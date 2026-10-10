@@ -1,0 +1,15 @@
+3-qubit stabilizer states: 1080 ; max |<s|CCZ+++>|^2 = 0.5624999999999997 (9/16)
+lambda=0.0000: tr(W rho) = -0.437500  (formula -0.437500)
+lambda=0.1000: tr(W rho) = -0.309180  (formula -0.309180)
+lambda=0.3333: tr(W rho) = -0.096354  (formula -0.096354)
+lambda=0.4000: tr(W rho) = -0.055000  (formula -0.055000)
+lambda=0.5000: tr(W rho) = -0.006836  (formula -0.006836)
+lambda=0.5100: tr(W rho) = -0.002866  (formula -0.002866)
+lambda=0.5200: tr(W rho) = 0.000958  (formula 0.000958)
+lambda = 1/2: tr(W rho) = -7/1024 exactly (float check)
+w(lambda) < 0 at every lambda = k/1000 in [0, 1/2] (exact rationals)
+min <phi|W|phi> over 3000 random 6-qubit stabilizer states = 0.0
+ALL_OK
+noise before CCZ, lambda=0.3333: tr(W rho) = -0.096354
+noise before CCZ, lambda=0.5000: tr(W rho) = -0.006836
+ALL_OK_BOTH_ORDERS
