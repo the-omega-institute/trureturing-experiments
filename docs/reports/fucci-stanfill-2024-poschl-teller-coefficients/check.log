@@ -1,0 +1,5 @@
+P1 constant part from the definitions equals B.21: True
+P1 T-coefficient from the definitions: -(6*y**2 - 6*y + 1)/3 ; B.21 prints -(6*y**2 - 6*y - 1)/3 ; difference -2/3
+T-coefficient symmetric under y -> 1 - y (both forms)
+g_{q,1} = 0 for all coprime 0<p<q<=8 (higher Omega_k arbitrary); g_{q,0} values: [(1, 2, Cc*(8*Cc**2 - 3)/24), (1, 3, -Cc*(81*Cc**3 + 32)/324), (2, 3, -10*Cc/81), (1, 4, Cc*(8*Cc**2 - 5)*(8*Cc**2 + 5)/320), (3, 4, -7*Cc/64), (1, 5, -Cc*(125*Cc**5 + 48)/750)] ...
+ALL_OK
