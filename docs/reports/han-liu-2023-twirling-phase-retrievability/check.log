@@ -1,0 +1,14 @@
+(1) m=(1, 1, 1): C_3 twirl equals the three-block pinching: True
+(1) m=(2, 1, 1): C_3 twirl equals the three-block pinching: True
+(1) m=(2, 2, 2): C_3 twirl equals the three-block pinching: True
+(1) m=(3, 1, 2): C_3 twirl equals the three-block pinching: True
+(2) encoding is an isometry and injective on all operators for all 24 block triples with N <= 12 and floor(N/2) > max m: True
+(2) m=(2, 2, 2): logical dimension 3 = 3s, beta = 2
+(2) m=(4, 4, 4): logical dimension 6 = 3s, beta = 4
+(2) m=(6, 6, 6): logical dimension 9 = 3s, beta = 6
+(3) 80 random subspaces of dimension max(r, floor(N/2)) + 1: x, Dx collide under the pinching: True
+(4) three vectors in C^2: the intensity kernel contains an indefinite K = xx*-yy* (200 random triples): True
+(4) four generic vectors in C^2 give a rank-4 intensity map (no collision): True
+(5) m=(2,2,2): 200 random 3-dimensional subspaces violate Knill–Laflamme: True
+bad= 0
+EXIT=0
