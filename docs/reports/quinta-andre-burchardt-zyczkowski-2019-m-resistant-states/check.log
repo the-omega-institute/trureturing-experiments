@@ -1,0 +1,15 @@
+N=3 m=0 d=2: every |L|=m reduced state has a negative partial transpose (min eig -0.5); every |L|=m+1 reduced state is diagonal in a product basis: True OK
+N=3 m=1 d=6: every |L|=m reduced state has a negative partial transpose (min eig -0.1667); every |L|=m+1 reduced state is diagonal in a product basis: True OK
+N=4 m=0 d=2: every |L|=m reduced state has a negative partial transpose (min eig -0.5); every |L|=m+1 reduced state is diagonal in a product basis: True OK
+N=4 m=1 d=8: every |L|=m reduced state has a negative partial transpose (min eig -0.125); every |L|=m+1 reduced state is diagonal in a product basis: True OK
+N=4 m=2 d=12: every |L|=m reduced state has a negative partial transpose (min eig -0.08333); every |L|=m+1 reduced state is diagonal in a product basis: True OK
+N=5 m=0 d=2: every |L|=m reduced state has a negative partial transpose (min eig -0.5); every |L|=m+1 reduced state is diagonal in a product basis: True OK
+N=5 m=1 d=10: every |L|=m reduced state has a negative partial transpose (min eig -0.1); every |L|=m+1 reduced state is diagonal in a product basis: True OK
+N=5 m=2 d=20: every |L|=m reduced state has a negative partial transpose (min eig -0.05); every |L|=m+1 reduced state is diagonal in a product basis: True OK
+N=5 m=3 d=20: every |L|=m reduced state has a negative partial transpose (min eig -0.05); every |L|=m+1 reduced state is diagonal in a product basis: True OK
+N=6 m=0 d=2: every |L|=m reduced state has a negative partial transpose (min eig -0.5); every |L|=m+1 reduced state is diagonal in a product basis: True OK
+N=6 m=1 d=12: every |L|=m reduced state has a negative partial transpose (min eig -0.08333); every |L|=m+1 reduced state is diagonal in a product basis: True OK
+N=6 m=2 d=30: every |L|=m reduced state has a negative partial transpose (min eig -0.03333); every |L|=m+1 reduced state is diagonal in a product basis: True OK
+N=6 m=3 d=40: every |L|=m reduced state has a negative partial transpose (min eig -0.025); every |L|=m+1 reduced state is diagonal in a product basis: True OK
+N=6 m=4 d=30: every |L|=m reduced state has a negative partial transpose (min eig -0.03333); every |L|=m+1 reduced state is diagonal in a product basis: True OK
+ALL_OK
