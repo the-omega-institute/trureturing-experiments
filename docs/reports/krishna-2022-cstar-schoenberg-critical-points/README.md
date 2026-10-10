@@ -8,3 +8,5 @@ It verifies, exactly and with symbolic `t, c > 0`, the factorization of the orde
 
 Files:
 - `check.py`: sha256 `702b68b36e2ae270381994118ce00660b5310f00ad5c514705b95334a7b0f4dd`
+
+`scalar-kushel-tyaglov.py` (SymPy, exact) evaluates the scalar inequality that the source quotes as the Kushel–Tyaglov theorem (Section 1), at d = 3 and a = (1+i, 1−i, 1). It checks the factorization of P′, gets lhs = 32/9 and rhs = 28/9, and so finds the inequality false by 4/9. `scalar-kushel-tyaglov.log` holds its run (exit 0).
