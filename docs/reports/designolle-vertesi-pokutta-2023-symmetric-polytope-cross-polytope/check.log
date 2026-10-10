@@ -1,0 +1,52 @@
+(A) m=4: |G|=192, 4096 strategies, Reynolds coordinates equal P(ABC)/m^2: True
+(A) m=5: |G|=300, 32768 strategies, Reynolds coordinates equal P(ABC)/m^2: True
+(A) m=6: |G|=432, 3000 strategies, Reynolds coordinates equal P(ABC)/m^2: True
+(A) m=7: |G|=588, 3000 strategies, Reynolds coordinates equal P(ABC)/m^2: True
+(B) m=3: 10 distinct symmetrised points, Table II gives 10: True
+(B) m=4: 10 distinct symmetrised points, Table II gives 10: True
+(B) m=5: 60 distinct symmetrised points, Table II gives 60: True
+(B) m=6: 100 distinct symmetrised points, Table II gives 100: True
+(B) m=7: 640 distinct symmetrised points, Table II gives 640: True
+(B) m=8: 1540 distinct symmetrised points, Table II gives 1540: True
+(B) m=9: 10032 distinct symmetrised points, Table II gives 10032: True
+(C) m=5: max over symmetrised points of ||V^-1 q||_1 = 1.000000000000 <= 1: True
+(C) m=7: max over symmetrised points of ||V^-1 q||_1 = 1.000000000000 <= 1: True
+(C) m=9: max over symmetrised points of ||V^-1 q||_1 = 1.000000000000 <= 1: True
+(C) m=11: max over symmetrised points of ||V^-1 q||_1 = 1.000000000000 <= 1: True
+(C) m=13: max over symmetrised points of ||V^-1 q||_1 = 1.000000000000 <= 1: True
+(D) V matches the displayed matrix: True
+(D) det V = 98400527135576109875200
+(D) det V = 98400527135576109875200 (nonzero): True
+(D) j=1: max |A(zeta^j)| = 10.8379514475 with 34 maximizers (the signed rotations of s_j); l_j(V_j) = 1273.038691 vs 1273.038691: True
+(D) j=3: max |A(zeta^j)| = 10.8379514475 with 34 maximizers (the signed rotations of s_j); l_j(V_j) = 1273.038691 vs 1273.038691: True
+(D) j=5: max |A(zeta^j)| = 10.8379514475 with 34 maximizers (the signed rotations of s_j); l_j(V_j) = 1273.038691 vs 1273.038691: True
+(D) j=7: max |A(zeta^j)| = 10.8379514475 with 34 maximizers (the signed rotations of s_j); l_j(V_j) = 1273.038691 vs 1273.038691: True
+(D) j=9: max |A(zeta^j)| = 10.8379514475 with 34 maximizers (the signed rotations of s_j); l_j(V_j) = 1273.038691 vs 1273.038691: True
+(D) j=11: max |A(zeta^j)| = 10.8379514475 with 34 maximizers (the signed rotations of s_j); l_j(V_j) = 1273.038691 vs 1273.038691: True
+(D) j=13: max |A(zeta^j)| = 10.8379514475 with 34 maximizers (the signed rotations of s_j); l_j(V_j) = 1273.038691 vs 1273.038691: True
+(D) j=15: max |A(zeta^j)| = 10.8379514475 with 34 maximizers (the signed rotations of s_j); l_j(V_j) = 1273.038691 vs 1273.038691: True
+(D) j=17: max |A(zeta^j)| = 17.0000000000 with 2 maximizers (the signed rotations of s_j); l_j(V_j) = 4913.000000 vs 4913.000000: True
+(D) ABC coefficients as displayed: True
+(D) p = [-141, 133, -109, 69, -13, -43, 91, -123, 139]
+(D) w.V_j = [8295, -8385, -8313, 8383, 8271, -8345, -8169, -8417, -7225]  w.p = 8421
+(D) max |w.V_j| = 8417 < w.p = 8421: True
+bad= 0
+       16.43 real        14.91 user         3.39 sys
+          1973223424  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+              121340  page reclaims
+                  58  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   0  signals received
+                   6  voluntary context switches
+                4743  involuntary context switches
+        293386412926  instructions retired
+         69750951392  cycles elapsed
+           920061752  peak memory footprint
+EXIT=0
