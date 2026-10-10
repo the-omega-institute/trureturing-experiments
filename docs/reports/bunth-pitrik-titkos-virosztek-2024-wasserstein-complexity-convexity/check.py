@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Bunth–Pitrik–Titkos–Virosztek arXiv:2402.13150v4, §6.1: "whether the Wasserstein complexity (eq:qw-compl-def)
+"""Bunth–Pitrik–Titkos–Virosztek arXiv:2402.13150v4, §5.1: "whether the Wasserstein complexity (eq:qw-compl-def)
 is convex or not is an open question". C_W(Φ) = max_ρ d_A(ρ, Φ(ρ)) with d_A^2 = D_A^2(ρ,ω) - (D_A^2(ρ,ρ)+D_A^2(ω,ω))/2,
 D_A^2(ρ,ω) = min over couplings Π ≥ 0 on H⊗H* with tr_{H*}Π = ω, tr_H Π = ρ^T of tr(C Π), C = Σ_j (A_j⊗I - I⊗A_j^T)^2.
 Qubit, A = (X, Y, Z). Channels Φ_± = Ad(U_±), U_± = sqrt(1-t) I ± i sqrt(t) Z, midpoint Ψ = (1-t) id + t Ad(Z), t = 1/4.
