@@ -1,0 +1,43 @@
+(1) n=2 intrinsic Scal_3 = 1.901978716728070992646611  N/(9 s4^2) = 1.901978716728070992646611
+(1) n=2 intrinsic curvature equals the formula: True
+(1) n=2 control p=2: 1.5  expected 1.5
+(1) n=2 control p=2 equals (n^2-1)(n^2-2)/4: True
+(1) n=3 intrinsic Scal_3 = 16.77929912505800523121669  N/(9 s4^2) = 16.77929912505800523121669
+(1) n=3 intrinsic curvature equals the formula: True
+(1) n=3 control p=2: 14.0  expected 14.0
+(1) n=3 control p=2 equals (n^2-1)(n^2-2)/4: True
+(2) n=2 (trS)^2 - tr S^2 = 14.406247952165840338  N/s4^2 = 14.406247952165840338
+(2) n=2 trial 0 Gauss evaluation equals N/s4^2: True
+(2) n=2 trial 1 Gauss evaluation equals N/s4^2: True
+(2) n=2 trial 2 Gauss evaluation equals N/s4^2: True
+(2) n=3 (trS)^2 - tr S^2 = 137.99309477628122525  N/s4^2 = 137.99309477628122525
+(2) n=3 trial 0 Gauss evaluation equals N/s4^2: True
+(2) n=3 trial 1 Gauss evaluation equals N/s4^2: True
+(2) n=3 trial 2 Gauss evaluation equals N/s4^2: True
+(2) n=4 (trS)^2 - tr S^2 = 314.63228943587546437  N/s4^2 = 314.63228943587546437
+(2) n=4 trial 0 Gauss evaluation equals N/s4^2: True
+(2) n=4 trial 1 Gauss evaluation equals N/s4^2: True
+(2) n=4 trial 2 Gauss evaluation equals N/s4^2: True
+(2) n=5 (trS)^2 - tr S^2 = 1164.9086942767165902  N/s4^2 = 1164.9086942767165902
+(2) n=5 trial 0 Gauss evaluation equals N/s4^2: True
+(2) n=5 trial 1 Gauss evaluation equals N/s4^2: True
+(2) n=5 trial 2 Gauss evaluation equals N/s4^2: True
+(3) numerator divisible by x - y: True
+(3) chain-rule identity n=2: True
+(3) chain-rule identity n=3: True
+(3) chain-rule identity n=4: True
+(3) L equals the displayed closed form: True
+(3) moment-deficit identity Q = L + deficits (symbolic n): True
+(3) n=k+4: monomials 126 min coefficient 2
+(3) n>=4: every coefficient of L(n=k+4) is positive: True
+(3) n=2: L = H_10(3,8,9,24,28,16): True
+(3) n=2: monomials 11
+(3) n=2: coefficients positive: True
+(3) n=3: negative monomials of L [((2, 2, 6), -4)]
+(3) n=3: monomials after subtracting the square 41
+(3) n=3: remainder coefficients positive: True
+(3) n=3: x^10 present in the remainder: True
+(4) nontrivial T-transforms 19999 violations 0
+(4) no violation: True
+bad= 0
+EXIT=0
