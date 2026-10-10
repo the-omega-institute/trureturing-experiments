@@ -1,0 +1,11 @@
+n 3 R 150/361 pred 150/361 eq True
+  p=2 check 1/2 expected 1/2
+n 4 R 202/225 pred 202/225 eq True
+  p=2 check 3/2 expected 3/2
+n 5 R 3712/2025 pred 3712/2025 eq True
+identity r= 1 True
+identity r= 2 True
+identity r= 3 True
+identity r= 4 True
+T-transform violations 0
+bad= 0
