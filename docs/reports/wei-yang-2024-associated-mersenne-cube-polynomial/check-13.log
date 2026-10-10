@@ -1,0 +1,14 @@
+1 1 1 | GF 1 | edges 0 squares 0 OK
+2 1 1 | GF 1 | edges 0 squares 0 OK
+3 4 3*x + 4 | GF 3*x + 4 | edges 3 squares 0 OK
+4 5 4*x + 5 | GF 4*x + 5 | edges 4 squares 0 OK
+5 11 5*x**2 + 15*x + 11 | GF 5*x**2 + 15*x + 11 | edges 15 squares 5 OK
+6 16 9*x**2 + 24*x + 16 | GF 9*x**2 + 24*x + 16 | edges 24 squares 9 OK
+7 29 21*x**2 + 49*x + 29 | GF 21*x**2 + 49*x + 29 | edges 49 squares 21 OK
+8 45 8*x**3 + 52*x**2 + 88*x + 45 | GF 8*x**3 + 52*x**2 + 88*x + 45 | edges 88 squares 52 OK
+9 76 21*x**3 + 108*x**2 + 162*x + 76 | GF 21*x**3 + 108*x**2 + 162*x + 76 | edges 162 squares 108 OK
+10 121 5*x**4 + 70*x**3 + 235*x**2 + 290*x + 121 | GF 5*x**4 + 70*x**3 + 235*x**2 + 290*x + 121 | edges 290 squares 235 OK
+11 199 22*x**4 + 176*x**3 + 473*x**2 + 517*x + 199 | GF 22*x**4 + 176*x**3 + 473*x**2 + 517*x + 199 | edges 517 squares 473 OK
+12 320 69*x**4 + 424*x**3 + 948*x**2 + 912*x + 320 | GF 69*x**4 + 424*x**3 + 948*x**2 + 912*x + 320 | edges 912 squares 948 OK
+13 521 13*x**5 + 221*x**4 + 975*x**3 + 1846*x**2 + 1599*x + 521 | GF 13*x**5 + 221*x**4 + 975*x**3 + 1846*x**2 + 1599*x + 521 | edges 1599 squares 1846 OK
+ALL_OK
