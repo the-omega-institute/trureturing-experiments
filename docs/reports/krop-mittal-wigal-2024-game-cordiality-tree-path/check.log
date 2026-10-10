@@ -1,0 +1,5 @@
+cg(P10)= 1 cg(T)= 3
+pairing lower bound on T = 3
+r=1 n=10 cg(T_r)=3 cg(P_n)=1
+r=2 n=12 cg(T_r)=3 cg(P_n)=1
+bad= 0
