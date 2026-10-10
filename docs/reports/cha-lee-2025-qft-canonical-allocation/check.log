@@ -1,0 +1,7 @@
+literal coverage == set-pair condition R_i & L_j != {} on 2400 random instances
+k=3 m=1: OPT_GC(pi*) = 2 (MS-HC optimum m*C(k,2) = 3); balanced allocations up to relabelling = 1; min OPT_GC over them = 2
+k=3 m=2: OPT_GC(pi*) = 4 (MS-HC optimum m*C(k,2) = 6); balanced allocations up to relabelling = 15; min OPT_GC over them = 4
+k=4 m=1: OPT_GC(pi*) = 4 (MS-HC optimum m*C(k,2) = 6); balanced allocations up to relabelling = 1; min OPT_GC over them = 4
+k=4 m=2: OPT_GC(pi*) = 8 (MS-HC optimum m*C(k,2) = 12); balanced allocations up to relabelling = 105; min OPT_GC over them = 8
+k=5 m=1: OPT_GC(pi*) = 6 (MS-HC optimum m*C(k,2) = 10); balanced allocations up to relabelling = 1; min OPT_GC over them = 6
+ALL_OK
