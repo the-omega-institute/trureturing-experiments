@@ -1,0 +1,16 @@
+direct: r6 increasing on [37,8191), s6 on [5,8191); r6(36)=12152 r6(37)=11976
+recurrence tables match T^j/(1-z)^(5-j) and T^6 for n < 600
+first-difference identities verified for 1 <= n < 8192
+j=1 max row-sum norm 6
+j=2 max row-sum norm 4
+j=3 max row-sum norm 4
+j=4 max row-sum norm 6
+j=5 max row-sum norm 16
+C word norms by length 0..5: [1, 32, 320, 5360, 68384, 1019200]
+prefix bits 8: min p^4-24B_p = -1344904727 at p=221
+prefix bits 9: min p^4-24B_p = -13132136135 at p=445
+prefix bits 10: min p^4-24B_p = -93085057559 at p=893
+prefix bits 11: min p^4-24B_p = -211507860935 at p=1597
+prefix bits 12: min p^4-24B_p = 4300720697905 at p=2173
+prefix bits 13: min p^4-24B_p = 100857757740265 at p=4157
+ALL_OK
