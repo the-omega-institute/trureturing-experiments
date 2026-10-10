@@ -1,0 +1,6 @@
+/Users/auric/trureturing-experiments/docs/reports/bunth-pitrik-titkos-virosztek-2024-wasserstein-complexity-convexity/check.py:25: UserWarning: Solution may be inaccurate. Try another solver, adjusting the solver settings, or solve with verbose=True for more information.
+  prob=cp.Problem(cp.Minimize(cp.real(cp.trace(C@P))),cons); prob.solve(solver=cp.CLARABEL if 'CLARABEL' in cp.installed_solvers() else cp.SCS)
+self-cost formula ok: True
+max d^2 over sampled rho for Phi_+-: 1.654607 (bound 8t = 2)
+d^2(+, Psi(+)) = 2.732051  1+sqrt3 = 2.732051
+bad= 0
