@@ -1,0 +1,39 @@
+(1) n=3: 5 points in (L,U) checked; last point pivots=7, size=11, objective - (n+1) = 363/3276800
+(1) n=4: 5 points in (L,U) checked; last point pivots=9, size=16, objective - (n+1) = 9801/32000000
+(1) n=5: 5 points in (L,U) checked; last point pivots=11, size=22, objective - (n+1) = 53361/102400000
+(1) n=6: 5 points in (L,U) checked; last point pivots=13, size=29, objective - (n+1) = 363/490000
+(1) n=7: 5 points in (L,U) checked; last point pivots=15, size=37, objective - (n+1) = 88209/91750400
+(1) n=8: 5 points in (L,U) checked; last point pivots=17, size=46, objective - (n+1) = 121/102400
+(1) n=9: 5 points in (L,U) checked; last point pivots=19, size=56, objective - (n+1) = 717409/512000000
+(1) n=10: 5 points in (L,U) checked; last point pivots=21, size=67, objective - (n+1) = 81/50000
+(1) all constraint, PSD and objective checks passed: True
+(2) objective = n+1+delta^2/(32n): True
+(2) Schur complement S(1,1) = 2n p (p0 - p): True
+(2) det S = 2n q^3 (4 p0 - c (c - 1/(2n))): True
+(2) n=5 smallest eigenvalues: [-0.  0.  0.  0.  0.  0.]
+(2) numerical spectrum nonnegative (n=5): True
+(3) n=3: lambda_max(H) = 4 at three points of (L, U)
+(3) n=4: lambda_max(H) = 5 at three points of (L, U)
+(3) n=5: lambda_max(H) = 6 at three points of (L, U)
+(3) exact diagonalization agrees with E_GS = n+1: True
+(4) L < U iff n > 2 (n = 1..20): True
+bad= 0
+        4.86 real         4.13 user         0.22 sys
+            94863360  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+                6496  page reclaims
+                 216  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   0  signals received
+                1019  voluntary context switches
+                4885  involuntary context switches
+         70551186458  instructions retired
+         16600837451  cycles elapsed
+            85394248  peak memory footprint
+EXIT=0
