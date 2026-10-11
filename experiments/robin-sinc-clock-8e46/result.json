@@ -1,0 +1,220 @@
+{
+  "scope": "Exact changed-parameter certificates only; external analytic premises retained.",
+  "clock": {
+    "lower_excluded": {
+      "numerator": 35000000000000000000000000000000000000000000000,
+      "denominator": 1
+    },
+    "upper_included": 80000000000000000000000000000000000000000000000
+  },
+  "parameters": {
+    "height": 3000000000000,
+    "count": 21,
+    "a": {
+      "numerator": 17,
+      "denominator": 20000000000000
+    },
+    "q0": {
+      "numerator": 7,
+      "denominator": 32
+    },
+    "q": {
+      "numerator": 219,
+      "denominator": 1000
+    }
+  },
+  "bounds": {
+    "inverse_moment": {
+      "numerator": 200000000000000000000000000,
+      "denominator": 199999999999999999999993931
+    },
+    "variance": {
+      "numerator": 2023,
+      "denominator": 399999999999999999999997688
+    },
+    "complex_tail_base": {
+      "numerator": 105000000000159999999999924137500000000000000000000000,
+      "denominator": 479999999999999999999999306400000000000000000000250563
+    },
+    "whole_support_log": {
+      "numerator": 47600000000040459999999965609,
+      "denominator": 2666666666666666666666664740000000000000
+    },
+    "head": {
+      "numerator": 1138320000000000000000000000,
+      "denominator": 21399999999999999999999350617
+    },
+    "tail": {
+      "numerator": 398628434999242932436913672393236504686106204139742108369849,
+      "denominator": 33437500000000000000000000000000000000000000000000000000000000
+    },
+    "transport": {
+      "numerator": 37200078576675000000000000,
+      "denominator": 49999999999999999999999711
+    },
+    "elementary": {
+      "numerator": 10000,
+      "denominator": 199999999999999999999993931
+    },
+    "allowance": {
+      "numerator": 270548059831506491824378059571564485026125156610398064782922179292295087321634417020314403801795063413296321324909,
+      "denominator": 334374999999999999999987920703125000000000000058647402187500000000000000000000000000000000000000000000000000000000
+    },
+    "reserve": {
+      "numerator": 67838284064811,
+      "denominator": 83593750000000
+    },
+    "reserve_minus_allowance": {
+      "numerator": 805076427737508175612137796388149784374843437195674333445288768104912678365582979685596198204936586703678675091,
+      "denominator": 334374999999999999999987920703125000000000000058647402187500000000000000000000000000000000000000000000000000000000
+    }
+  },
+  "checks": [
+    {
+      "name": "initial_sine_P13_upper",
+      "positive_margin": {
+        "numerator": 58456888567547064143,
+        "denominator": 2099249152000000000000000
+      }
+    },
+    {
+      "name": "alternating_tail_first_ratio",
+      "positive_margin": {
+        "numerator": 6247,
+        "denominator": 6400
+      }
+    },
+    {
+      "name": "middle_segment_P5_concavity",
+      "positive_margin": {
+        "numerator": 483999,
+        "denominator": 122500
+      }
+    },
+    {
+      "name": "tangent_point_in_middle_segment",
+      "positive_margin": {
+        "numerator": 1,
+        "denominator": 14
+      }
+    },
+    {
+      "name": "tangent_slope",
+      "positive_margin": {
+        "numerator": 281,
+        "denominator": 37500000
+      }
+    },
+    {
+      "name": "tangent_intercept",
+      "positive_margin": {
+        "numerator": 1487231,
+        "denominator": 3125000000
+      }
+    },
+    {
+      "name": "sine_sign_before_second_zero",
+      "positive_margin": {
+        "numerator": 299,
+        "denominator": 175
+      }
+    },
+    {
+      "name": "cutoff_below_pi",
+      "positive_margin": {
+        "numerator": 59,
+        "denominator": 100
+      }
+    },
+    {
+      "name": "inverse_moment_denominator",
+      "positive_margin": {
+        "numerator": 199999999999999999999993931,
+        "denominator": 200000000000000000000000000
+      }
+    },
+    {
+      "name": "variance_denominator",
+      "positive_margin": {
+        "numerator": 149999999999999999999999133,
+        "denominator": 50000000000000000000000000
+      }
+    },
+    {
+      "name": "all_real_parts_complex_tail",
+      "positive_margin": {
+        "numerator": 119999999839999999999923964100000000000000000054873297,
+        "denominator": 479999999999999999999999306400000000000000000000250563000
+      }
+    },
+    {
+      "name": "whole_support_log_bound",
+      "positive_margin": {
+        "numerator": 2666666619066666666626204740000034391,
+        "denominator": 2666666666666666666666664740000000000000
+      }
+    },
+    {
+      "name": "whole_support_lower",
+      "positive_margin": {
+        "numerator": 26666666619066666666626187400000034391,
+        "denominator": 2666666666666666666666664740000000000000
+      }
+    },
+    {
+      "name": "whole_support_upper",
+      "positive_margin": {
+        "numerator": 2666666661859066666662578280000003473491,
+        "denominator": 266666666661906666666662428000000003439100
+      }
+    },
+    {
+      "name": "upper_clock_square_root",
+      "positive_margin": {
+        "numerator": 32410000000000000000000000000000000000000000,
+        "denominator": 1
+      }
+    },
+    {
+      "name": "complete_allowance_vs_reserve",
+      "positive_margin": {
+        "numerator": 136326427737508175612161954981899784374843437078379529070288768104912678365582979685596198204936586703678675091,
+        "denominator": 334374999999999999999987920703125000000000000058647402187500000000000000000000000000000000000000000000000000000000
+      }
+    },
+    {
+      "name": "displayed_margin_lower",
+      "positive_margin": {
+        "numerator": 235802737508175612166871255727909374843437054510036379976268104912678365582979685596198204936586703678675091,
+        "denominator": 334374999999999999999987920703125000000000000058647402187500000000000000000000000000000000000000000000000000000000
+      }
+    },
+    {
+      "name": "displayed_margin_upper",
+      "positive_margin": {
+        "numerator": 98572262491824387833116664975215625156562945548611022211231895087321634417020314403801795063413296321324909,
+        "denominator": 334374999999999999999987920703125000000000000058647402187500000000000000000000000000000000000000000000000000000000
+      }
+    },
+    {
+      "name": "old_allowance_does_not_pay_new_endpoint",
+      "positive_margin": {
+        "numerator": 192456207352165159396752583398248629228688955776974860267549469238214034303331657157727664695239086940125783433355070244619197271322482629,
+        "denominator": 5200199999999999999999802585000000000000000000999781250000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+      }
+    },
+    {
+      "name": "new_law_strictly_reduces_variance",
+      "positive_margin": {
+        "numerator": 230319999999999999999999711,
+        "denominator": 863999999999999999999989806080000000000000000030056
+      }
+    }
+  ],
+  "check_count": 20,
+  "boundaries": [
+    "Sine Taylor and concavity, pi lower bound, GAK analytic transport and reserve are mathematical inputs to the application.",
+    "All actual zero real parts and multiplicities, both signs of ordinate, and the complete improper response are retained by GAK.",
+    "This is not a kernel proof, an independent primary-proof audit, a least-counterexample bound or an unbounded RH estimate."
+  ]
+}
