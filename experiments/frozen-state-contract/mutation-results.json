@@ -1,0 +1,116 @@
+[
+  {
+    "mutation_position": "tools/StrataLint.Engine/FrozenState/FrozenStateRecord.cs",
+    "name": "schema",
+    "named_red_test": "StrictStateSchemaRejectsSingleFieldRecord",
+    "command": [
+      "make",
+      "-C",
+      "tools",
+      "test",
+      "TEST_PROJECT=tools/tests/StrataLint.Tests/StrataLint.Tests.csproj",
+      "TEST_FILTER=FullyQualifiedName~StrictStateSchemaRejectsSingleFieldRecord"
+    ],
+    "compile_errors": 0,
+    "red_exit": 2,
+    "named_failure": true,
+    "restored": true,
+    "green_exit": 0,
+    "preregistered_expected_red": "The named regression fails with zero compiler errors."
+  },
+  {
+    "mutation_position": "tools/StrataLint.Engine/Rules/RepositoryRules.FrozenState.cs",
+    "name": "pin",
+    "named_red_test": "CurrentStateChecksPinAndDeclarationInventoryIndependently",
+    "command": [
+      "make",
+      "-C",
+      "tools",
+      "test",
+      "TEST_PROJECT=tools/tests/StrataLint.Tests/StrataLint.Tests.csproj",
+      "TEST_FILTER=FullyQualifiedName~CurrentStateChecksPinAndDeclarationInventoryIndependently"
+    ],
+    "compile_errors": 0,
+    "red_exit": 2,
+    "named_failure": true,
+    "restored": true,
+    "green_exit": 0,
+    "preregistered_expected_red": "The named regression fails with zero compiler errors."
+  },
+  {
+    "mutation_position": "tools/StrataLint.Engine/Rules/RepositoryRules.FrozenState.cs",
+    "name": "inventory",
+    "named_red_test": "CurrentStateChecksPinAndDeclarationInventoryIndependently",
+    "command": [
+      "make",
+      "-C",
+      "tools",
+      "test",
+      "TEST_PROJECT=tools/tests/StrataLint.Tests/StrataLint.Tests.csproj",
+      "TEST_FILTER=FullyQualifiedName~CurrentStateChecksPinAndDeclarationInventoryIndependently"
+    ],
+    "compile_errors": 0,
+    "red_exit": 2,
+    "named_failure": true,
+    "restored": true,
+    "green_exit": 0,
+    "preregistered_expected_red": "The named regression fails with zero compiler errors."
+  },
+  {
+    "mutation_position": "tools/StrataLint.Cli/Commands/Ledger/DagLedgerAlignWriter.cs",
+    "name": "write-set",
+    "named_red_test": "RepinWritesOnlyTargetWithFrozenDownstreamAndIdenticalRetryWritesNothing",
+    "command": [
+      "make",
+      "-C",
+      "tools",
+      "test",
+      "TEST_PROJECT=tools/tests/StrataLint.Tests/StrataLint.Tests.csproj",
+      "TEST_FILTER=FullyQualifiedName~RepinWritesOnlyTargetWithFrozenDownstreamAndIdenticalRetryWritesNothing"
+    ],
+    "compile_errors": 0,
+    "red_exit": 2,
+    "named_failure": true,
+    "restored": true,
+    "green_exit": 0,
+    "preregistered_expected_red": "The named regression fails with zero compiler errors."
+  },
+  {
+    "mutation_position": "Meta/FILEMAP.toml",
+    "name": "unclassified-accepted",
+    "named_red_test": "AcceptedPathIsRejectedByCanonicalFileMapCoverage",
+    "command": [
+      "make",
+      "-C",
+      "tools",
+      "test",
+      "TEST_PROJECT=tools/tests/StrataLint.FileMap.Tests/StrataLint.FileMap.Tests.csproj",
+      "TEST_FILTER=FullyQualifiedName~AcceptedPathIsRejectedByCanonicalFileMapCoverage"
+    ],
+    "compile_errors": 0,
+    "red_exit": 2,
+    "named_failure": true,
+    "restored": true,
+    "green_exit": 0,
+    "preregistered_expected_red": "The named regression fails with zero compiler errors."
+  },
+  {
+    "mutation_position": "tools/StrataLint.Cli/Commands/TruthReleaseCommand.cs",
+    "name": "release",
+    "named_red_test": "TruthReleaseRejectsIssuanceWhenEventFieldsHaveNoSource",
+    "command": [
+      "make",
+      "-C",
+      "tools",
+      "test",
+      "TEST_PROJECT=tools/tests/StrataLint.Tests/StrataLint.Tests.csproj",
+      "TEST_FILTER=FullyQualifiedName~TruthReleaseRejectsIssuanceWhenEventFieldsHaveNoSource"
+    ],
+    "compile_errors": 0,
+    "red_exit": 2,
+    "named_failure": true,
+    "restored": true,
+    "green_exit": 0,
+    "preregistered_expected_red": "The named regression fails with zero compiler errors."
+  }
+]
