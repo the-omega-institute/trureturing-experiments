@@ -1,0 +1,356 @@
+{
+  "historical": [
+    {
+      "case": "627a558a9c",
+      "ours": "627a558a9c^1",
+      "theirs": "627a558a9c^2",
+      "base": {
+        "members": 5994,
+        "identical_freezes_collapsed": 0
+      },
+      "ours_projection": {
+        "members": 6036,
+        "identical_freezes_collapsed": 0
+      },
+      "theirs_projection": {
+        "members": 5997,
+        "identical_freezes_collapsed": 0
+      },
+      "merge_exit": 0,
+      "conflict_paths": [],
+      "merged_tree": {
+        "records_unique_by_path": true,
+        "record_paths": 6039,
+        "source_import_edges_checked": 7893,
+        "missing_source_imports": [],
+        "accepted_paths": 0
+      }
+    },
+    {
+      "case": "09674ad841",
+      "ours": "09674ad841^1",
+      "theirs": "09674ad841^2",
+      "base": {
+        "members": 6278,
+        "identical_freezes_collapsed": 0
+      },
+      "ours_projection": {
+        "members": 6285,
+        "identical_freezes_collapsed": 0
+      },
+      "theirs_projection": {
+        "members": 6279,
+        "identical_freezes_collapsed": 0
+      },
+      "merge_exit": 0,
+      "conflict_paths": [],
+      "merged_tree": {
+        "records_unique_by_path": true,
+        "record_paths": 6286,
+        "source_import_edges_checked": 8204,
+        "missing_source_imports": [],
+        "accepted_paths": 0
+      }
+    },
+    {
+      "case": "f8137cae8d",
+      "ours": "f8137cae8d^1",
+      "theirs": "f8137cae8d^2",
+      "base": {
+        "members": 6259,
+        "identical_freezes_collapsed": 0
+      },
+      "ours_projection": {
+        "members": 6259,
+        "identical_freezes_collapsed": 0
+      },
+      "theirs_projection": {
+        "members": 6319,
+        "identical_freezes_collapsed": 0
+      },
+      "merge_exit": 0,
+      "conflict_paths": [],
+      "merged_tree": {
+        "records_unique_by_path": true,
+        "record_paths": 6319,
+        "source_import_edges_checked": 8270,
+        "missing_source_imports": [],
+        "accepted_paths": 0
+      }
+    },
+    {
+      "case": "9a29946a31",
+      "ours": "9a29946a31^1",
+      "theirs": "9a29946a31^2",
+      "base": {
+        "members": 7592,
+        "identical_freezes_collapsed": 0
+      },
+      "ours_projection": {
+        "members": 7595,
+        "identical_freezes_collapsed": 0
+      },
+      "theirs_projection": {
+        "members": 7592,
+        "identical_freezes_collapsed": 0
+      },
+      "merge_exit": 0,
+      "conflict_paths": [],
+      "merged_tree": {
+        "records_unique_by_path": true,
+        "record_paths": 7595,
+        "source_import_edges_checked": 11237,
+        "missing_source_imports": [],
+        "accepted_paths": 0
+      }
+    },
+    {
+      "case": "c1321c1f62",
+      "ours": "c1321c1f62^1",
+      "theirs": "c1321c1f62^2",
+      "base": {
+        "members": 7008,
+        "identical_freezes_collapsed": 0
+      },
+      "ours_projection": {
+        "members": 7012,
+        "identical_freezes_collapsed": 0
+      },
+      "theirs_projection": {
+        "members": 7008,
+        "identical_freezes_collapsed": 0
+      },
+      "merge_exit": 0,
+      "conflict_paths": [],
+      "merged_tree": {
+        "records_unique_by_path": true,
+        "record_paths": 7012,
+        "source_import_edges_checked": 9383,
+        "missing_source_imports": [],
+        "accepted_paths": 0
+      }
+    },
+    {
+      "case": "146d4f8678",
+      "ours": "146d4f8678^1",
+      "theirs": "146d4f8678^2",
+      "base": {
+        "members": 7012,
+        "identical_freezes_collapsed": 0
+      },
+      "ours_projection": {
+        "members": 7016,
+        "identical_freezes_collapsed": 0
+      },
+      "theirs_projection": {
+        "members": 7013,
+        "identical_freezes_collapsed": 0
+      },
+      "merge_exit": 0,
+      "conflict_paths": [],
+      "merged_tree": {
+        "records_unique_by_path": true,
+        "record_paths": 7017,
+        "source_import_edges_checked": 9390,
+        "missing_source_imports": [],
+        "accepted_paths": 0
+      }
+    },
+    {
+      "case": "57bab5c18b",
+      "ours": "57bab5c18b^1",
+      "theirs": "57bab5c18b^2",
+      "base": {
+        "members": 7085,
+        "identical_freezes_collapsed": 0
+      },
+      "ours_projection": {
+        "members": 7104,
+        "identical_freezes_collapsed": 0
+      },
+      "theirs_projection": {
+        "members": 7086,
+        "identical_freezes_collapsed": 0
+      },
+      "merge_exit": 0,
+      "conflict_paths": [],
+      "merged_tree": {
+        "records_unique_by_path": true,
+        "record_paths": 7105,
+        "source_import_edges_checked": 9532,
+        "missing_source_imports": [],
+        "accepted_paths": 0
+      }
+    },
+    {
+      "case": "1f0c36bb2c",
+      "ours": "1f0c36bb2c^1",
+      "theirs": "1f0c36bb2c^2",
+      "base": {
+        "members": 7105,
+        "identical_freezes_collapsed": 0
+      },
+      "ours_projection": {
+        "members": 7107,
+        "identical_freezes_collapsed": 0
+      },
+      "theirs_projection": {
+        "members": 7106,
+        "identical_freezes_collapsed": 0
+      },
+      "merge_exit": 0,
+      "conflict_paths": [],
+      "merged_tree": {
+        "records_unique_by_path": true,
+        "record_paths": 7108,
+        "source_import_edges_checked": 9539,
+        "missing_source_imports": [],
+        "accepted_paths": 0
+      }
+    },
+    {
+      "case": "756b195ca3",
+      "ours": "756b195ca3^1",
+      "theirs": "756b195ca3^2",
+      "base": {
+        "members": 7096,
+        "identical_freezes_collapsed": 0
+      },
+      "ours_projection": {
+        "members": 7110,
+        "identical_freezes_collapsed": 0
+      },
+      "theirs_projection": {
+        "members": 7098,
+        "identical_freezes_collapsed": 0
+      },
+      "merge_exit": 0,
+      "conflict_paths": [],
+      "merged_tree": {
+        "records_unique_by_path": true,
+        "record_paths": 7112,
+        "source_import_edges_checked": 9547,
+        "missing_source_imports": [],
+        "accepted_paths": 0
+      }
+    },
+    {
+      "case": "e2f35ca445",
+      "ours": "e2f35ca445^1",
+      "theirs": "e2f35ca445^2",
+      "base": {
+        "members": 6719,
+        "identical_freezes_collapsed": 0
+      },
+      "ours_projection": {
+        "members": 7134,
+        "identical_freezes_collapsed": 0
+      },
+      "theirs_projection": {
+        "members": 6746,
+        "identical_freezes_collapsed": 0
+      },
+      "merge_exit": 0,
+      "conflict_paths": [],
+      "merged_tree": {
+        "records_unique_by_path": true,
+        "record_paths": 7161,
+        "source_import_edges_checked": 9647,
+        "missing_source_imports": [],
+        "accepted_paths": 0
+      }
+    },
+    {
+      "case": "7284119321",
+      "ours": "7284119321^1",
+      "theirs": "7284119321^2",
+      "base": {
+        "members": 7106,
+        "identical_freezes_collapsed": 0
+      },
+      "ours_projection": {
+        "members": 7163,
+        "identical_freezes_collapsed": 0
+      },
+      "theirs_projection": {
+        "members": 7107,
+        "identical_freezes_collapsed": 0
+      },
+      "merge_exit": 0,
+      "conflict_paths": [],
+      "merged_tree": {
+        "records_unique_by_path": true,
+        "record_paths": 7164,
+        "source_import_edges_checked": 9650,
+        "missing_source_imports": [],
+        "accepted_paths": 0
+      }
+    },
+    {
+      "case": "6d3dcd868c",
+      "ours": "6d3dcd868c^1",
+      "theirs": "6d3dcd868c^2",
+      "base": {
+        "members": 7171,
+        "identical_freezes_collapsed": 0
+      },
+      "ours_projection": {
+        "members": 7172,
+        "identical_freezes_collapsed": 0
+      },
+      "theirs_projection": {
+        "members": 7172,
+        "identical_freezes_collapsed": 0
+      },
+      "merge_exit": 0,
+      "conflict_paths": [],
+      "merged_tree": {
+        "records_unique_by_path": true,
+        "record_paths": 7173,
+        "source_import_edges_checked": 9672,
+        "missing_source_imports": [],
+        "accepted_paths": 0
+      }
+    },
+    {
+      "case": "2b7dbda6e5",
+      "ours": "2b7dbda6e5^1",
+      "theirs": "2b7dbda6e5^2",
+      "base": {
+        "members": 7418,
+        "identical_freezes_collapsed": 0
+      },
+      "ours_projection": {
+        "members": 7467,
+        "identical_freezes_collapsed": 0
+      },
+      "theirs_projection": {
+        "members": 7419,
+        "identical_freezes_collapsed": 0
+      },
+      "merge_exit": 0,
+      "conflict_paths": [],
+      "merged_tree": {
+        "records_unique_by_path": true,
+        "record_paths": 7468,
+        "source_import_edges_checked": 10799,
+        "missing_source_imports": [],
+        "accepted_paths": 0
+      }
+    }
+  ],
+  "direct": [
+    {
+      "case": "different-records",
+      "merge_exit": 1,
+      "conflict_paths": [
+        "Golden/Frozen/state/D5/S0/Carrier/Probe.lean.json"
+      ]
+    },
+    {
+      "case": "same-content",
+      "merge_exit": 0,
+      "conflict_paths": []
+    }
+  ]
+}

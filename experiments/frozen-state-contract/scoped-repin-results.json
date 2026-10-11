@@ -1,0 +1,11 @@
+{
+  "scoped_report_command": "PATH=/tmp/frozen-python312-bin:$PATH make lean-report-scoped LEAN_TARGETS=D5.S0.Carrier.Ring",
+  "scoped_report_exit": 0,
+  "align_command": "dotnet run --project tools/StrataLint.Cli/StrataLint.Cli.csproj --configuration Release --no-build -- ledger-align --selector D5/S0/Carrier/Ring.lean --candidate-lean-report .lake/build/stratalint/scoped-lean-report.json",
+  "align_exit": 0,
+  "whole_report_exists": false,
+  "changed_frozen_paths": [],
+  "align_output": "LEDGER_ALIGN selectors_considered=1 changed=0 added=0 unchanged=1 conflicts=0\n",
+  "frozen_downstream": "D5/S0/Carrier/Conj.lean",
+  "reason_zero_writes": "Migrated Ring pin and inventory already equal the current module report; the writer regression changes A with frozen downstream B and asserts one-path writes."
+}
