@@ -154,13 +154,14 @@ for k in range(2, 9):
         print("E_2 =", str(lhs)[:22])
     # exact E_{n,k} for moderate n via the renewal law (odd n: no empty centre)
 
-# source Table 3 (four decimals)
+# source Table 3 (four decimals; the table mixes rounding and truncation, e.g. E_8 = 1.32726... is
+# printed 1.3272 while E_9 = 1.28168... is printed 1.2817, so allow one unit in the last place)
 src_tab = {2: "6.4686", 3: "2.5908", 4: "1.9080", 5: "1.6314", 6: "1.4827", 7: "1.3902",
            8: "1.3272", 9: "1.2817", 10: "1.2472", 100: "1.0204"}
 for k, s in src_tab.items():
     u = unbordered(k, 400)
     q = sum(Decimal(u[j]) / Decimal(k) ** (2 * j) for j in range(1, 401))
-    ok(abs((2 / (1 - q) - 1) - Decimal(s)) <= Decimal("0.00005"), f"table3 k={k}")
+    ok(abs((2 / (1 - q) - 1) - Decimal(s)) <= Decimal("0.0001"), f"table3 k={k}")
 
 # exact E_{n,2} by enumeration for n <= 16 versus the IB recurrence route (sanity on monotone approach)
 for n in (15, 16):
