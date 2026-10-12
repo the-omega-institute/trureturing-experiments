@@ -62,8 +62,8 @@ def h(e, w, F1):
 
 VALS = [Fr(0), Fr(1), Fr(2), Fr(-3), Fr(1, 2)]
 kept = exc = 0; bad = 0; byn = {}
-for trial in range(30000):
-    n = random.choice([2, 3, 3, 4])
+for trial in range(60000):
+    n = random.choice([2, 3, 4, 4, 4, 5])
     X = tuple(range(n))
     F1 = {}; F2 = {}
     for a in X:
@@ -102,6 +102,6 @@ for trial in range(30000):
         break
     if not is_comm_assoc(gprod, X, 2): bad += 1; print("NORMALIZED NOT ASSOC", E)
 print("systems kept (comm+assoc on words <= 2):", kept, "with exceptional pairs:", exc, "by alphabet size:", dict(sorted(byn.items())))
-if exc < 20 or byn.get(4, 0) < 20: bad += 1; print("FAIL too few exceptional systems")
+if exc < 20 or byn.get(4, 0) + byn.get(5, 0) < 20: bad += 1; print("FAIL too few exceptional systems")
 print("bad=", bad)
 raise SystemExit(1 if bad else 0)
