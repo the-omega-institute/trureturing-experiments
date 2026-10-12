@@ -95,7 +95,7 @@ def plan(root):
                             'prerequisite_frozen_node_ids'}:
             raise MigrationError('invalid Freeze payload: ' + str(path))
         by_module[payload['descriptor_selector']].append(payload)
-    records, pins, count = {}, {}, 0
+    records, pins, count, collapsed = {}, {}, 0, 0
     for path in sorted(state_root.rglob('*')):
         if path.is_dir():
             continue
@@ -109,10 +109,16 @@ def plan(root):
         if set(old) != {'statement_id'} or not isinstance(old['statement_id'], str) or not HASH.fullmatch(old['statement_id']):
             raise MigrationError('expected old single-field state: ' + selector)
         matches = by_module[selector]
-        if len(matches) != 1:
-            raise MigrationError(f'{selector}: expected one Freeze, found {len(matches)}')
-        if old['statement_id'] != matches[0]['statement_id']:
+        if not matches:
+            raise MigrationError(selector + ': expected at least one Freeze')
+        if any(match['statement_id'] != old['statement_id'] for match in matches):
             raise MigrationError('state/Freeze pin mismatch: ' + selector)
+        # Concurrent re-pins can leave several Freeze events for one module that differ only in
+        # prerequisite edges. The record drops those edges, so identical projections are one record.
+        wires = {canonical(project(match)) for match in matches}
+        if len(wires) != 1:
+            raise MigrationError(f'{selector}: {len(matches)} Freeze events project to different records')
+        collapsed += len(matches) - 1
         value = project(matches[0])
         records[path] = canonical(value)
         pins[selector] = old['statement_id']
@@ -126,7 +132,8 @@ def plan(root):
         raise MigrationError('projection changed members or pins')
     return records, {'members_before': len(pins), 'members_after': len(migrated),
                      'pins_equal': sum(pins[key] == migrated[key] for key in pins),
-                     'declaration_entries': count, 'inconsistencies': 0}
+                     'declaration_entries': count, 'identical_freezes_collapsed': collapsed,
+                     'inconsistencies': 0}
 
 def apply(root, records):
     # Recheck the entire source before replacing any member. Stage all bytes first.

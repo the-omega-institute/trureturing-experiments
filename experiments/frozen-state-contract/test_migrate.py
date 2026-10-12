@@ -51,8 +51,32 @@ class MigrationTests(unittest.TestCase):
             migrate.plan(self.root)
         self.assertEqual(before, self.image())
 
-    def test_duplicate_freeze_stops_instead_of_choosing_one(self):
-        self.write_event('b.json')
+    def write_event_with_prerequisites(self, name, prerequisites, declarations=None):
+        self.write_event(name, declarations=declarations)
+        path = self.accepted / name
+        event = json.loads(path.read_text())
+        event['payload']['prerequisite_frozen_node_ids'] = prerequisites
+        path.write_text(json.dumps(event) + '\n')
+
+    def test_duplicate_freezes_with_identical_projection_collapse(self):
+        self.write_event_with_prerequisites('b.json', ['sha256:' + 'c' * 64])
+        records, result = migrate.plan(self.root)
+        self.assertEqual({'statement_id': PIN, 'declarations':
+                          [{'declaration_name_key': DECL['declaration_name_key'], 'kind': 'theorem'}]},
+                         json.loads(records[self.state]))
+        self.assertEqual(1, result['identical_freezes_collapsed'])
+        self.assertEqual(1, result['members_after'])
+
+    def test_duplicate_freezes_with_different_declarations_stop(self):
+        other = dict(DECL, declaration_name_key='ns(n0,5:other)')
+        self.write_event_with_prerequisites('b.json', [], declarations=[DECL, other])
+        before = self.image()
+        with self.assertRaises(migrate.MigrationError):
+            migrate.plan(self.root)
+        self.assertEqual(before, self.image())
+
+    def test_duplicate_freeze_with_another_pin_stops(self):
+        self.write_event('b.json', pin='sha256:' + 'b' * 64)
         with self.assertRaises(migrate.MigrationError):
             migrate.plan(self.root)
 
