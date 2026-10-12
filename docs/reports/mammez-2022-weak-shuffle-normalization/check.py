@@ -61,14 +61,18 @@ def h(e, w, F1):
     return seg.count(a) if nxt == b else 0
 
 VALS = [Fr(0), Fr(1), Fr(2), Fr(-3), Fr(1, 2)]
-kept = exc = 0; bad = 0; byn = {}
-for trial in range(60000):
-    n = random.choice([2, 3, 4, 4, 4, 5])
+kept = exc = 0; bad = 0; byn = {}; caseb = 0
+for trial in range(150000):
+    n = random.choice([2, 3, 4, 4, 4, 4, 5])
     X = tuple(range(n))
     F1 = {}; F2 = {}
     for a in X:
-        d = random.choice([Fr(0), Fr(1)])
-        F1[(a, a)] = d; F2[(a, a)] = d
+        if random.random() < 0.15:
+            al = random.choice([Fr(1, 3), Fr(2), Fr(-1, 2)])
+            F1[(a, a)] = al; F2[(a, a)] = 1 - al          # Theorem 2.? case (b): f1(a,a) = alpha, f2(a,a) = 1 - alpha
+        else:
+            d = random.choice([Fr(0), Fr(1)])
+            F1[(a, a)] = d; F2[(a, a)] = d
     for a in X:
         for b in X:
             if a != b:
@@ -82,6 +86,7 @@ for trial in range(60000):
     E = [(a, b) for a in X for b in X if a != b and F1[(a, b)] not in (0, 1)]
     if not E: continue
     exc += 1; byn[n] = byn.get(n, 0) + 1
+    if any(F1[(c, c)] + F2[(c, c)] == 1 and F1[(c, c)] not in (0, 1) for c in X): caseb += 1
     G1 = {k: (Fr(1) if (k[0] != k[1] and v not in (0, 1)) else v) for k, v in F1.items()}
     G2 = {(a, b): (G1[(b, a)] if a != b else F2[(a, b)]) for a in X for b in X}
     gprod = make_product(G1, G2)
@@ -101,7 +106,7 @@ for trial in range(60000):
         else: continue
         break
     if not is_comm_assoc(gprod, X, 2): bad += 1; print("NORMALIZED NOT ASSOC", E)
-print("systems kept (comm+assoc on words <= 2):", kept, "with exceptional pairs:", exc, "by alphabet size:", dict(sorted(byn.items())))
+print("systems kept (comm+assoc on words <= 2):", kept, "with exceptional pairs:", exc, "by alphabet size:", dict(sorted(byn.items())), "with a case-(b) diagonal letter:", caseb)
 if exc < 20 or byn.get(4, 0) + byn.get(5, 0) < 20: bad += 1; print("FAIL too few exceptional systems")
 print("bad=", bad)
 raise SystemExit(1 if bad else 0)
