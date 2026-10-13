@@ -1,0 +1,154 @@
+{
+  "source": {
+    "c": 64,
+    "density": "45*(256*x**8 - 448*x**6 + 381*x**4 - 274*x**2 + 109)/5248",
+    "raw_mass": "41/9",
+    "derivative_kappa": "256/3157",
+    "moments_0_through_3": [
+      "1",
+      "512/3157",
+      "2784/41041",
+      "1667/41041"
+    ],
+    "positive_bernstein_at_64": [
+      "545/128",
+      "1495/512",
+      "7575/3584",
+      "2735/1792",
+      "253/256",
+      "1695/3584",
+      "345/3584",
+      "15/128",
+      "15/16"
+    ]
+  },
+  "rows": [
+    {
+      "degree": 1,
+      "positive_roots": 1,
+      "negative_roots": 0,
+      "gcd_with_derivative_degree": 0
+    },
+    {
+      "degree": 2,
+      "positive_roots": 2,
+      "negative_roots": 0,
+      "gcd_with_derivative_degree": 0
+    },
+    {
+      "degree": 3,
+      "positive_roots": 3,
+      "negative_roots": 0,
+      "gcd_with_derivative_degree": 0
+    },
+    {
+      "degree": 4,
+      "positive_roots": 4,
+      "negative_roots": 0,
+      "gcd_with_derivative_degree": 0
+    },
+    {
+      "degree": 5,
+      "positive_roots": 5,
+      "negative_roots": 0,
+      "gcd_with_derivative_degree": 0
+    },
+    {
+      "degree": 6,
+      "positive_roots": 6,
+      "negative_roots": 0,
+      "gcd_with_derivative_degree": 0
+    },
+    {
+      "degree": 7,
+      "positive_roots": 7,
+      "negative_roots": 0,
+      "gcd_with_derivative_degree": 0
+    },
+    {
+      "degree": 8,
+      "positive_roots": 8,
+      "negative_roots": 0,
+      "gcd_with_derivative_degree": 0
+    },
+    {
+      "degree": 9,
+      "positive_roots": 9,
+      "negative_roots": 0,
+      "gcd_with_derivative_degree": 0
+    },
+    {
+      "degree": 10,
+      "positive_roots": 10,
+      "negative_roots": 0,
+      "gcd_with_derivative_degree": 0
+    },
+    {
+      "degree": 11,
+      "positive_roots": 11,
+      "negative_roots": 0,
+      "gcd_with_derivative_degree": 0
+    },
+    {
+      "degree": 12,
+      "positive_roots": 12,
+      "negative_roots": 0,
+      "gcd_with_derivative_degree": 0
+    },
+    {
+      "degree": 13,
+      "positive_roots": 11,
+      "negative_roots": 0,
+      "gcd_with_derivative_degree": 0
+    }
+  ],
+  "first_defect": 13,
+  "actual_node": {
+    "row": 12,
+    "interval": [
+      "131/2",
+      "6551/100"
+    ],
+    "root_count": 1,
+    "ratio_strict_interval": [
+      "-3/2",
+      "-7/5"
+    ],
+    "sign_certificates": {
+      "G12": {
+        "root_count": 0,
+        "sign": -1
+      },
+      "J12prime": {
+        "root_count": 0,
+        "sign": 1
+      },
+      "G12_plus_7over5_J12prime": {
+        "root_count": 0,
+        "sign": -1
+      },
+      "G12_plus_3over2_J12prime": {
+        "root_count": 0,
+        "sign": 1
+      }
+    }
+  },
+  "derivative_identity_orders_checked": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14
+  ],
+  "evidence_limit": "Exact finite algebra and Sturm data, not a Lean proof of the infinite shifted-row or smooth-source existence statements, the actual Xi cofactor signs, RH or Robin."
+}
