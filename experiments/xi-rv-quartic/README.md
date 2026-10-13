@@ -35,8 +35,8 @@ Thus this real quadratic has no real zero, and `U4` has no unit-circle
 zero. Its constant term is nonzero, so all four numerator zeros lie
 off the unit circle. The certificate also checks `U4(1)>0`.
 
-This refutes the unit-circle premise for every even-degree approximant
-at degree four. It does not exclude a sufficiently large-degree
-subsequence, prove that the transformed polynomial has an off-line
+The universal claim that every even-degree numerator has all zeros
+on the unit circle fails at E=4. This does not exclude a sufficiently
+large-degree subsequence, prove that the transformed polynomial has an off-line
 zero, or prove or refute RH. Arb enclosures are numerical certificates;
 no Lean verification is supplied.
