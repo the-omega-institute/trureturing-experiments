@@ -11,7 +11,10 @@ rate alpha; site L: 1 -> 0 at rate beta. M[new, old] = rate; columns sum to zero
     Hence dim ker(M + 2) = dim ker(M^T + 2) >= floor((L-1)/2) >= 2.
  2. Exact: -2 differs from every other eigenvalue of Theorem 4 at these parameters.
  3. Float (numpy SVD, corroboration only): geometric multiplicity of every eigenvalue, L = 4..8,
-    including the alpha = 1/2 control.
+    including the alpha = 1/2 control. Float SVD can overcount near large Jordan blocks.
+ 4. With --exact-totals: the exact (rational rank) geometric multiplicity of every eigenvalue of
+    Theorem 4 and the total eigenvector dimension, L = 4..8, at the three rational parameter pairs
+    (about 20 minutes).
 """
 import itertools, sys
 from fractions import Fraction as F
@@ -89,5 +92,18 @@ for (a, b) in [(1/3, 2/5), (0.5, 2/5)]:
             geo[mu] = int(np.sum(sv < 1e-8 * sv.max()))
         print(f"float alpha={a} beta={b} L={L}: geometric multiplicity at -2 = {geo.get(-2.0)}, "
               f"total eigenvector dimension = {sum(geo.values())} (2L = {2*L})")
+if "--exact-totals" in sys.argv:
+    for (a, b) in [(F(1,3), F(2,5)), (F(2,3), F(7,4)), (F(3,8), F(5,6))]:
+        for L in range(4, 9):
+            _, M = generator(L, a, b); N = len(M)
+            evs = eigenvalues(L, a, b); total = 0; g2 = None
+            for mu in sorted(set(evs)):
+                A = [[M[i][j] - (mu if i == j else 0) for j in range(N)] for i in range(N)]
+                g = N - rank(A); total += g
+                if mu == -2: g2 = g
+            line = len(set(evs)) == 2*L and (L < 5 or (g2 >= (L-1)//2 and total > 2*L))
+            ok &= line
+            print(f"exact alpha={a} beta={b} L={L}: dim ker(M+2I)={g2} total eigenvector dimension={total} "
+                  f"(2L={2*L}) {'OK' if line else 'FAIL'}", flush=True)
 print("ALL_OK" if ok else "SOME_FAIL")
 sys.exit(0 if ok else 1)
