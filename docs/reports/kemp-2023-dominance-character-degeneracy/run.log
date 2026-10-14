@@ -1,0 +1,33 @@
+bridge ok: n <= 10, chars T_2..T_m degenerate iff <c^1..c^(m-1)> agree
+stronger vector statement ok on 20000 random pairs
+n=2 pairs=1 ok
+n=3 pairs=3 ok
+n=4 pairs=10 ok
+n=5 pairs=21 ok
+n=6 pairs=55 ok
+n=7 pairs=105 ok
+n=8 pairs=231 ok
+n=9 pairs=435 ok
+n=10 pairs=861 ok
+n=11 pairs=1540 ok
+n=12 pairs=2926 ok
+n=13 pairs=5050 ok
+n=14 pairs=9045 ok
+n=15 pairs=15400 ok
+n=16 pairs=26565 ok
+n=17 pairs=43956 ok
+n=18 pairs=73920 ok
+n=19 pairs=119805 ok
+n=20 pairs=196251 ok
+n=21 pairs=313236 ok
+n=22 pairs=501501 ok
+n=23 pairs=786885 ok
+n=24 pairs=1239525 ok
+n=25 pairs=1915903 ok
+n=26 pairs=2965830 ok
+n=27 pairs=4528545 ok
+n=28 pairs=6909903 ok
+n=29 pairs=10417330 ok
+n=30 pairs=15699606 ok
+conjecture ok for all pairs, n <= 30; max(kdeg-(kswap+1)) by kswap: {0: 0, 1: 0, 2: 0, 3: 0, 4: 0}
+ALL_OK
