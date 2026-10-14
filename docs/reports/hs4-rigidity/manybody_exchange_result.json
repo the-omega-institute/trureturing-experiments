@@ -1,0 +1,76 @@
+{
+  "status": "passed",
+  "exact_checks": 1972,
+  "numerical_checks": 65,
+  "negative_controls": 3,
+  "exact_coupling_matrices": 9,
+  "random_spectral_matrices": 8,
+  "matched_spectral_cases": [
+    {
+      "g_over_Delta": 0.001,
+      "energy0": -1.0007501665981582e-06,
+      "gap": 5.007502913880242e-07,
+      "maximum_third_order_energy_error": 1.66598158328856e-13,
+      "proved_error_bound": 8.1e-11,
+      "encoded_Bell_overlap": 0.9999994992497875
+    },
+    {
+      "g_over_Delta": 0.002,
+      "energy0": -4.00600264912443e-06,
+      "gap": 2.0060046483077413e-06,
+      "maximum_third_order_energy_error": 2.6491244297494575e-12,
+      "proved_error_bound": 1.296e-09,
+      "encoded_Bell_overlap": 0.9999979939965914
+    },
+    {
+      "g_over_Delta": 0.005,
+      "energy0": -2.509385252594159e-05,
+      "gap": 1.259393065051941e-05,
+      "maximum_third_order_energy_error": 1.0252594158719061e-10,
+      "proved_error_bound": 5.062499999999999e-08,
+      "encoded_Bell_overlap": 0.9999874061189552
+    },
+    {
+      "g_over_Delta": 0.01,
+      "energy0": -0.00010075161377017051,
+      "gap": 5.075286370733219e-05,
+      "maximum_third_order_energy_error": 1.613770170499993e-09,
+      "proved_error_bound": 8.099999999999999e-07,
+      "encoded_Bell_overlap": 0.9999492479604078
+    },
+    {
+      "g_over_Delta": 0.02,
+      "energy0": -0.0004060249476509049,
+      "gap": 0.00020604494365276463,
+      "maximum_third_order_energy_error": 2.4947650904849107e-08,
+      "proved_error_bound": 1.2959999999999998e-05,
+      "encoded_Bell_overlap": 0.9997939692442472
+    },
+    {
+      "g_over_Delta": 0.04,
+      "energy0": -0.0016483699635113163,
+      "gap": 0.0008486897077673478,
+      "maximum_third_order_energy_error": 3.699635113161518e-07,
+      "proved_error_bound": 0.00020735999999999997,
+      "encoded_Bell_overlap": 0.9991515712340564
+    },
+    {
+      "g_over_Delta": 0.08,
+      "energy0": -0.006788902527921283,
+      "gap": 0.0035940062091642144,
+      "maximum_third_order_energy_error": 5.103681244254376e-06,
+      "proved_error_bound": 0.0033177599999999995,
+      "encoded_Bell_overlap": 0.9964113748229655
+    }
+  ],
+  "third_order_YY_coefficient": "3 det(B^T T B)/(16 Delta^2)",
+  "at_g_over_Delta_0_01": {
+    "proved_gap_lower_bound": "4913/100000000 * Delta",
+    "proved_encoded_Bell_fidelity_lower_bound": "9409/9418"
+  },
+  "python": "3.13.5",
+  "numpy": "2.3.5",
+  "sympy": "1.14.0",
+  "scipy": "1.17.0",
+  "scope": "exact finite identities and bounded numerical tests; no Lean, hardware, or thermodynamic-limit certificate"
+}

@@ -1,0 +1,20 @@
+{
+  "status": "passed",
+  "exact_checks": 50,
+  "numerical_states": 560,
+  "numerical_checks": 2240,
+  "negative_controls": 3,
+  "maximum_gap_identity_residual": 2.4424906541753444e-15,
+  "parent_spectrum": {
+    "0": 1,
+    "2": 4,
+    "3": 3,
+    "4": 3,
+    "7": 5
+  },
+  "chirality_invariant": "sqrt(3)/864",
+  "sympy": "1.14.0",
+  "numpy": "2.3.5",
+  "python": "3.13.5",
+  "scope": "exact finite identities plus bounded numerical tests; no Lean replay; no universal-proof certification"
+}
