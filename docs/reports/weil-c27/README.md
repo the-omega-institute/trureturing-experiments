@@ -635,3 +635,128 @@ test or an RH counterexample. The existing high-complement floor and
 far-input majorant remain valid. Further summation alone cannot make
 $S_w$ positive; another retained cutoff, a stronger common exterior
 comparison or a correlated inverse estimate requires its own analysis.
+
+## Actual finite-column inverse-residual consumer
+
+The existing inverse-residual identity in Liu, Appendix B.4, is applied
+to the same actual exterior operator $H=H_{\rm ext}$ after mode1280.
+This application assumes the existing actual Fourier/form identification,
+the selected Fourier vectors in $D(H)$, and the existing comparison
+$H^{-1}\preceq W$. These are analytic inputs, not conclusions of the
+numerical programs. The retained space still has1281 coordinates.
+
+Here $W$ is the positive diagonal operator with exact upward dyadic
+weights $w_m\ge h_m^{-1}$ for $1281\le m\le32768$, on a256-bit grid.
+For $m>32768$ its weight is the already archived constant
+$D\ge h_{32769}^{-1}$. The elementary logarithmic $h_m$ is increasing
+and positive on this exterior. This reuses the existing comparison;
+it does not identify $W$ with the actual exterior inverse.
+
+Let $E$ select the actual exterior columns1281 through1284, put
+$Z=HE$, $F=E^*HE$ and $B=E^*Cv$, and reuse the fixed integer vector
+$v=-e_{1277}+2e_{1278}-e_{1280}$. The complete joint Gram is
+
+$$
+\begin{pmatrix}G&J^*\\J&L\end{pmatrix}
+=[Cv,Z]^*W[Cv,Z].
+$$
+
+For each prefix of one, two or four selected columns, set $K=L-F$
+and $T=J-B$. FLINT proposes a solution of $Kx=T$, which is rounded
+to an exact64-bit dyadic vector. The program evaluates the existing
+residual bound on this fixed vector:
+
+$$
+U(x)=G-2x^*T+x^*Kx
+=2x^*B-x^*Fx+(Cv-Zx)^*W(Cv-Zx).
+$$
+
+Under the stated analytic inputs,
+$\langle Cv,H^{-1}Cv\rangle\le U(x)$. This does not require the
+dyadic trial to be an exact optimizer. All signed cross terms remain
+in the same actual residual; the selected exterior diagonal uses its
+actual scalar formula.
+
+`middle-scalars.json.zlib` adds only the31483 previously missing
+scalar pairs1285 through32767, using the unchanged `Arithmetic.scalars`.
+The original1281 and32768 rows and the earlier witness rows1282–1284
+are reused. Working precision is768 bits and the grid remains640 bits;
+all62966 new scalar intervals have width at most one grid unit.
+The first100 new rows were reused from a pinned cache. A new cache is
+optional; a fresh run computes only missing rows. Packet SHA-256:
+`55212d0181673c015de503928265509e594eb0f81b85e3afb34cc28a103d18db`.
+
+Every middle row1281 through32768 contributes to the joint Gram.
+Beyond32768 the consumer reuses all168 published signed moment
+intervals and the existing112-feature reconstruction. Extending the
+feature columns through1284 requires a new call to `far_bounds`;
+the former allowance is not transferred. The new weighted far matrix
+allowance has $\log_2\epsilon\simeq-524.0636624$.
+The physical column combination has squared norms $(6,1,1,1,1)$;
+entrywise balls with radii $\epsilon\|l_i\|\|l_j\|$ pay the complete
+two-sided far error before applying the dyadic trial.
+
+The saved directed intervals give:
+
+| Exterior trial columns | Upper-debit expression $U(x)$, approximate | Retained minus debit, approximate |
+|---|---:|---:|
+| none | 50.9913204560 | -20.2883780129 |
+| 1281 | 36.3114689536 | -5.6085265105 |
+| 1281–1282 | 24.6961199103 | 6.0068225328 |
+| 1281–1284 | 18.9893075926 | 11.7136348505 |
+
+These displayed decimals summarize directed intervals; the exact
+integer endpoints and dyadic trials are in
+`inverse-residual-pilot.json.zlib`, SHA-256
+`6db5093bf78fe1dcf43cbbe1b39ef2b1faf4174cf7cf33fe796c0d10ad4d231b`.
+Eight distributed new scalar rows agree exactly at1024 bits. An
+independent1024-bit five-column calculation, including direct full
+residual evaluation, agrees on every scientific output interval,
+all31488 weights and the exact trial integers. The serialized analytic
+conditions are explicit. Input hashes, source identity, incomplete
+coverage, occupied outputs and inadequate precision have rejection guards.
+
+```sh
+uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/arb_middle_scalars.py --out build/c27-middle-scalars.json.zlib
+uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/arb_inverse_residual_pilot.py --out build/c27-inverse-residual-pilot.json.zlib
+```
+
+This is an efficacy test of the estimate on a known obstruction to the
+weaker diagonal scheme. Positivity of the actual Schur quadratic on
+this high-frequency vector already follows from the existing G7
+comparison after1203. It is not a new positivity theorem for that
+direction, a sign certificate for the complete retained space, a Lean
+verification or an RH proof.
+
+## Full retained-space floating proposals
+
+`float_inverse_residual.py` reuses the same scalar packets, middle
+weights and far moments. It extends the actual exterior trial through
+1408 and forms the midpoint joint Gram for all1281 retained columns.
+NumPy supplies the finite solves and symmetric eigensolver; no new
+general matrix algorithm is implemented. For64 and128 exterior columns
+it evaluates the optimized midpoint expression
+$A-G+T^*K^{-1}T$.
+
+| Exterior columns | Smallest computed eigenvalue | Computed eigenvalues with absolute value at most $10^{-7}$ |
+|---|---:|---:|
+| 64 | $-3.9827725420\times10^{-6}$ | 23 |
+| 128 | $-2.4967957659\times10^{-11}$ | 24 |
+
+The data are in `inverse-residual-float.json`. Neither calculation
+pays scalar, far-feature or floating arithmetic errors. The reported
+negative values are candidates, not sign certificates; the128-column
+case does not establish nonnegativity. The file also retains finite
+dyadic candidates for subsequent directed tests. Restricting the
+64-column minimum eigenvector to modes0–127 gives a positive computed
+quadratic, about $7.64\times10^{-5}$, so that truncated candidate does
+not witness its full-space negative value.
+
+```sh
+uv run --no-project --python 3.13.12 --with numpy==2.2.6 --with python-flint==0.9.0 --with threadpoolctl==3.6.0 python docs/reports/weil-c27/float_inverse_residual.py --out build/c27-inverse-residual-float.json
+```
+
+The remaining target is a directed full retained-space test paying
+the errors after the same common-form congruence. Tiny midpoint
+eigenvalues require their own conditioning and enclosure analysis;
+the successful fixed-vector pilot does not settle them.
