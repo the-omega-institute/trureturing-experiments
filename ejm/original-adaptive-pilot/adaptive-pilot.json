@@ -1,0 +1,93 @@
+{
+  "status": "prepared bounded actual adaptive assembly probe, uncompiled",
+  "kernel_accepted": false,
+  "full_global_accepted": false,
+  "root": 55,
+  "depth": 15,
+  "code": 0,
+  "suffix_cap": 64,
+  "full_contexts": 201,
+  "contexts": [
+    {
+      "index": 55,
+      "depth": 15,
+      "code": 0,
+      "contexts": 201
+    },
+    {
+      "index": 30,
+      "depth": 16,
+      "code": 0,
+      "contexts": 65
+    },
+    {
+      "index": 16,
+      "depth": 17,
+      "code": 0,
+      "contexts": 33
+    },
+    {
+      "index": 27,
+      "depth": 17,
+      "code": 1,
+      "contexts": 29
+    },
+    {
+      "index": 28,
+      "depth": 17,
+      "code": 2,
+      "contexts": 1
+    },
+    {
+      "index": 29,
+      "depth": 17,
+      "code": 3,
+      "contexts": 1
+    },
+    {
+      "index": 52,
+      "depth": 16,
+      "code": 1,
+      "contexts": 133
+    },
+    {
+      "index": 38,
+      "depth": 17,
+      "code": 4,
+      "contexts": 53
+    },
+    {
+      "index": 43,
+      "depth": 17,
+      "code": 5,
+      "contexts": 37
+    },
+    {
+      "index": 51,
+      "depth": 17,
+      "code": 6,
+      "contexts": 41
+    },
+    {
+      "index": 29,
+      "depth": 17,
+      "code": 7,
+      "contexts": 1
+    },
+    {
+      "index": 53,
+      "depth": 16,
+      "code": 2,
+      "contexts": 1
+    },
+    {
+      "index": 54,
+      "depth": 16,
+      "code": 3,
+      "contexts": 1
+    }
+  ],
+  "node_equalities": 3,
+  "source": "/Users/macstudio/omega/trureturing-01a12631-certificate/D5/S3/Quantum/Entanglement/EJM/TransientEJMOriginalAdaptivePilot.lean",
+  "sha256": "cd7a66bc74f10e29235d67448171e261be5d82af84ba86bbf35d85baa3c2c054"
+}
