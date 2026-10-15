@@ -1,0 +1,283 @@
+{
+  "schema": "C9_SOURCE_INPUT_VERIFICATION_V1",
+  "input_manifest": {
+    "sha256": "e74dc313ceed824af92f4726cfd5b25e2af3be4567a8a0bd5479a88340518ceb",
+    "schema": "ACTUAL_C9_RETAINED_INPUTS_V2"
+  },
+  "baseline_commit": "ad3e57ac452485696705ee18ac4834b0c09c07c1",
+  "upstream_oracle": {
+    "sha256": "4ed7661f1f869ed6d37d7bc52f1a0889a8d305a790663dc0ae43d76f2ea0e356",
+    "url": "https://raw.githubusercontent.com/luciferyu666/certified-weil-positivity/b6cd2183c1e79c6c27a34267812a7b2d73ed1b59/frozen-source/reproduction/source/01-check.py"
+  },
+  "program_hashes": {
+    "c9_source_moments.py": "dc57635ff70c152c70966a9838eb5bf898b5eac83933fa0eba6686b976d73560",
+    "reproduce.py": "0dcfa4a3333f08c0db6e3860c71106bb8fe9cbc9ebe40ce914fc641fa8329ddb",
+    "c9_retained_ball_consumer.py": "1c148cbdde7eb428f52d1f73773996b2d8d46df83b1a625d7933d46cb9402bd4",
+    "c9_kernel_ball_matrices.py": "b13bb22b0cfdb66f4d346dbfe53fbc0ff7d467b95d165698e222a614d3602487",
+    "c9_prime_ball_matrices.py": "f7112ddea70d225c296714113cd54f3a93cd7dbf9895c27b8369cc8ca19ee9de"
+  },
+  "inputs": {
+    "prime": {
+      "sha256": "29fb7e7197098fb3daef8d6058541a6103335dad57abd482af60f9a53e905aba",
+      "packed_sha256": "cbd78f41aa77ed4654bbdf560d587cb90009af3f5c004dbb53a1f73ce4dd7060",
+      "bytes": 21496789
+    },
+    "kernel": {
+      "sha256": "be4883440af19653296509df1b47716f3d574262fc5060ac0e3341ac9790cc20",
+      "packed_sha256": "0937ae9dc11f5da8086ee9172746a0f28c410aa264608daadc41e113533d0c57",
+      "bytes": 8675761
+    },
+    "moments": {
+      "sha256": "fc94d792f80e832d48f167e30c2ab59f56ea1fde61ed2b50d665e2520526cb6d",
+      "packed_sha256": "bbff74735f01c3c4efdd05d440a6c4e6268e198f8a37f40953f26b95ae1c007b",
+      "bytes": 692009
+    }
+  },
+  "producer": {
+    "moment_python": "3.9.6",
+    "moment_elapsed_seconds": 175.40280175,
+    "kernel_bits": 3072,
+    "kernel_elapsed_seconds": 4.457956500351429
+  },
+  "separate_execution": {
+    "native_session_id": "01a140f5-7b3c-78d3-ab28-3ba8054be2eb",
+    "carrier": "Native Codex CLI; same model family as producer; same scientific implementations",
+    "runtime_versions": {
+      "python": "3.13.12",
+      "python_flint": "0.9.0",
+      "numpy": "2.5.3"
+    },
+    "required_command_exit_codes": {
+      "check_inputs_only": 0,
+      "fresh_source_moments": 0,
+      "fresh_kernel": 0,
+      "scientific_identity_and_evidence_validation": 0
+    },
+    "fresh_moments": {
+      "generated_sha256": "bc927aa2f39040e072f0abb152e98d102e98c09b7102bddad4871ba6e12d5d33",
+      "packed_project_rows_equal_generated_rows": true,
+      "all_scientific_fields_equal": true,
+      "excluded_runtime_fields": [
+        "python",
+        "elapsed_seconds"
+      ],
+      "canonical_scientific_sha256": "96c7ccf253322b233429d7c6af2b36a884d7b17c2b617beb9c5d80da319e3eb6",
+      "parameters": {
+        "omega": 256,
+        "beta": "7/2",
+        "outputBits": 1024
+      },
+      "oracle_count": 1024,
+      "working_bits": 6400,
+      "grid_bits": 1024,
+      "maximum_grid_width": 1,
+      "negative_control_rejections": [
+        {
+          "name": "missing_last_row",
+          "status": "REJECTED",
+          "reason": "exactly 1024 rows required"
+        },
+        {
+          "name": "changed_last_q_to_1024",
+          "status": "REJECTED",
+          "reason": "row q is not exact canonical order"
+        },
+        {
+          "name": "row0_real_interval_1024_1025",
+          "status": "REJECTED",
+          "reason": "row outside source consistency guard"
+        },
+        {
+          "name": "row0_shift_2_pow_224_output_units",
+          "status": "REJECTED",
+          "reason": "reported row does not contain complete independent interval"
+        }
+      ],
+      "containment_checked_by_executed_check_rows": true,
+      "containment_scope": "NEW project rows against the complete published oracle, including its Binet remainder",
+      "old_author_moment_packet_read": false,
+      "old_author_moment_rows_compared": false,
+      "oracle_execution_count": 1,
+      "runtime_python": "3.13.12",
+      "packed_packet_runtime_python": "3.9.6",
+      "elapsed_seconds": 193.09597762534395
+    },
+    "fresh_kernel": {
+      "generated_sha256": "c88c4387f5588c43c795d5cf31d0ad44e9aebeae15d1d1577fb377a99cb33cfe",
+      "input_is_decoded_canonical_project_packet": true,
+      "canonical_moment_input_sha256": "fc94d792f80e832d48f167e30c2ab59f56ea1fde61ed2b50d665e2520526cb6d",
+      "execution_count": 1,
+      "size": 256,
+      "bits": 3072,
+      "all_scientific_fields_equal_current_packed_kernel": true,
+      "excluded_fields": [
+        "elapsed_seconds"
+      ],
+      "canonical_scientific_sha256": "60f9528d2526f709567cda2b9685fac712281a34e3a00e5189b0124dc2dbcb67",
+      "elapsed_seconds": 8.225716042332351
+    }
+  },
+  "baseline_comparison": {
+    "prime_packed_bytes_identical": true,
+    "prime_decoded_bytes_identical": true,
+    "prime_support_program_bytes_identical": true,
+    "canonical_basis": "sqrt((4j+1)/(2log3))*P_(2j)(u/log3),j=0..size-1",
+    "support": {
+      "a": "log(3)",
+      "u_interval": "[-log(3),log(3)]",
+      "paired_shifts": [
+        2,
+        3,
+        4,
+        5,
+        7,
+        8
+      ],
+      "support_cells": 6,
+      "n9_endpoint_zero": true
+    },
+    "matrices": {
+      "A": {
+        "centers_compared": 65536,
+        "all_centers_equal": true,
+        "entire_record_equal": true,
+        "center_sha256": "a1aeba663897b9039dc2ef584272f6f626884264244e9decc01043816444b44b",
+        "error_allowances": {
+          "common_denominator_power": 512,
+          "maximum_native_radius_exponent": -2139,
+          "operator_error_upper_power_of_two": -504
+        }
+      },
+      "B": {
+        "centers_compared": 65536,
+        "all_centers_equal": true,
+        "entire_record_equal": true,
+        "center_sha256": "00e28a8edd3c037f1823e20231b9b6fb39a39a8b4268d635c9c3f6756f969f19",
+        "error_allowances": {
+          "common_denominator_power": 512,
+          "maximum_native_radius_exponent": -1519,
+          "operator_error_upper_power_of_two": -504
+        }
+      },
+      "J": {
+        "centers_compared": 65536,
+        "all_centers_equal": true,
+        "entire_record_equal": true,
+        "center_sha256": "87fdcbe96736122704d1eb762aed0d144c20716520d86494708b0e40e0edadba",
+        "error_allowances": {
+          "common_denominator_power": 512,
+          "maximum_native_radius_exponent": -2139,
+          "arithmetic_operator_error_upper_power_of_two": -504
+        }
+      },
+      "tail_column": {
+        "centers_compared": 256,
+        "all_centers_equal": true,
+        "entire_record_equal": true,
+        "center_sha256": "26cf98197424be09f14ed6bd765ce24efd3e8a4ef976ff1993e2f045ef4e3404",
+        "error_allowances": {
+          "common_denominator_power": 512,
+          "maximum_native_radius_exponent": -2260,
+          "arithmetic_operator_error_upper_power_of_two": -504
+        }
+      }
+    },
+    "old_new_kernel_target_scientific_fields_equal": true,
+    "target_scientific_fields_compared": [
+      "cutoff",
+      "even_dimension",
+      "precision_bits",
+      "basis",
+      "J",
+      "tail_column",
+      "kernel_analytic_operator_error_upper_power_of_two",
+      "tail_column_analytic_norm_error_upper_power_of_two",
+      "J_total_operator_error_upper_power_of_two"
+    ],
+    "old_new_entire_kernel_equal": false,
+    "changed_provenance_and_runtime_fields": [
+      "elapsed_seconds",
+      "moment_containment_evidence",
+      "moment_containment_premise",
+      "moment_source_checker_sha256",
+      "moment_source_sha256",
+      "scope"
+    ],
+    "all_old_new_error_allowances_equal": true
+  },
+  "exact_target_identity": {
+    "verified": true,
+    "construction_source_bytes_identical_from_size_through_target": true,
+    "construction_source_sha256": "6eec6b420787c6b29ea125c8ec39b19cc1b6078f80d642425bdd9a0bc6473527",
+    "construction_ast_sha256": "8efa413f34c7322371ca091d03d6bf003d17a3c0ebd52acc4ec6770ee9c37e77",
+    "X_proposal_and_rounding_ast_identical": true,
+    "X_grid_bits": 256,
+    "mu": "4/5",
+    "trial_frobenius_bound": 32,
+    "checked_expressions": {
+      "mu": "arb(4)/5",
+      "proposal": "(B-mu*A).solve(A-mu*identity)",
+      "X": "arb_mat([[arb(x)*arb(2)**(-256) for x in row] for row in integers])",
+      "norm_square": "sum(x*x for row in integers for x in row)",
+      "s": "32",
+      "epsA": "arb(2)**prime['A']['operator_error_upper_power_of_two']",
+      "epsB": "arb(2)**prime['B']['operator_error_upper_power_of_two']",
+      "epsJ": "arb(2)**(-205)",
+      "deltaX": "(s*s+2*s/mu)*epsA+(s*s/mu)*epsB",
+      "Xt": "X.transpose()",
+      "W": "X+Xt-Xt*A*X+(identity-A*X-Xt*A+Xt*B*X)/mu+deltaX*identity",
+      "D": "B-A*A",
+      "epsD": "epsB+(2*arb(2011)/325+epsA)*epsA",
+      "target": "W.inv()+J-(epsJ+arb(2)**(-187)+arb(2)**(-186)*epsD)*identity-arb(2)**(-186)*D"
+    },
+    "epsilonJ_power": -205,
+    "identity_allowance_power": -187,
+    "D_coefficient_power": -186,
+    "prior_sign_precision_bits": 1536,
+    "arithmetic_versions_identical": true,
+    "assessment": "All rational A/B/J centers, error allowances, basis/support and target-construction arithmetic are identical. The same finite target construction applies to the prior fixed rational trial X; prior positive evidence is reusable.",
+    "prior_trial_integers_reconstructed": false,
+    "new_trial_integers_computed": false,
+    "sign_calculation_executed": false,
+    "trial_reuse": "Fix the prior certified dyadic trial X. No new floating proposal or trial integers are computed or asserted identical."
+  },
+  "prior_positive_evidence": {
+    "result_summary_sha256": "d25bbb1fb29518ff758fe11a9eb024e888ad85d4999858ca15f3bc916acb8879",
+    "retained_verbatim_from_baseline": true,
+    "actual_prior_input_manifest_sha256": "e2dd9ea5530cf353d643895676230952ce7e803aea27c161c60c534454cd1133",
+    "prior_consumer_sha256": "fbc63dac28828fee3effca02cfacd890fe594a6e1eaf5c6857733d6491ce71e9",
+    "prior_input_sha256": {
+      "prime": "29fb7e7197098fb3daef8d6058541a6103335dad57abd482af60f9a53e905aba",
+      "kernel": "1c627477649520e1a0b9f26d57202841d392873e5d61a7d3cd16d190b6e4bce9"
+    },
+    "recorded_producer_full_result_sha256": "beff5f153927d3619cb0ed34ea752cccd0b039f4eeda795e83583db32d34f256",
+    "recorded_independent_result_sha256": "1b1731dce5b98c52f08ce25a41d855344fffe41626194d738fe8f5aaba3a0080",
+    "prior_independent_execution_binding_verified": true,
+    "prior_independent_native_session_id": "01a1029d-ed4a-77a3-92b4-4e4fdaaf0e95",
+    "prior_wrapper_exit_code": 0,
+    "prior_consumer_exit_code": 0,
+    "serialized_pivots_checked_this_run": 256,
+    "all_serialized_pivot_lower_endpoints_strictly_positive": true,
+    "serialized_pivots_sha256": "050286b810ce115fce86345b89ceed27d35ada042a82484c6177258fa5fad7ec",
+    "minimum_serialized_pivot_lower_endpoint_exact": "382132771185282256856128679793953807222741/200000000000000000000000000000000000000000000000",
+    "pivot_endpoints_are_eigenvalue_bounds": false,
+    "directed_negative_witness": false,
+    "prior_trial_integers_omitted": true,
+    "old_trial_integers_recreated": false,
+    "prior_trial_squared_norm_recomputed_from_integers_this_run": false,
+    "archived_full_result_hashes_rehashed_this_run": false,
+    "scope": "Prior sign evidence for the prior manifest, reused solely by exact target identity. This is not a new-manifest sign execution."
+  },
+  "scope_flags": {
+    "fresh_sign_execution": false,
+    "prior_sign_reused_by_exact_target_identity": true,
+    "upstream_oracle_reused": true,
+    "independent_implementation": false,
+    "prime_matrix_regeneration": false,
+    "kernel_regeneration": true,
+    "moment_containment_directly_checked": true,
+    "Lean": false,
+    "cofinalRH": false
+  },
+  "scope": "Execution and exact-data validation only; attributed upstream oracle reused. No generic-math re-review, author code vendoring, independent implementation, external human reproduction, Lean, cofinal positivity or RH claim."
+}
