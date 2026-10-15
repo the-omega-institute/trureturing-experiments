@@ -756,10 +756,10 @@ not witness its full-space negative value.
 uv run --no-project --python 3.13.12 --with numpy==2.2.6 --with python-flint==0.9.0 --with threadpoolctl==3.6.0 python docs/reports/weil-c27/float_inverse_residual.py --out build/c27-inverse-residual-float.json
 ```
 
-The remaining target is a directed full retained-space test paying
-the errors after the same common-form congruence. Tiny midpoint
-eigenvalues require their own conditioning and enclosure analysis;
-the successful fixed-vector pilot does not settle them.
+The directed sections below pay the errors on complete retained
+directions and exclude both specified sufficient families. Actual
+Schur positivity still requires a different comparison; the successful
+fixed-vector pilot does not settle it.
 
 ## A directed obstruction to the fixed64-column certificate family
 
@@ -840,3 +840,42 @@ the fixed direction using NumPy. It requires the same pinned NumPy and
 threadpoolctl versions as the floating supplier above. Verification
 uses the saved exact trial and requires neither NumPy nor another
 full-space solve.
+
+## The128-column family has a directed obstruction too
+
+The same consumer accepts the separate128-column candidate, with actual
+exterior modes1281 through1408. Only the selected-column count changes;
+the complete1281-coordinate direction is reused from that existing
+proposal. The64-column packet and its executed producer remain pinned
+to their original commit. No old scalar, moment, Gram or eigensolver
+output is regenerated.
+
+For this instance the first128 weighted rows again certify $K\succeq40I$.
+The same square-completion argument above gives:
+
+| Quantity | Approximate enclosed value |
+|---|---:|
+| Fixed trial margin | $-2.49668870337129250789512679741\times10^{-11}$ |
+| Residual correction | $7.169494010542168\times10^{-34}$ |
+| Optimized-family quadratic upper | $-2.49668870337129250789505510247\times10^{-11}$ |
+
+The upper endpoint is strictly below $-2.49\times10^{-11}$, excluding
+every $X$ for this specified128-column $E$ and the same $W$. This is a
+separate complete direction and trial; the64-column sign was not used
+to infer this sign. Actual Schur/Weil positivity and RH remain unresolved.
+
+Extending the existing far features through1408 requires operator error
+$\varepsilon\simeq6.0325461\times10^{-154}$. Its quadratic interval
+has width about16.17664 units on the $2^{-512}$ grid, exceeding that
+exporter's two-unit contract. On the $2^{-504}$ grid its width is
+about0.06319 units. The consumer keeps its full error allowance and
+strict raw-ball negative test; this instance uses504-bit exported
+intervals with768 working bits.
+
+Exact inputs and result are `inverse-residual-k128-candidate.json` and
+`inverse-residual-k128-obstruction.json`. The result SHA-256 is
+`3b850c5e42f0c5671884a2abdabbc66b5e7611df9bfb6e24f63b512215679a51`.
+
+```sh
+uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/arb_inverse_residual_obstruction.py --candidate docs/reports/weil-c27/inverse-residual-k128-candidate.json --output-bits 504 --out build/c27-k128-obstruction.json
+```
