@@ -1,0 +1,61 @@
+{
+  "historical_repository": "the-omega-institute/trureturing",
+  "historical_commit": "63a005da4c695c3136da0bac01e3c138e7338840",
+  "global_cover_introduction": "3b0a12fea60aa281645b786cb5e1e87db58afdd0",
+  "prior_parameter_radius": "1/4294967296",
+  "new_parameter_radius": "1/16777216",
+  "historical_sources": [
+    {
+      "path": "scripts/research/check_real_x_global_cover.py",
+      "git_blob": "b50e79de90d10debef67cf89833265560ae38cdc",
+      "commit": "63a005da4c695c3136da0bac01e3c138e7338840",
+      "url": "https://github.com/the-omega-institute/trureturing/blob/63a005da4c695c3136da0bac01e3c138e7338840/scripts/research/check_real_x_global_cover.py",
+      "sha256": "2d32ea37ecc27a24365c6961624eeec0e7472c5aa42155e0c77d07fccd62cccb",
+      "bytes": 9540,
+      "delivered_path": "check_real_x_global_cover.py"
+    },
+    {
+      "path": "scripts/research/check_real_x_global_cover.cpp",
+      "git_blob": "8e1439391594875aafea3dbcf14e6625dc001b2d",
+      "commit": "63a005da4c695c3136da0bac01e3c138e7338840",
+      "url": "https://github.com/the-omega-institute/trureturing/blob/63a005da4c695c3136da0bac01e3c138e7338840/scripts/research/check_real_x_global_cover.cpp",
+      "sha256": "dc71bf13400feffc555040172682ad40d6ab378f2466b80da19237ea1f01b531",
+      "bytes": 8690,
+      "delivered_path": "check_real_x_global_cover.cpp"
+    },
+    {
+      "path": "scripts/research/check_real_x_supergraph_patch.py",
+      "git_blob": "5f66030bee92afc13c128bf610967b34a8b9ae34",
+      "commit": "63a005da4c695c3136da0bac01e3c138e7338840",
+      "url": "https://github.com/the-omega-institute/trureturing/blob/63a005da4c695c3136da0bac01e3c138e7338840/scripts/research/check_real_x_supergraph_patch.py",
+      "sha256": "2dc6cd18ece495e699c1cdaed6a487ef3c4384c42890e01dcb2051ca276f2de2",
+      "bytes": 9548,
+      "delivered_path": "check_real_x_supergraph_patch.py"
+    },
+    {
+      "path": "scripts/research/check_strict_x_counterexample.py",
+      "git_blob": "bc3240bfb1028b99115d7be3e2a9522743950915",
+      "commit": "63a005da4c695c3136da0bac01e3c138e7338840",
+      "url": "https://github.com/the-omega-institute/trureturing/blob/63a005da4c695c3136da0bac01e3c138e7338840/scripts/research/check_strict_x_counterexample.py",
+      "sha256": "3a23425baf48f1fe78c3932b1dd0b11593686c494ea53372d653f9a929c26c85",
+      "bytes": 14334,
+      "delivered_path": "check_strict_x_counterexample.py"
+    },
+    {
+      "path": "docs/develop/certificates/real_x_supergraph_patch/input.json",
+      "git_blob": "cd98cc1f7408a1e668079bc3026da1ba8b24c8ca",
+      "commit": "63a005da4c695c3136da0bac01e3c138e7338840",
+      "url": "https://github.com/the-omega-institute/trureturing/blob/63a005da4c695c3136da0bac01e3c138e7338840/docs/develop/certificates/real_x_supergraph_patch/input.json",
+      "sha256": "cb3a8cbcec587eeaea748c879b1333e06d09685e4b85a7c7755353a75931b153",
+      "bytes": 6859,
+      "delivered_path": "input.json"
+    }
+  ],
+  "changes": [
+    "Uniqueness-box radius in the C++ core changes from 2^-16 to 2^-12; no other core bytes change.",
+    "New driver reconstructs the enlarged parameter enclosure, revalidates old centre roots afresh, and runs every compact chart.",
+    "Connected unique-branch symmetry propagation replaces the conservative shifted-interval-image test.",
+    "New independent verifier uses separately implemented arbitrary-precision integer interval arithmetic."
+  ],
+  "verification_level": "Exact external computational interval proof with stated analytic transfer; not Lean kernel admission."
+}

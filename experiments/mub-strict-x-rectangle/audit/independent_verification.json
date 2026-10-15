@@ -1,0 +1,55 @@
+{
+  "status": "INDEPENDENT_PORTABLE_AUDIT_PASS",
+  "parameter_radius": "1/16777216",
+  "root_radius": "1/4096",
+  "root_count": 60,
+  "all_32_chart_reports_checked": true,
+  "nodes": 5992724,
+  "pending": 0,
+  "unresolved": 0,
+  "exact_center_Grams_and_shift_commutation_checked": true,
+  "fresh_center_root_and_shift_fixation_checked": true,
+  "old_boxes_strictly_contained_in_new": true,
+  "enlarged_root_margins": {
+    "max_contraction_num": 385012914919,
+    "max_displacement_num": 206508646,
+    "scale": 1099511627776
+  },
+  "center_root_margins": {
+    "max_contraction_num": 24027404506,
+    "max_displacement_num": 367089,
+    "scale": 1099511627776
+  },
+  "independently_refined_graph": {
+    "distinct_pair_tests": 1770,
+    "nonedges": 1656,
+    "minimum_nonedge_lower": "2496945/1099511627776",
+    "worst_pair": [
+      19,
+      58
+    ],
+    "maximum_distinctness_upper": "1095804773357/1099511627776"
+  },
+  "reported_enclosure_graph": {
+    "distinct_pair_tests": 1770,
+    "nonedges": 1656,
+    "minimum_nonedge_lower": "2496945/1099511627776",
+    "worst_pair": [
+      19,
+      58
+    ],
+    "maximum_distinctness_upper": "547902386663/549755813888"
+  },
+  "canonical_propagation": "Fresh exact-center fixation plus connected continuous unique-root branch lemma; see proof documentation",
+  "global_coverage_level": "Audited fresh reports and reviewed core, not an independent trace replay",
+  "arithmetic": "Independent unbounded-integer dyadic intervals; exact Fraction center-field identities",
+  "lean_kernel_verified": false,
+  "sha256": {
+    "independent_checker": "adcfe91f40fe86afcf87f6c32fed55729d1693e44b4e367a84d894a3688a4b0d",
+    "preconditioner_proposals": "aa6fd8ae23ecb93cc837dfc1c4a99b05f07f1b95da8713bdc031bb918e8c5f72",
+    "combined_cover_report": "695708e6967eea6d8e9de979e718f97a04d0a5e7f286de88417536ea6979f7eb",
+    "input": "cb3a8cbcec587eeaea748c879b1333e06d09685e4b85a7c7755353a75931b153",
+    "parameter_bounds": "90fdce6642d9dad9f45972d474aa1efacddb4b1565a4a807d404f47d65148eae",
+    "centers": "86543588ac1be4032fc4a16231bb0cbae77b0d5078a114b8397050bc24fb7155"
+  }
+}
