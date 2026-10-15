@@ -1,7 +1,7 @@
 """Pay the actual inverse-compression finite target; no RH conclusion.
 
-The author scalar-moment containment is an explicit premise. Classical trial
-proposal minimizes the source's residual quadratic for center A,B; directed
+The scalar input has the attributed source-only oracle calculation. Classical
+trial proposal minimizes the source's residual quadratic for center A,B; directed
 arithmetic checks its use and the complete finite sign independently of doubles.
 """
 import argparse
@@ -17,6 +17,7 @@ from flint import arb, arb_mat, ctx
 parser = argparse.ArgumentParser()
 parser.add_argument('--prime', type=Path, required=True)
 parser.add_argument('--kernel', type=Path, required=True)
+parser.add_argument('--moments', type=Path, required=True)
 parser.add_argument('--manifest', type=Path, required=True)
 parser.add_argument('--out', type=Path, required=True)
 parser.add_argument('--bits', type=int, default=1536)
@@ -25,8 +26,9 @@ manifest_bytes = args.manifest.read_bytes()
 manifest = json.loads(manifest_bytes)
 input_bytes = {'prime': args.prime.read_bytes(),
                'kernel': args.kernel.read_bytes(),
+               'moments': args.moments.read_bytes(),
                'consumer': Path(__file__).read_bytes()}
-if manifest['schema']!='ACTUAL_C9_RETAINED_INPUTS_V1':
+if manifest['schema']!='ACTUAL_C9_RETAINED_INPUTS_V2':
     raise ValueError('Wrong scientific input manifest.')
 actual_versions = {'python': platform.python_version(),
                    'python_flint': importlib.metadata.version('python-flint'),
@@ -42,8 +44,12 @@ if prime['basis']!=canonical_basis or kernel['basis']!=canonical_basis:
     raise ValueError('Wrong canonical basis.')
 if prime['cutoff']!=9 or kernel['cutoff']!=9 or prime['even_dimension']!=kernel['even_dimension']:
     raise ValueError('Mismatched retained embedding.')
-if kernel['moment_source_sha256']!='f8cb5c681a22755b980d2e98d781353fe9ce058fe33eb8a7753585e2c52b2f93':
+if kernel['moment_source_sha256']!=manifest['moments']['sha256']:
     raise ValueError('Wrong source moment identity.')
+moments=json.loads(input_bytes['moments'])
+if (moments['schema']!='C9_VERIFIED_SOURCE_MOMENTS_V1'
+    or kernel['moment_source_checker_sha256']!=moments['source_checker']['sha256']):
+    raise ValueError('Mismatched moment oracle provenance.')
 size = prime['even_dimension']
 if size != 256:
     raise ValueError('The stated complement allowances require the256-mode space.')
@@ -133,7 +139,8 @@ for k in range(size):
 result={'cutoff':9,'even_dimension':size,'precision_bits':args.bits,
         'source_input_manifest_sha256':hashlib.sha256(manifest_bytes).hexdigest(),
         'arithmetic_versions':manifest['arithmetic_versions'],
-        'moment_containment_premise':kernel['moment_containment_premise'],
+        'moment_source_sha256':kernel['moment_source_sha256'],
+        'moment_containment_evidence':kernel['moment_containment_evidence'],
         'trial_grid_bits':256,'trial_exact_frobenius_bound':s,
         'trial_exact_frobenius_squared_numerator':str(norm_square),
         'trial_exact_frobenius_squared_denominator_power':512,
@@ -147,9 +154,10 @@ result={'cutoff':9,'even_dimension':size,'precision_bits':args.bits,
         'directed_LDL_pivots':pivots,
         'directed_LDL_minimum_lower_bound':minimum_pivot.str(50) if minimum_pivot is not None else None,
         'elapsed_seconds':time.monotonic()-started,
-        'scope':'Conditional numerical research of the specified sufficient comparison only. '
-                'Source contract reviewed separately; this output attests no independent execution, '
-                'moment containment, full-Weil positivity or RH proof.'}
+        'scope':'Directed sign calculation for the specified sufficient comparison. '
+                'Moment containment is supplied by the separately executed attributed source-only oracle. '
+                'The analytic form transfer is a paper dependency; no independent implementation, '
+                'Lean verification, cofinal positivity or RH proof.'}
 args.out.write_text(json.dumps(result,indent=2)+'\n')
 print(json.dumps({k:v for k,v in result.items() if k not in ['negative_sufficient_target_witness','directed_LDL_pivots','trial_integer_centers']}),flush=True)
 if complete_positive and len(pivots)==256 and not (witness and witness['directed_negative']):
