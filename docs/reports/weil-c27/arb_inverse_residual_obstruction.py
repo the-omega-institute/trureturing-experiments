@@ -1,4 +1,4 @@
-"""Directed test of the fixed64-column c27 inverse-residual certificate.
+"""Directed tests of fixed-column c27 inverse-residual certificates.
 
 Reuse the complete scalar packets, archived weights and far moments. The
 input direction is the existing full1281-coordinate floating proposal,
@@ -24,8 +24,7 @@ from diagonal_floor_witness import interval_ball
 
 HERE = Path(__file__).resolve().parent
 PILOT_SHA = '6db5093bf78fe1dcf43cbbe1b39ef2b1faf4174cf7cf33fe796c0d10ad4d231b'
-N, COUNT, M = 1280, 64, 32768
-SELECTED = tuple(range(N+1, N+COUNT+1))
+N, M = 1280, 32768
 
 
 def inputs():
@@ -47,8 +46,7 @@ def inputs():
 
 def direction(path):
     candidate = json.loads(path.read_text())
-    if (candidate['N'], candidate['columns'],
-            len(candidate['candidate_dyadic_integers'])) != (N, COUNT, N+1):
+    if (candidate['N'], len(candidate['candidate_dyadic_integers'])) != (N, N+1) or candidate['columns'] not in (64,128):
         raise ValueError('Require the untruncated candidate in the original mass.')
     return candidate
 
@@ -58,12 +56,14 @@ def propose(args):
     from threadpoolctl import threadpool_limits
     scalar, rows, pilot, far = inputs()
     candidate = direction(args.candidate)
+    count = candidate['columns']
+    selected = tuple(range(N+1,N+count+1))
     bits = scalar['grid_bits']
     def mid(row, name):
         return math.ldexp(int(row[name][0])+int(row[name][1]), -bits-1)
     s = np.array([mid(rows[n], 's') for n in range(M+1)])
     a = np.array([mid(rows[n], 'a') for n in range(M+1)])
-    last = SELECTED[-1]
+    last = selected[-1]
     indices = np.arange(last+1)
     phase = np.where(indices % 2, -1., 1.)
     norm = np.ones(last+1)
@@ -85,9 +85,9 @@ def propose(args):
                  -candidate['candidate_dyadic_bits'])
     weights = np.ldexp(np.array([float(int(x)) for x in pilot['middle_weight_numerators']]),
                       -pilot['middle_weight_bits'])
-    joint = np.zeros((COUNT+1, COUNT+1))
+    joint = np.zeros((count+1, count+1))
     with threadpool_limits(limits=1):
-        selected_rows = block(np.array(SELECTED))
+        selected_rows = block(np.array(selected))
         F, Bv = selected_rows[:, N+1:], selected_rows[:, :N+1]@v
         for first in range(N+1, M+1, 1024):
             modes = np.arange(first, min(first+1024, M+1))
@@ -103,8 +103,8 @@ def propose(args):
         K, t = joint[1:, 1:]-F, joint[1:, 0]-Bv
         x = np.linalg.solve(K, t)
         partial = selected_rows[:, N+1:]
-        partial_K = partial.T@(weights[:COUNT, None]*partial)-F
-        print('partial64_K_min', np.linalg.eigvalsh(partial_K)[0], flush=True)
+        partial_K = partial.T@(weights[:count, None]*partial)-F
+        print('partial_K_min', np.linalg.eigvalsh(partial_K)[0], flush=True)
         print('full_K_min', np.linalg.eigvalsh(K)[0], flush=True)
         retained_rows = block(np.arange(N+1))
         q = float(v@retained_rows[:, :N+1]@v)
@@ -122,8 +122,10 @@ def certify(args):
     started = time.monotonic()
     scalar, rows, pilot, far = inputs()
     candidate = direction(args.candidate)
-    if len(candidate['trial_dyadic_integers']) != COUNT:
-        raise ValueError('Require the full64-coordinate trial.')
+    count = candidate['columns']
+    selected = tuple(range(N+1,N+count+1))
+    if len(candidate['trial_dyadic_integers']) != count:
+        raise ValueError('Require the complete selected trial.')
     vq = [fmpq(int(i), 1 << candidate['candidate_dyadic_bits'])
           for i in candidate['candidate_dyadic_integers']]
     xq = [fmpq(int(i), 1 << candidate['trial_dyadic_bits'])
@@ -144,23 +146,23 @@ def certify(args):
     if len(weights) != M-N or not all(w > 0 for w in weights):
         raise ValueError('Positive complete archived weights required.')
 
-    # Omitted rows of Z*WZ are PSD. The first64 rows alone suffice for
+    # Omitted rows of Z*WZ are PSD. The selected rows alone suffice for
     # the lower bound on K=Z*WZ-F; FLINT verifies their eigenvalue boxes.
-    F = arb_mat([[arithmetic.even_entry(i,j,data) for j in SELECTED]
-                 for i in SELECTED])
-    weighted_F = arb_mat([[weights[i]*F[i,j] for j in range(COUNT)]
-                         for i in range(COUNT)])
+    F = arb_mat([[arithmetic.even_entry(i,j,data) for j in selected]
+                 for i in selected])
+    weighted_F = arb_mat([[weights[i]*F[i,j] for j in range(count)]
+                         for i in range(count)])
     partial_K = F.transpose()*weighted_F-F
     eigenvalues = partial_K.eig()
     kappa = 40
-    if len(eigenvalues) != COUNT or not all(z.real > kappa for z in eigenvalues):
+    if len(eigenvalues) != count or not all(z.real > kappa for z in eigenvalues):
         raise ArithmeticError('The partial Gram did not certify K>=40I.')
     print('certified K >=', kappa, 'I; seconds', time.monotonic()-started, flush=True)
 
     # Q(v-Ex) uses the existing complete Fourier assembly, including all
     # pole, Gamma and fourteen prime-power contributions.
     q_u = arb(0)
-    last = SELECTED[-1]
+    last = selected[-1]
     for i in range(last+1):
         q_u += u[i]**2*arithmetic.even_entry(i,i,data)
         q_u += 2*u[i]*sum((u[j]*arithmetic.even_entry(i,j,data)
@@ -168,7 +170,7 @@ def certify(args):
     print('finite Q(v-Ex)', q_u.str(24), 'seconds', time.monotonic()-started, flush=True)
 
     middle_debit = arb(0)
-    gradient = arb_mat(COUNT, 1)
+    gradient = arb_mat(count, 1)
     selected_residual = []
     for first in range(N+1, M+1, 128):
         modes = range(first, min(first+128, M+1))
@@ -178,17 +180,17 @@ def certify(args):
         weighted_residual = arb_mat([[weights[m-N-1]*residual[i,0]]
                                     for i,m in enumerate(modes)])
         middle_debit += (residual.transpose()*weighted_residual)[0,0]
-        Z = arb_mat([[block[i,N+1+j] for j in range(COUNT)]
+        Z = arb_mat([[block[i,N+1+j] for j in range(count)]
                      for i in range(len(modes))])
         gradient += Z.transpose()*weighted_residual
         selected_residual.extend(residual[i,0] for i,m in enumerate(modes) if m <= last)
         if (first-N-1) % 4096 == 0:
             print('middle through', modes.stop-1, 'seconds', time.monotonic()-started, flush=True)
-    if len(selected_residual) != COUNT:
+    if len(selected_residual) != count:
         raise ArithmeticError('Incomplete selected residual.')
 
     # Apply the archived moment core to this single combined vector and
-    # its64 gradient columns. No moments or old Gram are regenerated.
+    # its selected gradient columns. No moments or old Gram are regenerated.
     alpha, D, P, H, _ = reconstruct_factors(
         dict(far, N=last), dict(scalar, rows=[rows[n] for n in range(last+1)]))
     from flint import fmpq_mat
@@ -205,31 +207,31 @@ def certify(args):
     epsilon = arb(D)*bounds['unweighted_matrix_error']
     far_debit = arb(far_center)+arb(0, (epsilon*arb(norm_u_sq)).upper())
     gradient_error = epsilon*arb(norm_u_sq).sqrt()
-    for j in range(COUNT):
+    for j in range(count):
         center = alpha*D*sum((P[i,N+1+j]*Hfeature[i,0]
                               for i in range(P.nrows())), fmpq(0))
         gradient[j,0] += arb(center)+arb(0, gradient_error.upper())-selected_residual[j]
 
     fixed_margin = q_u-middle_debit-far_debit
-    gradient_sq = sum((gradient[j,0]**2 for j in range(COUNT)), arb(0))
+    gradient_sq = sum((gradient[j,0]**2 for j in range(count)), arb(0))
     correction = gradient_sq/kappa
     optimal_upper = fixed_margin+correction
     if not optimal_upper < 0:
         raise ArithmeticError('No strictly negative optimized-family upper bound.')
     result = {
-        'schema':'ACTUAL_C27_K64_OBSTRUCTION_V1', 'N':N, 'M':M,
-        'selected_exterior_columns':list(SELECTED), 'basis':scalar['basis'],
+        'schema':f'ACTUAL_C27_K{count}_OBSTRUCTION_V1', 'N':N, 'M':M,
+        'selected_exterior_columns':list(selected), 'basis':scalar['basis'],
         'working_bits':args.precision, 'grid_bits':args.output_bits,
         'candidate_sha256':hashlib.sha256(args.candidate.read_bytes()).hexdigest(),
         'candidate_norm_sq':str(norm_v_sq), 'combined_norm_sq':str(norm_u_sq),
-        'K_lower_bound':kappa, 'partial_K_rows':list(SELECTED),
+        'K_lower_bound':kappa, 'partial_K_rows':list(selected),
         'partial_K_eigenvalue_real_intervals':[grid_interval(z.real,args.output_bits) for z in eigenvalues],
         'finite_combined_Q':grid_interval(q_u,args.output_bits),
         'middle_residual_debit':grid_interval(middle_debit,args.output_bits),
         'far_residual_debit':grid_interval(far_debit,args.output_bits),
         'extended_far_error_grid_bits':640,
         'extended_far_matrix_error':grid_interval(epsilon,640),
-        'gradient_intervals':[grid_interval(gradient[j,0],args.output_bits) for j in range(COUNT)],
+        'gradient_intervals':[grid_interval(gradient[j,0],args.output_bits) for j in range(count)],
         'fixed_trial_margin':grid_interval(fixed_margin,args.output_bits),
         'optimizer_correction_upper':grid_interval(correction,args.output_bits),
         'optimized_family_quadratic_upper':grid_interval(optimal_upper,args.output_bits),
@@ -241,7 +243,7 @@ def certify(args):
              'far-coupling.json.zlib','inverse-residual-pilot.json.zlib']},
         'conditions':['Existing complete Fourier/form identification and actual exterior domain.',
                       'The archived positive diagonal W majorizes the same actual exterior inverse.'],
-        'scope':'Directed conditional exclusion of every X for the fixed64 exterior columns and '
+        'scope':f'Directed conditional exclusion of every X for the fixed{count} exterior columns and '
                 'archived W: K>=40I and completion of the square give '
                 'v*(A-G+T*K^-1T)v<=fixed_trial_margin+||Kx-Tv||²/40<0. '
                 'This excludes this sufficient lower-certificate family, not actual Weil positivity, '
