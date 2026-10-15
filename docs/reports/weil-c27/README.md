@@ -572,3 +572,66 @@ The original Fourier/form identification and c27 exterior comparison
 remain paper-level inputs. The finite middle rows1281 through32768,
 retained sign and cofinal positivity are still missing; no complete
 coupling, Lean or RH certificate follows.
+
+## A four-row obstruction to the N1280 diagonal-floor debit
+
+`diagonal_floor_witness.py` reuses the actual scalar table and
+`Arithmetic.even_entry`. It supplies only the missing rows1282,1283,1284.
+In the original centered unphased cosine basis, take
+
+$$
+v=-e_{1277}+2e_{1278}-e_{1280},\qquad \|v\|^2=6.
+$$
+
+Write $A_N$ for the actual retained block, $C_m$ for its actual exterior
+coupling row, and
+
+$$
+d_m=\Re\psi\left(\frac14+\frac{i\pi m}{\log27}\right)
+-\log\pi-\frac{59}{10}.
+$$
+
+This is the existing full even Neumann–Gamma/prime diagonal lower
+comparison; it is sharper than the elementary logarithmic $h_m$ used
+in the far input. For each $m=1281,\ldots,1284$, directed evaluation gives
+
+$$
+\frac1{16}<d_m<\frac1{15},\qquad 0<h_m<\frac1{15}.
+$$
+
+For either choice $w_m=d_m$ or $w_m=h_m$, the sufficient diagonal-floor
+Schur target $S_w=A_N-\sum_{m>N}w_m^{-1}C_m^*C_m$ therefore satisfies
+
+$$
+\langle v,S_wv\rangle
+\le\langle v,A_Nv\rangle
+-15\sum_{m=1281}^{1284}|C_mv|^2
+<-\frac{13}{5}.
+$$
+
+The omitted debit rows are positive semidefinite, so this exclusion
+needs no further middle or far summation. The actual retained quadratic
+is positive:
+
+$$
+\langle v,A_Nv\rangle=30.70294244311003905\ldots,
+\quad15\sum_{m=1281}^{1284}|C_mv|^2=33.30890128199787908\ldots.
+$$
+
+The saved `diagonal-floor-witness.json` encloses their difference by
+$-2.60595883888784003\ldots$ on a $2^{-512}$ grid, using 768 working
+bits and the original 640-bit scalar grid. It retains all three newly
+generated scalar rows, the four row responses, both floor intervals,
+the integer vector and input/source hashes. Result SHA-256:
+`f45f3a333b50aa60c38c5b2ee9be416a165a1c719ba7dfb3ca6dfbe251bf1840`.
+
+```sh
+uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/diagonal_floor_witness.py --out build/c27-diagonal-floor-witness.json
+```
+
+This witnesses failure of this specified sufficient comparison at N1280,
+including the uniform inverse-floor charge16. It is not a negative Weil
+test or an RH counterexample. The existing high-complement floor and
+far-input majorant remain valid. Further summation alone cannot make
+$S_w$ positive; another retained cutoff, a stronger common exterior
+comparison or a correlated inverse estimate requires its own analysis.
