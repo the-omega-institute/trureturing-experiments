@@ -1,0 +1,23 @@
+{
+  "status": "prepared/uncompiled actual-context adaptive certificate source",
+  "kernel_accepted": false,
+  "full_global_accepted": false,
+  "dag_sha256": "bf188b5ef8d359fc12872297ba3c3db9b633debdec7db6eddf924265c880bf59",
+  "shapes": 1558777,
+  "global_root": 1558776,
+  "global_expanded_contexts": 87458265,
+  "root": 55,
+  "depth": 15,
+  "code": 0,
+  "full_contexts": 201,
+  "suffix_cap": 64,
+  "suffixes": 10,
+  "splits": 3,
+  "node_equalities": 3,
+  "declarations_per_part": 4,
+  "declarations": 16,
+  "parts": 4,
+  "root_target": "D5.S3.Quantum.Entanglement.EJM.PreparedEJMOriginalAdaptiveRegression201Root",
+  "root_source_sha256": "175243f671bde7f74a068808a7aa3649ef1282340ebc50798adf4bea86e269e1",
+  "emits_original_globalAccepted": false
+}
