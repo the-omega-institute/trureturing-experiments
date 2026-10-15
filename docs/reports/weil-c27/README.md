@@ -347,8 +347,9 @@ scalar or positivity certificates. Packet SHA-256:
 
 `arb_far_coupling.py` consumes the published actual scalar packet and
 the shared normalized moments. It applies the finite geometric expansion
-to the actual divided difference, keeping every feature and signed cross
-term. It returns an explicit rational matrix representation and a uniform
+to the actual divided difference, keeping every feature and all signed
+products inside each supplied moment. Omitted core entries have an explicit
+norm allowance. It returns a rational matrix representation and a uniform
 operator error. It does not compute the middle modes or a retained sign.
 
 Work first in the phase-adjusted basis. For $m>M>N$, the original rows are
@@ -511,6 +512,11 @@ $$
 +D(\eta_{\rm geom}+\eta_{\rm core}+\eta_{\rm round})I.
 $$
 
+The scalar allowance controls approximation of $DC^*C$. Replacing the
+varying inverse weight by $D$ introduces additional one-sided slack.
+Thus this is a contribution to the sufficient diagonal-floor Schur debit;
+it does not identify a far block of the full exterior inverse.
+
 The default parameters are $N=1280$, $M=32768$, $R=56$, $b=640$,
 with 2304 working bits. The reduced core requires exactly 56 U-moments at
 even powers2 through112, 56 T-moments at odd powers3 through113, and 56
@@ -545,6 +551,19 @@ $\alpha_0,D,P_0,H_0$ and the exported weighted scalar allowance, using
 FLINT rational matrices. Its default convention is the centered unphased
 basis. This is the explicit far matrix input; a dense 1281-square matrix
 and a replacement factorization algorithm are not built here.
+
+The saved `far-coupling.json.zlib` packet contains all 168 required
+intervals at the default parameters. Each has width at most one
+$2^{-640}$ grid unit. Its exact factors have shapes $112\times1281$
+and $112\times112$; seven seed moments are reused unchanged. The
+exported weighted allowance has base-two logarithm
+approximately $-524.573894274258476$, below the requested $2^{-500}$.
+Both highest U112/T113 endpoint pairs agree exactly with independent
+2560-bit executions. Validation also covers 768 exact rational row-bound
+cases, eight actual finite-vector Gram checks, 32 coordinated input
+perturbations, zero-mode, full/reduced selection and pinned-cache guards.
+Packet SHA-256:
+`ac35edacd7f55de470586e3b8a5915bcaa49b9d2c4c9c2ee073eeaaa8c9c73e7`.
 
 This application reuses the finite geometric mechanism of the existing
 Cauchy jets and the actual divided difference. Its new interface is the
