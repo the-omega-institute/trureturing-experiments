@@ -150,20 +150,34 @@ class TailMoments:
         return value-sum((w*(self.phase(u)**m).imag
                           for u, w in self.primes.items()), arb(0))
 
-    def moments(self, p):
-        """Enclose the normalized actual T_p and U_p, including all errors."""
+    def moment_errors(self, p):
+        """Common analytic errors for the two actual moment families."""
+        error_T = (self.err_a*self.kernel(p+2*self.order).real
+                   +self.err_b*self.kernel(p+2*self.order+1).real)
+        return error_T, (2*self.budget+self.uniform_error)*error_T
+
+    def linear_moment(self, p):
+        """Enclose T_p without computing the unused square family."""
         T = sum((v*self.kernel(p+j).real for j, v in self.nonzero), arb(0))
         T -= sum((w*self.kernel(p, u).imag for u, w in self.primes.items()), arb(0))
+        error_T, _ = self.moment_errors(p)
+        return T+arb(0, error_T.upper()), error_T
+
+    def square_moment(self, p):
+        """Enclose U_p, keeping every signed product of the same symbol."""
         U = sum((v*self.kernel(p+j).real for j, v in enumerate(self.square_coefficients)
                  if v != 0), arb(0))
         U -= 2*sum((v*w*self.kernel(p+j, u).imag
                     for j, v in self.nonzero for u, w in self.primes.items()), arb(0))
         U += sum((v*self.kernel(p, u).real for u, v in self.square_phases.items()), arb(0))
-        error_T = (self.err_a*self.kernel(p+2*self.order).real
-                   +self.err_b*self.kernel(p+2*self.order+1).real)
-        error_U = (2*self.budget+self.uniform_error)*error_T
-        return (T+arb(0, error_T.upper()), U+arb(0, error_U.upper()),
-                error_T, error_U)
+        _, error_U = self.moment_errors(p)
+        return U+arb(0, error_U.upper()), error_U
+
+    def moments(self, p):
+        """Enclose both normalized actual families, including all errors."""
+        T, error_T = self.linear_moment(p)
+        U, error_U = self.square_moment(p)
+        return T, U, error_T, error_U
 
 
 def main():

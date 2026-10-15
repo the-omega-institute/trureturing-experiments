@@ -342,3 +342,214 @@ Hurwitz-progression checks cover production kernels at powers2,4,128.
 These checks validate the new interface, without repeating the older
 scalar or positivity certificates. Packet SHA-256:
 `fc91b487a48f82cb276c0823f28c4a38432f12f822d6e0ed2644a67da7c22ad1`.
+
+## Actual infinite far-coupling Gram
+
+`arb_far_coupling.py` consumes the published actual scalar packet and
+the shared normalized moments. It applies the finite geometric expansion
+to the actual divided difference, keeping every feature and signed cross
+term. It returns an explicit rational matrix representation and a uniform
+operator error. It does not compute the middle modes or a retained sign.
+
+Work first in the phase-adjusted basis. For $m>M>N$, the original rows are
+
+$$
+C_{m0}=-\frac{\sqrt2s_m}{\pi m},\qquad
+C_{mn}=\frac{2(ns_n-ms_m)}{\pi(m^2-n^2)},\quad 1\le n\le N.
+$$
+
+With $t=M/m$, $x_n=n/M$ and $0\le k<R$, define the exact features
+
+$$
+A_k(v)=\frac{v_0}{\sqrt2}\mathbf1_{k=0}
++\sum_{n=1}^N x_n^{2k}v_n,\qquad
+B_k(v)=\sum_{n=1}^N s_nx_n^{2k+1}v_n.
+$$
+
+The finite geometric jet is
+
+$$
+J_m(v)=\frac2{\pi m}\sum_{k=0}^{R-1}t^{2k}
+\left(tB_k(v)-s_mA_k(v)\right).
+$$
+
+Let $P$ be the feature matrix, ordered as $A_0,\ldots,A_{R-1},
+B_0,\ldots,B_{R-1}$. Absolute convergence and finite expansion give
+
+$$
+J^*J=\alpha P^*HP,\qquad \alpha=\frac4{\pi^2M},
+$$
+
+$$
+H_{AA,kl}=\mathsf U_{2k+2l+2},\qquad
+H_{AB,kl}=-\mathsf T_{2k+2l+3},\qquad
+H_{BB,kl}=\mathsf Z_{2k+2l+4},
+$$
+
+where $\mathsf Z_p=M^{p-1}\zeta(p,M+1)$. Thus the full Gram keeps the
+same complete symbol in both factors. No cross term is optimized
+independently. The jet's zero column is exact at every positive order.
+The original centered unphased basis transports this Gram by multiplying
+column $n$ of $P$ by $(-1)^n$; the exterior row parity cancels.
+
+The existing finite geometric identity gives, entry by entry,
+
+$$
+(C-J)_{m0}=0,\qquad
+(C-J)_{mn}=C_{mn}(n/m)^{2R}\quad(n\ge1).
+$$
+
+Reuse the existing bound $|s_n|\le B_*$ and put
+$q_0=N/M$, $\kappa=1-N/(M+1)$. Since
+$|C_{mn}|\le2B_*/(\pi(m-n))$, the integral bound for the positive
+inverse-power tail gives
+
+$$
+\|C\|^2\le\|C\|_F^2\le
+c_2:=\frac{B_*^2}{\pi^2M}\left(\frac{4N}{\kappa^2}+2\right),
+$$
+
+$$
+\|C-J\|^2\le\|C-J\|_F^2\le
+r_2:=\frac{4B_*^2N}{\pi^2\kappa^2M(4R+1)}q_0^{4R}.
+$$
+
+Consequently the whole matrix error, rather than just its squared
+remainder, is
+
+$$
+\|C^*C-J^*J\|\le\eta_{\rm geom}:=2\sqrt{c_2r_2}+r_2.
+$$
+
+Only the first $d$ block anti-diagonals need numerical moments. Let
+$H^{(d)}$ equal $H$ where $k+l<d$ in each block, and zero elsewhere.
+For $q_0>0$, use the exact diagonal scaling
+$D_q=\operatorname{diag}((q_0^{2k})_k,(q_0^{2k})_k)$ and put
+$\widetilde P=D_q^{-1}P$. The feature definition gives
+
+$$
+\|\widetilde P\|^2\le L_R^2:=\frac12+RN(1+B_*^2q_0^2).
+$$
+
+The elementary moment bounds
+$|\mathsf T_p|\le B_* /(p-1)$,
+$0\le\mathsf U_p\le B_*^2/(p-1)$ and
+$0<\mathsf Z_p\le1/(p-1)$ follow from the same positive
+inverse-power integral bound. Since $B_*\ge1$, every absolute row sum of
+$D_q(H-H^{(d)})D_q$ is at most
+
+$$
+\tau_d:=\frac{q_0^{2d}}{1-q_0^2}
+\left(\frac{B_*^2}{2d+1}+\frac{B_*}{2d+2}\right).
+$$
+
+Symmetry gives the same operator-norm bound. Therefore
+
+$$
+\|J^*J-\alpha P^*H^{(d)}P\|
+\le\eta_{\rm core}:=\alpha L_R^2\tau_d.
+$$
+
+When $d=2R-1$, there are no omitted entries and $\tau_d=0$ is used.
+For $N=0$ the omitted features vanish and the same zero error applies.
+The sparse core need not be positive semidefinite: its missing signed
+terms are paid by this scalar allowance. Its first feature row and column
+are exact when $d=R$. The default uses $d=R$;
+`--full-moments` uses $d=2R-1$.
+
+The input also pays all finite-precision matrix amplification. The exact
+rational $P_0$ uses the published scalar midpoints and a dyadic midpoint
+for $1/\sqrt2$; its powers $x_n^k$ are exact rationals. Let
+$\epsilon_s$ be the maximum original scalar midpoint error and
+$\epsilon_a$ the midpoint error for $1/\sqrt2$. Then
+
+$$
+\|P\|_F^2\le p_2:=\frac12+
+\frac{N(1+B_*^2q_0^2)}{1-q_0^4},\qquad
+\|P-P_0\|_F\le e_P:=
+\sqrt{\epsilon_a^2+\frac{\epsilon_s^2Nq_0^2}{1-q_0^4}}.
+$$
+
+The moment intervals have width at most two $2^{-b}$ grid units. Their
+shared exact sparse midpoint matrix $H_0$ therefore satisfies
+$\|H^{(d)}-H_0\|\le e_H:=2R\,2^{-b}$. The genuine full Gram $H$ is
+positive semidefinite. Masking decreases its Frobenius norm, so its trace
+and the original symbol bound give
+
+$$
+\|H^{(d)}\|\le\|H^{(d)}\|_F\le\|H\|_F\le H_*:=\sum_{k=0}^{R-1}
+\left(\frac{B_*^2}{4k+1}+\frac1{4k+3}\right).
+$$
+
+With $p_0=\sqrt{p_2}+e_P$, and a dyadic midpoint $\alpha_0$ with
+$|\alpha-\alpha_0|\le\epsilon_\alpha$, the complete rounding allowance is
+
+$$
+\eta_{\rm round}=
+\alpha\left[H_*(2\sqrt{p_2}e_P+e_P^2)+p_0^2e_H\right]
++\epsilon_\alpha p_0^2(H_*+e_H).
+$$
+
+The program evaluates this bound with directed balls. It does not assume
+that the midpoint $H_0$ is positive semidefinite. The asserted upper
+matrix bound follows after adding the scalar allowance.
+
+For the existing c27 exterior floor, set
+
+$$
+h_m=\log(m/\log27)-\frac{\log27}{\pi m}-\frac{59}{10}.
+$$
+
+This is the previously supplied full even Neumann–Gamma/prime comparison,
+not a new prime estimate. The program requires $h_{M+1}>0$ and rounds
+$h_{M+1}^{-1}$ upward to an exact dyadic $D$. Monotonicity yields the
+sufficient actual far-debit majorant
+
+$$
+\sum_{m>M}h_m^{-1}C_m^*C_m
+\preceq D\alpha_0 P_0^*H_0P_0
++D(\eta_{\rm geom}+\eta_{\rm core}+\eta_{\rm round})I.
+$$
+
+The default parameters are $N=1280$, $M=32768$, $R=56$, $b=640$,
+with 2304 working bits. The reduced core requires exactly 56 U-moments at
+even powers2 through112, 56 T-moments at odd powers3 through113, and 56
+Hurwitz moments at even powers4 through114. The seven applicable scalar
+moments in the earlier packet are reused. `linear_moment` and
+`square_moment` call the same existing supplier formulas separately so
+the unused opposite-parity family is not evaluated.
+
+```sh
+uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/arb_far_coupling.py --moment-cache build/c27-far-moments.partial.zlib --out build/c27-far-coupling.json.zlib
+```
+
+The program fails if its total weighted operator allowance is not below
+$2^{-500}$ or any required moment fails its dyadic output-width check.
+`upper_bounds` contains exact nonnegative numerators on the
+`bound_grid_bits` grid. `D_numerator` uses `D_grid_bits`; moment and
+prefactor interval pairs use `grid_bits`. All pairs use one exact
+midpoint with denominator $2^{\text{grid\_bits}+1}$.
+
+The highest-power pair is evaluated first. An optional moment cache saves
+completed pairs atomically; reuse requires its explicit `--resume-sha256`
+pin and identical source, supplier, seed and numerical parameters. Cached
+interval widths and power indices are checked before reuse. The cache
+is an intermediate scalar input, not a completed matrix packet. The optional
+full core needs 111 moments per family through powers222/223/224.
+Its T223 export fails at 2304 and 2560 working bits and passes at 2816;
+use `--full-moments --precision 2816` for that case. The default reduced
+core does not require this higher-order calculation.
+
+`reconstruct_factors(packet, scalar_packet)` returns exact rational
+$\alpha_0,D,P_0,H_0$ and the exported weighted scalar allowance, using
+FLINT rational matrices. Its default convention is the centered unphased
+basis. This is the explicit far matrix input; a dense 1281-square matrix
+and a replacement factorization algorithm are not built here.
+
+This application reuses the finite geometric mechanism of the existing
+Cauchy jets and the actual divided difference. Its new interface is the
+actual discrete moment majorant with all matrix errors paid.
+The original Fourier/form identification and c27 exterior comparison
+remain paper-level inputs. The finite middle rows1281 through32768,
+retained sign and cofinal positivity are still missing; no complete
+coupling, Lean or RH certificate follows.
