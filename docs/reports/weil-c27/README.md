@@ -156,3 +156,189 @@ contained in the older read-only scalar routines' intervals. Those calls
 check interface normalization only; the older certificate was not run.
 The retained packet SHA-256 is
 `f993be1aa48824cbf22276ac2d80e834ca9e54e4519e2040f437ebb4f724990f`.
+
+## Infinite moments of the same actual symbol
+
+`arb_tail_moments.py` supplies directed intervals for
+
+$$
+\mathsf T_p=M^{p-1}\sum_{m>M}\frac{s_m}{m^p},\qquad
+\mathsf U_p=M^{p-1}\sum_{m>M}\frac{s_m^2}{m^p},\qquad p\ge2.
+$$
+
+These are discrete moments of the symbol defined above, including the
+pole, full Gamma contribution and all fourteen c27 prime powers. They
+are different from the integrated Gamma moments used by the c9 source.
+The normalization prevents powers of the exterior cutoff from obscuring
+the accuracy needed by a coupling consumer. Divide a supplied moment by
+$M^{p-1}$ to obtain its unnormalized counterpart.
+
+The reused analytic input is Fredrik Johansson,
+[*Arbitrary-precision computation of the gamma function*](https://doi.org/10.5206/mt.v3i1.14591),
+Maple Transactions 3(1), Article14591, Eq28 and Theorem3.3/Eq35,
+printed pp.13–14. At derivative order1 these give
+
+$$
+\psi(z)=\log z-\frac1{2z}
+-\sum_{k=1}^{J-1}\frac{B_{2k}}{2kz^{2k}}+R'_J(z),\qquad
+|R'_J(z)|\le
+\left(1+\sqrt{\pi(J+1/2)}\right)
+\frac{|B_{2J}|}{2J|z|^{2J}}
+$$
+
+for $J\ge1$, $\Re z\ge0$, $z\ne0$. The primary PDF and these theorem
+conditions were inspected. FLINT supplies Bernoulli numbers, finite
+power series, Lerch $\Phi$ and Hurwitz $\zeta$ directly. No replacement
+algorithm for these functions is implemented.
+
+Set $A=M+1$, $\beta=\pi/\log c$, $a=1/4$, $q=c^{-2}$,
+$\delta=c^{-1/2}$, $\alpha=a/\beta$ and
+$K=\log c\, (\cosh(\log c/2)-1)/\pi$. For
+$P_m=\sum_{r<c}\Lambda(r)r^{-1/2}\sin(2\pi m\log r/\log c)$,
+the existing symbol has the exact special-function representation
+
+$$
+s_m=-P_m-\frac{Km}{m^2+\alpha^2}
+-\frac12\Im\psi(a+i\beta m)
+-\frac\delta2\Im\Phi(q,1,a+i\beta m).
+$$
+
+The last term is a positive Gamma endpoint correction. The constant
+nonoscillatory term is $-\pi/4$. Neither term is dropped.
+
+For $\mu_\ell=\Phi(q,-\ell,a)=\sum_{j\ge0}q^j(j+a)^\ell$,
+the finite geometric identity gives
+
+$$
+-\frac\delta2\Im\Phi(q,1,a+i\beta m)
+=\frac\delta2\sum_{k=0}^{J-1}
+\frac{(-1)^k\mu_{2k}}{(\beta m)^{2k+1}}+\rho^E_{J,m},\qquad
+|\rho^E_{J,m}|\le\frac{\delta\mu_{2J}}{2(\beta m)^{2J+1}}.
+$$
+
+This uses $1/(1+t^2)=\sum_{k<J}(-t^2)^k+(-t^2)^J/(1+t^2)$,
+valid for every real $t$; it does not assume the unbounded summation
+index $j$ satisfies $(j+a)/(\beta m)<1$. The pole expansion has
+remainder at most $K\alpha^{2J}m^{-(2J+1)}$.
+
+To convert the finite digamma sum into inverse-mode coefficients, define
+
+$$
+H_J(x)=\log(1+ax/(i\beta))
+-\frac{x}{2(i\beta+ax)}
+-\sum_{k=1}^{J-1}\frac{B_{2k}}{2k}
+\left(\frac{x}{i\beta+ax}\right)^{2k}.
+$$
+
+The program requires $\beta>a$, so this function is analytic on a
+neighborhood of the closed unit disk. On that disk its modulus is at
+most
+
+$$
+V_J=-\log(1-a/\beta)+\frac1{2(\beta-a)}
++\sum_{k=1}^{J-1}\frac{|B_{2k}|}{2k(\beta-a)^{2k}}.
+$$
+
+Cauchy's coefficient bound controls the Taylor tail by
+$V_Jm^{-2J}/(1-1/A)$ for every $m\ge A$. If $[H_J]_{<2J}$
+denotes the Taylor polynomial, the program forms
+
+$$
+D_J(x)=-\frac\pi4-\frac12\Im_{\rm coeff}[H_J]_{<2J}(x)
+-K\sum_{k<J}(-\alpha^2)^kx^{2k+1}
++\frac\delta2\sum_{k<J}(-1)^k\mu_{2k}\beta^{-(2k+1)}x^{2k+1}.
+$$
+
+Writing $D_J(1/m)=\sum_j c_j(M/m)^j$, it computes the $c_j$
+with FLINT series arithmetic. For $\widetilde s_m=D_J(1/m)-P_m$,
+the full common remainder is
+
+$$
+|s_m-\widetilde s_m|\le\mathcal A_Jm^{-2J}
++\mathcal B_Jm^{-(2J+1)},
+$$
+
+$$
+\mathcal A_J=
+\frac{(1+\sqrt{\pi(J+1/2)})|B_{2J}|}{4J\beta^{2J}}
++\frac{V_J}{2(1-1/A)},\qquad
+\mathcal B_J=K\alpha^{2J}+\frac{\delta\mu_{2J}}{2\beta^{2J+1}}.
+$$
+
+The finite order $J$ must pass the output accuracy check; a larger $J$
+at fixed $M$ does not guarantee a smaller asymptotic remainder.
+
+For a positive rational $u$, the existing scalar kernel is
+
+$$
+\mathsf L_p(u)=M^{p-1}z(u)^A\Phi(z(u),p,A),\qquad
+z(u)=e^{2\pi i\log u/\log c}.
+$$
+
+For phase1 the program calls Hurwitz $\zeta$ instead. Exact rational
+arithmetic merges phases modulo $c^{\mathbb Z}$ and conjugation,
+before evaluating any logarithms. In particular $z(3)z(9)=1$ at c27;
+its negative sum-frequency terms are retained. If $v_r=\Lambda(r)/\sqrt r$,
+the finite centers are
+
+$$
+\widetilde{\mathsf T}_p=\sum_jc_j\mathsf L_{p+j}(1)
+-\sum_rv_r\Im\mathsf L_p(r),
+$$
+
+$$
+\begin{aligned}
+\widetilde{\mathsf U}_p={}&\sum_{j,k}c_jc_k\mathsf L_{p+j+k}(1)
+-2\sum_{j,r}c_jv_r\Im\mathsf L_{p+j}(r)\\
+&+\frac12\sum_{r,t}v_rv_t
+\left[\Re\mathsf L_p(r/t)-\Re\mathsf L_p(rt)\right].
+\end{aligned}
+$$
+
+The last sum is ordered. All finite signed products come from the same
+symbol; no independent-phase average or unsigned substitute is used.
+
+Set $\epsilon=\mathcal A_J A^{-2J}+\mathcal B_J A^{-(2J+1)}$ and
+reuse the existing actual-symbol bound $|s_m|\le B_*$, where
+$B_*=2\cosh(\log c/2)+\sum_{r<c}v_r$. Then
+
+$$
+F_p=\frac{\mathcal A_J}{M^{2J}}\mathsf L_{p+2J}(1)
++\frac{\mathcal B_J}{M^{2J+1}}\mathsf L_{p+2J+1}(1)
+$$
+
+bounds the normalized $\mathsf T_p$ truncation error. The corresponding
+$\mathsf U_p$ error is at most $(2B_*+\epsilon)F_p$, since
+$|s_m^2-\widetilde s_m^2|\le(2B_*+\epsilon)|s_m-\widetilde s_m|$.
+The program adds these balls to all finite-arithmetic and special-function
+errors before outward dyadic rounding. All consumers must use the same
+moment intervals. Their own coefficient and matrix-norm amplification,
+finite middle modes, jet remainder and sign check remain separate.
+
+```sh
+uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/arb_tail_moments.py --power 2 --power 3 --power 4 --power 8 --power 16 --power 32 --power 64 --power 128 --out build/c27-tail-moments.json.zlib
+```
+
+Output fields `T`, `U` and `normalized_polynomial` use exact integer
+endpoint pairs on the `grid_bits` dyadic grid. The analytic error fields
+and `uniform_symbol_error` use `analytic_grid_bits`. Every reported
+moment interval has width at most two output grid units, or the program
+fails and requests more precision/order. A finite returned special-function
+value alone is insufficient. This interface supplies scalar moments;
+it supplies no complete coupling Gram, retained-block sign or RH proof.
+
+The saved `tail-moments.json.zlib` packet covers powers
+$2,3,4,8,16,32,64,128$, with $M=32768$, $J=32$, 2304 working bits
+and a $2^{-640}$ output grid. It uses 3,132 cached scalar kernels;
+every one of the sixteen moment intervals has width at most one grid
+unit. The included analytic U-errors are all less than $2^{-816}$;
+this is only the truncation component of the total exported error.
+All six T/U endpoint pairs at powers2,4,128 agree exactly with an
+independent 2560-bit execution. The original fourteen-phase sine and
+square were checked against the folded expressions at seven modes.
+A c3 cutoff shift from64 to71, at powers2,3,8, agrees with the exact
+finite original-symbol segment in both moment families. Independent
+Hurwitz-progression checks cover production kernels at powers2,4,128.
+These checks validate the new interface, without repeating the older
+scalar or positivity certificates. Packet SHA-256:
+`fc91b487a48f82cb276c0823f28c4a38432f12f822d6e0ed2644a67da7c22ad1`.
