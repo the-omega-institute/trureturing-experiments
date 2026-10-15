@@ -66,3 +66,93 @@ The pinned NumPy and SymPy dependencies support importing the existing
 arithmetic module; its array/certificate routines are not run. The
 machine result is `high-floor.json`; it is numerical input evidence,
 not a proof-assistant or independent reproduction claim.
+
+## Precision-parametric arithmetic input
+
+`arb_arithmetic.py` applies the existing actual Fourier assembly to c27
+using FLINT's `acb.digamma` and `acb.polygamma(1)`. These are existing
+certified special-function suppliers, also used elsewhere in this
+experiment repository; their algorithms are not reimplemented here.
+The interface replaces the old fixed special-function remainder only.
+It does not rerun the old spectral certificate or change its parameters.
+
+For full length $d=\log c$, write $\omega_n=2\pi n/d$,
+$z_n=1/4+i\omega_n/2$, $b_j=2j+1/2$, $H=\cosh(d/2)$ and
+$w_r=\Lambda(r)/\sqrt r$. The scalar formulas are the existing
+[arithmetic boundary symbol](https://github.com/the-omega-institute/trureturing/blob/212cac9d3e065e29e07f43b0ec5e48b2a066640c/D5/S3/Weil/ZetaBridge/WeilArithmeticCouplingJet.lean)
+and [actual Fourier assembly](https://github.com/the-omega-institute/trureturing/blob/4804c4020d7d9f165a2e2683c42b01e3d47a8be4/research/weil_ground_mode/certify_prime3_refined.py),
+with every prime power $r<c$ retained:
+
+$$
+\begin{aligned}
+s_n={}&-\frac{2\omega_n(H-1)}{\omega_n^2+1/4}
+-\frac12\Im\psi(z_n)
++\sum_{j\ge0}\frac{\omega_nc^{-b_j}}{b_j^2+\omega_n^2}
+-\sum_{r<c}w_r\sin(\omega_n\log r),\\
+a_n={}&\Re\psi(z_n)-\log\pi+
+\frac{\Re\psi_1(z_n)}{2d}
+-\frac2d\sum_{j\ge0}c^{-b_j}\Re(b_j-i\omega_n)^{-2}\\
+&+\frac{4(H-1)}d\Re(1/2+i\omega_n)^{-2}
+-2\sum_{r<c}w_r(1-\log r/d)\cos(\omega_n\log r).
+\end{aligned}
+$$
+
+The endpoint shift at integer c is zero almost everywhere. The actual
+unphased orthonormal even basis is $1/\sqrt d$ and
+$\sqrt{2/d}\cos(2\pi nx/d)$ on $(-d/2,d/2)$. Its entries are
+
+$$
+E_{00}=a_0,\qquad E_{0n}=-(-1)^n\frac{\sqrt2s_n}{\pi n},\qquad
+E_{nn}=a_n-\frac{s_n}{\pi n},\qquad
+E_{mn}=(-1)^{m+n}\frac{2(ns_n-ms_m)}{\pi(m^2-n^2)}\quad(m,n>0,\ m\ne n).
+$$
+
+`Arithmetic.even_entry` consumes the supplied scalars in these formulas.
+The original divided-difference formula without these parity factors
+uses the phase-adjusted basis $(-1)^n\sqrt{2/d}\cos(2\pi nx/d)$.
+The diagonal congruence transports that formula to the unphased basis
+declared by this interface, including its zero column.
+
+The two decaying Gamma corrections are truncated after R terms. Set
+$q=c^{-2}$ and $b_R=2R+1/2$. Uniformly over all nonnegative frequencies,
+the omitted absolute contributions are bounded by
+
+$$
+\epsilon_s=\frac{c^{-b_R}}{2b_R(1-q)},\qquad
+\epsilon_a=\frac{2c^{-b_R}}{d b_R^2(1-q)}.
+$$
+
+Here $\omega/(b^2+\omega^2)\le1/(2b)$ and
+$|(b-i\omega)^{-2}|\le1/b^2$; subsequent terms have geometric
+decay q and nondecreasing denominators. The program adds these explicit
+tail balls to the special-function and finite-arithmetic balls. It
+chooses R from the requested output precision instead of retaining a
+fixed asymptotic remainder. The exact zero symbol $s_0=0$ is preserved.
+
+The default packet supplies all modes 0 through 1280 and three additional
+coupling samples, 1281, 32768 and 32769. It uses 768 working bits and a
+$2^{-640}$ output grid. Each scalar interval has width at most two grid
+units; its midpoint therefore has error at most $2^{-640}$. This is a
+scalar accuracy statement. Subsequent matrix operations, infinite
+coupling sums and a positivity decision need their own error bounds.
+
+```sh
+uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/arb_arithmetic.py --extra-mode 1281 --extra-mode 32768 --extra-mode 32769 --out build/c27-arithmetic.json.zlib
+```
+
+The output is zlib-compressed JSON. `rows` uses exact integer endpoint
+pairs on the `grid_bits` dyadic grid; the two tail-bound fields use
+`tail_grid_bits`. Only the scalar table is supplied: no matrix sign,
+full infinite-tail certificate, Lean verification or RH conclusion is
+asserted. FLINT's documented APIs are
+[digamma/polygamma](https://python-flint.readthedocs.io/en/latest/acb.html)
+and its [ball-arithmetic contract](https://flintlib.org/doc/using.html).
+
+The saved `arithmetic-scalars.json.zlib` packet contains 1,284 rows. All
+rows agree exactly on the dyadic output grid between the 768-bit and
+1024-bit executions; the observed maximum interval width is one grid
+unit. Eight c3 diagonal samples and seven nonzero c3 symbol samples are
+contained in the older read-only scalar routines' intervals. Those calls
+check interface normalization only; the older certificate was not run.
+The retained packet SHA-256 is
+`f993be1aa48824cbf22276ac2d80e834ca9e54e4519e2040f437ebb4f724990f`.
