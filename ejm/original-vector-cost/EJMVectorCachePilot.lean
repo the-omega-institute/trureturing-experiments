@@ -92,8 +92,10 @@ theorem view_step (cache : VectorCache) (g : Fin 20) (a : Fin 4) :
   apply congrArg₂ Cache.mk
   · funext k
     simp only [view, step, EJMCacheState.step, Vector.getElem_mapFinIdx]
+    rfl
   · funext k
     simp only [view, step, EJMCacheState.step, Vector.getElem_mapFinIdx]
+    rfl
 
 theorem lower_view (cache : VectorCache) :
     lower cache = EJMCacheState.lower (view cache) := rfl

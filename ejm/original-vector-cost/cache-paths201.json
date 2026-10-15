@@ -130,5 +130,38 @@
     "Function-chain counts count one projected-state reconstruction per bound field, not duplication inside triangleStep/singletonStep.",
     "These structural counts justify a controlled representation experiment, not a speedup claim.",
     "All original node occurrences and four value branches are traversed; no acceptance is shared by shape."
-  ]
+  ],
+  "kernel_cost_comparison": {
+    "same_context": {
+      "index": 55,
+      "depth": 15,
+      "code": 0,
+      "fuel": 6,
+      "contexts": 201
+    },
+    "vector": {
+      "kernel_exit": 0,
+      "kernel_seconds": 11.699086,
+      "owned_peak_GiB": 3.597116,
+      "helper_sha256": "85a1eebb9c5d2b11667b24a321b95aad7a84a34aeaa09fd94fe2eb243abba77c",
+      "consumer_sha256": "a4587dc322ad915f0efc5c88eefdfe12d4b786ef0a2a5657c375b4fe46935a47",
+      "accepted_declarations": [
+        "check_view",
+        "view_pack",
+        "view_step",
+        "view_foldl",
+        "exact_original_context"
+      ],
+      "axiom_closure": "standard three axioms; accepted by coordinator"
+    },
+    "baseline_numeric": {
+      "kernel_exit": 0,
+      "kernel_seconds": 7.200382,
+      "owned_peak_GiB_rounded": 2.358,
+      "source_sha256": "f68c1c80a415c044111b429dc129cb9d19da8469c8f04db29b9b1009b17ee930"
+    },
+    "result": "Vector representation passed the same exact original-context kernel check but increased measured kernel time and owned memory. Structural counts are not measured kernel operations and did not predict a speedup.",
+    "source_fix": "Two Fin eta equalities in view_step required rfl after simp; exact accepted helper is preserved unchanged.",
+    "scope": "Bounded original 201-context experiment only; not complete global certificate acceptance."
+  }
 }
