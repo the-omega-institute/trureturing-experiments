@@ -760,3 +760,83 @@ The remaining target is a directed full retained-space test paying
 the errors after the same common-form congruence. Tiny midpoint
 eigenvalues require their own conditioning and enclosure analysis;
 the successful fixed-vector pilot does not settle them.
+
+## A directed obstruction to the fixed64-column certificate family
+
+`arb_inverse_residual_obstruction.py` reuses the complete scalar packets,
+the archived diagonal weights $W$, all168 far moments and the full1281
+coordinates of the64-column candidate. The exact direction and64-entry
+trial are in `inverse-residual-k64-candidate.json`. The direction is not
+truncated and no full retained Gram or new eigenvector is produced.
+
+Keep $E$ equal to the actual exterior columns1281 through1344. With
+$Z=HE$, $F=E^*HE$, $B=E^*C$, put
+
+$$
+G=C^*WC,\quad J=Z^*WC,\quad L=Z^*WZ,\quad K=L-F,\quad T=J-B.
+$$
+
+For the fixed dyadic direction $v$ and trial $x$, the existing residual
+identity gives
+
+$$
+m(x)=Q(v-Ex)-\|Cv-Zx\|_W^2
+=v^*(A-G)v+2\operatorname{Re}(x^*Tv)-x^*Kx.
+$$
+
+The first64 weighted exterior rows alone certify $K\succeq40I$.
+Their contribution is $F^*W_{64}F-F$; all omitted rows of $Z^*WZ$
+are positive semidefinite. FLINT encloses all64 eigenvalues of this
+finite lower matrix with real parts above40. Completing the square
+and using the same residual vector $r=Tv-Kx$ yields
+
+$$
+\begin{aligned}
+v^*(A-G+T^*K^{-1}T)v
+&=m(x)+r^*K^{-1}r\\
+&\le m(x)+\|r\|^2/40.
+\end{aligned}
+$$
+
+The directed calculation includes every middle row1281 through32768.
+It evaluates the far residual and its64 gradient components using the
+existing112-feature core, extended only through1344. The recomputed
+operator error $\varepsilon$ pays $\varepsilon\|v-Ex\|^2$ for the
+quadratic and $\varepsilon\|v-Ex\|$ for each gradient coordinate.
+The gradient is $Z^*W(Cv-Zx)-Bv+Fx=Tv-Kx$; the selected residual
+rows are included in this subtraction.
+
+The768-bit execution, with outward512-bit output intervals, gives
+
+| Quantity | Approximate enclosed value |
+|---|---:|
+| Fixed trial margin $m(x)$ | $-3.98277254117260544336127915956\times10^{-6}$ |
+| Residual correction $\|Tv-Kx\|^2/40$ | $1.671986500522932\times10^{-32}$ |
+| Upper bound for the optimized-family quadratic | $-3.98277254117260544336127914284\times10^{-6}$ |
+
+The last interval has strictly negative upper endpoint. Thus **every**
+matrix trial $X$ for this fixed $E,W$ fails to make $A-U(X)$ positive
+semidefinite: its quadratic on this same $v$ is at most the displayed
+optimized value. Improving the finite solve or changing coordinates
+cannot repair this specified family. A different $E$ or inverse
+majorant $W$ remains a separate task.
+
+The original complete Fourier/form identification, exterior domain and
+$H^{-1}\preceq W$ remain analytic premises. This excludes a sufficient
+lower-certificate family; it neither gives negative actual Weil energy
+nor determines the sign for128 exterior columns or RH. The experiment
+uses existing square completion, inverse-residual comparison and FLINT
+algorithms, without a new general theorem, originality or Lean claim.
+
+The packet is `inverse-residual-k64-obstruction.json`, SHA-256
+`d2a447699a7893be537c461bab3d43b619d0611d7dc90052fb9b9df571d4ca73`.
+
+```sh
+uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/arb_inverse_residual_obstruction.py --out build/c27-k64-obstruction.json
+```
+
+The optional `--propose` mode supplies only the64 trial coefficients for
+the fixed direction using NumPy. It requires the same pinned NumPy and
+threadpoolctl versions as the floating supplier above. Verification
+uses the saved exact trial and requires neither NumPy nor another
+full-space solve.
