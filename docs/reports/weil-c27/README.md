@@ -4485,3 +4485,33 @@ also do not exist:
 ```sh
 PYTHONDONTWRITEBYTECODE=1 UV_OFFLINE=1 uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/full_gamma_signed_mu.py --out /tmp/c27-signed-mu-abel-reproduction.json.zlib
 ```
+
+## Same-source signed mixed correction from the saved Gram
+
+[full_gamma_signed_correction.py](full_gamma_signed_correction.py) consumes
+the saved proxy interval and original physical Gram kernel, full112 short
+jet, inverse profiles and scalar/component bounds. For q=`D_inverse_difference`
+and p=`F_inverse_z`, lambda=q−p is supported on1281..2048. The original
+source identity is uF=u0+r_sm+Cphys*ell; the target is Bv=Cphys*t, with
+cached h=P0*t. The missing signed cross is
+nu=kappa*<Cphys*ell,Cphys*t>W, enclosed around kappa*a^T*K0*h,
+where a=P0*ell. The original physical `far_matrix_error` pays the cross
+error; it is read on its512-bit metadata grid, rather than replaced by
+the amplified complete allowance. The saved kernel is not assumed PSD.
+
+Two short calls to the existing signed source-power reducer supply a:
+even coefficients of (−1)^n*lambda_n and odd coefficients of
+−(−1)^n*lambda_n*s_mid_n, using its negative power ratio. All original
+kernel entries and right features are reused. The old primal Hmix bound
+and a positive lower bound on its symbol coefficient supply a lambda-l1
+upper without another absolute source reduction.
+
+The existing separate geometric/feature forward components also give
+a sharper proxy-forward allowance. The true full moment norm is read
+on its628-bit grid. The physical symbol-width premise is checked on
+all2049 rows; r2 is square-rooted at1024 bits before640-bit rounding,
+and its squared interval is retained separately on a1024-bit grid.
+The complete allowance for theta around saved I_mu+nu0 is
+kappa*(eps_sm*Ncap+P*eps_b_sharp)+kappa*eps_far*Zlambda*sqrt(Kphys)*LV.
+This replaces the earlier E_mu; I_mu already includes the proxy's
+source, symbol and Abel allowances.
