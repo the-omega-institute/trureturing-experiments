@@ -4690,3 +4690,112 @@ For an explicitly requested reproduction only, choose a fresh output:
 ```sh
 PYTHONDONTWRITEBYTECODE=1 UV_OFFLINE=1 uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/full_gamma_mixed_norm_reprice.py --out /tmp/c27-mixed-norm-reprice-reproduction.json.zlib
 ```
+
+## Saved signed-response joint bound and energy-only family
+
+[full_gamma_negative_index_joint.py](full_gamma_negative_index_joint.py)
+consumes saved scalar certificates only. It reuses the classical
+negative-index-one Schur inequality and scalar square completion; no
+source, feature, norm, signed pairing, derivative, Gram, inverse, trace
+or tail supplier is evaluated.
+
+Use the SAME $P=TRT^*\succeq0$, $Q_R=P-e_0e_0^*/\delta$,
+$y_0=\alpha_0\rho+\beta_J$, far row $f$ and signed
+$\vartheta_0=fQ_Ry_0^*$. For saved $\eta_{\rm up}<1$, set
+$\varepsilon=\eta/(1+\eta)$ and
+$Q_\varepsilon=(1-\varepsilon)P-e_0e_0^*/\delta\preceq Q_{\rm true}$.
+The saved whole interval $q_0$ and old finite derivative $d_0$ give
+
+$$
+\begin{aligned}
+b&=D_{\rm old}+\alpha_0^2/t_{\rm old}-q_0+\varepsilon r_0,\\
+g&=d_0-\alpha_0/t_{\rm old}-\varepsilon\rho Py_0^*,\\
+c&=q_0-D_{\rm old}+\vartheta_0-\alpha_0d_0
+-\varepsilon(\beta_J+f)Py_0^*.
+\end{aligned}
+$$
+
+Let $0<B\le b$, $G\ge|g|$, $M\ge|c|$ use the Cauchy bounds in the
+source. The positive far-row energy UPPER in these constants is frozen
+at the accepted new cap, including at the artificial energy LOWER
+endpoint. For every real $\alpha$, the paid comparison is bounded below
+by $D-kM^2/(Bk-G^2)$ when $Bk-G^2>0$, where $k=1/t$.
+
+Two specified interfaces are evaluated once: the accepted new fixed
+fee/coefficient, and an endpoint for the entire source-energy-only
+pricing rule. The latter uses the saved signed Hankel cross to obtain
+
+$$
+E_H=\left[\sqrt{\max(w_F\operatorname{cross}_{\rm lo}/4,0)}
+-\epsilon_{\rm sm,up}-H_{\rm new,up}\right]_+^2\le E_{\rm true}.
+$$
+
+The omitted exact principal diagonal is nonnegative. All three terms
+must use the same weighted norm. With the charge constant, original
+Bessel coefficients and $h$ endpoints fixed, both $D(E)$ and $k(E)$
+are nondecreasing in the source energy upper $E\ge E_{\rm true}$.
+An unrounded-budget reciprocal coefficient at $E_H$, rounded downward,
+therefore provides a lower endpoint. A positive endpoint floor excludes
+all real-$\alpha$ comparisons obtained solely by reducing that energy
+upper in this fixed pricing rule. It does not cover better independent
+charge terms, different budget formulas, sources or lifts. The formal
+endpoint need not itself be a legal source-energy cap.
+
+The fee is an upper defining the paid comparison, never a lower bound
+for an actual smaller charge. All inherited actual-form/domain,
+source/short/lift, reference inverse, component and physical-weight
+premises remain. Actual-center/full-border signs, good-block payment,
+retained/cofinal positivity, Robin and RH remain unresolved. There is no
+new generic theorem, algorithm, novelty or Lean-proof claim.
+
+The single fixed1024-working/640-export application uses no new matrix,
+norm, source, feature, derivative, signed-response, inverse, trace or
+tail supplier. Its64 source/input bindings agree at entry and prewrite;
+18 scalar intervals and14 exact rationals are retained. Stored assembly
+time is0.15059seconds; total time including serialization is0.18470seconds.
+
+| Bound or comparison | Directed value |
+|---|---:|
+| Timelike lower $B$ |>200.284690047319663558|
+| Pairing upper $G$ |<1139.054295521911259039|
+| Pairing upper $M$ |<161.346407789081724764|
+| Source-energy lower $E_H$ |>6.227486948459329823|
+| Fixed repriced rank denominator |>3787475.149285169293|
+| Fixed repriced all-real floor |>1.667100663167811801|
+| Energy-endpoint rank denominator |>3579664.592067604194|
+| Energy-endpoint all-real floor |>-1.473501281813134057|
+
+The current repriced fee/coefficient comparison is therefore strictly
+positive for EVERY real steering coefficient under its inherited
+interfaces. Computing a favorable derivative cannot make that specified
+paid comparison negative. This strengthens the preceding independent-cap
+test, whose negative lower floor left the same family unexcluded.
+It still supplies no lower bound for an actual smaller-fee center.
+
+The energy endpoint has a positive rank denominator, but its saved floor
+is negative. The sufficient endpoint test therefore does NOT exclude the
+whole fixed-budget energy-cap-only family. That negative lower bound is
+neither a realizable negative value nor a negative upper. The accepted
+actual energy now lies between the certified lower6.227486948459329823
+and upper6.766398882441490; a sharper SAME-source energy enclosure or a
+change to another charge/budget component can escape the scope of the
+fixed-recipe exclusion. No such escape or successful negative recipe is
+certified here. In particular independent triangle bounds do not supply
+the signed principal/mixed correlation needed to sharpen that enclosure.
+
+The [source](full_gamma_negative_index_joint.py) and [exact packet](full-gamma-negative-index-joint.json.zlib)
+retain packet SHA256
+`a7df6338b629e9dd791ac2914c8efc7f3ef3c69c20e562da0aa18067aa40728d`
+and source SHA256
+`9c84ee8891ccc7d9af9aeaa79b162e3c0854bf714badd9366607890aa8e345c3`.
+The exact packet endpoints and rational comparisons are authoritative.
+The two scalar applications use one common realization and frozen far-row
+upper; they are not a parameter scan. The actual good-block metric,
+full-border/cofinal positivity, Robin and RH remain unresolved. No Lean
+verification or new generic theorem is claimed.
+
+Reproduction in the pinned environment, with a fresh output:
+
+```sh
+PYTHONDONTWRITEBYTECODE=1 UV_OFFLINE=1 uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/full_gamma_negative_index_joint.py --out /tmp/c27-negative-index-joint-reproduction.json.zlib
+```
