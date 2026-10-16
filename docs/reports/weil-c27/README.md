@@ -3391,3 +3391,117 @@ positivity, Robin-tail, RH, generic novelty or Lean result follows.
 ```sh
 python3 docs/reports/weil-c27/full_gamma_surplus_budget.py --out build/c27-surplus-budget.json
 ```
+
+## A cached fixed-trial exclusion over the sufficient surplus interval
+
+[full_gamma_small_shift_exclusion.py](full_gamma_small_shift_exclusion.py)
+uses the stronger-base compression already defined above, with the
+SAME nineteen channels, $\rho=1/32$, $\overline W$, original exact384-bit
+$w_0$, lift $V$ and full unscaled $u=\mathcal Mw_0$. It tests the
+entire saved sufficient interval $0\le\tau\le t_{\rm cap}$; no new
+parameter, source or cutoff is selected.
+
+Let $a=a_{\max}<0$, $T=T_{\max}$ and $x_J$ denote the accepted
+negative-pivot decomposition and saved exact seventeen-vector for
+$\Sigma_{\max}$. This is the upper compression of the stronger
+base $\overline L$, not $\Xi$ or the actual old $\Sigma_*$. Put
+
+$$
+r=w_0^*R_JV,\qquad g_0=Tx_J+(\overline{b_{J,0}}/a)e_0.
+$$
+
+The same fixed trial's signed value at $b_J+\tau r$ differs from
+its old value by
+
+$$
+2\tau\Re(rg_0)+\tau^2|r_0|^2/a.
+$$
+
+Its far gradient is $g_\tau=g_0+\tau(\overline{r_0}/a)e_0$.
+Reuse the accepted square-completion coefficient $A_{\rm low}>0$,
+old penalty upper $P_0$ and old lower $L_0$ verbatim. For the SAME
+complete paid PSD far Gram $G$, choose a directed upper
+
+$$
+P_1\ge\kappa^2|r_0/a|^2G_{00}/A_{\rm low}.
+$$
+
+The $G$-metric triangle inequality bounds the new completed-square
+penalty by $(\sqrt{P_0}+\tau\sqrt{P_1})^2$. Thus
+
+$$
+\mathcal K_\tau+q_{\max}(\mathcal B_\tau V)
+\ge L_0+c_1\tau+c_2\tau^2,
+$$
+
+$$
+c_1\le h_{\rm low}+2\Re(rg_0)-2\sqrt{P_0P_1},\qquad
+c_2\le |r_0|^2/a-P_1.
+$$
+
+Here $\mathcal K_\tau=\mathcal K+\tau h$,
+$\mathcal B_\tau=\mathcal B+\tau w_0^*R_{\rm res}$, and the original
+far action is unscaled. The fixed-trial lower, actual common forms,
+comparison domains, complete far enclosure, same-source identity
+and sound cached intervals remain inherited conditions.
+
+| Accepted packet | Reused fields |
+|---|---|
+| full-gamma-baseline-gap.json.zlib | shifted negative pivot and gap coefficient, $A_{\rm low}$, $P_0$, $L_0$ |
+| full-gamma-actual-joint-lower.json.zlib | new_reference_profile, used as an exact fixed trial only |
+| joint-gamma-6765-rho32-v2-schur.json | reduced_schur_intervals, first row only |
+| full-gamma-lift-projection.json.zlib | lift_gram first row and complete far_gram_upper diagonal00 |
+| full-gamma-actual-channel-projection.json.zlib | actual_finite_row_on_lift, coordinate0 |
+| full-gamma-projection-upper.json.zlib | matrices.source_on_lift[0], the same source's $r$ |
+| full-gamma-surplus-budget.json | exact h_lower and admissible_parameter_upper |
+
+The program reconstructs only the needed first-row entries of
+$\Sigma_{\max}$, evaluates the new mixed scalar $rg_0$ and shifted
+far-penalty scalars, then exports downward coefficient endpoints.
+It does not repeat the old trial quadratic, old gradient energy,
+old penalty/lower, any source/action, inverse, solve, Gram, far
+producer or reference profile. The existing exact rational
+quadratic-minimum helper is reused after substituting
+$\tau=t_{\rm cap}s$, $0\le s\le1$. All input bytes are hash-pinned
+before and after consumption; output is exclusive and never overwrites
+an accepted packet. A failed prerequisite or nonpositive lower minimum
+stops without an automatic supplier, precision or parameter retry.
+
+The sole1024-bit application takes0.0113 seconds. Its640-bit outward
+enclosures and exact rational coefficients are in
+[full-gamma-small-shift-exclusion.json](full-gamma-small-shift-exclusion.json).
+The following displays are approximate; the JSON rational pairs define
+the actual lower polynomial and its minimum.
+
+| Quantity | Approximate value |
+|---|---:|
+| $L_0$ | $36.0446979705377$ |
+| $rg_0$ | $-954.862843927571$ |
+| $P_1$ | $8005.06261257558$ |
+| $c_1$ | $-1404.30017560541$ |
+| $c_2$ | $-32507.0069794674$ |
+| Minimum of the lower polynomial | $35.5140698387622$ |
+| Minimizing parameter | $t_{\rm cap}\approx0.000374611013884066$ |
+
+Under the stated premises, this gives
+$\mathcal K_\tau+q_{\max}(\mathcal B_\tau V)>35.514069$ throughout
+the interval. For every eligible rational $0<\tau\le t_{\rm cap}$
+and every positive $D\ge\mathcal K_\tau$, the one-negative-core
+criterion excludes PSD of
+$\Sigma_{\max}+(\mathcal B_\tau V)^*(\mathcal B_\tau V)/D$.
+Since this matrix dominates the compression of
+$\overline L+\mathcal B_\tau^*\mathcal B_\tau/D$, that specified
+lower update is also excluded. No1263good-block inverse upper is
+needed for this exclusion. The zero endpoint is the old construction.
+
+This leaves the earlier inconclusive $\ell$ packet unchanged and does
+not turn its lower relaxation into an actual signed-inverse upper.
+The budget interval is only sufficient; larger truly eligible shifts,
+other sources/bases/majorants and other constructions remain unexcluded.
+The rejected lower update can be dominated by a positive actual Weil
+operator. No actual Weil negativity, retained/cofinal positivity,
+Robin-tail, RH, generic novelty or Lean result is supplied.
+
+```sh
+PYTHONDONTWRITEBYTECODE=1 UV_OFFLINE=1 uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/full_gamma_small_shift_exclusion.py --out build/c27-small-shift-exclusion.json
+```
