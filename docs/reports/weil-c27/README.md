@@ -2982,3 +2982,59 @@ it supplies no new general theorem, algorithm or Lean verification.
 uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/full_gamma_two_source.py --out build/c27-two-source.json.zlib
 uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/full_gamma_two_source.py --precision 1536 --reuse-source docs/reports/weil-c27/full-gamma-two-source.json.zlib --out build/c27-two-source-independent.json.zlib
 ```
+
+## Calibrate a source quadratic before selecting a new direction
+
+`full_gamma_source_calibration.py` consumes only the accepted two-source
+row/charge, eighteen-coordinate compression, far Gram and exact reference.
+It tests a necessary small-matrix interface before constructing a whole-J
+source eigensolver. No old source action, scalar/channel supplier, inverse
+solve or optimizer runs.
+
+Keep the preceding $a,T,P,G,A,\kappa$, and let $R_{\rm ref}$ be the saved
+exact symmetric seventeen-dimensional reference. The new **linear** trial
+rule is $X=R_{\rm ref}T^*B^*$, with
+
+$$
+L=e_0e_0^*/a+TR_{\rm ref}T^*,\qquad
+Q=e_0e_0^*/a+T(2R_{\rm ref}-R_{\rm ref}PR_{\rm ref})T^*
+-\frac{\kappa^2}{A}L^*GL.
+$$
+
+For one rational midpoint model, exact FLINT rational arithmetic checks
+that the factored trial expression equals $K_J+BQB^*$. This is a different
+trial rule from the archived fixed rational trial; their certificates
+are not identified. The calibration scale is approximately36.04 and the
+preselected tolerance is $10^{-8}\max(1,\|C_{\rm ref}\|_{\max})$.
+
+| Evaluation on this same rational reference model | Measured maximum absolute error |
+|---|---:|
+| Ordinary doubles using the rounded **exact** $Q$ entries | $5.1006\times10^{89}$ |
+| Factored doubles computing $R_{\rm ref}T^*B^*$ | $1.4422\times10^{161}$ |
+| Factored doubles using rounded exact reference trial entries | $3.6005\times10^{87}$ |
+
+All three fail the gate. No eigensolver or new source selection follows.
+These are measurements for the recorded NumPy environment, not a
+universal instability theorem or actual matrix condition number.
+
+On the inherited640-bit input grid with1024 working bits, naive interval
+evaluation of the variable linear trial has maximum output width
+$1.7499\times10^{25}$; expanding through $Q$ gives
+$2.7353\times10^{79}$. Fixing the exact rational reference $X$ first gives
+width $1.4388\times10^{-27}$. **The last computation uses a different,
+fixed trial rule**: it shares the rational midpoint value but does not
+certify the variable-trial source operator. These widths measure the
+specified evaluation, rather than intrinsic uncertainty. The frozen
+trial calculation is an implementation option for a later certificate,
+not a guarantee that a useful new source can be selected.
+
+The canonical packet is `full-gamma-source-calibration.json.zlib`. It
+records source/input hashes, the exact identity check, all three errors,
+interval outputs, runtime versions and the failed calibration verdict.
+This numerical diagnostic changes no accepted exclusion and settles no
+new source space, actual Weil sign, cofinal positivity, Robin tail or RH.
+It supplies no new general theorem, algorithm or Lean verification.
+
+```sh
+uv run --no-project --python 3.13.12 --with python-flint==0.9.0 --with numpy==2.3.3 --with threadpoolctl==3.6.0 python docs/reports/weil-c27/full_gamma_source_calibration.py --out build/c27-source-calibration.json.zlib
+```
