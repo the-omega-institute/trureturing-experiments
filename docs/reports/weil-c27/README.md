@@ -3726,3 +3726,110 @@ output path. The second command consumes the saved153 masses directly.
 PYTHONDONTWRITEBYTECODE=1 UV_OFFLINE=1 uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/full_gamma_prime_potential_refined.py --out build/c27-prime-potential-refined.json
 PYTHONDONTWRITEBYTECODE=1 UV_OFFLINE=1 uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/full_gamma_prime_potential_resolvent.py --out build/c27-prime-potential-resolvent.json
 ```
+
+## Transport the comparison before solving another trial
+
+[full_gamma_shifted_projection_upper.py](full_gamma_shifted_projection_upper.py)
+consumes the accepted two-source projection upper $U_2$, original
+$r_V=w_0^*R_{\rm res}V$, true positive $h=w_0^*\mathcal Mw_0$
+enclosure and the conditional same-source1/48 resolvent budget.
+The existing rank-one inverse and inverse-projection facts give
+
+$$
+V^*(Q-R_{\rm res}^*\mathcal M_\tau^{-1}R_{\rm res})V
+\preceq U_{2,\tau}=U_2+\tau r_V^*r_V/h.
+$$
+
+Here $\mathcal M_\tau=\mathcal M+\tau uu^*/[h(1-\tau)]$ and
+$u=\mathcal Mw_0$ is the SAME full unscaled source. Every admitted
+inverse-majorant/residual-trial lower construction for this comparison
+is dominated by the left side. The inequality requires the inherited
+actual common inverse forms/domains, legal $E$ elimination, unitary
+identification, SAME short and sound common source/lift/full-far
+archives. A finite source projection does not truncate the exterior.
+
+In particular, transporting
+$\overline W_\tau=\overline W-\tau w_0w_0^*/h$ along with
+$w_\tau=(1-\tau)w_0$ preserves $\mathcal B$ and $\mathcal K$,
+while its base gains $\tau r^*r/h$. This lower dominates the
+held-majorant shifted-row construction. Both remain below the exact
+shifted comparison and hence below the displayed compressed ceiling.
+
+The new packet
+[full-gamma-shifted-projection-upper.json.zlib](full-gamma-shifted-projection-upper.json.zlib)
+uses1024-bit arithmetic and the existing640-bit entry grid, with
+11584-bit determinant export. Its one new determinant satisfies
+
+$$
+\det U_{2,1/48}<-4.93328\times10^{-1362}<0.
+$$
+
+Under the stated premises this excludes whole-retained positivity
+certification by the specified fixed $\mathcal M_{1/48}$ comparison,
+including both transported and held-majorant lower constructions.
+It is not actual Weil negativity. The run takes0.0286seconds, with
+no source/action, energy, projection, inverse, solve, Gram or far
+production. A new seventeen-dimensional trial is not needed and
+was not executed. No parameter/source/precision scan or retry occurs.
+No actual retained/cofinal positivity, Robin, RH, Lean or generic
+novelty conclusion follows.
+
+```sh
+PYTHONDONTWRITEBYTECODE=1 UV_OFFLINE=1 uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/full_gamma_shifted_projection_upper.py --out build/c27-shifted-projection-upper.json.zlib
+```
+
+### The entire supplied eligibility interval
+
+[full_gamma_shifted_projection_interval.py](full_gamma_shifted_projection_interval.py)
+uses only exact rational scalar arithmetic on the two archived
+zero/1/48 determinant enclosures and the saved resolvent upper
+$U_{\rm res}\ge p_v$. With the original directed $h_{\rm low}$,
+
+$$
+\tau_{\rm cap}=\frac{h_{\rm low}}{h_{\rm low}+U_{\rm res}}
+\approx0.0215048994247574
+$$
+
+supplies eligibility for every $0<\tau\le\tau_{\rm cap}$ under
+the SAME actual common-form/short/source premises. The resolvent
+bound concerns $p_v$ independently of the shift; its original target
+at1/48 does not restrict this implication to that single point.
+
+A rank-one determinant is affine even for a singular base. Thus
+$d(\tau)=\det(U_2+\tau r_V^*r_V/h)$ obeys
+
+$$
+d(\tau_{\rm cap})=(1-48\tau_{\rm cap})d(0)
+ +48\tau_{\rm cap}d(1/48).
+$$
+
+Because $\tau_{\rm cap}>1/48$, its directed upper uses the lower
+endpoint of $d(0)$ and the upper endpoint of $d(1/48)$. The maximum
+of the two endpoint uppers then bounds the full affine segment.
+The new packet
+[full-gamma-shifted-projection-interval.json](full-gamma-shifted-projection-interval.json)
+contains the exact cap and determinant bounds and certifies
+
+$$
+\sup_{0\le\tau\le\tau_{\rm cap}}d(\tau)
+<-4.36494\times10^{-1362}<0.
+$$
+
+The scalar run takes0.0145seconds, without any new determinant,
+inverse, solve, projection, source/action, energy, Gram or far supplier.
+Consequently the specified fixed-source $\mathcal M_\tau$ comparison
+cannot certify whole-retained positivity anywhere in this supplied
+interval. Numerical refinement of a residual trial inside the same
+comparison cannot alter that ceiling.
+
+This is a sufficient budget interval, not the largest actual capacity.
+It does not exclude larger actually eligible shifts, other update
+directions or changed comparison/support. All inherited actual
+inverse-form/domain, legal $E$, unitary/SAME-short/source/lift/full-far
+and sound-archive premises remain conditions. Actual retained/cofinal
+positivity, Robin and RH remain unresolved; no Lean or generic novelty
+is claimed.
+
+```sh
+PYTHONDONTWRITEBYTECODE=1 UV_OFFLINE=1 uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/full_gamma_shifted_projection_interval.py --out build/c27-shifted-projection-interval.json
+```
