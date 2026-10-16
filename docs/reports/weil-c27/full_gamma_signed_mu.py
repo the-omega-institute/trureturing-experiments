@@ -96,20 +96,21 @@ def source_polynomial(z, first_source, scale, order):
     return arb_poly(coefficients)
 
 
-def finite_functional(z, first_source, scale, apoly, bpoly, smooth, supplier, kappa, weight):
+def finite_functional(samples, scale, apoly, bpoly, smooth, supplier, kappa, weight):
     first, count = scale+1, scale
-    samples = reciprocal_sum_block(z, first_source, first, count)
+    if len(samples) != count:
+        raise ValueError('Incomplete saved finite reciprocal-sum block.')
+    require_finite(samples)
     xs = [arb(fmpq(scale, first+i)) for i in range(count)]
     squares = [x*x for x in xs]
     av = apoly.evaluate(squares, algorithm='iter')
     bv = bpoly.evaluate(squares, algorithm='iter')
     symbols = smooth.evaluate(xs, algorithm='iter')
     for u, w in supplier.primes.items():
-        phase = supplier.phase(u)
-        power = phase**first
+        angle_pi = 2*arb(fmpq(u.numerator, u.denominator)).log()/supplier.L
         for i in range(count):
-            symbols[i] -= w*power.imag
-            power *= phase
+            # Direct real sine avoids wrapping from repeated rectangular rotations.
+            symbols[i] -= w*((first+i)*angle_pi).sin_pi()
     require_finite(list(av)+list(bv)+list(symbols))
     brackets = [x*b-s*a for x, a, b, s in zip(xs, av, bv, symbols)]
     total = sum((s*bracket/(first+i) for i, (s, bracket)
@@ -117,7 +118,7 @@ def finite_functional(z, first_source, scale, apoly, bpoly, smooth, supplier, ka
     jet = [2*(-1)**(first+i)*bracket/(arb.pi()*(first+i))
            for i, bracket in enumerate(brackets)]
     require_finite([total]+jet)
-    return total, samples, jet
+    return total, jet
 
 
 def contracted_tail(source, apoly, bpoly, smooth, supplier, kappa, weight):
@@ -292,13 +293,28 @@ def consume(directory, out):
     apoly, bpoly = arb_poly(h[:56]), arb_poly(h[56:])
     print('fixed source-power order', order, 'real kernel limit', order+174,
           'oscillatory Lerch calls', 0, flush=True)
-    finite_mu, samples, finite_jet = finite_functional(
-        z, FIRST, M, apoly, bpoly, smooth, supplier, kappa, weight)
+    samples = reciprocal_sum_block(z, FIRST, M+1, M)
+    cauchy_export = [envelope(v, BITS) for v in samples]
+    if any(pair is None or int(pair[0]) > int(pair[1]) for pair in cauchy_export):
+        raise ArithmeticError('Invalid reciprocal-sum export; stop without retry.')
+    cauchy_path = out.with_suffix('.cauchy.zlib')
+    cauchy_packet = dict(schema='ACTUAL_C27_SIGNED_MU_CAUCHY_BLOCK_V1',
+        packet_sha256=PINS, source_sha256=guards[source], source_integer_sha256=identifier,
+        source_bits=384, source_row=0, grid_bits=BITS, working_bits=1024,
+        first_source_mode=FIRST, last_source_mode=M, physical_residual_last_mode=SPLIT,
+        finite_first_mode=M+1, finite_last_mode=2*M, normalization_scale=M,
+        finite_cauchy_source_outputs=cauchy_export,
+        output_basis='Cauchy=sum z_n/(m+n); q=D_inverse_difference, original w',
+        elapsed_seconds=time.monotonic()-started)
+    verify_guards(guards)
+    cauchy_sha = write_packet(cauchy_path, cauchy_packet)
+    print('Cauchy checkpoint saved', cauchy_path.name, cauchy_sha, flush=True)
+    finite_mu, finite_jet = finite_functional(
+        samples, M, apoly, bpoly, smooth, supplier, kappa, weight)
     print('finite signed functional enclosed; seconds', time.monotonic()-started, flush=True)
     print('finite_approximate_functional', finite_mu.str(24), flush=True)
-    cauchy_export = [envelope(v, BITS) for v in samples]
     jet_export = [envelope(v, BITS) for v in finite_jet]
-    if any(pair is None or int(pair[0]) > int(pair[1]) for pair in cauchy_export+jet_export):
+    if any(pair is None or int(pair[0]) > int(pair[1]) for pair in jet_export):
         raise ArithmeticError('Invalid finite-functional export; stop without retry.')
     checkpoint_path = out.with_suffix('.finite.zlib')
     checkpoint = dict(schema='ACTUAL_C27_SIGNED_MU_FINITE_BLOCK_V1', packet_sha256=PINS,
@@ -309,7 +325,8 @@ def consume(directory, out):
         jet_order=56, feature_order=jet['feature_order'],
         original_far_weight=[str(weight.p), str(weight.q)], kappa=[str(kappa.p), str(kappa.q)],
         finite_approximate_functional=envelope(finite_mu, BITS),
-        finite_cauchy_source_outputs=cauchy_export, finite_approximate_jet_outputs=jet_export,
+        cauchy_checkpoint=dict(path=cauchy_path.name, sha256=cauchy_sha),
+        finite_approximate_jet_outputs=jet_export,
         finite_output_basis='Cauchy=sum z_n/(m+n); approximate jet retains (-1)^m and exact2/pi',
         symbol_is_approximate=True, errors_paid_in_final_packet=True,
         elapsed_seconds=time.monotonic()-started)
@@ -337,8 +354,7 @@ def consume(directory, out):
     for key, value in scalars.items():
         print(key, value.str(24), flush=True)
         exports[key] = envelope(value, BITS)
-    if any(pair is None or int(pair[0]) > int(pair[1])
-           for pair in list(exports.values())+cauchy_export+jet_export):
+    if any(pair is None or int(pair[0]) > int(pair[1]) for pair in exports.values()):
         raise ArithmeticError('Invalid actual-functional export; stop without retry.')
     upper_negative = bool(center.upper() < 0)
     verdict = ('negative-upper-before-good-block-metric' if upper_negative else
@@ -363,11 +379,13 @@ def consume(directory, out):
         feature_order=jet['feature_order'], scalar_bounds=exports,
         exact_rationals={k: [str(v.p), str(v.q)] for k, v in rationals.items()},
         finite_checkpoint=dict(path=checkpoint_path.name, sha256=checkpoint_sha),
+        cauchy_checkpoint=dict(path=cauchy_path.name, sha256=cauchy_sha),
         real_hurwitz_kernels={str(p): envelope(v.real, BITS)
                               for (p, u), v in supplier._kernels.items() if u == 1},
         certified_phase_gap_lower={u: envelope(gap, BITS) for u, gap in phase_gaps.items()},
         new_reciprocal_sum_convolutions=1, new_source_power_polynomials=1,
         new_scalar_tail_kernels=len(supplier._kernels), new_phase_initializations=len(supplier._phases),
+        new_direct_real_sine_evaluations=M*len(supplier.primes),
         new_oscillatory_lerch_kernels=0,
         new_cached_symbol_polynomial_productions=0, new_source_selections=0,
         new_reference_gram_trace_inverse_solve_calls=0, old_producers_replayed=0,
@@ -389,6 +407,8 @@ def consume(directory, out):
     verify_guards(guards)
     if hashlib.sha256(checkpoint_path.read_bytes()).hexdigest() != checkpoint_sha:
         raise RuntimeError('Finite checkpoint changed.')
+    if hashlib.sha256(cauchy_path.read_bytes()).hexdigest() != cauchy_sha:
+        raise RuntimeError('Cauchy checkpoint changed.')
     write_packet(out, result)
     print(verdict, 'seconds', result['elapsed_seconds'], flush=True)
 
@@ -398,7 +418,8 @@ def main():
     parser.add_argument('--input-dir', type=Path, default=HERE)
     parser.add_argument('--out', type=Path, required=True)
     args = parser.parse_args()
-    if args.out.exists() or args.out.with_suffix('.finite.zlib').exists() or args.out.suffix != '.zlib':
+    if (args.out.exists() or args.out.with_suffix('.finite.zlib').exists()
+            or args.out.with_suffix('.cauchy.zlib').exists() or args.out.suffix != '.zlib'):
         parser.error('Use a fresh .zlib output; old archives are never overwritten.')
     ctx.prec = 1024
     consume(args.input_dir.resolve(), args.out)
