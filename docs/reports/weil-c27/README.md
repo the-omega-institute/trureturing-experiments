@@ -2644,7 +2644,9 @@ this projection supplies the actual finite channel information instead
 of assigning that entire error envelope to every direction.
 
 The packet preserves $F_\phi$, $\eta$, $A_\rho^{-1}F_\phi^*$ and $b_J$.
-The far mixed row and the good-block inverse metric remain unsupplied.
+The packet supplies the finite channel data. The joint lower consumer
+below controls the far terms through a common-source bound and uses
+only nonnegativity of the good-block metric.
 All conclusions inherit the actual common-form/domain,
 inverse/comparison, channel-definition and sound-cache premises. This
 is a new functional of the fixed source using existing channel formulas,
@@ -2652,4 +2654,109 @@ not a new generic method, Lean proof or retained/cofinal/RH result.
 
 ```sh
 uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/full_gamma_actual_channel_projection.py --out build/c27-actual-channel-projection.json.zlib
+```
+
+## The actual source excludes the fixed old-base rank-one lower update
+
+`full_gamma_actual_joint_lower.py` uses the actual finite row $b_J$
+above, the saved exact seventeen-dimensional reference inverse and
+the accepted old far trace. Its new exact profile applies that inverse
+to the new finite row; no inverse, solve, prior consumer or scientific
+producer runs. The positive-complement residual certificate gives
+
+$$
+q_J=b_J\Sigma_*^{-1}b_J^*,\qquad
+-120.742435<q_J<-120.742434.
+$$
+
+The new residual-energy ceiling is below $1.316\cdot10^{-55}$.
+This row differs from the earlier scalar-defect center, so its signed
+energy and gradient are newly contracted rather than copied from
+the older center certificate.
+
+Let $\kappa=1+\rho=33/32$, $s=\|u_{\rm far}\|_W^2\ge0$,
+$E_\phi=F_\phi A_\rho^{-1}F_\phi^*$ and
+$t=\kappa u_{\rm far}^*W_{\rm far}R_{\rm far}V$.
+The same actual common source satisfies
+
+$$
+\mathcal K=m_J-h+\kappa s-E_\phi,\qquad b=b_J+t.
+$$
+
+Keep the full signed far Gram and its entire allowance, denoted $G$.
+It majorizes $V^*R_{\rm far}^*W_{\rm far}R_{\rm far}V$.
+For $g=\Sigma_*^{-1}b_J^*$, weighted Cauchy gives
+
+$$
+|t_0|^2\le\kappa^2sG_{00},\qquad
+|tg|^2\le\kappa^2s\,g^*Gg.
+$$
+
+Using the accepted decomposition
+$\Sigma_*^{-1}=a^{-1}e_0e_0^*+TP_+^{-1}T^*$, $a<0$, and
+discarding only the nonnegative positive-complement part of the
+quadratic far error yields
+
+$$
+\mathcal K+\Gamma+q
+\ge m_J-h-E_\phi+q_J+A s-2B\sqrt{s},
+$$
+
+$$
+A=\kappa-\frac{\kappa^2G_{00}}{-a},\qquad
+B=\kappa\sqrt{g^*Gg},\qquad \Gamma\ge0.
+$$
+
+Here $A>0.7772979$. Completing the square in $\sqrt{s}$ gives
+$As-2B\sqrt{s}\ge-B^2/A$ for every $s\ge0$.
+
+To pay the new gradient without re-solving, use its new exact
+reference profile $x_J$, residual $r_J=h_J^*-P_+x_J$ and
+$g_J=(b_{J,0}/a)e_0+Tx_J$. The accepted far trace bounds
+
+$$
+\|C_t^{1/2}(g-g_J)\|\le\sqrt{\tau_tQ_J}.
+$$
+
+For the same fixed cap $E_M^0$ used in
+$C_t=\kappa^2E_M^0G$, the saved positive lower $E_{M,\rm low}$
+satisfies $E_M^0\ge E_{M,\rm low}$. Therefore
+
+$$
+B^2\le
+\frac{(\sqrt{g_J^*C_tg_J}+\sqrt{\tau_tQ_J})^2}
+{E_{M,\rm low}}.
+$$
+
+The1024-bit new contractions take0.108 seconds and give
+
+$$
+m_J-h-E_\phi+q_J>48.450729,\qquad B^2/A<10.153002,
+$$
+
+$$
+\boxed{\mathcal K+\Gamma+q>38.297727.}
+$$
+
+Under the inherited actual common-form/domain, inverse/comparison
+and sound-cache premises, this lower bound concerns the **actual
+fixed common source**, not the earlier zero-error relaxation.
+For every positive $D\ge\mathcal K$, it implies
+$D+\Gamma+q>0$. The accepted one-negative-core criterion consequently
+excludes PSD of the sufficient update
+$L_*+\mathcal B^*\mathcal B/D$ for this fixed OLD base $L_*$ and
+fixed saved dyadic dual $w$. The good-block inverse metric needs no
+new computation for this exclusion.
+
+The stronger base $Q-R^*\overline W R$, other dual directions and
+other lower constructions remain outside this exclusion. A matrix
+dominating this non-PSD lower bound can still be positive. This is
+not actual $S_N$ negativity or an RH counterexample. Actual full
+retained/cofinal positivity, the Robin tail and RH remain unresolved.
+The methods are existing inverse-residual certification, weighted
+Cauchy and square completion; no generic novelty or Lean proof is
+claimed.
+
+```sh
+uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/full_gamma_actual_joint_lower.py --out build/c27-actual-joint-lower.json.zlib
 ```
