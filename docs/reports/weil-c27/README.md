@@ -4179,3 +4179,63 @@ For an explicitly requested reproduction, choose a fresh output path:
 ```sh
 PYTHONDONTWRITEBYTECODE=1 UV_OFFLINE=1 uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/full_gamma_hankel_tail_energy.py --out /tmp/c27-hankel-tail-energy-reproduction.json.zlib
 ```
+
+## Fixed negative-channel envelope capacity
+
+[full_gamma_negative_channel_capacity.py](full_gamma_negative_channel_capacity.py)
+tests one fixed full-center UPPER-envelope package before supplying
+an actual signed far moment. It reuses the TRUE old18-core, its exact17
+reference inverse and certified Neumann bound, the complete paid far
+Gram and saved trace, the signed-tail energy/fee/cap, and original
+unphased384-bit row0. The legal coefficient is cap/h_upper; the old
+energy-cap lower used to normalize the trace is not an actual
+source-energy lower. The
+[owning application exposition](https://github.com/the-omega-institute/trureturing/blob/dev/Library/Weil/connesconsanimoscovici2026spectral.md#a-fixed-negative-channel-envelope-before-a-signed-far-functional)
+gives the block inverse decomposition and the directed endpoint rules.
+
+Three17-dimensional reference forms select one tail-independent64-bit
+dyadic alpha and price its positive channel. For that fixed direction,
+write the actual finite negative-channel response as lambda and the
+unknown far response as xi. The resulting upper envelope is
+Tbar-(lambda+xi)^2/delta, with |xi|<=Cminus. Its directed stopping
+floor uses delta_lower; the future sufficient response threshold uses
+delta_upper.
+
+The [saved packet](full-gamma-negative-channel-capacity.json.zlib),
+SHA256 `1487736c15e524c3b86859c3e427c85ccf3512659990597bb8199e882688b21e`,
+records one1024-working/640-export-bit run taking0.04108seconds:
+
+| Quantity | Approximate directed value |
+|---|---:|
+| Fixed alpha |0.0379872985139444681|
+| Legal t0 |0.0000333498575645498988|
+| Frozen positive envelope Tbar |911.633113280467383|
+| Finite negative-channel response lambda |9.64684697797322708e-15|
+| Allowed far-response radius Cminus |5.23550628472335536e-16|
+| Sufficient response magnitude upper |1.03616862656981840e-14|
+| Package stopping floor lower |33.3488964810889399|
+
+The strictly positive floor excludes strict negativity of this ONE
+fixed upper-envelope package for every far response allowed by its
+energy/Gram bounds. An actual signed xi alone therefore cannot make
+this package certify negativity; its prospective signed-tail supplier
+is not executed. Tighter coherent positive-channel pricing, another
+direction or another legal recipe is outside this exclusion. Even the
+most favorable separate endpoints were used for the stop, with no
+assertion that they share an actual realization.
+
+The packet pins ten accepted inputs, invoked local helpers and ten
+cached producer sources at entry and exit. No old producer or passed
+suite, inverse/solve, trace/Gram/source/far supplier or determinant is
+replayed, and there is no parameter/source/precision scan. Source and
+result reviews use new tiny implementation examples and thin scalar
+consumption only. This is a conditional cached-data application of
+standard block inverse, Loewner and norm inequalities, with no generic
+novelty or Lean claim. Actual full-border sign, the additional good-block
+metric, retained/cofinal positivity, Robin tail and RH remain unresolved.
+
+For an explicitly requested reproduction, use a fresh output path:
+
+```sh
+PYTHONDONTWRITEBYTECODE=1 UV_OFFLINE=1 uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/full_gamma_negative_channel_capacity.py --out /tmp/c27-negative-channel-capacity-reproduction.json.zlib
+```
