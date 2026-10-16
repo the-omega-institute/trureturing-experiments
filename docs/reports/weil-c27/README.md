@@ -4043,3 +4043,82 @@ actual retained/cofinal positivity, Robin-tail bound, RH or Lean result.
 ```sh
 PYTHONDONTWRITEBYTECODE=1 UV_OFFLINE=1 uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/full_gamma_finite_retained_row.py --out build/c27-finite-retained-row.json.zlib
 ```
+
+## Stop the fixed-charge true-old-base recipe before filling its metric
+
+[full_gamma_old_base_stop.py](full_gamma_old_base_stop.py) uses the TRUE
+old18-core $\Sigma_0$, the original unweighted source row $\rho=rV$,
+the finite row $\beta_J=b_JV$ and the cached exact17-coordinate trial
+$x$. It does not substitute the earlier compression upper
+$\Sigma_{\max}$. Its cached trial lower is valid for this exact $x$:
+the producer's positive variational lower was strictly positive, so
+the `max(0,trial)` clipping was inactive.
+
+Partition $\Sigma_0=\left(\begin{smallmatrix}a&c\\c^*&F\end{smallmatrix}\right)$,
+and reuse its certified inertia$(17+,1-)$. Choose exact rational values
+
+$$
+t_+=\tau_{\rm cap}/h_{\rm lower},\qquad
+\overline D=\operatorname{up}(\texttt{refined_common_charge_upper}).
+$$
+
+The first coefficient is an UPPER COMPARISON, not an eligibility claim.
+Every actual $t=\tau/h$ in the supplied band satisfies $0\le t\le t_+$.
+The only missing contractions restore
+
+$$
+g_0=\binom{(\beta_{J0}-cx)/a}{x},\qquad m=\rho g_0.
+$$
+
+With $\eta=1+t_+\rho_0^2/a>0$, the established fixed-trial identity gives
+
+$$
+q_{\mathrm{trial},t_+}
+=q_{\mathrm{trial},0}-t_+m^2/\eta,
+\qquad
+q_{\mathrm{trial},t_+}\ge
+q_{0,\mathrm{lo}}-\operatorname{up}(t_+m^2/\eta).
+$$
+
+The sole1024-working/640-export-bit run takes0.10488seconds:
+
+| Quantity | Approximate enclosure value |
+|---|---:|
+| $t_+$ |$2.5319197720691323970\times10^{-5}$|
+| $a+t_+\rho_0^2$ |$-4.47097042972572520\times10^{-32}$|
+| $\eta$ |0.379630426033288183|
+| $q_{0,\mathrm{lo}}$ |$-120.742434607587509$|
+| Transport loss upper |60.8094277285621680|
+| Transported trial lower |$-181.551862336149677$|
+| Fixed $\overline D$ |183.800677119682971|
+| Stopping margin lower |2.24881478353329417|
+
+The negative updated first pivot preserves exactly one negative core
+direction. The strict positive stopping margin makes the center-only
+two-row border positive definite; adding ANY PSD joint good-block
+metric preserves it. The existing inertia criterion therefore excludes
+PSD of the auxiliary target with zero PROJECTED far response. Target
+order extends the exclusion to all $0\le t\le t_+$ and
+$D\ge\overline D$ for that same recipe.
+
+The [saved directed packet](full-gamma-old-base-stop.json.zlib), SHA256
+`685d3535cfbc21f6ad3d03b04126d5250ff76570265fbf7f315ca741a6b45af3`,
+pins seven inputs, nine invoked source/helper files and seven cached
+producer sources. Only17+18 contraction terms are new. No producer,
+inverse, solve, trial quadratic, profile, Gram, source or far action is
+replayed, and no parameter/source/precision scan follows.
+
+An enlarged energy/Gram UPPER-only far-response relaxation that permits
+zero projected response cannot certify this fixed-charge recipe
+uniformly. Tighter upper envelopes that still permit zero do not remove
+this obstruction. Zero response is not identified with the actual
+fixed source. A source-specific signed/correlated far-charge estimate,
+a smaller valid denominator, or a stronger TRUE baseline can escape it.
+The actual source far completion, $D<\overline D$, retained/cofinal
+positivity, Robin tail, RH and Lean remain unresolved. This is a new
+cached-data application of established variational/inertia identities,
+not a new general method or a rerun of the unshifted exclusion.
+
+```sh
+PYTHONDONTWRITEBYTECODE=1 UV_OFFLINE=1 uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/full_gamma_old_base_stop.py --out build/c27-old-base-stop.json.zlib
+```
