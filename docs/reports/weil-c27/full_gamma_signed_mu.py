@@ -2,7 +2,8 @@
 
 Reuse the saved full56 short jet and all original source certificates.
 FLINT supplies reciprocal-sum convolution, polynomial evaluation and
-Lerch/Hurwitz kernels. Only the source-specific assembly and errors are new.
+real Hurwitz kernels. Abel summation bounds the oscillatory infinite tail.
+Only the source-specific assembly and errors are new.
 """
 import argparse
 from fractions import Fraction
@@ -133,12 +134,38 @@ def contracted_tail(source, apoly, bpoly, smooth, supplier, kappa, weight):
     # Arb comparisons are definite relations; only discard provably exact zeros.
     total = sum((v*supplier.kernel(p+2).real
                  for p, v in enumerate(f0.coeffs()) if not (v == 0)), arb(0))
-    for u, w in supplier.primes.items():
-        total += w*sum((v*supplier.kernel(p+2, u).imag
-                        for p, v in enumerate(f1.coeffs()) if not (v == 0)), arb(0))
     total *= kappa*weight/(arb.pi()*supplier.M)
-    require_finite([total])
-    return total
+    # For the exact unit phase xi != 1, Abel summation gives
+    # |sum_{m>=T} xi^m/m^q| <= 2/(|1-xi|*T^q), q>=2.
+    # Bound the SAME approximate-source F1; the old telescope is unchanged.
+    ratio = arb(fmpq(supplier.M, supplier.A))
+    coefficient_cap = sum((abs(v).upper()*ratio**p
+                           for p, v in enumerate(f1.coeffs())), arb(0)).upper()
+    phase_gaps, phase_cap = {}, arb(0)
+    for u, w in supplier.primes.items():
+        gap = abs(1-supplier.phase(u)).lower()
+        if not gap.is_finite() or not gap > 0:
+            raise ArithmeticError('Uncertified nontrivial unit-phase gap; stop without retry.')
+        phase_gaps[str(u)] = gap
+        phase_cap += abs(w).upper()/gap
+    oscillatory_error = freeze_upper(2*kappa*weight*coefficient_cap*phase_cap
+                                     /(arb.pi()*supplier.A**2))
+    require_finite([total, coefficient_cap, phase_cap, arb(oscillatory_error)])
+    return total, oscillatory_error, coefficient_cap, phase_cap, phase_gaps
+
+
+def verify_guards(guards):
+    for path, digest in guards.items():
+        if hashlib.sha256(path.read_bytes()).hexdigest() != digest:
+            raise RuntimeError('Read dependency changed: '+str(path))
+
+
+def write_packet(out, packet):
+    raw = zlib.compress(json.dumps(packet, separators=(',', ':'), allow_nan=False).encode(), 9)
+    out.parent.mkdir(parents=True, exist_ok=True)
+    with out.open('xb') as stream:
+        stream.write(raw)
+    return hashlib.sha256(raw).hexdigest()
 
 
 def error_contract(z_upper, jcap, principal, h_a, sigma, kappa, weight, scale):
@@ -263,15 +290,38 @@ def consume(directory, out):
     order, delta, beta, remainder = error_contract(
         z_upper, jcap, principal, h[:56], sigma, kappa, weight, M)
     apoly, bpoly = arb_poly(h[:56]), arb_poly(h[56:])
-    print('fixed source-power order', order, 'kernel limit',
-          (order+174)+len(supplier.primes)*(order+111), flush=True)
+    print('fixed source-power order', order, 'real kernel limit', order+174,
+          'oscillatory Lerch calls', 0, flush=True)
     finite_mu, samples, finite_jet = finite_functional(
         z, FIRST, M, apoly, bpoly, smooth, supplier, kappa, weight)
     print('finite signed functional enclosed; seconds', time.monotonic()-started, flush=True)
+    print('finite_approximate_functional', finite_mu.str(24), flush=True)
+    cauchy_export = [envelope(v, BITS) for v in samples]
+    jet_export = [envelope(v, BITS) for v in finite_jet]
+    if any(pair is None or int(pair[0]) > int(pair[1]) for pair in cauchy_export+jet_export):
+        raise ArithmeticError('Invalid finite-functional export; stop without retry.')
+    checkpoint_path = out.with_suffix('.finite.zlib')
+    checkpoint = dict(schema='ACTUAL_C27_SIGNED_MU_FINITE_BLOCK_V1', packet_sha256=PINS,
+        source_sha256=guards[source], source_integer_sha256=identifier,
+        source_bits=384, source_row=0, grid_bits=BITS, working_bits=1024,
+        first_source_mode=FIRST, last_source_mode=M, physical_residual_last_mode=SPLIT,
+        finite_first_mode=M+1, finite_last_mode=2*M, normalization_scale=M,
+        jet_order=56, feature_order=jet['feature_order'],
+        original_far_weight=[str(weight.p), str(weight.q)], kappa=[str(kappa.p), str(kappa.q)],
+        finite_approximate_functional=envelope(finite_mu, BITS),
+        finite_cauchy_source_outputs=cauchy_export, finite_approximate_jet_outputs=jet_export,
+        finite_output_basis='Cauchy=sum z_n/(m+n); approximate jet retains (-1)^m and exact2/pi',
+        symbol_is_approximate=True, errors_paid_in_final_packet=True,
+        elapsed_seconds=time.monotonic()-started)
+    verify_guards(guards)
+    checkpoint_sha = write_packet(checkpoint_path, checkpoint)
+    print('finite checkpoint saved', checkpoint_path.name, checkpoint_sha, flush=True)
     source_poly = source_polynomial(z, FIRST, M, order)
-    tail_mu = contracted_tail(source_poly, apoly, bpoly, smooth, supplier, kappa, weight)
+    tail_mu, osc_error, coefficient_cap, phase_cap, phase_gaps = contracted_tail(
+        source_poly, apoly, bpoly, smooth, supplier, kappa, weight)
     alg = finite_mu+tail_mu
-    mu = alg+arb(0, arb(remainder))
+    total_error = freeze_upper(arb(remainder)+arb(osc_error))
+    mu = alg+arb(0, arb(total_error))
     theta = mu+arb(0, arb(theta_error))
     center = arb(clin)+2*theta
     scalars = dict(finite_approximate_functional=finite_mu, tail_approximate_functional=tail_mu,
@@ -279,11 +329,14 @@ def consume(directory, out):
         center_upper_expression_before_good_metric=center, cached_source_l1_upper=arb(z_upper),
         source_tail_norm_error_upper=arb(delta), symbol_jet_norm_error_upper=arb(beta),
         functional_analytic_error_upper=arb(remainder), inherited_theta_error_upper=arb(theta_error),
+        oscillatory_tail_error_upper=arb(osc_error), complete_functional_error_upper=arb(total_error),
+        oscillatory_coefficient_cap=coefficient_cap, inverse_phase_gap_weight_cap=phase_cap,
         unchanged_strict_mu_threshold=arb(exact['strict_mu_upper_threshold']))
     require_finite(list(scalars.values()))
-    exports = {k: envelope(v, BITS) for k, v in scalars.items()}
-    cauchy_export = [envelope(v, BITS) for v in samples]
-    jet_export = [envelope(v, BITS) for v in finite_jet]
+    exports = {}
+    for key, value in scalars.items():
+        print(key, value.str(24), flush=True)
+        exports[key] = envelope(value, BITS)
     if any(pair is None or int(pair[0]) > int(pair[1])
            for pair in list(exports.values())+cauchy_export+jet_export):
         raise ArithmeticError('Invalid actual-functional export; stop without retry.')
@@ -295,9 +348,10 @@ def consume(directory, out):
         source_l1_upper=z_upper, jet_norm_upper=jcap, principal_norm_upper=principal,
         geometric_scalar_budget=GEOMETRIC_BUDGET, source_tail_norm_error_upper=delta,
         symbol_jet_norm_error_upper=beta, functional_analytic_error_upper=remainder,
+        oscillatory_tail_error_upper=osc_error, complete_functional_error_upper=total_error,
         inherited_theta_error_upper=theta_error, frozen_linear_envelope_upper=clin,
         strict_mu_upper_threshold=exact['strict_mu_upper_threshold'])
-    result = dict(schema='ACTUAL_C27_SAME_SOURCE_SIGNED_MU_V1', packet_sha256=PINS,
+    result = dict(schema='ACTUAL_C27_SAME_SOURCE_SIGNED_MU_ABEL_V1', packet_sha256=PINS,
         source_sha256=guards[source], invocation_source_sha256={
             p.name: sha for p, sha in guards.items() if p in invoked},
         inherited_dependency_sha256={p.name: sha for p, sha in guards.items() if p not in invoked},
@@ -308,10 +362,13 @@ def consume(directory, out):
         normalization_scale=M, jet_order=56, source_power_order=order,
         feature_order=jet['feature_order'], scalar_bounds=exports,
         exact_rationals={k: [str(v.p), str(v.q)] for k, v in rationals.items()},
-        finite_cauchy_source_outputs=cauchy_export, finite_approximate_jet_outputs=jet_export,
-        finite_output_basis='Cauchy=sum z_n/(m+n); approximate jet retains (-1)^m and exact2/pi',
+        finite_checkpoint=dict(path=checkpoint_path.name, sha256=checkpoint_sha),
+        real_hurwitz_kernels={str(p): envelope(v.real, BITS)
+                              for (p, u), v in supplier._kernels.items() if u == 1},
+        certified_phase_gap_lower={u: envelope(gap, BITS) for u, gap in phase_gaps.items()},
         new_reciprocal_sum_convolutions=1, new_source_power_polynomials=1,
         new_scalar_tail_kernels=len(supplier._kernels), new_phase_initializations=len(supplier._phases),
+        new_oscillatory_lerch_kernels=0,
         new_cached_symbol_polynomial_productions=0, new_source_selections=0,
         new_reference_gram_trace_inverse_solve_calls=0, old_producers_replayed=0,
         parameter_source_precision_cutoff_scan=False, actual_same_source_mu_supplied=True,
@@ -322,20 +379,17 @@ def consume(directory, out):
             'Finite Cauchy samples use ONE FLINT reciprocal-sum convolution, all q/w/h intervals and the SAME original source. Parities cancel in mu and the scalar prefactor is kappa*D/pi.',
             'The source1-norm cap is reused from the saved UNWEIGHTED gp_w/q_hankel_term=||w/q||1/(2sqrtM), not a weighted norm or energy lower bound.',
             'Only the tail m>=2M+1 uses the finite source expansion. Its norm error includes the principal factor1/2; actual jet norm <=Ncap+eps_b.',
-            'Cached smooth polynomial and832-grid uniform symbol error are reused. Only14 elementary prime-power weights,13 folded phases and new endpoint scalar kernels are initialized; no old polynomial or scalar supplier is replayed.',
-            'All kernels have q>=2 at endpoint65537 with normalizationM32768. Short polynomial contraction removes the long-source factor before Lerch/Hurwitz calls.',
-            'R_mu=kappa*(Jcap*delta_r+(P+delta_r)*beta_s) pays source-tail truncation and the global symbol error. I_alg +/-R_mu encloses actual mu; inheritedE_mu additionally encloses actual theta.',
+            'Cached smooth polynomial and832-grid uniform symbol error are reused. Only14 elementary prime-power weights,13 folded phases and real Hurwitz endpoint kernels are initialized; no old polynomial or scalar supplier is replayed.',
+            'All real kernels have q>=2 at endpoint65537 with normalizationM32768. No complex infinite phase kernel is evaluated. Every exact nontrivial unit phase has a certified positive gap.',
+            'For approximate-source F1, Abel summation gives Rosc=up640[2*kappa*D/(pi*T^2)*sum_p|F1_p|(M/T)^p*sum_u|a_u|/|1-xi_u|]. This bounds the omitted oscillatory tail of the SAME approximate functional.',
+            'R_mu=kappa*(Jcap*delta_r+(P+delta_r)*beta_s) still pays source-tail truncation and the global symbol error. I_alg +/-(R_mu+Rosc) encloses actual mu; inheritedE_mu additionally encloses actual theta.',
             'Saved finite jet outputs use the approximate symbol, not the actual far operator. Their complete symbol/forward errors remain paid only by the stated norm/error contract.',
             'Clin+2theta is the existing sufficient upper expression before the additional PSD good-block metric. A positive expression does not establish a positive actual center; a negative upper alone does not supply a full-border sign.'
         ], scope='Source-specific actual signed functional using existing FLINT algorithms and inherited certificates. No new generic algorithm or Lean theorem. Good-block metric, actual full-border sign, retained/cofinal positivity, Robin tail and RH remain unresolved.')
-    for path, digest in guards.items():
-        if hashlib.sha256(path.read_bytes()).hexdigest() != digest:
-            raise RuntimeError('Read dependency changed: '+str(path))
-    out.parent.mkdir(parents=True, exist_ok=True)
-    with out.open('xb') as stream:
-        stream.write(zlib.compress(json.dumps(result, separators=(',', ':'), allow_nan=False).encode(), 9))
-    for key, value in scalars.items():
-        print(key, value.str(24), flush=True)
+    verify_guards(guards)
+    if hashlib.sha256(checkpoint_path.read_bytes()).hexdigest() != checkpoint_sha:
+        raise RuntimeError('Finite checkpoint changed.')
+    write_packet(out, result)
     print(verdict, 'seconds', result['elapsed_seconds'], flush=True)
 
 
@@ -344,7 +398,7 @@ def main():
     parser.add_argument('--input-dir', type=Path, default=HERE)
     parser.add_argument('--out', type=Path, required=True)
     args = parser.parse_args()
-    if args.out.exists() or args.out.suffix != '.zlib':
+    if args.out.exists() or args.out.with_suffix('.finite.zlib').exists() or args.out.suffix != '.zlib':
         parser.error('Use a fresh .zlib output; old archives are never overwritten.')
     ctx.prec = 1024
     consume(args.input_dir.resolve(), args.out)
