@@ -1,0 +1,16 @@
+== (1) spectral identities and purity
+  n=5: a=0.689898 b=-0.126599 min eig rho_t=0.077526 purity-1/(n-1)=1.600e-09 formula match True
+  n=6: a=0.693713 b=-0.096856 min eig rho_t=0.061257 purity-1/(n-1)=5.144e-10 formula match True
+  n=7: a=0.696140 b=-0.078456 min eig rho_t=0.050643 purity-1/(n-1)=1.983e-10 formula match True
+  n=8: a=0.697822 b=-0.065941 min eig rho_t=0.043168 purity-1/(n-1)=8.719e-11 formula match True
+== (2) dual gap search: max <A, U B U*> over A in L2, Tr A = 1
+  n=5: largest value found 0.988699, gap 0.011301
+  n=6: largest value found 0.982928, gap 0.017072
+== (3) primal decompositions at n = 5, t = 1e-3
+  purity 0.250100 > 1/(n-1) = 0.250000
+  min slack over 31 unitaries (incl. the adversarial one): 1.314e-02
+== negative controls
+  (a) n=4: largest <A, U B U*> 0.999777, gap 2.23e-04
+  (b) pure state: min slack -2.644e+00 (negative: not 2-incoherent after a generic unitary)
+  (c) purity 0.2080 < 1/4: min slack 6.224e-01
+ALL_OK
