@@ -3505,3 +3505,96 @@ Robin-tail, RH, generic novelty or Lean result is supplied.
 ```sh
 PYTHONDONTWRITEBYTECODE=1 UV_OFFLINE=1 uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/full_gamma_small_shift_exclusion.py --out build/c27-small-shift-exclusion.json
 ```
+
+## The saved prime-potential step weight cannot meet the fixed1/48 budget
+
+[full_gamma_prime_potential_budget.py](full_gamma_prime_potential_budget.py)
+reuses the original weighted row and the complete source profile. Put
+$v=59/10-r_q$ and keep the SAME exterior form, $E$, $O$, full unscaled
+$u=\mathcal Mw_0$ and $h=w_0^*u>0$. Under the inherited common-domain
+identifications, $H_{\rm ext}-T\succeq\operatorname{mult}(v)$.
+For every admitted $f=e+y$, orthogonality and weighted Cauchy give
+
+$$
+|\langle u,y\rangle|^2\le p_v(H_{\rm ext}-T)[e+y],\qquad
+p_v=\int_I|u|^2/v.
+$$
+
+Taking the infimum over the finite $E$ coordinate gives
+$uu^*\preceq p_v\Pi$ for the SAME closed short. Multiplication by $v$
+need not preserve either Fourier subspace. This uses standard weighted
+Schur, Cauchy and form-short estimates; no new general theorem is claimed.
+
+The existing `high-floor.json` supplies26disjoint outward cells on
+$s=x/L\in[0,1]$. Its saved minimum $\mu_C$ lower-bounds $qv$,
+so the reused cell floor is
+
+$$
+v_C=\frac{\mu_C}{1+(29/50)(\sup C)^2},\qquad
+W|_{\pm LC}=v_C^{-1}\ge v^{-1},\qquad m=\max_Cv_C^{-1}.
+$$
+
+No old logarithm, prime, source/action, Gamma, inverse, solve, Gram
+matrix or far producer is repeated. The cached source uses the original
+unphased orthonormal cosine basis. FLINT polynomial convolution and
+autocorrelation retain both sum and difference frequencies through65536.
+All input coefficients remain interval balls. Rational-angle sine/cosine
+anchors and the addition formula in blocks of64 integrate the square on
+each saved cell at1024working bits, with640-bit outward exports. Exact
+endpoint primitives at0and1 retain the Parseval normalization. The new
+energy computation takes1.264seconds and has no parameter/cell/precision
+scan. The complete unknown far and its cross term are paid by the weighted
+triangle; no far phase or cancellation is assumed.
+
+| Quantity | Approximate value |
+|---|---:|
+| $\min_Cv_C$ | $0.00174356661223271$ |
+| $\|u_J\|^2$ | $1344.75921630745$ |
+| $a_1=\langle u_J,Wu_J\rangle$ | $656214.527747263$ |
+| $mU_F$ | $26846.3715529475$ |
+| $(\sqrt{a_1^{\rm up}}+\sqrt{mU_F})^2$ | $948518.835933079$ |
+| $47h$ | $50553.3119129287$ |
+
+The forward upper does not certify the preselected $\tau=1/48$.
+The exact data and all26cell energies are in
+[full-gamma-prime-potential-budget.json](full-gamma-prime-potential-budget.json).
+They also permit a stronger stop test without another Fourier calculation.
+
+[full_gamma_prime_potential_obstruction.py](full_gamma_prime_potential_obstruction.py)
+uses only exact rational postprocessing of these cells and the original
+complete far cap. Let $a_-$ be the sum of nonnegative lower cell-energy
+endpoints times $W_C$. Integer square roots certify
+
+$$
+\sqrt{a_-}\ge810,\qquad \sqrt{mU_F}\le164.
+$$
+
+The reverse weighted triangle therefore gives, for the SAME full source
+and every far phase satisfying its complete cap,
+
+$$
+\boxed{\int_IW|u|^2\ge(810-164)^2=417316>47h.}
+$$
+
+The comparison uses the archived upper endpoint for $h$, not its lower.
+The scalar-only application takes0.005seconds; its exact certificate is
+[full-gamma-prime-potential-step-obstruction.json](full-gamma-prime-potential-step-obstruction.json).
+Thus this exact saved26-cell step weight cannot supply the required
+multiplication-weight budget at1/48. More accurate integration or a sharper
+cross estimate with this same $W$ cannot remove that obstruction.
+
+This lower bound is for $\int W|u|^2$, not for $p_v\le\int W|u|^2$.
+It neither rejects the exact reciprocal potential, a different majorant,
+the optimal $\Pi$ budget nor actual Weil positivity. Actual common forms,
+source/far identity and sound saved intervals remain conditions. Eligibility
+with a different estimate, the actual good-block sufficient score, cofinal
+positivity, Robin tail and RH remain unresolved. No Lean or originality
+claim is supplied.
+
+```sh
+PYTHONDONTWRITEBYTECODE=1 UV_OFFLINE=1 uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/full_gamma_prime_potential_budget.py --out build/c27-prime-potential-budget.json
+PYTHONDONTWRITEBYTECODE=1 python3 docs/reports/weil-c27/full_gamma_prime_potential_obstruction.py --out build/c27-prime-potential-step-obstruction.json
+```
+
+The scalar consumer pins the published energy packet; its default input
+directory is the report directory. Both outputs must be fresh paths.
