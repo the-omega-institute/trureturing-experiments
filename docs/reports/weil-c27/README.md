@@ -4399,3 +4399,89 @@ For an explicitly requested reproduction, use a fresh output path:
 ```sh
 PYTHONDONTWRITEBYTECODE=1 UV_OFFLINE=1 uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/full_gamma_signed_jet_interface.py --out /tmp/c27-signed-jet-interface-reproduction.json.zlib
 ```
+
+## Same-source signed proxy with a bounded oscillatory tail
+
+[full_gamma_signed_mu.py](full_gamma_signed_mu.py) applies the existing
+FLINT reciprocal-sum convolution, iterative polynomial evaluation and
+real Hurwitz-zeta supplier to the original384-bit source and all112
+saved full56 jet coefficients. The source uses minus q on1281..2048
+with q=`D_inverse_difference`, and the original w on2049..32768. The
+normalization is M32768, the finite output block is32769..65536, and
+the analytic tail starts at65537. No source or direction is reselected.
+
+The scalar identity, source-power expansion, and complete source/symbol
+error telescope are in the owning
+[application exposition](https://github.com/the-omega-institute/trureturing/blob/dev/Library/Weil/connesconsanimoscovici2026spectral.md#enclose-the-same-source-signed-proxy-with-an-abel-tail-allowance).
+For F0=a_r[xB(x²)-C(x)A(x²)] and F1=a_r A(x²), only the F0 real Hurwitz
+tail is included in the computed center. Classical Abel summation
+bounds each omitted unit-phase tail by
+2*M^(q-1)/(|1-xi|*T^q). Positive phase gaps are certified, and the
+resulting Rosc is added to the original R_mu. The bound uses the SAME
+approximate sourceF1; no actual-source bound is substituted into a
+different telescope. All zero-crossing coefficient intervals remain.
+
+A fresh exclusive Cauchy checkpoint saves32768 reciprocal samples
+before finite-symbol evaluation, and a second checkpoint saves32768
+approximate-jet outputs before infinite-tail evaluation. Finite sine
+samples use FLINT real sin_pi(m*2log(u)/log27) directly, retaining
+interval uncertainty without rectangular rotation wrapping. The
+final archive references both checkpoints by SHA256 and saves the new
+real kernel intervals and certified phase-gap lower bounds for reuse.
+The finite approximate jet alone is not an actual-operator certificate;
+all symbol/forward errors remain paid in the final interval contract.
+
+The saved direct-sine/Abel application uses1024 working bits and640-bit
+exports, taking6.96478seconds. Its fixed source-power order is13;
+it evaluates186 real Hurwitz kernels,13 positive phase gaps and425984
+direct real sine samples. One reciprocal convolution supplies both
+the finite functional and the reusable Cauchy checkpoint.
+
+| Quantity | Approximate directed result |
+|---|---:|
+| Finite approximate functional |−2.266706962449528562|
+| Smooth tail center |−2.242939503220959819|
+| Algorithmic center |−4.509646465670488381|
+| Original source/symbol allowance R_mu |0.001800203553588446|
+| Omitted oscillatory allowance Rosc |0.000869186655284127|
+| Complete analytic allowance |0.002669390208872574|
+| Exported proxy I_mu |[−4.512315855885066397,−4.506977075455910365]|
+| Exported actual-theta enclosure |[−26.48108725775422862,17.46179432641325185]|
+| Existing Clin+2theta enclosure |[−27.43383853406987275,60.45192487268366729]|
+
+Decimals are approximate; exact grid intervals/rationals are authoritative.
+Arb radius construction conservatively inflates the exported intervals.
+The proxy interval does not meet the inherited threshold−34.73293944.
+Moreover, exact endpoint arithmetic gives Clin+2I_mu>16.5 throughout.
+Reducing the nonnegative transfer allowance E_mu alone, even to zero,
+cannot make this proxy-only sufficient upper test negative. This does
+not determine the actual center's sign. For delta=theta−mu, a sufficient
+new signed bound is sup(delta)<−Clin/2−sup(I_mu), approximately
+−8.25719097486802665. The inherited absolute delta bound does not
+supply that negative upper.
+
+The final [interval packet](full-gamma-signed-mu-direct-sine.json.zlib)
+has SHA256 `6475e5f63dba423b2f1ee7e488581f15ef8d53de83a22ea064ac2e393b124d55`.
+It references the [Cauchy checkpoint](full-gamma-signed-mu-direct-sine.json.cauchy.zlib),
+SHA256 `dbfedf8f55f74b4fa1659ff02e57559fea52e3250379c8f99ed1807ee91245f9`,
+and [finite-jet checkpoint](full-gamma-signed-mu-direct-sine.json.finite.zlib),
+SHA256 `43a29c6710cae4b4b7ad2fce9433ebba4ca0bdec9dfea968d668b13d3a469bc8`.
+
+
+All reported intervals retain the original same-source/lift/domain and
+component-bound premises. The complete sufficient center test still
+includes the inherited E_mu and the frozen Clin; the additional PSD
+good-block metric is separate. No positive sufficient upper expression
+is interpreted as a positive actual center. No full-border, retained
+or cofinal positivity, Robin-tail or RH result, new generic algorithm
+or Lean theorem is supplied. Old producers and passed suites are
+reused, with no reference/Gram/trace/inverse/solve, source, parameter,
+precision or cutoff scan.
+
+For an explicitly requested reproduction, choose a fresh final path
+whose corresponding `.finite.zlib` and `.cauchy.zlib` checkpoints
+also do not exist:
+
+```sh
+PYTHONDONTWRITEBYTECODE=1 UV_OFFLINE=1 uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/full_gamma_signed_mu.py --out /tmp/c27-signed-mu-abel-reproduction.json.zlib
+```
