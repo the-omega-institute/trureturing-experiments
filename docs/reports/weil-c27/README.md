@@ -1035,3 +1035,83 @@ uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/repo
 uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/structured_inverse_residual_interval.py --target docs/reports/weil-c27/structured-joint-2048-target.json.zlib --out build/c27-joint-reused-pivots.json
 uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/structured_residual_schur_finish.py --target docs/reports/weil-c27/structured-joint-2048-target.json.zlib --pivots docs/reports/weil-c27/structured-joint-2048-pivots.json --out build/c27-joint-dense-schur.json
 ```
+
+## Optimizing the768-column support still leaves an obstruction
+
+The preceding negative diagonal excludes one chosen trial, not all
+trials on that support. `structured_support_test.py` addresses the
+missing optimization using the existing square-completion argument
+already used for the64- and128-column families.
+
+Let $L_0$ be the saved complete target, with its1263-coordinate positive
+principal block $P$. Lift unresolved Schur coordinate0 as
+$(-P^{-1}be_0,e_0)$, then round the retained coefficients to exact
+256-bit dyadics. The complete1281-coordinate vector $v$ is stored in
+`support-2048-direction.json`; its exact mass is retained, with
+$\|v\|^2\simeq2.0458788430940653$. Its saved-target quadratic is strictly
+below $-5.77\times10^{-31}$. It is a new direction, distinct from the
+earlier128-column witness which the scalar enrichment repaired.
+
+Keep $V$ selecting modes1281–2048 and the same actual $H,C,W$. Put
+
+$$
+Z=HV,\quad F=V^*HV,\quad
+K=Z^*WZ-F,\quad t=Z^*WCv-V^*Cv.
+$$
+
+For $m(x)=Q(v-Vx)-\|Cv-Zx\|_W^2$ the existing identity gives
+
+$$
+\sup_xm(x)=m(x_0)+(t-Kx_0)^*K^{-1}(t-Kx_0)
+\le m(x_0)+16\|t-Kx_0\|^2.
+$$
+
+Here $K\succeq I/16$ is certified by768 positive pivots of the finite
+lower matrix formed using **all** middle rows1281–32768; the omitted
+actual far Gram is positive semidefinite. No positivity of the signed
+moment midpoint is used. Finite Gram generators use the same product
+rule as above, with selected rows overlapping the column set and
+their actual diagonals supplied separately.
+
+The expensive finite sums are archived in
+`support-2048-finite-action.json.zlib`. Alternative floor/optimization
+consumers use `--finite` and rescan no middle rows. The far consumer
+reuses all168 moments, the112-feature core and the already paid
+extended-support error from the original512-grid pivot packet.
+It pays $\varepsilon\|v-Vx_0\|^2$ for the quadratic and
+$\varepsilon\|v-Vx_0\|$ for each gradient coordinate. A finite solve
+only proposes $x_0$; the stored trial has768 exact384-bit dyadic
+coefficients, and the full residual comparison accepts the result.
+
+| Quantity on this same $v$ | Approximate enclosed value |
+|---|---:|
+| Fixed trial margin $m(x_0)$ | $-4.22459205900814696498591\times10^{-31}$ |
+| Optimizer correction bound on the stored grid | $\le2^{-512}<7.46\times10^{-155}$ |
+| Upper bound for $\sup_xm(x)$ | $-4.22459205900814696498591\times10^{-31}$ |
+
+The exact upper endpoint is below $-4.22\times10^{-31}$. Thus every
+trial matrix on this fixed768-column support, with this same $W$,
+fails to make its inverse-residual lower target positive semidefinite.
+This strengthens the preceding chosen-trial rejection; it neither
+gives negative actual Weil energy nor excludes other supports or
+inverse majorants. The same common-form/domain/inverse-comparison
+premises remain. Full positivity, cofinal positivity and RH are open;
+these quadratics are not normalized eigenvalues or Lean results.
+
+The result is `support-2048-optimized.json`. The new exact rational
+check includes overlapping row/column sets and the signed $K$-floor
+LDL correspondence. The saved direction, finite action and result
+allow later consumers to reuse all numerical production.
+
+```sh
+uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/structured_support_test.py --self-check
+uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/structured_support_test.py --candidate docs/reports/weil-c27/support-2048-direction.json --finite docs/reports/weil-c27/support-2048-finite-action.json.zlib --out build/c27-support-reused.json
+```
+
+Fresh direction/finite production, if required, uses `--prepare` and
+`--finite-out`; it does not regenerate old scientific packets:
+
+```sh
+uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/structured_support_test.py --prepare --out build/c27-support-direction.json
+uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/structured_support_test.py --candidate build/c27-support-direction.json --finite-out build/c27-support-finite.json.zlib --out build/c27-support-optimized.json
+```
