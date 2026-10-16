@@ -1335,3 +1335,112 @@ generators with `--produce --generator PATH`; do not repeat the
 unchanged residual-generator production. The two production inputs,
 corrected target/pivot/Schur packets, saved lift and dyadic-direction
 result retain their source hashes and parameter provenance.
+
+## Every trial on the same support with the changed Gamma comparison
+
+`gamma_support_optimization.py` tests the same complete saved dyadic
+direction against every trial on exterior modes1281–2048 with the
+changed nineteen-channel $W_{\rm G}$. It reuses the old finite support
+Gram, original complete target, residual generators, scalar rows and
+signed infinite far core. It produces only the missing $19\times768$
+finite projection $D_0=U_0^*W_0Z_0$ and two mixed inverse generators,
+where $Z=HE$. `gamma-support-6765-finite.json.zlib` archives these
+direction-independent actions for later consumers.
+
+Every middle row1281–32768 enters $D_0$, including the selected diagonal.
+Rows through4096 are direct. The384-term finite geometric expansion
+on the remaining rows has uniform ratio $2048/4097$; its absolute
+coefficient remainder is included. The cache's producer source hash
+is historical provenance; the subsequent consumer-only changes to
+the paid allowance and finite floor do not change its producer formulas.
+
+Let $Y_0=EF^{-1}B$, $F=E^*HE$, $R=C-HY_0$, $G_Z=Z_0^*W_0Z_0$,
+$V=F^{-1}G_E$, $\widetilde G_O=G_O-Z_0V$,
+$T_Z=Z_0^*W_0G_O$ and $T_R=R_0^*W_0\widetilde G_O$.
+The old $G_Z,V,T_Z,T_R$ and transformed retained generator $G_P$ are
+already saved. Only $V_A=F^{-1}(T_Z-G_ZV)$ needs two new right sides.
+The existing finite displacement identity gives
+
+$$
+(F^{-1}Z_0^*W_0R_0)_{mn}=\frac{\kappa}{m^2-n^2}
+\left[(V_A)_{m0}(G_P)_{n1}-(V_A)_{m1}(G_P)_{n0}
+ +V_{m0}(T_R)_{n1}-V_{m1}(T_R)_{n0}\right].
+$$
+
+Selected $m$ and retained $n$ are disjoint; no overlapping-node
+diagonal is inferred from this formula. The actual independent
+diagonals in $F$ and $G_Z$ remain intact.
+
+For $S_0=I+U_0^*W_0U_0$, dropping the complete nonnegative far
+square in the existing channel variational formula gives
+
+$$
+K_{\rm G}=Z^*W_{\rm G}Z-F
+\succeq K_{{\rm G},0}:=G_Z-F-D_0^*S_0^{-1}D_0.
+$$
+
+This keeps the joint channel dependence. The existing structured
+interval LDL certifies all768 positive pivots of
+$K_{{\rm G},0}-I/16$, using the rank19 update and independent
+diagonal. The old fixed-$W$ floor alone is not transferred through
+the negative channel update. The result packet saves the complete
+new pivot order and intervals.
+
+An exact384-bit dyadic correction $t_0$ is proposed by the changed
+finite normal system. For the unchanged complete retained $v$, put
+
+$$
+m_{\rm G}(t)=v^*Q_{Y_0}v+t^*Ft-\|Rv-Zt\|_{W_{\rm G}}^2,
+\qquad g_{\rm G}(t)=Z^*W_{\rm G}Rv-K_{\rm G}t.
+$$
+
+The old paid far allowance is added back as its full interval, on
+the original512-bit metadata grid; the matrix grid remains640 bits.
+The new far error is paid on the transformed original-column
+coefficient norm. The preceding Gamma gain bounds enclose the full
+ideal margin. For the gradient, the same Cauchy/resolvent estimates
+give $\|z_{\rm true}-z_0\|\le e+\delta\|z_0\|$ and
+$\|D_\infty\|\le\sqrt{\delta\operatorname{Tr}G_{Z,\infty}}$.
+The trace includes the signed far-core error. Both the finite $D_0$
+amplification and full far mixed action are paid; the archived
+extended-support error also pays $\sqrt{768}\varepsilon\|u\|$.
+
+The exact directed endpoints in `gamma-support-6765-optimum.json`
+give the rounded bounds
+
+$$
+-4.102\times10^{-32}<m_{\rm G}(t_0)<-3.652\times10^{-32},
+\qquad\|g_{\rm G}(t_0)\|<1.943\times10^{-17}.
+$$
+
+Existing square completion with the newly certified $1/16$ floor
+then yields
+
+$$
+\sup_t m_{\rm G}(t)
+\le m_{\rm G}(t_0)+16\|g_{\rm G}(t_0)\|^2
+<-3.04\times10^{-32}.
+$$
+
+Every trial on this same768-mode support therefore fails to certify
+this direction for this fixed $W_{\rm G}$, conditional on the existing
+actual common-form, selected-domain, comparison and sound enclosure
+premises. This includes every common linear trial on the same
+support. The optimized upper is a bound on the best sufficient
+target in this family, not a negative upper for the actual Schur
+form. Larger supports, additional channels and stronger inverse
+comparisons remain open. There is no new generic algorithm,
+literature-priority claim, Lean verification, full c27/cofinal
+positivity or RH proof.
+
+The cached consumer avoids all old scientific production:
+
+```sh
+uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/gamma_support_optimization.py --finite docs/reports/weil-c27/gamma-support-6765-finite.json.zlib --trial docs/reports/weil-c27/gamma-support-6765-optimum.json --out build/c27-gamma-support-check.json
+```
+
+`--trial` reuses the saved exact correction and revalidates the floor,
+margin and gradient without another proposal solve. Omit it only
+when a new proposal is needed. `--produce --out PATH` is reserved
+for a genuinely missing thin cache. The retained cache SHA256 is
+`63b908fee9a0ed4f3dfc3e5480d57fcb1678c0c03877c708c027fa1d1cbdff6f`.

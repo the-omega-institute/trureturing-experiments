@@ -19,7 +19,7 @@ from arb_inverse_residual_pilot import trial_integer
 from diagonal_floor_witness import interval_ball
 from gamma_boundary_update import boundary_columns, read_json
 from joint_gamma_boundary import matrix_in, matrix_out, original_target, write_packet
-from structured_inverse_residual_interval import envelope
+from structured_inverse_residual_interval import eliminate, envelope
 from structured_support_test import gram_from_generators
 
 
@@ -177,11 +177,38 @@ def consume(args):
     for i in range(S0.nrows()):
         S0[i, i] += 1
     S0invD = S0.solve(D0, algorithm='precond')
-    Kmid = Kfinite+PE.transpose()*core*PE-D0.transpose()*S0invD
-    gmid = finite_gradient+PE.transpose()*core*pr-D0.transpose()*S0.solve(beta_base, algorithm='precond')
-    proposed = Kmid.solve(gmid, algorithm='precond')
-    integers = [trial_integer(proposed[i, 0], args.trial_bits) for i in range(768)]
-    t = arb_mat([[arb(fmpq(x, 1 << args.trial_bits))] for x in integers])
+    floor = fmpq(1, 16)
+    S0inverse = S0.inv()
+    floor_generators = arb_mat([[GE[i, j] for j in range(2)]+[TZ[i, j] for j in range(2)]
+        +[D0[j, i] for j in range(19)]+[m*m*D0[j, i] for j in range(19)]
+        for i, m in enumerate(selected)])
+    floor_diagonal = [Kfinite[i, i]-sum((D0[j, i]*S0invD[j, i] for j in range(19)), arb(0))-arb(floor)
+                      for i in range(768)]
+    floor_verdict, failure, floor_pivots, floor_order = eliminate(
+        floor_diagonal, floor_generators, S0inverse, -kap, [m*m for m in selected],
+        pivoting='max-diagonal')
+    if floor_verdict != 'positive-pivots':
+        raise ArithmeticError(f'Changed finite Gamma K floor not certified: {floor_verdict} at {failure}.')
+    # Dropping the far squared residual before minimizing over channel z gives
+    # K_G >= GramZ0-F-D0* S0^-1 D0, so these finite pivots bound every trial.
+    trial_cache_hash = None
+    if args.trial:
+        previous, trial_cache_hash = read_json(args.trial)
+        if (previous['schema'], previous['metadata'], previous['finite_action_sha256'],
+                previous['direction_sha256']) != ('ACTUAL_C27_GAMMA_SUPPORT_OPTIMUM_V1',
+                provenance, action_hash, candidate_hash):
+            raise ValueError('Require a trial cache for these exact inputs and direction.')
+        integers = [int(x) for x in previous['trial_correction_integers']]
+        trial_bits = previous['trial_correction_bits']
+        if len(integers) != 768 or trial_bits < 64:
+            raise ValueError('Incomplete or invalid cached exact trial.')
+    else:
+        Kmid = Kfinite+PE.transpose()*core*PE-D0.transpose()*S0invD
+        gmid = finite_gradient+PE.transpose()*core*pr-D0.transpose()*S0.solve(beta_base, algorithm='precond')
+        proposed = Kmid.solve(gmid, algorithm='precond')
+        trial_bits = args.trial_bits
+        integers = [trial_integer(proposed[i, 0], trial_bits) for i in range(768)]
+    t = arb_mat([[arb(fmpq(x, 1 << trial_bits))] for x in integers])
     u_norm_sq = norm_v+sum(((base_x[i, 0]+t[i, 0])**2 for i in range(768)), arb(0))
     pu = pr-PE*t
     far_center = (pu.transpose()*core*pu)[0, 0]
@@ -211,7 +238,6 @@ def consume(args):
     z_error = e+delta*norm(z0)
     gradient = finite_gradient-Kfinite*t+PE.transpose()*core*pu-D0.transpose()*z0
     gradient_error = arb(768).sqrt()*epsilon*u_norm_sq.upper().sqrt()+norm(D0)*z_error+Dfar_norm*(norm(z0)+z_error)
-    floor = fmpq(1, 632)
     correction = (norm(gradient)+gradient_error)**2/arb(floor)
     optimal_upper = upper+correction
     verdict = ('all-trials-on-this-Gamma-support-excluded' if optimal_upper < 0 else
@@ -219,12 +245,18 @@ def consume(args):
     result = dict(schema='ACTUAL_C27_GAMMA_SUPPORT_OPTIMUM_V1', metadata=provenance,
                   finite_action_sha256=action_hash, direction_sha256=candidate_hash,
                   grid_bits=args.output_bits, working_bits=args.precision,
-                  trial_correction_bits=args.trial_bits, trial_correction_integers=list(map(str, integers)),
+                  trial_correction_bits=trial_bits, trial_correction_integers=list(map(str, integers)),
+                  trial_cache_sha256=trial_cache_hash,
+                  channel_trial_bits=args.trial_bits,
                   channel_trial_integers=list(map(str, zintegers)),
                   trial_base='Same exact Y0=E F^-1 B applied to the complete saved dyadic direction.',
                   trial_parameterization='y=Y0 v+E t; t is the saved exact dyadic correction.',
                   combined_norm_sq_upper=envelope(u_norm_sq.upper(), args.output_bits),
                   changed_K_floor=str(floor),
+                  changed_K_floor_method='Drop the nonnegative far channel residual, then apply the existing structured LDL to GramZ0-F-D0* S0^-1 D0-I/16.',
+                  changed_K_floor_positive_pivot_count=len(floor_pivots),
+                  changed_K_floor_pivot_order=[selected[i] for i in floor_order],
+                  changed_K_floor_pivot_intervals=[envelope(p, args.output_bits) for p in floor_pivots],
                   original_metadata_grid_bits=metadata_bits,
                   original_margin=envelope(qold, args.output_bits),
                   diagonal_margin=envelope(margin_W, args.output_bits),
@@ -240,7 +272,7 @@ def consume(args):
                   source_sha256=hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
                   conditions=['Same actual common form/domain, exterior and original orthonormal mass.',
                     'Existing Gamma boundary/diagonal inverse comparison and sound saved full target and extended-support far enclosure.',
-                    'G6 weighted prime slack gives H>=W^-1+UU*+I/632 and hence (HE)*W_G(HE)-E*HE>=I/632.'],
+                    'Finite Gamma shorting bound (HE)*W_G(HE)-E*HE>=GramZ0-F-D0* S0^-1 D0>=I/16, with all768 directed pivots positive.'],
                   scope='Changed nineteen-channel W_G, same selected768-mode support and one complete saved retained direction. '
                     'A negative optimal upper excludes all trials on this support for this W_G only; a positive lower repairs this direction only. '
                     'Neither sign determines the actual Schur form, cofinal positivity or RH. No old scientific producer or old fixed-W optimizer rerun; no Lean verification.')
@@ -259,6 +291,7 @@ def main():
     p.add_argument('--boundary', type=Path, default=HERE/'joint-gamma-6765-finite.json.zlib')
     p.add_argument('--direction', type=Path, default=HERE/'joint-gamma-6765-direction.json')
     p.add_argument('--finite', type=Path)
+    p.add_argument('--trial', type=Path, help='Reuse a matching saved exact trial without another proposal solve.')
     p.add_argument('--precision', type=int, default=1024)
     p.add_argument('--output-bits', type=int, default=640)
     p.add_argument('--trial-bits', type=int, default=384)
