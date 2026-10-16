@@ -1222,3 +1222,116 @@ Only when a fresh residual archive is required:
 ```sh
 uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/gamma_boundary_update.py --prepare --out build/c27-residual-action.json.zlib
 ```
+
+## A common Gamma update for every retained coefficient
+
+`joint_gamma_boundary.py` applies the existing positive Gamma channels
+and inverse-residual comparison to the original common exact trial
+$Y=EF^{-1}B$, not the saved scalar optimizer of the preceding section.
+The selected exterior modes are1281–2048, while all original retained
+modes0–1280 and every actual exterior row are preserved. The scalar
+rows, diagonal weights, complete old structured target,112-feature far
+covariance and its error bounds are reused.
+
+Write $R=C-HY$, $Q_Y=A-C^*Y-Y^*C+Y^*HY$ and
+$T_{\rm G}=Q_Y-R^*W_{\rm G}R\preceq S_N$. This ideal sufficient
+target is distinct from the actual Schur matrix. With the row split
+at32768, the new common projections are
+
+$$
+A_0=U_0^*W_0U_0,\qquad \Beta_0=U_0^*W_0R_0.
+$$
+
+`joint-residual-generators-2048.json.zlib` retains the previously
+unsaved two-generator residual action on rows2049–32768. It reuses the
+archived selected block, solves only two generator right sides, and
+uses direct rows through4096 and a384-term finite geometric expansion
+thereafter. Its absolute remainder and four direct geometric samples
+are included. `joint-gamma-6765-finite.json.zlib` retains the complete
+$19\times19$ Gram and $19\times1281$ thin projection. All31488 middle
+rows enter $A_0$, including the selected rows. The selected-row
+residual is exactly zero, so $\Beta_0$ uses the30720 outside rows.
+The512-term moment expansion has paid uniform remainder with ratio
+$1280/2049$. No old scalar or far-moment production is repeated.
+
+The actual far residual Gram has the existing complete majorizer
+$G_R=P^*KP+aI$. Only this sum, not the signed core alone, is used as
+an upper bound for the positive Gram. The Gamma far trace bound gives
+$U_\infty^*W_\infty U_\infty\preceq\delta I$, with
+$\delta\le0.000106746689$. For a common $\rho>0$, finite Cauchy and
+the existing variational inverse identity yield
+
+$$
+L_\rho=L_{\rm old}
++\Beta_0^*[I+A_0+(1+\rho^{-1})\delta I]^{-1}\Beta_0
+-\rho G_R\preceq T_{\rm G}\preceq S_N.
+$$
+
+The factor $1+\rho^{-1}$ pays both the mixed tail and the negative
+far-channel Gram. The signed structured kernel becomes
+$\operatorname{diag}((1+\rho)K,-[I+A_0+(1+\rho^{-1})\delta I]^{-1})$;
+the original four displacement generators and independent diagonal
+are preserved. This applies existing identities and algorithms to
+new thin data; it introduces no general inverse algorithm or
+literature-priority claim.
+
+The original target's matrix endpoints use a640-bit grid. Its
+allowance metadata uses the512-bit grid explicitly supplied by the
+original pivot packet. The new consumer validates the inherited
+metadata, decodes the two grids separately, and judges the same
+outward target it archives. The corrected `rho32-v2` packets below
+are the retained derived outputs.
+
+At $\rho=1/32$,1263 positive pivots are certified and the next interval
+contains zero at mode24. The existing validated dense finish leaves
+18 coordinates. Eigenvalue isolation is inconclusive; all18 reduced
+diagonal upper endpoints are nevertheless negative. One such
+endpoint rejects this lower target, without counting negative
+eigenvalues or determining actual Weil positivity.
+
+`structured_residual_schur_finish.py --actions-out PATH` saves its
+already computed positive-block inverse action. The consumer
+`joint_gamma_direction.py` uses that action at remaining mode0 to
+build a full exact256-bit dyadic direction, with squared norm
+approximately2.058687316. It repeats no dense solve or row production.
+For $\beta_0=\Beta_0v$, $S_0=I+A_0$, $E_v=v^*G_Rv$ and
+$e=\sqrt{\delta E_v}$, its independent gain bounds are
+
+$$
+2\Re z^*\beta_0-z^*S_0z-2e\|z\|-\delta\|z\|^2
+\le\beta^*S^{-1}\beta
+\le\beta_0^*S_0^{-1}\beta_0+2e\|\beta_0\|+e^2.
+$$
+
+The complete old target differs from the ideal old sufficient target
+by between zero and $2a\|v\|^2$. With that allowance included, the
+exact directed endpoints establish
+
+$$
+-1.18\times10^{-31}<v^*T_{\rm G}v<-1.14\times10^{-31}.
+$$
+
+The common-Young target on the same dyadic direction is approximately
+$-1.177716569\times10^{-31}$. Thus changing only $\rho$ or sharpening
+the tail payment cannot make this fixed $Y,W_{\rm G}$ target positive.
+This excludes the ideal sufficient target for this common trial,
+not all trials on the same selected support, additional Gamma
+channels, a sharper inverse majorant, the actual Schur matrix or RH.
+The preceding positive scalar repair uses a different direction and
+trial and remains valid. These results are conditional numerical
+applications under the existing actual form/domain and comparison
+premises, without Lean verification. Full c27 positivity and cofinal
+positivity remain unresolved.
+
+The retained inputs and consumers permit reuse without regeneration:
+
+```sh
+uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/joint_gamma_boundary.py --finite docs/reports/weil-c27/joint-gamma-6765-finite.json.zlib --target-out build/c27-joint-gamma-target.json.zlib --out build/c27-joint-gamma-pivots.json
+uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/joint_gamma_direction.py --lift-target docs/reports/weil-c27/joint-gamma-6765-rho32-v2-target.json.zlib --lift-pivots docs/reports/weil-c27/joint-gamma-6765-rho32-v2-pivots.json --actions docs/reports/weil-c27/joint-gamma-6765-rho32-v2-actions.json.zlib --out build/c27-joint-gamma-direction.json
+```
+
+Only when new channels require new thin projections, reuse the saved
+generators with `--produce --generator PATH`; do not repeat the
+unchanged residual-generator production. The two production inputs,
+corrected target/pivot/Schur packets, saved lift and dyadic-direction
+result retain their source hashes and parameter provenance.

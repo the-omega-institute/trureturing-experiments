@@ -82,6 +82,19 @@ def run(args):
     coupling = arb_mat([[target[i,j] for j in remaining] for i in prefix])
     small = arb_mat([[target[i,j] for j in remaining] for i in remaining])
     inverse_action = positive.solve(coupling,algorithm='precond')
+    if args.actions_out:
+        actions={
+            'schema':'ACTUAL_C27_SCHUR_LIFT_V1','N':N,'M':M,
+            'target_packet_sha256':target_hash,
+            'pivot_result_sha256':hashlib.sha256(pivot_raw).hexdigest(),
+            'positive_modes':prefix,'remaining_modes':remaining,
+            'grid_bits':args.output_bits,'working_bits':args.precision,
+            'inverse_action':[[envelope(inverse_action[i,j],args.output_bits)
+                               for j in range(inverse_action.ncols())]
+                              for i in range(inverse_action.nrows())],
+            'source_sha256':hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
+        }
+        args.actions_out.write_bytes(zlib.compress(json.dumps(actions,separators=(',',':')).encode(),9))
     small -= coupling.transpose()*inverse_action
     small = (small+small.transpose())/2
     print('validated dense Schur solve completed; remaining',len(remaining),
@@ -137,9 +150,10 @@ def main():
     parser.add_argument('--precision',type=int,default=768)
     parser.add_argument('--output-bits',type=int,default=640)
     parser.add_argument('--max-remainder',type=int,default=32)
+    parser.add_argument('--actions-out',type=Path,help='Archive the already computed lift for later exact directions.')
     parser.add_argument('--out',type=Path,required=True)
     args = parser.parse_args()
-    if args.precision < max(640,args.output_bits)+96 or args.out.exists():
+    if args.precision < max(640,args.output_bits)+96 or args.out.exists() or (args.actions_out and args.actions_out.exists()):
         parser.error('Use source/output guard bits and a fresh output path.')
     ctx.prec = args.precision
     run(args)

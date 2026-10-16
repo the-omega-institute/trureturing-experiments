@@ -117,6 +117,25 @@ def fibonacci_bins(last):
     return list(zip(endpoints,endpoints[1:]))
 
 
+def boundary_columns(arithmetic, bins, D):
+    """Actual finite boundary columns and their existing trace-tail allowance."""
+    c = [1-(-arb(fmpq(4*a+1,2))*arithmetic.d).exp() for a,_ in bins]
+    factors = [(c[k]/(b-a)/arithmetic.d).sqrt() for k,(a,b) in enumerate(bins)]
+    U = arb_mat(M-N,len(bins))
+    for i,m in enumerate(range(N+1,M+1)):
+        im = arithmetic.pi*m/arithmetic.d
+        values = {e:acb(arb(e)+arb(fmpq(1,4)),im).digamma().real
+                  for e in {x for ab in bins for x in ab}}
+        for k,(a,b) in enumerate(bins):
+            U[i,k] = (-1)**m*factors[k]*(values[b]-values[a])
+    # Each column has |U_m|<=a_k/m^2. The far Gram is bounded by its trace,
+    # not by an entrywise outer product; mixed tails use weighted Cauchy.
+    constants = [2*factors[k]*(b-a)*arb(fmpq(2*a+2*b-1,2))
+                 *(arithmetic.d/(2*arithmetic.pi))**2 for k,(a,b) in enumerate(bins)]
+    tail_energies = [D*t*t/(3*M**3) for t in constants]
+    return U,tail_energies
+
+
 def certify(args):
     started = time.monotonic()
     saved, _, _, _, weights, D, arithmetic, provenance = setup(args)
@@ -127,24 +146,11 @@ def certify(args):
     if len(r) != M-N:
         raise ValueError('Require the complete actual finite residual.')
     bins = fibonacci_bins(args.last_bin)
-    c = [1-(-arb(fmpq(4*a+1,2))*arithmetic.d).exp() for a,_ in bins]
-    factors = [(c[k]/(b-a)/arithmetic.d).sqrt() for k,(a,b) in enumerate(bins)]
-    U = arb_mat(M-N,len(bins))
-    for i,m in enumerate(range(N+1,M+1)):
-        im = arithmetic.pi*m/arithmetic.d
-        values = {e:acb(arb(e)+arb(fmpq(1,4)),im).digamma().real
-                  for e in {x for ab in bins for x in ab}}
-        for k,(a,b) in enumerate(bins):
-            U[i,k] = (-1)**m*factors[k]*(values[b]-values[a])
+    U,tail_energies = boundary_columns(arithmetic,bins,D)
     print('new thin boundary projections assembled; seconds',time.monotonic()-started,flush=True)
     WU = arb_mat([[weights[i]*U[i,k] for k in range(len(bins))] for i in range(M-N)])
     A = U.transpose()*WU
     beta = WU.transpose()*arb_mat([[x] for x in r])
-    # Each column has |U_m|<=a_k/m^2. The far Gram is bounded by its trace,
-    # not by an entrywise outer product; mixed tails use weighted Cauchy.
-    constants = [2*factors[k]*(b-a)*arb(fmpq(2*a+2*b-1,2))
-                 *(arithmetic.d/(2*arithmetic.pi))**2 for k,(a,b) in enumerate(bins)]
-    tail_energies = [D*t*t/(3*M**3) for t in constants]
     delta = sum(tail_energies,arb(0))
     far = interval_ball(saved['far_residual_energy'],saved['grid_bits'])
     if not far > 0:
