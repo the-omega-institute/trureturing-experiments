@@ -2351,11 +2351,12 @@ $$
 -586<q<388,\qquad -287<D_*+q<688.
 $$
 
-The sign remains inconclusive. The separate triangle bounds do not
+These separate bounds leave the sign inconclusive. They do not
 use every correlation between the negative coordinate and the
-positive-subspace errors already recorded in $C_f,C_t$. A useful
-joint signed estimate, or a sufficiently sharper common gain charge,
-is still needed; the good-block inverse metric is separately missing.
+positive-subspace errors already recorded in $C_f,C_t$. The joint
+signed estimate below uses these correlations to exclude the
+$D_*$-based sufficient update. A sharper common gain charge and the
+good-block inverse metric remain missing.
 Neither interval endpoint is claimed attainable. All results retain
 the inherited actual common-form/domain/inverse/comparison and
 sound-cache premises. Existing exact rational, inverse-residual and
@@ -2368,4 +2369,103 @@ Fresh-output usage:
 ```sh
 uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/full_gamma_directional_metric.py --out build/c27-directional-metric.json.zlib
 uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/full_gamma_reference_trace.py --out build/c27-reference-trace.json
+```
+
+## Use the negative/positive error correlations in the signed scalar
+
+`full_gamma_joint_sign.py` reuses the same center profile, residual
+energy ceiling $Q_c$, error traces $\tau_f,\tau_t$, and full shared
+Grams. It evaluates only thin quadratic products. For the exact
+center $\widehat b$, write
+
+$$
+q_c=\widehat b\Sigma_*^{-1}\widehat b^*
+=|\widehat b_0|^2/a+hP^{-1}h^*,\qquad
+g=\Sigma_*^{-1}\widehat b^*.
+$$
+
+Use the finite center coordinate here, not the full-row $b_0$ interval.
+The accepted exact reference profile gives
+
+$$
+g=g_x+TP^{-1}r_c,\qquad
+g_x=(\widehat b_0/a)e_0+Tx,\qquad
+r_c=h^*-Px,\quad r_c^*P^{-1}r_c\le Q_c.
+$$
+
+For the SAME actual PSD $C_j$, trace domination bounds the correction
+in its seminorm:
+
+$$
+\|C_j^{1/2}TP^{-1}r_c\|^2\le\tau_jQ_c,\qquad
+L_j:=\sqrt{(g_x^*C_jg_x)_{\rm up}}+\sqrt{\tau_{j,\rm up}Q_{c,\rm up}}.
+$$
+
+Thus each corresponding linear error has magnitude at most $L_j$.
+For $e=f+t$, the exact expansion is
+
+$$
+q(b)=q_c+2\operatorname{Re}(eg)+e\Sigma_*^{-1}e^*.
+$$
+
+The negative-pivot decomposition gives uniform quadratic-error bounds
+
+$$
+-\frac{(\sqrt{(C_f)_{00}}+\sqrt{(C_t)_{00}})^2}{-a}
+\le e\Sigma_*^{-1}e^*
+\le(\sqrt{\tau_f}+\sqrt{\tau_t})^2.
+$$
+
+All ceilings are directed, including the positive lower denominator
+$(-a)_{\rm lo}$. The estimates retain the shared negative/positive
+correlations in the linear contraction; they do not assume independent
+error optimizers are simultaneously attained.
+
+The1024-bit thin contraction takes0.021 seconds. It bounds the center
+signed energy near $-128.17372946339$, the total linear error by
+$62.805752720500$, and the quadratic error between
+$-28.404847233170$ and $29.517335427025$. Consequently
+
+$$
+\boxed{-219.39<q<-35.85},\qquad
+\boxed{79.76<D_*+q<263.30}.
+$$
+
+Independent1536-bit consumption takes0.017 seconds; all17 scalar
+interval pairs and the final $q$ interval are endpoint-identical.
+
+Under the inherited actual common-form/domain/inverse/comparison and
+sound-cache premises, this excludes the PARTICULAR $D_*$-based
+sufficient update for every $\Gamma\ge0$. It does not give a negative
+direction for the actual Schur form or exclude stronger gain charges.
+
+The negative upper for $q$ also supplies a concrete full-matrix budget.
+If new certified positive $D_\sharp\ge\mathcal K$ and
+$\Omega\ge\Gamma$ satisfy
+
+$$
+\boxed{D_\sharp+\Omega<35.85},
+$$
+
+the same block-inertia criterion makes that strengthened lower update
+positive definite, including all coupled coordinates. These two bounds
+are not supplied here. A known available refinement is
+
+$$
+\mathcal K\le D_*-F_\phi A_\rho^{-1}F_\phi^*.
+$$
+
+It is an inequality: $D_*$ is already a ceiling for
+$\delta+\rho\|u_{\rm far}\|_W^2$. A quantitative common-source
+channel-energy lower bound and the good-block metric remain missing.
+The exact common charge must not be replaced by $D_*$ in an equality.
+This is an application of existing quadratic expansion, trace and
+weighted Cauchy methods, with no generic novelty or Lean verification.
+Actual full retained/cofinal positivity, the Robin tail and RH remain
+unresolved.
+
+Fresh-output usage:
+
+```sh
+uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/full_gamma_joint_sign.py --out build/c27-joint-sign.json
 ```
