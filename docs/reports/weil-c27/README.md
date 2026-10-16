@@ -2883,3 +2883,102 @@ novelty or Lean proof is supplied.
 ```sh
 uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/full_gamma_baseline_gap.py --out build/c27-baseline-gap.json.zlib
 ```
+
+## One new coupled two-source space
+
+`full_gamma_two_source.py` and `full-gamma-two-source.json.zlib` extend
+the preceding fixed-source exclusion to one specified two-dimensional
+space. The old exact source $w_0$ and its actual effective action are
+read unchanged. The new exact512-bit dyadic source $w_1$ is proposed
+from $W_JR_JVe_0$, normalized by one power of two. The proposal is
+rounded once and then treated as an arbitrary exact finite trial,
+rather than the exact residual or an optimizer. Its integer-list
+SHA256 is `cc753399b62b568f700b6fbcac4bd4816dbedf37d70d421561f8d7b89c15fec8`.
+A nonzero exact two-coordinate minor certifies independence from $w_0$.
+Both sources have support $J=2049{:}32768$.
+
+Only $w_1$ needs new actual mixed actions, the corresponding two
+certified768-dimensional solves, $u_1=Mw_1$, a1281-coordinate common
+row and the original19-channel functional. The existing separated
+Cauchy projection and FLINT Toeplitz/Hankel adapter supply these
+actions. No old mixed solve, scalar table, old channel functional,
+moment, residual generator or floor is regenerated. The new common
+row is projected through every column of the saved exact18-column
+lift. Direct actual rows at1281,2048,32768 and the two independently
+computed selfadjoint crosses agree with their enclosures.
+
+Write $U=[u_0,u_1]$, $W_{\rm src}=[w_0,w_1]$ and
+$\Phi=U_J^*W_JU_{{\rm ch},J}$. With the same original19-channel
+inverse and map $\Beta_V$, retain the full joint matrices
+
+$$
+K_J=U_J^*W_JU_J-W_{{\rm src},J}^*U_J
+-\Phi A_\rho^{-1}\Phi^*,\qquad
+B=(U_J^*W_J-W_{{\rm src},J}^*)R_JV
+-\Phi A_\rho^{-1}\Beta_V.
+$$
+
+These include every source cross term. Use the preceding
+$\Sigma_{\max}$, its negative first pivot $a$, positive complement
+$P$ and elimination map $T$. Let $H=BT$, $B_0=Be_0$ and choose
+one exact17-by2 rational trial $X$ with the saved reference inverse.
+It is not an inverse action for the changed $P$. Put
+
+$$
+Q_X=B_0B_0^*/a+HX+X^*H^*-X^*PX,\qquad
+g=e_0B_0^*/a+TX,
+$$
+
+$$
+A=\kappa-\kappa^2G_{00}/(-a)>0,\qquad
+C=K_J+Q_X-\frac{\kappa^2}{A}g^*Gg.
+$$
+
+Here $G$ is the same full signed far Gram plus its entire allowance.
+For each coefficient vector $c$, the actual far row and far energy
+belong to the common source $W_{\rm src}c$. The existing variational
+inverse bound, weighted Cauchy and square completion therefore give
+the uniform matrix inequality
+
+$$
+K_{\rm actual}+B_{\rm actual}\Sigma_{\max}^{-1}B_{\rm actual}^*
+\succeq C.
+$$
+
+The far covariance is paid by this same-source inequality; it is not
+set to zero or replaced by independently optimized scalar gains.
+No numerical far profile of $u_1$ is required. The common domain
+must contain the entire source span and both actions must have finite
+weighted far energy; these remain explicit operator/model premises.
+
+The1024-bit application takes77.55 seconds and gives, approximately,
+
+$$
+C=\begin{pmatrix}
+36.0446979705376894&20.9502754574294758\\
+20.9502754574294758&12.1909310344309248
+\end{pmatrix}.
+$$
+
+The archived directed intervals, rather than this rounded display,
+certify its first pivot $>36.044697$ and second Schur pivot
+$>0.0139933305$. Thus $C\succ0$. For every positive-definite2-by2
+denominator $D\succeq K_{\rm actual}$, standard bordered-block inertia
+leaves one negative direction in
+$\Sigma_{\max}+B_{\rm actual}^*D^{-1}B_{\rm actual}$.
+Consequently the specified simultaneous two-source stronger-base
+update is not PSD. The uniform inequality also excludes every
+one-source combination from this span with its own admissible
+positive denominator.
+
+This conditional exclusion uses the same $\overline W$, support,
+nineteen channels, $\rho=1/32$ and two-sided far-error comparison.
+It excludes neither other dual spaces/majorants nor actual $S_N$
+positivity. Full retained/cofinal positivity, Robin tail and RH remain
+unresolved. This is an application with new actual-source data;
+it supplies no new general theorem, algorithm or Lean verification.
+
+```sh
+uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/full_gamma_two_source.py --out build/c27-two-source.json.zlib
+uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/full_gamma_two_source.py --precision 1536 --reuse-source docs/reports/weil-c27/full-gamma-two-source.json.zlib --out build/c27-two-source-independent.json.zlib
+```
