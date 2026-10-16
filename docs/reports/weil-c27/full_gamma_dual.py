@@ -274,9 +274,74 @@ def consume(args):
           'denominator', denominator.str(24), 'seconds', time.monotonic()-started, flush=True)
 
 
+def diagnose(args):
+    """Test whether this dual restriction already loses the known35 result.
+
+    Use the same exact w, v and archived support correction. The finite
+    T35 compression is inverted with the existing Woodbury identity.
+    No full-Gamma action, old optimizer or scientific producer is rerun.
+    """
+    started = time.monotonic()
+    arithmetic, _, pilot, _, _, selected, _, _, _, F, _, provenance = source_inputs(args)
+    saved, packet_hash = read_json(args.finite)
+    trial, trial_hash = read_json(args.proposal)
+    boundary, boundary_hash = read_json(args.boundary)
+    if (saved['metadata'], saved['proposal_sha256'], saved['boundary_sha256']) != (
+            provenance, trial_hash, boundary_hash):
+        raise ValueError('Require the same common dual action and exact proposal.')
+    bits = saved['grid_bits']
+    outside = list(range(saved['dual_first'], saved['dual_last']+1))
+    w = arb_mat([[arb(fmpq(int(x), 1 << saved['dual_bits']))] for x in saved['dual_integers']])
+    t = arb_mat([[arb(fmpq(int(x), 1 << trial['trial_correction_bits']))]
+                 for x in trial['trial_correction_integers']])
+    UE, UO = [proposal_channels(arithmetic, boundary['bins'], modes) for modes in (selected, outside)]
+    weights = [arb(fmpq(int(x), 1 << pilot['middle_weight_bits']))
+               for x in pilot['middle_weight_numerators']]
+    WUE = arb_mat([[weights[m-N-1]*UE[i, j] for j in range(UE.ncols())]
+                   for i, m in enumerate(selected)])
+    S = UE.transpose()*WUE
+    for i in range(S.nrows()):
+        S[i, i] += 1
+    uw = UO.transpose()*w
+    b = UE*uw
+    beta = (uw.transpose()*uw)[0, 0]+sum((w[i, 0]**2/weights[m-N-1]
+                                                       for i, m in enumerate(outside)), arb(0))
+    ft = -F*t
+    WG = arb_mat([[weights[m-N-1]*ft[i, 0], weights[m-N-1]*b[i, 0]]
+                  for i, m in enumerate(selected)])
+    inverses = WG-WUE*S.solve(UE.transpose()*WG, algorithm='precond')
+    inv_ft = arb_mat([[inverses[i, 0]] for i in range(len(selected))])
+    inv_b = arb_mat([[inverses[i, 1]] for i in range(len(selected))])
+    schur = beta-(b.transpose()*inv_b)[0, 0]
+    if not schur > 0:
+        raise ArithmeticError('Finite T35 dual Schur complement must be positive.')
+    Q, a = [interval_ball(saved[key], bits) for key in ('Q', 'a')]
+    z = matrix_in(saved['z'], bits)
+    residual = a-(z.transpose()*t)[0, 0]-(b.transpose()*inv_ft)[0, 0]
+    upper = Q+(t.transpose()*F*t)[0, 0]-(ft.transpose()*inv_ft)[0, 0]-residual**2/schur
+    known_upper = interval_ball(trial['updated_margin_upper'], trial['grid_bits']).upper()
+    result = dict(schema='ACTUAL_C27_DUAL_RESTRICTION_DIAGNOSTIC_V1', metadata=provenance,
+                  finite_action_sha256=packet_hash, proposal_sha256=trial_hash,
+                  grid_bits=args.output_bits, working_bits=args.precision,
+                  fixed_trial_restricted_T35_upper=envelope(upper, args.output_bits),
+                  archived_complete_T35_margin_upper=envelope(known_upper, args.output_bits),
+                  restriction_gap_lower=envelope(upper-known_upper, args.output_bits),
+                  verdict='this-dual-restriction-loses-the-known-certificate-gap' if upper > 0 and known_upper < 0 else 'inconclusive',
+                  source_sha256=hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
+                  elapsed_seconds=time.monotonic()-started,
+                  scope='Same v,w and cached t0; exact finite dual restriction for the already studied35-channel/pole T. '
+                    'Positive restricted upper at t0 prevents this one-w dual upper from excluding even that family, '
+                    'whose actual sufficient margin is independently bounded strictly negative. '
+                    'No actual Schur sign or conclusion about full-Gamma saturation.')
+    args.out.write_text(json.dumps(result, indent=2)+'\n')
+    print(result['verdict'], 'restricted fixed-trial upper', upper.str(24),
+          'known margin upper', known_upper.str(24), 'seconds', time.monotonic()-started, flush=True)
+
+
 def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument('--produce', action='store_true')
+    p.add_argument('--diagnose', action='store_true')
     p.add_argument('--target', type=Path, default=HERE/'structured-joint-2048-target.json.zlib')
     p.add_argument('--pivots', type=Path, default=HERE/'structured-joint-2048-pivots.json')
     p.add_argument('--support', type=Path, default=HERE/'support-2048-finite-action.json.zlib')
@@ -296,8 +361,10 @@ def main():
         p.error('Use a fresh output path and at least192 working guard bits.')
     if not args.produce and args.finite is None:
         p.error('A cached finite dual action is required for the consumer.')
+    if args.produce and args.diagnose:
+        p.error('Production and diagnosis are separate actions.')
     ctx.prec = args.precision
-    produce(args) if args.produce else consume(args)
+    produce(args) if args.produce else diagnose(args) if args.diagnose else consume(args)
 
 
 if __name__ == '__main__':
