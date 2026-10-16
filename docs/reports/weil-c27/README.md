@@ -3307,3 +3307,87 @@ or Lean result is supplied.
 ~~~sh
 uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/full_gamma_surplus_shift_gate.py --out build/c27-surplus-shift-gate.json.zlib
 ~~~
+
+## An admissible surplus interval from the same cached action
+
+[full_gamma_surplus_budget.py](full_gamma_surplus_budget.py) supplies
+the directional budget required by the preceding shift, under the
+inherited actual form/domain and sound-cache premises. It reuses
+the original unscaled $u=\mathcal Mw_0$; no action or energy is rerun.
+
+The complete identity $H-T=A_\Gamma-\Lambda-C_{\rm p}$ and the
+existing global weighted-prime slack give $H-T\succeq I/632$.
+Indeed $q(59/10-r_q)>1/400$, $q\le79/50$ and
+$\Lambda\preceq A_\Gamma-(59/10)I$ apply on the common form domain.
+Taking the infimum over the selected finite $E$ coordinate yields
+$\Pi\succeq I/632$ on $O$; a bound only on $D$ would not give this.
+
+The common-column packet already contains an enclosure of the SAME
+full action's middle weighted energy $E_J$ and an upper bound for its
+far weighted energy $E_F$.
+The far weight is the original positive CONSTANT
+$W_{\rm far}=D_{\rm far}I$. The pilot supplies $D_{\rm far}$ and
+all middle weights. With $w_{\min,J}=\min_{2049\le m\le32768}W_m$,
+
+$$
+\|u\|_2^2\le U_u:=\frac{E_J^{\rm up}}{w_{\min,J}}
++\frac{E_F^{\rm up}}{D_{\rm far}},\qquad
+uu^*\preceq U_uI\preceq p_{\rm up}\Pi,\qquad p_{\rm up}=632U_u.
+$$
+
+For the accepted directed $0<h_{\rm low}\le h$, define
+
+$$
+t_{\rm cap}=\frac{h_{\rm low}}{h_{\rm low}+p_{\rm up}}.
+$$
+
+Every fixed rational $0<t\le t_{\rm cap}<1$ then satisfies
+$p_{\rm up}\le h(1-t)/t$. This admits the stated
+$\mathcal M_t\preceq\mathcal A$ and
+$\mathcal M_t((1-t)w_0)=u$, while retaining the original unscaled far
+action. It is a sufficient interval, not a maximization of $t$.
+
+| Accepted packet | Fields consumed |
+|---|---|
+| full-gamma-common-column.json.zlib | bounds.middle_action_energy and bounds.far_action_energy_upper |
+| inverse-residual-pilot.json.zlib | middle_weight_numerators, middle_weight_bits and the exact constant far weight |
+| full-gamma-dual-32768-finite.json.zlib | original exact384-bit source and common metadata |
+| full-gamma-dual-32768-defect.json.zlib | same action/source correspondence |
+| full-gamma-primal-tail.json | provenance of the already paid weighted far energy |
+| full-gamma-projection-upper.json.zlib | matrices.source_gram[0][0] for $h$ and the same row0 source hash |
+
+The middle array starts at1281, so the $J$ slice begins at index768
+and has30720 entries. The program validates the exact packet pins,
+metadata edges and original source hash. All new arithmetic uses
+standard-library exact rational numbers; no precision parameter,
+solve, source/action, Gram, projection, tail producer or parameter
+scan is invoked. The output stores every scalar as a rational pair
+and one interior dyadic parameter, and refuses to overwrite an
+existing output. The new scalar conclusion is conditional on the
+actual common-form identification and accepted energy enclosures;
+those premises are not discharged by reading the archives.
+
+The canonical [full-gamma-surplus-budget.json](full-gamma-surplus-budget.json)
+records the scalar bounds and parameter. The exact rational outputs are displayed approximately below;
+the JSON pairs, rather than these rounded values, define the budget.
+
+| Quantity | Approximate value |
+|---|---:|
+| $U_u$ | $4541.41732972820$ |
+| $p_{\rm up}$ | $2870175.75238822$ |
+| $t_{\rm cap}$ | $0.000374611013884066$ |
+| Eligible exact interior example | $2^{-13}=1/8192$ |
+
+The sole exact scalar application takes0.1789 seconds. Its terminal
+verdict is conditional-positive-same-action-budget-interval. No
+second scientific execution or precision retry is performed.
+
+The earlier necessary-quadratic packet remains inconclusive and is
+not recomputed. Eligibility of a shift supplies no sign of $\ell$
+and no actual joint sufficient upper including $\Gamma_t$, the SAME
+actual complement and full far response. No actual retained/cofinal
+positivity, Robin-tail, RH, generic novelty or Lean result follows.
+
+```sh
+python3 docs/reports/weil-c27/full_gamma_surplus_budget.py --out build/c27-surplus-budget.json
+```
