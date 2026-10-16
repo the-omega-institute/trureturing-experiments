@@ -2145,3 +2145,110 @@ is claimed.
 ```sh
 uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/full_gamma_defect_cross.py --out build/c27-defect-cross.json
 ```
+
+## Contract the shared row uncertainty against the positive complement
+
+`full_gamma_correlated_sign.py` consumes the SAME OLD nineteen-channel
+base, its accepted inertia, and the defect-transported full common row.
+Write $b=\mathcal B_V$, and let
+$\Gamma=\mathcal B_GP_g^{-1}\mathcal B_G^*\ge0$ be the exact missing
+good-block metric. Standard bordered-matrix inertia gives, for $s>0$,
+
+$$
+\Sigma_*+b^*b/s\succ0
+\quad\Longleftrightarrow\quad s+q<0,
+\qquad q=b\Sigma_*^{-1}b^*.
+$$
+
+PSD corresponds to $s+q\le0$; exact equality leaves one zero eigenvalue.
+For the exact updated lower target $s=D_*+\Gamma$. Replacing $\Gamma$
+by a certified upper $\Omega$ gives a sufficient lower test; failure of
+that weaker test need not exclude the exact update. These are existing
+block-inertia/rank-one identities, not new general results.
+
+Partition the saved core at its negative first pivot:
+
+$$
+\Sigma_*=\begin{pmatrix}a&r^*\\r&H\end{pmatrix},\qquad
+P_+=H-rr^*/a\succ0,\qquad
+T_+=\binom{-r^*/a}{I_{17}}.
+$$
+
+Its accepted one-negative inertia supplies $P_+\succ0$, without an
+eigensolver or another determinant test. The scalar becomes
+
+$$
+q=|b_0|^2/a+(bT_+)P_+^{-1}(bT_+)^*.
+$$
+
+The consumer supplies the previously missing shared error Grams:
+with $Z=A_\rho^{-1}\Beta_V$ and $\widehat b=c-(\Beta_0v_0)^*Z/\vartheta$,
+
+$$
+b=\widehat b+f+t,\qquad
+f^*f\preceq C_f:=E_e\vartheta^{-2}Z^*A_0Z,\qquad
+t^*t\preceq C_t:=(1+\rho)^2E_MG_V.
+$$
+
+Here $\rho=1/32$, $A_0$ includes all middle rows, and $G_V$ retains
+the signed far core and the full allowance. Both inequalities concern
+components of the same actual row, with the inherited common-form,
+domain, inverse/comparison and sound-cache premises. No independent
+attainment of error extrema is assumed.
+
+One validated FLINT17-by17 solve with35 right-hand sides contracts
+the center and both transported Grams. Define
+
+$$
+n_c^2=(\widehat bT_+)P_+^{-1}(\widehat bT_+)^*,\qquad
+n_f^2=\operatorname{tr}(P_+^{-1}T_+^*C_fT_+),\qquad
+n_t^2=\operatorname{tr}(P_+^{-1}T_+^*C_tT_+).
+$$
+
+Weighted trace domination and the triangle/reverse-triangle bounds give
+
+$$
+\max(0,n_c-n_f-n_t)^2
+\le (bT_+)P_+^{-1}(bT_+)^*
+\le(n_c+n_f+n_t)^2.
+$$
+
+All endpoints are directed, and the negative term is evaluated as
+the interval $b_0^2/a$. The1024-bit consumption takes0.40 seconds.
+Its present enclosure is too wide to determine the sign:
+
+$$
+-792<q<1.043\times10^{25},\qquad
+-493<D_*+q<1.043\times10^{25}.
+$$
+
+These are outer enclosures, not attained extrema or evidence that the
+actual positive energy is large. In particular, neither a positive
+full-matrix metric budget nor failure of the exact lower update is
+certified. Independent1536-bit consumption gives the same inconclusive
+verdict: all648 Gram pairs and the four intervals for actual scalar
+quantities overlap. Of all17 scalar exports,9 overlap and6 are identical;
+the eight disjoint exports represent different computed bound values,
+not conflicting enclosures of an actual quantity. The center-energy
+width ratio is0.999999997454, so this comparison supplies no reason
+to repeat the same calculation at higher working precision.
+
+The new packet retains both shared Grams and the17 scalar intervals.
+The center-only energy interval is already broad before either trace
+radius is added. The observed data do not separate input uncertainty,
+conditioning, lost joint cancellations and solve overestimation; no
+condition number or spectral floor was measured. The minimal missing
+checkpoint is a useful joint certificate of $P_+x=(\widehat bT_+)^*$
+and $(\widehat bT_+)x$, with its directional residual/error bound.
+Tight center and error-trace bounds would then need to be combined
+with the good-block metric when required. Scalar noncancellation
+alone does not supply these quantities.
+This applies existing ball solves, inertia and weighted trace bounds.
+No large inverse, scientific producer, new generic theorem, Lean
+verification, actual Schur-sign or RH conclusion is supplied.
+
+Fresh-output usage:
+
+```sh
+uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/full_gamma_correlated_sign.py --out build/c27-correlated-sign.json
+```
