@@ -1,0 +1,78 @@
+=== value readouts first, exposure control last
+states=36  ordered pairs=1260  readouts=['shape', 'admission', 'resolution', 'utility', 'track', 'period']  task=downstream
+escape pairs under all readouts: 102/1260
+unique capture / leave-one-out escape:
+  shape       unique=  24  leave-one-out=126
+  admission   unique=  10  leave-one-out=112
+  resolution  unique=   0  leave-one-out=102
+  utility     unique=   0  leave-one-out=102
+  track       unique=  66  leave-one-out=168
+  period      unique=  12  leave-one-out=114
+layered spectrum (shape -> admission -> resolution -> utility -> track -> period):
+  layer 0 []: newly separated=0  remaining=1260
+  layer 1 ['shape']: newly separated=616  remaining=644
+  layer 2 ['shape', 'admission']: newly separated=126  remaining=518
+  layer 3 ['shape', 'admission', 'resolution']: newly separated=256  remaining=262
+  layer 4 ['shape', 'admission', 'resolution', 'utility']: newly separated=0  (collapsed)  remaining=262
+  layer 5 ['shape', 'admission', 'resolution', 'utility', 'track']: newly separated=148  remaining=114
+  layer 6 ['shape', 'admission', 'resolution', 'utility', 'track', 'period']: newly separated=12  remaining=102
+task on unresolved fiber: unordered pairs with different task value = 5 -> readouts not sufficient
+  fiber size  9: bind-only / open-problem-resolution only / Refuted / certified-instance / quick / late (2026-10-10..16)  PRs 15565,16709,16727,17178,17487,17489,17628,17653,17760  task [('no external D5 importer', 9)]
+  fiber size  5  MIXED: bind-only / open-problem-resolution only / Proved / none / deep / late (2026-10-10..16)  PRs 15354,16702,16902,17145,17605  task [('has external D5 importer', 1), ('no external D5 importer', 4)]
+  fiber size  3: content / open-problem-resolution only / Proved / none / quick / late (2026-10-10..16)  PRs 15193,16887,16949  task [('no external D5 importer', 3)]
+  fiber size  2: content / escape-witness + open-problem-resolution / Proved / none / unlabelled / early (2026-10-01..09)  PRs 12188,13245  task [('has external D5 importer', 2)]
+  fiber size  2  MIXED: bind-only / open-problem-resolution only / Proved / none / quick / late (2026-10-10..16)  PRs 16971,17778  task [('has external D5 importer', 1), ('no external D5 importer', 1)]
+  fiber size  1: content / open-problem-resolution only / Proved / none / unlabelled / early (2026-10-01..09)  PRs 11696  task [('no external D5 importer', 1)]
+  fiber size  1: bind-only / open-problem-resolution only / Proved / none / unlabelled / early (2026-10-01..09)  PRs 12833  task [('has external D5 importer', 1)]
+  fiber size  1: content / escape-witness only / none (library result) / none / unlabelled / early (2026-10-01..09)  PRs 13018  task [('has external D5 importer', 1)]
+  fiber size  1: bind-only / open-problem-resolution only / Refuted / certified-instance / deep / early (2026-10-01..09)  PRs 13409  task [('no external D5 importer', 1)]
+  fiber size  1: bind-only / open-problem-resolution only / Refuted / certified-instance / unlabelled / early (2026-10-01..09)  PRs 13680  task [('has external D5 importer', 1)]
+  fiber size  1: content / escape-witness only / Proved / checker / deep / early (2026-10-01..09)  PRs 14064  task [('no external D5 importer', 1)]
+  fiber size  1: content / open-problem-resolution only / Proved / none / deep / early (2026-10-01..09)  PRs 14159  task [('has external D5 importer', 1)]
+  fiber size  1: bind-only / open-problem-resolution only / Proved / none / quick / early (2026-10-01..09)  PRs 14605  task [('no external D5 importer', 1)]
+  fiber size  1: content / escape-witness + open-problem-resolution / Refuted / certified-instance / quick / late (2026-10-10..16)  PRs 15530  task [('has external D5 importer', 1)]
+  fiber size  1: bind-only / open-problem-resolution only / Refuted / certified-instance / deep / late (2026-10-10..16)  PRs 15993  task [('no external D5 importer', 1)]
+  fiber size  1: content / escape-witness + open-problem-resolution / Refuted / certified-instance / deep / late (2026-10-10..16)  PRs 16103  task [('no external D5 importer', 1)]
+  fiber size  1: content / escape-witness only / none (library result) / none / unlabelled / late (2026-10-10..16)  PRs 16361  task [('has external D5 importer', 1)]
+  fiber size  1: bind-only / open-problem-resolution only / Proved / none / unlabelled / late (2026-10-10..16)  PRs 16879  task [('no external D5 importer', 1)]
+  fiber size  1: content / open-problem-resolution only / Proved / none / deep / late (2026-10-10..16)  PRs 17103  task [('no external D5 importer', 1)]
+  fiber size  1: content / escape-witness + open-problem-resolution / Proved / none / quick / late (2026-10-10..16)  PRs 17791  task [('no external D5 importer', 1)]
+=== exposure control first
+states=36  ordered pairs=1260  readouts=['shape', 'admission', 'resolution', 'utility', 'track', 'period']  task=downstream
+escape pairs under all readouts: 102/1260
+unique capture / leave-one-out escape:
+  shape       unique=  24  leave-one-out=126
+  admission   unique=  10  leave-one-out=112
+  resolution  unique=   0  leave-one-out=102
+  utility     unique=   0  leave-one-out=102
+  track       unique=  66  leave-one-out=168
+  period      unique=  12  leave-one-out=114
+layered spectrum (period -> shape -> admission -> resolution -> utility -> track):
+  layer 0 []: newly separated=0  remaining=1260
+  layer 1 ['period']: newly separated=520  remaining=740
+  layer 2 ['period', 'shape']: newly separated=336  remaining=404
+  layer 3 ['period', 'shape', 'admission']: newly separated=62  remaining=342
+  layer 4 ['period', 'shape', 'admission', 'resolution']: newly separated=174  remaining=168
+  layer 5 ['period', 'shape', 'admission', 'resolution', 'utility']: newly separated=0  (collapsed)  remaining=168
+  layer 6 ['period', 'shape', 'admission', 'resolution', 'utility', 'track']: newly separated=66  remaining=102
+task on unresolved fiber: unordered pairs with different task value = 5 -> readouts not sufficient
+  fiber size  9: bind-only / open-problem-resolution only / Refuted / certified-instance / quick / late (2026-10-10..16)  PRs 15565,16709,16727,17178,17487,17489,17628,17653,17760  task [('no external D5 importer', 9)]
+  fiber size  5  MIXED: bind-only / open-problem-resolution only / Proved / none / deep / late (2026-10-10..16)  PRs 15354,16702,16902,17145,17605  task [('has external D5 importer', 1), ('no external D5 importer', 4)]
+  fiber size  3: content / open-problem-resolution only / Proved / none / quick / late (2026-10-10..16)  PRs 15193,16887,16949  task [('no external D5 importer', 3)]
+  fiber size  2: content / escape-witness + open-problem-resolution / Proved / none / unlabelled / early (2026-10-01..09)  PRs 12188,13245  task [('has external D5 importer', 2)]
+  fiber size  2  MIXED: bind-only / open-problem-resolution only / Proved / none / quick / late (2026-10-10..16)  PRs 16971,17778  task [('has external D5 importer', 1), ('no external D5 importer', 1)]
+  fiber size  1: content / open-problem-resolution only / Proved / none / unlabelled / early (2026-10-01..09)  PRs 11696  task [('no external D5 importer', 1)]
+  fiber size  1: bind-only / open-problem-resolution only / Proved / none / unlabelled / early (2026-10-01..09)  PRs 12833  task [('has external D5 importer', 1)]
+  fiber size  1: content / escape-witness only / none (library result) / none / unlabelled / early (2026-10-01..09)  PRs 13018  task [('has external D5 importer', 1)]
+  fiber size  1: bind-only / open-problem-resolution only / Refuted / certified-instance / deep / early (2026-10-01..09)  PRs 13409  task [('no external D5 importer', 1)]
+  fiber size  1: bind-only / open-problem-resolution only / Refuted / certified-instance / unlabelled / early (2026-10-01..09)  PRs 13680  task [('has external D5 importer', 1)]
+  fiber size  1: content / escape-witness only / Proved / checker / deep / early (2026-10-01..09)  PRs 14064  task [('no external D5 importer', 1)]
+  fiber size  1: content / open-problem-resolution only / Proved / none / deep / early (2026-10-01..09)  PRs 14159  task [('has external D5 importer', 1)]
+  fiber size  1: bind-only / open-problem-resolution only / Proved / none / quick / early (2026-10-01..09)  PRs 14605  task [('no external D5 importer', 1)]
+  fiber size  1: content / escape-witness + open-problem-resolution / Refuted / certified-instance / quick / late (2026-10-10..16)  PRs 15530  task [('has external D5 importer', 1)]
+  fiber size  1: bind-only / open-problem-resolution only / Refuted / certified-instance / deep / late (2026-10-10..16)  PRs 15993  task [('no external D5 importer', 1)]
+  fiber size  1: content / escape-witness + open-problem-resolution / Refuted / certified-instance / deep / late (2026-10-10..16)  PRs 16103  task [('no external D5 importer', 1)]
+  fiber size  1: content / escape-witness only / none (library result) / none / unlabelled / late (2026-10-10..16)  PRs 16361  task [('has external D5 importer', 1)]
+  fiber size  1: bind-only / open-problem-resolution only / Proved / none / unlabelled / late (2026-10-10..16)  PRs 16879  task [('no external D5 importer', 1)]
+  fiber size  1: content / open-problem-resolution only / Proved / none / deep / late (2026-10-10..16)  PRs 17103  task [('no external D5 importer', 1)]
+  fiber size  1: content / escape-witness + open-problem-resolution / Proved / none / quick / late (2026-10-10..16)  PRs 17791  task [('no external D5 importer', 1)]
