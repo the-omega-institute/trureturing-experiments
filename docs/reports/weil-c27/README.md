@@ -4560,3 +4560,67 @@ For an explicitly requested reproduction only, choose a fresh output:
 ```sh
 PYTHONDONTWRITEBYTECODE=1 UV_OFFLINE=1 uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/full_gamma_signed_correction.py --out /tmp/c27-signed-correction-reproduction.json.zlib
 ```
+
+## All-real steering capacity from saved scalar certificates
+
+[full_gamma_steering_capacity.py](full_gamma_steering_capacity.py) consumes
+only the saved negative-channel, coherent-mixed and signed-correction
+scalar packets. The source, core, lift, far row, legal t0 and frozen
+fee D* remain fixed. It bounds the comparison expression
+E*(alpha)=alpha²/t0+D*+(alpha*rho+betaJ+f)Qtrue(alpha*rho+betaJ+f)*
+for every real alpha. This algebraic domain does not assert that every
+alpha is a legal physical test; any legal subset with the same fixed
+data is included in the exclusion.
+
+The existing identity rho0²/delta=1/t0+rr−H11 and Cauchy give a uniform
+absolute derivative cap, using the saved far positive energy A and
+negative-coordinate radius. The existing lower inverse comparison
+pays eta/(1+eta) times the positive reference norm. A two-step triangle
+bound encloses that norm by4*r0+4*s²*rr+2*A, with s=alpha−alpha0.
+Scalar completion then gives E*(alpha)>=K−B²/H for all real alpha.
+The finite lower is read directly from its saved scalar quadratic;
+subtracting upper allowances from Clin would not justify that lower.
+The complete proof and common-object conditions are in the owning
+[application exposition](https://github.com/the-omega-institute/trureturing/blob/dev/Library/Weil/connesconsanimoscovici2026spectral.md#test-all-steering-coefficients-before-a-new-signed-supplier).
+
+The sole fixed1024/640 application takes0.61818seconds including
+serialization and uses60 unchanged source/input bindings. No old
+producer, new derivative, source, norm, feature, matrix, inverse or
+tail computation is run.
+
+| Quantity | Approximate directed value |
+|---|---:|
+| Negative-square credit upper |2.327429771347697837|
+| Absolute signed-derivative capacity upper |515.620424366832531834|
+| Comparison curvature lower |25136.371399957733363764|
+| Comparison base lower |10.639254031103735470|
+| Maximal steering gain upper |10.576881515391657423|
+| All-alpha comparison floor lower |0.062372515712078048|
+
+The saved integer lower endpoint exceeds0.062372515712078048.
+Consequently this fixed-fee/t0 comparison recipe cannot become
+negative for any alpha; an actual derivative supplier for this recipe
+is unnecessary. D* is a frozen charge upper used to define this
+comparison family. Its positive floor is not a lower bound on an
+actual center with a smaller fee. At alpha0 the separate self-term-only
+refinement class retains a floor above10.639254031103735470; it bounds
+that frozen upper-expression class, not the actual center.
+
+The [directed packet](full-gamma-steering-capacity.json.zlib) has SHA256
+`85a52adf97e96def95aaf5abaa307338522a2bae5d7b40c96692ad0366a444fe`;
+the source hash is
+`dcdb47a55003e4ca745bf33ce81133fd65577facdf6004d38308fb9f1dddc96e`.
+This is a source-specific application of existing Schur, Cauchy and
+quadratic estimates, with no new generic theorem, algorithm, literature
+novelty or Lean claim. All inherited actual-form/domain, common-source,
+short/lift, weight and component premises remain. Actual-center and
+full-border signs, good-block metric, retained/cofinal positivity,
+Robin tail and RH remain unresolved. A next route must change a
+justified fee, coefficient, source or comparison rather than supply
+the derivative of the excluded recipe.
+
+For an explicitly requested reproduction only, choose a fresh output:
+
+```sh
+PYTHONDONTWRITEBYTECODE=1 UV_OFFLINE=1 uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/full_gamma_steering_capacity.py --out /tmp/c27-steering-capacity-reproduction.json.zlib
+```
