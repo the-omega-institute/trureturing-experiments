@@ -3919,3 +3919,76 @@ To reproduce into a fresh output, rather than overwrite the archive:
 ```sh
 PYTHONDONTWRITEBYTECODE=1 UV_OFFLINE=1 uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/full_gamma_band_surplus_budget.py --out build/c27-band-surplus-budget.json.zlib
 ```
+
+## Reuse the fixed trial at the supplied band endpoint
+
+[full_gamma_scalar_transport.py](full_gamma_scalar_transport.py) consumes
+the exact supplied band cap and BOTH true-$h$ endpoints. It reuses the
+same exact17trial $x$, old signed-trial LOWER, gradient energy, first
+gradient coordinate, mixed source scalar and curvature. The old
+held-majorant program supplies these scalar enclosures only; its
+verdict and far-penalty constants are not transported.
+
+Write $\Sigma_0=\Sigma_*+\delta H_{\rm lift}$, $a_0<0$,
+$g_0=((b_0-cx)/a_0,x)$, $m_0=rg_0$, $z_0=g_0^*Gg_0$ and
+$\mu=\tau/h$. The standard rank-one identities for this SAME real
+trial give
+
+$$
+\eta=1+\mu r_0^2/a_0,\quad a_\tau=a_0+\mu r_0^2,\quad
+\theta=\mu r_0m_0/a_\tau,\quad g_\tau=g_0-\theta e_0,
+$$
+
+$$
+q_\tau(x)=q_0(x)-\mu m_0^2/\eta,\qquad
+z_\tau=z_0-2\theta(e_0^*Gg_0)+\theta^2G_{00}.
+$$
+
+Only the missing18term cross $e_0^*Gg_0$ is newly contracted. The raw
+complete paid $G$ is used; the energy-scaled joint Gram is not substituted.
+For $\kappa=33/32$, the NEW coefficient and directed exclusion lower are
+
+$$
+A_\tau=\kappa-\kappa^2G_{00}/(-a_\tau)>0,\qquad
+\ell_\tau=\mathrm{charge}_{\rm lo}+q_{0,\rm lo}
+ -(\mu m_0^2/\eta)_{\rm up}-(\kappa^2z_\tau/A_\tau)_{\rm up}.
+$$
+
+The sole fixed1024/640-bit application takes0.09882seconds. Its
+[saved packet](full-gamma-scalar-transport.json), SHA256
+`c87498beff259c4a22ba319aa32af4975649c35a50990ba27bb2324a43ffa757`,
+records the nine accepted input pins, all14 invoked source/helper hashes,
+true-$h$ bounds, exact cap and new scalar enclosures:
+
+| Quantity | Approximate enclosure value |
+|---|---:|
+| $\tau$ |0.0272333893565792018|
+| $\eta$ |0.379630426033288183|
+| $a_\tau$ |$-4.47097042972572520\times10^{-32}$|
+| $A_\tau$ |0.362304559585549403|
+| $z_\tau$ |55.6410065569858228|
+| Signed-trial decrement upper |60.8094277285621680|
+| New completed-square penalty upper |163.323659119699822|
+| Exclusion lower $\ell_\tau$ |$-177.935387035771641$|
+
+The pivot and far-coefficient guards pass, but the exclusion lower is
+negative. The result is INCONCLUSIVE: it proves neither feasibility nor
+actual positivity or negativity. If a strict positive endpoint lower
+were obtained, the unchanged $B,K$ and fixed-$D$ Loewner monotonicity
+would exclude the SAME transported family throughout the supplied
+interval; that implication is not triggered here.
+
+No new trial, matrix, determinant, inverse, solve, Fourier/potential,
+source/action, Gram or old energy/far producer is evaluated. No parameter
+or precision scan follows this inconclusive result. A sharper exclusion
+would need a justified further estimate; a sufficient positivity
+certificate still needs the SAME actual Schur complement and good-block
+inverse cost, which the projected18row does not supply. The actual
+common forms/domains, legal $E$, closed short, unitary/source/lift and
+sound full-far/cache premises remain conditions. These are established
+rank-one and square-completion methods applied to saved data, not a new
+generic theorem, maximal capacity, Lean, Robin-tail or RH result.
+
+```sh
+PYTHONDONTWRITEBYTECODE=1 UV_OFFLINE=1 uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/full_gamma_scalar_transport.py --out build/c27-scalar-transport.json
+```
