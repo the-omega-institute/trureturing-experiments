@@ -4239,3 +4239,94 @@ For an explicitly requested reproduction, use a fresh output path:
 ```sh
 PYTHONDONTWRITEBYTECODE=1 UV_OFFLINE=1 uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/full_gamma_negative_channel_capacity.py --out /tmp/c27-negative-channel-capacity-reproduction.json.zlib
 ```
+
+## One coherent same-source tail direction
+
+[full_gamma_coherent_mixed_capacity.py](full_gamma_coherent_mixed_capacity.py)
+retains the original unphased384-bit row0, fixed alpha, legal t0,
+positive fee and source-energy cap. On the SAME true old18-core,
+let Q_R=T R T*−e0 e0*/delta, y=alpha rho+betaJ and vR=Q_R y*.
+The actual signed functional theta=f vR combines the positive and
+negative cross terms before either is bounded separately. Existing
+relative Loewner and PSD bounds yield the center upper Clin+2theta,
+before the additional PSD good-block metric. R remains a reference,
+not the actual inverse. The negative tail self-square is discarded.
+
+The [coherent packet](full-gamma-coherent-mixed-capacity.json.zlib),
+SHA256 `b082eaad102c5f7ca38d1c49c19970952288ce630198a4ea76b48b96d8d23b65`,
+freezes the packet's exact rational Clin (approximately25.528336100647874028)
+and the sufficient signed condition theta<−Clin/2 (threshold approximately−12.764168050323937014).
+It reads the cached RAW reference energy,
+not the already-inflated positive-channel energy. One new17-reference
+vector action and one18-dimensional full paid Gram form take0.04560
+seconds at1024working/640export bits. All old producers, identities,
+tests, inverse/solve, trace and source suppliers are reused.
+
+The direct Gram interval spans approximately ±4.4981e24 and gives only
+the response-radius upper6.62128273610463133e12. Its negative endpoint
+is not a negative PSD norm; the inconclusive package result does not
+establish a large actual norm, improvement, sign or favorable response.
+Saved coefficient intervals enclose ONE exact analytic direction;
+they are not independently selectable coefficients or free midpoints.
+
+## Cached PSD trace bound for the coherent direction
+
+[full_gamma_coherent_split_capacity.py](full_gamma_coherent_split_capacity.py)
+consumes only the two accepted packets' scalars and metadata. With
+the SAME complete paid PSD majorant G, the existing normalized trace
+upper Tfar bounds tr(Qplus G). The PSD operator<=trace inequality and
+R<=(1+eta)S^-1 give the uniform direction-norm upper
+
+```text
+Nsplit = UP(sqrt(r_UP*(1+eta_UP)*Tfar_UP)
+            + abs(lambda)_UP/delta_LOWER*sqrt(G00_UP)).
+```
+
+Tfar is already normalized; there is no additional energy division.
+The norm uses abs(lambda) UPPER and delta LOWER, opposite to the
+negative finite credit inside Clin. Take the minimum with the saved
+direct norm upper on this SAME analytic direction, then freeze
+Ctheta=UP640(kappa*sqrt(Ecap)*Ncap). This is a uniform operator bound;
+a particular-source |theta| bound cannot be divided to recover a norm.
+The complete derivation and parameter map are in the
+[owning application exposition](https://github.com/the-omega-institute/trureturing/blob/dev/Library/Weil/connesconsanimoscovici2026spectral.md#bound-the-same-direction-using-the-cached-positive-trace).
+
+The [scalar-only packet](full-gamma-coherent-split-capacity.json.zlib)
+has SHA256 `6e4232d6079a4279511a67c13c6501d51a3b4fdaf410ccfee957adce29e1d7bc`
+and records one fixed1024-working/640-export-bit evaluation taking0.01185seconds:
+
+| Quantity | Approximate directed value |
+|---|---:|
+| Positive-direction norm upper |15.3617882831078431|
+| Negative-direction norm upper |13.7365253063170975|
+| Selected direction norm upper |29.0983135894249406|
+| Response-radius upper |90.8435754570087271|
+| Unchanged frozen Clin |25.5283361006478740|
+| Package floor lower |−156.158814813369580|
+| Uniform center upper |207.215487014665328|
+| Unchanged sufficient signed threshold |−12.7641680503239370|
+
+The radius is smaller than the direct interval's bound, but the negative
+floor means only that this fixed linear package is not excluded. No
+actual signed theta or favorable realization is supplied. All source,
+lift, full-far allowance, trace and comparison assumptions remain
+conditions. A future same-source signed interval must have an upper
+below the frozen threshold and retain the analytic direction relations;
+the additional good-block metric would still have to be paid.
+
+The scalar adapter guards both packets, original input/helper/producer
+bytes and current invoked sources before and after use. No matrix or
+vector is extracted; no old suite/producer, new reference/Gram/trace,
+inverse/solve or source/far supplier runs. There is no source, parameter
+or precision scan. Nonexclusion alone does not justify an expensive
+supplier; its factored or short-lift interface and complete error
+contract must first be established. Existing classical block inverse,
+Loewner, PSD trace and Cauchy bounds are applied without a new generic
+theorem, algorithm or Lean claim. Actual full-border sign, good-block
+metric, retained/cofinal positivity, Robin tail and RH remain unresolved.
+
+For an explicitly requested reproduction, use a fresh output path:
+
+```sh
+PYTHONDONTWRITEBYTECODE=1 UV_OFFLINE=1 uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/full_gamma_coherent_split_capacity.py --out /tmp/c27-coherent-split-capacity-reproduction.json.zlib
+```
