@@ -4330,3 +4330,72 @@ For an explicitly requested reproduction, use a fresh output path:
 ```sh
 PYTHONDONTWRITEBYTECODE=1 UV_OFFLINE=1 uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/full_gamma_coherent_split_capacity.py --out /tmp/c27-coherent-split-capacity-reproduction.json.zlib
 ```
+
+## Same-source signed-jet interface
+
+[full_gamma_signed_jet_interface.py](full_gamma_signed_jet_interface.py)
+consumes the saved full56 features F_lift=P0 Dphys V and the ONE
+coherent direction vR. The physical residual Dphys=[I;-Y] includes
+modes0..2048; the far synthesis starts at32769 with scale M=32768.
+One cached112x18 action encloses h=F_lift vR, in order
+A0..A55,B0..B55. All source/lift coefficient intervals propagate;
+there is no independently selected midpoint direction.
+
+The original geometric and exact-midpoint rounding components imply
+the forward bound ||BvR-j_h||_W<=sqrt(2eps_complete)*||VvR||. Here r2
+is the original UNWEIGHTED squared Frobenius error. eps_complete
+already pays the original far weight and physical residual amplification;
+the original allowance metadata grid is512, while matrix grids are640.
+A Gram-error estimate alone would not supply this forward bound. The
+genuine full moment Gram controls the feature error; the masked core
+is not assumed PSD.
+
+Eighteen diagonal lift-Gram terms bound ||VvR|| by
+LV=UP sum_j abs(vR_j)_UP sqrt(liftGram_jj_UP). Freeze
+eps_b=UP640(sqrt(2eps_complete)*LV). For the SAME principal proxy u0,
+reuse the independent principal norm upper P and smooth+mixed-H norm
+error eps_u. With theta=kappa<uF,BvR> and mu=kappa<u0,j_h>, telescoping
+gives error E_mu=UP640[kappa*(eps_u*Ncap+P*eps_b)]. The proxy uses
+minus q on1281..2048 and the original w on2049..32768; a q remainder
+is not renamed a p remainder.
+
+The [saved interface](full-gamma-signed-jet-interface.json.zlib), SHA256
+`154949d8ab3e1f2875de531aa63a9c5a3c3d7d133640a5ce8b1d23c98d67565a`,
+records one fixed1024-working/640-export-bit evaluation taking0.28065seconds:
+
+| Quantity | Approximate directed value |
+|---|---:|
+| Lift triangle bound LV |4.48767188714705487e67|
+| Inherited complete allowance |2.07732485158467804e-135|
+| Forward jet error eps_b |2.89259947122008663|
+| Principal-proxy norm error eps_u |0.478756042962487477|
+| Signed-functional error E_mu |21.9687713914200247|
+| Unchanged Clin |25.5283361006478740|
+| Sufficient proxy threshold |−34.7329394417439617|
+
+The112 coefficient intervals have maximum absolute endpoint
+approximately1038.04984493700085 and maximum absolute width
+approximately5.11418e-25. The exact future sufficient condition is
+UP(Clin+2*(I_mu+E_mu))<0, or in exact arithmetic
+sup(I_mu)<−Clin/2−E_mu. The exact rational threshold is saved; decimals
+are approximate. No actual mu, theta, center or full-border sign is
+supplied. The extra PSD good-block metric remains unpaid.
+
+This adapter reuses the existing component, norm and source certificates
+and passed suites. It guards source/helper/producer/input bytes at entry
+and exit and writes one exclusive fresh archive. No reference, Gram,
+trace, inverse/solve, source/far supplier, old producer or scan runs.
+It applies standard triangle and Cauchy inequalities without a new
+generic theorem, algorithm or Lean claim. The common actual-form/domain,
+kernel, unphased source384/row0, short/lift, original weight and complete
+component-bound premises remain conditions. A priced threshold alone
+does not justify an expensive supplier. Actual signed response,
+good-block metric, full-border sign, retained/cofinal positivity,
+Robin tail and RH remain unresolved. The full derivation is in the
+[owning application exposition](https://github.com/the-omega-institute/trureturing/blob/dev/Library/Weil/connesconsanimoscovici2026spectral.md#use-the-full-short-residual-jet-for-one-signed-functional).
+
+For an explicitly requested reproduction, use a fresh output path:
+
+```sh
+PYTHONDONTWRITEBYTECODE=1 UV_OFFLINE=1 uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/full_gamma_signed_jet_interface.py --out /tmp/c27-signed-jet-interface-reproduction.json.zlib
+```
