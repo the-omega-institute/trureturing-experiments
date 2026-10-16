@@ -2748,8 +2748,9 @@ $L_*+\mathcal B^*\mathcal B/D$ for this fixed OLD base $L_*$ and
 fixed saved dyadic dual $w$. The good-block inverse metric needs no
 new computation for this exclusion.
 
-The stronger base $Q-R^*\overline W R$, other dual directions and
-other lower constructions remain outside this exclusion. A matrix
+The stronger base $Q-R^*\overline W R$ is not tested by that calculation
+alone. Other dual directions and other lower constructions remain
+outside this exclusion. A matrix
 dominating this non-PSD lower bound can still be positive. This is
 not actual $S_N$ negativity or an RH counterexample. Actual full
 retained/cofinal positivity, the Robin tail and RH remain unresolved.
@@ -2759,4 +2760,126 @@ claimed.
 
 ```sh
 uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/full_gamma_actual_joint_lower.py --out build/c27-actual-joint-lower.json.zlib
+```
+
+## The far-enclosure gap cannot rescue the same fixed dual
+
+`full_gamma_baseline_gap.py` tests the specific stronger base
+$\overline L=Q-R^*\overline W R$ with exactly the old nineteen
+channels, their $A_\rho^{-1}$, $\rho=1/32$ and the saved fixed dual.
+It reuses the accepted finite charge floor and exact seventeen-entry
+trial. Only the changed small-matrix variational and far-gradient
+contractions are new. No inverse, solve, old signed energy, channel
+projection, action or trace supplier runs.
+
+The exact baseline correspondence must distinguish the original
+padding from its transported upper endpoint. Let $\widehat F$ be
+the signed far approximation, $F_{\rm act}$ the actual far residual
+Gram, $\epsilon_0$ the original complete padding, $\epsilon_1$ the
+padding used by the later $\rho$ update, and $\epsilon$ the exact
+rational upper in the accepted lift packet. Under the inherited
+two-sided far enclosure,
+
+$$
+\|\widehat F-F_{\rm act}\|\le\epsilon_0\le\epsilon_1\le\epsilon.
+$$
+
+With $\kappa=1+\rho$ and
+$C_J=Q-R_J^*W_JR_J+\Beta^*A_\rho^{-1}\Beta$, the source builders give
+
+$$
+L_*=C_J-\kappa\widehat F-(\epsilon_0+\rho\epsilon_1)I,
+\qquad \overline L=C_J-\kappa F_{\rm act}.
+$$
+
+Consequently
+
+$$
+0\preceq\overline L-L_*\preceq2\kappa\epsilon I.
+$$
+
+There is no identification of $\epsilon_0$ with the transported
+$\epsilon$. The original allowance metadata uses its explicit
+512-bit grid; the reused upper has its separately labelled640-bit
+grid. This comparison keeps the same $\overline W$ and does not
+replace it by the different ideal $W_{\rm G}$ majorant.
+
+For the accepted exact lift $V$, set $H_V=V^*V$ and
+
+$$
+\Sigma_{\max}=\Sigma_*+\delta H_V,\qquad
+\delta=2\kappa\epsilon,
+\qquad V^*\overline LV\preceq\Sigma_{\max}.
+$$
+
+The PSD addition preserves at least seventeen positive directions.
+The new first pivot $a_{\max}$ is strictly negative, so this
+eighteen-dimensional upper compression still has exactly one
+negative direction and no zero direction. Its negative-pivot
+positive complement $P_{\max}$ and lift $T_{\max}$ therefore give
+the usual inverse decomposition. Reuse the saved exact trial $x_J$
+from `full-gamma-actual-joint-lower.json.zlib`, without asserting
+it is an inverse action for this changed complement. Define
+
+$$
+q_{J,\rm trial}
+=\frac{|b_{J,0}|^2}{a_{\max}}
++2\Re(b_JT_{\max}x_J)-x_J^*P_{\max}x_J,
+\qquad
+g_x=\frac{\overline{b_{J,0}}}{a_{\max}}e_0+T_{\max}x_J.
+$$
+
+For the same actual $b=b_J+t$ and
+$q_{\max}=b\Sigma_{\max}^{-1}b^*$, variational inversion gives
+
+$$
+q_{\max}\ge q_{J,\rm trial}+2\Re(tg_x)+|t_0|^2/a_{\max}.
+$$
+
+Use the full signed far Gram plus its entire allowance, denoted $G$,
+with the same $t=\kappa u_{\rm far}^*W_{\rm far}R_{\rm far}V$
+and $s=\|u_{\rm far}\|_W^2$. Weighted Cauchy and square completion
+yield, if $A_{\max}>0$,
+
+$$
+\mathcal K+q_{\max}
+\ge m_J-h-E_\phi+q_{J,\rm trial}-B_{\max}^2/A_{\max},
+$$
+
+$$
+A_{\max}=\kappa-\kappa^2G_{00}/(-a_{\max}),\qquad
+B_{\max}^2=\kappa^2g_x^*Gg_x.
+$$
+
+The1024-bit contractions take0.467 seconds. Directed endpoints give
+
+$$
+\delta<4.285\cdot10^{-135},\qquad
+q_{J,\rm trial}>-122.995465,\qquad
+B_{\max}^2/A_{\max}<10.153002,
+$$
+
+$$
+\boxed{\mathcal K+q_{\max}>36.044697.}
+$$
+
+For every positive $D\ge\mathcal K$, strict positivity of
+$D+q_{\max}$ excludes PSD of
+$\Sigma_{\max}+b^*b/D$ by the existing one-negative-core criterion.
+This matrix dominates the compression of
+$\overline L+\mathcal B^*\mathcal B/D$, so that full stronger-base
+update is also not PSD. A good-block inverse metric is unnecessary
+for this exclusion.
+
+The result is a conditional numerical application under the inherited
+actual common-form/domain, inverse/comparison and sound-cache premises.
+It excludes only this $\overline W$, saved fixed dual and admissible
+positive denominators. Other majorants, new or combined directions
+and other constructions remain outside its scope. Actual $S_N$ can
+dominate the rejected lower bound and be positive. No actual $S_N$
+negativity, full retained/cofinal positivity, Robin-tail, RH, generic
+novelty or Lean proof is supplied.
+
+```sh
+uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/full_gamma_baseline_gap.py --out build/c27-baseline-gap.json.zlib
 ```
