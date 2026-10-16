@@ -3137,3 +3137,69 @@ cofinal positivity, Robin-tail or RH result.
 ```sh
 uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/full_gamma_threshold_upper.py --out build/c27-threshold-upper.json.zlib
 ```
+
+## Sharpen the upper with the two archived exact sources
+
+`full_gamma_projection_upper.py` reuses $Z=[w_0,w_1]$ and their saved
+$M_J$ actions on $J=2049{:}32768$. With the same exact eighteen-column
+$Y=R_JV$, it supplies
+
+$$
+A_Z=Z^*M_JZ,\qquad B_Z=Z^*Y,\qquad
+K_Z=B_Z^*A_Z^{-1}B_Z\preceq Y^*M_J^{-1}Y,
+$$
+
+and therefore the ordered upper
+
+$$
+\Xi\preceq H=\Xi+\Theta\preceq
+U_2=\Xi+S_J-K_Z.
+$$
+
+The source Gram reuses its archived first diagonal and both directed
+cross enclosures. Only its unexported second diagonal is contracted from
+the cached action. One existing two-column Cauchy projection supplies
+the missing $Z^*R_J$, then multiplies the same implicit $V$. Its input
+contains unweighted exact sources, with the leading768 rows zero; the
+original residual coefficient and zero-mode normalization are preserved.
+Six direct generator-column checks cover both sources and retained modes
+0,39,1280. A native two-by-two solve with eighteen right sides forms all
+cross terms of $K_Z$.
+
+The fixed1024-bit application takes9.17 seconds and encloses
+
+$$
+\det U_2\simeq-2.2564304658181403\times10^{-1361}<0.
+$$
+
+A1536-bit execution of the same consumer takes10.55 seconds. All724
+matrix-entry interval pairs have identical endpoints; the determinant
+intervals overlap with nonidentical endpoints and remain strictly
+negative. Both executions pass the six direct checks, with all40
+guarded files unchanged. This is a reproduction of the same algorithm.
+
+Under the inherited channel-aware inverse comparison and seventeen
+positive directions of $\Xi$, this gives seventeen positive and one
+negative direction of $U_2$, and hence of $H$. The accepted inertia
+identity gives $n_-(C_{\rm sharp})=0$ for this whole finite-$J$,
+fixed-eighteen-lift lower source comparison, including sources outside
+$\operatorname{span}Z$. Thus its strict-negative-source criterion is
+excluded without supplying the complete common inverse. This does not
+exclude actual sufficient updates generally or settle semidefinite
+endpoint updates.
+
+`full-gamma-projection-upper.json.zlib` saves $A_Z,B_Z,A_Z^{-1}B_Z,K_Z,U_2$,
+directed pivots, determinant endpoints, projection checks and source/input/
+helper pins. Entry intervals enclose the same exact matrices; their
+endpoints are not Loewner bounds. The512-term expansion,640-bit entry
+grid and11584-bit absolute determinant grid are fixed. No forward lift
+profiles, old source actions, scientific suppliers, F/D solves or full
+Gram are regenerated. Actual common-domain/far-energy identification,
+sufficient good-block/far certification, retained/cofinal positivity,
+Robin tail and RH remain open. This is a numerical application of
+existing variational projection and inertia, with no generic novelty
+or Lean-verification claim.
+
+```sh
+uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/full_gamma_projection_upper.py --out build/c27-projection-upper.json.zlib
+```
