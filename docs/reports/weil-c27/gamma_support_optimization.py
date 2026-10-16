@@ -159,7 +159,7 @@ def consume(args):
                 +inverse_GE[i, 0]*TR[n, 1]-inverse_GE[i, 1]*TR[n, 0])/(m*m-n*n)*v[n, 0]
     finite_gradient = F*transformed_cross
     Kfinite = gram-F
-    scalar, rows, _, far = inputs()
+    scalar, rows, pilot, far = inputs()
     alpha, scale, Pq, Hq, _ = reconstruct_factors(dict(far, N=selected[-1]),
                                 dict(scalar, rows=[rows[n] for n in range(selected[-1]+1)]))
     PE = arb_mat([[arb(Pq[i, n]) for n in selected] for i in range(Pq.nrows())])
@@ -171,8 +171,63 @@ def consume(args):
     allowance = interval_ball(old['metadata']['complete_far_operator_allowance'], metadata_bits)
     qold = interval_ball(candidate['old_lower_target_quadratic'], candidate['grid_bits'])
     A0 = matrix_in(boundary['finite_gram'], boundary['grid_bits'])
-    beta_base = matrix_in(boundary['finite_beta'], boundary['grid_bits'])*v
+    Beta0 = matrix_in(boundary['finite_beta'], boundary['grid_bits'])
     delta = interval_ball(boundary['far_gram_trace_bound'], boundary['grid_bits']).upper()
+    refinement_path = getattr(args, 'channel_refinement', None)
+    if refinement_path:
+        refinement, refinement_hash = read_json(refinement_path)
+        if (refinement['schema'], refinement['metadata'], refinement['parent_support_action_sha256']) != (
+                'ACTUAL_C27_GAMMA_RATE_CONTRAST_V1', provenance, action_hash):
+            raise ValueError('Rate contrasts must extend these exact parent channels and inputs.')
+        rb = refinement['grid_bits']
+        across = matrix_in(refinement['finite_cross'], rb)
+        extra_A = matrix_in(refinement['finite_gram'], rb)
+        extra_Beta = matrix_in(refinement['finite_beta'], rb)
+        extra_D = matrix_in(refinement['finite_support'], rb)
+        parent_count, extra_count = A0.nrows(), extra_A.nrows()
+        if ((across.nrows(), across.ncols()), (extra_A.nrows(), extra_A.ncols()),
+                (extra_Beta.nrows(), extra_Beta.ncols()), (extra_D.nrows(), extra_D.ncols())) != (
+                (parent_count, extra_count), (extra_count, extra_count),
+                (extra_count, N+1), (extra_count, len(selected))):
+            raise ValueError('Incomplete common rate-contrast actions.')
+        combined = arb_mat(parent_count+extra_count, parent_count+extra_count)
+        for i in range(parent_count):
+            for j in range(parent_count):
+                combined[i, j] = A0[i, j]
+            for j in range(extra_count):
+                combined[i, parent_count+j] = across[i, j]
+                combined[parent_count+j, i] = across[i, j]
+        for i in range(extra_count):
+            for j in range(extra_count):
+                combined[parent_count+i, parent_count+j] = extra_A[i, j]
+        A0 = combined
+        Beta0 = arb_mat([[Beta0[i, j] if i < parent_count else extra_Beta[i-parent_count, j]
+                         for j in range(N+1)] for i in range(parent_count+extra_count)])
+        D0 = arb_mat([[D0[i, j] if i < parent_count else extra_D[i-parent_count, j]
+                      for j in range(len(selected))] for i in range(parent_count+extra_count)])
+        delta += interval_ball(refinement['far_gram_trace_bound'], rb).upper()
+        provenance = dict(provenance, channel_refinement_sha256=refinement_hash)
+    keep_even_pole = getattr(args, 'keep_even_pole', False)
+    if keep_even_pole:
+        if boundary['bins'][0] != [0, 1]:
+            raise ValueError('The retained even pole must share the singleton b0=1/2 channel.')
+        width = arb(27).log()
+        pole_scale = (width/4).exp()
+        for j in range(A0.ncols()):
+            A0[0, j] *= pole_scale
+        for i in range(A0.nrows()):
+            A0[i, 0] *= pole_scale
+        for j in range(Beta0.ncols()):
+            Beta0[0, j] *= pole_scale
+        for j in range(D0.ncols()):
+            D0[0, j] *= pole_scale
+        debit = arb(fmpq(int(pilot['far_weight_numerator']), int(pilot['far_weight_denominator'])))
+        c0 = 1-(-width/2).exp()
+        eta0 = debit*c0/width*(width/(2*arb.pi()))**4/(3*M**3)
+        delta += (pole_scale**2-1)*eta0.upper()
+        provenance = dict(provenance, retained_even_pole=True)
+    beta_base = Beta0*v
+    channel_count = A0.nrows()
     S0 = arb_mat(A0)
     for i in range(S0.nrows()):
         S0[i, i] += 1
@@ -180,9 +235,9 @@ def consume(args):
     floor = fmpq(1, 16)
     S0inverse = S0.inv()
     floor_generators = arb_mat([[GE[i, j] for j in range(2)]+[TZ[i, j] for j in range(2)]
-        +[D0[j, i] for j in range(19)]+[m*m*D0[j, i] for j in range(19)]
+        +[D0[j, i] for j in range(channel_count)]+[m*m*D0[j, i] for j in range(channel_count)]
         for i, m in enumerate(selected)])
-    floor_diagonal = [Kfinite[i, i]-sum((D0[j, i]*S0invD[j, i] for j in range(19)), arb(0))-arb(floor)
+    floor_diagonal = [Kfinite[i, i]-sum((D0[j, i]*S0invD[j, i] for j in range(channel_count)), arb(0))-arb(floor)
                       for i in range(768)]
     floor_verdict, failure, floor_pivots, floor_order = eliminate(
         floor_diagonal, floor_generators, S0inverse, -kap, [m*m for m in selected],
@@ -247,6 +302,8 @@ def consume(args):
                   grid_bits=args.output_bits, working_bits=args.precision,
                   trial_correction_bits=trial_bits, trial_correction_integers=list(map(str, integers)),
                   trial_cache_sha256=trial_cache_hash,
+                  channel_count=channel_count,
+                  retained_even_pole=keep_even_pole,
                   channel_trial_bits=args.trial_bits,
                   channel_trial_integers=list(map(str, zintegers)),
                   trial_base='Same exact Y0=E F^-1 B applied to the complete saved dyadic direction.',
@@ -273,7 +330,7 @@ def consume(args):
                   conditions=['Same actual common form/domain, exterior and original orthonormal mass.',
                     'Existing Gamma boundary/diagonal inverse comparison and sound saved full target and extended-support far enclosure.',
                     'Finite Gamma shorting bound (HE)*W_G(HE)-E*HE>=GramZ0-F-D0* S0^-1 D0>=I/16, with all768 directed pivots positive.'],
-                  scope='Changed nineteen-channel W_G, same selected768-mode support and one complete saved retained direction. '
+                  scope=f'Changed {channel_count}-channel W_G, same selected768-mode support and one complete saved retained direction. '
                     'A negative optimal upper excludes all trials on this support for this W_G only; a positive lower repairs this direction only. '
                     'Neither sign determines the actual Schur form, cofinal positivity or RH. No old scientific producer or old fixed-W optimizer rerun; no Lean verification.')
     args.out.write_text(json.dumps(result, indent=2)+'\n')
@@ -292,6 +349,8 @@ def main():
     p.add_argument('--direction', type=Path, default=HERE/'joint-gamma-6765-direction.json')
     p.add_argument('--finite', type=Path)
     p.add_argument('--trial', type=Path, help='Reuse a matching saved exact trial without another proposal solve.')
+    p.add_argument('--channel-refinement', type=Path, help='Append cached orthogonal rate contrasts to the same parent channels.')
+    p.add_argument('--keep-even-pole', action='store_true', help='Retain the actual even pole by rescaling the singleton b0=1/2 channel.')
     p.add_argument('--precision', type=int, default=1024)
     p.add_argument('--output-bits', type=int, default=640)
     p.add_argument('--trial-bits', type=int, default=384)

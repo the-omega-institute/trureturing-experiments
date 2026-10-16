@@ -1444,3 +1444,103 @@ margin and gradient without another proposal solve. Omit it only
 when a new proposal is needed. `--produce --out PATH` is reserved
 for a genuinely missing thin cache. The retained cache SHA256 is
 `63b908fee9a0ed4f3dfc3e5480d57fcb1678c0c03877c708c027fa1d1cbdff6f`.
+
+## Retain the even pole and the within-bin rate contrasts
+
+`--keep-even-pole` uses the existing even pole without a new thin
+matrix. For the singleton rate0, the exterior cosine moment is
+$\sqrt2\sinh(d/4)h_{0,n}$. The actual pole
+$2|\int f\cosh(x/2)|^2$ therefore adds
+$4\sinh^2(d/4)h_0h_0^*$, and
+
+$$
+c_0+4\sinh^2(d/4)=e^{d/2}c_0,\qquad
+c_0=1-e^{-d/2},\quad d=\log27.
+$$
+
+Only the existing channel0 is scaled by $e^{d/4}$: its Gram row and
+column, Beta row and support-action row. Its far trace contribution
+increases by $(e^{d/2}-1)\eta_0$, where
+$\eta_0=Dc_0(d/(2\pi))^4/(3M^3d)$.
+The actual $H$, residual and target already contain the pole; this
+changes only their inverse comparison. The identity applies on even
+tests; the unrestricted pole pair is not asserted positive.
+
+`gamma_channel_resolution.py` applies classical finite Bessel/Haar
+projection to the rate bins. For a root bin $[a,b)$ split at $m$,
+write $p=m-a$, $q=b-m$, $\ell=p+q$ and retain
+
+$$
+V=\sqrt{c_a}\left[
+\sqrt{\frac q{p\ell}}\sum_{j=a}^{m-1}h_j
+-\sqrt{\frac p{q\ell}}\sum_{j=m}^{b-1}h_j\right].
+$$
+
+Use the same original $c_a$ for every detail inside this root.
+The old mean and retained details are orthogonal coefficient
+projections, so their joint positive matrix remains below the actual
+Gamma boundary contribution. At depth1 there are16 new contrasts
+and35 channels in total. The new cache contains only their
+$19\times16$ cross, $16\times16$ Gram, $16\times1281$ Beta and
+$16\times768$ support blocks. Parent aggregates and all scientific
+scalar/residual/far suppliers are consumed without regeneration.
+
+The finite Beta action uses the saved transformed outside generator
+on rows2049–32768 and512 geometric terms with ratio1280/2049.
+The support action uses direct rows1281–4096, including the actual
+independent diagonal, and384 terms thereafter with ratio2048/4097.
+The absolute finite remainders are paid. For each detail the existing
+tail estimate follows from
+
+$$
+|V_n|\le\frac{a_V}{n^2},\quad
+a_V=2\sqrt{\frac{c_a}{d}}\sqrt{pq\ell}
+\left(\frac d{2\pi}\right)^2,\qquad
+\eta_V=\frac{Da_V^2}{3M^3}.
+$$
+
+The derivative of $b/(b^2+\omega^2)$ has magnitude at most
+$1/\omega^2$, and the two rate means differ by $\ell$.
+The enlarged far Gram is bounded by its trace, adding the old and
+new channel energy allowances while preserving the cross terms.
+The consumer assembles the complete common blocks, revalidates
+the finite shorting floor and keeps refinement and pole flags in
+the exact trial-family provenance. No new generic algorithm or
+literature-priority claim is made.
+
+The saved results `gamma-support-pole-6765-optimum.json` and
+`gamma-support-pole-contrasts-depth1-optimum.json` each certify all768
+positive pivots of the changed finite $K_0-I/16$. The directed
+square-completion upper bounds are, respectively,
+
+$$
+\sup_t m_{\rm pole}(t)<-3.0484\times10^{-32},\qquad
+\sup_t m_{\rm pole+details}(t)<-2.9782\times10^{-32}.
+$$
+
+For the35-channel result, the saved384-bit dyadic trial has
+$-4.047\times10^{-32}<m(t_0)<-3.5939\times10^{-32}$,
+paid gradient norm below $1.962\times10^{-17}$ and optimization
+correction below $6.158\times10^{-33}$. Both results concern the
+same complete retained direction and768 selected modes, under the
+inherited actual common-form/domain and sound comparison/enclosure
+premises. Neither comparison certifies this direction for any trial
+on that support. This excludes neither arbitrary finer channels nor
+the actual Schur form, other supports, full c27/cofinal positivity
+or RH. No actual negative Weil test or new Lean result is supplied.
+
+The new common contrast cache is
+`gamma-rate-contrasts-depth1.json.zlib`. Reuse the saved exact trials
+without another proposal solve:
+
+```sh
+uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/gamma_support_optimization.py --finite docs/reports/weil-c27/gamma-support-6765-finite.json.zlib --keep-even-pole --trial docs/reports/weil-c27/gamma-support-pole-6765-optimum.json --out build/c27-even-pole-check.json
+uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/gamma_support_optimization.py --finite docs/reports/weil-c27/gamma-support-6765-finite.json.zlib --channel-refinement docs/reports/weil-c27/gamma-rate-contrasts-depth1.json.zlib --keep-even-pole --trial docs/reports/weil-c27/gamma-support-pole-contrasts-depth1-optimum.json --out build/c27-rate-details-check.json
+```
+
+The producer command below is for a genuinely missing common contrast
+cache, not for consuming the archived result:
+
+```sh
+uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/gamma_channel_resolution.py --out build/c27-rate-details.json.zlib
+```
