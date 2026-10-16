@@ -1,0 +1,134 @@
+{
+  "schema": "ACTUAL_C27_FULL_GAMMA_CHARGE_CENTER_OBSTRUCTION_V1",
+  "packet_sha256": {
+    "charge": "403147587fb2138793bf2c907ce1a1eb4ca72f874f41ee85541559bc73edeea5",
+    "joint": "c44b4763d6284610e155bdbda034b6634a530c811f51d60e4d9ac8831971d7f9",
+    "common": "314e341189f72516aa9f251c6b873587f1bfae54d902c35f6c87c9b03130dfe7",
+    "defect": "6f320576338562a4e7338906ca66b25ab49e4a1d4460e87e26165cd9579a1154",
+    "cross": "0f7762b68fcc92764f767f8f15311e6df31aa4bc978b5f039b039c947e0ca715"
+  },
+  "input_sha256": {
+    "arithmetic-scalars.json.zlib": "f993be1aa48824cbf22276ac2d80e834ca9e54e4519e2040f437ebb4f724990f",
+    "middle-scalars.json.zlib": "55212d0181673c015de503928265509e594eb0f81b85e3afb34cc28a103d18db",
+    "diagonal-floor-witness.json": "f45f3a333b50aa60c38c5b2ee9be416a165a1c719ba7dfb3ca6dfbe251bf1840",
+    "far-coupling.json.zlib": "ac35edacd7f55de470586e3b8a5915bcaa49b9d2c4c9c2ee073eeaaa8c9c73e7",
+    "inverse-residual-pilot.json.zlib": "6db5093bf78fe1dcf43cbbe1b39ef2b1faf4174cf7cf33fe796c0d10ad4d231b"
+  },
+  "remaining_modes": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    9,
+    10,
+    12,
+    14,
+    15,
+    18,
+    19,
+    24,
+    29,
+    33,
+    39
+  ],
+  "source_sha256": "2d986f62adb0a582f3fd8478b3991dbf2fa978cece451eaab1e8a6d9e2470039",
+  "grid_bits": 640,
+  "scalar_intervals": {
+    "old_charge_upper": [
+      "1364838910628193461193924761592838435127170854276264728081624510693980531850895634286710177126238068561702850455545190046736044606879340107125742885224982050015859206536533190510591508007566943820",
+      "1364838910628193461193924761592838435127170854276264728081624510693980531850895634286710177126238068561702850455545190046736044606879340107125742885224982050015859206536533190510591508007566943821"
+    ],
+    "channel_center_energy": [
+      "485156491203621823341316939686485915368883334207195031345883676298805562540855212449396516304445542756491015458434298691207209020104107527617485187621701509245837146005187084662324794690965078016",
+      "485156491203621823341316939686485915368883334207195031345883676298805562540855212449396516304445542756491015458434298691207209020104107527617485187621701509245837146005187084667140946269650812928"
+    ],
+    "signed_center_energy": [
+      "-584785029415900965637549844901961475473541318746560150056681299986400081494544651340759397495906184473648019812078254885921140653149187676436581362426861444000882596176714912190571422845105392752",
+      "-584785029415900965637549844898957978368630266697959138577627747875541861310857048731905195818779987025260733934652342342539828092480233240103001281661665849232749506622973587090826119660402166896"
+    ],
+    "relaxed_zero_error_charge": [
+      "879682419424571637852607821906352519758287520069069696735740834395174969310040421837313660821792525805211834997110891355528835586775232579508257697603280540770022060531346105843450561737916130892",
+      "879682419424571637852607821906352519758287520069069696735740834395174969310040421837313660821792525805211834997110891355528835586775232579508257697603280540770022060531346105848266713316601865805"
+    ],
+    "relaxed_zero_error_joint_scalar": [
+      "294897390008670672215057977004391044284746201322509546679059534408774887815495770496554263325886341331563815185032636469607694933626044903071676335176419096769139464354631193652879138892810738140",
+      "294897390008670672215057977007394541389657253371110558158113086519633107999183373105408465003012538779951101062458549012989007494294999339405256415941614691537272553908372518757440593656199698909"
+    ],
+    "middle_action_energy": [
+      "6205564991051568701510651784231379156260628726944847335600263302037131026445014129626270087582481726970411128868844490178103656898262288022957113048647600453668967144169237587848695347417293790253",
+      "6205564991051568701510651784231379156260628726944847335600263302037131026445014129626270087582481726970411128868844490178103656898262288022957113048647600453668967144169237587848695347417293875735"
+    ],
+    "dual_denominator": [
+      "4907371992061063905993184960167422043604808647019143076429414577266341526851306100383776894054633933652387147226165094638561197773485803944927090920588946044235225590989123487317635458585083672135",
+      "4907371992061063905993184960167422043604808647019143076429414577266341526851306100383776894054633933652387147226165094638561197773485803944927090920588946044235225590989123487317635458585083704248"
+    ],
+    "finite_common_charge_floor": [
+      "1298192998990504795517466824063957112655820079925704259170848724770789499593708029242493193527847793318023981642679395539542459124776484078030022128058654409433741553180114100531059888832210086005",
+      "1298192998990504795517466824063957112655820079925704259170848724770789499593708029242493193527847793318023981642679395539542459124776484078030022128058654409433741553180114100531059888832210203600"
+    ],
+    "relaxed_zero_error_charge_floor": [
+      "813036507786882972176149884377471197286936745718509227824965048471983937052852816793096677223402250561532966184245096848335250104672376550412536940436952900187904407174927015863918942562559273077",
+      "813036507786882972176149884377471197286936745718509227824965048471983937052852816793096677223402250561532966184245096848335250104672376550412536940436952900187904407174927015868735094141245125584"
+    ],
+    "relaxed_zero_error_joint_floor": [
+      "228251478370982006538600039475509721813395426971949077768283748485583855558308165452337279727496066087884946372166841962414109451523188873975955578010091456187021810998212103673347519717453880325",
+      "228251478370982006538600039478513218918306479020550089247337300596442075741995768061191481404622263536272232249592754505795422012192143310309535658775287050955154900551953428777908974480842958688"
+    ]
+  },
+  "relaxed_point": {
+    "finite_channel_error": "zero row in19channels",
+    "far_lift_error": "zero row in18retained coordinates",
+    "good_metric": "any Gamma>=0",
+    "far_action_energy": "any s>=0, including the relaxed value zero"
+  },
+  "verdict": "zero-error-point-obstructs-uniform-relaxed-upper-sign",
+  "elapsed_seconds": 0.0660355,
+  "conditions": [
+    "Same actual form/domain, exterior, original orthonormal mass and saved complete direction.",
+    "Actual H>=T=Lambda+full Gamma boundary+even pole>0 with the same archived Lambda=W^-1.",
+    "Sound saved exact-inverse/residual and common finite directed enclosures.",
+    "D>0 and T>=Lambda imply M_J>=Lambda_J by the finite block factorization.",
+    "The inherited floor and exact dyadic w, Q, z, b, scalar array and original W are sound.",
+    "The accepted smooth GP polynomial has exact constant coefficient -pi/4 and the source-proved pointwise remainder decay.",
+    "The matching saved far residual energy applies to this exact retained v and selected inverse x0.",
+    "Finite support correction and inverse-residual square completion are valid on the inherited actual common form/domain.",
+    "The same residual generators represent the full retained-to-J map R_J.",
+    "The existing finite Cauchy projection and its absolute remainder enclose every retained coordinate.",
+    "The saved19-channel base lift encloses its exact implicit P^-1 B_g.",
+    "The original signed far factors plus their full allowance majorize the same R_far^* W R_far.",
+    "A0 is the Gram of all middle channel rows, and hence majorizes the J-only channel Gram.",
+    "The old base channel kernel is exactly -A_rho^-1 for the same Beta0.",
+    "The common far cross uses the same Mw and R and the weight (1+rho)W_far.",
+    "The saved exact scalar direction has r_J=R_J v0 and defect e=r_J-theta*(Mw)_J.",
+    "The accepted scalar defect encloses e^*W_J e for this same exact theta and original weights.",
+    "Same complete actual common-form and exterior-domain premises.",
+    "Same positive actual exterior H and archived W majorizing H^-1.",
+    "Sound reused positive-pivot certificate for this exact complete target.",
+    "The saved real symmetric enclosure contains the exact complement of this base.",
+    "Nonzero leading determinant signs determine the principal-block inertia by Jacobi signature.",
+    "A positive-semidefinite update of rank r cannot remove more than r negative directions.",
+    "The accepted old real symmetric core has inertia17positive,1negative,0zero.",
+    "Both error Grams bound components of the same actual full common row on the same exact lift.",
+    "The standard validated solve encloses the positive-complement inverse actions.",
+    "The accepted actual Pplus is positive definite; a rational midpoint is only a reference.",
+    "The saved finite_center fields enclose the same exact bhat used by the shared-Gram consumer.",
+    "The Neumann residual bound applies only when the outward eta upper is strictly below one.",
+    "Actual Pplus is positive and the reference path is nonsingular for eta<1; hence P0 is positive.",
+    "R/(1+eta) <= Pplus^-1 <= R/(1-eta) applies to the same actual PSD transported error Grams.",
+    "The center residual is h*-Pplus*x for the SAME h and Pplus as the accepted center certificate.",
+    "Both full error Grams control components of the SAME actual common row, including negative/positive cross correlations.",
+    "The signed expansion uses uniform bounds, without asserting joint attainment of separate error extrema.",
+    "The SAME actual A_rho inverse is the saved negative channel block of the old kernel.",
+    "Fphi=F0-eta with eta=e*W_J U_J/theta and e*W_J e<=Ee for the SAME defect and original weights.",
+    "A_J=U_J*W_J U_J<=A0<A_rho, so eta A_rho^-1 eta*<=Ee/theta^2 by the operator norm, without a channel-count factor.",
+    "The actual common charge is nonnegative and Kcal<=Dstar-Fphi A_rho^-1 Fphi*.",
+    "The relaxation constrains eta and t only by the accepted PSD error upper envelopes; it imposes no positive lower size or further same-source realization condition.",
+    "The tested denominator is Dstar-(F0-eta) A_rho^-1 (F0-eta)*, not the exact actual common charge.",
+    "The same-source charge identity is Kcal=middle_action_energy-h+(1+rho)*s-(F0-eta) A_rho^-1 (F0-eta)*, with s=||u_far||_W^2>=0 and rho=1/32.",
+    "The accepted old core has one negative direction and a positive good block; the same inherited rank-one criterion is used only with the positive relaxed denominator."
+  ],
+  "scope": "At eta=t=0, both error upper envelopes hold and the positive relaxed denominator plus q is strictly positive even before adding Gamma>=0. Even replacing the far action energy by its ideal relaxed value zero leaves a strictly positive lower bound for the exact-charge scalar Kcal+Gamma+q at eta=t=0. Thus a uniform negative upper on this stated relaxation cannot follow from these envelopes or a sharper far-energy upper alone. This is not an actual-source realization, an exclusion of sharper charge data or other lower constructions, actual Schur negativity, or an RH result. Existing feasibility reasoning and exact cached arithmetic; no generic novelty or Lean claim."
+}
