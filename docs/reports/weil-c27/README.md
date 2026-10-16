@@ -2469,3 +2469,70 @@ Fresh-output usage:
 ```sh
 uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/full_gamma_joint_sign.py --out build/c27-joint-sign.json
 ```
+
+## A scalar-defect lower bound for the channel energy
+
+`full_gamma_channel_charge.py` consumes the same old nineteen-channel
+inverse, exact direction, scalar defect and joint signed packet. It
+contracts the previously unused scalar channel energy; no inverse,
+solve, scientific supplier or earlier center/trace/sign calculation runs.
+Write
+
+$$
+F_0=(\Beta_0v_0)^*/\vartheta,\qquad
+F_\phi=F_0-\eta,\qquad
+\eta=e^*W_JU_J/\vartheta,\qquad k=E_e/\vartheta^2.
+$$
+
+Because $U_J^*W_JU_J\preceq A_0\prec A_\rho$, weighted Cauchy and
+the operator norm imply
+
+$$
+\eta A_\rho^{-1}\eta^*\le k.
+$$
+
+For example the squared norm of
+$W_J^{1/2}U_JA_\rho^{-1/2}$ is at most1. This bound uses an operator
+norm, with no factor equal to the nineteen channels. Set
+
+$$
+E_0=F_0A_\rho^{-1}F_0^*,\qquad
+L_F=(\max(0,\sqrt{E_0}-\sqrt{k}))^2,\qquad
+U_F=(\sqrt{E_0}+\sqrt{k})^2.
+$$
+
+The triangle inequalities in the $A_\rho^{-1}$ norm give
+
+$$
+L_F\le F_\phi A_\rho^{-1}F_\phi^*\le U_F,\qquad
+0\le\mathcal K\le D_*-L_F.
+$$
+
+The1024-bit computation takes0.413 seconds, including packet loading.
+It gives $E_0$ near106.3370533152211, $\sqrt{k}<4.023460$,
+$L_F>39.545559$ and $U_F<205.505007$. In particular the positive
+certified ceiling
+
+$$
+D_\sharp=(D_*)_{\rm up}-(L_F)_{\rm low}<259.601110
+$$
+
+improves the coarse charge. Combining it with the already certified
+$q$ upper gives a sufficient good-metric budget near-223.750468;
+this separate estimate supplies no positive allowance for $\Gamma$.
+That failure is inconclusive for $\mathcal K+\Gamma+q$: the same
+$\eta$ occurs in both $F_\phi$ and the finite error of $b$, so a joint
+estimate can retain cancellations lost by the two separate bounds.
+The actual good-block inverse metric also remains missing.
+
+The packet retains the new $F_0^*$ and $A_\rho^{-1}F_0^*$ columns for
+subsequent common-source contractions. These are applications of
+existing weighted Cauchy and norm inequalities, not new generic
+methods. All conclusions inherit the same actual common-form/domain,
+inverse/comparison and sound-cache premises. No Lean verification,
+actual full retained/cofinal positivity, Robin tail or RH result is
+claimed.
+
+```sh
+uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/full_gamma_channel_charge.py --out build/c27-channel-charge.json
+```
