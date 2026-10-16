@@ -1985,3 +1985,80 @@ These are applications of existing numerical and variational methods,
 with the inherited actual domain/comparison and sound-cache premises.
 They supply no new generic algorithm/theorem or Lean verification.
 Full retained positivity, cofinal positivity and RH remain unresolved.
+
+## Reuse the old exact lift and determine its rank requirement
+
+`full_gamma_lift_projection.py` consumes the OLD nineteen-channel
+`joint-gamma-6765-rho32-v2-*` base, its1263-by18 saved inverse action,
+the accepted common column and the original signed far factors. With
+the old positive block denoted by (P_g), it uses the exact implicit
+lift (V=[-P_g^{-1}B_g;I]) enclosed by that saved action. It supplies
+only the missing products
+
+$$
+c=b_{\rm fin}^*V,\qquad \Beta_V=\Beta_0V,\qquad
+G_V=(P_{\rm far}^*V)^*K(P_{\rm far}^*V)+\varepsilon V^*V.
+$$
+
+The signed112-feature core is retained, together with every cross
+term in the independent allowance. Its exact rational coefficient
+is the upper endpoint of the old base's explicitly640-bit transported
+allowance, checked against the original512-bit metadata. Neither
+the signed core alone nor an interval midpoint is assumed PSD.
+This is the old base's complete lift, not a rounded saved direction
+or the different lift of the failed common-rho1 target.
+
+The1024-bit production took1.44 seconds. Independent1536-bit cached
+consumption gave exactly the same3024 matrix interval pairs. No
+target, inverse solve, channel values, special functions or moments
+were regenerated.
+
+`full_gamma_cross_screen.py` uses the saved channel inverse
+
+$$
+A_\rho^{-1},\qquad
+A_\rho=I+A_0+(1+\rho^{-1})\delta_{\rm ch}I,\qquad \rho=1/32,
+$$
+
+from the last19-by19 block of the base kernel. This is not
+(P_g^{-1}). Set (u=Mw), (F_\phi=u_J^*W_JU_J) and
+(Z=A_\rho^{-1}\Beta_V). Since (A_0) includes all middle channel
+rows, it majorizes the J-only Gram. Weighted Cauchy gives
+
+$$
+|(F_\phi Z)_j|\le\sqrt{e_J(Z^*A_0Z)_{jj}},\qquad
+|(1+\rho)u_\infty^*W_\infty R_\infty V_j|
+\le(1+\rho)\sqrt{E_M(G_V)_{jj}}.
+$$
+
+Subtract both radii from (|c_j|). All18 lower bounds are positive;
+the smallest is above (1.8419798\times10^{-16}), at mode24. Thus
+the full corrected common row has nonzero coordinates, under the
+inherited common-object and sound-enclosure premises. This does
+not supply a fixed positive matrix lower bound or pay coupling
+to the good block. The screen took0.30 seconds; its90 interval pairs
+match an independent1536-bit consumption exactly.
+
+`small_schur_rank_floor.py` applies Jacobi's signature criterion to
+the saved18-by18 complement of the SAME OLD nineteen-channel base.
+All18 leading determinant intervals are strictly negative. Their
+export grids are degree dependent, (640k+64), so the tiny higher
+determinants are not rounded onto the entry grid. The pivot signs
+are therefore one negative followed by17 positive. The complement
+has inertia17 positive,1 negative,0 zero; with the1263 positive
+prefix, the full sufficient base has1280 positive and1 negative
+direction. This is not an inertia statement about actual (S_N).
+A single positive update is permitted by this inertia count, but
+its direction and paid strength still need verification. The18
+determinant tests took0.25 seconds and were independently checked
+on the saved small matrix, without an eigensolver or a large solve.
+
+These consumers apply existing ball products, weighted Cauchy and
+Jacobi/LDL signature; no new generic method or Lean verification
+is claimed. Fresh-output usage:
+
+```sh
+uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/full_gamma_lift_projection.py --out build/c27-lift-projection.json.zlib
+uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/full_gamma_cross_screen.py --out build/c27-cross-screen.json
+uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/small_schur_rank_floor.py --target docs/reports/weil-c27/joint-gamma-6765-rho32-v2-target.json.zlib --pivots docs/reports/weil-c27/joint-gamma-6765-rho32-v2-pivots.json --schur docs/reports/weil-c27/joint-gamma-6765-rho32-v2-schur.json --out build/c27-old-base-rank-floor.json
+```
