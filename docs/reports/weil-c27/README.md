@@ -1544,3 +1544,84 @@ cache, not for consuming the archived result:
 ```sh
 uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/gamma_channel_resolution.py --out build/c27-rate-details.json.zlib
 ```
+
+## Complete Gamma boundary on a common finite dual space
+
+`full_gamma_dual.py` applies the existing inverse variational formula
+and finite block elimination to `T=Lambda+Gamma_boundary+even_pole`,
+with the same archived `Lambda=W^-1`, complete1281-coordinate retained
+vector and selected support1281–2048. All Gamma rates are retained.
+For a nonzero finite exact dyadic `w` outside that support, use the
+common dual space `[E,w]`. Set
+
+```
+B0=E*TE, b=E*Tw, beta=w*Tw, a=w*r, z=w*Z, D=F-B0.
+Q=v*Av-(F^-1 B_ret v)*F(F^-1 B_ret v), r=Cv-Z F^-1 B_ret v.
+h=beta-z F^-1 z*+(z-b*)D^-1(z*-b).
+sup_t U_[E,w](t)=Q-|a|^2/h >= sup_t m_T(t).
+```
+
+This is the supremum of a finite dual **upper bound**, not the full
+comparison's exact optimum. Positivity of `D` follows from the
+existing prime slack `D>=I/632`; the saved consumer additionally
+checks768 directed positive pivots of `D-I/632` as finite numerical
+consistency. This is not a new floor theorem. The two subsequent
+FLINT solves each have one RHS. There is no new old-family optimizer.
+The exact disjointness cancellation `z*-b=-E*C_p w` is available for
+subsequent consumers.
+
+The complete Gamma/pole kernel is separated from already cached
+actual scalars by adding back every prime sine and cosine term and
+subtracting the periodic Gamma diagonal. In particular its diagonal
+keeps `-s_GP/(pi*n)`; removing just the cosine term is incorrect.
+Digamma/trigamma full-rate formulas follow from
+[DLMF5.7.6](https://dlmf.nist.gov/5.7.E6) and
+[DLMF5.15.1](https://dlmf.nist.gov/5.15.E1). No finite-channel trace
+allowance is applied to the full boundary. The streamed current-v
+quadratic is new; the earlier support packet's `qv` belongs to an
+older vector and is not relabeled. The original selected inverse
+and transformed residual generators are reused without a new solve.
+
+`full-gamma-dual-4096-finite.json.zlib` archives this new common action,
+the exact384-bit dual vector on modes2049–4096 and the scalar inputs
+needed to reconstruct its full boundary compression. Only the dual
+trials are restricted; the inverse variational upper therefore needs
+no debit for an omitted Fourier residual tail. Direct full-boundary
+quadratics use independent diagonals and every cross term of `w`.
+
+The directed result in `full-gamma-dual-4096-bound.json` is
+**inconclusive**: its upper is approximately
+`6.323379216251768e-31`, with actual current-direction
+`Q≈2.971626487064166e-30`. A positive upper certifies no sign of the
+full comparison or actual Schur form, and repairs no trial.
+
+`full-gamma-dual-4096-diagnostic.json` uses the same exact `v,w,t0`
+but the already studied35-channel/pole comparison. A small Woodbury
+system gives its restricted fixed-trial upper
+`4.847374044137042e-31>0`; the archived actual margin at that same
+trial is below `-3.5939e-32`. Thus this dual restriction loses more
+than `5.2067e-31` even before passing to all Gamma rates. It cannot
+exclude that already excluded family. This identifies a limitation
+of the chosen dual space; it does not determine full-Gamma
+saturation or promise success from a larger cutoff.
+
+The one production took14.23 seconds, the directed bound consumer
+49.71 seconds and the diagnostic4.93 seconds at1024 working bits.
+These are measured applications on the recorded environment, not
+complexity or performance guarantees. The production reads the old
+scientific scalar/inverse/residual packets and does not regenerate
+any old target, Gram, scalar table or far moment. No new general
+method, Lean verification, actual/cofinal positivity or RH result is
+claimed. All numerical implications inherit the actual common-form,
+domain and sound-comparison/enclosure premises of the earlier packet.
+
+Consume the caches with fresh output paths:
+
+```sh
+uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/full_gamma_dual.py --finite docs/reports/weil-c27/full-gamma-dual-4096-finite.json.zlib --out build/c27-full-gamma-dual-check.json
+uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/full_gamma_dual.py --diagnose --finite docs/reports/weil-c27/full-gamma-dual-4096-finite.json.zlib --out build/c27-full-gamma-dual-diagnostic-check.json
+```
+
+Only when these new common dual actions are absent, produce them with
+`--produce --out <fresh-packet.json.zlib>`. Increasing working precision
+in a cached consumer repeats no scientific production.
