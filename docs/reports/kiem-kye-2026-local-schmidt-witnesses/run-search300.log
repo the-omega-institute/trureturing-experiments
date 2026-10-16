@@ -1,0 +1,18 @@
+product kernel: m=3 n=3 dim E=1 SR(v)=1 k=1 l=1
+   t=0.2: alpha=0.961538 (search 0.961471)  <v_t,W v_t>=-3.045e-03  min_SR<=l <x,Wx>=1.831e-03  max|W-rho|=2.438e-02  ok
+   t=0.05: alpha=0.997506 (search 0.997466)  <v_t,W v_t>=-8.915e-05  min_SR<=l <x,Wx>=2.230e-04  max|W-rho|=6.230e-03  ok
+   t=0.01: alpha=0.999900 (search 0.999827)  <v_t,W v_t>=-9.259e-07  min_SR<=l <x,Wx>=1.252e-05  max|W-rho|=1.250e-03  ok
+product kernel: m=3 n=3 dim E=1 SR(v)=1 k=1 l=2
+   t=0.2: alpha=0.980769 (search 0.980506)  <v_t,W v_t>=-1.502e-03  min_SR<=l <x,Wx>=9.287e-04  max|W-rho|=1.700e-02  FAIL
+   t=0.05: alpha=0.998753 (search 0.998431)  <v_t,W v_t>=-4.456e-05  min_SR<=l <x,Wx>=1.151e-04  max|W-rho|=4.403e-03  FAIL
+   t=0.01: alpha=0.999950 (search 0.999757)  <v_t,W v_t>=-4.629e-07  min_SR<=l <x,Wx>=8.205e-06  max|W-rho|=8.837e-04  FAIL
+mixed kernel: m=3 n=3 dim E=2 SR(v)=1 k=1 l=2
+   t=0.2: alpha=0.980769 (search 0.980469)  <v_t,W v_t>=-1.502e-03  min_SR<=l <x,Wx>=3.988e-04  max|W-rho|=4.353e-02  FAIL
+   t=0.05: alpha=0.998753 (search 0.998489)  <v_t,W v_t>=-4.456e-05  min_SR<=l <x,Wx>=6.293e-05  max|W-rho|=2.037e-02  FAIL
+   t=0.01: alpha=0.999950 (search 0.999749)  <v_t,W v_t>=-4.629e-07  min_SR<=l <x,Wx>=7.545e-06  max|W-rho|=5.290e-03  FAIL
+Schmidt-rank-2 kernel: m=3 n=4 dim E=1 SR(v)=2 k=2 l=2
+   t=0.2: alpha=0.961538 (search 0.959624)  <v_t,W v_t>=-2.478e-03  min_SR<=l <x,Wx>=1.147e-03  max|W-rho|=1.593e-02  FAIL
+   t=0.05: alpha=0.997506 (search 0.996070)  <v_t,W v_t>=-8.053e-05  min_SR<=l <x,Wx>=1.669e-04  max|W-rho|=4.053e-03  FAIL
+   t=0.01: alpha=0.999900 (search 0.998650)  <v_t,W v_t>=-9.008e-07  min_SR<=l <x,Wx>=4.144e-05  max|W-rho|=8.130e-04  FAIL
+FAIL
+EXIT=1
