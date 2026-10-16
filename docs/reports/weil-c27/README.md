@@ -4485,3 +4485,78 @@ also do not exist:
 ```sh
 PYTHONDONTWRITEBYTECODE=1 UV_OFFLINE=1 uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/full_gamma_signed_mu.py --out /tmp/c27-signed-mu-abel-reproduction.json.zlib
 ```
+
+## Same-source signed mixed correction from the saved Gram
+
+[full_gamma_signed_correction.py](full_gamma_signed_correction.py) consumes
+the saved proxy interval and original physical Gram kernel, full112 short
+jet, inverse profiles and scalar/component bounds. For q=`D_inverse_difference`
+and p=`F_inverse_z`, lambda=q−p is supported on1281..2048. The original
+source identity is uF=u0+r_sm+Cphys*ell; the target is Bv=Cphys*t, with
+cached h=P0*t. The missing signed cross is
+nu=kappa*<Cphys*ell,Cphys*t>W, enclosed around kappa*a^T*K0*h,
+where a=P0*ell. The original physical `far_matrix_error` pays the cross
+error; it is read on its512-bit metadata grid, rather than replaced by
+the amplified complete allowance. The saved kernel is not assumed PSD.
+
+Two short calls to the existing signed source-power reducer supply a:
+even coefficients of (−1)^n*lambda_n and odd coefficients of
+−(−1)^n*lambda_n*s_mid_n, using its negative power ratio. All original
+kernel entries and right features are reused. The old primal Hmix bound
+and a positive lower bound on its symbol coefficient supply a lambda-l1
+upper without another absolute source reduction.
+
+The existing separate geometric/feature forward components also give
+a sharper proxy-forward allowance. The true full moment norm is read
+on its628-bit grid. The physical symbol-width premise is checked on
+all2049 rows; r2 is square-rooted at1024 bits before640-bit rounding,
+and its squared interval is retained separately on a1024-bit grid.
+The complete allowance for theta around saved I_mu+nu0 is
+kappa*(eps_sm*Ncap+P*eps_b_sharp)+kappa*eps_far*Zlambda*sqrt(Kphys)*LV.
+This replaces the earlier E_mu; I_mu already includes the proxy's
+source, symbol and Abel allowances.
+
+The sole fixed1024/640 application finishes in1.30498seconds. It performs
+two short source-power reductions on768 entries and one112-by112 cross.
+No old proxy/source, scalar, moment, inverse, reference, trace or Gram
+producer is replayed. Its new left features and fine squared remainder
+are retained in the [interval packet](full-gamma-signed-correction.json.zlib),
+SHA256 `d527c5217314bdd5b21e0f1080ef17b1e29b880954a1bafe77a711a1102dc6bd`.
+
+| Quantity | Approximate directed result |
+|---|---:|
+| Reused mixed bound's lambda-l1 upper |18.61447623568004556|
+| Signed kernel cross nu0 |+0.181002566603288306|
+| Sharp forward error upper |5.304632297062084e−69|
+| Physical Gram cross error upper |1.669239650964427e−66|
+| Complete new transfer allowance |4.112478850097329e−11|
+| Actual theta−mu interval |[0.18100256656216351,0.18100256664441310]|
+| Actual theta interval |[−4.331313289332710,−4.325974508801690]|
+| Frozen Clin+2theta interval |[16.865709521960626,16.876387083066322]|
+
+Displayed intervals round outwards; the saved integer endpoints and
+exact rational allowances control all tests. Reopening a saved interval
+as an Arb ball conservatively inflates its width. This includes the
+reused proxy interval and does not change its source or error contract.
+The actual correction is positive under the inherited certificates,
+while the unchanged sufficient test needs a negative upper below about
+−8.25719. Even its zero-transfer-error expression remains above16.86.
+Further reduction of this transfer allowance cannot make the fixed
+sufficient expression negative. This determines a limitation of the
+frozen envelope, not the sign of the actual center below that envelope.
+
+The useful next obligation is to derive a tighter linear upper or
+restore discarded signed contributions, preserving their common
+realization and the old certificate; replaying this mixed correction
+is unnecessary.
+The good-block metric, actual full-border sign, retained/cofinal
+positivity, Robin and RH remain unresolved. All inherited actual-form,
+domain, source/lift and component premises remain conditions. This is
+a numerical application of existing bounds, with no new generic
+algorithm, literature novelty or Lean theorem claim.
+
+For an explicitly requested reproduction only, choose a fresh output:
+
+```sh
+PYTHONDONTWRITEBYTECODE=1 UV_OFFLINE=1 uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/full_gamma_signed_correction.py --out /tmp/c27-signed-correction-reproduction.json.zlib
+```
