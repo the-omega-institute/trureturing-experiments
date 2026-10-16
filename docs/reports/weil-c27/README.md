@@ -952,3 +952,86 @@ uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/repo
 Without `--trial`, the program proposes the finite correction using
 NumPy2.2.6 and threadpoolctl3.6.0 in addition to the pinned python-flint.
 The directed consumer needs neither NumPy nor another solve.
+
+## A complete joint inverse trial and its reduced obstruction
+
+The finite solver interface reuses Poloni's Trummer-like displacement
+machinery, [arXiv:0903.4569v3](https://arxiv.org/pdf/0903.4569v3):
+the same-node definition and finite Schur update on p.3, Theorem4 on
+p.11, the separate diagonal update on p.12 and Algorithms5–6 on
+pp.21–22. The actual diagonal is additional input; generators alone do
+not recover it. Section7, p.17, warns about generator growth and actual
+residual checks. No source implementation is copied, general algorithm
+invented or universal stability inferred.
+
+`structured_inverse_residual_interval.py` uses all1281 original
+orthonormal retained coordinates, the same actual exterior $H$ and
+$W\succeq H^{-1}$. Select exterior modes1281–2048 by $V$, and set
+$F=V^*HV$, $B=V^*C$, $X=F^{-1}B$, $Y=VX$. The trial is this exact
+implicit finite inverse, rather than the previous96-bit rounded scalar
+trial. Two right-hand sides $F^{-1}G_E$ reconstruct every column of $X$
+from the finite rank2 displacement identity. The selected768 residual
+rows vanish exactly. The remaining finite rows2049–32768 are all kept;
+their weighted residual Gram has displacement rank at most4, with
+actual diagonals accumulated separately. The finite product identity
+has the plus sign
+
+$$
+D_P(R^*WR)-(R^*WR)D_P
+=\frac2\pi\bigl(TJ_2(G'_P)^*+G'_PJ_2T^*\bigr),\qquad
+T=R^*WG'_O.
+$$
+
+All168 archived far moments and112 features remain. The transformed
+features are $P_P-P_EX$. The full far allowance, approximately
+$1.80743\times10^{-135}$ before transport, pays
+$\varepsilon(1+\|X\|_F^2)<2.07733\times10^{-135}$.
+The complete sufficient target uses228 finite generator columns and
+the separately supplied diagonal. No infinite generator sum, bounded
+infinite displacement or positive signed-moment midpoint is assumed.
+
+The reusable640-grid target is `structured-joint-2048-target.json.zlib`,
+SHA-256 `ea4a761f76b59a11b2d04faf80531901a5164f4145c2424a4e79889ae3f72e22`.
+Alternative factorization consumers can use this target directly.
+
+| Saved result | Conclusion |
+|---|---|
+| `structured-joint-2048-float.json` | Smallest reading about $-4.83\times10^{-12}$; finite-middle subset discrepancy about $4.62\times10^{-12}$, so no sign or small-eigenspace claim. |
+| `structured-joint-2048-pivots.json` |1263 positive pivots, then uncertain mode24;18 coordinates remain. |
+| `structured-joint-2048-dense-schur.json` | Validated dense solve of the positive block; eigenvalue isolation inconclusive, but all18 reduced diagonal upper endpoints negative. |
+| `structured-joint-2048-diagonal-check.json` | Exact integer consumption of the same stored endpoints rejects this explicit sufficient lower target. |
+
+The first remaining coordinate, mode0, has reduced diagonal upper
+endpoint less than $-5.77\times10^{-31}$. A negative Schur diagonal
+already precludes positive semidefiniteness of this target because the
+eliminated block is positive. This is not a claim of18 negative
+eigenvalues, negative actual $A-C^*H^{-1}C$, or failure of every trial
+on the selected support. In particular the target includes its paid
+conservative far allowance; rejection does not remove that allowance.
+The common-form, domain and actual infinite-inverse comparison remain
+the same analytic premises. Full c27 positivity, cofinal positivity
+and RH are unresolved; no Lean verification is claimed.
+
+The rational `--self-check` covers the finite residual/Gram identities,
+signed low-rank update and dense LDL correspondence. A separate
+1024-bit run reproduced every target endpoint and the same1263-pivot
+prefix; its324 reduced intervals overlap the saved768-bit enclosures.
+This is precision reproduction by the same serial native reviewer,
+not independent algorithm or model diversity. No old scalar, moment,
+Gram, obstruction or enrichment production is repeated.
+
+The stored target and reduced enclosures suffice for the endpoint
+conclusion, using only the standard library:
+
+```sh
+python3 docs/reports/weil-c27/structured_schur_diagonal_check.py --target docs/reports/weil-c27/structured-joint-2048-target.json.zlib --pivots docs/reports/weil-c27/structured-joint-2048-pivots.json --reduced docs/reports/weil-c27/structured-joint-2048-dense-schur.json --out build/c27-joint-diagonal-check.json
+```
+
+For a new production or a different factorization, use fresh outputs:
+
+```sh
+uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/structured_inverse_residual_interval.py --self-check
+uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/structured_inverse_residual_interval.py --target-out build/c27-joint-target.json.zlib --out build/c27-joint-pivots.json
+uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/structured_inverse_residual_interval.py --target docs/reports/weil-c27/structured-joint-2048-target.json.zlib --out build/c27-joint-reused-pivots.json
+uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/structured_residual_schur_finish.py --target docs/reports/weil-c27/structured-joint-2048-target.json.zlib --pivots docs/reports/weil-c27/structured-joint-2048-pivots.json --out build/c27-joint-dense-schur.json
+```
