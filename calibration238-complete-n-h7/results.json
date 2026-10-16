@@ -1,0 +1,48 @@
+{
+  "arithmetic": "exact integers and fractions",
+  "certificate_bytes": 2579533,
+  "certificate_sha256": "621bed2ac570875c2bcb96796338e753ba045c544aa30fb8e1af8702cc94581d",
+  "example": {
+    "N_pairs": 21,
+    "cell_label_maximizations": 672,
+    "counterfactual_cells": 42,
+    "event_rows": 382,
+    "optimal_error": "15/64",
+    "schedules": 14,
+    "score_rows": 22,
+    "weighted_amplitude_numerator_over_64": 694,
+    "words": 128
+  },
+  "geometry": {
+    "affine_dimension": 7,
+    "crossing_edges": 21337,
+    "cuts_clipped": 471,
+    "domain_bases": 120,
+    "domain_vertices": 12,
+    "final_edges": 8363,
+    "peak_vertices": 1752,
+    "vertices": 1606,
+    "vertices_with_exactly_seven_active_rows": 251
+  },
+  "lifts": {
+    "cell_vectors": 66081,
+    "independent_event_rows": 613492,
+    "lifts": 1606,
+    "schedule_rows": 22027,
+    "word_laws": 205568
+  },
+  "scalar_budget_obstruction": {
+    "avoid_forbidden_zero_labels": 354,
+    "deterministic_descriptions": 820,
+    "maximum_two_word_zero_score": 1,
+    "target_score": "3/2"
+  },
+  "scores": {
+    "N_pairs_per_cut": 21,
+    "cells_per_pair": 4,
+    "cuts": 471,
+    "event_rows": 382,
+    "labels_per_cell": 8,
+    "words": 128
+  }
+}
