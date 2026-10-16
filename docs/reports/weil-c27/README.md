@@ -2062,3 +2062,86 @@ uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/repo
 uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/full_gamma_cross_screen.py --out build/c27-cross-screen.json
 uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/small_schur_rank_floor.py --target docs/reports/weil-c27/joint-gamma-6765-rho32-v2-target.json.zlib --pivots docs/reports/weil-c27/joint-gamma-6765-rho32-v2-pivots.json --schur docs/reports/weil-c27/joint-gamma-6765-rho32-v2-schur.json --out build/c27-old-base-rank-floor.json
 ```
+
+## Transport the scalar defect to the missing common cross row
+
+`full_gamma_defect_cross.py` reuses information stronger than the
+unscaled action energy. The accepted exact dyadic direction $v_0$
+and exact nonzero $\vartheta$ have a certified finite defect
+
+$$
+e=R_Jv_0-\vartheta u_J,\qquad e^*W_Je\le E_e.
+$$
+
+Consequently the missing finite contraction satisfies
+
+$$
+F_\phi=(\Beta_0v_0)^*/\vartheta-e^*W_JU_J/\vartheta.
+$$
+
+Let $Z=A_\rho^{-1}\Beta_V$. The full common row has the enclosure
+
+$$
+\mathcal B_V\in
+c-(\Beta_0v_0)^*Z/\vartheta+\mathcal E,
+$$
+
+$$
+|\mathcal E_j|\le
+\frac{\sqrt{E_e(Z^*A_0Z)_{jj}}}{|\vartheta|}
++(1+\rho)\sqrt{E_M(G_V)_{jj}}.
+$$
+
+The consumer reuses the first screen's finite radii with the
+conservative factor $\sqrt{E_e/(\vartheta^2e_J)}$, taking the
+numerator upward and $e_J$ downward. Its factor is less than
+$0.109095699$. The far uncertainty remains paid. This obtains
+common-row intervals from saved data without evaluating raw
+channels, digamma functions, new moments or inverse actions.
+
+Under the same actual form/domain and inverse-comparison premises,
+the ordinary inverse-residual square completion can use
+
+$$
+\overline W=(W_J-W_JU_JA_\rho^{-1}U_J^*W_J)
+\oplus(1+\rho)W_{\rm far}\succeq M^{-1},
+$$
+
+$$
+\mathcal K=u^*\overline W u-h
+=\delta+\rho\|u_{\rm far}\|_W^2
+-F_\phi A_\rho^{-1}F_\phi^*\le
+D_*:=\delta_{\rm up}+\rho E_M.
+$$
+
+Here $0<D_*<299.146668420532$.
+The corresponding conditional monotone lower target is
+$L_*+\mathcal B^*\mathcal B/D_*$. This uses the FULL common row;
+it does not pair that denominator with the raw finite column.
+
+All18 full-row intervals exclude zero. Mode0 is enclosed within
+$(5.99690490660,9.65492947706)\times10^{-15}$. With the old core,
+all18 quantities $(\Sigma_*)_{jj}+|(\mathcal B_V)_j|^2/D_*$
+have positive lower endpoints; mode0's exceeds
+$2.44652\times10^{-33}$. These are quadratic restrictions to the
+old lift, not the Schur complement after updating its good block.
+The production took0.41 seconds at1024 working bits.
+Independent1536-bit cached consumption overlaps all128 interval
+pairs;124 are endpoint-identical. All18 final row intervals,
+diagonal lower bounds and metric budgets are endpoint-identical.
+The four differences occur only in auxiliary center intervals.
+
+For the full coupled test the scalar good-block metric
+$\Omega=\mathcal B_GP_g^{-1}\mathcal B_G^*$ must still be enclosed
+upward. An upper strictly below6.21431056 would preserve all18
+updated diagonal lower bounds. It has not been supplied, and
+positive diagonals would still leave the off-diagonal sign test.
+The cached $P_g^{-1}B_g$ is not an inverse on this new row.
+Coordinate interval boxes alone do not supply a fixed positive
+matrix lower bound. Full retained/cofinal positivity and RH remain
+unresolved; no general theorem, algorithmic novelty or Lean result
+is claimed.
+
+```sh
+uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/full_gamma_defect_cross.py --out build/c27-defect-cross.json
+```
