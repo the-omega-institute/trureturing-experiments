@@ -3833,3 +3833,89 @@ is claimed.
 ```sh
 PYTHONDONTWRITEBYTECODE=1 UV_OFFLINE=1 uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/full_gamma_shifted_projection_interval.py --out build/c27-shifted-projection-interval.json
 ```
+
+## Full-band orthogonality for the same-source surplus budget
+
+[full_gamma_band_surplus_budget.py](full_gamma_band_surplus_budget.py)
+uses the SAME original384-bit source,153-cell reflected refined weight
+$W\ge1/v$, complete far cap and saved moments. In the original
+unphased orthonormal cosine basis, $u_J$ occupies2049..32768 and the
+entire $u_F$ is perpendicular to every mode0..32768. With $P_N$ the
+projection onto that complete band, the standard Bessel/Cauchy bound is
+
+$$
+p_v\le a_1+2\sqrt{U_F}\sqrt{a_2-\|P_N(Wu_J)\|^2}+mU_F.
+$$
+
+For the reflected coordinate $s$, define
+$c_l=\int_0^1W(s)\cos(\pi ls)\,ds$. Rational step jumps give every
+needed $c_l$, and the normalized output coefficients are
+
+$$
+\beta_0=\sqrt2\sum_{n\in J}u_nc_n,\qquad
+\beta_k=\sum_{n\in J}u_n(c_{|n-k|}+c_{n+k}),\quad1\le k\le32768.
+$$
+
+One native ball polynomial product implements the symmetric Laurent
+convolution, keeping both sum and difference frequencies. The input
+helper requires positive source modes; it does not claim constant-source
+support. Its zero OUTPUT mode has the separate $1/\sqrt2$ factor.
+The exact finite multiplication identity uses only weight coefficients
+through65536; it does not approximate the step weight by a finite series.
+This reuses Olver–Townsend,
+[arXiv:1202.1347v2](https://arxiv.org/pdf/1202.1347v2), §2.2, (2.7),
+and Johansson, [arXiv:1611.02831v1](https://arxiv.org/pdf/1611.02831v1),
+§6.1. No continuous-coefficient uniform approximation or unverified
+floating-point FFT error bound is imported.
+
+The prescribed sole1024/640-bit run takes9.168seconds and supplies:
+
+| Quantity | Approximate enclosure value |
+|---|---:|
+| $\|P_N(Wu_J)\|^2$ |1147558.75453915025|
+| $\|(I-P_N)Wu_J\|^2$ upper |17004.3003962366169|
+| Complete cross upper |1784.31468694854120|
+| Complete $p_v$ upper |38420.1198384914721|
+| Supplied eligibility cap |0.0272333893565792018|
+
+The Bessel subtraction uses the projection LOWER and saved $a_2$
+UPPER. The final bound includes the entire $mU_F$ and cross contribution.
+No old source-cell mass, coefficient source/action, operator, potential,
+inverse, solve, Gram or far producer is replayed. All65537 new weight
+coefficients and32769 projected coefficients are retained as finite
+ordered dyadic intervals, enabling subsequent consumers to reuse them.
+
+The same run reuses the old zero and1/48 determinant enclosures to
+enclose their affine zero near0.026662647029077637 and the necessary
+capacity target near39265.56779425506. Its primary success criterion
+is the STRICT complete-budget inequality against that target's LOWER
+endpoint. The new upper passes. Affine propagation at the sufficient
+new cap gives a positive determinant near4.83012948603e-1363, with
+no new determinant/matrix calculation. This escapes the preceding
+ceiling exclusion only; a positive upper ceiling is not a positive
+lower or an actual retained-positivity certificate. No maximal actual
+capacity is claimed. The previous exclusion on its smaller supplied
+interval remains valid.
+
+Accepted input byte pins and correspondence are exported in
+[full-gamma-band-surplus-budget.json.zlib](full-gamma-band-surplus-budget.json.zlib),
+SHA256 `04fb6eb533b8448ade52ad4032faaaf079ad6603f9998d272a36828c57be44b1`.
+Its source SHA256 is
+`4ce09199999cf5730623507c38be4e5301472ee0d4b882947f3fab76c8e8245a`.
+Source/helper hashes are invocation guards, not replacement data-cache
+keys. All coefficient exports reject nonfinite or unordered intervals;
+an inconsistent negative Bessel residual stops rather than being hidden.
+Failure of the strict target is inconclusive and ends this fixed recipe,
+without a cell, source, parameter or precision scan.
+
+The actual common inverse forms/domains, legal $E$ elimination, same
+closed short, unitary source/phase normalization, full-band orthogonality
+and sound entire-far/cache identifications remain assumptions. These are
+applications of established methods. Actual sufficient score/good-block,
+retained/cofinal positivity, Robin, RH and Lean verification are unresolved.
+
+To reproduce into a fresh output, rather than overwrite the archive:
+
+```sh
+PYTHONDONTWRITEBYTECODE=1 UV_OFFLINE=1 uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/full_gamma_band_surplus_budget.py --out build/c27-band-surplus-budget.json.zlib
+```
