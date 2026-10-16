@@ -5103,7 +5103,7 @@ proof. Actual-center/full-border signs, good-block payment,
 retained/cofinal positivity, Robin tail and RH remain unresolved.
 
 
-The saved assembly time is0.32502seconds; time including serialization
+The saved assembly time is<0.32502seconds; time including serialization
 is0.42767seconds. Runtime guards bind11 invoked sources and59 inherited
 sources/data, unchanged at entry and prewrite. One constructed-row
 application and one homogeneous cap rescaling are new. No actual-source,
