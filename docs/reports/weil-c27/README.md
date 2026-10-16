@@ -1694,3 +1694,86 @@ uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/repo
 
 If this new action is genuinely missing, produce it with
 `full_gamma_dual_middle.py --out <fresh-packet.json.zlib>`.
+
+
+## Complete finite dual optimization defect
+
+`full_gamma_dual_defect.py` consumes the preceding accepted complete
+middle vector and scalar bound. The complete $r_J$ and $M_Jw$ profiles,
+and the two inverse vectors, were not saved by that bound. Only these
+missing actions and their scalar defect are produced. Original $Q,v,w$,
+$z,b$, all full-rate scalar rows and the original diagonal $W$ are reused.
+No old channel optimizer, retained quadratic, scalar supplier or floor
+check is rerun.
+
+For the same coordinate embeddings $E,J$, $J=2049{:}32768$, let
+$T=\Lambda+G$, $G$ the complete Gamma boundary plus even pole,
+$F=E^*HE$, $D=F-E^*TE>0$, $Z_J=J^*HE$,
+$B_J=E^*TJ$, $K_J=Z_J^*-B_J=-E^*C_{\rm p}J$ and
+
+$$
+M_J=T_J-Z_JF^{-1}Z_J^*+K_J^*D^{-1}K_J.
+$$
+
+The existing block factorization gives $M_J\succeq\Lambda_J>0$:
+the block with upper row $(F,Z_J^*)$ and lower-right
+$T_J+K_J^*D^{-1}K_J$ is $T_{[E,J]}$ plus
+$[I;K_J^*D^{-1}]D[I,D^{-1}K_J]$. Minimize in the $E$ coordinate
+and retain the $\Lambda_J$ part of the original diagonal lower bound.
+For any exact dyadic $y$, square completion therefore yields
+
+$$
+L(y)=2\Re(y^*r_J)-y^*M_Jy,\quad e=r_J-M_Jy,
+$$
+
+$$
+Q-L(y)-e^*W_Je\ \le\
+\mathcal U_J:=Q-r_J^*M_J^{-1}r_J\ \le\ Q-L(y).
+$$
+
+This uses ordinary finite inverse variational, block and inverse-defect
+estimates, not a new theorem. It applies to the entire current finite
+space, with all inherited common-form/domain and sound-comparison premises.
+A positive lower rules out a negative restricted upper in this finite
+space. It does not give a positive lower for the actual comparison
+supremum, a larger dual space or the actual Schur form. A large defect
+upper by itself does not prove that the actual optimization gap is large.
+
+The new adapter calls existing FLINT `arb_poly` multiplication for the
+classical Toeplitz/Hankel squared-node action. It retains the independent
+diagonals, parity, both mixed terms and complete cached Gamma/pole symbol.
+No asymptotic or full weighted-trace estimate is used. The direct residual
+uses the accepted GO/GP geometric action and absolute remainder. With
+$p=F^{-1}z$ and $q=D^{-1}(z-b)$ from the same certified solver,
+
+$$
+M_Jw=\Lambda_Jw+J^*G(Jw-Eq)+J^*HE(q-p).
+$$
+
+The numerical packet `full-gamma-dual-32768-defect.json.zlib` saves all
+$30720$ coordinates of each missing profile and both $768$-coordinate
+inverse vectors. Taking $y=\vartheta w$ with the saved exact $512$-bit
+dyadic scalar, the directed output gives
+
+$$
+2.48441\times10^{-31}<\mathcal U_J<2.88819\times10^{-31},
+\qquad e^*W_Je<4.03773\times10^{-32}.
+$$
+
+Thus further direction optimization inside this same finite $J$ cannot
+make its restricted upper negative. The larger-space and actual Schur
+questions remain unresolved. The producer took $54.63$ seconds at $1024$
+working bits and checked actual direct rows $2049,4096,32768$. This is an
+application timing, not an algorithmic complexity claim. No Lean,
+full/cofinal positivity or RH result is supplied.
+
+To produce only the new profiles from the accepted scientific inputs:
+
+```sh
+uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/full_gamma_dual_defect.py --out build/c27-full-middle-defect.json.zlib
+```
+
+Existing numerical kernels and APIs are described by
+[Netlib's structured matrix multiplication](https://www.netlib.org/utk/people/JackDongarra/etemplates/node384.html),
+[FLINT's ball polynomial API](https://flintlib.org/doc/arb_poly.html) and
+[Python-FLINT 0.9.0's multiplication binding](https://github.com/flintlib/python-flint/blob/0.9.0/src/flint/types/arb_poly.pyx).
