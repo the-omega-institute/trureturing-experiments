@@ -1,0 +1,13 @@
+== (1),(2),(4) variance, mean and spectral lemma
+  N=   4: mean 0.6750 (formula 0.6159), var 2.135e-02, bound 2.360e+00, ratio 0.009, lemma True
+  N=   8: mean 1.3250 (formula 1.3091), var 6.316e-03, bound 8.344e-01, ratio 0.008, lemma True
+  N=  16: mean 2.0069 (formula 2.0022), var 1.864e-03, bound 2.959e-01, ratio 0.006, lemma True
+  N=  32: mean 2.6965 (formula 2.6954), var 4.875e-04, bound 1.011e-01, ratio 0.005, lemma True
+  N=  64: mean 3.3890 (formula 3.3885), var 1.231e-04, bound 3.329e-02, ratio 0.004, lemma True
+  N= 128: mean 4.0817 (formula 4.0817), var 2.940e-05, bound 1.062e-02, ratio 0.003, lemma True
+== (3) diagonal phases do not change the entropy law (N = 16)
+  KS statistic 0.0192
+== negative control: one tenth of the bound fails for small N
+  N=4: var 2.169e-02 vs bound/10 2.360e-01
+FAIL control: bound/10 should be violated at N=4
+SOME_FAILED
