@@ -3598,3 +3598,131 @@ PYTHONDONTWRITEBYTECODE=1 python3 docs/reports/weil-c27/full_gamma_prime_potenti
 
 The scalar consumer pins the published energy packet; its default input
 directory is the report directory. Both outputs must be fresh paths.
+
+## A refined reciprocal-potential budget at the fixed shift1/48
+
+[full_gamma_prime_potential_refined.py](full_gamma_prime_potential_refined.py)
+keeps the same full source, actual comparison/short and complete far cap.
+It reuses the first25 saved cell energies and weights, the saved norm
+$a_0$, and the total energy of the last cell. Only the last cell
+$[l,1]$, $l=261826231978/274653072167$, is divided into128 equal rational
+subcells, fixed before the sole integration run. On each new $[a,b]$,
+
+$$
+\widetilde W_C=
+\frac{1+(29/50)b^2}{\min_{[a,b]}P},
+\qquad 1/v\le\widetilde W\le W.
+$$
+
+Here $P\le qv$ is the SAME accepted last-cell quadratic, restored from
+saved log/root enclosures and possible-active lists. No logarithm, Gamma
+or prime comparison is regenerated. Exact affine quadratic minimization
+checks the saved whole-cell minimum and all positive subcell margins;
+the outward support strips remain covered. The full reflected partition
+has25 unchanged plus128 new cells.
+
+With the original unphased coefficients, let
+$g(s)=2|\sum_{2049}^{32768}u_n\cos(\pi ns)|^2$ and let $F$ be its
+nonconstant sine primitive. Its two old endpoints are recovered by
+
+$$
+F(l)=a_0(1-l)-E_{\rm last},\qquad F(1)=0.
+$$
+
+The harmonic intermediate was not archived. The program restores it once
+with the existing FLINT convolution/autocorrelation helper, retaining both
+sum and difference frequencies, and evaluates only127 missing interior
+primitives. It reuses $a_0$ rather than taking a new norm contraction.
+All interval coefficients and the accepted anchored trigonometric helper
+are retained at1024 working/640 outward bits. Negative original mass
+intervals stop before serialization; a valid zero-crossing interval is
+intersected with mathematical nonnegativity. The128 new masses must be
+consistent with the saved last-cell total. No source/action, inverse,
+solve, Gram or far supplier, or old cell integral is replayed.
+
+The same153 masses and weights give the following approximate values:
+
+| Quantity | Value |
+|---|---:|
+| $a_0=\|u_J\|^2$ | $1344.75921630745$ |
+| $E_{\rm last}$ | $1134.58229325125$ |
+| $a_1=\int\widetilde W|u_J|^2$ | $10681.5778952432$ |
+| $a_2=\int\widetilde W^2|u_J|^2$ | $1164563.05493539$ |
+| $m=\|\widetilde W\|_\infty$ | $554.477544320329$ |
+| $mU_F$ | $25954.2272562998$ |
+| Centered-Cauchy complete upper | $50854.0911649295$ |
+| $47h_{\rm low}$ | $50553.3119129287$ |
+
+The centered upper includes
+$2\sqrt{U_F}\sqrt{a_2-a_1^2/a_0}$, using unweighted $u_F\perp u_J$.
+It remains INCONCLUSIVE, with no actual ineligibility or sign inferred.
+The fixed refinement takes5.7965seconds; its128 new mass intervals and
+moment bounds are in
+[full-gamma-prime-potential-refined.json](full-gamma-prime-potential-refined.json).
+There is no refinement/cell/precision/shift scan or retry.
+
+[full_gamma_prime_potential_resolvent.py](full_gamma_prime_potential_resolvent.py)
+uses those SAME153 saved masses in a different standard weighted-Cauchy
+upper. Its auxiliary price $\lambda=640$ is fixed from the inherited
+uniform bound632 before evaluating any resolvent moment. The actual
+shift stays $1/48$. Since $\lambda>m$, define
+
+$$
+R_\lambda=\int_I\frac{|u_J|^2}{\lambda-\widetilde W}
+ =\sum_C\frac{E_C}{\lambda-\widetilde W_C}.
+$$
+
+Orthogonality gives $\langle u_J,u_J+u_F\rangle=a_0$. Weighted Cauchy
+with the positive multiplier $\lambda-\widetilde W$ therefore yields
+
+$$
+a_0^2\le R_\lambda
+ \left(\lambda\|u_J+u_F\|^2-\int\widetilde W|u_J+u_F|^2\right).
+$$
+
+Using the complete far cap, the single joint upper is
+
+$$
+p_v\le\int\widetilde W|u|^2
+ \le\lambda(a_0+U_F)-a_0^2/R_\lambda.
+$$
+
+The directed implementation uses
+$\lambda(a_0^{\rm up}+U_F)-(a_0^{\rm low})^2/R_\lambda^{\rm up}$.
+It retains the far self-energy and cross contribution in one common
+quadratic form. It assumes neither weighted orthogonality nor jointly
+attained separate extrema. Only one scalar sum is new; no coefficient,
+primitive or energy is recomputed. Approximately,
+
+$$
+R_{640}=2.14857834484827,\qquad U_{\rm res}=48941.0175472545.
+$$
+
+Exact exported endpoints certify
+
+$$
+\boxed{p_v\le U_{\rm res}<47h_{\rm low}\le47h.}
+$$
+
+Thus this same-source fixed1/48 directional budget is conditionally
+admitted. The scalar application takes0.0144seconds; its bounds, fixed
+price and input/source invocation provenance are in
+[full-gamma-prime-potential-resolvent.json](full-gamma-prime-potential-resolvent.json).
+No auxiliary price or parameter scan is used.
+
+Both applications require the inherited actual common closed domains,
+legal finite-$E$ shifts, original unitary mass/phase identification,
+SAME short $\Pi$ and sound full-source/far archives. The earlier old-W
+obstruction is unchanged. Budget admission supplies no actual sufficient
+score, good-block contribution, retained/cofinal positivity, Robin tail
+or RH. These are parameter-specific applications of existing quadratic,
+finite-Fourier and weighted-Cauchy facts, with no generic novelty or Lean
+verification claim.
+
+Each command reads the published pinned inputs and requires a fresh
+output path. The second command consumes the saved153 masses directly.
+
+```sh
+PYTHONDONTWRITEBYTECODE=1 UV_OFFLINE=1 uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/full_gamma_prime_potential_refined.py --out build/c27-prime-potential-refined.json
+PYTHONDONTWRITEBYTECODE=1 UV_OFFLINE=1 uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/full_gamma_prime_potential_resolvent.py --out build/c27-prime-potential-resolvent.json
+```
