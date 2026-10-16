@@ -4799,3 +4799,80 @@ Reproduction in the pinned environment, with a fresh output:
 ```sh
 PYTHONDONTWRITEBYTECODE=1 UV_OFFLINE=1 uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/full_gamma_negative_index_joint.py --out /tmp/c27-negative-index-joint-reproduction.json.zlib
 ```
+
+## Shared principal/mixed projections in the source energy
+
+[full_gamma_shared_projection_energy.py](full_gamma_shared_projection_energy.py)
+reuses the saved signed principal and mixed projections on the SAME
+physical representer b=Cphys t. One112-component quadratic h^T K0h,
+h=P0t, and the original physical operator error give
+
+$$
+\|b\|_{W_F}^2\le h^TK_0h+\epsilon_{\rm far}K_{\rm phys}L_V^2.
+$$
+
+Take the smaller outward upper with the previous direction-norm cap
+squared. The kernel is already weighted; no extra far weight or kappa
+is inserted, and K0 need not be PSD. Kernel arrays use640-grid units;
+original physical error and Kphys metadata use512-grid units.
+
+In uF=v+r+c, the saved mu/kappa plus its separate sharp forward
+allowance encloses s=<v,b>; the saved mixed signed cross/kappa plus its
+physical allowance encloses z=<c,b>. The smooth remainder r is not in
+z. The classical three-vector Gram/Schur inequality bounds <v,c> by
+s*z/N2 plus or minus the product of the two residual-norm caps for any
+N2>=||b||². Only a norm UPPER is needed. Interval evaluation and ordinary
+Cauchy supply joint bounds Jlo<=||v+c||²<=Jup, uniformly for the same
+realization, without asserting simultaneous attainability of endpoints.
+
+The accepted pricing maps then consume the valid regrouping (v+c)+r+0.
+The final zero is a component of this new decomposition, not a claim
+that the original c vanishes. The energy lower is the reverse-triangle
+bound [sqrt(Jlo)-smooth]+², strengthened by the old lower if necessary.
+The smaller energy upper feeds BOTH the fee and the full original
+Bessel budget. The saved B/G/M and their fixed far-row UPPER remain
+unchanged at the fixed and energy-lower comparisons.
+
+The single fixed1024-working/640-export application evaluates one
+physical representer quadratic. Its66 runtime bindings agree at entry
+and prewrite. Stored assembly time is0.61203seconds; time including
+serialization is0.72872seconds. No old source, feature, mixed norm,
+Gram, inverse, signed projection, trace or tail producer is replayed;
+there is no source/parameter/precision/cutoff scan.
+
+| Quantity | Directed value |
+|---|---:|
+| Representer norm upper |<3.918738184778600392|
+| Principal/mixed cross interval |[−0.113379023101042651,0.013416593112150290]|
+| Source-energy lower |>6.268984281541914933|
+| Source-energy upper |<6.524928095642312689|
+| Source-valid positive fee |<175.921995998246711018|
+| Legal coefficient |>0.000040122278284528281535|
+| Fixed repriced all-real floor |>0.296481006612169882|
+| Energy-endpoint all-real floor |>−1.220854294197841680|
+
+The previous energy bracket was [6.227486948459329823,
+6.766398882441490]. Both ends improve. The new fixed fee/coefficient
+comparison nevertheless stays positive for every real steering
+coefficient. Further derivative supply cannot make that specified paid
+recipe negative. This is not an actual smaller-fee center lower bound.
+The negative energy-endpoint lower remains inconclusive for the whole
+fixed-budget energy-cap-only family; it is neither a negative upper nor
+a realized value. The cross interval still contains positive numbers,
+so this packet does not certify a negative principal/mixed cross.
+
+The [exact packet](full-gamma-shared-projection-energy.json.zlib) has
+SHA256 `59374362635382b3b180aff21584a5a1e32d603b19ccaa5db3ea693086b5f89c`.
+Source SHA256 is
+`ba5ea56e4a30c3afcaf52d428bbd060f19ca18a29464f6dc15e8055837329735`.
+These are applications of existing Gram/Schur and physical-error
+certificates, not a new generic theorem, algorithm, novelty or Lean
+proof. Actual-form/domain, source/short/lift, original-weight, component
+and inverse-comparison premises remain. Actual-center/full-border signs,
+good-block payment, retained/cofinal positivity, Robin and RH remain open.
+
+Reproduction only when explicitly needed, using a fresh output:
+
+```sh
+PYTHONDONTWRITEBYTECODE=1 UV_OFFLINE=1 uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/full_gamma_shared_projection_energy.py --out /tmp/c27-shared-projection-energy-reproduction.json.zlib
+```
