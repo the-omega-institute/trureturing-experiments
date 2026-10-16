@@ -1625,3 +1625,72 @@ uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/repo
 Only when these new common dual actions are absent, produce them with
 `--produce --out <fresh-packet.json.zlib>`. Increasing working precision
 in a cached consumer repeats no scientific production.
+
+## Extend the same dual prefix through the complete archived middle
+
+`full_gamma_dual_middle.py` produces only the new common actions for
+a vector on2049–32768. Its old2049–4096 prefix is exactly unchanged,
+including384-bit coefficients and original power-of-two normalization.
+The current-direction Q and old prefix actions/scalar components are
+reused. New residual and support-proposal rows start at4097, using
+256/384-term finite geometric expansions; actual direct row checks
+cover4097,16384,32768. Existing Cauchy projections give the new z and
+u=z*-b=-E*C_p w, including their complete paid remainders. Only missing
+Gamma/pole scalar components are separated from the archived actual
+scalar table. No old actual scalar or far-moment supplier is rerun.
+
+For the full-rate quadratic, set k=2pi/d, Phi_n=-omega_n*s_GP_n and
+choose any common centering constant. On the finite supplied nodes,
+write e_n=Phi_n-(pi/4)omega_n-constant. The linear term gives the signed
+Hankel kernel J_mn=(-1)^(m+n)/(2(m+n)), including J_nn=1/(4n).
+Finite scalar maxima give
+
+```
+eta=8 max|e_n|/[d*k^2*(2L+1)], L=2049;
+delta=max|B_GP_nn-1/(4n)|;
+|w*(B_GP-J)w|<=eta*(l1(w)^2-l2(w))+delta*l2(w),
+l2(w)=sum|w_n|^2.
+```
+
+This is a finite triangle envelope from actual scalar enclosures,
+with independent actual diagonals. The constant affects sharpness
+only. No asymptotic formula, infinite-grid regularity, entrywise
+Loewner claim or finite-channel trace allowance is assumed.
+
+Existing FLINT polynomial multiplication of
+`p(x)=sum(-1)^n*w_n*x^n` evaluates the real quadratic as
+`sum_j coefficient(p*p,j)/(2j)`. Reuse the ACTUAL saved prefix beta,
+add Lambda_tail and `Hankel_full-Hankel_prefix`, and pay the triangle
+error on only the new offdiagonal pairs and tail diagonals. Both
+prefix/tail cross terms are present. The exact saved prefix and its
+parent hash guard this reuse; no changed normalization is hidden.
+These are applications of existing polynomial convolution, finite
+Cauchy sums and triangle inequalities, with no generic new algorithm.
+
+`full-gamma-dual-32768-finite.json.zlib` has30720 exact dual coordinates
+and31488 scalar rows1281–32768. It uses the same accepted finite-action
+schema and unchanged `full_gamma_dual.py` consumers. Its beta allowance
+is approximately2.27151e-5; wide ordered grid endpoints honestly retain
+this allowance. The all-trial full-Gamma upper is enclosed between
+2.88818e-31 and2.88820e-31, so it remains inconclusive. At the SAME
+fixed t0 the35-channel control upper is approximately
+-1.012916950382631e-32<0. This is a negative upper at that ONE fixed
+trial; no all-t exclusion by this restricted bound is inferred.
+Neither result gives a positive full-Gamma trial, an actual Schur sign,
+full/cofinal positivity, Lean verification or RH resolution.
+
+At1024 working bits the production took50.78s, bound consumer50.60s
+and diagnostic35.74s. The first two figures include their complete
+recorded actions, not a stand-alone multiplication benchmark or an
+algorithmic complexity guarantee. The inherited actual common-form,
+domain and sound-enclosure/comparison premises are unchanged.
+
+Consume the new cache; do not rerun its producer:
+
+```sh
+uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/full_gamma_dual.py --finite docs/reports/weil-c27/full-gamma-dual-32768-finite.json.zlib --out build/c27-full-middle-bound-check.json
+uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/full_gamma_dual.py --diagnose --finite docs/reports/weil-c27/full-gamma-dual-32768-finite.json.zlib --out build/c27-full-middle-control-check.json
+```
+
+If this new action is genuinely missing, produce it with
+`full_gamma_dual_middle.py --out <fresh-packet.json.zlib>`.
