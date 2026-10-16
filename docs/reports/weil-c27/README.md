@@ -4876,3 +4876,98 @@ Reproduction only when explicitly needed, using a fresh output:
 ```sh
 PYTHONDONTWRITEBYTECODE=1 UV_OFFLINE=1 uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/full_gamma_shared_projection_energy.py --out /tmp/c27-shared-projection-energy-reproduction.json.zlib
 ```
+
+## Directional full-jet norm from three retained moments
+
+[full_gamma_directional_jet_norm.py](full_gamma_directional_jet_norm.py)
+pays omitted moments on the SAME saved real feature vector h=P0t.
+It reuses the saved Q=h^T K0h and the sharp weighted physical-to-jet
+forward allowance; no quadratic or physical supplier is repeated.
+
+For each omitted n=k+l>=56, it groups the complete ordered signed
+feature sums a_n=sum A_k A_l, g_n=sum A_k B_l and b_n=sum B_k B_l
+before bounding a_n U_(2n+2)-2g_n T_(2n+3)+b_n V_(2n+4). The first
+upper uses the positive parts of a_n,b_n and absolute g_n with the
+original moment integral caps. Ordered AA/BB terms and the one AB/BA
+factor2 are retained.
+
+The second upper reads only the already retained U112,T113,V114
+intervals. Their TRUE two-by-two PSD Gram Sstar dominates every omitted
+moment block Sn by Sn<=q^(2(n-55))*Sstar, q=32768/32769. The exact
+positive-part trace support formula for an indefinite coefficient matrix
+bounds its contraction. Its interval implementation uses tauUP and
+deltaLOW, not a PSD assertion about rounded centers. The per-n minimum
+of both valid uppers is uniform on the SAME realization.
+
+The accepted outer certificate separately pays the retained moment
+midpoint error112*2^-640 and alpha midpoint error using the original
+explicit TRACE upper Hstar. Entry masking decreases Frobenius norm;
+PSD of the full true Gram then bounds the masked norm by Hstar.
+The masked midpoint or omitted block need not be PSD. The original
+512-grid complete physical error is not relabeled as a640-grid moment
+error. Adding the old sharp forward norm once gives the full physical
+representer cap without an extra far weight or kappa.
+
+A strictly improved cap alone enters the accepted projection/pricing
+maps. The valid regrouping is still (v+c)+r+0. Stronger old energy
+endpoints and unchanged comparison outputs are reused. The SAME saved
+B/G/M and fixed far-row energy UPPER are used throughout.
+
+The single fixed1024-working/640-export application retains68 runtime
+bindings, unchanged at entry and prewrite. The saved quadratic is reused.
+The omitted-block payment is below$1.43015\cdot10^{-130}$ and the
+separate rounding payment below$1.25068\cdot10^{-185}$. Adding the
+original sharp forward allowance gives the following outward bounds.
+
+| Quantity | Directed value |
+|---|---:|
+| Representer squared-norm upper |<11.172943110390517643|
+| Representer norm upper |<3.342595265716523695|
+| Principal/mixed cross interval |[−0.076771255960990555,−0.060620829249211873]|
+| Source-energy lower |>6.342199815821979165|
+| Source-energy upper |<6.376853250919508462|
+| Source-valid positive fee |<175.769293814626319160|
+| Legal coefficient |>0.000040586603433261736126|
+| Fixed repriced all-real floor |>−0.572919445838071768|
+| Energy-endpoint all-real floor |>−0.779703303246544574|
+
+The norm cap improves from3.918738184778600392, and both ends of the
+preceding energy bracket [6.268984281541914933,6.524928095642312689]
+tighten. The principal/mixed cross is now strictly negative under the
+retained common-source premises. This follows from the sharper common
+direction norm, with no new signed pairing supplier.
+
+The preceding paid-recipe exclusion applies to its original fee and
+coefficient. The newly repriced pair has a negative all-real LOWER,
+so that lower-bound test leaves the new recipe unexcluded. Its negative
+lower neither realizes a negative comparison nor supplies a negative
+upper. The energy-endpoint test also remains inconclusive for the whole
+fixed-budget energy-cap-only family. Actual smaller-fee center sign is
+not determined. Displayed endpoints round outwards; exact rationals
+and640-bit packet endpoints are authoritative.
+
+The [exact packet](full-gamma-directional-jet-norm.json.zlib) has SHA256
+`9ccd6494c0520f9f53efe0b44bcae879566157c7e7ffb698165f9d02c258fd41`.
+Source SHA256 is
+`d9cbc7f94640ec60a885dfce018fc626726fe77caaaa87aef63c912c0f70abcd`.
+Stored assembly time is0.14732seconds; time including
+serialization is0.18160seconds. There is one new grouped omitted-block
+contraction, three signed feature-antidiagonal families, three anchor
+scalar reads and one feature absolute norm. One projection, one pricing
+and two rank-floor applications consume the new cap; all old producers,
+quadratics, signed pairings, moments, sources, lifts, inverses, traces
+and long-tail suppliers are reused. There is no source, parameter,
+precision or cutoff scan.
+
+This applies existing jet, moment, semidefinite support-function and
+midpoint estimates. No new generic theorem, algorithm, novelty or Lean
+proof is claimed. The actual-form/domain, common-source/short/lift,
+original-weight, component and inverse-comparison premises remain.
+Actual-center/full-border signs, good-block payment, retained/cofinal
+positivity, Robin and RH remain unresolved.
+
+Reproduction only when explicitly needed, using a fresh output:
+
+```sh
+PYTHONDONTWRITEBYTECODE=1 UV_OFFLINE=1 uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/full_gamma_directional_jet_norm.py --out /tmp/c27-directional-jet-norm-reproduction.json.zlib
+```
