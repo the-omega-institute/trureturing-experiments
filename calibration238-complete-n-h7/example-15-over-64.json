@@ -1,0 +1,552 @@
+{
+  "amplitudes_numerators_over_64": [
+    43,
+    34,
+    34,
+    29,
+    27,
+    25,
+    22
+  ],
+  "lower": {
+    "B_N": 18,
+    "K": 42,
+    "N_four_cell_maxima": [
+      [
+        1,
+        6,
+        6,
+        5
+      ],
+      [
+        3,
+        4,
+        5,
+        6
+      ],
+      [
+        4,
+        3,
+        5,
+        6
+      ],
+      [
+        3,
+        4,
+        5,
+        6
+      ],
+      [
+        4,
+        3,
+        5,
+        6
+      ],
+      [
+        5,
+        2,
+        5,
+        6
+      ],
+      [
+        4,
+        2,
+        5,
+        7
+      ],
+      [
+        4,
+        2,
+        5,
+        7
+      ],
+      [
+        4,
+        2,
+        5,
+        7
+      ],
+      [
+        5,
+        1,
+        5,
+        7
+      ],
+      [
+        4,
+        2,
+        6,
+        5
+      ],
+      [
+        4,
+        4,
+        5,
+        5
+      ],
+      [
+        4,
+        4,
+        5,
+        5
+      ],
+      [
+        5,
+        3,
+        5,
+        5
+      ],
+      [
+        6,
+        2,
+        5,
+        5
+      ],
+      [
+        4,
+        4,
+        5,
+        5
+      ],
+      [
+        5,
+        3,
+        5,
+        5
+      ],
+      [
+        6,
+        2,
+        5,
+        5
+      ],
+      [
+        5,
+        3,
+        5,
+        5
+      ],
+      [
+        6,
+        2,
+        5,
+        5
+      ],
+      [
+        6,
+        3,
+        5,
+        4
+      ]
+    ],
+    "all_other_coefficients": 0,
+    "beta": [
+      1,
+      0,
+      4,
+      5,
+      5,
+      5,
+      5
+    ],
+    "constant_demand": 17,
+    "inequality": "b1+4*b3+5*(b4+b5+b6+b7)<=1+42e",
+    "pair_order": "lexicographic (1,2),(1,3),...,(6,7)",
+    "typed_nonzero_rows": [
+      [
+        "C",
+        "0010111",
+        1
+      ],
+      [
+        "P",
+        "0100110",
+        1
+      ],
+      [
+        "P",
+        "0101001",
+        1
+      ],
+      [
+        "P",
+        "0101100",
+        1
+      ],
+      [
+        "P",
+        "0110010",
+        1
+      ],
+      [
+        "P",
+        "0110100",
+        1
+      ],
+      [
+        "P",
+        "0111000",
+        1
+      ],
+      [
+        "P",
+        "1000100",
+        1
+      ],
+      [
+        "P",
+        "1000101",
+        1
+      ],
+      [
+        "P",
+        "1001000",
+        1
+      ],
+      [
+        "P",
+        "1001010",
+        1
+      ],
+      [
+        "P",
+        "1010000",
+        1
+      ],
+      [
+        "P",
+        "1010001",
+        1
+      ],
+      [
+        "P",
+        "1100010",
+        1
+      ],
+      [
+        "C",
+        "1101100",
+        2
+      ],
+      [
+        "C",
+        "1101110",
+        2
+      ],
+      [
+        "C",
+        "1110000",
+        1
+      ],
+      [
+        "C",
+        "1110100",
+        4
+      ],
+      [
+        "C",
+        "1111000",
+        5
+      ],
+      [
+        "C",
+        "1111100",
+        5
+      ],
+      [
+        "C",
+        "1111110",
+        5
+      ],
+      [
+        "T",
+        "1111111",
+        4
+      ]
+    ]
+  },
+  "optimal_error": "15/64",
+  "purpose": "A fully inline checkable member of the joint classification, not an additional claimed family or novelty of an isolated lower inequality.",
+  "tail": "Any entire positive ordered vanishing tail with a8<=15/64; e.g. a_n=(15/64)*2^(-(n-8)) for n>=8, including the a8=e tie.",
+  "upper": {
+    "correct_counts": [
+      [
+        28
+      ],
+      [
+        19
+      ],
+      [
+        19
+      ],
+      [
+        14
+      ],
+      [
+        12
+      ],
+      [
+        10
+      ],
+      [
+        7
+      ]
+    ],
+    "criterion109": {
+      "H": [
+        34,
+        28,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "c": [
+        34,
+        28,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "denominator": 64,
+    "max_base_deficits": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      -4,
+      -5
+    ],
+    "max_outside_pair_counts": [
+      15,
+      15,
+      15,
+      15,
+      15,
+      11,
+      10
+    ],
+    "positive_law_counts": [
+      49,
+      0,
+      0,
+      5,
+      5,
+      0,
+      0,
+      5
+    ],
+    "schedules": [
+      [
+        1,
+        2,
+        17,
+        {
+          "1": 17
+        },
+        {
+          "2": 17
+        },
+        {
+          "0": 7,
+          "3": 5,
+          "4": 5
+        }
+      ],
+      [
+        1,
+        3,
+        7,
+        {
+          "1": 7
+        },
+        {
+          "3": 7
+        },
+        {
+          "0": 7
+        }
+      ],
+      [
+        1,
+        4,
+        2,
+        {
+          "1": 2
+        },
+        {
+          "4": 2
+        },
+        {
+          "0": 2
+        }
+      ],
+      [
+        1,
+        5,
+        2,
+        {
+          "1": 2
+        },
+        {
+          "5": 2
+        },
+        {
+          "0": 2
+        }
+      ],
+      [
+        2,
+        3,
+        7,
+        {
+          "0": 5,
+          "2": 2
+        },
+        {
+          "3": 7
+        },
+        {
+          "0": 7
+        }
+      ],
+      [
+        2,
+        4,
+        2,
+        {
+          "0": 2
+        },
+        {
+          "4": 2
+        },
+        {
+          "0": 2
+        }
+      ],
+      [
+        2,
+        5,
+        2,
+        {
+          "0": 2
+        },
+        {
+          "5": 2
+        },
+        {
+          "0": 2
+        }
+      ],
+      [
+        3,
+        4,
+        5,
+        {
+          "0": 5
+        },
+        {
+          "4": 5
+        },
+        {
+          "0": 4,
+          "7": 1
+        }
+      ],
+      [
+        3,
+        5,
+        4,
+        {
+          "0": 4
+        },
+        {
+          "5": 4
+        },
+        {
+          "0": 4
+        }
+      ],
+      [
+        3,
+        6,
+        2,
+        {
+          "0": 2
+        },
+        {
+          "6": 2
+        },
+        {
+          "0": 2
+        }
+      ],
+      [
+        4,
+        5,
+        4,
+        {
+          "0": 4
+        },
+        {
+          "5": 4
+        },
+        {
+          "0": 4
+        }
+      ],
+      [
+        4,
+        6,
+        2,
+        {
+          "0": 2
+        },
+        {
+          "6": 2
+        },
+        {
+          "0": 2
+        }
+      ],
+      [
+        5,
+        6,
+        6,
+        {
+          "0": 6
+        },
+        {
+          "6": 6
+        },
+        {
+          "0": 2,
+          "7": 4
+        }
+      ],
+      [
+        6,
+        7,
+        2,
+        {
+          "0": 2
+        },
+        {
+          "7": 2
+        },
+        {
+          "0": 2
+        }
+      ]
+    ]
+  },
+  "upper_format": "Each schedule row is [i,j,m,first_vector,middle_vector,exhaustion_vector], with every integer divided by 64. Every vector sums to its row m; row masses sum to 64. Correct and outside-pair counts cover full first-zero fibres. The example has c=H in criterion109.1.",
+  "verification": "At this profile both sides equal 694/64 when e=15/64. The displayed O law attains that error, and its N completion does too. The full-N score excludes smaller caps against every original competitor, using 110.2 and restriction/projection to the seven-bit prefix even when a smaller cap activates more tail coordinates. Consequently both original marked-target minima equal15/64 and every positive closed cap is feasible iff >=15/64."
+}
