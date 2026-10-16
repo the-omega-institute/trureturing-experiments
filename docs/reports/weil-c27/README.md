@@ -4624,3 +4624,69 @@ For an explicitly requested reproduction only, choose a fresh output:
 ```sh
 PYTHONDONTWRITEBYTECODE=1 UV_OFFLINE=1 uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/full_gamma_steering_capacity.py --out /tmp/c27-steering-capacity-reproduction.json.zlib
 ```
+
+## Mixed-H norm and linked fee/eligibility repricing
+
+[full_gamma_mixed_norm_reprice.py](full_gamma_mixed_norm_reprice.py)
+consumes the signed-correction packet's saved112 left features a=P0*ell
+and the original physical112-by112 kernel K0. One new quadratic bounds
+the weighted mixed energy by a^T*K0*a+epsfar*Zlambda². The original
+physical epsfar retains its512-bit metadata units and K0 already
+contains the far weight; no extra kappa or weight enters this norm.
+The kernel is not assumed PSD. No source, feature, moment, Gram,
+inverse or signed-response supplier is repeated.
+
+The same total energy upper min(Eold,(P+epssm+mixedUpper)²) enters both
+the independent source-valid fee Kconst_up+kappa*E and the complete
+reflected Bessel budget. The resulting legal coefficient is
+tnew=[hlo/(hlo+p_up)]/hhi. The shifted reference curvature is
+H11new=H11old+1/tnew−1/told; H12, rho, betaJ, f, r0, rr and theta0
+remain fixed. Positive/negative Cauchy caps scale with E and sqrt(E),
+respectively, using their original homogeneous formulas. The existing
+steering capacity function is reused at these new common parameters.
+The complete derivation and conditions are in the owning
+[application exposition](https://github.com/the-omega-institute/trureturing/blob/dev/Library/Weil/connesconsanimoscovici2026spectral.md#reprice-the-same-source-from-its-saved-mixed-h-features).
+
+The sole fixed1024/640 application takes0.55967seconds including
+serialization, uses62 unchanged runtime bindings and makes one new
+mixed quadratic. It reuses all old science and accepted tests.
+
+| Quantity | Previous value | Repriced value |
+|---|---:|---:|
+| Weighted mixed-H norm upper |0.478756042961117000|0.052637674256435558|
+| Weighted far-energy upper |9.164839739390695|6.766398882441490|
+| Positive source-valid fee |178.644404880862231|176.171012747133362|
+| Sufficient eligibility cap |0.035871186206647585|0.042365798558350576|
+| Legal coefficient |0.000033349857564549898|0.000039387973940699242|
+| Fixed-point sufficient expression |[16.865709521960626,16.876387083066322]|[6.738778327421815964,6.749455888527510587]|
+
+Norm/energy/fee displays round upward and legal cap/coefficient displays
+downward; intervals round outward. Exact saved grid endpoints and
+rationals are authoritative. The new finite derivative is approximately
+−174.6152875359602151, and the all-alpha capacity lower floor is near
+−16.43212445437972714. This new recipe is not excluded by that capacity
+test. No favorable actual derivative or negative center follows: the
+fixed-point sufficient upper remains positive. Its separate self-term
+refinement class retains a positive floor above2.141787799175894749;
+that class diagnostic is not an actual-center lower bound.
+
+The old fixed-fee/t0 family exclusion remains true. This package
+supplies one improved source-energy enclosure and linked comparison,
+not an optimized all-energy family or a new generic theorem/algorithm,
+literature-novelty result or Lean proof. All actual-form/domain,
+common-source/short/lift, original-weight, homogeneous-cap and component
+premises remain. Actual-center/full-border signs, good-block payment,
+retained/cofinal positivity, Robin tail and RH remain unresolved.
+The next steering datum is f*Qref*rho*, or a sufficient conditional
+capacity enclosure using the known theta0 and saved full physical Gram;
+neither has been supplied by this packet.
+
+The [directed packet](full-gamma-mixed-norm-reprice.json.zlib) has SHA256
+`66360516946c571c187b5a4eb35aeed1487eef9eff28bee26d5f8fb3211f1a59`.
+Source SHA256 is
+`92d38517ef0e724cc819ae26e934f492273d93a2a8634c89b573f98c3154b518`.
+For an explicitly requested reproduction only, choose a fresh output:
+
+```sh
+PYTHONDONTWRITEBYTECODE=1 UV_OFFLINE=1 uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/full_gamma_mixed_norm_reprice.py --out /tmp/c27-mixed-norm-reprice-reproduction.json.zlib
+```
