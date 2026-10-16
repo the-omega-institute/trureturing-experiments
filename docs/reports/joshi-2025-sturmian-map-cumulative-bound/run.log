@@ -1,0 +1,36 @@
+== (1) alpha = 2 - sqrt(3)
+q_1 = 3
+letters at 1,3,5,7,9: [0, 0, 0, 0, 0]
+  g > 0      (27 > 25) True
+  g < alpha  (48 < 49) True
+  4g > 1-alpha (363 > 361) True
+  2g > alpha (147 > 144) True
+brute force on 4000 letters: A(1)=3 A(2)=8 A(3)=4
+first 8-term a-MAP of difference 2 starts at 12
+== (2) Corollary 4.3.13 vs brute force
+  <sqrt5>: d=1..40 mismatches []
+  fibonacci (3-sqrt5)/2: d=1..40 mismatches []
+  2-sqrt3: d=1..40 mismatches []
+  (14-sqrt26)/34: d=1..40 mismatches []
+  thesis examples: <sqrt5> A(5)=5, A(3)=6; Fibonacci A(3)=5: reproduced
+== (3)(4) violations of d <= q_n => A(d) <= A(q_n), n >= 1, q_n <= 250
+  <sqrt5>: cf [4, 4, 4, 4, 4, 4, 4, 4] q [1, 4, 17, 72, 305, 1292, 5473] violations 0 at levels n=[]
+  fibonacci (3-sqrt5)/2: cf [2, 1, 1, 1, 1, 1, 1, 1] q [1, 2, 3, 5, 8, 13, 21] violations 0 at levels n=[]
+  2-sqrt3: cf [3, 1, 2, 1, 2, 1, 2, 1] q [1, 3, 4, 11, 15, 41, 56] violations 2 at levels n=[1, 5]
+     n=1 q_n=3 d=2 A(d)=8 A(q_n)=4 g(d)>alpha=True
+     n=5 q_n=41 d=28 A(d)=92 A(q_n)=52 g(d)>alpha=True
+  (14-sqrt26)/34: cf [3, 1, 4, 1, 1, 4, 1, 1] q [1, 3, 4, 19, 23, 42, 191] violations 5 at levels n=[1, 3, 4, 7]
+     n=1 q_n=3 d=2 A(d)=12 A(q_n)=4 g(d)>alpha=True
+     n=3 q_n=19 d=14 A(d)=49 A(q_n)=29 g(d)>alpha=True
+     n=4 q_n=23 d=14 A(d)=49 A(q_n)=35 g(d)>alpha=True
+     n=4 q_n=23 d=21 A(d)=104 A(q_n)=35 g(d)>alpha=True
+  brute force on 1.2e6 letters confirms 5 of the 5 violations of (14-sqrt26)/34 (the rest need a longer prefix)
+== family [0;3,(1,B,1)]: worst ratio max_{d<=q_n}A(d)/A(q_n) per level (q_n <= 2000)
+  B=4: [(1, 3, 2, 12, 4, 3.0), (3, 19, 14, 49, 29, 1.69), (4, 23, 21, 104, 35, 2.971), (7, 233, 212, 1032, 351, 2.94)]
+  B=6: [(1, 3, 2, 16, 4, 4.0), (4, 31, 29, 200, 47, 4.255), (6, 379, 272, 1297, 568, 2.283), (7, 437, 408, 2788, 655, 4.256)]
+  B=8: [(1, 3, 2, 20, 4, 5.0), (4, 39, 37, 328, 59, 5.559), (7, 705, 668, 5888, 1055, 5.581)]
+  B=12: [(1, 3, 2, 28, 4, 7.0), (4, 55, 53, 680, 83, 8.193), (6, 1327, 920, 8491, 1984, 4.28), (7, 1433, 1380, 17656, 2143, 8.239)]
+== random slopes alpha uniform in (0, 1/2), levels with q_n <= 60
+  192/400 random slopes violate at some level with q_n <= 60
+  level 1 on (1/4,1/3): violating fraction of a 1e5 grid = 0.4286; sup of violating grid points = 0.285714
+ALL_OK
