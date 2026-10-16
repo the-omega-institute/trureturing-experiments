@@ -1,0 +1,14 @@
+{
+  "status": "exact_pass",
+  "vertices": 8,
+  "free_amplitude_dimension": 7,
+  "word_laws": 2048,
+  "event_inequalities": 6128,
+  "positive_mass_schedule_rows": 168,
+  "full_N_schedules": 37,
+  "full_N_cells": 129,
+  "N_support": "54",
+  "N_anchor": "54",
+  "score_K": "138",
+  "scope": "ordinary rational finite certificate only; no global selector, strict separator or Lean claim"
+}
