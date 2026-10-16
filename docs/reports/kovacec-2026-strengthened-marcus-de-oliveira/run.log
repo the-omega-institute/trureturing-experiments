@@ -1,0 +1,10 @@
+Q Q^T = I: True   det = (Fraction(2864, 49), Fraction(1840, 49))
+sigma-points: [(-30, -50), (280, 280), (-130, 10), (-28, -56), (232, 376), (24, -20)]
+edges (1-based): [(1, 2), (1, 3), (1, 6), (2, 4), (2, 5), (3, 4), (3, 5), (4, 6), (5, 6)]
+all nine edges inside P: True
+Re d = 2864/49  12 Re d - 280 - 11 Im d = 408/49  in (7672/155, 280): True  L(Re d) - Im d = 408/539
+   s = 9: unitary True, det = (58.4490, 37.5510), below P: True
+   s = 3481/400: unitary True, det = (55.8000, 33.3428), below P: True
+   s = 13689/1600: unitary True, det = (54.4677, 31.2485), below P: True
+ALL_OK
+EXIT=0
