@@ -3203,3 +3203,107 @@ or Lean-verification claim.
 ```sh
 uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/full_gamma_projection_upper.py --out build/c27-projection-upper.json.zlib
 ```
+
+## A necessary quadratic for one archived-source surplus shift
+
+[The program and canonical packet](https://github.com/the-omega-institute/trureturing-experiments/tree/ca237495af332048e91aeb50d5be69480014105a/docs/reports/weil-c27)
+consume the original exact384-bit $w_0$. This changes the effective
+comparison using actual surplus; it does not reopen the unchanged
+comparison's source search.
+
+Keep the SAME actual exterior $H$, complete $T=\Lambda+B_{\rm GP}$,
+selected support $E$ and common effective action $\mathcal M$. With
+$O$ its complement, $D=E^*(H-T)E$ and $C=O^*(H-T)E$, the actual
+selected exterior Schur form has the conditional decomposition
+
+$$
+\mathcal A=\mathcal M+\Pi,\qquad
+\Pi=(H-T)_{OO}-CD^{-1}C^*\succeq0.
+$$
+
+Fix the SAME full $u=\mathcal Mw_0$, $h=w_0^*u>0$. If a directional
+budget $uu^*\preceq p\Pi$ and $p\le h(1-t)/t$ hold for $0<t<1$, then
+
+$$
+\mathcal M_t=\mathcal M+\frac{t}{h(1-t)}uu^*\preceq\mathcal A,\qquad
+\mathcal M_t((1-t)w_0)=u.
+$$
+
+Thus the full charge and row change by
+$\mathcal K_t=\mathcal K+th$ and
+$\mathcal B_t=\mathcal B+t\,w_0^*R_{\rm res}$. The actual $u_{\rm far}$
+is unchanged, not multiplied by $1-t$. No such directional budget
+is certified by this consumer.
+
+For the SAME old nineteen-channel base, positive good block,
+actual complement $\Sigma_*$ and exact lift $V$, the actual sufficient
+score includes its new good-block charge $\Gamma_t\ge0$.
+The inherited order $\Sigma_*\preceq\Sigma_{\max}$, together with
+their same nonsingular inertia, gives
+$\Sigma_{\max}^{-1}\preceq\Sigma_*^{-1}$. The existing common far
+square completion, with its complete signed/paid $G$ and
+$\Xi=\Sigma_{\max}+\kappa G$, then supplies the necessary LOWER gate
+
+$$
+\mathfrak F_{w_0}(t)
+=\mathcal K_t+\Gamma_t+
+(\mathcal B_tV)\Sigma_*^{-1}(\mathcal B_tV)^*
+\ \ge\ \ell(t)
+=k_J+th+(b_J+t r_V)\Xi^{-1}(b_J+t r_V)^*.
+$$
+
+This retains the actual common forms/domains/inverses, same
+source/lift/base, finite unscaled weighted far energy and sound
+enclosure premises. A negative $\ell$ would not certify a sufficient
+update. A nonnegative minimum would stop only this fixed-source
+strict criterion; zero thresholds alone do not exclude shifted PSD
+endpoints.
+
+The three accepted inputs already contain all required data:
+
+| Packet | Fields reused |
+|---|---|
+| full-gamma-two-source.json.zlib | finite_charge_matrix[0][0] is $k_J$; finite_row_on_lift[0] is $b_J$ |
+| full-gamma-projection-upper.json.zlib | matrices.source_gram[0][0] is $h$; matrices.source_on_lift[0] is $r_V$ |
+| full-gamma-lift-finite-gram.json.zlib | matrices.far_shifted_core is $\Xi$ |
+
+[full_gamma_surplus_shift_gate.py](full_gamma_surplus_shift_gate.py)
+validates those exact packet pins and their common metadata.
+One native18-by18 solve with two right sides supplies the common
+contractions and the three coefficients of $\ell(t)$. Exact rational
+minima of the lower- and upper-coefficient polynomials enclose
+$\min_{[0,1]}\ell$. Here $t,t^2\ge0$ justify scalar coefficient
+endpoints; no matrix endpoint ordering is used. The closed interval
+bounds the polynomial, not an operation at $t=1$.
+
+The1024-bit run takes0.0657 seconds and returns the enclosure,
+displayed approximately,
+
+$$
+-4.03437\times10^{26}
+\ \le\ \min_{0\le t\le1}\ell(t)
+\ \le\ 4.60803\times10^{24}.
+$$
+
+Its verdict is **inconclusive**: neither a negative region nor
+nonnegativity is certified. These are widths from this evaluation,
+not measured condition numbers, intrinsic uncertainty or a proof
+that the shift cannot work. No precision retry or second scientific
+execution follows this inconclusive gate. The different-working-directory
+and path-with-spaces execution has not been tested.
+
+[full-gamma-surplus-shift-gate.json.zlib](full-gamma-surplus-shift-gate.json.zlib)
+saves the coefficient intervals, 43 exported intervals in total,
+exact rational minimum bounds, solve result and provenance.
+No old source/action/Gamma/Gram/projection production, new source,
+large inverse or parameter scan is performed. A useful correlated
+or factored certificate for this same minimum remains missing.
+Any later negative necessary region still needs a SAME-$u$
+directional surplus budget and an actual joint sufficient upper
+including $\Gamma_t$, $\Sigma_*$ and the full far response.
+No actual retained/cofinal positivity, Robin-tail, RH, generic novelty
+or Lean result is supplied.
+
+~~~sh
+uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/full_gamma_surplus_shift_gate.py --out build/c27-surplus-shift-gate.json.zlib
+~~~
