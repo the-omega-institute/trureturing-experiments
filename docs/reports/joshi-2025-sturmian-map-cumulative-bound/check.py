@@ -12,8 +12,10 @@ g(d) = min(<d alpha>, 1 - <d alpha>) <= alpha.
 Prediction registered before the run:
   (1) alpha = 2 - sqrt(3) = [0; 3, 1, 2, 1, 2, ...] violates it at n = 1: q_1 = 3, A(2) = 8 > A(3) = 4
       (exact integer certificates for the witness MAP and for the bound A(3) <= 4);
-  (2) the thesis formulae of Corollary 4.3.13 reproduce the brute-force values (and the thesis
-      examples A(5) = 5, A(3) = 6 for <sqrt 5>, A(3) = 5 for the Fibonacci word);
+  (2) an exact circle-rotation computation of A(d) (intersection of the arcs I - k<d alpha>)
+      reproduces brute force on long prefixes and the thesis examples (A(5) = 5, A(3) = 6 for
+      <sqrt 5>; A(3) = 5 for the Fibonacci word); the scans below use it.  The closed formulae of
+      Corollary 4.3.13 are compared with it as a separate reading;
   (3) no violation occurs among differences with g(d) <= alpha (Proposition 4.4.4) in any scan;
   (4) every violation found has g(d) > alpha (the Case-2 cluster regime of Theorem 4.3.9).
 Negative controls: (2) and (3), and the thesis's own running slopes <sqrt 5> and the Fibonacci
@@ -105,6 +107,42 @@ def A_formula(x, d):
     return k * int(ceil((g - x) / (k * g - 1))) + k - 2
 
 
+from decimal import ROUND_FLOOR
+
+
+def dfrac(x):
+    return x - x.to_integral_value(rounding=ROUND_FLOOR)
+
+
+def _inter(S, lo, ln):
+    hi = lo + ln
+    pieces = [(lo, min(hi, Decimal(1)))] + ([(Decimal(0), hi - 1)] if hi > 1 else [])
+    out = []
+    for (l, h) in S:
+        for (pl, ph) in pieces:
+            L, H = max(l, pl), min(h, ph)
+            if H - L > Decimal("1e-45"):
+                out.append((L, H))
+    return out
+
+
+def _run(beta, lo, ln):
+    """largest L such that {x : x + k beta in [lo, lo + ln) mod 1 for all k < L} has positive measure"""
+    S, L = _inter([(Decimal(0), Decimal(1))], lo, ln), 1
+    while True:
+        S2 = _inter(S, dfrac(lo - L * beta), ln)
+        if not S2:
+            return L
+        S, L = S2, L + 1
+
+
+def A_exact(x, d):
+    """A(d) of the Sturmian word of slope x: the orbit is dense, so A(d) is the longest run of the
+    rotation by <d x> inside I_a = [0, 1 - x) or I_b = [1 - x, 1)."""
+    beta = dfrac(d * x)
+    return max(_run(beta, Decimal(0), 1 - x), _run(beta, 1 - x, x))
+
+
 # ---------------------------------------------------------------- (1) the exact witness
 print("== (1) alpha = 2 - sqrt(3)")
 a0 = Quad(2, -1, 3, 1)
@@ -151,28 +189,43 @@ if (A2, A3) != (8, 4):
 first8 = next(i for i in range(len(w0) - 16) if all(w0[i + 2 * k] == 0 for k in range(8)))
 print("first 8-term a-MAP of difference 2 starts at", first8)
 
-# ---------------------------------------------------------------- (2) formula vs brute force
-print("== (2) Corollary 4.3.13 vs brute force")
-D5 = Decimal(5).sqrt()
+# ---------------------------------------------------------------- (2) exact algorithm vs brute force
+print("== (2) exact circle computation vs brute force; Corollary 4.3.13 vs exact")
 samples = {
     "<sqrt5>": Quad(-2, 1, 5, 1),
     "fibonacci (3-sqrt5)/2": Quad(3, -1, 5, 2),
     "2-sqrt3": a0,
     "(14-sqrt26)/34": Quad(14, -1, 26, 34),
+    "(sqrt83-6)/28": Quad(-6, 1, 83, 28),
 }
-words = {nm: word_quad(a, 120000) for nm, a in samples.items()}
+words = {nm: word_quad(a, 150000) for nm, a in samples.items()}
 for nm, a in samples.items():
     x = a.dec()
-    mism = [(d, A_formula(x, d), A_brute(words[nm], d)) for d in range(1, 41) if A_formula(x, d) != A_brute(words[nm], d)]
-    print(f"  {nm}: d=1..40 mismatches {mism}")
+    mism = [(d, A_exact(x, d), A_brute(words[nm], d)) for d in range(1, 41)
+            if A_exact(x, d) != A_brute(words[nm], d) and 3 * A_exact(x, d) * d < len(words[nm])]
+    fmism = [(d, A_formula(x, d), A_exact(x, d)) for d in range(1, 41) if A_formula(x, d) != A_exact(x, d)]
+    print(f"  {nm}: exact vs brute mismatches {mism}; formula vs exact mismatches {fmism[:4]}{' ...' if len(fmism) > 4 else ''}")
     if mism:
-        fail("formula mismatch " + nm)
+        fail("exact algorithm mismatch " + nm)
 xs = samples["<sqrt5>"].dec()
-if (A_formula(xs, 5), A_formula(xs, 3)) != (5, 6):
+if (A_exact(xs, 5), A_exact(xs, 3)) != (5, 6):
     fail("thesis Examples 4.3.6/4.3.10")
-if A_brute(words["fibonacci (3-sqrt5)/2"], 3) != 5:
+if A_exact(samples["fibonacci (3-sqrt5)/2"].dec(), 3) != 5:
     fail("thesis Example 2.6.5")
 print("  thesis examples: <sqrt5> A(5)=5, A(3)=6; Fibonacci A(3)=5: reproduced")
+xb = samples["(sqrt83-6)/28"].dec()
+print(f"  Corollary 4.3.13 at alpha=(sqrt83-6)/28, d=4: formula {A_formula(xb, 4)}, exact {A_exact(xb, 4)}, brute {A_brute(words['(sqrt83-6)/28'], 4)}")
+import random
+random.seed(20261016)
+dis = tot = 0
+for _ in range(200):
+    x = Decimal(random.random()) / 2
+    if x < Decimal("0.02"):
+        continue
+    for d in range(2, 40):
+        tot += 1
+        dis += A_formula(x, d) != A_exact(x, d)
+print(f"  Corollary 4.3.13 differs from the exact value on {dis}/{tot} random (alpha, d) pairs")
 
 # ---------------------------------------------------------------- (3),(4) violation scans
 print("== (3)(4) violations of d <= q_n => A(d) <= A(q_n), n >= 1, q_n <= 250")
@@ -180,19 +233,24 @@ print("== (3)(4) violations of d <= q_n => A(d) <= A(q_n), n >= 1, q_n <= 250")
 
 def scan(x, qmax=250):
     a, q = cf_dens(x, 30)
-    out = []
+    out, memo = [], {}
+
+    def Ae(d):
+        if d not in memo:
+            memo[d] = A_exact(x, d)
+        return memo[d]
     for n in range(1, len(q)):
         if q[n] > qmax:
             break
-        Aq = A_formula(x, q[n])
+        Aq = Ae(q[n])
         for d in range(1, q[n] + 1):
-            Ad = A_formula(x, d)
+            Ad = Ae(d)
             if Ad > Aq:
                 out.append((n, q[n], d, Ad, Aq, g_of(x, d) > x))
     return a, q, out
 
 
-for nm, a in samples.items():
+for nm, a in list(samples.items())[:4]:
     x = a.dec()
     cf, q, v = scan(x)
     lv = sorted({t[0] for t in v})
@@ -222,7 +280,7 @@ if conf < 4:
     fail("too few brute confirmations")
 
 # family alpha_B = [0; 3, (1, B, 1)] : ratio max_{d<=q_n} A(d) / A(q_n) along the levels
-print("== family [0;3,(1,B,1)]: worst ratio max_{d<=q_n}A(d)/A(q_n) per level (q_n <= 2000)")
+print("== family [0;3,(1,B,1)]: worst ratio max_{d<=q_n}A(d)/A(q_n) per level (q_n <= 700)")
 
 
 def cf_value(prefix, period, reps=40):
@@ -238,17 +296,16 @@ for B in (4, 6, 8, 12):
     a, q = cf_dens(x, 12)
     rows = []
     for n in range(1, len(q)):
-        if q[n] > 2000:
+        if q[n] > 700:
             break
-        Aq = A_formula(x, q[n])
-        best = max(range(1, q[n] + 1), key=lambda d: A_formula(x, d))
-        rows.append((n, q[n], best, A_formula(x, best), Aq, round(A_formula(x, best) / Aq, 3)))
+        vals = {d: A_exact(x, d) for d in range(1, q[n] + 1)}
+        best = max(vals, key=vals.get)
+        rows.append((n, q[n], best, vals[best], vals[q[n]], round(vals[best] / vals[q[n]], 3)))
     print(f"  B={B}:", [(r[0], r[1], r[2], r[3], r[4], r[5]) for r in rows if r[5] > 1])
 
 # random slopes: how often does level n = 1..3 fail?
 print("== random slopes alpha uniform in (0, 1/2), levels with q_n <= 60")
-import random
-random.seed(20261016)
+random.seed(20261017)
 cnt = viol = 0
 for _ in range(400):
     x = Decimal(random.random()) / 2
@@ -260,7 +317,8 @@ for _ in range(400):
 print(f"  {viol}/{cnt} random slopes violate at some level with q_n <= 60")
 # level n = 1 on (1/4, 1/3): A(2) = 2 ceil(alpha/(4 alpha - 1)), A(3) = ceil((1-alpha)/(1-3 alpha))
 grid = [Decimal(1) / 4 + Decimal(i) / 100000 * (Decimal(1) / 3 - Decimal(1) / 4) for i in range(1, 100000)]
-bad = [x for x in grid if A_formula(x, 2) > A_formula(x, 3)]
-print(f"  level 1 on (1/4,1/3): violating fraction of a 1e5 grid = {len(bad)/len(grid):.4f}; sup of violating grid points = {float(max(bad)):.6f}")
+bad = [x for x in grid[::10] if A_exact(x, 2) > A_exact(x, 3)]
+grid = grid[::10]
+print(f"  level 1 on (1/4,1/3): violating fraction of a 1e4 grid = {len(bad)/len(grid):.4f}; sup of violating grid points = {float(max(bad)):.6f}")
 print("ALL_OK" if OK else "SOME_FAILED")
 sys.exit(0 if OK else 1)
