@@ -3038,3 +3038,62 @@ It supplies no new general theorem, algorithm or Lean verification.
 ```sh
 uv run --no-project --python 3.13.12 --with python-flint==0.9.0 --with numpy==2.3.3 --with threadpoolctl==3.6.0 python docs/reports/weil-c27/full_gamma_source_calibration.py --out build/c27-source-calibration.json.zlib
 ```
+
+## The common finite Gram on the exact eighteen-column lift
+
+`full_gamma_lift_finite_gram.py` supplies the finite residual Gram missing
+from the source-sign reduction. Keep the exact implicit lift $V$, its
+eighteen-coordinate order, original nineteen channels and positive
+diagonal weights. Put $Y=R_JV$, with $J=2049{:}32768$, and reuse
+$\Beta_V=U_J^*W_JY$ and $A_\rho^{-1}$ from the accepted packets.
+The new common products are
+
+$$
+G_J=Y^*W_JY,\qquad
+S_J=G_J-\Beta_V^*A_\rho^{-1}\Beta_V=Y^*W_cY.
+$$
+
+The existing certified disjoint Cauchy action supplies the eighteen
+new profiles with a fixed512-term expansion and its absolute geometric
+remainder. The full30720-row Gram retains every cross term. Six direct
+generator dot products check endpoint/interior rows in columns0 and17;
+overlap is an implementation check, with provenance and the remainder
+argument still required. No selected inverse, old source action,
+scalar/channel supplier or complete1281-dimensional target is rerun.
+
+The1024-bit application takes88.26 seconds on the recorded arm64,
+Python3.13.12/Python-FLINT0.9.0 environment. The maximum exported entry
+width for $S_J$ is below $4.132\times10^{-178}$. This is the width of
+this chosen enclosure, rather than intrinsic input uncertainty or a
+matrix condition number. The saved implicit lift is not rounded to a
+new rational lift.
+
+With $\kappa=33/32$, the same core, complete paid far Gram and exact
+transported allowance also give
+
+$$
+\Xi=\Sigma_*+2\kappa\epsilon V^*V+\kappa G_{\rm far},\qquad
+\Xi+\Theta\preceq\Xi+S_J,
+\quad\Theta=Y^*(W_c-M_J^{-1})Y.
+$$
+
+The packet encloses entries of this exact **upper** matrix. Its scalar
+entry endpoints are not Loewner matrix endpoints. A positive upper
+matrix does not prove positive definiteness of $\Xi+\Theta$; no
+threshold sign is tested here. The accepted far applicability condition
+is reused, and no explicit $\Xi^{-1}$ is computed.
+
+`full-gamma-lift-finite-gram.json.zlib` contains the five18-by18 matrices,
+source/helper/input hashes, fixed expansion order, six direct checks,
+grids, runtime and enclosure-width diagnostics. The transient full
+profiles are represented by the pinned generators and lift, without a
+second large archived copy. The common inverse action and complete
+inverse-residual Gram remain missing. Actual source-domain and far-energy
+identification, sufficient good-block/far certification, retained/cofinal
+positivity, Robin tail and RH remain open. This is a numerical application
+of existing Cauchy and matrix identities, without generic novelty or
+Lean verification.
+
+```sh
+uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/full_gamma_lift_finite_gram.py --out build/c27-lift-finite-gram.json.zlib
+```
