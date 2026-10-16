@@ -4122,3 +4122,60 @@ not a new general method or a rerun of the unshifted exclusion.
 ```sh
 PYTHONDONTWRITEBYTECODE=1 UV_OFFLINE=1 uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/full_gamma_old_base_stop.py --out build/c27-old-base-stop.json.zlib
 ```
+
+
+## Signed same-source infinite Hankel tail energy
+
+[full_gamma_hankel_tail_energy.py](full_gamma_hankel_tail_energy.py)
+uses the accepted exact384-bit row0 w and enclosed q to bound the SAME
+actual action $u_F=G_{FJ}w-G_{FE}q+H_{FE}(q-p)$. It combines the signed
+principal sources before taking a norm. The standard harmonic
+partial-fraction tail Gram is evaluated by one FLINT linear Toeplitz
+convolution; only its diagonal is padded by the integral bound.
+The complete derivation and parameter correspondence are in the
+[owning application exposition](https://github.com/the-omega-institute/trureturing/blob/dev/Library/Weil/connesconsanimoscovici2026spectral.md#retain-signed-source-correlations-in-the-infinite-principal-tail).
+
+The [directed result](full-gamma-hankel-tail-energy.json.zlib), SHA256
+`d09a5ab254d164cfd40982b31e1a155e31d6288b705d916bf248236a0d527606`,
+records one1024-working/640-export-bit application taking0.52936seconds:
+
+| Quantity | Previous upper | New upper |
+|---|---:|---:|
+| Complete weighted far energy |14.1648613043077766|9.16483973939069465|
+| Positive source-valid fee |183.800677119682971|178.644404880862230|
+| Supplied sufficient parameter cap |0.0272333893565792018|0.0358711862066475850|
+
+The norm factor is1/2, so the principal energy factor is1/4. Saved
+smooth remainder bounds already include gamma and are UNWEIGHTED;
+they are multiplied once by sqrt(Dfar). The saved mixed-H norm is
+already WEIGHTED and remains paid in full. Rebuild the charge constant
+from the original middle upper, h lower and channel-energy lower;
+subtracting an old far-energy upper from an old charge upper is invalid.
+A finite positive fee is checked before use. The saved full-band Bessel
+projection, finite weighted moment and maximum reflected weight are
+reused unchanged for the cap.
+
+The packet pins nine accepted inputs, nine invoked source/helper files
+and nine cached producers at entry and exit. It saves the preselected
+convolution coefficients0,767,31487 for a thin result check. No source,
+inverse/solve, far-mode or old producer is regenerated; no new Fourier
+potential projection, determinant or parameter/source/precision scan
+is performed. The previous finite w*Jw convolution is a different
+quadratic and is not replayed. The prescribed recipe stops on failed
+or nonfinite guards or no strict energy improvement.
+
+These are conditional actual-source energy/fee/eligibility estimates.
+They preserve all inherited actual-form/domain, inverse/legal-E,
+SAME-short, unitary/source/lift/comparison and sound full-far/cache
+premises. The smaller fee is outside the previous fixed-fee exclusion,
+but gives no actual FULL border sign. Complete signed far response,
+joint good-block inverse metric, actual retained/cofinal positivity,
+Robin, RH and Lean verification remain unresolved. Classical tail
+identities and existing FLINT/Bessel methods are reused, with no
+new generic theorem or algorithm claim.
+
+For an explicitly requested reproduction, choose a fresh output path:
+
+```sh
+PYTHONDONTWRITEBYTECODE=1 UV_OFFLINE=1 uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/full_gamma_hankel_tail_energy.py --out /tmp/c27-hankel-tail-energy-reproduction.json.zlib
+```
