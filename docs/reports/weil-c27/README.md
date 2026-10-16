@@ -879,3 +879,76 @@ Exact inputs and result are `inverse-residual-k128-candidate.json` and
 ```sh
 uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/arb_inverse_residual_obstruction.py --candidate docs/reports/weil-c27/inverse-residual-k128-candidate.json --output-bits 504 --out build/c27-k128-obstruction.json
 ```
+
+## An actual inverse-residual correction beyond the excluded span
+
+Keep the exact full dyadic direction $v$ and trial $y_0=E_{128}x_0$
+in `inverse-residual-k128-candidate.json`, the same actual exterior $H$
+and the archived $W\succeq H^{-1}$. Let $V$ select exterior modes1281
+through2048. The existing dense linear solve proposes a correction from
+
+$$
+(V^*HV)z=V^*(Cv-Hy_0),\qquad y=y_0+Vz.
+$$
+
+This is an actual-inverse proposal, rather than another optimization of
+the excluded $Kx=Tv$ system. The saved $y$ has768 exact96-bit dyadic
+coordinates, including640 nonzero coordinates beyond the old span.
+The finite solve supplies no infinite-inverse certificate by itself.
+
+`inverse_residual_enrichment.py` accepts the saved finite trial through
+the existing full-exterior residual inequality. Put $r=Cv-Hy$ and
+$\ell=Q(v-y)-\|r\|_W^2$. Under the same common-form/domain and inverse
+comparison premises,
+
+$$
+\ell\le v^*(A-C^*H^{-1}C)v\le Q(v-y).
+$$
+
+The consumer reuses the old directed $Q(v-y_0)$ and evaluates its exact
+correction, with $\delta=y-y_0$:
+
+$$
+Q(v-y)=Q(v-y_0)-2\operatorname{Re}\langle\delta,Cv-Hy_0\rangle
++\langle\delta,H\delta\rangle.
+$$
+
+Every middle row1281–32768 is included once; the first768 rows serve
+both this correction and the new residual. All168 old far moments are
+reused. The112-feature columns are extended through2048 with the
+complete symbol bound $2H_{\rm gamma}+\sum w_{p^j}$ and freshly paid
+operator allowance approximately $1.80743\times10^{-135}$. No old
+scalar, moment, retained Gram or eigensolver production is repeated.
+
+| Quantity on the same full dyadic $v$ | Approximate enclosed value |
+|---|---:|
+| Old complete residual energy | $4.3635328423409634\times10^{-10}$ |
+| New complete residual energy | $1.0904887215065086\times10^{-10}$ |
+| Old sufficient lower target | $-2.4966887033712925\times10^{-11}$ |
+| New sufficient lower target $\ell$ | $2.8606682320961359\times10^{-10}$ |
+| New upper trial energy $Q(v-y)$ | $3.9511569536026445\times10^{-10}$ |
+
+Exact endpoints give new residual energy below one quarter of the old
+energy and the conditional scalar enclosure
+$2.86\times10^{-10}<v^*(A-C^*H^{-1}C)v<3.96\times10^{-10}$.
+This repairs the former witness direction after changing the exterior
+trial. It does not undo either fixed-family exclusion or certify the
+other retained directions, the full1281-dimensional matrix, cofinal
+support positivity or RH. The vector has its original exact mass;
+these quadratics are not claimed to be normalized eigenvalues.
+No new inverse algorithm, general theorem or Lean verification is claimed.
+
+The candidate and result are
+`inverse-residual-enrichment-2048-candidate.json` and
+`inverse-residual-enrichment-2048-result.json`. Result SHA-256:
+`1084eca5cb36a75a5a6d82fe9cc4fa2ef88ab0b59b179d7b7fa29729f7aace22`.
+The result uses768 working bits and384-bit exported intervals;
+the far allowance is separately exported on a640-bit grid.
+
+```sh
+uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/inverse_residual_enrichment.py --trial docs/reports/weil-c27/inverse-residual-enrichment-2048-candidate.json --out build/c27-inverse-enrichment.json
+```
+
+Without `--trial`, the program proposes the finite correction using
+NumPy2.2.6 and threadpoolctl3.6.0 in addition to the pinned python-flint.
+The directed consumer needs neither NumPy nor another solve.
