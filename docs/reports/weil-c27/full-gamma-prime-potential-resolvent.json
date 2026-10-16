@@ -1,0 +1,93 @@
+{
+  "schema": "ACTUAL_C27_REFINED_RESOLVENT_BUDGET_V1",
+  "packet_sha256": {
+    "full-gamma-prime-potential-budget.json": "76f2867d013771d78912af8182a8d722c446691f1c3fd1b78c9e229439b4999c",
+    "full-gamma-prime-potential-refined.json": "9bad7a02ad1a69ff53f0b6a253cce1b04603d1877ba5da05811cbbd141f9389c",
+    "full-gamma-surplus-budget.json": "25eedbaa0dc4fe6612b58cd34f4fbf544719e5d373c2fbccd4b2d11a8b64597f"
+  },
+  "source_sha256": "05add0b06660bbebadbc8e41f0c8e7c061610f59371b0532b16f9b253fc01916",
+  "invocation_source_sha256": {
+    "full_gamma_prime_potential_resolvent.py": "05add0b06660bbebadbc8e41f0c8e7c061610f59371b0532b16f9b253fc01916",
+    "arb_arithmetic.py": "bb00525fdf7c7df9fd16bf66b3baa19eded2a75c482bd0933d5f613065af073c",
+    "diagonal_floor_witness.py": "5942cdf0779e13d4ba0763122c311e4fec730ed1660e9fe01ff89eb8db16c6a6",
+    "arb_tail_moments.py": "91e76acc0e857c972e0c19380d39b57f84172d1f7ba2ac88ceca9999cafd2067",
+    "arb_far_coupling.py": "d8a4a4a73723fd1523a0a6fed4719bdc1ff1e83a6cf298c712ee2dda1d0185de",
+    "arb_middle_scalars.py": "cafe8ff7b9604772f70c049e4bbd4825ac455f7cc3bb0683c337802302a97b1e",
+    "arb_inverse_residual_pilot.py": "bf4cb01b01052dd98863c8aaf3cc9f9fb5d054399dc56654e490a48a96fc3b72",
+    "arb_inverse_residual_obstruction.py": "0aea8a43a0b6a7ef5ec758357b821ee587bfcb84fead426e5c9331467e49dcf0",
+    "structured_inverse_residual_interval.py": "eae66659370f74c8a4c7adbf8df59755c8aa25d532a9652a3c16e7f2da10567c",
+    "full_gamma_prime_potential_budget.py": "4b7c1e213e3b5ab1b7b54c48e18ec2949b01df691e400dfe35991fd42737b290",
+    "gamma_boundary_update.py": "dd83caebff65ba64596028b7a32d03dbaa154a182d6ce4b9e629bd502f10b13e",
+    "structured_residual_schur_finish.py": "99edf1e9057b6349d4dbe48ce950ca43df1887cec84a8c2a21ac627671e90d57",
+    "joint_gamma_boundary.py": "10021a4faf837683e8430a7124241f3145e1bcfdce42aca3f817cdd4a491ea07",
+    "full_gamma_surplus_shift_gate.py": "324f0c49c181aedae99411d7b8955be753cdb93ff20426c3712bac67736a1f1a",
+    "full_gamma_prime_potential_refined.py": "3b2edc006810847bfdd68a64b019c4159278092d9937c67efd912ade71704957"
+  },
+  "working_bits": 1024,
+  "grid_bits": 640,
+  "fixed_parameter": [
+    "1",
+    "48"
+  ],
+  "fixed_cauchy_price": [
+    "640",
+    "1"
+  ],
+  "source_integer_sha256": "1ecb02691d9b99e4c181c3f8955ec84dd41328f277bb59bdffcf6d80412dd55e",
+  "reused_cell_masses": 153,
+  "scalar_bounds": {
+    "resolvent_moment": [
+      "9802761110679201584156397576539597617280341824397422495446859543814514032506207712038499335540350327413981106756122135463599293313675296164390243654005792217224263167703819553869175914447997085",
+      "9802761110679201584156397576539597617280341824397422495446859543814514032506207712038499335540350327413981106756122135463599293313675296164390243654005792217224263167703819553869175914448103068"
+    ],
+    "complete_weighted_budget_upper": [
+      "223290486325354595557032006486256017951408153699263517274285718150172645656808040020083289189346464071650329401080013746694308568369389077017500817694124734671080836090267605958929751596621312604002",
+      "223290486325354595557032006486256017951408153699263517274285718150172645656808040020083289189346464071650329401080013746694308568369389077017500817694124734671080836090267605958929751596621312604003"
+    ]
+  },
+  "exact_rationals": {
+    "maximum_weight": [
+      "2115054747530763749741579579289085435326636590398239028198124052725134851918399400869826629402527832249841205344280199824306244582359795517576809326171875",
+      "3814500279039014233056913523972245662930532618817837804613411527876772620975456072828548583933733891787555812385015313728877486089209233456562101097212"
+    ],
+    "far_unweighted_norm_squared_upper": [
+      "21542112852586235370168222231557599182658836153716515203483082318607202345757609711262055304530189977754785878906115396264593287144357504354172365952752368673007726337428392720656684985973895829",
+      "460218588518144064679671784889512082134965335998235152719995042656320198496988705407033333547349620769139877459163032481143622609572894791840758793935885866327970539331188777055353750322937856"
+    ],
+    "target_using_h_lower": [
+      "115323241813435001790839846563934418024713003204949862296091242565759025881005693359018757010283897440831097959814879724006188147676916392705786636633840232039527801388244401951964433276749466295149",
+      "2281220308811097609320585802850145662446614253624279965289596258949637583604338693252956405658685699889321154786797203655344352360687718999126330659861107094125997337180132475041437096123301888"
+    ]
+  },
+  "verdict": "conditional-fixed-shift-budget-admitted",
+  "conditions": [
+    "Same actual form/domain, exterior, original orthonormal mass and saved complete direction.",
+    "Actual H>=T=Lambda+full Gamma boundary+even pole>0 with the same archived Lambda=W^-1.",
+    "Sound saved exact-inverse/residual and common finite directed enclosures.",
+    "D>0 and T>=Lambda imply M_J>=Lambda_J by the finite block factorization.",
+    "The inherited floor and exact dyadic w, Q, z, b, scalar array and original W are sound.",
+    "The accepted smooth GP polynomial has exact constant coefficient -pi/4 and the source-proved pointwise remainder decay.",
+    "The matching saved far residual energy applies to this exact retained v and selected inverse x0.",
+    "Finite support correction and inverse-residual square completion are valid on the inherited actual common form/domain.",
+    "The same residual generators represent the full retained-to-J map R_J.",
+    "The existing finite Cauchy projection and its absolute remainder enclose every retained coordinate.",
+    "The same actual complete H-T identity and global prime/diagonal slack give H-T >= I/632.",
+    "The selected Schur Pi is the same common actual form and inherits Pi >= I/632.",
+    "The archived energies enclose the SAME unscaled full u=M w0, with constant Wfar=Dfar I.",
+    "The actual global difference dominates multiplication by v=59/10-r_q on the same common closed form domain.",
+    "The original unphased cosine identification is unitary and E/O orthogonal; finite E shifts preserve the form domain.",
+    "Pi is the same finite-E short; the full u includes the complete unknown far action.",
+    "The sound accepted26-cell polynomial margins lower-bound q*v everywhere up to null endpoints.",
+    "The restored last-cell polynomial is the same accepted lower for q*v on the complete outward cell.",
+    "The original full source splits into unweighted orthogonal uJ and uF; all new moments use one common reflected majorant.",
+    "The SAME full source uJ+uF has unweighted orthogonal finite and complete far parts.",
+    "All saved153 cell masses enclose the same original finite source and reflected refined weight."
+  ],
+  "scope": "Standard weighted-Cauchy application at fixed price640 and actual shift1/48; a passing upper certifies only the conditional same-source directional budget. No actual sufficient score, retained/cofinal positivity, Robin, RH, Lean or novelty claim.",
+  "new_coefficient_or_primitive_arithmetic": 0,
+  "new_actions_inverses_solves_Grams": 0,
+  "old_producers_replayed": 0,
+  "price_or_parameter_scan": false,
+  "precision_retry": false,
+  "elapsed_seconds": 0.014367499854415655
+}
