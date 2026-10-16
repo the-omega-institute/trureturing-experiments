@@ -3097,3 +3097,43 @@ Lean verification.
 ```sh
 uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/full_gamma_lift_finite_gram.py --out build/c27-lift-finite-gram.json.zlib
 ```
+
+## Test the cached upper before requesting a common inverse
+
+`full_gamma_threshold_upper.py` consumes only the saved eighteen-by-eighteen
+matrix $U=\Xi+S_J$. The accepted same-object comparison gives
+
+$$
+\Xi\preceq H=\Xi+\Theta\preceq U,\qquad 0\preceq\Theta\preceq S_J.
+$$
+
+Since $\Xi$ has seventeen positive eigenvalues and $S_J\succeq0$, $U$
+has at least seventeen positive eigenvalues. One existing Arb determinant
+can therefore distinguish a positive upper from an upper with a negative
+direction. This reuses finite Hermitian inertia, without a new generic
+determinant method or another Gram/profile calculation.
+
+The one1024-bit application takes0.53 seconds and encloses
+
+$$
+\det U\simeq1.06742140729487513\times10^{-1359}>0.
+$$
+
+Thus this exact upper matrix is positive definite under the inherited
+premises. **This leaves $H$ undecided**: positivity of an upper does not
+establish positivity of the actual threshold or a negative lower-source
+direction. The inexpensive exclusion selector fails to exclude; this
+route still needs a sharper common inverse/residual bound or another
+sufficient ordered estimate.
+
+`full-gamma-threshold-upper.json.zlib` records the outward determinant
+endpoints, sign, input/helper/source pins and inherited conditions. The
+matrix-entry grid remains640 bits; the determinant uses the existing
+degree-based serialization rule $18\cdot640+64=11584$ absolute bits,
+chosen before execution. There is no precision/grid scan, inverse/solve,
+old supplier replay, source search, Lean verification, actual retained or
+cofinal positivity, Robin-tail or RH result.
+
+```sh
+uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/full_gamma_threshold_upper.py --out build/c27-threshold-upper.json.zlib
+```
