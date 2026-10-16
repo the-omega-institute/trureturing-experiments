@@ -2233,16 +2233,15 @@ not conflicting enclosures of an actual quantity. The center-energy
 width ratio is0.999999997454, so this comparison supplies no reason
 to repeat the same calculation at higher working precision.
 
-The new packet retains both shared Grams and the17 scalar intervals.
-The center-only energy interval is already broad before either trace
-radius is added. The observed data do not separate input uncertainty,
+The packet retains both shared Grams and the17 scalar intervals.
+Its center-only interval is already broad before either trace radius
+is added. This calculation alone does not separate input uncertainty,
 conditioning, lost joint cancellations and solve overestimation; no
-condition number or spectral floor was measured. The minimal missing
-checkpoint is a useful joint certificate of $P_+x=(\widehat bT_+)^*$
-and $(\widehat bT_+)x$, with its directional residual/error bound.
-Tight center and error-trace bounds would then need to be combined
-with the good-block metric when required. Scalar noncancellation
-alone does not supply these quantities.
+condition number or spectral floor was measured. The exact-reference
+certificate below supplies useful center and trace bounds from the
+accepted packets. Their joint full-row sign and the good-block metric
+remain separate obligations. Scalar noncancellation alone supplies
+neither.
 This applies existing ball solves, inertia and weighted trace bounds.
 No large inverse, scientific producer, new generic theorem, Lean
 verification, actual Schur-sign or RH conclusion is supplied.
@@ -2251,4 +2250,222 @@ Fresh-output usage:
 
 ```sh
 uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/full_gamma_correlated_sign.py --out build/c27-correlated-sign.json
+```
+
+## Certify the directional metric using an exact small reference
+
+`full_gamma_directional_metric.py` applies the existing inverse-residual
+identity and Neumann bound to the SAME actual positive complement
+$P=P_+$ and $h=\widehat bT_+$. It reads the saved `finite_center`
+fields, retaining their uncertainty; it does not substitute the full
+row containing the finite/far errors.
+
+Use exact rational midpoints of the mirrored old core to construct
+$P_0,T_0$, and a rational reference $h_0$. FLINT computes the small
+exact reference inverse $R=P_0^{-1}$ and $x=Rh_0^*$. Both identities
+$RP_0=I$ and $P_0x=h_0^*$ are checked by exact rational products.
+The midpoint is a reference, not an assumed actual or positive matrix.
+
+Put $\Delta P=P-P_0$, $\delta h=h-h_0$ and $r=\delta h^*-\Delta Px$.
+If $E\ge|\Delta P|$ entrywise and
+$\eta\ge\||R|E\|_\infty$ is a certified upper strictly below one,
+the existing residual identity gives
+
+$$
+hP^{-1}h^*
+=h_0x+2\operatorname{Re}(\delta h\,x)-x^*\Delta Px+r^*P^{-1}r,
+$$
+
+$$
+0\le r^*P^{-1}r
+\le\frac{\|r\|_1\|Rr\|_\infty}{1-\eta}.
+$$
+
+Actual $P\succ0$ comes from the accepted old-core inertia. All source
+uncertainty, including the negative pivot and $T_+$, remains enclosed.
+The reference energy is computed exactly, signed perturbations are
+kept, and the nonnegative residual allowance is added upward. No
+cancellation-prone interval evaluation of $2hx-x^*Px$ is required.
+
+The1024-bit certificate takes0.104 seconds and gives
+
+$$
+\eta<3.976\times10^{-28},\qquad
+|2\operatorname{Re}(\delta h\,x)|<4.39\times10^{-79},
+$$
+
+$$
+|x^*\Delta Px|<3.30\times10^{-28},\qquad
+r^*P^{-1}r<1.309\times10^{-55}.
+$$
+
+Consequently
+
+$$
+391.85784253565945840673491942575
+<hP^{-1}h^*<
+391.85784253565945840673491942642.
+$$
+
+The directed interval width is below $6.584\times10^{-28}$.
+Independent1536-bit consumption takes0.092 seconds: all324 exact
+reference fields match, the actual correction/energy intervals
+overlap, and both final widths satisfy that bound. These are exact
+reference-arithmetic checks and numerical enclosures, not Lean proofs.
+The reference profile and inverse have large norms, but no actual
+condition number or intrinsic uncertainty floor is inferred.
+
+`full_gamma_reference_trace.py` reuses the saved $R$ without an inverse
+or solve. For $0\le t\le1$, $P_0+t\Delta P$ is nonsingular by the
+same Neumann bound. Hermitian inertia is constant on this path;
+actual $P\succ0$ therefore implies $P_0\succ0$. The eigenvalues of
+$R\Delta P$, similar to a Hermitian matrix, have magnitude at most
+$\eta$. Thus the standard Loewner comparison is
+
+$$
+\frac{R}{1+\eta}\preceq P^{-1}\preceq\frac{R}{1-\eta}.
+$$
+
+For each SAME actual PSD $C_j^+=T_+^*C_jT_+$, $j=f,t$,
+
+$$
+\frac{\operatorname{tr}(RC_j^+)}{1+\eta}
+\le\operatorname{tr}(P^{-1}C_j^+)
+\le\frac{\operatorname{tr}(RC_j^+)}{1-\eta}.
+$$
+
+The full trace includes all offdiagonal terms and the uncertainty in
+$T_+$. The thin1024-bit contractions take0.030 seconds and yield
+approximately $8.869400460878844$ and $6.026200142006464$; their
+directed actual-trace interval widths are below $8.423\times10^{-27}$
+and $5.210\times10^{-27}$ respectively.
+Independent1536-bit thin consumption preserves the verdict and
+overlaps the actual scalar intervals and final $q$ enclosure.
+Of17 scalar exports,12 overlap and11 are identical; the five disjoint
+exports are generated bound values.
+
+Combining these with the certified center and saved full-row $b_0$
+interval gives the simultaneous conservative enclosures
+
+$$
+-586<q<388,\qquad -287<D_*+q<688.
+$$
+
+These separate bounds leave the sign inconclusive. They do not
+use every correlation between the negative coordinate and the
+positive-subspace errors already recorded in $C_f,C_t$. The joint
+signed estimate below uses these correlations to exclude the
+$D_*$-based sufficient update. A sharper common gain charge and the
+good-block inverse metric remain missing.
+Neither interval endpoint is claimed attainable. All results retain
+the inherited actual common-form/domain/inverse/comparison and
+sound-cache premises. Existing exact rational, inverse-residual and
+Loewner methods are reused; there is no new generic algorithm,
+Lean-verification, actual full retained/cofinal positivity, Robin-tail
+completion or RH claim.
+
+Fresh-output usage:
+
+```sh
+uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/full_gamma_directional_metric.py --out build/c27-directional-metric.json.zlib
+uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/full_gamma_reference_trace.py --out build/c27-reference-trace.json
+```
+
+## Use the negative/positive error correlations in the signed scalar
+
+`full_gamma_joint_sign.py` reuses the same center profile, residual
+energy ceiling $Q_c$, error traces $\tau_f,\tau_t$, and full shared
+Grams. It evaluates only thin quadratic products. For the exact
+center $\widehat b$, write
+
+$$
+q_c=\widehat b\Sigma_*^{-1}\widehat b^*
+=|\widehat b_0|^2/a+hP^{-1}h^*,\qquad
+g=\Sigma_*^{-1}\widehat b^*.
+$$
+
+Use the finite center coordinate here, not the full-row $b_0$ interval.
+The accepted exact reference profile gives
+
+$$
+g=g_x+TP^{-1}r_c,\qquad
+g_x=(\widehat b_0/a)e_0+Tx,\qquad
+r_c=h^*-Px,\quad r_c^*P^{-1}r_c\le Q_c.
+$$
+
+For the SAME actual PSD $C_j$, trace domination bounds the correction
+in its seminorm:
+
+$$
+\|C_j^{1/2}TP^{-1}r_c\|^2\le\tau_jQ_c,\qquad
+L_j:=\sqrt{(g_x^*C_jg_x)_{\rm up}}+\sqrt{\tau_{j,\rm up}Q_{c,\rm up}}.
+$$
+
+Thus each corresponding linear error has magnitude at most $L_j$.
+For $e=f+t$, the exact expansion is
+
+$$
+q(b)=q_c+2\operatorname{Re}(eg)+e\Sigma_*^{-1}e^*.
+$$
+
+The negative-pivot decomposition gives uniform quadratic-error bounds
+
+$$
+-\frac{(\sqrt{(C_f)_{00}}+\sqrt{(C_t)_{00}})^2}{-a}
+\le e\Sigma_*^{-1}e^*
+\le(\sqrt{\tau_f}+\sqrt{\tau_t})^2.
+$$
+
+All ceilings are directed, including the positive lower denominator
+$(-a)_{\rm lo}$. The estimates retain the shared negative/positive
+correlations in the linear contraction; they do not assume independent
+error optimizers are simultaneously attained.
+
+The1024-bit thin contraction takes0.021 seconds. It bounds the center
+signed energy near $-128.17372946339$, the total linear error by
+$62.805752720500$, and the quadratic error between
+$-28.404847233170$ and $29.517335427025$. Consequently
+
+$$
+\boxed{-219.39<q<-35.85},\qquad
+\boxed{79.76<D_*+q<263.30}.
+$$
+
+Independent1536-bit consumption takes0.017 seconds; all17 scalar
+interval pairs and the final $q$ interval are endpoint-identical.
+
+Under the inherited actual common-form/domain/inverse/comparison and
+sound-cache premises, this excludes the PARTICULAR $D_*$-based
+sufficient update for every $\Gamma\ge0$. It does not give a negative
+direction for the actual Schur form or exclude stronger gain charges.
+
+The negative upper for $q$ also supplies a concrete full-matrix budget.
+If new certified positive $D_\sharp\ge\mathcal K$ and
+$\Omega\ge\Gamma$ satisfy
+
+$$
+\boxed{D_\sharp+\Omega<35.85},
+$$
+
+the same block-inertia criterion makes that strengthened lower update
+positive definite, including all coupled coordinates. These two bounds
+are not supplied here. A known available refinement is
+
+$$
+\mathcal K\le D_*-F_\phi A_\rho^{-1}F_\phi^*.
+$$
+
+It is an inequality: $D_*$ is already a ceiling for
+$\delta+\rho\|u_{\rm far}\|_W^2$. A quantitative common-source
+channel-energy lower bound and the good-block metric remain missing.
+The exact common charge must not be replaced by $D_*$ in an equality.
+This is an application of existing quadratic expansion, trace and
+weighted Cauchy methods, with no generic novelty or Lean verification.
+Actual full retained/cofinal positivity, the Robin tail and RH remain
+unresolved.
+
+Fresh-output usage:
+
+```sh
+uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/full_gamma_joint_sign.py --out build/c27-joint-sign.json
 ```
