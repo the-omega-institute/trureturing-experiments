@@ -1,0 +1,64 @@
+{
+  "schema": "ACTUAL_C27_STRUCTURED_DIAGONAL_CHECK_V1",
+  "target_packet_sha256": "ea4a761f76b59a11b2d04faf80531901a5164f4145c2424a4e79889ae3f72e22",
+  "pivot_result_sha256": "47abfac57654d30b212495198e5c24d4686885bc96bac18b21f8d9f2a5434ba3",
+  "reduced_result_sha256": "925d78f4b92514c207bcdc7b95e30e13e3b127d49b5db7d588c5d2d82b7d83d6",
+  "grid_bits": 640,
+  "reused_positive_coordinate_count": 1263,
+  "remaining_modes": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    9,
+    10,
+    12,
+    14,
+    15,
+    18,
+    19,
+    24,
+    29,
+    33,
+    39
+  ],
+  "negative_diagonal_modes": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    9,
+    10,
+    12,
+    14,
+    15,
+    18,
+    19,
+    24,
+    29,
+    33,
+    39
+  ],
+  "witness": {
+    "remaining_mode": 0,
+    "diagonal_interval": [
+      "-2633489322513735287396806904463261666205155602828889421895421316986475394348663644189126949887851993115940768231765516722933560780533013687442456800307880684803057",
+      "-2633489322513735287396806904463261666205155602828889421895421316986475394348663644189126949887851993115940768231765516722933560780532765493682483867114900363531249"
+    ]
+  },
+  "verdict": "sufficient-target-not-positive-semidefinite",
+  "conditions": [
+    "Same complete actual common-form and exterior-domain premises.",
+    "Same positive actual exterior H and archived W majorizing H^-1.",
+    "Sound reused positive-pivot certificate for this exact complete target.",
+    "Sound saved dense-Schur interval enclosures for this same target."
+  ],
+  "scope": "A negative reduced diagonal plus the positive prefix rejects this explicit complete sufficient lower target. It does not determine the full reduced inertia, actual Schur/Weil sign or every trial on this support. No target, solve, spectrum, scalar or moment producer is rerun; no Lean, cofinal positivity or RH result.",
+  "source_sha256": "9f64b7de62a0e012399609fdd1586bd0222b90053d6d234a371012d0cb909b4f"
+}
