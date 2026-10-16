@@ -1,0 +1,5 @@
+witness: GME True  S = [2.0, 1.0, 1.0]  l = {(0, 1): 0.0, (0, 2): 0.0, (1, 2): 2.0}  l_all = 9.609873083229848e-11
+200 random family members: all GME, max |l_AB| = 3.58046925441613e-15
+200 random states of C^4 x C^2 x C^2: min l_all = 0.024471229912549904
+ALL_OK
+EXIT=0
