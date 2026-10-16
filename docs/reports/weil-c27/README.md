@@ -2536,3 +2536,120 @@ claimed.
 ```sh
 uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/full_gamma_channel_charge.py --out build/c27-channel-charge.json
 ```
+
+## A zero-error point obstructs the current error-envelope relaxation
+
+`full_gamma_charge_center_obstruction.py` reads only accepted scalar
+packets, using exact integer endpoint arithmetic. It runs no inverse,
+contraction, scientific supplier or prior consumer. Its question is
+whether the current *relaxed information* can force
+$\mathcal K+\Gamma+q<0$; it does not seek an actual-source counterexample.
+
+Keep the same cached $F_0,A_\rho,\widehat b,\Sigma_*$ and write
+
+$$
+b=\widehat b+\eta Z+t,\qquad F_\phi=F_0-\eta,
+$$
+
+$$
+\eta^*\eta\preceq kA_0,\qquad t^*t\preceq C_t,\qquad\Gamma\ge0.
+$$
+
+These upper envelopes alone admit $\eta=t=0$. Put
+$E_0=F_0A_\rho^{-1}F_0^*$ and
+$q_c=\widehat b\Sigma_*^{-1}\widehat b^*$. At that relaxed point,
+
+$$
+D_*-E_0>192.809615,\qquad D_*-E_0+q_c>64.635885.
+$$
+
+Thus no uniform negative upper on this stated relaxation is possible
+for the $D_*-F_\phi A_\rho^{-1}F_\phi^*$ envelope, even with $\Gamma=0$.
+The stronger check also retains the same-source charge identity. Let
+$J=\{2049,\ldots,32768\}$, $m_J=\|u_J\|_W^2$ and
+$s=\|u_{\rm far}\|_W^2\ge0$. Then
+
+$$
+\mathcal K=m_J-h+(1+\rho)s-F_\phi A_\rho^{-1}F_\phi^*.
+$$
+
+The saved finite action energy and exact dual-denominator enclosure give
+
+$$
+m_J-h>284.539155,\qquad
+m_J-h-E_0>178.202101,
+$$
+
+$$
+m_J-h-E_0+q_c>50.028372.
+$$
+
+Consequently the relaxed point has $\mathcal K+\Gamma+q>50.028372$
+for every $s\ge0$ and $\Gamma\ge0$. Even the ideal relaxed choice $s=0$
+does not remove it. Sharpening only the far-energy upper or solving an
+optimization problem over these unchanged upper envelopes cannot
+supply the desired uniform negative bound.
+
+The actual common source is fixed; $\eta,t,s,\Gamma$ also obey
+relationships discarded by this relaxation. No assertion is made
+that its zero-error point is realized by that source. The result
+identifies missing information: use actual channel/cross actions,
+further source constraints or a different lower construction. It
+neither excludes the actual common gain nor proves actual Schur
+negativity, full retained/cofinal positivity, a Robin tail or RH.
+This is existing feasibility reasoning applied to cached numerical
+scalars under the inherited common-form/domain, inverse/comparison
+and sound-cache premises, without generic novelty or Lean verification.
+
+```sh
+python3 docs/reports/weil-c27/full_gamma_charge_center_obstruction.py --out build/c27-charge-center-obstruction.json
+```
+
+## The actual finite channel projection of the common source
+
+`full_gamma_actual_channel_projection.py` supplies the missing
+$F_\phi=u_J^*W_JU_J$ from the accepted cached $u_J=Mw$ and original
+positive weights. The original nineteen channel shapes are evaluated
+only for this new functional, one row at a time; their full values were
+not archived. The effective action, residual, channel Gram and map,
+exact lift and inverse actions are reused. No pole or contrast
+rescaling is introduced. The channel definition source hash is checked
+against the accepted boundary packet.
+
+For the original bin $[a,b]$ and $m\in J$, the reused formula is
+
+$$
+U_{m,[a,b]}=(-1)^m
+\sqrt{\frac{1-e^{-(4a+1)d/2}}{(b-a)d}}
+\operatorname{Re}\left[
+\psi_0\left(b+\tfrac14+i\pi m/d\right)
+-\psi_0\left(a+\tfrac14+i\pi m/d\right)\right],
+\qquad d=\log27,
+$$
+
+where $\psi_0$ denotes digamma. The new nineteen sums retain all
+$m=2049,\ldots,32768$. With the cached $F_0$, they also supply
+$\eta=F_0-F_\phi$ and the actual finite common row
+
+$$
+b_J=c-F_\phi A_\rho^{-1}\Beta_V.
+$$
+
+All eighteen coordinates overlap the separate transported expression
+$\widehat b+\eta Z$. The1024-bit projection takes15.924 seconds and
+gives channel energy near115.345991300848898, projected defect energy
+near0.211760521889664071, and a positive common-charge ceiling below
+183.800678. The earlier operator-only defect ceiling was above16.188229;
+this projection supplies the actual finite channel information instead
+of assigning that entire error envelope to every direction.
+
+The packet preserves $F_\phi$, $\eta$, $A_\rho^{-1}F_\phi^*$ and $b_J$.
+The far mixed row and the good-block inverse metric remain unsupplied.
+All conclusions inherit the actual common-form/domain,
+inverse/comparison, channel-definition and sound-cache premises. This
+is a new functional of the fixed source using existing channel formulas,
+not a new generic method, Lean proof or retained/cofinal/RH result.
+
+```sh
+uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/full_gamma_actual_channel_projection.py --out build/c27-actual-channel-projection.json.zlib
+```
