@@ -3992,3 +3992,54 @@ generic theorem, maximal capacity, Lean, Robin-tail or RH result.
 ```sh
 PYTHONDONTWRITEBYTECODE=1 UV_OFFLINE=1 uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/full_gamma_scalar_transport.py --out build/c27-scalar-transport.json
 ```
+
+
+## Assemble the complete retained finite row from cached arrays
+
+[full_gamma_finite_retained_row.py](full_gamma_finite_retained_row.py)
+assembles the original real, unphased384-bit row0 finite contribution
+on retained modes $0,\ldots,1280$:
+
+$$
+b_J=c^*-(A_\rho^{-1}F_\phi^*)^*\Beta.
+$$
+
+It reads `common.column` (1281-by1),
+`actual.channel_inverse_actual_column` (19-by1), and
+`boundary.finite_beta` (19-by1281). One thin channel product supplies
+all1281 coefficients. One product with the saved1263-by18 inverse
+action checks the SAME exact old lift $V=[-X;I]$ in its saved order:
+
+$$
+b_JV=(b_J)_\ell-(b_J)_gX.
+$$
+
+The sole1024-working/640-export-bit assembly takes0.22688seconds.
+All1281 finite ordered entries are exported, and all18 projected
+coordinates overlap the archived actual finite lift row. Source identity
+and distributivity, rather than interval overlap alone, identify the
+common mathematical row. Packet SHA256:
+`479b8da2bb1d490d0f4adf285a67797d733ec05d4dab33d88b6175946a89f28a`.
+
+The [saved finite-row packet](full-gamma-finite-retained-row.json.zlib)
+contains the1281 coefficients,18 lift-check coefficients, six fixed input
+pins, invoked source/helper hashes, complete coordinate order and
+inherited conditions. Fresh output, finite ordered exports and unchanged
+inputs/helpers are required. No old producer, source/adjoint/channel
+projection, inverse, solve, Gram, far or Fourier calculation is replayed;
+no parameter, source or precision scan runs.
+
+This is complete only in retained coordinates. The actual full
+$b=\mathcal B$ includes an additional SAME-source far mixed row. The
+full unweighted $r=w^*R$ and a certified1263good-block inverse metric
+remain missing. The cached17inverse belongs inside the18-core; neither
+it nor1263-by18 saved actions gives an inverse for a new good-block row.
+The [owning application note](https://github.com/the-omega-institute/trureturing/blob/dev/Library/Weil/connesconsanimoscovici2026spectral.md)
+states the standard sufficient two-row bordered-inertia interface and
+its remaining complete-row/metric inputs. Those methods are reused,
+not claimed as new results. The assembly supplies no sufficient score,
+actual retained/cofinal positivity, Robin-tail bound, RH or Lean result.
+
+```sh
+PYTHONDONTWRITEBYTECODE=1 UV_OFFLINE=1 uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/full_gamma_finite_retained_row.py --out build/c27-finite-retained-row.json.zlib
+```
