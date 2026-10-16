@@ -1,0 +1,241 @@
+{
+  "schema": "ACTUAL_C27_SMALL_SHIFT_EXCLUSION_V1",
+  "packet_sha256": {
+    "full-gamma-baseline-gap.json.zlib": "f7182de82c7f015252fc14cffc2b0e947ed6ff557f1f58de464dbb9ac88699bd",
+    "full-gamma-actual-joint-lower.json.zlib": "f294428dc9685e04fca777a5dc71ac0374fc17a4c69246422e8b4325351da5a9",
+    "full-gamma-lift-projection.json.zlib": "a41813b27cd4567af326d42ec77e3b8c8942474b80bdf5833f7bc05aff52f873",
+    "full-gamma-projection-upper.json.zlib": "a0f6f2f222d35fa6a1c94c68d1573d9b7695eea03308974ed4481b03940993e3",
+    "full-gamma-actual-channel-projection.json.zlib": "63e3c2e291940ca3549fa4a1303b55b4d92c08d594a50daf7ca2132087ad2745",
+    "joint-gamma-6765-rho32-v2-schur.json": "13823fc56c3c06d79e5db97132afbdbd3fef79929ce59103436fc8dfae9166fd",
+    "full-gamma-surplus-budget.json": "25eedbaa0dc4fe6612b58cd34f4fbf544719e5d373c2fbccd4b2d11a8b64597f"
+  },
+  "input_sha256": {
+    "arithmetic-scalars.json.zlib": "f993be1aa48824cbf22276ac2d80e834ca9e54e4519e2040f437ebb4f724990f",
+    "middle-scalars.json.zlib": "55212d0181673c015de503928265509e594eb0f81b85e3afb34cc28a103d18db",
+    "diagonal-floor-witness.json": "f45f3a333b50aa60c38c5b2ee9be416a165a1c719ba7dfb3ca6dfbe251bf1840",
+    "far-coupling.json.zlib": "ac35edacd7f55de470586e3b8a5915bcaa49b9d2c4c9c2ee073eeaaa8c9c73e7",
+    "inverse-residual-pilot.json.zlib": "6db5093bf78fe1dcf43cbbe1b39ef2b1faf4174cf7cf33fe796c0d10ad4d231b"
+  },
+  "remaining_modes": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    9,
+    10,
+    12,
+    14,
+    15,
+    18,
+    19,
+    24,
+    29,
+    33,
+    39
+  ],
+  "source_sha256": "0f975ed9f9776ce35bdba00a8322c549ea650a441a9edeba66fad6112153ff70",
+  "grid_bits": 640,
+  "working_bits": 1024,
+  "scalar_bounds": {
+    "new_gradient_first_coordinate": [
+      "50276291743142258053349347378060517659284392463676239245485978911315828897394868716997454740099531067198859146795796943598691608547327749852704951368196313608737028263622755551409931542355125244148872724460168775711325095274342587482742951809354193015563878400",
+      "50276291743142258053349347378060517659284392463676239245485978911315828897394868716997454740099531067198859146795796943598691608547490753043818250380073511244015425634635691075454087176723227995410273130625808915432265029303148995541013318614097140597217296384"
+    ],
+    "new_mixed_scalar": [
+      "-4356505023393391160570645127970274354854561954378606373949623296680020413865005468834092473589436596306129594443130651074843613546074293844194007125912671858485977203667771313650749955632046016170",
+      "-4356505023393391160570645127970274354854561954378606373949623296680020413865005460077870231676833098139743000531967372172686426102378133642010154716035388903061686429709323854774523290488088299177"
+    ],
+    "new_signed_curvature": [
+      "-111788666190226370248965311892627401624911034499741338408334228691976083962265957610860787216051444366221557877262692999135165214718437573164795374044775831707333792044913516479859842335028474281984",
+      "-111788666190226370248965311892627401624911034499741338408334228691976083962265957610860787216051444366221557877262692999135165214718375010894519391528130029797912602556189175952029093021582001963008"
+    ],
+    "shifted_far_penalty_coefficient_upper": [
+      "36522622810223668435317172163291058505079990680052623441759126221514075231595685643983589830166791080350478474114861421985857743596203336499657749611238803229359928758216326361061707313326383846045",
+      "36522622810223668435317172163291058505079990680052623441759126221514075231595685643983589830166791080350478474114861421985857743596203336499657749611238803229359928758216326361061707313326383846046"
+    ],
+    "far_penalty_cross_sqrt_upper": [
+      "1300699052895184819497770312344723914724953189532724038796771913356780672838033532506675926612955765400085077566216818808022543404130050844330540283343981150296080947301616528756442978647670884182",
+      "1300699052895184819497770312344723914724953189532724038796771913356780672838033532506675926612955765400085077566216818808022543404130050844330540283343981150296080947301616528756442978647670884183"
+    ],
+    "lower_polynomial_linear": [
+      "-6407036160516088054143645920462574495554221640803517749063375842807260646554771902297759924698139717680614289679097007543866642499442798778370993798635075068711899418828116757645175290979842565563",
+      "-6407036160516088054143645920462574495554221640803517749063375842807260646554771884785315404176954865506696916083636124906161214867010651681505309177459078967097300455154292719595872198680942257594"
+    ],
+    "lower_polynomial_quadratic": [
+      "-148311289000450038684282484055918460129991025179793961850093354913490159193861643254844377046218235446572036351377554421121022958314640909664502163513322343380161187907998652734797349300264733397662",
+      "-148311289000450038684282484055918460129991025179793961850093354913490159193861643254844377046218235446572036351377554421121022958314578347394128101282061124583805064209536692419215000682998510539421"
+    ]
+  },
+  "inherited_scalar_fields": {
+    "lower": "gap.stronger_baseline_core_joint_lower",
+    "far_penalty": "gap.shifted_completed_square_penalty_upper",
+    "far_quadratic": "gap.shifted_far_quadratic_coefficient_lower",
+    "h_lower": "budget.h_lower",
+    "parameter_endpoint": "budget.admissible_parameter_upper"
+  },
+  "coefficient_order": [
+    "constant",
+    "linear",
+    "quadratic"
+  ],
+  "exact_lower_coefficients": [
+    [
+      "20556474258838182798623170494256704011287737929956148564411448214481128267558856037539575301448017056275779265851592438803943395275593141537220147554071212514974499117344492385104575147952648871",
+      "570305077202774402330146450712536415611653563406069991322399064737409395901084673313239101414671424972330288696699300913836088090171929749781582664965276773531499334295033118760359274030825472"
+    ],
+    [
+      "-6407036160516088054143645920462574495554221640803517749063375842807260646554771902297759924698139717680614289679097007543866642499442798778370993798635075068711899418828116757645175290979842565563",
+      "4562440617622195218641171605700291324893228507248559930579192517899275167208677386505912811317371399778642309573594407310688704721375437998252661319722214188251994674360264950082874192246603776"
+    ],
+    [
+      "-74155644500225019342141242027959230064995512589896980925046677456745079596930821627422188523109117723286018175688777210560511479157320454832251081756661171690080593953999326367398674650132366698831",
+      "2281220308811097609320585802850145662446614253624279965289596258949637583604338693252956405658685699889321154786797203655344352360687718999126330659861107094125997337180132475041437096123301888"
+    ]
+  ],
+  "exact_unit_interval_coefficients": [
+    [
+      "20556474258838182798623170494256704011287737929956148564411448214481128267558856037539575301448017056275779265851592438803943395275593141537220147554071212514974499117344492385104575147952648871",
+      "570305077202774402330146450712536415611653563406069991322399064737409395901084673313239101414671424972330288696699300913836088090171929749781582664965276773531499334295033118760359274030825472"
+    ],
+    [
+      "-2144725979237687621571948635438334048361390236503352903047529184863448386251733682554125801385854445096218677131431667895352338275807285473914438920912259309022863154183871590755358322510285747143377011961421055301794355602481771177367329241928277937175352702801824323054858252032602696933003982001616587119119881452667446837759677852347721887487160612076872134748141144777545481203194808756638970895100127616187255735258834544114227437243251857240377435421668887785951963577954329748136619030709046221393766203040612300541349041640072328803759",
+      "4076911841616919599113284639280679804744404842928122715921067275532088435718044994539291736942725591994570939466334835275320440672404300951253368019555237048655182070633419599569237488733359257469409152903621568970245141262048815374293123735518589609579465842647932945613406264589930572274257644813406876811158237169222295851490485000619602316048731616976210329115893829416271890722742221076910999239111625852288950876214611271955499303858950100510491879849424729165770048282110481735087103075636900058345452091225953643378227033287442053464064"
+    ],
+    [
+      "-8309473143373752829332788515809266029351240327505206785046935023789393559185763635761625457295724944109950551585598056545894732375797190595135960059921518463533105047225729354961654518101581788871782663834741091194508610882160191991460258041609328707705441358730360495027426283252719910517478586666936279554112862593123377751145512642490970785253484445208587078162284317308600589001659998088158878247387520202170914179781083760448793097652916855617674830545190110708318756052595246064234928290462899358232793425410525269650686529703983941651630283999474721978107961992443666791297428806195818311512169751819840772791710634031886231768234987321963006941388314881152239583426694639159768752928561306026524182906604995240782531685950402232186880538514267775414018715998816937530713746008483378418232139787169819895872171977611382991448425401901766483695819744434777260521363405358941467368074119",
+      "1821526191499093997365186689212338943023673380167213492034482207850892487403605568386413540053072297099790340332368152483969455284973643184580473660140311084785803930081339457462253138373730136906817509025319161758592350808291210920144603917868198648606763564733623475038659255459653373224822147496092481438067162651178732543257941930458445480688557610416975095646838901347327188687510743973322858358860265072328541998147181231760471089511798498362998110813945310960389981254051955292133540272226362163336533796865118658009575591880789479306319919034968761711658874908932393471896967421274949056526158492142574581291508976126414425959571036083338825946543091826868202144709814895492640096797919269386235623604849413525497812459798678491329662434180593497541520620633809301367888696946744108797280982229627288932104286797084450782452965364083050523672908553331624601867454620330859974230276046848"
+    ]
+  ],
+  "minimum_of_lower_polynomial": [
+    "129379616756066839150682225515674826079281456252373557202858817265897977833443495466757587461375609058270633821716611522204692546980203445932478142697498738728224690498853324568042575155266089831712182282334392159853912252823797991012581609948060582701142584657305644195428715531277093207254883059833565435590203485149361325484243761742998985584328363171139173652682212730512924239583326168231840408622994609175968729809259624792798541250985870593450928272451319579668514387394967076521543718334305657762217074552918468579728692945862557459907683710562109946410748331580573390396766357185251426639867219090423860519200961720632011038756210590961017929271221796540836369278849968685112762905045370694239222702837752246794493255183146826945770637760870800169872126605201804735494497744700280497859064853073055555025548434813291548657753655020865872788003261306256410765484899798583816961927434297239",
+    "3643052382998187994730373378424677886047346760334426984068964415701784974807211136772827080106144594199580680664736304967938910569947286369160947320280622169571607860162678914924506276747460273813635018050638323517184701616582421840289207835736397297213527129467246950077318510919306746449644294992184962876134325302357465086515883860916890961377115220833950191293677802694654377375021487946645716717720530144657083996294362463520942179023596996725996221627890621920779962508103910584267080544452724326673067593730237316019151183761578958612639838069937523423317749817864786943793934842549898113052316984285149162583017952252828851919142072166677651893086183653736404289419629790985280193595838538772471247209698827050995624919597356982659324868361186995083041241267618602735777393893488217594561964459254577864208573594168901564905930728166101047345817106663249203734909240661719948460552093696"
+  ],
+  "minimizing_parameter": [
+    "334745415119512843774774678529539553323944972685805409403807199775303305374011444481528075994489441726915680722961446649368007665130240549948992548261787856225598395227864747931503953925704640616145014288824337338792694494312742256282636458990612893626121424676620009238750102729634964270603710141042937995591029253251403024279866227955960137012893",
+    "893581348953903010619116162253176823783341370275875968466297106689884726229079105208826223498445482511555140884313607882555061052916114755038460132756197270516915648888581775295825186686260664023093830705296123529943736908662698262036328495261636485512131070756850155958176067670374372669499921836817374923325760903972653104176312606368209599739090589"
+  ],
+  "parameter_interval": [
+    [
+      "0",
+      "1"
+    ],
+    [
+      "334745415119512843774774678529539553323944972685805409403807199775303305374011444481528075994489441726915680722961446649368007665130240549948992548261787856225598395227864747931503953925704640616145014288824337338792694494312742256282636458990612893626121424676620009238750102729634964270603710141042937995591029253251403024279866227955960137012893",
+      "893581348953903010619116162253176823783341370275875968466297106689884726229079105208826223498445482511555140884313607882555061052916114755038460132756197270516915648888581775295825186686260664023093830705296123529943736908662698262036328495261636485512131070756850155958176067670374372669499921836817374923325760903972653104176312606368209599739090589"
+    ]
+  ],
+  "verdict": "conditional-small-surplus-interval-update-excluded",
+  "exact_trial_source": "joint.new_reference_profile",
+  "old_scientific_productions_replayed": 0,
+  "new_inverse_or_solve_calls": 0,
+  "parameter_scan": false,
+  "elapsed_seconds": 0.011277791112661362,
+  "conditions": [
+    "Same actual form/domain, exterior, original orthonormal mass and saved complete direction.",
+    "Actual H>=T=Lambda+full Gamma boundary+even pole>0 with the same archived Lambda=W^-1.",
+    "Sound saved exact-inverse/residual and common finite directed enclosures.",
+    "D>0 and T>=Lambda imply M_J>=Lambda_J by the finite block factorization.",
+    "The inherited floor and exact dyadic w, Q, z, b, scalar array and original W are sound.",
+    "The accepted smooth GP polynomial has exact constant coefficient -pi/4 and the source-proved pointwise remainder decay.",
+    "The matching saved far residual energy applies to this exact retained v and selected inverse x0.",
+    "Finite support correction and inverse-residual square completion are valid on the inherited actual common form/domain.",
+    "The same residual generators represent the full retained-to-J map R_J.",
+    "The existing finite Cauchy projection and its absolute remainder enclose every retained coordinate.",
+    "The saved19-channel base lift encloses its exact implicit P^-1 B_g.",
+    "The original signed far factors plus their full allowance majorize the same R_far^* W R_far.",
+    "A0 is the Gram of all middle channel rows, and hence majorizes the J-only channel Gram.",
+    "The old base channel kernel is exactly -A_rho^-1 for the same Beta0.",
+    "The common far cross uses the same Mw and R and the weight (1+rho)W_far.",
+    "The saved exact scalar direction has r_J=R_J v0 and defect e=r_J-theta*(Mw)_J.",
+    "The accepted scalar defect encloses e^*W_J e for this same exact theta and original weights.",
+    "Same complete actual common-form and exterior-domain premises.",
+    "Same positive actual exterior H and archived W majorizing H^-1.",
+    "Sound reused positive-pivot certificate for this exact complete target.",
+    "The saved real symmetric enclosure contains the exact complement of this base.",
+    "Nonzero leading determinant signs determine the principal-block inertia by Jacobi signature.",
+    "A positive-semidefinite update of rank r cannot remove more than r negative directions.",
+    "The accepted old real symmetric core has inertia17positive,1negative,0zero.",
+    "Both error Grams bound components of the same actual full common row on the same exact lift.",
+    "The standard validated solve encloses the positive-complement inverse actions.",
+    "The accepted actual Pplus is positive definite; a rational midpoint is only a reference.",
+    "The saved finite_center fields enclose the same exact bhat used by the shared-Gram consumer.",
+    "The Neumann residual bound applies only when the outward eta upper is strictly below one.",
+    "Actual Pplus is positive and the reference path is nonsingular for eta<1; hence P0 is positive.",
+    "R/(1+eta) <= Pplus^-1 <= R/(1-eta) applies to the same actual PSD transported error Grams.",
+    "The center residual is h*-Pplus*x for the SAME h and Pplus as the accepted center certificate.",
+    "Both full error Grams control components of the SAME actual common row, including negative/positive cross correlations.",
+    "The signed expansion uses uniform bounds, without asserting joint attainment of separate error extrema.",
+    "The SAME actual A_rho inverse is the saved negative channel block of the old kernel.",
+    "Fphi=F0-eta with eta=e*W_J U_J/theta and e*W_J e<=Ee for the SAME defect and original weights.",
+    "A_J=U_J*W_J U_J<=A0<A_rho, so eta A_rho^-1 eta*<=Ee/theta^2 by the operator norm, without a channel-count factor.",
+    "The actual common charge is nonnegative and Kcal<=Dstar-Fphi A_rho^-1 Fphi*.",
+    "The original19channel shapes are evaluated by the unchanged boundary-definition formula, with no pole/contrast rescaling.",
+    "The same exact effective action u_J=Mw and original weights are enclosed by the accepted cached arrays.",
+    "Only Fphi=u_J*W_J U_J is newly projected; old Mw, residuals, channel Grams/maps and inverse actions are not regenerated.",
+    "Same actual form/domain, exterior, original orthonormal mass and saved complete direction.",
+    "Actual H>=T=Lambda+full Gamma boundary+even pole>0 with the same archived Lambda=W^-1.",
+    "Sound saved exact-inverse/residual and common finite directed enclosures.",
+    "D>0 and T>=Lambda imply M_J>=Lambda_J by the finite block factorization.",
+    "The inherited floor and exact dyadic w, Q, z, b, scalar array and original W are sound.",
+    "The accepted smooth GP polynomial has exact constant coefficient -pi/4 and the source-proved pointwise remainder decay.",
+    "The matching saved far residual energy applies to this exact retained v and selected inverse x0.",
+    "Finite support correction and inverse-residual square completion are valid on the inherited actual common form/domain.",
+    "The same residual generators represent the full retained-to-J map R_J.",
+    "The existing finite Cauchy projection and its absolute remainder enclose every retained coordinate.",
+    "The saved19-channel base lift encloses its exact implicit P^-1 B_g.",
+    "The original signed far factors plus their full allowance majorize the same R_far^* W R_far.",
+    "A0 is the Gram of all middle channel rows, and hence majorizes the J-only channel Gram.",
+    "The old base channel kernel is exactly -A_rho^-1 for the same Beta0.",
+    "The common far cross uses the same Mw and R and the weight (1+rho)W_far.",
+    "The saved exact scalar direction has r_J=R_J v0 and defect e=r_J-theta*(Mw)_J.",
+    "The accepted scalar defect encloses e^*W_J e for this same exact theta and original weights.",
+    "Same complete actual common-form and exterior-domain premises.",
+    "Same positive actual exterior H and archived W majorizing H^-1.",
+    "Sound reused positive-pivot certificate for this exact complete target.",
+    "The saved real symmetric enclosure contains the exact complement of this base.",
+    "Nonzero leading determinant signs determine the principal-block inertia by Jacobi signature.",
+    "A positive-semidefinite update of rank r cannot remove more than r negative directions.",
+    "The accepted old real symmetric core has inertia17positive,1negative,0zero.",
+    "Both error Grams bound components of the same actual full common row on the same exact lift.",
+    "The standard validated solve encloses the positive-complement inverse actions.",
+    "The accepted actual Pplus is positive definite; a rational midpoint is only a reference.",
+    "The saved finite_center fields enclose the same exact bhat used by the shared-Gram consumer.",
+    "The Neumann residual bound applies only when the outward eta upper is strictly below one.",
+    "Actual Pplus is positive and the reference path is nonsingular for eta<1; hence P0 is positive.",
+    "R/(1+eta) <= Pplus^-1 <= R/(1-eta) applies to the same actual PSD transported error Grams.",
+    "The SAME full far Gram including its signed core and entire allowance controls the actual R_far V.",
+    "Ct=kappa^2*EM0*G for the SAME fixed cap EM0 from the accepted common packet; EM0 is at least the saved positive EMlo.",
+    "Actual t=kappa*u_far*W_far*R_far V and s=||u_far||_W^2 share the SAME source, so |t0|^2<=kappa^2*s*G00 and |t g|^2<=kappa^2*s*g*Gg.",
+    "The actual common charge is middle_action_energy-h+kappa*s-Ephi, and Gamma>=0.",
+    "Only the fixed OLD base Lstar and fixed saved dyadic dual w are tested; a positive result excludes PSD of Lstar+calB*calB/D for every positive D>=Kcal via the accepted one-negative-core criterion.",
+    "The inherited two-sided far approximation has norm error at most the SAME upward epsilon, so 0<=Fup-Factual<=2*epsilon*I.",
+    "For these SAME Q,R,Wbar,Lstar, Delta=kappa*(Fhat-Factual)+(eps0+rho*eps1)*I with ||Fhat-Factual||<=eps0<=eps1<=epsilon, hence 0<=Delta<=2*kappa*epsilon*I. The actual original and transported paddings are not identified.",
+    "The accepted actual common charge floor bounds mJ-h-Ephi for the SAME fixed common source.",
+    "Exact old Sigma has inertia17positive/1negative. PSD addition of delta*Hlift preserves at least17positive eigenvalues, and the strictly negative shifted first pivot leaves exactly one negative.",
+    "The archived lift Gram is V*V, and the full signed far Gram plus its entire allowance is a PSD majorant on that SAME lift.",
+    "The saved exact17profile is only a trial for the CHANGED positive complement; its variational lower is used without asserting it is a new inverse action.",
+    "Actual t=kappa*ufar_adjoint*Wfar*Rfar*V and s=||ufar||W^2 share the SAME source; the displayed new gradient and G control their linear term.",
+    "For every positive D>=Kcal, strict positivity of D+b*SigmaMax^-1*b_adjoint contradicts PSD by the existing one-negative-core rank-one criterion.",
+    "Same actual form/domain, exterior, original orthonormal mass and saved complete direction.",
+    "Actual H>=T=Lambda+full Gamma boundary+even pole>0 with the same archived Lambda=W^-1.",
+    "Sound saved exact-inverse/residual and common finite directed enclosures.",
+    "D>0 and T>=Lambda imply M_J>=Lambda_J by the finite block factorization.",
+    "The inherited floor and exact dyadic w, Q, z, b, scalar array and original W are sound.",
+    "The accepted smooth GP polynomial has exact constant coefficient -pi/4 and the source-proved pointwise remainder decay.",
+    "The matching saved far residual energy applies to this exact retained v and selected inverse x0.",
+    "Finite support correction and inverse-residual square completion are valid on the inherited actual common form/domain.",
+    "The same residual generators represent the full retained-to-J map R_J.",
+    "The existing finite Cauchy projection and its absolute remainder enclose every retained coordinate.",
+    "The same actual complete H-T identity and global prime/diagonal slack give H-T >= I/632.",
+    "The selected Schur Pi is the same common actual form and inherits Pi >= I/632.",
+    "The archived energies enclose the SAME unscaled full u=M w0, with constant Wfar=Dfar I.",
+    "The same real signed compression SigmaMax has exactly one negative eigenvalue; its positive complement, saved exact17trial, finite bJ, shift rV and complete paid PSD far Gram G share the same lift.",
+    "The full unscaled u and its far action stay fixed; K_tau=K+tau*h and B_tau=B+tau*w0*R_res on the same common domain.",
+    "The inherited completed-square constants and cached lower are sound, outward enclosures of this same fixed-trial argument; the metric triangle bounds the shifted far gradient.",
+    "SigmaMax upper-bounds compression of the actual same-Wbar stronger base; its inverse quadratic is used only for compression exclusion, not substituted into an arbitrary actual score."
+  ],
+  "scope": "Conditional numerical lower for K_tau+qMax(B_tau V) on the saved sufficient budget interval, including its zero endpoint. Strict positivity excludes Lbar+B_tau*B_tau/D for every positive D>=K_tau in this family. This is not actual Weil negativity or a maximal eligibility bound. Larger admissible shifts, other sources/bases/majorants, retained/cofinal positivity, Robin-tail, RH, generic novelty and Lean remain outside scope."
+}
