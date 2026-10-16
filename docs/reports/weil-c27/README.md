@@ -1777,3 +1777,124 @@ Existing numerical kernels and APIs are described by
 [Netlib's structured matrix multiplication](https://www.netlib.org/utk/people/JackDongarra/etemplates/node384.html),
 [FLINT's ball polynomial API](https://flintlib.org/doc/arb_poly.html) and
 [Python-FLINT 0.9.0's multiplication binding](https://github.com/flintlib/python-flint/blob/0.9.0/src/flint/types/arb_poly.pyx).
+
+## Infinite residual payment for one positive primal direction
+
+`full_gamma_primal_tail.py` consumes the accepted finite defect and
+inverse profiles, matching current-direction far energy, original
+constant far weight and the existing smooth symbol polynomial with
+pointwise remainder decay. It runs no scalar or moment producer,
+finite action, inverse solve, floor check or optimizer. The Fourier
+cutoff remains $M_0=32768$.
+
+The same inverse-residual square completion gives a positive sufficient
+comparison after the complete residual has been paid. For finite $y$
+outside $E$, put $Z=HE$, $Z_O=O^*Z$, $K=Z_O^*-E^*TO$ and
+
+$$
+p_y=F^{-1}Z_O^*y,\quad q_y=D^{-1}Ky,\quad
+t_y=q_y-p_y,\quad g=-Eq_y+Oy,
+$$
+
+$$
+My=T_Oy-Z_Op_y+K^*q_y,\quad
+e=O(r_O-My),\quad L(y)=2\Re(y^*r_O)-y^*My.
+$$
+
+Then $Ft_y+Z^*g=0$, $r-Zt_y=Tg+e$, $E^*e=0$ and
+
+$$
+m_T(t_y)=Q-L(y)-e^*T^{-1}e
+\ge Q-L(y)-e^*We.
+$$
+
+Only this finite-input action is needed, with bounded/coercive $T$,
+square-summable $HE$ columns and the inherited actual domain.
+No infinite minimax or bounded infinite $M$ assertion is used.
+For the exact saved $y=\vartheta w$, the existing finite lower has
+already paid $e_J^*W_Je_J$. Its actual inverse profiles define the
+exact implicit correction $t_y=\vartheta(q-p)$; no midpoint rounding
+or new solve occurs. The only additional debit is the disjoint
+$m>M_0$ residual.
+
+Let $A_0=M_0+1$, $k=2\pi/d$, $\gamma_0=d/\pi^2$ and
+
+$$
+c_0=\frac14-\frac{27^{-1/2}}{1-27^{-2}}+2(\cosh(d/2)-1),
+\quad \rho_n=-kns_n^{\rm GP}-\pi kn/4-c_0.
+$$
+
+The accepted normalized polynomial has exact analytic $C_0=-\pi/4$.
+Its pointwise remainder $\epsilon(m)=a(M_0/m)^{64}+b(M_0/m)^{65}$,
+$a,b\ge0$, satisfies $m\epsilon(m)\le A_0\epsilon(A_0)$. Thus
+
+$$
+|\rho_m|\le R_\infty:=|-kM_0C_1-c_0|
++kA_0\left(\sum_{j=2}^{63}|C_j|(M_0/A_0)^j+\epsilon(A_0)\right).
+$$
+
+The $640$-bit coefficient grid and $832$-bit remainder grid are read
+separately. The exported $C_0$ interval is never multiplied by
+unbounded $m$. The smooth polynomial already contains the pole;
+its prime sine terms are separate.
+
+For $m>M_0\ge n>0$, the exact disjoint kernel is
+
+$$
+G_{mn}=(-1)^{m+n}\left[\frac1{2(m+n)}
++\gamma_0\frac{\rho_m-\rho_n}{m^2-n^2}\right].
+$$
+
+Set $s_n^2=((A_0-n)^{-2}+(A_0-n)^{-1})/(A_0+n)^2$.
+The elementary bound $\sum_{m>M_0}(m^2-n^2)^{-2}\le s_n^2$
+and weighted Minkowski give
+
+$$
+\mathcal B_G(x)=\sqrt{D_{\rm far}}\left[
+\frac{\|x\|_1}{2\sqrt{M_0}}
++\gamma_0\sum_n|x_n|(R_\infty+|\rho_n|)s_n\right]
+\ge\|G_{\rm far}x\|_W.
+$$
+
+It remains valid at $n=M_0$ and requires no separated geometric
+ratio. For $x$ on $E$, reuse the old actual-symbol budget $B_*$:
+
+$$
+\mathcal B_H(x)=\sqrt{D_{\rm far}}\frac{2B_*}{\pi}
+\frac{\|x\|_1}{\sqrt{M_0-2048}}
+\ge\|H_{{\rm far},E}x\|_W.
+$$
+
+The effective action is
+$G_{{\rm far},J}w+H_{{\rm far},E}(q-p)-G_{{\rm far},E}q$.
+With the matching archived residual upper $E_r$,
+
+$$
+\|e_{\rm far}\|_W\le\sqrt{E_r}
++|\vartheta|\bigl(\mathcal B_G(w)+\mathcal B_H(q-p)
++\mathcal B_G(q)\bigr).
+$$
+
+`full-gamma-primal-tail.json` encloses the squared upper allowance
+below $1.264968\times10^{-31}$. Subtracting it from the accepted
+finite lower gives
+
+$$
+m_T(t_y)>1.2194448\times10^{-31}>0.
+$$
+
+Under the inherited actual form/domain, comparison and sound-cache
+premises, the actual Schur quadratic in this one original saved
+direction has the same strict lower bound, since $H^{-1}\preceq T^{-1}$.
+This does not decide the full retained matrix or a cofinal family.
+It neither proves RH nor supplies a new general theorem, algorithm
+or Lean verification. A positive restricted upper alone had not
+supplied this primal conclusion; the global residual payment is
+essential.
+
+The cache-only consumer took $0.36$ seconds at $1024$ working bits.
+Reconsume the accepted data without regenerating any supplier:
+
+```sh
+uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/full_gamma_primal_tail.py --out build/c27-full-gamma-primal-tail-check.json
+```
