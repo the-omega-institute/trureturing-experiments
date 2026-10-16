@@ -1985,3 +1985,163 @@ These are applications of existing numerical and variational methods,
 with the inherited actual domain/comparison and sound-cache premises.
 They supply no new generic algorithm/theorem or Lean verification.
 Full retained positivity, cofinal positivity and RH remain unresolved.
+
+## Reuse the old exact lift and determine its rank requirement
+
+`full_gamma_lift_projection.py` consumes the OLD nineteen-channel
+`joint-gamma-6765-rho32-v2-*` base, its1263-by18 saved inverse action,
+the accepted common column and the original signed far factors. With
+the old positive block denoted by (P_g), it uses the exact implicit
+lift (V=[-P_g^{-1}B_g;I]) enclosed by that saved action. It supplies
+only the missing products
+
+$$
+c=b_{\rm fin}^*V,\qquad \Beta_V=\Beta_0V,\qquad
+G_V=(P_{\rm far}^*V)^*K(P_{\rm far}^*V)+\varepsilon V^*V.
+$$
+
+The signed112-feature core is retained, together with every cross
+term in the independent allowance. Its exact rational coefficient
+is the upper endpoint of the old base's explicitly640-bit transported
+allowance, checked against the original512-bit metadata. Neither
+the signed core alone nor an interval midpoint is assumed PSD.
+This is the old base's complete lift, not a rounded saved direction
+or the different lift of the failed common-rho1 target.
+
+The1024-bit production took1.44 seconds. Independent1536-bit cached
+consumption gave exactly the same3024 matrix interval pairs. No
+target, inverse solve, channel values, special functions or moments
+were regenerated.
+
+`full_gamma_cross_screen.py` uses the saved channel inverse
+
+$$
+A_\rho^{-1},\qquad
+A_\rho=I+A_0+(1+\rho^{-1})\delta_{\rm ch}I,\qquad \rho=1/32,
+$$
+
+from the last19-by19 block of the base kernel. This is not
+(P_g^{-1}). Set (u=Mw), (F_\phi=u_J^*W_JU_J) and
+(Z=A_\rho^{-1}\Beta_V). Since (A_0) includes all middle channel
+rows, it majorizes the J-only Gram. Weighted Cauchy gives
+
+$$
+|(F_\phi Z)_j|\le\sqrt{e_J(Z^*A_0Z)_{jj}},\qquad
+|(1+\rho)u_\infty^*W_\infty R_\infty V_j|
+\le(1+\rho)\sqrt{E_M(G_V)_{jj}}.
+$$
+
+Subtract both radii from (|c_j|). All18 lower bounds are positive;
+the smallest is above (1.8419798\times10^{-16}), at mode24. Thus
+the full corrected common row has nonzero coordinates, under the
+inherited common-object and sound-enclosure premises. This does
+not supply a fixed positive matrix lower bound or pay coupling
+to the good block. The screen took0.30 seconds; its90 interval pairs
+match an independent1536-bit consumption exactly.
+
+`small_schur_rank_floor.py` applies Jacobi's signature criterion to
+the saved18-by18 complement of the SAME OLD nineteen-channel base.
+All18 leading determinant intervals are strictly negative. Their
+export grids are degree dependent, (640k+64), so the tiny higher
+determinants are not rounded onto the entry grid. The pivot signs
+are therefore one negative followed by17 positive. The complement
+has inertia17 positive,1 negative,0 zero; with the1263 positive
+prefix, the full sufficient base has1280 positive and1 negative
+direction. This is not an inertia statement about actual (S_N).
+A single positive update is permitted by this inertia count, but
+its direction and paid strength still need verification. The18
+determinant tests took0.25 seconds and were independently checked
+on the saved small matrix, without an eigensolver or a large solve.
+
+These consumers apply existing ball products, weighted Cauchy and
+Jacobi/LDL signature; no new generic method or Lean verification
+is claimed. Fresh-output usage:
+
+```sh
+uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/full_gamma_lift_projection.py --out build/c27-lift-projection.json.zlib
+uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/full_gamma_cross_screen.py --out build/c27-cross-screen.json
+uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/small_schur_rank_floor.py --target docs/reports/weil-c27/joint-gamma-6765-rho32-v2-target.json.zlib --pivots docs/reports/weil-c27/joint-gamma-6765-rho32-v2-pivots.json --schur docs/reports/weil-c27/joint-gamma-6765-rho32-v2-schur.json --out build/c27-old-base-rank-floor.json
+```
+
+## Transport the scalar defect to the missing common cross row
+
+`full_gamma_defect_cross.py` reuses information stronger than the
+unscaled action energy. The accepted exact dyadic direction $v_0$
+and exact nonzero $\vartheta$ have a certified finite defect
+
+$$
+e=R_Jv_0-\vartheta u_J,\qquad e^*W_Je\le E_e.
+$$
+
+Consequently the missing finite contraction satisfies
+
+$$
+F_\phi=(\Beta_0v_0)^*/\vartheta-e^*W_JU_J/\vartheta.
+$$
+
+Let $Z=A_\rho^{-1}\Beta_V$. The full common row has the enclosure
+
+$$
+\mathcal B_V\in
+c-(\Beta_0v_0)^*Z/\vartheta+\mathcal E,
+$$
+
+$$
+|\mathcal E_j|\le
+\frac{\sqrt{E_e(Z^*A_0Z)_{jj}}}{|\vartheta|}
++(1+\rho)\sqrt{E_M(G_V)_{jj}}.
+$$
+
+The consumer reuses the first screen's finite radii with the
+conservative factor $\sqrt{E_e/(\vartheta^2e_J)}$, taking the
+numerator upward and $e_J$ downward. Its factor is less than
+$0.109095699$. The far uncertainty remains paid. This obtains
+common-row intervals from saved data without evaluating raw
+channels, digamma functions, new moments or inverse actions.
+
+Under the same actual form/domain and inverse-comparison premises,
+the ordinary inverse-residual square completion can use
+
+$$
+\overline W=(W_J-W_JU_JA_\rho^{-1}U_J^*W_J)
+\oplus(1+\rho)W_{\rm far}\succeq M^{-1},
+$$
+
+$$
+\mathcal K=u^*\overline W u-h
+=\delta+\rho\|u_{\rm far}\|_W^2
+-F_\phi A_\rho^{-1}F_\phi^*\le
+D_*:=\delta_{\rm up}+\rho E_M.
+$$
+
+Here $0<D_*<299.146668420532$.
+The corresponding conditional monotone lower target is
+$L_*+\mathcal B^*\mathcal B/D_*$. This uses the FULL common row;
+it does not pair that denominator with the raw finite column.
+
+All18 full-row intervals exclude zero. Mode0 is enclosed within
+$(5.99690490660,9.65492947706)\times10^{-15}$. With the old core,
+all18 quantities $(\Sigma_*)_{jj}+|(\mathcal B_V)_j|^2/D_*$
+have positive lower endpoints; mode0's exceeds
+$2.44652\times10^{-33}$. These are quadratic restrictions to the
+old lift, not the Schur complement after updating its good block.
+The production took0.41 seconds at1024 working bits.
+Independent1536-bit cached consumption overlaps all128 interval
+pairs;124 are endpoint-identical. All18 final row intervals,
+diagonal lower bounds and metric budgets are endpoint-identical.
+The four differences occur only in auxiliary center intervals.
+
+For the full coupled test the scalar good-block metric
+$\Omega=\mathcal B_GP_g^{-1}\mathcal B_G^*$ must still be enclosed
+upward. An upper strictly below6.21431056 would preserve all18
+updated diagonal lower bounds. It has not been supplied, and
+positive diagonals would still leave the off-diagonal sign test.
+The cached $P_g^{-1}B_g$ is not an inverse on this new row.
+Coordinate interval boxes alone do not supply a fixed positive
+matrix lower bound. Full retained/cofinal positivity and RH remain
+unresolved; no general theorem, algorithmic novelty or Lean result
+is claimed.
+
+```sh
+uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/full_gamma_defect_cross.py --out build/c27-defect-cross.json
+```
