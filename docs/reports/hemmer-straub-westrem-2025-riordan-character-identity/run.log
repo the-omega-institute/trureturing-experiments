@@ -1,0 +1,26 @@
+n=1 lambda=(1,): LHS = RHS = 0 (2^r CT = 0)
+n=1: all 1 partitions checked
+n=2 lambda=(2,): LHS = RHS = 2 (2^r CT = 2)
+n=2 lambda=(1, 1): LHS = RHS = 4 (2^r CT = 4)
+n=2: all 2 partitions checked
+n=3 lambda=(3,): LHS = RHS = 2 (2^r CT = 2)
+n=3 lambda=(2, 1): LHS = RHS = -4 (2^r CT = -4)
+n=3 lambda=(1, 1, 1): LHS = RHS = 8 (2^r CT = 8)
+n=3: all 3 partitions checked
+n=4 lambda=(4,): LHS = RHS = 2 (2^r CT = 2)
+n=4 lambda=(3, 1): LHS = RHS = 0 (2^r CT = 0)
+n=4 lambda=(2, 2): LHS = RHS = 12 (2^r CT = 12)
+n=4 lambda=(2, 1, 1): LHS = RHS = 8 (2^r CT = 8)
+n=4 lambda=(1, 1, 1, 1): LHS = RHS = 48 (2^r CT = 48)
+n=4: all 5 partitions checked
+n=5: all 7 partitions checked
+n=6: all 11 partitions checked
+n=7: all 15 partitions checked
+n=8: all 22 partitions checked
+n=9: all 30 partitions checked
+n=10 lambda=(4, 3, 2, 1): LHS = RHS = 16 (2^r CT = 16)
+n=10: all 42 partitions checked
+n=11: all 56 partitions checked
+partitions checked: 194; character cross-checks (MN vs Frobenius): 192914
+ALL_OK
+EXIT=0
