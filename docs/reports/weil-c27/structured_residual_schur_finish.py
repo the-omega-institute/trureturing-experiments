@@ -19,12 +19,12 @@ from diagonal_floor_witness import interval_ball
 from structured_inverse_residual_interval import envelope
 
 
-def run(args):
-    started = time.monotonic()
-    raw = args.target.read_bytes()
+def load_target(target_path, pivot_path, max_remainder=32):
+    """Read the existing complete target and its certified positive prefix."""
+    raw = target_path.read_bytes()
     target_hash = hashlib.sha256(raw).hexdigest()
     packet = json.loads(zlib.decompress(raw))
-    pivot_raw = args.pivots.read_bytes()
+    pivot_raw = pivot_path.read_bytes()
     proof = json.loads(pivot_raw)
     if (packet['schema'],packet['metadata']['N'],packet['metadata']['M'],proof['schema'],
             proof['target_packet_sha256'],proof['verdict']) != (
@@ -40,8 +40,13 @@ def run(args):
     if len(proof['pivot_intervals']) != len(prefix)+1 or not all(int(x[0]) > 0 for x in proof['pivot_intervals'][:-1]):
         raise ValueError('Every reused pivot must have a strictly positive lower endpoint.')
     remaining = [n for n in range(N+1) if n not in set(prefix)]
-    if not remaining or len(remaining) > args.max_remainder:
+    if not remaining or len(remaining) > max_remainder:
         raise ValueError('Unresolved block outside the requested small-matrix scope.')
+    return packet, prefix, remaining, target_hash, pivot_raw
+
+
+def reconstruct_target(packet):
+    """Reconstruct the saved finite target, including its independent diagonal."""
     bits = packet['grid_bits']
     G = [[interval_ball(x,bits) for x in row] for row in packet['generators']]
     K = arb_mat([[interval_ball(x,bits) for x in row] for row in packet['kernel']])
@@ -65,6 +70,13 @@ def run(args):
     target -= P*K*P.transpose()
     for n in range(N+1):
         target[n,n] = diagonal[n]
+    return target
+
+
+def run(args):
+    started = time.monotonic()
+    packet, prefix, remaining, target_hash, pivot_raw = load_target(args.target, args.pivots, args.max_remainder)
+    target = reconstruct_target(packet)
     print('same full target reconstructed; seconds',time.monotonic()-started,flush=True)
     positive = arb_mat([[target[i,j] for j in prefix] for i in prefix])
     coupling = arb_mat([[target[i,j] for j in remaining] for i in prefix])
