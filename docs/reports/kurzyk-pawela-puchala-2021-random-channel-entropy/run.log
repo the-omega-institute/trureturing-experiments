@@ -1,0 +1,21 @@
+seed 20261016
+== deterministic sandwich on samples (optimized D over inputs) ==
+d=2 s=0 m=0.544506 D_opt=0.649041 lmax(A)=0.791786 |m-(2logd-S(J))|=0.0e+00 max[D-Tr(rhoA)]=-2.82e-03 ok
+d=2 s=1 m=0.300407 D_opt=0.381750 lmax(A)=0.487433 |m-(2logd-S(J))|=3.9e-16 max[D-Tr(rhoA)]=-1.80e-03 ok
+d=2 s=2 m=0.445617 D_opt=0.569376 lmax(A)=0.632311 |m-(2logd-S(J))|=1.1e-16 max[D-Tr(rhoA)]=-1.83e-03 ok
+d=3 s=0 m=0.432355 D_opt=0.443106 lmax(A)=0.535007 |m-(2logd-S(J))|=0.0e+00 max[D-Tr(rhoA)]=-2.45e-02 ok
+d=3 s=1 m=0.494079 D_opt=0.532495 lmax(A)=0.662075 |m-(2logd-S(J))|=1.3e-15 max[D-Tr(rhoA)]=-2.07e-02 ok
+d=3 s=2 m=0.350402 D_opt=0.388138 lmax(A)=0.483674 |m-(2logd-S(J))|=9.4e-16 max[D-Tr(rhoA)]=-2.83e-02 ok
+d=4 s=0 m=0.481451 D_opt=0.499271 lmax(A)=0.628222 |m-(2logd-S(J))|=1.3e-15 max[D-Tr(rhoA)]=-7.85e-02 ok
+d=4 s=1 m=0.457974 D_opt=0.463606 lmax(A)=0.525662 |m-(2logd-S(J))|=1.0e-15 max[D-Tr(rhoA)]=-4.75e-02 ok
+d=4 s=2 m=0.497189 D_opt=0.514681 lmax(A)=0.632754 |m-(2logd-S(J))|=1.1e-16 max[D-Tr(rhoA)]=-5.19e-02 ok
+== asymptotics: m, lambda_min(A), lambda_max(A) ==
+d= 2 reps=20 mean m=0.39666 mean lmin(A)=0.25775 mean lmax(A)=0.53556 mean gap bound lmax-m=0.13890
+d= 4 reps=20 mean m=0.47527 mean lmin(A)=0.34082 mean lmax(A)=0.62195 mean gap bound lmax-m=0.14668
+d= 6 reps=20 mean m=0.48823 mean lmin(A)=0.38022 mean lmax(A)=0.59292 mean gap bound lmax-m=0.10469
+d= 8 reps=20 mean m=0.49365 mean lmin(A)=0.41484 mean lmax(A)=0.58008 mean gap bound lmax-m=0.08643
+d=12 reps=20 mean m=0.49774 mean lmin(A)=0.43705 mean lmax(A)=0.55574 mean gap bound lmax-m=0.05801
+d=16 reps= 6 mean m=0.49755 mean lmin(A)=0.45108 mean lmax(A)=0.54622 mean gap bound lmax-m=0.04868
+d=24 reps= 6 mean m=0.49954 mean lmin(A)=0.46793 mean lmax(A)=0.53255 mean gap bound lmax-m=0.03301
+d=32 reps= 3 mean m=0.49975 mean lmin(A)=0.47527 mean lmax(A)=0.52449 mean gap bound lmax-m=0.02474
+SANDWICH_OK
