@@ -1,0 +1,16 @@
+seed 20261016
+seed a=d=sqrt2, b=c=1: 6*eig(rho^G) = [-1.        0.        0.585786  1.        2.        3.414214]
+  min eig |rho^G|^G = -0.048212; Tr|rho^G| = 1.333333 (4/3 = 1.333333); kappa primal 1.374083 dual 1.374083; E_N = 0.415037 E_kappa = 0.458469
+== random family members (D = 3) ==
+  40 samples: every binegativity eigenvalue < 0 and kappa > Tr|rho^G|; smallest dual gap 4.75e-06
+== white noise, 2 x D ==
+  D=3 eps=0.01: min eig rho 0.00167, min eig |rho^G|^G -0.045451, Tr|rho^G| 1.326667, kappa 1.364389/1.364389 ok
+  D=3 eps=0.1: min eig rho 0.01667, min eig |rho^G|^G -0.020754, Tr|rho^G| 1.266667, kappa 1.278075/1.278075 ok
+  D=4 eps=0.01: min eig rho 0.00125, min eig |rho^G|^G -0.046021, Tr|rho^G| 1.327500, kappa 1.365875/1.365875 ok
+  D=4 eps=0.1: min eig rho 0.01250, min eig |rho^G|^G -0.026383, Tr|rho^G| 1.275000, kappa 1.292545/1.292545 ok
+  D=6 eps=0.01: min eig rho 0.00083, min eig |rho^G|^G -0.046590, Tr|rho^G| 1.328333, kappa 1.367363/1.367363 ok
+  D=6 eps=0.1: min eig rho 0.00833, min eig |rho^G|^G -0.032032, Tr|rho^G| 1.283333, kappa 1.307128/1.307128 ok
+== control: two qubits (Ishizaka) ==
+  20 random two-qubit states: binegativity operator PSD
+ALL_OK
+EXIT=0
