@@ -1115,3 +1115,110 @@ Fresh direction/finite production, if required, uses `--prepare` and
 uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/structured_support_test.py --prepare --out build/c27-support-direction.json
 uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/structured_support_test.py --candidate build/c27-support-direction.json --finite-out build/c27-support-finite.json.zlib --out build/c27-support-optimized.json
 ```
+
+## Retain positive even Gamma boundary channels
+
+`gamma_boundary_update.py` changes the inverse majorant while keeping
+exactly the saved complete direction and saved768-coordinate trial.
+It reuses the existing even Gamma boundary decomposition, variational
+inversion, Woodbury identity and inverse-residual comparison. No new
+general inverse algorithm is supplied.
+
+For $d=\log27$, $b_j=2j+1/2$ and $n>1280$, the original orthonormal
+cosine coefficients give the positive boundary term
+
+$$
+B_j=(1-e^{-b_jd})h_jh_j^*,\qquad
+h_{j,n}=\frac{2b_j(-1)^n}{\sqrt d\,[b_j^2+(2\pi n/d)^2]}.
+$$
+
+For a finite bin $[a,b)$, set $c_a=1-e^{-b_ad}$ and
+$U_{[a,b)}=\sqrt{c_a/(b-a)}\sum_{j=a}^{b-1}h_j$.
+Finite Cauchy--Schwarz gives $\sum_{j=a}^{b-1}B_j\succeq
+U_{[a,b)}U_{[a,b)}^*$. Nineteen disjoint bins use the endpoints
+$0,1,2,3,5,8,13,21,34,55,89,144,233,377,610,987,1597,2584,4181,6765$.
+The Fibonacci endpoints are a choice of scale grouping; their necessity
+and optimality are not asserted.
+
+The archived upward reciprocal weights imply
+$H\succeq W^{-1}+UU^*$ on the same actual even form domain. Existing
+variational inversion and Woodbury therefore yield
+
+$$
+H^{-1}\preceq W_{\rm G}:=W-WU(I+U^*WU)^{-1}U^*W\preceq W.
+$$
+
+These columns have infinite Fourier support. This changes the fixed
+$W$ in the preceding exclusion, while retaining its $v,x_0$ and actual
+$H$. For $r=Cv-HVx_0$, $\beta=U^*Wr$ and $S=I+U^*WU$, the improvement
+to that same trial margin is $\beta^*S^{-1}\beta$.
+
+`support-2048-residual-action.json.zlib` archives the previously unsaved
+actual residual on all31488 middle rows. The original scalar tables,
+exact trial, complete margin and far residual energy are consumed.
+Rows through4096 are direct; subsequent rows use the existing finite
+geometric expansion of $1/(m^2-n^2)$ to order128, including the
+absolute-coefficient remainder. The two coefficient polynomials use
+the signed combinations $(-1)^n n s_nu_n$ and $(-1)^nk_nu_n$, with
+$u=(v,-x_0)$ and $k_0=1/\sqrt2$, $k_n=1$ otherwise. At
+$t=(2048/m)^2$ the remainder radius is
+
+$$
+\frac{2}{\pi m^2}\frac{t^{128}}{1-t}
+\left(\sum_n|n s_nu_n|+m|s_m|\sum_n|k_nu_n|\right).
+$$
+
+Four direct rows check the geometric evaluator at4097,8192,16384,32768;
+the complete finite energy overlaps its independent archived value.
+The residual preparation took8.78 seconds. It reruns no old Gram,
+target, solve, scalar or far-moment producer.
+
+For the new thin projections, FLINT digamma evaluates the finite rate
+sums. Each column satisfies $|U_{k,m}|\le a_k/m^2$, where
+$a_k=2\sqrt{c_a/((b-a)d)}(b-a)(a+b-1/2)(d/(2\pi))^2$.
+With archived constant far weight $D$ and actual far energy upper bound
+$E_\infty$, put $\eta_k=Da_k^2/(3M^3)$ and
+$\delta=\sum_k\eta_k$. Weighted Cauchy gives mixed-tail error
+$\sqrt{\eta_kE_\infty}$ per coordinate, and the positive far Gram
+is bounded by $\delta I$ using its trace. Entrywise bounds are not
+promoted to rank-one Loewner bounds.
+
+Write $S_0=I+U_0^*W_0U_0$, $\beta_0=U_0^*W_0r_0$ for all middle
+rows. An exact stored256-bit dyadic $z$ gives
+
+$$
+\beta^*S^{-1}\beta\ge2\Re z^*\beta_0-z^*S_0z
+-2\sum_k|z_k|\sqrt{\eta_kE_\infty}-\delta\|z\|^2.
+$$
+
+An upper enclosure follows from $S\succeq S_0\succeq I$ and the
+Euclidean norm of the mixed-tail error. The512-bit directed consumer,
+with256-bit output endpoints, took7.68 seconds and gives:
+
+| Quantity on the unchanged complete direction and trial | Enclosed value |
+|---|---:|
+| Original margin | $-4.224592059008147\times10^{-31}$ |
+| Lower gain | $6.603392989188944\times10^{-31}$ |
+| Upper gain | $6.703543517093231\times10^{-31}$ |
+| Updated margin | between $2.378800930180797\times10^{-31}$ and $2.478951458085084\times10^{-31}$ |
+
+The exact lower endpoint exceeds $2.37\times10^{-31}$, so the actual
+retained Schur quadratic is strictly positive on this same direction
+under the original common-form/domain identifications, existing even
+boundary comparison and sound reused enclosures. This certifies one
+direction; it does not optimize the new trial family or certify the
+whole matrix. Full c27 positivity, cofinal positivity and RH remain
+unresolved. This is a numerical application, without Lean verification
+or a literature-priority claim.
+
+The new residual is reusable by later thin consumers:
+
+```sh
+uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/gamma_boundary_update.py --residual docs/reports/weil-c27/support-2048-residual-action.json.zlib --out build/c27-gamma-boundary.json
+```
+
+Only when a fresh residual archive is required:
+
+```sh
+uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/gamma_boundary_update.py --prepare --out build/c27-residual-action.json.zlib
+```
