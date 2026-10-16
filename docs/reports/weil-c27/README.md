@@ -1898,3 +1898,90 @@ Reconsume the accepted data without regenerating any supplier:
 ```sh
 uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/full_gamma_primal_tail.py --out build/c27-full-gamma-primal-tail-check.json
 ```
+
+## A common retained column from the complete Gamma direction
+
+`full_gamma_common_column.py` supplies the missing joint projection
+
+$$
+b_{\rm fin}=R_J^*(W_J(Mw)_J-w)\in\mathbb R^{1281},
+\qquad J=2049{:}32768.
+$$
+
+It consumes the accepted complete finite action, defect profiles,
+primal tail and original residual generators. The existing disjoint
+Cauchy product supplies all retained modes0–1280 in one adjoint
+action, with512 terms and its absolute remainder. No scalar/moment
+supplier, inverse solve, optimizer or old target production runs.
+The saved $R_Jv_0$ is used only to check the new column's contraction;
+it is not substituted for the whole retained-to-$J$ map.
+
+The packet encloses the column on the640-bit grid at1024 working bits.
+Its production took10.48 seconds. An independent1536-bit cached
+consumption produced the same1281 column interval pairs. Direct
+sums over all30720 exterior nodes at retained modes0,39,1280 lie in
+those enclosures. The saved energy bounds are approximately
+
+$$
+E_M=14.1648613043077766231,\qquad
+\delta_{\rm up}=298.7040165047722506653.
+$$
+
+Here $E_M$ is an upward square of the accepted unscaled effective
+action tail norm. It is distinct from the tiny scaled residual
+debit of the single-direction certificate. The denominator upper
+is the finite original-$W$ energy plus $E_M$ minus the lower
+endpoint of the same $h=w^*M_Jw$.
+
+`full_gamma_common_target.py` applies the existing complete coupled
+structured certificate to
+
+$$
+L_{\rm new}=L_0-\rho F_{\rm up}
++\frac{b_{\rm fin}b_{\rm fin}^*}{d_\rho},\qquad
+d_\rho=\delta_{\rm up}+E_M/\rho>0.
+$$
+
+The inequality $L_{\rm new}\preceq S_N$ follows from the same
+inverse-residual square completion and Young bound, with one common
+linear trial for all retained coefficients. The full signed far
+majorant $F_{\rm up}=P K P^*+\varepsilon I$ is reused. Its allowance
+is read through the existing original-target loader on its512-bit
+metadata grid; matrix entries keep their640-bit grid. The independent
+diagonal is retained and updated separately. Signed $K$ is not
+assumed positive, and no midpoint column outer product is used.
+The new target includes all coupling to the1263-coordinate good
+block; no old lift from a different target is reused.
+
+At $\rho=1$, `full-gamma-common-rho1-pivots.json` certifies1263
+positive pivots, then an inconclusive pivot, in54.82 seconds. The
+existing `structured_residual_schur_finish.py` consumes this NEW
+target and prefix to enclose its18-by18 complement in99.48 seconds.
+All18 diagonal lower endpoints are positive; the full-spectrum
+routine fails to isolate eigenvalues and retains none.
+
+`small_schur_sylvester.py` instead calls FLINT's existing determinant
+on leading principal submatrices of that saved enclosure. It stops
+at order2: on remaining modes0,1 the determinant is strictly below
+$-3.90918\times10^{-71}$. This rejects the $\rho=1$ sufficient lower
+target, even though its reduced diagonals are positive. It supplies
+no negative direction of actual $S_N$, no old-target inertia count,
+and does not revoke the saved positive scalar direction. Each
+determinant has a separate degree-dependent absolute export grid,
+so a small determinant is not rounded onto the entry grid. The
+first two minor tests took0.21 seconds; no spectral retry or
+parameter scan is used.
+
+Run only genuinely missing new data products; outputs must be fresh:
+
+```sh
+uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/full_gamma_common_column.py --out build/c27-common-column.json.zlib
+uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/full_gamma_common_target.py --target-out build/c27-common-rho1-target.json.zlib --out build/c27-common-rho1-pivots.json
+uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/structured_residual_schur_finish.py --target docs/reports/weil-c27/full-gamma-common-rho1-target.json.zlib --pivots docs/reports/weil-c27/full-gamma-common-rho1-pivots.json --precision 1024 --out build/c27-common-rho1-schur.json
+uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/small_schur_sylvester.py --target docs/reports/weil-c27/full-gamma-common-rho1-target.json.zlib --pivots docs/reports/weil-c27/full-gamma-common-rho1-pivots.json --schur docs/reports/weil-c27/full-gamma-common-rho1-schur.json --out build/c27-common-rho1-sylvester.json
+```
+
+These are applications of existing numerical and variational methods,
+with the inherited actual domain/comparison and sound-cache premises.
+They supply no new generic algorithm/theorem or Lean verification.
+Full retained positivity, cofinal positivity and RH remain unresolved.

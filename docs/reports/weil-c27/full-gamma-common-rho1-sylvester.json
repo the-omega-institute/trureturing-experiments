@@ -1,0 +1,72 @@
+{
+  "schema": "ACTUAL_C27_SMALL_SCHUR_SYLVESTER_V1",
+  "target_packet_sha256": "446dc9804efae669600a0398419f83f3f7c976cb557724d08200bf1ec8fd60e9",
+  "pivot_result_sha256": "88613b204d88a561b87c3fb0cedfd9adc8ed8f30dbb227aed8446d8bd8dc8cf3",
+  "schur_result_sha256": "4a3b99e4cf49d419104fcf1a3bae548e4d515107566cd1a5ef06f158a32ddafe",
+  "reused_positive_coordinate_count": 1263,
+  "remaining_modes": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    9,
+    10,
+    12,
+    14,
+    15,
+    18,
+    19,
+    24,
+    29,
+    33,
+    39
+  ],
+  "working_bits": 1536,
+  "verdict": "negative-leading-minor",
+  "leading_minors": [
+    {
+      "order": 1,
+      "grid_bits": 704,
+      "determinant_interval": [
+        "5575419538551763276745981931038775200119681292603143472875793786295304300185041716592064190389698667349656896139646381593321901676004596398477095964072470490081128149767703322689536",
+        "5575419538551763276745981931038775200119681292603143472875793786295304300185041716592064190389698667349656896139646381593321901676009161540497766791409326020733842213179802964197376"
+      ],
+      "sign": "positive"
+    },
+    {
+      "order": 2,
+      "grid_bits": 1344,
+      "determinant_interval": [
+        "-15010680310329593308211554152524168157665956200982441198074155634097903552442923585969879595374868246482498733548187734431113104339831281771561880558332198519235390811620744668960111846793711567283368362356673746007832940233305327877794714634249009302218200267728203339114721620517407874099521302810503009436435780653225580022196076544",
+        "-15010680310329593308211554152524168157665956200982441198074155634097903552442923585969879595374868246482498733548187734431102457802054227485514198012413138359428401750023351040914209431992469675662471796767133839014976327324870800639983643375824931798798830816741680001053816334323044726817359604776581641541578983016075911397986271232"
+      ],
+      "sign": "negative"
+    }
+  ],
+  "source_sha256": "1adc009dce5baa6d7396292ef5cbe3e3a37f6563e03ae5d8b6b175cfbadf54ac",
+  "elapsed_seconds": 0.20006541581824422,
+  "conditions": [
+    "Same complete actual common-form and exterior-domain premises.",
+    "Same positive actual exterior H and archived W majorizing H^-1.",
+    "Sound reused positive-pivot certificate for this exact complete target.",
+    "Same actual form/domain, exterior, original orthonormal mass and saved complete direction.",
+    "Actual H>=T=Lambda+full Gamma boundary+even pole>0 with the same archived Lambda=W^-1.",
+    "Sound saved exact-inverse/residual and common finite directed enclosures.",
+    "D>0 and T>=Lambda imply M_J>=Lambda_J by the finite block factorization.",
+    "The inherited floor and exact dyadic w, Q, z, b, scalar array and original W are sound.",
+    "The accepted smooth GP polynomial has exact constant coefficient -pi/4 and the source-proved pointwise remainder decay.",
+    "The matching saved far residual energy applies to this exact retained v and selected inverse x0.",
+    "Finite support correction and inverse-residual square completion are valid on the inherited actual common form/domain.",
+    "The same residual generators represent the full retained-to-J map R_J.",
+    "The existing finite Cauchy projection and its absolute remainder enclose every retained coordinate.",
+    "L0 is the matching original coefficient-uniform lower target.",
+    "The original signed far core plus its allowance majorizes the same actual residual Gram.",
+    "L0-rho*Fup+b_fin*b_fin^*/(delta_up+E_M/rho) is the common Young lower target.",
+    "The saved real symmetric Schur enclosure contains the exact complement of this target.",
+    "All strict leading-minor signs are read from outward endpoint pairs."
+  ],
+  "scope": "Classical Sylvester sign test of one saved small complement. All positive leading minors certify this sufficient finite target under inherited premises. A negative leading minor rejects only that lower target; inconclusive decides neither sign. No new generic method, Lean verification, cofinal positivity or RH result."
+}
