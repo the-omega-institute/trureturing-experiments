@@ -6,11 +6,13 @@ representatives). Conjecture: T(n,k) also counts partitions whose reversed
 The script decides choosability by brute force (search for distinct representatives)
 for all partitions of n <= N and checks that it coincides with superdiagonality of the
 reversed partition, and compares the row counts with the published triangle and the row
-sums with A387118 (partitions of n without choosable initial intervals).
+sums with A387118 (partitions of n without choosable initial intervals), and the counts by
+maximum part with A388713.
 """
 import sys
 N = int(sys.argv[1]) if len(sys.argv) > 1 else 22
 A387118 = [0,0,1,1,2,4,6,8,13,19,28,37,52,70,97,130,172,224,293,378,492,630,806]
+A388713 = [0,0,1,0,0,1,0,0,1,1,0,0,1,1,1,0,0,0,1,1,1,0,0,0,2,1,1,1,0,0,0,2,2,1,1,1,0,0,0,1,3,2,1,1,1,0,0,0,1,2,3,2,1,1,1,0,0,0,0,3,3,3,2,1,1,1,0,0,0,0,4,4,3,3,2,1,1,1]
 DATA = [0,0,0,0,0,1,0,0,0,1,0,0,0,1,1,0,0,0,2,1,1,0,0,0,2,2,1,1,0,0,0,1,3,2,1,1]
 
 def partitions(n, mx=None):
@@ -34,16 +36,20 @@ def choosable(parts):
 def superdiagonal(z):
     return all(z[i] >= i + 1 for i in range(len(z)))
 
-ok, tri, rowsums = True, [0], [0]  # row n = 0 is [T(0,0)] = [0]: the empty partition is choosable
+ok, tri, rowsums = True, [0], [0]
+bymax = [0]  # A388713 row 0 is [0]; the empty partition is excluded there (both sides)  # row n = 0 is [T(0,0)] = [0]: the empty partition is choosable
 for n in range(1, N + 1):
     row = [0] * (n + 1)  # columns k = 0..n
+    mrow = [0] * (n + 1)  # superdiagonal reversed partitions of n by maximum k
     for p in partitions(n):
         c = choosable(p)
         if c != superdiagonal(tuple(reversed(p))): ok = False
         if not c: row[len(p)] += 1
+        if c: mrow[p[0]] += 1  # choosable <=> superdiagonal, so this counts both sides of A388713
     tri.extend(row)
     rowsums.append(sum(row))
-ok_data = tri[:len(DATA)] == DATA and rowsums[:len(A387118)] == A387118
-print(f"N={N}: choosable <=> reversed superdiagonal on all partitions: {ok}; triangle (A388712) and row sums (A387118) match data: {ok_data}")
+    bymax.extend(mrow)
+ok_data = tri[:len(DATA)] == DATA and rowsums[:len(A387118)] == A387118 and bymax[:len(A388713)] == A388713
+print(f"N={N}: choosable <=> reversed superdiagonal on all partitions: {ok}; A388712 triangle, A387118 row sums and A388713 by-maximum triangle match data: {ok_data}")
 print("RESULT", "PASS" if ok and ok_data else "FAIL")
 sys.exit(0 if ok and ok_data else 1)
