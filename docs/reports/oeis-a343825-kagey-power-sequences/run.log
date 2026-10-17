@@ -1,0 +1,8 @@
+A071537 data: True; A343825 prime rows 2, 3, 5, 7 (k = 0..10): True
+p = 31: k <= 150 with T(p, k) != A071537(k): []
+p = 37: k <= 150 with T(p, k) != A071537(k): [144, 147, 150]
+p = 41: k <= 150 with T(p, k) != A071537(k): []
+p = 43: k <= 150 with T(p, k) != A071537(k): []
+primes p <= 31 with T(p, k) != A071537(k): {2: [2], 4: [2, 3], 8: [2, 3], 9: [2, 3], 12: [2], 16: [2, 5], 27: [3, 5], 32: [2, 3, 5], 64: [2, 3, 5]}
+RESULT PASS
+/opt/homebrew/bin/python3.13 -I check.py 150  7.75s user 0.42s system 59% cpu 13.704 total
