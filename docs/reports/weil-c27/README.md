@@ -5487,6 +5487,9 @@ response subinterval $J\subseteq I$, including a singleton. The issued
 lower is the minimum of
 $q_{e,J}(z)=A_ez^2+2B_ez+C_e-2R_e\sup_J|z|$ over $z\in J$ and the
 two theta endpoints, with $A_e>0,R_e\ge0$.
+Its use as an actual comparison lower also requires the true response
+$\zeta\in J$. The algebraic algorithm ceiling holds for every such
+subinterval, regardless of whether this extra membership is known.
 
 Dropping the nonnegative debit upper-bounds that LOWER certificate.
 Convexity bounds each optimistic polynomial on $I$ by
