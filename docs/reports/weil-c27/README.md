@@ -7543,3 +7543,87 @@ env PYTHONDONTWRITEBYTECODE=1 UV_OFFLINE=1 \
   python docs/reports/weil-c27/c27_propagated_prime_row.py \
   --out build/c27-propagated-prime-row-reproduction.json.zlib
 ```
+
+
+## Whole-inverse contraction from the actual uniform surplus
+
+The standard inverse-order and residual identities give a common consumer
+for the propagated prime-row surplus. Under the inherited actual common
+form/domain and sound-cache identifications, write
+
+$$
+H_{\rm ext}\succeq T+gI,\qquad T=\Lambda+B_{\rm GP}>0,
+\qquad S_N=Q-R^*H_{\rm ext}^{-1}R.
+$$
+
+Here $Q$ is the full initial-trial matrix, and $R$ is the SAME original
+residual map, with zero selected-support rows. The original nineteen-channel
+Young comparison has $\overline W\succeq T^{-1}$ on this residual range and
+$L_*\preceq Q-R^*\overline W R$. Its actual parameter remains $\rho=1/32$.
+For any supplied $T\preceq M_T I$, inverse order gives
+
+$$
+c=\frac{M_T}{M_T+g},\qquad
+H_{\rm ext}^{-1}\preceq cT^{-1},\qquad
+S_N\succeq\mathcal L_{\rm unif}:=cL_*+(1-c)Q.
+$$
+
+This is an application of established operator order, not a new theorem.
+The full matrix $Q$ is not supplied by its cached scalar $Q(v)$.
+
+`c27_uniform_joint_contraction.py` uses all31488 original exterior weights,
+including selected modes1281–2048, plus the constant far weight $D$. Reusing
+the complete Gamma bound G2 and the complete positive even pole gives the
+fixed rational norm upper
+
+$$
+M_T=\max\{W_n^{-1}:1281\le n\le32768,\ D^{-1}\}
++\frac{22}{3}+\frac{729}{364}+\frac{52}{5}.
+$$
+
+The Gamma replacements use $\pi<22/7$, $e^2>7$, $\sqrt{27}>5$ and
+$\log27<4$; the pole has norm at most $4\sinh(\log27/2)=52/\sqrt{27}$.
+Restriction/compression does not increase these full operator norm bounds.
+No finite selection of Gamma rates replaces the complete boundary here.
+
+The exact256-bit all1281-coordinate direction is identified by
+`joint-gamma-6765-direction.json`; the finite dual packet pins that exact
+direction and supplies its initial-trial $q=Q(v)$. The saved Young value is
+$\ell=v^*L_*v<0$. A necessary condition for this sufficient comparison to
+be positive is
+
+$$
+v^*\mathcal L_{\rm unif}v=\frac{M_T\ell+gq}{M_T+g}>0
+\quad\Longleftrightarrow\quad M_T<\frac{gq}{-\ell}.
+$$
+
+| Quantity | Rounded value or enclosing interval |
+|---|---:|
+| Maximum exterior $\Lambda$, attained on the far band | $3.30454609429024$ |
+| Supplied complete norm upper $M_T$ | $23.04062668037082$ |
+| Accepted surplus lower $g$ | $0.360851119703494$ |
+| Contraction $c$ | $0.984579985811736$ |
+| Cached initial-trial $Q(v)$ | $2.97162648706417\cdot10^{-30}$ |
+| Cached $v^*L_*v$ | $-1.17771656935993\cdot10^{-31}$ |
+| Necessary ceiling $gq/(-\ell)$ | $[9.1050323405,9.1050323406]$ |
+| $v^*\mathcal L_{\rm unif}v$ | $[-7.013309373,-7.013309371]\cdot10^{-32}$ |
+
+The exact rational endpoints in `uniform-joint-contraction.json` decide
+the sign; the rounded displays do not replace them. The one Fraction-only
+consumption takes0.18862seconds. It reuses four pinned packets and supplies
+no new direction, trial quadratic, residual, Gram, inverse, solve, far
+query or full target. No accepted scientific producer or fixture is
+replayed, and no norm, weight, direction, parameter or precision scan runs.
+
+Thus this fixed uniform-contraction target is insufficient. Its rejection
+uses a necessary scalar check before supplying the missing full$Q$ or
+refactorizing1281 coordinates. This does not determine the actual norm of
+$T$ or the actual Weil sign. A positive necessary scalar check would also
+leave full retained positivity unresolved. The stopped rank-one endpoint
+family is a different comparison and stays stopped. All actual domain,
+source, original-trial and sound-enclosure premises remain; no Lean,
+actual retained/cofinal positivity, Robin or RH conclusion is supplied.
+
+```sh
+PYTHONDONTWRITEBYTECODE=1 UV_OFFLINE=1 uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/c27_uniform_joint_contraction.py --out build/c27-uniform-joint-contraction.json
+```
