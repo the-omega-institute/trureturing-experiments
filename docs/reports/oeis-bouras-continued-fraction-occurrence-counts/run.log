@@ -1,0 +1,12 @@
+A372761: nested nonzero n<=300: True; closed form + den formula: True; data: True; valuation formula = exact n<=300: True
+A372763: nested nonzero n<=300: True; closed form + den formula: True; data: True; valuation formula = exact n<=300: True
+A363347: nested nonzero n<=300: True; closed form + den formula: True; data: True; valuation formula = exact n<=300: True
+A363102: nested nonzero n<=300: True; closed form + den formula: True; data: True; valuation formula = exact n<=300: True
+A372761 Conjecture 1: non-prime denominators > 1 for n<=20000: [(4, 4)]; holds: True
+A372763 Conjecture 2: occurrences of 11: [10, 21]; occurrences of 5, 7: [5], [9]; deviations from the corrected classification for p<=10000: []; refuted at p = 11: True
+A363347 Conjecture 3: occurrence counts for p<=10000: {0: 619, 1: 1, 2: 609}; 5 at [4]; deviations from the roots prediction: []; holds: True
+A363102 Conjecture 2: occurrence counts for p<=10000: {0: 626, 3: 3, 2: 600}; three times (p, third n): [(7, 10), (41, 58), (239, 338)]; deviations: []; holds: True
+RESULT PASS
+real 2.19
+user 1.99
+sys 0.05
