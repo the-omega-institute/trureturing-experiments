@@ -1,0 +1,127 @@
+{
+  "schema": "R2511_INDEPENDENT_SMALL_RATIONAL_REVIEW_V1",
+  "candidate_sha256": "d436cc16ffb63536a04d04ca2e586fdcca8af4b11a93e4f00de91f7c7180e24e",
+  "counts": {
+    "fixtures": 6,
+    "exact_full_product_entries": 1250,
+    "exact_box_hull_entries": 64,
+    "exhaustive_symmetric_vertices": 138,
+    "characteristic_inertia_comparisons": 6,
+    "complete_interval_inertia_comparisons": 6,
+    "power_of_two_scaling_checks": 18,
+    "point_floor_checks": 12,
+    "rejection_checks": 7
+  },
+  "fixtures": [
+    {
+      "fixture": 0,
+      "dimension": 1,
+      "input_bits": 80,
+      "output_bits": 160,
+      "permutation": [
+        0
+      ],
+      "inertia": [
+        1,
+        0,
+        0
+      ],
+      "complete": true
+    },
+    {
+      "fixture": 1,
+      "dimension": 2,
+      "input_bits": 80,
+      "output_bits": 160,
+      "permutation": [
+        1,
+        0
+      ],
+      "inertia": [
+        1,
+        1,
+        0
+      ],
+      "complete": true
+    },
+    {
+      "fixture": 2,
+      "dimension": 3,
+      "input_bits": 80,
+      "output_bits": 160,
+      "permutation": [
+        2,
+        1,
+        0
+      ],
+      "inertia": [
+        2,
+        1,
+        0
+      ],
+      "complete": true
+    },
+    {
+      "fixture": 3,
+      "dimension": 4,
+      "input_bits": 80,
+      "output_bits": 160,
+      "permutation": [
+        1,
+        2,
+        3,
+        0
+      ],
+      "inertia": [
+        2,
+        2,
+        0
+      ],
+      "complete": true
+    },
+    {
+      "fixture": 4,
+      "dimension": 5,
+      "input_bits": 1024,
+      "output_bits": 4096,
+      "permutation": [
+        4,
+        3,
+        2,
+        1,
+        0
+      ],
+      "inertia": [
+        3,
+        2,
+        0
+      ],
+      "complete": true
+    },
+    {
+      "fixture": 5,
+      "dimension": 3,
+      "input_bits": 80,
+      "output_bits": 160,
+      "permutation": [
+        1,
+        2,
+        0
+      ],
+      "inertia": [
+        2,
+        1,
+        0
+      ],
+      "complete": true
+    }
+  ],
+  "completed": true,
+  "actual_exit": 0,
+  "real_112_packet_read": false,
+  "large_gram_repeated": false,
+  "actual_science_arithmetic": false,
+  "planner_actual_112_run": false,
+  "method": "independent Fraction full products, exact symmetric box hulls, characteristic inertia, generic interval full coverage",
+  "elapsed_ns": 109777667
+}
