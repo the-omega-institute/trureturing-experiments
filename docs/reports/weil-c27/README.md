@@ -5542,3 +5542,100 @@ positivity, Robin and RH remain unresolved.
 
 [Source](full_gamma_response_ceiling.py) ·
 [Exact rational packet](full-gamma-response-ceiling.json)
+
+
+## Test the raw-coordinate cap on the same-source complement
+
+Keep the preceding real form $Q=\gamma P-e_0e_0^*/\delta$, plane
+$\operatorname{span}\{y_0,v\}$ and transported response
+$\theta=\theta_\varepsilon=Q(f,y_0)$. The accepted factorization
+$P=TRT^*$ has an identity tail in $T$, so
+$n=(1,\Sigma_{0,\mathrm{tail}}/\Sigma_{00})$ lies in $\ker P$ and
+$n[0]=1$. The reference row $\xi=-\delta n$ satisfies
+$Q\xi^*=e_0$ and $Q(\xi,\xi)=-\delta$.
+
+Write $\lambda=y_0[0]$ in RAW finite-row units and retain
+$\omega=c+g/b$, $a=t+b\omega^2>0$. Its projection off the same plane has
+
+$$
+T_\xi=-\delta+\frac{\lambda^2t}{ba},\qquad
+\ell_\xi=Q(f,\xi_\perp)
+=f[0]+d,\qquad
+d=\lambda\left(\frac{t\theta}{ba}-\frac{\gamma\omega\zeta}{a}\right).
+$$
+
+The original cap $C\ge|f[0]|$, saved as
+`relaxed_negative_coordinate_cap`, uses the SAME raw units as
+$\lambda=\alpha_0\rho[0]+\beta_J[0]$; neither is divided by
+$\sqrt\delta$. The reference $\xi$ is a row in the full controlled
+finite real form domain, not a newly asserted physical source row.
+All inherited source/form/physical-error premises remain.
+
+If $I_d$ encloses $d$, then $I_\ell=[-C,C]+I_d$ encloses the actual
+$\ell_\xi=Q(f_\perp,\xi_\perp)=f_\perp[0]$. With a certified
+$0<T_\xi\le T_{\xi,\mathrm{up}}$, reuse PSD Cauchy to obtain
+
+$$
+R\ge r_\xi=\frac{\operatorname{dist}(0,I_\ell)^2}{T_{\xi,\mathrm{up}}}.
+$$
+
+The consumer requires a strictly positive directed norm lower before
+division. It augments the saved lower for the SAME $F$ by $r_\xi$, then
+takes a maximum with the previously retained lower; the residual is
+not added to an unrelated earlier bound.
+
+The single1024-working/640-export application gives these outward
+ranges:
+
+| Quantity | Enclosure or exact result |
+|---|---|
+| $T_\xi$ | $[3.460702373153308560,3.460702373153308561]\cdot10^{-31}$ |
+| $I_d$ | contained in $[-2.135953295,-2.133377122]\cdot10^{-16}$ |
+| $I_\ell$ | contained in $[-6.503116871,2.233786454]\cdot10^{-16}$; exact saved interval contains0 |
+| $r_\xi$ | $0$ |
+| Fixed retained lower | unchanged, $-0.472489775052793370265\ldots$ |
+| Energy-endpoint retained lower | unchanged, $-0.674685241069653953208\ldots$ |
+
+The norm is certified positive; the coordinate cross is not separated
+from zero. This estimate gives no positive residual gain. It neither
+shows the actual residual vanishes nor supplies an actual energy
+upper or a negative physical row.
+
+There is a sharper explanation for this particular interface. The
+entire saved $I_d$ lies inside $[-C,C]$, with the accepted
+$C>4.367163575891468984\cdot10^{-16}$. For each common realization,
+the plane row
+
+$$
+f_H=-\frac{\theta}{b}y_0+\frac{\gamma\zeta+\omega\theta}{a}v
+$$
+
+has the same two responses, $Q(f_H,y_0)=\theta$ and $P(f_H,w)=\zeta$,
+and satisfies $f_H[0]=-d$, $R(f_H)=0$. Thus the two responses and this
+absolute coordinate cap ALONE still allow zero residual. This does not
+check every earlier scalar cap, a paid sign or generation by the
+original source/coupling. A same-source noncancellation relation for
+$f[0]+d$, or another residual direction, remains missing.
+
+The new consumer reads four accepted scalar packets, makes one new
+coordinate-complement application and two lower additions, and stores
+assembly time<0.580244seconds before serialization. It calls no old
+plane-floor, source/matrix/inverse/solve/tail supplier or accepted
+scientific fixture and performs no parameter/source/precision/cutoff
+scan or retry. Source SHA256
+`47f34f89cfddfecb581fe626415d303df64de0b5c5004935ebfb0c42285c0a19`;
+packet SHA256
+`7f6c5d4dc3175e4cd508aadef54d65588bf4c003fddfd01f1c22f8b1748198bb`.
+This is an application of existing projection/Cauchy, with no generic
+novelty or Lean claim. Actual paid/center/full-border/good-block/cofinal
+positivity, Robin and RH remain unresolved.
+
+Reproduction uses the existing pinned Python3.13.12/python-flint0.9.0
+environment and an unused output path:
+
+```sh
+PYTHONDONTWRITEBYTECODE=1 UV_OFFLINE=1 uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/full_gamma_coordinate_complement.py --out build/c27-coordinate-complement-reproduction.json.zlib
+```
+
+[Source](full_gamma_coordinate_complement.py) ·
+[Exact rational/directed interval packet](full-gamma-coordinate-complement.json.zlib)
