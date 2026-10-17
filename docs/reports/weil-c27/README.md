@@ -4259,7 +4259,7 @@ and the sufficient signed condition theta<−Clin/2 (threshold approximately−1
 It reads the cached RAW reference energy,
 not the already-inflated positive-channel energy. One new17-reference
 vector action and one18-dimensional full paid Gram form take0.04560
-seconds at1024working/640export bits. All old producers, identities,
+seconds at1024 working/640 export bits. All old producers, identities,
 tests, inverse/solve, trace and source suppliers are reused.
 
 The direct Gram interval spans approximately ±4.4981e24 and gives only
@@ -7367,7 +7367,7 @@ $$
 
 Use the accepted upper for the TRUE remaining energy $e$ and the
 upper for $\rho_H$; no independent interval corner is declared jointly
-attainable. The rounded640grid lower of $\Omega$ is formed before
+attainable. The rounded640 grid lower of $\Omega$ is formed before
 normalization. A positive lower uses $h_+$; otherwise the denominator
 is $h_-$. Strict negativity would exclude only this SAME strengthened
 endpoint LOWER comparison and its inherited dominated parameters.
@@ -7442,3 +7442,104 @@ novelty claim. All inherited actual/common-source, domain,
 exact20frame, physical and Euclidean PSD, conditional-source,
 two-sided reference, complete original512metadata allowance,
 normalization, endpoint-charge and baseline-order premises remain.
+
+## Canonical propagated prime row and its actual slack
+
+`c27_propagated_prime_row.py` consumes the accepted `high-floor.json`
+logarithms/metadata, complete-source `full-gamma-surplus-budget.json`
+and exact coefficient endpoint from
+`full-gamma-stationarity-family-norm.json.zlib`. Their SHA256 bindings
+are retained in `propagated-prime-row.json.zlib`; no producer or
+scientific fixture is replayed.
+
+On $I=(-L,L)$, $L=\log27/2$, use the SAME actual clipped prime-power
+operator $C_{\rm p}$ with weights $(\log p)/\sqrt{p^k}$ and fix
+
+$$
+q_0(x)=1+(29/50)(x/L)^2,\qquad q_1=C_{\rm p}q_0.
+$$
+
+This is one application of the standard positive weighted Schur
+method. On the positive half interval put $e=\exp(L-x)$.
+First shifts require $a<e<27a$, where $a=n$ or $1/n$; ordered
+paths additionally require $ab<e<27ab$. Exact rational switch
+ordering retains intermediate clipping, repeated log relations and
+the full cover. A sample inside a cell selects the exact active
+set only. Evenness supplies the other half; endpoints are null.
+The negative log2 shift makes $q_1$ uniformly positive.
+
+On each exact normalized cell both $q_1$ and $C_{\rm p}^2q_0$
+are quadratic polynomials. With positive denominator Bernstein
+coefficients, their ratio is at most the largest coefficient ratio.
+Outward intervals enclose the exact endpoints and all coefficients;
+the maximum of the640 grid cell uppers bounds the essential row
+supremum. It need not be the optimal bound or an attained maximum.
+
+For the resulting upper $\overline R_1$, standard weighted Schur
+and the inherited global cancellation give
+
+$$
+H_{\rm ext}-T\succeq gI,\qquad g=59/10-\overline R_1.
+$$
+
+If $g>0$, the SAME finite-$E$ short satisfies $\Pi\succeq gI$.
+The cached COMPLETE unscaled source has $\|u\|^2\le N$ and
+$h=\langle w_0,u\rangle\ge h_{\rm lo}>0$. Therefore
+$uu^*\preceq(N/g)\Pi$, so $\rho=g/N$ is an eligible coefficient
+of $uu^*$ in $\mathcal M+\rho uu^*\preceq\mathcal A$.
+Its normalized $\tau=h\rho$ is another scale. The comparison to
+the excluded endpoint uses the archived coefficient
+$t_+\simeq2.531919772\cdot10^{-5}$, not the normalized cap
+$0.0272333894$. The full far norm remains paid in $N$.
+
+The single directed application supplies:
+
+| Certified sufficient quantity | Directed bound |
+|---|---:|
+| Row upper $\overline R_1$ | $<5.53914888029651$ |
+| Actual slack lower $g$ | $>0.36085111970349$ |
+| Complete-source directional budget upper $N/g$ | $<12585.2937174196$ |
+| One eligible rank-one coefficient $\rho_{\rm cert}=g/N$ | $>7.9457819773874\cdot10^{-5}$ |
+| Its normalized parameter lower $h_{\rm lo}\rho_{\rm cert}$ | $>0.08546502014787$ |
+
+In particular, under the stated premises,
+
+$$
+\boxed{H_{\rm ext}-T\succeq\frac9{25}I,\qquad
+\Pi\succeq\frac9{25}I.}
+$$
+
+This strengthens the inherited $1/632$ floor using the actual
+nonlocal prime operator. The complete-source norm and far bound
+are unchanged. The supplied coefficient satisfies
+$\rho_{\rm cert}>3t_+$, beyond the range of the stopped endpoint
+exclusion. This comparison of scales is an eligibility result;
+the missing actual joint retained-sign estimate is separate.
+It does not evaluate or revive the excluded lower construction.
+The value is one certified sufficient coefficient, not a maximum
+of all eligible coefficients.
+
+The source has 233 lines, SHA256 `0b72a6ba263c545fd6ed03958c8d4e8ff82faf05197eb9eee03dc02a81c3f767`. The packet
+has 138683 bytes, SHA256 `935b2c0707c3187fa652730b1e40d5937a4e071158b7cb9f1f4a6a78f8459ce6`. One 1024 working/640 export
+application takes <0.103267seconds excluding serialization,
+covering 102 exact cells and 9350 ordered path-cell
+contributions. No new source action, Gram, inverse, solve or far
+query is performed. No propagation-order, weight, parameter,
+precision or partition scan is performed.
+
+All inherited actual/common-domain, source/normalization,
+finite-short and sound-cache conditions remain. These standard
+inequalities and their specific numerical application are not a
+new general theorem, Lean proof or actual retained/cofinal Weil
+sign certificate. Robin and RH remain unresolved. The stopped
+old lower-comparison route remains stopped.
+
+
+A reproduction uses the pinned Python 3.13.12/python-flint 0.9.0 environment and a fresh output:
+
+```sh
+env PYTHONDONTWRITEBYTECODE=1 UV_OFFLINE=1 \
+  uv run --no-project --python 3.13.12 --with python-flint==0.9.0 \
+  python docs/reports/weil-c27/c27_propagated_prime_row.py \
+  --out build/c27-propagated-prime-row-reproduction.json.zlib
+```
