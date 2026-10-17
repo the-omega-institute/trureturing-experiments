@@ -1,5 +1,14 @@
 # Physics settlement value census
 
+The fixed-input reproduction and source audit are in
+[RESULTS.md](RESULTS.md), with the prior
+[registration](PREREGISTRATION.md), the
+[36-row original/checked label table](LABEL-AUDIT.md), and separate audited
+v2 data. The original census and preview below are retained as the input
+record; statements below that the analyzer has not been run describe that
+original record. The measured analyzer output and scope reconciliation
+are in the results.
+
 A finite census of 36 merged physics settlement pull requests of
 [trureturing](https://github.com/the-omega-institute/trureturing), created
 2026-10-01 to 2026-10-16, presented as a typed-source arena for the main

@@ -1,0 +1,2340 @@
+{
+  "batch_sha256": "8a26793329161a9b0654d5976e187c8e2d167b72cebd273fab57e51d6d90004d",
+  "analyzer_output_sha256": "04a7516782f59ae111eeaf42e1e39291d21637e3d383487f7934662c38eaa8c7",
+  "comparisons": [
+    {
+      "label": "value readouts first, exposure control last",
+      "passed": true,
+      "states": 36,
+      "ordered_pairs": 1260,
+      "final_unresolved": 102,
+      "conflict_count": 10,
+      "sufficient": false,
+      "determined_at_layer": null,
+      "conflict_pr_pairs": [
+        [
+          15354,
+          16702
+        ],
+        [
+          16702,
+          15354
+        ],
+        [
+          16702,
+          16902
+        ],
+        [
+          16702,
+          17145
+        ],
+        [
+          16702,
+          17605
+        ],
+        [
+          16902,
+          16702
+        ],
+        [
+          16971,
+          17778
+        ],
+        [
+          17145,
+          16702
+        ],
+        [
+          17605,
+          16702
+        ],
+        [
+          17778,
+          16971
+        ]
+      ],
+      "scope_comparison": [
+        {
+          "readout": "shape",
+          "analyzer_catalog_unique": 14,
+          "analyzer_catalog_leave_one_out": 106,
+          "preview_plan_unique": 24,
+          "preview_plan_leave_one_out": 126
+        },
+        {
+          "readout": "admission",
+          "analyzer_catalog_unique": 6,
+          "analyzer_catalog_leave_one_out": 98,
+          "preview_plan_unique": 10,
+          "preview_plan_leave_one_out": 112
+        },
+        {
+          "readout": "resolution",
+          "analyzer_catalog_unique": 0,
+          "analyzer_catalog_leave_one_out": 92,
+          "preview_plan_unique": 0,
+          "preview_plan_leave_one_out": 102
+        },
+        {
+          "readout": "utility",
+          "analyzer_catalog_unique": 0,
+          "analyzer_catalog_leave_one_out": 92,
+          "preview_plan_unique": 0,
+          "preview_plan_leave_one_out": 102
+        },
+        {
+          "readout": "track",
+          "analyzer_catalog_unique": 44,
+          "analyzer_catalog_leave_one_out": 136,
+          "preview_plan_unique": 66,
+          "preview_plan_leave_one_out": 168
+        },
+        {
+          "readout": "period",
+          "analyzer_catalog_unique": 6,
+          "analyzer_catalog_leave_one_out": 98,
+          "preview_plan_unique": 12,
+          "preview_plan_leave_one_out": 114
+        },
+        {
+          "readout": "downstream",
+          "analyzer_catalog_unique": 10,
+          "analyzer_catalog_leave_one_out": 102,
+          "preview_plan_unique": null,
+          "preview_plan_leave_one_out": null
+        }
+      ],
+      "layers": [
+        {
+          "position": 0,
+          "readouts": [],
+          "captured": 0,
+          "remaining": 1260,
+          "collapsed": false
+        },
+        {
+          "position": 1,
+          "readouts": [
+            "shape"
+          ],
+          "captured": 616,
+          "remaining": 644,
+          "collapsed": false
+        },
+        {
+          "position": 2,
+          "readouts": [
+            "shape",
+            "admission"
+          ],
+          "captured": 126,
+          "remaining": 518,
+          "collapsed": false
+        },
+        {
+          "position": 3,
+          "readouts": [
+            "shape",
+            "admission",
+            "resolution"
+          ],
+          "captured": 256,
+          "remaining": 262,
+          "collapsed": false
+        },
+        {
+          "position": 4,
+          "readouts": [
+            "shape",
+            "admission",
+            "resolution",
+            "utility"
+          ],
+          "captured": 0,
+          "remaining": 262,
+          "collapsed": true
+        },
+        {
+          "position": 5,
+          "readouts": [
+            "shape",
+            "admission",
+            "resolution",
+            "utility",
+            "track"
+          ],
+          "captured": 148,
+          "remaining": 114,
+          "collapsed": false
+        },
+        {
+          "position": 6,
+          "readouts": [
+            "shape",
+            "admission",
+            "resolution",
+            "utility",
+            "track",
+            "period"
+          ],
+          "captured": 12,
+          "remaining": 102,
+          "collapsed": false
+        }
+      ],
+      "checks": [
+        {
+          "name": "cardinality",
+          "expected": 36,
+          "actual": 36,
+          "equal": true
+        },
+        {
+          "name": "ordered_pair_denominator",
+          "expected": 1260,
+          "actual": 1260,
+          "equal": true
+        },
+        {
+          "name": "partition_count",
+          "expected": 1260,
+          "actual": 1260,
+          "equal": true
+        },
+        {
+          "name": "source.supplied_binding",
+          "expected": "3c70c0b978b8aba7a8d8f3828cfa81316bb6151c160de98f271015bee8bdc837",
+          "actual": "3c70c0b978b8aba7a8d8f3828cfa81316bb6151c160de98f271015bee8bdc837",
+          "equal": true
+        },
+        {
+          "name": "source.supplied_acquisition",
+          "expected": {
+            "kind": "finite",
+            "reason": "complete listed population of 36 merged PRs; labels extracted from PR bodies and the tree at head"
+          },
+          "actual": {
+            "kind": "finite",
+            "reason": "complete listed population of 36 merged PRs; labels extracted from PR bodies and the tree at head"
+          },
+          "equal": true
+        },
+        {
+          "name": "source.binding_unverified",
+          "expected": null,
+          "actual": null,
+          "equal": true
+        },
+        {
+          "name": "source.physical_law_certified",
+          "expected": false,
+          "actual": false,
+          "equal": true
+        },
+        {
+          "name": "plan.kernel_echo",
+          "expected": "b37d03a44921a3dbc4280e7ba71f060a48646102be1d9a2ecdf6011866b64473",
+          "actual": "b37d03a44921a3dbc4280e7ba71f060a48646102be1d9a2ecdf6011866b64473",
+          "equal": true
+        },
+        {
+          "name": "plan.spectrum_echo",
+          "expected": "b37d03a44921a3dbc4280e7ba71f060a48646102be1d9a2ecdf6011866b64473",
+          "actual": "b37d03a44921a3dbc4280e7ba71f060a48646102be1d9a2ecdf6011866b64473",
+          "equal": true
+        },
+        {
+          "name": "presentation_echo",
+          "equal": true
+        },
+        {
+          "name": "kernel.shape.outputs_reflect_table",
+          "expected": true,
+          "actual": true,
+          "equal": true
+        },
+        {
+          "name": "kernel.admission.outputs_reflect_table",
+          "expected": true,
+          "actual": true,
+          "equal": true
+        },
+        {
+          "name": "kernel.resolution.outputs_reflect_table",
+          "expected": true,
+          "actual": true,
+          "equal": true
+        },
+        {
+          "name": "kernel.utility.outputs_reflect_table",
+          "expected": true,
+          "actual": true,
+          "equal": true
+        },
+        {
+          "name": "kernel.track.outputs_reflect_table",
+          "expected": true,
+          "actual": true,
+          "equal": true
+        },
+        {
+          "name": "kernel.period.outputs_reflect_table",
+          "expected": true,
+          "actual": true,
+          "equal": true
+        },
+        {
+          "name": "kernel.downstream.outputs_reflect_table",
+          "expected": true,
+          "actual": true,
+          "equal": true
+        },
+        {
+          "name": "task_outputs_reflect_task_kernel",
+          "expected": true,
+          "actual": true,
+          "equal": true
+        },
+        {
+          "name": "kernel_tables_echo",
+          "expected": "0a7a2a9b0c88e84fb5548a4a4b5e2ceea0ae8b0586287ed67164ae362a4c0d82",
+          "actual": "0a7a2a9b0c88e84fb5548a4a4b5e2ceea0ae8b0586287ed67164ae362a4c0d82",
+          "equal": true
+        },
+        {
+          "name": "kernel_outputs_echo",
+          "expected": "aad733d4981955c76bf5a464d197cb5780372df46bb72f2c3259a844d7845793",
+          "actual": "aad733d4981955c76bf5a464d197cb5780372df46bb72f2c3259a844d7845793",
+          "equal": true
+        },
+        {
+          "name": "task_outputs_echo",
+          "expected": "f695047423d5a3b758272b7fd8d1880bc1c6fb0f026ce367f9f9d471dbaa3c77",
+          "actual": "f695047423d5a3b758272b7fd8d1880bc1c6fb0f026ce367f9f9d471dbaa3c77",
+          "equal": true
+        },
+        {
+          "name": "catalog_full_relation",
+          "expected": "e22eb5ea043a55316837f55b4fccfd13a71b4981fb7e04bfabf54ebbfbe74c98",
+          "actual": "e22eb5ea043a55316837f55b4fccfd13a71b4981fb7e04bfabf54ebbfbe74c98",
+          "equal": true
+        },
+        {
+          "name": "catalog_escape_pairs",
+          "expected_count": 92,
+          "actual_count": 92,
+          "expected_sha256": "8178c6cb4b71d01aa1ba948c570356e9a8da6e8934cfc365659f3aca4769da3b",
+          "actual_sha256": "8178c6cb4b71d01aa1ba948c570356e9a8da6e8934cfc365659f3aca4769da3b",
+          "missing": [],
+          "extra": [],
+          "equal": true
+        },
+        {
+          "name": "catalog_escape_rate",
+          "expected": {
+            "numerator": 92,
+            "denominator": 1260
+          },
+          "actual": {
+            "denominator": 1260,
+            "numerator": 92
+          },
+          "equal": true
+        },
+        {
+          "name": "final_unresolved_count",
+          "expected": 102,
+          "actual": 102,
+          "equal": true
+        },
+        {
+          "name": "final_unresolved_pairs",
+          "expected_count": 102,
+          "actual_count": 102,
+          "expected_sha256": "a83c09373e70da4268fe92da4f430189a79cde61aa2616d6dbbead96c321c157",
+          "actual_sha256": "a83c09373e70da4268fe92da4f430189a79cde61aa2616d6dbbead96c321c157",
+          "missing": [],
+          "extra": [],
+          "equal": true
+        },
+        {
+          "name": "final_unresolved_rate",
+          "expected": {
+            "numerator": 102,
+            "denominator": 1260
+          },
+          "actual": {
+            "denominator": 1260,
+            "numerator": 102
+          },
+          "equal": true
+        },
+        {
+          "name": "unique_capture_role_count",
+          "expected": 7,
+          "actual": 7,
+          "equal": true
+        },
+        {
+          "name": "unique.shape.identity",
+          "expected": 0,
+          "actual": 0,
+          "equal": true
+        },
+        {
+          "name": "unique.shape.count",
+          "expected": 14,
+          "actual": 14,
+          "equal": true
+        },
+        {
+          "name": "unique.shape.pairs",
+          "expected_count": 14,
+          "actual_count": 14,
+          "expected_sha256": "bb4666463164f232baa41433b4da092df7e6c7f77a42edad0f06b65d15c4bac3",
+          "actual_sha256": "bb4666463164f232baa41433b4da092df7e6c7f77a42edad0f06b65d15c4bac3",
+          "missing": [],
+          "extra": [],
+          "equal": true
+        },
+        {
+          "name": "unique.shape.rate",
+          "expected": {
+            "numerator": 14,
+            "denominator": 1260
+          },
+          "actual": {
+            "denominator": 1260,
+            "numerator": 14
+          },
+          "equal": true
+        },
+        {
+          "name": "leave_one_out.shape.count",
+          "expected": 106,
+          "actual": 106,
+          "equal": true
+        },
+        {
+          "name": "leave_one_out.shape.pairs",
+          "expected_count": 106,
+          "actual_count": 106,
+          "expected_sha256": "c71cac5ad9e942713152976f3ce2170f2f18cda67f3922a35d0813cfe4d3ee2d",
+          "actual_sha256": "c71cac5ad9e942713152976f3ce2170f2f18cda67f3922a35d0813cfe4d3ee2d",
+          "missing": [],
+          "extra": [],
+          "equal": true
+        },
+        {
+          "name": "unique.admission.identity",
+          "expected": 1,
+          "actual": 1,
+          "equal": true
+        },
+        {
+          "name": "unique.admission.count",
+          "expected": 6,
+          "actual": 6,
+          "equal": true
+        },
+        {
+          "name": "unique.admission.pairs",
+          "expected_count": 6,
+          "actual_count": 6,
+          "expected_sha256": "e51411f8e842367c88fd9612c0441fe534df6d45ea75e19cf35faa16f95c5e3f",
+          "actual_sha256": "e51411f8e842367c88fd9612c0441fe534df6d45ea75e19cf35faa16f95c5e3f",
+          "missing": [],
+          "extra": [],
+          "equal": true
+        },
+        {
+          "name": "unique.admission.rate",
+          "expected": {
+            "numerator": 6,
+            "denominator": 1260
+          },
+          "actual": {
+            "denominator": 1260,
+            "numerator": 6
+          },
+          "equal": true
+        },
+        {
+          "name": "leave_one_out.admission.count",
+          "expected": 98,
+          "actual": 98,
+          "equal": true
+        },
+        {
+          "name": "leave_one_out.admission.pairs",
+          "expected_count": 98,
+          "actual_count": 98,
+          "expected_sha256": "905f2abec2e55b0e23990e2d6e2492e8403688506ddfdf5d56b97a89d2276567",
+          "actual_sha256": "905f2abec2e55b0e23990e2d6e2492e8403688506ddfdf5d56b97a89d2276567",
+          "missing": [],
+          "extra": [],
+          "equal": true
+        },
+        {
+          "name": "unique.resolution.identity",
+          "expected": 2,
+          "actual": 2,
+          "equal": true
+        },
+        {
+          "name": "unique.resolution.count",
+          "expected": 0,
+          "actual": 0,
+          "equal": true
+        },
+        {
+          "name": "unique.resolution.pairs",
+          "expected_count": 0,
+          "actual_count": 0,
+          "expected_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "actual_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "missing": [],
+          "extra": [],
+          "equal": true
+        },
+        {
+          "name": "unique.resolution.rate",
+          "expected": {
+            "numerator": 0,
+            "denominator": 1260
+          },
+          "actual": {
+            "denominator": 1260,
+            "numerator": 0
+          },
+          "equal": true
+        },
+        {
+          "name": "leave_one_out.resolution.count",
+          "expected": 92,
+          "actual": 92,
+          "equal": true
+        },
+        {
+          "name": "leave_one_out.resolution.pairs",
+          "expected_count": 92,
+          "actual_count": 92,
+          "expected_sha256": "8178c6cb4b71d01aa1ba948c570356e9a8da6e8934cfc365659f3aca4769da3b",
+          "actual_sha256": "8178c6cb4b71d01aa1ba948c570356e9a8da6e8934cfc365659f3aca4769da3b",
+          "missing": [],
+          "extra": [],
+          "equal": true
+        },
+        {
+          "name": "unique.utility.identity",
+          "expected": 3,
+          "actual": 3,
+          "equal": true
+        },
+        {
+          "name": "unique.utility.count",
+          "expected": 0,
+          "actual": 0,
+          "equal": true
+        },
+        {
+          "name": "unique.utility.pairs",
+          "expected_count": 0,
+          "actual_count": 0,
+          "expected_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "actual_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "missing": [],
+          "extra": [],
+          "equal": true
+        },
+        {
+          "name": "unique.utility.rate",
+          "expected": {
+            "numerator": 0,
+            "denominator": 1260
+          },
+          "actual": {
+            "denominator": 1260,
+            "numerator": 0
+          },
+          "equal": true
+        },
+        {
+          "name": "leave_one_out.utility.count",
+          "expected": 92,
+          "actual": 92,
+          "equal": true
+        },
+        {
+          "name": "leave_one_out.utility.pairs",
+          "expected_count": 92,
+          "actual_count": 92,
+          "expected_sha256": "8178c6cb4b71d01aa1ba948c570356e9a8da6e8934cfc365659f3aca4769da3b",
+          "actual_sha256": "8178c6cb4b71d01aa1ba948c570356e9a8da6e8934cfc365659f3aca4769da3b",
+          "missing": [],
+          "extra": [],
+          "equal": true
+        },
+        {
+          "name": "unique.track.identity",
+          "expected": 4,
+          "actual": 4,
+          "equal": true
+        },
+        {
+          "name": "unique.track.count",
+          "expected": 44,
+          "actual": 44,
+          "equal": true
+        },
+        {
+          "name": "unique.track.pairs",
+          "expected_count": 44,
+          "actual_count": 44,
+          "expected_sha256": "b528d5952f2c07614c1ad96db3177828a4c812cab65a0cd2db369732519067af",
+          "actual_sha256": "b528d5952f2c07614c1ad96db3177828a4c812cab65a0cd2db369732519067af",
+          "missing": [],
+          "extra": [],
+          "equal": true
+        },
+        {
+          "name": "unique.track.rate",
+          "expected": {
+            "numerator": 44,
+            "denominator": 1260
+          },
+          "actual": {
+            "denominator": 1260,
+            "numerator": 44
+          },
+          "equal": true
+        },
+        {
+          "name": "leave_one_out.track.count",
+          "expected": 136,
+          "actual": 136,
+          "equal": true
+        },
+        {
+          "name": "leave_one_out.track.pairs",
+          "expected_count": 136,
+          "actual_count": 136,
+          "expected_sha256": "461cca4ad56ba96524f1c00d8e773e2d6b8a4661e514b9235eaf50ec6086f888",
+          "actual_sha256": "461cca4ad56ba96524f1c00d8e773e2d6b8a4661e514b9235eaf50ec6086f888",
+          "missing": [],
+          "extra": [],
+          "equal": true
+        },
+        {
+          "name": "unique.period.identity",
+          "expected": 5,
+          "actual": 5,
+          "equal": true
+        },
+        {
+          "name": "unique.period.count",
+          "expected": 6,
+          "actual": 6,
+          "equal": true
+        },
+        {
+          "name": "unique.period.pairs",
+          "expected_count": 6,
+          "actual_count": 6,
+          "expected_sha256": "64b76a2789d06d272298f4d937f97bfaec9cc76e19f1424739d9fe9ac6ba7cfd",
+          "actual_sha256": "64b76a2789d06d272298f4d937f97bfaec9cc76e19f1424739d9fe9ac6ba7cfd",
+          "missing": [],
+          "extra": [],
+          "equal": true
+        },
+        {
+          "name": "unique.period.rate",
+          "expected": {
+            "numerator": 6,
+            "denominator": 1260
+          },
+          "actual": {
+            "denominator": 1260,
+            "numerator": 6
+          },
+          "equal": true
+        },
+        {
+          "name": "leave_one_out.period.count",
+          "expected": 98,
+          "actual": 98,
+          "equal": true
+        },
+        {
+          "name": "leave_one_out.period.pairs",
+          "expected_count": 98,
+          "actual_count": 98,
+          "expected_sha256": "02386e15d2c252fe21e5f96b3270aa49c84e3a96a8b6e0e166e9dc3d2221efb6",
+          "actual_sha256": "02386e15d2c252fe21e5f96b3270aa49c84e3a96a8b6e0e166e9dc3d2221efb6",
+          "missing": [],
+          "extra": [],
+          "equal": true
+        },
+        {
+          "name": "unique.downstream.identity",
+          "expected": 6,
+          "actual": 6,
+          "equal": true
+        },
+        {
+          "name": "unique.downstream.count",
+          "expected": 10,
+          "actual": 10,
+          "equal": true
+        },
+        {
+          "name": "unique.downstream.pairs",
+          "expected_count": 10,
+          "actual_count": 10,
+          "expected_sha256": "98540cc23ecdff077fcc743f4b0f9f959b6a528997368c89a2ebede8f83494a7",
+          "actual_sha256": "98540cc23ecdff077fcc743f4b0f9f959b6a528997368c89a2ebede8f83494a7",
+          "missing": [],
+          "extra": [],
+          "equal": true
+        },
+        {
+          "name": "unique.downstream.rate",
+          "expected": {
+            "numerator": 10,
+            "denominator": 1260
+          },
+          "actual": {
+            "denominator": 1260,
+            "numerator": 10
+          },
+          "equal": true
+        },
+        {
+          "name": "leave_one_out.downstream.count",
+          "expected": 102,
+          "actual": 102,
+          "equal": true
+        },
+        {
+          "name": "leave_one_out.downstream.pairs",
+          "expected_count": 102,
+          "actual_count": 102,
+          "expected_sha256": "a83c09373e70da4268fe92da4f430189a79cde61aa2616d6dbbead96c321c157",
+          "actual_sha256": "a83c09373e70da4268fe92da4f430189a79cde61aa2616d6dbbead96c321c157",
+          "missing": [],
+          "extra": [],
+          "equal": true
+        },
+        {
+          "name": "layer_count",
+          "expected": 7,
+          "actual": 7,
+          "equal": true
+        },
+        {
+          "name": "layer.0.position",
+          "expected": 0,
+          "actual": 0,
+          "equal": true
+        },
+        {
+          "name": "layer.0.readouts",
+          "expected": [],
+          "actual": [],
+          "equal": true
+        },
+        {
+          "name": "layer.0.count",
+          "expected": 0,
+          "actual": 0,
+          "equal": true
+        },
+        {
+          "name": "layer.0.pairs",
+          "expected_count": 0,
+          "actual_count": 0,
+          "expected_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "actual_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "missing": [],
+          "extra": [],
+          "equal": true
+        },
+        {
+          "name": "layer.0.rate",
+          "expected": {
+            "numerator": 0,
+            "denominator": 1260
+          },
+          "actual": {
+            "denominator": 1260,
+            "numerator": 0
+          },
+          "equal": true
+        },
+        {
+          "name": "layer.0.collapsed",
+          "expected": false,
+          "actual": false,
+          "equal": true
+        },
+        {
+          "name": "layer.1.position",
+          "expected": 1,
+          "actual": 1,
+          "equal": true
+        },
+        {
+          "name": "layer.1.readouts",
+          "expected": [
+            0
+          ],
+          "actual": [
+            0
+          ],
+          "equal": true
+        },
+        {
+          "name": "layer.1.count",
+          "expected": 616,
+          "actual": 616,
+          "equal": true
+        },
+        {
+          "name": "layer.1.pairs",
+          "expected_count": 616,
+          "actual_count": 616,
+          "expected_sha256": "6251915db53fcb8e716ec722be1a9de2b7e8dbfa8984fd4cbe1ab9f642d4720d",
+          "actual_sha256": "6251915db53fcb8e716ec722be1a9de2b7e8dbfa8984fd4cbe1ab9f642d4720d",
+          "missing": [],
+          "extra": [],
+          "equal": true
+        },
+        {
+          "name": "layer.1.rate",
+          "expected": {
+            "numerator": 616,
+            "denominator": 1260
+          },
+          "actual": {
+            "denominator": 1260,
+            "numerator": 616
+          },
+          "equal": true
+        },
+        {
+          "name": "layer.1.collapsed",
+          "expected": false,
+          "actual": false,
+          "equal": true
+        },
+        {
+          "name": "layer.2.position",
+          "expected": 2,
+          "actual": 2,
+          "equal": true
+        },
+        {
+          "name": "layer.2.readouts",
+          "expected": [
+            0,
+            1
+          ],
+          "actual": [
+            0,
+            1
+          ],
+          "equal": true
+        },
+        {
+          "name": "layer.2.count",
+          "expected": 126,
+          "actual": 126,
+          "equal": true
+        },
+        {
+          "name": "layer.2.pairs",
+          "expected_count": 126,
+          "actual_count": 126,
+          "expected_sha256": "42b2488c509a3fd213064f949b698c2b2917f82d3c0cfd1ae015db317a44266c",
+          "actual_sha256": "42b2488c509a3fd213064f949b698c2b2917f82d3c0cfd1ae015db317a44266c",
+          "missing": [],
+          "extra": [],
+          "equal": true
+        },
+        {
+          "name": "layer.2.rate",
+          "expected": {
+            "numerator": 126,
+            "denominator": 1260
+          },
+          "actual": {
+            "denominator": 1260,
+            "numerator": 126
+          },
+          "equal": true
+        },
+        {
+          "name": "layer.2.collapsed",
+          "expected": false,
+          "actual": false,
+          "equal": true
+        },
+        {
+          "name": "layer.3.position",
+          "expected": 3,
+          "actual": 3,
+          "equal": true
+        },
+        {
+          "name": "layer.3.readouts",
+          "expected": [
+            0,
+            1,
+            2
+          ],
+          "actual": [
+            0,
+            1,
+            2
+          ],
+          "equal": true
+        },
+        {
+          "name": "layer.3.count",
+          "expected": 256,
+          "actual": 256,
+          "equal": true
+        },
+        {
+          "name": "layer.3.pairs",
+          "expected_count": 256,
+          "actual_count": 256,
+          "expected_sha256": "0dc7a2d08fa590e8f190332b1363bedcf4be4de801725fc45f9662687f0db8e0",
+          "actual_sha256": "0dc7a2d08fa590e8f190332b1363bedcf4be4de801725fc45f9662687f0db8e0",
+          "missing": [],
+          "extra": [],
+          "equal": true
+        },
+        {
+          "name": "layer.3.rate",
+          "expected": {
+            "numerator": 256,
+            "denominator": 1260
+          },
+          "actual": {
+            "denominator": 1260,
+            "numerator": 256
+          },
+          "equal": true
+        },
+        {
+          "name": "layer.3.collapsed",
+          "expected": false,
+          "actual": false,
+          "equal": true
+        },
+        {
+          "name": "layer.4.position",
+          "expected": 4,
+          "actual": 4,
+          "equal": true
+        },
+        {
+          "name": "layer.4.readouts",
+          "expected": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "actual": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "equal": true
+        },
+        {
+          "name": "layer.4.count",
+          "expected": 0,
+          "actual": 0,
+          "equal": true
+        },
+        {
+          "name": "layer.4.pairs",
+          "expected_count": 0,
+          "actual_count": 0,
+          "expected_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "actual_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "missing": [],
+          "extra": [],
+          "equal": true
+        },
+        {
+          "name": "layer.4.rate",
+          "expected": {
+            "numerator": 0,
+            "denominator": 1260
+          },
+          "actual": {
+            "denominator": 1260,
+            "numerator": 0
+          },
+          "equal": true
+        },
+        {
+          "name": "layer.4.collapsed",
+          "expected": true,
+          "actual": true,
+          "equal": true
+        },
+        {
+          "name": "layer.5.position",
+          "expected": 5,
+          "actual": 5,
+          "equal": true
+        },
+        {
+          "name": "layer.5.readouts",
+          "expected": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "actual": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "equal": true
+        },
+        {
+          "name": "layer.5.count",
+          "expected": 148,
+          "actual": 148,
+          "equal": true
+        },
+        {
+          "name": "layer.5.pairs",
+          "expected_count": 148,
+          "actual_count": 148,
+          "expected_sha256": "163b21c5b1aa4bcf5c1fa9935b50bc7a3d5ffeba6d4c6ce3fd0d9e62983ccbe6",
+          "actual_sha256": "163b21c5b1aa4bcf5c1fa9935b50bc7a3d5ffeba6d4c6ce3fd0d9e62983ccbe6",
+          "missing": [],
+          "extra": [],
+          "equal": true
+        },
+        {
+          "name": "layer.5.rate",
+          "expected": {
+            "numerator": 148,
+            "denominator": 1260
+          },
+          "actual": {
+            "denominator": 1260,
+            "numerator": 148
+          },
+          "equal": true
+        },
+        {
+          "name": "layer.5.collapsed",
+          "expected": false,
+          "actual": false,
+          "equal": true
+        },
+        {
+          "name": "layer.6.position",
+          "expected": 6,
+          "actual": 6,
+          "equal": true
+        },
+        {
+          "name": "layer.6.readouts",
+          "expected": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "actual": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "equal": true
+        },
+        {
+          "name": "layer.6.count",
+          "expected": 12,
+          "actual": 12,
+          "equal": true
+        },
+        {
+          "name": "layer.6.pairs",
+          "expected_count": 12,
+          "actual_count": 12,
+          "expected_sha256": "b2017680f4e68ea0afae7120abb3dc456a4f98145c97238510e5883bbe89aa6d",
+          "actual_sha256": "b2017680f4e68ea0afae7120abb3dc456a4f98145c97238510e5883bbe89aa6d",
+          "missing": [],
+          "extra": [],
+          "equal": true
+        },
+        {
+          "name": "layer.6.rate",
+          "expected": {
+            "numerator": 12,
+            "denominator": 1260
+          },
+          "actual": {
+            "denominator": 1260,
+            "numerator": 12
+          },
+          "equal": true
+        },
+        {
+          "name": "layer.6.collapsed",
+          "expected": false,
+          "actual": false,
+          "equal": true
+        },
+        {
+          "name": "first_capture.address_count",
+          "expected": 1260,
+          "actual": 1260,
+          "equal": true
+        },
+        {
+          "name": "first_capture.all_pair_addresses_and_nulls",
+          "expected": true,
+          "actual": true,
+          "equal": true
+        },
+        {
+          "name": "residual.task",
+          "expected": 6,
+          "actual": 6,
+          "equal": true
+        },
+        {
+          "name": "residual.sufficient",
+          "expected": false,
+          "actual": false,
+          "equal": true
+        },
+        {
+          "name": "residual.conflict_count",
+          "expected": 10,
+          "actual": 10,
+          "equal": true
+        },
+        {
+          "name": "residual.conflict_pairs",
+          "expected_count": 10,
+          "actual_count": 10,
+          "expected_sha256": "98540cc23ecdff077fcc743f4b0f9f959b6a528997368c89a2ebede8f83494a7",
+          "actual_sha256": "98540cc23ecdff077fcc743f4b0f9f959b6a528997368c89a2ebede8f83494a7",
+          "missing": [],
+          "extra": [],
+          "equal": true
+        },
+        {
+          "name": "residual.conflict_rate",
+          "expected": {
+            "numerator": 10,
+            "denominator": 1260
+          },
+          "actual": {
+            "denominator": 1260,
+            "numerator": 10
+          },
+          "equal": true
+        },
+        {
+          "name": "residual.determined_at_layer",
+          "expected": null,
+          "actual": null,
+          "equal": true
+        }
+      ]
+    },
+    {
+      "label": "exposure control first",
+      "passed": true,
+      "states": 36,
+      "ordered_pairs": 1260,
+      "final_unresolved": 102,
+      "conflict_count": 10,
+      "sufficient": false,
+      "determined_at_layer": null,
+      "conflict_pr_pairs": [
+        [
+          15354,
+          16702
+        ],
+        [
+          16702,
+          15354
+        ],
+        [
+          16702,
+          16902
+        ],
+        [
+          16702,
+          17145
+        ],
+        [
+          16702,
+          17605
+        ],
+        [
+          16902,
+          16702
+        ],
+        [
+          16971,
+          17778
+        ],
+        [
+          17145,
+          16702
+        ],
+        [
+          17605,
+          16702
+        ],
+        [
+          17778,
+          16971
+        ]
+      ],
+      "scope_comparison": [
+        {
+          "readout": "shape",
+          "analyzer_catalog_unique": 14,
+          "analyzer_catalog_leave_one_out": 106,
+          "preview_plan_unique": 24,
+          "preview_plan_leave_one_out": 126
+        },
+        {
+          "readout": "admission",
+          "analyzer_catalog_unique": 6,
+          "analyzer_catalog_leave_one_out": 98,
+          "preview_plan_unique": 10,
+          "preview_plan_leave_one_out": 112
+        },
+        {
+          "readout": "resolution",
+          "analyzer_catalog_unique": 0,
+          "analyzer_catalog_leave_one_out": 92,
+          "preview_plan_unique": 0,
+          "preview_plan_leave_one_out": 102
+        },
+        {
+          "readout": "utility",
+          "analyzer_catalog_unique": 0,
+          "analyzer_catalog_leave_one_out": 92,
+          "preview_plan_unique": 0,
+          "preview_plan_leave_one_out": 102
+        },
+        {
+          "readout": "track",
+          "analyzer_catalog_unique": 44,
+          "analyzer_catalog_leave_one_out": 136,
+          "preview_plan_unique": 66,
+          "preview_plan_leave_one_out": 168
+        },
+        {
+          "readout": "period",
+          "analyzer_catalog_unique": 6,
+          "analyzer_catalog_leave_one_out": 98,
+          "preview_plan_unique": 12,
+          "preview_plan_leave_one_out": 114
+        },
+        {
+          "readout": "downstream",
+          "analyzer_catalog_unique": 10,
+          "analyzer_catalog_leave_one_out": 102,
+          "preview_plan_unique": null,
+          "preview_plan_leave_one_out": null
+        }
+      ],
+      "layers": [
+        {
+          "position": 0,
+          "readouts": [],
+          "captured": 0,
+          "remaining": 1260,
+          "collapsed": false
+        },
+        {
+          "position": 1,
+          "readouts": [
+            "period"
+          ],
+          "captured": 520,
+          "remaining": 740,
+          "collapsed": false
+        },
+        {
+          "position": 2,
+          "readouts": [
+            "period",
+            "shape"
+          ],
+          "captured": 336,
+          "remaining": 404,
+          "collapsed": false
+        },
+        {
+          "position": 3,
+          "readouts": [
+            "period",
+            "shape",
+            "admission"
+          ],
+          "captured": 62,
+          "remaining": 342,
+          "collapsed": false
+        },
+        {
+          "position": 4,
+          "readouts": [
+            "period",
+            "shape",
+            "admission",
+            "resolution"
+          ],
+          "captured": 174,
+          "remaining": 168,
+          "collapsed": false
+        },
+        {
+          "position": 5,
+          "readouts": [
+            "period",
+            "shape",
+            "admission",
+            "resolution",
+            "utility"
+          ],
+          "captured": 0,
+          "remaining": 168,
+          "collapsed": true
+        },
+        {
+          "position": 6,
+          "readouts": [
+            "period",
+            "shape",
+            "admission",
+            "resolution",
+            "utility",
+            "track"
+          ],
+          "captured": 66,
+          "remaining": 102,
+          "collapsed": false
+        }
+      ],
+      "checks": [
+        {
+          "name": "cardinality",
+          "expected": 36,
+          "actual": 36,
+          "equal": true
+        },
+        {
+          "name": "ordered_pair_denominator",
+          "expected": 1260,
+          "actual": 1260,
+          "equal": true
+        },
+        {
+          "name": "partition_count",
+          "expected": 1260,
+          "actual": 1260,
+          "equal": true
+        },
+        {
+          "name": "source.supplied_binding",
+          "expected": "fdc5f55a6a690ea1ad8c7d998aff5f09a256cca4e0153b80c7b67b7546629029",
+          "actual": "fdc5f55a6a690ea1ad8c7d998aff5f09a256cca4e0153b80c7b67b7546629029",
+          "equal": true
+        },
+        {
+          "name": "source.supplied_acquisition",
+          "expected": {
+            "kind": "finite",
+            "reason": "complete listed population of 36 merged PRs; labels extracted from PR bodies and the tree at head"
+          },
+          "actual": {
+            "kind": "finite",
+            "reason": "complete listed population of 36 merged PRs; labels extracted from PR bodies and the tree at head"
+          },
+          "equal": true
+        },
+        {
+          "name": "source.binding_unverified",
+          "expected": null,
+          "actual": null,
+          "equal": true
+        },
+        {
+          "name": "source.physical_law_certified",
+          "expected": false,
+          "actual": false,
+          "equal": true
+        },
+        {
+          "name": "plan.kernel_echo",
+          "expected": "f0c904261730d983d89f76633d8f64e2fff8ec78f32b16f36fd26a9120796d4b",
+          "actual": "f0c904261730d983d89f76633d8f64e2fff8ec78f32b16f36fd26a9120796d4b",
+          "equal": true
+        },
+        {
+          "name": "plan.spectrum_echo",
+          "expected": "f0c904261730d983d89f76633d8f64e2fff8ec78f32b16f36fd26a9120796d4b",
+          "actual": "f0c904261730d983d89f76633d8f64e2fff8ec78f32b16f36fd26a9120796d4b",
+          "equal": true
+        },
+        {
+          "name": "presentation_echo",
+          "equal": true
+        },
+        {
+          "name": "kernel.shape.outputs_reflect_table",
+          "expected": true,
+          "actual": true,
+          "equal": true
+        },
+        {
+          "name": "kernel.admission.outputs_reflect_table",
+          "expected": true,
+          "actual": true,
+          "equal": true
+        },
+        {
+          "name": "kernel.resolution.outputs_reflect_table",
+          "expected": true,
+          "actual": true,
+          "equal": true
+        },
+        {
+          "name": "kernel.utility.outputs_reflect_table",
+          "expected": true,
+          "actual": true,
+          "equal": true
+        },
+        {
+          "name": "kernel.track.outputs_reflect_table",
+          "expected": true,
+          "actual": true,
+          "equal": true
+        },
+        {
+          "name": "kernel.period.outputs_reflect_table",
+          "expected": true,
+          "actual": true,
+          "equal": true
+        },
+        {
+          "name": "kernel.downstream.outputs_reflect_table",
+          "expected": true,
+          "actual": true,
+          "equal": true
+        },
+        {
+          "name": "task_outputs_reflect_task_kernel",
+          "expected": true,
+          "actual": true,
+          "equal": true
+        },
+        {
+          "name": "kernel_tables_echo",
+          "expected": "0a7a2a9b0c88e84fb5548a4a4b5e2ceea0ae8b0586287ed67164ae362a4c0d82",
+          "actual": "0a7a2a9b0c88e84fb5548a4a4b5e2ceea0ae8b0586287ed67164ae362a4c0d82",
+          "equal": true
+        },
+        {
+          "name": "kernel_outputs_echo",
+          "expected": "aad733d4981955c76bf5a464d197cb5780372df46bb72f2c3259a844d7845793",
+          "actual": "aad733d4981955c76bf5a464d197cb5780372df46bb72f2c3259a844d7845793",
+          "equal": true
+        },
+        {
+          "name": "task_outputs_echo",
+          "expected": "f695047423d5a3b758272b7fd8d1880bc1c6fb0f026ce367f9f9d471dbaa3c77",
+          "actual": "f695047423d5a3b758272b7fd8d1880bc1c6fb0f026ce367f9f9d471dbaa3c77",
+          "equal": true
+        },
+        {
+          "name": "catalog_full_relation",
+          "expected": "e22eb5ea043a55316837f55b4fccfd13a71b4981fb7e04bfabf54ebbfbe74c98",
+          "actual": "e22eb5ea043a55316837f55b4fccfd13a71b4981fb7e04bfabf54ebbfbe74c98",
+          "equal": true
+        },
+        {
+          "name": "catalog_escape_pairs",
+          "expected_count": 92,
+          "actual_count": 92,
+          "expected_sha256": "8178c6cb4b71d01aa1ba948c570356e9a8da6e8934cfc365659f3aca4769da3b",
+          "actual_sha256": "8178c6cb4b71d01aa1ba948c570356e9a8da6e8934cfc365659f3aca4769da3b",
+          "missing": [],
+          "extra": [],
+          "equal": true
+        },
+        {
+          "name": "catalog_escape_rate",
+          "expected": {
+            "numerator": 92,
+            "denominator": 1260
+          },
+          "actual": {
+            "denominator": 1260,
+            "numerator": 92
+          },
+          "equal": true
+        },
+        {
+          "name": "final_unresolved_count",
+          "expected": 102,
+          "actual": 102,
+          "equal": true
+        },
+        {
+          "name": "final_unresolved_pairs",
+          "expected_count": 102,
+          "actual_count": 102,
+          "expected_sha256": "a83c09373e70da4268fe92da4f430189a79cde61aa2616d6dbbead96c321c157",
+          "actual_sha256": "a83c09373e70da4268fe92da4f430189a79cde61aa2616d6dbbead96c321c157",
+          "missing": [],
+          "extra": [],
+          "equal": true
+        },
+        {
+          "name": "final_unresolved_rate",
+          "expected": {
+            "numerator": 102,
+            "denominator": 1260
+          },
+          "actual": {
+            "denominator": 1260,
+            "numerator": 102
+          },
+          "equal": true
+        },
+        {
+          "name": "unique_capture_role_count",
+          "expected": 7,
+          "actual": 7,
+          "equal": true
+        },
+        {
+          "name": "unique.shape.identity",
+          "expected": 0,
+          "actual": 0,
+          "equal": true
+        },
+        {
+          "name": "unique.shape.count",
+          "expected": 14,
+          "actual": 14,
+          "equal": true
+        },
+        {
+          "name": "unique.shape.pairs",
+          "expected_count": 14,
+          "actual_count": 14,
+          "expected_sha256": "bb4666463164f232baa41433b4da092df7e6c7f77a42edad0f06b65d15c4bac3",
+          "actual_sha256": "bb4666463164f232baa41433b4da092df7e6c7f77a42edad0f06b65d15c4bac3",
+          "missing": [],
+          "extra": [],
+          "equal": true
+        },
+        {
+          "name": "unique.shape.rate",
+          "expected": {
+            "numerator": 14,
+            "denominator": 1260
+          },
+          "actual": {
+            "denominator": 1260,
+            "numerator": 14
+          },
+          "equal": true
+        },
+        {
+          "name": "leave_one_out.shape.count",
+          "expected": 106,
+          "actual": 106,
+          "equal": true
+        },
+        {
+          "name": "leave_one_out.shape.pairs",
+          "expected_count": 106,
+          "actual_count": 106,
+          "expected_sha256": "c71cac5ad9e942713152976f3ce2170f2f18cda67f3922a35d0813cfe4d3ee2d",
+          "actual_sha256": "c71cac5ad9e942713152976f3ce2170f2f18cda67f3922a35d0813cfe4d3ee2d",
+          "missing": [],
+          "extra": [],
+          "equal": true
+        },
+        {
+          "name": "unique.admission.identity",
+          "expected": 1,
+          "actual": 1,
+          "equal": true
+        },
+        {
+          "name": "unique.admission.count",
+          "expected": 6,
+          "actual": 6,
+          "equal": true
+        },
+        {
+          "name": "unique.admission.pairs",
+          "expected_count": 6,
+          "actual_count": 6,
+          "expected_sha256": "e51411f8e842367c88fd9612c0441fe534df6d45ea75e19cf35faa16f95c5e3f",
+          "actual_sha256": "e51411f8e842367c88fd9612c0441fe534df6d45ea75e19cf35faa16f95c5e3f",
+          "missing": [],
+          "extra": [],
+          "equal": true
+        },
+        {
+          "name": "unique.admission.rate",
+          "expected": {
+            "numerator": 6,
+            "denominator": 1260
+          },
+          "actual": {
+            "denominator": 1260,
+            "numerator": 6
+          },
+          "equal": true
+        },
+        {
+          "name": "leave_one_out.admission.count",
+          "expected": 98,
+          "actual": 98,
+          "equal": true
+        },
+        {
+          "name": "leave_one_out.admission.pairs",
+          "expected_count": 98,
+          "actual_count": 98,
+          "expected_sha256": "905f2abec2e55b0e23990e2d6e2492e8403688506ddfdf5d56b97a89d2276567",
+          "actual_sha256": "905f2abec2e55b0e23990e2d6e2492e8403688506ddfdf5d56b97a89d2276567",
+          "missing": [],
+          "extra": [],
+          "equal": true
+        },
+        {
+          "name": "unique.resolution.identity",
+          "expected": 2,
+          "actual": 2,
+          "equal": true
+        },
+        {
+          "name": "unique.resolution.count",
+          "expected": 0,
+          "actual": 0,
+          "equal": true
+        },
+        {
+          "name": "unique.resolution.pairs",
+          "expected_count": 0,
+          "actual_count": 0,
+          "expected_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "actual_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "missing": [],
+          "extra": [],
+          "equal": true
+        },
+        {
+          "name": "unique.resolution.rate",
+          "expected": {
+            "numerator": 0,
+            "denominator": 1260
+          },
+          "actual": {
+            "denominator": 1260,
+            "numerator": 0
+          },
+          "equal": true
+        },
+        {
+          "name": "leave_one_out.resolution.count",
+          "expected": 92,
+          "actual": 92,
+          "equal": true
+        },
+        {
+          "name": "leave_one_out.resolution.pairs",
+          "expected_count": 92,
+          "actual_count": 92,
+          "expected_sha256": "8178c6cb4b71d01aa1ba948c570356e9a8da6e8934cfc365659f3aca4769da3b",
+          "actual_sha256": "8178c6cb4b71d01aa1ba948c570356e9a8da6e8934cfc365659f3aca4769da3b",
+          "missing": [],
+          "extra": [],
+          "equal": true
+        },
+        {
+          "name": "unique.utility.identity",
+          "expected": 3,
+          "actual": 3,
+          "equal": true
+        },
+        {
+          "name": "unique.utility.count",
+          "expected": 0,
+          "actual": 0,
+          "equal": true
+        },
+        {
+          "name": "unique.utility.pairs",
+          "expected_count": 0,
+          "actual_count": 0,
+          "expected_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "actual_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "missing": [],
+          "extra": [],
+          "equal": true
+        },
+        {
+          "name": "unique.utility.rate",
+          "expected": {
+            "numerator": 0,
+            "denominator": 1260
+          },
+          "actual": {
+            "denominator": 1260,
+            "numerator": 0
+          },
+          "equal": true
+        },
+        {
+          "name": "leave_one_out.utility.count",
+          "expected": 92,
+          "actual": 92,
+          "equal": true
+        },
+        {
+          "name": "leave_one_out.utility.pairs",
+          "expected_count": 92,
+          "actual_count": 92,
+          "expected_sha256": "8178c6cb4b71d01aa1ba948c570356e9a8da6e8934cfc365659f3aca4769da3b",
+          "actual_sha256": "8178c6cb4b71d01aa1ba948c570356e9a8da6e8934cfc365659f3aca4769da3b",
+          "missing": [],
+          "extra": [],
+          "equal": true
+        },
+        {
+          "name": "unique.track.identity",
+          "expected": 4,
+          "actual": 4,
+          "equal": true
+        },
+        {
+          "name": "unique.track.count",
+          "expected": 44,
+          "actual": 44,
+          "equal": true
+        },
+        {
+          "name": "unique.track.pairs",
+          "expected_count": 44,
+          "actual_count": 44,
+          "expected_sha256": "b528d5952f2c07614c1ad96db3177828a4c812cab65a0cd2db369732519067af",
+          "actual_sha256": "b528d5952f2c07614c1ad96db3177828a4c812cab65a0cd2db369732519067af",
+          "missing": [],
+          "extra": [],
+          "equal": true
+        },
+        {
+          "name": "unique.track.rate",
+          "expected": {
+            "numerator": 44,
+            "denominator": 1260
+          },
+          "actual": {
+            "denominator": 1260,
+            "numerator": 44
+          },
+          "equal": true
+        },
+        {
+          "name": "leave_one_out.track.count",
+          "expected": 136,
+          "actual": 136,
+          "equal": true
+        },
+        {
+          "name": "leave_one_out.track.pairs",
+          "expected_count": 136,
+          "actual_count": 136,
+          "expected_sha256": "461cca4ad56ba96524f1c00d8e773e2d6b8a4661e514b9235eaf50ec6086f888",
+          "actual_sha256": "461cca4ad56ba96524f1c00d8e773e2d6b8a4661e514b9235eaf50ec6086f888",
+          "missing": [],
+          "extra": [],
+          "equal": true
+        },
+        {
+          "name": "unique.period.identity",
+          "expected": 5,
+          "actual": 5,
+          "equal": true
+        },
+        {
+          "name": "unique.period.count",
+          "expected": 6,
+          "actual": 6,
+          "equal": true
+        },
+        {
+          "name": "unique.period.pairs",
+          "expected_count": 6,
+          "actual_count": 6,
+          "expected_sha256": "64b76a2789d06d272298f4d937f97bfaec9cc76e19f1424739d9fe9ac6ba7cfd",
+          "actual_sha256": "64b76a2789d06d272298f4d937f97bfaec9cc76e19f1424739d9fe9ac6ba7cfd",
+          "missing": [],
+          "extra": [],
+          "equal": true
+        },
+        {
+          "name": "unique.period.rate",
+          "expected": {
+            "numerator": 6,
+            "denominator": 1260
+          },
+          "actual": {
+            "denominator": 1260,
+            "numerator": 6
+          },
+          "equal": true
+        },
+        {
+          "name": "leave_one_out.period.count",
+          "expected": 98,
+          "actual": 98,
+          "equal": true
+        },
+        {
+          "name": "leave_one_out.period.pairs",
+          "expected_count": 98,
+          "actual_count": 98,
+          "expected_sha256": "02386e15d2c252fe21e5f96b3270aa49c84e3a96a8b6e0e166e9dc3d2221efb6",
+          "actual_sha256": "02386e15d2c252fe21e5f96b3270aa49c84e3a96a8b6e0e166e9dc3d2221efb6",
+          "missing": [],
+          "extra": [],
+          "equal": true
+        },
+        {
+          "name": "unique.downstream.identity",
+          "expected": 6,
+          "actual": 6,
+          "equal": true
+        },
+        {
+          "name": "unique.downstream.count",
+          "expected": 10,
+          "actual": 10,
+          "equal": true
+        },
+        {
+          "name": "unique.downstream.pairs",
+          "expected_count": 10,
+          "actual_count": 10,
+          "expected_sha256": "98540cc23ecdff077fcc743f4b0f9f959b6a528997368c89a2ebede8f83494a7",
+          "actual_sha256": "98540cc23ecdff077fcc743f4b0f9f959b6a528997368c89a2ebede8f83494a7",
+          "missing": [],
+          "extra": [],
+          "equal": true
+        },
+        {
+          "name": "unique.downstream.rate",
+          "expected": {
+            "numerator": 10,
+            "denominator": 1260
+          },
+          "actual": {
+            "denominator": 1260,
+            "numerator": 10
+          },
+          "equal": true
+        },
+        {
+          "name": "leave_one_out.downstream.count",
+          "expected": 102,
+          "actual": 102,
+          "equal": true
+        },
+        {
+          "name": "leave_one_out.downstream.pairs",
+          "expected_count": 102,
+          "actual_count": 102,
+          "expected_sha256": "a83c09373e70da4268fe92da4f430189a79cde61aa2616d6dbbead96c321c157",
+          "actual_sha256": "a83c09373e70da4268fe92da4f430189a79cde61aa2616d6dbbead96c321c157",
+          "missing": [],
+          "extra": [],
+          "equal": true
+        },
+        {
+          "name": "layer_count",
+          "expected": 7,
+          "actual": 7,
+          "equal": true
+        },
+        {
+          "name": "layer.0.position",
+          "expected": 0,
+          "actual": 0,
+          "equal": true
+        },
+        {
+          "name": "layer.0.readouts",
+          "expected": [],
+          "actual": [],
+          "equal": true
+        },
+        {
+          "name": "layer.0.count",
+          "expected": 0,
+          "actual": 0,
+          "equal": true
+        },
+        {
+          "name": "layer.0.pairs",
+          "expected_count": 0,
+          "actual_count": 0,
+          "expected_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "actual_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "missing": [],
+          "extra": [],
+          "equal": true
+        },
+        {
+          "name": "layer.0.rate",
+          "expected": {
+            "numerator": 0,
+            "denominator": 1260
+          },
+          "actual": {
+            "denominator": 1260,
+            "numerator": 0
+          },
+          "equal": true
+        },
+        {
+          "name": "layer.0.collapsed",
+          "expected": false,
+          "actual": false,
+          "equal": true
+        },
+        {
+          "name": "layer.1.position",
+          "expected": 1,
+          "actual": 1,
+          "equal": true
+        },
+        {
+          "name": "layer.1.readouts",
+          "expected": [
+            5
+          ],
+          "actual": [
+            5
+          ],
+          "equal": true
+        },
+        {
+          "name": "layer.1.count",
+          "expected": 520,
+          "actual": 520,
+          "equal": true
+        },
+        {
+          "name": "layer.1.pairs",
+          "expected_count": 520,
+          "actual_count": 520,
+          "expected_sha256": "aaadf8c3a1bd386b2891ea027eb05b93ff534d5cefccc364ab816512b6adc288",
+          "actual_sha256": "aaadf8c3a1bd386b2891ea027eb05b93ff534d5cefccc364ab816512b6adc288",
+          "missing": [],
+          "extra": [],
+          "equal": true
+        },
+        {
+          "name": "layer.1.rate",
+          "expected": {
+            "numerator": 520,
+            "denominator": 1260
+          },
+          "actual": {
+            "denominator": 1260,
+            "numerator": 520
+          },
+          "equal": true
+        },
+        {
+          "name": "layer.1.collapsed",
+          "expected": false,
+          "actual": false,
+          "equal": true
+        },
+        {
+          "name": "layer.2.position",
+          "expected": 2,
+          "actual": 2,
+          "equal": true
+        },
+        {
+          "name": "layer.2.readouts",
+          "expected": [
+            5,
+            0
+          ],
+          "actual": [
+            5,
+            0
+          ],
+          "equal": true
+        },
+        {
+          "name": "layer.2.count",
+          "expected": 336,
+          "actual": 336,
+          "equal": true
+        },
+        {
+          "name": "layer.2.pairs",
+          "expected_count": 336,
+          "actual_count": 336,
+          "expected_sha256": "f26070e447cc4eec35fad60c9ff75714efabe047ceb7a450452979298a18b5a2",
+          "actual_sha256": "f26070e447cc4eec35fad60c9ff75714efabe047ceb7a450452979298a18b5a2",
+          "missing": [],
+          "extra": [],
+          "equal": true
+        },
+        {
+          "name": "layer.2.rate",
+          "expected": {
+            "numerator": 336,
+            "denominator": 1260
+          },
+          "actual": {
+            "denominator": 1260,
+            "numerator": 336
+          },
+          "equal": true
+        },
+        {
+          "name": "layer.2.collapsed",
+          "expected": false,
+          "actual": false,
+          "equal": true
+        },
+        {
+          "name": "layer.3.position",
+          "expected": 3,
+          "actual": 3,
+          "equal": true
+        },
+        {
+          "name": "layer.3.readouts",
+          "expected": [
+            5,
+            0,
+            1
+          ],
+          "actual": [
+            5,
+            0,
+            1
+          ],
+          "equal": true
+        },
+        {
+          "name": "layer.3.count",
+          "expected": 62,
+          "actual": 62,
+          "equal": true
+        },
+        {
+          "name": "layer.3.pairs",
+          "expected_count": 62,
+          "actual_count": 62,
+          "expected_sha256": "3c5b032ac175c6e3314b7f2e008e29dd173f0aa083573020192e306b25d3cb67",
+          "actual_sha256": "3c5b032ac175c6e3314b7f2e008e29dd173f0aa083573020192e306b25d3cb67",
+          "missing": [],
+          "extra": [],
+          "equal": true
+        },
+        {
+          "name": "layer.3.rate",
+          "expected": {
+            "numerator": 62,
+            "denominator": 1260
+          },
+          "actual": {
+            "denominator": 1260,
+            "numerator": 62
+          },
+          "equal": true
+        },
+        {
+          "name": "layer.3.collapsed",
+          "expected": false,
+          "actual": false,
+          "equal": true
+        },
+        {
+          "name": "layer.4.position",
+          "expected": 4,
+          "actual": 4,
+          "equal": true
+        },
+        {
+          "name": "layer.4.readouts",
+          "expected": [
+            5,
+            0,
+            1,
+            2
+          ],
+          "actual": [
+            5,
+            0,
+            1,
+            2
+          ],
+          "equal": true
+        },
+        {
+          "name": "layer.4.count",
+          "expected": 174,
+          "actual": 174,
+          "equal": true
+        },
+        {
+          "name": "layer.4.pairs",
+          "expected_count": 174,
+          "actual_count": 174,
+          "expected_sha256": "b30c12111c4ea7f07f56fb956331f1177287a17a7a3038f80c7da5788139b077",
+          "actual_sha256": "b30c12111c4ea7f07f56fb956331f1177287a17a7a3038f80c7da5788139b077",
+          "missing": [],
+          "extra": [],
+          "equal": true
+        },
+        {
+          "name": "layer.4.rate",
+          "expected": {
+            "numerator": 174,
+            "denominator": 1260
+          },
+          "actual": {
+            "denominator": 1260,
+            "numerator": 174
+          },
+          "equal": true
+        },
+        {
+          "name": "layer.4.collapsed",
+          "expected": false,
+          "actual": false,
+          "equal": true
+        },
+        {
+          "name": "layer.5.position",
+          "expected": 5,
+          "actual": 5,
+          "equal": true
+        },
+        {
+          "name": "layer.5.readouts",
+          "expected": [
+            5,
+            0,
+            1,
+            2,
+            3
+          ],
+          "actual": [
+            5,
+            0,
+            1,
+            2,
+            3
+          ],
+          "equal": true
+        },
+        {
+          "name": "layer.5.count",
+          "expected": 0,
+          "actual": 0,
+          "equal": true
+        },
+        {
+          "name": "layer.5.pairs",
+          "expected_count": 0,
+          "actual_count": 0,
+          "expected_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "actual_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "missing": [],
+          "extra": [],
+          "equal": true
+        },
+        {
+          "name": "layer.5.rate",
+          "expected": {
+            "numerator": 0,
+            "denominator": 1260
+          },
+          "actual": {
+            "denominator": 1260,
+            "numerator": 0
+          },
+          "equal": true
+        },
+        {
+          "name": "layer.5.collapsed",
+          "expected": true,
+          "actual": true,
+          "equal": true
+        },
+        {
+          "name": "layer.6.position",
+          "expected": 6,
+          "actual": 6,
+          "equal": true
+        },
+        {
+          "name": "layer.6.readouts",
+          "expected": [
+            5,
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "actual": [
+            5,
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "equal": true
+        },
+        {
+          "name": "layer.6.count",
+          "expected": 66,
+          "actual": 66,
+          "equal": true
+        },
+        {
+          "name": "layer.6.pairs",
+          "expected_count": 66,
+          "actual_count": 66,
+          "expected_sha256": "fbb2e34bee22c82605cda2dce0833d4a5ea4fd7f5128e1175bbbfffb565f177e",
+          "actual_sha256": "fbb2e34bee22c82605cda2dce0833d4a5ea4fd7f5128e1175bbbfffb565f177e",
+          "missing": [],
+          "extra": [],
+          "equal": true
+        },
+        {
+          "name": "layer.6.rate",
+          "expected": {
+            "numerator": 66,
+            "denominator": 1260
+          },
+          "actual": {
+            "denominator": 1260,
+            "numerator": 66
+          },
+          "equal": true
+        },
+        {
+          "name": "layer.6.collapsed",
+          "expected": false,
+          "actual": false,
+          "equal": true
+        },
+        {
+          "name": "first_capture.address_count",
+          "expected": 1260,
+          "actual": 1260,
+          "equal": true
+        },
+        {
+          "name": "first_capture.all_pair_addresses_and_nulls",
+          "expected": true,
+          "actual": true,
+          "equal": true
+        },
+        {
+          "name": "residual.task",
+          "expected": 6,
+          "actual": 6,
+          "equal": true
+        },
+        {
+          "name": "residual.sufficient",
+          "expected": false,
+          "actual": false,
+          "equal": true
+        },
+        {
+          "name": "residual.conflict_count",
+          "expected": 10,
+          "actual": 10,
+          "equal": true
+        },
+        {
+          "name": "residual.conflict_pairs",
+          "expected_count": 10,
+          "actual_count": 10,
+          "expected_sha256": "98540cc23ecdff077fcc743f4b0f9f959b6a528997368c89a2ebede8f83494a7",
+          "actual_sha256": "98540cc23ecdff077fcc743f4b0f9f959b6a528997368c89a2ebede8f83494a7",
+          "missing": [],
+          "extra": [],
+          "equal": true
+        },
+        {
+          "name": "residual.conflict_rate",
+          "expected": {
+            "numerator": 10,
+            "denominator": 1260
+          },
+          "actual": {
+            "denominator": 1260,
+            "numerator": 10
+          },
+          "equal": true
+        },
+        {
+          "name": "residual.determined_at_layer",
+          "expected": null,
+          "actual": null,
+          "equal": true
+        }
+      ]
+    }
+  ],
+  "scope_note": "Top-level escape/unique/leave-one-out use all seven catalog roles, including task; the preview and planned layers use only the six selected observation roles. These are different definitions. Compare each against its own role set; do not substitute 92 for the 102 planned final unresolved pairs.",
+  "stored_preview_exact_match": true,
+  "registration_matches": true,
+  "passed": true
+}
