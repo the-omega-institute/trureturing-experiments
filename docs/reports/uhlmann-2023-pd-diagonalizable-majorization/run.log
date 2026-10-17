@@ -1,0 +1,5 @@
+diag(PDP^-1) = [64/63, 1565/63, 36/35, 36/35, 36/35, 36/35, 36/35] sum 31 | spectrum (1,20,2,2,2,2,2)
+min diag 64/63 > min eigenvalue 1: True | max diag 1565/63 > 20: True
+family diag - c: [r/63 - 2/7, 80*r/63 - 2/7, 39/35 - 2*r/35, 39/35 - 2*r/35, 39/35 - 2*r/35, 39/35 - 2*r/35, 39/35 - 2*r/35]
+control n=4: necessary majorization inequalities hold on 200 random PD examples: True
+RESULT PASS
