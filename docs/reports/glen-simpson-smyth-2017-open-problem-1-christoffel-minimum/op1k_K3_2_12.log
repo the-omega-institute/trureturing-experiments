@@ -1,0 +1,11 @@
+K=3 n=2 lyndon_words=3 min_distinct=3 attained_by=3 min_using_all_3_letters=-1 christoffel_min=3 OK example=ab
+K=3 n=3 lyndon_words=8 min_distinct=4 attained_by=6 min_using_all_3_letters=5 christoffel_min=4 OK example=aab
+K=3 n=4 lyndon_words=18 min_distinct=5 attained_by=6 min_using_all_3_letters=6 christoffel_min=5 OK example=aaab
+K=3 n=5 lyndon_words=48 min_distinct=5 attained_by=6 min_using_all_3_letters=6 christoffel_min=5 OK example=aabab
+K=3 n=6 lyndon_words=116 min_distinct=7 attained_by=18 min_using_all_3_letters=7 christoffel_min=7 OK example=aaaaab
+K=3 n=7 lyndon_words=312 min_distinct=6 attained_by=12 min_using_all_3_letters=7 christoffel_min=6 OK example=aaabaab
+K=3 n=8 lyndon_words=810 min_distinct=6 attained_by=6 min_using_all_3_letters=7 christoffel_min=6 OK example=aabaabab
+K=3 n=9 lyndon_words=2184 min_distinct=7 attained_by=12 min_using_all_3_letters=8 christoffel_min=7 OK example=aaaabaaab
+K=3 n=10 lyndon_words=5880 min_distinct=7 attained_by=6 min_using_all_3_letters=8 christoffel_min=7 OK example=aaabaabaab
+K=3 n=11 lyndon_words=16104 min_distinct=7 attained_by=12 min_using_all_3_letters=8 christoffel_min=7 OK example=aaabaaabaab
+K=3 n=12 lyndon_words=44220 min_distinct=7 attained_by=6 min_using_all_3_letters=8 christoffel_min=7 OK example=aababaababab

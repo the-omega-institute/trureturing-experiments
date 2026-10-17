@@ -1,0 +1,7 @@
+K=3 n=13 lyndon_words=122640 min_distinct=7 attained_by=6 min_using_all_3_letters=8 christoffel_min=7 OK example=aabaababaabab
+K=3 n=14 lyndon_words=341484 min_distinct=8 attained_by=12 min_using_all_3_letters=9 christoffel_min=8 OK example=aaaabaaaabaaab
+K=3 n=15 lyndon_words=956576 min_distinct=8 attained_by=6 min_using_all_3_letters=9 christoffel_min=8 OK example=aaabaaabaaabaab
+K=3 n=16 lyndon_words=2690010 min_distinct=8 attained_by=6 min_using_all_3_letters=9 christoffel_min=8 OK example=aabababaabababab
+K=3 n=17 lyndon_words=7596480 min_distinct=8 attained_by=12 min_using_all_3_letters=9 christoffel_min=8 OK example=aaabaabaaabaabaab
+K=3 n=18 lyndon_words=21522228 min_distinct=8 attained_by=12 min_using_all_3_letters=9 christoffel_min=8 OK example=aaabaaabaabaaabaab
+K3 EXIT=0
