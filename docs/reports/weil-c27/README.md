@@ -5401,3 +5401,79 @@ Reproduction only when explicitly needed, using a fresh output:
 ```sh
 PYTHONDONTWRITEBYTECODE=1 UV_OFFLINE=1 uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/full_gamma_joint_plane_paid_floor.py --out /tmp/c27-joint-plane-reproduction.json.zlib
 ```
+
+
+### A signed source response from saved finite outputs
+
+The archived finite Cauchy block and old approximate jet both contain32768
+entries for the SAME original384-bit row0. The old jet A polynomial has a
+certified nonzero denominator, so algebra recovers its common approximate
+symbol without repeating the source convolution or elementary sine work.
+The new direction's complete112features then give one new finite signed
+functional. Approximate-symbol and physical-operator errors remain distinct
+and are both paid.
+
+Use13 fixed cached Cauchy samples to interpolate
+$U(x)=\sum_nz_n/(1+(n/M)x)$, $M=32768$. For rational nodes
+$x_i=M/(M+1+\lfloor i(M-1)/12\rfloor)$, the exact Cauchy-kernel
+Lagrange remainder supplies the uniform error
+$Z\prod_i x_i/(1+x_i)$ on $[0,1/2]$. The old source-power polynomial
+is not regenerated. Original real Hurwitz kernels and the saved Abel
+phase allowance contract the new coefficients; one cached physical
+left-kernel action supplies the mixed correction. Every source interval,
+weight, prefactor and separate physical/smooth/forward error is retained.
+
+The fixed1024-working/640-export application gives the following
+outward displays; the packet's exact rational bounds and640-bit
+interval endpoints remain authoritative.
+
+| Quantity | Enclosure or directed bound |
+|---|---:|
+| Nonzero old $A_b$ absolute lower |$>1037.446293$|
+| Source absolute-sum upper $Z$ |$<2161.865701$|
+| Uniform interpolation error $E_U$ |$<0.016074441$|
+| Principal-source tail norm error $\delta_v$ |$<0.000017270703$|
+| Functional interpolation/symbol error $R_{\rm fun}$ |$<0.000066044862$|
+| Oscillatory tail allowance $R_{\rm osc}$ |$<0.000584639478$|
+| Physical mixed error allowance |$<4.458569\times10^{-65}$|
+| Smooth remainder allowance |$<5.240841\times10^{-12}$|
+| Proxy forward allowance |$<3.723887\times10^{-67}$|
+| Previous $\zeta$ |contained in$[-8.423006305,0.178343401]$|
+| New $\zeta$ |contained in$[-7.591449537,-7.590148168]$|
+| Previous fixed all-real lower, rounded down |$-0.484608778$|
+| Retained fixed all-real lower, rounded down |$-0.472489776$|
+| Previous energy-endpoint all-real lower, rounded down |$-0.687084970$|
+| Retained energy-endpoint all-real lower, rounded down |$-0.674685242$|
+
+The actual same-source response interval is strictly narrower, and both
+retained paid lower bounds strictly improve. Both exclusion flags remain
+false. All four saved bounding quadratics select the new lower zeta
+endpoint; this constructs no source realizing that endpoint and supplies
+no negative actual paid value. Even after the response is localized to
+this narrow negative interval, these particular paid estimates do not
+establish positivity. Further sharpening of this scalar alone has not
+been shown sufficient.
+
+The application binds16 invoked and66 inherited paths. Stored assembly
+time is<1.118949seconds, excluding serialization. The old producers and
+accepted fixtures are reused without replay.
+
+The packet retains the recovered approximate symbols, interpolation
+coefficients/nodes and physical left-kernel action for later reuse. These
+are enclosures of the original source, not arbitrary realizable interval
+endpoints. The source and packet SHA256 are respectively
+`da93886e4aa00ef58ab4c446486c671996f6f22eaed8d251b7fa8d6d064d94d2` and `2f6fa2f46f91dfa0449d5bec2523cdbd91a0e7587284f8e417ccb5bd2068ee03`.
+
+The one fixed1024/640 application performs one cached-symbol recovery,
+one13-node interpolation, one new finite functional, one cached tail
+application, one physical left-kernel action and two paid-plane uses.
+There is no source/sine/phase/moment/inverse/solve supplier, old producer
+or fixture replay, or source/parameter/precision/cutoff scan.
+A nonpositive paid lower remains inconclusive. A positive lower excludes
+only its specified paid comparison family. Actual smaller-charge center,
+full-border/good-block/cofinal positivity, Robin and RH remain unresolved.
+This applies existing interpolation/algebra/error estimates; it claims no
+new generic theorem, novelty or Lean proof.
+
+[Source](full_gamma_cached_source_response.py) ·
+[Exact packet](full-gamma-cached-source-response.json.zlib)
