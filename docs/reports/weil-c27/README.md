@@ -6391,3 +6391,86 @@ fresh reproduction output does not silently replace that input.
 No reproduction is needed to consume the saved results.
 
 [Unweighted source](full_gamma_unweighted_retained_row.py) · [Complete row packet](full-gamma-unweighted-retained-row.json.zlib) · [Joint-metric source](full_gamma_finite_good_block_metric.py) · [Finite joint metric and inverse actions](full-gamma-finite-good-block-metric.json.zlib)
+
+
+## Far mixed terms on the saved two good-block inverse actions
+
+The complete old18-coordinate far row is already saved. Reuse the
+different1263-by2 actions
+$Y_1=P^{-1}r_g^*$ and $Y_2=P^{-1}b_{J,g}^*$ from the finite joint
+metric, with the SAME positive block $P$ of the rho32-v2 lower target.
+The new observations are $u=f_gY_1$ and $v=f_gY_2$, where
+$f=\kappa u_F^*W_FR_F$ uses the original source and $\kappa=33/32$.
+
+Aggregate the existing1281-by112 far feature map on the two embedded
+retained profiles before any source/physical error estimate. Zeros
+occupy the18remaining coordinates, and direct Euclidean norm caps
+bound the full profiles. The full signed-kernel Gram comparison
+retains the complete original far allowance; the independently
+valid directional jet comparison retains masking, moments, rounding
+and forward allowances. Select the smaller valid norm upper.
+The kernel midpoint is not assumed PSD. Original $W$ is already in
+the physical norm; no extra $\kappa$ is added to it.
+
+Apply the accepted cached finite and analytic-tail functionals once
+per new profile and the saved left-kernel row in one batch.
+All symbol/source/smooth/actual-symbol-forward/raw-mixed and Abel
+errors are paid. Approximate recovered symbols are not the actual
+symbol. The resulting pair contains two functionals of ONE source;
+separate interval endpoints need not be jointly attainable.
+
+| New observation | Outward enclosure |
+|---|---|
+| $u=f_gP^{-1}r_g^*$ | $[20.231424206590496643,\ 20.240043090713776357]$ |
+| $v=f_gP^{-1}b_{J,g}^*$ | $[2.786887993197035236,\ 2.788073520641284838]$ |
+| Complete $G_{2,12}=c+u$ | $[683.456490591670613158,\ 683.465109475822996702]$ |
+| $G_{2,22}-z=d+2v$ | $[97.741734616883793577,\ 97.744105671790482675]$ |
+
+The single1024-working/640-export application takes<4.991544seconds,
+excluding serialization. Its30181-byte packet has SHA256
+`39ddee410fa83bf4d35cb97f33bc9e63568dff8d9404dee331b0b3925336a858`;
+the source has SHA256
+`62c0da60931ae22580a8e1f16b79180ef9f26c40bae4aaf08b047e2006b09d2b`.
+It makes two new feature, norm, finite-functional and cached-tail
+applications, with one two-column raw mixed product. Old source
+recovery, old lift queries, target reconstruction, inverse/solve,
+scientific producer and fixture replays are all0. No scan or retry
+follows.
+
+For these two profiles the directional jet caps are selected; their
+improvement over the full paid Gram caps is below the displayed precision.
+The physical norm-squared uppers are at most241.529430992648325580 and
+4.573192066649095956. The total explicit functional allowances are
+at most0.004309442047589309 and0.000592763720310256, including
+the respective Abel allowances0.004032646541103321 and
+0.000554676109821741. The positive signs do not result from dropping
+these nonzero analytic payments.
+
+With the saved $G_{JJ}=\left(\begin{smallmatrix}a&c\\c&d\end{smallmatrix}\right)$,
+the complete metric is
+
+$$
+G_2=\begin{pmatrix}a&c+u\\c+u&d+2v+z\end{pmatrix},
+\qquad z=f_gP^{-1}f_g^*\ge0.
+$$
+
+No new upper for $z$ is supplied. The matrix with $z$ omitted is not
+asserted PSD and is not the complete metric. The old18-coordinate
+far row remains reusable with its earlier broad error-transport
+limitation; it has not been queried again. These new contractions
+do not by themselves establish a complete joint-border sign or
+cofinal positivity.
+
+All inherited common-form/domain/residual/source/normalization
+and comparison premises remain. Existing functional, Gram and
+error methods are reused; no generic-method novelty, Lean proof,
+actual-center/full-border/cofinal positivity, Robin or RH is claimed.
+
+The existing pinned environment and a fresh output path support
+reproduction; consuming the saved result requires no replay:
+
+```sh
+PYTHONDONTWRITEBYTECODE=1 UV_OFFLINE=1 uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/full_gamma_good_block_far_cross.py --out build/c27-good-block-far-cross-reproduction.json.zlib
+```
+
+[New functional source](full_gamma_good_block_far_cross.py) · [Saved two cross terms and partial complete metric](full-gamma-good-block-far-cross.json.zlib)
