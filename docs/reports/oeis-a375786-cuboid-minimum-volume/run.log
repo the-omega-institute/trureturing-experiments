@@ -1,0 +1,6 @@
+N=1500: conjecture holds for all n <= N: True
+minimum volume matches the first 36 terms: True
+2xyz >= x(S - x^2) on every solution: True
+least edge is 1, or 2 with 1 + 3n^2 prime, n even, y0 = 2: True
+RESULT PASS
+       18.78 real        18.73 user         0.04 sys
