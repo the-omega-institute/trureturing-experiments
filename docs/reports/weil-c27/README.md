@@ -7334,3 +7334,111 @@ quadratic lower bounds or a maximal coefficient. The method stops
 without a formula/source/direction/parameter/precision retry.
 The exact second-row equation and SAME residual response remain joint
 information for a different estimate. RH and Robin remain unresolved.
+
+
+### Compare the same source's negative energy and physical cost jointly
+
+`full_gamma_joint_margin_budget.py` consumes the accepted stationarity
+packet, its pinned inputs and helper identities. It keeps all saved
+norm/error bounds unchanged and compares the SAME source's exact old
+negative energy with its physical cost before taking a uniform bound.
+Schur elimination, energy completion and quadratic norm expansion
+are established methods; this is their source-specific application.
+
+For each exact real source, put
+$\alpha=k_1^2/A$, $h=b-c^2/A>0$,
+$\beta=k_2-ck_1/A$ and $p_2=\beta/h$.
+The inherited energy identity gives
+$\beta^2\le eh$, $e=E_+-\alpha\ge0$.
+The nominal physical norm is
+$n_0+2\beta\gamma/h+\beta^2\rho_H/h^2$
+with $\rho_H\ge0$. Retain the signed cross term and bound only the
+square term by the energy constraint. With the unchanged accepted
+nominal upper $N_0$ and both error norms, set
+$\varepsilon=e_{\rm cond}+e_{\rm inv}$ and
+$K_{\rm err}=2\sqrt{N_0}\varepsilon+\varepsilon^2$.
+The complete stronger endpoint comparison satisfies
+
+$$
+Q_{\rm str}\le-\Omega/h,\qquad
+\Omega=\bigl(d-\alpha-\delta(n_0+K_{\rm err})\bigr)h
+-\beta^2-2\delta\beta\gamma-\delta e\rho_H.
+$$
+
+Use the accepted upper for the TRUE remaining energy $e$ and the
+upper for $\rho_H$; no independent interval corner is declared jointly
+attainable. The rounded640grid lower of $\Omega$ is formed before
+normalization. A positive lower uses $h_+$; otherwise the denominator
+is $h_-$. Strict negativity would exclude only this SAME strengthened
+endpoint LOWER comparison and its inherited dominated parameters.
+The source-dependent witness need not be one common fixed vector.
+The actual retained/cofinal Weil form, Robin and RH are different
+unresolved targets.
+
+One fresh directed application, with Python3.13.12 and
+`python-flint==0.9.0`:
+
+```sh
+env PYTHONDONTWRITEBYTECODE=1 UV_OFFLINE=1 \
+  uv run --no-project --python 3.13.12 --with python-flint==0.9.0 \
+  python docs/reports/weil-c27/full_gamma_joint_margin_budget.py \
+  --out docs/reports/weil-c27/full-gamma-joint-margin-budget.json.zlib
+```
+
+Use a fresh output. The retained scientific application is not a
+routine test fixture. It performs scalar arithmetic only: no new
+geometric contraction, Gram, trace, reference action, inverse, solve,
+source/far query, fixed vector, source/direction/parameter/precision
+scan or accepted producer/fixture replay. The original complete
+allowance, endpoint parameters and all inherited actual/common-source,
+domain, exact-frame, physical/Euclidean PSD, conditional-source,
+two-sided reference, normalization and baseline-order premises remain.
+
+The single directed application gives:
+
+| Computed sufficient quantity | Enclosure |
+|---|---:|
+| Complete squared-error cost upper $K_{\rm err}$ | $[2.0245720,2.0245721]\cdot10^{101}$ |
+| Complete coefficient $d-\alpha-\delta(n_0+K_{\rm err})$ | $[7.1552412,7.1552413]\cdot10^{-32}$ |
+| Signed cross gain $-2\delta\beta\gamma$ | $[3.5658829,4.0047579]\cdot10^{-31}$ |
+| Conditional energy-cost upper $\delta\overline e\,\overline\rho_H$ | $[9.0037697,9.0037698]\cdot10^{-31}$ |
+| Rounded sufficient numerator lower $\underline\Omega$ | $[2.0929367,2.0929368]\cdot10^{-30}$ |
+| Complete uniform quadratic upper | $[-3.6680036,-3.6680035]\cdot10^{-33}$ |
+
+Thus the rounded numerator lower is strictly positive and the
+complete uniform upper is strictly negative. Under ALL inherited
+premises, every admissible SAME source has a source-dependent
+negative vector for this particular strengthened endpoint LOWER
+comparison, throughout its dominated range
+$0<t\le t_+$ and $D\ge K\ge D_{\rm lo}$.
+This excludes that sufficient comparison route. It does not establish
+a common fixed vector, an actual retained/cofinal Weil sign, Robin
+or RH. The original allowance and every saved error payment remain.
+
+The positive sufficient upper from the preceding norm estimate was
+inconclusive. The new result comes from retaining the SAME source's
+negative energy and physical cost in one numerator. It does not
+invalidate the older norm bound or sharpen its components.
+Under the stated premises, this lower-comparison route now stops;
+continued research requires the actual retained form or a different
+comparison with an explicitly justified bridge to it.
+
+The170-line source has SHA256
+`d64767daa7375eb460e44d7051b5c966c1ed38ec85797dbb86191fb753503d03`;
+the7434-byte packet has SHA256
+`cdb77c01221bd7289c5c593c928360471075b4d43850aec7bc75c410d9cf09da`.
+The sole1024-working/640-export scalar application takes
+<0.029441seconds excluding serialization. It performs zero new
+geometric contractions, Grams, traces, reference actions, inverses,
+solves, source/far queries or fixed-vector selections. All accepted
+scientific producers and fixtures are reused without replay; no
+source, direction, parameter, precision or present-formula retry is
+performed.
+
+The [source and directed packet at the immutable experimental commit](https://github.com/the-omega-institute/trureturing-experiments/tree/d21b88f6c9c4db3a7d16b0668680a33a63b4025e/docs/reports/weil-c27)
+retain the single application. This is a numerical certificate for
+the specified conditional comparison, not a Lean proof or a generic
+novelty claim. All inherited actual/common-source, domain,
+exact20frame, physical and Euclidean PSD, conditional-source,
+two-sided reference, complete original512metadata allowance,
+normalization, endpoint-charge and baseline-order premises remain.
