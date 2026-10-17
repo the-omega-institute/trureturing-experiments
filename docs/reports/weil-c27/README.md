@@ -5115,3 +5115,109 @@ Reproduction only when explicitly needed, using a fresh output:
 ```sh
 PYTHONDONTWRITEBYTECODE=1 UV_OFFLINE=1 uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/full_gamma_relaxation_row_witness.py --out /tmp/c27-relaxation-row-reproduction.json.zlib
 ```
+
+### Retain the original source on a zero-first-coordinate direction
+
+The scalar relaxation omits the full source-to-row relation. Reuse
+$P=TRT^*\succeq0$, $Q_R=P-e_0e_0^*/\delta$,
+$y_0=\alpha_0\rho+\beta_J$ and $\lambda=y_0[0]\ne0$, and set
+
+$$
+c=\rho[0]/\lambda,\quad w=\rho-cy_0,\quad w[0]=0.
+$$
+
+Then $Q_Rw^*=Pw^*$ and
+$fQ_R\rho^*=\zeta+c\theta$, with
+$\zeta=fPw^*$ and the SAME actual signed response
+$\theta=fQ_Ry_0^*$. The original full row is
+$f=\kappa u_F^*W_F\mathsf B$, $\mathsf B=R_FV$,
+$\kappa=33/32$. Thus for $b=\mathsf BQ_Ry_0^*$ and
+$d=\mathsf BPw^*$,
+
+$$
+\theta=\kappa\langle u_F,b\rangle_{W_F},\qquad
+\zeta=\kappa\langle u_F,d\rangle_{W_F}.
+$$
+
+Keep the whole actual-$\theta$ interval, the source-energy UPPER
+$E\ge\|u_F\|_{W_F}^2$, the saved sharper $J_b$, and the common
+physical Gram relation. Source energy $E$ differs from the far-row
+positive-energy cap $A$. The existing `projected_energy` bound is
+applied to the SAME $(u_F,d,b)$ with caps $(E,J_d,J_b)$; its output
+is intersected with the old scalar-only bound
+$|\zeta|\le\sqrt{AwPw^*}$. Empty intersections stop.
+
+The [coarse consumer](full_gamma_zero_channel_pairing.py) performs
+one cached reference-vector action, one112-by18 feature action, one
+new feature quadratic and one old/new feature cross. Its uniform
+physical error pays over2984.69 against a quadratic of13.75086838,
+so it supplies neither strict narrowing nor constructed-row exclusion.
+The old direction quadratic and all original source/sine/moment/tail/
+inverse/solve/trace producers are reused without replay.
+
+The [directional consumer](full_gamma_zero_channel_jet_refine.py)
+reuses those saved new features, quadratic and cross with the existing
+`directional_norm` method. In the original sharp forward allowance
+$\epsilon_b^\sharp\ge C_{\rm forw}L_b$, all coefficient factors are
+direction-independent for the SAME physical operator, support2048,
+scale32768, order56, symbol, moment, weight and rounding certificates.
+Since $L_b>0$, outward rounding gives
+
+$$
+\epsilon_d^\sharp=\operatorname{up}
+ (\epsilon_b^\sharp L_d/L_b)\ge C_{\rm forw}L_d.
+$$
+
+This transfers a uniform error coefficient, not an arbitrary actual
+norm cap. The original three retained anchors and existing omitted-jet
+and midpoint payments bound $J_{h_d}$; select the smaller of the coarse
+cap and $\operatorname{up}((\sqrt{J_{h_d}}+\epsilon_d^\sharp)^2)$.
+Apply the SAME common-projection bound with the saved old/new cross,
+then intersect with the coarse interval. No direction, feature,
+quadratic, cross or moment supplier is regenerated.
+
+| Quantity | Outward displayed enclosure or cap |
+|---|---:|
+| Coarse squared-norm upper |<2998.447008|
+| Directional squared-norm upper |<13.750868382|
+| Transferred forward-error upper |<1.416877e-67|
+| Retained scalar-only $\zeta$ interval |contained in[−66.425463,66.425463]|
+| Refined actual $\zeta$ interval |contained in[−9.656778,9.656778]|
+| Constructed row's $f_{\rm rel}Pw^*$ |contained in[−20.900041,−20.900040]|
+| Refined actual $fQ_R\rho^*$ interval |contained in[−33.775533,−14.432247]|
+
+The norm strictly improves and the actual zero-pairing interval
+strictly narrows; it excludes the particular saved constructed row
+under the retained original-source premises. It does not exclude all
+negative rows or supply the sign of $\zeta$. The reference-$\rho$
+pairing is strictly negative in this conditional model, but a far-row
+pairing is neither an exact derivative nor the paid expression.
+Actual-center/full-border signs, good-block payment, retained/cofinal
+positivity, Robin tail and RH remain unresolved.
+
+The [coarse packet](full-gamma-zero-channel-pairing.json.zlib)
+has SHA256 `c4cbbead777f652812c0aa0bd238bf08053daa52be7afbedfa1321da19847a9b`;
+its source SHA256 is `612ba841171f1a040c90f376c85cbc326f3e46c2a9ef94e0257094720c0460bb`.
+The [refinement packet](full-gamma-zero-channel-jet-refine.json.zlib)
+has SHA256 `ee401d13ef503a44089c33e958b8f90dab09aefa843050f09713ee6a33729861`;
+its source SHA256 is `4c07a0a9a55dd9d87c1f1b741960f29c495246a9a868ecd3b2341bf0b11c07d0`.
+Exact rational caps and640-bit endpoints are authoritative; the
+displayed actual-pairing bounds also enclose the exported Arb balls.
+
+Each consumer has one fixed1024-working/640-export application, with
+no parameter/source/precision/cutoff scan or retry. The refinement
+adds one homogeneous-forward, one directional-norm and one projection
+application on saved output, with zero repeated finite actions.
+Coarse entry/prewrite guards bind19 invoked and53 inherited paths;
+refinement guards bind19 invoked and55 inherited paths. Saved assembly
+times are<0.472150seconds and<0.703493seconds respectively; these
+exclude serialization. No generic theorem, novelty or Lean claim is
+made. Original actual-form/domain, source/lift and physical-error
+certificates remain premises.
+
+Reproduction only when explicitly needed, using fresh outputs:
+
+```sh
+PYTHONDONTWRITEBYTECODE=1 UV_OFFLINE=1 uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/full_gamma_zero_channel_pairing.py --out /tmp/c27-zero-channel-reproduction.json.zlib
+PYTHONDONTWRITEBYTECODE=1 UV_OFFLINE=1 uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/full_gamma_zero_channel_jet_refine.py --out /tmp/c27-zero-channel-refinement-reproduction.json.zlib
+```
