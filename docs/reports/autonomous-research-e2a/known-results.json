@@ -1,0 +1,89 @@
+{
+  "baseline": "442e8d0a8855794547208a39a9ae17cd9798e572",
+  "completed_before_freeze": "2026-10-17T07:14:23Z",
+  "eligibility": "Eligible under the bounded statement/metadata screen, with the named missingness. This is not a certified novelty or difficulty judgment and gives no admission exception.",
+  "format": "e2a-known-result-screen-v1",
+  "literature": {
+    "data": "literature-readings.json",
+    "repository_bibliography": "Library/Certificates/fokkinkrust2024splythoff.md",
+    "scope": "Repository-quoted source statements; primary source bibliographic metadata and abstract; bounded index queries. No proof sections, tables or target trials.",
+    "source_arxiv": "1904.08339",
+    "source_doi": "10.1007/s00182-022-00824-1"
+  },
+  "live_work": {
+    "issues": {
+      "hits": [
+        {
+          "number": 15902,
+          "scope": "Already-settled original row/column conjecture; not the frozen event.",
+          "state": "closed",
+          "url": "https://github.com/the-omega-institute/trureturing/issues/15902"
+        }
+      ],
+      "query": "Splythoff"
+    },
+    "open_prs": {
+      "hits": [],
+      "query": "Splythoff"
+    },
+    "scope": "Title searches, limit 100, before freeze; no returned result reached the cap. Body search was not exhaustive."
+  },
+  "no_probe": true,
+  "pinned_mathlib": {
+    "reason": "The pinned read-only checkout has no .lake/packages. No substitute pin, download, build or claim of Mathlib-complete search.",
+    "status": "missing"
+  },
+  "purpose": "Existing statement/metadata duplicate screen only, never proof/refutation search or answer derivation.",
+  "repository": {
+    "conclusion": "The existing named row/column settlement is not the proposed legal-move-target proposition. No explicit positive/negative statement of this precise event or explicitly stronger legality-fiber statement was located in the searched statements. Related results are disclosed without deriving an event answer.",
+    "related_existing_statements": [
+      {
+        "declaration": "grundy_symm",
+        "line": 215,
+        "scope": "Symmetry of Grundy values; no legality-fiber constancy statement.",
+        "source": "D5/S0/Certificates/Games/SplythoffGrundyRows.lean"
+      },
+      {
+        "declaration": "move_value_ne",
+        "line": 237,
+        "scope": "A legal edge has distinct endpoint Grundy values; no legality-fiber constancy statement.",
+        "source": "D5/S0/Certificates/Games/SplythoffGrundyRows.lean"
+      },
+      {
+        "declaration": "row_exists_bound",
+        "line": 507,
+        "scope": "Every row has a bounded occurrence of each value.",
+        "source": "D5/S0/Certificates/Games/SplythoffGrundyRows.lean"
+      },
+      {
+        "declaration": "result",
+        "line": 528,
+        "scope": "Every row and column contains each value exactly once.",
+        "source": "D5/S0/Certificates/Games/SplythoffGrundyRows.lean"
+      }
+    ],
+    "relevant_files": [
+      "D5/S0/Certificates/Games/SplythoffGrundyRows.lean",
+      "Reg/D5/S0/Certificates/Games/SplythoffGrundyRows.lean",
+      "Problems/fokkink-rust-2024-splythoff-grundy-rows.md",
+      "Library/Certificates/fokkinkrust2024splythoff.md"
+    ],
+    "scope": [
+      "D5/ including private declaration statements",
+      "Reg/",
+      "Problems/",
+      "Library/",
+      "docs/develop/theory/"
+    ],
+    "terms": [
+      "Splythoff",
+      "splythoffMove",
+      "grundy",
+      "grundy.*(readout|sufficien|determin|factor)",
+      "(readout|sufficien|determin|factor).*grundy",
+      "fokkinkrust2024splythoff",
+      "1904.08339",
+      "s00182-022-00824-1"
+    ]
+  }
+}

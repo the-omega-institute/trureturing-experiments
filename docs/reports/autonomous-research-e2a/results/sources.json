@@ -1,0 +1,75 @@
+{
+  "format": "e2a-result-sources-v1",
+  "source_precedence": "PROTOCOL.md supplies fixed criteria; frozen frame/event supplies target; complete REST snapshot supplies published evidence. Caller and worker attestations remain attributed, not independent telemetry.",
+  "frozen_input_commit": "b64db4da10a725240f4b93adb8e8df6abd6806b5",
+  "issue_sources": {
+    "local_snapshot": "issue-18101.rest.json",
+    "issue": "https://github.com/the-omega-institute/trureturing/issues/18101",
+    "preregistration_comment": 6231250391,
+    "solver_evidence_comment": 6231287063,
+    "evaluator_comment": 6231318594,
+    "terminal_comment": 6231318725
+  },
+  "role_evidence": {
+    "proposer": {
+      "source": "../decisions.json: no_probe_attestation; PROTOCOL.md: Subsequent prospective execution; caller implementation brief",
+      "scope": "Protocol/frame generation, separate from both predictors, solver and evaluator."
+    },
+    "predictors": [
+      {
+        "flight": "6ad323f77260e33014165325",
+        "carrier": "codex-cli",
+        "model_family": "GPT-6",
+        "model_identity": "unknown",
+        "probability": "1/1000",
+        "prior_disclosure": "repo-prior-exposed",
+        "source": "preregistration comment and predictor returned conclusion"
+      },
+      {
+        "flight": "6ad323f9e2328b2ada517c78",
+        "carrier": "nyxid-oracle",
+        "reported_model": "chatgpt-6-pro / GPT-6 Astra Pro",
+        "model_family": "GPT-6",
+        "probability": "1/50",
+        "prior_disclosure": "external-prior-exposed; account memory/project context unknown or uncontrollable; sterile context unverified",
+        "source": "preregistration comment; caller implementation brief"
+      }
+    ],
+    "solver": {
+      "flight": "6ad324be35d500a2c9d6a7a5",
+      "carrier": "codex-cli",
+      "skills_loaded": [
+        "skills/autonomous-research/SKILL.md",
+        "skills/formal-thinking-and-answer/SKILL.md"
+      ],
+      "saw_predictions": false,
+      "execution_started_at": "2026-10-17T07:33:24Z",
+      "settled_at": "2026-10-17T07:34:55Z",
+      "seconds_to_settlement": 91,
+      "formal_delivery_attempted": false,
+      "source": "solver published evidence comment; returned conclusion skill_route and formal_delivery"
+    },
+    "evaluator": {
+      "flight": "6ad325bc5d51934501461e0e",
+      "carrier": "codex-cli",
+      "independent_from_proposer_predictors_solver": true,
+      "checks_fixed_before_reading_predictions_at": "2026-10-17T07:38:52Z",
+      "completed_at": "2026-10-17T07:39:49Z",
+      "source": "evaluator published comment; returned conclusion timing_check and arithmetic.evidence"
+    },
+    "independence_limit": "Distinct roles and input-hiding are workflow attestations. Shared GPT-6 family does not establish contamination or statistical independence; no sterile-prior claim."
+  },
+  "panel_four": {
+    "observation": "The oracle seat did not reach terminal completion in two attempts and was reassigned to codex in the same GPT-6 family.",
+    "source": "Caller-supplied implementation brief, acceptance item 4(d).",
+    "evidence_kind": "attributed caller observation",
+    "independent_carrier_telemetry_checked": false,
+    "limit": "This reports panel composition/completion only. It is separate from the residual prediction oracle, whose published prediction exists. No cause of noncompletion or effect on quality is inferred; no logs or receipts are retained."
+  },
+  "storage_visibility": {
+    "endpoint": "https://api.github.com/repos/the-omega-institute/trureturing-experiments",
+    "private": false,
+    "source": "Read-only GitHub REST repository metadata; agrees with existing README Storage visibility discrepancy.",
+    "limit": "The designated repository identity and push are explicitly authorized by the caller. Private storage cannot be attested; no visibility setting changed."
+  }
+}

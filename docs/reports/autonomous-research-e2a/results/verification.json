@@ -1,0 +1,37 @@
+{
+  "format": "e2a-result-verification-v1",
+  "as_of": "2026-10-17T07:41:07Z",
+  "l2_blob": "5e4d264cb223a2c8287e5472179fccfaca887c09",
+  "sha256": {
+    "issue-18101.rest.json": "e8d617e95cb7d8326d446bf61a7dfe21d3006cc3955ca51d0afde48824eb4391",
+    "readouts-online.json": "3bf407e42620a0552ea0bc10aa3a27d4385c69765a8a9e31518128088df814e5",
+    "readouts-offline.json": "3bf407e42620a0552ea0bc10aa3a27d4385c69765a8a9e31518128088df814e5"
+  },
+  "offline_replay_exit_code": 0,
+  "online_offline_replay_byte_equal": true,
+  "complete_rest_comment_count": 4,
+  "event_and_prediction_text_unchanged": true,
+  "registered_window_seconds": 3599,
+  "prediction_to_execution_seconds": 36,
+  "execution_to_settlement_seconds": 91,
+  "evaluator_enclosure_seconds": 227,
+  "terminal_before_deadline_seconds": 3109,
+  "evaluator_arithmetic_matches_l2": true,
+  "x_and_mode_unmeasured": true,
+  "distinct_prediction_solver_evaluator_flights": 4,
+  "protected_base": "b64db4da10a725240f4b93adb8e8df6abd6806b5",
+  "protected_diff_exit_code": 0,
+  "protected_paths": [
+    "docs/reports/autonomous-research-e2a/PROTOCOL.md",
+    "docs/reports/autonomous-research-e2a/boundary-frame.json.gz",
+    "docs/reports/autonomous-research-e2a/checks.json",
+    "docs/reports/autonomous-research-e2a/compiled-availability.json",
+    "docs/reports/autonomous-research-e2a/decisions.json",
+    "docs/reports/autonomous-research-e2a/frame.py",
+    "docs/reports/autonomous-research-e2a/known-results.json",
+    "docs/reports/autonomous-research-e2a/literature-readings.json",
+    "docs/reports/autonomous-research-e2a/residual-frame.json.gz"
+  ],
+  "readme_is_append_only": true,
+  "new_event_mathematics_executed": false
+}
