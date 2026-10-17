@@ -1,0 +1,15 @@
+d=1 n=1 N=3: det M = 2 formula = 2 OK
+d=1 n=2 N=5: det M = 96 formula = 96 OK
+d=1 n=3 N=7: det M = 162000 formula = 162000 OK
+d=1 n=4 N=9: det M = 11014635520 formula = 11014635520 OK
+d=2 n=1 N=4: det M = -4 formula = -4 OK
+d=2 n=2 N=9: det M = -65536 formula = -65536 OK
+d=2 n=3 N=16: det M = 11555266180939776 formula = 11555266180939776 OK
+d=2 n=4 N=25: det M = 76649984299905759159274319436029362176 formula = 76649984299905759159274319436029362176 OK
+d=3 n=1 N=5: det M = 8 formula = 8 OK
+d=3 n=2 N=14: det M = 335544320 formula = 335544320 OK
+d=3 n=3 N=30: det M = 16418039942521527304406039292542976 formula = 16418039942521527304406039292542976 OK
+d=4 n=1 N=6: det M = -16 formula = -16 OK
+d=4 n=2 N=20: det M = -13194139533312 formula = -13194139533312 OK
+d=5 n=2 N=27: det M = 4035225266123964416 formula = 4035225266123964416 OK
+RESULT PASS
