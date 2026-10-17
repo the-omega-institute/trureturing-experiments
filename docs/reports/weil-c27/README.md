@@ -6505,11 +6505,13 @@ For the earlier joint border use the SAME complete reduced row
 $\beta=\beta_J+fV$, with the already saved18-coordinate far row. Choose
 only the fixed optimistic comparison
 $t_+=\mathrm{cap}/h_{\mathrm{lo}}$ and the saved refined common charge
-$D=\overline D$. Eligibility of $t_+$ is not asserted. The reference
-inverse of the17-dimensional positive core and its accepted Neumann
+$D=\overline D$. Eligibility of $t_+$ is not asserted. Let $p=(\Sigma_0)_{00}<0$;
+the18-by17 core elimination map $T_\Sigma$ has first row
+$-(\Sigma_0)_{0,1:}/p$ and remaining block $I_{17}$. The reference
+inverse $R$ of the17-dimensional positive core and its accepted Neumann
 constant $\eta<1$ are reused. A single new reference action on
-$\beta T$ supplies its energy and its cross with $\rho T$; the archived
-$\rho T R T^*\rho^*$ is consumed directly. The relative inverse error
+$\beta T_\Sigma$ supplies its energy and its cross with $\rho T_\Sigma$;
+the archived $\rho T_\Sigma R T_\Sigma^*\rho^*$ is consumed directly. The relative inverse error
 is bounded by $\eta/(1-\eta)$ in the reference metric, with its bilinear
 Cauchy allowances retained.
 
@@ -6554,9 +6556,9 @@ them or that the actual source has intrinsic uncertainty of that size.
 The undivided determinant coefficients remain saved. The new projection
 floor does not turn an inconclusive budget into a target sign.
 
-Consequently a source-specific upper for $z$ remains necessary on this
-route, and the current canonical row box also fails to provide a useful
-threshold to compare it against. A useful next input must retain shared
+Consequently the positive floor does not settle the required joint
+inequality $z<z_{\mathrm{crit}}$. The current canonical row box also fails
+to provide a useful threshold for that comparison. A useful next input must retain shared
 source constraints in the core transport or supply a sufficient joint
 comparison directly. Increasing the arithmetic precision of this same
 box does not add those constraints. No source or precision retry follows.
