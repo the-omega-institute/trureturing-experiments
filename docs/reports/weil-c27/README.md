@@ -5221,3 +5221,98 @@ Reproduction only when explicitly needed, using fresh outputs:
 PYTHONDONTWRITEBYTECODE=1 UV_OFFLINE=1 uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/full_gamma_zero_channel_pairing.py --out /tmp/c27-zero-channel-reproduction.json.zlib
 PYTHONDONTWRITEBYTECODE=1 UV_OFFLINE=1 uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/full_gamma_zero_channel_jet_refine.py --out /tmp/c27-zero-channel-refinement-reproduction.json.zlib
 ```
+
+### Signed old/new cross from the saved directional features
+
+The [bilinear consumer](full_gamma_zero_channel_cross_refine.py) uses
+the SAME actual-symbol full jets, saved features and masked cross from
+the preceding two consumers. It supplies a two-sided physical-cross
+payment without repeating any finite direction, feature, quadratic,
+cross or original producer. Approximate-symbol finite proxy samples
+are not substituted for these full jets.
+
+For each omitted antidiagonal $56\le n=k+l\le110$, sum ordered AA,
+AB+BA and BB feature products into $a_n,g_n,b_n$. The two-sided
+omitted payment is bounded upward by
+
+$$
+w_F\alpha_{\rm up}\sum_{n=56}^{110}
+\left(\frac{S^2|a_n|}{2n+1}
++\frac{S|g_n|}{2n+2}+\frac{|b_n|}{2n+3}\right).
+$$
+
+Absolute AA and BB coefficients pay both signs; AB+BA already includes
+both mixed orientations. Feature uncertainty is included before
+taking absolute uppers. The original entrywise moment intervals and
+full-moment trace cap pay the masked midpoint/prefactor error by
+
+$$
+w_F\sqrt{H_bH_d}
+\left[\alpha_{\rm up}e_H+r_\alpha(H_*+e_H)\right].
+$$
+
+The original physical-vector bounds pay a further
+
+$$
+\epsilon_b^\sharp\sqrt{J_{j_d}}
++\epsilon_d^\sharp\sqrt{J_{j_b}}
++\epsilon_b^\sharp\epsilon_d^\sharp.
+$$
+
+Add these payments to the saved masked-cross interval and intersect
+with its accepted physical interval. No masked or rounded matrix is
+assumed PSD. The existing common projection uses the new signed
+cross, the entire actual $\theta/\kappa$ interval and the SAME
+source/physical norm bounds. Retain intersections with both preceding
+pairing intervals; empty intersections stop the application.
+
+| Quantity | Outward enclosure or directed bound |
+|---|---:|
+| Bilinear masking payment |<1.055086e-128|
+| Bilinear moment/prefactor rounding payment |<2.575728e-185|
+| Total additional bilinear cross-error payment |<4.932753e-67|
+| Actual physical old/new cross |contained in[10.6404166919614235901773440,10.6404166919614235901773441]|
+| Actual $\zeta$ |contained in[−8.423007,0.178344]|
+| Actual $fQ_R\rho^*$ |contained in[−32.541761,−23.910682]|
+| New fixed-recipe all-real lower, rounded down |−2.756762331|
+| New energy-endpoint all-real lower, rounded down |−2.959238524|
+| Retained stronger fixed-recipe lower, rounded down |−0.572919446|
+| Retained stronger energy-endpoint lower, rounded down |−0.779703304|
+
+The displayed pairing bounds also enclose the exported Arb balls.
+The final physical-cross interval retains the saved masked-cross width
+of about $5.56\times10^{-27}$; the additional payment is not its final
+width. Physical-cross and source-pairing strict-narrowing flags are
+true. The $\zeta$ interval contains zero. The negative reference-$\rho$
+pairing does not supply a paid-expression sign.
+
+The existing all-real square completion is applied with explicit
+translations $k-k_0,D-D_0$ in the old reference base, curvature and
+slope. It retains the SAME-row old negative-square credit and
+inverse-loss uppers. The fixed current recipe and saved energy-lower-
+endpoint recipe are tested separately. Both new exclusion flags are
+false; their lowers are weaker than the preceding timelike joint
+bounds, which remain the stronger certificates. A nonpositive lower
+constructs no negative row or actual-source upper. A positive endpoint
+lower would exclude only the fixed monotone energy-cap-only pricing
+family, not an actual center with a smaller justified charge.
+
+The [exact packet](full-gamma-zero-channel-cross-refine.json.zlib)
+has SHA256 `5cfba16d5428c1c61618a861a8167ca6828f46142d7bd7993d4d84b20de6e980`;
+source SHA256 is
+`a35c3222a788508622b92adc6525bc73a26cdc2070c26eb5a701a62015e991a5`.
+One fixed1024-working/640-export application performs one bilinear
+payment, one existing common projection and two scalar floor
+applications. There are18 invoked and58 inherited bindings, with zero
+repeated finite actions or original producers and no parameter/source/
+precision/cutoff scan or retry. Saved assembly time is<0.074813seconds,
+excluding serialization. Original actual-form/domain, common-source/
+lift and physical error premises remain. Actual-center/full-border/
+good-block/cofinal positivity, Robin and RH remain unresolved; no
+generic theorem, novelty or Lean proof is claimed.
+
+Reproduction only when explicitly needed, using a fresh output:
+
+```sh
+PYTHONDONTWRITEBYTECODE=1 UV_OFFLINE=1 uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/full_gamma_zero_channel_cross_refine.py --out /tmp/c27-zero-channel-cross-reproduction.json.zlib
+```
