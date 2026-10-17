@@ -1,7 +1,8 @@
 A356360: nested nonzero n<=300: True; closed form + den formula: True; data: True; composite denominators n<=4000: []; conjecture: True
 A370726: nested nonzero n<=300: True; closed form + den formula: True; data: True; composite denominators n<=4000: []; conjecture: True
 A372763: nested nonzero n<=300: True; closed form + den formula: True; data: True; composite denominators n<=4000: []; conjecture: True
+A369797: nested nonzero n<=300: True; closed form + den formula: True; data: True; composite denominators n<=4000: []; conjecture: True
 A362086: nested nonzero n<=300: True; closed form + den formula: True; data: True; composite denominators n<=4000: [(5, 9)]; conjecture: True
 A363482: nested nonzero n<=300: True; closed form + den formula: True; data: True; composite denominators n<=4000: [(6, 49)]; conjecture: True
 RESULT PASS
-        2.36 real         2.33 user         0.02 sys
+        2.86 real         2.82 user         0.02 sys

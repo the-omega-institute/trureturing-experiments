@@ -1,7 +1,7 @@
-# OEIS A356360, A370726, A372763, A362086, A363482: denominators of Bouras' continued fractions
+# OEIS A356360, A369797, A370726, A372763, A362086, A363482: denominators of Bouras' continued fractions
 
-Mohammed Bouras' five sequences are the denominators of K_n(x) = 1/(2 − 3/(3 − 4/(4 − ⋯ (n−1) − n/x))) for n ≥ 3:
-- x = n+1, n+3, n+5 (A356360, A370726, A372763). The conjecture is that the denominators are 1 or primes.
+Mohammed Bouras' six sequences are the denominators of K_n(x) = 1/(2 − 3/(3 − 4/(4 − ⋯ (n−1) − n/x))) for n ≥ 3:
+- x = n+1, n+2, n+3, n+5 (A356360, A369797, A370726, A372763). The conjecture is that the denominators are 1 or primes.
 - x = −3 and −5 (A362086, A363482). The conjecture is the same except for the single value 9, respectively 49.
 
 `check.py` (Python 3 with sympy) does three things:
