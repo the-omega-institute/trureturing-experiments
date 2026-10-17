@@ -7140,3 +7140,65 @@ requires Python3.13.12,python-flint0.9.0 and a fresh output path:
 ```sh
 env PYTHONDONTWRITEBYTECODE=1 UV_OFFLINE=1 uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/full_gamma_stronger_base_witness.py --out build/c27-stronger-base-witness-reproduction.json.zlib
 ```
+
+### Normalize an exact source-dependent negative family
+
+[Saved-data consumer](full_gamma_coherent_family_norm.py) · [Directed family budget](full-gamma-coherent-family-norm.json.zlib)
+
+The accepted negative border budget now supplies a correctly
+normalized exact minimizer family. For each common source realization,
+let $C_0=\operatorname{diag}(G_{JJ},P_+)$ and write the two source rows
+in its signed pivot chart as$[F,k]$. With
+$C=\Lambda^{-1}+FC_0^{-1}F^*$, choose the exact positive part
+$v=-C_0^{-1}F^*C^{-1}k$ and negative coordinate1. Its old quadratic is
+$-d+k^*C^{-1}k$; no nominal vector or numerical solve is selected.
+The restriction's good metric contains exactly$Q_J$, so the accepted
+$z_{\rm crit}-Q_J$ budget identifies this same border.
+
+The determinant identity
+$\det N/\det C=1-k^*C^{-1}k/d$ converts the saved determinant lower
+through a NEW determinant upper into a primal gap lower$\mu$.
+One new joint Euclidean trace of the saved20-profile Gram bounds the
+positive-part norm in its actual energy metric. Triangle then bounds
+the full source-dependent family norm by$N_{\rm fam}$. The stronger
+baseline is tested by$-\mu+\delta N_{\rm fam}$ with the complete
+original$\delta=2\kappa\epsilon$.
+
+Outward enclosures of computed sufficient-certificate values are:
+
+| Quantity | Enclosure |
+|---|---|
+| Euclidean energy trace upper |$[1.0100202,1.0100203]\cdot10^{134}$|
+| Old negative margin lower |$[1.6070745,1.6070746]\cdot10^{-33}$|
+| Family norm squared upper |$[1.1732857,1.1732858]\cdot10^{103}$|
+| Sufficient gain coefficient threshold lower |$[1.3697212,1.3697213]\cdot10^{-136}$|
+| Complete stronger-family quadratic upper |$[4.8662150,4.8662151]\cdot10^{-32}$|
+
+The actual allowance coefficient is contained in
+$[4.2844825,4.2844826]\cdot10^{-135}$; its computed norm payment
+upper exceeds the certified gap. This trace certificate is inconclusive
+for the stronger target. The threshold is sufficient only, not maximal
+or a bound on the actual spectral gap. A smaller independently justified
+coefficient below$1.3697212\cdot10^{-136}$ would be covered; no
+replacement of the original allowance is assumed.
+
+All inherited common-form/source/lift/domain, actual PSD geometry,
+complete source-energy, reference and original allowance premises remain.
+The positive-coordinate trace retains good/core cross terms through the
+PSD inequality, and triangle pays the negative/positive cross terms.
+The full interval-entry box is not asserted PSD. No source, direction,
+parameter, precision or norm-refinement retry follows.
+
+The sole1024-working/640-export application takes<0.043857seconds,
+excluding serialization. There is one new joint Euclidean geometry
+trace, zero fixed-vector selections, reference actions, inverse/solves,
+source/far queries or accepted producer/fixture replays. Existing
+block-minimization, determinant, trace and energy methods are applied;
+no generic novelty, stronger-form sign, actual retained/cofinal sign,
+Robin, RH or Lean-proof claim is made.
+
+Reproduction uses a fresh output and the original pinned environment:
+
+```sh
+env PYTHONDONTWRITEBYTECODE=1 UV_OFFLINE=1 uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/full_gamma_coherent_family_norm.py --out build/c27-coherent-family-norm-reproduction.json.zlib
+```
