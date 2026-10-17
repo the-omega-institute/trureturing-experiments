@@ -178,6 +178,19 @@ No main-repository file, branch, issue or PR was written, and the other
 experiment checkout's working files were not accessed. The artifact delivery is an unmerged
 experiment-repository PR to main.
 
+## Storage visibility discrepancy
+
+The task and preregistered protocol described the named experiment repository
+as private. The live GitHub repository metadata instead returned
+`nameWithOwner = the-omega-institute/trureturing-experiments`,
+`defaultBranchRef.name = main`, and `isPrivate = false` after the branch push.
+Source: the GitHub repository endpoint
+`https://api.github.com/repos/the-omega-institute/trureturing-experiments`.
+The designated repository identity is the one explicitly authorized for commit,
+push and PR; no repository setting or visibility was changed. This delivery
+cannot attest private storage. The factual discrepancy is an unresolved item
+for caller/owner routing; it does not retroactively alter the protocol or event.
+
 ## Acceptance outcome
 
 1. **Met:** separate untouched protocol ancestor commit precedes every frame run;
