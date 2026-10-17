@@ -1,0 +1,12 @@
+Lemma 1: identity ok = True; max ratio sum a a |z-z| / (sum a)^2 = 1.25629 (bound 4/3 = 1.33333; 4/pi = 1.27324)
+Lemma 2: max ||Gamma(P_u - P_v)||_1 / d over 3000 random equal-marginal pairs = 1.12042 (bound 4/3)
+matrix theorem, d=2: max ratio ||Gamma X||_1 / (d ||X||_1) found = 0.500000 (70/99 = 0.707071, 1/sqrt2 = 0.707107)
+matrix theorem, d=3: max ratio ||Gamma X||_1 / (d ||X||_1) found = 0.509750 (70/99 = 0.707071, 1/sqrt2 = 0.707107)
+cyclic control d=2: ratio at max-entangled/random inputs = 0.500000; source cot(pi/2d)/d = 0.500000
+cyclic control d=3: ratio at max-entangled/random inputs = 0.577350; source cot(pi/2d)/d = 0.577350
+cyclic control d=4: ratio at max-entangled/random inputs = 0.603553; source cot(pi/2d)/d = 0.603553
+cyclic control d=6: ratio at max-entangled/random inputs = 0.622008; source cot(pi/2d)/d = 0.622008
+cyclic control d=8: ratio at max-entangled/random inputs = 0.628417; source cot(pi/2d)/d = 0.628417
+exact comparisons: case 4a True, case 4b True, (70/99)^2 < 1/2 True
+source lower bound sup_d cot(pi/2d)/d = 0.636620 (-> 2/pi = 0.636620) < 70/99: True
+RESULT PASS
