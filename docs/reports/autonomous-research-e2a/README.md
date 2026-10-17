@@ -209,3 +209,14 @@ for caller/owner routing; it does not retroactively alter the protocol or event.
    sources are retained. No logs or command transcripts are committed.
 6. **Delivery:** commit and push this branch and open an experiment PR to main;
    never merge. The final result envelope supplies its commit IDs and PR URL.
+
+## Execution result
+
+[RESULTS.md](RESULTS.md) settles the three preregistered claims against the
+subsequent evidence. Full two-slot feasibility is falsified by the boundary
+source's original infeasibility; the residual unit closed prospectively as
+refuted. Retained live L2 output and complete REST data replay byte for byte.
+Answer scoring was observed; x and mode remain unmeasured without a compiled
+live proof path. Selection policy is descriptive and unadjudicated. The result
+also states the evidence limits for model families, panel completion and the
+previously disclosed repository visibility discrepancy.

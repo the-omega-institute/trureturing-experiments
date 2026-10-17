@@ -1,0 +1,64 @@
+{
+  "format": "e2a-result-data-v1",
+  "as_of": "2026-10-17T07:41:07Z",
+  "acquired_between_utc": [
+    "2026-10-17T07:43:08Z",
+    "2026-10-17T07:43:11Z"
+  ],
+  "main_baseline": "442e8d0a8855794547208a39a9ae17cd9798e572",
+  "python": "3.12.13",
+  "online": {
+    "command": [
+      "make",
+      "-s",
+      "-C",
+      "tools",
+      "research-readouts",
+      "ISSUES=18101",
+      "AS_OF=2026-10-17T07:41:07Z"
+    ],
+    "cwd": "/Users/auricstudio/Library/Application Support/heca/worktrees/568cd92c/lively-pebble",
+    "exit_code": 0
+  },
+  "offline": {
+    "command": [
+      "make",
+      "-s",
+      "-C",
+      "tools",
+      "research-readouts",
+      "AS_OF=2026-10-17T07:41:07Z"
+    ],
+    "cwd": "/Users/auricstudio/Library/Application Support/heca/worktrees/568cd92c/lively-pebble",
+    "stdin": "issue-18101.rest.json",
+    "exit_code": 0
+  },
+  "rest": {
+    "issue_endpoint": "https://api.github.com/repos/the-omega-institute/trureturing/issues/18101",
+    "comments_endpoint": "https://api.github.com/repos/the-omega-institute/trureturing/issues/18101/comments",
+    "pagination": "gh api --paginate --slurp; every returned page flattened",
+    "page_sizes": [
+      4
+    ],
+    "reported_comment_count": 4,
+    "retained_comment_count": 4,
+    "comment_ids": [
+      6231250391,
+      6231287063,
+      6231318594,
+      6231318725
+    ],
+    "external_cited_evidence_count": 0
+  },
+  "sha256": {
+    "issue-18101.rest.json": "e8d617e95cb7d8326d446bf61a7dfe21d3006cc3955ca51d0afde48824eb4391",
+    "readouts-online.json": "3bf407e42620a0552ea0bc10aa3a27d4385c69765a8a9e31518128088df814e5",
+    "readouts-offline.json": "3bf407e42620a0552ea0bc10aa3a27d4385c69765a8a9e31518128088df814e5"
+  },
+  "online_offline_byte_equal": true,
+  "command_environment": {
+    "PATH_prefix": "/Users/auricstudio/.local/share/uv/python/cpython-3.12.13-macos-aarch64-none/bin",
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "scope": "subprocess only; no shell or host configuration changed"
+  }
+}
