@@ -7627,3 +7627,120 @@ actual retained/cofinal positivity, Robin or RH conclusion is supplied.
 ```sh
 PYTHONDONTWRITEBYTECODE=1 UV_OFFLINE=1 uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/c27_uniform_joint_contraction.py --out build/c27-uniform-joint-contraction.json
 ```
+
+## Whole-space uniform surplus on the saved nineteen channels
+
+`c27_nineteen_joint_gain.py` applies the existing inverse-order,
+variational-projection and paid Woodbury interfaces to one fixed new
+lower target. It reuses the accepted uniform surplus, original nineteen
+channels, original Young payment, exact saved full direction, positive
+prefix, Schur complement and old lift. It does not replay their producers
+or accepted fixtures. This is an application of existing operator
+identities, without a new general inverse algorithm or RH criterion.
+
+The finite middle set is $J_0=1281..32768$, including selected support
+$E=1281..2048$. The saved $A=U_{J_0}^*W_{J_0}U_{J_0}$ includes $E$;
+$\beta=U_{J_0}^*W_{J_0}R_{J_0}$ can omit it since $R_E=0$.
+The fixed parameters are the accepted
+$g=16641320634704717921/46116860184273879040$, original $\rho=1/32$,
+and original $s=1+33\delta_{\rm ch}$. The charge uses the original
+`interval_ball(...,640).upper()` at1024-bit working precision, with an
+exact-expression check. The middle weights have their own256-bit scale.
+
+Apply the original Young argument to **every** exterior vector, including
+nonzero $E$ components, to get
+
+$$
+\mathcal V=
+[W_{J_0}-W_{J_0}U_{J_0}(A+sI)^{-1}U_{J_0}^*W_{J_0}]
+\oplus(1+\rho)W_{\rm far}\succeq T^{-1}.
+$$
+
+The full-space step is required; an inverse bound compressed to the
+residual range alone cannot be inverted. With
+$H\succeq T+gI\succeq\mathcal V^{-1}+gI$, define
+
+$$
+K_g=\mathcal V-(\mathcal V^{-1}+gI)^{-1}\succ0,\qquad
+C_A=I+A/s,\qquad
+\ell_\Lambda=\max_{n\in J_0}W_n^{-1},
+$$
+
+$$
+D_g=AC_A+(\ell_\Lambda/g)C_AAC_A.
+$$
+
+Square completion with $\Phi=\iota_{J_0}W_{J_0}U_{J_0}$ and
+$U_{J_0}^*U_{J_0}\preceq\ell_\Lambda A$ gives
+
+$$
+S_{\rm actual}\succeq L_*+R^*K_gR
+\succeq\mathcal L_g^{(19)}:=L_*+\beta^*D_g^{-1}\beta
+$$
+
+when $D_g\succ0$. The original signed far core and complete operator
+allowance stay paid in $L_*$. No operator monotonicity is assumed for
+$t^{-1}-(t+g)^{-1}$. Separately projected gains cannot be added without
+their common observation Gram.
+
+The preregistered staged consumer first certifies the19 positive leading
+minors of $D_g$ at fixed1024-bit precision. It then screens the SAME saved
+exact256-bit full1281-coordinate direction via
+$v^*L_*v+(\beta v)^*D_g^{-1}(\beta v)$.
+A negative upper rejects this fixed target before reconstructing $P$;
+a crossing/zero interval stops inconclusive. A positive lower is only a
+necessary pass and triggers the genuinely missing NEW19-RHS query
+$P^{-1}\beta_G^*$. The old18-RHS lift solve is not repeated. The full
+paid small target is
+
+$$
+\Sigma_*+\beta_V^*(D_g+\Omega_\beta)^{-1}\beta_V,
+\quad\beta_V=\beta_{\rm bad}-\beta_GX,
+\quad\Omega_\beta=\beta_GP^{-1}\beta_G^*.
+$$
+
+The saved two-row metric does not supply these nineteen right sides.
+Dropping $\Omega_\beta$ would leave the good-block coupling unpaid.
+All determinant exports use the existing degree-dependent grid
+$640k+64$. No singular truncation, regularization, parameter, precision,
+source, weight, cutoff or direction scan is allowed.
+
+The source and [archived result](nineteen-uniform-joint-gain.json.zlib) are
+fixed at source/data commit `29e7df207a22d193d516c767dd801a59e760d833`.
+
+The one fixed application takes102.73939seconds; its new19-RHS solve takes
+93.58200seconds. The consumer uses1024-bit working precision and a
+640-bit output grid, with the exact original charge and all finite middle
+weights retained.
+
+| Quantity | Rounded value or enclosing interval |
+|---|---:|
+| Accepted $g$ | $0.360851119703494$ |
+| All-middle reciprocal bound $\ell_\Lambda$ | $3.30451557620074$ |
+| Original channel-tail charge $\delta_{\rm ch}$ | $0.000106746688356027$ |
+| Original $s=1+33\delta_{\rm ch}$ | $1.00352264071575$ |
+| Saved $v^*L_*v$ | $[-1.177716570,-1.177716569]\cdot10^{-31}$ |
+| New direction gain $(\beta v)^*D_g^{-1}(\beta v)$ | $[2.250035340,2.250035341]\cdot10^{-31}$ |
+| New sufficient target on that SAME $v$ | $[1.072318771,1.072318772]\cdot10^{-31}$ |
+| First paid-complement leading minor | $[-3.207347831,3.207347831]\cdot10^{-16}$ |
+
+All19 leading minors of $D_g$ are certified positive, and the saved-direction
+screen has a strictly positive lower endpoint. The consumer therefore completes the new1263-by19 inverse
+action,19-by19 $\Omega_\beta$ and19-by18 $\beta_V$, using the saved old
+18-column lift. All19 leading minors of $D_g+\Omega_\beta$ also pass.
+The first leading minor of the resulting18-coordinate complement contains
+zero. The fixed application stops there: neither positivity nor failure
+of this sufficient target is established. The earlier positive scalar is
+only a necessary-direction result.
+
+The new inverse actions and their joint metric are archived for reuse;
+they need not be produced again. No original channel, residual, trial,
+far Gram, positive-prefix, old lift or inertia fixture is replayed.
+Reconstructing the saved positive block supplies input to the new right
+sides, rather than repeating the original target producer. There is no
+parameter, weight, cutoff, source, direction or precision scan. The stopped
+whole-norm contraction and rank-one endpoint families remain stopped.
+Under the inherited actual form/domain, exact-trial, normalization and
+sound-cache premises, the common lower-bound bridge and the displayed
+necessary pass are available. The paid full-target sign, actual retained
+and cofinal Weil positivity, Robin, RH and Lean verification remain open.
