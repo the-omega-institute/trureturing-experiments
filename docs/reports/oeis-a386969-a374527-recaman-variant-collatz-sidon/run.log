@@ -1,0 +1,6 @@
+A386969: data True; McEachen closed forms n<=3000: True; He g.f. (1-x^2)^2 A(x) = numerator, n<=3000: True; set invariant n<=3000: True
+A374527: Sidon for (4^k-1)/3 iff k != 2, k<=60: True; trajectory shape: True; odd terms < 400: [1, 21, 85, 151, 227, 341]
+RESULT PASS
+real 0.25
+user 0.24
+sys 0.00
