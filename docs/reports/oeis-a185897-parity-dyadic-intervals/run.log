@@ -1,0 +1,6 @@
+a(1..20) = [1, 2, 9, 64, 574, 5919, 67205, 820258, 10602848, 143710500, 2028137178, 29649220223, 447247229447, 6940546801219, 110540089124381, 1803424905623166, 30092225956558590, 512900050694933194, 8920102424129086072, 158152113262621615772]
+matches OEIS data (18 terms): True
+integer parity vs classification, n <= 150: mismatches []
+F_2 recursion vs classification, n <= 512: mismatches []
+F_2 identities up to degree 4096: B^2 + B = x + x^3 and (1+x) D = B: True
+RESULT PASS
