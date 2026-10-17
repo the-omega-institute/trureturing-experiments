@@ -5477,3 +5477,68 @@ new generic theorem, novelty or Lean proof.
 
 [Source](full_gamma_cached_source_response.py) ·
 [Exact packet](full-gamma-cached-source-response.json.zlib)
+
+
+### Bound further refinement of the saved response interval
+
+Keep both saved pricing recipes, the finite parameters, theta endpoints
+and directed quadratic coefficients fixed. Allow only a nonempty closed
+response subinterval $J\subseteq I$, including a singleton. The issued
+lower is the minimum of
+$q_{e,J}(z)=A_ez^2+2B_ez+C_e-2R_e\sup_J|z|$ over $z\in J$ and the
+two theta endpoints, with $A_e>0,R_e\ge0$.
+Its use as an actual comparison lower also requires the true response
+$\zeta\in J$. The algebraic algorithm ceiling holds for every such
+subinterval, regardless of whether this extra membership is known.
+
+Dropping the nonnegative debit upper-bounds that LOWER certificate.
+Convexity bounds each optimistic polynomial on $I$ by
+$U_e=\max\{A_ez_-^2+2B_ez_-+C_e,A_ez_+^2+2B_ez_++C_e\}$.
+Therefore every such scalar-only refinement, retaining an old lower
+$L_0$, has issued certificate at most
+$\max\{L_0,\min_eU_e\}$. A negative ceiling excludes positive
+certification only by this unchanged algorithm, even with exact
+response knowledge. It is not an actual-energy upper or negative row.
+
+The exact-rational application gives the following directed displays.
+Lower certificates round down; certificate CEILINGS round up. The
+saved fractions remain authoritative.
+
+| Quantity | Fixed recipe | Energy-endpoint recipe |
+|---|---:|---:|
+| Current retained lower, rounded down |$-0.472489776$|$-0.674685242$|
+| Optimistic ceiling at lower theta endpoint |$<-0.472470198$|$<-0.674665225$|
+| Optimistic ceiling at upper theta endpoint |$<-0.460850945$|$<-0.663035940$|
+| Retained scalar-refinement certificate ceiling |$<-0.472470198$|$<-0.674665225$|
+
+Both recipe flags are true: with the specified coefficients and all
+other inputs fixed, no response-only interval refinement can make
+these lower certificates positive. This includes a hypothetical exact
+response and even waives the nonnegative linear-radius debit. The
+result does not exclude actual paid positivity or yield a negative
+physical source. It gives no restriction on a new bound that changes
+the projection, directed coefficients, prices or joint source
+constraints.
+
+The single exact-rational application stores assembly time<0.041523
+seconds, excluding serialization. Its eight endpoint evaluations and
+two retained caps are new; the original plane and source suppliers
+are not repeated.
+
+The exact-rational consumer makes eight new endpoint evaluations and
+two recipe caps. It calls no previous plane-floor, physical/source
+producer or accepted scientific fixture, and performs no parameter,
+source, precision or cutoff scan/retry. Source SHA256 `bc523a5b5392e37f6cbcbb8da27151a39cd3f2e216633e01bb51ff03cd1e1baf`;
+packet SHA256 `f4e444527b6e471b710734e702d9d31067a73eac59cab985a358900213729f1a`.
+
+Changing joint source constraints, directed coefficients, theta,
+projection or pricing is outside this result. A quantitative positive
+lower for the actual source component orthogonal in the same finite
+form to the retained timelike/positive plane remains a missing supplier;
+no such bound is inferred from a negative certificate ceiling.
+This is a classical convexity application, with no generic theorem,
+novelty or Lean claim. Actual paid/center/full-border/good-block/cofinal
+positivity, Robin and RH remain unresolved.
+
+[Source](full_gamma_response_ceiling.py) ·
+[Exact rational packet](full-gamma-response-ceiling.json)
