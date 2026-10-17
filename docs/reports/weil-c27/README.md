@@ -7104,3 +7104,39 @@ existing directory:
 ```sh
 env PYTHONDONTWRITEBYTECODE=1 python3 docs/reports/weil-c27/full_gamma_admissible_charge.py --out full-gamma-admissible-charge-reproduction.json.zlib
 ```
+
+### One fixed twenty-profile test of the stronger baseline
+
+[Consumer and explicit dyadic vector](full_gamma_stronger_base_witness.py) · [Directed result](full-gamma-stronger-base-witness.json.zlib)
+
+Reuse the saved frame $A=[\iota_gY,V]$, its Euclidean Gram, finite metric,
+source observations and conditional ellipsoid. One nominal Woodbury
+selection produces a fixed exact20-coordinate dyadic vector. Certification
+uses the original enclosing forms and pays the complete true-base gain
+$\delta\|Aw\|^2$; the nominal/reference data only select the vector.
+
+The sole1024-working/640-export application is inconclusive. The old-base
+quadratic is contained in$[4.2597335,4.2597336]\cdot10^{37}$, already
+strictly positive. The Euclidean norm squared is contained in
+$[4.3024170,4.3024171]\cdot10^{171}$; the full stronger-target quadratic
+UPPER is contained in$[6.5391654,6.5391655]\cdot10^{37}$.
+The strict base lower, together with positive updates and the nonnegative
+baseline gain, rules out this fixed vector as a negative witness. It does
+not determine the sign of the form or exclude a different vector.
+
+The result does not distinguish selection mismatch, rounding amplification
+and lost common relations as causes. The earlier negative border budget
+is not the quadratic value of this chosen vector. No stronger-target,
+actual retained/cofinal, Robin, RH or Lean result is claimed.
+There is no direction, parameter or precision retry. The saved vector and
+all failed-budget components remain reusable without rerunning this
+selection or any accepted scientific producer.
+
+One new combined17-reference action and two2x2 selection inverses run;
+there is no new large inverse/solve, source/far query or old fixture replay.
+Assembly takes<0.102317seconds, excluding serialization. Reproduction
+requires Python3.13.12,python-flint0.9.0 and a fresh output path:
+
+```sh
+env PYTHONDONTWRITEBYTECODE=1 UV_OFFLINE=1 uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/full_gamma_stronger_base_witness.py --out build/c27-stronger-base-witness-reproduction.json.zlib
+```
