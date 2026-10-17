@@ -1,0 +1,16 @@
+{
+  "baseline": "442e8d0a8855794547208a39a9ae17cd9798e572",
+  "complete_compiled_d5_value_graph": null,
+  "complete_compiled_d5_value_graph_status": "not-acquired",
+  "directories_present": {
+    ".lake": false,
+    ".lake/build": false,
+    ".lake/packages": false,
+    "Reg/.lake": false,
+    "tools/lean-inspector-interface/.lake": false,
+    "tools/lean-inspector-reg/.lake": false,
+    "tools/lean-inspector/.lake": false
+  },
+  "format": "e2a-compiled-availability-v1",
+  "reason": "No compiled dependency graph is supplied; missing build directories cannot be built in the read-only checkout."
+}

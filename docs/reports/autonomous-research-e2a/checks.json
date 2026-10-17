@@ -1,0 +1,37 @@
+{
+  "checked_at": "2026-10-17T07:18:58Z",
+  "format": "e2a-local-checks-v1",
+  "independent_evaluator": "not-run-caller-owned-later-stage",
+  "l2_answer_scoring": "not-run-no-preregistration-or-execution-yet",
+  "replays": [
+    {
+      "artifact": "boundary-frame.json.gz",
+      "canonical_json_sha256": "9ee3b0727143bff50dd6f163f0c72c5d6f501e0fe1af17936a07f134e294bb48",
+      "compressed_bytes": 1393249,
+      "compressed_sha256": "a994168d6cb43c7ab2277b046fd20035c1d8095ef8c9b5a2c55fb1815d86bf02",
+      "rerun_byte_identical": true
+    },
+    {
+      "artifact": "residual-frame.json.gz",
+      "canonical_json_sha256": "7e58dd3f1fad6469a5865c374e84da5171668ffda8ef46ec5cc3c4a35e91c5ba",
+      "compressed_bytes": 239219,
+      "compressed_sha256": "926034448544c43d8e6fa50153b7b3c3cf959e8e82a94edbe3186d8192396125",
+      "rerun_byte_identical": true
+    }
+  ],
+  "runtime": {
+    "python": "3.9.6",
+    "zlib": "1.2.12"
+  },
+  "scope": "Inventory/parser, input identity, serialization and event-text consistency only. No Lean target, mathematical definition, proof, counterexample or trial was executed.",
+  "source_assertions": {
+    "all_canonical_name_keys_decoded": true,
+    "boundary_no_event_no_substitution": true,
+    "boundary_unmeasured_users_preserved": true,
+    "no_clock_fields_in_canonical_frames": true,
+    "residual_all_explicit_owners_parsed_without_collision": true,
+    "residual_exact_event_identity": true,
+    "residual_order_and_first_eligible_prefix": true,
+    "residual_unknown_fields_biject_to_inventory_rows": true
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "assessments": [
+    {
+      "known_result_sources": [
+        {
+          "declaration": "identity_readout_is_complete_on_every_model",
+          "line": 213,
+          "source": "D5/S3/ConceptDynamics/Faithfulness/ModelRelativeCompletenessDifferenceCriterion.lean"
+        },
+        {
+          "declaration": "left_invertible_recovers_all_targets",
+          "line": 59,
+          "source": "D5/S3/ConceptDynamics/Reversibility/LeftInvertibleRecoversAllTargets.lean"
+        }
+      ],
+      "rank": 1,
+      "readout_source_line": 37,
+      "reason": "The original Unit-parameter, natural-state arena uses the identity readout. Existing universally quantified identity-completeness and left-invertible-all-targets statements cover sufficiency for every target on that original state. No proof or counterexample was sought or computed.",
+      "registration": "Reg.D5.S0.Automata.BoundedStateSampleCompactness.registration_1",
+      "source": "Reg/D5/S0/Automata/BoundedStateSampleCompactness.lean",
+      "source_blob": "6ecd66361dbb8a4d4b1ddb10b6f737c5d642f14b",
+      "status": "skipped-known-result"
+    },
+    {
+      "known_result_sources": [
+        {
+          "declaration": "identity_readout_is_complete_on_every_model",
+          "line": 213,
+          "source": "D5/S3/ConceptDynamics/Faithfulness/ModelRelativeCompletenessDifferenceCriterion.lean"
+        },
+        {
+          "declaration": "left_invertible_recovers_all_targets",
+          "line": 59,
+          "source": "D5/S3/ConceptDynamics/Reversibility/LeftInvertibleRecoversAllTargets.lean"
+        }
+      ],
+      "rank": 2,
+      "readout_source_line": 35,
+      "reason": "The original Unit-parameter, natural-state arena uses the identity readout. Existing universally quantified identity-completeness and left-invertible-all-targets statements cover sufficiency for every target on that original state. No proof or counterexample was sought or computed.",
+      "registration": "Reg.D5.S0.Automata.PromiseColoringTotalization.registration_1",
+      "source": "Reg/D5/S0/Automata/PromiseColoringTotalization.lean",
+      "source_blob": "4c2f851576c885a6fd4cf3bff66b93f82f00ddcc",
+      "status": "skipped-known-result"
+    },
+    {
+      "known_results_ref": "known-results.json",
+      "rank": 3,
+      "reason": "Closed binary sufficiency event on the original natural-pair state and actual Grundy readout. The target is the source-defined legal-move relation with a shared target position, not the already-proved row-existence claim. Scoped statement/metadata checks found no explicit statement of this event or its negation; no answer or originality is claimed.",
+      "registration": "Reg.D5.S0.Certificates.Games.SplythoffGrundyRows.bound_registration",
+      "source": "Reg/D5/S0/Certificates/Games/SplythoffGrundyRows.lean",
+      "source_blob": "bc5ac9e073b5950f0d9ebc2aefa815194e1555a2",
+      "status": "eligible-frozen"
+    }
+  ],
+  "baseline": "442e8d0a8855794547208a39a9ae17cd9798e572",
+  "format": "e2a-frame-decisions-v1",
+  "frozen_at": "2026-10-17T07:14:23Z",
+  "no_probe_attestation": {
+    "activity": "Only immutable source/statement/definition inventory, dependency capability inspection, bibliographic metadata and duplicate screening. No probabilities or mathematical truth values were produced.",
+    "counterexample_search": false,
+    "existing_theorem_proofs_used_to_answer_event": false,
+    "numeric_or_symbolic_trials": false,
+    "proof_search_for_candidate_answers": false,
+    "tactic_or_lean_target_execution": false
+  },
+  "protocol_commit": "193add30a05ec4eb23ed67cb7c00f122d1a16dd0",
+  "slots": {
+    "boundary": {
+      "event": null,
+      "reason": "Complete compiled D5 proof-value dependencies unavailable; original slot consumed without replacement.",
+      "source": "boundary-frame.json",
+      "status": "infeasible"
+    },
+    "residual": {
+      "eligibility_limit": "Bibliographic/statement screening only, with named missingness. This internal target has no open-problem-resolution admission basis. Neither proof shape nor truth, difficulty, novelty priority or policy effectiveness has been measured. Caller must preserve this text if publishing the original slot.",
+      "event": {
+        "quantifiers": "p, q and z range independently over all ordered pairs of natural numbers, including zero, with no upper bound, order restriction or positivity assumption. grundy and splythoffMove are exactly their fixed definitions at main commit 442e8d0a8855794547208a39a9ae17cd9798e572. The same original Splythoff implementation, move rules and Grundy function apply to both p and q; for each comparison the target index z is identical. No state, carrier, readout, intervention law or typeclass is changed. This is semantic determination of the named legal-move target family p ↦ splythoffMove p z, using equality of the one registered actual readout p ↦ grundy p.1 p.2. Allowed operations are evaluation of these fixed mathematical definitions, equality and first-order logical quantification; no decoder cost, extra observation, finite cutoff or physical claim is implicit.",
+        "statement": "For all p q z : ℕ × ℕ, D5.S0.Certificates.Games.SplythoffGrundyRows.grundy p.1 p.2 = D5.S0.Certificates.Games.SplythoffGrundyRows.grundy q.1 q.2 → (D5.S0.Certificates.Games.SplythoffGrundyRows.splythoffMove p z ↔ D5.S0.Certificates.Games.SplythoffGrundyRows.splythoffMove q z)."
+      },
+      "rank": 3,
+      "source_correspondence": {
+        "actual_readout": "fun _ _ p => grundy p.1 p.2",
+        "anchor": "Empty",
+        "arena": "Reg.D5.S0.Certificates.Games.SplythoffGrundyRows.pairArena boundLaw",
+        "arena_lines": [
+          11,
+          22,
+          25,
+          66,
+          86
+        ],
+        "arena_source": "Reg/D5/S0/Certificates/Games/SplythoffGrundyRows.lean",
+        "output": "ℕ",
+        "params": "Unit",
+        "readout_definition_line": 164,
+        "role": "Unit",
+        "state": "ℕ × ℕ",
+        "target_definition_line": 136,
+        "target_source": "D5/S0/Certificates/Games/SplythoffGrundyRows.lean"
+      },
+      "source_registration": "Reg.D5.S0.Certificates.Games.SplythoffGrundyRows.bound_registration",
+      "status": "proposer-frozen-awaiting-caller-publication"
+    }
+  }
+}

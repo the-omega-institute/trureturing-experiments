@@ -1,0 +1,138 @@
+{
+  "prior_queries": [
+    {
+      "provider": "Crossref query.title; rows=5",
+      "query": "Splythoff Nim",
+      "returned_dois": [
+        "10.31826/9781463211011-013",
+        "10.2307/3615520",
+        "10.1176/ajp.137.8.997",
+        "10.1142/9789812813374_0002",
+        "10.1007/978-3-322-98597-2_10"
+      ],
+      "status": "ok-no-relevant-title-in-first-five",
+      "url": "https://api.crossref.org/works?query.title=Splythoff%20Nim&rows=5&select=DOI,title,author,URL,published"
+    },
+    {
+      "provider": "OpenAlex search; per-page=5",
+      "query": "Splythoff Nim Grundy moves",
+      "reason": "HTTP 429 Too Many Requests",
+      "status": "missing",
+      "url": "https://api.openalex.org/works?search=Splythoff%20Nim%20Grundy%20moves&per-page=5"
+    },
+    {
+      "provider": "OpenAlex search; per-page=5",
+      "query": "Sprague Grundy move relation reconstruction",
+      "reason": "HTTP 429 Too Many Requests",
+      "status": "missing",
+      "url": "https://api.openalex.org/works?search=Sprague%20Grundy%20move%20relation%20reconstruction&per-page=5"
+    }
+  ],
+  "readings": [
+    {
+      "acquired_at": "2026-10-17T07:13:18Z",
+      "items": [
+        {
+          "DOI": "10.1007/s00182-022-00824-1",
+          "URL": "https://doi.org/10.1007/s00182-022-00824-1",
+          "abstract": "<jats:title>Abstract</jats:title>\n          <jats:p>Wythoff Nim is a classical combinatorial game of queen moves on a chessboard. There are many ways to describe its <jats:italic>P</jats:italic>-positions (safe positions to move to). One way is to code them by the Fibonacci word 010010100100101..., which is the unique fixed point of the substitution of 0 by 01, and of 1 by 0. The coordinates of the <jats:italic>n</jats:italic>-th <jats:italic>P</jats:italic>-position are encoded by the location of the <jats:italic>n</jats:italic>-th zero and the <jats:italic>n</jats:italic>-th one in the Fibonacci word. We show that a minor modification of the rules of Wythoff Nim leads to a game with <jats:italic>P</jats:italic>-positions that are coded by 010010010010100100... This word can be derived by deleting all 2’s from the Tribonacci word, which is the unique fixed point of the substitution of 0 by 01, of 1 by 02, and of 2 by 0.</jats:p>",
+          "title": [
+            "Queen reflections: a modification of Wythoff Nim"
+          ]
+        }
+      ],
+      "query_kind": "source-doi",
+      "status": "ok",
+      "url": "https://api.crossref.org/works/10.1007/s00182-022-00824-1"
+    },
+    {
+      "acquired_at": "2026-10-17T07:13:20Z",
+      "items": [
+        {
+          "DOI": "10.4324/9781003375722-10",
+          "URL": "https://doi.org/10.4324/9781003375722-10",
+          "title": [
+            "On the Move at Long Last"
+          ]
+        },
+        {
+          "DOI": "10.31338/uw.9788323567288.pp.131-144",
+          "URL": "https://doi.org/10.31338/uw.9788323567288.pp.131-144",
+          "title": [
+            "“Move, move, everything moves”: The Representations of the Body–Machine Relation in the Literature of Factory Reform"
+          ]
+        },
+        {
+          "DOI": "10.1186/s12913-025-12531-0",
+          "URL": "https://doi.org/10.1186/s12913-025-12531-0",
+          "title": [
+            "African nurses on the move: decisions, destinations and recruitment practices - a scoping review"
+          ]
+        },
+        {
+          "DOI": "10.2458/azu_acku_pamphlet_hv640_4_a28_p67_1997",
+          "URL": "https://doi.org/10.2458/azu_acku_pamphlet_hv640_4_a28_p67_1997",
+          "title": [
+            "A population on the move : a study of the socio-economic manifestation of internal displacement in relation to Kabul, Afghanistan."
+          ]
+        },
+        {
+          "DOI": "10.1002/clc.4960161303",
+          "URL": "https://doi.org/10.1002/clc.4960161303",
+          "title": [
+            "Oxidized LDL and atherogenesis: Relation to risk factors for coronary heart disease"
+          ]
+        },
+        {
+          "DOI": "10.1055/s-2007-1002769",
+          "URL": "https://doi.org/10.1055/s-2007-1002769",
+          "title": [
+            "Hypertriglyceridemia: Causes and Relation to Coronary Heart Disease"
+          ]
+        },
+        {
+          "DOI": "10.1215/9781478059769-002",
+          "URL": "https://doi.org/10.1215/9781478059769-002",
+          "title": [
+            "Wey Dey Move"
+          ]
+        },
+        {
+          "DOI": "10.29007/gwn6",
+          "URL": "https://doi.org/10.29007/gwn6",
+          "title": [
+            "Move it or lose it: Exploring the relation of defensive disruptiveness and team success"
+          ]
+        },
+        {
+          "DOI": "10.2307/jj.12446699.4",
+          "URL": "https://doi.org/10.2307/jj.12446699.4",
+          "title": [
+            "“Wey Dey Move”"
+          ]
+        },
+        {
+          "DOI": "10.1007/978-3-642-83665-7_4",
+          "URL": "https://doi.org/10.1007/978-3-642-83665-7_4",
+          "title": [
+            "Familial Combined Hyperlipidemia Workshop"
+          ]
+        }
+      ],
+      "query_kind": "target-metadata",
+      "status": "ok",
+      "url": "https://api.crossref.org/works?query=Splythoff%20Grundy%20move%20relation&rows=10&select=DOI,title,URL"
+    },
+    {
+      "abstract": "Abstract:We modify Wythoff&#39;s game by allowing an additional move, which we call a &#34;split&#34;, and show how the $P$-positions are coded by the Tribonacci word. We analyze the table of letter positions of arbitrary $k$-bonacci words and find a $\\mathrm{mex}$-rule that generates the Quadribonacci table.",
+      "acquired_at": "2026-10-17T07:13:21Z",
+      "query_kind": "source-abstract",
+      "scope": "HTML title and abstract only; no full text, PDF, proof or numerical table",
+      "status": "ok",
+      "title": "[1904.08339] A modification of Wythoff&#39;s Nim",
+      "url": "https://arxiv.org/abs/1904.08339"
+    }
+  ],
+  "scope": "bibliographic metadata and source abstract only",
+  "screen_conclusion": "No explicit statement of the frozen legal-move-target event or its negation found in the inspected title/abstract/quoted-statement scope. General Crossref search was low relevance, and OpenAlex unavailable. No exhaustive novelty, original priority or previously-open-problem claim."
+}
