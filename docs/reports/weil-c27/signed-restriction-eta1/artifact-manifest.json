@@ -1,0 +1,122 @@
+{
+  "schema": "C27_COMPLETE_RESTRICTED_INERTIA_ARTIFACTS_V1",
+  "repository": "the-omega-institute/trureturing-experiments",
+  "destination": "docs/reports/weil-c27/signed-restriction-eta1",
+  "original_reduced_inertia": [
+    56,
+    56,
+    0
+  ],
+  "border_inertia": [
+    56,
+    77,
+    0
+  ],
+  "same_source_restricted_inertia": [
+    1261,
+    0,
+    0
+  ],
+  "conditional_source_and_action_contracts": true,
+  "eta_budget_or_RH_claim": false,
+  "portable_driver_syntax_checked": true,
+  "portable_replay_not_run": true,
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 4489,
+      "sha256": "bf7706d1c3082654652e1a62077f1e5e1b13ec36b703b8dac5a1a432a20f6c01",
+      "git_blob_sha1": "a468d04384618802053a4004ee3970dd5dc97d02"
+    },
+    {
+      "path": "replay.py",
+      "bytes": 4335,
+      "sha256": "a780c7b05fa98d869d2cb1a0172b69b351deba1bc08fdec7ae29691fb37eb2a9",
+      "git_blob_sha1": "ceabf547ca932b3047417b06698161f1ea80c5a5"
+    },
+    {
+      "path": "structure.md",
+      "bytes": 14843,
+      "sha256": "dfe11c215cc3594650860dd2df0204276c35349a1e642cee29b774141da444b5",
+      "git_blob_sha1": "bfe2851279b57cf98441c0ee44cc7c3ad8a7b5ac"
+    },
+    {
+      "path": "r2380/diagonal_bound_query.py",
+      "bytes": 38090,
+      "sha256": "b278f8a358845ca436166b5595f8043173c7e09678d805d9d2c7e54d9d83d1c7",
+      "git_blob_sha1": "3b3104fea1f3ca06d9132389bbbbfa619ad4c47a"
+    },
+    {
+      "path": "r2429/signed_interval_replay.py",
+      "bytes": 13120,
+      "sha256": "8cdfce25b0342e0b0f5b208f186aef1633e69209383a178e42311b76c689256e",
+      "git_blob_sha1": "9089bc2d9b465d516a312def0e2eedbe7dddc376"
+    },
+    {
+      "path": "r2462/signed_interval_contractions.py",
+      "bytes": 17440,
+      "sha256": "2f54ee32dcbcbc934f31c8b9f10772322589ae79c8164071f432bd0321785b37",
+      "git_blob_sha1": "044e0fbe7197ecfb60f1549a6e60df89e2c03f08"
+    },
+    {
+      "path": "r2490/small_boundary_inertia.py",
+      "bytes": 16903,
+      "sha256": "7f018c43946985a95a15ff5223c49c423ee14a9818c162f9964f693fc72bf7e0",
+      "git_blob_sha1": "b32ec43ba6028ce267c5f921efee0bf0557fe8e7"
+    },
+    {
+      "path": "r2510/fixed_congruence.py",
+      "bytes": 6731,
+      "sha256": "d436cc16ffb63536a04d04ca2e586fdcca8af4b11a93e4f00de91f7c7180e24e",
+      "git_blob_sha1": "449638e87855179daad34097b17df6f5c1441553"
+    },
+    {
+      "path": "signed-eta1-contractions-result-r2473.json",
+      "bytes": 16701843,
+      "sha256": "94f6251fe6d75c0d8729a459a4068f54ce692bdd94e5b86f24b94acd9aaf9ce7",
+      "git_blob_sha1": "3f8686782fd9c6b258bd55a3eaac84b6c82a9541"
+    },
+    {
+      "path": "signed-eta1-border-reduction-result-r2499.json",
+      "bytes": 4091487,
+      "sha256": "b46df8ada7963dc098e1cf92809c3081ed31017b261f3b189009f156fc6ee4e4",
+      "git_blob_sha1": "e16ea73cc4ccefa120c25f54b167a837f89aeffa"
+    },
+    {
+      "path": "actual-fixed-dyadic-basis.json",
+      "bytes": 7781272,
+      "sha256": "b7389ca37f0e1f34d29a7a8eb7c0dad21523f0317e6f705431fcae07c62012ed",
+      "git_blob_sha1": "d9f387a90a9923ffb33430002515bcadeb17971f"
+    },
+    {
+      "path": "signed-eta1-preconditioned112-result-r2512.json",
+      "bytes": 703100,
+      "sha256": "53c79a0f9a355b1126482f5e02ba009df8d1515dc6e62556fcbdcf00de942412",
+      "git_blob_sha1": "5e7706684218b6499838f81a40c51313e9c50d82"
+    },
+    {
+      "path": "root-acceptance.json",
+      "bytes": 2353,
+      "sha256": "c9b4c3f55e8f90a890d00fa6496d3f92199f745c78183c354355a41d5e8dcc75",
+      "git_blob_sha1": "058802d6dab587874f18f6edce191c7c2324a91c"
+    },
+    {
+      "path": "independent-review.md",
+      "bytes": 6666,
+      "sha256": "992844e3c2d1744d221c099b8254ddb3de1cf998255b74e8f41265d3678b9b3b",
+      "git_blob_sha1": "bca9bb633c597a6e66a88bc36cf43aafb4e1d2b6"
+    },
+    {
+      "path": "synthetic-result.json",
+      "bytes": 2367,
+      "sha256": "3dcaa76d06114d8d104ff9c0b54b7e80f51f11b174b4001303b8bca187ff1bea",
+      "git_blob_sha1": "d4dd3ed5c4cef71f382869c947c169e5f0020eb6"
+    },
+    {
+      "path": "execution-runner-r2512.py",
+      "bytes": 6074,
+      "sha256": "eee6741b7dc32ef57d49577c090cbba90b0c684260a9e78a520f84cf0538c158",
+      "git_blob_sha1": "6a420a54207501cbbce6a5e21a6a640dc45bd248"
+    }
+  ]
+}
