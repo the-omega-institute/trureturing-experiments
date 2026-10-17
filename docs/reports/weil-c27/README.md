@@ -7081,3 +7081,26 @@ Reproduction requires a fresh output path:
 ```sh
 env PYTHONDONTWRITEBYTECODE=1 UV_OFFLINE=1 uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/full_gamma_conditioned_norm_budget.py --out build/c27-conditioned-norm-budget-reproduction.json.zlib
 ```
+
+### Extend the old-base exclusion to every valid common charge
+
+[Exact-rational consumer](full_gamma_admissible_charge.py) · [All-valid-charge budget](full-gamma-admissible-charge.json.zlib)
+
+The accepted actual common-charge floor is169.193163899615576.
+Reducing the fixed fee to that floor costs at most14.607513220067395;
+the saved complete upper remains below−15.895593038365393.
+At the optimistic endpoint its determinant lower exceeds626827.787500448.
+Under the inherited premises and the existing inertia/Loewner interface,
+this excludes the SAME old-base lower target for every0<t<=t_plus and
+every actual-valid D>=K. It does not exclude a stronger baseline, a
+larger shift or another source, and gives no actual Weil negativity,
+retained/cofinal positivity, Robin, RH or Lean-proof result.
+
+Only rational scalar arithmetic is new; no accepted producer or fixture,
+source/far query, matrix/vector contraction, inverse or solve is repeated.
+Python3.10+ suffices; reproduction requires a fresh output path in an
+existing directory:
+
+```sh
+env PYTHONDONTWRITEBYTECODE=1 python3 docs/reports/weil-c27/full_gamma_admissible_charge.py --out full-gamma-admissible-charge-reproduction.json.zlib
+```
