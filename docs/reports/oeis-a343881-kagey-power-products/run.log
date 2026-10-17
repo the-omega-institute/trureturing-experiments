@@ -1,0 +1,7 @@
+table rows n = 2..11, k = 1..10 reproduced: True
+T(p, 12) for primes p < 48: [(2, 27), (3, 18), (5, 54), (7, 144), (11, 144), (13, 144), (17, 144), (19, 144), (23, 144), (29, 144), (31, 144), (37, 144), (41, 144), (43, 144), (47, 144)]; A064549(12) = 72
+n <= 60 for which m = 72 works at k = 12: []
+T(p, k) = k^(1+1/g(k)) for 2 <= k <= 100, primes [31, 37, 41, 43]: True []
+k <= 100 where k^(1+1/g) != A064549(k) (unequal exponents): [12, 18, 20, 24, 28, 40, 44, 45, 48, 50, 52, 54] ... (27)
+RESULT PASS
+/opt/homebrew/bin/python3.13 -I check.py 100 43  248.63s user 0.63s system 99% cpu 4:11.35 total
