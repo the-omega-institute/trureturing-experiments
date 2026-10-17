@@ -6437,9 +6437,9 @@ recovery, old lift queries, target reconstruction, inverse/solve,
 scientific producer and fixture replays are all0. No scan or retry
 follows.
 
-For these two profiles the full paid Gram caps, rather than the
-alternative directional jet caps, are selected: the physical
-norm-squared uppers are at most241.529430992648325580 and
+For these two profiles the directional jet caps are selected; their
+improvement over the full paid Gram caps is below the displayed precision.
+The physical norm-squared uppers are at most241.529430992648325580 and
 4.573192066649095956. The total explicit functional allowances are
 at most0.004309442047589309 and0.000592763720310256, including
 the respective Abel allowances0.004032646541103321 and
