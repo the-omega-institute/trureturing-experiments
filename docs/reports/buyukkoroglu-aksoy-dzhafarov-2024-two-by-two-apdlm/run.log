@@ -1,0 +1,6 @@
+/private/tmp/op-lit/bad/exp/check.py:37: UserWarning: Solution may be inaccurate. Try another solver, adjusting the solver settings, or solve with verbose=True for more information.
+  prob.solve(solver='CLARABEL')
+random robustly stable segments: 300/300 admit a verified APDLM (smallest verified margin 1.73e-03)
+near-boundary segments (min det <= 0.05): 60/60 admit a verified APDLM
+control (both endpoints Hurwitz, segment not robustly stable): 40/40 infeasible (expected all)
+RESULT PASS
