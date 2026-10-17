@@ -1,0 +1,6 @@
+A341239: data True; 1 < value < 3 for n<=20000: True; value = f + c: True
+A341249: data True; value in (1,4) for n<=20000: True; value = 2f + c: True; n < 40 with value >= 2: [2, 4, 7, 9, 11, 12, 14, 16]; value at n = 2: 3.65685424949238
+RESULT PASS
+real 0.47
+user 0.46
+sys 0.01
