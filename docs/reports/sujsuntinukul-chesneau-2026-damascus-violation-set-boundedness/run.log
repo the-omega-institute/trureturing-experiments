@@ -1,0 +1,16 @@
+M_n for n = 1..8: 0.207107, 0.333333, 0.420319, 0.484664, 0.534555, 0.574570, 0.607498, 0.635145
+Lemma 5 exact identities: True
+classification (n = 1..10, U unbounded, B bounded):
+m= 1: BBBBBBBBBB
+m= 2: BBBBBBBBBB
+m= 3: BBBBBBBBBB
+m= 4: BBBBUUUUUU
+m= 5: BUUUUUUUUU
+m= 6: BUUUUUUUUU
+m= 7: UUUUUUUUUU
+m= 8: UUUUUUUUUU
+m= 9: UUUUUUUUUU
+m=10: UUUUUUUUUU
+unbounded regimes (m <= 10, n <= 10): rational families give S > 0 at t = 10^3, 10^6: True
+bounded regimes: largest violating coordinate / B over samples = 5.535e-03 (must be <= 1)
+RESULT PASS
