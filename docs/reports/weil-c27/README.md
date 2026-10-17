@@ -5668,8 +5668,7 @@ this new column. The mixed term is one new112-component dot product
 of the stored left-kernel row with $h_0$, multiplied once by $\kappa$.
 No kernel positivity is assumed.
 
-Write $N_{
-m pr}$ for the saved principal-source norm cap, $\Delta$ for the
+Write $N_{\mathrm{pr}}$ for the saved principal-source norm cap, $\Delta$ for the
 saved source-tail interpolation error, $\epsilon_0$ for the transported
 physical forward error and $\epsilon_{\rm sm}$ for the saved smooth
 source remainder. If $A_{0,k}$ are the new first-column
@@ -5686,12 +5685,12 @@ The actual-symbol jet norm is at most $N_0+\epsilon_0$. Consequently
 the source/symbol allowance is
 
 $$
-\kappa\bigl((N_0+\epsilon_0)\Delta+(N_{\rm pr}+\Delta)\beta_0\bigr).
+\kappa\bigl((N_0+\epsilon_0)\Delta+(N_{\mathrm{pr}}+\Delta)\beta_0\bigr).
 $$
 
 Pay the new analytic-tail Abel allowance and transported two-sided
 physical mixed error separately, together with
-$\kappa\epsilon_{\rm sm}N_0$ and $\kappa N_{\rm pr}\epsilon_0$.
+$\kappa\epsilon_{\rm sm}N_0$ and $\kappa N_{\mathrm{pr}}\epsilon_0$.
 The approximate symbols are not substituted for actual symbols
 without this allowance. The smooth polynomial uses its640-bit export
 grid; the uniform symbol error uses its832-bit analytic grid.
