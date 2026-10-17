@@ -1,0 +1,73 @@
+{
+  "scope": "Conditional paper scalar supplier for original even minimal form; no Lean, RH or cofinal certificate",
+  "input_commit": "e5c5d8bf2b157e5c94af05ba724e18f4131b4c88",
+  "inputs": [
+    "derivative-bandwidth-result.json",
+    "joint-high-floor-result.json",
+    "sharper-exterior-result.json"
+  ],
+  "epsilon": "1/32",
+  "bandwidth_N": 1099511627776,
+  "verified_height": 3000000000000,
+  "source_acquisitions": 0,
+  "old_producer_executions": 0,
+  "parameter_scan": false,
+  "row_comparisons": 128,
+  "checks": {
+    "saved_derivative_caps": true,
+    "sobolev_cap": true,
+    "commutator_cap": true,
+    "whole_projector_error_cap": true,
+    "symbol_increment": true,
+    "complete_partition": true,
+    "new_fixed_row_floor": true,
+    "same_exterior_floor": true,
+    "high_leakage_cap": true,
+    "high_form_gap": true,
+    "ordinate_tail_cap": true,
+    "fixed_separation": true,
+    "shifted_zero_tail_cap": true,
+    "strict_contradiction": true,
+    "improves_owned_gap": true
+  },
+  "minimum_row_margin": {
+    "numerator": "721580297331903231342176262114335387",
+    "denominator": "340282366920938463463374607431768211456"
+  },
+  "sobolev_squared_cap": {
+    "numerator": "18994538514809262243565144181892332165863551",
+    "denominator": "680564733841876926926749214863536422912"
+  },
+  "commutator_cap": {
+    "numerator": "7220500521850705816986447555879605174383317",
+    "denominator": "3323069989462289682259517650700861440"
+  },
+  "whole_projector_error_cap": {
+    "numerator": "628183545401011406077820937361525650171348579",
+    "denominator": "57089907708238395242331438777979805455309864960"
+  },
+  "high_leakage_cap": {
+    "numerator": "109283046988283600586432590916785250613",
+    "denominator": "225975662473920507498088419235475990979684796000705242464256"
+  },
+  "fourth_tail_cap": {
+    "numerator": "1375000000003541666666669",
+    "denominator": "6591796875008789062500000000000000000000000000000000000000"
+  },
+  "shifted_zero_tail_cap": {
+    "numerator": "217703302300208750930166129435906932736",
+    "denominator": "1096733474935369925907864104316098019636662161"
+  },
+  "strict_contradiction_margin": {
+    "numerator": "3288807123671388441717639249719904254540476083",
+    "denominator": "7019094239586367525810330267623027325674637830400"
+  },
+  "required_paper_bridges": [
+    "original same-form and accepted scalar supplier premises",
+    "unwindowed actual minimal-form and paired zero-sum cutoff passage",
+    "owned principal coefficient64 and fixed smoothed-trapezoid bounds",
+    "whole-projector commutator application to the new high restriction",
+    "published Platt-Trudgian inclusive verified head"
+  ],
+  "passed_fixed_supplier": true
+}
