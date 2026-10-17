@@ -1,0 +1,4 @@
+N=2000000: 164 terms of A376114 below N; a(n) = A181795(n)/2 for all of them: True; A181795 terms are even squares: True; criterion c*tau(u^2) | u^2 matches both: True
+A376114 head: [2, 8, 18, 72, 128, 288, 450, 882, 1152, 1250, 1800, 2178]
+RESULT PASS
+        6.58 real         6.56 user         0.01 sys
