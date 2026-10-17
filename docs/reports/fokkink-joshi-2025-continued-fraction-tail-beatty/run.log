@@ -1,0 +1,10 @@
+u=2, v=1: alpha = 2.4142135623731, beta = 0.5; failures for n <= 1300: [1, 6, 35, 204, 1189]; Pell indices [1, 6, 35, 204, 1189]
+   n=1: s_n = 3.1815601610378201011, floor(s_n) = 3, floor(alpha n + beta) = 2, n(s_n - alpha n - beta) = 0.2673465987
+   n=6: s_n = 15.061179716961737515, floor(s_n) = 15, floor(alpha n + beta) = 14, n(s_n - alpha n - beta) = 0.4553900563
+   n=35: s_n = 85.01189545738919619, floor(s_n) = 85, floor(alpha n + beta) = 84, n(s_n - alpha n - beta) = 0.5047271016
+   n=204: s_n = 493.00208328345984256, floor(s_n) = 493, floor(alpha n + beta) = 492, n(s_n - alpha n - beta) = 0.5133781071
+control (Theorem 24) u=1, v=phi-1: failures for n <= 3000: 0
+Triage: Conjecture 20 (v = -1), u=1: failures for n <= 3000: 0 []
+Triage: Conjecture 20 (v = -1), u=2: failures for n <= 3000: 0 []
+Triage: Conjecture 20 (v = -1), u=3: failures for n <= 3000: 0 []
+RESULT PASS
