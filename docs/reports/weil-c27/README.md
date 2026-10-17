@@ -5316,3 +5316,88 @@ Reproduction only when explicitly needed, using a fresh output:
 ```sh
 PYTHONDONTWRITEBYTECODE=1 UV_OFFLINE=1 uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/full_gamma_zero_channel_cross_refine.py --out /tmp/c27-zero-channel-cross-reproduction.json.zlib
 ```
+
+### Both source responses in the paid indefinite plane
+
+The [joint-plane consumer](full_gamma_joint_plane_paid_floor.py) reuses
+the saved finite scalars and both signed responses. The classical
+two-dimensional Schur projection retains a positive square that the
+single-timelike lower discards. No finite or physical supplier is
+repeated, and the original actual-symbol certificates remain premises.
+
+On the SAME real form $Q_\varepsilon=\gamma P-e_0e_0^*/\delta
+\preceq Q_{\rm true}$, use
+
+$$
+b=-y_0Q_\varepsilon y_0^*>0,\quad
+g=\rho Q_\varepsilon y_0^*,\quad h=\rho Q_\varepsilon\rho^*,
+\quad t=wQ_\varepsilon w^*\ge0,
+$$
+
+with $w=\rho-cy_0$, $w[0]=0$, $\omega=c+g/b$ and
+$a=t+b\omega^2=h+g^2/b>0$. The projection lower is
+
+$$
+fQ_\varepsilon f^*\ge-\theta_\varepsilon^2/b
++(\gamma\zeta+\omega\theta_\varepsilon)^2/a.
+$$
+
+Here $\theta_\varepsilon=fQ_\varepsilon y_0^*$ and $\zeta=fPw^*$.
+The original theta interval is enlarged by
+$\varepsilon\sqrt{A r_{0,\rm up}}$ with a SAVED actual $fPf^*$
+UPPER $A$, held fixed for both pricing recipes. Source-energy lower
+endpoints never replace this upper. All common identities come from
+the pinned reference and rows; interval overlap is only an
+inconsistency stop.
+
+After eliminating every real steering coefficient, the comparison
+lower is concave in $\theta_\varepsilon$. Its minimum over that
+interval is at one of its two endpoints. The saved positive rank gap
+$k-g^2/b$ makes the remaining zeta quadratic convex. Outward rational
+coefficient bounds and a linear-radius debit reduce its lower to the
+exact clipped minimum on the entire saved zeta interval. The clipped
+optimizer belongs to a bounding polynomial, not an actual row or
+physically legal steering value. Singular $P$ is allowed; failure to
+certify the positive denominators or curvature supplies no new floor.
+
+| Quantity | Outward enclosure or directed bound |
+|---|---:|
+| Transported theta |contained in[−4.331314,−4.325974]|
+| Saved zeta |contained in[−8.423007,0.178344]|
+| Theta transport error upper |<1.590332e-26|
+| Positive-plane energy |>1629.238166139474|
+| Fixed comparison curvature |>19789.907603158162|
+| Fixed rank gap |>18160.669437018688|
+| Previous fixed all-real lower, rounded down |−0.572919446|
+| New fixed all-real lower, rounded down |−0.484608778|
+| Previous energy-endpoint lower, rounded down |−0.779703304|
+| New energy-endpoint lower, rounded down |−0.687084970|
+
+Both floors strictly improve and both exclusion flags remain false.
+The four endpoint bounding quadratics select the saved lower zeta
+endpoint; this constructs no source realizing that endpoint or a
+negative value. A nonpositive lower is inconclusive. Every stronger
+previous certificate remains retained. A positive endpoint floor
+would exclude only the fixed monotone energy-cap-only pricing family,
+with the same row and form, rather than an actual smaller-fee center.
+
+The [exact packet](full-gamma-joint-plane-paid-floor.json.zlib) has
+SHA256 `3bdf5f3f81daeeda99c5fa71f2a48ee64c84c09da0f20070b45b0ad781aeec22`;
+source SHA256 is
+`fb6ae6eb627079e43628481bae7e2b9485077ab22bac7c85b4bcf12994f1b3b9`.
+One fixed1024-working/640-export application uses two paid recipes,
+two analytic theta endpoints each,12 invoked and66 inherited bindings.
+Saved assembly time is<0.133236seconds, excluding serialization.
+There is no original producer/fixture replay, new finite/physical
+supplier or source/parameter/precision/cutoff scan or retry. This
+applies existing indefinite projection and scalar minimization; it
+claims no generic theorem, novelty or Lean proof. Original common-
+form/domain/source/lift/reference/inverse/weight and actual-symbol
+error premises remain. Actual-center/full-border/good-block/cofinal
+positivity, Robin and RH remain unresolved.
+
+Reproduction only when explicitly needed, using a fresh output:
+
+```sh
+PYTHONDONTWRITEBYTECODE=1 UV_OFFLINE=1 uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/full_gamma_joint_plane_paid_floor.py --out /tmp/c27-joint-plane-reproduction.json.zlib
+```
