@@ -7202,3 +7202,71 @@ Reproduction uses a fresh output and the original pinned environment:
 ```sh
 env PYTHONDONTWRITEBYTECODE=1 UV_OFFLINE=1 uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/full_gamma_coherent_family_norm.py --out build/c27-coherent-family-norm-reproduction.json.zlib
 ```
+
+
+### Coherent family norm through five source responses
+
+`full_gamma_directional_family_norm.py` applies one fixed directional
+norm certificate to the SAME exact source-dependent minimizer. It
+reuses the normalized negative margin, complete original allowance,
+coefficient-energy cap, twenty-profile Gram, conditional regression,
+saved regression reference actions and positive-core Euclidean trace.
+No new nominal vector, source query, inverse or solve is selected.
+
+The exact small coefficients obey
+`p*Lambda^-1*p <= Eplus`, with
+`Lambda=diag(tplus,1/actual_charge_floor)`. A five-response Euclidean
+Gram retains the negative column, the reference r and finite bJ
+responses, and both measured-source regression responses. A two-by-two
+Rayleigh upper and the negative-column ellipse support bound the
+nominal physical norm. One conditional trace pays the SAME residual
+q, including its actual p2 coefficient. Only the inverse-reference
+error uses the inherited full positive trace, multiplied by
+`eta/(1-eta)`. All triangle cross terms are paid before squaring.
+
+The single 1024-working/640-export application is inconclusive. These
+are enclosures of computed certificate values, not actual eigenvalues
+or independently attainable source ranges:
+
+| Quantity | Outward enclosure |
+|---|---|
+| Nominal reference family norm-squared upper | `[8.3700696,8.3700697]e101` |
+| Conditional residual norm upper | `[3.3845050,3.3845051]e50` |
+| Inverse-reference error norm upper | `[1.3616977,1.3616978]e24` |
+| Complete family norm-squared upper | `[1.5708394,1.5708395]e102` |
+| Original gain payment upper | `[6.7302343,6.7302344]e-33` |
+| Complete sufficient quadratic upper | `[5.1231598,5.1231599]e-33` |
+| Sufficient coefficient threshold lower | `[1.0230672,1.0230673]e-135` |
+
+The earlier normalized margin lower is about `1.6070745e-33`; the
+original coefficient remains about `4.2844825e-135`. The new norm
+upper is smaller than the prior trace upper by a factor between 7.46
+and 7.48, but its gain payment still exceeds the certified margin.
+The coefficient threshold is sufficient only, not a maximum tolerance.
+
+The nominal term alone in THIS sufficient estimator gives
+`delta*N0-mu > 1.97e-33`, using containing intervals for these
+computed constants. Consequently improving only the conditional or
+inverse-error term, while keeping this nominal upper fixed, cannot
+make this estimator negative. This is not a lower bound for an actual
+family member. A different sufficient estimate must keep more of the
+joint exact-coefficient/source relation or independently change the
+joint comparison. No present-formula or precision retry follows.
+
+The application takes less than 0.046938 seconds excluding
+serialization. The 263-line source has SHA256
+`961c1ab5dd31d8e351cd824df8d25266c9c530060dd74bec9e6fa5901b3e8aac`.
+The 11399-byte packet `full-gamma-directional-family-norm.json.zlib`
+has SHA256
+`6e12d77e100465978d3a9eb777280de15c1942256cbedf62c337fbe120f1c7d3`.
+There is one new five-response Gram, one conditional Euclidean trace
+and two previously unsaved reference-vector products. The two saved
+regression actions and all earlier accepted producers and fixtures
+are reused without replay.
+
+All inherited actual/common-source, domain, exact-frame, PSD physical
+and Euclidean, conditional source, two-sided positive-reference,
+original complete 512-metadata allowance, endpoint/charge and
+baseline-order premises remain. This applies existing methods and
+makes no generic novelty or Lean-proof claim. The stronger-target
+sign, actual retained/cofinal positivity, Robin and RH remain unresolved.
