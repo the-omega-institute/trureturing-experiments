@@ -6033,7 +6033,7 @@ $$
 C_{R,\rm fixed}&\in
 [1.892324368802542735566375,\ 1.892324368802542735566376],\\
 C_{R,\rm endpoint}&\in
-[1.690128902785682152622540,\ 1.690128902785682152622541].
+[1.690128902785682152622539,\ 1.690128902785682152622541].
 \end{aligned}
 $$
 
@@ -6130,8 +6130,9 @@ $$
 Finite row actions are also anchored at exact midpoint products, with
 all original interval variations retained. The actual $g/b$ remains
 in $d_v$; neither the plane nor its readouts are replaced by midpoint
-values. The only source-dependent quantities reused in this profile
-are the saved accurate $\theta$ and $s$.
+values. The projected cross reuses the saved accurate $\theta$ and $s$;
+the fixed $c$ and finite row actions retain their inherited same-source
+bindings.
 
 For the one new physical quantity $fc$, use linearity to form $Hc$
 from the saved112-by18feature map BEFORE estimating any errors.
