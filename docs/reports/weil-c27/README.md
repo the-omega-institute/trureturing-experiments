@@ -7270,3 +7270,67 @@ original complete 512-metadata allowance, endpoint/charge and
 baseline-order premises remain. This applies existing methods and
 makes no generic novelty or Lean-proof claim. The stronger-target
 sign, actual retained/cofinal positivity, Robin and RH remain unresolved.
+
+
+### Exact first-row stationarity for the coherent family
+
+`full_gamma_stationarity_family_norm.py` consumes the accepted exact
+family, five-response Gram, conditional Euclidean trace, two saved
+regression reference actions, reference energies and full original
+allowance. It retains $Cp=k$ through
+$p_1=k_1/A-(c/A)p_2$ and the signed Schur ratio for $p_2$, then
+intersects the ratio interval with the first-row energy bound.
+
+Two scalar dots pair the fixed first-source row with the saved
+regression reference actions. Three contractions of the saved Gram
+supply a convex quadratic in real $p_2$; the two coefficient-interval
+endpoints give its nominal norm upper. Conditional physical response
+and inverse-reference errors are paid in full before applying the
+original allowance. No matrix inverse, solve, new Gram/trace,
+reference vector action, actual source/far query, fixed vector,
+parameter/precision/direction scan or accepted producer/fixture replay
+is used. These are applications of established Schur, Cauchy and
+quadratic-convexity methods, without a generic novelty claim.
+
+One fresh directed application, with Python3.13.12 and
+`python-flint==0.9.0`:
+
+```sh
+env PYTHONDONTWRITEBYTECODE=1 UV_OFFLINE=1 \
+  uv run --no-project --python 3.13.12 --with python-flint==0.9.0 \
+  python docs/reports/weil-c27/full_gamma_stationarity_family_norm.py \
+  --out docs/reports/weil-c27/full-gamma-stationarity-family-norm.json.zlib
+```
+
+Use a fresh output; the accepted application is retained and is not
+replayed as a routine check. All original common-source, domain,
+exact-frame, physical/Euclidean PSD, conditional source, two-sided
+reference, full512metadata allowance and endpoint/charge premises
+remain. A strictly negative upper would exclude only the SAME stronger endpoint
+comparison; a nonnegative upper is inconclusive. Neither outcome is
+a claim of actual retained/cofinal positivity, Robin, RH or Lean proof.
+
+The retained `full-gamma-stationarity-family-norm.json.zlib` has9170bytes,
+SHA256 `169e858deb9f06ca677098da032849450074f794627eb0174711717abc5ca1b8`.
+The258-line source SHA256 is
+`e16031be55706d509027664c7bb0132a7a862e0fc1b1c31caeaec57dd0f28972`.
+The sole application takes<0.038870seconds excluding serialization.
+
+| Computed bound | Enclosure |
+|---|---:|
+| Nominal norm-squared upper | $[3.0020727,3.0020728]\cdot10^{101}$ |
+| Conditional response norm upper | $[1.6107661,1.6107662]\cdot10^{50}$ |
+| Complete norm-squared upper | $[5.0266447,5.0266448]\cdot10^{101}$ |
+| Original gain payment upper | $[2.1536571,2.1536572]\cdot10^{-33}$ |
+| Complete sufficient quadratic upper | $[5.4658264,5.4658265]\cdot10^{-34}$ |
+| Sufficient coefficient threshold lower | $[3.1971117,3.1971118]\cdot10^{-135}$ |
+
+The verdict is `inconclusive_stationarity_family_norm_budget`.
+The complete norm-squared upper improves the preceding response-ellipse
+bound by a factor in$(3.12,3.13)$, but the payment still exceeds the
+inherited certified margin by a factor in$(1.34,1.35)$.
+These are comparisons of computed sufficient bounds, not actual
+quadratic lower bounds or a maximal coefficient. The method stops
+without a formula/source/direction/parameter/precision retry.
+The exact second-row equation and SAME residual response remain joint
+information for a different estimate. RH and Robin remain unresolved.
