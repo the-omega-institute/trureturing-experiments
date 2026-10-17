@@ -1,0 +1,6 @@
+brute force n<=150: matches data True; matches formulas True
+witness and least admissible u for n<=100000: True
+RESULT PASS
+real 0.56
+user 0.55
+sys 0.00
