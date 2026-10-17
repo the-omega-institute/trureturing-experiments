@@ -1,0 +1,5 @@
+data: True; a(1) = 4, a(2) = 6 (refutation): True; corrected: a(m) = 2 mod 4 iff m = 2k^2, else 0 mod 4, m<=120: True
+RESULT PASS
+real 0.84
+user 0.80
+sys 0.03
