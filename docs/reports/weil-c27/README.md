@@ -7744,3 +7744,82 @@ Under the inherited actual form/domain, exact-trial, normalization and
 sound-cache premises, the common lower-bound bridge and the displayed
 necessary pass are available. The paid full-target sign, actual retained
 and cofinal Weil positivity, Robin, RH and Lean verification remain open.
+
+
+## A coupled-border certificate for the fixed paid target
+
+`c27_coupled_border_determinant.py` consumes the saved paid19-channel
+joint arrays and old18-dimensional core. It uses the existing Schur,
+Haynsworth and one-negative-core determinant interfaces, without a new
+generic theorem or determinant algorithm.
+
+Let $D=D_g+\Omega_\beta\succ0$, $B=\beta_V$ and
+$C=\Sigma_*+B^*D^{-1}B$. The accepted old core has17 positive,
+1 negative and no zero direction. The positive update preserves at least
+17 strictly positive eigenvalues. For the37-dimensional real symmetric
+border
+
+$$
+\mathcal Z=\begin{pmatrix}D&B\\B^*&-\Sigma_*\end{pmatrix},\qquad
+\det\mathcal Z=\det D\,\det C,
+$$
+
+the last identity uses the even lower-block dimension18. Thus a strictly
+positive determinant certifies $C\succ0$; a strictly negative determinant
+gives one negative direction of this fixed lower target. A zero-containing
+or nonfinite enclosure settles neither sign. The updated good block
+remains positive, so this classification transports to the same1281
+lower target. It does not classify the actual Weil form without the
+inherited comparison premises and does not supply cofinal positivity.
+
+The source reads three pinned packets: `nineteen-uniform-joint-gain.json.zlib`,
+`joint-gamma-6765-rho32-v2-schur.json` and
+`joint-gamma-6765-rho32-v2-rank-floor.json`. It reuses the saved19-positive
+certificates for $D_g,D$ and the old18-minor inertia certificate, including
+its original1536-bit computation as inherited evidence. Those certificates
+are read without rerunning their computations. The new determinant itself
+uses the unchanged1024-bit working precision and the existing FLINT
+routine, once. Its export grid is $37\cdot640+64=23744$ bits; an explicit
+20000-digit integer-string limit supports the exact endpoint serialization.
+This export setting does not raise arithmetic precision.
+
+The SAME saved $B$ occupies both off-diagonal blocks. Symmetric input
+entries may be averaged with their transpose enclosures. No endpoint
+matrix is substituted as a Loewner bound. The accepted $D\succ0$ premise
+concerns the actual common matrix, while its serialized box need only
+contain it. Keeping the coupled border before elimination avoids another
+explicit inverse. No $P$, inverse action, $D_g$, joint metric, lifted row,
+Gram, source, trial or far producer is repeated. No balancing, parameter,
+precision, basis, direction, cutoff or weight scan is used.
+
+The [source and exact archived result](https://github.com/the-omega-institute/trureturing-experiments/tree/0f72c75a1653fedddf023a8c9cdb32b7a41459c7/docs/reports/weil-c27)
+are pinned at source/data commit `0f72c75a1653fedddf023a8c9cdb32b7a41459c7`.
+The single application takes0.119342seconds and returns
+`inconclusive-coupled-border-determinant`.
+
+| Quantity | Value or enclosing interval |
+|---|---:|
+| Working precision | 1024bits |
+| Saved matrix-entry grid | 640bits |
+| Coupled-border dimension | 37 |
+| Determinant export grid | 23744bits |
+| New native determinant calls | 1 |
+| Coupled-border determinant | $[-1.391,1.391]\cdot10^{-1859}$ |
+| New solve, inverse, source or Gram calls | 0 |
+| Old determinant or inertia fixture replays | 0 |
+
+The exact dyadic determinant endpoints have opposite signs. The displayed
+rounded enclosure therefore certifies neither positivity nor a negative
+direction of the fixed lower target; it is not an exact-zero certificate.
+Both target-sign flags remain false. The application stops without a new
+minor, determinant, balancing, precision or parameter retry.
+
+This archive supplies the result of the previously missing coupled-border
+application; no accepted19-RHS action or earlier scientific certificate
+needs recomputation. Under the inherited actual form/domain, original
+exact-trial, normalization and sound-cache premises, the earlier common
+lower-bound bridge remains available. The paid fixed-target sign, actual
+retained/cofinal Weil positivity, Robin, RH and Lean verification remain
+open. A bounded certificate for this single trial cannot supply a uniform
+cofinal estimate or the core-density and continuity bridge needed to pass
+to all admissible tests.
