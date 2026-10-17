@@ -6253,3 +6253,56 @@ PYTHONDONTWRITEBYTECODE=1 UV_OFFLINE=1 uv run --no-project --python 3.13.12 --wi
 ```
 
 [Saved-scalar source](full_gamma_residual_envelope.py) · [Saved-scalar packet](full-gamma-residual-envelope.json.zlib) · [Common-trial source](full_gamma_common_trial_residual.py) · [Common-trial packet](full-gamma-common-trial-residual.json.zlib)
+
+
+## Capacity of refining the saved common covector
+
+Keep the saved actual form, exact covector, plane, SAME-$F$ lowers and
+previous retained paid lowers fixed. For the saved cross interval
+$I_c=[\ell_-,\ell_+]$ and dual-norm interval $[d_-,d_+]$ with $d_->0$,
+reuse `full_gamma_response_ceiling.optimistic_ceiling` on $z^2/d_-$.
+It bounds every further one-direction lower
+$\operatorname{dist}(0,J)^2/U$, where $J\subseteq I_c$ is nonempty and
+$U\ge d_-$ is a valid refined dual-norm upper, by
+
+$$
+C_c=\frac{\max\{|\ell_-|,|\ell_+|\}^2}{d_-}.
+$$
+
+The single exact-rational saved-data application gives outward ranges:
+
+| Quantity | Range containing the exact certificate ceiling |
+|---|---|
+| One-direction residual-certificate capacity $C_c$ | $[0.000645676655497943832123311,\ 0.000645676655497943832123312]$ |
+| Fixed retained-certificate ceiling | $[-0.471844098397295426432892720,\ -0.471844098397295426432892719]$ |
+| Energy-endpoint retained-certificate ceiling | $[-0.674039564414156009376728580,\ -0.674039564414156009376728579]$ |
+
+Each retained ceiling is $\max\{L_{\rm old},L_F+C_c\}$.
+Both are negative, excluding positive certification by further
+interval refinement of this one fixed direction with the SAME-$F$
+certificates unchanged. Its maximum capacity is less than0.14%of
+$-L_F$ in either recipe. This does not bound total residual or actual
+paid energy, determine an actual sign, or settle RH/Robin.
+Joint $F$/residual estimates, a genuinely orthogonal remainder lower,
+a different covector or a stronger SAME-$F$ lower remain outside
+this test. Lower bounds on the same residual must not be added.
+
+The source SHA256 is
+`8bcf41f185202bac5eb189720e62e19b437a1c978cd5605e2443e273c2d31d59`;
+the7656-byte packet SHA256 is
+`914ec78b2be3b1ba1ebed01fb0a205802f9258786fbf02318c0fe7ba3cb971f0`.
+Assembly takes<0.009150seconds, excluding serialization. There are
+zero physical source, reference, inverse, solve or tail calls and no
+old scientific producer or fixture replay. This is an application of
+accepted projection and convexity methods, without a generic novelty
+or Lean-proof claim. All inherited same-source and physical-error
+premises remain; actual-center/full-border/cofinal positivity is open.
+
+Reproduction requires only the pinned Python3.13.12standard library
+and a fresh output path:
+
+```sh
+PYTHONDONTWRITEBYTECODE=1 UV_OFFLINE=1 uv run --no-project --python 3.13.12 python docs/reports/weil-c27/full_gamma_fixed_trial_ceiling.py --out build/c27-fixed-trial-ceiling-reproduction.json.zlib
+```
+
+[Saved-trial ceiling source](full_gamma_fixed_trial_ceiling.py) · [Exact packet](full-gamma-fixed-trial-ceiling.json.zlib)
