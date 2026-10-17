@@ -1,0 +1,9 @@
+data: True
+Conjecture 1 failures n<=20000: [] 0
+Conjecture 2 failures among pairs n<m<=20000 with a(n)=a(m)!=1: 109 first: [(35, 61, 97, 1261), (86, 982, 1069, 7483), (88, 284, 373, 2611), (123, 2055, 2179, 15253), (204, 3012, 3217, 41821)]
+prediction n+m+1 = p and gcd = p*gcd((n^2+n+1)/p, m-n): True
+every prime value p<=20000 occurs exactly twice: True
+RESULT PASS
+real 8.73
+user 8.69
+sys 0.03
