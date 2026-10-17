@@ -6306,3 +6306,88 @@ PYTHONDONTWRITEBYTECODE=1 UV_OFFLINE=1 uv run --no-project --python 3.13.12 pyth
 ```
 
 [Saved-trial ceiling source](full_gamma_fixed_trial_ceiling.py) · [Exact packet](full-gamma-fixed-trial-ceiling.json.zlib)
+
+
+## Complete unweighted retained row and finite joint good-block metric
+
+The saved1263-by18 lift action only supplies $P^{-1}C$. A new query
+uses the same1263-positive principal block $P$ of the rho32-v2 lower
+target, its accepted pivot certificate and the original exact384-bit
+row0 source, with no old target supplier or lift-solve replay.
+
+One unweighted residual-generator Cauchy product supplies
+$r_n=\sum_{m=2049}^{32768}w_mR_{mn}$ on all1281 retained coordinates.
+No $W$, $Mw$ or source rescaling enters the coefficients; the accepted
+product applies $\kappa$ once. The original $w$ is finitely supported,
+so $r=w^*R$ is complete for that source. Its restriction to the exact
+old lift overlaps all18 archived check coordinates. Source formulas
+identify the observations; overlap only checks the implementation.
+
+Use this $r$ and the already saved full finite row $b_J$. A single
+new two-right-side solve encloses
+
+$$
+PX_J=\begin{pmatrix}r_g^*&b_{J,g}^*\end{pmatrix},\qquad
+G_{JJ}=\begin{pmatrix}r_g\\b_{J,g}\end{pmatrix}X_J.
+$$
+
+The saved symmetric cross entry is retained for all real joint
+combinations of these same rows. Averaging its two enclosing
+evaluations remains enclosing. The new result is:
+
+| Metric entry | Outward enclosure |
+|---|---|
+| $r_gP^{-1}r_g^*$ | $[4787.103066499741053563,\ 4787.103066499741053564]$ |
+| $r_gP^{-1}b_{J,g}^*$ | $[663.225066385094668430,\ 663.225066385094668431]$ |
+| $b_{J,g}P^{-1}b_{J,g}^*$ | $[92.167958630498818052,\ 92.167958630498818053]$ |
+
+The row packet is144087bytes, SHA256
+`566cb68530f31dd6e26af076055bb368e2b2e82fdcc0857abb7b2b475a036f48`;
+its assembly takes<8.573037seconds. The joint metric packet is303335bytes,
+SHA256
+`9ba53b70a0f1cad25b9e92894eff93f1340dc31d1a9bf945c560b6dc6940d072`.
+It includes all1263-by2 inverse-action intervals. Its preparation and
+target reconstruction take<14.334747seconds, the one two-right-side
+solve takes<118.573775seconds, and total assembly takes<133.114112seconds,
+excluding serialization.
+
+The row source has SHA256
+`b64f97a5ee95ecc624b729fcb6f85bd74a8f477f8aa9ee527bcd524778d78f20`;
+the metric source has SHA256
+`1166528a1418d2aae4d8026a6e5760b4de91b238b55966e138dda53d24437ae9`.
+Both applications use fixed1024-working/640-export-bit arithmetic;
+the Cauchy order is512. There are exactly one new unweighted
+projection, one target reconstruction for this new query and one
+two-right-side inverse-action solve. There is no general inverse,
+old18-right-side solve, source/direction/parameter/precision/cutoff
+scan, old scientific producer or fixture replay.
+
+The complete row is still $b=b_J+b_{\rm far}$. With
+$f_g=b_{{\rm far},g}$, the complete joint metric needs
+$r_gP^{-1}f_g^*$, $b_{J,g}P^{-1}f_g^*$ and
+$f_gP^{-1}f_g^*$, as well as the far row on the reduced core.
+The first two mixed terms can use the newly saved inverse actions;
+neither the last far energy nor the far row is supplied here.
+The complete metric's11entry is already enclosed; the finite12and22
+entries must not be substituted for the complete ones. Their matrix
+correction has no claimed Loewner sign.
+
+These are conditional applications of accepted Cauchy, interval-solve
+and Schur methods. All original common-source, residual-map/domain,
+lift and comparison premises remain. No generic-method novelty, Lean
+proof, actual-center/full-border/cofinal positivity, Robin or RH
+conclusion is claimed.
+
+The existing pinned Python3.13.12/python-flint0.9.0 environment and
+fresh output paths support reproduction:
+
+```sh
+PYTHONDONTWRITEBYTECODE=1 UV_OFFLINE=1 uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/full_gamma_unweighted_retained_row.py --out build/c27-unweighted-retained-row-reproduction.json.zlib
+PYTHONDONTWRITEBYTECODE=1 UV_OFFLINE=1 uv run --no-project --python 3.13.12 --with python-flint==0.9.0 python docs/reports/weil-c27/full_gamma_finite_good_block_metric.py --out build/c27-finite-good-block-metric-reproduction.json.zlib
+```
+
+The metric consumer reads the canonical newly saved row packet; a
+fresh reproduction output does not silently replace that input.
+No reproduction is needed to consume the saved results.
+
+[Unweighted source](full_gamma_unweighted_retained_row.py) · [Complete row packet](full-gamma-unweighted-retained-row.json.zlib) · [Joint-metric source](full_gamma_finite_good_block_metric.py) · [Finite joint metric and inverse actions](full-gamma-finite-good-block-metric.json.zlib)
