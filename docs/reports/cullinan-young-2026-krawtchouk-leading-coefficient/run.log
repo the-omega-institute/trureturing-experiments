@@ -1,0 +1,7 @@
+N=2 deg=1 lead=1 formula=1 ok
+N=4 deg=3 lead=-1/6 formula=-1/6 ok
+N=6 deg=5 lead=1/60 formula=1/60 ok
+N=8 deg=7 lead=-1/1008 formula=-1/1008 ok
+checked N = 2..40 even
+RESULT PASS
+python3 $R/check.py  0.35s user 0.01s system 98% cpu 0.367 total
