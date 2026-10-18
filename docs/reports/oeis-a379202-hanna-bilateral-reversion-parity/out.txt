@@ -1,0 +1,9 @@
+ok   term n = -m equals y^(m^2-2m) (1+2y^m)^(1-m), m = 1..6
+ok   T = y S(y) is an integer series = 1 (mod 2)
+ok   B = y/T = y (mod 2)
+ok   B(A(x)) = x to order 160
+ok   a(1..160) equal the b-file
+ok   x * S(A(x)) = 1 to order 159, i.e. equation (1)
+ok   a(n) even for 1 < n <= 160
+RESULT PASS
+       17.39 real        17.29 user         0.08 sys
