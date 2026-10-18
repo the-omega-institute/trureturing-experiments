@@ -1,0 +1,7 @@
+ok   a(0..300) equal the b-file
+ok   R = Sum (-1)^m C(2m,m) x^(2m) = 1/sqrt(1+4x^2) to order 300
+ok   T = x(1-2x)(1+4x^2)^(-3/2) to order 300
+ok   T' = T (mod 2)
+ok   a = R + 2x T' (mod 4)
+ok   a(n) = 2 (mod 4) iff n = 2^k, k >= 2, else 0 (mod 4), n >= 1; a(0) = 1
+RESULT PASS
