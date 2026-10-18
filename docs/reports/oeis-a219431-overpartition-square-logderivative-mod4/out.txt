@@ -1,0 +1,7 @@
+ok   pbar(m) = 2 d(m) (mod 4) for 1 <= m <= 3000 (product definition)
+ok   the theta recursion equals the product for m <= 3000
+ok   pbar(n^2) = 2 (mod 4) for 1 <= n <= 200
+ok   a(1..200) equal the b-file
+ok   a(n) = 2n (mod 4) for 1 <= n <= 200
+RESULT PASS
+        1.86 real         1.85 user         0.00 sys
