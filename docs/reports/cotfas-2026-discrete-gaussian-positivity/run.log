@@ -1,0 +1,5 @@
+cases 600 fails 0 worst relmin -7.668186032229494e-16
+D<1 cases 36 non-PSD 36
+RESULT PASS
+/opt/homebrew/bin/python3.13 -I check.py  1.14s user 0.04s system 90% cpu 1.308 total
+max |identity error| 1.6514567491299204e-15

@@ -1,0 +1,5 @@
+OEIS terms match: True
+checked 5..20000, mismatches: 0
+a(4) = 0, 4 - lpf(4) = 2
+RESULT PASS
+python3 $R/check.py  1.41s user 0.02s system 99% cpu 1.425 total
