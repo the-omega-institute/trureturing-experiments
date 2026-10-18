@@ -1,0 +1,5 @@
+PASS floor identity holds in all 1300 cases (2 <= s <= 12, 1 <= t < s, r in {1,2,3,5}, n in {1,2,3,4,7})
+PASS the proof's bounds 1/b_n < S_n <= 1/(b_n - 1) hold in all cases (failures 0)
+PASS Lemma 4 (Cassini a_k^2 - a_(k-1) a_(k+1) = c^2 Q^(k-1)) and Lemma 5 (H_k >= c^2 Q^(k-1) + 1), exact (failures 0)
+PASS (s, t) = (2, 1) gives {n} = n (harmonic tail, excluded)
+RESULT PASS
