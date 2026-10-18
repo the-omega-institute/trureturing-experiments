@@ -1,0 +1,7 @@
+(A1) trigonometric expression = h_d for n <= 30, even d <= 60: True
+(A2) bilateral sum = h_d: True
+(B) stated truncation fails in 81 cases; first [(1, 4), (1, 8), (1, 12), (1, 16)]
+(C) restricted closed form fails in 29 cases, all with n+1 = d/2: True; boundary cases checked 29; differences h - formula: [1.0]; first [(1, 4), (2, 6), (3, 8), (4, 10)]
+witness n = 2, d = 6: h = 1, formula = 0
+RESULT PASS
+/opt/homebrew/bin/python3.13 -I check.py 30 60  0.54s user 0.01s system 97% cpu 0.562 total

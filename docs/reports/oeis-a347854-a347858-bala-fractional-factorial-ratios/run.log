@@ -1,0 +1,18 @@
+A347854: data True; non-integral n <= 300: []
+A347855: data True; non-integral n <= 300: []
+A347856: data True; non-integral n <= 300: []
+A347857: data True; non-integral n <= 300: []
+A347858: data True; non-integral n <= 300: []
+A347855 b, c: relations to a True; non-integral b, c for m <= 100: [], []
+H854: min 0 max 1 on the grid j/360; period 1: True
+H856: min 0 max 1 on the grid j/360; period 1: True
+H857: min 0 max 1 on the grid j/360; period 1: True
+H858: min 0 max 1 on the grid j/360; period 1: True
+K854: min 0 max 1 on the grid j/360; period 1: True
+K856: min 0 max 1 on the grid j/360; period 1: True
+K857: min 0 max 1 on the grid j/360; period 1: True
+K858: min 0 max 1 on the grid j/360; period 1: True
+T1: min 0 max 1 on the grid j/360; period 1: True
+T2: min 0 max 1 on the grid j/360; period 1: True
+RESULT PASS
+/opt/homebrew/bin/python3.13 -I check.py 300  0.64s user 0.04s system 69% cpu 0.978 total
