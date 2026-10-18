@@ -1,0 +1,19 @@
+PASS p=7 q=3 s=1: 10 subgroups (= 2s+p+1 = 10), f = 74/21 = formula 74/21, nonabelian True
+PASS p=7 q=3 s=2: 12 subgroups (= 2s+p+1 = 12), f = 146/63 = formula 146/63, nonabelian True
+PASS p=5 q=2 s=3: 12 subgroups (= 2s+p+1 = 12), f = 11/4 = formula 11/4, nonabelian True
+PASS p=13 q=3 s=2: 18 subgroups (= 2s+p+1 = 18), f = 26/9 = formula 26/9, nonabelian True
+PASS p=11 q=5 s=1: 14 subgroups (= 2s+p+1 = 14), f = 182/55 = formula 182/55, nonabelian True
+q, p (least prime = 1 mod q), s, f, f - 1:
+  q=3 p=7 s=3 f-1=0.915344  bound 3/(q-1)=1.500000
+PASS q=3: 1 < f < 1 + 3/(q-1)
+  q=5 p=11 s=3 f-1=0.441455  bound 3/(q-1)=0.750000
+PASS q=5: 1 < f < 1 + 3/(q-1)
+  q=11 p=23 s=3 f-1=0.164277  bound 3/(q-1)=0.300000
+PASS q=11: 1 < f < 1 + 3/(q-1)
+  q=23 p=47 s=3 f-1=0.071475  bound 3/(q-1)=0.136364
+PASS q=23: 1 < f < 1 + 3/(q-1)
+  q=47 p=283 s=3 f-1=0.028065  bound 3/(q-1)=0.065217
+PASS q=47: 1 < f < 1 + 3/(q-1)
+  q=101 p=607 s=3 f-1=0.012252  bound 3/(q-1)=0.030000
+PASS q=101: 1 < f < 1 + 3/(q-1)
+RESULT PASS
