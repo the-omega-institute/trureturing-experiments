@@ -9,6 +9,7 @@
 | `rro-sft-profile-closure/` | 第 29–32 节的精确整数与有理秩检查、有限路径恢复和结果数据 | [SFT 理论](https://github.com/the-omega-institute/trureturing/blob/4128c47e530bc03508c9b11d1edb59a9b5e33f33/docs/develop/theory/RECURSIVE_RELATIONAL_OBSERVATION_SFT.md) |
 | `rro-sft-29-35/` | 第 29–35 节的有限分拆图、群代数、标号路径和固定 C2 端点检查；详见其 [报告](rro-sft-29-35/README.md) | [SFT 理论](https://github.com/the-omega-institute/trureturing/blob/4128c47e530bc03508c9b11d1edb59a9b5e33f33/docs/develop/theory/RECURSIVE_RELATIONAL_OBSERVATION_SFT.md) |
 | `periodic-tree/` | 141 行节点注册表，包含地址、度量、组合标签与流向字段 | [周期树](https://github.com/the-omega-institute/trureturing/blob/4128c47e530bc03508c9b11d1edb59a9b5e33f33/docs/develop/theory/PERIODIC_TREE.md) |
+| `fib-native-complete-continuation/` | 连通区间与双参数条带的完整 JSON/JSONL 数据、章节索引、SHA-256 和读取核验入口；详见其 [说明](fib-native-complete-continuation/README.md) | [连通区间](https://github.com/the-omega-institute/trureturing/blob/4128c47e530bc03508c9b11d1edb59a9b5e33f33/docs/develop/theory/FIB_NATIVE_COMPLETE_CONTINUATION_CONNECTED_INTERVAL.md)、[双参数条带](https://github.com/the-omega-institute/trureturing/blob/4128c47e530bc03508c9b11d1edb59a9b5e33f33/docs/develop/theory/FIB_NATIVE_COMPLETE_CONTINUATION_TWO_PARAMETER_STRIP.md) |
 
 ## 运行入口
 
