@@ -1,0 +1,30 @@
+PASS Pi_U is unitary
+INFO omega = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 1], [0, 0, 1, 1]]
+PASS rho_0: reduced state equals rho o Omega (Eq. (22))
+PASS rho_1: reduced state equals rho o Omega (Eq. (22))
+PASS rhobar: reduced state equals rho o Omega (Eq. (22))
+PASS sqrt certificate for rho_0
+PASS sqrt certificate for Phi(rho_0)
+INFO D(rho_0) = 5/16
+PASS sqrt certificate for rho_1
+PASS sqrt certificate for Phi(rho_1)
+INFO D(rho_1) = 5/16
+PASS sqrt certificate for rhobar
+PASS sqrt certificate for Phi(rhobar)
+PASS Phi(rhobar) is diagonal
+INFO D(rhobar) = 3/8
+PASS D(rho_0) = D(rho_1) = 5/16
+PASS D(rhobar) = 3/8
+PASS Jensen gap D(rhobar) - (D(rho_0) + D(rho_1))/2 = 1/16 > 0
+PASS family m=2 (d=4), degenerate detectors: gap 0.062500 = (1-1/m)p(1-2p) = 0.062500
+PASS family m=2 (d=4), full rank, overlaps in (0,1): gap 0.062154 > 13/256
+INFO family m=2, eps=0.01, a=0.1, b=0.9: gap -0.141472
+PASS family m=3 (d=6), degenerate detectors: gap 0.083333 = (1-1/m)p(1-2p) = 0.083333
+PASS family m=3 (d=6), full rank, overlaps in (0,1): gap 0.083004 > 13/256
+INFO family m=3, eps=0.01, a=0.1, b=0.9: gap -0.170989
+PASS family m=4 (d=8), degenerate detectors: gap 0.093750 = (1-1/m)p(1-2p) = 0.093750
+PASS family m=4 (d=8), full rank, overlaps in (0,1): gap 0.093456 > 13/256
+INFO family m=4, eps=0.01, a=0.1, b=0.9: gap -0.178687
+INFO random search d=2: largest Jensen gap found 0.000e+00 (positive means a convexity violation)
+INFO random search d=3: largest Jensen gap found 0.000e+00 (positive means a convexity violation)
+RESULT PASS 0
