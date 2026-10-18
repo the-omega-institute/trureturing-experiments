@@ -1,0 +1,14 @@
+/Users/auric/trureturing-experiments/docs/reports/datta-dorlas-jozsa-benatti-2013-conjecture-2-conditional-subentropy/check.py:42: UserWarning: Solution may be inaccurate. Try another solver, adjusting the solver settings, or solve with verbose=True for more information.
+  prim.solve(solver=cp.CLARABEL)
+eq (4) vs eq (1) ['0.7', '0.3'] 4.93e-32
+eq (4) vs eq (1) ['0.5', '0.3', '0.2'] 4.93e-32
+eq (4) vs eq (1) ['0.61', '0.27', '0.12'] 0.0
+c-q states tested: 120 max of Q(X|B) - (1 - P_up): -0.0019293938015541088  max duality gap: 2.2579642044995296e-08
+Lemma 1: max of Q(r) - (1 - max r) over 400 vectors: -6.165877369270764e-09
+f'(0+) at m = 2 : 1.0
+f'(0+) at m = 3 : 1.0
+f'(0+) at m = 5 : 1.0
+f'(0+) at m = 8 : 1.0
+Lemma 2: Q(Delta R) - Q(R) = 0.01702  Monte Carlo KL = 0.01752 +- 0.00029
+RESULT PASS
+~/.venvs/opx/bin/python check.py  3.26s user 0.21s system 75% cpu 4.577 total
