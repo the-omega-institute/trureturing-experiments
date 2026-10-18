@@ -1,0 +1,6 @@
+PASS 1/2 <= a < 1: every random nonnormal A (singular included) gives a non-PSD block (1350 pairs, failures 0)
+PASS 1/2 <= a < 1: every random normal A (singular included) gives a PSD block (failures 0)
+PASS a = 1: A = [[0, 1], [2, 0]] is nonnormal and the block is PSD (min eigenvalue 0.00e+00)
+PASS a = 1: the block equals Q*Q with Q = [A, I] (so it is PSD for every A)
+PASS a = 3/4, singular nonnormal A = [[0, 1], [0, 0]]: block not PSD (min eigenvalue -0.6180)
+RESULT PASS
