@@ -1,0 +1,35 @@
+Fibonacci, conjecture (5 F_n^(2k)):
+  k = 0: integral to order 80: True; local Dold congruences (p <= 13, m <= 40): True
+  k = 1: integral to order 80: True; local Dold congruences (p <= 13, m <= 40): True
+  k = 2: integral to order 80: True; local Dold congruences (p <= 13, m <= 40): True
+  k = 3: integral to order 80: True; local Dold congruences (p <= 13, m <= 40): True
+  k = 4: integral to order 80: True; local Dold congruences (p <= 13, m <= 40): True
+  k = 5: integral to order 80: True; local Dold congruences (p <= 13, m <= 40): True
+  k = 6: integral to order 80: True; local Dold congruences (p <= 13, m <= 40): True
+  k = 7: integral to order 80: True; local Dold congruences (p <= 13, m <= 40): True
+  k = 8: integral to order 80: True; local Dold congruences (p <= 13, m <= 40): True
+Fibonacci, notes (expected to fail):
+  5 F^(2k+1), k = 0: integral False; c_3 - c_1 mod 3 = 2
+  5 F^(2k+1), k = 1: integral False; c_3 - c_1 mod 3 = 2
+  5 F^(2k+1), k = 2: integral False; c_3 - c_1 mod 3 = 2
+  5 F^(2k+1), k = 3: integral False; c_3 - c_1 mod 3 = 2
+  5 F^(2k+1), k = 4: integral False; c_3 - c_1 mod 3 = 2
+  F^(2k), k = 1: integral False; c_5 - c_1 mod 5 = 4
+  F^(2k), k = 2: integral False; c_5 - c_1 mod 5 = 4
+  F^(2k), k = 3: integral False; c_5 - c_1 mod 5 = 4
+  F^(2k), k = 4: integral False; c_5 - c_1 mod 5 = 4
+Pell, conjectures (1)-(3), k >= 1:
+  k = 1: (1) integral True, Dold True; (2) integral False, c_3 - c_1 mod 3 = 2; (3) integral False, c_2 - c_1 mod 2 = 1
+  k = 2: (1) integral True, Dold True; (2) integral False, c_3 - c_1 mod 3 = 2; (3) integral False, c_2 - c_1 mod 2 = 1
+  k = 3: (1) integral True, Dold True; (2) integral False, c_3 - c_1 mod 3 = 2; (3) integral False, c_2 - c_1 mod 2 = 1
+  k = 4: (1) integral True, Dold True; (2) integral False, c_3 - c_1 mod 3 = 2; (3) integral False, c_2 - c_1 mod 2 = 1
+  k = 5: (1) integral True, Dold True; (2) integral False, c_3 - c_1 mod 3 = 2; (3) integral False, c_2 - c_1 mod 2 = 1
+  k = 6: (1) integral True, Dold True; (2) integral False, c_3 - c_1 mod 3 = 2; (3) integral False, c_2 - c_1 mod 2 = 1
+  k = 7: (1) integral True, Dold True; (2) integral False, c_3 - c_1 mod 3 = 2; (3) integral False, c_2 - c_1 mod 2 = 1
+  k = 8: (1) integral True, Dold True; (2) integral False, c_3 - c_1 mod 3 = 2; (3) integral False, c_2 - c_1 mod 2 = 1
+valuations: v_5(F_n) = v_5(n) and v_2(P_n) = v_2(n) for n <= 160: True
+oeis-a207969.txt: first 12 terms match: True
+oeis-a207970.txt: first 12 terms match: True
+oeis-a208034.txt: first 12 terms match: True
+RESULT PASS
+python3 check.py  0.13s user 0.02s system 93% cpu 0.156 total
