@@ -1,0 +1,6 @@
+PASS Lemma 1 (symbolic, k = 1..8): x_k = c_k (1 + t_{k-1}), y_k = c_k c_{k+1} t_k, t_0 = 0
+PASS s_w > 0 for all 609 words with |w| <= 12 (exact determinants)
+PASS all t_k in (0, 1/4] and t_{k+1} <= (125/256) t_k for k = 1..58
+PASS Lemma 3 bound E_k(m) >= (143/768) t_{m+1} for k, m <= 20
+PASS Lemma 2 (k, l, m < 8): B_k(m) = E_k(m) prod_{j=m+1}^{m+k+2} c_j and A_l(m) = D_l(m) prod_{j=m+1}^{m+l} c_j
+RESULT PASS
