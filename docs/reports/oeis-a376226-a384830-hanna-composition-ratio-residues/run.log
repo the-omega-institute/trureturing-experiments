@@ -1,0 +1,8 @@
+recursion multiplier is -1 at every step: True
+oeis-a376226.txt: first 12 terms match: True
+oeis-a384830.txt: first 12 terms match: True
+A376226 (C1), (C2) for n <= 70: True
+A384830 (C.1)-(C.3) for n <= 70: True
+F = H = inverse of y + y^2 + y^3 (mod 3): True   H = sum x^(2^k) (mod 2): True
+RESULT PASS
+python3 check.py  0.42s user 0.01s system 99% cpu 0.431 total

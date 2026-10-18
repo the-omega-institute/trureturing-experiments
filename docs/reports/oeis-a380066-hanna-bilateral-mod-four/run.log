@@ -1,0 +1,7 @@
+A380066: first 10 terms match: True
+integral to order 18 : True
+a(n) = 2 mod 4 for 1 <= n <= 18 : True
+A = (1 - x)/(1 + x) (mod 4) coefficientwise: True
+c = 2 reproduces A381362 (frozen family): True
+RESULT PASS
+python3 check.py  1.04s user 0.01s system 99% cpu 1.049 total
