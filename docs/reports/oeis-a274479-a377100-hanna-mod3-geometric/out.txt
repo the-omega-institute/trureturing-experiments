@@ -1,0 +1,14 @@
+ok   A274479 first 12 terms equal the entry's example
+ok   A274479 a(1..159) are integers
+ok   A274479 a(1..159) = 1 (mod 3)
+ok   A274479 A^2 = A(x^2/(1-2x-4x^2)) to order 159
+ok   A274479 every division by 2 in the reversion recursion is exact (n < 159)
+ok   A274479 R is the compositional inverse of A to order 158
+ok   A274479 x/(1-x) satisfies the equation mod 3 to order 159
+ok   A377100 first 12 terms equal the entry's example
+ok   A377100 a(1..160) are integers (division-free recursion)
+ok   A377100 a(1..160) = 1 (mod 3)
+ok   A377100 A = A(x^3)/A(x^2) + A^2 to order 160
+ok   A377100 x/(1-x) satisfies the equation mod 3 to order 160
+RESULT PASS
+       70.78 real        36.65 user         0.26 sys
