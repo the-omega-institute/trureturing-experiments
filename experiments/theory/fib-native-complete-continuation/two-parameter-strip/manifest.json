@@ -1,0 +1,2582 @@
+{
+  "source_repository": "https://github.com/the-omega-institute/trureturing",
+  "source_commit": "4128c47e530bc03508c9b11d1edb59a9b5e33f33",
+  "source_path": "docs/develop/theory/FIB_NATIVE_COMPLETE_CONTINUATION_TWO_PARAMETER_STRIP.md",
+  "source_bytes": 5075801,
+  "source_sha256": "7c4d315843875c8fef29cba0357695c026a000b3b7a219e511904da35671fb7e",
+  "record_convention": "A JSON object is one record; a top-level JSON array counts its elements; JSONL counts its nonempty lines.",
+  "count_convention": "root_boxes counts objects with array-valued center and R; arcs and leaves count the elements of array-valued fields with those names. Scalar summary fields are not counted again.",
+  "payload_files": 67,
+  "payload_bytes": 5022436,
+  "entries": [
+    {
+      "fence": 1,
+      "section": "Appendix A. Exact source data and conventions",
+      "headings": [
+        {
+          "level": 1,
+          "title": "An original finite-activity two-parameter strip with exactly eight actual outputs"
+        },
+        {
+          "level": 2,
+          "title": "Appendix A. Exact source data and conventions"
+        }
+      ],
+      "source_fence_info": "textJSON",
+      "source_lines": [
+        462,
+        464
+      ],
+      "source_fence_byte_range": [
+        44929,
+        45400
+      ],
+      "source_body_byte_range": [
+        44941,
+        45396
+      ],
+      "path": "appendix-a-source-box.json",
+      "format": "json",
+      "bytes": 455,
+      "sha256": "7c4f84a6befea98d4c7211a8621cb1d499a47892aaf1642ede2a62c43373e5ad",
+      "records": 1,
+      "root_boxes": 0,
+      "arcs": 0,
+      "leaves": 0
+    },
+    {
+      "fence": 2,
+      "section": "Appendix A. Exact source data and conventions",
+      "headings": [
+        {
+          "level": 1,
+          "title": "An original finite-activity two-parameter strip with exactly eight actual outputs"
+        },
+        {
+          "level": 2,
+          "title": "Appendix A. Exact source data and conventions"
+        }
+      ],
+      "source_fence_info": "textJSON",
+      "source_lines": [
+        468,
+        470
+      ],
+      "source_fence_byte_range": [
+        45819,
+        49400
+      ],
+      "source_body_byte_range": [
+        45831,
+        49396
+      ],
+      "path": "appendix-a-source-enclosures.json",
+      "format": "json",
+      "bytes": 3565,
+      "sha256": "96afaa852fc0470b60c28f345bd52b139fb4903ea56c8f50920d8179186eec4e",
+      "records": 1,
+      "root_boxes": 0,
+      "arcs": 0,
+      "leaves": 0
+    },
+    {
+      "fence": 3,
+      "section": "Appendix A. Exact source data and conventions",
+      "headings": [
+        {
+          "level": 1,
+          "title": "An original finite-activity two-parameter strip with exactly eight actual outputs"
+        },
+        {
+          "level": 2,
+          "title": "Appendix A. Exact source data and conventions"
+        }
+      ],
+      "source_fence_info": "textJSON",
+      "source_lines": [
+        474,
+        476
+      ],
+      "source_fence_byte_range": [
+        49694,
+        54624
+      ],
+      "source_body_byte_range": [
+        49706,
+        54620
+      ],
+      "path": "appendix-a-derived-enclosures.json",
+      "format": "json",
+      "bytes": 4914,
+      "sha256": "8f085addd7c6b340928551d998e1f66a7dace303273c02978f711d49ed6ffb40",
+      "records": 1,
+      "root_boxes": 0,
+      "arcs": 0,
+      "leaves": 0
+    },
+    {
+      "fence": 4,
+      "section": "B.1. The complete rational parameter cover",
+      "headings": [
+        {
+          "level": 1,
+          "title": "An original finite-activity two-parameter strip with exactly eight actual outputs"
+        },
+        {
+          "level": 2,
+          "title": "Appendix B. Complete root boxes, matrices, cover and leaves"
+        },
+        {
+          "level": 3,
+          "title": "B.1. The complete rational parameter cover"
+        }
+      ],
+      "source_fence_info": "textJSON",
+      "source_lines": [
+        486,
+        488
+      ],
+      "source_fence_byte_range": [
+        56079,
+        61888
+      ],
+      "source_body_byte_range": [
+        56091,
+        61884
+      ],
+      "path": "parameter-cover.json",
+      "format": "json",
+      "bytes": 5793,
+      "sha256": "407efe6a30a4442bac2f146975025bd20979922b5963bd843b13e0f3caeb8c0d",
+      "records": 1,
+      "root_boxes": 0,
+      "arcs": 0,
+      "leaves": 0
+    },
+    {
+      "fence": 5,
+      "section": "B.2.0000. cell-0000.json",
+      "headings": [
+        {
+          "level": 1,
+          "title": "An original finite-activity two-parameter strip with exactly eight actual outputs"
+        },
+        {
+          "level": 2,
+          "title": "Appendix B. Complete root boxes, matrices, cover and leaves"
+        },
+        {
+          "level": 3,
+          "title": "B.2.0000. cell-0000.json"
+        }
+      ],
+      "source_fence_info": "textJSON",
+      "source_lines": [
+        492,
+        555
+      ],
+      "source_fence_byte_range": [
+        61919,
+        143068
+      ],
+      "source_body_byte_range": [
+        61931,
+        143064
+      ],
+      "path": "final-strip/cell-0000.json",
+      "format": "json",
+      "bytes": 81133,
+      "sha256": "02d52ae2a206aa897a48f233c01841805638e71cd7ce5faacd251808ebc28ee7",
+      "records": 1,
+      "root_boxes": 1,
+      "arcs": 8,
+      "leaves": 35
+    },
+    {
+      "fence": 6,
+      "section": "B.2.0001. cell-0001.json",
+      "headings": [
+        {
+          "level": 1,
+          "title": "An original finite-activity two-parameter strip with exactly eight actual outputs"
+        },
+        {
+          "level": 2,
+          "title": "Appendix B. Complete root boxes, matrices, cover and leaves"
+        },
+        {
+          "level": 3,
+          "title": "B.2.0001. cell-0001.json"
+        }
+      ],
+      "source_fence_info": "textJSON",
+      "source_lines": [
+        559,
+        622
+      ],
+      "source_fence_byte_range": [
+        143099,
+        224248
+      ],
+      "source_body_byte_range": [
+        143111,
+        224244
+      ],
+      "path": "final-strip/cell-0001.json",
+      "format": "json",
+      "bytes": 81133,
+      "sha256": "9671bfe0bd034390b75990e0e0f3b11265426d60dc69a3c87b8e06c2c60af8ba",
+      "records": 1,
+      "root_boxes": 1,
+      "arcs": 8,
+      "leaves": 35
+    },
+    {
+      "fence": 7,
+      "section": "B.2.0002. cell-0002.json",
+      "headings": [
+        {
+          "level": 1,
+          "title": "An original finite-activity two-parameter strip with exactly eight actual outputs"
+        },
+        {
+          "level": 2,
+          "title": "Appendix B. Complete root boxes, matrices, cover and leaves"
+        },
+        {
+          "level": 3,
+          "title": "B.2.0002. cell-0002.json"
+        }
+      ],
+      "source_fence_info": "textJSON",
+      "source_lines": [
+        626,
+        689
+      ],
+      "source_fence_byte_range": [
+        224279,
+        305429
+      ],
+      "source_body_byte_range": [
+        224291,
+        305425
+      ],
+      "path": "final-strip/cell-0002.json",
+      "format": "json",
+      "bytes": 81134,
+      "sha256": "dcb961702e790fba402baf70b08590aa242f56ab8b893d4d6a6a8e547f88e72f",
+      "records": 1,
+      "root_boxes": 1,
+      "arcs": 8,
+      "leaves": 35
+    },
+    {
+      "fence": 8,
+      "section": "B.2.0003. cell-0003.json",
+      "headings": [
+        {
+          "level": 1,
+          "title": "An original finite-activity two-parameter strip with exactly eight actual outputs"
+        },
+        {
+          "level": 2,
+          "title": "Appendix B. Complete root boxes, matrices, cover and leaves"
+        },
+        {
+          "level": 3,
+          "title": "B.2.0003. cell-0003.json"
+        }
+      ],
+      "source_fence_info": "textJSON",
+      "source_lines": [
+        693,
+        756
+      ],
+      "source_fence_byte_range": [
+        305460,
+        386611
+      ],
+      "source_body_byte_range": [
+        305472,
+        386607
+      ],
+      "path": "final-strip/cell-0003.json",
+      "format": "json",
+      "bytes": 81135,
+      "sha256": "352273a19fd28f091b3a21e2e3ca7d49483e41419b6474afd3a29b45b66cb708",
+      "records": 1,
+      "root_boxes": 1,
+      "arcs": 8,
+      "leaves": 35
+    },
+    {
+      "fence": 9,
+      "section": "B.2.0004. cell-0004.json",
+      "headings": [
+        {
+          "level": 1,
+          "title": "An original finite-activity two-parameter strip with exactly eight actual outputs"
+        },
+        {
+          "level": 2,
+          "title": "Appendix B. Complete root boxes, matrices, cover and leaves"
+        },
+        {
+          "level": 3,
+          "title": "B.2.0004. cell-0004.json"
+        }
+      ],
+      "source_fence_info": "textJSON",
+      "source_lines": [
+        760,
+        823
+      ],
+      "source_fence_byte_range": [
+        386642,
+        467794
+      ],
+      "source_body_byte_range": [
+        386654,
+        467790
+      ],
+      "path": "final-strip/cell-0004.json",
+      "format": "json",
+      "bytes": 81136,
+      "sha256": "8d7a3beb80d169fa46b99422fd9813e9663f3155480bc78cea7bf8175525d858",
+      "records": 1,
+      "root_boxes": 1,
+      "arcs": 8,
+      "leaves": 35
+    },
+    {
+      "fence": 10,
+      "section": "B.2.0005. cell-0005.json",
+      "headings": [
+        {
+          "level": 1,
+          "title": "An original finite-activity two-parameter strip with exactly eight actual outputs"
+        },
+        {
+          "level": 2,
+          "title": "Appendix B. Complete root boxes, matrices, cover and leaves"
+        },
+        {
+          "level": 3,
+          "title": "B.2.0005. cell-0005.json"
+        }
+      ],
+      "source_fence_info": "textJSON",
+      "source_lines": [
+        827,
+        890
+      ],
+      "source_fence_byte_range": [
+        467825,
+        548975
+      ],
+      "source_body_byte_range": [
+        467837,
+        548971
+      ],
+      "path": "final-strip/cell-0005.json",
+      "format": "json",
+      "bytes": 81134,
+      "sha256": "c3d53ef3cae2b71c3dfc5d51370c0a70f6d02dc8c384a635f781668d0430e09f",
+      "records": 1,
+      "root_boxes": 1,
+      "arcs": 8,
+      "leaves": 35
+    },
+    {
+      "fence": 11,
+      "section": "B.2.0006. cell-0006.json",
+      "headings": [
+        {
+          "level": 1,
+          "title": "An original finite-activity two-parameter strip with exactly eight actual outputs"
+        },
+        {
+          "level": 2,
+          "title": "Appendix B. Complete root boxes, matrices, cover and leaves"
+        },
+        {
+          "level": 3,
+          "title": "B.2.0006. cell-0006.json"
+        }
+      ],
+      "source_fence_info": "textJSON",
+      "source_lines": [
+        894,
+        957
+      ],
+      "source_fence_byte_range": [
+        549006,
+        630156
+      ],
+      "source_body_byte_range": [
+        549018,
+        630152
+      ],
+      "path": "final-strip/cell-0006.json",
+      "format": "json",
+      "bytes": 81134,
+      "sha256": "cc9e39f4384348b221e78c016f67d4a89e50338ff77ea2d1e7d289932d4db9ac",
+      "records": 1,
+      "root_boxes": 1,
+      "arcs": 8,
+      "leaves": 35
+    },
+    {
+      "fence": 12,
+      "section": "B.2.0007. cell-0007.json",
+      "headings": [
+        {
+          "level": 1,
+          "title": "An original finite-activity two-parameter strip with exactly eight actual outputs"
+        },
+        {
+          "level": 2,
+          "title": "Appendix B. Complete root boxes, matrices, cover and leaves"
+        },
+        {
+          "level": 3,
+          "title": "B.2.0007. cell-0007.json"
+        }
+      ],
+      "source_fence_info": "textJSON",
+      "source_lines": [
+        961,
+        1024
+      ],
+      "source_fence_byte_range": [
+        630187,
+        711345
+      ],
+      "source_body_byte_range": [
+        630199,
+        711341
+      ],
+      "path": "final-strip/cell-0007.json",
+      "format": "json",
+      "bytes": 81142,
+      "sha256": "4d27cb542954a40dd101cdf909eda59987bb3cc3921676c796947e8d4761561c",
+      "records": 1,
+      "root_boxes": 1,
+      "arcs": 8,
+      "leaves": 35
+    },
+    {
+      "fence": 13,
+      "section": "B.2.0008. cell-0008.json",
+      "headings": [
+        {
+          "level": 1,
+          "title": "An original finite-activity two-parameter strip with exactly eight actual outputs"
+        },
+        {
+          "level": 2,
+          "title": "Appendix B. Complete root boxes, matrices, cover and leaves"
+        },
+        {
+          "level": 3,
+          "title": "B.2.0008. cell-0008.json"
+        }
+      ],
+      "source_fence_info": "textJSON",
+      "source_lines": [
+        1028,
+        1091
+      ],
+      "source_fence_byte_range": [
+        711376,
+        792528
+      ],
+      "source_body_byte_range": [
+        711388,
+        792524
+      ],
+      "path": "final-strip/cell-0008.json",
+      "format": "json",
+      "bytes": 81136,
+      "sha256": "5c73c75509d3a6281c4d6f597a215219c13478bf8a9b37dc20c84abe123e2a9c",
+      "records": 1,
+      "root_boxes": 1,
+      "arcs": 8,
+      "leaves": 35
+    },
+    {
+      "fence": 14,
+      "section": "B.2.0009. cell-0009.json",
+      "headings": [
+        {
+          "level": 1,
+          "title": "An original finite-activity two-parameter strip with exactly eight actual outputs"
+        },
+        {
+          "level": 2,
+          "title": "Appendix B. Complete root boxes, matrices, cover and leaves"
+        },
+        {
+          "level": 3,
+          "title": "B.2.0009. cell-0009.json"
+        }
+      ],
+      "source_fence_info": "textJSON",
+      "source_lines": [
+        1095,
+        1158
+      ],
+      "source_fence_byte_range": [
+        792559,
+        873715
+      ],
+      "source_body_byte_range": [
+        792571,
+        873711
+      ],
+      "path": "final-strip/cell-0009.json",
+      "format": "json",
+      "bytes": 81140,
+      "sha256": "5c0f16cb45c1993a340dbff2907b0c8bce4dbaafced15a9eaee6319dda312815",
+      "records": 1,
+      "root_boxes": 1,
+      "arcs": 8,
+      "leaves": 35
+    },
+    {
+      "fence": 15,
+      "section": "B.2.0010. cell-0010.json",
+      "headings": [
+        {
+          "level": 1,
+          "title": "An original finite-activity two-parameter strip with exactly eight actual outputs"
+        },
+        {
+          "level": 2,
+          "title": "Appendix B. Complete root boxes, matrices, cover and leaves"
+        },
+        {
+          "level": 3,
+          "title": "B.2.0010. cell-0010.json"
+        }
+      ],
+      "source_fence_info": "textJSON",
+      "source_lines": [
+        1162,
+        1225
+      ],
+      "source_fence_byte_range": [
+        873746,
+        954891
+      ],
+      "source_body_byte_range": [
+        873758,
+        954887
+      ],
+      "path": "final-strip/cell-0010.json",
+      "format": "json",
+      "bytes": 81129,
+      "sha256": "81c64cc98b1900a3e6b6bbd61e4585736ce74fa305b2a60f086fa49cce22da70",
+      "records": 1,
+      "root_boxes": 1,
+      "arcs": 8,
+      "leaves": 35
+    },
+    {
+      "fence": 16,
+      "section": "B.2.0011. cell-0011.json",
+      "headings": [
+        {
+          "level": 1,
+          "title": "An original finite-activity two-parameter strip with exactly eight actual outputs"
+        },
+        {
+          "level": 2,
+          "title": "Appendix B. Complete root boxes, matrices, cover and leaves"
+        },
+        {
+          "level": 3,
+          "title": "B.2.0011. cell-0011.json"
+        }
+      ],
+      "source_fence_info": "textJSON",
+      "source_lines": [
+        1229,
+        1292
+      ],
+      "source_fence_byte_range": [
+        954922,
+        1036076
+      ],
+      "source_body_byte_range": [
+        954934,
+        1036072
+      ],
+      "path": "final-strip/cell-0011.json",
+      "format": "json",
+      "bytes": 81138,
+      "sha256": "36ccae28fd9a5b649164d01bd2cabc6f557e3420b22ff120dfa2c3946563b834",
+      "records": 1,
+      "root_boxes": 1,
+      "arcs": 8,
+      "leaves": 35
+    },
+    {
+      "fence": 17,
+      "section": "B.2.0012. cell-0012.json",
+      "headings": [
+        {
+          "level": 1,
+          "title": "An original finite-activity two-parameter strip with exactly eight actual outputs"
+        },
+        {
+          "level": 2,
+          "title": "Appendix B. Complete root boxes, matrices, cover and leaves"
+        },
+        {
+          "level": 3,
+          "title": "B.2.0012. cell-0012.json"
+        }
+      ],
+      "source_fence_info": "textJSON",
+      "source_lines": [
+        1296,
+        1359
+      ],
+      "source_fence_byte_range": [
+        1036107,
+        1117264
+      ],
+      "source_body_byte_range": [
+        1036119,
+        1117260
+      ],
+      "path": "final-strip/cell-0012.json",
+      "format": "json",
+      "bytes": 81141,
+      "sha256": "c7dc75930b29d8d1f2da4fd2307411ad71fcbd9576dec84ce32276476bfce3c1",
+      "records": 1,
+      "root_boxes": 1,
+      "arcs": 8,
+      "leaves": 35
+    },
+    {
+      "fence": 18,
+      "section": "B.2.0013. cell-0013.json",
+      "headings": [
+        {
+          "level": 1,
+          "title": "An original finite-activity two-parameter strip with exactly eight actual outputs"
+        },
+        {
+          "level": 2,
+          "title": "Appendix B. Complete root boxes, matrices, cover and leaves"
+        },
+        {
+          "level": 3,
+          "title": "B.2.0013. cell-0013.json"
+        }
+      ],
+      "source_fence_info": "textJSON",
+      "source_lines": [
+        1363,
+        1426
+      ],
+      "source_fence_byte_range": [
+        1117295,
+        1198451
+      ],
+      "source_body_byte_range": [
+        1117307,
+        1198447
+      ],
+      "path": "final-strip/cell-0013.json",
+      "format": "json",
+      "bytes": 81140,
+      "sha256": "cd293474c4fd985943725b19973aa824ac311535324f185fe8c09d769dbf9b39",
+      "records": 1,
+      "root_boxes": 1,
+      "arcs": 8,
+      "leaves": 35
+    },
+    {
+      "fence": 19,
+      "section": "B.2.0014. cell-0014.json",
+      "headings": [
+        {
+          "level": 1,
+          "title": "An original finite-activity two-parameter strip with exactly eight actual outputs"
+        },
+        {
+          "level": 2,
+          "title": "Appendix B. Complete root boxes, matrices, cover and leaves"
+        },
+        {
+          "level": 3,
+          "title": "B.2.0014. cell-0014.json"
+        }
+      ],
+      "source_fence_info": "textJSON",
+      "source_lines": [
+        1430,
+        1493
+      ],
+      "source_fence_byte_range": [
+        1198482,
+        1279637
+      ],
+      "source_body_byte_range": [
+        1198494,
+        1279633
+      ],
+      "path": "final-strip/cell-0014.json",
+      "format": "json",
+      "bytes": 81139,
+      "sha256": "61ad3d361ef54f81e9dedc9502032776a58de11fd44e4e437f9dee3b6f7e53c0",
+      "records": 1,
+      "root_boxes": 1,
+      "arcs": 8,
+      "leaves": 35
+    },
+    {
+      "fence": 20,
+      "section": "B.2.0015. cell-0015.json",
+      "headings": [
+        {
+          "level": 1,
+          "title": "An original finite-activity two-parameter strip with exactly eight actual outputs"
+        },
+        {
+          "level": 2,
+          "title": "Appendix B. Complete root boxes, matrices, cover and leaves"
+        },
+        {
+          "level": 3,
+          "title": "B.2.0015. cell-0015.json"
+        }
+      ],
+      "source_fence_info": "textJSON",
+      "source_lines": [
+        1497,
+        1560
+      ],
+      "source_fence_byte_range": [
+        1279668,
+        1360828
+      ],
+      "source_body_byte_range": [
+        1279680,
+        1360824
+      ],
+      "path": "final-strip/cell-0015.json",
+      "format": "json",
+      "bytes": 81144,
+      "sha256": "4275e8768bf818244227fed57ab8fb5aa95debd75a493b52fb984408abd045a3",
+      "records": 1,
+      "root_boxes": 1,
+      "arcs": 8,
+      "leaves": 35
+    },
+    {
+      "fence": 21,
+      "section": "B.2.0016. cell-0016.json",
+      "headings": [
+        {
+          "level": 1,
+          "title": "An original finite-activity two-parameter strip with exactly eight actual outputs"
+        },
+        {
+          "level": 2,
+          "title": "Appendix B. Complete root boxes, matrices, cover and leaves"
+        },
+        {
+          "level": 3,
+          "title": "B.2.0016. cell-0016.json"
+        }
+      ],
+      "source_fence_info": "textJSON",
+      "source_lines": [
+        1564,
+        1627
+      ],
+      "source_fence_byte_range": [
+        1360859,
+        1442015
+      ],
+      "source_body_byte_range": [
+        1360871,
+        1442011
+      ],
+      "path": "final-strip/cell-0016.json",
+      "format": "json",
+      "bytes": 81140,
+      "sha256": "2e85c067fb45a09b44e4331d5c414ea12042cb743debbe360f9638165b05219c",
+      "records": 1,
+      "root_boxes": 1,
+      "arcs": 8,
+      "leaves": 35
+    },
+    {
+      "fence": 22,
+      "section": "B.2.0017. cell-0017.json",
+      "headings": [
+        {
+          "level": 1,
+          "title": "An original finite-activity two-parameter strip with exactly eight actual outputs"
+        },
+        {
+          "level": 2,
+          "title": "Appendix B. Complete root boxes, matrices, cover and leaves"
+        },
+        {
+          "level": 3,
+          "title": "B.2.0017. cell-0017.json"
+        }
+      ],
+      "source_fence_info": "textJSON",
+      "source_lines": [
+        1631,
+        1694
+      ],
+      "source_fence_byte_range": [
+        1442046,
+        1523205
+      ],
+      "source_body_byte_range": [
+        1442058,
+        1523201
+      ],
+      "path": "final-strip/cell-0017.json",
+      "format": "json",
+      "bytes": 81143,
+      "sha256": "78020658c3b0c87d5bb3bdd433a9d48b03df3fbce89d4803d8fac20a030f459b",
+      "records": 1,
+      "root_boxes": 1,
+      "arcs": 8,
+      "leaves": 35
+    },
+    {
+      "fence": 23,
+      "section": "B.2.0018. cell-0018.json",
+      "headings": [
+        {
+          "level": 1,
+          "title": "An original finite-activity two-parameter strip with exactly eight actual outputs"
+        },
+        {
+          "level": 2,
+          "title": "Appendix B. Complete root boxes, matrices, cover and leaves"
+        },
+        {
+          "level": 3,
+          "title": "B.2.0018. cell-0018.json"
+        }
+      ],
+      "source_fence_info": "textJSON",
+      "source_lines": [
+        1698,
+        1761
+      ],
+      "source_fence_byte_range": [
+        1523236,
+        1604399
+      ],
+      "source_body_byte_range": [
+        1523248,
+        1604395
+      ],
+      "path": "final-strip/cell-0018.json",
+      "format": "json",
+      "bytes": 81147,
+      "sha256": "7180e25e0ccb6f6cc5fa018f06a2309efe2c0195e1ac8adc081e6f7f83f064d3",
+      "records": 1,
+      "root_boxes": 1,
+      "arcs": 8,
+      "leaves": 35
+    },
+    {
+      "fence": 24,
+      "section": "B.2.0019. cell-0019.json",
+      "headings": [
+        {
+          "level": 1,
+          "title": "An original finite-activity two-parameter strip with exactly eight actual outputs"
+        },
+        {
+          "level": 2,
+          "title": "Appendix B. Complete root boxes, matrices, cover and leaves"
+        },
+        {
+          "level": 3,
+          "title": "B.2.0019. cell-0019.json"
+        }
+      ],
+      "source_fence_info": "textJSON",
+      "source_lines": [
+        1765,
+        1828
+      ],
+      "source_fence_byte_range": [
+        1604430,
+        1685589
+      ],
+      "source_body_byte_range": [
+        1604442,
+        1685585
+      ],
+      "path": "final-strip/cell-0019.json",
+      "format": "json",
+      "bytes": 81143,
+      "sha256": "6fec3eed60f9757759c80b178363ddf441a50515e1e9ba84cf41f883cc421958",
+      "records": 1,
+      "root_boxes": 1,
+      "arcs": 8,
+      "leaves": 35
+    },
+    {
+      "fence": 25,
+      "section": "B.2.0020. cell-0020.json",
+      "headings": [
+        {
+          "level": 1,
+          "title": "An original finite-activity two-parameter strip with exactly eight actual outputs"
+        },
+        {
+          "level": 2,
+          "title": "Appendix B. Complete root boxes, matrices, cover and leaves"
+        },
+        {
+          "level": 3,
+          "title": "B.2.0020. cell-0020.json"
+        }
+      ],
+      "source_fence_info": "textJSON",
+      "source_lines": [
+        1832,
+        1895
+      ],
+      "source_fence_byte_range": [
+        1685620,
+        1766780
+      ],
+      "source_body_byte_range": [
+        1685632,
+        1766776
+      ],
+      "path": "final-strip/cell-0020.json",
+      "format": "json",
+      "bytes": 81144,
+      "sha256": "f129cba02b586e5574f3eb5b333b329d6794a391676b10a1463ef1f561bf056b",
+      "records": 1,
+      "root_boxes": 1,
+      "arcs": 8,
+      "leaves": 35
+    },
+    {
+      "fence": 26,
+      "section": "B.2.0021. cell-0021.json",
+      "headings": [
+        {
+          "level": 1,
+          "title": "An original finite-activity two-parameter strip with exactly eight actual outputs"
+        },
+        {
+          "level": 2,
+          "title": "Appendix B. Complete root boxes, matrices, cover and leaves"
+        },
+        {
+          "level": 3,
+          "title": "B.2.0021. cell-0021.json"
+        }
+      ],
+      "source_fence_info": "textJSON",
+      "source_lines": [
+        1899,
+        1962
+      ],
+      "source_fence_byte_range": [
+        1766811,
+        1847969
+      ],
+      "source_body_byte_range": [
+        1766823,
+        1847965
+      ],
+      "path": "final-strip/cell-0021.json",
+      "format": "json",
+      "bytes": 81142,
+      "sha256": "426d18df26d3df82e1008f9037f06262482d0fa8723044d34f5f38a83dd26ea6",
+      "records": 1,
+      "root_boxes": 1,
+      "arcs": 8,
+      "leaves": 35
+    },
+    {
+      "fence": 27,
+      "section": "B.2.0022. cell-0022.json",
+      "headings": [
+        {
+          "level": 1,
+          "title": "An original finite-activity two-parameter strip with exactly eight actual outputs"
+        },
+        {
+          "level": 2,
+          "title": "Appendix B. Complete root boxes, matrices, cover and leaves"
+        },
+        {
+          "level": 3,
+          "title": "B.2.0022. cell-0022.json"
+        }
+      ],
+      "source_fence_info": "textJSON",
+      "source_lines": [
+        1966,
+        2029
+      ],
+      "source_fence_byte_range": [
+        1848000,
+        1929165
+      ],
+      "source_body_byte_range": [
+        1848012,
+        1929161
+      ],
+      "path": "final-strip/cell-0022.json",
+      "format": "json",
+      "bytes": 81149,
+      "sha256": "7a689da10440296b8a2bf16ee4fa925fb48bd4869a686e92d91bb627ffd2ab8f",
+      "records": 1,
+      "root_boxes": 1,
+      "arcs": 8,
+      "leaves": 35
+    },
+    {
+      "fence": 28,
+      "section": "B.2.0023. cell-0023.json",
+      "headings": [
+        {
+          "level": 1,
+          "title": "An original finite-activity two-parameter strip with exactly eight actual outputs"
+        },
+        {
+          "level": 2,
+          "title": "Appendix B. Complete root boxes, matrices, cover and leaves"
+        },
+        {
+          "level": 3,
+          "title": "B.2.0023. cell-0023.json"
+        }
+      ],
+      "source_fence_info": "textJSON",
+      "source_lines": [
+        2033,
+        2096
+      ],
+      "source_fence_byte_range": [
+        1929196,
+        2010359
+      ],
+      "source_body_byte_range": [
+        1929208,
+        2010355
+      ],
+      "path": "final-strip/cell-0023.json",
+      "format": "json",
+      "bytes": 81147,
+      "sha256": "1f359c7316160b2ed5a2ab94c916a7a0125d236cdc33425e7ca771d4769bbd1f",
+      "records": 1,
+      "root_boxes": 1,
+      "arcs": 8,
+      "leaves": 35
+    },
+    {
+      "fence": 29,
+      "section": "B.2.0024. cell-0024.json",
+      "headings": [
+        {
+          "level": 1,
+          "title": "An original finite-activity two-parameter strip with exactly eight actual outputs"
+        },
+        {
+          "level": 2,
+          "title": "Appendix B. Complete root boxes, matrices, cover and leaves"
+        },
+        {
+          "level": 3,
+          "title": "B.2.0024. cell-0024.json"
+        }
+      ],
+      "source_fence_info": "textJSON",
+      "source_lines": [
+        2100,
+        2163
+      ],
+      "source_fence_byte_range": [
+        2010390,
+        2091551
+      ],
+      "source_body_byte_range": [
+        2010402,
+        2091547
+      ],
+      "path": "final-strip/cell-0024.json",
+      "format": "json",
+      "bytes": 81145,
+      "sha256": "310846c1cc602543952cdd784041e3d0b55c05df1a92b4ab130f227a3426015f",
+      "records": 1,
+      "root_boxes": 1,
+      "arcs": 8,
+      "leaves": 35
+    },
+    {
+      "fence": 30,
+      "section": "B.2.0025. cell-0025.json",
+      "headings": [
+        {
+          "level": 1,
+          "title": "An original finite-activity two-parameter strip with exactly eight actual outputs"
+        },
+        {
+          "level": 2,
+          "title": "Appendix B. Complete root boxes, matrices, cover and leaves"
+        },
+        {
+          "level": 3,
+          "title": "B.2.0025. cell-0025.json"
+        }
+      ],
+      "source_fence_info": "textJSON",
+      "source_lines": [
+        2167,
+        2230
+      ],
+      "source_fence_byte_range": [
+        2091582,
+        2172742
+      ],
+      "source_body_byte_range": [
+        2091594,
+        2172738
+      ],
+      "path": "final-strip/cell-0025.json",
+      "format": "json",
+      "bytes": 81144,
+      "sha256": "39c602a0a755c1a31d13bbfe7802926c96f461a5a30e590072601702964cf109",
+      "records": 1,
+      "root_boxes": 1,
+      "arcs": 8,
+      "leaves": 35
+    },
+    {
+      "fence": 31,
+      "section": "B.2.0026. cell-0026.json",
+      "headings": [
+        {
+          "level": 1,
+          "title": "An original finite-activity two-parameter strip with exactly eight actual outputs"
+        },
+        {
+          "level": 2,
+          "title": "Appendix B. Complete root boxes, matrices, cover and leaves"
+        },
+        {
+          "level": 3,
+          "title": "B.2.0026. cell-0026.json"
+        }
+      ],
+      "source_fence_info": "textJSON",
+      "source_lines": [
+        2234,
+        2297
+      ],
+      "source_fence_byte_range": [
+        2172773,
+        2253938
+      ],
+      "source_body_byte_range": [
+        2172785,
+        2253934
+      ],
+      "path": "final-strip/cell-0026.json",
+      "format": "json",
+      "bytes": 81149,
+      "sha256": "7daf687e07972e267355eca7a1793078222f95180b9ca6eb4968bd607d103620",
+      "records": 1,
+      "root_boxes": 1,
+      "arcs": 8,
+      "leaves": 35
+    },
+    {
+      "fence": 32,
+      "section": "B.2.0027. cell-0027.json",
+      "headings": [
+        {
+          "level": 1,
+          "title": "An original finite-activity two-parameter strip with exactly eight actual outputs"
+        },
+        {
+          "level": 2,
+          "title": "Appendix B. Complete root boxes, matrices, cover and leaves"
+        },
+        {
+          "level": 3,
+          "title": "B.2.0027. cell-0027.json"
+        }
+      ],
+      "source_fence_info": "textJSON",
+      "source_lines": [
+        2301,
+        2364
+      ],
+      "source_fence_byte_range": [
+        2253969,
+        2335130
+      ],
+      "source_body_byte_range": [
+        2253981,
+        2335126
+      ],
+      "path": "final-strip/cell-0027.json",
+      "format": "json",
+      "bytes": 81145,
+      "sha256": "70ed150755550be5437b608ab5c21ff23a6d54daf1a202a8df8b218df85bd5fd",
+      "records": 1,
+      "root_boxes": 1,
+      "arcs": 8,
+      "leaves": 35
+    },
+    {
+      "fence": 33,
+      "section": "B.2.0028. cell-0028.json",
+      "headings": [
+        {
+          "level": 1,
+          "title": "An original finite-activity two-parameter strip with exactly eight actual outputs"
+        },
+        {
+          "level": 2,
+          "title": "Appendix B. Complete root boxes, matrices, cover and leaves"
+        },
+        {
+          "level": 3,
+          "title": "B.2.0028. cell-0028.json"
+        }
+      ],
+      "source_fence_info": "textJSON",
+      "source_lines": [
+        2368,
+        2431
+      ],
+      "source_fence_byte_range": [
+        2335161,
+        2416322
+      ],
+      "source_body_byte_range": [
+        2335173,
+        2416318
+      ],
+      "path": "final-strip/cell-0028.json",
+      "format": "json",
+      "bytes": 81145,
+      "sha256": "0a86f40bcc71bc9dc0230787e302311a7778c24ce714583b70c45ec2b70c8ac9",
+      "records": 1,
+      "root_boxes": 1,
+      "arcs": 8,
+      "leaves": 35
+    },
+    {
+      "fence": 34,
+      "section": "B.2.0029. cell-0029.json",
+      "headings": [
+        {
+          "level": 1,
+          "title": "An original finite-activity two-parameter strip with exactly eight actual outputs"
+        },
+        {
+          "level": 2,
+          "title": "Appendix B. Complete root boxes, matrices, cover and leaves"
+        },
+        {
+          "level": 3,
+          "title": "B.2.0029. cell-0029.json"
+        }
+      ],
+      "source_fence_info": "textJSON",
+      "source_lines": [
+        2435,
+        2498
+      ],
+      "source_fence_byte_range": [
+        2416353,
+        2497514
+      ],
+      "source_body_byte_range": [
+        2416365,
+        2497510
+      ],
+      "path": "final-strip/cell-0029.json",
+      "format": "json",
+      "bytes": 81145,
+      "sha256": "4d4a7196b62a75f62d412dd35407ac8a1a48c5104e34f6ee24993b338691a12e",
+      "records": 1,
+      "root_boxes": 1,
+      "arcs": 8,
+      "leaves": 35
+    },
+    {
+      "fence": 35,
+      "section": "B.2.0030. cell-0030.json",
+      "headings": [
+        {
+          "level": 1,
+          "title": "An original finite-activity two-parameter strip with exactly eight actual outputs"
+        },
+        {
+          "level": 2,
+          "title": "Appendix B. Complete root boxes, matrices, cover and leaves"
+        },
+        {
+          "level": 3,
+          "title": "B.2.0030. cell-0030.json"
+        }
+      ],
+      "source_fence_info": "textJSON",
+      "source_lines": [
+        2502,
+        2565
+      ],
+      "source_fence_byte_range": [
+        2497545,
+        2578709
+      ],
+      "source_body_byte_range": [
+        2497557,
+        2578705
+      ],
+      "path": "final-strip/cell-0030.json",
+      "format": "json",
+      "bytes": 81148,
+      "sha256": "9ee6ef49d572b88eaded7392b4a8c29826efd25653236f3df3d56714217343cf",
+      "records": 1,
+      "root_boxes": 1,
+      "arcs": 8,
+      "leaves": 35
+    },
+    {
+      "fence": 36,
+      "section": "B.2.0031. cell-0031.json",
+      "headings": [
+        {
+          "level": 1,
+          "title": "An original finite-activity two-parameter strip with exactly eight actual outputs"
+        },
+        {
+          "level": 2,
+          "title": "Appendix B. Complete root boxes, matrices, cover and leaves"
+        },
+        {
+          "level": 3,
+          "title": "B.2.0031. cell-0031.json"
+        }
+      ],
+      "source_fence_info": "textJSON",
+      "source_lines": [
+        2569,
+        2632
+      ],
+      "source_fence_byte_range": [
+        2578740,
+        2659906
+      ],
+      "source_body_byte_range": [
+        2578752,
+        2659902
+      ],
+      "path": "final-strip/cell-0031.json",
+      "format": "json",
+      "bytes": 81150,
+      "sha256": "17085b03634bc6bfdd5ee6aa626ac5e3433faf34d5ec7ddff8e23c8492274669",
+      "records": 1,
+      "root_boxes": 1,
+      "arcs": 8,
+      "leaves": 35
+    },
+    {
+      "fence": 37,
+      "section": "B.2.0032. cell-0032.json",
+      "headings": [
+        {
+          "level": 1,
+          "title": "An original finite-activity two-parameter strip with exactly eight actual outputs"
+        },
+        {
+          "level": 2,
+          "title": "Appendix B. Complete root boxes, matrices, cover and leaves"
+        },
+        {
+          "level": 3,
+          "title": "B.2.0032. cell-0032.json"
+        }
+      ],
+      "source_fence_info": "textJSON",
+      "source_lines": [
+        2636,
+        2699
+      ],
+      "source_fence_byte_range": [
+        2659937,
+        2741103
+      ],
+      "source_body_byte_range": [
+        2659949,
+        2741099
+      ],
+      "path": "final-strip/cell-0032.json",
+      "format": "json",
+      "bytes": 81150,
+      "sha256": "5a8832cf9e7ff04de6c93c292c383ecd409c052eea9664e7187dc4206f98d6eb",
+      "records": 1,
+      "root_boxes": 1,
+      "arcs": 8,
+      "leaves": 35
+    },
+    {
+      "fence": 38,
+      "section": "B.2.0033. cell-0033.json",
+      "headings": [
+        {
+          "level": 1,
+          "title": "An original finite-activity two-parameter strip with exactly eight actual outputs"
+        },
+        {
+          "level": 2,
+          "title": "Appendix B. Complete root boxes, matrices, cover and leaves"
+        },
+        {
+          "level": 3,
+          "title": "B.2.0033. cell-0033.json"
+        }
+      ],
+      "source_fence_info": "textJSON",
+      "source_lines": [
+        2703,
+        2766
+      ],
+      "source_fence_byte_range": [
+        2741134,
+        2822301
+      ],
+      "source_body_byte_range": [
+        2741146,
+        2822297
+      ],
+      "path": "final-strip/cell-0033.json",
+      "format": "json",
+      "bytes": 81151,
+      "sha256": "ba207820eadaf8ffff724325db3b0269b4f5283b175978cb0f15f029f0e0aec4",
+      "records": 1,
+      "root_boxes": 1,
+      "arcs": 8,
+      "leaves": 35
+    },
+    {
+      "fence": 39,
+      "section": "B.2.0034. cell-0034.json",
+      "headings": [
+        {
+          "level": 1,
+          "title": "An original finite-activity two-parameter strip with exactly eight actual outputs"
+        },
+        {
+          "level": 2,
+          "title": "Appendix B. Complete root boxes, matrices, cover and leaves"
+        },
+        {
+          "level": 3,
+          "title": "B.2.0034. cell-0034.json"
+        }
+      ],
+      "source_fence_info": "textJSON",
+      "source_lines": [
+        2770,
+        2833
+      ],
+      "source_fence_byte_range": [
+        2822332,
+        2903491
+      ],
+      "source_body_byte_range": [
+        2822344,
+        2903487
+      ],
+      "path": "final-strip/cell-0034.json",
+      "format": "json",
+      "bytes": 81143,
+      "sha256": "b7671b67f74e39a7ff1f7bb6041602a30ee9f9b0ebea92197d699a39eda33e6a",
+      "records": 1,
+      "root_boxes": 1,
+      "arcs": 8,
+      "leaves": 35
+    },
+    {
+      "fence": 40,
+      "section": "B.2.0035. cell-0035.json",
+      "headings": [
+        {
+          "level": 1,
+          "title": "An original finite-activity two-parameter strip with exactly eight actual outputs"
+        },
+        {
+          "level": 2,
+          "title": "Appendix B. Complete root boxes, matrices, cover and leaves"
+        },
+        {
+          "level": 3,
+          "title": "B.2.0035. cell-0035.json"
+        }
+      ],
+      "source_fence_info": "textJSON",
+      "source_lines": [
+        2837,
+        2900
+      ],
+      "source_fence_byte_range": [
+        2903522,
+        2984687
+      ],
+      "source_body_byte_range": [
+        2903534,
+        2984683
+      ],
+      "path": "final-strip/cell-0035.json",
+      "format": "json",
+      "bytes": 81149,
+      "sha256": "ac9290cf734438dc83609d2bc95994935f03ed86260047bc15adb130eb2bcd64",
+      "records": 1,
+      "root_boxes": 1,
+      "arcs": 8,
+      "leaves": 35
+    },
+    {
+      "fence": 41,
+      "section": "B.2.0036. cell-0036.json",
+      "headings": [
+        {
+          "level": 1,
+          "title": "An original finite-activity two-parameter strip with exactly eight actual outputs"
+        },
+        {
+          "level": 2,
+          "title": "Appendix B. Complete root boxes, matrices, cover and leaves"
+        },
+        {
+          "level": 3,
+          "title": "B.2.0036. cell-0036.json"
+        }
+      ],
+      "source_fence_info": "textJSON",
+      "source_lines": [
+        2904,
+        2967
+      ],
+      "source_fence_byte_range": [
+        2984718,
+        3065884
+      ],
+      "source_body_byte_range": [
+        2984730,
+        3065880
+      ],
+      "path": "final-strip/cell-0036.json",
+      "format": "json",
+      "bytes": 81150,
+      "sha256": "40d9aedbb0bea71e326aa60e600f311b66cee22c8cf33d2376b044be840058f3",
+      "records": 1,
+      "root_boxes": 1,
+      "arcs": 8,
+      "leaves": 35
+    },
+    {
+      "fence": 42,
+      "section": "B.2.0037. cell-0037.json",
+      "headings": [
+        {
+          "level": 1,
+          "title": "An original finite-activity two-parameter strip with exactly eight actual outputs"
+        },
+        {
+          "level": 2,
+          "title": "Appendix B. Complete root boxes, matrices, cover and leaves"
+        },
+        {
+          "level": 3,
+          "title": "B.2.0037. cell-0037.json"
+        }
+      ],
+      "source_fence_info": "textJSON",
+      "source_lines": [
+        2971,
+        3034
+      ],
+      "source_fence_byte_range": [
+        3065915,
+        3147085
+      ],
+      "source_body_byte_range": [
+        3065927,
+        3147081
+      ],
+      "path": "final-strip/cell-0037.json",
+      "format": "json",
+      "bytes": 81154,
+      "sha256": "fbe603e4bd158ced36deefa1576402c1ab8aa37e025df2a1c2f0c24ee30d0616",
+      "records": 1,
+      "root_boxes": 1,
+      "arcs": 8,
+      "leaves": 35
+    },
+    {
+      "fence": 43,
+      "section": "B.2.0038. cell-0038.json",
+      "headings": [
+        {
+          "level": 1,
+          "title": "An original finite-activity two-parameter strip with exactly eight actual outputs"
+        },
+        {
+          "level": 2,
+          "title": "Appendix B. Complete root boxes, matrices, cover and leaves"
+        },
+        {
+          "level": 3,
+          "title": "B.2.0038. cell-0038.json"
+        }
+      ],
+      "source_fence_info": "textJSON",
+      "source_lines": [
+        3038,
+        3101
+      ],
+      "source_fence_byte_range": [
+        3147116,
+        3228282
+      ],
+      "source_body_byte_range": [
+        3147128,
+        3228278
+      ],
+      "path": "final-strip/cell-0038.json",
+      "format": "json",
+      "bytes": 81150,
+      "sha256": "7567074c3d447b57459b1c6b1214436be1f1611c317e3b574bb769eea6448a48",
+      "records": 1,
+      "root_boxes": 1,
+      "arcs": 8,
+      "leaves": 35
+    },
+    {
+      "fence": 44,
+      "section": "B.2.0039. cell-0039.json",
+      "headings": [
+        {
+          "level": 1,
+          "title": "An original finite-activity two-parameter strip with exactly eight actual outputs"
+        },
+        {
+          "level": 2,
+          "title": "Appendix B. Complete root boxes, matrices, cover and leaves"
+        },
+        {
+          "level": 3,
+          "title": "B.2.0039. cell-0039.json"
+        }
+      ],
+      "source_fence_info": "textJSON",
+      "source_lines": [
+        3105,
+        3168
+      ],
+      "source_fence_byte_range": [
+        3228313,
+        3309484
+      ],
+      "source_body_byte_range": [
+        3228325,
+        3309480
+      ],
+      "path": "final-strip/cell-0039.json",
+      "format": "json",
+      "bytes": 81155,
+      "sha256": "2d8a0d41a9bb01340696854304fe3e38dce3d0fd63bf0fc0efa4b94ef2cc4126",
+      "records": 1,
+      "root_boxes": 1,
+      "arcs": 8,
+      "leaves": 35
+    },
+    {
+      "fence": 45,
+      "section": "B.2.0040. cell-0040.json",
+      "headings": [
+        {
+          "level": 1,
+          "title": "An original finite-activity two-parameter strip with exactly eight actual outputs"
+        },
+        {
+          "level": 2,
+          "title": "Appendix B. Complete root boxes, matrices, cover and leaves"
+        },
+        {
+          "level": 3,
+          "title": "B.2.0040. cell-0040.json"
+        }
+      ],
+      "source_fence_info": "textJSON",
+      "source_lines": [
+        3172,
+        3235
+      ],
+      "source_fence_byte_range": [
+        3309515,
+        3390680
+      ],
+      "source_body_byte_range": [
+        3309527,
+        3390676
+      ],
+      "path": "final-strip/cell-0040.json",
+      "format": "json",
+      "bytes": 81149,
+      "sha256": "0af9fa1b06fd019ea436b8cb333ffc0bb9268fb50ef01b189cad751e9e657e95",
+      "records": 1,
+      "root_boxes": 1,
+      "arcs": 8,
+      "leaves": 35
+    },
+    {
+      "fence": 46,
+      "section": "B.2.0041. cell-0041.json",
+      "headings": [
+        {
+          "level": 1,
+          "title": "An original finite-activity two-parameter strip with exactly eight actual outputs"
+        },
+        {
+          "level": 2,
+          "title": "Appendix B. Complete root boxes, matrices, cover and leaves"
+        },
+        {
+          "level": 3,
+          "title": "B.2.0041. cell-0041.json"
+        }
+      ],
+      "source_fence_info": "textJSON",
+      "source_lines": [
+        3239,
+        3302
+      ],
+      "source_fence_byte_range": [
+        3390711,
+        3471876
+      ],
+      "source_body_byte_range": [
+        3390723,
+        3471872
+      ],
+      "path": "final-strip/cell-0041.json",
+      "format": "json",
+      "bytes": 81149,
+      "sha256": "f2d237ccbe8eb71cb2e905fe0b263ef6a448b87189b891c90441d70c85732afd",
+      "records": 1,
+      "root_boxes": 1,
+      "arcs": 8,
+      "leaves": 35
+    },
+    {
+      "fence": 47,
+      "section": "B.2.0042. cell-0042.json",
+      "headings": [
+        {
+          "level": 1,
+          "title": "An original finite-activity two-parameter strip with exactly eight actual outputs"
+        },
+        {
+          "level": 2,
+          "title": "Appendix B. Complete root boxes, matrices, cover and leaves"
+        },
+        {
+          "level": 3,
+          "title": "B.2.0042. cell-0042.json"
+        }
+      ],
+      "source_fence_info": "textJSON",
+      "source_lines": [
+        3306,
+        3369
+      ],
+      "source_fence_byte_range": [
+        3471907,
+        3553077
+      ],
+      "source_body_byte_range": [
+        3471919,
+        3553073
+      ],
+      "path": "final-strip/cell-0042.json",
+      "format": "json",
+      "bytes": 81154,
+      "sha256": "261f80f55e9e0010e2ef898c874bbf23e4c8e0ec5f16240a8a2d92ad0d40a56b",
+      "records": 1,
+      "root_boxes": 1,
+      "arcs": 8,
+      "leaves": 35
+    },
+    {
+      "fence": 48,
+      "section": "B.2.0043. cell-0043.json",
+      "headings": [
+        {
+          "level": 1,
+          "title": "An original finite-activity two-parameter strip with exactly eight actual outputs"
+        },
+        {
+          "level": 2,
+          "title": "Appendix B. Complete root boxes, matrices, cover and leaves"
+        },
+        {
+          "level": 3,
+          "title": "B.2.0043. cell-0043.json"
+        }
+      ],
+      "source_fence_info": "textJSON",
+      "source_lines": [
+        3373,
+        3436
+      ],
+      "source_fence_byte_range": [
+        3553108,
+        3634277
+      ],
+      "source_body_byte_range": [
+        3553120,
+        3634273
+      ],
+      "path": "final-strip/cell-0043.json",
+      "format": "json",
+      "bytes": 81153,
+      "sha256": "b0d3e1155e48936304f31195a507bb2cb623d2dace11c3c50df16579ece078f2",
+      "records": 1,
+      "root_boxes": 1,
+      "arcs": 8,
+      "leaves": 35
+    },
+    {
+      "fence": 49,
+      "section": "B.2.0044. cell-0044.json",
+      "headings": [
+        {
+          "level": 1,
+          "title": "An original finite-activity two-parameter strip with exactly eight actual outputs"
+        },
+        {
+          "level": 2,
+          "title": "Appendix B. Complete root boxes, matrices, cover and leaves"
+        },
+        {
+          "level": 3,
+          "title": "B.2.0044. cell-0044.json"
+        }
+      ],
+      "source_fence_info": "textJSON",
+      "source_lines": [
+        3440,
+        3503
+      ],
+      "source_fence_byte_range": [
+        3634308,
+        3715473
+      ],
+      "source_body_byte_range": [
+        3634320,
+        3715469
+      ],
+      "path": "final-strip/cell-0044.json",
+      "format": "json",
+      "bytes": 81149,
+      "sha256": "d2be9e7dd3bd9a02180a1fe3d2643145a0dad6e6976087a494ec885b8b8554d8",
+      "records": 1,
+      "root_boxes": 1,
+      "arcs": 8,
+      "leaves": 35
+    },
+    {
+      "fence": 50,
+      "section": "B.2.0045. cell-0045.json",
+      "headings": [
+        {
+          "level": 1,
+          "title": "An original finite-activity two-parameter strip with exactly eight actual outputs"
+        },
+        {
+          "level": 2,
+          "title": "Appendix B. Complete root boxes, matrices, cover and leaves"
+        },
+        {
+          "level": 3,
+          "title": "B.2.0045. cell-0045.json"
+        }
+      ],
+      "source_fence_info": "textJSON",
+      "source_lines": [
+        3507,
+        3570
+      ],
+      "source_fence_byte_range": [
+        3715504,
+        3796672
+      ],
+      "source_body_byte_range": [
+        3715516,
+        3796668
+      ],
+      "path": "final-strip/cell-0045.json",
+      "format": "json",
+      "bytes": 81152,
+      "sha256": "18c83f30475fcb62cce2ed57ab7a6f02164b460fe36927c51cdd6130781791eb",
+      "records": 1,
+      "root_boxes": 1,
+      "arcs": 8,
+      "leaves": 35
+    },
+    {
+      "fence": 51,
+      "section": "B.2.0046. cell-0046.json",
+      "headings": [
+        {
+          "level": 1,
+          "title": "An original finite-activity two-parameter strip with exactly eight actual outputs"
+        },
+        {
+          "level": 2,
+          "title": "Appendix B. Complete root boxes, matrices, cover and leaves"
+        },
+        {
+          "level": 3,
+          "title": "B.2.0046. cell-0046.json"
+        }
+      ],
+      "source_fence_info": "textJSON",
+      "source_lines": [
+        3574,
+        3637
+      ],
+      "source_fence_byte_range": [
+        3796703,
+        3877870
+      ],
+      "source_body_byte_range": [
+        3796715,
+        3877866
+      ],
+      "path": "final-strip/cell-0046.json",
+      "format": "json",
+      "bytes": 81151,
+      "sha256": "4495f03a9d54ed69c18e67d26d4250b45b9b528b32b26ff97c8f1be5b85c352a",
+      "records": 1,
+      "root_boxes": 1,
+      "arcs": 8,
+      "leaves": 35
+    },
+    {
+      "fence": 52,
+      "section": "B.2.0047. cell-0047.json",
+      "headings": [
+        {
+          "level": 1,
+          "title": "An original finite-activity two-parameter strip with exactly eight actual outputs"
+        },
+        {
+          "level": 2,
+          "title": "Appendix B. Complete root boxes, matrices, cover and leaves"
+        },
+        {
+          "level": 3,
+          "title": "B.2.0047. cell-0047.json"
+        }
+      ],
+      "source_fence_info": "textJSON",
+      "source_lines": [
+        3641,
+        3704
+      ],
+      "source_fence_byte_range": [
+        3877901,
+        3959072
+      ],
+      "source_body_byte_range": [
+        3877913,
+        3959068
+      ],
+      "path": "final-strip/cell-0047.json",
+      "format": "json",
+      "bytes": 81155,
+      "sha256": "22fc1f2955a3586358ab76ffd8d0e8f22b1e643547f45007b2382404c0935765",
+      "records": 1,
+      "root_boxes": 1,
+      "arcs": 8,
+      "leaves": 35
+    },
+    {
+      "fence": 53,
+      "section": "B.2.0048. cell-0048.json",
+      "headings": [
+        {
+          "level": 1,
+          "title": "An original finite-activity two-parameter strip with exactly eight actual outputs"
+        },
+        {
+          "level": 2,
+          "title": "Appendix B. Complete root boxes, matrices, cover and leaves"
+        },
+        {
+          "level": 3,
+          "title": "B.2.0048. cell-0048.json"
+        }
+      ],
+      "source_fence_info": "textJSON",
+      "source_lines": [
+        3708,
+        3771
+      ],
+      "source_fence_byte_range": [
+        3959103,
+        4040273
+      ],
+      "source_body_byte_range": [
+        3959115,
+        4040269
+      ],
+      "path": "final-strip/cell-0048.json",
+      "format": "json",
+      "bytes": 81154,
+      "sha256": "b6d3b0b6721827786f1efac87b4fd475553c1963483f196f853f110b31069811",
+      "records": 1,
+      "root_boxes": 1,
+      "arcs": 8,
+      "leaves": 35
+    },
+    {
+      "fence": 54,
+      "section": "B.2.0049. cell-0049.json",
+      "headings": [
+        {
+          "level": 1,
+          "title": "An original finite-activity two-parameter strip with exactly eight actual outputs"
+        },
+        {
+          "level": 2,
+          "title": "Appendix B. Complete root boxes, matrices, cover and leaves"
+        },
+        {
+          "level": 3,
+          "title": "B.2.0049. cell-0049.json"
+        }
+      ],
+      "source_fence_info": "textJSON",
+      "source_lines": [
+        3775,
+        3838
+      ],
+      "source_fence_byte_range": [
+        4040304,
+        4121469
+      ],
+      "source_body_byte_range": [
+        4040316,
+        4121465
+      ],
+      "path": "final-strip/cell-0049.json",
+      "format": "json",
+      "bytes": 81149,
+      "sha256": "440d9c334203bc8dc0b7f2340fec0c4490d798dba4fd042bdcab6d8424fcbb2b",
+      "records": 1,
+      "root_boxes": 1,
+      "arcs": 8,
+      "leaves": 35
+    },
+    {
+      "fence": 55,
+      "section": "B.3. Both uniform edges and both separate midpoint roots",
+      "headings": [
+        {
+          "level": 1,
+          "title": "An original finite-activity two-parameter strip with exactly eight actual outputs"
+        },
+        {
+          "level": 2,
+          "title": "Appendix B. Complete root boxes, matrices, cover and leaves"
+        },
+        {
+          "level": 3,
+          "title": "B.3. Both uniform edges and both separate midpoint roots"
+        }
+      ],
+      "source_fence_info": "textJSON",
+      "source_lines": [
+        3844,
+        3907
+      ],
+      "source_fence_byte_range": [
+        4121570,
+        4202161
+      ],
+      "source_body_byte_range": [
+        4121582,
+        4202157
+      ],
+      "path": "edge-91.json",
+      "format": "json",
+      "bytes": 80575,
+      "sha256": "91a28ebec12191c1797ec26a49c44442c9ee2ba5361fa7cdfafe8a4665ce85d4",
+      "records": 1,
+      "root_boxes": 1,
+      "arcs": 8,
+      "leaves": 30
+    },
+    {
+      "fence": 56,
+      "section": "B.3. Both uniform edges and both separate midpoint roots",
+      "headings": [
+        {
+          "level": 1,
+          "title": "An original finite-activity two-parameter strip with exactly eight actual outputs"
+        },
+        {
+          "level": 2,
+          "title": "Appendix B. Complete root boxes, matrices, cover and leaves"
+        },
+        {
+          "level": 3,
+          "title": "B.3. Both uniform edges and both separate midpoint roots"
+        }
+      ],
+      "source_fence_info": "textJSON",
+      "source_lines": [
+        3911,
+        3974
+      ],
+      "source_fence_byte_range": [
+        4202200,
+        4282803
+      ],
+      "source_body_byte_range": [
+        4202212,
+        4282799
+      ],
+      "path": "edge-23.json",
+      "format": "json",
+      "bytes": 80587,
+      "sha256": "c052e5b8f48d1c3865ccd40b680f8e75c60c226bfea78083768e121ae33c71db",
+      "records": 1,
+      "root_boxes": 1,
+      "arcs": 8,
+      "leaves": 30
+    },
+    {
+      "fence": 57,
+      "section": "B.3. Both uniform edges and both separate midpoint roots",
+      "headings": [
+        {
+          "level": 1,
+          "title": "An original finite-activity two-parameter strip with exactly eight actual outputs"
+        },
+        {
+          "level": 2,
+          "title": "Appendix B. Complete root boxes, matrices, cover and leaves"
+        },
+        {
+          "level": 3,
+          "title": "B.3. Both uniform edges and both separate midpoint roots"
+        }
+      ],
+      "source_fence_info": "textJSON",
+      "source_lines": [
+        3978,
+        4041
+      ],
+      "source_fence_byte_range": [
+        4282849,
+        4363017
+      ],
+      "source_body_byte_range": [
+        4282861,
+        4363013
+      ],
+      "path": "edge-center-91.json",
+      "format": "json",
+      "bytes": 80152,
+      "sha256": "fe4221a594c96265c6c36a00e1ddae5927bc7bc4d171999f1b522203c0c112fb",
+      "records": 1,
+      "root_boxes": 1,
+      "arcs": 8,
+      "leaves": 30
+    },
+    {
+      "fence": 58,
+      "section": "B.3. Both uniform edges and both separate midpoint roots",
+      "headings": [
+        {
+          "level": 1,
+          "title": "An original finite-activity two-parameter strip with exactly eight actual outputs"
+        },
+        {
+          "level": 2,
+          "title": "Appendix B. Complete root boxes, matrices, cover and leaves"
+        },
+        {
+          "level": 3,
+          "title": "B.3. Both uniform edges and both separate midpoint roots"
+        }
+      ],
+      "source_fence_info": "textJSON",
+      "source_lines": [
+        4045,
+        4108
+      ],
+      "source_fence_byte_range": [
+        4363063,
+        4443248
+      ],
+      "source_body_byte_range": [
+        4363075,
+        4443244
+      ],
+      "path": "edge-center-23.json",
+      "format": "json",
+      "bytes": 80169,
+      "sha256": "f8e73825c2cbd727ede866fe556348ef6de89058468f448bb9d1e6073b7816dd",
+      "records": 1,
+      "root_boxes": 1,
+      "arcs": 8,
+      "leaves": 30
+    },
+    {
+      "fence": 59,
+      "section": "B.4. Original outward edge constants",
+      "headings": [
+        {
+          "level": 1,
+          "title": "An original finite-activity two-parameter strip with exactly eight actual outputs"
+        },
+        {
+          "level": 2,
+          "title": "Appendix B. Complete root boxes, matrices, cover and leaves"
+        },
+        {
+          "level": 3,
+          "title": "B.4. Original outward edge constants"
+        }
+      ],
+      "source_fence_info": "textJSON",
+      "source_lines": [
+        4112,
+        4114
+      ],
+      "source_fence_byte_range": [
+        4443291,
+        4444192
+      ],
+      "source_body_byte_range": [
+        4443303,
+        4444188
+      ],
+      "path": "appendix-b-edge-constants.json",
+      "format": "json",
+      "bytes": 885,
+      "sha256": "db729e213088315b031d494a17a35da7ce9e240d1bc00df7c106ba1c1c04f980",
+      "records": 1,
+      "root_boxes": 0,
+      "arcs": 0,
+      "leaves": 0
+    },
+    {
+      "fence": 60,
+      "section": "Appendix C. Exact independent enclosures and contracted-image bounds",
+      "headings": [
+        {
+          "level": 1,
+          "title": "An original finite-activity two-parameter strip with exactly eight actual outputs"
+        },
+        {
+          "level": 2,
+          "title": "Appendix C. Exact independent enclosures and contracted-image bounds"
+        }
+      ],
+      "source_fence_info": "textJSON",
+      "source_lines": [
+        4120,
+        4177
+      ],
+      "source_fence_byte_range": [
+        4444744,
+        4541285
+      ],
+      "source_body_byte_range": [
+        4444756,
+        4541281
+      ],
+      "path": "appendix-c-independent-enclosures.json",
+      "format": "json",
+      "bytes": 96525,
+      "sha256": "5754c34c32535b03c8abf8f347912f2a26561aebbc55fb48a6019e98a002a4d7",
+      "records": 54,
+      "root_boxes": 0,
+      "arcs": 0,
+      "leaves": 0
+    },
+    {
+      "fence": 61,
+      "section": "Appendix C. Exact independent enclosures and contracted-image bounds",
+      "headings": [
+        {
+          "level": 1,
+          "title": "An original finite-activity two-parameter strip with exactly eight actual outputs"
+        },
+        {
+          "level": 2,
+          "title": "Appendix C. Exact independent enclosures and contracted-image bounds"
+        }
+      ],
+      "source_fence_info": "textJSON",
+      "source_lines": [
+        4181,
+        4234
+      ],
+      "source_fence_byte_range": [
+        4541615,
+        4596219
+      ],
+      "source_body_byte_range": [
+        4541627,
+        4596215
+      ],
+      "path": "appendix-c-contracted-image-bounds.json",
+      "format": "json",
+      "bytes": 54588,
+      "sha256": "a0e7952887c1f7bd99056115b1770b12db766f09d4042fda25172787261fcb10",
+      "records": 50,
+      "root_boxes": 0,
+      "arcs": 0,
+      "leaves": 0
+    },
+    {
+      "fence": 62,
+      "section": "Appendix C. Exact independent enclosures and contracted-image bounds",
+      "headings": [
+        {
+          "level": 1,
+          "title": "An original finite-activity two-parameter strip with exactly eight actual outputs"
+        },
+        {
+          "level": 2,
+          "title": "Appendix C. Exact independent enclosures and contracted-image bounds"
+        }
+      ],
+      "source_fence_info": "textJSON",
+      "source_lines": [
+        4238,
+        4243
+      ],
+      "source_fence_byte_range": [
+        4596512,
+        4598400
+      ],
+      "source_body_byte_range": [
+        4596524,
+        4598396
+      ],
+      "path": "appendix-c-edge-identification.json",
+      "format": "json",
+      "bytes": 1872,
+      "sha256": "76fcbe34c5daa8f819526faf8f2b4f4b3ac043051e3bcc761cedfbc88d252d8e",
+      "records": 2,
+      "root_boxes": 0,
+      "arcs": 0,
+      "leaves": 0
+    },
+    {
+      "fence": 63,
+      "section": "Appendix C. Exact independent enclosures and contracted-image bounds",
+      "headings": [
+        {
+          "level": 1,
+          "title": "An original finite-activity two-parameter strip with exactly eight actual outputs"
+        },
+        {
+          "level": 2,
+          "title": "Appendix C. Exact independent enclosures and contracted-image bounds"
+        }
+      ],
+      "source_fence_info": "textJSON",
+      "source_lines": [
+        4247,
+        4249
+      ],
+      "source_fence_byte_range": [
+        4598504,
+        4602759
+      ],
+      "source_body_byte_range": [
+        4598516,
+        4602755
+      ],
+      "path": "appendix-c-extrema.json",
+      "format": "json",
+      "bytes": 4239,
+      "sha256": "290092c7a5287b60cf1a9961718411fba51567b237a9c9135c84174d47b97f28",
+      "records": 1,
+      "root_boxes": 0,
+      "arcs": 0,
+      "leaves": 0
+    },
+    {
+      "fence": 64,
+      "section": "Appendix D. Direct rational evaluation bounds",
+      "headings": [
+        {
+          "level": 1,
+          "title": "An original finite-activity two-parameter strip with exactly eight actual outputs"
+        },
+        {
+          "level": 2,
+          "title": "Appendix D. Direct rational evaluation bounds"
+        }
+      ],
+      "source_fence_info": "textJSON",
+      "source_lines": [
+        4255,
+        4308
+      ],
+      "source_fence_byte_range": [
+        4603407,
+        4636490
+      ],
+      "source_body_byte_range": [
+        4603419,
+        4636486
+      ],
+      "path": "appendix-d-direct-cell-bounds.json",
+      "format": "json",
+      "bytes": 33067,
+      "sha256": "3039e7465d0227b2018092c585476c4ba03fc32cf9df0f770e6ee7d6c14dda48",
+      "records": 50,
+      "root_boxes": 0,
+      "arcs": 0,
+      "leaves": 0
+    },
+    {
+      "fence": 65,
+      "section": "Appendix D. Direct rational evaluation bounds",
+      "headings": [
+        {
+          "level": 1,
+          "title": "An original finite-activity two-parameter strip with exactly eight actual outputs"
+        },
+        {
+          "level": 2,
+          "title": "Appendix D. Direct rational evaluation bounds"
+        }
+      ],
+      "source_fence_info": "textJSON",
+      "source_lines": [
+        4312,
+        4319
+      ],
+      "source_fence_byte_range": [
+        4636632,
+        4638599
+      ],
+      "source_body_byte_range": [
+        4636644,
+        4638595
+      ],
+      "path": "appendix-d-direct-edge-bounds.json",
+      "format": "json",
+      "bytes": 1951,
+      "sha256": "e34a745bae0b242ea41da032f220b3dbbfb834ecdfd3bf054d0afd0acfd67c1a",
+      "records": 4,
+      "root_boxes": 0,
+      "arcs": 0,
+      "leaves": 0
+    },
+    {
+      "fence": 66,
+      "section": "Appendix D. Direct rational evaluation bounds",
+      "headings": [
+        {
+          "level": 1,
+          "title": "An original finite-activity two-parameter strip with exactly eight actual outputs"
+        },
+        {
+          "level": 2,
+          "title": "Appendix D. Direct rational evaluation bounds"
+        }
+      ],
+      "source_fence_info": "textJSON",
+      "source_lines": [
+        4323,
+        4376
+      ],
+      "source_fence_byte_range": [
+        4639173,
+        5068096
+      ],
+      "source_body_byte_range": [
+        4639185,
+        5068092
+      ],
+      "path": "appendix-d-direct-cell-geometry.json",
+      "format": "json",
+      "bytes": 428907,
+      "sha256": "7f18989495394d38684714de5fd3b596d28988edb3642fac3a13144ed721296c",
+      "records": 50,
+      "root_boxes": 0,
+      "arcs": 0,
+      "leaves": 0
+    },
+    {
+      "fence": 67,
+      "section": "Appendix D. Direct rational evaluation bounds",
+      "headings": [
+        {
+          "level": 1,
+          "title": "An original finite-activity two-parameter strip with exactly eight actual outputs"
+        },
+        {
+          "level": 2,
+          "title": "Appendix D. Direct rational evaluation bounds"
+        }
+      ],
+      "source_fence_info": "textJSON",
+      "source_lines": [
+        4380,
+        4385
+      ],
+      "source_fence_byte_range": [
+        5068780,
+        5075757
+      ],
+      "source_body_byte_range": [
+        5068792,
+        5075753
+      ],
+      "path": "appendix-d-direct-edge-tangents.json",
+      "format": "json",
+      "bytes": 6961,
+      "sha256": "c26c7876639701594b75d4201553c2af5e1e5e2fd9310d916ad2f4c8ae9fe167",
+      "records": 2,
+      "root_boxes": 0,
+      "arcs": 0,
+      "leaves": 0
+    }
+  ]
+}

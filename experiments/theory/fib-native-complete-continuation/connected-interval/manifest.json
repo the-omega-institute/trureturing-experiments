@@ -1,0 +1,363 @@
+{
+  "source_repository": "https://github.com/the-omega-institute/trureturing",
+  "source_commit": "4128c47e530bc03508c9b11d1edb59a9b5e33f33",
+  "source_path": "docs/develop/theory/FIB_NATIVE_COMPLETE_CONTINUATION_CONNECTED_INTERVAL.md",
+  "source_bytes": 36894435,
+  "source_sha256": "8f1cc8918c5c4967e68272f15ba21a11edee85fa93cd7868db972a20a062aa8f",
+  "record_convention": "A JSON object is one record; a top-level JSON array counts its elements; JSONL counts its nonempty lines.",
+  "count_convention": "root_boxes counts objects with array-valued center and R; arcs and leaves count the elements of array-valued fields with those names. Scalar summary fields are not counted again.",
+  "payload_files": 10,
+  "payload_bytes": 36837685,
+  "entries": [
+    {
+      "fence": 1,
+      "section": "12. Complete source-enclosure table",
+      "headings": [
+        {
+          "level": 1,
+          "title": "Native complete-continuation connected interval"
+        },
+        {
+          "level": 2,
+          "title": "12. Complete source-enclosure table"
+        }
+      ],
+      "source_fence_info": "text",
+      "source_lines": [
+        568,
+        570
+      ],
+      "source_fence_byte_range": [
+        53138,
+        56715
+      ],
+      "source_body_byte_range": [
+        53146,
+        56711
+      ],
+      "path": "section-12-source-enclosures.json",
+      "format": "json",
+      "bytes": 3565,
+      "sha256": "96afaa852fc0470b60c28f345bd52b139fb4903ea56c8f50920d8179186eec4e",
+      "records": 1,
+      "root_boxes": 0,
+      "arcs": 0,
+      "leaves": 0
+    },
+    {
+      "fence": 2,
+      "section": "13. All uniform cells and full-circle rational certificates",
+      "headings": [
+        {
+          "level": 1,
+          "title": "Native complete-continuation connected interval"
+        },
+        {
+          "level": 2,
+          "title": "13. All uniform cells and full-circle rational certificates"
+        }
+      ],
+      "source_fence_info": "text",
+      "source_lines": [
+        576,
+        780
+      ],
+      "source_fence_byte_range": [
+        57170,
+        35187455
+      ],
+      "source_body_byte_range": [
+        57178,
+        35187451
+      ],
+      "path": "section-13-six-band-uniform-cells.jsonl",
+      "format": "jsonl",
+      "bytes": 35130273,
+      "sha256": "ea63beed1a09292b12e21b3f2c7404e17ae66b4d62a5f2e5e966c46b4bcf676e",
+      "records": 203,
+      "root_boxes": 203,
+      "arcs": 1624,
+      "leaves": 5153
+    },
+    {
+      "fence": 3,
+      "section": "13. All uniform cells and full-circle rational certificates",
+      "headings": [
+        {
+          "level": 1,
+          "title": "Native complete-continuation connected interval"
+        },
+        {
+          "level": 2,
+          "title": "13. All uniform cells and full-circle rational certificates"
+        }
+      ],
+      "source_fence_info": "text",
+      "source_lines": [
+        784,
+        787
+      ],
+      "source_fence_byte_range": [
+        35187777,
+        35572033
+      ],
+      "source_body_byte_range": [
+        35187785,
+        35572029
+      ],
+      "path": "section-13-six-band-final-cells.jsonl",
+      "format": "jsonl",
+      "bytes": 384244,
+      "sha256": "df845535ffa4ae82beae1dda52d979e328049144fb3f25e363a3ff758dd1d384",
+      "records": 2,
+      "root_boxes": 2,
+      "arcs": 16,
+      "leaves": 60
+    },
+    {
+      "fence": 4,
+      "section": "13. All uniform cells and full-circle rational certificates",
+      "headings": [
+        {
+          "level": 1,
+          "title": "Native complete-continuation connected interval"
+        },
+        {
+          "level": 2,
+          "title": "13. All uniform cells and full-circle rational certificates"
+        }
+      ],
+      "source_fence_info": "text",
+      "source_lines": [
+        791,
+        796
+      ],
+      "source_fence_byte_range": [
+        35572347,
+        36375869
+      ],
+      "source_body_byte_range": [
+        35572355,
+        36375865
+      ],
+      "path": "section-13-seven-band-uniform-cells.jsonl",
+      "format": "jsonl",
+      "bytes": 803510,
+      "sha256": "b2ad47e39aaebb374e10d0e7c653ce5cc45f301ea5b0cf80e21c451b19262e25",
+      "records": 4,
+      "root_boxes": 4,
+      "arcs": 32,
+      "leaves": 120
+    },
+    {
+      "fence": 5,
+      "section": "14. Complete event box and common embeddings",
+      "headings": [
+        {
+          "level": 1,
+          "title": "Native complete-continuation connected interval"
+        },
+        {
+          "level": 2,
+          "title": "14. Complete event box and common embeddings"
+        }
+      ],
+      "source_fence_info": "text",
+      "source_lines": [
+        802,
+        804
+      ],
+      "source_fence_byte_range": [
+        36376394,
+        36464429
+      ],
+      "source_body_byte_range": [
+        36376402,
+        36464425
+      ],
+      "path": "section-14-event-box.json",
+      "format": "json",
+      "bytes": 88023,
+      "sha256": "18a6d09bda0a8e88aa1d2da0da2cce980420538e7bd9f7ac709bd0c2482b152f",
+      "records": 1,
+      "root_boxes": 1,
+      "arcs": 8,
+      "leaves": 30
+    },
+    {
+      "fence": 6,
+      "section": "14. Complete event box and common embeddings",
+      "headings": [
+        {
+          "level": 1,
+          "title": "Native complete-continuation connected interval"
+        },
+        {
+          "level": 2,
+          "title": "14. Complete event box and common embeddings"
+        }
+      ],
+      "source_fence_info": "text",
+      "source_lines": [
+        808,
+        810
+      ],
+      "source_fence_byte_range": [
+        36464870,
+        36465160
+      ],
+      "source_body_byte_range": [
+        36464878,
+        36465156
+      ],
+      "path": "section-14-embedding-margins.json",
+      "format": "json",
+      "bytes": 278,
+      "sha256": "cd7247de090dfbf6fa594e46092c6aff0193f700964b0a7b5dd7022560099f14",
+      "records": 1,
+      "root_boxes": 0,
+      "arcs": 0,
+      "leaves": 0
+    },
+    {
+      "fence": 7,
+      "section": "15. Complete common point boxes for every seven-band join",
+      "headings": [
+        {
+          "level": 1,
+          "title": "Native complete-continuation connected interval"
+        },
+        {
+          "level": 2,
+          "title": "15. Complete common point boxes for every seven-band join"
+        }
+      ],
+      "source_fence_info": "text",
+      "source_lines": [
+        816,
+        820
+      ],
+      "source_fence_byte_range": [
+        36465509,
+        36657871
+      ],
+      "source_body_byte_range": [
+        36465517,
+        36657867
+      ],
+      "path": "section-15-seven-band-joins.jsonl",
+      "format": "jsonl",
+      "bytes": 192350,
+      "sha256": "a2efef46209986f1d93f2665d44327faa722038be7dd98c9571c269c1158b33a",
+      "records": 3,
+      "root_boxes": 3,
+      "arcs": 0,
+      "leaves": 0
+    },
+    {
+      "fence": 8,
+      "section": "16. Complete endpoint, seam-response and feasibility data",
+      "headings": [
+        {
+          "level": 1,
+          "title": "Native complete-continuation connected interval"
+        },
+        {
+          "level": 2,
+          "title": "16. Complete endpoint, seam-response and feasibility data"
+        }
+      ],
+      "source_fence_info": "text",
+      "source_lines": [
+        826,
+        828
+      ],
+      "source_fence_byte_range": [
+        36658229,
+        36779465
+      ],
+      "source_body_byte_range": [
+        36658237,
+        36779461
+      ],
+      "path": "section-16-endpoints-and-seam.json",
+      "format": "json",
+      "bytes": 121224,
+      "sha256": "4561e177ef297fdac0c2407a32f5cb927a5c3a3236deffea19ad2c5180cabfcb",
+      "records": 1,
+      "root_boxes": 2,
+      "arcs": 0,
+      "leaves": 0
+    },
+    {
+      "fence": 9,
+      "section": "16. Complete endpoint, seam-response and feasibility data",
+      "headings": [
+        {
+          "level": 1,
+          "title": "Native complete-continuation connected interval"
+        },
+        {
+          "level": 2,
+          "title": "16. Complete endpoint, seam-response and feasibility data"
+        }
+      ],
+      "source_fence_info": "text",
+      "source_lines": [
+        832,
+        834
+      ],
+      "source_fence_byte_range": [
+        36779841,
+        36892777
+      ],
+      "source_body_byte_range": [
+        36779849,
+        36892773
+      ],
+      "path": "section-16-seam-response.json",
+      "format": "json",
+      "bytes": 112924,
+      "sha256": "90e0a8b2006e7987d483304e47263e2cb5d207f5f4042c2ddfe3d1a8ca37536e",
+      "records": 1,
+      "root_boxes": 0,
+      "arcs": 0,
+      "leaves": 0
+    },
+    {
+      "fence": 10,
+      "section": "16. Complete endpoint, seam-response and feasibility data",
+      "headings": [
+        {
+          "level": 1,
+          "title": "Native complete-continuation connected interval"
+        },
+        {
+          "level": 2,
+          "title": "16. Complete endpoint, seam-response and feasibility data"
+        }
+      ],
+      "source_fence_info": "text",
+      "source_lines": [
+        838,
+        840
+      ],
+      "source_fence_byte_range": [
+        36893085,
+        36894391
+      ],
+      "source_body_byte_range": [
+        36893093,
+        36894387
+      ],
+      "path": "section-16-feasibility.json",
+      "format": "json",
+      "bytes": 1294,
+      "sha256": "188fa74dab4cd21e06efd6ae9511c7dd149607828d33257237c1ac666708d242",
+      "records": 1,
+      "root_boxes": 0,
+      "arcs": 0,
+      "leaves": 0
+    }
+  ]
+}
