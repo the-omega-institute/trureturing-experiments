@@ -1,0 +1,18 @@
+ok   A382318 a(1..300) equal the b-file
+ok   A382319 b(1..300) equal the b-file
+ok   sum_{n>=1} A(x^n) = B to order 300
+ok   A = x + B^3 to order 300
+ok   B^3 = B(x^3) (mod 3) to order 300
+ok   a(3n) = b(n) (mod 3), 3n <= 300
+ok   a(3n+1) = a(3n+2) = 0 (mod 3), 1 <= n, 3n+2 <= 300
+ok   sigma(n)sigma(2n) = 0 (mod 3) for n <= 900
+ok   Dold congruences c_{pm} = c_m (mod p^(v_p(m)+1)) for p < 40, pm <= 900
+ok   C = A382124 has integer coefficients to order 300
+ok   D = A382125 has integer coefficients to order 900
+ok   A382124 c(0..300) equal the b-file
+ok   A382125 d(0..) equal the b-file
+ok   D = C^3 to order 300
+ok   d(3n) = c(n) (mod 3), n <= 300
+ok   d(3n+1) = d(3n+2) = 0 (mod 3), n < 300
+RESULT PASS
+        3.51 real         2.24 user         0.02 sys
