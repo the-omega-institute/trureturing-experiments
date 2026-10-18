@@ -1,0 +1,7 @@
+ok   the n and -n summands coincide as rational functions (n = 1..6)
+ok   A = 1 + 2 sum x^(m^2) ((A - x^m)/(1 - x^m A))^m to order 400
+ok   a(0..400) equal the b-file
+ok   for 1 <= n <= 400: a(n) = 2 (mod 4) iff n is a square, else 0 (mod 4)
+ok   C = sum x^(m^2) (mod 2)
+RESULT PASS
+      150.82 real        96.26 user         0.94 sys
