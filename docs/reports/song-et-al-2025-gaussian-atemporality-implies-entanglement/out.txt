@@ -1,0 +1,13 @@
+PASS K V K^T = N
+PASS K((-Ω)⊕Ω)K^T = Ω - TΩT^T
+PASS A T^T = C and T A T^T + N = B (Eq. (6))
+PASS L V L^T = M
+PASS L(Ω⊕(-Ω))L^T = Ω - SΩS^T
+PASS Λ(V + iΩ⊕Ω)Λ = ΛVΛ + i((-Ω)⊕Ω) (partial transpose flips p_A)
+INFO {'total': 20000, 'ppt': 797, 'ppt_both': 797, 'atemporal': 18298, 'atemporal_npt': 18298, 'oneway': 18688, 'oneway_npt': 18688}
+PASS every PPT sample is compatible in both directions
+PASS every atemporal sample is NPT (entangled)
+PASS every sample incompatible in at least one direction is NPT
+INFO beam-splitter family: 985 atemporal grid points
+PASS beam-splitter family: atemporal points are NPT
+RESULT PASS 0
