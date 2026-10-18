@@ -1,0 +1,7 @@
+n=1: eps^T=-eps, eps^2=-I: True; 20000 random states in [-1/2,0] (min -0.499233, max 2.78e-16, |Im| < 8.3e-17): True; pure -6.94e-18; mixed pair -0.500000000000; segment monotone from 0 to -1/2: True
+n=3: eps^T=-eps, eps^2=-I: True; 20000 random states in [-1/2,0] (min -0.370964, max 1.07e-16, |Im| < 3.8e-17): True; pure 6.29e-18; mixed pair -0.500000000000; segment monotone from 0 to -1/2: True
+n=5: eps^T=-eps, eps^2=-I: True; 20000 random states in [-1/2,0] (min -0.087471, max 2.63e-17, |Im| < 2.1e-17): True; pure -9.12e-18; mixed pair -0.500000000000; segment monotone from 0 to -1/2: True
+exact n=1: I(|0><0|) = 0, I(Id/2) = -1/2
+contrast n=2: eps^T = +eps: True; I at a Bell state = 1.000000 (outside [-1/2, 0])
+RESULT PASS
+/opt/homebrew/bin/python3.13 -I check.py 20000 1  1.50s user 0.27s system 12% cpu 13.935 total
