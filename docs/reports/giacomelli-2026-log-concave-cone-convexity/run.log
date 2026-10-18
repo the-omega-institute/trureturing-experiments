@@ -1,0 +1,5 @@
+u_n = 1, v_n = 2^n, m_n = (1+2^n)/2 for n < 40: True
+u, v: all iterates L^i >= 0 up to i = 20: True, True; L(u) = 0 and L(v) = 0: True, True
+midpoint: L(m)_1 = -1/4, L(m)_2 = -1/2; first failing iterate i = 1
+RESULT PASS
+/opt/homebrew/bin/python3.13 -I check.py 40  0.03s user 0.02s system 58% cpu 0.082 total
