@@ -1,0 +1,6 @@
+f g = x^2, f >= g on [1, 20], g >= f on [0, 1], g > 0 (grid): True
+s = 2: |A| = diag(3, 3/2) True, nonnormal True, g(3) = g(3/2) = 7/5 True; c M = Q^T Q True
+family s in {1.5, 2, 3, 5, 10, 100}: M >= 0 and A nonnormal: True
+contrast f = x^(3/2), g = x^(1/2) at s = 2: min eigenvalue -0.387192 (< 0)
+RESULT PASS
+/opt/homebrew/bin/python3.13 -I check.py  0.14s user 0.06s system 33% cpu 0.606 total

@@ -1,0 +1,15 @@
+PASS A positive definite (leading minors [3, 3, 3/2])
+PASS B positive definite (leading minors [1/2, 5/16, 23/64])
+PASS L, R symmetric
+PASS trace L = trace R = 410065/4096
+PASS L - 7/5 I positive definite (leading minors [104813/1280, 21479961/6553600, 6125167917/33554432000]), so lambda_min(L) > 7/5
+PASS det(R - 7/5 I) = -81100763283/33554432000 < 0
+PASS R positive definite (leading minors [129085/4096, 94773349/1048576, 230594495153/268435456])
+lambda(L) = [97.00488147  1.7023284   1.40631552] partial sums [ 97.00488147  98.70720987 100.11352539]
+lambda(R) = [92.02692849  6.69163686  1.39496003] partial sums [ 92.02692849  98.71856536 100.11352539]
+PASS sum of two largest: L 98.707210 < R 98.718565
+PASS Lin-Wolkowicz Cor. 2.3 (k = 2) holds here: partial sums [67.53042248 69.01379694 70.27734375] >= [61.80659291 68.86931888 70.27734375]
+PASS (AB)^2 (BA)^2 differs from |BA|^4
+exponents in 0.25..12 (step 0.25) where this pair violates the majorization: [3.0, 3.25, 3.5, 3.75, 4.0, 4.25, 4.5, 4.75, 5.0, 5.25, 5.5, 5.75, 6.0, 6.25, 6.5, 6.75, 7.0, 7.25, 7.5, 7.75, 8.0, 8.25]
+PASS this pair satisfies the majorization at p = 2
+RESULT PASS
