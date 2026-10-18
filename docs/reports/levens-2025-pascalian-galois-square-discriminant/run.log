@@ -1,0 +1,8 @@
+P_49 = (1+z) q(z^2): True
+differential identity for m = 1..30: True
+discriminant closed form for m = 2..30: True
+Disc(q_24) = (7*5^23*c^11)^2: True
+square discriminants for m = 2..40: [24]
+Pell family (m, sqrt(2m+1), sqrt(m+1)): [(24, 7, 5), (840, 41, 29), (28560, 239, 169), (970224, 1393, 985)]  all m = 0 mod 4: True
+RESULT PASS
+/opt/homebrew/bin/python3.13 -I $R/check.py  0.72s user 0.06s system 79% cpu 0.977 total
