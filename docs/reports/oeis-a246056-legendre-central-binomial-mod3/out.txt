@@ -1,0 +1,7 @@
+ok   a(0..300) equal the b-file
+ok   Sum_n x^n (1+x)^(-2n-1) Sum_k C(n,k)^2 (-x)^k = Sum_m (-1)^m C(2m,m) x^(2m) to order 300
+ok   the g.f. is congruent mod 3 to the reduced series
+ok   (-1)^m C(2m,m) = 1 (mod 3) iff m has no base-3 digit 2, else 0
+ok   a(n) = 1 (mod 3) iff n = 2m with m in A005836, else 0, for n <= 300
+RESULT PASS
+        1.08 real         1.06 user         0.01 sys
