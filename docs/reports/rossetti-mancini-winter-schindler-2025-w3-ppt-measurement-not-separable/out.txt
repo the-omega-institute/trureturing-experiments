@@ -1,0 +1,25 @@
+PASS trace M' = 9/4
+PASS R equals the displayed matrix
+PASS M' >= 0 (eigenvalues [0, 1/12, 1/2, 2/3, 1])
+PASS M'^T1 >= 0 (eigenvalues [0, 1/6, 1/3, 3/4, 1])
+PASS M'^T2 >= 0 (eigenvalues [0, 1/6, 1/3, 3/4, 1])
+PASS M'^T3 >= 0 (eigenvalues [0, 1/6, 1/3, 3/4, 1])
+PASS R >= 0 (eigenvalues [0, 1/3, 1/2, 11/12, 1])
+PASS R^T1 >= 0 (eigenvalues [0, 1/4, 2/3, 5/6, 1])
+PASS R^T2 >= 0 (eigenvalues [0, 1/4, 2/3, 5/6, 1])
+PASS R^T3 >= 0 (eigenvalues [0, 1/4, 2/3, 5/6, 1])
+PASS R w = 0
+PASS R^T1 z1 = 0
+PASS R^T2 z2 = 0
+PASS R^T3 z3 = 0
+PASS Tr(P1 R) = 2 (got 2)
+PASS Tr(P2 R) = 5/2 (got 5/2)
+PASS Tr(P2 R) != 2 Tr(P1 R)
+INFO <w|u> = a0*b0*c1 + a0*b1*c0 + a1*b0*c0
+INFO <z1|u^*1> = 2*b0*c0*conjugate(a0) + b0*c1*conjugate(a1) + b1*c0*conjugate(a1)
+INFO <z2|u^*2> = 2*a0*c0*conjugate(b0) + a0*c1*conjugate(b1) + a1*c0*conjugate(b1)
+INFO <z3|u^*3> = 2*a0*b0*conjugate(c0) + a0*b1*conjugate(c1) + a1*b0*conjugate(c1)
+PASS sample solution satisfies the four kernel equations and ||P2u||^2 = 2||P1u||^2 (6, 12)
+PASS sample solution satisfies the four kernel equations and ||P2u||^2 = 2||P1u||^2 (6, 12)
+PASS M' = (1/48) sum_k |u_k><u_k| (fully separable)
+RESULT PASS 0
