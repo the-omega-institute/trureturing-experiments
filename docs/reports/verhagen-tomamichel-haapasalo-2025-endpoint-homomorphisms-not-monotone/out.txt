@@ -1,0 +1,12 @@
+PASS flag channel is trace preserving: L1^H L1 + L2^H L2 = I2
+PASS A' = diag(1/4, 0, 3/4, 0)
+PASS B' = (1/8)[[1,√3,0,0],[√3,3,0,0],[0,0,3,√3],[0,0,√3,1]]
+PASS A' and B' have the block decomposition (37) with p=(1/4,3/4), q=(1/2,1/2)
+PASS output squared overlaps are [1/4, 3/4] = (1/4, 3/4), all nonzero (V_e.o.)
+PASS input pair: unit vectors with squared overlap 1/2 (V_e.o.)
+PASS erasure channel is trace preserving and sends (A, B) to (1, 1)
+PASS Phi_(alpha,z) violates both orders for alpha in (0,1) and all 119 grid values z in [-5, 1), z != 0
+PASS tropical Phi^T_z violates TR_+ monotonicity for every grid z < 0
+INFO z=1/2: sqrt(2)/2 -> 1/4 + sqrt(3)/4
+INFO z=-1: 2 -> 8/3 ; tropical 2 -> 4
+RESULT PASS 0
