@@ -1,0 +1,3 @@
+data: True; rows 1..400: n - S = 1 fails at []; last term != 1 at []; strictly decreasing: True; longest row length 75
+RESULT PASS
+/opt/homebrew/bin/python3.13 -I check.py 400  0.08s user 0.02s system 78% cpu 0.127 total
