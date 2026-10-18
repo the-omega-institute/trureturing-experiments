@@ -1,0 +1,33 @@
+p =  2 prime: integral to order 14: True
+p =  3 prime: integral to order 14: True
+p =  4 composite (q = 2): first non-integer a_2 = 5/2, closed form 5/2: True
+p =  5 prime: integral to order 14: True
+p =  6 composite (q = 2): first non-integer a_2 = 7/2, closed form 7/2: True
+p =  7 prime: integral to order 14: True
+p =  8 composite (q = 2): first non-integer a_2 = 9/2, closed form 9/2: True
+p =  9 composite (q = 3): first non-integer a_3 = 95/3, closed form 95/3: True
+p = 10 composite (q = 2): first non-integer a_2 = 11/2, closed form 11/2: True
+p = 11 prime: integral to order 8: True
+p = 12 composite (q = 2): first non-integer a_2 = 13/2, closed form 13/2: True
+p = 13 prime: integral to order 8: True
+p = 14 composite (q = 2): first non-integer a_2 = 15/2, closed form 15/2: True
+p = 15 composite (q = 3): first non-integer a_3 = 248/3, closed form 248/3: True
+p = 16 composite (q = 2): first non-integer a_2 = 17/2, closed form 17/2: True
+p = 17 prime: integral to order 8: True
+p = 18 composite (q = 2): first non-integer a_2 = 19/2, closed form 19/2: True
+p = 19 prime: integral to order 8: True
+p = 20 composite (q = 2): first non-integer a_2 = 21/2, closed form 21/2: True
+p = 21 composite (q = 3): first non-integer a_3 = 473/3, closed form 473/3: True
+p = 22 composite (q = 2): first non-integer a_2 = 23/2, closed form 23/2: True
+p = 23 prime: integral to order 8: True
+p = 24 composite (q = 2): first non-integer a_2 = 25/2, closed form 25/2: True
+p = 25 composite (q = 5): first non-integer a_5 = 424099/5, closed form 424099/5: True
+p = 26 composite (q = 2): first non-integer a_2 = 27/2, closed form 27/2: True
+p = 27 composite (q = 3): first non-integer a_3 = 770/3, closed form 770/3: True
+p = 28 composite (q = 2): first non-integer a_2 = 29/2, closed form 29/2: True
+p = 29 prime: integral to order 8: True
+p = 30 composite (q = 2): first non-integer a_2 = 31/2, closed form 31/2: True
+oeis-a091190.txt: first 14 terms match: True
+oeis-a091200.txt: first 14 terms match: True
+RESULT PASS
+python3 check.py  0.10s user 0.01s system 97% cpu 0.110 total
