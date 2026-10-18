@@ -1,0 +1,8 @@
+ok   2 = (1 + 1/A) prod_{n>=1} (1 + x^n A)(1 + x^n/A) to order 120
+ok   a(0..120) equal the b-file
+ok   A = 1 (mod 2)
+ok   (1 + x^k A)(1 + x^k/A) = (1 + x^k)^2 (mod 4) for k < 40
+ok   1/A = 1 + 2 sum p(n) x^(2n) (mod 4)
+ok   a(n) = 2 (mod 4) iff n = 2k with p(k) odd, else 0 (mod 4), 1 <= n <= 120
+RESULT PASS
+        4.90 real         1.64 user         0.03 sys
