@@ -1,0 +1,7 @@
+R integral to order 150 (every division by 3 exact): True
+R mod 2 = y + y^2: True
+first 12 terms match the OEIS data: True
+A^3 = A(x^3 + 9 x A^3) to order 150 : True
+odd a(n), n <= 150 : [1, 2, 4, 8, 16, 32, 64, 128]
+RESULT PASS
+python3 check.py  1.67s user 0.01s system 99% cpu 1.689 total
