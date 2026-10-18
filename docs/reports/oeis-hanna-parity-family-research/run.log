@@ -1,0 +1,29 @@
+a393173: data match True, integral True, conjecture on 1..40: True
+a393850: data match True, integral True, conjecture on 1..40: True
+  a393850: a(0) = 1 is odd and 0 is not a power of 2 (the literal reading fails only at n = 0)
+a382122: data match True, integral True, conjecture on 1..40: True
+a382122 other solution branch: integral and same parity True
+a378258: data match True, integral True, conjecture on 1..40: True
+a375449: data match True, integral True, conjecture on 2..60: True
+a375452: data match True, integral True, conjecture on 2..60: True
+a365574: explicit reversion satisfies the definition for n = 2..19: True
+a365574: data match True, integral True, conjecture on 0..59: True
+a380711: data match True, integral True, conjecture on 0..40: True
+a379764: data match True, integral True, conjecture on 1..40: True
+p =  2 (a380681): equation True, integral True, data match True
+p =  3 (a380682): equation True, integral True, data match True
+p =  4 composite: first non-integer coefficient index 1 = 5/2 (predicted 5/2): True
+p =  5 (a380683): equation True, integral True, data match True
+p =  6 composite: first non-integer coefficient index 1 = 7/2 (predicted 7/2): True
+p =  7 (a380684): equation True, integral True, data match True
+p =  8 composite: first non-integer coefficient index 1 = 9/2 (predicted 9/2): True
+p =  9 composite: first non-integer coefficient index 2 = 95/3 (predicted 95/3): True
+p = 10 composite: first non-integer coefficient index 1 = 11/2 (predicted 11/2): True
+p = 11 (a380685): equation True, integral True, data match True
+p = 13 (a380686): equation True, integral True, data match True
+p = 15 composite: first non-integer coefficient index 2 = 248/3 (predicted 248/3): True
+Psi_1(Y) = 0: True; Psi_3(Y) = 0 mod 3: True
+Psi_1(Y) = 0: True; Psi_3(Y) = 0 mod 3: True
+Psi_1(Y) = 0: True; Psi_3(Y) = 0 mod 3: True
+RESULT PASS
+python3 check.py  10.16s user 0.06s system 94% cpu 10.843 total
