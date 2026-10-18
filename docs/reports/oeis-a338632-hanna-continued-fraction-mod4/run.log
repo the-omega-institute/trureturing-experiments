@@ -1,0 +1,5 @@
+integral: True  OEIS data: True  relation to order 40: True
+a(n) = 2 mod 4 for 2..40: True  A = (1+x^2)/(1-x) mod 4: True
+A^2 = A + x mod 3 (reported): True
+RESULT PASS
+python3 $R/check.py  1.20s user 0.01s system 70% cpu 1.705 total
