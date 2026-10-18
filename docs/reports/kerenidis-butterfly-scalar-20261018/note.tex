@@ -1,0 +1,398 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,array}
+\usepackage[colorlinks=true,urlcolor=blue,citecolor=blue,linkcolor=blue]{hyperref}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newcommand{\E}{\mathbb E}
+\newcommand{\V}{V^{(k)}_{ij}}
+\newcommand{\F}{\mathbb F_2}
+\title{Butterfly gradient variances at half filling and four particles}
+\author{Haobo Ma\thanks{ChronoAI Pte Ltd; The Omega Institute.}\and
+Wenlin Zhang\thanks{National University of Singapore; The Omega Institute.}}
+\date{18 October 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+For the single increasing-stride butterfly with uniform phase and rotation angles,
+we calculate the first-phase gradient variance of the Walsh-spread magic-block input.
+At half filling, $k=n/2$ and $n=4\cdot2^r$, an exact five-state transfer gives
+$V^{(k)}_{ij}(n)/H_k(n)\sim(273/224)(9/8)^r$ for each of the six readouts
+with $0\leq i<j\leq3$, where $H_k$ is the exact Haar variance.
+Thus a comparison uniform over all even $2\leq k\leq n/2$ cannot have a finite
+upper constant. A positive lower comparison does hold on this growing family
+for $n\geq8$. We also complete the six $k=4$ readouts, proving their exact formulas,
+the bounds $H_4/4<V^{(4)}_{ij}<H_4$, and their leading relative deficit.
+The half-filling obstruction leaves the sparse regime $n-2k=\Omega(n)$ open.
+\end{abstract}
+
+\section{The scalar and the range of a uniform comparison}
+We use the input and butterfly architecture of Kerenidis \cite{K}, keeping the
+first phase on mode zero. The exact Haar scalar, rather than a relative-design
+estimate, is the relevant benchmark for Claim 1, equation (40), of that paper.
+In correspondence of 18 October \cite{communication}, Kerenidis suggested a
+scalar comparison with constants uniform in particle number, reported finite-size
+evidence up to half filling, and identified the recurrence family of two remaining
+four-particle readouts. We verify the latter observation and show that half filling
+requires a separate upper-bound statement. This does not refute the sparse
+trainability assertion in Theorem 19 of \cite{K}, whose conclusion concerns
+$k\leq\gamma_0 n$ for a sufficiently small constant $\gamma_0$.
+
+All labels start at zero. Let $n=2^K$ and let $k$ be even, $2\leq k\leq n/2$.
+Before Walsh spreading the state is
+\[
+ |\Psi_k\rangle=\bigotimes_{a=0}^{k/2-1}
+ \frac{|1100\rangle+|0011\rangle}{\sqrt2}
+ \otimes|0\rangle^{\otimes(n-2k)}.
+\]
+The normalized Walsh matrix is $H_n(a,c)=(-1)^{\operatorname{popcount}(a\mathbin{\&}c)}/\sqrt n$.
+Write $\rho_{n,k}$ for the spread two-particle RDM on $\Lambda^2\mathbb C^n$,
+normalized by $\operatorname{tr}\rho_{n,k}=\binom k2$.
+The butterfly is $W_n=R_{K-1}D_{K-1}\cdots R_0D_0$, with independent
+uniform angles modulo $2\pi$. Here $D_\ell$ is diagonal with entries
+$e^{i\phi_{\ell,a}}$, and $R_\ell$ acts on pairs differing in bit $\ell$ by
+$\left(\begin{smallmatrix}\cos\theta&-\sin\theta\\\sin\theta&\cos\theta\end{smallmatrix}\right)$.
+In particular, $\E\cos^4\theta=3/8$; the two-mode blocks are not Haar distributed.
+Set
+\[
+ L_{ij}=\langle i\wedge j|\Lambda^2(W_n)\rho_{n,k}\Lambda^2(W_n)^*|i\wedge j\rangle,
+ \qquad V^{(k)}_{ij}(n)=\E(\partial_{\phi_{0,0}}L_{ij})^2.
+\]
+The derivative has mean zero by periodicity. A fixed diagonal data phase can be
+absorbed into the first uniform phase layer.
+
+The exact Haar identity of \cite[Theorem 9 and Appendix A.2]{K} is
+\[
+ H_k(n)=\frac{4\|B\|_F^2+2\|\Gamma(B)\|_F^2}{n^2(n^2-1)},\quad
+ B=[d\Lambda^2(|0\rangle\langle0|),\rho_{n,k}],\quad
+ \Gamma(B)_{ac}=\sum_d B_{ad,cd}.
+\]
+Pair indices in the contraction are extended antisymmetrically. For this input,
+direct contraction gives
+\begin{align}
+ \|B\|_F^2&=\frac{k((k+2)n-2k^2+3k-6)}{2n^2},&
+ \|\Gamma(B)\|_F^2&=\frac{k(k-1)^2(n-2k)}{n^2},\label{norms}\\
+ H_k(n)&=\frac{2k((k^2-k+3)(n-2k)+7k-6)}{n^4(n^2-1)}.\label{haar}
+\end{align}
+For clarity, the first norm can be obtained before spreading: put
+$u=n^{-1/2}(1,\ldots,1)$, $G=d\Lambda^2(|u\rangle\langle u|)$, and let $R$ be
+the unspread RDM. Since $G$ is a projector,
+$\|[G,R]\|_F^2=2(\operatorname{tr}(GR^2)-\operatorname{tr}(GRGR))$.
+The two traces are $k(k+2)/(4n)$ and $k(2k^2-3k+6)/(4n^2)$, respectively.
+The second norm in \eqref{norms} follows from
+$\Gamma(R)=(k-1)P/2$, where $P$ projects onto the $2k$ active modes.
+The vanishing of this second norm at $k=n/2$ explains why this endpoint must be
+checked independently of fixed sparse filling.
+
+\section{An exact growing family at half filling}
+Put $\mathcal A=\{\{0,1\},\{0,3\},\{1,2\},\{2,3\}\}$ and
+$\mathcal C=\{\{0,2\},\{1,3\}\}$.
+\begin{theorem}\label{half}
+Let $n=4\cdot2^r$, $r\geq0$, and $k=n/2$. For the six readouts above,
+\begin{equation}
+ n^4V^{(n/2)}_{ij}(n)=
+ \begin{cases}
+ \displaystyle\frac{273}{64}(9/8)^r-\frac72+
+       \frac{535}{64}(9/16)^r-\frac{57}{8}(1/2)^r,&\{i,j\}\in\mathcal A,\\[2mm]
+ \displaystyle\frac{273}{64}(9/8)^r-\frac72+
+       \frac{161}{64}(9/16)^r-\frac{105}{32}(1/2)^r,&\{i,j\}\in\mathcal C.
+ \end{cases}\label{half-formula}
+\end{equation}
+Consequently, for either family,
+\[
+ \frac{V^{(n/2)}_{ij}(n)}{H_{n/2}(n)}
+ =\frac{273}{224}(9/8)^r-1+O((9/16)^r)\longrightarrow\infty.
+\]
+For every $r\geq1$ the ratio exceeds $1/4$.
+\end{theorem}
+
+Here is a finite transfer derivation, including the matrices needed to check the
+formula without fitting values of $r$. Write $c=4h+c_0$, $u=4g+u_0$ and
+$v=4(h+g)+v_0$, where high labels lie in $\F^r$ and low labels in $\{0,1,2,3\}$;
+addition of labels means bitwise exclusive-or. Define
+\[
+ d_{ab,st}=\chi_a(s)\chi_b(t)-\chi_a(t)\chi_b(s),\quad
+ \chi_a(s)=(-1)^{\operatorname{popcount}(a\mathbin{\&}s)},
+\]
+\[
+ C_{ab,uv}=\frac12(d_{ab,01}+d_{ab,23})(d_{uv,01}+d_{uv,23})
+             -\frac14\sum_{0\leq s<t<4}d_{ab,st}d_{uv,st}.
+\]
+At half filling the unspread RDM is, with $P_a$ projecting onto the four modes of block $a$,
+\[
+ R=\tfrac14 I_{\Lambda^2}+
+   \sum_{a=0}^{n/4-1}(|\psi_a\rangle\langle\psi_a|-\tfrac14\Lambda^2P_a),
+ \quad \psi_a=(e_{4a}\wedge e_{4a+1}+e_{4a+2}\wedge e_{4a+3})/\sqrt2.
+\]
+Walsh character orthogonality therefore gives, for $u,v\ne0$,
+\begin{equation}
+ (\rho_{n,n/2})_{0c,uv}
+  =\frac{1}{4n}C_{0c_0,u_0v_0}\,
+       \mathbf1_{h+g+v_{\rm high}=0}.\label{rdm-half}
+\end{equation}
+The nonzero $C_{0c_0,u_0v_0}$ are
+$C_{01,01}=4$, $C_{01,23}=8$, $C_{02,02}=-4$, $C_{03,03}=-4$,
+together with negatives on reversal of the second pair. Thus all nonzero
+terms have $c_0+u_0+v_0=0$ and $c_0\ne0$.
+Also $(\rho_{n,n/2})_{0c,cv}=0$ when $v\ne0$.
+
+Write $x_a=(W_n)_{ia}$, $y_a=(W_n)_{ja}$ and $z_{ab}=x_ay_b-x_by_a$.
+Differentiating $D_0$ gives $\partial L=i(T-\overline T)$, with
+$T=\sum_{c>0,\,0<u<v}(\rho_{n,n/2})_{0c,uv}z_{0c}\overline{z_{uv}}$.
+The first-layer phases give distinct frequencies for distinct disjoint triples;
+the shared-index terms vanish by \eqref{rdm-half}. Consequently
+\begin{equation}
+ V^{(n/2)}_{ij}(n)=\frac1{16n^2}
+ \sum_{\substack{c,u,v\ne0\text{ distinct}\\c+u+v=0}}
+ C_{0c_0,u_0v_0}^{\,2}\,\E|z_{0c}|^2|z_{uv}|^2.\label{half-sum}
+\end{equation}
+The sum uses ordered $u,v$. Its factor accounts for both orientations of a
+Fourier frequency and for $z_{vu}=-z_{uv}$.
+
+Expand the four wedge factors in the expectation into sixteen terms, indexed
+by a mask $m\in\{0,\ldots,15\}$. Their column labels are the four linear forms
+$0,h,g,h+g$; masks reverse the order in each of
+$(0,h),(g,h+g),(0,h),(g,h+g)$, the first two being ket factors.
+When high bits are summed from the most significant bit downwards, equality of
+the high suffixes is encoded by the kernel of $(a,b)\mapsto ah+bg$.
+There are exactly five states, in the order
+\[
+ \F^2,\quad\langle(1,0)\rangle,\quad\langle(0,1)\rangle,
+ \quad\langle(1,1)\rangle,\quad\{0\}.
+\]
+For a new bit choice $f\in(\F^2)^*$, the state changes from $S$ to
+$S\cap\ker f$. Integrating the phases requires equal ket and bra counts in
+each new coset, separately in each output row. For each old coset and row,
+if $a$ factors stay and $b$ flip, the angular factor is
+\begin{equation}
+ a(a,b)=\E(\cos^a\theta\sin^b\theta)=
+ \begin{cases}(2p)!(2q)!/(4^{p+q}p!q!(p+q)!),&a=2p,\ b=2q,\\0,&\text{otherwise}.
+ \end{cases}\label{angular}
+\end{equation}
+For these high layers the two output rows use distinct gates, since $i,j<4$
+already differ in a low bit. Flip signs disappear in every nonzero angular
+integral. This gives the transfer independently of $r$.
+
+After combining masks related by interchange of the middle two line states,
+\eqref{half-sum} becomes
+\begin{equation}
+ n^4V^{(n/2)}_{ij}(n)=e^\mathsf T
+ (M_A^r\ell_A+M_B^r\ell_B+M_C^r\ell_C),\qquad e=(1,0,0,0,0)^\mathsf T,\label{small-transfer}
+\end{equation}
+where
+\[
+ M_A=\frac1{16}\begin{pmatrix}9&1&9&1&0\\0&8&0&0&8\\0&0&18&0&2\\0&0&0&8&8\\0&0&0&0&16\end{pmatrix},\quad
+ M_B=\frac1{16}\begin{pmatrix}9&1&0&0&0\\0&8&0&0&0\\0&0&0&0&0\\0&0&0&0&0\\0&0&0&0&0\end{pmatrix},
+\]
+\[
+ M_C=\frac1{16}\begin{pmatrix}9&1&0&1&0\\0&8&0&0&0\\0&0&0&0&0\\0&0&0&8&0\\0&0&0&0&0\end{pmatrix}.
+\]
+The terminal vectors, obtained by integrating the two low-bit layers, are
+{\small
+\begin{equation}
+\begin{array}{c|cc}
+ &\mathcal A&\mathcal C\\\hline
+ \ell_A&(9/8,53/8,49/64,49/16,7/2)^\mathsf T
+        &(3/16,77/32,49/64,361/64,7/2)^\mathsf T\\
+ \ell_B&(3/4,15/4,0,0,0)^\mathsf T
+        &(-3/8,19/16,0,0,0)^\mathsf T\\
+ \ell_C&(1/8,5/8,0,1/16,0)^\mathsf T
+        &(3/16,13/32,0,41/64,0)^\mathsf T
+\end{array}\label{terminals}
+\end{equation}
+}
+For the five states, use the respective low-layer representatives
+\[ (h,g)=(0,0),(0,1),(1,0),(1,1),(1,2). \]
+Sum over $c_0,u_0$,
+put $v_0=c_0+u_0$, weight by $C^2$, and use \eqref{angular} along the unique
+paths through the first two layers. Exclude $u=0$ when $u_0=0$ and
+$(0,1)\in S$, and exclude $v=0$ when $v_0=0$ and $(1,1)\in S$.
+Mask signs are $(-1)^{\operatorname{popcount}(m)}$.
+Masks $0,15$ give $M_A$ before combining with $5,10$; masks
+$1,2,4,7,8,11,13,14$ give $M_B$; masks $3,12$ give $M_C$ before combining
+with $6,9$. The matrices displayed are four times the moment transfer,
+because $n^2/16=4^r$ in \eqref{half-sum}.
+The third coordinate of $\ell_C$ is unreachable from $e$ and is set to zero.
+
+\begin{proof}[Completion of the proof of Theorem \ref{half}]
+The transfer derivation proves \eqref{small-transfer}. Direct multiplication gives
+$P(M_A)=P(M_B)=P(M_C)=0$ for
+\[
+ P(x)=x(x-1)(x-1/2)(x-9/16)(x-9/8).
+\]
+Thus both sides of \eqref{half-formula} obey the same recurrence of order five.
+Substitution of \eqref{terminals} in \eqref{small-transfer}, for $r=0,1,2,3,4$,
+gives the displayed coefficients and proves the identities for every $r\geq0$.
+This is an exact matrix calculation; it does not extrapolate a finite table.
+Equation \eqref{haar} gives
+\[
+ n^4H_{n/2}(n)=\frac{n(7n/2-6)}{n^2-1}=\frac72+O(1/n),
+\]
+which proves the ratio asymptotic.
+Let $F_C(r)$ be the second expression in \eqref{half-formula}. It is increasing:
+\[
+ F_C(r+1)-F_C(r)=\frac{273}{512}(9/8)^r
+       -\frac{1127}{1024}(9/16)^r+\frac{105}{64}(1/2)^r>0.
+\]
+For $r\geq2$ the first term exceeds the magnitude of the second, and $r=0,1$
+are direct rational checks. Since $F_C(1)=1099/1024$ and $n^4H_{n/2}<7/2$,
+its ratio for $r\geq1$ exceeds $1099/3584>1/4$.
+The first expression exceeds $F_C(r)$ by
+$[187(9/16)^r-123(1/2)^r]/32>0$.
+\end{proof}
+
+\section{Completion of the four-particle readouts}
+\begin{proposition}\label{four}
+Put $n=8\cdot2^s$, $s\geq0$. Then
+\[
+ n^5V^{(4)}_{ij}(n)=\begin{cases}A_4(s),&\{i,j\}\in\mathcal A,\\
+ C_4(s),&\{i,j\}\in\mathcal C,\end{cases}
+\]
+where
+\begin{align*}
+ A_4(s)&=120-\tfrac{891}{8}(3/4)^s+\tfrac{533}{64}(9/16)^s
+       +\tfrac{179}{2}(1/2)^s-\tfrac{911}{8}(3/8)^s
+       +\tfrac{8567}{128}(9/32)^s-40(1/4)^s,\\
+ C_4(s)&=120-\tfrac{891}{8}(3/4)^s+\tfrac{533}{64}(9/16)^s
+       -\tfrac{287}{4}(1/2)^s+\tfrac{125}{2}(3/8)^s
+       +\tfrac{5281}{128}(9/32)^s-\tfrac{323}{8}(1/4)^s.
+\end{align*}
+For every one of these six readouts,
+\[
+ \frac14<\frac{V^{(4)}_{ij}(n)}{H_4(n)}<1,\quad
+ H_4(n)=\frac{8(15n-98)}{n^4(n^2-1)},\quad
+ 1-\frac{V^{(4)}_{ij}(n)}{H_4(n)}
+ =\frac{297}{320}(3/4)^s+O((9/16)^s).
+\]
+\end{proposition}
+
+We give the exact recurrence behind the coefficient calculation. This also
+specifies the computer-assisted part of this proposition. Set $q=8$, $m=2^s$,
+and $R=\rho_{8,4}$. For rows $i,j$ put
+$X_a=\sum_{h<m}(W_n)_{i,qh+a}$, $Y_a=\sum_{h<m}(W_n)_{j,qh+a}$,
+$\alpha=(W_n)_{i0}$ and $\beta=(W_n)_{j0}$.
+With $z_{ab}=X_aY_b-X_bY_a$ and $d_{ab}=\mathbf1_{a=0}(\alpha Y_b-X_b\beta)$
+for $a<b$, differentiation gives
+\[
+ \partial L=im^{-2}T,\quad
+ T=\sum_{a<b,\,u<v}R_{ab,uv}(d_{ab}\overline z_{uv}-z_{ab}\overline d_{uv}),
+ \quad V=m^{-4}\E(-T^2).
+\]
+Independent subblocks $A,B$ at the next layer give
+\[
+ X'=uX^A+vX^B,\quad Y'=wY^A+zY^B,\quad
+ \alpha'=u\alpha^A,\quad\beta'=w\beta^A,
+\]
+where $u=\cos\theta e^{i\eta_1}$, $v=-\sin\theta e^{i\eta_2}$,
+$w=\cos\vartheta e^{i\eta_3}$ and $z=-\sin\vartheta e^{i\eta_4}$
+are independent between rows, with uniform phases.
+Order variables as $(X,Y,\overline X,\overline Y,\alpha,\beta,
+\overline\alpha,\overline\beta)$ and write $M_s(e)=\E Z^e$.
+Split the unmarked exponents between $f$ and $e-f$, putting every marked
+exponent in $f$. Each split has coefficient
+\[
+ \prod_{\nu<4q}\binom{e_\nu}{f_\nu}\,
+ a(d_X(f),d_X(e-f))a(d_Y(f),d_Y(e-f)),
+\]
+and contributes that coefficient times $M_s(f)M_s(e-f)$.
+Here $d_X,d_Y$ count all factors in their row, including conjugates and marks.
+Keep a split only if ket and bra degrees balance in each row of each branch,
+and in each component column of each branch, counting the marks as column zero.
+These rules follow from the independent new phases and from simultaneous shifts
+of first-layer phases in each residue class. Initial moments are unique-path
+phase and angle integrals in $W_8$.
+
+Closing the surviving monomials of $-T^2$ under these splits gives 2,988 moments
+and 10,003 transitions. The supplied rational certificate gives every exponent,
+transition, base moment and exponential-polynomial solution for each readout.
+The verifier checks each initial value and the entire coefficient identity
+$M_{s+1}(e)=\sum_f a_{e,f}M_s(f)M_s(e-f)$, rather than a finite list of layers.
+Its scalar contraction gives $A_4$ for $01,03,12,23$ and $C_4$ for $02,13$.
+This proves the asserted all-layer formulas, including Kerenidis's two suggested
+pairs $12,23$. The same certificate includes the preceding $q=4,k=2$ calculation:
+for $n=4\cdot2^t$, all five pairs $01,02,12,13,23$ have relative deficit
+$(17/20)(3/4)^t+O((9/16)^t)$. This is a fixed-particle effect, distinct from
+Theorem \ref{half}.
+
+For completeness, the bounds need no extrapolation. If $h_s=n^5H_4(n)$, then
+$120-98\,2^{-s}\leq h_s<120$. We have $A_4(s)>C_4(s)$: their difference is
+\[
+ \tfrac{645}{4}2^{-s}-\tfrac{1411}{8}(3/8)^s
+       +\tfrac{1643}{64}(9/32)^s+\tfrac38(1/4)^s>0.
+\]
+For $s\geq2$, dropping positive terms gives
+$C_4(s)\geq120-\tfrac{891}{8}(3/4)^s-\tfrac{287}{4}2^{-s}
+-\tfrac{323}{8}4^{-s}\geq2361/64>30$.
+For $s\geq3$,
+\[
+ h_s-A_4(s)\geq(3/4)^s\left[
+ \tfrac{891}{8}-\tfrac{375}{2}(2/3)^s
+ -\tfrac{533}{64}(3/4)^s-\tfrac{8567}{128}(3/8)^s\right]>0;
+\]
+the bracket increases and is positive at $s=3$.
+Direct rational substitution for $s=0,1,2$ completes the bounds.
+The leading deficit follows by dividing the formulas by $h_s$.
+
+\section{Exact finite-size comparison and the remaining question}
+The tables in the verification archive cover every even $k\leq n/2$ at
+$n=16,32,64,128$ for the representative retaining pair $01$ and disjoint pair $13$.
+All entries are exact fractions. Table~\ref{numerics} reports the extrema,
+rounded only for display; it makes no claim about other readout geometries.
+\begin{table}[ht]
+\centering
+\begin{tabular}{rrrrr}
+\toprule
+$n$ & pair & minimum $V/H$ (at $k$) & maximum $V/H$ (at $k$)\\
+\midrule
+16 &01&0.729873 (4)&0.930905 (2)\\
+16 &13&0.336871 (2)&0.597442 (8)\\
+32 &01&0.588903 (8)&0.956252 (16)\\
+32 &13&0.511095 (8)&0.787483 (16)\\
+64 &01&0.536444 (16)&1.093098 (32)\\
+64 &13&0.518345 (16)&0.991897 (32)\\
+128 &01&0.516801 (32)&1.284232 (64)\\
+128 &13&0.512561 (32)&1.223721 (64)\\
+\bottomrule
+\end{tabular}
+\caption{Exact enumeration over the stated particle numbers, displayed as decimals.}
+\label{numerics}
+\end{table}
+
+The computation uses a first-layer Fourier reduction independent of the
+layer recurrence. For general $b=k/2$, define
+$S_b(a)=\sum_{t<b}\chi_a(t)$. The spread matrix entries needed by the derivative are
+\begin{align*}
+ n^2(\rho_{n,k})_{0c,uv}
+ &=C_{0c_0,u_0v_0}S_b((c+u+v)_{\rm high})\\
+ &\quad+4\mathbf1_{u_0=0,c_0=v_0}S_b(u_{\rm high})S_b((c+v)_{\rm high})\\
+ &\quad-4\mathbf1_{v_0=0,c_0=u_0}S_b(v_{\rm high})S_b((c+u)_{\rm high}).
+\end{align*}
+Disjoint triples have distinct first-layer frequencies; shared-index terms
+are grouped by the frequency $\phi_0-\phi_v$. Integrating their products uses
+the unique circuit paths and \eqref{angular}. This has a number of column sums
+of order $n^3$, and the integrals do not depend on $k$. The archive includes
+cross-checks against full spread RDMs, the all-layer certificate and the
+independent five-state transfer.
+
+The sparse uniform comparison is still open: neither these finite tables nor
+the fixed-$k$ asymptotics prove constants for $k\leq\gamma n$ with fixed
+$\gamma<1/2$. At half filling, the exact growing mode in Theorem \ref{half}
+precludes a uniform upper constant. The neighborhood of half filling, where
+the contraction term in \eqref{norms} becomes small, is a distinct remaining
+boundary problem.
+
+\paragraph{Computation and provenance.}
+All certificate and integration checks use exact rational arithmetic; no Lean
+formalization is claimed. The note and verification programs were developed
+with Codex (GPT-6), with a supplied GPT Pro planning response. A separate
+computational and mathematical referee pass checks the final claims.
+
+\begin{thebibliography}{9}
+\bibitem{K} I. Kerenidis, \emph{Scalable Quantum Machine Learning:
+Trainability, Expressivity and Efficiency}, arXiv:2607.24014v2 [quant-ph], 2026.
+\url{https://arxiv.org/abs/2607.24014v2}.
+\bibitem{communication} I. Kerenidis, correspondence with H. Ma and W. Zhang,
+18 October 2026 (readout-recurrence identification and uniform-scalar question).
+\end{thebibliography}
+\end{document}
