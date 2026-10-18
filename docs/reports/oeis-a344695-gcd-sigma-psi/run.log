@@ -1,0 +1,5 @@
+data: True; n <= 2000000 with a(n) = 2: []; first n with a(n) = q for primes q <= 23: {2: None, 3: 2, 5: 366025, 7: 6724, 11: 9801, 13: 257049, 17: None, 19: 17689, 23: 541696}
+square n: a(n) odd; non-square n: (p+1) | a(n) for a prime p of odd exponent (n <= 2000000): True
+construction gcd(sigma, psi)(q^2 r^(q-1)) = q for the 45 odd primes q <= 200: True; first pairs (q, r): [(3, 157), (5, 1861), (7, 25537), (11, 105337), (13, 233143), (17, 1033363)]
+RESULT PASS
+/opt/homebrew/bin/python3.13 -I check.py 2000000 200  3.27s user 0.04s system 98% cpu 3.336 total
