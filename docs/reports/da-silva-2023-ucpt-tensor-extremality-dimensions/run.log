@@ -1,0 +1,9 @@
+Phi_3: UCPT True; Kraus rank 4/4; joint products rank 16/16 -> extreme True
+Phi_4: UCPT True; Kraus rank 4/4; joint products rank 16/16 -> extreme True
+Phi_5: UCPT True; Kraus rank 4/4; joint products rank 16/16 -> extreme True
+Phi_6: UCPT True; Kraus rank 4/4; joint products rank 16/16 -> extreme True
+(3,3): zero products True; Theta_pm positive and UCPT; Theta_+ != Theta_-: True
+(3,5): zero products True; Theta_pm positive and UCPT; Theta_+ != Theta_-: True
+(5,4): zero products True; Theta_pm positive and UCPT; Theta_+ != Theta_-: True
+tensor pairs (n, m) in {3,4,5}^2: zero-product certificate holds for all
+RESULT PASS

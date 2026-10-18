@@ -1,0 +1,3 @@
+brute force (d=2: n<=4, d=3: n<=3), average-sum count and product formulas agree with the data: True
+RESULT PASS
+        0.11 real         0.10 user         0.00 sys

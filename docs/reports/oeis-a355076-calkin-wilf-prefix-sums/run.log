@@ -1,0 +1,5 @@
+data: True; row sums 3*2^(m-1)-1/2: True; reciprocal symmetry: True; prefix formula: True; last term m+1: True; conjecture for 2*4^k-1 <= 65536: True
+RESULT PASS
+real 0.49
+user 0.48
+sys 0.01

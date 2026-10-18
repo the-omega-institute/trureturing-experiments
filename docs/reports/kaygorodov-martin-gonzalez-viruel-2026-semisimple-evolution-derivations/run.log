@@ -1,0 +1,9 @@
+{'samples': 3598, 'semisimple': 1911, 'nonzero': 674, 'ok': 1911, 'zero_sq_semisimple': 0}
+nonzero semisimple Der by summand sizes m_a: {(np.int64(3),): 252, (np.int64(4),): 161, (np.int64(5),): 113, (np.int64(7),): 72, (np.int64(6),): 66, (np.int64(3), np.int64(3)): 10}
+Proposition 14, n=1: dim Der = 0, expected 0, predicted m = [np.int64(1)]
+Proposition 14, n=2: dim Der = 1, expected 1, predicted m = [np.int64(2)]
+Proposition 14, n=3: dim Der = 3, expected 3, predicted m = [np.int64(3)]
+Proposition 14, n=4: dim Der = 6, expected 6, predicted m = [np.int64(4)]
+Proposition 14, n=5: dim Der = 10, expected 10, predicted m = [np.int64(5)]
+Proposition 14, n=6: dim Der = 15, expected 15, predicted m = [np.int64(6)]
+RESULT PASS

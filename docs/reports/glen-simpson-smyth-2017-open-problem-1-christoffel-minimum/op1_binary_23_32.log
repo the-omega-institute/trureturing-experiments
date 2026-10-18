@@ -1,0 +1,10 @@
+n=23 lyndon_words=364722 min_distinct=9 attained_by=8 christoffel_min=9 (p=5) OK example=aaaabaaaabaaabaaaabaaab
+n=24 lyndon_words=698870 min_distinct=9 attained_by=2 christoffel_min=9 (p=7) OK example=aaabaabaaabaabaaabaabaab
+n=25 lyndon_words=1342176 min_distinct=9 attained_by=6 christoffel_min=9 (p=7) OK example=aaabaaabaabaaabaabaaabaab
+n=26 lyndon_words=2580795 min_distinct=9 attained_by=4 christoffel_min=9 (p=7) OK example=aaabaaabaaabaabaaabaaabaab
+n=27 lyndon_words=4971008 min_distinct=9 attained_by=4 christoffel_min=9 (p=8) OK example=aaabaabaaabaabaabaaabaabaab
+n=28 lyndon_words=9586395 min_distinct=10 attained_by=6 christoffel_min=10 (p=5) OK example=aaaaabaaaaabaaaabaaaaabaaaab
+n=29 lyndon_words=18512790 min_distinct=9 attained_by=6 christoffel_min=9 (p=8) OK example=aaabaaabaabaaabaaabaabaaabaab
+n=30 lyndon_words=35790267 min_distinct=9 attained_by=2 christoffel_min=9 (p=11) OK example=aabaabaababaabaabaababaabaabab
+n=31 lyndon_words=69273666 min_distinct=9 attained_by=4 christoffel_min=9 (p=12) OK example=aabaababaababaabaababaababaabab
+n=32 lyndon_words=134215680 min_distinct=10 attained_by=4 christoffel_min=10 (p=7) OK example=aaaabaaaabaaabaaaabaaabaaaabaaab

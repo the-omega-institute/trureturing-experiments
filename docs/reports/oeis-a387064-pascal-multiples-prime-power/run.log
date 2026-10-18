@@ -1,0 +1,3 @@
+N=300: data match: True; a(p^k) = (p-1)p^(k-1) for all p^k <= N: True; proof facts: True
+RESULT PASS
+        0.75 real         0.73 user         0.02 sys

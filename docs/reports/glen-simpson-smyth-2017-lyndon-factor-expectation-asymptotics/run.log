@@ -1,0 +1,23 @@
+tables 2 and 3 reproduced: True
+sigma=2: A=-0.452233986586 B=-1.3827144554
+  ET n=100: n*(ET - formula) = 0.41583417
+  ET n=1000: n*(ET - formula) = 0.41658334
+  ET n=10000: n*(ET - formula) = 0.41665833
+  ED n=50: ED=76.19926684 (ED - formula)/(n/ln n) = 1.33998
+  ED n=200: ED=488.9451698 (ED - formula)/(n/ln n) = 0.955343
+  ED n=800: ED=2823.880878 (ED - formula)/(n/ln n) = 0.745738
+sigma=3: A=-0.24398342783 B=-0.634708593338
+  ET n=100: n*(ET - formula) = 0.41583417
+  ET n=1000: n*(ET - formula) = 0.41658334
+  ET n=10000: n*(ET - formula) = 0.41665833
+  ED n=50: ED=96.80354555 (ED - formula)/(n/ln n) = 1.15035
+  ED n=200: ED=577.8662722 (ED - formula)/(n/ln n) = 0.870807
+  ED n=800: ED=3188.358033 (ED - formula)/(n/ln n) = 0.712554
+sigma=5: A=-0.125455123074 B=-0.293012725952
+  ET n=100: n*(ET - formula) = 0.41583417
+  ET n=1000: n*(ET - formula) = 0.41658334
+  ET n=10000: n*(ET - formula) = 0.41665833
+  ED n=50: ED=114.6968453 (ED - formula)/(n/ln n) = 1.05657
+  ED n=200: ED=652.7436949 (ED - formula)/(n/ln n) = 0.831335
+  ED n=800: ED=3491.746288 (ED - formula)/(n/ln n) = 0.695161
+RESULT PASS

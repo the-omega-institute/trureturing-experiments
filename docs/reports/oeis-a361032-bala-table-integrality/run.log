@@ -1,0 +1,2 @@
+n,k <= 45: all integral: True; v2 = 3(s2(n+k+1)-1): True; floor inequality: True; data: True
+RESULT PASS

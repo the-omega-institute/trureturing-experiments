@@ -1,0 +1,15 @@
+non-commuting family, t=0.25: min eig M(t) = 0.9375; min off-diagonal mass over U(3) = 9.480e-05 (commutator norm 1.473e-02)
+non-commuting family, t=0.5: min eig M(t) = 0.8750; min off-diagonal mass over U(3) = 3.792e-04 (commutator norm 1.473e-02)
+non-commuting family, t=1.0: min eig M(t) = 0.7500; min off-diagonal mass over U(3) = 1.517e-03 (commutator norm 1.473e-02)
+control commuting pair: min off-diagonal mass = 2.029e-16 (expected ~0)
+   random pair: ||[rho0, rho1]|| = 3.68e-17 -> min off-diagonal mass 2.87e-13
+   random pair: ||[rho0, rho1]|| = 1.28e-16 -> min off-diagonal mass 2.76e-15
+   random pair: ||[rho0, rho1]|| = 1.12e-04 -> min off-diagonal mass 1.08e-07
+   random pair: ||[rho0, rho1]|| = 1.74e-04 -> min off-diagonal mass 4.55e-08
+   random pair: ||[rho0, rho1]|| = 2.72e-04 -> min off-diagonal mass 4.86e-07
+   random pair: ||[rho0, rho1]|| = 2.94e-04 -> min off-diagonal mass 5.28e-07
+   random pair: ||[rho0, rho1]|| = 1.20e-02 -> min off-diagonal mass 2.11e-03
+   random pair: ||[rho0, rho1]|| = 1.31e-02 -> min off-diagonal mass 3.09e-04
+   random pair: ||[rho0, rho1]|| = 1.78e-01 -> min off-diagonal mass 1.59e+00
+   random pair: ||[rho0, rho1]|| = 2.65e-01 -> min off-diagonal mass 1.50e+00
+RESULT PASS

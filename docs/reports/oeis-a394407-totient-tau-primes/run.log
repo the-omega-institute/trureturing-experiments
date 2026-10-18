@@ -1,0 +1,6 @@
+N=100000: terms below N = 26829; first 64 match DATA: True
+primes p != 3 below N that are not terms: [] (count 0)
+3 is a term: False
+phi(m)/tau(m) <= (m-1)/2 for all 2 <= m < N: True
+RESULT PASS
+        0.20 real         0.19 user         0.00 sys

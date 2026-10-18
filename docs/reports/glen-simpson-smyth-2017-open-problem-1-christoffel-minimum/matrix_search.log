@@ -1,0 +1,2 @@
+compositions of A, B and at most two h, at most 18 maps, n <= 2000: 1 counterexample lengths
+  n=506 L=16 C(n)=17 word=ABABhBABAB (outer→inner)

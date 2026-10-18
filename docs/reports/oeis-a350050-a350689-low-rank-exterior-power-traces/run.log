@@ -1,0 +1,6 @@
+n = 2..22: factorizations, |e_3| = A350689(n), e_k = 0 (k > 3), |det V^T U| = A350689(n); A349107/A349108 matrices: factorizations, |e_2| = A350050(n), e_k = 0 (k > 2), |det V^T U| = A350050(n): True
+published data (first terms): True
+RESULT PASS
+real 0.28
+user 0.21
+sys 0.03

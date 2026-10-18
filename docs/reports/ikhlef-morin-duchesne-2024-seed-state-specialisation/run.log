@@ -1,0 +1,4 @@
+C.1 cases: 1560; C.2 cases: 312; failures: 0
+control (perturbed recurrence) breaks 18/18 cases (expected 18)
+control (generic y) differs from the product: True
+RESULT PASS

@@ -1,0 +1,11 @@
+3 trees 1 colliding classes 0 trees in collisions 0
+4 trees 2 colliding classes 0 trees in collisions 0
+5 trees 3 colliding classes 0 trees in collisions 0
+6 trees 6 colliding classes 0 trees in collisions 0
+7 trees 11 colliding classes 0 trees in collisions 0
+8 trees 23 colliding classes 0 trees in collisions 0
+9 trees 47 colliding classes 0 trees in collisions 0
+10 trees 106 colliding classes 0 trees in collisions 0
+11 trees 235 colliding classes 1 trees in collisions 2
+    [[(0, 1), (0, 2), (0, 3), (0, 4), (1, 5), (1, 6), (2, 7), (5, 8), (8, 9), (8, 10)], [(0, 1), (0, 2), (0, 3), (0, 4), (1, 5), (1, 6), (2, 7), (7, 8), (7, 9), (8, 10)]]
+12 trees 551 colliding classes 2 trees in collisions 4

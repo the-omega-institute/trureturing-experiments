@@ -1,0 +1,7 @@
+one-copy: column-stochastic, dual certificate and exact optimum m(t) = 1/t + 22/3 for t in {1/10, 1/20, 1/50}: True
+t=1/20, s=1/20: m(t)m(s) = 6724/9, sigma objective = 60745/81 (= +229/81: True), best over 9! = 60745/81; b(Phi_t)b(Phi_s) = 9/6724 > b(tensor) <= 81/60745
+t=1/10, s=1/20: m(t)m(s) = 4264/9, sigma objective = 38605/81 (= +229/81: True), best over 9! = 38605/81; b(Phi_t)b(Phi_s) = 9/4264 > b(tensor) <= 81/38605
+t=1/50, s=1/10: m(t)m(s) = 8944/9, sigma objective = 80725/81 (= +229/81: True), best over 9! = 80725/81; b(Phi_t)b(Phi_s) = 9/8944 > b(tensor) <= 81/80725
+definition check (t = 1/20): min sampled t_Phi(Psi) = 0.037469 >= 1/m = 0.036585; permutation unitary gives 0.036585
+tensor definition check: unitary sigma gives t = 0.00133344 = 1/(m^2 + 229/81) = 0.00133344 < b(Phi)^2 = 0.00133849
+RESULT PASS

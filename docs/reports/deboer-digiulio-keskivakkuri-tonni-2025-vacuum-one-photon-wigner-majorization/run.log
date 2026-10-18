@@ -1,0 +1,13 @@
+(A) pairs*thresholds checked 8610; (B) checked 8610; violations 0
+closed forms I_0 and M: max abs error 7.1491e-30
+cross-branch pairs with 0<u<1/2<v<=1-u checked 190
+control full-family chain fails (0.1 vs 0.6 cross): True
+control reversed (A) for (0.6,0.9) holds: False (expected False)
+control reversed (B) for (0.1,0.3) holds: False (expected False)
+strictness witnesses present: True; chains (0.6<=0.9),(0.3<=0.1): True,True
+2-D brute force u=0.3 t=0.0: grid 1.00000000 radial 1.00000000
+2-D brute force u=0.3 t=0.1: grid 0.10666077 radial 0.10666084
+2-D brute force u=0.7 t=0.0: grid 1.10413628 radial 1.10413642
+2-D brute force u=0.7 t=0.05: grid 0.40236712 radial 0.40236695
+2-D brute force u=1.0 t=0.12: grid 0.12702100 radial 0.12702101
+RESULT PASS

@@ -1,0 +1,7 @@
+covering holds for 1 <= n <= 12, all k < 2^n: True
+published terms {1: 2, 2: 4, 3: 16, 5: 64, 6: 64, 4: 1968} recomputed {1: 2, 2: 4, 3: 16, 5: 64, 6: 64, 4: 1968} : True
+k = 2^n prime for n = 1, 2: [True, True]
+RESULT PASS
+real 0.52
+user 0.49
+sys 0.02

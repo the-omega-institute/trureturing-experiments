@@ -1,0 +1,9 @@
+identity s(A^2) = sum r_k c_k: checked on 200 random integer matrices
+n=2: max s(A^2) = 54 (A368539: 54), maximizers = 4, (d) holds for 4, monotone after sorting for 4
+n=3: max s(A^2) = 761 (A368539: 761), maximizers = 24, (d) holds for 24, monotone after sorting for 24
+n=4: best s(A^2) found = 5284 (A368539 bound: 5284), distinct maximizers found = 60, (d) 60/60, monotone 60/60
+n=5: best s(A^2) found = 24303 (A368539 bound: 24303), distinct maximizers found = 32, (d) 32/32, monotone 32/32
+n=6: best s(A^2) found = 85352 (A368539 bound: 85352), distinct maximizers found = 22, (d) 22/22, monotone 22/22
+n=7: best s(A^2) found = 248045 (A368539 bound: 248045), distinct maximizers found = 6, (d) 6/6, monotone 6/6
+control: 946/1000 random 4x4 labelings have 1 or 16 off the diagonal
+RESULT PASS

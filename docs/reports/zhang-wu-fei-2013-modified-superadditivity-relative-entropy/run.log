@@ -1,0 +1,12 @@
+a=2 b=2: Delta(1e-4)=-1.6096  Delta(1e-8)=-3.9120
+a=2 b=3: Delta(1e-4)=-2.0589  Delta(1e-8)=-5.1288
+a=3 b=2: Delta(1e-4)=-2.0589  Delta(1e-8)=-5.1288
+a=3 b=3: Delta(1e-4)=-2.6290  Delta(1e-8)=-6.7222
+a=2 b=5: Delta(1e-4)=-2.3252  Delta(1e-8)=-6.0090
+a=4 b=4: Delta(1e-4)=-3.1019  Delta(1e-8)=-8.2822
+closed form vs direct matrix evaluation: max |error| = 3.55e-15
+a=b=2, t=1/64: exp(4 Delta) = 0.231013 (< 1), Delta = -0.366320
+nondegenerate family: largest sup_U G over the grid = -0.343656 (claimed < -1/256 = -0.003906)
+control product sigma a=2 b=2: sup G = -5.551e-17 (expected >= 0)
+control product sigma a=2 b=3: sup G = 1.665e-16 (expected >= 0)
+RESULT PASS

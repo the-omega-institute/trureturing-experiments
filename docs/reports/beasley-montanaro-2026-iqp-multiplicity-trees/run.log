@@ -1,0 +1,9 @@
+both trees: True | non-isomorphic (AHU over all roots): True
+degree sequences: [1, 1, 1, 1, 1, 1, 2, 2, 3, 3, 4] [1, 1, 1, 1, 1, 1, 2, 2, 3, 3, 4]
+boundary map injective: True True | tables equal: True
+state-vector multiplicities equal at 41/41 angles
+random angles equal: 20/20
+max |norm-1|: 3.1e-15
+control P11 vs A separated: True
+control B - (0,1) + (1,2): tree, non-isomorphic to A and B: True | table differs: True | separated by multiplicities: True
+RESULT PASS

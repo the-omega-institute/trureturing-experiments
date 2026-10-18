@@ -1,0 +1,7 @@
+random states with N > 0: 36853; min N2 - f(N) = 2.872e-08; min N2 - g(C) = 1.658e-05
+Lemma 2 slack min = 3.389e-04; Lemma 3 formula max error = 1.11e-15
+adversarial min of N2 - f(N) over 60 restarts: -8.882e-16 (expected >= 0, approaching 0)
+sigma_c family: max |N2 - f(N)| = 1.11e-16
+Lemma 5 construction: max error in (N, N2) = 9.99e-16
+control N2 >= N fails on 1848/2000 random rank-3 states (expected many)
+RESULT PASS

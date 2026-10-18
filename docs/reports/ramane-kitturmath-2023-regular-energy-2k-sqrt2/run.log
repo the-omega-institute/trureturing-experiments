@@ -1,0 +1,13 @@
+n=1: 1 regular spectra
+n=2: 2 regular spectra
+n=3: 2 regular spectra
+n=4: 4 regular spectra
+n=5: 3 regular spectra
+n=6: 8 regular spectra
+n=7: 6 regular spectra
+n=8: 22 regular spectra
+exhaustive regular spectra (n<=8): 48; circulant spectra (n<=26): 4742; with E^2 integral: 384
+control P3 (not regular): energy = 2.828427124746, 2*sqrt(2) = 2.828427124746
+control stars K_{1,2k^2}, k=1..5: energy 2k*sqrt(2) as expected
+C8 energy = 9.6568542495 (4 + 4*sqrt2 = 9.6568542495)
+RESULT PASS

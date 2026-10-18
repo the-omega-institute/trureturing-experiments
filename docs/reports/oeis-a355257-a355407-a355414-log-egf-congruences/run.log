@@ -1,0 +1,7 @@
+series check n<=6, k<=12: True; data A355257/A355407/A355414: True
+C1 n<=30, p<=200: True; C2 n<16, k<=200: True; C4 even n<=30: True; reduction mod p-1: True
+k = 4 (excluded in C2): A(n,4) mod 4 for n = 0..7: [2, 2, 2, 2, 2, 2, 2, 2]
+RESULT PASS
+real 1.26
+user 1.23
+sys 0.02

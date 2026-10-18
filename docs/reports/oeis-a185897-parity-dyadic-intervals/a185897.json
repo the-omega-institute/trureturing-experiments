@@ -1,0 +1,45 @@
+[
+	{
+		"number": 185897,
+		"data": "1,2,9,64,574,5919,67205,820258,10602848,143710500,2028137178,29649220223,447247229447,6940546801219,110540089124381,1803424905623166,30092225956558590,512900050694933194",
+		"name": "G.f. A(x) satisfies: A(x - A(x)^2) = x/(1-x).",
+		"comment": [
+			"Conjecture: for n \u003e 1, a(n) is odd when n = 3*2^k through 4*2^k - 1 for k \u003e= 0. - _Paul D. Hanna_, Oct 05 2025"
+		],
+		"link": [
+			"Paul D. Hanna, \u003ca href=\"/A185897/b185897.txt\"\u003eTable of n, a(n) for n = 1..400\u003c/a\u003e"
+		],
+		"formula": [
+			"G.f. A(x) = Sum_{n\u003e=1} a(n)*x^n and the related series G(x) (the g.f. of A389476) satisfy the following formulas.",
+			"(1) A(x - A(x)^2) = x/(1-x).",
+			"(2) A(x) = G(x)/(1 - G(x)) where G(x - A(x)^2) = x.",
+			"(3) G(x) = x + A(G(x))^2 where G(x) = Series_Reversion(x - A(x)^2)."
+		],
+		"example": [
+			"G.f.: A(x) = x + 2*x^2 + 9*x^3 + 64*x^4 + 574*x^5 + 5919*x^6 + 67205*x^7 + ...",
+			"Related expansions.",
+			"x - A(x)^2 = x - x^2 - 4*x^3 - 22*x^4 - 164*x^5 - 1485*x^6 - 15286*x^7 - ...",
+			"where A(x - A(x)^2) = x/(1-x).",
+			"Let G(x) be the g.f. of A389476, which begins",
+			"G(x) = x + x^2 + 6*x^3 + 47*x^4 + 442*x^5 + 4691*x^6 + 54330*x^7 + 672992*x^8 + ... + A389476(n)*x^n + ...",
+			"then A(x) = G(x)/(1 - G(x)) and G(x - A(x)^2) = x."
+		],
+		"program": [
+			"(PARI) {a(n) = my(A=x+2*x^2, B=x/(1+x+x*O(x^n))); for(i=1,n, A=serreverse(B - subst(A,x,B)^2)); polcoef(A,n)}",
+			"for(n=1,25,print1(a(n),\", \"))"
+		],
+		"xref": [
+			"Cf. A389476, A213591."
+		],
+		"keyword": "nonn",
+		"offset": "1,2",
+		"author": "_Paul D. Hanna_, Feb 05 2011",
+		"ext": [
+			"Entry revised by _Paul D. Hanna_, Oct 05 2025"
+		],
+		"references": 2,
+		"revision": 13,
+		"time": "2025-10-06T11:25:27-04:00",
+		"created": "2011-02-05T22:55:59-05:00"
+	}
+]

@@ -1,0 +1,5 @@
+series coefficients compared: 375, mismatches: 0
+eigenvalue checks (n<=7, m<=6) done
+samples: {(4, 2): 8, (4, 3): 21, (4, 4): 55, (3, 4): 16}
+control (no wrap-around terms) differs in 105 cases (expected > 0)
+RESULT PASS

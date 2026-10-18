@@ -1,0 +1,5 @@
+family x = P h Q(ab), |P| + |Q| <= 13, n <= 4000: 2 hits with L(x) < C(n)
+  n=506 L(x)=16 C(n)=17 P=ABAB Q=BABAB
+smallest hit n=506: |x|=506 Lyndon=True L(x) brute=16 (claimed 16); Christoffel minimum by direct counting = 17 (formula 17)
+SMALLEST 506 aabaababaabaababaababaabaababaabaababaababaababaabaababaabaa...
+RESULT PASS

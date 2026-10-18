@@ -1,0 +1,127 @@
+n=2 f=3 minimizers=1
+  ab C u=a v=b L(u)=1 f(|u|)=1 L(v)=1 f(|v|)=1 |Lyn(u)uLyn(v)|=2
+n=3 f=4 minimizers=2
+  aab C u=a v=ab L(u)=1 f(|u|)=1 L(v)=3 f(|v|)=3 |Lyn(u)uLyn(v)|=3
+  abb C u=ab v=b L(u)=3 f(|u|)=3 L(v)=1 f(|v|)=1 |Lyn(u)uLyn(v)|=3
+n=4 f=5 minimizers=2
+  aaab C u=a v=aab L(u)=1 f(|u|)=1 L(v)=4 f(|v|)=4 |Lyn(u)uLyn(v)|=4
+  abbb C u=abb v=b L(u)=4 f(|u|)=4 L(v)=1 f(|v|)=1 |Lyn(u)uLyn(v)|=4
+n=5 f=5 minimizers=2
+  aabab C u=aab v=ab L(u)=4 f(|u|)=4 L(v)=3 f(|v|)=3 |Lyn(u)uLyn(v)|=4
+  ababb C u=ab v=abb L(u)=3 f(|u|)=3 L(v)=4 f(|v|)=4 |Lyn(u)uLyn(v)|=4
+n=6 f=7 minimizers=5
+  aaaaab C u=a v=aaaab L(u)=1 f(|u|)=1 L(v)=6 f(|v|)=5 |Lyn(u)uLyn(v)|=6
+  aaabab - u=a v=aabab L(u)=1 f(|u|)=1 L(v)=5 f(|v|)=5 |Lyn(u)uLyn(v)|=5
+  aabbab - u=aabb v=ab L(u)=6 f(|u|)=5 L(v)=3 f(|v|)=3 |Lyn(u)uLyn(v)|=6
+  ababbb - u=ab v=abbb L(u)=3 f(|u|)=3 L(v)=5 f(|v|)=5 |Lyn(u)uLyn(v)|=5
+  abbbbb C u=abbbb v=b L(u)=6 f(|u|)=5 L(v)=1 f(|v|)=1 |Lyn(u)uLyn(v)|=6
+n=7 f=6 minimizers=4
+  aaabaab C u=aaab v=aab L(u)=5 f(|u|)=5 L(v)=4 f(|v|)=4 |Lyn(u)uLyn(v)|=5
+  aababab C u=aabab v=ab L(u)=5 f(|u|)=5 L(v)=3 f(|v|)=3 |Lyn(u)uLyn(v)|=5
+  abababb C u=ab v=ababb L(u)=3 f(|u|)=3 L(v)=5 f(|v|)=5 |Lyn(u)uLyn(v)|=5
+  abbabbb C u=abb v=abbb L(u)=4 f(|u|)=4 L(v)=5 f(|v|)=5 |Lyn(u)uLyn(v)|=5
+n=8 f=6 minimizers=2
+  aabaabab C u=aab v=aabab L(u)=4 f(|u|)=4 L(v)=5 f(|v|)=5 |Lyn(u)uLyn(v)|=5
+  ababbabb C u=ababb v=abb L(u)=5 f(|u|)=5 L(v)=4 f(|v|)=4 |Lyn(u)uLyn(v)|=5
+n=9 f=7 minimizers=4
+  aaaabaaab C u=aaaab v=aaab L(u)=6 f(|u|)=5 L(v)=5 f(|v|)=5 |Lyn(u)uLyn(v)|=6
+  aabababab C u=aababab v=ab L(u)=6 f(|u|)=6 L(v)=3 f(|v|)=3 |Lyn(u)uLyn(v)|=6
+  ababababb C u=ab v=abababb L(u)=3 f(|u|)=3 L(v)=6 f(|v|)=6 |Lyn(u)uLyn(v)|=6
+  abbbabbbb C u=abbb v=abbbb L(u)=5 f(|u|)=5 L(v)=6 f(|v|)=5 |Lyn(u)uLyn(v)|=6
+n=10 f=7 minimizers=2
+  aaabaabaab C u=aaabaab v=aab L(u)=6 f(|u|)=6 L(v)=4 f(|v|)=4 |Lyn(u)uLyn(v)|=6
+  abbabbabbb C u=abb v=abbabbb L(u)=4 f(|u|)=4 L(v)=6 f(|v|)=6 |Lyn(u)uLyn(v)|=6
+n=11 f=7 minimizers=4
+  aaabaaabaab C u=aaab v=aaabaab L(u)=5 f(|u|)=5 L(v)=6 f(|v|)=6 |Lyn(u)uLyn(v)|=6
+  aabaabaabab C u=aab v=aabaabab L(u)=4 f(|u|)=4 L(v)=6 f(|v|)=6 |Lyn(u)uLyn(v)|=6
+  ababbabbabb C u=ababbabb v=abb L(u)=6 f(|u|)=6 L(v)=4 f(|v|)=4 |Lyn(u)uLyn(v)|=6
+  abbabbbabbb C u=abbabbb v=abbb L(u)=6 f(|u|)=6 L(v)=5 f(|v|)=5 |Lyn(u)uLyn(v)|=6
+n=12 f=7 minimizers=2
+  aababaababab C u=aabab v=aababab L(u)=5 f(|u|)=5 L(v)=6 f(|v|)=6 |Lyn(u)uLyn(v)|=6
+  abababbababb C u=abababb v=ababb L(u)=6 f(|u|)=6 L(v)=5 f(|v|)=5 |Lyn(u)uLyn(v)|=6
+n=13 f=7 minimizers=2
+  aabaababaabab C u=aabaabab v=aabab L(u)=6 f(|u|)=6 L(v)=5 f(|v|)=5 |Lyn(u)uLyn(v)|=6
+  ababbababbabb C u=ababb v=ababbabb L(u)=5 f(|u|)=5 L(v)=6 f(|v|)=6 |Lyn(u)uLyn(v)|=6
+n=14 f=8 minimizers=4
+  aaaabaaaabaaab C u=aaaab v=aaaabaaab L(u)=6 f(|u|)=5 L(v)=7 f(|v|)=7 |Lyn(u)uLyn(v)|=7
+  aabaabaabaabab C u=aab v=aabaabaabab L(u)=4 f(|u|)=4 L(v)=7 f(|v|)=7 |Lyn(u)uLyn(v)|=7
+  ababbabbabbabb C u=ababbabbabb v=abb L(u)=7 f(|u|)=7 L(v)=4 f(|v|)=4 |Lyn(u)uLyn(v)|=7
+  abbbabbbbabbbb C u=abbbabbbb v=abbbb L(u)=7 f(|u|)=7 L(v)=6 f(|v|)=5 |Lyn(u)uLyn(v)|=7
+n=15 f=8 minimizers=2
+  aaabaaabaaabaab C u=aaab v=aaabaaabaab L(u)=5 f(|u|)=5 L(v)=7 f(|v|)=7 |Lyn(u)uLyn(v)|=7
+  abbabbbabbbabbb C u=abbabbbabbb v=abbb L(u)=7 f(|u|)=7 L(v)=5 f(|v|)=5 |Lyn(u)uLyn(v)|=7
+n=16 f=8 minimizers=2
+  aabababaabababab C u=aababab v=aabababab L(u)=6 f(|u|)=6 L(v)=7 f(|v|)=7 |Lyn(u)uLyn(v)|=7
+  ababababbabababb C u=ababababb v=abababb L(u)=7 f(|u|)=7 L(v)=6 f(|v|)=6 |Lyn(u)uLyn(v)|=7
+n=17 f=8 minimizers=4
+  aaabaabaaabaabaab C u=aaabaab v=aaabaabaab L(u)=6 f(|u|)=6 L(v)=7 f(|v|)=7 |Lyn(u)uLyn(v)|=7
+  aababaababaababab C u=aabab v=aababaababab L(u)=5 f(|u|)=5 L(v)=7 f(|v|)=7 |Lyn(u)uLyn(v)|=7
+  abababbababbababb C u=abababbababb v=ababb L(u)=7 f(|u|)=7 L(v)=5 f(|v|)=5 |Lyn(u)uLyn(v)|=7
+  abbabbabbbabbabbb C u=abbabbabbb v=abbabbb L(u)=7 f(|u|)=7 L(v)=6 f(|v|)=6 |Lyn(u)uLyn(v)|=7
+n=18 f=8 minimizers=4
+  aaabaaabaabaaabaab C u=aaabaaabaab v=aaabaab L(u)=7 f(|u|)=7 L(v)=6 f(|v|)=6 |Lyn(u)uLyn(v)|=7
+  aabaababaababaabab C u=aabaababaabab v=aabab L(u)=7 f(|u|)=7 L(v)=5 f(|v|)=5 |Lyn(u)uLyn(v)|=7
+  ababbababbababbabb C u=ababb v=ababbababbabb L(u)=5 f(|u|)=5 L(v)=7 f(|v|)=7 |Lyn(u)uLyn(v)|=7
+  abbabbbabbabbbabbb C u=abbabbb v=abbabbbabbb L(u)=6 f(|u|)=6 L(v)=7 f(|v|)=7 |Lyn(u)uLyn(v)|=7
+n=19 f=8 minimizers=4
+  aabaabaababaabaabab C u=aabaabaabab v=aabaabab L(u)=7 f(|u|)=7 L(v)=6 f(|v|)=6 |Lyn(u)uLyn(v)|=7
+  aababaabababaababab C u=aababaababab v=aababab L(u)=7 f(|u|)=7 L(v)=6 f(|v|)=6 |Lyn(u)uLyn(v)|=7
+  abababbabababbababb C u=abababb v=abababbababb L(u)=6 f(|u|)=6 L(v)=7 f(|v|)=7 |Lyn(u)uLyn(v)|=7
+  ababbabbababbabbabb C u=ababbabb v=ababbabbabb L(u)=6 f(|u|)=6 L(v)=7 f(|v|)=7 |Lyn(u)uLyn(v)|=7
+n=20 f=9 minimizers=2
+  aababababaababababab C u=aabababab v=aababababab L(u)=7 f(|u|)=7 L(v)=8 f(|v|)=7 |Lyn(u)uLyn(v)|=8
+  abababababbababababb C u=abababababb v=ababababb L(u)=8 f(|u|)=7 L(v)=7 f(|v|)=7 |Lyn(u)uLyn(v)|=8
+n=21 f=8 minimizers=2
+  aabaababaabaababaabab C u=aabaabab v=aabaababaabab L(u)=6 f(|u|)=6 L(v)=7 f(|v|)=7 |Lyn(u)uLyn(v)|=7
+  ababbababbabbababbabb C u=ababbababbabb v=ababbabb L(u)=7 f(|u|)=7 L(v)=6 f(|v|)=6 |Lyn(u)uLyn(v)|=7
+n=22 f=9 minimizers=4
+  aaaabaaabaaaabaaabaaab C u=aaaabaaab v=aaaabaaabaaab L(u)=7 f(|u|)=7 L(v)=8 f(|v|)=7 |Lyn(u)uLyn(v)|=8
+  aababaababaababaababab C u=aabab v=aababaababaababab L(u)=5 f(|u|)=5 L(v)=8 f(|v|)=8 |Lyn(u)uLyn(v)|=8
+  abababbababbababbababb C u=abababbababbababb v=ababb L(u)=8 f(|u|)=8 L(v)=5 f(|v|)=5 |Lyn(u)uLyn(v)|=8
+  abbbabbbabbbbabbbabbbb C u=abbbabbbabbbb v=abbbabbbb L(u)=8 f(|u|)=7 L(v)=7 f(|v|)=7 |Lyn(u)uLyn(v)|=8
+n=23 f=9 minimizers=8
+  aaaabaaaabaaabaaaabaaab C u=aaaabaaaabaaab v=aaaabaaab L(u)=8 f(|u|)=8 L(v)=7 f(|v|)=7 |Lyn(u)uLyn(v)|=8
+  aaabaabaabaaabaabaabaab C u=aaabaabaab v=aaabaabaabaab L(u)=7 f(|u|)=7 L(v)=8 f(|v|)=7 |Lyn(u)uLyn(v)|=8
+  aabaababaababaababaabab C u=aabaababaababaabab v=aabab L(u)=8 f(|u|)=8 L(v)=5 f(|v|)=5 |Lyn(u)uLyn(v)|=8
+  aabababaabababaabababab C u=aababab v=aabababaabababab L(u)=6 f(|u|)=6 L(v)=8 f(|v|)=8 |Lyn(u)uLyn(v)|=8
+  ababababbabababbabababb C u=ababababbabababb v=abababb L(u)=8 f(|u|)=8 L(v)=6 f(|v|)=6 |Lyn(u)uLyn(v)|=8
+  ababbababbababbababbabb C u=ababb v=ababbababbababbabb L(u)=5 f(|u|)=5 L(v)=8 f(|v|)=8 |Lyn(u)uLyn(v)|=8
+  abbabbabbabbbabbabbabbb C u=abbabbabbabbb v=abbabbabbb L(u)=8 f(|u|)=7 L(v)=7 f(|v|)=7 |Lyn(u)uLyn(v)|=8
+  abbbabbbbabbbabbbbabbbb C u=abbbabbbb v=abbbabbbbabbbb L(u)=7 f(|u|)=7 L(v)=8 f(|v|)=8 |Lyn(u)uLyn(v)|=8
+n=24 f=9 minimizers=2
+  aaabaabaaabaabaaabaabaab C u=aaabaab v=aaabaabaaabaabaab L(u)=6 f(|u|)=6 L(v)=8 f(|v|)=8 |Lyn(u)uLyn(v)|=8
+  abbabbabbbabbabbbabbabbb C u=abbabbabbbabbabbb v=abbabbb L(u)=8 f(|u|)=8 L(v)=6 f(|v|)=6 |Lyn(u)uLyn(v)|=8
+n=25 f=9 minimizers=6
+  aaabaaabaabaaabaabaaabaab C u=aaabaaabaabaaabaab v=aaabaab L(u)=8 f(|u|)=8 L(v)=6 f(|v|)=6 |Lyn(u)uLyn(v)|=8
+  aabaabaabaababaabaabaabab C u=aabaabaabaabab v=aabaabaabab L(u)=8 f(|u|)=8 L(v)=7 f(|v|)=7 |Lyn(u)uLyn(v)|=8
+  aabababaababababaabababab C u=aabababaabababab v=aabababab L(u)=8 f(|u|)=8 L(v)=7 f(|v|)=7 |Lyn(u)uLyn(v)|=8
+  ababababbababababbabababb C u=ababababb v=ababababbabababb L(u)=7 f(|u|)=7 L(v)=8 f(|v|)=8 |Lyn(u)uLyn(v)|=8
+  ababbabbabbababbabbabbabb C u=ababbabbabb v=ababbabbabbabb L(u)=7 f(|u|)=7 L(v)=8 f(|v|)=8 |Lyn(u)uLyn(v)|=8
+  abbabbbabbabbbabbabbbabbb C u=abbabbb v=abbabbbabbabbbabbb L(u)=6 f(|u|)=6 L(v)=8 f(|v|)=8 |Lyn(u)uLyn(v)|=8
+n=26 f=9 minimizers=4
+  aaabaaabaaabaabaaabaaabaab C u=aaabaaabaaabaab v=aaabaaabaab L(u)=8 f(|u|)=8 L(v)=7 f(|v|)=7 |Lyn(u)uLyn(v)|=8
+  aababaabababaabababaababab C u=aababaabababaababab v=aababab L(u)=8 f(|u|)=8 L(v)=6 f(|v|)=6 |Lyn(u)uLyn(v)|=8
+  abababbabababbabababbababb C u=abababb v=abababbabababbababb L(u)=6 f(|u|)=6 L(v)=8 f(|v|)=8 |Lyn(u)uLyn(v)|=8
+  abbabbbabbbabbabbbabbbabbb C u=abbabbbabbb v=abbabbbabbbabbb L(u)=7 f(|u|)=7 L(v)=8 f(|v|)=8 |Lyn(u)uLyn(v)|=8
+n=27 f=9 minimizers=4
+  aaabaabaaabaabaabaaabaabaab C u=aaabaabaaabaabaab v=aaabaabaab L(u)=8 f(|u|)=8 L(v)=7 f(|v|)=7 |Lyn(u)uLyn(v)|=8
+  aabaabaababaabaababaabaabab C u=aabaabaababaabaabab v=aabaabab L(u)=8 f(|u|)=8 L(v)=6 f(|v|)=6 |Lyn(u)uLyn(v)|=8
+  ababbabbababbabbababbabbabb C u=ababbabb v=ababbabbababbabbabb L(u)=6 f(|u|)=6 L(v)=8 f(|v|)=8 |Lyn(u)uLyn(v)|=8
+  abbabbabbbabbabbabbbabbabbb C u=abbabbabbb v=abbabbabbbabbabbb L(u)=7 f(|u|)=7 L(v)=8 f(|v|)=8 |Lyn(u)uLyn(v)|=8
+n=28 f=10 minimizers=6
+  aaaaabaaaaabaaaabaaaaabaaaab C u=aaaaabaaaaabaaaab v=aaaaabaaaab L(u)=9 f(|u|)=8 L(v)=8 f(|v|)=7 |Lyn(u)uLyn(v)|=9
+  aabaababaabaabababaabaababab - u=aabaababaabaababab v=aabaababab L(u)=9 f(|u|)=8 L(v)=8 f(|v|)=7 |Lyn(u)uLyn(v)|=9
+  aabaababaababaababaababaabab C u=aabaababaababaababaabab v=aabab L(u)=9 f(|u|)=9 L(v)=5 f(|v|)=5 |Lyn(u)uLyn(v)|=9
+  ababbababbababbababbababbabb C u=ababb v=ababbababbababbababbabb L(u)=5 f(|u|)=5 L(v)=9 f(|v|)=9 |Lyn(u)uLyn(v)|=9
+  ababbababbbababbababbbababbb - u=ababbababbb v=ababbababbbababbb L(u)=8 f(|u|)=7 L(v)=9 f(|v|)=8 |Lyn(u)uLyn(v)|=9
+  abbbbabbbbbabbbbabbbbbabbbbb C u=abbbbabbbbb v=abbbbabbbbbabbbbb L(u)=8 f(|u|)=7 L(v)=9 f(|v|)=8 |Lyn(u)uLyn(v)|=9
+n=29 f=9 minimizers=6
+  aaabaaabaabaaabaaabaabaaabaab C u=aaabaaabaab v=aaabaaabaabaaabaab L(u)=7 f(|u|)=7 L(v)=8 f(|v|)=8 |Lyn(u)uLyn(v)|=8
+  aabaababaabaababaabaababaabab C u=aabaabab v=aabaababaabaababaabab L(u)=6 f(|u|)=6 L(v)=8 f(|v|)=8 |Lyn(u)uLyn(v)|=8
+  aababaababaabababaababaababab C u=aababaababaababab v=aababaababab L(u)=8 f(|u|)=8 L(v)=7 f(|v|)=7 |Lyn(u)uLyn(v)|=8
+  abababbababbabababbababbababb C u=abababbababb v=abababbababbababb L(u)=7 f(|u|)=7 L(v)=8 f(|v|)=8 |Lyn(u)uLyn(v)|=8
+  ababbababbabbababbabbababbabb C u=ababbababbabbababbabb v=ababbabb L(u)=8 f(|u|)=8 L(v)=6 f(|v|)=6 |Lyn(u)uLyn(v)|=8
+  abbabbbabbabbbabbbabbabbbabbb C u=abbabbbabbabbbabbb v=abbabbbabbb L(u)=8 f(|u|)=8 L(v)=7 f(|v|)=7 |Lyn(u)uLyn(v)|=8
+n=30 f=9 minimizers=2
+  aabaabaababaabaabaababaabaabab C u=aabaabaabab v=aabaabaababaabaabab L(u)=7 f(|u|)=7 L(v)=8 f(|v|)=8 |Lyn(u)uLyn(v)|=8
+  ababbabbababbabbabbababbabbabb C u=ababbabbababbabbabb v=ababbabbabb L(u)=8 f(|u|)=8 L(v)=7 f(|v|)=7 |Lyn(u)uLyn(v)|=8

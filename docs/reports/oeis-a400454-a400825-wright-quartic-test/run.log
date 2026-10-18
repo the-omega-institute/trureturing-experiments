@@ -1,0 +1,4 @@
+j=3, 1<=k<=400: hypothesis holds for k in [1, 2, 3, 5, 6, 10, 11, 14, 16, 18, 22, 26]... (21 values); violations []; size bound True; primes match data True; hypothesis-true primes / all primes = 21/21
+j=4, 1<=k<=400: hypothesis holds for k in [2, 6, 10, 12, 16, 30, 60, 64, 94, 118, 120, 138]... (15 values); violations []; size bound True; primes match data True; hypothesis-true primes / all primes = 15/15
+RESULT PASS
+        0.74 real         0.56 user         0.04 sys

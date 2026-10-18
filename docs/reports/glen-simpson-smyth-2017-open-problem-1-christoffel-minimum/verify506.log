@@ -1,0 +1,6 @@
+|w| = 506, letters a/b = 312/194, v = BABAB(ab): True, w = (AB)^2 h (v): True
+w Lyndon: True; distinct Lyndon factors: brute 16, prefix-scan 16; lengths [1, 1, 2, 3, 5, 8, 13, 18, 21, 26, 47, 73, 120, 193, 313, 506]
+Christoffel words of length 506: 220; min direct count = 17; argmin count = 32; direct = quotient sum + 1 for all: True
+brute-force spot check of Christoffel counts (p = 97, 1, 251): ok
+morphism identities on random words: 0 failures
+RESULT PASS
