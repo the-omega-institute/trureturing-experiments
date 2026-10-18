@@ -1,0 +1,9 @@
+ok   A(A^2) = x A/(1 - 2A) to order 160
+ok   a(1..160) equal the b-file
+ok   a(n) = 2 (mod 4) iff n = 2^k + 1, else 0 (mod 4), for 2 <= n <= 160
+ok   a(1) = 1 (the literal 'n > 0' clause fails only at n = 1)
+ok   x solves the equation mod 2
+ok   C(x^2) = x C + x^3 (mod 2)
+ok   C = sum x^(2^k+1) (mod 2)
+RESULT PASS
+       26.78 real         9.20 user         0.04 sys
