@@ -1,0 +1,6 @@
+PASS exact: S (Eq. (18)) = closed form = sum-of-squares form, and S > 0, on 30 rational instances (dim 2-4, N+1 = 2-4)
+INFO float: min S/|closed| = 1.000000, max relative |S - sos| = 1.61e-14
+PASS float: S > 0 on 20 000 random configurations in R^3
+PASS float: identity holds to 1e-9 relative
+PASS equality case: all y_i equal gives S = 0
+RESULT PASS 0
