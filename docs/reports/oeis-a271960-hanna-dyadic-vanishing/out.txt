@@ -1,0 +1,9 @@
+n=2: boundary k=n-1 coefficient = 4
+n=3: boundary k=n-1 coefficient = -60
+n=4: boundary k=n-1 coefficient = -1340
+n=5: boundary k=n-1 coefficient = -15724860
+n=6: boundary k=n-1 coefficient = 284540130262724
+n=7: boundary k=n-1 coefficient = 987872032806775979918826979012
+order=520 exact_cases=21 (2^n<=128) modular_cases=36 (2^n<=512, two primes)
+RESULT PASS
+EXIT=0
