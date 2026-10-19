@@ -1,0 +1,6 @@
+(1) max |root fidelity - sum_a |<v_ia,v_ja>|| = 9.104e-15
+(2) max chi - Xi = 6.286e-13
+(3) max S(G) - S(|G|) = 3.893e-13
+(4) max chi - S(C) = 0.000e+00  (trials 2000)
+(5) equality case |chi - S(C)| = 1.110e-16, chi = 0.636514168295
+RESULT PASS
