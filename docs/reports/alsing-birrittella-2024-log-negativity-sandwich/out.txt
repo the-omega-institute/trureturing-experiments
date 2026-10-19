@@ -1,0 +1,6 @@
+(1) max sandwich violation = 9.524e-16
+(2) max |LN_a(rho) - LN_e| for real C = 9.524e-16
+(3) max |rho^Gamma - Q F| = 1.112e-16
+(4) max |trace norm - sum p (tr C)^2| = 2.220e-15
+(5) exact example deviation = 2.220e-16, strict = True
+RESULT PASS
