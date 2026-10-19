@@ -1,0 +1,5 @@
+h=2 n=7 sizes=[3, 1, 1, 1, 1] partition=True no-part-PD=True every-part-has-partner=True
+h=5 n=63 sizes=[27, 9, 9, 9, 9] partition=True no-part-PD=True every-part-has-partner=True
+h=8 n=511 sizes=[219, 73, 73, 73, 73] partition=True no-part-PD=True every-part-has-partner=True
+explicit T(5) witness valid: True
+RESULT PASS
