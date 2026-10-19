@@ -1,0 +1,11 @@
+N=2 d=2 D=3 pmin=0.750000 ghz_at_pmin=3.47e-17 ghz_below=-6.67e-04
+N=2 d=3 D=6 pmin=0.857143 ghz_at_pmin=-3.34e-17 ghz_below=-5.83e-04
+N=3 d=2 D=4 pmin=0.857143 ghz_at_pmin=-2.11e-17 ghz_below=-5.83e-04
+N=3 d=3 D=10 pmin=0.937500 ghz_at_pmin=-3.35e-17 ghz_below=-5.33e-04
+N=4 d=2 D=5 pmin=0.937500 ghz_at_pmin=-9.37e-18 ghz_below=-5.33e-04
+N=2 d=4 D=10 pmin=0.909091 ghz_at_pmin=-2.78e-17 ghz_below=-5.50e-04
+N=4 d=3 D=15 pmin=0.978261 ghz_at_pmin=-3.12e-17 ghz_below=-5.11e-04
+N=5 d=2 D=6 pmin=0.967742 ghz_at_pmin=-4.05e-17 ghz_below=-5.17e-04
+N=3 d=4 D=20 pmin=0.967742 ghz_at_pmin=-3.98e-17 ghz_below=-5.17e-04
+RESULT PASS
+EXIT=0
