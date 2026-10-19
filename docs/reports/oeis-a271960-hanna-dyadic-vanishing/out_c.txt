@@ -1,0 +1,6 @@
+c=2: equation_ok=True a2..a4=[Fraction(2, 1), Fraction(9, 1), Fraction(50, 1)] failures=[]
+c=3: equation_ok=True a2..a4=[Fraction(3, 1), Fraction(39, 2), Fraction(315, 2)] failures=[]
+c=4: equation_ok=True a2..a4=[Fraction(4, 1), Fraction(34, 1), Fraction(360, 1)] failures=[]
+c=1/2: equation_ok=True a2..a4=[Fraction(1, 2), Fraction(3, 4), Fraction(5, 4)] failures=[]
+RESULT PASS
+EXIT=0
