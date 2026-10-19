@@ -1,0 +1,5 @@
+m=3 reproduces the A113249 data line: True
+a(m,2r+1)=b(m,r)^2 for 0<=m<=60, r<60: True
+closed form via c for 0<=m<=60, n<122: True
+c(m,2k)=2c(m,k)^2-m^(2k) for 0<=m<=60, k<=60: True
+RESULT PASS

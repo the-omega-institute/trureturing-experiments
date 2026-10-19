@@ -1,0 +1,25 @@
+F_2: dist=1 order=[2] forward(count,reaches,legal)=(2, True, True) reverse=(2, False, False); order=[1] forward(count,reaches,legal)=(2, False, False) reverse=(2, True, True) ok
+F_3: dist=1 order=[2] forward(count,reaches,legal)=(3, True, True) reverse=(3, False, False); order=[1] forward(count,reaches,legal)=(3, False, False) reverse=(3, True, True) ok
+F_4: dist=1 order=[2] forward(count,reaches,legal)=(4, True, True) reverse=(4, False, False); order=[1] forward(count,reaches,legal)=(4, False, False) reverse=(4, True, True) ok
+F_5: dist=1 order=[2] forward(count,reaches,legal)=(5, True, True) reverse=(5, False, False); order=[1] forward(count,reaches,legal)=(5, False, False) reverse=(5, True, True) ok
+F_6: dist=1 order=[2] forward(count,reaches,legal)=(6, True, True) reverse=(6, False, False); order=[1] forward(count,reaches,legal)=(6, False, False) reverse=(6, True, True) ok
+F_7: dist=1 order=[2] forward(count,reaches,legal)=(7, True, True) reverse=(7, False, False); order=[1] forward(count,reaches,legal)=(7, False, False) reverse=(7, True, True) ok
+G_2: dist=1 runs=[(2, True, True)] ok
+G_3: dist=1 runs=[(3, True, True)] ok
+G_4: dist=1 runs=[(4, True, True)] ok
+G_5: dist=1 runs=[(5, True, True)] ok
+G_6: dist=1 runs=[(6, True, True)] ok
+alphabet 2, n=2: pairs=6 pairs with no shortest admissible run=0
+alphabet 2, n=3: pairs=20 pairs with no shortest admissible run=0
+alphabet 2, n=4: pairs=70 pairs with no shortest admissible run=4
+alphabet 2, n=5: pairs=252 pairs with no shortest admissible run=40
+alphabet 2, n=6: pairs=924 pairs with no shortest admissible run=188
+alphabet 2, n=7: pairs=3432 pairs with no shortest admissible run=1148
+alphabet 2, n=8: pairs=12870 pairs with no shortest admissible run=4772
+alphabet 2, n=9: pairs=48620 pairs with no shortest admissible run=23952
+alphabet 3, n=2: pairs=15 pairs with no shortest admissible run=0
+alphabet 3, n=3: pairs=93 pairs with no shortest admissible run=0
+alphabet 3, n=4: pairs=639 pairs with no shortest admissible run=12
+alphabet 3, n=5: pairs=4653 pairs with no shortest admissible run=408
+alphabet 3, n=6: pairs=35169 pairs with no shortest admissible run=7020
+RESULT PASS
