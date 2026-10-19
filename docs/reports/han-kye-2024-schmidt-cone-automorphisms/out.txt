@@ -1,0 +1,6 @@
+m=3 n=3 k=2 generators_ok worst_SR_under_AdV=3 max_second_singular=2.5e-13
+m=3 n=4 k=2 generators_ok worst_SR_under_AdV=3 max_second_singular=3.0e-13
+m=4 n=4 k=2 generators_ok worst_SR_under_AdV=4 max_second_singular=6.5e-13
+m=4 n=4 k=3 generators_ok worst_SR_under_AdV=4 max_second_singular=7.6e-13
+RESULT PASS
+EXIT=0
