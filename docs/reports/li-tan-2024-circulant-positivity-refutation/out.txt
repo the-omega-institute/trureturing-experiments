@@ -1,0 +1,6 @@
+leading minors of H: [1, 39/64, 95/324, 275/13122]
+z = (1, 5/8, 2/9 , 5/8)
+v^T C_H v = -1/9  eigenvalue -1/36
+numeric C_H min eigenvalue -0.02777777777777742
+random Gram samples (20000 each): indefinite C_H for n=3: 0, n=4: 6093
+RESULT PASS
