@@ -1,0 +1,5 @@
+F_U = 0.955755333091 (trace norm), closed form 0.955755333091
+F_M <= 0.967624313794 (LP over 40006 rank-one directions); LP dual y0 = 1.451436
+certificate y0 = 36/25, y1 = 53/200: min slack on grid 1.142813e-02, Lipschitz margin 1.421723e-03
+F_M >= 2 y0 / 3 = 0.960000000000 > F_U = 0.955755333091: True; gap >= 4.244667e-03
+RESULT PASS
