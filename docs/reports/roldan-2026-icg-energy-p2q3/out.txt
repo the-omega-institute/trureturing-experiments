@@ -1,0 +1,14 @@
+p=5 q=3 n=675 E(D*)=4832 next=4424 unique_max=True
+p=7 q=3 n=1323 E(D*)=10408 next=9520 unique_max=True
+p=11 q=3 n=3267 E(D*)=27944 next=25520 unique_max=True
+p=13 q=3 n=4563 E(D*)=39904 next=36424 unique_max=True
+p=17 q=3 n=7803 E(D*)=70208 next=64040 unique_max=True
+p=3 q=5 n=1125 E(D*)=8200 next=7536 unique_max=True
+p=3 q=7 n=3087 E(D*)=24856 next=22800 unique_max=True
+p=5 q=7 n=8575 E(D*)=87280 next=79056 unique_max=True
+p=7 q=5 n=6125 E(D*)=62024 next=56104 unique_max=True
+p=11 q=5 n=15125 E(D*)=166728 next=150568 unique_max=True
+certificate over 2047 competitors: True; S equals U(X*): True
+brute-force energy (5,3): 4832.000000 vs formula 4832
+RESULT PASS
+EXIT=0
