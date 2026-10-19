@@ -1,0 +1,6 @@
+(1) transfer identity: True
+(2) odd coefficients vanish: True
+    a^2 = 1 - 2i: True
+(3) p_k(u) = 0 for k = 1..7: True
+(4) Jacobian columns 1 and 6 equal: True ; numerical rank 2
+RESULT PASS
