@@ -1,0 +1,7 @@
+d=3 N=3 dimL=6 H_in_L=False P23_in_L=False Q_commute_O12=True max|[H,O12]|=1
+d=2 N=3 dimL=2 H_in_L=False P23_in_L=False Q_commute_O12=True max|[H,O12]|=1
+d=2 N=4 dimL=2 H_in_L=False P23_in_L=False Q_commute_O12=True max|[H,O12]|=1
+d=3 N=4 dimL=6 H_in_L=False P23_in_L=False Q_commute_O12=True max|[H,O12]|=1
+d=4 N=3 dimL=24 H_in_L=False P23_in_L=False Q_commute_O12=True max|[H,O12]|=1
+RESULT PASS
+EXIT=0
