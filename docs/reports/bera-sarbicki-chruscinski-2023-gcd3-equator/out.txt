@@ -1,0 +1,7 @@
+exact counterexample (6,3): lambda* = 15/4, q* Phi(R) q = -13/40, R positive definite with trace 1: True
+family: x = 1_{3Z} certifies non-positivity at the conjectured value for all 31 pairs (n,k), GCD 3, n <= 30: True
+numerical lambda_max (6,3), |alpha|=|beta|, phase 0.0000: 3.0000
+numerical lambda_max (6,3), |alpha|=|beta|, phase 1.0472: 3.0000
+numerical lambda_max (6,3), |alpha|=|beta|, phase 3.1416: 3.0000
+numerical lambda_max (6,3), alpha=1, beta=0: 3.7500
+RESULT PASS
