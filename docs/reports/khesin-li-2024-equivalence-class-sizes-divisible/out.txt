@@ -1,0 +1,16 @@
+(2, 1) class sizes [3] match paper: True mixed classes 0
+(3, 1) class sizes [3, 21] match paper: True mixed classes 0
+(4, 1) class sizes [3, 30, 45, 54, 84, 198] match paper: True mixed classes 0
+(5, 1) class sizes [3, 39, 78, 84, 84, 204, 297, 306, 315, 360, 540, 558, 1332, 1404, 2376, 3024, 3276] match paper: True mixed classes 0
+(3, 2) class sizes [9] match paper: True mixed classes 0
+(4, 2) class sizes [36, 45, 99, 234] match paper: True mixed classes 0
+(2, 1) connected normalized encoders 3 action failures 0
+(3, 1) connected normalized encoders 24 action failures 0
+(4, 1) connected normalized encoders 414 action failures 0
+(5, 1) connected normalized encoders 14280 action failures 0
+(3, 2) connected normalized encoders 9 action failures 0
+(4, 2) connected normalized encoders 414 action failures 0
+(5, 2) connected normalized encoders 29970 action failures 0
+(4, 3) connected normalized encoders 27 action failures 0
+(5, 3) connected normalized encoders 6534 action failures 0
+RESULT PASS
