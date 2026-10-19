@@ -1,0 +1,9 @@
+(1) closed form vs series max error 5.06e-61
+(2) m=50: 3 u_1(m) = 12.2067818314, sign change of P_(3m) at z = (m/u1)^3: True
+(2) m=200: 3 u_1(m) = 12.5718933829, sign change of P_(3m) at z = (m/u1)^3: True
+(2) m=800: 3 u_1(m) = 12.6673905808, sign change of P_(3m) at z = (m/u1)^3: True
+(2) m=3200: 3 u_1(m) = 12.6915448671, sign change of P_(3m) at z = (m/u1)^3: True
+(2) increasing: True  Richardson 12.6995963  limit 3u_1(F) 12.6996215773
+(3) limit - prediction = 0.00302603  ratio 1.166944723 (Table I: 1.1669439)
+(4) spacings 3.62658567491 3.6276031251
+RESULT PASS
