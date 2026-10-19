@@ -1,0 +1,4 @@
+three-position witness: OA ['P', 'N', 'N'] OE ['P', 'N', 'N'] GA [0, 1, 2] GE [0, 1, 1] True
+family (subtract >= 2 vs. multiples of d), d = 3..7, N = 2d..59: domination, closed forms, gap (d-2)r: True
+no counterexample on boards with at most two positions: True
+RESULT PASS
