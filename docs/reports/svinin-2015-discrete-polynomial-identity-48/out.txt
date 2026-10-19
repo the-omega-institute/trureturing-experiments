@@ -1,0 +1,27 @@
+r=1 s=0 eq(48) holds: True
+r=1 s=1 eq(48) holds: True
+r=1 s=2 eq(48) holds: True
+r=1 s=3 eq(48) holds: True
+r=1 s=4 eq(48) holds: True
+r=2 s=1 eq(48) holds: True
+r=2 s=2 eq(48) holds: True
+r=2 s=3 eq(48) holds: True
+r=2 s=4 eq(48) holds: True
+r=2 s=5 eq(48) holds: True
+r=3 s=2 eq(48) holds: True
+r=3 s=3 eq(48) holds: True
+r=3 s=4 eq(48) holds: True
+r=3 s=5 eq(48) holds: True
+r=3 s=6 eq(48) holds: True
+r=4 s=3 eq(48) holds: True
+r=4 s=4 eq(48) holds: True
+r=4 s=5 eq(48) holds: True
+r=4 s=6 eq(48) holds: True
+r=4 s=7 eq(48) holds: True
+r=5 s=4 eq(48) holds: True
+r=5 s=5 eq(48) holds: True
+r=5 s=6 eq(48) holds: True
+r=5 s=7 eq(48) holds: True
+r=5 s=8 eq(48) holds: True
+cases 25 all hold: True
+RESULT PASS
