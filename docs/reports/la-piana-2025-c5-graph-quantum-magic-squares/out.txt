@@ -1,0 +1,6 @@
+5 PSD True rows True cols True graph True rank-one True separation data True
+7 PSD True rows True cols True graph True rank-one True separation data True
+9 PSD True rows True cols True graph True rank-one True separation data True
+11 PSD True rows True cols True graph True rank-one True separation data True
+13 PSD True rows True cols True graph True rank-one True separation data True
+RESULT PASS
