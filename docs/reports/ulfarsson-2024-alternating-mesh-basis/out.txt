@@ -1,0 +1,3 @@
+lemma 1: patterns with an unshaded cell tested: 2533
+lemma 2 (full shading occurs only in itself), k <= 3, n <= k+2: True
+RESULT PASS
