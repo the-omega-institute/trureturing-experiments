@@ -1,0 +1,94 @@
+/Users/auric/trureturing-experiments/docs/reports/badhani-das-2026-noisy-unitary-conditional-min-entropy/check.py:66: UserWarning: Solution may be inaccurate. Try another solver, adjusting the solver settings, or solve with verbose=True for more information.
+  prob.solve(solver=s, **kw)
+identity checks: q_chan vs d*q_state
+d=1 trial=0 p=0.00 q_state=0.99999999 q_chan=1.00000000 d*q_state=0.99999999 diff=5.84e-09 ok
+d=1 trial=0 p=0.25 q_state=1.00000000 q_chan=1.00000000 d*q_state=1.00000000 diff=6.75e-10 ok
+d=1 trial=0 p=0.60 q_state=1.00000000 q_chan=1.00000000 d*q_state=1.00000000 diff=5.94e-10 ok
+d=1 trial=0 p=1.00 q_state=1.00000000 q_chan=1.00000000 d*q_state=1.00000000 diff=1.58e-09 ok
+d=1 trial=1 p=0.00 q_state=0.99999999 q_chan=1.00000000 d*q_state=0.99999999 diff=5.84e-09 ok
+d=1 trial=1 p=0.25 q_state=1.00000000 q_chan=1.00000000 d*q_state=1.00000000 diff=6.75e-10 ok
+d=1 trial=1 p=0.60 q_state=1.00000000 q_chan=1.00000000 d*q_state=1.00000000 diff=5.94e-10 ok
+d=1 trial=1 p=1.00 q_state=1.00000000 q_chan=1.00000000 d*q_state=1.00000000 diff=1.58e-09 ok
+d=1 trial=2 p=0.00 q_state=0.99999999 q_chan=1.00000000 d*q_state=0.99999999 diff=5.84e-09 ok
+d=1 trial=2 p=0.25 q_state=1.00000000 q_chan=1.00000000 d*q_state=1.00000000 diff=6.75e-10 ok
+d=1 trial=2 p=0.60 q_state=1.00000000 q_chan=1.00000000 d*q_state=1.00000000 diff=5.94e-10 ok
+d=1 trial=2 p=1.00 q_state=1.00000000 q_chan=1.00000000 d*q_state=1.00000000 diff=1.58e-09 ok
+d=1 trial=3 p=0.00 q_state=0.99999999 q_chan=1.00000000 d*q_state=0.99999999 diff=5.84e-09 ok
+d=1 trial=3 p=0.25 q_state=1.00000000 q_chan=1.00000000 d*q_state=1.00000000 diff=6.75e-10 ok
+d=1 trial=3 p=0.60 q_state=1.00000000 q_chan=1.00000000 d*q_state=1.00000000 diff=5.94e-10 ok
+d=1 trial=3 p=1.00 q_state=1.00000000 q_chan=1.00000000 d*q_state=1.00000000 diff=1.58e-09 ok
+d=2 trial=0 p=0.00 q_state=2.76527438 q_chan=5.53054876 d*q_state=5.53054875 diff=6.32e-09 ok
+d=2 trial=0 p=0.25 q_state=2.13645578 q_chan=4.27291157 d*q_state=4.27291156 diff=6.92e-09 ok
+d=2 trial=0 p=0.60 q_state=1.25610975 q_chan=2.51221951 d*q_state=2.51221950 diff=6.78e-09 ok
+d=2 trial=0 p=1.00 q_state=0.25000000 q_chan=0.50000000 d*q_state=0.50000000 diff=2.58e-10 ok
+d=2 trial=1 p=0.00 q_state=3.05923012 q_chan=6.11846026 d*q_state=6.11846025 diff=1.14e-08 ok
+d=2 trial=1 p=0.25 q_state=2.35692258 q_chan=4.71384520 d*q_state=4.71384517 diff=2.63e-08 ok
+d=2 trial=1 p=0.60 q_state=1.37369205 q_chan=2.74738410 d*q_state=2.74738410 diff=2.86e-09 ok
+d=2 trial=1 p=1.00 q_state=0.25000000 q_chan=0.50000000 d*q_state=0.50000000 diff=2.58e-10 ok
+d=2 trial=2 p=0.00 q_state=2.66988989 q_chan=5.33977979 d*q_state=5.33977978 diff=7.14e-09 ok
+d=2 trial=2 p=0.25 q_state=2.06491742 q_chan=4.12983484 d*q_state=4.12983484 diff=4.52e-09 ok
+d=2 trial=2 p=0.60 q_state=1.21795596 q_chan=2.43591192 d*q_state=2.43591191 diff=9.89e-09 ok
+d=2 trial=2 p=1.00 q_state=0.25000000 q_chan=0.50000000 d*q_state=0.50000000 diff=2.58e-10 ok
+d=2 trial=3 p=0.00 q_state=3.69889402 q_chan=7.39778805 d*q_state=7.39778805 diff=4.66e-09 ok
+d=2 trial=3 p=0.25 q_state=2.83667050 q_chan=5.67334104 d*q_state=5.67334100 diff=3.93e-08 ok
+d=2 trial=3 p=0.60 q_state=1.62955761 q_chan=3.25911522 d*q_state=3.25911522 diff=1.71e-10 ok
+d=2 trial=3 p=1.00 q_state=0.25000000 q_chan=0.50000000 d*q_state=0.50000000 diff=2.58e-10 ok
+d=3 trial=0 p=0.00 q_state=3.78759046 q_chan=11.36277140 d*q_state=11.36277139 diff=9.37e-09 ok
+d=3 trial=0 p=0.25 q_state=2.86847063 q_chan=8.60541189 d*q_state=8.60541188 diff=5.61e-09 ok
+d=3 trial=0 p=0.60 q_state=1.58170285 q_chan=4.74510856 d*q_state=4.74510856 diff=3.10e-09 ok
+d=3 trial=0 p=1.00 q_state=0.11111111 q_chan=0.33333333 d*q_state=0.33333333 diff=4.67e-11 ok
+d=3 trial=1 p=0.00 q_state=3.64050873 q_chan=10.92152620 d*q_state=10.92152619 diff=9.58e-09 ok
+d=3 trial=1 p=0.25 q_state=2.75815932 q_chan=8.27447798 d*q_state=8.27447797 diff=9.88e-09 ok
+d=3 trial=1 p=0.60 q_state=1.52287016 q_chan=4.56861048 d*q_state=4.56861049 diff=1.45e-08 ok
+d=3 trial=1 p=1.00 q_state=0.11111111 q_chan=0.33333333 d*q_state=0.33333333 diff=4.67e-11 ok
+d=3 trial=2 p=0.00 q_state=3.76239613 q_chan=11.28718839 d*q_state=11.28718839 diff=5.52e-09 ok
+d=3 trial=2 p=0.25 q_state=2.84957487 q_chan=8.54872463 d*q_state=8.54872462 diff=7.12e-09 ok
+d=3 trial=2 p=0.60 q_state=1.57162512 q_chan=4.71487536 d*q_state=4.71487536 diff=2.02e-09 ok
+d=3 trial=2 p=1.00 q_state=0.11111111 q_chan=0.33333333 d*q_state=0.33333333 diff=4.67e-11 ok
+d=3 trial=3 p=0.00 q_state=3.76082800 q_chan=11.28248401 d*q_state=11.28248400 diff=5.02e-09 ok
+d=3 trial=3 p=0.25 q_state=2.84839878 q_chan=8.54519634 d*q_state=8.54519633 diff=1.02e-08 ok
+d=3 trial=3 p=0.60 q_state=1.57099787 q_chan=4.71299361 d*q_state=4.71299361 diff=1.76e-09 ok
+d=3 trial=3 p=1.00 q_state=0.11111111 q_chan=0.33333333 d*q_state=0.33333333 diff=4.67e-11 ok
+CNOT p=0.0 S_chan=-2.000000 S_state-1=-2.000000 ok
+CNOT p=0.5 S_chan=-1.169925 S_state-1=-1.169925 ok
+CNOT p=0.9 S_chan=0.234465 S_state-1=0.234465 ok
+SWAP p=0.0 S_chan=-3.000000 S_state-1=-3.000000 ok
+SWAP p=0.5 S_chan=-2.087463 S_state-1=-2.087463 ok
+SWAP p=0.9 S_chan=-0.321928 S_state-1=-0.321928 ok
+id p=0.0 S_chan=-1.000000 S_state-1=-1.000000 ok
+id p=0.5 S_chan=-0.321928 S_state-1=-0.321928 ok
+id p=0.9 S_chan=0.621488 S_state-1=0.621488 ok
+structural steps (maximally entangled eigenbasis via magic basis):
+d=1 trial=0 structural=ok
+d=1 trial=1 structural=ok
+d=1 trial=2 structural=ok
+d=1 trial=3 structural=ok
+d=1 trial=4 structural=ok
+d=2 trial=0 structural=ok
+d=2 trial=1 structural=ok
+d=2 trial=2 structural=ok
+d=2 trial=3 structural=ok
+d=2 trial=4 structural=ok
+d=3 trial=0 structural=ok
+d=3 trial=1 structural=ok
+d=3 trial=2 structural=ok
+d=3 trial=3 structural=ok
+d=3 trial=4 structural=ok
+d=4 trial=0 structural=ok
+d=4 trial=1 structural=ok
+d=4 trial=2 structural=ok
+d=4 trial=3 structural=ok
+d=4 trial=4 structural=ok
+negative controls (identity not expected in general):
+random CPTP d=1 trial=0 q_chan-d*q_state=-0.000000
+random CPTP d=1 trial=1 q_chan-d*q_state=0.000000
+random CPTP d=1 trial=2 q_chan-d*q_state=-0.000000
+random CPTP d=1 trial=3 q_chan-d*q_state=0.000000
+pure-replacement noise d=1 q_chan-d*q_state=0.000000
+random CPTP d=2 trial=0 q_chan-d*q_state=0.154180
+random CPTP d=2 trial=1 q_chan-d*q_state=0.004522
+random CPTP d=2 trial=2 q_chan-d*q_state=0.013311
+random CPTP d=2 trial=3 q_chan-d*q_state=0.058682
+pure-replacement noise d=2 q_chan-d*q_state=0.006949
+negative controls discriminate (some gap > 1e-3): True
+RESULT PASS

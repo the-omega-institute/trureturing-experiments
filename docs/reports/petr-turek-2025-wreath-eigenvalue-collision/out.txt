@@ -1,0 +1,8 @@
+(n,k)=(5,2) wreaths=12 spectrum=[(0, 6), (6, 5), (30, 1)] formula_match=True
+(n,k)=(7,2) wreaths=360 spectrum=[(0, 345), (120, 14), (840, 1)] formula_match=True
+(n,k)=(7,3) wreaths=360 spectrum=[(0, 331), (24, 14), (120, 14), (504, 1)] formula_match=True
+(n,k)=(8,3) wreaths=2520 spectrum=[(0, 2471), (180, 28), (612, 20), (2880, 1)] formula_match=True
+(n,k)=(14,5) lambda_1..lambda_5 = [304819200, 68947200, 17107200, 25401600, 17107200]  multiplicities [1, 77, 273, 637, 1001]
+coprime collisions for n < 120: [(14, 5, [(3, 5)]), (103, 50, [(27, 37)])]
+factorisation lambda_3(n,5) - lambda_5(n,5) holds for 11 <= n < 200, gcd(n,5) = 1: True
+RESULT PASS
