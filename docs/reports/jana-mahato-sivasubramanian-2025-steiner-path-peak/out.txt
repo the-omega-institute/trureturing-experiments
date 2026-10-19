@@ -1,0 +1,19 @@
+n=6 size=9 maximisers=[5] conjectured=5
+n=7 size=11 maximisers=[6] conjectured=6
+n=8 size=13 maximisers=[7] conjectured=7
+n=9 size=15 maximisers=[8] conjectured=8
+n=10 size=17 maximisers=[9] conjectured=9
+n=11 size=19 maximisers=[10] conjectured=10
+n=12 size=21 maximisers=[11] conjectured=11
+n=13 size=23 maximisers=[12] conjectured=12
+n=14 size=25 maximisers=[13] conjectured=13
+n=15 size=27 maximisers=[14] conjectured=14
+n=16 size=29 maximisers=[16] conjectured=15  |a_15|=939602445008  |a_16|=956326515118  |a_17|=802497798666
+n=17 size=31 maximisers=[17] conjectured=16
+n=18 size=33 maximisers=[18] conjectured=17
+n=19 size=35 maximisers=[19] conjectured=18
+n=20 size=37 maximisers=[20] conjectured=19
+n=21 size=39 maximisers=[21] conjectured=20
+n=22 size=41 maximisers=[22] conjectured=21
+RESULT PASS
+EXIT=0
