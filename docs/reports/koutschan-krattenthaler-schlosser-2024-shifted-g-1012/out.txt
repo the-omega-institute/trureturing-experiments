@@ -1,0 +1,5 @@
+identity (10.12) for n = 1..12: True
+Lemma 1 (column generating functions), j < 5, i < 48 : True
+Lemma 2 (common multiplier, symbolic in j): True
+Lemma 3 (L A R has top row (2,0,...,0) and lower block B_{n-1}), n < 16: True
+RESULT PASS
