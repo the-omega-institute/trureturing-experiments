@@ -1,0 +1,5 @@
+A368959 data reproduced (first 20 terms): True
+Conjecture 2: A338325 terms <= 3000 and 243, 972, 1944, 2401 are in A368959: True
+Conjecture 1: every non-powerful m <= 3000 has S_p(m) = 0 for a prime p dividing m exactly once: True
+Lemma 2 exact counts for p <= 13, 2 <= a <= 5, 2 <= s <= 12: True
+RESULT PASS
