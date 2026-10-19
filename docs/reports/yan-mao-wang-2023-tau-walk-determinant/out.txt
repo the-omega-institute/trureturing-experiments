@@ -1,0 +1,11 @@
+cases 790 identity up to sign holds: True
+2 True
+3 True
+4 True
+5 True
+6 True
+7 True
+8 True
+9 True
+resultant identity (13), m=2..9: True
+RESULT PASS
