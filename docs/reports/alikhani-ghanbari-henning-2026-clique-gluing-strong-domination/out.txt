@@ -1,0 +1,11 @@
+exhaustive r=2 n_i<=5: pairs=194481 violations_of_(4)=0 construction_failures=0
+exhaustive r=3 n_i<=5: pairs=14161 violations_of_(4)=0 construction_failures=0
+random r=2: trials=1500 violations_of_(4)=0 min_slack=1
+random r=3: trials=1500 violations_of_(4)=0 min_slack=2
+random r=4: trials=1500 violations_of_(4)=0 min_slack=2
+tightness t=2 r=2: gamma_st(G1)=9 gamma_st(G)=13 Sigma=4 equality=True
+tightness t=2 r=3: gamma_st(G1)=11 gamma_st(G)=17 Sigma=4 equality=True
+v1 family H_2: gamma_st(H)=4 gamma_st(G)=5 Psi=3 v1_bound=7 violated=True (4)_bound=5
+v1 family H_3: gamma_st(H)=5 gamma_st(G)=7 Psi=7 v1_bound=9 violated=True (4)_bound=7
+v1 family H_4: gamma_st(H)=6 gamma_st(G)=9 Psi=13 v1_bound=11 violated=True (4)_bound=9
+RESULT PASS
