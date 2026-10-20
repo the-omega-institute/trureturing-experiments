@@ -1,0 +1,6 @@
+scalar identity (eigenvalues of C.37 at h-eigenvalues n-1-2k) for n=1..40: True
+n 1 literal transfer matrix equals C.66: True
+n 2 literal transfer matrix equals C.66: True
+n 3 literal transfer matrix equals C.66: True
+n 4 literal transfer matrix equals C.66: True
+RESULT PASS
