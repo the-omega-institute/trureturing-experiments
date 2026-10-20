@@ -1,0 +1,2 @@
+cases: 600; max |G(U p) - G(U^dagger C p)| = 0.0
+RESULT PASS
