@@ -1,0 +1,6 @@
+r=4: n=12, 2-connected True, K5-free True, flat True, no isolated triangle True, C = [1, 12, 24, 16, 4], nonreal roots 2, C(-1) = 1
+r=5: n=15, 2-connected True, K5-free True, flat True, no isolated triangle True, C = [1, 15, 30, 20, 5], nonreal roots 2, C(-1) = 1
+r=6: n=18, 2-connected True, K5-free True, flat True, no isolated triangle True, C = [1, 18, 36, 24, 6], nonreal roots 2, C(-1) = 1
+r=7: n=21, 2-connected True, K5-free True, flat True, no isolated triangle True, C = [1, 21, 42, 28, 7], nonreal roots 2, C(-1) = 1
+r=8: n=24, 2-connected True, K5-free True, flat True, no isolated triangle True, C = [1, 24, 48, 32, 8], nonreal roots 2, C(-1) = 1
+RESULT PASS
