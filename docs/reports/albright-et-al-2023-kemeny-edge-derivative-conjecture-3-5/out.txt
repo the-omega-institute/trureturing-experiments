@@ -1,0 +1,17 @@
+A k=3 n=8: D K(B_k) = -30.8519 (closed form -30.8519); D_ends K(P_n) = -54.8571 (closed form -54.8571); no violation
+A k=4 n=11: D K(B_k) = -105.8555 (closed form -105.8555); D_ends K(P_n) = -163.3500 (closed form -163.3500); no violation
+A k=5 n=14: D K(B_k) = -269.8656 (closed form -269.8656); D_ends K(P_n) = -361.8462 (closed form -361.8462); no violation
+A k=6 n=17: D K(B_k) = -574.8765 (closed form -574.8765); D_ends K(P_n) = -677.3438 (closed form -677.3438); no violation
+A k=7 n=20: D K(B_k) = -1084.8867 (closed form -1084.8867); D_ends K(P_n) = -1136.8421 (closed form -1136.8421); no violation
+A k=8 n=23: D K(B_k) = -1875.8958 (closed form -1875.8958); D_ends K(P_n) = -1767.3410 (closed form -1767.3409); counterexample
+A k=9 n=26: D K(B_k) = -3035.9037 (closed form -3035.9037); D_ends K(P_n) = -2595.8402 (closed form -2595.8400); counterexample
+A k=10 n=29: D K(B_k) = -4664.9106 (closed form -4664.9106); D_ends K(P_n) = -3649.3396 (closed form -3649.3393); counterexample
+A k=11 n=32: D K(B_k) = -6874.9168 (closed form -6874.9167); D_ends K(P_n) = -4954.8392 (closed form -4954.8387); counterexample
+A k=12 n=35: D K(B_k) = -9789.9221 (closed form -9789.9220); D_ends K(P_n) = -6539.3390 (closed form -6539.3382); counterexample
+A k=13 n=38: D K(B_k) = -13545.9269 (closed form -13545.9268); D_ends K(P_n) = -8429.8390 (closed form -8429.8378); counterexample
+A k=14 n=41: D K(B_k) = -18290.9313 (closed form -18290.9310); D_ends K(P_n) = -10653.3392 (closed form -10653.3375); counterexample
+A k=15 n=44: D K(B_k) = -24184.9352 (closed form -24184.9347); D_ends K(P_n) = -13236.8397 (closed form -13236.8372); counterexample
+B k=8 n=23: exact D K(B_k) = -7683669/4096 = closed form True; exact D_ends K(P_n) = -77763/44 = closed form True; D K(B_k) < D_ends K(P_n): True
+B k=10 n=29: exact D K(B_k) = -23324553/5000 = closed form True; exact D_ends K(P_n) = -204363/56 = closed form True; D K(B_k) < D_ends K(P_n): True
+RESULT PASS
+EXIT=0
