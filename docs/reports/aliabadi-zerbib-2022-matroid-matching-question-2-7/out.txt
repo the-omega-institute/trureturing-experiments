@@ -1,0 +1,18 @@
+n=2 s=2: basis axioms True, loopless True, sparse paving True, basis (1, 2) of M matched to some basis of N: False, of N to some basis of N: False
+n=2 s=3: basis axioms True, loopless True, sparse paving True, basis (1, 2) of M matched to some basis of N: False, of N to some basis of N: False
+n=2 s=4: basis axioms True, loopless True, sparse paving True, basis (1, 2) of M matched to some basis of N: False, of N to some basis of N: False
+n=2 s=5: basis axioms True, loopless True, sparse paving True, basis (1, 2) of M matched to some basis of N: False, of N to some basis of N: False
+n=3 s=2: basis axioms True, loopless True, sparse paving True, basis (1, 2, 3) of M matched to some basis of N: False, of N to some basis of N: False
+n=3 s=3: basis axioms True, loopless True, sparse paving True, basis (1, 2, 3) of M matched to some basis of N: False, of N to some basis of N: False
+n=3 s=4: basis axioms True, loopless True, sparse paving True, basis (1, 2, 3) of M matched to some basis of N: False, of N to some basis of N: False
+n=3 s=5: basis axioms True, loopless True, sparse paving True, basis (1, 2, 3) of M matched to some basis of N: False, of N to some basis of N: False
+n=4 s=2: basis axioms True, loopless True, sparse paving True, basis (1, 2, 3, 4) of M matched to some basis of N: False, of N to some basis of N: False
+n=4 s=3: basis axioms True, loopless True, sparse paving True, basis (1, 2, 3, 4) of M matched to some basis of N: False, of N to some basis of N: False
+n=4 s=4: basis axioms True, loopless True, sparse paving True, basis (1, 2, 3, 4) of M matched to some basis of N: False, of N to some basis of N: False
+n=4 s=5: basis axioms True, loopless True, sparse paving True, basis (1, 2, 3, 4) of M matched to some basis of N: False, of N to some basis of N: False
+n=5 s=2: basis axioms True, loopless True, sparse paving True, basis (1, 2, 3, 4, 5) of M matched to some basis of N: False, of N to some basis of N: False
+n=5 s=3: basis axioms True, loopless True, sparse paving True, basis (1, 2, 3, 4, 5) of M matched to some basis of N: False, of N to some basis of N: False
+n=5 s=4: basis axioms True, loopless True, sparse paving True, basis (1, 2, 3, 4, 5) of M matched to some basis of N: False, of N to some basis of N: False
+n=5 s=5: basis axioms True, loopless True, sparse paving True, basis (1, 2, 3, 4, 5) of M matched to some basis of N: False, of N to some basis of N: False
+Lemma 3.14 with A = B = {1, 2, 3}, X = {1, ..., 6} in Z: hypotheses True, |X| = 6 < |A| + |B| + 1 = 7: True
+RESULT PASS
