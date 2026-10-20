@@ -1,0 +1,8 @@
+G = Z3 (|G| = 3, s = 1): perfect restricted bases of size s+1: 1; every element a generator: True; PASS
+G = Z7 (|G| = 7, s = 2): perfect restricted bases of size s+1: 2; every element a generator: True; PASS
+G = Z15 (|G| = 15, s = 3): perfect restricted bases of size s+1: 2; every element a generator: True; PASS
+G = Z31 (|G| = 31, s = 4): perfect restricted bases of size s+1: 6; every element a generator: True; PASS
+G = Z63 (|G| = 63, s = 5): perfect restricted bases of size s+1: 6; every element a generator: True; PASS
+G = Z3 x Z21 (|G| = 63, s = 5): perfect restricted bases of size s+1: 0; every element a generator: True; PASS
+RESULT PASS
+EXIT=0
