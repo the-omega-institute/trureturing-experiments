@@ -1,0 +1,13 @@
+M=1 n=1 (54)series=-2*t**3 + t**2 - t + 1 diff=0; (55)series=t**2 - t + 1 diff=0
+M=1 n=2 (54)series=-12*t**3 + 4*t**2 - 2*t + 1 diff=0; (55)series=4*t**2 - 2*t + 1 diff=0
+M=1 n=3 (54)series=-36*t**3 + 9*t**2 - 3*t + 1 diff=0; (55)series=9*t**2 - 3*t + 1 diff=0
+M=1 n=4 (54)series=-80*t**3 + 16*t**2 - 4*t + 1 diff=0
+M=2 n=1 (54)series=-5*t**3/4 + t**2 - t + 1 diff=0; (55)series=t**2 - t + 1 diff=0
+M=2 n=2 (54)series=-9*t**3 + 4*t**2 - 2*t + 1 diff=0; (55)series=13*t**2/4 - 2*t + 1 diff=0
+M=2 n=3 (54)series=-57*t**3/2 + 9*t**2 - 3*t + 1 diff=0; (55)series=27*t**2/4 - 3*t + 1 diff=0
+M=2 n=4 (54)series=-65*t**3 + 16*t**2 - 4*t + 1 diff=0
+M=3 n=1 (54)series=-10*t**3/9 + t**2 - t + 1 diff=0; (55)series=t**2 - t + 1 diff=0
+M=3 n=2 (54)series=-76*t**3/9 + 4*t**2 - 2*t + 1 diff=0; (55)series=28*t**2/9 - 2*t + 1 diff=0
+M=3 n=3 (54)series=-244*t**3/9 + 9*t**2 - 3*t + 1 diff=0; (55)series=19*t**2/3 - 3*t + 1 diff=0
+Eq. (54) at n = 2 equals Eq. (52) for M < 20: True
+RESULT PASS
