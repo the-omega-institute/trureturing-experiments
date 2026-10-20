@@ -1,0 +1,6 @@
+b=4: moves valid and cover [0, F(n)) without F(n) for n <= 400: True
+b=6: moves valid and cover [0, F(n)) without F(n) for n <= 400: True
+b=8: moves valid and cover [0, F(n)) without F(n) for n <= 400: True
+b=10: moves valid and cover [0, F(n)) without F(n) for n <= 400: True
+b=12: moves valid and cover [0, F(n)) without F(n) for n <= 400: True
+RESULT PASS
