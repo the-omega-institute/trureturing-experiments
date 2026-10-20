@@ -1,0 +1,10 @@
+1. basis in S: True dim S = 13 (expected 13); F_s - F_0 vanishes on S: True
+2. s=-1: J_s eigenvalues {1/32: 6, 3/32: 6, 9/32: 1, 11/32: 2, 73/32: 1}, minimum 1/32
+2. s=0: J_s eigenvalues {1/16: 12, 5/16: 3, 37/16: 1}, minimum 1/16
+2. s=1: J_s eigenvalues {1/32: 6, 3/32: 6, 9/32: 2, 11/32: 1, 75/32: 1}, minimum 1/32
+3. Tr_B X = I  =>  Tr_C F_s(X) = I: True
+4. R_s == P + I/2 + (s/8) Z(x)Z: True ; charpoly (-8*lam + s + 4)*(-8*lam + s + 20)*(8*lam + s - 4)**2/4096
+5. off-diagonal blocks equal K (x) E_{bb'}: True ; K eigenvalues {9/8: 1, 1/8: 3}
+6. F_1 != F_-1: True ; F_0 = midpoint: True ; delta(Z(x)I) = [1/8, 1/8, -1/8, -1/8]
+7. (float) 300 boundary extensions: min eigenvalue of R over samples = 0.324350 (> 0 means e = 4)
+RESULT PASS
