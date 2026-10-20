@@ -1,0 +1,16 @@
+n=4: sigma_3 = sigma_n = 1764, x_n = 42 = D(n), m - Q(n) = 0
+n=5: sigma_3 = sigma_n = 26160, x_n = 218 = D(n), m - Q(n) = 0
+n=6: sigma_3 = sigma_n = 176020, x_n = 677 = D(n), m - Q(n) = 0
+n=7: sigma_3 = sigma_n = 778080, x_n = 1621 = D(n), m - Q(n) = 0
+n=8: sigma_3 = sigma_n = 2638188, x_n = 3306 = D(n), m - Q(n) = 0
+n=9: sigma_3 = sigma_n = 7443744, x_n = 6042 = D(n), m - Q(n) = 0
+n=10: sigma_3 = sigma_n = 18347400, x_n = 10193 = D(n), m - Q(n) = 0
+n=11: sigma_3 = sigma_n = 40766040, x_n = 16177 = D(n), m - Q(n) = 34020
+n=12: sigma_3 = sigma_n = 83429060, x_n = 24466 = D(n), m - Q(n) = 272160
+n=13: sigma_3 = sigma_n = 159709968, x_n = 35586 = D(n), m - Q(n) = 1224720
+n=50: sigma_3 = sigma_n = 4153660188720, x_n = 12179393 = D(n), m - Q(n) = 1820909613600
+n=100: sigma_3 = sigma_n = 599765321467620, x_n = 209555018 = D(n), m - Q(n) = 405490928169600
+n=150: sigma_3 = sigma_n = 10661995186274020, x_n = 1086501893 = D(n), m - Q(n) = 8248189935585600
+n=200: sigma_3 = sigma_n = 81466099032045420, x_n = 3474895018 = D(n), m - Q(n) = 67304126378361600
+X_11 = [1, 1, 1, 1, 1, 1, 1, 2, 10, 126, 16177]
+RESULT PASS
