@@ -1,0 +1,10 @@
+d=21: n=55 almost-21-regular=True triangle-free=True factor-critical=True nu=27 Q=27
+d=23: n=61 almost-23-regular=True triangle-free=True factor-critical=True nu=30 Q=30
+d=25: n=65 almost-25-regular=True triangle-free=True factor-critical=True nu=32 Q=32
+d=27: n=71 almost-27-regular=True triangle-free=True factor-critical=True nu=35 Q=35
+d=29: n=75 almost-29-regular=True triangle-free=True factor-critical=True nu=37 Q=37
+d=31: n=81 almost-31-regular=True triangle-free=True factor-critical=True nu=40 Q=40
+2a. d=23,N=59: feasible (a,w) = 2310, with an edge in supp(w) = 0
+2b. U in (1,3): configurations with no violated independent-set inequality = 0
+2c. arithmetic bounds for odd d in 21..401: True
+RESULT PASS
