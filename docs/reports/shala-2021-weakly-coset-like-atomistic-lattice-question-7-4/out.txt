@@ -1,0 +1,6 @@
+m=4: |L|=12, lattice True, atomistic True, J = atoms True, nonzero S(q) {'2': -1, '1': 1, '8': -4}, weakly True, strongly False
+m=5: |L|=14, lattice True, atomistic True, J = atoms True, nonzero S(q) {'2': -1, '1': 1, '10': -5}, weakly True, strongly False
+m=6: |L|=16, lattice True, atomistic True, J = atoms True, nonzero S(q) {'2': -1, '1': 1, '12': -6}, weakly True, strongly False
+m=7: |L|=18, lattice True, atomistic True, J = atoms True, nonzero S(q) {'2': -1, '1': 1, '14': -7}, weakly True, strongly False
+m=8: |L|=20, lattice True, atomistic True, J = atoms True, nonzero S(q) {'2': -1, '1': 1, '16': -8}, weakly True, strongly False
+RESULT PASS
