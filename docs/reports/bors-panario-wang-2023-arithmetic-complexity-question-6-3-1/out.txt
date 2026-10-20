@@ -1,0 +1,31 @@
+m=2: sum_phi=1 upper=1 no_family_of_size_sum_phi-1=True AC=1 AC==upper=True
+m=3: sum_phi=2 upper=2 no_family_of_size_sum_phi-1=True AC=2 AC==upper=True
+m=4: sum_phi=2 upper=3 no_family_of_size_sum_phi-1=True AC=3 AC==upper=True
+m=5: sum_phi=4 upper=4 no_family_of_size_sum_phi-1=True AC=4 AC==upper=True
+m=6: sum_phi=3 upper=3 no_family_of_size_sum_phi-1=True AC=3 AC==upper=True
+m=7: sum_phi=6 upper=6 no_family_of_size_sum_phi-1=True AC=6 AC==upper=True
+m=8: sum_phi=4 upper=7 no_family_of_size_sum_phi-1=True AC=7 AC==upper=True
+m=9: sum_phi=6 upper=8 no_family_of_size_sum_phi-1=True AC=8 AC==upper=True
+m=10: sum_phi=5 upper=5 no_family_of_size_sum_phi-1=True AC=5 AC==upper=True
+m=11: sum_phi=10 upper=10 no_family_of_size_sum_phi-1=True AC=10 AC==upper=True
+m=12: sum_phi=4 upper=5 no_family_of_size_sum_phi-1=True AC=5 AC==upper=True
+m=13: sum_phi=12 upper=12 no_family_of_size_sum_phi-1=True AC=12 AC==upper=True
+m=14: sum_phi=7 upper=7 no_family_of_size_sum_phi-1=True AC=7 AC==upper=True
+m=15: sum_phi=6 upper=6 no_family_of_size_sum_phi-1=True AC=6 AC==upper=True
+m=16: sum_phi=8 upper=15 no_family_of_size_sum_phi-1=True AC=None
+m=17: sum_phi=16 upper=16 no_family_of_size_sum_phi-1=True AC=16 AC==upper=True
+m=18: sum_phi=7 upper=9 no_family_of_size_sum_phi-1=True AC=None
+m=19: sum_phi=18 upper=18 no_family_of_size_sum_phi-1=True AC=18 AC==upper=True
+m=20: sum_phi=6 upper=7 no_family_of_size_sum_phi-1=True AC=None
+m=21: sum_phi=8 upper=8 no_family_of_size_sum_phi-1=True AC=None
+m=22: sum_phi=11 upper=11 (lemma search skipped: 183579396 families)
+m=23: sum_phi=22 upper=22 no_family_of_size_sum_phi-1=True AC=22 AC==upper=True
+m=24: sum_phi=6 upper=9 (lemma search skipped: 5006386 families)
+m=25: sum_phi=20 upper=24 (lemma search skipped: 54627300 families)
+m=26: sum_phi=13 upper=13 (lemma search skipped: 7898654920 families)
+m=27: sum_phi=18 upper=26 (lemma search skipped: 51021117810 families)
+m=28: sum_phi=8 upper=9 (lemma search skipped: 202927725 families)
+m=29: sum_phi=28 upper=28 no_family_of_size_sum_phi-1=True AC=28 AC==upper=True
+m=30: sum_phi=7 upper=7 (lemma search skipped: 143218999 families)
+primorial ratios (K, sum phi / (log^2 m / log log m)) at K = 5, 50, 100, 200: [(5, 0.7849), (50, 0.6134), (100, 0.5848), (200, 0.5654)]
+RESULT PASS
