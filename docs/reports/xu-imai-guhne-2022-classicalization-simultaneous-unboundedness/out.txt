@@ -1,0 +1,4 @@
+d=2: E(rho)=3.357022604 formula=3.357022604  attained=2.333333333 5d/3-1=2.333333333  random max=2.095592731  Delta=1.023689 tildeDelta-Delta=0.509288
+d=3: E(rho)=5.299831646 formula=5.299831646  attained=4.000000000 5d/3-1=4.000000000  random max=3.675282957  Delta=1.299832 tildeDelta-Delta=0.763932
+d=4: E(rho)=7.242640687 formula=7.242640687  attained=5.666666667 5d/3-1=5.666666667  random max=5.129618788  Delta=1.575974 tildeDelta-Delta=1.018576
+RESULT PASS
