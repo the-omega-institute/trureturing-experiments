@@ -1,0 +1,23 @@
+a=2 b=2: N - M = -4(E_uv + E_vu) True; M = 3 on side-difference vectors True; E(K) = 12.000000 (6(n-2) = 12); E(K - e) = 14.944272; gap 2.944272; alt reading increases True: PASS
+a=2 b=3: N - M = -4(E_uv + E_vu) True; M = 3 on side-difference vectors True; E(K) = 18.000000 (6(n-2) = 18); E(K - e) = 20.417582; gap 2.417582; alt reading increases True: PASS
+a=2 b=4: N - M = -4(E_uv + E_vu) True; M = 3 on side-difference vectors True; E(K) = 24.000000 (6(n-2) = 24); E(K - e) = 26.465072; gap 2.465072; alt reading increases True: PASS
+a=2 b=5: N - M = -4(E_uv + E_vu) True; M = 3 on side-difference vectors True; E(K) = 30.000000 (6(n-2) = 30); E(K - e) = 32.518433; gap 2.518433; alt reading increases True: PASS
+a=2 b=6: N - M = -4(E_uv + E_vu) True; M = 3 on side-difference vectors True; E(K) = 36.000000 (6(n-2) = 36); E(K - e) = 38.562191; gap 2.562191; alt reading increases True: PASS
+a=2 b=7: N - M = -4(E_uv + E_vu) True; M = 3 on side-difference vectors True; E(K) = 42.000000 (6(n-2) = 42); E(K - e) = 44.597066; gap 2.597066; alt reading increases True: PASS
+a=2 b=8: N - M = -4(E_uv + E_vu) True; M = 3 on side-difference vectors True; E(K) = 48.000000 (6(n-2) = 48); E(K - e) = 50.625109; gap 2.625109; alt reading increases True: PASS
+a=2 b=9: N - M = -4(E_uv + E_vu) True; M = 3 on side-difference vectors True; E(K) = 54.000000 (6(n-2) = 54); E(K - e) = 56.648013; gap 2.648013; alt reading increases True: PASS
+a=2 b=10: N - M = -4(E_uv + E_vu) True; M = 3 on side-difference vectors True; E(K) = 60.000000 (6(n-2) = 60); E(K - e) = 62.667016; gap 2.667016; alt reading increases True: PASS
+a=2 b=11: N - M = -4(E_uv + E_vu) True; M = 3 on side-difference vectors True; E(K) = 66.000000 (6(n-2) = 66); E(K - e) = 68.683012; gap 2.683012; alt reading increases True: PASS
+a=2 b=12: N - M = -4(E_uv + E_vu) True; M = 3 on side-difference vectors True; E(K) = 72.000000 (6(n-2) = 72); E(K - e) = 74.696650; gap 2.696650; alt reading increases True: PASS
+a=3 b=3: N - M = -4(E_uv + E_vu) True; M = 3 on side-difference vectors True; E(K) = 24.000000 (6(n-2) = 24); E(K - e) = 25.559920; gap 1.559920; alt reading increases True: PASS
+a=4 b=4: N - M = -4(E_uv + E_vu) True; M = 3 on side-difference vectors True; E(K) = 36.000000 (6(n-2) = 36); E(K - e) = 37.005210; gap 1.005210; alt reading increases True: PASS
+a=5 b=5: N - M = -4(E_uv + E_vu) True; M = 3 on side-difference vectors True; E(K) = 48.000000 (6(n-2) = 48); E(K - e) = 48.806248; gap 0.806248; alt reading increases True: PASS
+a=6 b=6: N - M = -4(E_uv + E_vu) True; M = 3 on side-difference vectors True; E(K) = 60.000000 (6(n-2) = 60); E(K - e) = 60.966630; gap 0.966630; alt reading increases True: PASS
+a=7 b=7: N - M = -4(E_uv + E_vu) True; M = 3 on side-difference vectors True; E(K) = 72.000000 (6(n-2) = 72); E(K - e) = 73.088007; gap 1.088007; alt reading increases True: PASS
+a=8 b=8: N - M = -4(E_uv + E_vu) True; M = 3 on side-difference vectors True; E(K) = 84.000000 (6(n-2) = 84); E(K - e) = 85.183326; gap 1.183326; alt reading increases True: PASS
+a=9 b=9: N - M = -4(E_uv + E_vu) True; M = 3 on side-difference vectors True; E(K) = 96.000000 (6(n-2) = 96); E(K - e) = 97.260292; gap 1.260292; alt reading increases True: PASS
+a=10 b=10: N - M = -4(E_uv + E_vu) True; M = 3 on side-difference vectors True; E(K) = 108.000000 (6(n-2) = 108); E(K - e) = 109.323808; gap 1.323808; alt reading increases True: PASS
+a=11 b=11: N - M = -4(E_uv + E_vu) True; M = 3 on side-difference vectors True; E(K) = 120.000000 (6(n-2) = 120); E(K - e) = 121.377155; gap 1.377155; alt reading increases True: PASS
+a=12 b=12: N - M = -4(E_uv + E_vu) True; M = 3 on side-difference vectors True; E(K) = 132.000000 (6(n-2) = 132); E(K - e) = 133.422618; gap 1.422618; alt reading increases True: PASS
+RESULT PASS
+EXIT=0
