@@ -1,0 +1,4 @@
+admissible triples checked: 58088 (4 <= n <= 200)
+maxima and both transfers: True; transfer-lemma sign pattern for 3 <= c <= a < 60: True
+F(9,1,1) = 252, F(8,2,2) = 392
+RESULT PASS
