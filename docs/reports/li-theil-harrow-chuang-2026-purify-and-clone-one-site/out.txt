@@ -1,0 +1,5 @@
+(d,r)=(2,2): marginals_ok=True T_sym_support=True worstP=0.2000000000 formula=0.2000000000 worstT=0.1666666667 formula=0.1666666667 gap=0.033333 ok
+(d,r)=(3,2): marginals_ok=True T_sym_support=True worstP=0.2857142857 formula=0.2857142857 worstT=0.2500000000 formula=0.2500000000 gap=0.035714 ok
+(d,r)=(3,3): marginals_ok=True T_sym_support=True worstP=0.3000000000 formula=0.3000000000 worstT=0.2500000000 formula=0.2500000000 gap=0.050000 ok
+(d,r)=(4,2): marginals_ok=True T_sym_support=True worstP=0.3333333333 formula=0.3333333333 worstT=0.2999999955 formula=0.3000000000 gap=0.033333 ok
+RESULT PASS

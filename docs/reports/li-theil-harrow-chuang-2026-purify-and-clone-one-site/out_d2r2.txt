@@ -1,0 +1,5 @@
+P worst one-site infidelity with gamma=rho(x)I/r over samples 0.19999999999999984
+T worst one-site infidelity with gamma=rho(x)I/r over samples 0.16666666666666663
+P marginal [0.325 0.325 0.175 0.175] T marginal [0.333333 0.333333 0.166667 0.166667]
+fidelities 0.9880677910464577 0.9880677910464577 0.9915816237971962 0.9915816237971963
+P pure input: max fidelity over gamma=|0><0|(x)sigma 0.7986729360184324 (bound 0.8)
