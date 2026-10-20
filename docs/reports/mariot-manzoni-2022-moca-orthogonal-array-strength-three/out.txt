@@ -1,0 +1,5 @@
+b=2 d=3: rules=4 orthogonal pairs=4 3-MOCA=0 strength>=3 for all 2-MOCA=True all 3-MOCA=True 3-MOCA of strength exactly 3=0
+b=3 d=4: rules=16 orthogonal pairs=36 3-MOCA=16 strength>=3 for all 2-MOCA=True all 3-MOCA=True 3-MOCA of strength exactly 3=16
+b=4 d=5: rules=256 orthogonal pairs=852 3-MOCA=264 strength>=3 for all 2-MOCA=True all 3-MOCA=True 3-MOCA of strength exactly 3=192
+single-column and three-column XOR balance for random (not necessarily orthogonal) rules, b = 2..5: True
+RESULT PASS
