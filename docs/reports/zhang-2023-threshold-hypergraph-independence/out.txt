@@ -1,0 +1,5 @@
+5 T2(H)= True T2(K)= True poly equal= True [1, 5, 10, 3, 0, 0] isomorphic= False
+6 T2(H)= True T2(K)= True poly equal= True [1, 6, 15, 3, 0, 0, 0] isomorphic= False
+7 T2(H)= True T2(K)= True poly equal= True [1, 7, 21, 3, 0, 0, 0, 0] isomorphic= False
+8 T2(H)= True T2(K)= True poly equal= True [1, 8, 28, 3, 0, 0, 0, 0, 0] isomorphic= False
+RESULT PASS
