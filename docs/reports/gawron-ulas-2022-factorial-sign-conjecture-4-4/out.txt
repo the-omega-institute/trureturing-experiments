@@ -1,0 +1,19 @@
+k=0: source generating function reproduced for n < 80: True
+k=1: source generating function reproduced for n < 80: True
+k=1: source sign statement (-1)^floor((n+1)/2) S > 0 for 8 <= n < 80: True
+n=2: S_(U_3,2)(n) = 3, closed form 3, (-1)^n S < 0: False
+n=14: S_(U_3,2)(n) = 36, closed form 36, (-1)^n S < 0: False
+n=26: S_(U_3,2)(n) = 11, closed form 11, (-1)^n S < 0: False
+n=38: S_(U_3,2)(n) = -176, closed form -176, (-1)^n S < 0: True
+n=50: S_(U_3,2)(n) = -629, closed form -629, (-1)^n S < 0: True
+n=62: S_(U_3,2)(n) = -1452, closed form -1452, (-1)^n S < 0: True
+n=74: S_(U_3,2)(n) = -2749, closed form -2749, (-1)^n S < 0: True
+closed form and violations checked for r <= 40
+mechanism k=2, n in [400, 407]: period-4 sign holds True, (-1)^n violations 4/8
+mechanism k=3, n in [400, 407]: period-4 sign holds True, (-1)^n violations 4/8
+mechanism k=4, n in [800, 807]: period-4 sign holds True, (-1)^n violations 4/8
+mechanism k=5, n in [1000, 1007]: period-4 sign holds True, (-1)^n violations 4/8
+mechanism k=6, n in [1500, 1507]: period-4 sign holds True, (-1)^n violations 4/8
+mechanism k=7, n in [3000, 3007]: period-4 sign holds True, (-1)^n violations 4/8
+mechanism k=8, n in [6000, 6007]: period-4 sign holds True, (-1)^n violations 4/8
+RESULT PASS
