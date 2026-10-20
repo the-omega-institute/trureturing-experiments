@@ -1,0 +1,52 @@
+R(i,j)^i Hadamard for all 1<=j<i<=10: True
+(8,4) exact: R^16 == 2^8 I ? False  trace=4096
+(8,4) exact: R^24 == 2^12 I ? False  trace=0
+(8,4) exact: R^48 == 2^24 I ? True  trace=4294967296
+i=2 j=1: order=24 corrected=24 conjectured=24
+i=3 j=1: order=8 corrected=8 conjectured=8
+i=3 j=2: order=40 corrected=40 conjectured=40
+i=4 j=1: order=120 corrected=120 conjectured=120
+i=4 j=2: order=24 corrected=24 conjectured=24
+i=4 j=3: order=56 corrected=56 conjectured=56
+i=5 j=1: order=24 corrected=24 conjectured=24
+i=5 j=2: order=168 corrected=168 conjectured=168
+i=5 j=3: order=16 corrected=16 conjectured=16
+i=5 j=4: order=72 corrected=72 conjectured=72
+i=6 j=1: order=280 corrected=280 conjectured=280
+i=6 j=2: order=16 corrected=16 conjectured=16
+i=6 j=3: order=72 corrected=72 conjectured=72
+i=6 j=4: order=40 corrected=40 conjectured=40
+i=6 j=5: order=88 corrected=88 conjectured=88
+i=7 j=1: order=48 corrected=48 conjectured=48
+i=7 j=2: order=360 corrected=360 conjectured=360
+i=7 j=3: order=40 corrected=40 conjectured=40
+i=7 j=4: order=264 corrected=264 conjectured=264
+i=7 j=5: order=24 corrected=24 conjectured=24
+i=7 j=6: order=104 corrected=104 conjectured=104
+i=8 j=1: order=504 corrected=504 conjectured=504
+i=8 j=2: order=120 corrected=120 conjectured=120
+i=8 j=3: order=440 corrected=440 conjectured=440
+i=8 j=4: order=48 corrected=48 conjectured=24
+i=8 j=5: order=312 corrected=312 conjectured=312
+i=8 j=6: order=56 corrected=56 conjectured=56
+i=8 j=7: order=120 corrected=120 conjectured=120
+i=9 j=1: order=80 corrected=80 conjectured=80
+i=9 j=2: order=616 corrected=616 conjectured=616
+i=9 j=3: order=24 corrected=24 conjectured=24
+i=9 j=4: order=520 corrected=520 conjectured=520
+i=9 j=5: order=56 corrected=56 conjectured=56
+i=9 j=6: order=120 corrected=120 conjectured=120
+i=9 j=7: order=32 corrected=32 conjectured=32
+i=9 j=8: order=136 corrected=136 conjectured=136
+i=10 j=1: order=792 corrected=792 conjectured=792
+i=10 j=2: order=48 corrected=48 conjectured=48
+i=10 j=3: order=728 corrected=728 conjectured=728
+i=10 j=4: order=168 corrected=168 conjectured=168
+i=10 j=5: order=120 corrected=120 conjectured=120
+i=10 j=6: order=32 corrected=32 conjectured=32
+i=10 j=7: order=408 corrected=408 conjectured=408
+i=10 j=8: order=72 corrected=72 conjectured=72
+i=10 j=9: order=152 corrected=152 conjectured=152
+mismatches with corrected: []
+conjecture failures: [(8, 4, 48, 24)]
+RESULT PASS
