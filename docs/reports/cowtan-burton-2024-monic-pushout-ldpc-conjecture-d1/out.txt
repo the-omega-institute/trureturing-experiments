@@ -1,0 +1,7 @@
+monic spans: 3000 trials, well-defined 3000/3000, dQ1 dQ2 = 0 in 3000/3000, bounds violated in 0
+Appendix D non-monic span, m = 2: inputs have column weight 2 and vertex degree 1; glued vertex degree 3 (= m + 1)
+Appendix D non-monic span, m = 3: inputs have column weight 2 and vertex degree 1; glued vertex degree 4 (= m + 1)
+Appendix D non-monic span, m = 5: inputs have column weight 2 and vertex degree 1; glued vertex degree 6 (= m + 1)
+Appendix D non-monic span, m = 10: inputs have column weight 2 and vertex degree 1; glued vertex degree 11 (= m + 1)
+RESULT PASS
+EXIT=0
