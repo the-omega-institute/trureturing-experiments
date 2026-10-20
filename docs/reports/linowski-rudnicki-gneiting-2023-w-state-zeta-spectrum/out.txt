@@ -1,0 +1,22 @@
+N=2: F^T F = (N-2)I + J True; zeta = F F^T/(N(N-1)) on the weight-2 sector True
+N=3: F^T F = (N-2)I + J True; zeta = F F^T/(N(N-1)) on the weight-2 sector True
+N=4: F^T F = (N-2)I + J True; zeta = F F^T/(N(N-1)) on the weight-2 sector True
+N=5: F^T F = (N-2)I + J True; zeta = F F^T/(N(N-1)) on the weight-2 sector True
+N=6: F^T F = (N-2)I + J True; zeta = F F^T/(N(N-1)) on the weight-2 sector True
+N=7: F^T F = (N-2)I + J True; zeta = F F^T/(N(N-1)) on the weight-2 sector True
+N=8: F^T F = (N-2)I + J True; zeta = F F^T/(N(N-1)) on the weight-2 sector True
+N=9: F^T F = (N-2)I + J True; zeta = F F^T/(N(N-1)) on the weight-2 sector True
+N=10: F^T F = (N-2)I + J True; zeta = F F^T/(N(N-1)) on the weight-2 sector True
+N=11: F^T F = (N-2)I + J True; zeta = F F^T/(N(N-1)) on the weight-2 sector True
+N=12: F^T F = (N-2)I + J True; zeta = F F^T/(N(N-1)) on the weight-2 sector True
+N=2: lambda_max = 1.000000000000 (2/N = 1.000000000000); max |spectrum - conjectured| = 0.00e+00
+N=3: lambda_max = 0.666666666667 (2/N = 0.666666666667); max |spectrum - conjectured| = 1.11e-16
+N=4: lambda_max = 0.500000000000 (2/N = 0.500000000000); max |spectrum - conjectured| = 1.11e-16
+N=5: lambda_max = 0.400000000000 (2/N = 0.400000000000); max |spectrum - conjectured| = 1.11e-16
+N=6: lambda_max = 0.333333333333 (2/N = 0.333333333333); max |spectrum - conjectured| = 6.07e-17
+N=7: lambda_max = 0.285714285714 (2/N = 0.285714285714); max |spectrum - conjectured| = 1.11e-16
+N=8: lambda_max = 0.250000000000 (2/N = 0.250000000000); max |spectrum - conjectured| = 6.94e-17
+N=9: lambda_max = 0.222222222222 (2/N = 0.222222222222); max |spectrum - conjectured| = 8.33e-17
+N=10: lambda_max = 0.200000000000 (2/N = 0.200000000000); max |spectrum - conjectured| = 8.33e-17
+RESULT PASS
+EXIT=0
