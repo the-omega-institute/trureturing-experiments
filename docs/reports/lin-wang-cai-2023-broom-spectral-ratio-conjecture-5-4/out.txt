@@ -1,0 +1,27 @@
+A B_19^7 x=35467/1000000: negative inertia (full elimination) = 2, reduced recurrence = 2, expected 2
+A B_19^7 x=9018480/1000000: negative inertia (full elimination) = 18, reduced recurrence = 18, expected 18
+A B_19^8 x=39388/1000000: negative inertia (full elimination) = 1, reduced recurrence = 1, expected 1
+A B_19^8 x=10014270/1000000: negative inertia (full elimination) = 19, reduced recurrence = 19, expected 19
+A R_L(B_19^7) > 9018480/35467 and R_L(B_19^8) < 10014270/39388; 9018480*39388 = 355219890240 > 355176114090 = 10014270*35467: True
+A_OK
+B broom family, n = 8..400: conjectured broom is the best broom for n in [8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 20, 22, 24, 26, 28] ; fails for the other 377 n
+B n=19: best broom t*=7 (t*/n=0.3684) ratio 254.2789; conjectured t=8 ratio 254.2459
+B n=21: best broom t*=8 (t*/n=0.3810) ratio 337.6818; conjectured t=9 ratio 336.6864
+B n=60: best broom t*=26 (t*/n=0.4333) ratio 7067.8564; conjectured t=28 ratio 7009.8727
+B n=400: best broom t*=178 (t*/n=0.4450) ratio 1995539.0751; conjectured t=198 ratio 1963379.0388
+B n=3200: best broom t*=1432 (t*/n=0.4475) ratio 1014240751.1705; conjectured t=1598 ratio 996431362.8940
+B continuum limit: optimal broom fraction alpha* = 0.447977; asymptotic ratio gain over t = n/2: 1.018092
+B all 23 trees on n=8: max R_L = 25.391588 attained by broom t=[2]; conjectured t=2
+B all 47 trees on n=9: max R_L = 34.274008 attained by broom t=[3]; conjectured t=3
+B all 106 trees on n=10: max R_L = 44.409602 attained by broom t=[3]; conjectured t=3
+B all 235 trees on n=11: max R_L = 57.451886 attained by broom t=[4]; conjectured t=4
+B all 551 trees on n=12: max R_L = 72.025413 attained by broom t=[4]; conjectured t=4
+B all 1301 trees on n=13: max R_L = 89.607157 attained by broom t=[5]; conjectured t=5
+B all 3159 trees on n=14: max R_L = 109.457869 attained by broom t=[5]; conjectured t=5
+B all 7741 trees on n=15: max R_L = 132.159997 attained by broom t=[6]; conjectured t=6
+B all 19320 trees on n=16: max R_L = 158.111047 attained by broom t=[6]; conjectured t=6
+B all 48629 trees on n=17: max R_L = 186.555463 attained by broom t=[7]; conjectured t=7
+B all 123867 trees on n=18: max R_L = 219.424727 attained by broom t=[7]; conjectured t=7
+B all 317955 trees on n=19: max R_L = 254.278886 attained by broom t=[7]; conjectured t=8
+B all 823065 trees on n=20: max R_L = 294.849044 attained by broom t=[8]; conjectured t=8
+EXIT=0
