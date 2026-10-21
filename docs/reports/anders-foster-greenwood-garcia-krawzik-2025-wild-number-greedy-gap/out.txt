@@ -1,0 +1,12 @@
+wheel: n=8 m=14 wld=5 greedy_sizes=[6]
+chain r=2: n=15 m=28 greedy_sizes=[12]
+chain r=3: n=22 m=42 greedy_sizes=[18]
+Ex5.11 dips: {'v1v3': 2, 'v1v4': 1, 'v3v6': 2, 'v2v3': 2, 'v4v6': 1, 'v5v6': 2, 'v1v2': 2, 'v2v5': 2, 'v4v5': 1}
+  potential v1v3 (2, 2, 2, 1, 1, 1, 1, 1, 0)
+  potential v3v6 (2, 2, 2, 2, 1, 1, 1, 1, 0)
+  potential v2v3 (2, 2, 2, 1, 1, 1, 1, 1, 0)
+  potential v5v6 (2, 2, 2, 2, 2, 1, 0, 0, 0)
+  potential v1v2 (2, 2, 2, 1, 1, 1, 1, 1, 0)
+  potential v2v5 (2, 2, 2, 2, 1, 1, 1, 1, 0)
+Ex5.11 wld: 3 greedy sizes: [3]
+Ex5.12 printed order is a legal run: True and color-connected at the end: True
