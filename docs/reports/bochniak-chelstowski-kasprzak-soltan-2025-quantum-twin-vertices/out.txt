@@ -1,0 +1,5 @@
+K2 x K5: 10 vertices, degrees [5], rank A = 6 (singular: True), ordinary twin pairs = 0, Lemma 1 p_x = delta_x for all x: True
+C4 x C3: 12 vertices, degrees [4], rank A = 11 (singular: True), ordinary twin pairs = 0, Lemma 1 p_x = delta_x for all x: True
+Q4: 16 vertices, degrees [4], rank A = 10 (singular: True), ordinary twin pairs = 0, Lemma 1 p_x = delta_x for all x: True
+control C4: twin pairs [(0, 2), (1, 3)]
+ALL_CHECKS True

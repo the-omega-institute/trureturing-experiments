@@ -1,0 +1,5 @@
+N=1: identities on 14 test monomials OK; form (2.6) OK
+N=2: identities on 14 test monomials OK; form (2.6) OK
+N=3: identities on 14 test monomials OK; form (2.6) OK
+source N=2: (3.1) symmetries, (3.2), and (3.4) ladders with (3.5)=(5.1) reproduced
+ALL_CHECKS True

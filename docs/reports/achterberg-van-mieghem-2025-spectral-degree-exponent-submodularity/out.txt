@@ -1,0 +1,18 @@
+(a) exact certificates
+  H0: degrees [3, 2, 2, 2, 1], charpoly (z - 1)*(z + 1)*(z**3 - 4*z - 2), M_3^3 = 52/5
+  He: degrees [3, 3, 2, 2, 2], charpoly z*(z + 2)*(z**3 - 2*z**2 - 2*z + 2), M_3^3 = 78/5
+  Hf: degrees [3, 3, 2, 2, 2], charpoly z*(z + 2)*(z**3 - 2*z**2 - 2*z + 2), M_3^3 = 78/5
+  Hef: degrees [3, 3, 3, 3, 2], charpoly z*(z + 1)*(z**3 - z**2 - 6*z + 2), M_3^3 = 116/5
+  H0: chi(11/5) = -1824/3125 < 0; (11/5)^3 - M3^3 = 31/125 > 0 => q(H0) > 3
+  He: a(249/100) = 58049/1000000 > 0, a' increasing and positive at 2; M3^3 - (249/100)^3 = 161751/1000000 > 0 => q(He) < 3
+  Hef: u(571/200) = -78789/8000000 < 0; (571/200)^3 - M3^3 = 569411/8000000 > 0 => q(Hef) > 3
+  => q(He) + q(Hf) < 6 < q(H0) + q(Hef): submodularity fails
+(b) numerical exponents
+  t=1: q(H0), q(He), q(Hf), q(Hef) = 3.404621, 2.641523, 2.641523, 3.174472; q(He)+q(Hf) - q(H0)-q(Hef) = -1.296047
+  t=2: q(H0), q(He), q(Hf), q(Hef) = 3.404621, 2.641523, 2.641523, 3.174472; q(He)+q(Hf) - q(H0)-q(Hef) = -1.296047
+  t=3: q(H0), q(He), q(Hf), q(Hef) = 3.404621, 2.641523, 2.641523, 3.174472; q(He)+q(Hf) - q(H0)-q(Hef) = -1.296047
+(c) induced-vertex-set reading
+  q(G[S]) = 2.000000, q(G[T]) = 2.000000, q(G[S&T]) = 2.000000, q(G[S|T]) = 2.501215
+(d) a supermodularity violation on 6 vertices
+  q(E), q(E+e), q(E+f), q(E+e+f) = 3.911305, 3.303203, 3.303203, 2.357898; q(E+e)+q(E+f) > q(E)+q(E+e+f): True
+ALL_CHECKS True
