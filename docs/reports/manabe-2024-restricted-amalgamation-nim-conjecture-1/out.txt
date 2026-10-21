@@ -1,0 +1,6 @@
+positions with x,y,z <= 40: 68921
+(a) Theorem 2 (zero set = P of Definition 6): mismatches 0
+(b) Conjecture 1: mismatches 0
+(c) exact formula 2h + (p xor delta): mismatches 0
+examples: g(0,2,4)=7 (xor 6); g(2,2,0)=0; g(2,4,6)=1 (xor 0)
+EXIT=0

@@ -1,0 +1,5 @@
+||54||_2 = 8 (source 8), ||216||_2 = 9 (source 9)
+Theorem 2(1) small cases checked
+l=2: Proposition 1 lower bound holds True; orbits tested 199; d(m) increases in 0; last two equal in 199
+l=3: Proposition 1 lower bound holds True; orbits tested 133; d(m) increases in 0; last two equal in 133
+EXIT=0
