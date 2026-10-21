@@ -1,0 +1,17 @@
+Conjecture 5.1, k=0: E = M(n+1,k)/M(n,k) for n in [1, 2, 3, 4, 5, 6, 7, 8]: True
+Conjecture 5.1, k=1: E = M(n+1,k)/M(n,k) for n in [2, 3, 4, 5, 6, 7, 8]: True
+Conjecture 5.1, k=2: E = M(n+1,k)/M(n,k) for n in [3, 4, 5, 6, 7, 8]: True
+Conjecture 5.1, k=3: E = M(n+1,k)/M(n,k) for n in [4, 5, 6, 7, 8]: True
+Conjecture 5.1, k=4: E = M(n+1,k)/M(n,k) for n in [5, 6, 7, 8]: True
+Conjecture 5.1, k=5: E = M(n+1,k)/M(n,k) for n in [6, 7, 8]: True
+Conjecture 5.1, k=6: E = M(n+1,k)/M(n,k) for n in [7, 8]: True
+Conjecture 5.1, k=7: E = M(n+1,k)/M(n,k) for n in [8]: True
+Conjecture 5.2, k=1: monic integer Q (deg 1) and P (deg 2): True; matches brute force at n in [2, 3, 4, 5, 6, 7, 8, 9]: True; source display reproduced: True
+Conjecture 5.2, k=2: monic integer Q (deg 2) and P (deg 3): True; matches brute force at n in [3, 4, 5, 6, 7, 8, 9]: True; source display reproduced: True
+Conjecture 5.2, k=3: monic integer Q (deg 3) and P (deg 4): True; matches brute force at n in [3, 4, 5, 6, 7, 8, 9]: True; source display reproduced: True
+Conjecture 5.2, k=4: monic integer Q (deg 4) and P (deg 5): True; matches brute force at n in [4, 5, 6, 7, 8, 9]: True; source display reproduced: True
+Conjecture 5.2, k=5: monic integer Q (deg 5) and P (deg 6): True; matches brute force at n in [5, 6, 7, 8, 9]: True; source display reproduced: True
+Conjecture 5.2, k=6: monic integer Q (deg 6) and P (deg 7): True; matches brute force at n in [6, 7, 8, 9]: True; source display reproduced: True
+Conjecture 5.2, k=7: monic integer Q (deg 7) and P (deg 8): True; matches brute force at n in [7, 8, 9]: True; source display reproduced: True
+Conjecture 5.2, k=8: monic integer Q (deg 8) and P (deg 9): True; matches brute force at n in [8, 9]: True; source display reproduced: True
+RESULT PASS
