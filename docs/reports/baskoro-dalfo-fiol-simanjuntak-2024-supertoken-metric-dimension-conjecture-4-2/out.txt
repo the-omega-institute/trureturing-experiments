@@ -1,0 +1,23 @@
+(a) Proposition 4.1 and Proposition 4.3 (n = 3, 4)
+  n=3 k=1: |V|=3 Prop 4.1 set resolves True; dim=2 (conjectured 2) OK
+  n=3 k=2: |V|=6 Prop 4.1 set resolves True; dim=2 (conjectured 2) OK
+  n=3 k=3: |V|=10 Prop 4.1 set resolves True; dim=2 (conjectured 2) OK
+  n=3 k=4: |V|=15 Prop 4.1 set resolves True; dim=2 (conjectured 2) OK
+  n=4 k=1: |V|=4 Prop 4.1 set resolves True; dim=3 (conjectured 3) OK
+  n=4 k=2: |V|=10 Prop 4.1 set resolves True; dim=3 (conjectured 3) OK
+  n=4 k=3: |V|=20 Prop 4.1 set resolves True; dim=3 (conjectured 3) OK
+(b) F_2(K_8) with W = (12,13,14,56,57,58)
+  |V|=36 edges=224 diameter=2 resolves=True -> dim <= 6 < 7
+(c) the star family on F_2(K_{4r})
+  r=2 n=8: 6 landmarks resolve True; conjectured n-1=7
+  r=3 n=12: 9 landmarks resolve True; conjectured n-1=11
+  r=4 n=16: 12 landmarks resolve True; conjectured n-1=15
+(d) exact dim(F_2(K_n)), small n
+  n=3: dim=2 (conjectured 2)
+  n=4: dim=3 (conjectured 3)
+  n=5: dim=4 (conjectured 4)
+  n=6: dim=5 (conjectured 5)
+  n=7: dim=6 (conjectured 6)
+(e) exact dim(F_2(K_8))
+  n=8: dim=6 (conjectured 7)
+EXIT=0
