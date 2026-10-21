@@ -1,0 +1,17 @@
+p=2 (qubit), control + 1 target, KMAX=4
+  C(X): level=2 expected=2 order(U)=2 power_of_2=True OK
+  C(Z): level=2 expected=2 order(U)=2 power_of_2=True OK
+  C(S): level=3 expected=3 order(U)=4 power_of_2=True OK
+  C(T): level=4 expected=4 order(U)=8 power_of_2=True OK
+  C(H): level=3 expected=3 order(U)=2 power_of_2=True OK
+  C(iX): level=2 expected=2 order(U)=4 power_of_2=True OK
+  C(SH): level=None expected=None order(U)=24 power_of_2=False OK
+  C(Rz(1)): level=None expected=None order(U)=None power_of_2=False OK
+p=3 (qutrit), control + 1 target, KMAX=3
+  C(Z3): level=3 order(U)=3 power_of_3=True claim_consistent=True
+  C(X3): level=3 order(U)=3 power_of_3=True claim_consistent=True
+  C(diag(1,1,e^{2pi i/9})): level=None order(U)=9 power_of_3=True claim_consistent=True
+  C(e^{2pi i/9} I): level=None order(U)=9 power_of_3=True claim_consistent=True
+  C(-I): level=None order(U)=2 power_of_3=False claim_consistent=True
+  C(diag(1,1,-1)): level=None order(U)=2 power_of_3=False claim_consistent=True
+EXIT=0
