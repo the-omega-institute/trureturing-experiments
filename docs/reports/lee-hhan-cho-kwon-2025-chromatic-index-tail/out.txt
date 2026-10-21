@@ -1,0 +1,9 @@
+(a) k=4 m=2 alpha=3: distribution of chi' {2: 90, 3: 126}; Pr[chi'>=r] >= (m/k)^r for r=1..3: True; greedy bound (77) holds on every sample: True
+(a) k=5 m=2 alpha=3: distribution of chi' {2: 630, 3: 370}; Pr[chi'>=r] >= (m/k)^r for r=1..3: True; greedy bound (77) holds on every sample: True
+(a) k=5 m=3 alpha=3: distribution of chi' {3: 1000}; Pr[chi'>=r] >= (m/k)^r for r=1..3: True; greedy bound (77) holds on every sample: True
+(a) k=6 m=2 alpha=3: distribution of chi' {1: 90, 2: 2430, 3: 855}; Pr[chi'>=r] >= (m/k)^r for r=1..3: True; greedy bound (77) holds on every sample: True
+(b) L=1, q=64: k = 3t^2+6q <= 2^(2q+3): True; (2q+3) r < t^2: True (log2 of the two sides: 77 vs 128); r > L t log2 t: True
+(b) L=2, q=96: k = 3t^2+6q <= 2^(2q+3): True; (2q+3) r < t^2: True (log2 of the two sides: 111 vs 192); r > L t log2 t: True
+(b) L=3, q=128: k = 3t^2+6q <= 2^(2q+3): True; (2q+3) r < t^2: True (log2 of the two sides: 144 vs 256); r > L t log2 t: True
+(b) L=4, q=160: k = 3t^2+6q <= 2^(2q+3): True; (2q+3) r < t^2: True (log2 of the two sides: 177 vs 320); r > L t log2 t: True
+ALL_CHECKS True
