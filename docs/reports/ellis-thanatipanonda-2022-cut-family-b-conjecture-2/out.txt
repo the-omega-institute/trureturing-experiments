@@ -1,0 +1,27 @@
+Family D (C = {1, 2}) matches the source's 36 terms: True
+x=4 C=[1, 4, 13]: first diff []
+x=4 C=[1, 4, 15]: first diff []
+x=4 C=[1, 4, 17]: first diff []
+x=4 C=[1, 4, 19]: first diff []
+x=6 C=[1, 6, 19]: first diff []
+x=6 C=[1, 6, 21]: first diff []
+x=6 C=[1, 6, 23]: first diff []
+x=6 C=[1, 6, 25]: first diff []
+x=8 C=[1, 8, 25]: first diff []
+x=8 C=[1, 8, 27]: first diff []
+x=8 C=[1, 8, 29]: first diff []
+x=8 C=[1, 8, 31]: first diff []
+x=4 C=[1, 4, 10, 12, 13, 17, 19, 31]: first diff []
+x=6 C=[1, 6, 18, 21, 35, 43]: first diff []
+x=6 C=[1, 6, 8, 12, 14, 21, 34, 38, 43]: first diff []
+x=4 C=[1, 4, 12, 15, 18, 19, 21, 29, 33, 36]: first diff []
+x=4 C=[1, 4, 8, 10, 14, 15, 26, 27, 32, 34]: first diff []
+x=6 C=[1, 6, 20, 23, 25]: first diff []
+x=4 C=[1, 4, 15, 16, 18, 32, 41, 43]: first diff []
+x=4 C=[1, 4, 15, 16, 31]: first diff []
+x=4 C=[1, 4, 8, 12, 14, 18, 21, 26, 28, 31, 34, 35, 37]: first diff []
+x=6 C=[1, 6, 12, 23, 25, 34, 38]: first diff []
+Family B cut-sets with 3x < y: 22 violations up to n = 200 : 0
+boundary x=4 y=11: first diff n=16 (expected 16)
+boundary x=6 y=17: first diff n=24 (expected 24)
+RESULT PASS
