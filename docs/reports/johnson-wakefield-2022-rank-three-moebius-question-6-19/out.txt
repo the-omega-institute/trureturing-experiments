@@ -1,0 +1,12 @@
+Remark 6.18, U_{3,4}: (t - 1)*(t**8 - 3*t**7 - t**6 + 12*t**5 - 2*t**4 - 12*t**3 + 3*t**2 + 5*t - 1) matches source: True
+Remark 6.18, M*(K_{3,3}): matches source: True
+U_{3,4}: v=4 b=6 M(L,-1)=4 2(b-v)=4 modular=False ok=True
+U_{3,5}: v=5 b=10 M(L,-1)=10 2(b-v)=10 modular=False ok=True
+U_{3,6}: v=6 b=15 M(L,-1)=18 2(b-v)=18 modular=False ok=True
+Fano: v=7 b=7 M(L,-1)=0 2(b-v)=0 modular=True ok=True
+non-Fano: v=7 b=9 M(L,-1)=4 2(b-v)=4 modular=False ok=True
+near-pencil(5): v=5 b=5 M(L,-1)=0 2(b-v)=0 modular=True ok=True
+P_7 triangle: v=6 b=9 M(L,-1)=6 2(b-v)=6 modular=False ok=True
+two disjoint lines: v=6 b=11 M(L,-1)=10 2(b-v)=10 modular=False ok=True
+AG(2,3): v=9 b=12 M(L,-1)=6 2(b-v)=6 modular=False ok=True
+RESULT PASS
