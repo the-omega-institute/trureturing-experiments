@@ -1,0 +1,16 @@
+(a) a=9/25 t=12/125: sqrt q=12/25, m=4/5, M=6/5, D^max=1/25, ||rho-sigma||_1=24/125, rhs(50)=24/625
+    det rho=3456/15625 > 0: True; (49) matrix diag 78/125, 148/125, det 456/625: PSD True
+    D^max > rhs(50): True (difference 1/625)
+(b) qubit sweep, sigma = diag(a,1-a), rho = sigma + tX:
+    a=0.6 t=0.02: D^max=0.001667 rhs=0.001633 ratio=1.0206 (49) min eigenvalue 0.7790
+    a=0.6 t=0.1: D^max=0.041667 rhs=0.040825 ratio=1.0206 (49) min eigenvalue 0.6764
+    a=0.6 t=0.2: D^max=0.166667 rhs=0.163299 ratio=1.0206 (49) min eigenvalue 0.5172
+    a=0.75 t=0.02: D^max=0.002133 rhs=0.001848 ratio=1.1547 (49) min eigenvalue 0.4796
+    a=0.75 t=0.1: D^max=0.053333 rhs=0.046188 ratio=1.1547 (49) min eigenvalue 0.3901
+    a=0.75 t=0.2: D^max=0.213333 rhs=0.184752 ratio=1.1547 (49) min eigenvalue 0.2615
+    a=0.9 t=0.02: D^max=0.004444 rhs=0.002667 ratio=1.6667 (49) min eigenvalue 0.1798
+    a=0.9 t=0.1: D^max=0.111111 rhs=0.066667 ratio=1.6667 (49) min eigenvalue 0.0938
+    a=0.9 t=0.2: D^max=0.444444 rhs=0.266667 ratio=1.6667 (49) min eigenvalue -0.0246
+(b) 2000 Hilbert-Schmidt random 4x4 pairs (seed 20250124): (49) holds 33/2000; (50) fails for D^max_(x-1)^2 355/2000; both 3/2000
+(c) 2000 random 4x4 pairs U diag(w/sum w) U*, U Haar, w uniform on [0,1]^4: (49) holds 1582/2000 (the source reports more than 80% for its sampler); (49) holds and (50) fails for D^max_(x-1)^2 51/2000
+ALL_CHECKS True

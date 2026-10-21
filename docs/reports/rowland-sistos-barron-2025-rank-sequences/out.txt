@@ -1,0 +1,28 @@
+p=3: s_p starts [1, 18, 172, 1464], recurrence(14,-56,64) True, positive True, rank(s_p)=3
+p=5: s_p starts [3, 34, 300, 2488], recurrence(14,-56,64) True, positive True, rank(s_p)=3
+p=7: s_p starts [5, 50, 428, 3512], recurrence(14,-56,64) True, positive True, rank(s_p)=3
+p=11: s_p starts [9, 82, 684, 5560], recurrence(14,-56,64) True, positive True, rank(s_p)=3
+p=29: s_p starts [27, 226, 1836, 14776], recurrence(14,-56,64) True, positive True, rank(s_p)=3
+p=3: R_p(M) for M=1..8: [3, 5, 7, 9, 11, 13, 13, 17]; first M with R_p(M) < 2M+1: 7
+p=5: R_p(M) for M=1..12: [3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 21, 25]; first M with R_p(M) < 2M+1: 11
+p=7: R_p(M) for M=1..16: [3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 29, 33]; first M with R_p(M) < 2M+1: 15
+p=11: R_p(M) for M=1..24: [3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 27, 31, 33, 35, 37, 39, 41, 43, 45, 45, 49]; first M with R_p(M) < 2M+1: 14
+p=3 M=6: coefficient support 13, Berlekamp-Massey order 13, 2M+1=13
+p=3 M=7: coefficient support 13, Berlekamp-Massey order 13, 2M+1=15
+p=5 M=4: coefficient support 9, Berlekamp-Massey order 9, 2M+1=9
+p=5 M=11: coefficient support 21, Berlekamp-Massey order 21, 2M+1=23
+p=7 M=15: coefficient support 29, Berlekamp-Massey order 29, 2M+1=31
+p=11 M=7: coefficient support 15, Berlekamp-Massey order 15, 2M+1=15
+coefficients of (1+x-3x^2)^7: [1, 7, 0, -91, -91, 546, 637, -2015, -1911, 4914, 2457, -7371, 0, 5103, -2187]
+prime chain p_{i+1} = least prime > 2 p_i + 1: [3, 11, 29, 61, 127]
+  M=7: R_3(M)=13, R_11(M)=15
+  M=7: R_3(M)=13, R_29(M)=15
+  M=7: R_3(M)=13, R_61(M)=15
+  M=7: R_3(M)=13, R_127(M)=15
+  M=23: R_11(M)=45, R_29(M)=47
+  M=23: R_11(M)=45, R_61(M)=47
+  M=23: R_11(M)=45, R_127(M)=47
+  M=59: R_29(M)=117, R_61(M)=119
+  M=59: R_29(M)=117, R_127(M)=119
+  M=123: R_61(M)=245, R_127(M)=247
+ALL_CHECKS True
