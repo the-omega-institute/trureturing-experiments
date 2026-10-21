@@ -1,0 +1,18 @@
+k=2: a_k=13 b_k=7 odd True True; a_k = 2b_k - 1: True; table True
+k=3: a_k=149 b_k=75 odd True True; a_k = 2b_k - 1: True; table True
+k=4: a_k=2641 b_k=1321 odd True True; a_k = 2b_k - 1: True; table True
+k=5: a_k=6261 b_k=3175 odd True True; a_k = 2b_k - 1: False; table True
+k=6: a_k=711649 b_k=355825 odd True True; a_k = 2b_k - 1: True; table True
+k=7: a_k=249077 b_k=127839 odd True True; a_k = 2b_k - 1: False; table True
+k=8: a_k=1890241 b_k=945121 odd True True; a_k = 2b_k - 1: True; table True
+k=9: a_k=6464397 b_k=3438463 odd True True; a_k = 2b_k - 1: False; table True
+k=10: a_k=259379677393 b_k=129689838697 odd True True; a_k = 2b_k - 1: True; table True
+k=11: a_k=1089805529 b_k=544902765 odd True True; a_k = 2b_k - 1: True; table True
+k=12: a_k=279661050002881 b_k=139830525001441 odd True True; a_k = 2b_k - 1: True; table True
+k=13: a_k=6919301027 b_k=3461523969 odd True True; a_k = 2b_k - 1: False; table True
+k=14: a_k=37230606529 b_k=19044893737 odd True True; a_k = 2b_k - 1: False; table True
+k=15: a_k=215371956417 b_k=108650157073 odd True True; a_k = 2b_k - 1: False; table True
+k=16: a_k=778579070654167367041 b_k=389289535327083683521 odd True True; a_k = 2b_k - 1: True; table True
+k=14: F = 37230606529; F in S: False; witness h = 13790177273: h in S False, F - h in S False
+certificate: 16383 residues, every w_r a sum of generators, w_r = r (mod m), w_r <= F + m
+RESULT PASS
