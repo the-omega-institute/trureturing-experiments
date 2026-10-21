@@ -1,0 +1,31 @@
+D(2,2)=2 ceil(n^2/2)=2 OK
+D(2,3)=5 ceil(n^2/2)=5 OK
+D(2,4)=8 ceil(n^2/2)=8 OK
+D(2,5)=13 ceil(n^2/2)=13 OK
+D(2,6)=18 ceil(n^2/2)=18 OK
+D(2,7)=25 ceil(n^2/2)=25 OK
+D(2,8)=32 ceil(n^2/2)=32 OK
+D(2,9)=41 ceil(n^2/2)=41 OK
+D(2,10)=50 ceil(n^2/2)=50 OK
+D(2,11)=61 ceil(n^2/2)=61 OK
+D(1,1)=0 (m^3-m)/3=0 OK
+D(2,2)=2 (m^3-m)/3=2 OK
+D(3,3)=8 (m^3-m)/3=8 OK
+D(4,4)=20 (m^3-m)/3=20 OK
+D(5,5)=40 (m^3-m)/3=40 OK
+D(6,6)=70 (m^3-m)/3=70 OK
+D(7,7)=112 (m^3-m)/3=112 OK
+D(8,8)=168 (m^3-m)/3=168 OK
+lipschitz 2x3: functions=121 max_disp=5 D=5 OK
+lipschitz 2x4: functions=771 max_disp=8 D=8 OK
+lipschitz 2x5: functions=4913 max_disp=13 D=13 OK
+lipschitz 2x6: functions=31307 max_disp=18 D=18 OK
+lipschitz 2x7: functions=199497 max_disp=25 D=25 OK
+lipschitz 3x3: functions=1665 max_disp=8 D=8 OK
+lipschitz 3x4: functions=22979 max_disp=14 D=14 OK
+lipschitz 3x5: functions=317259 max_disp=20 D=20 OK
+lipschitz 4x4: functions=690437 max_disp=20 D=20 OK
+monotone 3x6: functions=7782 max_disp=29 D=29 OK
+monotone 4x5: functions=18150 max_disp=30 D=30 OK
+monotone 5x5: functions=193662 max_disp=40 D=40 OK
+EXIT=0
