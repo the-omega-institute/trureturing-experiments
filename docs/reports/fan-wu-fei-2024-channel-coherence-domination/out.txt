@@ -1,0 +1,16 @@
+(a) phase flip p=0.2 alpha=0.5: source Eq. (13) = 0.200000, Eq. (8) = 0.200000, D at the minimizing diagonal state = 0.200000, least over random diagonal states = 0.294236
+(a) phase flip p=0.7 alpha=0.5: source Eq. (13) = 0.083485, Eq. (8) = 0.083485, D at the minimizing diagonal state = 0.083485, least over random diagonal states = 0.101763
+(a) phase flip p=0.2 alpha=2.0: source Eq. (13) = 0.166190, Eq. (8) = 0.166190, D at the minimizing diagonal state = 0.166190, least over random diagonal states = 0.197850
+(a) phase flip p=0.7 alpha=2.0: source Eq. (13) = 0.077033, Eq. (8) = 0.077033, D at the minimizing diagonal state = 0.077033, least over random diagonal states = 0.087239
+(b) exact: Tr M^2 = 45/128 (= 45/128: True); C_2,1 <= sqrt(45/32) - 1 = 0.185854; Ctilde_2,1 >= sqrt(1 + (3/4)^2) - 1 = 0.250000; 45/32 < 25/16: True
+    numerically: D(M, I/4) = 0.185854, Eq. (8) value of C_2,1 = 0.184017, D(sigma_r, I/2) = 0.250000
+    alpha=0.1: C <= D(M, I/4) = 0.242932 (Eq. (8): 0.237428) < Ctilde >= 0.340615: True
+    alpha=0.3: C <= D(M, I/4) = 0.241169 (Eq. (8): 0.238006) < Ctilde >= 0.341638: True
+    alpha=0.5: C <= D(M, I/4) = 0.237753 (Eq. (8): 0.236268) < Ctilde >= 0.338562: True
+    alpha=0.8: C <= D(M, I/4) = 0.230038 (Eq. (8): 0.229839) < Ctilde >= 0.327254: True
+    alpha=0.95: C <= D(M, I/4) = 0.225281 (Eq. (8): 0.225270) < Ctilde >= 0.319286: True
+    alpha=1.05: C <= D(M, I/4) = 0.221865 (Eq. (8): 0.221855) < Ctilde >= 0.313365: True
+    alpha=1.3: C <= D(M, I/4) = 0.212727 (Eq. (8): 0.212424) < Ctilde >= 0.297181: True
+    alpha=1.6: C <= D(M, I/4) = 0.201189 (Eq. (8): 0.200251) < Ctilde >= 0.276666: True
+    alpha=2.0: C <= D(M, I/4) = 0.185854 (Eq. (8): 0.184017) < Ctilde >= 0.250000: True
+ALL_CHECKS True
