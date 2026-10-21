@@ -1,0 +1,19 @@
+Prop 4.18 on Z/n, U = (Z/n)^x:
+  n=6: prime=True zero_eigenvalue_mult=0 agree=True
+  n=10: prime=True zero_eigenvalue_mult=0 agree=True
+  n=12: prime=False zero_eigenvalue_mult=6 agree=True
+  n=14: prime=True zero_eigenvalue_mult=0 agree=True
+  n=15: prime=True zero_eigenvalue_mult=0 agree=True
+  n=18: prime=False zero_eigenvalue_mult=12 agree=True
+  n=20: prime=False zero_eigenvalue_mult=10 agree=True
+  n=21: prime=True zero_eigenvalue_mult=0 agree=True
+  n=22: prime=True zero_eigenvalue_mult=0 agree=True
+  n=24: prime=False zero_eigenvalue_mult=18 agree=True
+  n=26: prime=True zero_eigenvalue_mult=0 agree=True
+  n=28: prime=False zero_eigenvalue_mult=14 agree=True
+  n=30: prime=True zero_eigenvalue_mult=0 agree=True
+R_3: |R|=8 U closed=True frobenius=True degree={3} connected=True anti-connected=True prime(bruteforce)=True zero_eig_mult=0 binom(d,d/2)=0
+R_4: |R|=16 U closed=True frobenius=True degree={4} connected=True anti-connected=True prime(bruteforce)=True zero_eig_mult=6 binom(d,d/2)=6
+R_5: |R|=32 U closed=True frobenius=True degree={5} connected=True anti-connected=True prime(bruteforce)=True zero_eig_mult=0 binom(d,d/2)=0
+R_6: |R|=64 U closed=True frobenius=True degree={6} connected=True anti-connected=True prime(bruteforce)=True zero_eig_mult=20 binom(d,d/2)=20
+R_8: |R|=256 U closed=True frobenius=True degree={8} connected=True anti-connected=True prime(bruteforce)=True zero_eig_mult=70 binom(d,d/2)=70
