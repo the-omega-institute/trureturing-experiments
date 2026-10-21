@@ -1,0 +1,11 @@
+142065 nonzero roots (all graphs on 2..6 vertices, 20000 random graphs on 7): max |z|/(n-1)^(|arg z|/pi) = 1.000000000000; real roots max |z|/(n-1) = 1.000000000000
+star K_1,2: |D(z)| = 4.90e-16 at z = (n-1)^(1/(n-2)) e^(i pi/(n-2)); ratio = 1.000000000000
+star K_1,3: |D(z)| = 1.09e-15 at z = (n-1)^(1/(n-2)) e^(i pi/(n-2)); ratio = 1.000000000000
+star K_1,4: |D(z)| = 3.79e-15 at z = (n-1)^(1/(n-2)) e^(i pi/(n-2)); ratio = 1.000000000000
+star K_1,5: |D(z)| = 3.20e-15 at z = (n-1)^(1/(n-2)) e^(i pi/(n-2)); ratio = 1.000000000000
+star K_1,6: |D(z)| = 3.77e-15 at z = (n-1)^(1/(n-2)) e^(i pi/(n-2)); ratio = 1.000000000000
+star K_1,7: |D(z)| = 6.47e-15 at z = (n-1)^(1/(n-2)) e^(i pi/(n-2)); ratio = 1.000000000000
+star K_1,8: |D(z)| = 1.99e-15 at z = (n-1)^(1/(n-2)) e^(i pi/(n-2)); ratio = 1.000000000000
+star K_1,9: |D(z)| = 3.66e-15 at z = (n-1)^(1/(n-2)) e^(i pi/(n-2)); ratio = 1.000000000000
+star K_1,10: |D(z)| = 5.33e-15 at z = (n-1)^(1/(n-2)) e^(i pi/(n-2)); ratio = 1.000000000000
+ALL_CHECKS True
