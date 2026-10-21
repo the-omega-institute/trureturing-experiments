@@ -1,0 +1,9 @@
+200 random two-qubit states: max(mu_AM - mu_GM) = 0.000e+00; all mu_GM <= 1: True
+50 random classical 3x3 states: max |mu_AM - mu_GM| = 2.776e-16 (source Proposition 31: equal)
+mu_GM(rho) = 0.585870, mu_GM(rho x rho) = 0.585870; mu_AM(rho) = 0.517548, mu_AM(rho x rho) = 0.517548
+mu_GM(rho) = 0.692582, mu_GM(rho x rho) = 0.692582; mu_AM(rho) = 0.672780, mu_AM(rho x rho) = 0.672780
+mu_GM(rho) = 0.753787, mu_GM(rho x rho) = 0.753787; mu_AM(rho) = 0.730159, mu_AM(rho x rho) = 0.730159
+mu_GM(rho) = 0.792180, mu_GM(rho x rho) = 0.792180; mu_AM(rho) = 0.760584, mu_AM(rho x rho) = 0.760584
+mu_GM(rho) = 0.442308, mu_GM(rho x rho) = 0.442308; mu_AM(rho) = 0.396411, mu_AM(rho x rho) = 0.396411
+block state 0.6 a(x)b + 0.4 |2><2|(x)|2><2|: mu_GM = 1.000000000000, mu_AM = 1.000000000000
+ALL_CHECKS True
