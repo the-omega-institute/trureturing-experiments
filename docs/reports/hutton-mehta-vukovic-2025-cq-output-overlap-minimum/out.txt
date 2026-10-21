@@ -1,0 +1,2 @@
+random trials=1800 min(A - min_S f(S))=-1.776e-14 max|sum p_S - 1|=2.66e-15 max|A - E f - sum||T||^2|=6.75e-14
+local search runs=90 min(A - min f)=-2.487e-14
