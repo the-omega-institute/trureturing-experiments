@@ -1,0 +1,10 @@
+seed 1 n=3 k=3 trial 0: dims X=[1, 1, 2] ann dims=[2, 2, 1] D=18 subspaces=16 Definition 14 = Theorem 18 and rank(G S_U) = q-rank for all U: True
+seed 1 n=3 k=3 trial 1: dims X=[1, 1, 3] ann dims=[2, 2, 0] D=9 subspaces=16 Definition 14 = Theorem 18 and rank(G S_U) = q-rank for all U: True
+seed 1 n=3 k=3 trial 2: dims X=[1, 2, 0] ann dims=[2, 1, 3] D=24 subspaces=16 Definition 14 = Theorem 18 and rank(G S_U) = q-rank for all U: True
+seed 1 n=3 k=3 trial 3: dims X=[1, 2, 3] ann dims=[2, 1, 0] D=6 subspaces=16 Definition 14 = Theorem 18 and rank(G S_U) = q-rank for all U: True
+seed 1 n=3 k=3 trial 4: dims X=[1, 1, 2] ann dims=[2, 2, 1] D=18 subspaces=16 Definition 14 = Theorem 18 and rank(G S_U) = q-rank for all U: True
+seed 1 n=3 k=3 trial 5: dims X=[1, 2, 2] ann dims=[2, 1, 1] D=12 subspaces=16 Definition 14 = Theorem 18 and rank(G S_U) = q-rank for all U: True
+seed 2 n=4 k=2 trial 0: dims X=[1, 1] ann dims=[3, 3] D=16 subspaces=67 Definition 14 = Theorem 18 and rank(G S_U) = q-rank for all U: True
+seed 2 n=4 k=2 trial 1: dims X=[2, 2] ann dims=[2, 2] D=9 subspaces=67 Definition 14 = Theorem 18 and rank(G S_U) = q-rank for all U: True
+seed 2 n=4 k=2 trial 2: dims X=[3, 2] ann dims=[1, 2] D=6 subspaces=67 Definition 14 = Theorem 18 and rank(G S_U) = q-rank for all U: True
+ALL_CHECKS True
