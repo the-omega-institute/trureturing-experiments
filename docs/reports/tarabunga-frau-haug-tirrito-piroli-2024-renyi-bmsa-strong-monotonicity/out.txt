@@ -1,0 +1,17 @@
+N=2: stabilizer bases 15
+N=3: stabilizer bases 135
+alpha=0.0: max(avg_out - A_in) = 1.110e-16 (holds) at (2, 13, (0,))
+alpha=0.3: max(avg_out - A_in) = 6.661e-16 (holds) at (2, 124, (0,))
+alpha=0.5: max(avg_out - A_in) = 1.110e-15 (holds) at (3, 4, (1,))
+alpha=0.7: max(avg_out - A_in) = 2.748e-15 (holds) at (3, 4, (1,))
+alpha=0.9: max(avg_out - A_in) = 8.687e-15 (holds) at (3, 55, (0,))
+alpha=1.0: max(avg_out - A_in) = 1.110e-16 (holds) at (2, 118, (1,))
+alpha=1.2: max(avg_out - A_in) = 5.551e-17 (holds) at (2, 118, (1,))
+alpha=1.5: max(avg_out - A_in) = 5.551e-17 (holds) at (2, 118, (1,))
+alpha=1.8: max(avg_out - A_in) = 5.551e-17 (holds) at (2, 118, (1,))
+alpha=2.0: max(avg_out - A_in) = 5.551e-17 (holds) at (2, 118, (1,))
+alpha=2.5: max(avg_out - A_in) = 5.551e-17 (holds) at (2, 118, (1,))
+alpha=3.0: max(avg_out - A_in) = 5.551e-17 (holds) at (2, 118, (1,))
+source bounds (33), (51), (43) on 60 random 3-qubit states: violations 0; max A over 40 stabilizer states 2.22e-16
+family alpha=3/2 n=29: A_in <= 2.064560, avg_out >= 2.085695, 3 log 2 = 2.079442, 2^46 > 3^29: True
+EXIT=0
