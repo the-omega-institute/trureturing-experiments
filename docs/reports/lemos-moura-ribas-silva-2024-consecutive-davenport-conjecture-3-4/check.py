@@ -4,9 +4,11 @@ C(G) is the least positive l such that every ordered sequence over G of length >
 g_i g_(i+1) ... g_j equal to 1. For the nonabelian groups S_3, D_4, Q_8 (and the abelian C_2 x C_2, C_6 for
 comparison) the script computes C(G) by exhaustive search over all sequences of length |G| - 1 and |G|, and checks
 that the prefix-quotient word g_i = h_(i-1)^(-1) h_i, built from an enumeration h_0 = 1, h_1, ... of G, is
-product-one free of length |G| - 1. For A_4, S_4 and the nonabelian group of order 21 it checks the construction only.
+product-one free of length |G| - 1. It also counts the product-one free words of length |G| - 1, which are
+exactly the words whose prefix products enumerate G, so there are (|G| - 1)! of them. For A_4, S_4 and the nonabelian group of order 21 it checks the construction only.
 """
 import itertools
+import math
 import sys
 
 
@@ -61,10 +63,11 @@ def construction(G, mul, e):
 
 
 def C_exhaustive(G, mul, e):
+    """Returns (C(G) if it equals |G|, number of product-one free words of length |G| - 1)."""
     n = len(G)
-    some_free = any(free(w, mul, e) for w in itertools.product(G, repeat=n - 1))
+    n_free = sum(1 for w in itertools.product(G, repeat=n - 1) if free(w, mul, e))
     all_hit = all(not free(w, mul, e) for w in itertools.product(G, repeat=n))
-    return n if (some_free and all_hit) else None
+    return (n if (n_free > 0 and all_hit) else None), n_free
 
 
 groups = {
@@ -81,11 +84,12 @@ big = {
 }
 ok = True
 for name, (G, mul, e) in groups.items():
-    c = C_exhaustive(G, mul, e)
+    c, n_free = C_exhaustive(G, mul, e)
     w = construction(G, mul, e)
-    good = c == len(G) and len(w) == len(G) - 1 and free(w, mul, e)
+    good = c == len(G) and len(w) == len(G) - 1 and free(w, mul, e) and n_free == math.factorial(len(G) - 1)
     ok &= good
-    print(f"{name}: |G|={len(G)} C(G) by exhaustive search={c} construction free={free(w, mul, e)} ok={good}")
+    print(f"{name}: |G|={len(G)} C(G) by exhaustive search={c} free words of length |G|-1: {n_free} "
+          f"(|G|-1)! = {math.factorial(len(G) - 1)} construction free={free(w, mul, e)} ok={good}")
 for name, (G, mul, e) in big.items():
     w = construction(G, mul, e)
     good = len(w) == len(G) - 1 and free(w, mul, e)
