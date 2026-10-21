@@ -1,0 +1,9 @@
+C_2 x C_2: |G|=4 C(G) by exhaustive search=4 construction free=True ok=True
+C_6: |G|=6 C(G) by exhaustive search=6 construction free=True ok=True
+S_3: |G|=6 C(G) by exhaustive search=6 construction free=True ok=True
+D_4: |G|=8 C(G) by exhaustive search=8 construction free=True ok=True
+Q_8: |G|=8 C(G) by exhaustive search=8 construction free=True ok=True
+A_4: |G|=12 construction of length 11 product-one free=True ok=True
+S_4: |G|=24 construction of length 23 product-one free=True ok=True
+C_7 x| C_3: |G|=21 construction of length 20 product-one free=True ok=True
+RESULT PASS
