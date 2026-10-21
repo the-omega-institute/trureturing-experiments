@@ -1,0 +1,376 @@
+{
+  "arithmetic": "Q(a), a^2+a-1=0; exact rational pairs; integer matrices",
+  "threshold_rule": "stop iff address weight >= k; includes exact equality",
+  "mass_cuts": [
+    {
+      "k": 1,
+      "threshold_q_a": [
+        "0",
+        "1"
+      ],
+      "cells": 2,
+      "exact_threshold_equalities": 1,
+      "total_mass_q_a": [
+        "1",
+        "0"
+      ]
+    },
+    {
+      "k": 2,
+      "threshold_q_a": [
+        "1",
+        "-1"
+      ],
+      "cells": 3,
+      "exact_threshold_equalities": 2,
+      "total_mass_q_a": [
+        "1",
+        "0"
+      ]
+    },
+    {
+      "k": 3,
+      "threshold_q_a": [
+        "-1",
+        "2"
+      ],
+      "cells": 5,
+      "exact_threshold_equalities": 3,
+      "total_mass_q_a": [
+        "1",
+        "0"
+      ]
+    },
+    {
+      "k": 4,
+      "threshold_q_a": [
+        "2",
+        "-3"
+      ],
+      "cells": 8,
+      "exact_threshold_equalities": 5,
+      "total_mass_q_a": [
+        "1",
+        "0"
+      ]
+    },
+    {
+      "k": 5,
+      "threshold_q_a": [
+        "-3",
+        "5"
+      ],
+      "cells": 13,
+      "exact_threshold_equalities": 8,
+      "total_mass_q_a": [
+        "1",
+        "0"
+      ]
+    },
+    {
+      "k": 6,
+      "threshold_q_a": [
+        "5",
+        "-8"
+      ],
+      "cells": 21,
+      "exact_threshold_equalities": 13,
+      "total_mass_q_a": [
+        "1",
+        "0"
+      ]
+    },
+    {
+      "k": 7,
+      "threshold_q_a": [
+        "-8",
+        "13"
+      ],
+      "cells": 34,
+      "exact_threshold_equalities": 21,
+      "total_mass_q_a": [
+        "1",
+        "0"
+      ]
+    },
+    {
+      "k": 8,
+      "threshold_q_a": [
+        "13",
+        "-21"
+      ],
+      "cells": 55,
+      "exact_threshold_equalities": 34,
+      "total_mass_q_a": [
+        "1",
+        "0"
+      ]
+    },
+    {
+      "k": 9,
+      "threshold_q_a": [
+        "-21",
+        "34"
+      ],
+      "cells": 89,
+      "exact_threshold_equalities": 55,
+      "total_mass_q_a": [
+        "1",
+        "0"
+      ]
+    },
+    {
+      "k": 10,
+      "threshold_q_a": [
+        "34",
+        "-55"
+      ],
+      "cells": 144,
+      "exact_threshold_equalities": 89,
+      "total_mass_q_a": [
+        "1",
+        "0"
+      ]
+    },
+    {
+      "k": 11,
+      "threshold_q_a": [
+        "-55",
+        "89"
+      ],
+      "cells": 233,
+      "exact_threshold_equalities": 144,
+      "total_mass_q_a": [
+        "1",
+        "0"
+      ]
+    },
+    {
+      "k": 12,
+      "threshold_q_a": [
+        "89",
+        "-144"
+      ],
+      "cells": 377,
+      "exact_threshold_equalities": 233,
+      "total_mass_q_a": [
+        "1",
+        "0"
+      ]
+    },
+    {
+      "k": 13,
+      "threshold_q_a": [
+        "-144",
+        "233"
+      ],
+      "cells": 610,
+      "exact_threshold_equalities": 377,
+      "total_mass_q_a": [
+        "1",
+        "0"
+      ]
+    },
+    {
+      "k": 14,
+      "threshold_q_a": [
+        "233",
+        "-377"
+      ],
+      "cells": 987,
+      "exact_threshold_equalities": 610,
+      "total_mass_q_a": [
+        "1",
+        "0"
+      ]
+    },
+    {
+      "k": 15,
+      "threshold_q_a": [
+        "-377",
+        "610"
+      ],
+      "cells": 1597,
+      "exact_threshold_equalities": 987,
+      "total_mass_q_a": [
+        "1",
+        "0"
+      ]
+    },
+    {
+      "k": 16,
+      "threshold_q_a": [
+        "610",
+        "-987"
+      ],
+      "cells": 2584,
+      "exact_threshold_equalities": 1597,
+      "total_mass_q_a": [
+        "1",
+        "0"
+      ]
+    }
+  ],
+  "residual_gram": {
+    "cuts": [
+      1,
+      2,
+      3,
+      5
+    ],
+    "edge_support_max_depth": 5,
+    "matrix_entries": 15376,
+    "nonzero_entries": 3924,
+    "biased_child_variance_q_a": [
+      "-1",
+      "2"
+    ],
+    "fair_child_variance_q_a": [
+      "1/4",
+      "0"
+    ],
+    "fair_substitution_detected": true
+  },
+  "finite_sources": [
+    {
+      "n": 0,
+      "nodes": 1,
+      "tested_addresses": 254
+    },
+    {
+      "n": 1,
+      "nodes": 1,
+      "tested_addresses": 254
+    },
+    {
+      "n": 2,
+      "nodes": 3,
+      "tested_addresses": 254
+    },
+    {
+      "n": 3,
+      "nodes": 5,
+      "tested_addresses": 254
+    },
+    {
+      "n": 4,
+      "nodes": 9,
+      "tested_addresses": 254
+    },
+    {
+      "n": 5,
+      "nodes": 15,
+      "tested_addresses": 254
+    },
+    {
+      "n": 6,
+      "nodes": 25,
+      "tested_addresses": 254
+    },
+    {
+      "n": 7,
+      "nodes": 41,
+      "tested_addresses": 254
+    },
+    {
+      "n": 8,
+      "nodes": 67,
+      "tested_addresses": 254
+    },
+    {
+      "n": 9,
+      "nodes": 109,
+      "tested_addresses": 254
+    },
+    {
+      "n": 10,
+      "nodes": 177,
+      "tested_addresses": 254
+    },
+    {
+      "n": 11,
+      "nodes": 287,
+      "tested_addresses": 254
+    },
+    {
+      "n": 12,
+      "nodes": 465,
+      "tested_addresses": 254
+    }
+  ],
+  "finite_inverse": [
+    {
+      "n": 0,
+      "nodes": 1,
+      "edges": 0,
+      "normalized_inverse_identity": true,
+      "centered_covariance_identity": true,
+      "constant_zero_mode": true
+    },
+    {
+      "n": 1,
+      "nodes": 1,
+      "edges": 0,
+      "normalized_inverse_identity": true,
+      "centered_covariance_identity": true,
+      "constant_zero_mode": true
+    },
+    {
+      "n": 2,
+      "nodes": 3,
+      "edges": 2,
+      "normalized_inverse_identity": true,
+      "centered_covariance_identity": true,
+      "constant_zero_mode": true
+    },
+    {
+      "n": 3,
+      "nodes": 5,
+      "edges": 4,
+      "normalized_inverse_identity": true,
+      "centered_covariance_identity": true,
+      "constant_zero_mode": true
+    },
+    {
+      "n": 4,
+      "nodes": 9,
+      "edges": 8,
+      "normalized_inverse_identity": true,
+      "centered_covariance_identity": true,
+      "constant_zero_mode": true
+    },
+    {
+      "n": 5,
+      "nodes": 15,
+      "edges": 14,
+      "normalized_inverse_identity": true,
+      "centered_covariance_identity": true,
+      "constant_zero_mode": true
+    },
+    {
+      "n": 6,
+      "nodes": 25,
+      "edges": 24,
+      "normalized_inverse_identity": true,
+      "centered_covariance_identity": true,
+      "constant_zero_mode": true
+    },
+    {
+      "n": 7,
+      "nodes": 41,
+      "edges": 40,
+      "normalized_inverse_identity": true,
+      "centered_covariance_identity": true,
+      "constant_zero_mode": true
+    },
+    {
+      "n": 8,
+      "nodes": 67,
+      "edges": 66,
+      "normalized_inverse_identity": true,
+      "centered_covariance_identity": true,
+      "constant_zero_mode": true
+    }
+  ],
+  "limitation": "Finite identities only; not proof of infinite spectral growth."
+}
