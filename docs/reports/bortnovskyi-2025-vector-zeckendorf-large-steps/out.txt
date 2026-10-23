@@ -1,0 +1,25 @@
+fidelity k=3 v=(2, -2): accepted=[4, 3, 1] residual=(0, -1) small=[3, 1] jlsb=16 (source 16)
+fidelity k=3 v=(3, 0): accepted=[4, 1] residual=(0, 0) small=[] jlsb=7 (source 7)
+k=3 v=(0,m)
+  m=2^4: accepted=4 N=6 jlsb=25 jlsb/log(norm)=9.02 ties=1
+  m=2^8: accepted=13 N=13 jlsb=55 jlsb/log(norm)=9.92 ties=1
+  m=2^12: accepted=10 N=12 jlsb=61 jlsb/log(norm)=7.33 ties=1
+  m=2^16: accepted=24 N=24 jlsb=106 jlsb/log(norm)=9.56 ties=2
+  m=2^20: accepted=29 N=31 jlsb=138 jlsb/log(norm)=9.95 ties=0
+  m=2^24: accepted=35 N=35 jlsb=159 jlsb/log(norm)=9.56 ties=0
+  m=2^28: accepted=30 N=32 jlsb=158 jlsb/log(norm)=8.14 ties=2
+  m=2^32: accepted=30 N=32 jlsb=167 jlsb/log(norm)=7.53 ties=1
+  m=2^36: accepted=40 N=42 jlsb=206 jlsb/log(norm)=8.26 ties=0
+  m=2^40: accepted=51 N=51 jlsb=241 jlsb/log(norm)=8.69 ties=0
+k=4 v=(0,m,0)
+  m=2^4: accepted=11 N=14 jlsb=62 jlsb/log(norm)=22.36 ties=2
+  m=2^8: accepted=37 N=40 jlsb=180 jlsb/log(norm)=32.46 ties=3
+  m=2^12: accepted=77 N=80 jlsb=348 jlsb/log(norm)=41.84 ties=3
+  m=2^16: accepted=207 N=210 jlsb=880 jlsb/log(norm)=79.35 ties=4
+  m=2^20: accepted=694 N=697 jlsb=2836 jlsb/log(norm)=204.57 ties=1
+  m=2^24: accepted=1507 N=1510 jlsb=6098 jlsb/log(norm)=366.56 ties=1
+  m=2^28: accepted=4737 N=4737 jlsb=19018 jlsb/log(norm)=979.90 ties=3
+  m=2^32: accepted=9977 N=9980 jlsb=40000 jlsb/log(norm)=1803.37 ties=1
+  m=2^36: accepted=33953 N=33953 jlsb=135904 jlsb/log(norm)=5446.33 ties=3
+  m=2^40: accepted=65102 N=65105 jlsb=260522 jlsb/log(norm)=9396.34 ties=2
+FIDELITY_OK
