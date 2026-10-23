@@ -1,0 +1,30 @@
+reduction identity D_n(|z|^2) = |z - 1|^2 (|(z)_n|^2 - n^2 |z|^2) on |z - 2| = 1, n = 3: True
+reduction identity D_n(|z|^2) = |z - 1|^2 (|(z)_n|^2 - n^2 |z|^2) on |z - 2| = 1, n = 5: True
+reduction identity D_n(|z|^2) = |z - 1|^2 (|(z)_n|^2 - n^2 |z|^2) on |z - 2| = 1, n = 7: True
+fidelity Proposition 8: (4.17) factorization True, its left side equals |z^5 - 1|^2 True; (4.19) factorization True, its left side equals |z^6 - 1|^2 True
+certificate n = 5: 32 D_5(1 + t) = t**3*(31*t**2 + 160*t + 340): True
+certificate n = 6: 64 D_6(1 + t) = t**2*(63*t**4 + 384*t**3 + 984*t**2 + 1376*t + 48): True
+certificate n = 7: 128 D_7(1 + t) = t**3*(127*t**4 + 896*t**3 + 2716*t**2 + 4592*t + 4704): True
+D_n(1) = D_n'(1) = 0 and c_n = -n^2 (n - 5)(n - 7)/48 for 1 <= n <= 60: True
+D_n(1 + 4^(-n-3)) < 0 for every excluded n <= 60: True
+n =  1: min over |z - 2| = 1 of |(z)_n| - n|z| = -2.000e+00; over 2e5 interior samples -2.000e+00
+n =  2: min over |z - 2| = 1 of |(z)_n| - n|z| = -2.000e+00; over 2e5 interior samples -2.000e+00
+n =  3: min over |z - 2| = 1 of |(z)_n| - n|z| = -1.628e-01; over 2e5 interior samples -1.626e-01
+n =  4: min over |z - 2| = 1 of |(z)_n| - n|z| = -1.439e-02; over 2e5 interior samples -1.404e-02
+n =  5: min over |z - 2| = 1 of |(z)_n| - n|z| = +0.000e+00; over 2e5 interior samples +2.190e-04
+n =  6: min over |z - 2| = 1 of |(z)_n| - n|z| = +0.000e+00; over 2e5 interior samples +1.056e-04
+n =  7: min over |z - 2| = 1 of |(z)_n| - n|z| = +0.000e+00; over 2e5 interior samples +3.827e-04
+n =  8: min over |z - 2| = 1 of |(z)_n| - n|z| = -8.418e-03; over 2e5 interior samples -6.435e-03
+n =  9: min over |z - 2| = 1 of |(z)_n| - n|z| = -5.529e-02; over 2e5 interior samples -5.363e-02
+n = 10: min over |z - 2| = 1 of |(z)_n| - n|z| = -1.779e-01; over 2e5 interior samples -1.607e-01
+n = 11: min over |z - 2| = 1 of |(z)_n| - n|z| = -4.109e-01; over 2e5 interior samples -4.097e-01
+n = 12: min over |z - 2| = 1 of |(z)_n| - n|z| = -7.779e-01; over 2e5 interior samples -7.631e-01
+n = 13: min over |z - 2| = 1 of |(z)_n| - n|z| = -1.287e+00; over 2e5 interior samples -1.268e+00
+n = 14: min over |z - 2| = 1 of |(z)_n| - n|z| = -1.934e+00; over 2e5 interior samples -1.914e+00
+n = 15: min over |z - 2| = 1 of |(z)_n| - n|z| = -2.705e+00; over 2e5 interior samples -2.608e+00
+n = 16: min over |z - 2| = 1 of |(z)_n| - n|z| = -3.582e+00; over 2e5 interior samples -3.514e+00
+n = 17: min over |z - 2| = 1 of |(z)_n| - n|z| = -4.545e+00; over 2e5 interior samples -4.433e+00
+n = 18: min over |z - 2| = 1 of |(z)_n| - n|z| = -5.576e+00; over 2e5 interior samples -5.566e+00
+n = 19: min over |z - 2| = 1 of |(z)_n| - n|z| = -6.658e+00; over 2e5 interior samples -6.632e+00
+n = 20: min over |z - 2| = 1 of |(z)_n| - n|z| = -7.778e+00; over 2e5 interior samples -7.676e+00
+ALL_CHECKS_OK
