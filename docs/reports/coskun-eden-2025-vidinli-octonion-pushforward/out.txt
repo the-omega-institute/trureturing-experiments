@@ -6,4 +6,5 @@ V3: rank of L_a for 20 random nonzero a orthogonal to e1: [2]; necessary bound N
 V5: rank of L_a for 20 random nonzero a orthogonal to e1: [2]; necessary bound N >= 2d - 2 = 8
 V7: rank of L_a for 20 random nonzero a orthogonal to e1: [2]; necessary bound N >= 2d - 2 = 12
 V9: rank of L_a for 20 random nonzero a orthogonal to e1: [2]; necessary bound N >= 2d - 2 = 16
+D5 owner MonsterTwistedOctonionNorm.mul (8 coordinates): two-sided unit e0 True; |xy|^2 = |x|^2 |y|^2 identically True
 ALL_CHECKS_OK

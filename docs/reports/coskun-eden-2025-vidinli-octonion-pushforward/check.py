@@ -5,6 +5,8 @@ V7 = R^7 with the coordinate product of Definition 5.1: c1 = a1 b1 - sum_{i>=2} 
 + (a6 b7 - a7 b6), ci = a1 bi + b1 ai (i >= 2). Octonions: pairs of quaternions with Baez (2002), (2):
 (a, b)(c, d) = (ac - d b*, a* d + c b). A push-forward is a pair of real-linear maps nu: V7 -> O, pi: O -> V7 with
 a * b = pi(nu(a) nu(b)).
+With an argument, also checks the D5 owner's octonion table (D5/S3/VertexAlgebra/MonsterTwistedOctonionNorm.lean):
+two-sided unit and multiplicative norm.
 Fidelity: Section 3.1 (3)-(4) for V3 (the quaternion push-forward with the source's pi and nu). Lemmas: the octonion
 norm is multiplicative; L_{e2} on V7 has rank 2 and the kernel basis e2 + e3, e4, ..., e7; L_a has rank 2 for random
 nonzero a orthogonal to e1 in V3, V5, V7, V9. Exits 1 on failure.
@@ -75,5 +77,17 @@ for n in (3, 5, 7, 9):
         ranks.add(Ln.rank())
     print(f"V{n}: rank of L_a for 20 random nonzero a orthogonal to e1: {sorted(ranks)}; necessary bound N >= 2d - 2 = {2*n - 2}")
     ok &= ranks == {2}
+if len(sys.argv) > 1:
+    import re
+    src = open(sys.argv[1]).read()
+    body = src[src.index('def mul (x y : Octonion)'):src.index('/-- The Euclidean square norm')]
+    rows = [r.strip() for r in body[body.index('![') + 2:body.rindex(']')].split(',')]
+    T = lambda xs, ys: [sp.expand(eval(re.sub(r'([xy]) (\d)', r'\1s[\2]', r.replace('\n', ' ')), {'xs': xs, 'ys': ys})) for r in rows]
+    prod = T(X, Y)
+    unit = [1, 0, 0, 0, 0, 0, 0, 0]
+    d5_unit = T(unit, list(Y)) == list(Y) and T(list(X), unit) == list(X)
+    d5_norm = sp.expand(sum(v**2 for v in prod) - sum(v**2 for v in X) * sum(v**2 for v in Y)) == 0
+    print(f"D5 owner MonsterTwistedOctonionNorm.mul ({len(rows)} coordinates): two-sided unit e0 {d5_unit}; |xy|^2 = |x|^2 |y|^2 identically {d5_norm}")
+    ok &= len(rows) == 8 and d5_unit and d5_norm
 print("ALL_CHECKS_OK" if ok else "CHECK_FAIL")
 sys.exit(0 if ok else 1)
