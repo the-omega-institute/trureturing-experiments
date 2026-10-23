@@ -1,0 +1,6 @@
+Example 4.14: (4.1) fails at []; q-Gauss fails at [12, 20, 24, 28, 30, 36, 40, 42, 44, 48, 52, 56, 60]; criterion [n]_q | A_n S_n fails at [] (n <= 60); deg A_N = 480
+Example 4.11: (4.1) fails at []; q-Gauss fails at [12, 24, 48]; criterion [n]_q | A_n S_n fails at [] (n <= 60); deg A_N = 780
+Example 4.13 (negative control): (4.1) fails at [6, 10, 14, 18, 22, 26, 30, 34, 38, 42, 46, 50, 54, 58]; q-Gauss fails at [6, 10, 14, 18, 22, 26, 30, 34, 38, 42, 46, 50, 54, 58]; criterion [n]_q | A_n S_n fails at [6, 10, 14, 18, 22, 26, 30, 34, 38, 42, 46, 50, 54, 58] (n <= 60); deg A_N = 136
+fidelity: Example 4.14 fails q-Gauss exactly at the even n <= 60 not of the form 2p^k: True; Example 4.11 exactly at 2^k 3: True; Example 4.13 is not q-Euler-Gauss: True
+p = 2*lcm(1..60)+1; trials 60 (restarts 85); root checks 106200; failures of A_n S_n = 0: 0; of S_n = 0: 9388; of B_n S_n = 0: 600
+ALL_CHECKS_OK
