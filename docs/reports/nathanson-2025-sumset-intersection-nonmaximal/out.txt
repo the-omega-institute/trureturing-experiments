@@ -1,0 +1,4 @@
+fidelity: A#_q = {|r| >= q} has hA#_q = Z on the window for q in (1, 3, 7), h in (2, 3, 4): True
+fidelity: h*Z is a maximal nonbasis of order h iff h is prime (h = 2..40, residue form): True
+claim: for F in ({2}, {0}, {2,4,10}, {-6,8}) and h in (2,3,4), hA_F = 2Z, A_F is not maximal, and every sample admissible stage A_q has every odd integer of the window in hA_q (so 1 in cap hA_q, 1 not in hA_F): True
+ALL_CHECKS_OK
