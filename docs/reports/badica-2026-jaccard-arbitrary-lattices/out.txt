@@ -1,0 +1,6 @@
+fidelity Theorem 1 (2^3, f = |S| + 1): triangle inequality True
+fidelity Theorem 4 (N5): 1059 valuations satisfy the triangle inequality; 0 fail the necessary conditions
+fidelity Theorem 4 (M3): 1279 valuations satisfy the triangle inequality; 0 fail the necessary conditions
+claim (N5): 1041 admissible valuations, 0 triangle violations
+claim (M3): 977 admissible valuations, 0 triangle violations
+ALL_CHECKS_OK
