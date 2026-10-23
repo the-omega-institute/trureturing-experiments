@@ -1,0 +1,10 @@
+fidelity: E'_f(GHZ_n) = 1 > E'_f(W_n) = H2(1/n) for n = 3..8: True
+d =  8: probabilities [0.5, 0.5]; marginals diagonal (max off-diagonal 0.0e+00); E'_f 2.500000 -> average 3.000000 (increase 0.500000); tau 1.437500 -> 1.750000; 1-||rho|| 0.500000 -> 0.875000
+d =  5: probabilities [0.5, 0.5]; marginals diagonal (max off-diagonal 0.0e+00); E'_f 2.160964 -> average 2.321928 (increase 0.160964); tau 1.400000 -> 1.600000; 1-||rho|| 0.500000 -> 0.800000
+d =  6: probabilities [0.5, 0.5]; marginals diagonal (max off-diagonal 0.0e+00); E'_f 2.292481 -> average 2.584963 (increase 0.292481); tau 1.416667 -> 1.666667; 1-||rho|| 0.500000 -> 0.833333
+d =  7: probabilities [0.5, 0.5]; marginals diagonal (max off-diagonal 0.0e+00); E'_f 2.403677 -> average 2.807355 (increase 0.403677); tau 1.428571 -> 1.714286; 1-||rho|| 0.500000 -> 0.857143
+d =  9: probabilities [0.5, 0.5]; marginals diagonal (max off-diagonal 0.0e+00); E'_f 2.584963 -> average 3.169925 (increase 0.584963); tau 1.444444 -> 1.777778; 1-||rho|| 0.500000 -> 0.888889
+d = 12: probabilities [0.5, 0.5]; marginals diagonal (max off-diagonal 0.0e+00); E'_f 2.792481 -> average 3.584963 (increase 0.792481); tau 1.458333 -> 1.833333; 1-||rho|| 0.500000 -> 0.916667
+d = 16: probabilities [0.5, 0.5]; marginals diagonal (max off-diagonal 0.0e+00); E'_f 3.000000 -> average 4.000000 (increase 1.000000); tau 1.468750 -> 1.875000; 1-||rho|| 0.500000 -> 0.937500
+observation n = 3: largest average increase of E'_f over 6000 random qubit/qutrit states and measurements: 1.59e-15
+ALL_CHECKS_OK
