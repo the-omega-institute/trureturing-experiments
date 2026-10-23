@@ -1,0 +1,9 @@
+fidelity Theorem 4, n = 3: every kefalopoda inequality is facet-defining (tight source digraphs span a hyperplane) for all 8 f: True; f for which the proof's digraphs D_ij are not 6 distinct: 6
+fidelity Theorem 4, n = 4: every kefalopoda inequality is facet-defining (tight source digraphs span a hyperplane) for all 81 f: True; f for which the proof's digraphs D_ij are not 12 distinct: 72
+fidelity: non-isomorphic kefalopoda digraphs for n = 3: 2
+fidelity n = 3: Q~ has 37 vertices, all 0/1 adjacency vectors of source digraphs (so Q~ = Q): True
+n = 2: every source digraph satisfies every kefalopoda inequality: True
+n = 3: every source digraph satisfies every kefalopoda inequality: True
+n = 4: every source digraph satisfies every kefalopoda inequality: True
+1700 random points of Q~ (n = 2..8): column-maximum form of the kefalopoda inequalities (n <= 6, all f) True; convex decomposition x = sum_i q_i y^(i) with y^(i) in the box with source i True
+ALL_CHECKS_OK
