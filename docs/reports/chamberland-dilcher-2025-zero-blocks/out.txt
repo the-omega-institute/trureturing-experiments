@@ -1,0 +1,4 @@
+fidelity Table 1 (n = 33): [3, 2, 2, 1, 1, 0, 1, 0, 1, 0, 0, 1, 1, 1, 1, 1] True
+fidelity (2.4) for odd n <= 4001: 0 failures
+conjecture blocks, odd n in [3, 20001]: 6268190 surplus indices, 0 failures
+ALL_CHECKS_OK
