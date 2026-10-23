@@ -6,7 +6,8 @@ map Tr_E[U^dag (X (x) xi') U] (3). TTR (4) needs some xi' with Petz = tabletop r
 over all complex 3x3 (2x2) matrices xi' is computed, so a positive residual excludes every xi', density or not.
 Fidelity: Examples 1 and 2 of the source are TTR (residual ~ 0). Claim: the family S = E = C^3, xi = diag(1/2,1/3,1/6),
 gamma = diag(17,13,14)/44, U_t = exp(-itH) keeps gamma steady for all t and is not TTR for t in (0, pi/2]; at
-t = pi/2 the Petz population matrix equals the exact rationals of the prereg.
+t = pi/2 the Petz population matrix equals the exact rationals of the prereg. Generic: random Haar dilations with a
+full-rank steady prior are not TTR either.
 Exits 1 on failure.
 """
 import sys
@@ -70,5 +71,23 @@ R = np.array([[np.trace(sg @ Nadj(ri @ E(n) @ ri) @ sg @ E(m)).real for n in ran
 R_exact = np.array([[1 / 3, 17 / 26, 17 / 84], [13 / 51, 1 / 6, 13 / 28], [7 / 17, 7 / 39, 1 / 3]])
 print(f"Petz population matrix at t = pi/2 (column = input) minus the exact rationals: {np.abs(R - R_exact).max():.1e}; p(1|0), p(2|1), p(0|2) = {R[1, 0]:.6f}, {R[2, 1]:.6f}, {R[0, 2]:.6f}")
 ok &= np.abs(R - R_exact).max() < 1e-12
+def fixed_point(U, xi, d):
+    M = np.zeros((d * d, d * d), complex)
+    for k in range(d * d):
+        X = np.zeros(d * d, complex); X[k] = 1
+        M[:, k] = ptrE(U @ np.kron(X.reshape(d, d), xi) @ U.conj().T, d, xi.shape[0]).ravel()
+    w, V = np.linalg.eig(M); G = V[:, np.argmin(abs(w - 1))].reshape(d, d); G = G / np.trace(G)
+    return (G + G.conj().T) / 2
+for ds, de in ((2, 2), (2, 3), (3, 2)):
+    rs, ss = [], []
+    while len(rs) < 200:
+        Z = rng.normal(size=(ds * de, ds * de)) + 1j * rng.normal(size=(ds * de, ds * de)); Ur, _ = np.linalg.qr(Z)
+        B = rng.normal(size=(de, de)) + 1j * rng.normal(size=(de, de)); xr = B @ B.conj().T; xr /= np.trace(xr)
+        gr = fixed_point(Ur, xr, ds)
+        if np.linalg.eigvalsh(gr).min() < 1e-3:
+            continue
+        r, s = residual(Ur, xr, gr); rs.append(r); ss.append(s)
+    print(f"generic (U, xi) with S = C^{ds}, E = C^{de}: 200 random Haar U and full-rank xi, full-rank steady gamma: max ||N(gamma) - gamma|| = {max(ss):.1e}, min TTR residual = {min(rs):.4f}")
+    ok &= max(ss) < 1e-10 and min(rs) > 1e-3
 print("ALL_CHECKS_OK" if ok else "CHECK_FAIL")
 sys.exit(0 if ok else 1)

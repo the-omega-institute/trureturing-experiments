@@ -2,4 +2,7 @@ fidelity Example 1 (unital, xi = 1/3, steady gamma = diag(0.3, 0.3, 0.4), U comm
 fidelity Example 2 (controlled-X, diagonal xi and gamma): steady 5.6e-17, TTR residual 5.0e-16
 claim family, 50 values of t in (0, pi/2]: max ||N(gamma) - gamma|| = 2.6e-16, min TTR residual = 2.624e-04; at t = pi/2 residual 0.3819
 Petz population matrix at t = pi/2 (column = input) minus the exact rationals: 2.2e-16; p(1|0), p(2|1), p(0|2) = 0.254902, 0.179487, 0.202381
+generic (U, xi) with S = C^2, E = C^2: 200 random Haar U and full-rank xi, full-rank steady gamma: max ||N(gamma) - gamma|| = 1.5e-15, min TTR residual = 0.0385
+generic (U, xi) with S = C^2, E = C^3: 200 random Haar U and full-rank xi, full-rank steady gamma: max ||N(gamma) - gamma|| = 7.8e-16, min TTR residual = 0.0564
+generic (U, xi) with S = C^3, E = C^2: 200 random Haar U and full-rank xi, full-rank steady gamma: max ||N(gamma) - gamma|| = 1.5e-15, min TTR residual = 0.1565
 ALL_CHECKS_OK
