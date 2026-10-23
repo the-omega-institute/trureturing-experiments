@@ -1,0 +1,15 @@
+fidelity Theorem 1.1: for coprime a, b <= 80 exactly one of the two equations is solvable: True
+fidelity Proposition 2.5 (a <= 300): Gamma(a, 2a) = 0 and Gamma(a, 2a - 1) = 1: True
+fidelity Gamma(n, n + 1), n = 1..40, alternates 0, 1, 0, 1, ...: True
+fidelity Theorem 2.1 (a, b <= 60): True
+certificates: the ten rows satisfy delta + a x + b y = (a - 1)(b - 1)/2 identically in k, with gcd(c, e - c) = 1 and (e - c) | 40: True
+blocks: Gamma = 0 on every edge of 40k + Z and Gamma = 1 on every edge of 40k + O for k <= 300 (brute force): True
+p = 0.000000: strictly increasing True; -9 <= a_n - 8n <= 15 True; 0 <= pN - C_N < 5 for N <= 4000 True; C_N/N at N = 4000: 0.000000
+p = 1.000000: strictly increasing True; -9 <= a_n - 8n <= 15 True; 0 <= pN - C_N < 5 for N <= 4000 True; C_N/N at N = 4000: 1.000000
+p = 0.500000: strictly increasing True; -9 <= a_n - 8n <= 15 True; 0 <= pN - C_N < 5 for N <= 4000 True; C_N/N at N = 4000: 0.500000
+p = 0.333333: strictly increasing True; -9 <= a_n - 8n <= 15 True; 0 <= pN - C_N < 5 for N <= 4000 True; C_N/N at N = 4000: 0.332500
+p = 0.714286: strictly increasing True; -9 <= a_n - 8n <= 15 True; 0 <= pN - C_N < 5 for N <= 4000 True; C_N/N at N = 4000: 0.713750
+p = 0.414214: strictly increasing True; -9 <= a_n - 8n <= 15 True; 0 <= pN - C_N < 5 for N <= 4000 True; C_N/N at N = 4000: 0.413750
+p = 0.141593: strictly increasing True; -9 <= a_n - 8n <= 15 True; 0 <= pN - C_N < 5 for N <= 4000 True; C_N/N at N = 4000: 0.141250
+p = 0.123456: strictly increasing True; -9 <= a_n - 8n <= 15 True; 0 <= pN - C_N < 5 for N <= 4000 True; C_N/N at N = 4000: 0.122500
+ALL_CHECKS_OK
