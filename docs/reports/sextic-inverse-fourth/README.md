@@ -107,3 +107,71 @@ moment comparisons. These checks support the implementation. The tabulated
 signs are numerical observations, not interval-certified counterexamples or
 asymptotic estimates. The missing analytic input still has to bound the
 positive cross-core contribution with its actual Möbius coefficients.
+
+
+## Product-squarepart correlation
+
+`squarepart.py` resolves the full original order-six correlation by
+
+$$
+ab=p^2k,\qquad k=r_2(ab)\text{ squarefree},\qquad P=Np.
+$$
+
+It retains precisely the ordered unequal-parity pairs with $P^4<U$,
+and also computes their complement. The strict threshold uses integers.
+All original sixth-power-free rows, all six unit multiples, actual
+Möbius convolution coefficients and collision zeros remain. The program
+imports the existing ideal engine and smooth coefficient plan; it does
+not replace the family by independent random characters.
+
+The flat calculation assigns weight one to the selected inverse and row
+annuli. Since the norm grids are finite, these values can be realized
+by smooth profiles supported in the same open annuli, with transitions
+between adjacent sampled norms. Such a profile is fixed for that finite
+example; the flat runs at different scales are not asserted to come
+from one common fixed smooth profile or to have uniform derivative costs.
+
+Flat arithmetic uses the exact representation
+$\zeta_6^j=A_j+B_j\zeta_6$, $\zeta_6^2=\zeta_6-1$.
+The normalized fourth moments have denominator $U$, so every flat
+quantity is a rational number obtained by integer arithmetic. An explicit
+bound rejects requests that could overflow the integer array accumulators.
+The second calculation uses exactly the fixed smooth bumps from `moment.py`;
+these weights and sums use binary64 and are not interval enclosures.
+
+The retained [squarepart.json](squarepart.json) evaluates the preselected
+scales $64,128,256,512,1024,2048,4096$. In particular:
+
+| U | Flat small-P correlation, exact | Fixed bump small-P correlation |
+|---|---:|---:|
+| 128 | $-9/4$ | -0.1603369703 |
+| 256 | $-135/32$ | -1.1848357344 |
+| 1024 | $-135/32$ | -1.2508545208 |
+| 2048 | $747/64$ | -1.2448873346 |
+| 4096 | $7041/512$ | 0.2490045477 |
+
+The exact positive value at $U=2048$ prevents a blanket all-scales
+nonpositive-sign assertion for this small-$P$ contraction over admissible
+finite smooth profiles. It does not disprove eventual nonpositivity for
+a specified fixed profile. The fixed-bump measurements also have both
+signs, but those signs are numerical observations rather than interval
+certificates. None of these outputs proves an asymptotic power bound,
+a full inverse-fourth improvement, Robin's inequality or RH.
+
+`test_squarepart.py` independently checks the positive flat example by
+visiting the four original ordered inverse-factor slots and every
+physical unit row, without the grouped inverse plan, pair plan or unit
+orthogonality used in the main program. It also compares the new smooth
+calculation's full moment and cubic block against the retained original
+baseline and checks the exact signed decomposition
+$\mathcal T=H_2+E_{6,\mathrm{small}\ P}+E_{6,\mathrm{large}\ P}$.
+
+```sh
+python3 -B docs/reports/sextic-inverse-fourth/test_squarepart.py
+python3 -B docs/reports/sextic-inverse-fourth/squarepart.py --scales 64 128 256 512 1024 2048 4096 --out docs/reports/sextic-inverse-fourth/squarepart.json
+```
+
+The corresponding analytic target and the already controlled large-$P$
+sector are [C16–C20 in the owning source](https://github.com/the-omega-institute/trureturing/blob/3abf0112f94615ae920928b3b01dcca20be9a113/Library/Analytic/liu2026quasirh.md#localizing-the-remaining-contraction-by-the-product-squarepart).
+The remaining estimate must control positive contributions with the
+actual coefficients; the Möbius sign cannot simply be assumed to pay it.
