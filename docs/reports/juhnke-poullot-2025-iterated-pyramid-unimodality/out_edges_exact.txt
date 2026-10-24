@@ -1,0 +1,2 @@
+facets 22 vertices 9 exact edges 31 HiGHS edges 31 agree True
+only exact [] only HiGHS []

@@ -1,0 +1,15 @@
+cube3 k=0: |V|=8 |E|=12 mono=[0, 0, 0, 6] coh=[0, 0, 0, 6] unimodal=(True,True)
+  fidelity (Example 3.5 / Example 4.1): mono == coh == [0, 0, 0, 6]: True
+cube3 k=1: |V|=9 |E|=20 mono=[0, 1, 3, 6, 6] coh=[0, 1, 3, 6, 6] unimodal=(True,True)
+cube3 k=2: |V|=10 |E|=29 mono=[0, 1, 4, 9, 12, 6] coh=[0, 1, 4, 9, 12, 6] unimodal=(True,True)
+  product structure X(1+X)^(k-1) Q: mono True, coh True
+cube3 k=3: |V|=11 |E|=39 mono=[0, 1, 5, 13, 21, 18, 6] coh=[0, 1, 5, 13, 21, 18, 6] unimodal=(True,True)
+  product structure X(1+X)^(k-1) Q: mono True, coh True
+Lop3 k=0: |V|=8 |E|=12 mono=[0, 0, 2, 0, 4] coh=[0, 0, 2, 0, 4] unimodal=(False,False)
+  fidelity (Example 3.5 / Example 4.1): mono == coh == [0, 0, 2, 0, 4]: True
+Lop3 k=1: |V|=9 |E|=20 mono=[0, 1, 3, 4, 4, 4] coh=[0, 1, 3, 4, 4, 4] unimodal=(True,True)
+Lop3 k=2: |V|=10 |E|=29 mono=[0, 1, 4, 7, 8, 8, 4] coh=[0, 1, 4, 7, 8, 8, 4] unimodal=(True,True)
+  product structure X(1+X)^(k-1) Q: mono True, coh True
+Lop3 k=3: |V|=11 |E|=39 mono=[0, 1, 5, 11, 15, 16, 12, 4] coh=[0, 1, 5, 11, 15, 16, 12, 4] unimodal=(True,True)
+  product structure X(1+X)^(k-1) Q: mono True, coh True
+ALL_CHECKS_OK
