@@ -1,0 +1,19 @@
+environment {"arithmetic": "integers and exact polynomials", "networkx": "3.7", "sympy": "1.14.0"}
+fidelity_cycle {"automorphisms": 6, "charpoly": "x**3 - 3*x - 2", "distinct_eigenvalues": 2, "n": 3, "unordered_pair_orbits": 2}
+fidelity_cycle {"automorphisms": 8, "charpoly": "x**4 - 4*x**2", "distinct_eigenvalues": 3, "n": 4, "unordered_pair_orbits": 3}
+fidelity_cycle {"automorphisms": 10, "charpoly": "x**5 - 5*x**3 + 5*x - 2", "distinct_eigenvalues": 3, "n": 5, "unordered_pair_orbits": 3}
+fidelity_cycle {"automorphisms": 12, "charpoly": "x**6 - 6*x**4 + 9*x**2 - 4", "distinct_eigenvalues": 4, "n": 6, "unordered_pair_orbits": 4}
+fidelity_cycle {"automorphisms": 14, "charpoly": "x**7 - 7*x**5 + 14*x**3 - 7*x - 2", "distinct_eigenvalues": 4, "n": 7, "unordered_pair_orbits": 4}
+fidelity_cycle {"automorphisms": 16, "charpoly": "x**8 - 8*x**6 + 20*x**4 - 16*x**2", "distinct_eigenvalues": 5, "n": 8, "unordered_pair_orbits": 5}
+fidelity_cycle {"automorphisms": 18, "charpoly": "x**9 - 9*x**7 + 27*x**5 - 30*x**3 + 9*x - 2", "distinct_eigenvalues": 5, "n": 9, "unordered_pair_orbits": 5}
+fidelity_cycle {"automorphisms": 20, "charpoly": "x**10 - 10*x**8 + 35*x**6 - 50*x**4 + 25*x**2 - 4", "distinct_eigenvalues": 6, "n": 10, "unordered_pair_orbits": 6}
+direct_product_check {"b": 3, "degree": 7, "direct_charpoly_matches_tensor_formula": true, "edge_common_neighbor_counts": {"0": [0], "1": [1], "2": [3]}, "factored_charpoly": "x**4*(x - 7)*(x - 5)*(x - 4)**2*(x - 2)**6*(x + 1)**8*(x + 3)**8", "full_automorphism_count": 1440, "full_unordered_pair_orbits": 8, "orbit_sizes": [15, 30, 30, 30, 60, 60, 120, 120], "spectrum": [[-3, 8], [-1, 8], [0, 4], [2, 6], [4, 2], [5, 1], [7, 1]], "translation_cycle_length": 30, "vertices": 30}
+direct_product_check {"b": 5, "degree": 11, "direct_charpoly_matches_tensor_formula": true, "edge_common_neighbor_counts": {"0": [0], "1": [3], "2": [5]}, "spectrum": [[-3, 24], [-1, 24], [2, 6], [4, 10], [6, 4], [9, 1], [11, 1]], "translation_cycle_length": 70, "vertices": 70}
+direct_product_check {"b": 7, "degree": 15, "direct_charpoly_matches_tensor_formula": true, "edge_common_neighbor_counts": {"0": [0], "1": [5], "2": [7]}, "spectrum": [[-3, 48], [-1, 48], [4, 8], [6, 14], [8, 6], [13, 1], [15, 1]], "translation_cycle_length": 126, "vertices": 126}
+family_formula_check {"cases": 50, "odd_b_max": 101, "odd_b_min": 3, "orbit_formula_each": 8, "orbit_formula_is_not_exhaustively_enumerated_here": true, "subset_sum_count_each": 7}
+extension_subset_sum_check {"gap_formula": 1, "orbit_formula": 8, "sizes": [2, 3, 5], "spectral_values": 7}
+extension_subset_sum_check {"gap_formula": 2, "orbit_formula": 16, "sizes": [2, 3, 5, 11], "spectral_values": 14}
+extension_subset_sum_check {"gap_formula": 4, "orbit_formula": 32, "sizes": [2, 3, 5, 11, 23], "spectral_values": 28}
+extension_subset_sum_check {"gap_formula": 8, "orbit_formula": 64, "sizes": [2, 3, 5, 11, 23, 47], "spectral_values": 56}
+extension_subset_sum_check {"gap_formula": 16, "orbit_formula": 128, "sizes": [2, 3, 5, 11, 23, 47, 97], "spectral_values": 112}
+ALL_CHECKS_OK
