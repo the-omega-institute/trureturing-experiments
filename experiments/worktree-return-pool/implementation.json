@@ -1,0 +1,7 @@
+{
+  "before_measured_phases": true,
+  "sha256": {
+    "tools/scripts/worktree/worktree_pool.py": "78bb7e44b3d0ec7bb39a2d62b385544bed311df71f9b4009d593d847a62a0e2b",
+    "tools/StrataLint.Cli/bin/Release/net10.0/StrataLint.dll": "1ebea679b125688aa454d6867e1c4ac3e35d1aa5a65323bf58ae614f1f45dac0"
+  }
+}

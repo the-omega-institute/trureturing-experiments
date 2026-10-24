@@ -1,0 +1,557 @@
+{
+  "implementation_commit": "cdd00a3027193c2dc07579ae4d412b04718cddb5",
+  "module": "D5.S0.Carrier.TraceConjugation",
+  "phases": [
+    {
+      "command": [
+        "dotnet",
+        "/Users/auric/trureturing-219aba10-21130/tools/StrataLint.Cli/bin/Release/net10.0/StrataLint.dll",
+        "worktree",
+        "return",
+        "--pr",
+        "21147",
+        "--writers-joined"
+      ],
+      "cwd": "/Users/auric/trureturing-219aba10-21131",
+      "exit_code": 0,
+      "wall_seconds": 21.888621375001094,
+      "stdout": "{\"event\": \"worktree_return\", \"status\": \"returned\", \"path\": \"/Users/auric/trureturing-219aba10-21131\", \"dev_commit\": \"f4d22f1ce7e3446438f833b207e0cc55cf314359\", \"task_branch\": \"refs/heads/lane/governance/wt-routing-21131\", \"idle_branch\": \"refs/heads/lane/governance/idle-8b01061c5eeb42cdaac6a31c8062ce72\", \"checkpoint\": {\"event\": \"worktree_checkpoint\", \"status\": \"unchanged\", \"commit\": \"fff23e51861ff10d2f991e911056ad6971361896\", \"parent\": \"fff23e51861ff10d2f991e911056ad6971361896\", \"branch\": \"refs/heads/lane/governance/wt-routing-21131\"}, \"commits_not_in_dev\": [], \"remote\": {\"remote\": \"origin\", \"endpoint\": \"https://github.com/the-omega-institute/trureturing.git\", \"branch\": \"dev\", \"required_commit\": \"c3d2a49550da2996670f5aa591026a38a4ccccfa\", \"observed_tip\": \"f4d22f1ce7e3446438f833b207e0cc55cf314359\", \"relation\": \"ancestor\"}, \"pool\": {\"event\": \"worktree_pool\", \"capacity\": 4, \"items\": [{\"path\": \"/Users/auric/trureturing-219aba10-21131\", \"branch\": \"refs/heads/lane/governance/idle-8b01061c5eeb42cdaac6a31c8062ce72\", \"head\": \"f4d22f1ce7e3446438f833b207e0cc55cf314359\", \"created\": 1792877006, \"outcome\": \"retained\", \"reason\": \"idle_pool\"}]}}\n",
+      "stderr": "",
+      "name": "return",
+      "files_created": 555,
+      "files_removed": 522,
+      "files_modified": 29,
+      "olean_files_written": 0,
+      "disk_before": {
+        "df_k": "Filesystem   1024-blocks      Used Available Capacity  iused      ifree %iused  Mounted on\n/dev/disk3s5   971350180 540003692 411826024    57% 48774052 4118260240    1%   /System/Volumes/Data",
+        "available_kib": 411826024
+      },
+      "disk_after": {
+        "df_k": "Filesystem   1024-blocks      Used Available Capacity  iused      ifree %iused  Mounted on\n/dev/disk3s5   971350180 540289700 411540016    57% 48802170 4115400160    1%   /System/Volumes/Data",
+        "available_kib": 411540016
+      },
+      "available_kib_delta": -286008,
+      "built_lines": 0,
+      "cache_receipts": []
+    },
+    {
+      "command": [
+        "make",
+        "lean-cache-ensure"
+      ],
+      "cwd": "/Users/auric/trureturing-219aba10-21131",
+      "exit_code": 0,
+      "wall_seconds": 4.995301625000138,
+      "stdout": "LEAN_CACHE {\"status\":\"present\",\"worktree\":\"/Users/auric/trureturing-219aba10-21131\",\"donor\":null,\"method\":\"none\",\"reason\":null,\"stamp_miss\":null,\"pin_sha256\":\"sha256:6e263543ee0c576b796667fc05a69ec232d3f1236a2ab6a8be8e3e1976459fb8\",\"clonefile_errno\":null,\"clonefile_errnos\":[],\"clonefile_attempts\":0,\"clonefile_cleanup_error\":null,\"mathlib_missing_olean_files\":0,\"mathlib_missing_olean_samples\":[],\"archive_status\":\"not_attempted\",\"archive_mode\":null,\"archive_skip_reason\":\"linked worktree: release archive disabled\",\"archive_reason\":null,\"archive_producer_commit_sha\":null,\"archive_workflow_run_id\":null,\"mathlib_olean_state\":\"warm\",\"mathlib_olean_probe_error\":null,\"project_olean_state\":\"warm\",\"project_olean_probe_error\":null}\n",
+      "stderr": "",
+      "name": "reused-cache-door",
+      "files_created": 0,
+      "files_removed": 0,
+      "files_modified": 26,
+      "olean_files_written": 0,
+      "disk_before": {
+        "df_k": "Filesystem   1024-blocks      Used Available Capacity  iused      ifree %iused  Mounted on\n/dev/disk3s5   971350180 543667320 408162396    58% 49465166 4081623960    1%   /System/Volumes/Data",
+        "available_kib": 408162396
+      },
+      "disk_after": {
+        "df_k": "Filesystem   1024-blocks      Used Available Capacity  iused      ifree %iused  Mounted on\n/dev/disk3s5   971350180 543965232 407864484    58% 49481697 4078644840    1%   /System/Volumes/Data",
+        "available_kib": 407864484
+      },
+      "available_kib_delta": -297912,
+      "built_lines": 0,
+      "cache_receipts": [
+        "LEAN_CACHE {\"status\":\"present\",\"worktree\":\"/Users/auric/trureturing-219aba10-21131\",\"donor\":null,\"method\":\"none\",\"reason\":null,\"stamp_miss\":null,\"pin_sha256\":\"sha256:6e263543ee0c576b796667fc05a69ec232d3f1236a2ab6a8be8e3e1976459fb8\",\"clonefile_errno\":null,\"clonefile_errnos\":[],\"clonefile_attempts\":0,\"clonefile_cleanup_error\":null,\"mathlib_missing_olean_files\":0,\"mathlib_missing_olean_samples\":[],\"archive_status\":\"not_attempted\",\"archive_mode\":null,\"archive_skip_reason\":\"linked worktree: release archive disabled\",\"archive_reason\":null,\"archive_producer_commit_sha\":null,\"archive_workflow_run_id\":null,\"mathlib_olean_state\":\"warm\",\"mathlib_olean_probe_error\":null,\"project_olean_state\":\"warm\",\"project_olean_probe_error\":null}"
+      ]
+    },
+    {
+      "command": [
+        "make",
+        "lean",
+        "LEAN_TARGETS=D5.S0.Carrier.TraceConjugation"
+      ],
+      "cwd": "/Users/auric/trureturing-219aba10-21131",
+      "exit_code": 0,
+      "wall_seconds": 224.11296266600039,
+      "stdout": "LEAN_CACHE {\"status\":\"present\",\"worktree\":\"/Users/auric/trureturing-219aba10-21131\",\"donor\":null,\"method\":\"none\",\"reason\":null,\"stamp_miss\":null,\"pin_sha256\":\"sha256:6e263543ee0c576b796667fc05a69ec232d3f1236a2ab6a8be8e3e1976459fb8\",\"clonefile_errno\":null,\"clonefile_errnos\":[],\"clonefile_attempts\":0,\"clonefile_cleanup_error\":null,\"mathlib_missing_olean_files\":0,\"mathlib_missing_olean_samples\":[],\"archive_status\":\"not_attempted\",\"archive_mode\":null,\"archive_skip_reason\":\"linked worktree: release archive disabled\",\"archive_reason\":null,\"archive_producer_commit_sha\":null,\"archive_workflow_run_id\":null,\"mathlib_olean_state\":\"warm\",\"mathlib_olean_probe_error\":null,\"project_olean_state\":\"warm\",\"project_olean_probe_error\":null}\nBuild completed successfully (1442 jobs).\n",
+      "stderr": "lean-cache-run: waiting for another Lean build to finish\n",
+      "name": "default-lock-reused-build",
+      "files_created": 0,
+      "files_removed": 0,
+      "files_modified": 0,
+      "olean_files_written": 0,
+      "disk_before": {
+        "df_k": "Filesystem   1024-blocks      Used Available Capacity  iused      ifree %iused  Mounted on\n/dev/disk3s5   971350180 544059620 407770096    58% 49539779 4077700960    1%   /System/Volumes/Data",
+        "available_kib": 407770096
+      },
+      "disk_after": {
+        "df_k": "Filesystem   1024-blocks      Used Available Capacity  iused      ifree %iused  Mounted on\n/dev/disk3s5   971350180 545784300 406045416    58% 50594726 4060454160    1%   /System/Volumes/Data",
+        "available_kib": 406045416
+      },
+      "available_kib_delta": -1724680,
+      "built_lines": 0,
+      "cache_receipts": [
+        "LEAN_CACHE {\"status\":\"present\",\"worktree\":\"/Users/auric/trureturing-219aba10-21131\",\"donor\":null,\"method\":\"none\",\"reason\":null,\"stamp_miss\":null,\"pin_sha256\":\"sha256:6e263543ee0c576b796667fc05a69ec232d3f1236a2ab6a8be8e3e1976459fb8\",\"clonefile_errno\":null,\"clonefile_errnos\":[],\"clonefile_attempts\":0,\"clonefile_cleanup_error\":null,\"mathlib_missing_olean_files\":0,\"mathlib_missing_olean_samples\":[],\"archive_status\":\"not_attempted\",\"archive_mode\":null,\"archive_skip_reason\":\"linked worktree: release archive disabled\",\"archive_reason\":null,\"archive_producer_commit_sha\":null,\"archive_workflow_run_id\":null,\"mathlib_olean_state\":\"warm\",\"mathlib_olean_probe_error\":null,\"project_olean_state\":\"warm\",\"project_olean_probe_error\":null}"
+      ]
+    },
+    {
+      "command": [
+        "dotnet",
+        "/Users/auric/trureturing-219aba10-21130/tools/StrataLint.Cli/bin/Release/net10.0/StrataLint.dll",
+        "worktree",
+        "remove",
+        "--names",
+        "trureturing-219aba10-21129"
+      ],
+      "cwd": "/Users/auric/trureturing-219aba10-21130",
+      "exit_code": 0,
+      "wall_seconds": 120.4931764590001,
+      "stdout": "{\"name\":\"trureturing-219aba10-21129\",\"path\":\"/Users/auric/trureturing-219aba10-21129\",\"outcome\":\"removed\",\"error\":null,\"recovery_branch\":\"refs/heads/lane/governance/benchmark-initial-fa495926ddf2\",\"recovery_branch_candidate\":null}\nWORKTREE_REMOVE_RESULT exit=0 removed=1 failed=0 refused=0\n",
+      "stderr": "",
+      "name": "remove",
+      "files_created": 0,
+      "files_removed": 665169,
+      "files_modified": 0,
+      "olean_files_written": 0,
+      "disk_before": {
+        "df_k": "Filesystem   1024-blocks      Used Available Capacity  iused      ifree %iused  Mounted on\n/dev/disk3s5   971350180 546515980 405313736    58% 50803497 4053137360    1%   /System/Volumes/Data",
+        "available_kib": 405313736
+      },
+      "disk_after": {
+        "df_k": "Filesystem   1024-blocks      Used Available Capacity  iused      ifree %iused  Mounted on\n/dev/disk3s5   971350180 544768524 407061192    58% 50256218 4070611920    1%   /System/Volumes/Data",
+        "available_kib": 407061192
+      },
+      "available_kib_delta": 1747456,
+      "built_lines": 0,
+      "cache_receipts": []
+    },
+    {
+      "command": [
+        "dotnet",
+        "/Users/auric/trureturing-219aba10-21130/tools/StrataLint.Cli/bin/Release/net10.0/StrataLint.dll",
+        "worktree",
+        "--kind",
+        "governance",
+        "--name",
+        "benchmark-recreated-fa495926ddf2",
+        "--path",
+        "/Users/auric/trureturing-219aba10-21129",
+        "--base",
+        "fff23e51861ff10d2f991e911056ad6971361896"
+      ],
+      "cwd": "/Users/auric/trureturing-219aba10-21130",
+      "exit_code": 0,
+      "wall_seconds": 67.17957029100035,
+      "stdout": "{\"event\":\"worktree_init\",\"status\":\"succeeded\",\"branch\":\"lane/governance/benchmark-recreated-fa495926ddf2\",\"path\":\"/Users/auric/trureturing-219aba10-21129\",\"base_revision\":\"fff23e51861ff10d2f991e911056ad6971361896\",\"pin_sha256\":\"sha256:6e263543ee0c576b796667fc05a69ec232d3f1236a2ab6a8be8e3e1976459fb8\",\"donor_behind_base\":0,\"donor_cache_pin\":\"absent\",\"halfbuilt_recovered\":false,\"dotnet_restore\":\"restored\"}\n",
+      "stderr": "WARNING donor /Users/auric/trureturing-219aba10-21130 has no Lean build cache.\n        Only the cache is affected; this worktree still branches from fff23e51861ff10d2f991e911056ad6971361896.\n        It will provision its own cache, which works and just costs more.\n        To warm the donor:  cd /Users/auric/trureturing-219aba10-21130 && git pull --ff-only && make lean\n",
+      "name": "create",
+      "files_created": 330747,
+      "files_removed": 0,
+      "files_modified": 0,
+      "olean_files_written": 0,
+      "disk_before": {
+        "df_k": "Filesystem   1024-blocks      Used Available Capacity  iused      ifree %iused  Mounted on\n/dev/disk3s5   971350180 544832776 406996940    58% 50519927 4069969400    1%   /System/Volumes/Data",
+        "available_kib": 406996940
+      },
+      "disk_after": {
+        "df_k": "Filesystem   1024-blocks      Used Available Capacity  iused      ifree %iused  Mounted on\n/dev/disk3s5   971350180 547909780 403919936    58% 51612555 4039199360    1%   /System/Volumes/Data",
+        "available_kib": 403919936
+      },
+      "available_kib_delta": -3077004,
+      "built_lines": 0,
+      "cache_receipts": []
+    },
+    {
+      "command": [
+        "make",
+        "lean-cache-ensure"
+      ],
+      "cwd": "/Users/auric/trureturing-219aba10-21129",
+      "exit_code": 0,
+      "wall_seconds": 42.03954395799883,
+      "stdout": "LEAN_CACHE {\"status\":\"seeded\",\"worktree\":\"/Users/auric/trureturing-219aba10-21129\",\"donor\":\"/Users/auric/trureturing\",\"method\":\"clonefile\",\"reason\":null,\"stamp_miss\":null,\"pin_sha256\":\"sha256:6e263543ee0c576b796667fc05a69ec232d3f1236a2ab6a8be8e3e1976459fb8\",\"clonefile_errno\":null,\"clonefile_errnos\":[],\"clonefile_attempts\":1,\"clonefile_cleanup_error\":null,\"mathlib_missing_olean_files\":0,\"mathlib_missing_olean_samples\":[],\"archive_status\":\"not_attempted\",\"archive_mode\":null,\"archive_skip_reason\":\"linked worktree: release archive disabled\",\"archive_reason\":null,\"archive_producer_commit_sha\":null,\"archive_workflow_run_id\":null,\"mathlib_olean_state\":\"warm\",\"mathlib_olean_probe_error\":null,\"project_olean_state\":\"warm\",\"project_olean_probe_error\":null}\n",
+      "stderr": "",
+      "name": "recreated-cache-door",
+      "files_created": 334422,
+      "files_removed": 0,
+      "files_modified": 15,
+      "olean_files_written": 21376,
+      "disk_before": {
+        "df_k": "Filesystem   1024-blocks      Used Available Capacity  iused      ifree %iused  Mounted on\n/dev/disk3s5   971350180 548342452 403487264    58% 51686749 4034872640    1%   /System/Volumes/Data",
+        "available_kib": 403487264
+      },
+      "disk_after": {
+        "df_k": "Filesystem   1024-blocks      Used Available Capacity  iused      ifree %iused  Mounted on\n/dev/disk3s5   971350180 549885260 401944456    58% 52565617 4019444560    1%   /System/Volumes/Data",
+        "available_kib": 401944456
+      },
+      "available_kib_delta": -1542808,
+      "built_lines": 0,
+      "cache_receipts": [
+        "LEAN_CACHE {\"status\":\"seeded\",\"worktree\":\"/Users/auric/trureturing-219aba10-21129\",\"donor\":\"/Users/auric/trureturing\",\"method\":\"clonefile\",\"reason\":null,\"stamp_miss\":null,\"pin_sha256\":\"sha256:6e263543ee0c576b796667fc05a69ec232d3f1236a2ab6a8be8e3e1976459fb8\",\"clonefile_errno\":null,\"clonefile_errnos\":[],\"clonefile_attempts\":1,\"clonefile_cleanup_error\":null,\"mathlib_missing_olean_files\":0,\"mathlib_missing_olean_samples\":[],\"archive_status\":\"not_attempted\",\"archive_mode\":null,\"archive_skip_reason\":\"linked worktree: release archive disabled\",\"archive_reason\":null,\"archive_producer_commit_sha\":null,\"archive_workflow_run_id\":null,\"mathlib_olean_state\":\"warm\",\"mathlib_olean_probe_error\":null,\"project_olean_state\":\"warm\",\"project_olean_probe_error\":null}"
+      ]
+    },
+    {
+      "command": [
+        "make",
+        "lean",
+        "LEAN_TARGETS=D5.S0.Carrier.TraceConjugation"
+      ],
+      "cwd": "/Users/auric/trureturing-219aba10-21129",
+      "exit_code": 2,
+      "wall_seconds": 469.5092167920011,
+      "stdout": "",
+      "stderr": "lean-cache-run: waiting for another Lean build to finish\nmake: *** [lean] Error 130\n",
+      "name": "default-lock-recreated-build",
+      "files_created": 0,
+      "files_removed": 0,
+      "files_modified": 0,
+      "olean_files_written": 0,
+      "disk_before": {
+        "df_k": "Filesystem   1024-blocks      Used Available Capacity  iused      ifree %iused  Mounted on\n/dev/disk3s5   971350180 549883832 401945884    58% 52591280 4019458840    1%   /System/Volumes/Data",
+        "available_kib": 401945884
+      },
+      "disk_after": {
+        "df_k": "Filesystem   1024-blocks      Used Available Capacity  iused      ifree %iused  Mounted on\n/dev/disk3s5   971350180 559808752 392020964    59% 57156216 3920209640    1%   /System/Volumes/Data",
+        "available_kib": 392020964
+      },
+      "available_kib_delta": -9924920,
+      "built_lines": 0,
+      "cache_receipts": []
+    },
+    {
+      "command": [
+        "make",
+        "lean",
+        "LEAN_TARGETS=D5.S0.Carrier.TraceConjugation",
+        "LEAN_SKIP_LOCK=1"
+      ],
+      "cwd": "/Users/auric/trureturing-219aba10-21131",
+      "exit_code": 0,
+      "wall_seconds": 11.238864082999498,
+      "stdout": "LEAN_CACHE {\"status\":\"present\",\"worktree\":\"/Users/auric/trureturing-219aba10-21131\",\"donor\":null,\"method\":\"none\",\"reason\":null,\"stamp_miss\":null,\"pin_sha256\":\"sha256:6e263543ee0c576b796667fc05a69ec232d3f1236a2ab6a8be8e3e1976459fb8\",\"clonefile_errno\":null,\"clonefile_errnos\":[],\"clonefile_attempts\":0,\"clonefile_cleanup_error\":null,\"mathlib_missing_olean_files\":0,\"mathlib_missing_olean_samples\":[],\"archive_status\":\"not_attempted\",\"archive_mode\":null,\"archive_skip_reason\":\"linked worktree: release archive disabled\",\"archive_reason\":null,\"archive_producer_commit_sha\":null,\"archive_workflow_run_id\":null,\"mathlib_olean_state\":\"warm\",\"mathlib_olean_probe_error\":null,\"project_olean_state\":\"warm\",\"project_olean_probe_error\":null}\nBuild completed successfully (1442 jobs).\n",
+      "stderr": "",
+      "name": "reused-build",
+      "files_created": 0,
+      "files_removed": 0,
+      "files_modified": 0,
+      "olean_files_written": 0,
+      "disk_before": {
+        "df_k": "Filesystem   1024-blocks      Used Available Capacity  iused      ifree %iused  Mounted on\n/dev/disk3s5   971350180 562504708 389325008    60% 57380684 3893250080    1%   /System/Volumes/Data",
+        "available_kib": 389325008
+      },
+      "disk_after": {
+        "df_k": "Filesystem   1024-blocks      Used Available Capacity  iused      ifree %iused  Mounted on\n/dev/disk3s5   971350180 562545384 389284332    60% 57473507 3892843320    1%   /System/Volumes/Data",
+        "available_kib": 389284332
+      },
+      "available_kib_delta": -40676,
+      "built_lines": 0,
+      "cache_receipts": [
+        "LEAN_CACHE {\"status\":\"present\",\"worktree\":\"/Users/auric/trureturing-219aba10-21131\",\"donor\":null,\"method\":\"none\",\"reason\":null,\"stamp_miss\":null,\"pin_sha256\":\"sha256:6e263543ee0c576b796667fc05a69ec232d3f1236a2ab6a8be8e3e1976459fb8\",\"clonefile_errno\":null,\"clonefile_errnos\":[],\"clonefile_attempts\":0,\"clonefile_cleanup_error\":null,\"mathlib_missing_olean_files\":0,\"mathlib_missing_olean_samples\":[],\"archive_status\":\"not_attempted\",\"archive_mode\":null,\"archive_skip_reason\":\"linked worktree: release archive disabled\",\"archive_reason\":null,\"archive_producer_commit_sha\":null,\"archive_workflow_run_id\":null,\"mathlib_olean_state\":\"warm\",\"mathlib_olean_probe_error\":null,\"project_olean_state\":\"warm\",\"project_olean_probe_error\":null}"
+      ]
+    },
+    {
+      "command": [
+        "make",
+        "lean",
+        "LEAN_TARGETS=D5.S0.Carrier.TraceConjugation",
+        "LEAN_SKIP_LOCK=1"
+      ],
+      "cwd": "/Users/auric/trureturing-219aba10-21129",
+      "exit_code": 0,
+      "wall_seconds": 9.627987166000821,
+      "stdout": "LEAN_CACHE {\"status\":\"present\",\"worktree\":\"/Users/auric/trureturing-219aba10-21129\",\"donor\":null,\"method\":\"none\",\"reason\":null,\"stamp_miss\":null,\"pin_sha256\":\"sha256:6e263543ee0c576b796667fc05a69ec232d3f1236a2ab6a8be8e3e1976459fb8\",\"clonefile_errno\":null,\"clonefile_errnos\":[],\"clonefile_attempts\":0,\"clonefile_cleanup_error\":null,\"mathlib_missing_olean_files\":0,\"mathlib_missing_olean_samples\":[],\"archive_status\":\"not_attempted\",\"archive_mode\":null,\"archive_skip_reason\":\"linked worktree: release archive disabled\",\"archive_reason\":null,\"archive_producer_commit_sha\":null,\"archive_workflow_run_id\":null,\"mathlib_olean_state\":\"warm\",\"mathlib_olean_probe_error\":null,\"project_olean_state\":\"warm\",\"project_olean_probe_error\":null}\nBuild completed successfully (1442 jobs).\n",
+      "stderr": "",
+      "name": "recreated-build",
+      "files_created": 0,
+      "files_removed": 0,
+      "files_modified": 0,
+      "olean_files_written": 0,
+      "disk_before": {
+        "df_k": "Filesystem   1024-blocks      Used Available Capacity  iused      ifree %iused  Mounted on\n/dev/disk3s5   971350180 562601468 389228248    60% 57724574 3892282480    1%   /System/Volumes/Data",
+        "available_kib": 389228248
+      },
+      "disk_after": {
+        "df_k": "Filesystem   1024-blocks      Used Available Capacity  iused      ifree %iused  Mounted on\n/dev/disk3s5   971350180 562600844 389228872    60% 57724606 3892288720    1%   /System/Volumes/Data",
+        "available_kib": 389228872
+      },
+      "available_kib_delta": 624,
+      "built_lines": 0,
+      "cache_receipts": [
+        "LEAN_CACHE {\"status\":\"present\",\"worktree\":\"/Users/auric/trureturing-219aba10-21129\",\"donor\":null,\"method\":\"none\",\"reason\":null,\"stamp_miss\":null,\"pin_sha256\":\"sha256:6e263543ee0c576b796667fc05a69ec232d3f1236a2ab6a8be8e3e1976459fb8\",\"clonefile_errno\":null,\"clonefile_errnos\":[],\"clonefile_attempts\":0,\"clonefile_cleanup_error\":null,\"mathlib_missing_olean_files\":0,\"mathlib_missing_olean_samples\":[],\"archive_status\":\"not_attempted\",\"archive_mode\":null,\"archive_skip_reason\":\"linked worktree: release archive disabled\",\"archive_reason\":null,\"archive_producer_commit_sha\":null,\"archive_workflow_run_id\":null,\"mathlib_olean_state\":\"warm\",\"mathlib_olean_probe_error\":null,\"project_olean_state\":\"warm\",\"project_olean_probe_error\":null}"
+      ]
+    }
+  ],
+  "preparation": [
+    {
+      "command": [
+        "dotnet",
+        "/Users/auric/trureturing-219aba10-21130/tools/StrataLint.Cli/bin/Release/net10.0/StrataLint.dll",
+        "worktree",
+        "remove",
+        "--names",
+        "trureturing-219aba10-21129"
+      ],
+      "cwd": "/Users/auric/trureturing-219aba10-21130",
+      "exit_code": 0,
+      "wall_seconds": 66.49441812499936,
+      "stdout": "{\"name\":\"trureturing-219aba10-21129\",\"path\":\"/Users/auric/trureturing-219aba10-21129\",\"outcome\":\"removed\",\"error\":null,\"recovery_branch\":\"refs/heads/lane/governance/wt-commit-age-21129\",\"recovery_branch_candidate\":null}\nWORKTREE_REMOVE_RESULT exit=0 removed=1 failed=0 refused=0\n",
+      "stderr": "",
+      "name": "normalize-remove",
+      "files_created": 0,
+      "files_removed": 337456,
+      "files_modified": 0,
+      "olean_files_written": 0,
+      "disk_before": {
+        "df_k": "Filesystem   1024-blocks      Used Available Capacity  iused      ifree %iused  Mounted on\n/dev/disk3s5   971350180 534398236 417431480    57% 46217684 4174314800    1%   /System/Volumes/Data",
+        "available_kib": 417431480
+      },
+      "disk_after": {
+        "df_k": "Filesystem   1024-blocks      Used Available Capacity  iused      ifree %iused  Mounted on\n/dev/disk3s5   971350180 532289936 419539780    56% 45874544 4195397800    1%   /System/Volumes/Data",
+        "available_kib": 419539780
+      },
+      "available_kib_delta": 2108300,
+      "built_lines": 0,
+      "cache_receipts": []
+    },
+    {
+      "command": [
+        "dotnet",
+        "/Users/auric/trureturing-219aba10-21130/tools/StrataLint.Cli/bin/Release/net10.0/StrataLint.dll",
+        "worktree",
+        "--kind",
+        "governance",
+        "--name",
+        "benchmark-initial-fa495926ddf2",
+        "--path",
+        "/Users/auric/trureturing-219aba10-21129",
+        "--base",
+        "fff23e51861ff10d2f991e911056ad6971361896"
+      ],
+      "cwd": "/Users/auric/trureturing-219aba10-21130",
+      "exit_code": 0,
+      "wall_seconds": 194.26712254099948,
+      "stdout": "{\"event\":\"worktree_init\",\"status\":\"succeeded\",\"branch\":\"lane/governance/benchmark-initial-fa495926ddf2\",\"path\":\"/Users/auric/trureturing-219aba10-21129\",\"base_revision\":\"fff23e51861ff10d2f991e911056ad6971361896\",\"pin_sha256\":\"sha256:6e263543ee0c576b796667fc05a69ec232d3f1236a2ab6a8be8e3e1976459fb8\",\"donor_behind_base\":0,\"donor_cache_pin\":\"absent\",\"halfbuilt_recovered\":false,\"dotnet_restore\":\"restored\"}\n",
+      "stderr": "WARNING donor /Users/auric/trureturing-219aba10-21130 has no Lean build cache.\n        Only the cache is affected; this worktree still branches from fff23e51861ff10d2f991e911056ad6971361896.\n        It will provision its own cache, which works and just costs more.\n        To warm the donor:  cd /Users/auric/trureturing-219aba10-21130 && git pull --ff-only && make lean\n",
+      "name": "normalize-create",
+      "files_created": 330747,
+      "files_removed": 0,
+      "files_modified": 0,
+      "olean_files_written": 0,
+      "disk_before": {
+        "df_k": "Filesystem   1024-blocks      Used Available Capacity  iused      ifree %iused  Mounted on\n/dev/disk3s5   971350180 532289944 419539772    56% 45874548 4195397720    1%   /System/Volumes/Data",
+        "available_kib": 419539772
+      },
+      "disk_after": {
+        "df_k": "Filesystem   1024-blocks      Used Available Capacity  iused      ifree %iused  Mounted on\n/dev/disk3s5   971350180 536220916 415608800    57% 46589896 4156088000    1%   /System/Volumes/Data",
+        "available_kib": 415608800
+      },
+      "available_kib_delta": -3930972,
+      "built_lines": 0,
+      "cache_receipts": []
+    },
+    {
+      "command": [
+        "make",
+        "lean-cache-ensure"
+      ],
+      "cwd": "/Users/auric/trureturing-219aba10-21131",
+      "exit_code": 0,
+      "wall_seconds": 18.187200540998674,
+      "stdout": "LEAN_CACHE {\"status\":\"seeded\",\"worktree\":\"/Users/auric/trureturing-219aba10-21131\",\"donor\":\"/Users/auric/trureturing\",\"method\":\"clonefile\",\"reason\":null,\"stamp_miss\":null,\"pin_sha256\":\"sha256:6e263543ee0c576b796667fc05a69ec232d3f1236a2ab6a8be8e3e1976459fb8\",\"clonefile_errno\":null,\"clonefile_errnos\":[],\"clonefile_attempts\":1,\"clonefile_cleanup_error\":null,\"mathlib_missing_olean_files\":0,\"mathlib_missing_olean_samples\":[],\"archive_status\":\"not_attempted\",\"archive_mode\":null,\"archive_skip_reason\":\"linked worktree: release archive disabled\",\"archive_reason\":null,\"archive_producer_commit_sha\":null,\"archive_workflow_run_id\":null,\"mathlib_olean_state\":\"warm\",\"mathlib_olean_probe_error\":null,\"project_olean_state\":\"warm\",\"project_olean_probe_error\":null}\n",
+      "stderr": "",
+      "name": "initial-cache-reuse",
+      "files_created": 334292,
+      "files_removed": 0,
+      "files_modified": 26,
+      "olean_files_written": 21376,
+      "disk_before": {
+        "df_k": "Filesystem   1024-blocks      Used Available Capacity  iused      ifree %iused  Mounted on\n/dev/disk3s5   971350180 536698680 415131036    57% 46638136 4151310360    1%   /System/Volumes/Data",
+        "available_kib": 415131036
+      },
+      "disk_after": {
+        "df_k": "Filesystem   1024-blocks      Used Available Capacity  iused      ifree %iused  Mounted on\n/dev/disk3s5   971350180 537133496 414696220    57% 47132076 4146962200    1%   /System/Volumes/Data",
+        "available_kib": 414696220
+      },
+      "available_kib_delta": -434816,
+      "built_lines": 0,
+      "cache_receipts": [
+        "LEAN_CACHE {\"status\":\"seeded\",\"worktree\":\"/Users/auric/trureturing-219aba10-21131\",\"donor\":\"/Users/auric/trureturing\",\"method\":\"clonefile\",\"reason\":null,\"stamp_miss\":null,\"pin_sha256\":\"sha256:6e263543ee0c576b796667fc05a69ec232d3f1236a2ab6a8be8e3e1976459fb8\",\"clonefile_errno\":null,\"clonefile_errnos\":[],\"clonefile_attempts\":1,\"clonefile_cleanup_error\":null,\"mathlib_missing_olean_files\":0,\"mathlib_missing_olean_samples\":[],\"archive_status\":\"not_attempted\",\"archive_mode\":null,\"archive_skip_reason\":\"linked worktree: release archive disabled\",\"archive_reason\":null,\"archive_producer_commit_sha\":null,\"archive_workflow_run_id\":null,\"mathlib_olean_state\":\"warm\",\"mathlib_olean_probe_error\":null,\"project_olean_state\":\"warm\",\"project_olean_probe_error\":null}"
+      ]
+    },
+    {
+      "command": [
+        "make",
+        "lean-cache-ensure"
+      ],
+      "cwd": "/Users/auric/trureturing-219aba10-21129",
+      "exit_code": 0,
+      "wall_seconds": 26.70933795900055,
+      "stdout": "LEAN_CACHE {\"status\":\"seeded\",\"worktree\":\"/Users/auric/trureturing-219aba10-21129\",\"donor\":\"/Users/auric/trureturing\",\"method\":\"clonefile\",\"reason\":null,\"stamp_miss\":null,\"pin_sha256\":\"sha256:6e263543ee0c576b796667fc05a69ec232d3f1236a2ab6a8be8e3e1976459fb8\",\"clonefile_errno\":null,\"clonefile_errnos\":[],\"clonefile_attempts\":1,\"clonefile_cleanup_error\":null,\"mathlib_missing_olean_files\":0,\"mathlib_missing_olean_samples\":[],\"archive_status\":\"not_attempted\",\"archive_mode\":null,\"archive_skip_reason\":\"linked worktree: release archive disabled\",\"archive_reason\":null,\"archive_producer_commit_sha\":null,\"archive_workflow_run_id\":null,\"mathlib_olean_state\":\"warm\",\"mathlib_olean_probe_error\":null,\"project_olean_state\":\"warm\",\"project_olean_probe_error\":null}\n",
+      "stderr": "",
+      "name": "initial-cache-recreate",
+      "files_created": 334422,
+      "files_removed": 0,
+      "files_modified": 15,
+      "olean_files_written": 21376,
+      "disk_before": {
+        "df_k": "Filesystem   1024-blocks      Used Available Capacity  iused      ifree %iused  Mounted on\n/dev/disk3s5   971350180 538157464 413672252    57% 47521919 4136722520    1%   /System/Volumes/Data",
+        "available_kib": 413672252
+      },
+      "disk_after": {
+        "df_k": "Filesystem   1024-blocks      Used Available Capacity  iused      ifree %iused  Mounted on\n/dev/disk3s5   971350180 539836648 411993068    57% 48425933 4119930680    1%   /System/Volumes/Data",
+        "available_kib": 411993068
+      },
+      "available_kib_delta": -1679184,
+      "built_lines": 0,
+      "cache_receipts": [
+        "LEAN_CACHE {\"status\":\"seeded\",\"worktree\":\"/Users/auric/trureturing-219aba10-21129\",\"donor\":\"/Users/auric/trureturing\",\"method\":\"clonefile\",\"reason\":null,\"stamp_miss\":null,\"pin_sha256\":\"sha256:6e263543ee0c576b796667fc05a69ec232d3f1236a2ab6a8be8e3e1976459fb8\",\"clonefile_errno\":null,\"clonefile_errnos\":[],\"clonefile_attempts\":1,\"clonefile_cleanup_error\":null,\"mathlib_missing_olean_files\":0,\"mathlib_missing_olean_samples\":[],\"archive_status\":\"not_attempted\",\"archive_mode\":null,\"archive_skip_reason\":\"linked worktree: release archive disabled\",\"archive_reason\":null,\"archive_producer_commit_sha\":null,\"archive_workflow_run_id\":null,\"mathlib_olean_state\":\"warm\",\"mathlib_olean_probe_error\":null,\"project_olean_state\":\"warm\",\"project_olean_probe_error\":null}"
+      ]
+    },
+    {
+      "command": [
+        "dotnet",
+        "/Users/auric/trureturing-219aba10-21130/tools/StrataLint.Cli/bin/Release/net10.0/StrataLint.dll",
+        "worktree",
+        "remove",
+        "--names",
+        "trureturing-219aba10-21131 trureturing-219aba10-21129"
+      ],
+      "cwd": "/Users/auric/trureturing-219aba10-21130",
+      "exit_code": 0,
+      "wall_seconds": 196.7744747910001,
+      "stdout": "{\"name\":\"trureturing-219aba10-21131\",\"path\":\"/Users/auric/trureturing-219aba10-21131\",\"outcome\":\"removed\",\"error\":null,\"recovery_branch\":\"refs/heads/lane/governance/benchmark-claim-fa495926ddf2-1\",\"recovery_branch_candidate\":null}\n{\"name\":\"trureturing-219aba10-21129\",\"path\":\"/Users/auric/trureturing-219aba10-21129\",\"outcome\":\"removed\",\"error\":null,\"recovery_branch\":\"refs/heads/lane/governance/benchmark-recreated-fa495926ddf2\",\"recovery_branch_candidate\":null}\nWORKTREE_REMOVE_RESULT exit=0 removed=2 failed=0 refused=0\n",
+      "stderr": "",
+      "name": "cleanup-subjects",
+      "files_created": 0,
+      "files_removed": 671741,
+      "files_modified": 0,
+      "olean_files_written": 0,
+      "disk_before": {
+        "df_k": "Filesystem   1024-blocks      Used Available Capacity  iused      ifree %iused  Mounted on\n/dev/disk3s5   971350180 562615228 389214488    60% 57725929 3892144880    1%   /System/Volumes/Data",
+        "available_kib": 389214488
+      },
+      "disk_after": {
+        "df_k": "Filesystem   1024-blocks      Used Available Capacity  iused      ifree %iused  Mounted on\n/dev/disk3s5   971350180 557984416 393845300    59% 56360171 3938453000    1%   /System/Volumes/Data",
+        "available_kib": 393845300
+      },
+      "available_kib_delta": 4630812,
+      "built_lines": 0,
+      "cache_receipts": []
+    }
+  ],
+  "timestamp_unix": 1792876201,
+  "subjects": [
+    {
+      "path": "/Users/auric/trureturing-219aba10-21131",
+      "branch": "lane/governance/wt-routing-21131",
+      "pr": {
+        "baseRefName": "dev",
+        "headRefName": "lane/governance/wt-routing-21131",
+        "headRefOid": "fff23e51861ff10d2f991e911056ad6971361896",
+        "mergeCommit": {
+          "oid": "c3d2a49550da2996670f5aa591026a38a4ccccfa"
+        },
+        "state": "MERGED"
+      }
+    },
+    {
+      "path": "/Users/auric/trureturing-219aba10-21129",
+      "branch": "lane/governance/wt-commit-age-21129",
+      "pr": {
+        "baseRefName": "dev",
+        "headRefName": "lane/governance/wt-commit-age-21129",
+        "headRefOid": "d537c99d19cc0a5418e67c691769fca9335193db",
+        "mergeCommit": {
+          "oid": "6295ccedd82b7ebc5599a9a7ce5559b2fefbce75"
+        },
+        "state": "MERGED"
+      }
+    }
+  ],
+  "source_commit": "fff23e51861ff10d2f991e911056ad6971361896",
+  "requested_base": "fff23e51861ff10d2f991e911056ad6971361896",
+  "toolchain": "leanprover/lean4:v4.35.0\n",
+  "manifest_sha256": "8550e44937f85a9be196a2917a075eeb8c22bf6c15baa83e72017c6fc4437a8e",
+  "same_condition": {
+    "heads": [
+      "fff23e51861ff10d2f991e911056ad6971361896",
+      "fff23e51861ff10d2f991e911056ad6971361896"
+    ],
+    "toolchains_equal": true,
+    "manifests_equal": true,
+    "cache_files": [
+      334292,
+      334292
+    ]
+  },
+  "concurrent_claim": {
+    "attempts": [
+      {
+        "command": [
+          "dotnet",
+          "/Users/auric/trureturing-219aba10-21130/tools/StrataLint.Cli/bin/Release/net10.0/StrataLint.dll",
+          "worktree",
+          "--kind",
+          "governance",
+          "--name",
+          "benchmark-claim-fa495926ddf2-0",
+          "--path",
+          "/Users/auric/trureturing-219aba10-21131",
+          "--base",
+          "fff23e51861ff10d2f991e911056ad6971361896"
+        ],
+        "cwd": "/Users/auric/trureturing-219aba10-21130",
+        "exit_code": 73,
+        "wall_seconds": 0.5058289169992349,
+        "stdout": "",
+        "stderr": "WORKTREE_RETAINED busy_scope:operation:idle-pool\n"
+      },
+      {
+        "command": [
+          "dotnet",
+          "/Users/auric/trureturing-219aba10-21130/tools/StrataLint.Cli/bin/Release/net10.0/StrataLint.dll",
+          "worktree",
+          "--kind",
+          "governance",
+          "--name",
+          "benchmark-claim-fa495926ddf2-1",
+          "--path",
+          "/Users/auric/trureturing-219aba10-21131",
+          "--base",
+          "fff23e51861ff10d2f991e911056ad6971361896"
+        ],
+        "cwd": "/Users/auric/trureturing-219aba10-21130",
+        "exit_code": 0,
+        "wall_seconds": 12.295371083000646,
+        "stdout": "{\"event\": \"worktree_init\", \"status\": \"claimed\", \"path\": \"/Users/auric/trureturing-219aba10-21131\", \"branch\": \"lane/governance/benchmark-claim-fa495926ddf2-1\", \"base_revision\": \"fff23e51861ff10d2f991e911056ad6971361896\", \"allocation_time\": 1792877109, \"dotnet_restore\": \"restored\"}\n",
+        "stderr": ""
+      }
+    ],
+    "successes": 1,
+    "files_created": 522,
+    "files_removed": 555,
+    "files_modified": 44,
+    "olean_files_written": 0,
+    "disk_before": {
+      "df_k": "Filesystem   1024-blocks      Used Available Capacity  iused      ifree %iused  Mounted on\n/dev/disk3s5   971350180 541105444 410724272    57% 48889721 4107242720    1%   /System/Volumes/Data",
+      "available_kib": 410724272
+    },
+    "disk_after": {
+      "df_k": "Filesystem   1024-blocks      Used Available Capacity  iused      ifree %iused  Mounted on\n/dev/disk3s5   971350180 541947208 409882508    57% 48948346 4098825080    1%   /System/Volumes/Data",
+      "available_kib": 409882508
+    },
+    "available_kib_delta": -841764
+  },
+  "build_options": [
+    "LEAN_SKIP_LOCK=1"
+  ],
+  "final_heads": [
+    "fff23e51861ff10d2f991e911056ad6971361896",
+    "fff23e51861ff10d2f991e911056ad6971361896"
+  ],
+  "interpretation": {
+    "built_line_scope": "Observed stdout count; canonical Lean door suppresses info-level Built messages.",
+    "file_scope": "Entries under the subject, including ignored caches; Git directories and metadata outside the tree excluded. Modified means size/mtime/inode changed.",
+    "disk_scope": "df available-space delta on the shared filesystem; concurrent host activity can contribute.",
+    "sample_scope": "One pair and one concurrent exact-path claim trial, not a population timing estimate."
+  }
+}
