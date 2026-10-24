@@ -11,6 +11,7 @@ Requires Python 3 with mpmath. Run from this directory:
     python3 turanian_scan.py 0.01 7 10
     python3 turanian_scan.py 0.5 6 11
     python3 turanian_scan.py 1 7 11
+    python3 two_block_scan.py
 
 The kernel-checked result (delta_1 < 0 for p = 0, b = (1/2)^q, mu = 1,
 alpha = beta = 1/2 and every q >= 6) lives in the main repository at
