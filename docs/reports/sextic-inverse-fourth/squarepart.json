@@ -1,0 +1,332 @@
+{
+  "arithmetic": "existing exact Eisenstein factorization and sextic labels; integer flat traces, normalization denominator U",
+  "bump_profile": "same fixed smooth bump as moment.py; binary64, no interval certificate",
+  "flat_profile": "unit weights on D/2<Nd<3D/2 and U<Nu<2U; realizable by smooth annular functions on each finite grid, not one asserted fixed smooth profile across scales",
+  "limitations": "finite sign checks only; no eventual sign, asymptotic exponent, inverse-fourth gain, Robin or RH result",
+  "mask": "unequal parity cores; exact P^4<U; P=root norm of squarepart(ab)",
+  "numpy": "2.0.2",
+  "python": "3.9.6",
+  "results": [
+    {
+      "D": 8.0,
+      "U": 64,
+      "all_E6_unordered_unit_compatible_pairs": 2,
+      "bump": {
+        "decomposition_absolute_error": 4.440892098500626e-16,
+        "e6": -1.3290597399356088,
+        "fourth": 2.18441998769143,
+        "h2": 3.513479727627039,
+        "large_P": -1.3290597399356083,
+        "small_P": 0.0
+      },
+      "flat": {
+        "e6": {
+          "decimal": -1.125,
+          "denominator": 8,
+          "numerator": -9
+        },
+        "fourth": {
+          "decimal": 7.40625,
+          "denominator": 32,
+          "numerator": 237
+        },
+        "h2": {
+          "decimal": 8.53125,
+          "denominator": 32,
+          "numerator": 273
+        },
+        "large_P": {
+          "decimal": -1.125,
+          "denominator": 8,
+          "numerator": -9
+        },
+        "small_P": {
+          "decimal": 0.0,
+          "denominator": 1,
+          "numerator": 0
+        }
+      },
+      "inverse_square_columns": 3,
+      "physical_rows": 114,
+      "seconds": 0.0023707920000000104,
+      "small_P_unordered_unit_compatible_pairs": 0,
+      "squarefree_inverse_columns": 2
+    },
+    {
+      "D": 11.313708498984761,
+      "U": 128,
+      "all_E6_unordered_unit_compatible_pairs": 10,
+      "bump": {
+        "decomposition_absolute_error": 1.1102230246251565e-16,
+        "e6": 0.12531714585496445,
+        "fourth": 4.641124116570294,
+        "h2": 4.51580697071533,
+        "large_P": 0.2856541161666444,
+        "small_P": -0.16033697031168
+      },
+      "flat": {
+        "e6": {
+          "decimal": -6.375,
+          "denominator": 8,
+          "numerator": -51
+        },
+        "fourth": {
+          "decimal": 33.84375,
+          "denominator": 32,
+          "numerator": 1083
+        },
+        "h2": {
+          "decimal": 40.21875,
+          "denominator": 32,
+          "numerator": 1287
+        },
+        "large_P": {
+          "decimal": -4.125,
+          "denominator": 8,
+          "numerator": -33
+        },
+        "small_P": {
+          "decimal": -2.25,
+          "denominator": 4,
+          "numerator": -9
+        }
+      },
+      "inverse_square_columns": 10,
+      "physical_rows": 234,
+      "seconds": 0.0022697919999999927,
+      "small_P_unordered_unit_compatible_pairs": 2,
+      "squarefree_inverse_columns": 4
+    },
+    {
+      "D": 16.0,
+      "U": 256,
+      "all_E6_unordered_unit_compatible_pairs": 10,
+      "bump": {
+        "decomposition_absolute_error": 7.771561172376096e-16,
+        "e6": -0.6727302589128161,
+        "fourth": 13.619115622218096,
+        "h2": 14.291845881130913,
+        "large_P": 0.5121054754417588,
+        "small_P": -1.1848357343545741
+      },
+      "flat": {
+        "e6": {
+          "decimal": -6.0,
+          "denominator": 1,
+          "numerator": -6
+        },
+        "fourth": {
+          "decimal": 41.6953125,
+          "denominator": 128,
+          "numerator": 5337
+        },
+        "h2": {
+          "decimal": 47.6953125,
+          "denominator": 128,
+          "numerator": 6105
+        },
+        "large_P": {
+          "decimal": -1.78125,
+          "denominator": 32,
+          "numerator": -57
+        },
+        "small_P": {
+          "decimal": -4.21875,
+          "denominator": 32,
+          "numerator": -135
+        }
+      },
+      "inverse_square_columns": 10,
+      "physical_rows": 480,
+      "seconds": 0.0028649580000000008,
+      "small_P_unordered_unit_compatible_pairs": 2,
+      "squarefree_inverse_columns": 4
+    },
+    {
+      "D": 22.627416997969522,
+      "U": 512,
+      "all_E6_unordered_unit_compatible_pairs": 50,
+      "bump": {
+        "decomposition_absolute_error": 2.1649348980190553e-15,
+        "e6": -0.6873065402607672,
+        "fourth": 11.502028654891774,
+        "h2": 12.189335195152541,
+        "large_P": -0.4313440413375888,
+        "small_P": -0.25596249892317624
+      },
+      "flat": {
+        "e6": {
+          "decimal": -5.71875,
+          "denominator": 32,
+          "numerator": -183
+        },
+        "fourth": {
+          "decimal": 137.91796875,
+          "denominator": 256,
+          "numerator": 35307
+        },
+        "h2": {
+          "decimal": 143.63671875,
+          "denominator": 256,
+          "numerator": 36771
+        },
+        "large_P": {
+          "decimal": -0.328125,
+          "denominator": 64,
+          "numerator": -21
+        },
+        "small_P": {
+          "decimal": -5.390625,
+          "denominator": 64,
+          "numerator": -345
+        }
+      },
+      "inverse_square_columns": 28,
+      "physical_rows": 900,
+      "seconds": 0.0058957079999999995,
+      "small_P_unordered_unit_compatible_pairs": 17,
+      "squarefree_inverse_columns": 7
+    },
+    {
+      "D": 32.0,
+      "U": 1024,
+      "all_E6_unordered_unit_compatible_pairs": 144,
+      "bump": {
+        "decomposition_absolute_error": 2.733924198139448e-15,
+        "e6": -1.1678675269831729,
+        "fourth": 38.246196518878904,
+        "h2": 39.41406404586208,
+        "large_P": 0.08298699386604731,
+        "small_P": -1.2508545208492174
+      },
+      "flat": {
+        "e6": {
+          "decimal": 3.46875,
+          "denominator": 32,
+          "numerator": 111
+        },
+        "fourth": {
+          "decimal": 264.3984375,
+          "denominator": 128,
+          "numerator": 33843
+        },
+        "h2": {
+          "decimal": 260.9296875,
+          "denominator": 128,
+          "numerator": 33399
+        },
+        "large_P": {
+          "decimal": 7.6875,
+          "denominator": 16,
+          "numerator": 123
+        },
+        "small_P": {
+          "decimal": -4.21875,
+          "denominator": 32,
+          "numerator": -135
+        }
+      },
+      "inverse_square_columns": 45,
+      "physical_rows": 1872,
+      "seconds": 0.013363000000000014,
+      "small_P_unordered_unit_compatible_pairs": 63,
+      "squarefree_inverse_columns": 9
+    },
+    {
+      "D": 45.254833995939045,
+      "U": 2048,
+      "all_E6_unordered_unit_compatible_pairs": 471,
+      "bump": {
+        "decomposition_absolute_error": 8.881784197001252e-16,
+        "e6": -2.6706111767981824,
+        "fourth": 45.48691222683346,
+        "h2": 48.15752340363164,
+        "large_P": -1.425723842173943,
+        "small_P": -1.2448873346242402
+      },
+      "flat": {
+        "e6": {
+          "decimal": -18.515625,
+          "denominator": 64,
+          "numerator": -1185
+        },
+        "fourth": {
+          "decimal": 441.9990234375,
+          "denominator": 1024,
+          "numerator": 452607
+        },
+        "h2": {
+          "decimal": 460.5146484375,
+          "denominator": 1024,
+          "numerator": 471567
+        },
+        "large_P": {
+          "decimal": -30.1875,
+          "denominator": 16,
+          "numerator": -483
+        },
+        "small_P": {
+          "decimal": 11.671875,
+          "denominator": 64,
+          "numerator": 747
+        }
+      },
+      "inverse_square_columns": 78,
+      "physical_rows": 3732,
+      "seconds": 0.03544537499999997,
+      "small_P_unordered_unit_compatible_pairs": 247,
+      "squarefree_inverse_columns": 12
+    },
+    {
+      "D": 64.0,
+      "U": 4096,
+      "all_E6_unordered_unit_compatible_pairs": 1827,
+      "bump": {
+        "decomposition_absolute_error": 1.887379141862766e-14,
+        "e6": -0.6409882345687663,
+        "fourth": 117.32381714591327,
+        "h2": 117.96480538048203,
+        "large_P": -0.8899927822835321,
+        "small_P": 0.2490045477147847
+      },
+      "flat": {
+        "e6": {
+          "decimal": -9.5859375,
+          "denominator": 128,
+          "numerator": -1227
+        },
+        "fourth": {
+          "decimal": 865.16015625,
+          "denominator": 256,
+          "numerator": 221481
+        },
+        "h2": {
+          "decimal": 874.74609375,
+          "denominator": 256,
+          "numerator": 223935
+        },
+        "large_P": {
+          "decimal": -23.337890625,
+          "denominator": 512,
+          "numerator": -11949
+        },
+        "small_P": {
+          "decimal": 13.751953125,
+          "denominator": 512,
+          "numerator": 7041
+        }
+      },
+      "inverse_square_columns": 152,
+      "physical_rows": 7386,
+      "seconds": 0.11887304100000001,
+      "small_P_unordered_unit_compatible_pairs": 1084,
+      "squarefree_inverse_columns": 17
+    }
+  ],
+  "scope": "complete original good sixth-power-free rows; six units; trivial fixed ray twist",
+  "source_sha256": {
+    "eisenstein.py": "641b02051b2f48b725ce69404e581f09cbec205cd72c92dc65fbc47c653ade5c",
+    "moment.py": "2981d8169b6ad21549d95c8c704efcd204a1516daa2dc55706b3f4200e65b4de",
+    "squarepart.py": "f0b6862ded080d222029de4bdad2cae2922f4b54b164d74d6694ba0d4718ef62"
+  }
+}
