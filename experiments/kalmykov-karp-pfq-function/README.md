@@ -12,3 +12,8 @@ Parameters: p = 0, b = (1/2, …, 1/2) of length q, µ = 1, α = β = 1/2.
 
 The kernel-checked result lives in the main repository at
 D5/S3/Analytic/HypergeometricShiftTuran/FunctionResult.lean.
+
+Nonempty numerator (a = (1), q = 12, x = 2000):
+
+    python3 kk1f-cert-p1.py    # exact rational certificate (standard library only)
+    python3 kk1f-scan-p1.py    # mpmath scan, a in {1, 1/2, 3/2, 2}, q = 8..20
