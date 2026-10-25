@@ -1,0 +1,12 @@
+FIDELITY A022629 r=1: all 43 displayed OEIS terms agree
+FIDELITY A092484 r=2: all 31 displayed OEIS terms agree
+FIDELITY A265840 r=3: all 29 displayed OEIS terms agree
+FIDELITY A265841 r=4: all 26 displayed OEIS terms agree
+FIDELITY A265842 r=5: all 23 displayed OEIS terms agree
+FIDELITY: the two OEIS n=6 worked examples agree
+EXACT ENUMERATION: n=0..45, 16857 partitions; all five weighted subset identities agree
+EXACT INTEGER BOUNDS: n=1..180, r=1..5; triangular witness, AM-GM and count-times-max bounds agree
+CERTIFIED RATIONAL LOG BOUNDS: n=2..180, r=1..5; counting, maximum-product, factorial and final logarithmic sandwiches hold
+RATIONAL ENCLOSURES: atanh series 48 terms; fixed denominator 10000000000000000000000000000000000000000; square roots by integer isqrt
+SCOPE: finite exact checks support the paper outline; no infinite limit or Lean proof is certified
+ALL_CHECKS_OK
