@@ -16,6 +16,13 @@ def mul(a, b):
     c = [a[0]*b[0], a[0]*b[1], a[1]*b[0], a[1]*b[1]]
     return (dn(min(c)), up(max(c)))
 E1 = (F(36787944117, 10**11), F(36787944118, 10**11))   # exp(-1) = 0.367879441171...
+def _alt_sum(n):
+    # partial sum of sum_{j<=n} (-1)^j / j!; for n odd it is <= exp(-1), for n even it is >= exp(-1)
+    s = F(0); t = F(1)
+    for j in range(n + 1):
+        s += t; t = -t / (j + 1)
+    return s
+assert E1[0] <= _alt_sum(23) and _alt_sum(22) <= E1[1], "exp(-1) enclosure not certified"
 def exp_neg_r(r, n=24):
     # alternating series for exp(-r), 0 <= r < 1: partial sums alternate around the value
     s = F(0); t = F(1); sums = []
