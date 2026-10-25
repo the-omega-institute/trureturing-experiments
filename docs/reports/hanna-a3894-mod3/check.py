@@ -6,7 +6,7 @@ from math import comb
 from hashlib import sha256
 import json
 
-N = 400
+N = 403
 SOURCE_474 = [1,1,4,14,104,488,3291,18141,127527,790427,5441663,35375651,244925743,1652908531,11518757017,79372305657,557324355555,3900077626815,27596212781442,195214162327620,1390657027410402,9919148868199578,71088535006091553,510378145935043827]
 SOURCE_475 = [1,1,7,17,147,445,2199,9993,61837,281417,1515387,7844861,42920817,232527741,1297380639,7159441425,40375866078,226515725383,1286378694156,7313784351897,41879211301623,240239676368409,1384901325628119]
 SOURCE_472 = [1,1,2,3,6,9,14,24,42,72,114,179,284,453,736,1213,2016,3362,5606,9318,15378,25121,40614,65216,104422,167118,267674,429297,689478,1109149,1788032,2889897,4683664,7610640,12394998,20225081,33050490,54068421,88519060,144984819,237508938]
@@ -100,28 +100,28 @@ def main():
     h[3] += 2
     assert composition(a,h,N) == [3*x for x in aa]
     assert all(aa[d]%9 == 0 for d in range(4,N+1))
-    print('A389474 (3): equation and square congruence checked at degrees 0..400')
+    print(f'A389474 (3): equation and square congruence at degrees 0..{N}; {N-3} requested coefficients at degrees 4..{N}')
     cube,sub = frobenius(a)
     p=q=[1]+[0]*N
     for k in range(1,N//3+2):
         p=mul(p,[x%3 for x in cube],N,3)
         q=mul(q,[x%3 for x in sub],N,3)
         assert p==q,('474 (4)',k)
-    print('A389474 (4): degrees 0..400 for k=1..134; k>=134 vanish in this truncation by order')
+    print(f'A389474 (4): degrees 0..{N} for k=1..{N//3+1}; k>={N//3+1} vanish in this truncation by order')
     bb=mul(b,b,N)
     bbb,subb=frobenius(b)
     lhs=[3**(d//2)*b[d//2] if d%2==0 else 0 for d in range(N+1)]
     rhs=[bb[d]-2*bbb[d]+(2 if d==2 else 0) for d in range(N+1)]
     assert lhs==rhs
     assert all((bb[d]-(1 if d==2 else 0)-2*subb[d])%3==0 for d in range(N+1))
-    print('A389475 (4.a), (4.b): defining equation and both congruences checked at degrees 0..400')
+    print(f'A389475 (4.a), (4.b): defining equation and both congruences checked at degrees 0..{N}')
     assert all(c[3*n-1]%3==0 for n in range(2,N+2))
     assert all(c[2*n-1]%2==0 for n in range(2,(len(c)+1)//2))
     # Direct binomial composition, checked independently of the recursion loop.
     for d in range(len(c)):
         comp=sum(c[k]*comb(k,d-2*k) for k in range((d+2)//3,d//2+1))
         assert comp==(c[d-2]+(1 if d==2 else 0) if d>=2 else 0)
-    print('A389472 mod 3: 400 target indices n=2..401, coefficients through 1202; defining equation through degree 1202; existing parity line also checked')
+    print(f'A389472 mod 3: {N} target indices n=2..{N+1}, coefficients through {3*(N+1)-1}; defining equation through degree {3*(N+1)-1}; existing parity line also checked')
     print('A389474 square coefficients, degrees 2..10:',','.join(map(str,aa[2:11])))
     print('ALL_CHECKS_OK')
 
