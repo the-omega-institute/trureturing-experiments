@@ -1,0 +1,8 @@
+FIDELITY: direct Choi and phase Pauli sums m2(CCZ)=11/32; M2=5-log2(11); E=4; F=7
+FOURTH-MOMENT IDENTITY: all 21 cubics on n=0,...,4 agree exactly
+DIRECT SUM: complete 7-variable slice sum factors exactly
+WITNESS: Gray/highest-pivot histogram={0: 1, 12: 31, 14: 10970, 16: 292882, 18: 220404}; elapsed_ns=3012404167
+WITNESS: binary/lowest-column histogram={0: 1, 12: 31, 14: 10970, 16: 292882, 18: 220404}; elapsed_ns=17168368458
+EXACT: radical cardinality=1; d=0; F=39; S=457895/65536; Choi m2=457895/34359738368; E=40
+FAMILY: exact base inequality m<(3/4)^39; direct sums multiply moments; 39k>=38k+1 for every k>=1 (power checks k=1,...,32)
+ALL_CHECKS_OK
