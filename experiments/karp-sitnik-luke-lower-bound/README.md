@@ -8,3 +8,4 @@ Companion programs for the refutation of Conjecture 1 in D. Karp and S. M. Sitni
 Conjecture 2 (upper bound (38)):
 
     python3 ks2-upper-cert.py   # exact rational certificate, σ = 1, a = (2, 2), b = (3/2, 3), x = 1/2 (standard library)
+    python3 ks2-upper-scan.py   # mpmath scan, σ ∈ {0.01, 0.05, 0.09}, a = (1, 1), b = (1/10, 2), x ∈ {0.01, …, 1000}
