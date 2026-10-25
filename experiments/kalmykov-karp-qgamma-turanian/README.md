@@ -4,3 +4,8 @@ Companion programs for the refutation of the coefficient clause of Conjecture 1 
 
     python3 kk-qgamma-cert.py    # exact rational certificate, g_n = 1, q = (99/100)^10, µ = −7/10, α = β = 7/10, degree 2 (standard library)
     python3 kk-qgamma-scan.py    # mpmath scan of the minimal coefficient over t = α = β, µ, degree ≤ 4, at q = 0.5, 0.9, 0.97
+
+Function clause (Δ_g(α, β; x) > 0 for 0 < x < R_g):
+
+    python3 kk-qgamma-fcert.py 93            # exact rational certificate, g_n = 1, q = (93/100)^10, µ = −7/10, α = 3/10, β = 7/10, x = 93/100 (standard library)
+    python3 kk-qgamma-function-scan.py 0.5 0.9   # mpmath scan of the relative Turánian over x in (0, R_g) for several (µ, α, β)
