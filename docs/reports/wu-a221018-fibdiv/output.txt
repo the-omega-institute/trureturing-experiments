@@ -1,0 +1,15 @@
+source: https://oeis.org/A221018/b221018.txt
+b-file sha256: 6342506738bc79f3758594d8cf8b31b757e73e77be0062627f0059b2cf00549f
+fidelity: all integers 2 <= k <= 500000; 38 members; exact b-file prefix
+source Python range(2, 100000): [108, 2688, 3528, 4968, 6480, 15288, 18048, 20808, 21000, 25308, 35448, 47520, 62928, 68208, 81648, 82008, 97608]
+independent full-integer recurrence: n=0..20000; all pairs and memberships agree
+fidelity: first 7777 terms have exactly 81 terms not ending in 8
+all 10000 listed members verified; final-digit histogram: {0: 86, 2: 1, 8: 9913}
+expected settlement: no counterexample for ANY integer 2 <= k <= 500000
+rank ingredient: modulus=2, period=3, residues=[0, 1, 1], zero positions=[0]
+rank ingredient: modulus=3, period=8, residues=[0, 1, 1, 2, 0, 2, 2, 1], zero positions=[0, 4]
+rank ingredient: modulus=5, period=20, residues=[0, 1, 1, 2, 3, 0, 3, 3, 1, 4, 0, 4, 4, 3, 2, 0, 2, 2, 4, 1], zero positions=[0, 5, 10, 15]
+A225219 stronger-comment counterexample: k=14930352, k%30=12, k%10=2
+modulus k(k-1)(k+1)=3328205550124088843856; pair=(0, 1); doubling, matrix, and 14930352 direct steps agree
+scope: finite evidence and source fidelity only; the universal claim is not Lean-proved
+ALL_CHECKS_OK
