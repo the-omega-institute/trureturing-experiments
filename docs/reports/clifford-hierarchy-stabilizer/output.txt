@@ -1,5 +1,5 @@
 FIDELITY: B.3 identity-only; B.4 order four, 3 noncommuting pairs,
-          eight-point support, one invariant ray; B16 exact for all bits
+          eight-point support, one invariant ray; B15 exact for all bits
 SPAN p=2 ell=2 r=1: full phase-group HNF equal; tensor rank=2; top derivative nonzero
 SPAN p=2 ell=2 r=2: full phase-group HNF equal; tensor rank=3; top derivative nonzero
 SPAN p=2 ell=2 r=3: full phase-group HNF equal; tensor rank=3; top derivative nonzero

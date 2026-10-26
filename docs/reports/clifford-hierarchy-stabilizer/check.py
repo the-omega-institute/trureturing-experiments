@@ -81,9 +81,9 @@ def source_fidelity():
             if z not in seen: seen.add(z); pending.append(z)
     assert seen == set(support)
     for x,y in product(range(2),repeat=2):
-        assert (2*x*y - x-y+(x+y)%2) % 4 == 0  # B16
+        assert (2*x*y - x-y+(x+y)%2) % 4 == 0  # B15
     print('FIDELITY: B.3 identity-only; B.4 order four, 3 noncommuting pairs,')
-    print('          eight-point support, one invariant ray; B16 exact for all bits')
+    print('          eight-point support, one invariant ray; B15 exact for all bits')
 
 
 def compositions(total, n):

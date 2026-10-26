@@ -12,7 +12,7 @@ Run with Python 3 and SymPy:
 integer Hermite normal forms and elimination over prime fields. It uses no
 floating-point arithmetic.
 
-The fidelity checks reproduce Lemma B.3, Example B.4 and equation B16: the
+The fidelity checks reproduce Lemma B.3, Example B.4 and equation B15: the
 three-qubit CCZ state has only the identity onsite Clifford stabilizer; the
 six-qubit generators have order four, pairwise fail to commute, and have one
 common invariant ray on the indicated eight-point affine support.
