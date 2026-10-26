@@ -4,6 +4,6 @@ GRAPH p=3: all 729 monomial products, adjoints, opposite KD phases and trace ort
 GRAPH p=5: all 15625 monomial products, adjoints, opposite KD phases and trace orthogonality pass
 GRAPH p=7: all 117649 monomial products, adjoints, opposite KD phases and trace orthogonality pass
 FAMILY p=3, all real 0<t<1: exact symbolic density, strict positivity certificates, KD positivity, SLD and QFI=3*t^2/(4+t)
-FIDELITY Proposition 6.4: computational/Fourier measurement marginals=1/9 and tangent diagonals=0; both classical FI vanish
+FIDELITY Proposition 6.3: computational/Fourier measurement marginals=1/9 and tangent diagonals=0; both classical FI vanish
 MEMBER p=3,t=1/2: rho=(I+E)/12, eigenvalues 1/6 (x3), 1/12 (x6); KD entries {1/54,1/108}; QFI=1/6
 ALL_CHECKS_OK

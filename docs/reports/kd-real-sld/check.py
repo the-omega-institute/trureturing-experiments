@@ -187,7 +187,7 @@ def symbolic_nine_dimensional_family():
             equal(pop[k, k], s.Rational(1, d))
             equal(deriv[k, k], 0)
     print('FAMILY p=3, all real 0<t<1: exact symbolic density, strict positivity certificates, KD positivity, SLD and QFI=3*t^2/(4+t)')
-    print('FIDELITY Proposition 6.4: computational/Fourier measurement marginals=1/9 and tangent diagonals=0; both classical FI vanish')
+    print('FIDELITY Proposition 6.3: computational/Fourier measurement marginals=1/9 and tangent diagonals=0; both classical FI vanish')
     rh, lh = rho.subs(t, s.Rational(1, 2)), ell.subs(t, s.Rational(1, 2))
     equal(rh, (a+e)/12)
     equal(lh, -2*s.I*comm(x, e)/3)

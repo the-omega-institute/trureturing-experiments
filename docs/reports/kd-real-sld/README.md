@@ -8,7 +8,7 @@ The source is Spriet–Langrenez–Brummelhuis–De Bièvre,
 [arXiv:2511.01996v2](https://arxiv.org/abs/2511.01996v2), Section 6.3 and Appendix E.
 The fidelity check reproduces Proposition 6.5 on a pure qubit: QFI is 4, the SLD
 has a non-real KD symbol, and its conditional expectation is nonzero and
-anti-Hermitian. It also checks Proposition 6.4 on the mixed family: the two basis
+anti-Hermitian. It also checks Proposition 6.3 on the mixed family: the two basis
 measurements have zero classical Fisher information.
 
 For `G = F_3^2`, the script checks the full symbolic interval `0 < t < 1` for
