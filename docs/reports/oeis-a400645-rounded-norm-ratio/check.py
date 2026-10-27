@@ -38,6 +38,16 @@ def checked(condition, message):
         raise AssertionError(message)
 
 
+def sqrt_bracket(value, scale=10 ** 40):
+    """Rational square-root enclosure certified only by integer squares."""
+    value = F(value)
+    checked(value >= 0, 'nonnegative rational square-root input')
+    lower = F(isqrt(value.numerator * scale * scale // value.denominator), scale)
+    upper = lower + F(1, scale)
+    checked(lower ** 2 <= value < upper ** 2, 'rational square-root enclosure')
+    return lower, upper
+
+
 def main():
     a = source_sequence(N)
     checked(a[1:52] == SOURCE_TERMS, 'OEIS revision 21 data mismatch')
@@ -80,12 +90,15 @@ def main():
     checked(p.count_roots(-sp.oo, sp.oo) == 2, 'two real roots')
     checked(p.count_roots(sp.Rational(17, 10), sp.Rational(7, 4)) == 1,
             'dominant real root interval')
-    checked(sp.simplify(r - sp.Rational(17, 10)).is_positive is True, 'r>17/10')
-    t_minus = (1 - sp.sqrt(13)) / 2
-    t_plus = (1 + sp.sqrt(13)) / 2
-    checked((t_minus + 2).is_positive is True and (2 - t_minus).is_positive is True,
+    sqrt13_lo, sqrt13_hi = sqrt_bracket(F(13))
+    inner_lo = sqrt_bracket(2 * sqrt13_lo - 2)[0]
+    inner_hi = sqrt_bracket(2 * sqrt13_hi - 2)[1]
+    r_lo = (1 + sqrt13_lo + inner_lo) / 4
+    r_hi = (1 + sqrt13_hi + inner_hi) / 4
+    checked(F(17, 10) < r_lo < r_hi < F(7, 4), 'rational radical-root enclosure')
+    checked(-2 < (1 - sqrt13_hi) / 2 < (1 - sqrt13_lo) / 2 < 2,
             'unit-circle pair reduced root')
-    checked((t_plus - 2).is_positive is True, 'positive reciprocal real pair')
+    checked(2 < (1 + sqrt13_lo) / 2, 'positive reciprocal real pair')
     checked(sp.expand(p.as_expr().subs(y, x ** 2)) == octic.as_expr(), 'octic substitution')
     print('exact algebra: radical, reciprocal reduction, distinct roots and octic substitution OK')
     print('root location: 17/10 < r < 7/4; other roots are 1/r and a unit-circle conjugate pair')

@@ -5,7 +5,8 @@ author line Oct 02 2026, revision timestamp 2026-10-11T22:07:30-04:00.
 
 Run `python3 check.py` with Python 3 and SymPy 1.14.0. The recorded run used
 Python 3.14.8. All computations use integers, rational numbers or exact
-symbolic algebra; no floating point is used. The output is in `output.txt`.
+symbolic algebra; no floating point is used. Radical inequalities use rational
+brackets certified by integer squares. The output is in `output.txt`.
 
 The program reproduces all 51 published terms. Through index 4096 it checks
 the signed radicands, independent nearest-integer midpoint brackets,
