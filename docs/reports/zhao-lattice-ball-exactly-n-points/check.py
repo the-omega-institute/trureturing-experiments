@@ -57,7 +57,11 @@ def check_volume_formula():
     for d in (2, 3, 4, 5):
         kappa_d = pi ** (sp.Rational(d, 2)) / sp.gamma(sp.Rational(d, 2) + 1)
         assert sp.simplify(kappa_d - pi ** (sp.Rational(d, 2)) / sp.gamma(sp.Rational(d, 2) + 1)) == 0
-    assert sp.simplify(sp.pi ** 1 / sp.gamma(2) - sp.pi) == 0
+    kappa_2 = pi ** 1 / sp.gamma(2)
+    assert sp.simplify(kappa_2 - pi) == 0
+    for n in range(1, 13):
+        radius_squared = sp.Rational(n) / kappa_2
+        assert sp.simplify(kappa_2 * radius_squared - n) == 0
 
 
 def main():
