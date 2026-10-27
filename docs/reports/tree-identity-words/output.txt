@@ -1,0 +1,22 @@
+Source: Boris Shapiro, arXiv:2610.14373v1, Remark 8 and Conjecture 1(iii)
+Convention: right multiplication, (sigma*tau)(x)=sigma(tau(x))
+e=0 tree=K1 edges=() double_words=1 identity_onto=1 local_noncrossing=1
+e=1 tree=K2 edges=((0, 1),) double_words=1 identity_onto=1 local_noncrossing=1
+e=2 tree=P3 edges=((0, 1), (0, 2)) double_words=6 identity_onto=4 local_noncrossing=4
+e=3 tree=K1,3 edges=((0, 1), (0, 2), (0, 3)) double_words=90 identity_onto=30 local_noncrossing=30
+e=3 tree=P4 edges=((0, 1), (0, 2), (1, 3)) double_words=90 identity_onto=42 local_noncrossing=42
+e=4 tree=Ch edges=((0, 1), (0, 2), (0, 3), (1, 4)) double_words=2520 identity_onto=608 local_noncrossing=608
+e=4 tree=K1,4 edges=((0, 1), (0, 2), (0, 3), (0, 4)) double_words=2520 identity_onto=336 local_noncrossing=336
+e=4 tree=P5 edges=((0, 1), (0, 3), (1, 2), (2, 4)) double_words=2520 identity_onto=816 local_noncrossing=816
+e=5 tree=DS edges=((0, 1), (0, 2), (0, 3), (1, 4), (1, 5)) double_words=113400 identity_onto=14480 local_noncrossing=14480
+e=5 tree=K1,5 edges=((0, 1), (0, 2), (0, 3), (0, 4), (0, 5)) double_words=113400 identity_onto=5040 local_noncrossing=5040
+e=5 tree=P6 edges=((0, 1), (0, 4), (1, 2), (2, 3), (3, 5)) double_words=113400 identity_onto=25520 local_noncrossing=25520
+e=5 tree=S(2,2,1) edges=((0, 1), (0, 2), (0, 3), (1, 4), (2, 5)) double_words=113400 identity_onto=19680 local_noncrossing=19680
+e=5 tree=S(3,1,1) edges=((0, 1), (0, 3), (0, 4), (1, 2), (2, 5)) double_words=113400 identity_onto=18880 local_noncrossing=18880
+e=5 tree=S4 edges=((0, 1), (0, 2), (0, 3), (0, 4), (1, 5)) double_words=113400 identity_onto=11220 local_noncrossing=11220
+Fidelity: all 13 published tree-table values reproduced exactly
+Settlement check: all onto identity words are double and all double words obey the iff
+Coverage: 14 tree shapes, 0..5 edges, 688148 double-occurrence words; all onto words covered by exact meet-in-the-middle counts
+Cross-check: literal enumeration of every onto word for every tree with 0..4 edges
+Boundary: finite verification only; no proof of the unbounded assertion
+ALL_CHECKS_OK

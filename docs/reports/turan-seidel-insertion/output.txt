@@ -1,0 +1,9 @@
+source p=2: t=3, exact delta=-6 + 4*sqrt(2) < 0
+source p=2: t=4, exact delta=-8 + 2*sqrt(13) < 0
+source p=2: t=5, exact delta=-10 + 4*sqrt(5) < 0
+source p=2: t=6, exact delta=-12 + 2*sqrt(29) < 0
+source p=2: t=7, exact delta=-14 + 4*sqrt(10) < 0
+source p=2: t=8, exact delta=-16 + 2*sqrt(53) < 0
+independent-twin bound: 2 - 8/m is positive for m>4 and the m=4 case is isolated
+sharpness family: det(4I-M)=3(t-7), hence equality at t=7 and decrease for t>=8
+ALL_CHECKS_OK
