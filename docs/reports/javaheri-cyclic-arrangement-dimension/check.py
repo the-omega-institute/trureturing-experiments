@@ -29,6 +29,7 @@ def main():
 
     # Fidelity: Corollary 4.2(ii), label cor:examples, says N(0,b)=1 for b != 1.
     # Reproduce b=3. Every n>=2 has the witness (2,1,...,1), with D_n=2(n-1).
+    identity(x * x**3, (x**2)**2)
     assert sides([2], 0, 3)[:2] == (16, 16)
     identity((n + 1) * (n + 7) - (n + 3) ** 2, 2 * (n - 1))
     for dim in range(2, 101):
@@ -40,6 +41,7 @@ def main():
     print(f'FIDELITY n=2, x=(1,2), a=0,b=3,c=2: LHS={lhs}, RHS={rhs}, D={lhs-rhs}')
 
     # Global validity in dimension 2: verify the complete algebraic identity.
+    identity(x * (x**6 * x), (x**4)**2)
     gap = (x ** 4 + y ** 4) ** 2 - (x + y) * (x ** 6 * y + y ** 6 * x)
     factor = (x-y) ** 2 * (x*x+x*y+y*y) * (x ** 4-x*x*y*y+y ** 4)
     identity(gap, factor)
