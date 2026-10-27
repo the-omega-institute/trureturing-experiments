@@ -1,0 +1,7 @@
+FIDELITY: Proposition 5.22 symbolic block and parameter identity OK
+FIDELITY: 80 repeated-block cases, n=2,4,6,8, endpoints included OK
+EXACT_INSTANCE: delta=3/5 eta=1/2 L=37/9 R=13/9 violation=24/13
+ORBIT_FACTOR: both scalar monotonicity identities OK
+ORBIT_CHECKS: 6642 exact permutation pairings for all spectra in {1,2,3}, n=2..5 OK
+MATRIX_CHECKS: 320 independently oriented exact rational-complex 2x2 inputs OK (0 zero products)
+ALL_CHECKS_OK
