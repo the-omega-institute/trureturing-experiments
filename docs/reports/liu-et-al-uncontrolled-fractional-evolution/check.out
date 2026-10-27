@@ -1,3 +1,4 @@
+PI BOUNDS: rational Gregory partial sum 33976/45045 > 3/4; alternating-series bounds certify 3 < pi < 4
 FIDELITY: source Laurent amplitude/channel support bounds; all 15 sign words for N=0..3 OK
 PROMISE: nonscalar U,V; exp(i H)=oracle; both spectra lie in (1,2*pi), hence in [delta,2*pi) for every 0<delta<1
 INDISTINGUISHABILITY: 62 exact circuits; both signs, N=0..4, workspace dimensions 1 and 2 OK

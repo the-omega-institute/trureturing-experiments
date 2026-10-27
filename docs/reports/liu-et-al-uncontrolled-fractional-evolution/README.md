@@ -22,6 +22,10 @@ their separation 2 exceeds twice the permitted error, 1/2. It also checks 62
 circuits with both query signs, zero through four queries, and workspace
 dimensions one and two. At t = 0 and t = 1 the target-channel separation vanishes.
 
+The spectral and gap comparisons use 3 < pi < 4, certified by the exact
+eight-term Gregory lower partial sum for pi/4 and its first-term upper bound.
+The checker uses only rational comparisons for these inequalities.
+
 All calculations use exact integers, rationals, algebraic constants and symbolic
 expressions. The stored output is `check.out`, ending in `ALL_CHECKS_OK`.
 Finite enumeration does not establish the arbitrary-query statement. That step

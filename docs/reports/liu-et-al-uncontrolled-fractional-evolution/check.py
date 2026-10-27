@@ -44,7 +44,14 @@ def laurent_support(expr, z):
 # oracle-independent mixing gates, and the source's hard family at delta=pi/4.
 z = s.Symbol('z', nonzero=True)
 a = (1 + I) / s.sqrt(2)
-assert 0 < s.pi / 4 < 1
+# Gregory's alternating series for atan(1): its even partial sum is a
+# strict lower bound, and its first term is a strict upper bound. All
+# comparisons below are rational; no numerical sign test involving pi is used.
+assert s.atan(1) == s.pi / 4
+pi_quarter_lower = sum(Q((-1) ** k, 2 * k + 1) for k in range(8))
+assert Q(3, 4) < pi_quarter_lower < 1
+assert Q(1, 4) * 3 > 0 and Q(1, 4) * 4 == 1
+print('PI BOUNDS: rational Gregory partial sum', pi_quarter_lower, '> 3/4; alternating-series bounds certify 3 < pi < 4')
 O = {1: s.diag(a, z, 1, 1), -1: s.diag(s.conjugate(a), 1 / z, 1, 1)}
 W = [s.kronecker_product(Had, Had),
      s.kronecker_product(phase, Had),
@@ -83,7 +90,9 @@ for H, B in [(HU, U), (HV, V)]:
     assert len(H.eigenvals()) == 2
     assert B[0, 0] != B[1, 1]
     for eigenvalue in H.eigenvals():
-        assert 1 < eigenvalue < 2 * s.pi
+        coefficient = s.cancel(eigenvalue / s.pi)
+        assert coefficient.is_Rational
+        assert coefficient * 3 > 1 and 0 < coefficient < 2
 matrix_equal(V, -U)
 print('PROMISE: nonscalar U,V; exp(i H)=oracle; both spectra lie in (1,2*pi), hence in [delta,2*pi) for every 0<delta<1')
 
