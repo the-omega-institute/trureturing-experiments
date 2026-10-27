@@ -120,7 +120,7 @@ def lex(a, h):
 
 
 def source_fidelity():
-    # Theorem 7, n=5=3*1+2: I(P5) is homotopy equivalent to S^1.
+    # Theorem 6, n=5=3*1+2: I(P5) is homotopy equivalent to S^1.
     p5 = graph(5, [(i, i + 1) for i in range(4)])
     k = faces(p5)
     k = collapse(k, (1 << 0) | (1 << 2), (1 << 0) | (1 << 2) | (1 << 4))
@@ -129,7 +129,7 @@ def source_fidelity():
                     frozenset({1, 4}), frozenset({4, 0})}
     assert {frozenset(bits(s)) for s in k if s.bit_count() == 2} == square_edges
     assert max(s.bit_count() for s in k) == 2 and betti(k) == (1, 1)
-    print('FIDELITY: Theorem 7, I(P5) collapses in 2 verified elementary steps to a 4-cycle; Betti=(1,1)')
+    print('FIDELITY: Theorem 6, I(P5) collapses in 2 verified elementary steps to a 4-cycle; Betti=(1,1)')
 
 
 def small_substitution_checks():

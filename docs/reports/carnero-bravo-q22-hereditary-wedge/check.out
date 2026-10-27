@@ -1,4 +1,4 @@
-FIDELITY: Theorem 7, I(P5) collapses in 2 verified elementary steps to a 4-cycle; Betti=(1,1)
+FIDELITY: Theorem 6, I(P5) collapses in 2 verified elementary steps to a 4-cycle; Betti=(1,1)
 SUBSTITUTION: all labelled G of orders 1..4, H of orders 1..3, all vertices: 3135 cases
 RESTRICTIONS: 159322; empty-realization links: 451; all union/intersection/link identities pass
 SPLITTING DIAGNOSTIC: rational Betti additivity passes in every nonempty-link case

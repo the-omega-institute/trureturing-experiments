@@ -1,7 +1,7 @@
 # Carnero Bravo Question 22: exact finite diagnostics
 
 Source: Andrés Carnero Bravo, *On independence complexes of graph products*,
-arXiv:2505.06457v2, Question 22 and Theorem 7.
+arXiv:2505.06457v2, Question 22 and Theorem 6.
 <https://arxiv.org/abs/2505.06457v2>
 
 Run with Python 3 (standard library only):
@@ -15,7 +15,7 @@ row elimination computing ranks over the rationals; it uses no floating point.
 
 - Source fidelity: two individually verified elementary simplicial collapses
   take the independence complex of the five-vertex path to a four-cycle,
-  reproducing Theorem 7's homotopy type S¹ for this instance.
+  reproducing Theorem 6's homotopy type S¹ for this instance.
 - All 3,135 choices of labelled outer graphs on 1–4 vertices, labelled inner
   graphs on 1–3 vertices, and substituted vertices satisfy the deletion,
   cone-intersection, substitution-union and graph-link identities. All 159,322
