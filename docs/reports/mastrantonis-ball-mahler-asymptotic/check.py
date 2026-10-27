@@ -50,6 +50,17 @@ def source_fidelity():
 
 
 def finite_ball_identities():
+    # Exact functional identities for all r>0 in the small odd dimensions.
+    # This compares the whole integral with Bessel I, not just series terms.
+    t, r = s.symbols('t r', positive=True)
+    for n in range(1, 8, 2):
+        a = s.gamma(1+Q(n, 2))/(s.sqrt(s.pi)*s.gamma(Q(n+1, 2)))
+        marginal = a*s.integrate(s.exp(r*t)*(1-t*t)**((n-1)//2), (t, -1, 1))
+        source = s.gamma(1+Q(n, 2))*(2/r)**Q(n, 2)*s.besseli(Q(n, 2), r)
+        difference = s.cancel(s.expand((s.simplify(marginal)-s.simplify(source)).rewrite(s.exp)))
+        assert difference == 0, ('whole ball marginal', n, difference)
+        assert not (marginal.atoms(s.Float) | source.atoms(s.Float))
+    print('FINITE IDENTITIES: whole ball marginal equals normalized Bessel I for all r>0, n=1,3,5,7: 4')
     # Beta-integral marginal moments versus coefficients in the source's
     # Gamma(1+n/2) (2/r)^(n/2) I_(n/2)(r), label hpB2n.
     count = 0
