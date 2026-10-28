@@ -203,7 +203,26 @@ def check_case(m, n, size):
     fidelity_ok = q_mat * operator == traceful_delta_matrix
     assert f_matrix * projection == f_matrix, "fP = f failed"
 
-    projected_ok = f_matrix * projection * operator * intersection == delta_matrix * intersection
+    restricted_f = f_matrix * intersection
+    projected_action = projection * operator * intersection
+    physical_action = delta_matrix * intersection
+    projected_ok = f_matrix * projected_action == physical_action
+
+    # Check the inverse form as well, on the complete source contraction image.
+    # The invariant-theory identification of that image with H'_N is a source
+    # theorem, not a new assertion about arbitrary polynomial functions.
+    assert restricted_f.rank() == intersection.cols, "F is not injective on U"
+    assert restricted_f.rank() == f_matrix.rank(), "F(U) misses the ambient contraction image"
+    if intersection.cols:
+        projected_coordinates, projected_parameters = intersection.gauss_jordan_solve(
+            projected_action)
+        physical_coordinates, physical_parameters = restricted_f.gauss_jordan_solve(
+            physical_action)
+        assert projected_parameters.rows == physical_parameters.rows == 0
+        assert projected_coordinates == physical_coordinates, "inverse intertwining failed"
+    else:
+        assert projected_action == sp.zeros(len(orbits), 0)
+        assert physical_action == sp.zeros(f_matrix.rows, 0)
     return fidelity_ok, projected_ok, intersection.cols, len(orbits), q_matrix.rank()
 
 
