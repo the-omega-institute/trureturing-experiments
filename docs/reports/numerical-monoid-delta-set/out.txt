@@ -1,0 +1,24 @@
+FIDELITY source Section 3, (a,h,d,k)=(4,143,109,2):
+  E(142,109) union {393,251,109} = [1, 2, 3, 4, 7, 10, 13, 23, 33, 43, 76, 109, 142, 251, 393]
+FIDELITY Theorem 12.1, generators (3, 8, 10) n=0..2000: observed delta = [1, 2, 3, 4]
+  This is a bounded reproduction, not a proof of the global theorem.
+REWRITES odd a=3..101: checked 87175 value identities; all change length by one; residue maps bijective.
+NORMALIZATION all coordinate vectors for a in {3,5,7,9,11}, n=0..120: 27803 vectors; endpoints and length-DP agree.
+FAMILY a=3, (h,d,k)=(2,2,2), n=0..5000: every nonempty L(n) is an interval; observed delta=[1]; E(1,2)=[1,2].
+FAMILY a=5, (h,d,k)=(2,2,4), n=0..5000: every nonempty L(n) is an interval; observed delta=[1]; E(1,2)=[1,2].
+FAMILY a=7, (h,d,k)=(2,2,6), n=0..5000: every nonempty L(n) is an interval; observed delta=[1]; E(1,2)=[1,2].
+FAMILY a=9, (h,d,k)=(2,2,8), n=0..5000: every nonempty L(n) is an interval; observed delta=[1]; E(1,2)=[1,2].
+FAMILY a=11, (h,d,k)=(2,2,10), n=0..5000: every nonempty L(n) is an interval; observed delta=[1]; E(1,2)=[1,2].
+FAMILY a=13, (h,d,k)=(2,2,12), n=0..5000: every nonempty L(n) is an interval; observed delta=[1]; E(1,2)=[1,2].
+FAMILY a=15, (h,d,k)=(2,2,14), n=0..5000: every nonempty L(n) is an interval; observed delta=[1]; E(1,2)=[1,2].
+FAMILY a=17, (h,d,k)=(2,2,16), n=0..5000: every nonempty L(n) is an interval; observed delta=[1]; E(1,2)=[1,2].
+FAMILY a=19, (h,d,k)=(2,2,18), n=0..5000: every nonempty L(n) is an interval; observed delta=[1]; E(1,2)=[1,2].
+FAMILY a=21, (h,d,k)=(2,2,20), n=0..5000: every nonempty L(n) is an interval; observed delta=[1]; E(1,2)=[1,2].
+FAMILY a=23, (h,d,k)=(2,2,22), n=0..5000: every nonempty L(n) is an interval; observed delta=[1]; E(1,2)=[1,2].
+FAMILY a=25, (h,d,k)=(2,2,24), n=0..5000: every nonempty L(n) is an interval; observed delta=[1]; E(1,2)=[1,2].
+FAMILY a=27, (h,d,k)=(2,2,26), n=0..5000: every nonempty L(n) is an interval; observed delta=[1]; E(1,2)=[1,2].
+FAMILY a=29, (h,d,k)=(2,2,28), n=0..5000: every nonempty L(n) is an interval; observed delta=[1]; E(1,2)=[1,2].
+FAMILY a=31, (h,d,k)=(2,2,30), n=0..5000: every nonempty L(n) is an interval; observed delta=[1]; E(1,2)=[1,2].
+FAMILY total represented elements checked: 74415
+Finite windows do not certify absence of 2 for unbounded n; the proposed normalization argument supplies that obligation.
+ALL_CHECKS_OK
