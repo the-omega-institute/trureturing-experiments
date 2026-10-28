@@ -1,0 +1,90 @@
+FIDELITY A281181 19 displayed terms; rational EGF cross-check OK
+FIDELITY A281183 17 displayed terms; rational EGF cross-check OK
+FIDELITY A281184 17 displayed terms; rational EGF cross-check OK
+FIDELITY A281440 17 displayed terms; rational EGF cross-check OK
+LOG_WEIGHT A281180 derivative Sprime w4=20/3 nonintegral
+LOG_WEIGHT A281181 w4=5/3 nonintegral
+LOG_WEIGHT A281183 w4=10/3 nonintegral
+LOG_WEIGHT A281184 w6=41/5 nonintegral
+LOG_WEIGHT A281440 w4=13/3 nonintegral
+FIDELITY A281180 19 displayed terms; rational EGF cross-check OK
+FIDELITY A281180 modulo 7: displayed 18-term block; least cyclic period 18
+SOURCE_INDEX A281440 modulo 13: source example begins at n=1; offset-0 prefix is [1,1,3]
+BASE_OPERATOR p=2 P=(1+y^2)^2 c=0
+BASE_OPERATOR p=2 P=(1+y^2)^4 c=0
+BASE_OPERATOR p=3 P=(1+y^2)^2 c=1
+BASE_OPERATOR p=3 P=(1+y^2)^4 c=2
+BASE_OPERATOR p=5 P=(1+y^2)^2 c=3
+BASE_OPERATOR p=5 P=(1+y^2)^4 c=0
+BASE_OPERATOR p=7 P=(1+y^2)^2 c=3
+BASE_OPERATOR p=7 P=(1+y^2)^4 c=1
+BASE_OPERATOR p=11 P=(1+y^2)^2 c=5
+BASE_OPERATOR p=11 P=(1+y^2)^4 c=10
+BASE_OPERATOR p=13 P=(1+y^2)^2 c=7
+BASE_OPERATOR p=13 P=(1+y^2)^4 c=6
+BASE_OPERATOR p=17 P=(1+y^2)^2 c=9
+BASE_OPERATOR p=17 P=(1+y^2)^4 c=12
+BASE_OPERATOR p=19 P=(1+y^2)^2 c=9
+BASE_OPERATOR p=19 P=(1+y^2)^4 c=8
+PERIOD k=1 shift=1 onset=1 400 consecutive comparisons/member; 5 members OK; generated through n=401
+PERIOD k=2 shift=1 onset=3 400 consecutive comparisons/member; 5 members OK; generated through n=403
+PERIOD k=3 shift=4 onset=4 400 consecutive comparisons/member; 5 members OK; generated through n=407
+PERIOD k=4 shift=4 onset=9 400 consecutive comparisons/member; 5 members OK; generated through n=412
+PERIOD k=5 shift=16 onset=6 400 consecutive comparisons/member; 5 members OK; generated through n=421
+PERIOD k=6 shift=4 onset=4 400 consecutive comparisons/member; 5 members OK; generated through n=407
+PERIOD k=7 shift=36 onset=8 400 consecutive comparisons/member; 5 members OK; generated through n=443
+PERIOD k=8 shift=16 onset=33 400 consecutive comparisons/member; 5 members OK; generated through n=448
+PERIOD k=9 shift=36 onset=28 400 consecutive comparisons/member; 5 members OK; generated through n=463
+PERIOD k=10 shift=16 onset=6 400 consecutive comparisons/member; 5 members OK; generated through n=421
+PERIOD k=11 shift=100 onset=12 400 consecutive comparisons/member; 5 members OK; generated through n=511
+PERIOD k=12 shift=16 onset=9 400 consecutive comparisons/member; 5 members OK; generated through n=424
+PERIOD k=13 shift=144 onset=14 400 consecutive comparisons/member; 5 members OK; generated through n=557
+PERIOD k=14 shift=36 onset=8 400 consecutive comparisons/member; 5 members OK; generated through n=443
+PERIOD k=15 shift=64 onset=6 400 consecutive comparisons/member; 5 members OK; generated through n=469
+PERIOD k=16 shift=64 onset=129 400 consecutive comparisons/member; 5 members OK; generated through n=592
+PERIOD k=17 shift=256 onset=18 400 consecutive comparisons/member; 5 members OK; generated through n=673
+PERIOD k=18 shift=36 onset=28 400 consecutive comparisons/member; 5 members OK; generated through n=463
+PERIOD k=19 shift=324 onset=20 400 consecutive comparisons/member; 5 members OK; generated through n=743
+PERIOD k=20 shift=64 onset=9 400 consecutive comparisons/member; 5 members OK; generated through n=472
+PERIOD k=21 shift=144 onset=8 400 consecutive comparisons/member; 5 members OK; generated through n=551
+PERIOD k=22 shift=100 onset=12 400 consecutive comparisons/member; 5 members OK; generated through n=511
+PERIOD k=23 shift=484 onset=24 400 consecutive comparisons/member; 5 members OK; generated through n=907
+PERIOD k=24 shift=64 onset=33 400 consecutive comparisons/member; 5 members OK; generated through n=496
+PERIOD k=25 shift=400 onset=126 400 consecutive comparisons/member; 5 members OK; generated through n=925
+PERIOD k=26 shift=144 onset=14 400 consecutive comparisons/member; 5 members OK; generated through n=557
+PERIOD k=27 shift=324 onset=244 400 consecutive comparisons/member; 5 members OK; generated through n=967
+PERIOD k=28 shift=144 onset=9 400 consecutive comparisons/member; 5 members OK; generated through n=552
+PERIOD k=29 shift=784 onset=30 400 consecutive comparisons/member; 5 members OK; generated through n=1213
+PERIOD k=30 shift=64 onset=6 400 consecutive comparisons/member; 5 members OK; generated through n=469
+PERIOD k=31 shift=900 onset=32 400 consecutive comparisons/member; 5 members OK; generated through n=1331
+PERIOD k=32 shift=256 onset=513 400 consecutive comparisons/member; 5 members OK; generated through n=1168
+PERIOD k=33 shift=400 onset=12 400 consecutive comparisons/member; 5 members OK; generated through n=811
+PERIOD k=34 shift=256 onset=18 400 consecutive comparisons/member; 5 members OK; generated through n=673
+PERIOD k=35 shift=576 onset=8 400 consecutive comparisons/member; 5 members OK; generated through n=983
+PERIOD k=36 shift=144 onset=28 400 consecutive comparisons/member; 5 members OK; generated through n=571
+PERIOD k=37 shift=1296 onset=38 400 consecutive comparisons/member; 5 members OK; generated through n=1733
+PERIOD k=38 shift=324 onset=20 400 consecutive comparisons/member; 5 members OK; generated through n=743
+PERIOD k=39 shift=576 onset=14 400 consecutive comparisons/member; 5 members OK; generated through n=989
+PERIOD k=40 shift=256 onset=33 400 consecutive comparisons/member; 5 members OK; generated through n=688
+PERIOD k=41 shift=1600 onset=42 400 consecutive comparisons/member; 5 members OK; generated through n=2041
+PERIOD k=42 shift=144 onset=8 400 consecutive comparisons/member; 5 members OK; generated through n=551
+PERIOD k=43 shift=1764 onset=44 400 consecutive comparisons/member; 5 members OK; generated through n=2207
+PERIOD k=44 shift=400 onset=12 400 consecutive comparisons/member; 5 members OK; generated through n=811
+PERIOD k=45 shift=576 onset=28 400 consecutive comparisons/member; 5 members OK; generated through n=1003
+PERIOD k=46 shift=484 onset=24 400 consecutive comparisons/member; 5 members OK; generated through n=907
+PERIOD k=47 shift=2116 onset=48 400 consecutive comparisons/member; 5 members OK; generated through n=2563
+PERIOD k=48 shift=256 onset=129 400 consecutive comparisons/member; 5 members OK; generated through n=784
+PERIOD k=49 shift=1764 onset=344 400 consecutive comparisons/member; 5 members OK; generated through n=2507
+PERIOD k=50 shift=400 onset=126 400 consecutive comparisons/member; 5 members OK; generated through n=925
+PERIOD k=51 shift=1024 onset=18 400 consecutive comparisons/member; 5 members OK; generated through n=1441
+PERIOD k=52 shift=576 onset=14 400 consecutive comparisons/member; 5 members OK; generated through n=989
+PERIOD k=53 shift=2704 onset=54 400 consecutive comparisons/member; 5 members OK; generated through n=3157
+PERIOD k=54 shift=324 onset=244 400 consecutive comparisons/member; 5 members OK; generated through n=967
+PERIOD k=55 shift=1600 onset=12 400 consecutive comparisons/member; 5 members OK; generated through n=2011
+PERIOD k=56 shift=576 onset=33 400 consecutive comparisons/member; 5 members OK; generated through n=1008
+PERIOD k=57 shift=1296 onset=20 400 consecutive comparisons/member; 5 members OK; generated through n=1715
+PERIOD k=58 shift=784 onset=30 400 consecutive comparisons/member; 5 members OK; generated through n=1213
+PERIOD k=59 shift=3364 onset=60 400 consecutive comparisons/member; 5 members OK; generated through n=3823
+PERIOD k=60 shift=256 onset=9 400 consecutive comparisons/member; 5 members OK; generated through n=664
+PERIOD total exact comparisons: 120000
+ALL_CHECKS_OK

@@ -1,0 +1,7 @@
+SOURCE_FIDELITY: isotropic identity, m=2..5, symbolic F; m=4,F=41/50 reproduced
+MIXED_FAMILY: symbolic q; F=169/189; ensemble cost=R_A(F)=5/21
+MIXED_RANK: rank two for 0<q<1; half-mixture eigenvalues 19/21,2/21,0 (multiplicity 7)
+ROTATED_CUTOFF: off-diagonal generator has the same fidelity and pure tail
+FINITE_GENERATORS: 300 exact parameter/projector/scale cases; 60 rotated projections; m=2..4 and n=m,m+1
+LIMIT: finite and symbolic family checks; exhaustiveness and roof attainment require the proposed proof
+ALL_CHECKS_OK

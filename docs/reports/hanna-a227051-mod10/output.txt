@@ -1,0 +1,10 @@
+FIDELITY: reproduced all 16 OEIS DATA values exactly
+INITIAL: 1,3,53,2333,191673,25307913,4900979093
+FORMAL_SERIES: product and odd-zero checks through degree 240
+BRIDGES: rational Taylor inversion = integer binomial recurrence for 0 <= n <= 120
+DENOMINATOR: d(2r)=1; d(2r+1)=-1-2*(-4)^r checked for 0 <= n <= 120
+RESIDUES: a(n) odd for 0 <= n <= 120; a(n) == 3 mod 5 and mod 10 for 1 <= n <= 120
+IDENTITIES: even/alternating binomial sums and mod-5 inverse cancellation for 1 <= n <= 120
+LITERATURE_HYPOTHESIS: w_6 = 379/60; denominator divisible by both 2 and 5
+BOUNDARY: a(0)=1, deliberately excluded from the conjecture
+ALL_CHECKS_OK

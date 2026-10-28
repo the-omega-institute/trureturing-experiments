@@ -1,0 +1,45 @@
+A185761: width=2; raw_compressed_states=6; complement_orbit_states=3; full_pair_states=16
+  source_revision=8; source_updated=2018-02-22T09:13:55-05:00
+  all_bfile_terms=200; range=1..200; source_prefix_terms=26; fidelity_and_independent_transfer=OK
+  literal_bruteforce={1: 16, 2: 40, 3: 104, 4: 264, 5: 680, 6: 1736, 7: 4456}
+  recurrence_coefficients=[1, 4]; first_claimed_n=3; finite_bridge_n=[3]
+  q_coefficients_ascending=[-4, -1, 1]; burn=1; q(T)T^burn*1=[0, 0, 0]
+  certificate_w=T^burn*1=[2, 2, 4]
+  initial_orbit_multiplicities=[4, 8, 4]
+  canonical_matrix_sha256=d7e2a1ad7114126b761b9448118011f5efea1047ee423edbd7440e2b140e126f
+  OGF_numerator=[0, 16, 24]; OGF_denominator=[1, -1, -4]; coefficient_checks=0..200 OK
+  Barker_closed_form_in_Q_sqrt17=OK for every n=1..200
+A185762: width=3; raw_compressed_states=16; complement_orbit_states=8; full_pair_states=40
+  source_revision=9; source_updated=2018-04-16T11:13:48-04:00
+  all_bfile_terms=200; range=1..200; source_prefix_terms=24; fidelity_and_independent_transfer=OK
+  literal_bruteforce={1: 40, 2: 120, 3: 368, 4: 1128}
+  recurrence_coefficients=[1, 6, 1]; first_claimed_n=4; finite_bridge_n=[4, 5]
+  q_coefficients_ascending=[-1, -6, -1, 1]; burn=2; q(T)T^burn*1=[0, 0, 0, 0, 0, 0, 0, 0]
+  certificate_w=T^burn*1=[6, 6, 6, 6, 14, 6, 18, 12]
+  initial_orbit_multiplicities=[8, 4, 4, 4, 4, 4, 4, 8]
+  canonical_matrix_sha256=4f16f33365d945726d86efbd4e939f8a54500b00aef1145b4f7fe54a5b4a18b3
+  OGF_numerator=[0, 40, 80, 8]; OGF_denominator=[1, -1, -6, -1]; coefficient_checks=0..200 OK
+A185763: width=4; raw_compressed_states=40; complement_orbit_states=20; full_pair_states=104
+  source_revision=9; source_updated=2018-04-16T22:09:01-04:00
+  all_bfile_terms=200; range=1..200; source_prefix_terms=22; fidelity_and_independent_transfer=OK
+  literal_bruteforce={1: 104, 2: 368, 3: 1408}
+  recurrence_coefficients=[1, 10, 3, -5, 1]; first_claimed_n=7; finite_bridge_n=[7, 8]
+  q_coefficients_ascending=[-1, 5, -3, -10, -1, 1]; burn=3; q(T)T^burn*1=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+  certificate_w=T^burn*1=[26, 26, 44, 44, 60, 26, 60, 34, 18, 18, 68, 100, 86, 136, 50, 118, 18, 18, 50, 50]
+  initial_orbit_multiplicities=[4, 4, 8, 4, 4, 4, 4, 8, 4, 8, 8, 4, 8, 4, 4, 4, 4, 8, 4, 4]
+  canonical_matrix_sha256=069cf3889966946914136dfd638ce3ce2797757feb56be4dcb12d835f2fc99ed
+  OGF_numerator=[0, 104, 264, 0, -128, 56, -8]; OGF_denominator=[1, -1, -10, -3, 5, -1]; coefficient_checks=0..200 OK
+A185764: width=5; raw_compressed_states=104; complement_orbit_states=52; full_pair_states=264
+  source_revision=10; source_updated=2018-04-16T18:03:08-04:00
+  all_bfile_terms=200; range=1..200; source_prefix_terms=19; fidelity_and_independent_transfer=OK
+  literal_bruteforce={1: 264, 2: 1128}
+  recurrence_coefficients=[1, 17, 9, -22, -1, 1, -6]; first_claimed_n=10; finite_bridge_n=[10]
+  q_coefficients_ascending=[6, -1, 1, 22, -9, -17, -1, 1]; burn=3; q(T)T^burn*1=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+  certificate_w=T^burn*1=[60, 60, 62, 62, 26, 26, 150, 62, 150, 88, 94, 136, 94, 136, 42, 110, 18, 36, 18, 36, 26, 26, 42, 42, 18, 18, 104, 104, 128, 128, 50, 50, 240, 104, 272, 168, 306, 128, 356, 228, 284, 192, 18, 36, 18, 36, 50, 50, 18, 18, 124, 124]
+  initial_orbit_multiplicities=[8, 4, 4, 4, 4, 8, 4, 4, 4, 8, 8, 4, 8, 4, 4, 4, 8, 4, 4, 4, 4, 8, 4, 4, 4, 4, 4, 4, 4, 4, 8, 4, 4, 4, 4, 8, 4, 4, 4, 8, 4, 8, 8, 4, 4, 4, 8, 4, 4, 4, 4, 8]
+  canonical_matrix_sha256=10c007f9f77d9ea551772bec87b3a999570afdeb25cf6d84efc565362966dce5
+  OGF_numerator=[0, 264, 864, -344, -1992, -552, 40, 344, 648, 144]; OGF_denominator=[1, -1, -17, -9, 22, 1, -1, 6]; coefficient_checks=0..200 OK
+A185769 parent table: 142 applicable cells checked among all 683 bfile entries
+Width 6 excluded: raw_compressed_states=264; complement_orbit_states=132 > 64; first four smallest widths selected
+Evidence is exact integer/rational arithmetic; no floating point and no Lean proof.
+ALL_CHECKS_OK

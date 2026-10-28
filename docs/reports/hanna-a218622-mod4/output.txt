@@ -1,0 +1,27 @@
+STATE  0: output=1; next0=1; next1=2; sparse=dense=OK
+STATE  1: output=1; next0=1; next1=3; sparse=dense=OK
+STATE  2: output=1; next0=4; next1=5; sparse=dense=OK
+STATE  3: output=1; next0=6; next1=5; sparse=dense=OK
+STATE  4: output=1; next0=7; next1=8; sparse=dense=OK
+STATE  5: output=2; next0=9; next1=10; sparse=dense=OK
+STATE  6: output=1; next0=11; next1=12; sparse=dense=OK
+STATE  7: output=1; next0=7; next1=12; sparse=dense=OK
+STATE  8: output=1; next0=4; next1=5; sparse=dense=OK
+STATE  9: output=2; next0=13; next1=14; sparse=dense=OK
+STATE 10: output=2; next0=9; next1=10; sparse=dense=OK
+STATE 11: output=1; next0=11; next1=8; sparse=dense=OK
+STATE 12: output=1; next0=6; next1=5; sparse=dense=OK
+STATE 13: output=2; next0=13; next1=9; sparse=dense=OK
+STATE 14: output=0; next0=14; next1=14; sparse=dense=OK
+CERTIFICATE: 15 input pairs, all 30 polynomial transition identities verified twice
+ALGEBRA: exact GF(2) resultant, derivative, and denominator identities OK
+FIDELITY: literal rational sum = normalized convolution = OEIS exact a(n), n=0..300
+FIDELITY: automaton = OEIS A218622 b-file residues, n=0..2048
+PREFIX: 1,1,5,26,145,841,5006,30350,186537,1158685,7258145,45779420
+BRIDGE: F=G*Sum binom(2m,m)*(G-1)^(2m); source square-root identity and G+2k, n=0..150
+CENTRAL BINOMIAL: predicted mod-4 power-of-two support, m=1..1000
+DIAGONALS: independent bivariate rational-series division agrees, n=0..64
+AUTOMATON COUNTS n=0..65535: {0: 52117, 1: 2584, 2: 10835}
+SCOPE: finite source checks and finite polynomial certificates; no Lean proof executed
+check.py sha256: 0a2dc7c07946d09dc13b024ec0c44dcf9c3eb447353f90cf9f5f2b83ebc67b98
+ALL_CHECKS_OK

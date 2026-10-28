@@ -1,0 +1,12 @@
+Arithmetic: integers and exact SymPy polynomial/rational/matrix algebra
+FIDELITY Proposition 14: (m, dim Der(A_m)) = [(1, 0), (2, 1), (3, 3), (4, 6), (5, 10), (6, 15), (7, 21)]
+FIDELITY full Leibniz kernels equal the embedded skew spaces; exact orthogonal examples verified
+TANGENT generic bilinear products d=1..3: dual-number equations = Leibniz; det(I+eps D) = 1+eps tr(D) mod eps^2
+SL3 exact adjoint Killing matrix: dimension=8, determinant=-5038848
+SL3 dimension obstruction: so factors of dimension <=8 have dimensions 3 or 6; no sum equals 8
+FAMILY exact all-n polynomial reductions: -(n - 4)*(n - 1) ; -(n - 2)*(n - 1)
+FAMILY n=2..256 simultaneous (rank,dimension) matches: [(2, 3), (4, 6)]
+CONTROL dimension alone has extra matches: [(2, 3), (4, 6), (11, 16), (23, 33), (64, 91), (134, 190)]
+BOUNDARY n=2 and n=4 are not excluded; these checks do not assert their group realization
+SCOPE classification, differentiation of natural isomorphisms, and maximal-Cartan rank formulas require the mathematical argument
+ALL_CHECKS_OK

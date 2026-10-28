@@ -1,0 +1,23 @@
+FIDELITY: OEIS A233860 revision 10 DATA, all 20 terms reproduced
+FIRST_20 = [1, 1, 5, 35, 355, 4465, 69125, 1252475, 26151475, 616872025, 16234589525, 471382586675, 14970245087875, 516142537458625, 19199498482905125, 766394702651760875, 32676482018991377875, 1482055899582130035625, 71248344993651091083125, 3618867148116847594611875]
+EULER_PRODUCT: reciprocal and pentagonal coefficients agree through degree 160
+INDEPENDENT_RATIONAL_INVERSE: both compositions through degree 32 ; source ODE through degree 31 ; factorial-scaled values agree
+PRIME_LOCAL: 5 pentagonal residues [0, 1, 2] ; G denominators checked through 160 ; inverse denominators through 32 ; factorial lower bound through 160
+PRIME_LOCAL: 7 pentagonal residues [0, 1, 2, 5] ; G denominators checked through 160 ; inverse denominators through 32 ; factorial lower bound through 160
+F5_G_SPARSE = {1: 1, 2: 2, 3: 3, 6: 1, 8: 2, 13: 3, 16: 4, 23: 2}
+F5_B_SPARSE = {1: 1, 2: 3, 5: 4, 6: 2, 10: 3, 11: 3, 12: 3, 15: 4, 16: 3, 17: 1, 20: 1, 21: 4, 22: 2}
+F5_G_OF_B_DEGREES_0_TO_24 = [0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+EXCEPTION: 3 a(n) = 5 v5 = 1
+EXCEPTION: 4 a(n) = 35 v5 = 1
+EXCEPTION: 8 a(n) = 1252475 v5 = 2
+EXCEPTION: 9 a(n) = 26151475 v5 = 2
+EXCEPTION: 13 a(n) = 14970245087875 v5 = 3
+EXCEPTION: 14 a(n) = 516142537458625 v5 = 3
+EXCEPTION: 18 a(n) = 1482055899582130035625 v5 = 4
+EXCEPTION: 19 a(n) = 71248344993651091083125 v5 = 4
+EXCEPTION: 23 a(n) = 641829656892378802582108653125 v5 = 5
+EXCEPTION: 24 a(n) = 39577486974389791588982993046875 v5 = 7
+CONJECTURES: all n = 1.. 160 ; parity cases = 160 ; admissible (k,n) for 5 = 2576 ; admissible (k,n) for 7 = 1771
+SCOPE: finite exact checks and the displayed polynomial certificate;
+       no unbounded theorem or Lean proof is certified by this program.
+ALL_CHECKS_OK

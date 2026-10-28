@@ -1,0 +1,8 @@
+FIDELITY: displayed order-3 partial Latin square: 0 of 12 Latin squares avoid it
+FIDELITY: source Conjecture-4 small-order assertion checked on all 148 ordered pairs at n=2,3
+ROOK: exact inclusion-exclusion, every Bonferroni truncation and collision bound: all 531 graphs at n=0..3
+OVERLAP: double-counting and O(r) overlap bound: all 2522 admissible 3-graph families at n=2, t=1,2
+HALL: all 66066 bipartite graphs at n=1..4; 6821 satisfy the degree/common-neighborhood criterion and have complement matching
+STRUCTURE: (order, all Latin squares, arrays)=[(1, 1, 2), (2, 2, 256), (3, 12, 11776)]; conflict/matching identities, graph degrees, edge multiplicity and coordinate conjugation all exact
+SCOPE: these finite checks test proof identities; they do not certify a uniform asymptotic threshold N(t)
+ALL_CHECKS_OK

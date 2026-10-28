@@ -1,0 +1,12 @@
+Kernel check: m,k=0..24; 625 exact identities; division, binomial expansion and Delannoy recurrence agree
+A323689 source table: rows=10001 range=0..10000 sha256=da50ca41f674f7c46f3fd9a40a6ffd03b6f4ec60a7a839b734cb35b5624baa49
+A323689 fidelity: literal rational summands by polynomial division reproduce published a(0)..a(80)
+A323689 full-table fidelity and expected parity: 10001 cases; coefficient, integrality and parity mismatches=0
+A323689 first 17 coefficients: [1, 3, 0, -14, 13, 22, 0, -30, -82, 101, 0, -46, 170, 54, 0, -524, 31]
+A324300 source table: rows=10202 range=0..10201 sha256=f7cc1c93f87d546d4df93149141bb9880fa079db2f99f968b0fd47dc944e187c
+A324300 fidelity: literal rational summands by polynomial division reproduce published a(0)..a(80)
+A324300 full-table fidelity and expected parity: 10202 cases; coefficient, integrality and parity mismatches=0
+A324300 first 17 coefficients: [1, 0, -2, 3, 2, 0, -2, -14, 15, 0, -2, 22, 2, 0, -84, 33, 2]
+Examples: A323689(16)=321-2*145=31; A324300(8)=2+13=15
+Finite checks support the transcription and proposed route; they do not prove either unbounded claim.
+ALL_CHECKS_OK

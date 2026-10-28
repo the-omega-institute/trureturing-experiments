@@ -1,0 +1,24 @@
+Exact arithmetic; SymPy 1.14.0; no floating-point evidence
+FIDELITY: source Proposition 3.3 (connected triangle-free graphs)
+n=1: all 1 connected triangle-free labelled graphs pass
+n=2: all 1 connected triangle-free labelled graphs pass
+n=3: all 3 connected triangle-free labelled graphs pass
+n=4: all 19 connected triangle-free labelled graphs pass
+n=5: all 207 connected triangle-free labelled graphs pass
+n=6: all 3571 connected triangle-free labelled graphs pass
+Source Proposition 3.1: paths on 2..10 vertices have roots -1 and -1/(n-1)
+FAMILY: symbolic identities in integer parameter m
+C_m(x) = 1 + (6*m+1)*x + (12*m**2+m)*x**2 + 8*m**3*x**3
+discriminant = -m**2*(108*m**2 - 1)
+4*m*C_m((u-1)/(2*m)) = 4*m*u**3 + u**2 - 1
+critical values: 1/(108*m**2)-1 and -1; both negative for m>=2
+m=2: clique counts=[1, 13, 50, 64]; K4-free; exactly 1 real root; cut size=2; deletion checks=14
+m=3: clique counts=[1, 19, 111, 216]; K4-free; exactly 1 real root; cut size=3; deletion checks=191
+m=4: clique counts=[1, 25, 196, 512]; K4-free; exactly 1 real root; cut size=4; deletion checks=2626
+m=5: clique counts=[1, 31, 305, 1000]; K4-free; exactly 1 real root; cut size=5; deletion checks=36457
+m=6: clique counts=[1, 37, 438, 1728]; K4-free; exactly 1 real root; cut size=6; deletion checks=0
+m=7: clique counts=[1, 43, 595, 2744]; K4-free; exactly 1 real root; cut size=7; deletion checks=0
+m=8: clique counts=[1, 49, 776, 4096]; K4-free; exactly 1 real root; cut size=8; deletion checks=0
+Finite graph checks cover m=2..8; exhaustive lower connectivity checks cover m=2..5.
+Uniform graph counting/connectivity and root conclusions still require mathematical proofs.
+ALL_CHECKS_OK

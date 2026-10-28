@@ -1,0 +1,17 @@
+Fidelity: integer Bell recursion and Fraction/Horner agree through n=17
+Source first eight a(n): [1, 2, 27, 820, 41005, 2933046, 277407235, 33008920904]
+Source fourth iterate through n=7: [1, 8, 180, 7240, 435400, 35615124, 3738724696]
+Fidelity: all 201 integer terms equal the pinned OEIS b-file
+b-file sha256: 32a0947573161ef08b5eb7b11c581d6c676bbcba1001a39a5634c599e55ac986
+Sixth logarithmic weight of A/x: 2967927/10 (not 5-integral)
+Quotient recurrence k=1: V=[1, 4, 0, 0, 0]; W=[1, 4, 1, 0, 4]
+Quotient recurrence k=2: V=[0, 1, 4, 0, 0]; W=[0, 2, 0, 2, 1]
+Quotient recurrence k=3: V=[0, 0, 1, 3, 1]; W=[0, 1, 2, 2, 0]
+Quotient recurrence k=4: V=[1, 1, 0, 1, 2]; W=[2, 2, 3, 0, 3]
+Exact quotient identity: f = X Exp_R(f composed four times); all 25 coefficients agree
+Initial residues n=1..4: [1, 2, 2, 0]
+Candidate period-20 table, indexed by n mod 20: [0, 1, 0, 1, 0, 0, 1, 0, 4, 0, 0, 1, 0, 4, 1, 0, 1, 0, 0, 2]
+No residue 3 in independently generated terms n=1..201
+Extraction and period checks pass for n=5..1000
+Scope: exact finite checks; the infinite Hurwitz identification is not a Lean proof
+ALL_CHECKS_OK
