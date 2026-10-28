@@ -80,7 +80,7 @@ def connected(neighbors):
 
 
 def check_fidelity():
-    """Source Section 2.3: D_i(G[K_r],x) = D_i(G,r*x)."""
+    """Source Section 2 (also Open Problem 1): D_i(G[K_r],x) = D_i(G,r*x)."""
     cases = 0
     for n in range(5):
         edges = tuple(combinations(range(n), 2))
