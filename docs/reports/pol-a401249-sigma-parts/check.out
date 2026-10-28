@@ -1,0 +1,14 @@
+FIDELITY A401249 n=70: blocks=[[1, 2], [5, 7, 10, 14], [35, 70]]; odd counts=[1, 2, 1]; minimum=1
+FIDELITY A279387 n=12: subparts by layer=[1, 1]; subparts by part=[2]
+FIDELITY A279387 n=15: subparts by layer=[3, 1]; subparts by part=[1, 2, 1]
+FIDELITY A279387 n=18: subparts by layer=[1, 2]; subparts by part=[3]
+FIDELITY A279387 n=45: subparts by layer=[3, 3]; subparts by part=[1, 4, 1]
+FIDELITY A279387 n=90: subparts by layer=[1, 3, 2]; subparts by part=[6]
+FIDELITY A279387 n=360: subparts by layer=[1, 1, 1, 1, 2]; subparts by part=[6]
+FIDELITY A401249 revision #22: all 105 DATA terms reproduced by both definitions
+EXACT CHECK n=1..10000: ordered per-part counts = ordered per-block odd counts; minima equal
+EXACT CHECK: total subparts = odd divisors; alternating widths = half-open divisor-window widths
+EXACT CHECK: layer-component counts = positive variation; complete dyadic chains stay in one block
+COVERAGE parts=32598 subparts=50292 half_width_entries=932960 central=2932 noncentral=29666
+SCOPE: finite exact evidence only; no universal proof or Lean probe was performed
+ALL_CHECKS_OK
