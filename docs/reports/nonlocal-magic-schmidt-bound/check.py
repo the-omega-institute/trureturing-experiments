@@ -6,7 +6,6 @@ used as evidence.
 """
 
 from fractions import Fraction
-from math import log2
 
 
 def parity(value: int) -> int:
