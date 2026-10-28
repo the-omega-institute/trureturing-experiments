@@ -1,0 +1,16 @@
+FIDELITY Definition 8.10 ribbon: 121122112 -> (2,4,2,4,1)
+FIDELITY Section 8.1 example: ell=(1,3,5), g=(2,3)
+SOURCE_BOUNDARY k=(1,1,1,1,1): A=(1,2,2); B_literal=(1,2,1), weight=4; B_weight_preserving=(2,2,1), weight=5
+NC n=1: Catalan=1, compositions=1, intended_support=1, literal_same_weight_support=1, literal_sum=1
+NC n=2: Catalan=2, compositions=2, intended_support=2, literal_same_weight_support=2, literal_sum=2
+NC n=3: Catalan=5, compositions=4, intended_support=4, literal_same_weight_support=4, literal_sum=5
+NC n=4: Catalan=14, compositions=8, intended_support=8, literal_same_weight_support=8, literal_sum=14
+NC n=5: Catalan=42, compositions=16, intended_support=16, literal_same_weight_support=15, literal_sum=41
+NC n=6: Catalan=132, compositions=32, intended_support=32, literal_same_weight_support=27, literal_sum=123
+NC n=7: Catalan=429, compositions=64, intended_support=64, literal_same_weight_support=48, literal_sum=376
+NC n=8: Catalan=1430, compositions=128, intended_support=128, literal_same_weight_support=86, literal_sum=1170
+NC n=9: Catalan=4862, compositions=256, intended_support=256, literal_same_weight_support=157, literal_sum=3706
+FIDELITY Figure 8: all 64 entries match the explicitly weight-preserving interpretation, sum=42
+SOURCE_BOUNDARY Figure 8 versus literal block: only (221,122) differs: 1 versus 0; literal sum=41
+SUPPORT all positive compositions of 1<=n<=14: intended=16383, literal_same_weight=8569; no dominance, hike, or order violation
+ALL_CHECKS_OK
