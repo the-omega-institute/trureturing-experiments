@@ -121,7 +121,7 @@ def compositions(total, length):
 
 def source_extremizers(d, e, v):
     k, mu, m, r = parameters(d, e, v)
-    # Equations (53)–(55), with their separate zero-remainder branch.
+    # Equations (42)–(44), with their separate zero-remainder branch.
     capped = (v / e,) * k + ((mu / e,) if mu else ())
     assert len(capped) == m and sum(capped) == 1
     q = capped + (Q(0),) * r

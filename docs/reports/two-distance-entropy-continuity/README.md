@@ -4,7 +4,7 @@ Source: Michael G. Jabbour and Nilanjana Datta, “Tightening continuity bounds 
 entropies and bounds on quantum capacities”, arXiv:2310.17329v3,
 DOI 10.1109/JSAIT.2024.3469929. The target is Conjecture 1, equation (108),
 with the function in equations (18)–(19). The classical fidelity result is
-Theorem 3 and its saturating distributions in equations (53)–(55).
+Theorem 3 and its saturating distributions in equations (42)–(44).
 
 Run `python3 check.py`. Python 3.9 or newer and the standard library suffice.
 The expected output is stored in `output.txt`.
