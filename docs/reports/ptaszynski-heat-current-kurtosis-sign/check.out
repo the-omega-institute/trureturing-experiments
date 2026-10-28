@@ -1,0 +1,7 @@
+source Eq. (19) fidelity case: K = 5201/12032
+family R=8: c2 = 3581/2401
+family R=8: c4/c2 = -113056891/1685204276
+family R>=8: c4 polynomial certificate has 14 positive coefficients
+six distinct energies: c2 = 9010078778600/35431447851
+six distinct energies: c4 = -70265274785484432257383595000/53520935151847443648463233
+ALL_CHECKS_OK

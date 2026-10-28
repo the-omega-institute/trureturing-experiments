@@ -1,0 +1,9 @@
+# Kotesovec exp-power-sum asymptotics
+
+Run `python3 check.py` with Python 3; no third-party packages are needed. `output.txt` is its exact output. The terminal line is `ALL_CHECKS_OK`.
+
+The checker reproduces the first 15 OEIS terms of A156170, A276751, A276752, A292500, A292501, A292502 and A156100 from their defining generating functions. A292502 starts at index 1 and is **N times** the coefficient of its logarithmic generating function; the other sequences start at 0. It checks integral coefficients, positivity, and the proposed rational lower and upper bounds at every 1 <= N <= 40. A max-product dynamic program independently checks every 1 <= m <= N <= 20. Exponentiation by the coefficient recurrence is cross-checked against direct finite exponential powers through degree 15. The signed expression for A292501 is checked against positive first differences for every 1 <= m <= 40 through degree 40.
+
+For N >= 1 put m = ceil(N/2), t = floor(N/2), D = floor(N^2/4). The proposed lower bounds are 2^D/m (A156170, A156100), 2^((2m-1)t)/m (A276751), 2^(2D)/m (A276752), 3^D/m (A292500), N*3^D/m (A292502), and (3^m-1)^t/m (A292501). The exponential-series upper bounds are 4^N times 2^D, 2^(2D), or 3^D, respectively. The A292502 upper bound is N*2^(N-1)*3^D. The checker uses only integers and `fractions.Fraction`; no floating-point calculation is evidence. Finite checks do not prove an asymptotic limit.
+
+Sources: https://oeis.org/A156170, https://oeis.org/A276751, https://oeis.org/A276752, https://oeis.org/A292500, https://oeis.org/A292501, https://oeis.org/A292502, https://oeis.org/A156100. Generating functions and initial terms are credited to Paul D. Hanna; the limit conjectures are credited to Vaclav Kotesovec. OEIS term data are reproduced under the [OEIS End-User License Agreement](https://oeis.org/LICENSE). The embedded 15-term lists are the expected data, independent of the generating-function computation.

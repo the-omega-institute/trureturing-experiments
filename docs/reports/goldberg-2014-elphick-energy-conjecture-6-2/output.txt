@@ -1,0 +1,9 @@
+FIDELITY: 20 complete bipartite graphs; exact charpoly, trace(A^2)=2m,
+E=2*sqrt(p*q)=2m/rho. Source typo m=2pq is excluded; actual m=pq.
+T_t: exact full adjacency charpolys at t=1..12,15,16,20 agree.
+WITNESS: n=31 m=30 rho=4 E=36 proposed_bound=30; basis rank=31.
+FAMILY: exact gap factorization; ratio=k/2+k/(2*(k^2+1))>k/2.
+Checked strict gap for k=2..100; symbolic formulas cover the proposed route.
+U_t: exact charpolys and nonzero determinants at t=1..8,16,20;
+positive reciprocal exceptional roots; radical bounds checked at t=16,17,20,100,10000.
+ALL_CHECKS_OK

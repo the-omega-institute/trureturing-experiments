@@ -1,0 +1,13 @@
+Arithmetic: SymPy exact integers, rationals, and algebraic square roots only
+SOURCE_FIDELITY: Proposition 3.2: Fhat(Tr(.)P,Tr(.)R)=0; Fhat(Omega/2,Omega/2)=1
+CHANNEL: delta=1/16; kappa=2; t=1/16; Fhat1=sqrt(15)/8; Fhat2=0; old_bound=1/2; STRICT
+CHANNEL: delta=1/8; kappa=2; t=1/8; Fhat1=sqrt(7)/4; Fhat2=0; old_bound=sqrt(2)/2; STRICT
+CHANNEL: delta=1/4; kappa=2; t=1/4; Fhat1=sqrt(3)/2; Fhat2=0; old_bound=1; STRICT
+CHANNEL: delta=1/3; kappa=2; t=1/3; Fhat1=2*sqrt(2)/3; Fhat2=0; old_bound=2*sqrt(3)/3; STRICT
+CHANNEL: delta=1/2; kappa=2; t=1/2; Fhat1=1; Fhat2=0; old_bound=sqrt(2); STRICT
+IDENTITY: q(E)-q(F)=(AB+BA)/2, checked in the free noncommutative algebra
+EFFECTS: 196 exact ordered pairs; 50 noncommuting; quadratic and square-root bounds pass
+LIMIT: channel ratio squared = 1-delta, whose limit at delta down to 0 is 1
+Scope: finite exact checks and symbolic identities; no universal Lean proof
+check.py sha256=026e731ad4e76ef030434901ce103e84169753c691b65dff04b26a966b95c5aa
+ALL_CHECKS_OK

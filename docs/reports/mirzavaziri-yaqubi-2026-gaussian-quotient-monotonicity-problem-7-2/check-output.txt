@@ -1,0 +1,35 @@
+FIDELITY Theorem 4.3: m=4, negatives=[(1, -1), (5, -1), (59, -1), (63, -1)]
+FIDELITY Theorem 4.3: m=6, negatives=[(1, -1), (7, -1), (147, -1), (153, -1)]
+FIDELITY P^(1)=1+q^2+q^4
+RESIDUES A=[1, -1, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 1, 0, 2, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+RESIDUES B=[2, 2, 2, 2, 2, 1, 2, 2, 1, 2, 2, 1, 1, 2, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0]
+PERIOD certificate: deg(E)=32, E(1)=1, checked 50 periods
+SMALL independent subset count=4060, deg(G)=81, deg(U)=75, deg(P)=66
+SMALL U coefficients 0..37=[1, 0, 1, 1, 1, 1, 2, 2, 2, 3, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 9, 9, 10, 11, 11, 12, 13, 13, 13, 14, 14, 14, 15, 15, 15, 15, 15]
+SMALL P all coefficients=[1, -1, 1, 0, 0, 0, 1, 0, 0, 1, 1, -1, 2, 0, 1, 0, 2, 0, 1, 1, 2, 0, 2, 1, 2, 0, 3, 1, 1, 1, 3, 0, 2, 2, 2, 0, 3, 1, 1, 1, 3, 0, 2, 1, 2, 0, 2, 1, 1, 0, 2, 0, 1, 0, 2, -1, 1, 1, 0, 0, 1, 0, 0, 0, 1, -1, 1]
+SMALL negative coefficients=[(1, -1), (11, -1), (55, -1), (65, -1)]
+FAMILY m=0, N=30, deg(U)=75, deg(P)=66, min(first-half differences from 2)=0, u10=u11=3, p11=-1
+FAMILY m=1, N=450, deg(U)=1335, deg(P)=1326, min(first-half differences from 2)=0, u10=u11=3, p11=-1
+FAMILY m=2, N=870, deg(U)=2595, deg(P)=2586, min(first-half differences from 2)=0, u10=u11=3, p11=-1
+FAMILY m=3, N=1290, deg(U)=3855, deg(P)=3846, min(first-half differences from 2)=0, u10=u11=3, p11=-1
+FAMILY m=4, N=1710, deg(U)=5115, deg(P)=5106, min(first-half differences from 2)=0, u10=u11=3, p11=-1
+FAMILY m=5, N=2130, deg(U)=6375, deg(P)=6366, min(first-half differences from 2)=0, u10=u11=3, p11=-1
+FAMILY m=6, N=2550, deg(U)=7635, deg(P)=7626, min(first-half differences from 2)=0, u10=u11=3, p11=-1
+FAMILY m=7, N=2970, deg(U)=8895, deg(P)=8886, min(first-half differences from 2)=0, u10=u11=3, p11=-1
+FAMILY m=8, N=3390, deg(U)=10155, deg(P)=10146, min(first-half differences from 2)=0, u10=u11=3, p11=-1
+FAMILY m=9, N=3810, deg(U)=11415, deg(P)=11406, min(first-half differences from 2)=0, u10=u11=3, p11=-1
+FAMILY m=10, N=4230, deg(U)=12675, deg(P)=12666, min(first-half differences from 2)=0, u10=u11=3, p11=-1
+FAMILY m=11, N=4650, deg(U)=13935, deg(P)=13926, min(first-half differences from 2)=0, u10=u11=3, p11=-1
+FAMILY m=12, N=5070, deg(U)=15195, deg(P)=15186, min(first-half differences from 2)=0, u10=u11=3, p11=-1
+FAMILY m=13, N=5490, deg(U)=16455, deg(P)=16446, min(first-half differences from 2)=0, u10=u11=3, p11=-1
+FAMILY m=14, N=5910, deg(U)=17715, deg(P)=17706, min(first-half differences from 2)=0, u10=u11=3, p11=-1
+FAMILY m=15, N=6330, deg(U)=18975, deg(P)=18966, min(first-half differences from 2)=0, u10=u11=3, p11=-1
+FAMILY m=16, N=6750, deg(U)=20235, deg(P)=20226, min(first-half differences from 2)=0, u10=u11=3, p11=-1
+FAMILY m=17, N=7170, deg(U)=21495, deg(P)=21486, min(first-half differences from 2)=0, u10=u11=3, p11=-1
+FAMILY m=18, N=7590, deg(U)=22755, deg(P)=22746, min(first-half differences from 2)=0, u10=u11=3, p11=-1
+FAMILY m=19, N=8010, deg(U)=24015, deg(P)=24006, min(first-half differences from 2)=0, u10=u11=3, p11=-1
+FAMILY m=20, N=8430, deg(U)=25275, deg(P)=25266, min(first-half differences from 2)=0, u10=u11=3, p11=-1
+FAMILY m=100, N=42030, deg(U)=126075, deg(P)=126066, min(first-half differences from 2)=0, u10=u11=3, p11=-1
+FAMILY exact full coefficient checks: 22 cases; m=0..20 and m=100
+SCOPE unbounded family requires the stated cyclotomic/period argument; no Lean proof is claimed
+ALL_CHECKS_OK

@@ -1,0 +1,10 @@
+STATES 68; INITIAL_MULTIPLICITY 335; TRANSITIONS 405
+DIRECT n=1; matrices=1024; valid=335
+DIRECT n=2; matrices=32768; valid=3254
+DIRECT n=3; matrices=1048576; valid=31805
+SOURCE_FIDELITY displayed_terms=16; bfile_terms=210; all equal
+CERTIFICATE P(T)T^4v equals the specified 11-pair vector; nonzero=True
+INVARIANT_SUBSPACE all 11 generators mapped into paired zero-sum span
+CORROBORATION sum(T^k w)=0 for k=0..68; auxiliary degree-4 vector identity holds
+RECURRENCE all n=16..500; exact integers; original threshold retained
+ALL_CHECKS_OK

@@ -1,0 +1,38 @@
+Python 3, SymPy 1.14.0
+Exact deterministic Schreier-Sims orders; tuple-BFS cross-check for n <= 7.
+Scope: every pair 2 <= k < m < n, for every 3 <= n <= 24.
+FIDELITY: source Section 4.2 eight n=7 triples reproduced exactly:
+[(7, 4, 2), (7, 4, 3), (7, 5, 2), (7, 5, 4), (7, 6, 2), (7, 6, 3), (7, 6, 4), (7, 6, 5)]
+FIDELITY: Theorem 4, m=n-2 and opposite parity: 210 cases
+STRUCTURE: parity-correct triangular exclusions: 670
+STRUCTURE: forward shifts by four: 323 ; parity-restricted shifts by two: 184
+n,residue,f(n),c_q,error,error/n
+3,3,0,1/7,9/7,3/7
+4,0,1,1/13,3/13,3/52
+5,1,3,1/9,2/9,2/45
+6,2,3,1/10,3/5,1/10
+7,3,8,1/7,1,1/7
+8,0,5,1/13,1/13,1/104
+9,1,9,1/9,0,0
+10,2,9,1/10,1,1/10
+11,3,20,1/7,19/7,19/77
+12,0,11,1/13,1/13,1/156
+13,1,21,1/9,20/9,20/117
+14,2,20,1/10,2/5,1/35
+15,3,35,1/7,20/7,4/21
+16,0,19,1/13,9/13,9/208
+17,1,34,1/9,17/9,1/9
+18,2,32,1/10,2/5,1/45
+19,3,61,1/7,66/7,66/133
+20,0,32,1/13,16/13,4/65
+21,1,49,1/9,0,0
+22,2,47,1/10,7/5,7/110
+23,3,87,1/7,80/7,80/161
+24,0,44,1/13,4/13,1/78
+FINITE_ERROR q=0: max |f(n)-c_q*n^2|/n = 4/65
+FINITE_ERROR q=1: max |f(n)-c_q*n^2|/n = 20/117
+FINITE_ERROR q=2: max |f(n)-c_q*n^2|/n = 1/10
+FINITE_ERROR q=3: max |f(n)-c_q*n^2|/n = 80/161
+CHECKED_PAIRS 1771 BFS_CROSS_CHECKS 20 INVOLUTION_CHECKS 275
+LIMIT: finite checks establish neither the conjecture nor its negation.
+ALL_CHECKS_OK

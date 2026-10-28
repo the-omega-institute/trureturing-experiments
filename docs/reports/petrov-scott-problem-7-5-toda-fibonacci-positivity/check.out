@@ -1,0 +1,10 @@
+FIDELITY: source (7.3), all four moment polynomials agree exactly
+FIDELITY: Example 7.3 Toda equations, n=1..8, correct backward-time orientation
+INITIAL: A_n=1 (n=0..12); B_k(shift r)=r+1 (k=0..7,r=0..5); 609 positive words (weight<=12)
+FAMILY: 81 independent rational tails, 7128 exact scaling/positivity comparisons (weight<=8), D=1/6
+DETERMINANTS: generic B_(N+1)(shift r) identity, N=0..5,r=0..3 (24 symbolic matrix determinants)
+VECTOR FIELD: generic induced Toda equations n=1..6; delta_prime=D; c_k=L/k gives D=L/6
+ATOM OBSTRUCTION: generic p_n(0)^2=c_1/(c_(n+1)*T_n), n=1..8 (essential c ratio retained)
+ZERO ATOM: Jv=0 rows 1..8 for generic positive c; exact sum (n+1)/n! = 2*e, so explicit-family mass=1/(2*e)
+SCOPE: finite exact algebra only; infinite spectral existence, tilting and immediate exit require the hand argument and later Lean proof
+ALL_CHECKS_OK

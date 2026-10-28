@@ -1,0 +1,23 @@
+SU2: determinant and adjoint-product identities checked symbolically
+SOURCE_EXAMPLE_1: normalized masses 1/4, 7/8; F1^2=4/9; F2^2=13/28; Fsum^2=127/252
+SOURCE_EXAMPLE_1: surface volumes are 2*pi^2 times the normalized masses
+SYMBOLIC_FAMILY: Beta moments, zero transverse mean, mixed second moment and composition checked
+BOUNDS: h>=1/30, 0<m<a/3<1/60 imply composed F^2>1/2
+LIMITS: F^2->1; m->0; k^3*m/a->20; k^6*defect/a^2->-800
+DIRECT_HAAR k=2: Z=5/4; p=8/15; all 3 rational perturbations checked
+DIRECT_HAAR k=3: Z=7/4; p=4/7; all 3 rational perturbations checked
+DIRECT_HAAR k=4: Z=21/8; p=17/28; all 3 rational perturbations checked
+DIRECT_HAAR k=5: Z=33/8; p=23/36; all 3 rational perturbations checked
+DIRECT_HAAR k=6: Z=429/64; p=2/3; all 3 rational perturbations checked
+DIRECT_HAAR k=7: Z=715/64; p=38/55; all 3 rational perturbations checked
+DIRECT_HAAR k=8: Z=2431/128; p=47/66; all 3 rational perturbations checked
+DIRECT_HAAR k=9: Z=4199/128; p=19/26; all 3 rational perturbations checked
+DIRECT_HAAR k=10: Z=29393/512; p=68/91; all 3 rational perturbations checked
+DIRECT_HAAR k=11: Z=52003/512; p=16/21; all 3 rational perturbations checked
+DIRECT_HAAR k=12: Z=185725/1024; p=31/40; all 3 rational perturbations checked
+DIRECT_HAAR k=13: Z=334305/1024; p=107/136; all 3 rational perturbations checked
+DIRECT_HAAR k=14: Z=9694845/16384; p=122/153; all 3 rational perturbations checked
+DIRECT_HAAR: 39 independent exact polynomial density checks
+EXACT_MEMBER k=2,a=1/40: p=8/15; m=3/4480; Fsum^2=113/225-9/10035200
+SCOPE: verifies the stated SU(2) model; identification with the source's general sum remains a separate obligation
+ALL_CHECKS_OK

@@ -1,0 +1,3 @@
+checked direct permutations m=1..8 and recurrence through m=202
+checked f(4), f(6), f(8), the sharp p=2 failure, ratio envelopes, and polynomial identity
+ALL_CHECKS_OK

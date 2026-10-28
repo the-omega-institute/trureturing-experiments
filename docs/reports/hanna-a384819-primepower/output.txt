@@ -1,0 +1,13 @@
+FIDELITY A384819: all 520 published terms (n=1..520) match
+FIDELITY A384820: all 41 displayed coefficients (n=0..40) match
+INDEPENDENCE: coefficient recurrence and divisor-ledger recursion agree for n=1..2048
+EULER_PRODUCT: exact signed-binomial product agrees through degree 96
+FORMAL_EXPONENTIAL: direct Fraction Taylor expansion agrees through degree 32
+GHOST_IDENTITY: all n=1..2048 satisfy b[n]=sum_(d|n) d*e[d]
+BOUNDED_UNIQUENESS: all allowed corrections checked for n=1..64
+NEGATIVE_CONTROL: a(2)=0 gives nonintegral coefficient 5/2
+PRIME_POWERS_SOURCE: 117 indices <=520 satisfy a(p^r)=p-1
+PRIME_POWERS_EXTENDED: 340 indices <=2048 satisfy a(p^r)=p-1 and the ghost-difference identity
+A384819_PREFIX: 0,1,2,1,4,3,6,1,2,7,10,3,12,11,3,1
+A384820_PREFIX: 1,1,2,4,8,14,25,43,74,124,205,335,543,869,1379,2170,3388
+ALL_CHECKS_OK

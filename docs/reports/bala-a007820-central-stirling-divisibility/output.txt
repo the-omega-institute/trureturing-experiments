@@ -1,0 +1,12 @@
+FIDELITY_DATA_OK: m=0..17; 18 values
+INCLUSION_EXCLUSION_OK: m=0..25, r=0..2*m; 676 pairs
+FIDELITY_REFLECTION_OK: m=0..201; 202 values
+ODD_SQUARE_AND_EXTRACTION_OK: m=1..201, odd; 101 values
+EXAMPLE: m=1, S(2*m,m)=1, quotient=1
+EXAMPLE: m=3, S(2*m,m)=90, quotient=10
+EXAMPLE: m=5, S(2*m,m)=42525, quotient=1701
+EXAMPLE: m=7, S(2*m,m)=49329280, quotient=1006720
+EXAMPLE: m=9, S(2*m,m)=106175395755, quotient=1310807355
+EVEN_BOUNDARY_OK: m=2, S(4,2)=7 is not divisible by 4
+SCOPE: finite exact checks only; the universal assertion is not proved here
+ALL_CHECKS_OK

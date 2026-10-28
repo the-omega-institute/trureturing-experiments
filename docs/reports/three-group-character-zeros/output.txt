@@ -1,0 +1,10 @@
+LITERAL_BOUNDARY C9: order=9 class=1 abelian_maximal_order=3 target=12; literal equivalence is false
+EXHAUSTIVE n=3: labelled_actions=10 extensions=30 nonsplit_relative_to_U=16 center_faithful_characters_per_action_total=60; zero_set=ker(delta^2)-ker(delta), internal_zeros=6, zero_classes=8
+EXHAUSTIVE n=4: labelled_actions=636 extensions=1908 nonsplit_relative_to_U=12 center_faithful_characters_per_action_total=11448; zero_set=ker(delta^2)-ker(delta), internal_zeros=6, zero_classes=8
+EISENSTEIN n=5: U_moduli=(9, 9) class=4 center_faithful_characters=54 twist_parameters=3 internal_zeros=6 element_zeros=168; all three twists have the same induced traces
+EISENSTEIN n=6: U_moduli=(27, 9) class=5 center_faithful_characters=162 twist_parameters=3 internal_zeros=6 element_zeros=492; all three twists have the same induced traces
+EISENSTEIN n=7: U_moduli=(27, 27) class=6 center_faithful_characters=486 twist_parameters=3 internal_zeros=6 element_zeros=1464; all three twists have the same induced traces
+SUMMARY small_labelled_actions=646 small_extensions=1938 small_nonsplit=28 total_center_faithful_characters=12210
+FIDELITY source Theorem 2.7: checked eight zero classes versus 3^n-3^(n-1)+6 zero elements in every enumerated small extension
+SCOPE all abelian-kernel cyclic-extension presentations at orders 27 and 81; selected Eisenstein actions at orders 243,729,2187; no universal proof
+ALL_CHECKS_OK

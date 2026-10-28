@@ -1,0 +1,19 @@
+Python 3.14.8 SymPy 1.14.0 arithmetic=exact
+FIDELITY: source Lemma 3, Q_n=0 for f_k=1, symbolic alpha,beta,x; n=0..8
+FIDELITY: determinant coefficient extraction equals source equation (3); n=0..5
+LIMIT: m=10, degree=18, positive coefficients, Routh=+++++++++++++-+++++, RHP=2
+LIMIT: m=11, degree=20, positive coefficients, Routh=++++++++++++++-++++++, RHP=2
+LIMIT: m=12, degree=22, positive coefficients, Routh=++++++++++++++-++++++++, RHP=2
+LIMIT: m=13, degree=24, positive coefficients, Routh=+++++++++++++++-+++++++++, RHP=2
+LIMIT: m=14, degree=26, positive coefficients, Routh=+++++++++++++++-+++++++++++, RHP=2
+LIMIT: m=15, degree=28, positive coefficients, Routh=++++++++++++++++-++++++++++++, RHP=2
+LIMIT: m=16, degree=30, positive coefficients, Routh=+++++++++++++++++-+++++++++++++, RHP=2
+LIMIT: m=10 cyclotomic root identity and strict positive real part checked exactly
+ROUTH: four exact-root control polynomials checked
+FINITE_PARAMETER_CONTROL: m=10, n=20, alpha=beta=100, degree=18, positive coefficients, strict log-concavity ratio=10000, Routh=+++++++++++++++++++, RHP=0
+WITNESS: m=10, n=20, alpha=beta=1000, degree=18, positive coefficients, strict log-concavity ratio=1000000, Routh=+++++++++++++-+++++, RHP=2
+WITNESS: m=10, n=20, alpha=beta=10000, degree=18, positive coefficients, strict log-concavity ratio=100000000, Routh=+++++++++++++-+++++, RHP=2
+WITNESS: m=11, n=22, alpha=beta=1000, degree=20, positive coefficients, strict log-concavity ratio=1000000, Routh=++++++++++++++-++++++, RHP=2
+WITNESS: m=12, n=24, alpha=beta=1000, degree=22, positive coefficients, strict log-concavity ratio=1000000, Routh=++++++++++++++-++++++++, RHP=2
+SCOPE: finite witnesses and limiting identities; the universal large-A family is a prose proof obligation
+ALL_CHECKS_OK

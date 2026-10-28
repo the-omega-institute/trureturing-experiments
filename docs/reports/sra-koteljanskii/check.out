@@ -1,0 +1,19 @@
+FIDELITY Theorem 1.2: A*M=M*A=I; all A entries positive; inverse off-diagonal <=0
+FIDELITY cycle sums: [[56, 147, 343], [546, 2051, 2940, 4459], [546, 2051, 2940, 4459], [3444, 21308, 48125, 51940, 57967]]
+FIDELITY permanents [R,S,T,U]: [546, 9996, 9996, 182784]
+FIDELITY product ratio: 832/833; difference: -119952
+ITEM (d) differentiated polynomial: {(2, 0, 0, 0, 0, 0): '1/546', (1, 1, 0, 0, 0, 0): '1/9996', (1, 0, 1, 0, 0, 0): '1/9996', (0, 1, 1, 0, 0, 0): '1/182784'}
+ITEM (d) Hessian 3x3: [['1/273', '1/9996', '1/9996'], ['1/9996', '0', '1/182784'], ['1/9996', '1/182784', '0']]
+ITEM (d) det(H3)=-1/7597732565090304; trace(H3)=1/273
+ITEM (d) positive two-plane: first pivot=1/273; determinant=1/20783363328
+ITEM (b) B= [[7, 2, 1, 2], [2, 7, 2, 1], [1, 2, 7, 2], [2, 1, 2, 7]]
+ITEM (b) B inverse= [['1/6', '-1/24', '0', '-1/24'], ['-1/24', '1/6', '-1/24', '0'], ['0', '-1/24', '1/6', '-1/24'], ['-1/24', '0', '-1/24', '1/6']]
+ITEM (b) symmetric; diagonal symmetrizer=I; all 16 entries strictly positive
+ITEM (b) alpha-permanent coefficients [R,S,T,U]: [[0, 1, 49], [0, 8, 63, 343], [0, 8, 63, 343], [0, 48, 257, 882, 2401]]
+ITEM (b) difference=alpha^2*(alpha+1)*(2401*alpha^2+1617*alpha-16)
+ITEM (b) bracket <= -314199/40000 for 0<alpha<=1/200
+ITEM (b) difference at alpha=1/200: -63153999/320000000000
+ITEM (b) all 256 subset pairs satisfy supermodularity at alpha=1/2 and alpha=1
+INTERPRETATION (d): positive definite restriction has dimension two, excluding Lorentzianity
+INTERPRETATION (b): universal affirmative extension is false; remaining alpha ranges unclassified
+ALL_CHECKS_OK

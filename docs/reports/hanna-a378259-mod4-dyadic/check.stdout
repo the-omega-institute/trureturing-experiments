@@ -1,0 +1,13 @@
+arithmetic: Python integers and fractions.Fraction only
+source table: source-b378259.txt; sha256=7478c1c8db8943c9a4ebd9b098070ebe6eff842504602f2c36e6556192405aa6
+fidelity: all 500 independently reconstructed terms match the OEIS table
+first ten: 1,2,14,32,286,480,3532,7520,75126,138560
+source NAME equation and quotient product: degrees 1..500, exact
+source first negative term: a(224)=-9752128675169494799449392240205737385850801515631803351052536752956097668137443387864198007660138490264113090216049975112266247902720
+scaled fixed-point square equation: degrees 0..60, exact
+integrality: n=1..500; evenness: n=2..500
+b^2=1+4x modulo 8: degrees 0..499
+c+c^2=x modulo 2 and dyadic support: degrees 0..499
+conjecture: all 499 cases n=2..500; residue-2 support=[2, 3, 5, 9, 17, 33, 65, 129, 257]
+scope: finite exact checks; the unbounded conjecture is not proved here
+ALL_CHECKS_OK

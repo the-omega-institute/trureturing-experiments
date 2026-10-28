@@ -1,0 +1,8 @@
+Rule 163 descending truth table: 10100011
+Fidelity: A266753 source terms n=0..24 and A392003 terms m=1..34 agree
+Independent simulators: 92407 cell comparisons, including both boundaries and exterior
+Row invariant, encoding, closed form and B(2n)=A(n): n=1..300
+First recurrence: n=2..300; second recurrence: n=3..300
+Generating-function product: coefficients n=0..300
+All arithmetic is integer or Fraction; finite checks are not a proof
+ALL_CHECKS_OK

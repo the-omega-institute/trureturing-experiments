@@ -1,0 +1,16 @@
+A276100: source first 6 terms reproduced exactly
+A276100: initial values = 1, 114688, 77636318760, 62505037015810048, 53837289804317953893960, 48066503353826060675410034688
+A276100: 401 exact Gamma-recurrence/progression comparisons, n=0..400; all positive integers
+A276100: values n=0..400 sha256 = 1e3ca74718aabde105186ea39ed557083f623da5c481dd283678a43b9baf620f
+A276101: source first 6 terms reproduced exactly
+A276101: initial values = 1, 1458, 9723402, 77636318760, 665145965903562, 5915482311008318958
+A276101: 401 exact Gamma-recurrence/progression comparisons, n=0..400; all positive integers
+A276101: values n=0..400 sha256 = 62341ef8d5990fe28fc005fbea15f14c9d684643a63b63a3687de03236fdc810
+A276102: source first 6 terms reproduced exactly
+A276102: initial values = 1, 50, 8250, 1636250, 349456250, 77636318760
+A276102: 401 exact Gamma-recurrence/progression comparisons, n=0..400; all positive integers
+A276102: values n=0..400 sha256 = 4e7367712b5bf50be22de2b13e684f8b199e35a8dfe0e0179b3cf2bfaeeec995
+Shared translated-floor identity: 15714 exact cases; n=0..80, q=2..100 coprime to d
+Radcliffe A364175: all six displayed source terms reproduced exactly
+Finite evidence only: universal integrality and literature priority are not certified
+ALL_CHECKS_OK

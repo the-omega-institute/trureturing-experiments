@@ -1,0 +1,17 @@
+FIDELITY: exact killed-Laplace integrals reproduce p_n=binom(2n,n)/4^n
+FIDELITY: q_n=C_n/2^(2n+1), source Section 4.2, through n=12
+BANDS: theta=1/2, positive=(Fraction(12, 5), Fraction(13, 5)), negative=(Fraction(-11, 10), Fraction(-9, 10))
+  one-negative lower margin=1/10; two-negative upper margin=-1/20
+BANDS: theta=1/3, positive=(Fraction(27, 5), Fraction(28, 5)), negative=(Fraction(-11, 10), Fraction(-9, 10))
+  one-negative lower margin=7/10; two-negative upper margin=-4/15
+BANDS: theta=1/4, positive=(Fraction(47, 5), Fraction(48, 5)), negative=(Fraction(-11, 10), Fraction(-9, 10))
+  one-negative lower margin=5/4; two-negative upper margin=-13/40
+BANDS: theta=1/5, positive=(Fraction(72, 5), Fraction(73, 5)), negative=(Fraction(-11, 10), Fraction(-9, 10))
+  one-negative lower margin=89/50; two-negative upper margin=-7/20
+FAMILY: all sign words of lengths 0..12 on four band pairs; 27 rational weights each
+FAMILY: adjacent-minor identity through n=64; killed-matrix row sums through n=16
+SOURCE CROSS-CHECK: p_(n+m)>=p_n*p_m for 0<=n,m<=32 on these families
+WITNESS: p1=2/7, p2=2/7, p3=48/343, D1=-100/2401; component-mean mixture=0
+ROBUSTNESS ARITHMETIC: D1+8/1000=-10099/300125<0 (coupling bound is a paper argument)
+PARAMETERS: rational margin formulas checked for 2<=m<=100; no unbounded inference from enumeration
+ALL_CHECKS_OK
