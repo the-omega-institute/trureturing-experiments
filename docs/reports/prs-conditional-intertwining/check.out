@@ -1,5 +1,13 @@
 fidelity (m,n,N)=(2,2,2): ok; orbit_count=10; q_rank=6
+conditional identity (0, 0, 1): ok; U_dimension=1
+conditional identity (0, 0, 2): ok; U_dimension=1
+conditional identity (1, 0, 1): ok; U_dimension=0
+conditional identity (0, 1, 2): ok; U_dimension=0
+conditional identity (1, 1, 1): ok; U_dimension=0
 conditional identity (1, 1, 2): ok; U_dimension=1
+conditional identity (2, 0, 2): ok; U_dimension=1
+conditional identity (0, 2, 2): ok; U_dimension=1
+conditional identity (2, 1, 2): ok; U_dimension=0
 conditional identity (2, 2, 2): ok; U_dimension=2
 conditional identity (2, 2, 3): ok; U_dimension=3
 conditional identity (3, 1, 2): ok; U_dimension=1

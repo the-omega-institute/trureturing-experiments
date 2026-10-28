@@ -173,25 +173,17 @@ def check_case(m, n, size):
                   if intersection.cols else sp.zeros(len(orbits), len(orbits)))
     operator = permutation_operator(m, n, size, orbits)
 
+    # Include every monomial from both sides so no output term can be dropped.
+    traceless_deltas = [delta_prime(e, size, z, w) for e in traceless_contractions]
     keys = sorted(set().union(*(set(polynomial_vector(e, variables_))
-                                for e in traceless_contractions)))
-    f_matrix = sp.Matrix([[polynomial_vector(e, variables_).get(k, 0)
-                           for e in traceless_contractions] for k in keys])
-    delta_matrix = sp.Matrix([
-        [polynomial_vector(delta_prime(e, size, z, w), variables_).get(k, 0)
-         for e in traceless_contractions] for k in keys
-    ])
+                                for e in traceless_contractions + traceless_deltas)))
+    f_matrix, _ = matrix_of(traceless_contractions, variables_, keys)
+    delta_matrix, _ = matrix_of(traceless_deltas, variables_, keys)
 
-    # Fidelity: q H = Δ q on the complete PCA.
-    q_keys = sorted(set().union(*(set(polynomial_vector(e, variables_))
-                                   for e in orbit_contractions)))
-    q_mat = sp.Matrix([[polynomial_vector(e, variables_).get(k, 0)
-                        for e in orbit_contractions] for k in q_keys])
-    ambient_delta = sp.Matrix([
-        [polynomial_vector(delta_prime(e, size, z, w), variables_).get(k, 0)
-         for e in orbit_contractions] for k in q_keys
-    ])
-    # The traceful identity uses ordinary derivatives; reconstruct it directly.
+    # Fidelity: q H = Δ q on the complete PCA.  Matrix derivatives in
+    # the paper are transposed: (∂Z)_{ji} = ∂/∂Z_{ij}.  Transposing the
+    # derivative commutator reverses its order; the following coordinate
+    # formula is exactly -tr([Z,W][∂Z,∂W])/N, with normal ordering.
     def traceful_delta(e):
         commutator = w * z - z * w
         result = 0
@@ -203,11 +195,13 @@ def check_case(m, n, size):
                     derivative_commutator -= sp.diff(sp.diff(e, z[k, j]), w[i, k])
                 result += commutator[i, j] * derivative_commutator
         return sp.expand(-result / size)
-    traceful_delta_matrix = sp.Matrix([
-        [polynomial_vector(traceful_delta(e), variables_).get(k, 0)
-         for e in orbit_contractions] for k in q_keys
-    ])
+    traceful_deltas = [traceful_delta(e) for e in orbit_contractions]
+    q_keys = sorted(set().union(*(set(polynomial_vector(e, variables_))
+                                 for e in orbit_contractions + traceful_deltas)))
+    q_mat, _ = matrix_of(orbit_contractions, variables_, q_keys)
+    traceful_delta_matrix, _ = matrix_of(traceful_deltas, variables_, q_keys)
     fidelity_ok = q_mat * operator == traceful_delta_matrix
+    assert f_matrix * projection == f_matrix, "fP = f failed"
 
     projected_ok = f_matrix * projection * operator * intersection == delta_matrix * intersection
     return fidelity_ok, projected_ok, intersection.cols, len(orbits), q_matrix.rank()
@@ -217,7 +211,9 @@ def main():
     fidelity, projected, dimension, orbit_count, q_rank = check_case(2, 2, 2)
     assert fidelity, "traceful source intertwining failed"
     print(f"fidelity (m,n,N)=(2,2,2): ok; orbit_count={orbit_count}; q_rank={q_rank}")
-    cases = [(1, 1, 2), (2, 2, 2), (2, 2, 3), (3, 1, 2)]
+    cases = [(0, 0, 1), (0, 0, 2), (1, 0, 1), (0, 1, 2),
+             (1, 1, 1), (1, 1, 2), (2, 0, 2), (0, 2, 2),
+             (2, 1, 2), (2, 2, 2), (2, 2, 3), (3, 1, 2)]
     for case in cases:
         result = check_case(*case)
         assert result[0] and result[1], f"identity failed for {case}: {result}"
