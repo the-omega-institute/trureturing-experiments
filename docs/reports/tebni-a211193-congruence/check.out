@@ -1,0 +1,13 @@
+Exact rational series and independent integer ODE recurrences agree: n=0..200.
+Signed Stirling B formula and OEIS Bell/Comtet A formula agree: n=0..200.
+Fidelity: all 201 OEIS b-file entries agree; sha256=30c0812bfa007bc7d2495951ad97238d9b53b2abff4054052474837f9e152897.
+Expected settlement finite check: n divides b_n and a_n-1 for n=2..200.
+Divided-power transfer identity agrees: n=1..40, including negative H weights.
+a(2)=3
+a(3)=10
+a(4)=45
+a(6)=1315
+a(12)=349085869
+a(31)=-4846230966409242053623795720800
+Source negative odd-index observation agrees for odd n=31..199; no infinite sign claim tested.
+ALL_CHECKS_OK

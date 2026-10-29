@@ -1,0 +1,10 @@
+Python 3.14; SymPy 1.14.0; exact algebra only
+FIDELITY: Theorem 10(5) K=1/2; eq.(28) K=-1/2 (exact)
+SYMBOLIC p=2: Gauss identity, coupling expansion, Cauchy SOS, row budgets OK
+SYMBOLIC p=3: Gauss identity, coupling expansion, Cauchy SOS, row budgets OK
+SYMBOLIC p=4: Gauss identity, coupling expansion, Cauchy SOS, row budgets OK
+SYMBOLIC p=5: Gauss identity, coupling expansion, Cauchy SOS, row budgets OK
+SCALAR: two-square upper deficit and normalization Cauchy identity OK
+ENDPOINTS: exact K=+/-1/2 for p=2,...,8 (n=p+1)
+FINITE: all 168 coordinate tangent 2-planes for p=2,...,5 satisfy both bounds
+ALL_CHECKS_OK

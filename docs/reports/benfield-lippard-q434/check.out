@@ -1,0 +1,8 @@
+FIDELITY: 16 published dyadic table entries and 3 mixed-order examples OK
+DYADIC: 640 cases, even K=2..128, a=1..10 OK
+DENSE: 12288 pairs, even K=2..96, 4|m, 4<=m<=1024 OK
+DENSE order counts: {1: 6607, 2: 5681}
+STRUCTURED: 11200 triples, even K=2..64, a=2..8, odd s=1..99 OK
+STRUCTURED order counts: {1: 8791, 2: 2409}
+INTEGER VALUATIONS: 8192 cases, even K=2..128, n=1..128 OK
+ALL_CHECKS_OK

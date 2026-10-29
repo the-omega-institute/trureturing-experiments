@@ -1,0 +1,14 @@
+FIDELITY_OK: A164660 %e, m=0..10; A164658/A164659 %e, rows=0..4
+POLYNOMIAL_CROSSCHECK_OK: recurrence versus binomial formula, m=0..301
+IDENTITY_OK: both equalities for every n=1..300
+INDICATORS_OK: 45150 pairs (n,k), 1<=k<=n<=300
+INTEGRAL_AND_PARITY_BRIDGES_OK: m=2..301 and n=1..300
+SAMPLES: n, I_(n+1), rad(n), count, product
+1, -1/3, 1, 1, -1
+2, -1/2, 2, 1, -1
+4, 1/6, 2, 2, 1
+9, -1/99, 3, 3, -1
+12, 1/14, 6, 2, 1
+16, 1/18, 2, 8, 1
+300, 1/302, 30, 10, 1
+ALL_CHECKS_OK

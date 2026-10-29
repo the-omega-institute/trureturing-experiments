@@ -1,0 +1,17 @@
+CHECK_SHA256=5a108507a05370b53449cfc57e79e8904492499ce05065f3e9136b548b80012b
+ARITHMETIC: integers, fractions.Fraction, sympy exact algebra; no evalf or float
+FIDELITY: source integer case mu=1, delta=1: T=2*y*(1-y)>0 for 0<y<1
+FIDELITY: exact positive integer-degree grid checks=936
+ENCLOSURE CROSS-CHECK: 18 terminating-series exact values enclosed
+FAMILY ALGEBRA: neighboring-digamma difference = -2/(mu*(mu+1))
+FAMILY ALGEBRA: delta=1 linear coefficient = -2*a_mu**2/(mu*(mu+1))
+FAMILY ALGEBRA: C_(3/2)=8/(15*pi**2)>0; quadratic moving-shift coefficient=1
+ANALYTIC BOUNDARY: DLMF 15.8.10 and the uniform endpoint remainder are prose obligations
+WITNESS mu=3/2 delta=127/128 y=255/256 nterms=8192: -1256997/100000000 <= T <= -314249/25000000
+  F_minus in (Fraction(-5546241, 4000000), Fraction(-17332003, 12500000)); F_center in (Fraction(92555347, 100000000), Fraction(23138837, 25000000)); F_plus in (Fraction(-7836111, 12500000), Fraction(-62688887, 100000000))
+WITNESS mu=3/2 delta=63/64 y=1023/1024 nterms=32768: -1501279/20000000 <= T <= -3753197/50000000
+  F_minus in (Fraction(-185110511, 100000000), Fraction(-18511051, 10000000)); F_center in (Fraction(138351321, 100000000), Fraction(69175661, 50000000)); F_plus in (Fraction(-53729331, 50000000), Fraction(-107458661, 100000000))
+WITNESS mu=3/2 delta=63/64 y=4095/4096 nterms=131072: -14914313/100000000 <= T <= -1864289/12500000
+  F_minus in (Fraction(-229341881, 100000000), Fraction(-5733547, 2500000)); F_center in (Fraction(183017893, 100000000), Fraction(91508947, 50000000)); F_plus in (Fraction(-152553823, 100000000), Fraction(-76276911, 50000000))
+REFUTATION CHECK: 3 exact rational strict counterexamples; every degree is positive
+ALL_CHECKS_OK

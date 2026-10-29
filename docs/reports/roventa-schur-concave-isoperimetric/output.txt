@@ -1,0 +1,20 @@
+FIDELITY: Theorem 5 and equality (2.6), 1089 exact rational cases, n=2..6
+ADMISSIBILITY: 30 rational T-transforms; strict derivative signs and Hessian identity, n=3..8
+FAMILY: n=3, p=9 and 18; exact root enclosures give A^(n-1)>B^n
+FAMILY: n=4, p=16 and 32; exact root enclosures give A^(n-1)>B^n
+FAMILY: n=5, p=25 and 50; exact root enclosures give A^(n-1)>B^n
+FAMILY: n=6, p=36 and 72; exact root enclosures give A^(n-1)>B^n
+FAMILY: n=7, p=49 and 98; exact root enclosures give A^(n-1)>B^n
+FAMILY: n=8, p=64 and 128; exact root enclosures give A^(n-1)>B^n
+FAMILY: n=9, p=81 and 162; exact root enclosures give A^(n-1)>B^n
+FAMILY: n=10, p=100 and 200; exact root enclosures give A^(n-1)>B^n
+FAMILY: n=11, p=121 and 242; exact root enclosures give A^(n-1)>B^n
+FAMILY: n=12, p=144 and 288; exact root enclosures give A^(n-1)>B^n
+FAMILY: n=13, p=169 and 338; exact root enclosures give A^(n-1)>B^n
+FAMILY: n=14, p=196 and 392; exact root enclosures give A^(n-1)>B^n
+FAMILY: n=15, p=225 and 450; exact root enclosures give A^(n-1)>B^n
+FAMILY: n=16, p=256 and 512; exact root enclosures give A^(n-1)>B^n
+FAMILY: 28 strict counterexamples, n=3..16; universal n and real p require the paper proof
+ROBUSTNESS: 6 all-distinct rational inputs, n=3..8, p=n^2
+GENERAL FAMILY: 3 repeated-minimum inputs; exact threshold (mu/a)^p>n^n
+ALL_CHECKS_OK

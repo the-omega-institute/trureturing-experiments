@@ -1,0 +1,12 @@
+Arithmetic: Python integers only; no floating-point operations
+Fidelity: source NAME/FORMULA (1), EXAMPLE and all 23 listed terms reproduced
+Fidelity: source b-file coefficients n=0..40 reproduced exactly
+a(0..9) = [1, 2, 4, 30, 154, 1078, 7046, 50766, 364268, 2713444]
+p(0..9) = [1, 1, 2, 3, 5, 7, 11, 15, 22, 30]
+Original bilateral equation and enlarged/coefficientwise windows: n=0..40 OK
+Reindexed pairing and source Watson product FORMULA (2): n=0..40 OK
+Euler product and ordinary-partition reciprocal: n=0..40 OK
+Evenness and a(n)/2 == p(n) modulo 2: n=1..40 OK
+Equation-specific modulo-four pairing: solution and 20 additional units OK
+Finite checks support the reading and outline; no all-index proof or Lean probe
+ALL_CHECKS_OK

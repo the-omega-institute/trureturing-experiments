@@ -1,0 +1,11 @@
+FIDELITY Theorem 4.10: C4, total=7, almost_stacked=32, successes=32
+FIDELITY Theorem 4.4: P3 bad_counts_at_2_to_7=[3, 3, 3, 2, 3, 0]
+GRAPH order=7 edges=11 connected=True triangle=(0,1,4)
+POSITIVE total=12 cases=448 checked_paths=448 lengths={0: 7, 5: 1, 6: 1, 8: 11, 9: 9, 10: 419}
+NEGATIVE initial=(0, 0, 0, 9, 0, 3, 0) reachable=225 transition_occurrences=615 closed=True stacked_endpoints=0
+NEGATIVE total_histogram={2: 13, 3: 23, 4: 35, 5: 54, 6: 36, 7: 25, 8: 21, 9: 9, 10: 4, 11: 4, 12: 1}
+ALMOST_STACKED bad_counts_at_2_to_15=[21, 55, 116, 177, 179, 135, 74, 37, 17, 6, 0, 1, 1, 0]
+UNRESTRICTED bad_counts_at_2_to_15=[21, 55, 117, 190, 249, 244, 185, 98, 30, 9, 2, 1, 1, 0]
+THRESHOLDS restricted_least=12 unrestricted_least=15
+INDEPENDENT bottom_up_states=170544 max_total=15 exact_integer_arithmetic=True
+ALL_CHECKS_OK

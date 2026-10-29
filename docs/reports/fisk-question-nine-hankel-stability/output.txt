@@ -1,0 +1,11 @@
+FIDELITY_OK: source Remark 1, degree-two transform and discriminant (symbolic b,c>0)
+FIDELITY_OK: Remark 8, f=(x+y+1)^4, i=0,d=1: F=-10(x+1)^6
+INPUT_OK: 15 positive support coefficients and positive imaginary parts of both affine factors
+DETERMINANT_OK: prescribed i=0,d=3 four-by-four determinant equals 5A^4+8A^3B+9A^2B^2+8AB^3+5B^4
+AUXILIARY_ROOTS_OK: q factors into two distinct unit-circle conjugate pairs
+CLASSIFICATION_OK: a>0, stable iff a+1/a <= 16+4*sqrt(21); a=1 treated separately
+FAMILY_OK: all a>=35 and all 0<a<=1/35 have exactly two simple right-half-plane roots
+TRANSPORT_OK: determinant, real-part and unit-circle identities are exact polynomial identities
+EXACT_WITNESS_OK: a=35, Re(z) = (-1141199 + 249696*sqrt(21))/2619145 > 0
+SMALL_CASES_OK: 50 integer determinant recomputations and five exact rational root-sign checks
+ALL_CHECKS_OK

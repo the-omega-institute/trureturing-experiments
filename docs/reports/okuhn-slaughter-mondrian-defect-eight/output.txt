@@ -1,0 +1,15 @@
+SYMBOLIC norm recurrence coefficients = (1, 0, -19)
+SYMBOLIC seven area offsets from 90*q^2 = [-2, -3, -3, -2, 0, 5, 5]
+SYMBOLIC equal-area perimeter differences = -4*p, 8*p, 16*q
+FIDELITY source Example 1 canvas = 315 x 315
+FIDELITY dimensions = [(259, 55), (56, 255), (238, 60), (77, 185), (189, 75), (70, 200), (112, 125)]
+FIDELITY min area = 14000; max area = 14280; defect = 280
+FIDELITY source square family checked at j = 0..7; table and recurrence agree
+SETTLEMENT first canvas = 585 x 1638
+SETTLEMENT first dimensions = [(482, 284), (103, 1329), (443, 309), (142, 964), (351, 390), (131, 1045), (209, 655)]
+SETTLEMENT first areas = [136888, 136887, 136887, 136888, 136890, 136895, 136895]
+SETTLEMENT first perimeters = [1532, 2864, 1504, 2212, 1482, 2352, 1728]
+SETTLEMENT first area sum = 958230 ; defect = 8
+SETTLEMENT 32 recurrence instances pass geometry, areas, congruence and affine checks
+SETTLEMENT exhaustive norm-1 solutions for 1 <= q <= 1000 = [(170, 39)]
+ALL_CHECKS_OK

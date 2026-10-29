@@ -1,0 +1,13 @@
+Unrestricted arrangements: 362880
+Endpoint/slope absolute maxima (t=0,1,2,12; slope): [86, 104, 172, 972, 81]
+Signed endpoint maxima: [86, 104, 172, 972]
+Signed endpoint minima: [-86, -104, -172, -972]
+Normalized representatives: 5040
+Rational Gaussian endpoint/slope maxima: [86, 104, 172, 972, 81]
+All normalized determinant polynomials have quadratic=cubic=0
+Fidelity: all 45 OEIS revision-21 terms reproduced, including a(0)=86 and a(5)=412
+Direct small-shift maxima n=0..45: [86, 104, 172, 252, 332, 412, 492, 572, 652, 732, 812, 892, 972, 1053, 1134, 1215, 1296, 1377, 1458, 1539, 1620, 1701, 1782, 1863, 1944, 2025, 2106, 2187, 2268, 2349, 2430, 2511, 2592, 2673, 2754, 2835, 2916, 2997, 3078, 3159, 3240, 3321, 3402, 3483, 3564, 3645]
+Attaining witness polynomials (constant,slope,quadratic,cubic): ((86, 4, 0, 0), (72, 32, 0, 0), (12, 80, 0, 0), (0, 81, 0, 0))
+Nonzero coefficients of (1-x)^2*A through degree 1000: {0: 86, 1: -68, 2: 50, 3: 12, 13: 1}
+Scope: exact finite checks; the unbounded proof is a preregistered outline, not Lean-verified
+ALL_CHECKS_OK
