@@ -1,0 +1,14 @@
+FIDELITY ternary SFT: allowed={ab,bc,ca,cc}; forbidden={aa,ac,ba,bb,cb}
+FIDELITY golden mean: all 8191 words of lengths 0..12 pass equality
+GRAPH vertices=6 edges=25 strongly_connected=yes
+GRAPH no-reset c-to-d core={1,2}; potential={1:0,2:1}; a-b telescopes to 0
+LIFT exact finite memory: reachable_states=2334 transitions=18725; no local/global mismatch
+CODE r=5: alphabet=11; symbols=30; block_length=7; max_forbidden_length=28
+CODE r=6: alphabet=12; symbols=30; block_length=8; max_forbidden_length=32
+CODE r=7: alphabet=13; symbols=30; block_length=9; max_forbidden_length=36
+CODE r=8: alphabet=14; symbols=30; block_length=10; max_forbidden_length=40
+TRIMMING k=0..8 r=5..8: hulls=4260 partial-block cuts=300510; all endpoint-preserving witnesses valid
+OBSTRUCTION exact Parikh DP: m,n=0..12 cases=169; possible iff m=n
+DISTINGUISHING 13 prefixes: 156 ordered pairs separated by b^i d
+GROWTH annotated loops at 4: exactly 2^n distinct code words for n=0..12
+ALL_CHECKS_OK
