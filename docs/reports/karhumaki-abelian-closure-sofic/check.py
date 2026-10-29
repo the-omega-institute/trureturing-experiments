@@ -106,6 +106,11 @@ def graph_certificates():
     assert len(EDGES) == len(set(EDGES)) == 25
     assert all(reachable(v, EDGES) == set(VERTICES) for v in VERTICES)
     no_reset = tuple(edge for edge in EDGES if edge[1] != "e")
+    # A marker-containing segment cannot acquire extra a,b letters outside
+    # its markers: c has to be its first edge and d its last edge.
+    assert all(s == 0 for s, c, _ in no_reset if c == "c")
+    assert all(t == 3 for _, c, t in no_reset if c == "d")
+    assert all(t != 0 and s != 3 for s, _, t in no_reset)
     # The states on any segment after c and before d are exactly {1,2}.
     after_c = {t for _, label, t in no_reset if label == "c"}
     before_d = {s for s, label, _ in no_reset if label == "d"}
