@@ -1,0 +1,43 @@
+Arithmetic: integers and fractions.Fraction only; no floating point.
+Fidelity: OEIS A259056 revision 7, A259057 revision 7.
+Dimensions 1..32: symmetry-orbit construction, two determinant algorithms,
+reflection basis and inverse, both block formulas, min-kernel factorizations.
+Source matrices 1..4: matched.
+Source determinant terms 1..20: matched.
+Source quotient terms 1..15 (dimensions 2..30): matched.
+Odd identity: m = 1..16; even identity and divisibility: m = 1..16.
+Empty min-kernel: determinant = empty product = 1.
+N=1 det=1
+N=2 det=-3
+N=3 det=-16
+N=4 det=60
+N=5 det=384
+N=6 det=-1680
+N=7 det=-12288
+N=8 det=60480
+N=9 det=491520
+N=10 det=-2661120
+N=11 det=-23592960
+N=12 det=138378240
+N=13 det=1321205760
+N=14 det=-8302694400
+N=15 det=-84557168640
+N=16 det=564583219200
+N=17 det=6088116142080
+N=18 det=-42908324659200
+N=19 det=-487049291366400
+N=20 det=3604299271372800
+N=21 det=42860337640243200
+N=22 det=-331595532966297600
+N=23 det=-4114592413463347200
+N=24 det=33159553296629760000
+N=25 det=427917611000188108800
+N=26 det=-3581231756036014080000
+N=27 det=-47926772432021068185600
+N=28 det=415422883700177633280000
+N=29 det=5751212691842528182272000
+N=30 det=-51512437578822026526720000
+N=31 det=-736155224555843607330816000
+N=32 det=6799641760404507501527040000
+Finite checks only; no Lean proof or all-dimension certification.
+ALL_CHECKS_OK
