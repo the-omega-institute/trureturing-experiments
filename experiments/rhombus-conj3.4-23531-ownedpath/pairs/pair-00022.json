@@ -1,0 +1,151 @@
+{
+  "raw_index": 22,
+  "G_edge_mask": 686234,
+  "H_edge_mask": 881368,
+  "G_clique_vector_hex": "0x1111100000006400c8a2",
+  "H_clique_vector_hex": "0x11001000260aac004824",
+  "components_as_subset_masks": [
+    [
+      5,
+      21,
+      37
+    ],
+    [
+      6,
+      34,
+      38,
+      40,
+      42
+    ],
+    [
+      12,
+      72,
+      76
+    ],
+    [
+      48,
+      49,
+      52
+    ]
+  ],
+  "G_selection": 5,
+  "H_selection": 10,
+  "selections_enumerated": 16,
+  "compatible_family": [
+    {
+      "selection": 1,
+      "edge_mask": 553114
+    },
+    {
+      "selection": 3,
+      "edge_mask": 619226
+    },
+    {
+      "selection": 5,
+      "edge_mask": 686234
+    },
+    {
+      "selection": 8,
+      "edge_mask": 815256
+    },
+    {
+      "selection": 10,
+      "edge_mask": 881368
+    },
+    {
+      "selection": 12,
+      "edge_mask": 948376
+    }
+  ],
+  "incompatible_selections": {
+    "0": {
+      "kind": "chordless_cycle",
+      "vertices": [
+        0,
+        4,
+        2,
+        5
+      ]
+    },
+    "2": {
+      "kind": "chordless_cycle",
+      "vertices": [
+        0,
+        4,
+        2,
+        5
+      ]
+    },
+    "4": {
+      "kind": "chordless_cycle",
+      "vertices": [
+        0,
+        4,
+        2,
+        5
+      ]
+    },
+    "6": {
+      "kind": "chordless_cycle",
+      "vertices": [
+        0,
+        4,
+        2,
+        5
+      ]
+    },
+    "7": {
+      "kind": "chordless_cycle",
+      "vertices": [
+        0,
+        4,
+        6,
+        3,
+        5
+      ]
+    },
+    "9": {
+      "kind": "clique_mismatch",
+      "subset_mask": 53,
+      "expected": 0,
+      "actual": 1
+    },
+    "11": {
+      "kind": "clique_mismatch",
+      "subset_mask": 53,
+      "expected": 0,
+      "actual": 1
+    },
+    "13": {
+      "kind": "clique_mismatch",
+      "subset_mask": 53,
+      "expected": 0,
+      "actual": 1
+    },
+    "14": {
+      "kind": "chordless_cycle",
+      "vertices": [
+        3,
+        5,
+        4,
+        6
+      ]
+    },
+    "15": {
+      "kind": "chordless_cycle",
+      "vertices": [
+        3,
+        5,
+        4,
+        6
+      ]
+    }
+  },
+  "rhombus_witness": {
+    "selection": 3,
+    "G_prime_edge_mask": 619226,
+    "H_prime_edge_mask": 948376
+  },
+  "exact_nonedge_candidate": null,
+  "lp_result": null
+}

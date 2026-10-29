@@ -1,0 +1,19 @@
+{
+  "gate_passed": true,
+  "body_sha256": "57ac5cb0f76b61501769cb8e63abe5ace64f611de77299d3c841fe091592c4da",
+  "verified_at": "2026-10-29T06:16:23.025418+00:00",
+  "operator_entry_at": "2026-10-29T06:14:46+00:00",
+  "issue": {
+    "number": 23531
+  },
+  "comment": {
+    "id": 6489468716,
+    "html_url": "https://github.com/the-omega-institute/trureturing/issues/23531#issuecomment-6489468716",
+    "body": "The forecasts concern the whole original conjecture. Actual model families are unexposed; no model-diversity or calibration claim is made. A capped no-hit leaves the event unresolved.\n\n```research-prereg-v1\n{\n  \"event\": {\n    \"statement\": \"The chordal graph polytope CGP_n fulfills the rhombus criterion in Linusson–Restadh arXiv:2305.05275v1 Conjecture 3.4.\",\n    \"quantifiers\": \"For every positive integer n and every two distinct finite simple undirected chordal labelled graphs G,H on [n], define I_n={S⊆[n]: |S|≥2}, c_G(S)=1 iff G|S is complete and 0 otherwise, and CGP_n=conv_ℝ{c_D: D is any chordal graph on this same [n]}. If segment[c_G,c_H] is not a one-dimensional face of CGP_n, there exist chordal G_prime,H_prime on the same [n], each different from both G and H, such that for every S∈I_n, c_G(S)+c_H(S)=c_G_prime(S)+c_H_prime(S).\"\n  },\n  \"deadline\": \"2026-10-29T10:00:00Z\",\n  \"scoring_rule\": {\n    \"name\": \"binary-brier\",\n    \"version\": 1\n  },\n  \"surprise_threshold\": 0,\n  \"predictions\": [\n    {\n      \"seat\": \"structure\",\n      \"model_family\": \"unknown (Codex CLI; model family not exposed)\",\n      \"event\": {\n        \"statement\": \"The chordal graph polytope CGP_n fulfills the rhombus criterion in Linusson–Restadh arXiv:2305.05275v1 Conjecture 3.4.\",\n        \"quantifiers\": \"For every positive integer n and every two distinct finite simple undirected chordal labelled graphs G,H on [n], define I_n={S⊆[n]: |S|≥2}, c_G(S)=1 iff G|S is complete and 0 otherwise, and CGP_n=conv_ℝ{c_D: D is any chordal graph on this same [n]}. If segment[c_G,c_H] is not a one-dimensional face of CGP_n, there exist chordal G_prime,H_prime on the same [n], each different from both G and H, such that for every S∈I_n, c_G(S)+c_H(S)=c_G_prime(S)+c_H_prime(S).\"\n      },\n      \"probability\": 0.6\n    },\n    {\n      \"seat\": \"obstruction\",\n      \"model_family\": \"unknown (Codex CLI; model family not exposed)\",\n      \"event\": {\n        \"statement\": \"The chordal graph polytope CGP_n fulfills the rhombus criterion in Linusson–Restadh arXiv:2305.05275v1 Conjecture 3.4.\",\n        \"quantifiers\": \"For every positive integer n and every two distinct finite simple undirected chordal labelled graphs G,H on [n], define I_n={S⊆[n]: |S|≥2}, c_G(S)=1 iff G|S is complete and 0 otherwise, and CGP_n=conv_ℝ{c_D: D is any chordal graph on this same [n]}. If segment[c_G,c_H] is not a one-dimensional face of CGP_n, there exist chordal G_prime,H_prime on the same [n], each different from both G and H, such that for every S∈I_n, c_G(S)+c_H(S)=c_G_prime(S)+c_H_prime(S).\"\n      },\n      \"probability\": 0.6\n    }\n  ]\n}\n```\n",
+    "created_at": "2026-10-29T06:16:21Z",
+    "updated_at": "2026-10-29T06:16:21Z"
+  },
+  "strict_preregistration": {
+    "deadline": "2026-10-29T10:00:00Z"
+  }
+}

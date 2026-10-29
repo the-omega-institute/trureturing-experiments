@@ -1,0 +1,399 @@
+{
+  "raw_index": 6759,
+  "G_edge_mask": 430270,
+  "H_edge_mask": 600297,
+  "G_clique_vector_hex": "0x302000600040cc832",
+  "H_clique_vector_hex": "0x3000200002220000aa5",
+  "components_as_subset_masks": [
+    [
+      3
+    ],
+    [
+      5,
+      20,
+      21
+    ],
+    [
+      6,
+      12,
+      14,
+      36,
+      40,
+      44
+    ],
+    [
+      9,
+      24,
+      25,
+      72,
+      73
+    ],
+    [
+      33,
+      48,
+      49
+    ],
+    [
+      80,
+      81
+    ]
+  ],
+  "G_selection": 26,
+  "H_selection": 37,
+  "selections_enumerated": 64,
+  "compatible_family": [
+    {
+      "selection": 0,
+      "edge_mask": 168
+    },
+    {
+      "selection": 1,
+      "edge_mask": 169
+    },
+    {
+      "selection": 2,
+      "edge_mask": 4266
+    },
+    {
+      "selection": 3,
+      "edge_mask": 4267
+    },
+    {
+      "selection": 4,
+      "edge_mask": 76008
+    },
+    {
+      "selection": 5,
+      "edge_mask": 76009
+    },
+    {
+      "selection": 6,
+      "edge_mask": 80106
+    },
+    {
+      "selection": 8,
+      "edge_mask": 164012
+    },
+    {
+      "selection": 10,
+      "edge_mask": 168110
+    },
+    {
+      "selection": 12,
+      "edge_mask": 239852
+    },
+    {
+      "selection": 16,
+      "edge_mask": 262328
+    },
+    {
+      "selection": 17,
+      "edge_mask": 262329
+    },
+    {
+      "selection": 18,
+      "edge_mask": 266426
+    },
+    {
+      "selection": 19,
+      "edge_mask": 266427
+    },
+    {
+      "selection": 20,
+      "edge_mask": 338168
+    },
+    {
+      "selection": 24,
+      "edge_mask": 426172
+    },
+    {
+      "selection": 26,
+      "edge_mask": 430270
+    },
+    {
+      "selection": 32,
+      "edge_mask": 524456
+    },
+    {
+      "selection": 33,
+      "edge_mask": 524457
+    },
+    {
+      "selection": 34,
+      "edge_mask": 528554
+    },
+    {
+      "selection": 35,
+      "edge_mask": 528555
+    },
+    {
+      "selection": 36,
+      "edge_mask": 600296
+    },
+    {
+      "selection": 37,
+      "edge_mask": 600297
+    },
+    {
+      "selection": 38,
+      "edge_mask": 604394
+    },
+    {
+      "selection": 48,
+      "edge_mask": 786616
+    },
+    {
+      "selection": 49,
+      "edge_mask": 786617
+    },
+    {
+      "selection": 50,
+      "edge_mask": 790714
+    },
+    {
+      "selection": 51,
+      "edge_mask": 790715
+    },
+    {
+      "selection": 52,
+      "edge_mask": 862456
+    }
+  ],
+  "incompatible_selections": {
+    "7": {
+      "kind": "clique_mismatch",
+      "subset_mask": 7,
+      "expected": 0,
+      "actual": 1
+    },
+    "9": {
+      "kind": "clique_mismatch",
+      "subset_mask": 11,
+      "expected": 0,
+      "actual": 1
+    },
+    "11": {
+      "kind": "clique_mismatch",
+      "subset_mask": 11,
+      "expected": 0,
+      "actual": 1
+    },
+    "13": {
+      "kind": "clique_mismatch",
+      "subset_mask": 11,
+      "expected": 0,
+      "actual": 1
+    },
+    "14": {
+      "kind": "clique_mismatch",
+      "subset_mask": 13,
+      "expected": 0,
+      "actual": 1
+    },
+    "15": {
+      "kind": "clique_mismatch",
+      "subset_mask": 7,
+      "expected": 0,
+      "actual": 1
+    },
+    "21": {
+      "kind": "chordless_cycle",
+      "vertices": [
+        0,
+        1,
+        2,
+        5
+      ]
+    },
+    "22": {
+      "kind": "clique_mismatch",
+      "subset_mask": 37,
+      "expected": 0,
+      "actual": 1
+    },
+    "23": {
+      "kind": "chordless_cycle",
+      "vertices": [
+        0,
+        1,
+        3,
+        5
+      ]
+    },
+    "25": {
+      "kind": "clique_mismatch",
+      "subset_mask": 11,
+      "expected": 0,
+      "actual": 1
+    },
+    "27": {
+      "kind": "clique_mismatch",
+      "subset_mask": 11,
+      "expected": 0,
+      "actual": 1
+    },
+    "28": {
+      "kind": "clique_mismatch",
+      "subset_mask": 41,
+      "expected": 0,
+      "actual": 1
+    },
+    "29": {
+      "kind": "chordless_cycle",
+      "vertices": [
+        0,
+        1,
+        2,
+        5
+      ]
+    },
+    "30": {
+      "kind": "clique_mismatch",
+      "subset_mask": 13,
+      "expected": 0,
+      "actual": 1
+    },
+    "31": {
+      "kind": "clique_mismatch",
+      "subset_mask": 7,
+      "expected": 0,
+      "actual": 1
+    },
+    "39": {
+      "kind": "clique_mismatch",
+      "subset_mask": 7,
+      "expected": 0,
+      "actual": 1
+    },
+    "40": {
+      "kind": "clique_mismatch",
+      "subset_mask": 88,
+      "expected": 0,
+      "actual": 1
+    },
+    "41": {
+      "kind": "clique_mismatch",
+      "subset_mask": 11,
+      "expected": 0,
+      "actual": 1
+    },
+    "42": {
+      "kind": "clique_mismatch",
+      "subset_mask": 88,
+      "expected": 0,
+      "actual": 1
+    },
+    "43": {
+      "kind": "clique_mismatch",
+      "subset_mask": 11,
+      "expected": 0,
+      "actual": 1
+    },
+    "44": {
+      "kind": "clique_mismatch",
+      "subset_mask": 88,
+      "expected": 0,
+      "actual": 1
+    },
+    "45": {
+      "kind": "clique_mismatch",
+      "subset_mask": 11,
+      "expected": 0,
+      "actual": 1
+    },
+    "46": {
+      "kind": "clique_mismatch",
+      "subset_mask": 13,
+      "expected": 0,
+      "actual": 1
+    },
+    "47": {
+      "kind": "clique_mismatch",
+      "subset_mask": 7,
+      "expected": 0,
+      "actual": 1
+    },
+    "53": {
+      "kind": "chordless_cycle",
+      "vertices": [
+        0,
+        1,
+        2,
+        5
+      ]
+    },
+    "54": {
+      "kind": "clique_mismatch",
+      "subset_mask": 37,
+      "expected": 0,
+      "actual": 1
+    },
+    "55": {
+      "kind": "chordless_cycle",
+      "vertices": [
+        0,
+        1,
+        3,
+        5
+      ]
+    },
+    "56": {
+      "kind": "clique_mismatch",
+      "subset_mask": 88,
+      "expected": 0,
+      "actual": 1
+    },
+    "57": {
+      "kind": "clique_mismatch",
+      "subset_mask": 11,
+      "expected": 0,
+      "actual": 1
+    },
+    "58": {
+      "kind": "clique_mismatch",
+      "subset_mask": 88,
+      "expected": 0,
+      "actual": 1
+    },
+    "59": {
+      "kind": "clique_mismatch",
+      "subset_mask": 11,
+      "expected": 0,
+      "actual": 1
+    },
+    "60": {
+      "kind": "clique_mismatch",
+      "subset_mask": 41,
+      "expected": 0,
+      "actual": 1
+    },
+    "61": {
+      "kind": "chordless_cycle",
+      "vertices": [
+        0,
+        1,
+        2,
+        5
+      ]
+    },
+    "62": {
+      "kind": "clique_mismatch",
+      "subset_mask": 13,
+      "expected": 0,
+      "actual": 1
+    },
+    "63": {
+      "kind": "clique_mismatch",
+      "subset_mask": 7,
+      "expected": 0,
+      "actual": 1
+    }
+  },
+  "rhombus_witness": {
+    "selection": 12,
+    "G_prime_edge_mask": 239852,
+    "H_prime_edge_mask": 790715
+  },
+  "exact_nonedge_candidate": null,
+  "lp_result": null
+}

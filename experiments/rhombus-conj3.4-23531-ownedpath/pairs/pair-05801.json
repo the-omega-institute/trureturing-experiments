@@ -1,0 +1,216 @@
+{
+  "raw_index": 5801,
+  "G_edge_mask": 385074,
+  "H_edge_mask": 549290,
+  "G_clique_vector_hex": "0x3202020264040002",
+  "H_clique_vector_hex": "0x3003200000020001822",
+  "components_as_subset_masks": [
+    [
+      10
+    ],
+    [
+      17,
+      80,
+      81
+    ],
+    [
+      18
+    ],
+    [
+      24,
+      40,
+      48,
+      56
+    ],
+    [
+      33,
+      37
+    ]
+  ],
+  "G_selection": 24,
+  "H_selection": 7,
+  "selections_enumerated": 32,
+  "compatible_family": [
+    {
+      "selection": 0,
+      "edge_mask": 24610
+    },
+    {
+      "selection": 1,
+      "edge_mask": 24738
+    },
+    {
+      "selection": 2,
+      "edge_mask": 548906
+    },
+    {
+      "selection": 3,
+      "edge_mask": 549034
+    },
+    {
+      "selection": 4,
+      "edge_mask": 24866
+    },
+    {
+      "selection": 5,
+      "edge_mask": 24994
+    },
+    {
+      "selection": 6,
+      "edge_mask": 549162
+    },
+    {
+      "selection": 7,
+      "edge_mask": 549290
+    },
+    {
+      "selection": 8,
+      "edge_mask": 385058
+    },
+    {
+      "selection": 9,
+      "edge_mask": 385186
+    },
+    {
+      "selection": 12,
+      "edge_mask": 385314
+    },
+    {
+      "selection": 16,
+      "edge_mask": 24626
+    },
+    {
+      "selection": 17,
+      "edge_mask": 24754
+    },
+    {
+      "selection": 18,
+      "edge_mask": 548922
+    },
+    {
+      "selection": 19,
+      "edge_mask": 549050
+    },
+    {
+      "selection": 20,
+      "edge_mask": 24882
+    },
+    {
+      "selection": 21,
+      "edge_mask": 25010
+    },
+    {
+      "selection": 22,
+      "edge_mask": 549178
+    },
+    {
+      "selection": 23,
+      "edge_mask": 549306
+    },
+    {
+      "selection": 24,
+      "edge_mask": 385074
+    },
+    {
+      "selection": 25,
+      "edge_mask": 385202
+    },
+    {
+      "selection": 28,
+      "edge_mask": 385330
+    }
+  ],
+  "incompatible_selections": {
+    "10": {
+      "kind": "chordless_cycle",
+      "vertices": [
+        0,
+        2,
+        5,
+        4
+      ]
+    },
+    "11": {
+      "kind": "chordless_cycle",
+      "vertices": [
+        0,
+        2,
+        5,
+        4
+      ]
+    },
+    "13": {
+      "kind": "clique_mismatch",
+      "subset_mask": 26,
+      "expected": 0,
+      "actual": 1
+    },
+    "14": {
+      "kind": "chordless_cycle",
+      "vertices": [
+        0,
+        2,
+        5,
+        4
+      ]
+    },
+    "15": {
+      "kind": "chordless_cycle",
+      "vertices": [
+        0,
+        2,
+        5,
+        4
+      ]
+    },
+    "26": {
+      "kind": "chordless_cycle",
+      "vertices": [
+        2,
+        5,
+        4,
+        6
+      ]
+    },
+    "27": {
+      "kind": "chordless_cycle",
+      "vertices": [
+        2,
+        5,
+        4,
+        6
+      ]
+    },
+    "29": {
+      "kind": "clique_mismatch",
+      "subset_mask": 26,
+      "expected": 0,
+      "actual": 1
+    },
+    "30": {
+      "kind": "chordless_cycle",
+      "vertices": [
+        2,
+        5,
+        4,
+        6
+      ]
+    },
+    "31": {
+      "kind": "chordless_cycle",
+      "vertices": [
+        2,
+        5,
+        4,
+        6
+      ]
+    }
+  },
+  "rhombus_witness": {
+    "selection": 3,
+    "G_prime_edge_mask": 549034,
+    "H_prime_edge_mask": 385330
+  },
+  "exact_nonedge_candidate": null,
+  "lp_result": null
+}

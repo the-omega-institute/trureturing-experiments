@@ -1,0 +1,220 @@
+{
+  "raw_index": 3483,
+  "G_edge_mask": 14610,
+  "H_edge_mask": 2057957,
+  "G_clique_vector_hex": "0x64005082",
+  "H_clique_vector_hex": "0x1055500010f5e00020aa8000075",
+  "components_as_subset_masks": [
+    [
+      3,
+      6,
+      9,
+      10,
+      11,
+      34,
+      38,
+      40,
+      42,
+      48,
+      65,
+      66,
+      67,
+      68,
+      70,
+      72,
+      73,
+      74,
+      75,
+      80,
+      96,
+      98,
+      100,
+      102,
+      104,
+      106,
+      112
+    ],
+    [
+      5,
+      33,
+      37
+    ],
+    [
+      12
+    ],
+    [
+      18
+    ],
+    [
+      20
+    ]
+  ],
+  "G_selection": 30,
+  "H_selection": 1,
+  "selections_enumerated": 32,
+  "compatible_family": [
+    {
+      "selection": 0,
+      "edge_mask": 8192
+    },
+    {
+      "selection": 1,
+      "edge_mask": 2057957
+    },
+    {
+      "selection": 2,
+      "edge_mask": 8210
+    },
+    {
+      "selection": 4,
+      "edge_mask": 10240
+    },
+    {
+      "selection": 6,
+      "edge_mask": 10258
+    },
+    {
+      "selection": 8,
+      "edge_mask": 8448
+    },
+    {
+      "selection": 10,
+      "edge_mask": 8466
+    },
+    {
+      "selection": 12,
+      "edge_mask": 10496
+    },
+    {
+      "selection": 14,
+      "edge_mask": 10514
+    },
+    {
+      "selection": 16,
+      "edge_mask": 12288
+    },
+    {
+      "selection": 18,
+      "edge_mask": 12306
+    },
+    {
+      "selection": 20,
+      "edge_mask": 14336
+    },
+    {
+      "selection": 22,
+      "edge_mask": 14354
+    },
+    {
+      "selection": 24,
+      "edge_mask": 12544
+    },
+    {
+      "selection": 26,
+      "edge_mask": 12562
+    },
+    {
+      "selection": 28,
+      "edge_mask": 14592
+    },
+    {
+      "selection": 30,
+      "edge_mask": 14610
+    }
+  ],
+  "incompatible_selections": {
+    "3": {
+      "kind": "clique_mismatch",
+      "subset_mask": 7,
+      "expected": 0,
+      "actual": 1
+    },
+    "5": {
+      "kind": "clique_mismatch",
+      "subset_mask": 14,
+      "expected": 0,
+      "actual": 1
+    },
+    "7": {
+      "kind": "clique_mismatch",
+      "subset_mask": 7,
+      "expected": 0,
+      "actual": 1
+    },
+    "9": {
+      "kind": "clique_mismatch",
+      "subset_mask": 50,
+      "expected": 0,
+      "actual": 1
+    },
+    "11": {
+      "kind": "clique_mismatch",
+      "subset_mask": 7,
+      "expected": 0,
+      "actual": 1
+    },
+    "13": {
+      "kind": "clique_mismatch",
+      "subset_mask": 14,
+      "expected": 0,
+      "actual": 1
+    },
+    "15": {
+      "kind": "clique_mismatch",
+      "subset_mask": 7,
+      "expected": 0,
+      "actual": 1
+    },
+    "17": {
+      "kind": "clique_mismatch",
+      "subset_mask": 52,
+      "expected": 0,
+      "actual": 1
+    },
+    "19": {
+      "kind": "clique_mismatch",
+      "subset_mask": 7,
+      "expected": 0,
+      "actual": 1
+    },
+    "21": {
+      "kind": "clique_mismatch",
+      "subset_mask": 14,
+      "expected": 0,
+      "actual": 1
+    },
+    "23": {
+      "kind": "clique_mismatch",
+      "subset_mask": 7,
+      "expected": 0,
+      "actual": 1
+    },
+    "25": {
+      "kind": "clique_mismatch",
+      "subset_mask": 22,
+      "expected": 0,
+      "actual": 1
+    },
+    "27": {
+      "kind": "clique_mismatch",
+      "subset_mask": 7,
+      "expected": 0,
+      "actual": 1
+    },
+    "29": {
+      "kind": "clique_mismatch",
+      "subset_mask": 14,
+      "expected": 0,
+      "actual": 1
+    },
+    "31": {
+      "kind": "clique_mismatch",
+      "subset_mask": 7,
+      "expected": 0,
+      "actual": 1
+    }
+  },
+  "rhombus_witness": null,
+  "exact_nonedge_candidate": null,
+  "lp_result": "no_feasible_point_found; no edge certificate claimed"
+}

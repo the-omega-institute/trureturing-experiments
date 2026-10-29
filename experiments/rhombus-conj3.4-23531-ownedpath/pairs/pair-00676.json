@@ -1,0 +1,125 @@
+{
+  "raw_index": 676,
+  "G_edge_mask": 1374368,
+  "H_edge_mask": 1581234,
+  "G_clique_vector_hex": "0x1100000012002200204440a0",
+  "H_clique_vector_hex": "0x30001000200000064000022",
+  "components_as_subset_masks": [
+    [
+      5,
+      33,
+      37,
+      97
+    ],
+    [
+      12,
+      20,
+      24,
+      28,
+      48,
+      52
+    ],
+    [
+      68,
+      100
+    ],
+    [
+      80
+    ]
+  ],
+  "G_selection": 6,
+  "H_selection": 9,
+  "selections_enumerated": 16,
+  "compatible_family": [
+    {
+      "selection": 0,
+      "edge_mask": 1056928
+    },
+    {
+      "selection": 1,
+      "edge_mask": 1056946
+    },
+    {
+      "selection": 2,
+      "edge_mask": 1357984
+    },
+    {
+      "selection": 3,
+      "edge_mask": 1358002
+    },
+    {
+      "selection": 4,
+      "edge_mask": 1073312
+    },
+    {
+      "selection": 6,
+      "edge_mask": 1374368
+    },
+    {
+      "selection": 8,
+      "edge_mask": 1581216
+    },
+    {
+      "selection": 9,
+      "edge_mask": 1581234
+    },
+    {
+      "selection": 12,
+      "edge_mask": 1597600
+    }
+  ],
+  "incompatible_selections": {
+    "5": {
+      "kind": "clique_mismatch",
+      "subset_mask": 69,
+      "expected": 0,
+      "actual": 1
+    },
+    "7": {
+      "kind": "clique_mismatch",
+      "subset_mask": 69,
+      "expected": 0,
+      "actual": 1
+    },
+    "10": {
+      "kind": "clique_mismatch",
+      "subset_mask": 112,
+      "expected": 0,
+      "actual": 1
+    },
+    "11": {
+      "kind": "chordless_cycle",
+      "vertices": [
+        0,
+        2,
+        4,
+        6
+      ]
+    },
+    "13": {
+      "kind": "clique_mismatch",
+      "subset_mask": 69,
+      "expected": 0,
+      "actual": 1
+    },
+    "14": {
+      "kind": "clique_mismatch",
+      "subset_mask": 84,
+      "expected": 0,
+      "actual": 1
+    },
+    "15": {
+      "kind": "clique_mismatch",
+      "subset_mask": 69,
+      "expected": 0,
+      "actual": 1
+    }
+  },
+  "rhombus_witness": {
+    "selection": 3,
+    "G_prime_edge_mask": 1358002,
+    "H_prime_edge_mask": 1597600
+  },
+  "exact_nonedge_candidate": null,
+  "lp_result": null
+}

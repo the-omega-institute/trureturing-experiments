@@ -1,0 +1,208 @@
+{
+  "raw_index": 2521,
+  "G_edge_mask": 1401940,
+  "H_edge_mask": 2012672,
+  "G_clique_vector_hex": "0x110000005400020624000014",
+  "H_clique_vector_hex": "0x100050101010400220028044000",
+  "components_as_subset_masks": [
+    [
+      6,
+      68,
+      70,
+      100
+    ],
+    [
+      9,
+      33,
+      40,
+      41
+    ],
+    [
+      20,
+      52
+    ],
+    [
+      24,
+      72,
+      80,
+      88,
+      112
+    ],
+    [
+      34,
+      98
+    ]
+  ],
+  "G_selection": 3,
+  "H_selection": 28,
+  "selections_enumerated": 32,
+  "compatible_family": [
+    {
+      "selection": 0,
+      "edge_mask": 1319936
+    },
+    {
+      "selection": 1,
+      "edge_mask": 1336384
+    },
+    {
+      "selection": 2,
+      "edge_mask": 1385492
+    },
+    {
+      "selection": 3,
+      "edge_mask": 1401940
+    },
+    {
+      "selection": 4,
+      "edge_mask": 1324032
+    },
+    {
+      "selection": 5,
+      "edge_mask": 1340480
+    },
+    {
+      "selection": 6,
+      "edge_mask": 1389588
+    },
+    {
+      "selection": 7,
+      "edge_mask": 1406036
+    },
+    {
+      "selection": 8,
+      "edge_mask": 2008064
+    },
+    {
+      "selection": 9,
+      "edge_mask": 2024512
+    },
+    {
+      "selection": 12,
+      "edge_mask": 2012160
+    },
+    {
+      "selection": 16,
+      "edge_mask": 1320448
+    },
+    {
+      "selection": 18,
+      "edge_mask": 1386004
+    },
+    {
+      "selection": 20,
+      "edge_mask": 1324544
+    },
+    {
+      "selection": 22,
+      "edge_mask": 1390100
+    },
+    {
+      "selection": 24,
+      "edge_mask": 2008576
+    },
+    {
+      "selection": 28,
+      "edge_mask": 2012672
+    }
+  ],
+  "incompatible_selections": {
+    "10": {
+      "kind": "clique_mismatch",
+      "subset_mask": 56,
+      "expected": 0,
+      "actual": 1
+    },
+    "11": {
+      "kind": "clique_mismatch",
+      "subset_mask": 56,
+      "expected": 0,
+      "actual": 1
+    },
+    "13": {
+      "kind": "clique_mismatch",
+      "subset_mask": 84,
+      "expected": 0,
+      "actual": 1
+    },
+    "14": {
+      "kind": "clique_mismatch",
+      "subset_mask": 56,
+      "expected": 0,
+      "actual": 1
+    },
+    "15": {
+      "kind": "clique_mismatch",
+      "subset_mask": 56,
+      "expected": 0,
+      "actual": 1
+    },
+    "17": {
+      "kind": "clique_mismatch",
+      "subset_mask": 38,
+      "expected": 0,
+      "actual": 1
+    },
+    "19": {
+      "kind": "clique_mismatch",
+      "subset_mask": 38,
+      "expected": 0,
+      "actual": 1
+    },
+    "21": {
+      "kind": "clique_mismatch",
+      "subset_mask": 38,
+      "expected": 0,
+      "actual": 1
+    },
+    "23": {
+      "kind": "clique_mismatch",
+      "subset_mask": 38,
+      "expected": 0,
+      "actual": 1
+    },
+    "25": {
+      "kind": "clique_mismatch",
+      "subset_mask": 38,
+      "expected": 0,
+      "actual": 1
+    },
+    "26": {
+      "kind": "clique_mismatch",
+      "subset_mask": 56,
+      "expected": 0,
+      "actual": 1
+    },
+    "27": {
+      "kind": "clique_mismatch",
+      "subset_mask": 38,
+      "expected": 0,
+      "actual": 1
+    },
+    "29": {
+      "kind": "clique_mismatch",
+      "subset_mask": 38,
+      "expected": 0,
+      "actual": 1
+    },
+    "30": {
+      "kind": "clique_mismatch",
+      "subset_mask": 56,
+      "expected": 0,
+      "actual": 1
+    },
+    "31": {
+      "kind": "clique_mismatch",
+      "subset_mask": 38,
+      "expected": 0,
+      "actual": 1
+    }
+  },
+  "rhombus_witness": {
+    "selection": 7,
+    "G_prime_edge_mask": 1406036,
+    "H_prime_edge_mask": 2008576
+  },
+  "exact_nonedge_candidate": null,
+  "lp_result": null
+}

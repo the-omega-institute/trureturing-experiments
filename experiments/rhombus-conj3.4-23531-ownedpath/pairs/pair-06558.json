@@ -1,0 +1,127 @@
+{
+  "raw_index": 6558,
+  "G_edge_mask": 137415,
+  "H_edge_mask": 1966113,
+  "G_clique_vector_hex": "0x100000000000047ff",
+  "H_clique_vector_hex": "0x100010001010200020000000001",
+  "components_as_subset_masks": [
+    [
+      5,
+      6,
+      7,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ],
+    [
+      20
+    ],
+    [
+      48,
+      80,
+      96,
+      112
+    ],
+    [
+      65
+    ]
+  ],
+  "G_selection": 3,
+  "H_selection": 12,
+  "selections_enumerated": 16,
+  "compatible_family": [
+    {
+      "selection": 0,
+      "edge_mask": 131073
+    },
+    {
+      "selection": 1,
+      "edge_mask": 133319
+    },
+    {
+      "selection": 2,
+      "edge_mask": 135169
+    },
+    {
+      "selection": 3,
+      "edge_mask": 137415
+    },
+    {
+      "selection": 4,
+      "edge_mask": 1966081
+    },
+    {
+      "selection": 5,
+      "edge_mask": 1968327
+    },
+    {
+      "selection": 6,
+      "edge_mask": 1970177
+    },
+    {
+      "selection": 8,
+      "edge_mask": 131105
+    },
+    {
+      "selection": 10,
+      "edge_mask": 135201
+    },
+    {
+      "selection": 12,
+      "edge_mask": 1966113
+    },
+    {
+      "selection": 14,
+      "edge_mask": 1970209
+    }
+  ],
+  "incompatible_selections": {
+    "7": {
+      "kind": "chordless_cycle",
+      "vertices": [
+        2,
+        3,
+        6,
+        4
+      ]
+    },
+    "9": {
+      "kind": "clique_mismatch",
+      "subset_mask": 73,
+      "expected": 0,
+      "actual": 1
+    },
+    "11": {
+      "kind": "clique_mismatch",
+      "subset_mask": 73,
+      "expected": 0,
+      "actual": 1
+    },
+    "13": {
+      "kind": "clique_mismatch",
+      "subset_mask": 73,
+      "expected": 0,
+      "actual": 1
+    },
+    "15": {
+      "kind": "chordless_cycle",
+      "vertices": [
+        0,
+        2,
+        4,
+        6
+      ]
+    }
+  },
+  "rhombus_witness": {
+    "selection": 1,
+    "G_prime_edge_mask": 133319,
+    "H_prime_edge_mask": 1970209
+  },
+  "exact_nonedge_candidate": null,
+  "lp_result": null
+}

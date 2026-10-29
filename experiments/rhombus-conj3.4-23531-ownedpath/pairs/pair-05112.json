@@ -1,0 +1,119 @@
+{
+  "raw_index": 5112,
+  "G_edge_mask": 2695,
+  "H_edge_mask": 689763,
+  "G_clique_vector_hex": "0x80001f3",
+  "H_clique_vector_hex": "0x101010e0000000804000f",
+  "components_as_subset_masks": [
+    [
+      6,
+      7
+    ],
+    [
+      9,
+      10,
+      11,
+      12,
+      13
+    ],
+    [
+      24,
+      72,
+      80,
+      88
+    ],
+    [
+      65,
+      66,
+      67
+    ]
+  ],
+  "G_selection": 2,
+  "H_selection": 13,
+  "selections_enumerated": 16,
+  "compatible_family": [
+    {
+      "selection": 0,
+      "edge_mask": 515
+    },
+    {
+      "selection": 1,
+      "edge_mask": 579
+    },
+    {
+      "selection": 2,
+      "edge_mask": 2695
+    },
+    {
+      "selection": 4,
+      "edge_mask": 688643
+    },
+    {
+      "selection": 5,
+      "edge_mask": 688707
+    },
+    {
+      "selection": 6,
+      "edge_mask": 690823
+    },
+    {
+      "selection": 8,
+      "edge_mask": 1571
+    },
+    {
+      "selection": 9,
+      "edge_mask": 1635
+    },
+    {
+      "selection": 10,
+      "edge_mask": 3751
+    },
+    {
+      "selection": 12,
+      "edge_mask": 689699
+    },
+    {
+      "selection": 13,
+      "edge_mask": 689763
+    }
+  ],
+  "incompatible_selections": {
+    "3": {
+      "kind": "clique_mismatch",
+      "subset_mask": 14,
+      "expected": 0,
+      "actual": 1
+    },
+    "7": {
+      "kind": "clique_mismatch",
+      "subset_mask": 14,
+      "expected": 0,
+      "actual": 1
+    },
+    "11": {
+      "kind": "clique_mismatch",
+      "subset_mask": 14,
+      "expected": 0,
+      "actual": 1
+    },
+    "14": {
+      "kind": "clique_mismatch",
+      "subset_mask": 73,
+      "expected": 0,
+      "actual": 1
+    },
+    "15": {
+      "kind": "clique_mismatch",
+      "subset_mask": 14,
+      "expected": 0,
+      "actual": 1
+    }
+  },
+  "rhombus_witness": {
+    "selection": 5,
+    "G_prime_edge_mask": 688707,
+    "H_prime_edge_mask": 3751
+  },
+  "exact_nonedge_candidate": null,
+  "lp_result": null
+}

@@ -1,0 +1,128 @@
+{
+  "raw_index": 649,
+  "G_edge_mask": 1158728,
+  "H_edge_mask": 1417500,
+  "G_clique_vector_hex": "0x500000004000022a8040884",
+  "H_clique_vector_hex": "0x100000000060606240c1810",
+  "components_as_subset_masks": [
+    [
+      6,
+      34,
+      38,
+      66,
+      98
+    ],
+    [
+      9,
+      25,
+      33,
+      41,
+      48,
+      49,
+      56,
+      57
+    ],
+    [
+      12,
+      44
+    ],
+    [
+      18
+    ]
+  ],
+  "G_selection": 5,
+  "H_selection": 10,
+  "selections_enumerated": 16,
+  "compatible_family": [
+    {
+      "selection": 0,
+      "edge_mask": 1155080
+    },
+    {
+      "selection": 1,
+      "edge_mask": 1156680
+    },
+    {
+      "selection": 2,
+      "edge_mask": 1417244
+    },
+    {
+      "selection": 3,
+      "edge_mask": 1418844
+    },
+    {
+      "selection": 4,
+      "edge_mask": 1157128
+    },
+    {
+      "selection": 5,
+      "edge_mask": 1158728
+    },
+    {
+      "selection": 6,
+      "edge_mask": 1419292
+    },
+    {
+      "selection": 7,
+      "edge_mask": 1420892
+    },
+    {
+      "selection": 8,
+      "edge_mask": 1155336
+    },
+    {
+      "selection": 10,
+      "edge_mask": 1417500
+    },
+    {
+      "selection": 12,
+      "edge_mask": 1157384
+    },
+    {
+      "selection": 14,
+      "edge_mask": 1419548
+    }
+  ],
+  "incompatible_selections": {
+    "9": {
+      "kind": "chordless_cycle",
+      "vertices": [
+        1,
+        4,
+        3,
+        5
+      ]
+    },
+    "11": {
+      "kind": "clique_mismatch",
+      "subset_mask": 50,
+      "expected": 0,
+      "actual": 1
+    },
+    "13": {
+      "kind": "chordless_cycle",
+      "vertices": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    "15": {
+      "kind": "chordless_cycle",
+      "vertices": [
+        1,
+        2,
+        3,
+        4
+      ]
+    }
+  },
+  "rhombus_witness": {
+    "selection": 1,
+    "G_prime_edge_mask": 1156680,
+    "H_prime_edge_mask": 1419548
+  },
+  "exact_nonedge_candidate": null,
+  "lp_result": null
+}

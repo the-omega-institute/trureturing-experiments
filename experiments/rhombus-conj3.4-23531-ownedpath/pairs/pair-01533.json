@@ -1,0 +1,155 @@
+{
+  "raw_index": 1533,
+  "G_edge_mask": 1543413,
+  "H_edge_mask": 2020844,
+  "G_clique_vector_hex": "0x30300000f0e020206040402f5",
+  "H_clique_vector_hex": "0x1000107570756000200001d5834",
+  "components_as_subset_masks": [
+    [
+      3,
+      11,
+      67,
+      75
+    ],
+    [
+      12,
+      14
+    ],
+    [
+      17,
+      18,
+      20,
+      22,
+      25,
+      26,
+      68,
+      70,
+      80,
+      81,
+      82,
+      84,
+      86,
+      88,
+      89,
+      90,
+      112
+    ],
+    [
+      33,
+      40,
+      41,
+      56,
+      97,
+      104,
+      105
+    ]
+  ],
+  "G_selection": 11,
+  "H_selection": 4,
+  "selections_enumerated": 16,
+  "compatible_family": [
+    {
+      "selection": 4,
+      "edge_mask": 2020844
+    },
+    {
+      "selection": 8,
+      "edge_mask": 1541364
+    },
+    {
+      "selection": 9,
+      "edge_mask": 1541365
+    },
+    {
+      "selection": 10,
+      "edge_mask": 1543412
+    },
+    {
+      "selection": 11,
+      "edge_mask": 1543413
+    }
+  ],
+  "incompatible_selections": {
+    "0": {
+      "kind": "chordless_cycle",
+      "vertices": [
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    "1": {
+      "kind": "chordless_cycle",
+      "vertices": [
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    "2": {
+      "kind": "chordless_cycle",
+      "vertices": [
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    "3": {
+      "kind": "chordless_cycle",
+      "vertices": [
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    "5": {
+      "kind": "clique_mismatch",
+      "subset_mask": 19,
+      "expected": 0,
+      "actual": 1
+    },
+    "6": {
+      "kind": "clique_mismatch",
+      "subset_mask": 28,
+      "expected": 0,
+      "actual": 1
+    },
+    "7": {
+      "kind": "clique_mismatch",
+      "subset_mask": 19,
+      "expected": 0,
+      "actual": 1
+    },
+    "12": {
+      "kind": "clique_mismatch",
+      "subset_mask": 49,
+      "expected": 0,
+      "actual": 1
+    },
+    "13": {
+      "kind": "clique_mismatch",
+      "subset_mask": 19,
+      "expected": 0,
+      "actual": 1
+    },
+    "14": {
+      "kind": "clique_mismatch",
+      "subset_mask": 28,
+      "expected": 0,
+      "actual": 1
+    },
+    "15": {
+      "kind": "clique_mismatch",
+      "subset_mask": 19,
+      "expected": 0,
+      "actual": 1
+    }
+  },
+  "rhombus_witness": null,
+  "exact_nonedge_candidate": null,
+  "lp_result": "no_feasible_point_found; no edge certificate claimed"
+}

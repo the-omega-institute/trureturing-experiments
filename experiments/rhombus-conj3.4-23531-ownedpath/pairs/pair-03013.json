@@ -1,0 +1,80 @@
+{
+  "raw_index": 3013,
+  "G_edge_mask": 102083,
+  "H_edge_mask": 707617,
+  "G_clique_vector_hex": "0x400000a080402af",
+  "H_clique_vector_hex": "0x101111e00000000040081",
+  "components_as_subset_masks": [
+    [
+      5,
+      6,
+      7,
+      10,
+      14,
+      34,
+      40,
+      42
+    ],
+    [
+      65,
+      67
+    ],
+    [
+      68,
+      72,
+      76,
+      80,
+      88
+    ]
+  ],
+  "G_selection": 1,
+  "H_selection": 6,
+  "selections_enumerated": 8,
+  "compatible_family": [
+    {
+      "selection": 0,
+      "edge_mask": 35841
+    },
+    {
+      "selection": 1,
+      "edge_mask": 102083
+    },
+    {
+      "selection": 2,
+      "edge_mask": 35873
+    },
+    {
+      "selection": 3,
+      "edge_mask": 102115
+    },
+    {
+      "selection": 4,
+      "edge_mask": 707585
+    },
+    {
+      "selection": 6,
+      "edge_mask": 707617
+    }
+  ],
+  "incompatible_selections": {
+    "5": {
+      "kind": "clique_mismatch",
+      "subset_mask": 70,
+      "expected": 0,
+      "actual": 1
+    },
+    "7": {
+      "kind": "clique_mismatch",
+      "subset_mask": 69,
+      "expected": 0,
+      "actual": 1
+    }
+  },
+  "rhombus_witness": {
+    "selection": 3,
+    "G_prime_edge_mask": 102115,
+    "H_prime_edge_mask": 707585
+  },
+  "exact_nonedge_candidate": null,
+  "lp_result": null
+}

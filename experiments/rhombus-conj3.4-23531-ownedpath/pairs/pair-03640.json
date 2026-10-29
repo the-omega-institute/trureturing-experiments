@@ -1,0 +1,118 @@
+{
+  "raw_index": 3640,
+  "G_edge_mask": 1205315,
+  "H_edge_mask": 1433699,
+  "G_clique_vector_hex": "0x11000001540000002000000f",
+  "H_clique_vector_hex": "0x11000000320202022004000f",
+  "components_as_subset_masks": [
+    [
+      24,
+      40,
+      48,
+      56
+    ],
+    [
+      65,
+      69
+    ],
+    [
+      66,
+      70
+    ],
+    [
+      72
+    ]
+  ],
+  "G_selection": 12,
+  "H_selection": 3,
+  "selections_enumerated": 16,
+  "compatible_family": [
+    {
+      "selection": 0,
+      "edge_mask": 1073219
+    },
+    {
+      "selection": 1,
+      "edge_mask": 1433667
+    },
+    {
+      "selection": 2,
+      "edge_mask": 1073251
+    },
+    {
+      "selection": 3,
+      "edge_mask": 1433699
+    },
+    {
+      "selection": 4,
+      "edge_mask": 1074243
+    },
+    {
+      "selection": 5,
+      "edge_mask": 1434691
+    },
+    {
+      "selection": 8,
+      "edge_mask": 1204291
+    },
+    {
+      "selection": 10,
+      "edge_mask": 1204323
+    },
+    {
+      "selection": 12,
+      "edge_mask": 1205315
+    }
+  ],
+  "incompatible_selections": {
+    "6": {
+      "kind": "clique_mismatch",
+      "subset_mask": 67,
+      "expected": 0,
+      "actual": 1
+    },
+    "7": {
+      "kind": "clique_mismatch",
+      "subset_mask": 67,
+      "expected": 0,
+      "actual": 1
+    },
+    "9": {
+      "kind": "clique_mismatch",
+      "subset_mask": 104,
+      "expected": 0,
+      "actual": 1
+    },
+    "11": {
+      "kind": "clique_mismatch",
+      "subset_mask": 104,
+      "expected": 0,
+      "actual": 1
+    },
+    "13": {
+      "kind": "clique_mismatch",
+      "subset_mask": 104,
+      "expected": 0,
+      "actual": 1
+    },
+    "14": {
+      "kind": "clique_mismatch",
+      "subset_mask": 67,
+      "expected": 0,
+      "actual": 1
+    },
+    "15": {
+      "kind": "clique_mismatch",
+      "subset_mask": 67,
+      "expected": 0,
+      "actual": 1
+    }
+  },
+  "rhombus_witness": {
+    "selection": 5,
+    "G_prime_edge_mask": 1434691,
+    "H_prime_edge_mask": 1204323
+  },
+  "exact_nonedge_candidate": null,
+  "lp_result": null
+}

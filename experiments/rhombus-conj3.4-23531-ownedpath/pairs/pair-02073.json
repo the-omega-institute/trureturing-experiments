@@ -1,0 +1,136 @@
+{
+  "raw_index": 2073,
+  "G_edge_mask": 1323738,
+  "H_edge_mask": 2004504,
+  "G_clique_vector_hex": "0x100000000006600ec00c826",
+  "H_clique_vector_hex": "0x10005010101040006000c044800",
+  "components_as_subset_masks": [
+    [
+      5,
+      6,
+      21,
+      36,
+      37,
+      38,
+      52,
+      53
+    ],
+    [
+      10
+    ],
+    [
+      24,
+      72,
+      80,
+      88,
+      112
+    ],
+    [
+      66,
+      98
+    ]
+  ],
+  "G_selection": 3,
+  "H_selection": 12,
+  "selections_enumerated": 16,
+  "compatible_family": [
+    {
+      "selection": 0,
+      "edge_mask": 1315352
+    },
+    {
+      "selection": 1,
+      "edge_mask": 1323610
+    },
+    {
+      "selection": 2,
+      "edge_mask": 1315480
+    },
+    {
+      "selection": 3,
+      "edge_mask": 1323738
+    },
+    {
+      "selection": 4,
+      "edge_mask": 2003480
+    },
+    {
+      "selection": 5,
+      "edge_mask": 2011738
+    },
+    {
+      "selection": 8,
+      "edge_mask": 1316376
+    },
+    {
+      "selection": 9,
+      "edge_mask": 1324634
+    },
+    {
+      "selection": 10,
+      "edge_mask": 1316504
+    },
+    {
+      "selection": 11,
+      "edge_mask": 1324762
+    },
+    {
+      "selection": 12,
+      "edge_mask": 2004504
+    }
+  ],
+  "incompatible_selections": {
+    "6": {
+      "kind": "chordless_cycle",
+      "vertices": [
+        1,
+        3,
+        4,
+        5
+      ]
+    },
+    "7": {
+      "kind": "chordless_cycle",
+      "vertices": [
+        1,
+        2,
+        4,
+        3
+      ]
+    },
+    "13": {
+      "kind": "chordless_cycle",
+      "vertices": [
+        1,
+        2,
+        4,
+        6
+      ]
+    },
+    "14": {
+      "kind": "chordless_cycle",
+      "vertices": [
+        1,
+        3,
+        4,
+        5
+      ]
+    },
+    "15": {
+      "kind": "chordless_cycle",
+      "vertices": [
+        1,
+        2,
+        4,
+        3
+      ]
+    }
+  },
+  "rhombus_witness": {
+    "selection": 4,
+    "G_prime_edge_mask": 2003480,
+    "H_prime_edge_mask": 1324762
+  },
+  "exact_nonedge_candidate": null,
+  "lp_result": null
+}

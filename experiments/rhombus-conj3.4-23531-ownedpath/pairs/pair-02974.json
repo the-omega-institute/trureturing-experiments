@@ -1,0 +1,134 @@
+{
+  "raw_index": 2974,
+  "G_edge_mask": 3865,
+  "H_edge_mask": 718288,
+  "G_clique_vector_hex": "0x40000001c003881",
+  "H_clique_vector_hex": "0x555055400000024155024",
+  "components_as_subset_masks": [
+    [
+      3,
+      17,
+      19,
+      34,
+      35
+    ],
+    [
+      6,
+      10,
+      20,
+      22,
+      24,
+      26,
+      68,
+      70,
+      72,
+      74,
+      80,
+      82,
+      84,
+      86,
+      88,
+      90
+    ],
+    [
+      12
+    ],
+    [
+      36
+    ]
+  ],
+  "G_selection": 5,
+  "H_selection": 10,
+  "selections_enumerated": 16,
+  "compatible_family": [
+    {
+      "selection": 0,
+      "edge_mask": 1296
+    },
+    {
+      "selection": 1,
+      "edge_mask": 1817
+    },
+    {
+      "selection": 2,
+      "edge_mask": 710096
+    },
+    {
+      "selection": 3,
+      "edge_mask": 710617
+    },
+    {
+      "selection": 4,
+      "edge_mask": 3344
+    },
+    {
+      "selection": 5,
+      "edge_mask": 3865
+    },
+    {
+      "selection": 8,
+      "edge_mask": 9488
+    },
+    {
+      "selection": 9,
+      "edge_mask": 10009
+    },
+    {
+      "selection": 10,
+      "edge_mask": 718288
+    },
+    {
+      "selection": 12,
+      "edge_mask": 11536
+    },
+    {
+      "selection": 13,
+      "edge_mask": 12057
+    }
+  ],
+  "incompatible_selections": {
+    "6": {
+      "kind": "clique_mismatch",
+      "subset_mask": 14,
+      "expected": 0,
+      "actual": 1
+    },
+    "7": {
+      "kind": "clique_mismatch",
+      "subset_mask": 14,
+      "expected": 0,
+      "actual": 1
+    },
+    "11": {
+      "kind": "chordless_cycle",
+      "vertices": [
+        0,
+        4,
+        2,
+        5
+      ]
+    },
+    "14": {
+      "kind": "clique_mismatch",
+      "subset_mask": 14,
+      "expected": 0,
+      "actual": 1
+    },
+    "15": {
+      "kind": "chordless_cycle",
+      "vertices": [
+        0,
+        4,
+        2,
+        5
+      ]
+    }
+  },
+  "rhombus_witness": {
+    "selection": 2,
+    "G_prime_edge_mask": 710096,
+    "H_prime_edge_mask": 12057
+  },
+  "exact_nonedge_candidate": null,
+  "lp_result": null
+}

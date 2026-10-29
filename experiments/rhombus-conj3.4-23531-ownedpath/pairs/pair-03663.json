@@ -1,0 +1,87 @@
+{
+  "raw_index": 3663,
+  "G_edge_mask": 692629,
+  "H_edge_mask": 1470644,
+  "G_clique_vector_hex": "0x101010000000004145071",
+  "H_clique_vector_hex": "0x130000031200220024004030",
+  "components_as_subset_masks": [
+    [
+      3,
+      11
+    ],
+    [
+      18,
+      24,
+      26,
+      80,
+      88
+    ],
+    [
+      36,
+      48,
+      52,
+      65,
+      68,
+      73,
+      96,
+      97,
+      100
+    ]
+  ],
+  "G_selection": 3,
+  "H_selection": 4,
+  "selections_enumerated": 8,
+  "compatible_family": [
+    {
+      "selection": 0,
+      "edge_mask": 135316
+    },
+    {
+      "selection": 1,
+      "edge_mask": 135317
+    },
+    {
+      "selection": 2,
+      "edge_mask": 692628
+    },
+    {
+      "selection": 3,
+      "edge_mask": 692629
+    },
+    {
+      "selection": 4,
+      "edge_mask": 1470644
+    },
+    {
+      "selection": 5,
+      "edge_mask": 1470645
+    }
+  ],
+  "incompatible_selections": {
+    "6": {
+      "kind": "chordless_cycle",
+      "vertices": [
+        0,
+        3,
+        4,
+        5
+      ]
+    },
+    "7": {
+      "kind": "chordless_cycle",
+      "vertices": [
+        0,
+        1,
+        4,
+        5
+      ]
+    }
+  },
+  "rhombus_witness": {
+    "selection": 2,
+    "G_prime_edge_mask": 692628,
+    "H_prime_edge_mask": 1470645
+  },
+  "exact_nonedge_candidate": null,
+  "lp_result": null
+}

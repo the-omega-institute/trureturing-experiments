@@ -1,0 +1,211 @@
+{
+  "raw_index": 6283,
+  "G_edge_mask": 515530,
+  "H_edge_mask": 791372,
+  "G_clique_vector_hex": "0x55540202020155daa6",
+  "H_clique_vector_hex": "0x10000000a0008015814",
+  "components_as_subset_masks": [
+    [
+      5,
+      21
+    ],
+    [
+      9
+    ],
+    [
+      10,
+      12,
+      14,
+      24,
+      26,
+      28,
+      30,
+      40,
+      56,
+      66,
+      68,
+      70,
+      72,
+      74,
+      76,
+      78
+    ],
+    [
+      34,
+      50
+    ],
+    [
+      80
+    ]
+  ],
+  "G_selection": 5,
+  "H_selection": 26,
+  "selections_enumerated": 32,
+  "compatible_family": [
+    {
+      "selection": 0,
+      "edge_mask": 266568
+    },
+    {
+      "selection": 1,
+      "edge_mask": 266570
+    },
+    {
+      "selection": 2,
+      "edge_mask": 266572
+    },
+    {
+      "selection": 3,
+      "edge_mask": 266574
+    },
+    {
+      "selection": 4,
+      "edge_mask": 515528
+    },
+    {
+      "selection": 5,
+      "edge_mask": 515530
+    },
+    {
+      "selection": 8,
+      "edge_mask": 267080
+    },
+    {
+      "selection": 9,
+      "edge_mask": 267082
+    },
+    {
+      "selection": 10,
+      "edge_mask": 267084
+    },
+    {
+      "selection": 11,
+      "edge_mask": 267086
+    },
+    {
+      "selection": 16,
+      "edge_mask": 790856
+    },
+    {
+      "selection": 17,
+      "edge_mask": 790858
+    },
+    {
+      "selection": 18,
+      "edge_mask": 790860
+    },
+    {
+      "selection": 19,
+      "edge_mask": 790862
+    },
+    {
+      "selection": 24,
+      "edge_mask": 791368
+    },
+    {
+      "selection": 25,
+      "edge_mask": 791370
+    },
+    {
+      "selection": 26,
+      "edge_mask": 791372
+    },
+    {
+      "selection": 27,
+      "edge_mask": 791374
+    }
+  ],
+  "incompatible_selections": {
+    "6": {
+      "kind": "clique_mismatch",
+      "subset_mask": 25,
+      "expected": 0,
+      "actual": 1
+    },
+    "7": {
+      "kind": "clique_mismatch",
+      "subset_mask": 13,
+      "expected": 0,
+      "actual": 1
+    },
+    "12": {
+      "kind": "clique_mismatch",
+      "subset_mask": 42,
+      "expected": 0,
+      "actual": 1
+    },
+    "13": {
+      "kind": "clique_mismatch",
+      "subset_mask": 42,
+      "expected": 0,
+      "actual": 1
+    },
+    "14": {
+      "kind": "clique_mismatch",
+      "subset_mask": 25,
+      "expected": 0,
+      "actual": 1
+    },
+    "15": {
+      "kind": "clique_mismatch",
+      "subset_mask": 13,
+      "expected": 0,
+      "actual": 1
+    },
+    "20": {
+      "kind": "clique_mismatch",
+      "subset_mask": 82,
+      "expected": 0,
+      "actual": 1
+    },
+    "21": {
+      "kind": "clique_mismatch",
+      "subset_mask": 82,
+      "expected": 0,
+      "actual": 1
+    },
+    "22": {
+      "kind": "clique_mismatch",
+      "subset_mask": 25,
+      "expected": 0,
+      "actual": 1
+    },
+    "23": {
+      "kind": "clique_mismatch",
+      "subset_mask": 13,
+      "expected": 0,
+      "actual": 1
+    },
+    "28": {
+      "kind": "clique_mismatch",
+      "subset_mask": 42,
+      "expected": 0,
+      "actual": 1
+    },
+    "29": {
+      "kind": "clique_mismatch",
+      "subset_mask": 42,
+      "expected": 0,
+      "actual": 1
+    },
+    "30": {
+      "kind": "clique_mismatch",
+      "subset_mask": 25,
+      "expected": 0,
+      "actual": 1
+    },
+    "31": {
+      "kind": "clique_mismatch",
+      "subset_mask": 13,
+      "expected": 0,
+      "actual": 1
+    }
+  },
+  "rhombus_witness": {
+    "selection": 4,
+    "G_prime_edge_mask": 515528,
+    "H_prime_edge_mask": 791374
+  },
+  "exact_nonedge_candidate": null,
+  "lp_result": null
+}
