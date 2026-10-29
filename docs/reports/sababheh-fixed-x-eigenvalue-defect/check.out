@@ -1,0 +1,9 @@
+FIDELITY: Lemma 2.1 disk support identity, n=2..6: exact symbolic equality
+FIDELITY: Theorem 3.2 nilpotent norm-defect maximizers: 3 exact cases
+FIXED_X_FAMILY: 90 exact PD completions, n=2..6, every 1<=j<n
+INTERIOR: 60 defects in [a-error,a], error<1/q, q=2,4,8
+TERMINAL: 30 defects in [-eps-eta,0], eps+eta<2/q
+FAMILY: det(X)=(3+4i)^n; [X,X*]=diag(a^2,-a^2,0,...); delta_2(X)=a>0
+COUPLED_LIFTING: 15 Gaussian-rational cases with cross-compression blocks
+SPECTRAL_RANKS: 2j+1 in the full completion, j+1 in A+B, checked by exact inertia
+ALL_CHECKS_OK
