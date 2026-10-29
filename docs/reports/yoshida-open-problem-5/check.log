@@ -1,0 +1,4 @@
+source Example 30: exact 4-rapid decrease checked for r=1..7
+counterexample q=7, L=49, r=1: output ratio 992 < b1/2 1116
+certificate: u**4 + 24*u**3 + 196*u**2 + 592*u + 368
+ALL_CHECKS_OK

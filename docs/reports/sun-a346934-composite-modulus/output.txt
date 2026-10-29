@@ -1,0 +1,13 @@
+FIDELITY OEIS revision 29: a(1) example and all 11 displayed terms agree
+INDEPENDENT: subset permanents agree with expansion at every order 0..18
+INDEPENDENT: direct permutation sums agree at every order 0..8
+FIDELITY prime-modulus theorem: primes [3, 5, 7, 11, 13, 17, 19] all give residue 2
+RANK_TWO exhaustive vectors in {-1,0,1}, orders 0..4: 7381
+RANK_TWO independent subset checks, orders 5..10, seed 346934: 72
+FACTORIAL_SPLIT odd composite q<=999: 332 moduli; 173874 splits; all residues zero
+EXCEPTION q=9 splits r=3,4,5: [720, 576, 720]
+TARGET every composite q=2n+1 with 1<=n<=100: 55 cases; all residues zero
+TARGET first composite q=9: a(4)= 24446016 =9*2716224
+GENERAL additive matrices: q=9,15, seed 346934: 16 independent integer-permanent checks
+SCOPE: sign sentence and Conjecture 2 are not nominated or settled here
+ALL_CHECKS_OK

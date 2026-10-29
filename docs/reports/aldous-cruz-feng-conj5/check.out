@@ -1,0 +1,9 @@
+FIDELITY: source R2 transition matrix and invariant law reproduced exactly
+SAMPLING: tuple enumeration equals binomial-tail kernel in 126 exact cases
+FAMILY: symbolic positive-coefficient certificate covers 0<b<a<c<a+b
+CYCLE: 0->7->12->4->0; (I-C)R=I-Pi and column norm(R)=3/2
+UNIFORM: k=8m, m>=128: eps<1/131072, L<3/32, stationary Lipschitz<3/16
+BASIN: self-map radius<1/64; fixed-point coordinates>=15/64; chart volume>=1/2097152
+EXACT LARGE k: 9 stationary solves at m=128,129,256 verify normalization and perturbation identity
+SCOPE: general attraction uses the stated analytical tail and contraction theorems; no Lean proof performed
+ALL_CHECKS_OK

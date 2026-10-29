@@ -1,0 +1,10 @@
+Source Definition 4 / equation (14): 1691 exact recurrence/binomial comparisons OK
+Source Theorem 3(2): 288 odd-order determinants vanish (N=3,5,7,9,11,13; 1<=m<=6N)
+OEIS A290540 revision #36: all 16 displayed terms reproduced exactly
+Even orders N=2,4,...,20; 0<=m<=8N: 890 exact determinant signs OK
+Precisely 90 initial zeros at 1<=m<=N-2 are exceptions to the phase sign rule
+Strict positive/negative blocks with separating zeros: 70 complete blocks OK
+Boundary reflection K_j(Nv+N-1)=(-1)^v K_(N-j+1)(Nv+N-1): all N=2,4,...,20 and 0<=v<=7 OK
+Independent Fraction Gaussian determinant cross-check: 60 cases OK
+All evidence above is finite exact arithmetic; no infinite claim or Lean proof is asserted
+ALL_CHECKS_OK

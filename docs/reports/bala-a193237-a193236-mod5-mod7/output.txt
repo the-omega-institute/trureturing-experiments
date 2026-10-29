@@ -1,0 +1,14 @@
+Triangular residue tables at 5 and 7: exact match
+A193237: source prefix indices 0..20 reproduced exactly
+A193237: independent binomial construction and A^3 F=1 through degree 100
+A193237: b-file indices 0..1000 match exactly; sha256=4ba6b426b1b859a65152b1e764a60d1683f857f1eeb710c63fe4f11a9a07bde5
+A193237: mod 5, residue 4: 701 cases, n=0..700, indices 4..3504; no violations; full transfer identity through degree 3505
+A193237: mod 7, residue 5: 501 cases, n=0..500, indices 5..3505; no violations; full transfer identity through degree 3505
+A193237: a(4)=1125=5*225; a(5)=9261=7*1323
+A193236: source prefix indices 0..20 reproduced exactly
+A193236: independent binomial construction and A^3 F=1 through degree 100
+A193236: b-file indices 0..1000 match exactly; sha256=5801e979042bf2f5d7a06e097706bcedeb4f60b2eebcc3fe4e98886eb524d06b
+A193236: mod 5, residue 4: 701 cases, n=0..700, indices 4..3504; no violations; full transfer identity through degree 3505
+A193236: mod 7, residue 5: 501 cases, n=0..500, indices 5..3505; no violations; full transfer identity through degree 3505
+A193236: a(4)=765=5*153; a(5)=5481=7*783
+ALL_CHECKS_OK

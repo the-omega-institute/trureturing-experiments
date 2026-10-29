@@ -1,0 +1,57 @@
+Arithmetic: SymPy exact integer/symbolic polynomial arithmetic; no floats.
+FIDELITY m=2, q=2..8: 7 source factorizations OK
+FIDELITY even m=4,6,8,10, q=1..6: 24 factorizations OK
+SYMBOLIC r=1..10: quotient formula and reflection-minus block OK
+ODD m=3 q=1 n=3: identity/equitable quotient/degrees/gcd OK
+ODD m=3 q=2 n=6: identity/equitable quotient/degrees/gcd OK
+ODD m=3 q=3 n=9: identity/equitable quotient/degrees/gcd OK
+ODD m=3 q=4 n=12: identity/equitable quotient/degrees/gcd OK
+ODD m=3 q=5 n=15: identity/equitable quotient/degrees/gcd OK
+ODD m=3 q=6 n=18: identity/equitable quotient/degrees/gcd OK
+ODD m=3 q=7 n=21: identity/equitable quotient/degrees/gcd OK
+ODD m=3 q=8 n=24: identity/equitable quotient/degrees/gcd OK
+ODD m=5 q=1 n=5: identity/equitable quotient/degrees/gcd OK
+ODD m=5 q=2 n=10: identity/equitable quotient/degrees/gcd OK
+ODD m=5 q=3 n=15: identity/equitable quotient/degrees/gcd OK
+ODD m=5 q=4 n=20: identity/equitable quotient/degrees/gcd OK
+ODD m=5 q=5 n=25: identity/equitable quotient/degrees/gcd OK
+ODD m=5 q=6 n=30: identity/equitable quotient/degrees/gcd OK
+ODD m=5 q=7 n=35: identity/equitable quotient/degrees/gcd OK
+ODD m=5 q=8 n=40: identity/equitable quotient/degrees/gcd OK
+ODD m=7 q=1 n=7: identity/equitable quotient/degrees/gcd OK
+ODD m=7 q=2 n=14: identity/equitable quotient/degrees/gcd OK
+ODD m=7 q=3 n=21: identity/equitable quotient/degrees/gcd OK
+ODD m=7 q=4 n=28: identity/equitable quotient/degrees/gcd OK
+ODD m=7 q=5 n=35: identity/equitable quotient/degrees/gcd OK
+ODD m=7 q=6 n=42: identity/equitable quotient/degrees/gcd OK
+ODD m=7 q=7 n=49: identity/equitable quotient/degrees/gcd OK
+ODD m=7 q=8 n=56: identity/equitable quotient/degrees/gcd OK
+ODD m=9 q=1 n=9: identity/equitable quotient/degrees/gcd OK
+ODD m=9 q=2 n=18: identity/equitable quotient/degrees/gcd OK
+ODD m=9 q=3 n=27: identity/equitable quotient/degrees/gcd OK
+ODD m=9 q=4 n=36: identity/equitable quotient/degrees/gcd OK
+ODD m=9 q=5 n=45: identity/equitable quotient/degrees/gcd OK
+ODD m=9 q=6 n=54: identity/equitable quotient/degrees/gcd OK
+ODD m=9 q=7 n=63: identity/equitable quotient/degrees/gcd OK
+ODD m=9 q=8 n=72: identity/equitable quotient/degrees/gcd OK
+ODD m=11 q=1 n=11: identity/equitable quotient/degrees/gcd OK
+ODD m=11 q=2 n=22: identity/equitable quotient/degrees/gcd OK
+ODD m=11 q=3 n=33: identity/equitable quotient/degrees/gcd OK
+ODD m=11 q=4 n=44: identity/equitable quotient/degrees/gcd OK
+ODD m=11 q=5 n=55: identity/equitable quotient/degrees/gcd OK
+ODD m=11 q=6 n=66: identity/equitable quotient/degrees/gcd OK
+ODD m=11 q=7 n=77: identity/equitable quotient/degrees/gcd OK
+ODD m=13 q=1 n=13: identity/equitable quotient/degrees/gcd OK
+ODD m=13 q=2 n=26: identity/equitable quotient/degrees/gcd OK
+ODD m=13 q=3 n=39: identity/equitable quotient/degrees/gcd OK
+ODD m=13 q=4 n=52: identity/equitable quotient/degrees/gcd OK
+ODD m=13 q=5 n=65: identity/equitable quotient/degrees/gcd OK
+ODD m=13 q=6 n=78: identity/equitable quotient/degrees/gcd OK
+ODD m=15 q=1 n=15: identity/equitable quotient/degrees/gcd OK
+ODD m=15 q=2 n=30: identity/equitable quotient/degrees/gcd OK
+ODD m=15 q=3 n=45: identity/equitable quotient/degrees/gcd OK
+ODD m=15 q=4 n=60: identity/equitable quotient/degrees/gcd OK
+ODD m=15 q=5 n=75: identity/equitable quotient/degrees/gcd OK
+ODD_GRID_OK: 50 cases, m=3,5,...,15; q=1..8; mq<=80
+EXAMPLES m=3 and m=5: displayed symbolic formulas OK
+ALL_CHECKS_OK

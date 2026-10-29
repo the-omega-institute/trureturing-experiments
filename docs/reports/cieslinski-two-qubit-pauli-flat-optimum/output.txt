@@ -1,0 +1,12 @@
+Pauli fidelity: all 16 words Hermitian, involutory and trace-orthogonal
+Source fidelity: rho^(2)(1/3), all 15 principal minors nonnegative, trace = 1
+Source fidelity: charpoly = t^2 * (t^2 - t + 1/6), purity = 2/3
+Source Pauli expectations: IX:-1/3, IY:1/3, IZ:-1/3, XI:-1/3, XX:1/3, XY:1/3, XZ:1/3, YI:1/3, YX:-1/3, YY:1/3, YZ:-1/3, ZI:-1/3, ZX:1/3, ZY:-1/3, ZZ:-1/3
+Contexts: six commuting product identities and 24 PSD rank-one projectors checked exactly
+All 32768 sign assignments checked; mismatch-count histogram: {1: 6144, 3: 20480, 5: 6144}
+For every sign assignment: Tr(T)=4, Tr(T H)=-12; tau=T/4 is PSD
+Hence Tr(tau rho_gamma)=(1-3*gamma)/4; positivity forces gamma <= 1/3
+For every sign assignment: Tr(H)=0, Tr(H^2)=60; purity=(1+15*gamma^2)/4
+Attainment: rho_*=(v v^*+w w^*)/6=(3 I+sum(P))/12; all 15 expectations = 1/3
+Exact optima: gamma=1/3 and purity=2/3
+ALL_CHECKS_OK

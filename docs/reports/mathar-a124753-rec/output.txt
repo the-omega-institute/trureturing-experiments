@@ -1,0 +1,9 @@
+FIDELITY: all 39 published OEIS data terms, n=0..38, agree
+FIDELITY: Manyama convolution from the entry agrees for n=1..150
+RECURRENCE: exact rational residuals vanish for n=6..300 (295 cases)
+POLYNOMIAL: s=0, degree <=11, coefficients m^0..m^11=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]; SymPy and integer convolution agree
+POLYNOMIAL: s=1, degree <=11, coefficients m^0..m^11=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]; SymPy and integer convolution agree
+POLYNOMIAL: s=2, degree <=11, coefficients m^0..m^11=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]; SymPy and integer convolution agree
+FACTORIAL BRIDGE: all 21 shifts, m=2..50 (1029 exact cases), agree
+SCOPE: finite sequence checks and exact polynomial certificates; no Lean proof is claimed
+ALL_CHECKS_OK

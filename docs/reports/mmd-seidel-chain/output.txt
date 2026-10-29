@@ -1,0 +1,9 @@
+Mandal--Mehatari--Das, arXiv:2205.00310v1, Conjecture 4.14
+SymPy 1.14.0; root-isolation width <= 1/10^16
+FIDELITY Lemma 4.12 and its energy consequence: 66 Gamma_{n,2} graphs, 4 <= n <= 14
+IDENTITIES inverse signed cycle and signed two-step rotation: 11 cores, 2 <= k <= 12
+SMALL CASES all positive compositions of even length, 2 <= n <= 10: 511
+CONJECTURE exact energy comparison: strict=416, equality=95
+COMPRESSION exact matrix/characteristic identities: 511; energy-identity sign certificates (k>=2): 466
+ARITHMETIC integers, exact radicals and rational real-root isolation; no floating-point evidence
+ALL_CHECKS_OK
