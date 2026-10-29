@@ -1,0 +1,4 @@
+source_fidelity: (aba)^3 at position 5; exact exponent 3
+family_checks: k=2..6, all four bigrams, p_v_k(n)=n+2k-1 for tested n
+algebra: phi=(1+sqrt(5))/2 represented by SymPy exact sqrt
+ALL_CHECKS_OK
