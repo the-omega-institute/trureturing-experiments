@@ -1,0 +1,9 @@
+SOURCE_DATA_SHA256 0a0109ef4faf2b478342d8d38af2ed5bb6fa9744183f87d24553a8a147377084
+FIDELITY first_ten_rows=10 all_source_rows=1000 exact_equation_and_gcd=OK
+SOURCE_REPEATED 498 D_COUNTS {1: 278, 4: 137, 8: 83} MAX_T 16
+SMALL_CASES all_positive_a_le_b_le 500 primitive_repeated_rows 969 D_COUNTS {1: 548, 4: 268, 8: 153}
+REDUCED_PAIRS all_coprime_1_le_u_lt_v_le 500 count 76115 D_COUNTS {1: 50765, 4: 12678, 8: 12672}
+SOURCE_AUXILIARY_DISCREPANCY literal_k3_family=(3,5,420,420) fails_equation; source_table_row=(3,5,120,120) passes; target_conjecture_unaffected
+NEGATIVE_CONTROL common_gcd_3_row=(3,6,72,72) difference=3 not_cube_or_twice_cube
+SCOPE finite exact checks; no universal proof or Lean settlement is claimed
+ALL_CHECKS_OK
