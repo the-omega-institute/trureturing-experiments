@@ -1,0 +1,12 @@
+FIDELITY d=1: dephaser CPTP/idempotent/full-rank fixed state; Eq29 Choi dephasing; identity DIO; depolarizing Choi=I/1
+FIDELITY d=2: dephaser CPTP/idempotent/full-rank fixed state; Eq29 Choi dephasing; identity DIO; depolarizing Choi=I/2
+FIDELITY d=3: dephaser CPTP/idempotent/full-rank fixed state; Eq29 Choi dephasing; identity DIO; depolarizing Choi=I/3
+COMMUTANT d=2: exact rank=14, dimension=2
+FAMILY d=2: 6 DIO monomial vectors; span=4; overlap component sizes=[3, 3]; non-DIO rational rotation verified
+COMMUTANT d=3: exact rank=80, dimension=1
+FAMILY d=3: 24 DIO monomial vectors; span=9; overlap component sizes=[24]; non-DIO rational rotation verified
+FAMILY d=4: 120 DIO monomial vectors; span=16; overlap component sizes=[120]; non-DIO rational rotation verified
+QUBIT: physical involution twirl idempotent; fixed space exactly DIO
+BOUNDARY d=3: Choi quadratic form of 2*Delta-id is -3 (not CP)
+Finite exact checks support the general argument; no infinite-family certification claimed.
+ALL_CHECKS_OK
