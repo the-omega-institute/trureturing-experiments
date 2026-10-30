@@ -1,0 +1,176 @@
+{
+  "solver": "Z3 4.15.4",
+  "selfcheck": {
+    "oracle_literal_comparisons": 128,
+    "symbolic_image_comparisons": 96,
+    "fixed_table_encoding_comparisons": 16,
+    "small_synthesis": "sat, decoded and replayed",
+    "avoidance_boundary_control": "ac=1, not strict ac>1"
+  },
+  "encoding_build_seconds": 0.5458531249896623,
+  "initial_counts": {
+    "declared_variables": {
+      "BV5": 38,
+      "BV19": 382,
+      "Bool": 346
+    },
+    "total_declared_variables": 766,
+    "top_level_assertions": 427,
+    "no_success_cuts": 1,
+    "cut_word_lengths": [
+      0
+    ]
+  },
+  "smtlib_bytes": 2722502,
+  "smtlib_sha256": "6efe92bc0fa40f8ec9314c4e04d2b972dfe9e44289113886d50e18b9e792ad30",
+  "serialization_seconds": 1.4378007090417668,
+  "checks": [
+    {
+      "solver_status": "sat",
+      "solver_seconds": 9.16382366605103,
+      "statistics": {
+        "solve-eqs-steps": 62182,
+        "solve-eqs-elim-vars": 382,
+        "sat mk clause 2ary": 4248734,
+        "sat mk clause 3ary": 84,
+        "sat mk clause nary": 686444,
+        "sat mk var": 496198,
+        "sat del clause": 170595,
+        "sat conflicts": 9523,
+        "sat decisions": 31908,
+        "sat propagations 2ary": 104263013,
+        "sat propagations nary": 3843586,
+        "sat restarts": 1695,
+        "sat minimized lits": 171387,
+        "sat subs resolution dyn": 59442,
+        "sat elim bool vars res": 85344,
+        "sat backjumps": 9476,
+        "sat backtracks": 47,
+        "sat subsumed": 30,
+        "sat subs resolution": 28,
+        "sat elim literals": 28,
+        "sat scc elim vars": 723,
+        "sat scc elim binary": 108,
+        "rlimit count": 112955672,
+        "max memory": 993.04,
+        "memory": 349.37,
+        "num allocs": 67687488036.0,
+        "time": 9.163
+      },
+      "counts": {
+        "declared_variables": {
+          "BV5": 38,
+          "BV19": 382,
+          "Bool": 346
+        },
+        "total_declared_variables": 766,
+        "top_level_assertions": 427,
+        "no_success_cuts": 1,
+        "cut_word_lengths": [
+          0
+        ]
+      },
+      "oracle_seconds": 1.691601937636733e-05,
+      "oracle": {
+        "survives": false,
+        "word": [
+          0
+        ],
+        "mask": 110577,
+        "visited": 3,
+        "processed": 2,
+        "levels": [
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "solver_status": "unknown",
+      "solver_seconds": 20.01013291598065,
+      "statistics": {
+        "conflicts": 16182,
+        "decisions": 510367,
+        "propagations": 36096493,
+        "binary propagations": 19045091,
+        "restarts": 101,
+        "added eqs": 6216074,
+        "mk clause": 5790809,
+        "mk clause binary": 598587,
+        "del clause": 5334571,
+        "minimized lits": 1336400,
+        "num checks": 1,
+        "mk bool var": 4526969,
+        "arith eq adapter": 192,
+        "arith-lower": 8197,
+        "arith-upper": 21753,
+        "arith-conflicts": 263,
+        "arith-bound-propagations-lp": 8058,
+        "arith-diseq": 10567,
+        "arith-make-feasible": 7940,
+        "arith-max-columns": 24,
+        "arith-max-rows": 1,
+        "arith-fixed-eqs": 43,
+        "bv diseqs": 58,
+        "bv dynamic diseqs": 337152,
+        "bv bit2core": 12682219,
+        "bv->core eq": 1523685,
+        "bv dynamic eqs": 5829,
+        "rlimit count": 197699435,
+        "max memory": 993.04,
+        "memory": 633.85,
+        "num allocs": 161514982092.0,
+        "time": 20.01
+      },
+      "counts": {
+        "declared_variables": {
+          "BV5": 38,
+          "BV19": 382,
+          "Bool": 346
+        },
+        "total_declared_variables": 766,
+        "top_level_assertions": 429,
+        "no_success_cuts": 2,
+        "cut_word_lengths": [
+          0,
+          1
+        ]
+      },
+      "reason": "canceled"
+    }
+  ],
+  "candidate": null,
+  "final_counts": {
+    "declared_variables": {
+      "BV5": 38,
+      "BV19": 382,
+      "Bool": 346
+    },
+    "total_declared_variables": 766,
+    "top_level_assertions": 429,
+    "no_success_cuts": 2,
+    "cut_word_lengths": [
+      0,
+      1
+    ]
+  },
+  "elapsed_seconds": 31.46598824998364,
+  "peak_rss_bytes_macos": 1272627200,
+  "complete_constraint_system": "bounded admissibility plus lazily separated exact all-word no-success constraints; readiness run may end before closure"
+}

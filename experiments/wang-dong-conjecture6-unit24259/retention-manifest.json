@@ -1,0 +1,139 @@
+{
+  "scope": "Retention integrity only; no mathematical recomputation",
+  "original_hashes_verified": 15,
+  "audit_original_sha256": "bf3962d1117670b35c778cf0b3dc7783941e768f007898c8e595da77007703ff",
+  "original_files": {
+    "wang-dong-unit24259-readiness-6ae4b425": {
+      "OWNERSHIP.json": "77e2230f2022db73e6ee521fd9dd55ff1e04775b672f243728f444052c108239",
+      "README.md": "a198c647dad58ff675273e694403e6bf0f4be755b0c5eae4387f372ee789e433",
+      "initial-admissibility.smt2.gz": "8db54a4f3c70b06310254be00bf1256cc2e5d6b709aa56160095a7ce39e95f76",
+      "measurements.json": "eba62c4b49dad293b152001b0fb53a129c2400c62cb3210a731710e5c1ea44d1",
+      "readiness.py": "47b0299e9067063027ece241d33120513f7a26108ee4f60c389aaa44dfc996e1",
+      "requirements.txt": "2bc40e2fcd7a609ec720d16ae245d16061a265276184c9c9bb7460cc5a0e6d56"
+    },
+    "wang-dong-unit24259-upfront-cuts-test-6ae4b9f2": {
+      "README.md": "32d92a477d8ed4ee0e512dbd84606317430d0476410b542d83733cdba2d49adc",
+      "SOURCE-LICENSE.md": "529762cc292b49cca3b8210f244164c6640b03da99ffeb1f01dab6176a3f4c18",
+      "encoding.py": "049de42b9db500f702f697449a7a5ca02b2e96724617bc1b9c4c4a65ad9b3695",
+      "experiment.py": "822746bc52afaa2cdea0cccb97341f8ce2093411c827037d50497e94fd6923a8",
+      "outcome.json": "fc8d9c8ecc9919f8d77e4dc1442e9ae4a3fd0a6b960134d306e3c3468ac42d79",
+      "requirements.txt": "2bc40e2fcd7a609ec720d16ae245d16061a265276184c9c9bb7460cc5a0e6d56",
+      "resources.json": "acda7fbfbf0f6032d4fab41af6cd38d57e8d777b36377871878987e9fdde22dc",
+      "supervisor.py": "216563d4b5cebd6719a616efe3bee2399456d888ad135433afba57b2577c0aaa",
+      "upfront.smt2.gz": "077ffb8b3e341257332db721391fab9b378f62f7ccd228d2d7de654ae748672b"
+    }
+  },
+  "json_removed_fields": {
+    "upfront-cuts/outcome.json": [
+      "started_utc",
+      "finished_utc"
+    ],
+    "upfront-cuts/resources.json": [
+      "computation_started_utc",
+      "computation_ended_utc",
+      "own_solver_process_joined"
+    ]
+  },
+  "audit_path_projection": {
+    "from": "ROOT = Path('/Users/mstudio3/trureturing-experiments/wang-dong-unit24259-readiness-6ae4b425')",
+    "to": "ROOT = Path(__file__).resolve().parent / 'readiness'"
+  },
+  "checks": {
+    "gzip_payload_hashes": 2,
+    "python_ast_parse": 5,
+    "solver_calls": 0,
+    "audit_executions": 0
+  },
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 1813,
+      "sha256": "9ecc47364ddcfa11e0c93d13861d6b457db64ab2fe91f56f739407bcc6e874e8"
+    },
+    {
+      "path": "SOURCE-LICENSE.md",
+      "bytes": 1176,
+      "sha256": "54c29d69ccdc573a870a743189c0baaa8b4a7536c79067db02a6f291a6e5abab"
+    },
+    {
+      "path": "audit-results.json",
+      "bytes": 1082,
+      "sha256": "6d822ec5ad0aff27e616407a8f79eb9eba929b72255861ba52af856c2f1138e6"
+    },
+    {
+      "path": "audit.py",
+      "bytes": 8881,
+      "sha256": "2e3a043737befb6c11ef5b50250c5f8f75d9d3c809851078c261688137b49ffb"
+    },
+    {
+      "path": "readiness/README.md",
+      "bytes": 5263,
+      "sha256": "c4150e880e746eeeff91c8aa8dcfd0b589628f3611d92b087232737464fac439"
+    },
+    {
+      "path": "readiness/initial-admissibility.smt2.gz",
+      "bytes": 51142,
+      "sha256": "8db54a4f3c70b06310254be00bf1256cc2e5d6b709aa56160095a7ce39e95f76"
+    },
+    {
+      "path": "readiness/measurements.json",
+      "bytes": 4553,
+      "sha256": "eba62c4b49dad293b152001b0fb53a129c2400c62cb3210a731710e5c1ea44d1"
+    },
+    {
+      "path": "readiness/readiness.py",
+      "bytes": 12027,
+      "sha256": "47b0299e9067063027ece241d33120513f7a26108ee4f60c389aaa44dfc996e1"
+    },
+    {
+      "path": "readiness/requirements.txt",
+      "bytes": 20,
+      "sha256": "2bc40e2fcd7a609ec720d16ae245d16061a265276184c9c9bb7460cc5a0e6d56"
+    },
+    {
+      "path": "upfront-cuts/README.md",
+      "bytes": 1896,
+      "sha256": "72cd8cb0868ec1dc22bae6bbe6c70550e42166908960cf3d2970dbbc1512459e"
+    },
+    {
+      "path": "upfront-cuts/SOURCE-LICENSE.md",
+      "bytes": 1176,
+      "sha256": "54c29d69ccdc573a870a743189c0baaa8b4a7536c79067db02a6f291a6e5abab"
+    },
+    {
+      "path": "upfront-cuts/encoding.py",
+      "bytes": 7224,
+      "sha256": "049de42b9db500f702f697449a7a5ca02b2e96724617bc1b9c4c4a65ad9b3695"
+    },
+    {
+      "path": "upfront-cuts/experiment.py",
+      "bytes": 7768,
+      "sha256": "822746bc52afaa2cdea0cccb97341f8ce2093411c827037d50497e94fd6923a8"
+    },
+    {
+      "path": "upfront-cuts/outcome.json",
+      "bytes": 2067,
+      "sha256": "41974405d72019ff2f254c0f9ad0f3b7c4ae148e73bad442645b39dea9ece190"
+    },
+    {
+      "path": "upfront-cuts/requirements.txt",
+      "bytes": 20,
+      "sha256": "2bc40e2fcd7a609ec720d16ae245d16061a265276184c9c9bb7460cc5a0e6d56"
+    },
+    {
+      "path": "upfront-cuts/resources.json",
+      "bytes": 340,
+      "sha256": "34d8b45f52feb8314ffee0ed777415488d4e64a4cd3fc2f96e7702e5ac55046e"
+    },
+    {
+      "path": "upfront-cuts/supervisor.py",
+      "bytes": 1590,
+      "sha256": "216563d4b5cebd6719a616efe3bee2399456d888ad135433afba57b2577c0aaa"
+    },
+    {
+      "path": "upfront-cuts/upfront.smt2.gz",
+      "bytes": 51525,
+      "sha256": "077ffb8b3e341257332db721391fab9b378f62f7ccd228d2d7de654ae748672b"
+    }
+  ]
+}
