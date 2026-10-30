@@ -1,0 +1,11 @@
+FIDELITY: displayed board and source example S(17)=48841=221^2
+BLOCK_SUM: direct double sums equal m^2*(7*m^2+5)/12 for 0<=m<=64
+MATRICES: inverses, norm preservation, T^2=110*T-I, seed successors
+BASE_CASES: all 46 positive sizes checked; only (6,1) and (78,17)
+BASE_TABLE: [(1, 6, 0), (3, 14, 8), (5, 23, 11), (7, 32, 20), (9, 41, 35), (11, 50, 56), (13, 59, 83), (15, 68, 116), (17, 78, 0), (19, 87, 27), (21, 96, 60), (23, 105, 99), (25, 114, 144), (27, 123, 195), (29, 132, 252), (31, 142, 32), (33, 151, 83), (35, 160, 140), (37, 169, 203), (39, 178, 272), (41, 187, 347), (43, 197, 35), (45, 206, 104)]
+SOURCE_TERMS: [1, 17, 127, 1871, 13969, 205793, 1536463, 22635359, 168996961, 2489683697]
+ORBIT_CHECK: 200 terms strictly sorted, valid, and descend to the two seeds
+EXHAUSTIVE_SCAN: 1<=m<=2000000; valid sizes=[1, 17, 127, 1871, 13969, 205793, 1536463]
+RECURRENCE: all indices 5..200; GENERATING_FUNCTION: coefficients 0..200
+SCOPE: exact finite checks; infinite completeness remains a proof obligation
+ALL_CHECKS_OK
