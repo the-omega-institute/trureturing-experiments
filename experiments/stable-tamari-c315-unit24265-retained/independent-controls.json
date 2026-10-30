@@ -1,0 +1,56 @@
+[
+  {
+    "bounds": [
+      3,
+      3,
+      3
+    ],
+    "vertices": 64,
+    "literal_comparabilities": 603,
+    "complete_F_comparisons": 64
+  },
+  {
+    "bounds": [
+      2,
+      2,
+      2,
+      2
+    ],
+    "vertices": 81,
+    "literal_comparabilities": 683,
+    "complete_F_comparisons": 81
+  },
+  {
+    "bounds": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "vertices": 64,
+    "literal_comparabilities": 377,
+    "complete_F_comparisons": 64
+  },
+  {
+    "bounds": [
+      2,
+      1
+    ],
+    "vertices": 6,
+    "literal_comparabilities": 16,
+    "complete_F_comparisons": 6
+  },
+  {
+    "bounds": [
+      1,
+      2,
+      0,
+      2
+    ],
+    "vertices": 18,
+    "literal_comparabilities": 96,
+    "complete_F_comparisons": 18
+  }
+]
