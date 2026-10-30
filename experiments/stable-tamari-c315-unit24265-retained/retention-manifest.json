@@ -1,0 +1,123 @@
+{
+  "schema_version": 1,
+  "scope": "Necessary independently authored programs and mathematical data from the closed probe. Hash/format retention only; no mathematical rerun or independent result verification.",
+  "source_inventory_sha256": "19857798d67bc71b6ed387dd82e984152ca99de3b94457d083cec73447b01a35",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 6417,
+      "sha256": "d71c625c600df4b70d95b2d68f446da683fc9fe5adbcaa4deea54b52b1c6eccf",
+      "scope": "new source documentation"
+    },
+    {
+      "path": "box-results.json",
+      "bytes": 9323,
+      "sha256": "1ff3bea0528fb39d2ff151f1f30b9879d0f7861ca06624f53ca3216664a65876",
+      "scope": "JSON projection: recursively remove elapsed_seconds, mode, and excluded; preserve all other values and array order. No independent mathematical replay.",
+      "source_name": "box-results.json",
+      "source_sha256": "6f49ed9220f3d3f7fe585d17c5891b8ba6ccc09b21833780186e48cebb69d445"
+    },
+    {
+      "path": "extended-box-results.json",
+      "bytes": 14172,
+      "sha256": "61a62a5c3ce5f9a630ed643abfd8de8d72c049be42301f8a5ece48b4c1b22267",
+      "scope": "JSON projection: recursively remove elapsed_seconds, mode, and excluded; preserve all other values and array order. No independent mathematical replay.",
+      "source_name": "extended-box-results.json",
+      "source_sha256": "8d72b8f0123e97fd68525ab6af2ac5e44340d12557d85852d5990eea0079a842"
+    },
+    {
+      "path": "independent-controls.json",
+      "bytes": 770,
+      "sha256": "8e22387e7b29c92e7ee368f8fa2db5b53f07c1d0c0136d431edda817ab66e1d2",
+      "scope": "JSON projection: recursively remove elapsed_seconds, mode, and excluded; preserve all other values and array order. No independent mathematical replay.",
+      "source_name": "independent-controls.json",
+      "source_sha256": "27748f9a0036f5926cc6d08c5d00bb2027d7c0e94253c6fe29c56d3dfbbf8c25"
+    },
+    {
+      "path": "independent_reference.py",
+      "bytes": 1371,
+      "sha256": "a799de61ecc64eb25d55cedd8ff3df45f1001556d2a2e52dcf0a60528b5dd067",
+      "scope": "byte-identical independently authored program or mathematical data",
+      "source_name": "independent_reference.py",
+      "source_sha256": "a799de61ecc64eb25d55cedd8ff3df45f1001556d2a2e52dcf0a60528b5dd067"
+    },
+    {
+      "path": "polynomials3.txt",
+      "bytes": 35226,
+      "sha256": "74596378235002306ccdfc4544257b4bc8c86e0c98d47a27317a67a2fa430968",
+      "scope": "byte-identical independently authored program or mathematical data",
+      "source_name": "polynomials3.txt",
+      "source_sha256": "74596378235002306ccdfc4544257b4bc8c86e0c98d47a27317a67a2fa430968"
+    },
+    {
+      "path": "polynomials4.txt",
+      "bytes": 56464,
+      "sha256": "20d05cf9f3715b9a642979523c5dba73f63c47b41711cf06f71dc442ce8c96a3",
+      "scope": "byte-identical independently authored program or mathematical data",
+      "source_name": "polynomials4.txt",
+      "source_sha256": "20d05cf9f3715b9a642979523c5dba73f63c47b41711cf06f71dc442ce8c96a3"
+    },
+    {
+      "path": "polynomials5.txt",
+      "bytes": 36887,
+      "sha256": "c4d078a5a8b5efc324c1f7771e4ecd1828340d91393daa37d919be77c89bdc87",
+      "scope": "byte-identical independently authored program or mathematical data",
+      "source_name": "polynomials5.txt",
+      "source_sha256": "c4d078a5a8b5efc324c1f7771e4ecd1828340d91393daa37d919be77c89bdc87"
+    },
+    {
+      "path": "probe.cpp",
+      "bytes": 3777,
+      "sha256": "804145acd4602f8e0994e4f53b5452f2c6883c710eeabd83012cdfa2c94c0469",
+      "scope": "byte-identical independently authored program or mathematical data",
+      "source_name": "probe.cpp",
+      "source_sha256": "804145acd4602f8e0994e4f53b5452f2c6883c710eeabd83012cdfa2c94c0469"
+    },
+    {
+      "path": "product-input.txt",
+      "bytes": 113854,
+      "sha256": "b4578add60aae81e77d5bd156ab5c1f97c982ca1571c107ac0b1271fae88df2d",
+      "scope": "byte-identical independently authored program or mathematical data",
+      "source_name": "product-input.txt",
+      "source_sha256": "b4578add60aae81e77d5bd156ab5c1f97c982ca1571c107ac0b1271fae88df2d"
+    },
+    {
+      "path": "product-results.json",
+      "bytes": 83,
+      "sha256": "e7442c04eb0b6440c9949a5c1ce66a41a27550a49bc7b50f712d6d1f938627f6",
+      "scope": "byte-identical independently authored program or mathematical data",
+      "source_name": "product-results.json",
+      "source_sha256": "e7442c04eb0b6440c9949a5c1ce66a41a27550a49bc7b50f712d6d1f938627f6"
+    },
+    {
+      "path": "product.cpp",
+      "bytes": 1100,
+      "sha256": "03b1f21ab047f11d4bc66c56d41546df087d7240cd850785780d75080931c10c",
+      "scope": "byte-identical independently authored program or mathematical data",
+      "source_name": "product.cpp",
+      "source_sha256": "03b1f21ab047f11d4bc66c56d41546df087d7240cd850785780d75080931c10c"
+    },
+    {
+      "path": "product_check.py",
+      "bytes": 630,
+      "sha256": "356f1a53a7e54a1485475bf2386821946c172dff1653d34b3414a7274bafca98",
+      "scope": "byte-identical independently authored program or mathematical data",
+      "source_name": "product_check.py",
+      "source_sha256": "356f1a53a7e54a1485475bf2386821946c172dff1653d34b3414a7274bafca98"
+    },
+    {
+      "path": "source.json",
+      "bytes": 1885,
+      "sha256": "724ade071c3af5b819b4481ce19a480b9d1fbf340a7a5f2306bc70202f5dccbf",
+      "scope": "new source documentation"
+    },
+    {
+      "path": "targeted-checked-results.json",
+      "bytes": 252765,
+      "sha256": "232219ef7aed2912312458197ff0f3172f58965fb13501128e7ba246eb8f15e5",
+      "scope": "JSON projection: recursively remove elapsed_seconds, mode, and excluded; preserve all other values and array order. No independent mathematical replay.",
+      "source_name": "targeted-checked-results.json",
+      "source_sha256": "d03f4f6207841979c8d2a9de5b4cdb3a77efde10bcf626cf4f0910d57106303d"
+    }
+  ]
+}

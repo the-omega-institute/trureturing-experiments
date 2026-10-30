@@ -1,0 +1,557 @@
+{
+  "domain": {
+    "n_max": 4,
+    "n_min": 2,
+    "order": "n, lexicographic h0, ascending p",
+    "stop": "first exact nonzero difference",
+    "top_b_search": false
+  },
+  "inspections": [
+    {
+      "cleared_difference_zero": true,
+      "h0": [
+        1,
+        2
+      ],
+      "h1": [
+        1,
+        1
+      ],
+      "n": 2,
+      "p": 1
+    },
+    {
+      "cleared_difference_zero": true,
+      "h0": [
+        1,
+        2,
+        1
+      ],
+      "h1": [
+        1,
+        1,
+        1
+      ],
+      "n": 3,
+      "p": 1
+    },
+    {
+      "cleared_difference_zero": false,
+      "h0": [
+        1,
+        2,
+        3
+      ],
+      "h1": [
+        1,
+        1,
+        3
+      ],
+      "n": 3,
+      "p": 1
+    }
+  ],
+  "n4_inspected": false,
+  "purpose": "Exact finite obstruction to two-summand context exchange; not a counterexample to Conjecture 3.12",
+  "source": {
+    "arxiv": "2610.39257v1",
+    "formula": "Theorem 4.17",
+    "license": "CC BY 4.0",
+    "title": "The Stable Tamari Lattice"
+  },
+  "verification": {
+    "Lean_kernel": false,
+    "arithmetic": "Python integers and fractions.Fraction",
+    "full_sparse_polynomial_identity": true
+  },
+  "witness": {
+    "D_definition": "W_h0(x;t)+W_h1(x;t)-W_h0(sigma_p x;t)-W_h1(sigma_p x;t)",
+    "cleared_numerator": [
+      {
+        "coefficient": -1,
+        "exponents": [
+          0,
+          1,
+          0,
+          0
+        ]
+      },
+      {
+        "coefficient": 1,
+        "exponents": [
+          0,
+          1,
+          1,
+          0
+        ]
+      },
+      {
+        "coefficient": 1,
+        "exponents": [
+          1,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "coefficient": -1,
+        "exponents": [
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "coefficient": 1,
+        "exponents": [
+          1,
+          2,
+          0,
+          1
+        ]
+      },
+      {
+        "coefficient": 1,
+        "exponents": [
+          1,
+          2,
+          1,
+          0
+        ]
+      },
+      {
+        "coefficient": -1,
+        "exponents": [
+          1,
+          2,
+          1,
+          1
+        ]
+      },
+      {
+        "coefficient": -1,
+        "exponents": [
+          1,
+          2,
+          2,
+          0
+        ]
+      },
+      {
+        "coefficient": -1,
+        "exponents": [
+          2,
+          1,
+          0,
+          1
+        ]
+      },
+      {
+        "coefficient": -1,
+        "exponents": [
+          2,
+          1,
+          1,
+          0
+        ]
+      },
+      {
+        "coefficient": 1,
+        "exponents": [
+          2,
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "coefficient": 1,
+        "exponents": [
+          2,
+          1,
+          2,
+          0
+        ]
+      },
+      {
+        "coefficient": -1,
+        "exponents": [
+          2,
+          3,
+          1,
+          1
+        ]
+      },
+      {
+        "coefficient": 1,
+        "exponents": [
+          2,
+          3,
+          2,
+          1
+        ]
+      },
+      {
+        "coefficient": 1,
+        "exponents": [
+          3,
+          2,
+          1,
+          1
+        ]
+      },
+      {
+        "coefficient": -1,
+        "exponents": [
+          3,
+          2,
+          2,
+          1
+        ]
+      }
+    ],
+    "cleared_numerator_factorization": "(x-y)(1-xyz)(1-z)(1-txy)",
+    "common_denominator_factors": [
+      {
+        "exponents": [
+          0,
+          0,
+          1,
+          0
+        ],
+        "multiplicity": 1
+      },
+      {
+        "exponents": [
+          0,
+          0,
+          1,
+          1
+        ],
+        "multiplicity": 1
+      },
+      {
+        "exponents": [
+          0,
+          1,
+          0,
+          0
+        ],
+        "multiplicity": 1
+      },
+      {
+        "exponents": [
+          0,
+          1,
+          0,
+          1
+        ],
+        "multiplicity": 1
+      },
+      {
+        "exponents": [
+          0,
+          1,
+          1,
+          0
+        ],
+        "multiplicity": 1
+      },
+      {
+        "exponents": [
+          1,
+          0,
+          0,
+          0
+        ],
+        "multiplicity": 1
+      },
+      {
+        "exponents": [
+          1,
+          0,
+          0,
+          1
+        ],
+        "multiplicity": 1
+      },
+      {
+        "exponents": [
+          1,
+          0,
+          1,
+          0
+        ],
+        "multiplicity": 1
+      },
+      {
+        "exponents": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "multiplicity": 1
+      },
+      {
+        "exponents": [
+          1,
+          1,
+          1,
+          0
+        ],
+        "multiplicity": 1
+      }
+    ],
+    "h0": [
+      1,
+      2,
+      3
+    ],
+    "h1": [
+      1,
+      1,
+      3
+    ],
+    "n": 3,
+    "numeric_check": {
+      "lhs": "2235233/590976",
+      "lhs_minus_rhs": "326095/1329696",
+      "rhs": "990143/279936",
+      "t": "2",
+      "x": "1/5",
+      "y": "1/7",
+      "z": "1/11"
+    },
+    "p": 1,
+    "reduced_difference": "(x-y)/((1-tx)(1-ty)(1-tz)(1-x)(1-y)(1-xz)(1-yz))",
+    "s0": {
+      "U": [
+        {
+          "gamma": 0,
+          "j": 1,
+          "k": 3
+        },
+        {
+          "gamma": 0,
+          "j": 2,
+          "k": 3
+        },
+        {
+          "gamma": 0,
+          "j": 3,
+          "k": 3
+        }
+      ],
+      "a": [
+        0,
+        0,
+        0
+      ],
+      "colored": [
+        [
+          1,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          1,
+          1
+        ]
+      ],
+      "denominator": [
+        [
+          1,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          1,
+          1
+        ]
+      ],
+      "h": [
+        1,
+        2,
+        3
+      ],
+      "numerator": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "uncolored": [
+        [
+          1,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0
+        ]
+      ]
+    },
+    "s1": {
+      "U": [
+        {
+          "gamma": 0,
+          "j": 1,
+          "k": 3
+        },
+        {
+          "gamma": 1,
+          "j": 1,
+          "k": 1
+        },
+        {
+          "gamma": 0,
+          "j": 3,
+          "k": 3
+        }
+      ],
+      "a": [
+        1,
+        0,
+        0
+      ],
+      "colored": [
+        [
+          1,
+          0,
+          0,
+          1
+        ],
+        [
+          1,
+          1,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          1,
+          1
+        ]
+      ],
+      "denominator": [
+        [
+          1,
+          1,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          1
+        ],
+        [
+          1,
+          1,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          1,
+          1
+        ]
+      ],
+      "h": [
+        1,
+        1,
+        3
+      ],
+      "numerator": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "uncolored": [
+        [
+          1,
+          1,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0
+        ]
+      ]
+    }
+  }
+}

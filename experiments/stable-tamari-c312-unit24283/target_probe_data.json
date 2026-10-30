@@ -1,0 +1,462 @@
+{
+  "independent_dp_controls": [
+    {
+      "candidates": 9,
+      "max_coordinate": 8,
+      "n": 1
+    },
+    {
+      "candidates": 36,
+      "max_coordinate": 5,
+      "n": 2
+    },
+    {
+      "candidates": 64,
+      "max_coordinate": 3,
+      "n": 3
+    },
+    {
+      "candidates": 81,
+      "max_coordinate": 2,
+      "n": 4
+    }
+  ],
+  "method": "literal stable-order enumeration; height via source Theorem 3.7 m-vector/forest formula; independent direct longest-chain dynamic program on control boxes",
+  "pairs": [
+    {
+      "b": [
+        3,
+        2,
+        1
+      ],
+      "f_b": [
+        1,
+        3,
+        3,
+        3,
+        2,
+        1,
+        1
+      ],
+      "f_rev": [
+        1,
+        3,
+        3,
+        3,
+        2,
+        1,
+        1
+      ],
+      "rev": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "b": [
+        1,
+        2,
+        3
+      ],
+      "f_b": [
+        1,
+        3,
+        3,
+        3,
+        2,
+        1,
+        1
+      ],
+      "f_rev": [
+        1,
+        3,
+        3,
+        3,
+        2,
+        1,
+        1
+      ],
+      "rev": [
+        3,
+        2,
+        1
+      ]
+    },
+    {
+      "b": [
+        2,
+        1,
+        3
+      ],
+      "f_b": [
+        1,
+        3,
+        4,
+        4,
+        3,
+        1,
+        1
+      ],
+      "f_rev": [
+        1,
+        3,
+        4,
+        4,
+        3,
+        1,
+        1
+      ],
+      "rev": [
+        3,
+        1,
+        2
+      ]
+    },
+    {
+      "b": [
+        3,
+        1,
+        2
+      ],
+      "f_b": [
+        1,
+        3,
+        4,
+        4,
+        3,
+        1,
+        1
+      ],
+      "f_rev": [
+        1,
+        3,
+        4,
+        4,
+        3,
+        1,
+        1
+      ],
+      "rev": [
+        2,
+        1,
+        3
+      ]
+    },
+    {
+      "b": [
+        1,
+        0,
+        1
+      ],
+      "f_b": [
+        1,
+        2,
+        1
+      ],
+      "f_rev": [
+        1,
+        2,
+        1
+      ],
+      "rev": [
+        1,
+        0,
+        1
+      ]
+    },
+    {
+      "b": [
+        1,
+        1,
+        1
+      ],
+      "f_b": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "f_rev": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "rev": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "b": [
+        2,
+        1,
+        1
+      ],
+      "f_b": [
+        1,
+        2,
+        2,
+        1,
+        1
+      ],
+      "f_rev": [
+        1,
+        2,
+        2,
+        1,
+        1
+      ],
+      "rev": [
+        1,
+        1,
+        2
+      ]
+    },
+    {
+      "b": [
+        3,
+        1
+      ],
+      "f_b": [
+        1,
+        2,
+        2,
+        1,
+        1
+      ],
+      "f_rev": [
+        1,
+        2,
+        2,
+        1,
+        1
+      ],
+      "rev": [
+        1,
+        3
+      ]
+    },
+    {
+      "b": [
+        6,
+        7,
+        0,
+        2,
+        1
+      ],
+      "f_b": [
+        1,
+        4,
+        7,
+        10,
+        13,
+        15,
+        18,
+        19,
+        19,
+        17,
+        15,
+        12,
+        10,
+        7,
+        5,
+        2,
+        1
+      ],
+      "f_rev": [
+        1,
+        4,
+        7,
+        10,
+        13,
+        15,
+        18,
+        19,
+        19,
+        17,
+        15,
+        12,
+        10,
+        7,
+        5,
+        2,
+        1
+      ],
+      "rev": [
+        1,
+        2,
+        0,
+        7,
+        6
+      ]
+    },
+    {
+      "b": [
+        10,
+        9,
+        0,
+        4,
+        3
+      ],
+      "f_b": [
+        1,
+        4,
+        8,
+        14,
+        21,
+        28,
+        36,
+        43,
+        51,
+        57,
+        64,
+        67,
+        70,
+        68,
+        66,
+        60,
+        55,
+        47,
+        41,
+        33,
+        27,
+        19,
+        14,
+        8,
+        5,
+        2,
+        1
+      ],
+      "f_rev": [
+        1,
+        4,
+        8,
+        14,
+        21,
+        28,
+        36,
+        43,
+        51,
+        57,
+        64,
+        67,
+        70,
+        68,
+        66,
+        60,
+        55,
+        47,
+        41,
+        33,
+        27,
+        19,
+        14,
+        8,
+        5,
+        2,
+        1
+      ],
+      "rev": [
+        3,
+        4,
+        0,
+        9,
+        10
+      ]
+    }
+  ],
+  "searches": [
+    {
+      "candidates": 13,
+      "max_coordinate": 12,
+      "n": 1,
+      "result": "none"
+    },
+    {
+      "candidates": 121,
+      "max_coordinate": 10,
+      "n": 2,
+      "result": "none"
+    },
+    {
+      "candidates": 17576,
+      "max_coordinate": 25,
+      "n": 3,
+      "result": "none"
+    },
+    {
+      "candidates": 28561,
+      "max_coordinate": 12,
+      "n": 4,
+      "result": "none"
+    },
+    {
+      "candidates": 59049,
+      "max_coordinate": 8,
+      "n": 5,
+      "result": "none"
+    },
+    {
+      "candidates": 46656,
+      "max_coordinate": 5,
+      "n": 6,
+      "result": "none"
+    },
+    {
+      "candidates": 16384,
+      "max_coordinate": 3,
+      "n": 7,
+      "result": "none"
+    },
+    {
+      "candidates": 6561,
+      "max_coordinate": 2,
+      "n": 8,
+      "result": "none"
+    },
+    {
+      "coordinate_box_product_limit": 100000,
+      "dimensions": "uniform proposals on 3..8 before coordinate-box-product rejection; accepted distribution is not uniform",
+      "max_coordinate": 20,
+      "result": "none",
+      "samples": 20000,
+      "seed": 20261030,
+      "type": "deterministic_random",
+      "unique_vectors": null
+    }
+  ],
+  "source": {
+    "arxiv": "2610.39257v1",
+    "definitions": {
+      "N": "{0,1,2,...}",
+      "height": "maximum chain length in [a,b], number of elements minus one",
+      "polynomial": "f_b(t)=sum_{a<=_T b} t^ht(a,b)",
+      "position_order": "i=j or i<j and a_k>a_j for every i<=k<j",
+      "reversal": "rev(b_1,...,b_n)=(b_n,...,b_1)",
+      "stable_order": "a_i<=b_i for all i and a_i-a_j<=b_i-b_j for every i<=_a j"
+    },
+    "license": "CC BY 4.0",
+    "question": "For every \\mathbf{b}\\in\\mathbb{N}^{n}, f_{\\mathbf{b}}(t)=f_{\\rev(\\mathbf{b})}(t).",
+    "title": "The stable Tamari lattice",
+    "whole_event": "For every positive integer n and every b in N^n, f_b(t)=f_rev(b)(t) as whole polynomials; equivalently every natural-degree coefficient agrees, with full coordinate boxes and longest-chain interval height.",
+    "authors": [
+      "H. Chau",
+      "S. Daugherty",
+      "S. Grate",
+      "M. Haiman",
+      "J. C. Martínez Mori",
+      "A. Pun"
+    ],
+    "url": "https://arxiv.org/abs/2610.39257v1"
+  },
+  "limits": {
+    "finite_computations_only": true,
+    "independent_large_search_replay": false,
+    "kernel_verification": false,
+    "full_conjecture_resolved": false,
+    "source_formula_fidelity": "Externally reviewed; not a kernel proof."
+  }
+}
