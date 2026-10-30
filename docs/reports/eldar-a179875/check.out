@@ -1,0 +1,6 @@
+Fidelity: reproduced all 43 displayed A179875 terms through 502
+Fidelity: B(10)=B(11)=7; B(1)=B(2)=1; B(6)=B(7)=13/3
+Fidelity: Petridi Section 1 moments verified for 2 <= n <= 2000
+Exact normalized moments and sharp endpoint tests: 2000 positive indices
+Adjacent biconditionals and monotonicity: 1999 pairs; 161 equal pairs
+ALL_CHECKS_OK
