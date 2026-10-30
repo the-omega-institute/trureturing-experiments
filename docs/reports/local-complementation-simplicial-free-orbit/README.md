@@ -2,9 +2,9 @@
 
 Run `python3 check.py` using Python 3.10 or later. Only the standard library is required. All graph operations, searches, isomorphism certificates and checks use integers and finite sets. The final output line is `ALL_CHECKS_OK`.
 
-The source is O. Makuta, F. Baccari and R. Augusiak, *Genuine multipartite nonlocality detection in graph states*, arXiv:2610.13609v1. Section VI asks whether larger connected graphs can obstruct the clique-neighborhood construction of Theorem 3 throughout their local-complementation orbits. A vertex is simplicial when every two distinct neighbors are adjacent, including neighborhoods of size zero or one.
+The source is O. Makuta, F. Baccari and R. Augusiak, *Genuine multipartite nonlocality detection in graph states*, arXiv:2610.13609v1. Section IV asks whether larger connected graphs can obstruct the clique-neighborhood construction of Theorem 3 throughout their local-complementation orbits. A vertex is simplicial when every two distinct neighbors are adjacent, including neighborhoods of size zero or one.
 
-The fidelity checks reproduce the source's complete-four-vertex to star transformation and the exceptional six-vertex orbit of Figure 1 / Appendix E, class 19. That orbit has two isomorphism representatives and no simplicial vertex. The depicted triangular prism is checked to be isomorphic to an orbit representative of the wheel consisting of a five-cycle and its hub.
+The fidelity checks reproduce the source's complete-four-vertex to star transformation and the exceptional six-vertex orbit of Figure 2 / Appendix D, class 19. That orbit has two isomorphism representatives and no simplicial vertex. The depicted triangular prism is checked to be isomorphic to an orbit representative of the wheel consisting of a five-cycle and its hub.
 
 The new candidate consists of two disjoint copies of that wheel, with an additional edge between their hubs. Its twelve vertices are numbered 0 through 11; the hubs are 5 and 11. It is connected and has 21 edges. Exact breadth-first search modulo graph isomorphism returns 54 representatives and 648 transitions, one for every representative and every vertex. Every representative lacks a simplicial vertex.
 

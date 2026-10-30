@@ -149,14 +149,14 @@ def wheel():
 
 
 def main():
-    # Source IV.A: local complementation maps K_4 to a star at its chosen vertex.
+    # Source III.C: local complementation maps K_4 to a star at its chosen vertex.
     k4 = graph(4, combinations(range(4), 2))
     star = graph(4, [(0, i) for i in range(1, 4)])
     assert lc(k4, 0) == star == lc_independent(k4, 0)
     assert all(nonclique_witness(star, v) is None for v in [1, 2, 3])
     print('FIDELITY_K4_TO_STAR_OK')
 
-    # Source Fig. 1 / Appendix E class 19: the six-vertex wheel orbit.
+    # Source Fig. 2 / Appendix D class 19: the six-vertex wheel orbit.
     w = wheel()
     reps6, trans6 = orbit(w)
     assert len(reps6) == 2
