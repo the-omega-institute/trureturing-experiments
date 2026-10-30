@@ -1,0 +1,12 @@
+Python: 3.14.8 SymPy: 1.14.0
+OEIS source fidelity: all 30 displayed coefficients agree
+Section 2 hook-length sum: agrees for n=0,...,25
+Independent permutation counts n=0,...,7: [1, 1, 2, 6, 23, 103, 488, 2320]
+First 12 coefficients: [1, 1, 2, 6, 23, 103, 488, 2320, 10867, 49971, 225861, 1005821]
+Conjectured recurrence: zero residual for n=4,...,200 (197 cases)
+Euler operator conversion: exact identity
+Rational polynomial certificate: 0
+Square-root polynomial certificate: 0
+Inhomogeneous term H coefficients: [3732736, -15245384, 2537736, 2708316]
+Finite checks are corroboration; the symbolic certificates support the universal argument.
+ALL_CHECKS_OK
