@@ -1,0 +1,12 @@
+FIDELITY: A058087 displayed U_0,...,U_5 agree coefficientwise
+FIDELITY: A000159 a(3),...,a(8) = [2, 8, 20, 152, 994, 7888]
+RECURRENCE: all 292 source-domain indices 9 <= n <= 300 pass
+ZERO EXTENSION: indices 6,7,8 also pass
+PULLBACK: 3(1+x)^2 A = rnum B + snum through degree 100
+REINDEXING: rook/binomial decomposition for 1 <= n <= 40 passes
+FACTORIAL SERIES: all three theta identities pass exact algebra
+REDUCTION: diagonal-to-RB+S and chain-rule coefficients pass
+CERTIFICATE: both rational differential identities pass
+OPERATOR: all three coefficients match the conjectured recurrence
+COEFFICIENT EXTRACTION: theta weights for 0 <= k <= 40 pass
+ALL_CHECKS_OK
