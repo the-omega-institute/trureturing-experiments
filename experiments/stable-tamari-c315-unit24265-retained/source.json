@@ -1,0 +1,34 @@
+{
+  "title": "The Stable Tamari Lattice",
+  "authors": [
+    "Herman Chau",
+    "Spencer Daugherty",
+    "Sean Grate",
+    "Mark D. Haiman",
+    "Juan Carlos Mart\u00ednez Mori",
+    "Anna Pun"
+  ],
+  "version": "arXiv:2610.39257v1",
+  "url": "https://arxiv.org/abs/2610.39257v1",
+  "paper_license": "CC BY 4.0",
+  "paper_license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "archive_sha256": "4c637c3599056a5a51935f0b503387d2bccf08e21003c3de08e3cccca0fb4148",
+  "tex_sha256": "b70f1fcb61fc13413dcfdfc716917f197d3fc64d36aa117fdc9fab179a2b2a3e",
+  "locators": [
+    "Section 2.1, Definitions 2.1 and 2.5",
+    "Section 3.1, finiteness paragraph and Definition 3.2",
+    "Section 3.1, F definition, example, Conjecture 3.15 and Remark 3.16",
+    "Theorem 3.7, Corollary 3.8 and forest m-coordinate corollaries",
+    "Corollary 3.14, zero-separated product identity"
+  ],
+  "metadata_scope": "Source attribution and source hashes transcribed from the closed probe documentary record; primary bytes and version history were not re-fetched or independently revalidated during retention. Paper files are not vendored.",
+  "original_program_license": "Apache-2.0; repository LICENSE, per closed probe documentary record",
+  "provenance": "The four retained programs are independently authored probe code. Inspection found no third-party imports beyond language standard libraries, copied-code attribution, or conflicting license headers. This is an inspection plus the supplied authorship record, not an independent authorship audit.",
+  "author_comparator": {
+    "repository": "https://github.com/seangrate/StableTamari",
+    "commit": "be0a19ed61b5175142b6ff5fec72c71be9bf6bd3",
+    "file": "orders.py",
+    "license": "GPL-3.0",
+    "use": "Comparison only after independent implementation, according to the closed probe record; no author code copied, run, or retained."
+  }
+}

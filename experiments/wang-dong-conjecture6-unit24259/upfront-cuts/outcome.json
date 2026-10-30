@@ -1,0 +1,104 @@
+{
+  "status": "unknown",
+  "solver_version": "4.15.4",
+  "target": {
+    "n": 19,
+    "m": 6,
+    "s": 13,
+    "r": 1,
+    "B": 17,
+    "S": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "A": [
+      0
+    ],
+    "alphabet": [
+      0,
+      1
+    ],
+    "reach_bound": 126,
+    "reset_bound": 220,
+    "original_letter_cost": 1
+  },
+  "timeout_ms": 60000,
+  "z3_memory_limit_mb": 1536,
+  "solver_checks": 1,
+  "candidate": null,
+  "build_seconds": 1.3853620829759166,
+  "formula_counts": {
+    "declared_variables": {
+      "BV5": 38,
+      "BV19": 382,
+      "Bool": 346
+    },
+    "total_declared_variables": 766,
+    "top_level_assertions": 431,
+    "no_success_cuts": 3,
+    "cut_word_lengths": [
+      0,
+      1,
+      1
+    ]
+  },
+  "initial_cut_words": [
+    [],
+    [
+      0
+    ],
+    [
+      1
+    ]
+  ],
+  "smtlib_bytes": 2739652,
+  "smtlib_sha256": "a9948c015d90ab55cceb8223a2e5707af26dcf1f9d2d977d62437a0c0293aa11",
+  "serialization_seconds": 1.5524347919854335,
+  "solve_seconds": 60.45412520796526,
+  "solver_statistics": {
+    "solve-eqs-steps": 62182,
+    "solve-eqs-elim-vars": 382,
+    "conflicts": 20631,
+    "decisions": 232504,
+    "propagations": 312992649,
+    "binary propagations": 282555017,
+    "restarts": 124,
+    "added eqs": 5524693,
+    "mk clause": 1171479,
+    "mk clause binary": 1338817,
+    "del clause": 469246,
+    "minimized lits": 466038,
+    "num checks": 1,
+    "mk bool var": 1197454,
+    "arith-make-feasible": 1,
+    "arith-max-columns": 4,
+    "bv diseqs": 58,
+    "bv dynamic diseqs": 169309,
+    "bv bit2core": 18445223,
+    "bv->core eq": 1518264,
+    "bv dynamic eqs": 5803,
+    "pb resolves": 545,
+    "pb conflicts": 545,
+    "pb propagations": 18285,
+    "pb predicates": 78,
+    "rlimit count": 367589932,
+    "max memory": 624.23,
+    "memory": 358.78,
+    "num allocs": 80306133403.0,
+    "time": 60.453
+  },
+  "reason_unknown": "timeout",
+  "elapsed_seconds": 63.43331104202662,
+  "peak_process_rss_bytes": 960561152
+}

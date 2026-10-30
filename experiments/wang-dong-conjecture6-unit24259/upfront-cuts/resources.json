@@ -1,0 +1,11 @@
+{
+  "external_hard_limit_seconds": 90,
+  "external_limit_triggered": false,
+  "elapsed_seconds": 63.78374666697346,
+  "exit_code": 0,
+  "peak_process_rss_bytes": 960561152,
+  "sampled_peak_rss_bytes": 960561152,
+  "child_user_seconds": 36.129259,
+  "child_system_seconds": 7.254369,
+  "rss_unit": "macOS bytes; ps KiB converted to bytes"
+}

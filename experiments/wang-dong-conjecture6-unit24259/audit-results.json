@@ -1,0 +1,23 @@
+{
+  "scope": "Previously reported closed independent fixed-table audit; not rerun during retention",
+  "counts": {
+    "strong_connectivity_tables": 729,
+    "oracle_literal_cases": 34992,
+    "surviving_certificates_checked": 11016,
+    "rejection_words_replayed": 23976,
+    "avoidance_only_control": 1,
+    "compression_only_control": 1,
+    "fixed_table_encoding_cases": 80,
+    "decoded_fixed_witnesses_replayed": 1,
+    "nonvacuous_fixed_witness_control": 1,
+    "n19_symbolic_images_no_solver": 132
+  },
+  "n19_smt_identical": true,
+  "n19_solver_checks": 0,
+  "source_sha256": "47b0299e9067063027ece241d33120513f7a26108ee4f60c389aaa44dfc996e1",
+  "audit_original_sha256": "bf3962d1117670b35c778cf0b3dc7783941e768f007898c8e595da77007703ff",
+  "smt_sha256": "6efe92bc0fa40f8ec9314c4e04d2b972dfe9e44289113886d50e18b9e792ad30",
+  "elapsed_seconds": 3.379306250018999,
+  "verdict": "all fixed-table audit assertions passed",
+  "limitations": "Rejected n19 table and witnesses were not retained, so that reported n19 model was not independently replayed. No source resolution."
+}
