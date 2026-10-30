@@ -1,0 +1,8 @@
+FIDELITY: all 66 published DATA terms agree
+FIDELITY: all 63 displayed entries of powers 2, 3, 4 agree
+DEFINITION: 630 NAME row-sum equalities hold; three independent 35 by 35 constructions agree
+CONJECTURE: 3962 equalities hold for 1 <= p,q <= 12 and 0 <= n <= 35-max(p,q)
+EXAMPLE: n=4,p=2,q=3 gives (T^2)[6,2]=(T^3)[5,1]=845
+ROUTE: inverse, quadratic shift, conjugation, factorization, cyclic-vector and commutation checks pass for N=1,2,3,5,8,12
+SCOPE: finite exact arithmetic; no unbounded proof or Lean proof is claimed
+ALL_CHECKS_OK

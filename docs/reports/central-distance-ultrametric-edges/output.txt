@@ -1,0 +1,37 @@
+FIDELITY n=2: metric_tables=3, nonempty_central=3, ultrametric_tables=3, minimum_nonempty_central_edges=1; Theorems 3.10,3.13 OK
+FIDELITY n=3: metric_tables=24, nonempty_central=18, ultrametric_tables=12, minimum_nonempty_central_edges=2; Theorems 3.10,3.13 OK
+FIDELITY n=4: metric_tables=482, nonempty_central=398, ultrametric_tables=60, minimum_nonempty_central_edges=2; Theorems 3.10,3.13 OK
+FOUR_POINT X: center={0,1,2}, central_edges=6, condition_i=True
+FOUR_POINT Y: center={0,4,5}, central_edges=4, metric=True, ultrametric=False
+FOUR_POINT exact central Y edges: [(0, 1), (0, 3), (1, 2), (2, 3)]
+FAMILY n=4: ultrametric_edges=6, metric_edges=4, centers=3, condition_i=True, condition_ii=False, cover_sizes=2,2
+FAMILY n=5: ultrametric_edges=9, metric_edges=6, centers=3, condition_i=True, condition_ii=False, cover_sizes=3,3
+FAMILY n=6: ultrametric_edges=12, metric_edges=6, centers=3, condition_i=True, condition_ii=False, cover_sizes=3,3
+FAMILY n=7: ultrametric_edges=15, metric_edges=8, centers=3, condition_i=True, condition_ii=False, cover_sizes=4,4
+FAMILY n=8: ultrametric_edges=18, metric_edges=8, centers=3, condition_i=True, condition_ii=False, cover_sizes=4,4
+FAMILY n=9: ultrametric_edges=21, metric_edges=10, centers=3, condition_i=True, condition_ii=False, cover_sizes=5,5
+FAMILY n=10: ultrametric_edges=24, metric_edges=10, centers=3, condition_i=True, condition_ii=False, cover_sizes=5,5
+FAMILY n=11: ultrametric_edges=27, metric_edges=12, centers=3, condition_i=True, condition_ii=False, cover_sizes=6,6
+FAMILY n=12: ultrametric_edges=30, metric_edges=12, centers=3, condition_i=True, condition_ii=False, cover_sizes=6,6
+FAMILY n=13: ultrametric_edges=33, metric_edges=14, centers=3, condition_i=True, condition_ii=False, cover_sizes=7,7
+FAMILY n=14: ultrametric_edges=36, metric_edges=14, centers=3, condition_i=True, condition_ii=False, cover_sizes=7,7
+FAMILY n=15: ultrametric_edges=39, metric_edges=16, centers=3, condition_i=True, condition_ii=False, cover_sizes=8,8
+FAMILY n=16: ultrametric_edges=42, metric_edges=16, centers=3, condition_i=True, condition_ii=False, cover_sizes=8,8
+FAMILY n=17: ultrametric_edges=45, metric_edges=18, centers=3, condition_i=True, condition_ii=False, cover_sizes=9,9
+FAMILY n=18: ultrametric_edges=48, metric_edges=18, centers=3, condition_i=True, condition_ii=False, cover_sizes=9,9
+FAMILY n=19: ultrametric_edges=51, metric_edges=20, centers=3, condition_i=True, condition_ii=False, cover_sizes=10,10
+FAMILY n=20: ultrametric_edges=54, metric_edges=20, centers=3, condition_i=True, condition_ii=False, cover_sizes=10,10
+FAMILY n=21: ultrametric_edges=57, metric_edges=22, centers=3, condition_i=True, condition_ii=False, cover_sizes=11,11
+FAMILY n=22: ultrametric_edges=60, metric_edges=22, centers=3, condition_i=True, condition_ii=False, cover_sizes=11,11
+FAMILY n=23: ultrametric_edges=63, metric_edges=24, centers=3, condition_i=True, condition_ii=False, cover_sizes=12,12
+FAMILY n=24: ultrametric_edges=66, metric_edges=24, centers=3, condition_i=True, condition_ii=False, cover_sizes=12,12
+FAMILY n=25: ultrametric_edges=69, metric_edges=26, centers=3, condition_i=True, condition_ii=False, cover_sizes=13,13
+FAMILY n=26: ultrametric_edges=72, metric_edges=26, centers=3, condition_i=True, condition_ii=False, cover_sizes=13,13
+FAMILY n=27: ultrametric_edges=75, metric_edges=28, centers=3, condition_i=True, condition_ii=False, cover_sizes=14,14
+FAMILY n=28: ultrametric_edges=78, metric_edges=28, centers=3, condition_i=True, condition_ii=False, cover_sizes=14,14
+FAMILY n=29: ultrametric_edges=81, metric_edges=30, centers=3, condition_i=True, condition_ii=False, cover_sizes=15,15
+FAMILY n=30: ultrametric_edges=84, metric_edges=30, centers=3, condition_i=True, condition_ii=False, cover_sizes=15,15
+FAMILY n=31: ultrametric_edges=87, metric_edges=32, centers=3, condition_i=True, condition_ii=False, cover_sizes=16,16
+FAMILY n=32: ultrametric_edges=90, metric_edges=32, centers=3, condition_i=True, condition_ii=False, cover_sizes=16,16
+SCOPE: finite family checks n=4..32; unbounded claims require the general proof.
+ALL_CHECKS_OK

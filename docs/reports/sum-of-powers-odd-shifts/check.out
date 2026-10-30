@@ -1,0 +1,13 @@
+fidelity k=2: a_k=13, b_k=7 (published table)
+fidelity k=3: a_k=149, b_k=75 (published table)
+fidelity k=4: a_k=2641, b_k=1321 (published table)
+fidelity k=5: a_k=6261, b_k=3175 (published table)
+fidelity k=6: a_k=711649, b_k=355825 (published table)
+fidelity k=7: a_k=249077, b_k=127839 (published table)
+fidelity k=8: a_k=1890241, b_k=945121 (published table)
+fidelity k=9: a_k=6464397, b_k=3438463 (published table)
+duplication k=2: S=2T union (m+2T) through 500; F=5, |G|=3
+duplication k=3: S=2T union (m+2T) through 2000; F=71, |G|=36
+duplication k=4: S=2T union (m+2T) through 10000; F=1313, |G|=657
+duplication k=5: S=2T union (m+2T) through 30000; F=3115, |G|=1580
+ALL_CHECKS_OK

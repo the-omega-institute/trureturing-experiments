@@ -1,0 +1,22 @@
+FIDELITY A038548 published terms matched: 105
+FIDELITY A140773 published terms matched: 91
+FIDELITY A007875 published terms matched: 90
+FIDELITY A219009 published terms matched: 97
+FIDELITY A355837 published terms matched: 96
+FIDELITY A369255 published terms matched: 125
+SOURCE_REPORTED_RANGE_REPRODUCED: both original convolutions match H(n)%2 for 1 <= n <= 1048576
+EXPECTED_SETTLEMENT_CHECK: exponent classification and count bridge match on the same range
+EXPONENT_MULTISET_CHECK: passed 74613 multisets; 0..6 exponents, each 1..16
+EXAMPLE 1 H= 1 A*B= 1 H*C= 1
+EXAMPLE 2 H= 2 A*B= 0 H*C= 0
+EXAMPLE 3 H= 2 A*B= 0 H*C= 0
+EXAMPLE 4 H= 4 A*B= 0 H*C= 0
+EXAMPLE 6 H= 5 A*B= 1 H*C= 1
+EXAMPLE 16 H= 9 A*B= 1 H*C= 1
+EXAMPLE 36 H= 20 A*B= 0 H*C= 0
+EXAMPLE 81 H= 9 A*B= 1 H*C= 1
+EXAMPLE 96 H= 33 A*B= 1 H*C= 1
+EXAMPLE 256 H= 25 A*B= 1 H*C= 1
+EXAMPLE 900 H= 112 A*B= 0 H*C= 0
+NONMULTIPLICATIVITY_CHECK: a(2)=a(3)=0, a(6)=1
+ALL_CHECKS_OK

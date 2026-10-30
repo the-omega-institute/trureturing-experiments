@@ -1,0 +1,8 @@
+FIDELITY: displayed M(4) and permanent a(2)=8 reproduced
+FIDELITY: permanent data n=0..4: [1, -1, 8, -965, 301864]
+DETERMINANTS n=0..32: [1, 1, 4, 9, 16, 25, 36, 49, 64, 81, 100, 121, 144, 169, 196, 225, 256, 289, 324, 361, 400, 441, 484, 529, 576, 625, 676, 729, 784, 841, 900, 961, 1024]
+CROSS_CHECK: fraction Gaussian elimination agrees for n=0..8
+REDUCTIONS n=1..16: difference/sign, odd kernel, border isolation, J split all exact
+BOUNDARY: empty determinant is 1; n=1 border uses J_0
+Finite checks corroborate the outline; no all-size theorem or Lean proof is certified.
+ALL_CHECKS_OK

@@ -1,0 +1,38 @@
+Python 3.14.8 SymPy 1.14.0
+FIDELITY: all 43 published terms, offset 0, agree with the generating function
+FIDELITY: generating-function, floor closed formula, and alternating binomial sum agree for k=0..200
+FLOOR: M(4) first row [0,1,1,2], first column [0,0,-1,-1]
+n= 2 charpoly_coeff=0 minor_sum=0 distance_sum=0 expected=0
+n= 3 charpoly_coeff=1 minor_sum=1 distance_sum=1 expected=1
+n= 4 charpoly_coeff=4 minor_sum=4 distance_sum=4 expected=4
+n= 5 charpoly_coeff=11 minor_sum=11 distance_sum=11 expected=11
+n= 6 charpoly_coeff=24 minor_sum=24 distance_sum=24 expected=24
+n= 7 charpoly_coeff=46 minor_sum=46 distance_sum=46 expected=46
+n= 8 charpoly_coeff=80 minor_sum=80 distance_sum=80 expected=80
+n= 9 charpoly_coeff=130 minor_sum=130 distance_sum=130 expected=130
+n=10 charpoly_coeff=200 minor_sum=200 distance_sum=200 expected=200
+n=11 charpoly_coeff=295 minor_sum=295 distance_sum=295 expected=295
+n=12 charpoly_coeff=420 minor_sum=420 distance_sum=420 expected=420
+n=13 charpoly_coeff=581 minor_sum=581 distance_sum=581 expected=581
+n=14 charpoly_coeff=784 minor_sum=784 distance_sum=784 expected=784
+n=15 charpoly_coeff=1036 minor_sum=1036 distance_sum=1036 expected=1036
+n=16 charpoly_coeff=1344 minor_sum=1344 distance_sum=1344 expected=1344
+n=17 charpoly_coeff=1716 minor_sum=1716 distance_sum=1716 expected=1716
+n=18 charpoly_coeff=2160 minor_sum=2160 distance_sum=2160 expected=2160
+n=19 charpoly_coeff=2685 minor_sum=2685 distance_sum=2685 expected=2685
+n=20 charpoly_coeff=3300 minor_sum=3300 distance_sum=3300 expected=3300
+n=21 charpoly_coeff=4015 minor_sum=4015 distance_sum=4015 expected=4015
+n=22 charpoly_coeff=4840 minor_sum=4840 distance_sum=4840 expected=4840
+n=23 charpoly_coeff=5786 minor_sum=5786 distance_sum=5786 expected=5786
+n=24 charpoly_coeff=6864 minor_sum=6864 distance_sum=6864 expected=6864
+n=25 charpoly_coeff=8086 minor_sum=8086 distance_sum=8086 expected=8086
+n=26 charpoly_coeff=9464 minor_sum=9464 distance_sum=9464 expected=9464
+n=27 charpoly_coeff=11011 minor_sum=11011 distance_sum=11011 expected=11011
+n=28 charpoly_coeff=12740 minor_sum=12740 distance_sum=12740 expected=12740
+n=29 charpoly_coeff=14665 minor_sum=14665 distance_sum=14665 expected=14665
+n=30 charpoly_coeff=16800 minor_sum=16800 distance_sum=16800 expected=16800
+n=31 charpoly_coeff=19160 minor_sum=19160 distance_sum=19160 expected=19160
+n=32 charpoly_coeff=21760 minor_sum=21760 distance_sum=21760 expected=21760
+SETTLEMENT CHECK: exact characteristic polynomials n=3..32; distance sums n=3..203
+LIMIT: finite exact checks do not prove the universal conjecture
+ALL_CHECKS_OK

@@ -1,0 +1,31 @@
+EXHAUSTIVE m=0 rows=1 arrays=1 count=1 OK
+EXHAUSTIVE m=0 rows=2 arrays=1 count=1 OK
+EXHAUSTIVE m=0 rows=3 arrays=1 count=1 OK
+EXHAUSTIVE m=0 rows=4 arrays=1 count=1 OK
+EXHAUSTIVE m=0 rows=5 arrays=1 count=1 OK
+EXHAUSTIVE m=0 rows=6 arrays=1 count=1 OK
+EXHAUSTIVE m=1 rows=1 arrays=4 count=4 OK
+EXHAUSTIVE m=1 rows=2 arrays=16 count=6 OK
+EXHAUSTIVE m=1 rows=3 arrays=64 count=10 OK
+EXHAUSTIVE m=1 rows=4 arrays=256 count=18 OK
+EXHAUSTIVE m=1 rows=5 arrays=1024 count=34 OK
+EXHAUSTIVE m=1 rows=6 arrays=4096 count=66 OK
+EXHAUSTIVE m=2 rows=1 arrays=9 count=9 OK
+EXHAUSTIVE m=2 rows=2 arrays=81 count=19 OK
+EXHAUSTIVE m=2 rows=3 arrays=729 count=45 OK
+EXHAUSTIVE m=2 rows=4 arrays=6561 count=115 OK
+EXHAUSTIVE m=2 rows=5 arrays=59049 count=309 OK
+EXHAUSTIVE m=2 rows=6 arrays=531441 count=859 OK
+EXHAUSTIVE m=3 rows=1 arrays=16 count=16 OK
+EXHAUSTIVE m=3 rows=2 arrays=256 count=44 OK
+EXHAUSTIVE m=3 rows=3 arrays=4096 count=136 OK
+EXHAUSTIVE m=3 rows=4 arrays=65536 count=452 OK
+EXHAUSTIVE m=4 rows=1 arrays=25 count=25 OK
+EXHAUSTIVE m=4 rows=2 arrays=625 count=85 OK
+EXHAUSTIVE m=4 rows=3 arrays=15625 count=325 OK
+EXHAUSTIVE m=4 rows=4 arrays=390625 count=1333 OK
+EXHAUSTIVE_SUMMARY checks=26 max_arrays=531441
+SOURCE_FIDELITY n=1..5 counts=[19, 45, 115, 309, 859] OK
+NATIVE_ROW_DP closed_form_and_GF_coefficients n=0..40 OK
+EXACT_POLYNOMIAL numerator_over_common_denominator=[19,-69,54] OK
+ALL_CHECKS_OK

@@ -1,0 +1,12 @@
+Literal Fraction/scaled-integer agreement: 1080 entries
+Source eq. (1.5): central-binomial identity r=0..100
+Source Theorem 1.2(a),(b): log-concavity and unique peak m=2..100
+Source Table 2: all 200 cells reproduced, 20000 complete sequences
+Denominator lower curvature bound and strict fixed-r limit: 2232 triples
+Additional grid: 7200 sequences, l=1..12, m=1..100
+Largest observed exceptional m over l=1..12, by weight: [('1/7', 100), ('1/2', 23), ('1', 19), ('3/2', 14), ('3', 15), ('10', 0)]
+Numerator prefixes log-concave on the entire additional grid
+Exact finite exception retained: a=1/7, l=10, m=100, r=18
+A largest observed exceptional m of 100 is censored by the scan ceiling
+Scope: bounded exact evidence only; the universal asymptotic claim is not tested by enumeration
+ALL_CHECKS_OK

@@ -1,0 +1,20 @@
+FIDELITY: Ising projector inverse and precisely the 3 source-positive supports: [(0,), (0, 1), (0, 1, 2)]
+BASE: full 8-by-8 transformed coefficient matrix equals Q/4; C[000,110] = -1/4
+1/2 1/4 1/4 0 0 1/4 -1/4 0
+1/4 1/2 0 1/4 1/4 0 0 -1/4
+1/4 0 1/2 1/4 -1/4 0 0 1/4
+0 1/4 1/4 1/2 0 -1/4 1/4 0
+0 1/4 -1/4 0 1/2 1/4 1/4 0
+1/4 0 0 -1/4 1/4 1/2 0 1/4
+-1/4 0 0 1/4 1/4 0 1/2 1/4
+0 -1/4 1/4 0 0 1/4 1/4 1/2
+FAMILY r=0: sectors=8, selected=4, unique vacuum, weight polynomial x*(x+y)^(r+2), transform C tensor I, negative entry -1/4
+FAMILY r=1: sectors=16, selected=8, unique vacuum, weight polynomial x*(x+y)^(r+2), transform C tensor I, negative entry -1/4
+FAMILY r=2: sectors=32, selected=16, unique vacuum, weight polynomial x*(x+y)^(r+2), transform C tensor I, negative entry -1/4
+FAMILY r=3: sectors=64, selected=32, unique vacuum, weight polynomial x*(x+y)^(r+2), transform C tensor I, negative entry -1/4
+FAMILY r=4: sectors=128, selected=64, unique vacuum, weight polynomial x*(x+y)^(r+2), transform C tensor I, negative entry -1/4
+FAMILY r=5: sectors=256, selected=128, unique vacuum, weight polynomial x*(x+y)^(r+2), transform C tensor I, negative entry -1/4
+FAMILY r=6: sectors=512, selected=256, unique vacuum, weight polynomial x*(x+y)^(r+2), transform C tensor I, negative entry -1/4
+Q-SERIES: exact coefficients through degree 24, leading coefficients 1 and 2
+ANALYTIC BOUNDARY: convergence, theta/eta modular laws, and the full upper-half-plane Gram limit require proof.
+ALL_CHECKS_OK

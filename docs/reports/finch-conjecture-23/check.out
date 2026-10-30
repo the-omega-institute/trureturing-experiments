@@ -1,0 +1,14 @@
+FIDELITY main-text N_A(k), k=2..12: 4,4,9,19,4,4,22,36,4,4,45
+FIDELITY Addendum evidence: k=3, mu=5, z=11, z-mu=6
+COUNTEREXAMPLE k=2: x_1..x_9=0,1,1,2,0,1,1,2,0
+CERTIFICATE state (x_1,x_2)=(x_5,x_6)=(0,1); least period=4
+COUNTEREXAMPLE k=2: G=1, first admissible zeros=5,9; mu=0; z=9; z-mu=9 != 6
+SOURCE_LISTED k=3: N_A=4, mu=5, z=11, z-mu=6
+SOURCE_LISTED k=6: N_A=4, mu=18, z=24, z-mu=6
+SOURCE_LISTED k=7: N_A=4, mu=33, z=39, z-mu=6
+SOURCE_LISTED k=10: N_A=4, mu=76, z=82, z-mu=6
+SOURCE_LISTED k=11: N_A=4, mu=56, z=62, z-mu=6
+SOURCE_LISTED k=14: N_A=4, mu=134, z=140, z-mu=6
+SOURCE_LISTED k=15: N_A=4, mu=79, z=85, z-mu=6
+SOURCE_LISTED k=19: N_A=4, mu=176, z=182, z-mu=6
+ALL_CHECKS_OK

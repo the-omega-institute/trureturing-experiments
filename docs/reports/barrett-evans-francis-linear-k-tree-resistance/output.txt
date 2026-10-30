@@ -1,0 +1,13 @@
+FIDELITY: source Fibonacci/Lucas formula, k=2, n=3..30: 28 exact equalities
+SMALL_CASES: k=1, n=2..10, cases=9, last_increment_error=0
+SMALL_CASES: k=2, n=2..12, cases=11, last_increment_error=8/122385
+SMALL_CASES: k=3, n=2..14, cases=13, last_increment_error=461/4849110
+SMALL_CASES: k=4, n=2..16, cases=15, last_increment_error=-1379258/40452754065
+SMALL_CASES: k=5, n=2..18, cases=17, last_increment_error=-27848847592/215493131182725
+SMALL_CASES: k=6, n=2..20, cases=19, last_increment_error=222450805570/2260653826032381
+SMALL_CASES: k=7, n=2..22, cases=21, last_increment_error=753133166962594/9437567906245879365
+SMALL_CASES: k=8, n=2..24, cases=23, last_increment_error=13212729746495351/313260624984137750064
+IDENTITIES_AND_SPECTRAL_BOUNDS: 128 exact cases; stabilized defects: 64
+BOUNDARY_LOCALIZATION: 49 stabilized moments and 98 zero cross moments; k=2..8, powers=0..6; integer B=D*I-Q
+SCOPE: finite exact checks; no proof of the infinite limit or Lean theorem is claimed
+ALL_CHECKS_OK

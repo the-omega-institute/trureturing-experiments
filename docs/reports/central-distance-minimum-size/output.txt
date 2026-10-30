@@ -1,0 +1,3 @@
+checked source bicentral band realization
+checked proposed minima for k=1..24
+ALL_CHECKS_OK

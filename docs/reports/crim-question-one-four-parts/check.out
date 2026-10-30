@@ -1,0 +1,27 @@
+Source: Basic-Gottlieb-Krnc, arXiv:2606.16828v1, Question 1
+Arithmetic: Python integers only; no random sampling
+FIDELITY Proposition 10: 465 two-part inputs, width <= 30: OK
+BOUNDARY empty SG=0; [1,1,1] SG=1 (Theorem 11 needs a>1): OK
+CLASSIFICATION rows=0: checked=1, P=1: OK
+CLASSIFICATION rows=1: checked=30, P=0: OK
+CLASSIFICATION rows=2: checked=465, P=240: OK
+CLASSIFICATION rows=3: checked=4960, P=1134: OK
+CLASSIFICATION rows=4: checked=40920, P=15761: OK
+Source moves = row/column-height moves; strict cell descent; P*/N* transitions: OK
+STRATEGY 01 even a, d>1: R1: checked=4760: OK
+STRATEGY 02 even a, d=c=1: R1: checked=105: OK
+STRATEGY 03 even a, remaining: C4: checked=1134: OK
+STRATEGY 04 all ones: C4: checked=1: OK
+STRATEGY 05 odd a>1, c=b=1: C1: checked=14: OK
+STRATEGY 06 odd a, c=1<b: R2: checked=210: OK
+STRATEGY 07 odd a,b, c>1: R4: checked=10080: OK
+STRATEGY 08 odd a, even b, d>1, odd c: R2: checked=3640: OK
+STRATEGY 09 odd a, even b,c, d>1: C1: checked=4200: OK
+STRATEGY 10 odd a, even b, d=1, odd c: C2: checked=455: OK
+STRATEGY 11 odd a, even b,c>=4, d=1: C3: checked=455: OK
+STRATEGY 12 odd a, b=c=2, d=1: C3: checked=14: OK
+STRATEGY 13 odd a, even b>c=2, d=1: C1: checked=91: OK
+EXAMPLE [4, 3, 3, 2]: SG=4: N
+EXAMPLE [6, 4, 3, 2]: SG=0: P
+SCOPE: width <= 30, at most four positive parts; no unbounded proof
+ALL_CHECKS_OK

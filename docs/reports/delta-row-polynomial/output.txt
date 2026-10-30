@@ -1,0 +1,11 @@
+FIDELITY: all 9 displayed A111184 rows n=0..8 reproduced exactly
+IDENTITY: all 210 pairs 1 <= n <= m <= 20, in Z[q]
+INDEPENDENT BRIDGES: quotient H_(q+1)/H_q and weighted return walks through n=20
+v_1, coefficients ascending: (1,)
+v_2, coefficients ascending: (2, 1)
+v_3, coefficients ascending: (6, 6, 1)
+v_4, coefficients ascending: (24, 34, 12, 1)
+v_5, coefficients ascending: (120, 210, 110, 20, 1)
+SPECIALIZATIONS: q=-5..6, n=1..20; at q=0, v_n=n!
+REPOSITORY SCALAR BRIDGE: v_n(1)=U(n-1,0), n=1..20
+ALL_CHECKS_OK

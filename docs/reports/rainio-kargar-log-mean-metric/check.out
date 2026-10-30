@@ -1,0 +1,11 @@
+Log certificate: chord minus 1/t = (t-a)*(b-t)/(a*b*t) >= 0 on [a,b].
+Consequences: log(2) <= 3/4; -log(1-r) <= r*(2-r)/(2*(1-r)).
+FIDELITY Lemma 4.5 (unbounded phi): defect = 2*(1-log(2))/c >= 1/(2*c) > 0.
+FIXED BALL c=2, r=1/2: Dxy=1/3, Dxz+Dzy <= 6/19, defect >= 1/57.
+BALL FAMILY c>1: r=(c-1)/(2*c-1), 0<r<1/2.
+BALL FAMILY defect lower bound: (c - 1)**3*(2*c - 1)/((c**2 + c - 1)*(8*c**3 - c**2 - 4*c + 1))
+HALF-SPACE FAMILY c>=4: Dxy=3/(3+c), Dxz=Dzy=B/(B+2*c).
+HALF-SPACE bound: B<=3*sqrt(2)/2<24/11<=6*c/(2*c+3); strict triangle failure.
+Zero-padding Euclidean-length checks: dimensions 2,3,4,7, exact.
+No claim is made here about metricity in the remaining parameter ranges.
+ALL_CHECKS_OK

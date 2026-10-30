@@ -1,0 +1,8 @@
+FIDELITY: A174491 denominators n=0..11, A174490 numerators n=0..12, displayed series n=0..4: OK
+INDEPENDENT_EXPANSION: recurrence = product of exponential factors, n=0..24: OK
+DENOMINATOR_IDENTITY: every n=1..80, plus constant term: OK
+DENOMINATOR_EXPONENTS n=0..20: [0, 1, 5, 9, 18, 25, 37, 49, 67, 81, 101, 121, 146, 169, 197, 225, 260, 289, 325, 361, 402]
+PARTITION_VALUATION: 7337 partitions for n=1..24, unique minimum at (n), minimum gap=2: OK
+ODD_PRIME_LOG_DIFFERENCE: 1280 coefficients, p=3..31 prime and m=1..128; LTE congruences k=1..128: OK
+SCOPE: finite exact evidence; no proof of the unbounded conjecture is claimed
+ALL_CHECKS_OK

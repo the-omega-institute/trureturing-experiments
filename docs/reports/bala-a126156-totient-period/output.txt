@@ -1,0 +1,10 @@
+Exact constructions: A126155 triangle, tangent recurrence, defining e.g.f.; agree at n=0..200
+Fidelity: all 17 displayed A126156 terms and the displayed A126155 row n=4 agree
+Fidelity: all 28 displayed mod-55 residues agree; shift 20 agrees for n=1..180
+Mod 4: every entry of every row n=0..200 equals its leading entry
+Mod 4: one-step congruence n=0..199; oddness n=0..200; two-step obstruction n=0..198
+Mod-4 residues n=0..15: [1, 1, 3, 3, 1, 1, 3, 3, 1, 1, 3, 3, 1, 1, 3, 3]
+phi(4)=2; allowed periods [1,2]; failed shifts found for each onset N=0..197
+Concrete positive indices: a(2)=7, a(4)=5473, difference=5466, residue=2
+Scope: finite exact evidence; arbitrary onset excluded by the preregistered all-index argument
+ALL_CHECKS_OK

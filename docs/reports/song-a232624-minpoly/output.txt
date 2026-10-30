@@ -1,0 +1,14 @@
+FIDELITY: all 20 source coefficient-table rows reproduced exactly
+CASE n=3 d=1 n/rad(n)=1 degree(F)=0 LC(F)=-1
+CASE n=9 d=3 n/rad(n)=3 degree(F)=0 LC(F)=-1
+FIDELITY: n=15 half-difference is x^3 - 4*x
+CASE n=15 d=4 n/rad(n)=1 degree(F)=3 LC(F)=1
+CASE n=105 d=24 n/rad(n)=1 degree(F)=23 LC(F)=-1
+CASE n=225 d=60 n/rad(n)=15 degree(F)=45 LC(F)=1
+CASE n=289 d=136 n/rad(n)=17 degree(F)=119 LC(F)=-1
+CASE n=441 d=126 n/rad(n)=21 degree(F)=105 LC(F)=1
+EXACT_CHECK: 225 odd conductors 3..451; nonzero, degree, leading coefficient, all quoted coefficient consequences
+CROSS_CHECK: both polynomials in every case equal the independent Chebyshev divisor construction
+BOUNDARY: n=3 gives F=-1; prime powers and repeated-prime composite conductors included
+SCOPE: finite exact checks only; no unbounded theorem or Lean proof established
+ALL_CHECKS_OK

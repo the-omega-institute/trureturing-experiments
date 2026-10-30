@@ -1,0 +1,13 @@
+FIDELITY: Section 4 dimension-13 example satisfies Fourier conditions (1)-(4)
+FIDELITY: congruence conditions (5)-(6), w = 40
+FIDELITY: row norms = [1600, 1600, 1600, 1600, 400, 25, 25, 25, 16, 16, 4, 4, 4]
+FIDELITY: structure constants = 2197 ; negative = 0
+FIDELITY: source indices (6,6): mathbb S_66 = 24 does not divide g_6*g_6 = 64
+SOURCE_13: weighted Gram, zero-excess balance and zero-free-column tests pass
+EXHAUSTIVE: n=1, entries in [-2,2], first column one; 1 matrices up to row permutation; all checks pass
+EXHAUSTIVE: n=2, entries in [-2,2], first column one; 1 matrices up to row permutation; all checks pass
+EXHAUSTIVE: n=3, entries in [-2,2], first column one; 8 matrices up to row permutation; all checks pass
+EXHAUSTIVE: n=4, entries in [-2,2], first column one; 26 matrices up to row permutation; all checks pass
+EXHAUSTIVE_TOTAL: 36
+BOUNDARIES: rational, unnormalized and rectangular counterexamples checked exactly
+ALL_CHECKS_OK

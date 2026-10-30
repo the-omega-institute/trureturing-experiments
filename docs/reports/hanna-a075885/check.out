@@ -1,0 +1,7 @@
+FIDELITY: all 30 source terms n=0..29 and the a(5)=46 example agree
+SETTLEMENT DIAGNOSTICS: n=1..1000; exact integer/rational checks
+PASS: terminal plateau, geometric early-mass bound, both sum/product sandwiches
+PASS: floor multiplicities, grouped floor product, Oudra rational product identity
+PASS: formal logarithm summation-by-parts coefficients, floor error, telescoping tail
+The infinite limit and analytic logarithm inequalities are not inferred from these checks.
+ALL_CHECKS_OK

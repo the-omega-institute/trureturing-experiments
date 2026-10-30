@@ -1,0 +1,8 @@
+FIDELITY_OK: source (2.4) polynomial identity; source (6.21) commuting pair
+WITNESS_IDENTITIES_OK: strict positivity, spectra, noncommutation, Riccati, LE, det W
+EXACT_COUNTEREXAMPLE_OK: 3/2500 < T < 121/100000
+ROOT_BRACKETS_OK: fourth-root(2) and square-root(265), integer-power checks
+FAMILY_JET_OK: D(r)=(-r^2+2r log(r)+1) S(r,log(r))/(32 r^3 (r+1)^2)
+FAMILY_SIGN_OK: positive odd-series coefficients; sinh(x)-x>0 for x>0
+SCOPE: exact algebra and rational certificates; analytic justification in README; no Lean claim proof
+ALL_CHECKS_OK

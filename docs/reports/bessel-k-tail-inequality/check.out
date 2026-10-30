@@ -1,0 +1,9 @@
+FIDELITY: Appendix B K recurrence, half-integer orders: 20 exact identities
+FIDELITY/EQUALITY: Appendix B weighted derivative and n=1 identity: 42 exact identities
+SETTLEMENT: strict derivative gap for every x>0 in 66 half-integer parameter pairs
+EXAMPLE: (n,nu,a,b)=(0,5/2,5/2,1/2); normalized gap=3/x^2
+GEOMETRY: 20 rational boundary/interior cases, including b=0
+CONVEXITY: 285 secant and 76 b=0 tangent monomial checks
+SHARPNESS: 66 exact two-term matches, positive third gaps, and larger-order signs
+LIMIT: finite exact algebra; no general real-parameter theorem or analytic remainder bound certified
+ALL_CHECKS_OK

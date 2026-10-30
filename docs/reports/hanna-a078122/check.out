@@ -1,0 +1,11 @@
+FIDELITY: all 45 OEIS DATA entries through row 8 and the displayed 4x4 cube match
+TERNARY_ROW_4: (1, 93, 117, 27, 1)
+TERNARY_ROW_5: (1, 1632, 3033, 1080, 81, 1)
+COEFFICIENT_IDENTITY: 144 entries, bases 2..5, rows 0..7
+ROW_SUM_IDENTITY: 32 rows, bases 2..5, rows 0..7
+SCALED_CONVOLUTION: 864 identities, d,r,u=0..5, bases 2..5
+FINITE_DIFFERENCE: 200 identities, d=1..5, t=0..9, bases 2..5
+SEMIGROUP: 2100 lower triangular entries, s,t=0..4, size 6, bases 2..5
+INDEPENDENT_DP_FIDELITY: 496 direct multiplicity counts, d=0..3, N=0..30
+BOUNDARIES: F_0(0)=1, F_d(0)=0 for d>0, and N_0=I checked
+ALL_CHECKS_OK

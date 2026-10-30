@@ -1,0 +1,14 @@
+ENVIRONMENT: Python 3.14.8, SymPy 1.14.0
+FIDELITY: complete graphs K_n, 1 <= n <= 12: exact source identity OK
+BASE: n=10, m=15, degree=3, connected; A^2 = 2I - A + J OK
+BASE: charpoly=(x-3)(x-1)^5(x+2)^4; spectrum=3^1,1^5,(-2)^4
+FAMILY: t=1, n=10, m=15, s+=14, s-=16, spread=-2, (-spread)/n^2=1/50; exact charpoly and connectivity OK
+FAMILY: t=2, n=20, m=60, s+=56, s-=64, spread=-8, (-spread)/n^2=1/50; exact charpoly and connectivity OK
+FAMILY: t=3, n=30, m=135, s+=126, s-=144, spread=-18, (-spread)/n^2=1/50; exact charpoly and connectivity OK
+FAMILY: t=4, n=40, m=240, s+=224, s-=256, spread=-32, (-spread)/n^2=1/50; exact charpoly and connectivity OK
+FAMILY: t=5, n=50, m=375, s+=350, s-=400, spread=-50, (-spread)/n^2=1/50; exact charpoly and connectivity OK
+FAMILY: t=6, n=60, m=540, s+=504, s-=576, spread=-72, (-spread)/n^2=1/50; exact charpoly and connectivity OK
+FAMILY: t=7, n=70, m=735, s+=686, s-=784, spread=-98, (-spread)/n^2=1/50; exact charpoly and connectivity OK
+FAMILY: t=8, n=80, m=960, s+=896, s-=1024, spread=-128, (-spread)/n^2=1/50; exact charpoly and connectivity OK
+SCOPE: finite exact checks t=1,...,8; unbounded-family claim requires the paper argument
+ALL_CHECKS_OK

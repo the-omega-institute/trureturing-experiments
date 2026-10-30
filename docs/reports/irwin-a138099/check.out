@@ -1,0 +1,10 @@
+FIDELITY: 77 published terms and 8 example rows matched
+FIDELITY: Merca formula matched for 1 <= n <= 1001
+FIDELITY: all 10 source diagrams (empty through 9 cells) matched by translation
+IDENTITY: direct hook increments matched for 1 <= n <= 1001
+PAIR_COUNT: direct hooks matched for 0 <= n <= 1001
+H(T_n), n=0..9: 0,1,3,5,8,11,15,18,22,27
+First 25 increments: 1,2,2,3,3,4,3,4,5,4,5,6,4,5,6,7,5,6,7,8,5,6,7,8,9
+Selected hook sums: {16: 64, 25: 125, 100: 1000, 1000: 31532, 1001: 31572}
+ORIENTATION: 8 symmetries matched for 0 <= n <= 100
+ALL_CHECKS_OK

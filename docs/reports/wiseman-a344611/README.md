@@ -1,0 +1,11 @@
+# Wiseman A344611: exact finite checks
+
+`python3 docs/reports/wiseman-a344611/check.py` uses Python 3 and its standard library. It uses integer arithmetic throughout and ends with `ALL_CHECKS_OK` when every assertion passes. The captured output is in `check.out`.
+
+The source is [OEIS A344611](https://oeis.org/A344611), revision 27 (May 17, 2026), by Gus Wiseman. Its conjecture is that the number of partitions of 2n with nonnegative reverse-alternating sum is at most [A160786(n)](https://oeis.org/A160786), the number of odd-length partitions of 2n+1. [A027193](https://oeis.org/A027193) resolves the meaning of odd length. The empty partition has reverse-alternating sum zero. Odd length does not restrict the parity of part sizes.
+
+The program enumerates all nonincreasing positive integer partitions for n=0..20 and independently checks enumeration totals and length-parity counts by an unbounded-parts dynamic program. Source fidelity checks reproduce the first 16 terms of A344611, A160786, A344743 and A236914, the published A344611 difference prefix, its complete example at weight 8, and the conjugate-part interpretation. A second recurrence implementation checks the signs in the source sum.
+
+The proposed injection increases the largest part of an odd-length source partition by one and appends a part 1 to an even-length source partition. The checks verify membership, inverse recovery, injectivity, disjointness of the branches and the paired-equality sign criterion for every enumerated object. The checked domain contains 61,515 source partitions. They also verify the omitted-image witness (n-1,n-1,3) for n=4..20 and equality of the counts at n=0..3. These checks support a proposed general combinatorial argument; they do not establish an unbounded theorem or supply a Lean proof.
+
+The adjacent conjecture [A344743](https://oeis.org/A344743), revision 10, compares negative reverse-alternating-sum partitions of 2n against [A236914(n)](https://oeis.org/A236914), revision 23. The latter counts even-length partitions of 2n+1: an odd weight forces an odd number of odd parts, so type OO means even total length. Thus the two pairs sum to p(2n) and p(2n+1), respectively. The conjectures are not equivalent. At n=1, A344743(1)=0 while A236914(1)=1, so the adjacent conjecture as written fails. The draft targets A344611 only.
