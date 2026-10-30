@@ -1,0 +1,20 @@
+SOURCE_FIDELITY: Section 3.3, OP(P3,C2)=OP(K2+K1,C2)=(x^3+x^2)/2-xy
+SOURCE_FIDELITY: F(P3,C2)-F(K2+K1,C2)=y(1-x), including the loop quotient
+STAR_FORMULA: exact expansion and literal coloring counts for m=0..5, 0<=y<=x<=4
+GROUP: all 1728 associativity triples, identities and inverses checked
+SUBGROUPS: all 4096 subsets tested; exactly 10, each a V4/C3 product
+ACTIONS: each has 58 leaves plus a fixed center, all 144 composition pairs checked
+ACTIONS: faithful, connected K_(1,58), every quotient is a loop-free star
+TABLE: class | multiplicity | individual 12*c_G | leaf cycles (L1,L2)
+1 | 1 | 44 | (58, 58)
+z,z^2 | 2 | 11 | (50, 50)
+a,b | 2 | 12 | (44, 44)
+c | 1 | 12 | (40, 36)
+az,az^2,bz,bz^2 | 4 | 3 | (36, 40)
+cz,cz^2 | 2 | 3 | (32, 32)
+POLYNOMIAL: 12F1=12F2=44S58+22S50+24S44+12S40+12S36+6S32
+POLYNOMIAL: OP2-OP1=(S40-S36)/4, coefficient equality checked in Q[x,y]
+PALETTE (2,1): OP1 = 24209895276412929 ; OP2 = 24210152974450689 ; difference = 257698037760
+FAMILY: fixed leaves shift every exponent by r; symbolic cycle-profile equality established
+FAMILY: direct expanded checks r=1,2,10,100; palette difference 15*2^(34+r)
+ALL_CHECKS_OK
