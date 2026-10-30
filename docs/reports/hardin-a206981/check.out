@@ -1,0 +1,8 @@
+Literal four-direction counts n=1..8: [4, 16, 36, 100, 256, 676, 1764, 4624]
+Fidelity: reproduced the source's first 8 terms by exhaustive array enumeration.
+Independent row-state DP agrees with enumeration and all 27 displayed source terms.
+Switch encoding: both inverse checks and forbidden-pattern equivalence pass for 2046 words, lengths 1..10.
+Exact identity a(n)=4*F(n+1)^2 holds for n=1..210; recurrence holds for n=4..210.
+OGF product coefficients match 4*x+8*x^2-4*x^3 through degree 210; denominator factorization is exact.
+Scope: finite checks only; the all-length array bridge and recurrence require a proof.
+ALL_CHECKS_OK
