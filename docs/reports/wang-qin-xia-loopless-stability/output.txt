@@ -1,0 +1,18 @@
+FIDELITY WQX cycle n=3: B(C_n)=S(C_n), no dispensable edges
+FIDELITY WQX cycle n=5: B(C_n)=S(C_n), no dispensable edges
+FIDELITY WQX cycle n=6: B(C_n)=S(C_n), no dispensable edges
+FIDELITY WQX cycle n=7: B(C_n)=S(C_n), no dispensable edges
+FIDELITY WQX cycle n=8: B(C_n)=S(C_n), no dispensable edges
+FIDELITY WQX cycle n=9: B(C_n)=S(C_n), no dispensable edges
+FIDELITY WQX cycle n=10: B(C_n)=S(C_n), no dispensable edges
+FIDELITY Wang--Gao Section 5: Delta has 3 loops, 2 diagonal TF automorphisms; loop-count excludes 2-by-2 factors
+P4 full loop-allowed factor screen: 15 labelled factors; 2 nonbipartite factors, both one-loop edges
+FAMILY m=3: vertices=12, independent_number=5, connected/twin-free/triangle/cover OK, mixer ordered pairs=2304, noncomponentwise OK
+STABILITY Gamma_3: degree-preserving row permutations=25920, TF=12, Aut=12, nondiagonal=0
+FAMILY m=4: vertices=16, independent_number=6, connected/twin-free/triangle/cover OK, mixer ordered pairs=4096, noncomponentwise OK
+FAMILY m=5: vertices=20, independent_number=7, connected/twin-free/triangle/cover OK, mixer ordered pairs=6400, noncomponentwise OK
+FAMILY m=6: vertices=24, independent_number=8, connected/twin-free/triangle/cover OK, mixer ordered pairs=9216, noncomponentwise OK
+FAMILY m=7: vertices=28, independent_number=9, connected/twin-free/triangle/cover OK, mixer ordered pairs=12544, noncomponentwise OK
+FAMILY m=8: vertices=32, independent_number=10, connected/twin-free/triangle/cover OK, mixer ordered pairs=16384, noncomponentwise OK
+SCOPE: finite family checks m=3..8; exhaustive stability check m=3; universal family remains a proposed argument, with no Lean proof
+ALL_CHECKS_OK
