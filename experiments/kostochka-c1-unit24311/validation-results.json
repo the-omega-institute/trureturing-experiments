@@ -1,0 +1,91 @@
+{
+  "candidate": null,
+  "controls": {
+    "capacity_coloring_vs_endpoint_naive": 4096,
+    "clique_prefix_and_all_cuts_vs_literal": 1751,
+    "equality_control": {
+      "bound": 21,
+      "edges": 21,
+      "ell": 4,
+      "full": false,
+      "k": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "n": 10,
+      "partial": true,
+      "strict_source_hypothesis": false
+    },
+    "fixed_partial_fails_but_full_rechoice_succeeds": true,
+    "literal_vs_endpoint_naive": 4096,
+    "node_limits_are_unknown": true
+  },
+  "limits": [
+    "finite evidence only",
+    "no new search or solver route",
+    "no source refetch or new literature/library search",
+    "ell boundary remains unresolved for positive whole-source closure",
+    "no Lean/kernel closure, admission, completion, novelty or KPI"
+  ],
+  "original_artifact_file_sha256": {
+    "clique-results.json": "93f8f99f2bfb406fee8963c68978d22b5ebdebd8e067c5a0f296c51b4822eda4",
+    "packing-witnesses.json": "877906937b159617cb8df4106ec743a5060260db5ffd5c11389a88e20ee7bb3e",
+    "packing_core.py": "05d46ca5ea9db46fb97a4a7cedcf6b5083bbdeaf03706d42943dec864bfc55cd"
+  },
+  "saved_clique_table": {
+    "large_clique_sweep_reexecuted": false,
+    "parameter_rows": 644,
+    "partition_counts_dp_checked_n": [
+      8,
+      34
+    ],
+    "saved_nonpacking_clique_records_cut_checked": 644,
+    "table_all_partition_pairs_sum": 778206,
+    "table_strict_eligible_sum": 344943,
+    "unverified": [
+      "actual sweep traversal",
+      "all strict-eligible classifications",
+      "claimed minima over partitions",
+      "arbitrary-graph coverage"
+    ]
+  },
+  "whole_answer_status": "unresolved",
+  "witnesses": {
+    "graph_input_stream_sha256": "aebdf7d53ba8177a43a767ec3d4809156fe2ed083c52748b5f28e57696aab875",
+    "input_count": 30000,
+    "observed_ranges": {
+      "edges": [
+        5,
+        76
+      ],
+      "ell": [
+        4,
+        6
+      ],
+      "n": [
+        8,
+        34
+      ],
+      "t": [
+        0,
+        6
+      ]
+    },
+    "packing_searches_on_saved_inputs": 0,
+    "per_seed": {
+      "1": 7500,
+      "2": 7500,
+      "261038430": 7500,
+      "3": 7500
+    },
+    "simple_symmetric_irreflexive": 30000,
+    "source_bound_valid": 30000,
+    "unique_seed_index_records": 30000,
+    "units": "generated inputs; graph repetitions are allowed",
+    "valid_full_witnesses": 30000,
+    "valid_partial_witnesses": 30000,
+    "witness_stream_sha256": "3c45d8afd07cc5748a2d694c935b646aff650751151177240a73c521bfec93dd"
+  }
+}
