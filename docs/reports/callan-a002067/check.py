@@ -142,14 +142,15 @@ def exponential(f, degree):
 
 def formal_series_checks(a):
     degree = 2*MAX_N
-    y = [Fraction(0)]*(degree+1)
-    for n in range(MAX_N):
+    y = [Fraction(0)]*(degree+2)
+    for n in range(MAX_N+1):
         y[2*n+1] = Fraction(a[n], factorial(2*n+1))
     quadratic = [v/2 for v in multiply(y, y, degree)]
     positive = exponential(quadratic, degree)
     negative = exponential([-v for v in quadratic], degree)
-    A = [Fraction(a[n//2], factorial(n)) if n % 2 == 0 else Fraction(0)
-         for n in range(degree+1)]
+    A = [(n+1)*y[n+1] for n in range(degree+1)]
+    assert A == [Fraction(a[n//2], factorial(n)) if n % 2 == 0 else Fraction(0)
+                 for n in range(degree+1)]
     assert positive == A
     assert multiply(A, negative, degree) == [Fraction(1)] + [Fraction(0)]*degree
     C = [Fraction(1)-negative[0]] + [-v for v in negative[1:]]

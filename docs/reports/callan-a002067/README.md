@@ -14,7 +14,7 @@ python3 docs/reports/callan-a002067/check.py
 - Independently calculate the NAME recurrence, the perfect-matching weighted sum, every Dyck path with the source weight, and P(2n, 0), for 0 <= n <= 10.
 - Explicitly enumerate every matching for 0 <= n <= 6; verify every matching-to-path fibre has the product of upstep upper heights as its cardinality and the stated total weight.
 - Enumerate every nonnegative walk of each length through 12 and compare every coefficient with the polynomial recurrence.
-- Use rational formal-series arithmetic through degree 20 to check y' = exp(y^2/2), A exp(-y^2/2) = 1, and C'' = A through degree 18, where C = 1 - exp(-y^2/2).
+- Construct y through degree 21, differentiate it explicitly, and use rational formal-series arithmetic through degree 20 to check y' = exp(y^2/2), A exp(-y^2/2) = 1, and C'' = A through degree 18, where C = 1 - exp(-y^2/2).
 
 The eleven common values are 1, 1, 7, 127, 4369, 243649, 20036983, 2280356863, 343141433761, 65967241200001, 15773461423793767. These are finite checks supporting a proposed general argument; they do not prove either universal conjecture. No Lean proof is included.
 
