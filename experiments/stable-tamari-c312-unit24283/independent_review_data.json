@@ -1,0 +1,385 @@
+{
+  "source": {
+    "arxiv": "2610.39257v1",
+    "sections": [
+      "2.22",
+      "2.24",
+      "2.30",
+      "4.17"
+    ],
+    "license": "CC BY 4.0"
+  },
+  "weights": [
+    {
+      "h": [
+        1,
+        2,
+        3
+      ],
+      "a": [
+        0,
+        0,
+        0
+      ],
+      "U": [
+        [
+          1,
+          0,
+          3
+        ],
+        [
+          2,
+          0,
+          3
+        ],
+        [
+          3,
+          0,
+          3
+        ]
+      ],
+      "numerator": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "factors": [
+        [
+          1,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "h": [
+        1,
+        1,
+        3
+      ],
+      "a": [
+        1,
+        0,
+        0
+      ],
+      "U": [
+        [
+          1,
+          0,
+          3
+        ],
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          3,
+          0,
+          3
+        ]
+      ],
+      "numerator": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "factors": [
+        [
+          1,
+          1,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          1
+        ],
+        [
+          1,
+          1,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          1,
+          1
+        ]
+      ]
+    }
+  ],
+  "Q_factors": [
+    [
+      1,
+      1,
+      1,
+      0
+    ],
+    [
+      0,
+      1,
+      1,
+      0
+    ],
+    [
+      0,
+      0,
+      1,
+      0
+    ],
+    [
+      1,
+      0,
+      0,
+      1
+    ],
+    [
+      0,
+      1,
+      0,
+      1
+    ],
+    [
+      0,
+      0,
+      1,
+      1
+    ],
+    [
+      1,
+      0,
+      0,
+      0
+    ],
+    [
+      1,
+      1,
+      0,
+      1
+    ],
+    [
+      1,
+      0,
+      1,
+      0
+    ],
+    [
+      0,
+      1,
+      0,
+      0
+    ]
+  ],
+  "cleared_polynomial": [
+    {
+      "exponents": [
+        0,
+        1,
+        0,
+        0
+      ],
+      "coefficient": -1
+    },
+    {
+      "exponents": [
+        0,
+        1,
+        1,
+        0
+      ],
+      "coefficient": 1
+    },
+    {
+      "exponents": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "coefficient": 1
+    },
+    {
+      "exponents": [
+        1,
+        0,
+        1,
+        0
+      ],
+      "coefficient": -1
+    },
+    {
+      "exponents": [
+        1,
+        2,
+        0,
+        1
+      ],
+      "coefficient": 1
+    },
+    {
+      "exponents": [
+        1,
+        2,
+        1,
+        0
+      ],
+      "coefficient": 1
+    },
+    {
+      "exponents": [
+        1,
+        2,
+        1,
+        1
+      ],
+      "coefficient": -1
+    },
+    {
+      "exponents": [
+        1,
+        2,
+        2,
+        0
+      ],
+      "coefficient": -1
+    },
+    {
+      "exponents": [
+        2,
+        1,
+        0,
+        1
+      ],
+      "coefficient": -1
+    },
+    {
+      "exponents": [
+        2,
+        1,
+        1,
+        0
+      ],
+      "coefficient": -1
+    },
+    {
+      "exponents": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "coefficient": 1
+    },
+    {
+      "exponents": [
+        2,
+        1,
+        2,
+        0
+      ],
+      "coefficient": 1
+    },
+    {
+      "exponents": [
+        2,
+        3,
+        1,
+        1
+      ],
+      "coefficient": -1
+    },
+    {
+      "exponents": [
+        2,
+        3,
+        2,
+        1
+      ],
+      "coefficient": 1
+    },
+    {
+      "exponents": [
+        3,
+        2,
+        1,
+        1
+      ],
+      "coefficient": 1
+    },
+    {
+      "exponents": [
+        3,
+        2,
+        2,
+        1
+      ],
+      "coefficient": -1
+    }
+  ],
+  "certificate": "Q D = (x-y)(1-xyz)(1-z)(1-txy)",
+  "nonzero_coefficient": {
+    "monomial": "x",
+    "coefficient": 1
+  },
+  "reduced_D": "(x-y)/((1-tx)(1-ty)(1-tz)(1-x)(1-y)(1-xz)(1-yz))",
+  "numeric": {
+    "lhs": "2235233/590976",
+    "rhs": "990143/279936",
+    "D": "326095/1329696"
+  },
+  "checks": {
+    "full_polynomial_identity": true,
+    "formal_series_units": true,
+    "stored_certificate_agrees": true,
+    "kernel_verification": false
+  }
+}
