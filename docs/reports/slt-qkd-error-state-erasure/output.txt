@@ -1,0 +1,9 @@
+FAMILY: normalization, pure-state squared distances, and CHSH identity checked symbolically
+WITNESS: all outcome probabilities positive; Eq. (6) flags match; all four density states distinct
+SOURCE FIDELITY: Lemma 1 unitary equivalence reproduced for every message of length 1, 2, 3
+TRACE DISTANCES: D(correct0,correct1)=4/5; D(correct_i,error_i)=200/10001
+CPTP OBSTRUCTION: total correct-state disturbance + residual error distance >= 38004/50005 > 0
+SOURCE FIDELITY: F=3/5, Q=9/25; F^2 <= Q <= F reproduced
+CHERNOFF REGION: Q=9/25 < epsilon/(1-epsilon)=9/16, epsilon=9/25
+BELL VIOLATION: CHSH=12498946*sqrt(34)/31253125; CHSH^2-4=1404572848708644/976757822265625 > 0
+ALL_CHECKS_OK
