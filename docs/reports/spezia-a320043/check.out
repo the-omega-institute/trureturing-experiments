@@ -1,0 +1,12 @@
+FIDELITY: all 42 DATA terms agree with the literal sum
+SOURCE_EXCEPTIONS: (1,1,1), (6,196,14), (96,7376656,2716)
+SMALL_CASES: integer and rational row sums agree for every 1 <= n <= 256
+SMALL_SQUARES: [(1, 1, 1), (6, 196, 14), (96, 7376656, 2716)]
+TELESCOPE: exact symbolic difference and both endpoints verified
+PRIME_ROWS: identity verified directly for all 55 primes p <= 257
+PELL_DOUBLING: [(7, 2), (97, 28), (18817, 5432), (708158977, 204427888)]; intermediate 18817 = 31 * 607 is composite
+LUCAS_CERTIFICATE: p-1 factors {2: 9, 3: 1, 7: 2, 97: 2}; base 5 residues [(2, 354079488, 708158976), (3, 236052992, 259204175), (7, 101165568, 342172932), (97, 7300608, 617955608)]
+INDEPENDENT_PRIMALITY: no integer divisor 2 through 26611
+WITNESS: n=708158976, m=144767444036350576, prime-row value=20957612852817895952216852375531776=m^2
+SCOPE: the large row is derived from the checked telescope and primality; not enumerated
+ALL_CHECKS_OK
