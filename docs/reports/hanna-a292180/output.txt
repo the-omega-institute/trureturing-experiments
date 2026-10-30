@@ -1,0 +1,13 @@
+Source: Paul D. Hanna, OEIS A292180, revision 15; offset 1.
+b-file sha256: a26d6a3a054f651f2a9c08c15b5651a66e6d9c8c279cc061186fd8d9fc70aa32
+Fidelity: all 1024 b-file values, first 40 displayed coefficients,
+and all 31 published square quotients agree exactly.
+Independent FORMULA expansion and reflected-product convolution agree at N=0..1024.
+Coefficient congruence b_d(k) = 2d (mod 4): 7262 positive (d,k) pairs with d*k<=1024.
+All 1024 coefficients are divisible by 4; all N=2 (mod 4) coefficients vanish.
+All 512 positive odd N<=1024 satisfy a(N)=4*sigma_1(N) (mod 8)
+and a(N)/4 is odd exactly when N is a square.
+Published conjecture: all 16 odd squares <=1024 pass.
+Odd-root quotients for roots 1,3,5,7,9: [1, 29, 527, 14457, 446745]
+These are exact finite checks, not a proof for all indices.
+ALL_CHECKS_OK
