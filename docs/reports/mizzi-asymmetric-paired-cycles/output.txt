@@ -1,0 +1,8 @@
+SOURCE12 k=3: cycles (1, 6, 12) and (2, 5, 10, 3, 4, 11); disjoint=True
+SOURCE12 k=5: cycles (1, 5, 10, 3, 6) and (1, 5, 2, 4, 9, 10, 3, 6, 7, 12); disjoint=False
+SOURCE12 automorphisms=1 TF_pair_verified=True cycle_length_counts={3: 3, 4: 3, 5: 4, 6: 6, 7: 7, 8: 6, 9: 7, 10: 5, 11: 3, 12: 1}
+SOURCE7 cycle_lengths=[5, 6] automorphisms=4
+SRIVASTAVA nonidentity_ordinary_automorphism=(1 6)(2 3) cycle_lengths=[5, 5, 6]
+INVARIANT_GRAPHS layouts=12 total=5078 bipartite_quotient=1991 odd_quotient=3087
+REFLECTION_LIFTS all_sum_tuples cases=6050 prime_and_length_ranges=[(3, 3), (3, 5), (3, 7), (5, 3), (5, 5), (7, 3)]
+ALL_CHECKS_OK
