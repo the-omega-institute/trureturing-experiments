@@ -1,0 +1,9 @@
+FIDELITY: all 13 source coefficients agree (indices 0..12)
+DIRECT_EXP: exact truncated exponential agrees (indices 0..24)
+SCALED: independent recurrence and n!*a(n)/3^n agree (indices 0..120)
+VALUATION: positive integral coefficients and v3(a(n)) = n-v3(n!) (indices 0..120)
+RESIDUES: scaled coefficients and involution numbers repeat 1,1,2 (indices 0..120)
+SOURCE_FORMULA: a(n) = 3 mod 6 (indices 1..120)
+a(0..5) = 1, 3, 9, 261, 13419, 7867287
+r(0..5) = 1, 1, 2, 58, 3976, 3885080
+ALL_CHECKS_OK
