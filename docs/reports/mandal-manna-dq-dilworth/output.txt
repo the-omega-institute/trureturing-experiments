@@ -1,0 +1,23 @@
+FIDELITY Example 5.4: quotient = [[7, 3, 2, 2], [1, 13, 2, 2], [2, 6, 10, 2], [1, 3, 1, 9]]
+FIDELITY quotient charpoly = (L-8)^2*(L^2-23*L+100)
+FIDELITY eigenvalue 8 has algebraic multiplicity 2; TQ = [5, 7]
+FIDELITY Dilworth = 2; 0-based chain cover = ([5, 6], [0, 1, 2, 3, 4]) ; incomparable pair = (0, 5)
+FAMILY r=1: order=8, lambda=8, nullity=2, Dilworth=1, TQ=[], independence_minor=1; PASS
+BASE r=1: Q = [[10, 1, 2, 1, 2, 1, 2, 1], [1, 10, 2, 1, 2, 1, 2, 1], [2, 2, 11, 1, 2, 1, 2, 1], [1, 1, 1, 9, 2, 1, 2, 1], [2, 2, 2, 2, 12, 1, 2, 1], [1, 1, 1, 1, 1, 8, 2, 1], [2, 2, 2, 2, 2, 2, 13, 1], [1, 1, 1, 1, 1, 1, 1, 7]]
+BASE r=1: u = [-1, -1, 1, 1, 0, 0, 0, 0] ; v = [0, 0, 0, 2, -1, 1, -1, 1]
+BASE r=1: Qu = [-8, -8, 8, 8, 0, 0, 0, 0] ; Qv = [0, 0, 0, 16, -8, 8, -8, 8]
+BASE r=1: 1-based vicinal chain = [7, 5, 3, 1, 2, 4, 6, 8]
+BASE r=1: charpoly = (L-9)*(L-8)^2*(L^5-55*L^4+1139*L^3-11261*L^2+53580*L-98676)
+FAMILY r=2: order=11, lambda=12, nullity=2, Dilworth=1, TQ=[13], independence_minor=1; PASS
+FAMILY r=3: order=14, lambda=16, nullity=2, Dilworth=1, TQ=[17], independence_minor=1; PASS
+FAMILY r=4: order=17, lambda=20, nullity=2, Dilworth=1, TQ=[21], independence_minor=1; PASS
+FAMILY r=5: order=20, lambda=24, nullity=2, Dilworth=1, TQ=[25], independence_minor=1; PASS
+FAMILY r=6: order=23, lambda=28, nullity=2, Dilworth=1, TQ=[29], independence_minor=1; PASS
+FAMILY r=7: order=26, lambda=32, nullity=2, Dilworth=1, TQ=[33], independence_minor=1; PASS
+FAMILY r=8: order=29, lambda=36, nullity=2, Dilworth=1, TQ=[37], independence_minor=1; PASS
+FAMILY r=9: order=32, lambda=40, nullity=2, Dilworth=1, TQ=[41], independence_minor=1; PASS
+FAMILY r=10: order=35, lambda=44, nullity=2, Dilworth=1, TQ=[45], independence_minor=1; PASS
+FAMILY r=11: order=38, lambda=48, nullity=2, Dilworth=1, TQ=[49], independence_minor=1; PASS
+FAMILY r=12: order=41, lambda=52, nullity=2, Dilworth=1, TQ=[53], independence_minor=1; PASS
+Scope: exact finite checks r=1,...,12; the infinite family still requires proof.
+ALL_CHECKS_OK

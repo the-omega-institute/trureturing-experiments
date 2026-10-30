@@ -1,0 +1,11 @@
+capped_states_checked: 78125
+valid_capped_states: 74311
+valid_counts_by_saturated_coordinates: [14267, 27206, 21273, 8960, 2240, 336, 28, 1]
+finite_identity_coefficients_degrees_0_through_28: [1, -7, 21, -35, 36, -27, 157, -303, -72, 649, -548, 60, 102, -33, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+independent_occurrence_checks_n_1_through_7: [1, 1, 136, 664, 1720, 3491, 6263]
+sorted_tuples_checked_by_n: [210, 462, 924, 1716, 3003, 5005, 8008]
+source_fidelity_a_3: 136
+source_bfile_and_cap_fibers_n_1_through_37: [1, 1, 136, 664, 1720, 3491, 6263, 10400, 16357, 24694, 36091, 51364, 71482, 97585, 131003, 173276, 226175, 291724, 372223, 470272, 588796, 731071, 900751, 1101896, 1339001, 1617026, 1941427, 2318188, 2753854, 3255565, 3831091, 4488868, 5238035, 6088472, 7050839, 8136616, 9358144]
+recurrence_checked_n_11_through_300: OK
+recurrence_residual_at_n_10: -33
+ALL_CHECKS_OK

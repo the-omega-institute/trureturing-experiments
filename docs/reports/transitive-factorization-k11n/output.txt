@@ -1,0 +1,12 @@
+FIDELITY K4 trees=16 weight=96 N_id=2880
+FIDELITY star n=2 N_id=1
+FIDELITY star n=3 N_id=4
+FIDELITY star n=4 N_id=30
+FIDELITY star n=5 N_id=336
+FIDELITY star n=6 N_id=5040
+TARGET n=3 N_id=24 full_support=12 trees=3 weight=6
+TARGET n=4 N_id=900 full_support=132 trees=8 weight=30
+TARGET n=5 N_id=47040 full_support=1920 trees=20 weight=140
+TARGET n=6 N_id=3175200 full_support=35280 trees=48 weight=630
+SCALAR identities: m=0..100; every telescoping summand checked exactly
+ALL_CHECKS_OK

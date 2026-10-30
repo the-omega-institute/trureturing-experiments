@@ -1,0 +1,40 @@
+Python: 3.14.8 SymPy: 1.14.0
+Source: arXiv:2610.31785v1, Remark 3.11, first question only
+FIDELITY base pair (5,4,3)/(4,5,3): ps3 equal; ps2 unequal
+Base common ps3 coefficients (low to high): (0, 0, 0, 0, 1, 7, 31, 94, 224, 444, 729, 991, 1102, 991, 729, 444, 224, 94, 31, 7, 1)
+Base ps2 coefficients: (0, 0, 0, 0, 0, 1, 0, 1) (0, 0, 0, 0, 0, 0, 2)
+INDEPENDENT GRAPH ENUMERATION: both members, j=1..3, k=2,3 agree with transfer
+j=1 vertices=14 bipartitions=(6, 8)/(7, 7) ps2=UNEQUAL ps3=EQUAL degree=23 sha256=5216981c2bb75cdf0097438af0459307236198f673a32278904c0a6f6ad91cca
+j=2 vertices=16 bipartitions=(7, 9)/(8, 8) ps2=UNEQUAL ps3=EQUAL degree=26 sha256=c82dbd17ecae02bec8a35e29817f1fc7d421d305be79253a0f5067a8b77a2acf
+j=3 vertices=18 bipartitions=(8, 10)/(9, 9) ps2=UNEQUAL ps3=EQUAL degree=29 sha256=7b0134d183836cd6f226430b4f9d0558a2304da6506d5a01e04d1c8adb865303
+j=4 vertices=20 bipartitions=(9, 11)/(10, 10) ps2=UNEQUAL ps3=EQUAL degree=33 sha256=36bb5cacd5b8b2a905ca88dfc3f477e872503a38410f524b2f97c74554e5fed5
+j=5 vertices=22 bipartitions=(10, 12)/(11, 11) ps2=UNEQUAL ps3=EQUAL degree=37 sha256=c4cbb6bf92e88dd990207cb67efe75fe39528800bbe8319de086003780c15e04
+j=6 vertices=24 bipartitions=(11, 13)/(12, 12) ps2=UNEQUAL ps3=EQUAL degree=41 sha256=12c5948d3e781d83d63aaccf6a5716021847e158e63f57fb16c25af71e705a59
+j=7 vertices=26 bipartitions=(12, 14)/(13, 13) ps2=UNEQUAL ps3=EQUAL degree=45 sha256=83a4ba9df06d05b2e5e753967cbf17dae4fa709b45c356197017f760cbd4aa1c
+j=8 vertices=28 bipartitions=(13, 15)/(14, 14) ps2=UNEQUAL ps3=EQUAL degree=49 sha256=a646c139dfc8ffece0918fed8c9c498726bd436c3a12ccb67baff4bb18233341
+j=9 vertices=30 bipartitions=(14, 16)/(15, 15) ps2=UNEQUAL ps3=EQUAL degree=53 sha256=5e4cb030e8714ab154abd626f838eaa1703aa1a5a5babcb8bbef247d25981b21
+j=10 vertices=32 bipartitions=(15, 17)/(16, 16) ps2=UNEQUAL ps3=EQUAL degree=57 sha256=49528d8f20ce88e74671117e13817f55b67b9efd6e1d164d526cfab327c29a9b
+j=11 vertices=34 bipartitions=(16, 18)/(17, 17) ps2=UNEQUAL ps3=EQUAL degree=61 sha256=0b2b7c37f9a8f48f26a0f0721367a20cf4ec3ee1bf531f3c97e85b1909f92962
+j=12 vertices=36 bipartitions=(17, 19)/(18, 18) ps2=UNEQUAL ps3=EQUAL degree=65 sha256=d9e256b81693c2ac241891734f8e6c0be358da98278266fa134cf6c0ac410dbf
+j=13 vertices=38 bipartitions=(18, 20)/(19, 19) ps2=UNEQUAL ps3=EQUAL degree=69 sha256=64b94d78cd10dd5e4413cf3a5d6961f47c589ccb29234f3c903cbb395424aa3f
+j=14 vertices=40 bipartitions=(19, 21)/(20, 20) ps2=UNEQUAL ps3=EQUAL degree=73 sha256=477d2bd2198f51e77eb5d3843d98972fb8aabef6f4b5da99a3af9acd71852d07
+j=15 vertices=42 bipartitions=(20, 22)/(21, 21) ps2=UNEQUAL ps3=EQUAL degree=77 sha256=804b66b534c3d5dd7316ffaee2dc46245a44e6bdde9432fe4fc4bc9c0728588d
+j=16 vertices=44 bipartitions=(21, 23)/(22, 22) ps2=UNEQUAL ps3=EQUAL degree=81 sha256=cd8ca339a2400d48b847827e54ce8d4afdc296c4d311d9ebfbd8c0f402737447
+j=17 vertices=46 bipartitions=(22, 24)/(23, 23) ps2=UNEQUAL ps3=EQUAL degree=85 sha256=5287f3b27e6014186352099774d067c8599dfa8d4136303be85e597aec32c391
+j=18 vertices=48 bipartitions=(23, 25)/(24, 24) ps2=UNEQUAL ps3=EQUAL degree=89 sha256=2d64c0144128e78af3c0946fae7e39f099c6765746750923593549d2d35810e0
+j=19 vertices=50 bipartitions=(24, 26)/(25, 25) ps2=UNEQUAL ps3=EQUAL degree=93 sha256=99f06d2426bee839e7e22d838e6ffa959ec20f18cfdc4c17600a16d2b7527fde
+j=20 vertices=52 bipartitions=(25, 27)/(26, 26) ps2=UNEQUAL ps3=EQUAL degree=97 sha256=33c5ad9bf8b91951f5360dff799bbbd80e0f3bf45f48e4c770b1943b5fe43635
+j=21 vertices=54 bipartitions=(26, 28)/(27, 27) ps2=UNEQUAL ps3=EQUAL degree=101 sha256=ea2d0197fc8a10d9da866fc110fbcd1a07761a9c5bf36118c66e28f96f6f46a8
+j=22 vertices=56 bipartitions=(27, 29)/(28, 28) ps2=UNEQUAL ps3=EQUAL degree=105 sha256=5c928f5cfdbd1b433ce9da3d81a9cc71c488d867e259c8951e50ffb1aa59cd1d
+j=23 vertices=58 bipartitions=(28, 30)/(29, 29) ps2=UNEQUAL ps3=EQUAL degree=109 sha256=b0886a2c7ebe8c2fc0ae0c3f3e6f4f97ef1e146e769305e83dad1cc3d6c406af
+j=24 vertices=60 bipartitions=(29, 31)/(30, 30) ps2=UNEQUAL ps3=EQUAL degree=113 sha256=5192deb5488c771f3e41992c06cf4773f376f6b83aefe59354fb021dda9543ca
+j=25 vertices=62 bipartitions=(30, 32)/(31, 31) ps2=UNEQUAL ps3=EQUAL degree=117 sha256=0b2630b546a381845ae799cd9e2772d58fbe8fb149a975e5b7ca318c06dc85d2
+j=26 vertices=64 bipartitions=(31, 33)/(32, 32) ps2=UNEQUAL ps3=EQUAL degree=121 sha256=71af66b2c0947fa852a01ea09c3550fa6290ab5fcc3a955b52c8e444b33d4221
+j=27 vertices=66 bipartitions=(32, 34)/(33, 33) ps2=UNEQUAL ps3=EQUAL degree=125 sha256=26df8ba7c2c083b640134927f304242baee284fec1bcf02ba56e1f721ab52c1b
+j=28 vertices=68 bipartitions=(33, 35)/(34, 34) ps2=UNEQUAL ps3=EQUAL degree=129 sha256=45b74edf987e354677298a3bb01b9f2399139e45ef1fb1ab80929c81bb263c4d
+j=29 vertices=70 bipartitions=(34, 36)/(35, 35) ps2=UNEQUAL ps3=EQUAL degree=133 sha256=bce3ba51460d78eb17572690aff4b93786291235afbf77c97587a6992e8aa564
+j=30 vertices=72 bipartitions=(35, 37)/(36, 36) ps2=UNEQUAL ps3=EQUAL degree=137 sha256=5e53feba5462b483c00e7894837adc7f9cfc9b04fb14f3772990cdd3f1359c71
+FIDELITY reported family j=1..7 reproduced; extension j=8..30 checked
+EXACT SYMBOLIC IDENTITY in Z[q,x,y,z]: arbitrary diagonal difference = 0
+Scope: exact arithmetic evidence and a general algebraic route; no Lean settlement proof
+ALL_CHECKS_OK

@@ -1,0 +1,13 @@
+FIDELITY: source Theorem 1.1 (1), (2) at n=2: identities and 484 rational pairs OK
+SOURCE CAVEAT: at n=0 all four positive means have power 1; its stated equality iff x=y needs n!=0
+LOCAL: F(1)=F'(1)=0; F''(1)=4*n*(n-1); epsilon^4 coefficient=n*(n-1)/2
+GLOBAL IDENTITIES: quadratic comparison, qu<=1 reduction, negative-power factorization OK
+HALF-POWER FAMILY: P((1+s)/2) Bernstein coefficients = [43/32, 77/40, 101/40, 31/10, 18/5, 4]
+HALF-POWER FAMILY: exact fourth-power gap positive for 1/2<=t<1; hence strict failures
+ANCHOR: n=1/2, x=2+sqrt(3), y=2-sqrt(3): A=2,G=1,H=1/2,Q=sqrt(7); strict failure OK
+EXACT GRID: 45 rational exponents in (0,1), each with certified F<0 and F>0
+GRID WITNESS: n=1/4, F(9/10)<0 and F(1/10000)>0 (112 bisections, exact rationals)
+GRID WITNESS: n=1/2, F(9/10)<0 and F(1/100)>0 (112 bisections, exact rationals)
+GRID WITNESS: n=3/4, F(9/10)<0 and F(1/10)>0 (112 bisections, exact rationals)
+SCOPE: finite grid and symbolic identities support the prose argument; no Lean proof or novelty certification
+ALL_CHECKS_OK

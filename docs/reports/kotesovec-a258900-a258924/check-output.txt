@@ -1,0 +1,15 @@
+IDENTITIES p=3, 0<=n<=8: independent constructions, F(S)=x, S'=C, C^p+S^p=1, T=S/C, T'=1+T^p OK
+FIDELITY p=4: 10 published a(n) terms and 5 published S/C terms agree
+PREFIX p=4: 1, -6, -1764, -7700616, -147910405104, -8310698364852576
+IDENTITIES p=4, 0<=n<=12: independent constructions, F(S)=x, S'=C, C^p+S^p=1, T=S/C, T'=1+T^p OK
+FIDELITY p=5: 9 published a(n) terms and 5 published S/C terms agree
+PREFIX p=5: 1, -24, -169344, -25255286784, -23089632627769344, -79051067969864491597824
+IDENTITIES p=5, 0<=n<=12: independent constructions, F(S)=x, S'=C, C^p+S^p=1, T=S/C, T'=1+T^p OK
+IDENTITIES p=6, 0<=n<=8: independent constructions, F(S)=x, S'=C, C^p+S^p=1, T=S/C, T'=1+T^p OK
+IDENTITIES p=7, 0<=n<=8: independent constructions, F(S)=x, S'=C, C^p+S^p=1, T=S/C, T'=1+T^p OK
+IDENTITIES p=8, 0<=n<=8: independent constructions, F(S)=x, S'=C, C^p+S^p=1, T=S/C, T'=1+T^p OK
+NORMALIZATION: exact rational exponents agree with both conjectured constants
+NAMED INPUTS: gamma reflection and the positive elementary sine values
+ASYMPTOTIC POWERS: p=4 -> 17/6, p=5 -> 13/4; p=4 growth -> 2^(14*n)
+SCOPE: finite exact checks; analytic continuation, transfer, and the limit are not machine-proved
+ALL_CHECKS_OK

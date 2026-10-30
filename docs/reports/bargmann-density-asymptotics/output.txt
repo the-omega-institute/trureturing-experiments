@@ -1,0 +1,8 @@
+DENSITY: conditional disk deficit identity verified symbolically
+FIDELITY: d=2 E[X]=1/4, E[X^2]=1/8, E[Y^2]=1/72 (source elementary marginals)
+DENSITY: normalization for d=3..9 and all 175 mixed moments with m,n=0..4 agree exactly
+ORIGIN: exact upper/lower triangle limits both give 2 for p=0..8; angular bounds use |Re z|<=|z|
+BOUNDARY: Hessian, quadratic Jacobian, beta integrals, and proposed coefficient verified exactly for d=3..11
+ENDPOINTS: 79 exact rational boundary parameter checks, including -1/8 and 1; cusp delta/(1-x)^2 -> 1/3
+SCOPE: exact supporting identities and limits; no Lean proof and no full certification of the density asymptotics
+ALL_CHECKS_OK

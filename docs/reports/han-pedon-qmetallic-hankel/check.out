@@ -1,0 +1,23 @@
+Exact integer arithmetic; no floating-point evidence.
+Source: Han--Pedon arXiv:2610.36132v1, Theorem B and Conjecture C.
+FIDELITY source Theorem B displayed block and next block: n= 2 block= [1, 1, -2, -1, 2, -1, -2, 1, 1, 0, 0, 0]
+FIDELITY source Theorem B displayed block and next block: n= 3 block= [1, 0, -1, 2, 1, -1, 1, 0, -1, 0, 0, -1, 0, 1, -1, 1, 2, -1, 0, 1, 0, 0, 0, 0]
+TRANSFER n= 1 rho= 8 R(0)=I U(0)=[[1,0],[1,0]] det(U)=q^(2rho); finite jets OK
+TRANSFER n= 2 rho= 12 R(0)=I U(0)=[[1,0],[1,0]] det(U)=q^(2rho); finite jets OK
+TRANSFER n= 3 rho= 48 R(0)=I U(0)=[[1,0],[1,0]] det(U)=q^(2rho); finite jets OK
+TRANSFER n= 4 rho= 40 R(0)=I U(0)=[[1,0],[1,0]] det(U)=q^(2rho); finite jets OK
+TRANSFER n= 5 rho= 120 R(0)=I U(0)=[[1,0],[1,0]] det(U)=q^(2rho); finite jets OK
+TRANSFER n= 6 rho= 84 R(0)=I U(0)=[[1,0],[1,0]] det(U)=q^(2rho); finite jets OK
+TRANSFER n= 7 rho= 224 R(0)=I U(0)=[[1,0],[1,0]] det(U)=q^(2rho); finite jets OK
+TRANSFER n= 8 rho= 144 R(0)=I U(0)=[[1,0],[1,0]] det(U)=q^(2rho); finite jets OK
+NORMAL n= 1 N= 4 det= -1 ; orthogonality, full Bezout inverse, all admissible complementary minors delta=2..7 OK; zero target minors= 1
+NORMAL n= 1 N= 8 det= 1 ; orthogonality, full Bezout inverse, all admissible complementary minors delta=2..7 OK; zero target minors= 2
+NORMAL n= 2 N= 12 det= 1 ; orthogonality, full Bezout inverse, all admissible complementary minors delta=2..7 OK; zero target minors= 4
+NORMAL n= 2 N= 24 det= 1 ; orthogonality, full Bezout inverse, all admissible complementary minors delta=2..7 OK; zero target minors= 8
+QUASIPOLYNOMIAL finite grid n= 1 ell= 4 rho= 8 all residues, m=0..5; Newton degree= 1 holdouts per residue= 4
+QUASIPOLYNOMIAL finite grid n= 1 ell= 5 rho= 8 all residues, m=0..5; Newton degree= 2 holdouts per residue= 2
+QUASIPOLYNOMIAL finite grid n= 2 ell= 5 rho= 12 all residues, m=0..5; Newton degree= 1 holdouts per residue= 4
+QUASIPOLYNOMIAL finite grid n= 2 ell= 6 rho= 12 all residues, m=0..5; Newton degree= 2 holdouts per residue= 2
+COUNTS source_determinants= 72 jet_identities= 96 complementary_minor_identities= 252 candidate_determinants= 240
+Finite corroboration only; universal Conjecture C remains unproved here.
+ALL_CHECKS_OK

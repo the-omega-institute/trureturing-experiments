@@ -1,0 +1,11 @@
+FIDELITY Theorem 4.3: vertices=27 edges=81 degree=6 connected=True
+FIDELITY identity-label neighborhood sums: [84] * 27
+FIDELITY reduced F_3 rank=24 nullity=2; 24x24 minor determinant=-11
+COUNTEREXAMPLE vertices=16 edges=48 degree=6 connected=True; spanning tree checked
+COUNTEREXAMPLE identity-label neighborhood sums: [51] * 16
+CERTIFICATES all 13 XOR cancellations checked; difference rank=13
+SCALAR all 65536 binary maps tested; magic masks=[0, 639, 21845, 22314, 43221, 43690, 64896, 65535]
+VECTOR all 4096 parameter triples checked; common sum=a XOR b
+VECTOR generated subgroup size histogram={1: 1, 2: 105, 4: 1470, 8: 2520}; maximum=8 < target order 16
+SCOPE exact integer/binary computations; no Lean proof; no minimal-order or infinite-family claim
+ALL_CHECKS_OK

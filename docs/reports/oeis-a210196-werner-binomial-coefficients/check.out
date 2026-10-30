@@ -1,0 +1,11 @@
+FIDELITY row n=1: [1]
+FIDELITY row n=2: [1, 4]
+FIDELITY row n=3: [1, 8, 8]
+FIDELITY row n=4: [1, 12, 24, 16]
+FIDELITY row n=5: [1, 16, 48, 64, 32]
+FIDELITY_OK: all five printed rows and the first three source polynomials
+IDENTITY_OK: n=1..100, k=0..n+4; 5550 exact integer comparisons
+BOUNDARIES_OK: n=1, k=0, top coefficient, and five zero coefficients past each row
+ALTERNATING_ROW_SUMS_OK: n=1..100 gives 1,-3,1,-3,...
+SCOPE: finite integer calculation only; no inference to all n or all k
+ALL_CHECKS_OK

@@ -1,0 +1,13 @@
+SIC projectors: 9 idempotents, 36 pair overlaps, sum=3I (symbolic t, t*=1/t)
+Source Eq. (43): independent 24-permutation contraction agrees for exact integer matrices
+Source two-copy qutrit SIC fidelity: 17/30 (all 81 ordered outcomes)
+Distinct triples: 84 matrix/cubic/contraction checks; phase multiplicities 3,54,9,9,9
+Ordered outcomes: 9 all equal; 216 two equal; 504 distinct; maximum roots 24, (15+3*sqrt(7))/2
+Spectral cubic, increasing polynomial h, and third-harmonic cancellation: exact identities
+Three-copy formula: C+[A*cos(u)+B*cos(2*u)]/180, u=pi/9-phi
+C=91/240+sqrt(7)/30+cos(2*pi/9)/30+cos(pi/9)/12
+A=(5/2)*(1+2*cos(2*pi/9)); B=1+2*cos(4*pi/9)
+cos(pi/9) exact isolating interval: (31/33, 47/50)
+Endpoint difference=(1-c)*(A+2*B*(1+c))/180; A>0 and B>0 for 1/2<c<1
+Scope: exact family identities; classification and analytic branch/order bridges remain proof obligations
+ALL_CHECKS_OK

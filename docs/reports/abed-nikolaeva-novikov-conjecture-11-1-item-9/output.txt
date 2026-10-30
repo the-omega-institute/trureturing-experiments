@@ -1,0 +1,8 @@
+Arithmetic: SymPy 1.14.0; exact integers/rationals/complex algebra/radicals only
+FIDELITY: Proposition 5.17 coordinate identity, slope 1/2 and limit sqrt(2)-1
+SHARPNESS SYMBOLIC: projections, F, H and characteristic polynomial agree exactly
+SHARPNESS INSTANCE: delta=24/25; F=21/40; H=7/5; F/H=3/8; padding n=2..7; delta=0
+QUBIT GRID: 1584 admissible cases; 16 excluded zero pairs; exact bound holds
+ALL RANK MASKS n=2..4: 999 admissible cases; 9 zero pairs; exact bound holds
+COMPRESSION: 27 same-density cases; block traces add; compressed contrasts do not grow
+ALL_CHECKS_OK

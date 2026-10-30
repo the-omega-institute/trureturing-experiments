@@ -1,0 +1,14 @@
+n= 1 center=(0, 0) exact_count=1
+n= 2 center=(0, 1/2) exact_count=2
+n= 3 center=(1/4, 1/4) exact_count=3
+n= 4 center=(1/2, 1/2) exact_count=4
+n= 5 center=(0, 0) exact_count=5
+n= 6 center=(0, 1/2) exact_count=6
+n= 7 center=(0, 1/4) exact_count=7
+n= 8 center=(0, 1/2) exact_count=8
+n= 9 center=(0, 0) exact_count=9
+n=10 center=(0, 1/4) exact_count=10
+n=11 center=(1/4, 1/4) exact_count=11
+n=12 center=(0, 1/2) exact_count=12
+Checked d=2 and n=1,...,12 with rational centers and certified pi bounds.
+ALL_CHECKS_OK

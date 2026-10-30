@@ -1,0 +1,10 @@
+FIDELITY: exact Table GW.n=6 polynomials at k=1,2,3 and positive masses at k=1..7 reproduced
+OEIS: all 22 DATA terms in A301421 revision 31 reproduced
+INDEPENDENCE: partition coefficients equal aggregated Newton-recursion polynomials for k=1..24
+SOURCE_BRIDGE: 4 exact six-data sets, k=1..24; repeated, zero, negative and rational data included
+GF: exact coefficients agree for k=1..24; denominator constant term = 1
+MASS: signed mass = 1 and twice positive mass = unsigned mass + 1 for k=1..24
+VALUES k=1..24: 1,6,46,371,3026,24707,201748,1647429,13452565,109850886,897019828,7324880157,59813470848,488424550081,3988374821616,32568251770049,265945672309613,2171657880797162,17733313387923690,144806604435722311,1182461068019218530,9655734852907204771,78846752820221900700,643846431680068020301
+MONOMIAL_COUNTS k=1..24: 1,2,3,5,7,11,14,20,26,35,44,58,71,90,110,136,163,199,235,282,331,391,454,532
+SCOPE: finite checks only; no all-degree proof and no Lean proof
+ALL_CHECKS_OK

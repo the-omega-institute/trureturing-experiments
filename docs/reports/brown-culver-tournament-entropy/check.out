@@ -1,0 +1,10 @@
+EXHAUSTIVE n=2 labeled=2 S=1 h2=1 trace_counts_k2_to_k8=[1, 1, 1, 1, 1, 1, 1] positive_trace_counts=[1, 1, 1, 1, 1, 1, 1]
+EXHAUSTIVE n=3 labeled=8 S=2 h2=2 trace_counts_k2_to_k8=[2, 2, 2, 2, 2, 2, 2] positive_trace_counts=[2, 1, 1, 1, 1, 1, 1]
+EXHAUSTIVE n=4 labeled=64 S=4 h2=3 trace_counts_k2_to_k8=[3, 4, 4, 4, 4, 4, 4] positive_trace_counts=[3, 4, 4, 2, 2, 2, 2]
+EXHAUSTIVE n=5 labeled=1024 S=9 h2=6 trace_counts_k2_to_k8=[6, 9, 11, 11, 11, 11, 11] positive_trace_counts=[6, 9, 10, 8, 8, 5, 6]
+EXHAUSTIVE n=6 labeled=32768 S=22 h2=9 trace_counts_k2_to_k8=[9, 21, 36, 43, 43, 42, 43] positive_trace_counts=[9, 21, 36, 37, 36, 32, 29]
+SCORE_FAMILY m=0..8 residues=0,1,2 realized=1533 distinct_for_each_order=2^m; every bit recovered from actual outdegrees
+POSITIVITY_LOWER_BOUND k=2..12 n=8^k+1 exact rational lower bound > 0
+TAIL_MAJORANT n=900 k=2..12: (2*n*(2*(n-1))^k+1)/2^floor(n/3) < 1/2^64
+DOMAIN_EDGE C3 raw traces k=2..6=[3, 0, -9, -27, -54] ; nonpositive small-order moments are excluded from real entropy values
+ALL_CHECKS_OK

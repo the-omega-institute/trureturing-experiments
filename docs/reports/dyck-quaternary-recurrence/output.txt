@@ -1,0 +1,11 @@
+fidelity: OEIS revision 20 terms n=0..31 and all four source n=4 paths agree
+independent brute-force word enumeration: n=0..10 agrees with height DP
+exact path DP, zero insertion, and Scheuerle source sum agree: n=0..512
+preorder forest encoding exhaustively checked: k=0..4; 722 forests
+factorial-ratio recurrence: k=1..512; inhomogeneous theta constant = 6
+symbolic ZZ polynomial certificate: all eight coefficient polynomials agree identically
+inhomogeneous L A = 384(1-z)^3: coefficients n=0..512 agree
+Mathar recurrence residual = 0: all 506 indices n=7..512
+scope: finite path checks and exact operator algebra; the all-n counting bridge is not kernel-proved
+Python 3.14.8; SymPy 1.14.0
+ALL_CHECKS_OK

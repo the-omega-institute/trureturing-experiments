@@ -1,0 +1,14 @@
+FIDELITY: all source COMMENTS rows P_0 through P_7 match exactly
+INDEPENDENT REPRESENTATIONS: Laguerre sum and inverse Eulerian transform agree for n=0..20
+FIDELITY: row sums and leading coefficients equal n! for n=0..20
+WITNESS: n=8 row = [6209, -41417, 48645, 376259, -1724861, 3233925, -2977609, 1078849, 40320]
+BFILE: all nine coefficients match published indices 36..44
+BEZOUT: -6417*6209 - 962*(-41417) = 1
+REFUTATION: c_8=1, D(8)=2, A060872(8)=16, D(9)=2
+PARITY SANITY: q_n(1) is odd for every even n=2..256 (exact integer sums)
+FAMILY SANITY: s=0, r=7, n=128, D(n)=4, D(n+1)=2, factors(n+1)={3: 1, 43: 1}
+FAMILY SANITY: s=1, r=19, n=524288, D(n)=10, D(n+1)=2, factors(n+1)={3: 1, 174763: 1}
+FAMILY SANITY: s=2, r=31, n=2147483648, D(n)=16, D(n+1)=2, factors(n+1)={3: 1, 715827883: 1}
+FAMILY MODULAR SANITY: r=12s+7 residues verified for s=0..100
+SCOPE: finite exact checks support the separately written infinite-family argument; no Lean proof claimed
+ALL_CHECKS_OK

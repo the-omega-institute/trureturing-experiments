@@ -1,0 +1,8 @@
+FIDELITY: Appendix E probability table, ontological model, all identity bases: OK
+FIDELITY: diagonal witness value = 0 < 2-sqrt(2), despite a finite model: OK
+CERTIFICATE: all 4 preparation-cone rays x 4 response vertices give W <= 1/2 per unit mass
+RECTANGLES: all a,b,eta in reduced fractions [0,1] with denominator <= 6 and a^2+b^2 <= 1
+RECTANGLES: {'model': 1480, 'violation': 68, 'boundary': 21, 'zero_noise': 129} total = 1677
+FINITE DETECTION: 95 distinct rational eta, denominator <= 32, 2*eta^2>1: four pure preparations each
+COMPRESSION: 25 rational responses -> 4 fixed vertices; statistics and preparation relation preserved: OK
+ALL_CHECKS_OK

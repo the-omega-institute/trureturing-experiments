@@ -1,0 +1,9 @@
+FIDELITY Theorem 6.3: T_1..T_5 = [1, 4, 15, 56, 209] ; recurrence verified through n=19
+SMALL FAMILY: 76 labelled graphs on 0..4 vertices; 44 connected, 32 disconnected/empty
+Each graph: six independent cofactors; exact spectral formula and alternating integer recurrence through n=19
+P4 annihilator descending coefficients: [1, -56, 672, -2632, 4094, -2632, 672, -56, 1]
+K1,3 annihilator descending coefficients: [1, -54, 625, -2646, 4164, -2646, 625, -54, 1]
+COMPLETE FAMILY: 42 cofactors for K_k box P_n, 2<=k<=8, 1<=n<=6
+Exact arithmetic: Python integers and SymPy 1.14.0
+COUNTS {'cofactors': 543, 'formula_comparisons': 524, 'recurrence_equations': 1089}
+ALL_CHECKS_OK

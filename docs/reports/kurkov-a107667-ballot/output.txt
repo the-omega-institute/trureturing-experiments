@@ -1,0 +1,9 @@
+FIDELITY: all 36 entries of the 8 explicitly printed T rows agree
+FIDELITY: all 28 entries of the 7 explicitly printed T^2 rows agree
+FIDELITY: source diagonalization agrees on 136 entries, 0 <= b <= a <= 15
+IDENTITY: native T, printed P rules and weighted path DP agree on all 861 entries, 0 <= b <= a <= 40
+PATH INTERPRETATION: 12341 P entries agree with forward path DP
+FIRST RETURN: 820 exact convolution checks
+DIRECT ENUMERATION: 54 checks, 0 <= m <= 5, 0 <= d <= 8
+SCOPE: finite exact evidence only; no all-index or Lean proof is claimed
+ALL_CHECKS_OK

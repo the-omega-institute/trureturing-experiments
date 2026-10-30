@@ -1,0 +1,4 @@
+W correlations: tau_33 = (0, 0, -1), tau_13 = (2/3, 0, 0)
+Cartesian index-pair bound and quadratic identity checks: OK
+White-noise visibility scaling: OK
+ALL_CHECKS_OK

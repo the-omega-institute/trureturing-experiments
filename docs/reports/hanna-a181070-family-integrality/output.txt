@@ -1,0 +1,19 @@
+A181070: first10=1,1,2,4,8,23,88,379,3044,32116
+A181070: fidelity b-file indices=0..120, rows=121, sha256=94c4e8fed08ca3a32652f757690c704dd8cd44a6c2a220070a32179c061c852f
+A181070: integral coefficients and integral m*[x^m]L for m=0..140; Taylor/recurrence agreement m=0..18; Dold pairs=249 with p*m<=140
+A181070: coefficient[140] sha256=5e60bd5ce4d37767ca181702bd6a89db9dfc7276aac4c91ad254e42be48ad923
+A181070: comparison without +1 first noninteger=coefficient[6]=45/2
+A181074: first10=1,1,2,5,23,231,5405,322799,42761356,12597156231
+A181074: fidelity b-file indices=0..75, rows=76, sha256=962a3948af1c65d11e518cc2447fb476392b1e8c53714c9e1583b0182da6737a
+A181074: integral coefficients and integral m*[x^m]L for m=0..140; Taylor/recurrence agreement m=0..18; Dold pairs=249 with p*m<=140
+A181074: coefficient[140] sha256=47a80be1a97ff3b45e53d17d7303a469997f425d6afcf80c47364fe2d16f1a12
+A181074: comparison without +1 first noninteger=coefficient[6]=1481/2
+A181080: first10=1,1,2,4,14,83,774,10641,255918,14643874
+A181080: fidelity b-file indices=0..90, rows=91, sha256=3959d8344e8f4e006425c3c504a7926a7825fb28e09fcebcc5323e2e13d7462c
+A181080: integral coefficients and integral m*[x^m]L for m=0..140; Taylor/recurrence agreement m=0..18; Dold pairs=249 with p*m<=140
+A181080: coefficient[140] sha256=d4c1bb9ea4f7e032886b4132d8165f290200d60eaa3d8e12166b47b8496eecd0
+A181080: comparison without +1 first noninteger=coefficient[6]=327/2
+A181080: j=n-k, weight 2*n-j reindexing agrees through degree 140
+Variable-power congruences: families=binomial,negative-binomial; n=1..40; k=0..40; primes=2,3,5,7,11,13,17,19; cases=26240; units=10291; nonzero-p-multiples=9709; zeros=6240
+Finite exact checks only; the all-degree statements are unproved by this program.
+ALL_CHECKS_OK

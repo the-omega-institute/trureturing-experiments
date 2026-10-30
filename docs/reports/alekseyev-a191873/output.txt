@@ -1,0 +1,11 @@
+Predicate controls: full 2x2 and nonadjacent rectangle rejected
+n=1: total=2, rectangle_free=2, Z=1, D=0, forcing_threshold=None, zero_transversal_cases=1, extremizers_checked=0
+n=2: total=16, rectangle_free=15, Z=3, D=2, forcing_threshold=4, zero_transversal_cases=7, extremizers_checked=0
+n=3: total=512, rectangle_free=334, Z=6, D=6, forcing_threshold=7, zero_transversal_cases=247, extremizers_checked=6
+n=4: total=65536, rectangle_free=18521, Z=9, D=9, forcing_threshold=10, zero_transversal_cases=17537, extremizers_checked=96
+Fidelity: A072567 and A191873 terms n=1..4; A001197 terms n=2..4 match
+Excluded-domain controls: equality fails at n=1 and n=2
+Fidelity: Knuth A191873 n=8 displayed matrix has weight 24, zero diagonal, no rectangle
+Cyclic family: weight 2n, rectangle-free, explicit zero transversal checked for n=3..64
+Scope: exhaustive identity and zero-transversal lemma checked only for n<=4
+ALL_CHECKS_OK

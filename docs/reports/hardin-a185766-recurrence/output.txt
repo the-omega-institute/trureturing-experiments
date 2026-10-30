@@ -1,0 +1,18 @@
+OEIS b-file sha256: 13b90ce1b356566ff93bd3a9ec25a5df52c2c919eda5ead12e02a074e62c4790
+States: 1736 Edges: 10592
+Independent bit/tuple states and edges: identical
+Direct two-row and three-row counts: 1736 10592
+All 3 displayed source examples satisfy literal trace constraints
+All 200 b-file values match exact transfer counts
+First 6 counts: [1736, 10592, 75192, 562800, 4430912, 35108016]
+Residual k=0: nonzero=1736 sum=6911872 max_abs=6555980
+Residual k=1: nonzero=1736 sum=5154624 max_abs=515384
+Residual k=2: nonzero=1736 sum=808864 max_abs=1420048
+Residual k=3: nonzero=1736 sum=-7776 max_abs=1098144
+Residual k=4: nonzero=1652 sum=0 max_abs=229168
+Residual k=5: nonzero=984 sum=0 max_abs=5760
+Residual k=6: nonzero=0 sum=0 max_abs=0
+Printed recurrence checked at n=19..200; residual at n=18: -7776
+T^6 q(T)1=0 coordinatewise; scalar sums at k=4,5 vanish
+Direct and Horner evaluations agree at k=0..6
+ALL_CHECKS_OK
