@@ -1,0 +1,24 @@
+Local squares: 81 tested, exactly 8 valid; column graph is 2 P3 + 3 K1
+Ordered row pairs: 59049 tested; 24 arcs, 12 undirected edges
+Exact row graph: 2 P3 + 8 K2 + 221 K1 (243 rows, 22 nonisolated)
+EDGE 01010 20202
+EDGE 20202 12121
+EDGE 10101 02020
+EDGE 02020 21212
+EDGE 01020 20212
+EDGE 02010 21202
+EDGE 02021 10102
+EDGE 02120 10201
+EDGE 02121 10202
+EDGE 12020 20101
+EDGE 12021 20102
+EDGE 12120 20201
+Fidelity: all four displayed source examples at n=4 satisfy the literal rule
+Independent entry-by-entry counts, n=1..8: 24,28,32,40,48,64,80,112
+a(1)..a(12): 6,7,8,10,12,16,20,28,36,52,68,100
+Fidelity: all 210 official b-file pairs match raw array counts / 4
+b209723.txt SHA256: 67c1ee54560cfb5da53a7bdf7b21b4141856fff5321130ba8d1145d9d341305b
+Parity formulas: n=1..210; recurrence: n=4..210; all exact
+Cross-multiplied formal GF: coefficients 0..210 match exactly
+Scope: finite checks only; no all-height proof and no Lean proof probe
+ALL_CHECKS_OK
