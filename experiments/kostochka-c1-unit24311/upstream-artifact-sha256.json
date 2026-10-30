@@ -1,0 +1,22 @@
+{
+  "clique-results.json": {
+    "bytes": 313194,
+    "sha256": "93f8f99f2bfb406fee8963c68978d22b5ebdebd8e067c5a0f296c51b4822eda4"
+  },
+  "encoding.md": {
+    "bytes": 3065,
+    "sha256": "681d1d2c75535f2a6c5cd3c324cb4790d41a9417422ea083fb62272838b859c2"
+  },
+  "packing-witnesses.json": {
+    "bytes": 1345901,
+    "sha256": "877906937b159617cb8df4106ec743a5060260db5ffd5c11389a88e20ee7bb3e"
+  },
+  "packing_core.py": {
+    "bytes": 4491,
+    "sha256": "05d46ca5ea9db46fb97a4a7cedcf6b5083bbdeaf03706d42943dec864bfc55cd"
+  },
+  "replay.py": {
+    "bytes": 6261,
+    "sha256": "3149dda6a3d0746b9f24b60c161997643195ef47c3d6c8be65b1e77f9c0e31eb"
+  }
+}
