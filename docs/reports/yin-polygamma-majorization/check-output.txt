@@ -1,0 +1,9 @@
+FIDELITY_OK: source (1.4) logarithmic derivative equals (1.5), 4 symbolic p cases
+DERIVATIVE_BRIDGE_OK: 24 symbolic (p,r) cases
+PRINTED_SIGN_CONFLICT_CONFIRMED: (1.6) finite sum gives -5/4; derivative definition gives 5/4 at p=k=x=r=1
+COUNTEREXAMPLE_OK: Q(1)=54/85; Q(2)=2450/3783; Q(2)-Q(1)=3968/321555
+MOMENT_GAP_AND_STRICT_DEFICIT_OK: 1584 exact rational (p,m,k,x) cases
+MULTIFACTOR_EMBEDDING_OK: 168 exact cases, n=3..8
+ENDPOINTS_OK: 9 exact rational-function cases, both limits m/(m+1)
+SCOPE: finite checks are regression evidence; the unbounded family requires the general argument in README and preregistration
+ALL_CHECKS_OK
