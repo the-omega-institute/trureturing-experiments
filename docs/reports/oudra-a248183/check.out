@@ -1,0 +1,10 @@
+FIDELITY: all 68 published DATA terms reproduced by direct finite sums
+FIDELITY: source example a(4)=2; exact inequalities 1/24 < 1/16 < 1/12
+TAIL: literal finite-sum identity checked for 0 <= k <= 10000
+IDENTITY: Oudra formula checked for every 2 <= n <= 10000; no discrepancies
+CONSTANTS: same finite range checked at c=1/4, 1/2, 1, 3/2, 1749/1000
+SHARPNESS: n=12 gives 8 at c=1/4 and 7 at c=24/100; n=3 gives 2 at c=7/4 instead of 1
+STRICT_BOUNDARY: equality cases (n, rejected k) = [(12, 7), (70, 48), (408, 287), (2378, 1680)]
+RESIDUES: 0 <= j,n <= 256 gives exactly {0, 3} modulo 4
+DOMAIN: n=1 is excluded by the conjecture and its proposed formula gives 0 instead of 1
+ALL_CHECKS_OK
