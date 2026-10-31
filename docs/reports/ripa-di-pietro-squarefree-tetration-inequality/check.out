@@ -1,0 +1,16 @@
+Evaluator cross-check: 3360 direct integer residues; capped towers also agree
+Fidelity: journal's 27057 residues at heights 1..7 modulo 10^25 reproduced
+  h=1: 0000000000000000000027057
+  h=2: 4777971988283521495227057
+  h=3: 0545271142050361495227057
+  h=4: 6344863520050361495227057
+  h=5: 6449963520050361495227057
+  h=6: 1449963520050361495227057
+  h=7: 1449963520050361495227057
+Domain: 44 composite squarefree radices 2..120; bases 2..150 with r not dividing a
+Expected identity: 32050 exact observed slope checks at heights 8..12, precision 128
+Source prime-radix formulas: 11430 exact observed slope checks
+Inequality: 6410 cases, including 2955 noncoprime cases
+Strict examples (r, a, V(a), minimum factor speed): [(6, 8, 2, 1), (6, 9, 3, 2), (6, 10, 2, 1), (15, 10, 2, 1), (30, 10, 2, 1), (58, 14, 2, 1)]
+Finite agreement supports the proposed general argument; it is not a proof of eventual stabilization
+ALL_CHECKS_OK
