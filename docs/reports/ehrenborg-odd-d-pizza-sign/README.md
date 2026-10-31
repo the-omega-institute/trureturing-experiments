@@ -11,6 +11,7 @@ The arithmetic uses integers, `fractions.Fraction`, and exact SymPy polynomials.
 - reproduces both displayed Table 2 coefficients for each of D3, D5, D7;
 - compares direct rotated odd-power coefficients with the proposed Gamma-moment identity for every p,q from 0 through 12;
 - verifies negativity and equality of the two coefficient formulas for all partitions of weight at most 12, 6, 3, 2 in dimensions 3, 5, 7, 9 respectively;
+- verifies the corrected coefficient projection for the geometric consequence at n=3, d=6, where the unprojected specialization differs by 7(a^6-b^6)/720;
 - checks the reciprocal-distance Pfaffian sign on every subset of {1,...,8} of sizes 2, 4, 6;
 - cancels the determinant times the reciprocal-distance Pfaffian to a polynomial before applying product moments in four exact cases.
 

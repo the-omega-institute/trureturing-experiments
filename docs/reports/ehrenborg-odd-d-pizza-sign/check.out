@@ -10,6 +10,7 @@ CLAIM_SMALL_CASES_OK n=5 partition_weight=0..6 cases=27
 CLAIM_SMALL_CASES_OK n=7 partition_weight=0..3 cases=7
 CLAIM_SMALL_CASES_OK n=9 partition_weight=0..2 cases=4
 COEFFICIENT_CASES_TOTAL 87
+PROJECTION_OK n=3 d=6 Z(a,b,0)-Y=7*(a^6-b^6)/720
 RECIPROCAL_PFAFFIAN_SIGN_OK subsets_of_1..8 sizes=2,4,6 cases=126
 CANCELLATION_MOMENT_IDENTITY_OK exponents=(2, 1) value=4
 CANCELLATION_MOMENT_IDENTITY_OK exponents=(4, 3, 2, 1) value=55296

@@ -144,6 +144,20 @@ def main():
         count += local_count
     print(f'COEFFICIENT_CASES_TOTAL {count}')
 
+    # Proposition 5.3 needs the projection onto monomials containing both variables.
+    a, b = sp.symbols('a b')
+    def td6(u, v):
+        return -sp.Rational(1, 8) * (u**5*v/5 + 2*u**3*v**3/9 + u*v**5/5)
+    y_poly = sp.expand(td6((a+b)/sp.sqrt(2), (a-b)/sp.sqrt(2)))
+    z_special = sp.expand(y_poly - td6(a/sp.sqrt(2), a/sp.sqrt(2))
+                         + td6(b/sp.sqrt(2), b/sp.sqrt(2)))
+    assert sp.expand(z_special-y_poly) == sp.Rational(7, 720)*(a**6-b**6)
+    def all_variables(poly):
+        return sum(coef*a**i*b**j for (i, j), coef in sp.Poly(poly, a, b).terms()
+                   if i > 0 and j > 0)
+    assert all_variables(z_special) == all_variables(y_poly)
+    print('PROJECTION_OK n=3 d=6 Z(a,b,0)-Y=7*(a^6-b^6)/720')
+
     sign_count = 0
     for size in [2, 4, 6]:
         for xs in combinations(range(1, 9), size):
