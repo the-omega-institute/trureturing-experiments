@@ -1,0 +1,5 @@
+depolarizing_fidelity 17/20
+depolarizing_input_error 1/10
+connected_graph_overlap 3/5
+traceless_line_preserving_A Matrix([[1, -3/2], [0, -1]])
+ALL_CHECKS_OK
