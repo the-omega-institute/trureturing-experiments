@@ -1,0 +1,8 @@
+FIDELITY: Gini-Simpson identity and source Jensen-gap equation; 39325 exact cases
+SYMBOLIC: normalization, risk-difference identity, geometric tail moments and limits
+DIRAC: 17 exact eventually-zero coordinate profiles have H=0
+TAIL FAMILY: 324 positive normalized p/q pairs, including entire tails
+RISK IDENTITY: 1620 exact infinite-series checks for integrable losses
+INFINITE LOSS: 432 strictly positive coordinate masses
+JENSEN SANITY: 2205 exact finite mixtures of infinite-tail profiles
+ALL_CHECKS_OK
