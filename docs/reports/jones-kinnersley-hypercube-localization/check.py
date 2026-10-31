@@ -127,6 +127,9 @@ def verify_lower_invariant(n):
         for size in range(k + 1):
             for projected in combinations(universe, size):
                 projected = frozenset(projected)
+                # Initial paired histories choose y outside the first
+                # projected probes; |Q_(n-1)| = 2^(n-1) >= n > k.
+                assert any(y not in projected for y in universe)
                 for previous_y in universe:
                     possible_y = [
                         y for y in closed_neighbors(n - 1, previous_y)
