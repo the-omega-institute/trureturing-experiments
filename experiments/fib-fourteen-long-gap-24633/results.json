@@ -1,0 +1,383 @@
+{
+  "actual_triangulations": 208012,
+  "enumerations_agree": true,
+  "exact_trace_core_weight": 4344,
+  "independent_masks": 843,
+  "maximum_spanning_weight": 4290,
+  "n": 14,
+  "positive_complete_ear_masks": 828,
+  "rows": [
+    {
+      "all_maximal_cliques": 45,
+      "maximum_spanning_weight": 4290,
+      "pairs": [
+        [
+          0,
+          2
+        ],
+        [
+          4,
+          6
+        ],
+        [
+          8,
+          10
+        ]
+      ],
+      "spanning_maximal_cliques": 27,
+      "vertices_per_core": [
+        24,
+        20,
+        24
+      ]
+    },
+    {
+      "all_maximal_cliques": 11,
+      "maximum_spanning_weight": 3690,
+      "pairs": [
+        [
+          0,
+          2
+        ],
+        [
+          4,
+          8
+        ],
+        [
+          6,
+          10
+        ]
+      ],
+      "spanning_maximal_cliques": 1,
+      "vertices_per_core": [
+        24,
+        10,
+        12
+      ]
+    },
+    {
+      "all_maximal_cliques": 19,
+      "maximum_spanning_weight": 3690,
+      "pairs": [
+        [
+          0,
+          2
+        ],
+        [
+          4,
+          10
+        ],
+        [
+          6,
+          8
+        ]
+      ],
+      "spanning_maximal_cliques": 6,
+      "vertices_per_core": [
+        24,
+        12,
+        20
+      ]
+    },
+    {
+      "all_maximal_cliques": 11,
+      "maximum_spanning_weight": 3690,
+      "pairs": [
+        [
+          0,
+          4
+        ],
+        [
+          2,
+          6
+        ],
+        [
+          8,
+          10
+        ]
+      ],
+      "spanning_maximal_cliques": 1,
+      "vertices_per_core": [
+        12,
+        10,
+        24
+      ]
+    },
+    {
+      "all_maximal_cliques": 6,
+      "maximum_spanning_weight": 3690,
+      "pairs": [
+        [
+          0,
+          4
+        ],
+        [
+          2,
+          8
+        ],
+        [
+          6,
+          10
+        ]
+      ],
+      "spanning_maximal_cliques": 1,
+      "vertices_per_core": [
+        12,
+        10,
+        12
+      ]
+    },
+    {
+      "all_maximal_cliques": 10,
+      "maximum_spanning_weight": 3690,
+      "pairs": [
+        [
+          0,
+          4
+        ],
+        [
+          2,
+          10
+        ],
+        [
+          6,
+          8
+        ]
+      ],
+      "spanning_maximal_cliques": 2,
+      "vertices_per_core": [
+        12,
+        12,
+        20
+      ]
+    },
+    {
+      "all_maximal_cliques": 19,
+      "maximum_spanning_weight": 3690,
+      "pairs": [
+        [
+          0,
+          6
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          8,
+          10
+        ]
+      ],
+      "spanning_maximal_cliques": 6,
+      "vertices_per_core": [
+        12,
+        20,
+        24
+      ]
+    },
+    {
+      "all_maximal_cliques": 6,
+      "maximum_spanning_weight": 3690,
+      "pairs": [
+        [
+          0,
+          6
+        ],
+        [
+          2,
+          8
+        ],
+        [
+          4,
+          10
+        ]
+      ],
+      "spanning_maximal_cliques": 1,
+      "vertices_per_core": [
+        12,
+        10,
+        12
+      ]
+    },
+    {
+      "all_maximal_cliques": 6,
+      "maximum_spanning_weight": 3690,
+      "pairs": [
+        [
+          0,
+          6
+        ],
+        [
+          2,
+          10
+        ],
+        [
+          4,
+          8
+        ]
+      ],
+      "spanning_maximal_cliques": 1,
+      "vertices_per_core": [
+        12,
+        12,
+        10
+      ]
+    },
+    {
+      "all_maximal_cliques": 10,
+      "maximum_spanning_weight": 3690,
+      "pairs": [
+        [
+          0,
+          8
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          6,
+          10
+        ]
+      ],
+      "spanning_maximal_cliques": 2,
+      "vertices_per_core": [
+        12,
+        20,
+        12
+      ]
+    },
+    {
+      "all_maximal_cliques": 6,
+      "maximum_spanning_weight": 3690,
+      "pairs": [
+        [
+          0,
+          8
+        ],
+        [
+          2,
+          6
+        ],
+        [
+          4,
+          10
+        ]
+      ],
+      "spanning_maximal_cliques": 1,
+      "vertices_per_core": [
+        12,
+        10,
+        12
+      ]
+    },
+    {
+      "all_maximal_cliques": 10,
+      "maximum_spanning_weight": 3690,
+      "pairs": [
+        [
+          0,
+          8
+        ],
+        [
+          2,
+          10
+        ],
+        [
+          4,
+          6
+        ]
+      ],
+      "spanning_maximal_cliques": 2,
+      "vertices_per_core": [
+        12,
+        12,
+        20
+      ]
+    },
+    {
+      "all_maximal_cliques": 19,
+      "maximum_spanning_weight": 3690,
+      "pairs": [
+        [
+          0,
+          10
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          6,
+          8
+        ]
+      ],
+      "spanning_maximal_cliques": 6,
+      "vertices_per_core": [
+        16,
+        20,
+        20
+      ]
+    },
+    {
+      "all_maximal_cliques": 8,
+      "maximum_spanning_weight": 3690,
+      "pairs": [
+        [
+          0,
+          10
+        ],
+        [
+          2,
+          6
+        ],
+        [
+          4,
+          8
+        ]
+      ],
+      "spanning_maximal_cliques": 1,
+      "vertices_per_core": [
+        16,
+        10,
+        10
+      ]
+    },
+    {
+      "all_maximal_cliques": 11,
+      "maximum_spanning_weight": 3690,
+      "pairs": [
+        [
+          0,
+          10
+        ],
+        [
+          2,
+          8
+        ],
+        [
+          4,
+          6
+        ]
+      ],
+      "spanning_maximal_cliques": 1,
+      "vertices_per_core": [
+        16,
+        10,
+        20
+      ]
+    }
+  ],
+  "selected_centres": [
+    0,
+    2,
+    4,
+    6,
+    8,
+    10
+  ],
+  "two_ear_weight_range": [
+    1,
+    252
+  ]
+}
