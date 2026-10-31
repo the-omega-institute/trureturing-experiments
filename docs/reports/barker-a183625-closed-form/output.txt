@@ -1,0 +1,11 @@
+SOURCE_FIDELITY: native transfer counts reproduce the 12 printed initial terms
+SOURCE_BFILE: all 200 source terms n=1..200 match native transfer counts and closed form
+HEIGHTS_1_TO_12: 27,45,87,189,447,1125,2967,8109,22767,65205,189447,556029
+EXHAUSTIVE_NATIVE: heights 1..4, ambient arrays up to 531441; counts=[27, 45, 87, 189]
+ROW_FIBERS: [[1, 1, 1, 0, 0], [1, 2, 2, 1, 0], [1, 2, 3, 2, 1], [0, 1, 2, 2, 1], [0, 0, 1, 1, 1]]
+PROFILE_TRANSITION: all 729 ordered row pairs checked against native block equations
+BIJECTION_CHECK: both directions, heights 1..3, with labelled positions preserved
+GENERATING_FUNCTION: exact product coefficients degrees 0..200; numerator [0,45,-183,162]
+EMPIRICAL_RECURRENCE: reproduced for n=4..200 from native transfer counts
+EXTENSION_CHECK: profile-fiber multiplicities for widths 1..8, exact enumeration
+ALL_CHECKS_OK
