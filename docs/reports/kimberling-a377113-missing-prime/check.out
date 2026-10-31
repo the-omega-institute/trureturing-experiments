@@ -1,0 +1,16 @@
+prime=167; trial divisors=2..12; all remainders nonzero
+fidelity: all 23 published DATA terms at n=0..22 equal exact multinomial expansion and T
+fidelity: a(2)=14; a(3)=72; source FORMULA/EXAMPLE indexing errors are not used
+source erratum: p=2; first zero index=2; 998 computed gaps through n=1000 match [1], not the displayed [2]
+source erratum: p=3; first zero index=1; 499 computed gaps through n=1000 match [2], not the displayed [8, 1, 4, 3, 8]
+source erratum: p=5; first zero index=4; 207 computed gaps through n=1000 match [8, 1, 4, 3, 8], not the displayed [12, 12, 1, 6, 4, 1, 5, 7, 12]
+source erratum: p=7; first zero index=2; 62 computed gaps through n=1000 match [12, 10, 26], not the displayed [3, 15, 9, 9, 15, 3, 18]
+period=166; exact full state return=(1, 0, 0, 0); no earlier full state return
+zero positions in a(0)..a(165) modulo 167: []
+residues=1,3,14,72,66,157,43,24,114,125,151,139,99,147,111,60,10,143,34,86,134,99,26,70,9,70,4,131,152,152,120,90,137,151,62,60,157,88,29,150,159,76,12,121,166,23,45,114,150,130,124,39,114,131,88,74,41,3,150,53,19,110,53,138,80,149,139,56,10,9,128,64,157,107,142,34,51,108,150,102,49,156,134,83,141,42,24,27,74,19,130,150,89,25,115,74,78,60,90,104,124,42,92,28,131,82,139,63,125,44,166,47,46,124,42,137,104,65,110,39,81,46,74,58,129,77,127,116,31,143,89,31,61,108,144,152,158,145,63,3,144,102,45,149,11,59,54,106,146,152,85,17,85,57,110,22,9,33,99,10,92,2,87,108,137,82
+independent quartic recurrence: 12,-44,48,8; all 166 residues agree
+split-field roots: sqrt2=13, sqrt3=62; conjugates=78,121,52,95
+split-field power sum and all four evaluations agree on all 166 states
+certificate: deterministic T returns to its initial state after 166 steps; all first coordinates on that cycle are nonzero
+scope: exact finite certificate for an all-index argument; no Lean proof is supplied
+ALL_CHECKS_OK
