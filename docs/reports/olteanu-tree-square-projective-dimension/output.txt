@@ -1,0 +1,19 @@
+FIDELITY: source Proposition 4.3 and Corollary 4.4 (v2), quotient pd(P_n^2)=n-ceil(n/5), 2<=n<=8
+PATH_ROWS (n, pd S/I(P_n), pd S/I(P_n^2)): [(2, 1, 1), (3, 2, 2), (4, 2, 3), (5, 3, 4), (6, 4, 4), (7, 4, 5), (8, 5, 6)]
+SIMPLE_GRAPHS n=0 count=1 OK
+SIMPLE_GRAPHS n=1 count=1 OK
+SIMPLE_GRAPHS n=2 count=2 OK
+SIMPLE_GRAPHS n=3 count=8 OK
+SIMPLE_GRAPHS n=4 count=64 OK
+SIMPLE_GRAPHS n=5 count=1024 OK
+LABELLED_TREES n=1 count=1 OK
+LABELLED_TREES n=2 count=1 OK
+LABELLED_TREES n=3 count=3 OK
+LABELLED_TREES n=4 count=16 OK
+LABELLED_TREES n=5 count=125 OK
+LABELLED_TREES n=6 count=1296 OK
+CHECKED: 1100 labelled simple graphs (0<=n<=5); 1442 labelled trees (1<=n<=6)
+FIELDS: Q, F_2, F_3; distance powers 2<=r<=max(2,n-1); zero ideals and disconnected graphs included
+METHOD: Hochster formula; exact reduced boundary ranks; no floating point
+LIMIT: finite evidence only; neither a universal proof nor a check over every field
+ALL_CHECKS_OK
