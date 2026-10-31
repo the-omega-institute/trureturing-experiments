@@ -1,0 +1,4 @@
+fidelity pairing formula: OK (exact value 2)
+Jordan/partial-transpose bound: OK (1536 exact rank-one cases)
+high-defect branch: OK (eta=2, exact certificate checked)
+ALL_CHECKS_OK
