@@ -1,0 +1,37 @@
+SOURCE: OEIS A200770 revision 14, corrected coefficient 2770
+ARITHMETIC: Python integers, Fraction, SymPy exact ZZ polynomials
+EXHAUSTIVE_WORDS n=0..11: 265720
+FIXED_CONTENT_TRIPLES total_length=0..11: 364
+SOURCE_N4: all seven arrays reproduced exactly
+BRUTE_SOURCE_TERMS n=1..11: 3,3,2,7,9,6,22,30,20,75,105
+BRUTE_RECURRENCE n=5..11: all residuals zero
+SOURCE_DATA n=1..41: all 41 printed terms matched
+BALANCED_CONTENT_SUM n=1..500: agrees with three residue formulas
+SOURCE_RECURRENCE n=5..41: all residuals zero
+FORMULA_RECURRENCE n=5..500: all residuals zero
+SYMBOLIC_RESIDUE r=0 q>=2 denominator=8*q - 4
+  P0=199440*q**3 - 84192*q**2 - 86052*q + 39144
+  P1=353160*q**3 - 707832*q**2 + 325170*q - 29772
+  P2=37488*q - 9372
+  P3=-199440*q**3 + 84192*q**2 + 68508*q
+  P4=-353160*q**3 + 707832*q**2 - 345114*q
+  coefficient_sums_descending=[0, 0, 0, 0]
+  residual=0
+SYMBOLIC_RESIDUE r=1 q>=2 denominator=(2*q - 1)*(2*q + 2)
+  P0=398880*q**4 + 396696*q**3 - 177240*q**2 - 136842*q + 38214
+  P1=117720*q**4 - 39744*q**3 - 134262*q**2 + 36252*q + 13050
+  P2=28116*q**2 + 14058*q - 14058
+  P3=-398880*q**4 - 396696*q**3 + 175392*q**2 + 136002*q - 37206
+  P4=-117720*q**4 + 39744*q**3 + 107994*q**2 - 49470*q
+  coefficient_sums_descending=[0, 0, 0, 0, 0]
+  residual=0
+SYMBOLIC_RESIDUE r=2 q>=1 denominator=(2*q - 1)*(2*q + 2)
+  P0=598320*q**4 + 844344*q**3 - 87468*q**2 - 211086*q - 15528
+  P1=470880*q**4 + 37224*q**3 - 380256*q**2 - 15702*q + 68832
+  P2=18744*q**2 + 9372*q - 9372
+  P3=-598320*q**4 - 844344*q**3 + 134556*q**2 + 326586*q - 53994
+  P4=-470880*q**4 - 37224*q**3 + 314424*q**2 - 109170*q + 10062
+  coefficient_sums_descending=[0, 0, 0, 0, 0]
+  residual=0
+SYMBOLIC_CERTIFICATES: 15 integer polynomials, 3 zero identities
+ALL_CHECKS_OK
