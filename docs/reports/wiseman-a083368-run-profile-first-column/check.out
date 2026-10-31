@@ -1,0 +1,9 @@
+FIDELITY A245563: all 22 printed rows n=0..21 reproduced
+FIDELITY A083368: 27=110111, 28=111010 in lazy Fibonacci notation; a(28)=4
+FIDELITY A083368: all 34 terms on the source's first data line reproduced
+IDENTITY: every n=1..17710 agrees; scanned binary integers 0..1048575
+FIRST OCCURRENCES: 17710; every minimum is odd and avoids 00
+LAZY REPRESENTATIONS: all values 0..28655 unique and consecutive
+BLOCK CHECKS: ordered value intervals, boundaries, D and T recurrences, T_m=D_(m-1)||[m], m=1..20
+TITLE CHECK: at n=3 the current NAME gives 2 but the historical change statistic gives 1
+ALL_CHECKS_OK
