@@ -1,0 +1,9 @@
+FIDELITY: all 48 published OEIS DATA terms reproduced from certified rational pi bounds
+SETTLEMENT: original analytic definition has floor 2*n^2+floor(2*n/3) for n=1..1000
+FIRST_TERMS: 2,9,20,34,53,76,102,133,168,206,249,296
+SYMBOLIC: tail summand identity, both signed barrier identities and inverse width 2/9 verified
+RESIDUES: fractional parts 0,2/3,1/3 each remain below 1 after adding 2/9
+RECURRENCE: all n=6..1000 verified; generating-function coefficient identity through degree 1000
+GENERATING_FUNCTION: exact rational-function simplification verified
+SCOPE: checks certify finite cases and algebraic identities; infinite-tail bounds still require proof
+ALL_CHECKS_OK
