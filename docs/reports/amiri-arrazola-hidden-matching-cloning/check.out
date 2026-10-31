@@ -1,0 +1,19 @@
+EXACT_ARITHMETIC Python fractions; SymPy integer/rational matrices and polynomials
+SOURCE arXiv:1610.06345v1 Eqs. (9), (20), (21)
+SYMBOLIC_BLOCKS zero_sum={0,1,3} uniform={0,2,n,n+2} top_vector OK
+SOURCE_EQ9 n=4 strings=16 fidelity=3/4 error=1/6 OK
+SOURCE_EQ9 n=6 strings=64 fidelity=13/18 error=1/6 OK
+n=2 dim=8 fourth_moment=enumerated norm_Q=1/2 optimum=1 top_norm_squared=4 CPTP_partial_trace=I OK
+n=3 dim=27 fourth_moment=enumerated norm_Q=5/18 optimum=5/6 top_norm_squared=20/3 CPTP_partial_trace=I OK
+n=4 dim=64 fourth_moment=enumerated norm_Q=3/16 optimum=3/4 top_norm_squared=9 CPTP_partial_trace=I OK
+n=5 dim=125 fourth_moment=enumerated norm_Q=7/50 optimum=7/10 top_norm_squared=56/5 CPTP_partial_trace=I OK
+n=6 dim=216 fourth_moment=enumerated norm_Q=1/9 optimum=2/3 top_norm_squared=40/3 CPTP_partial_trace=I OK
+n=7 dim=343 fourth_moment=enumerated norm_Q=9/98 optimum=9/14 top_norm_squared=108/7 CPTP_partial_trace=I OK
+n=8 dim=512 fourth_moment=enumerated norm_Q=5/64 optimum=5/8 top_norm_squared=35/2 CPTP_partial_trace=I OK
+n=9 dim=729 fourth_moment=parity norm_Q=11/162 optimum=11/18 top_norm_squared=176/9 CPTP_partial_trace=I OK
+n=10 dim=1000 fourth_moment=parity norm_Q=3/50 optimum=3/5 top_norm_squared=108/5 CPTP_partial_trace=I OK
+n=11 dim=1331 fourth_moment=parity norm_Q=13/242 optimum=13/22 top_norm_squared=260/11 CPTP_partial_trace=I OK
+n=12 dim=1728 fourth_moment=parity norm_Q=7/144 optimum=7/12 top_norm_squared=77/3 CPTP_partial_trace=I OK
+n=13 dim=2197 fourth_moment=parity norm_Q=15/338 optimum=15/26 top_norm_squared=360/13 CPTP_partial_trace=I OK
+n=14 dim=2744 fourth_moment=parity norm_Q=2/49 optimum=4/7 top_norm_squared=208/7 CPTP_partial_trace=I OK
+ALL_CHECKS_OK
