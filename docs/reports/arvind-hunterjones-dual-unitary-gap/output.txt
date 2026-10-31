@@ -1,0 +1,10 @@
+FIDELITY: symbolic dual unitarity and traceless one-site spreading: OK
+SETTLEMENT: all parameter-dependent conjugations, generating brackets, and Pauli Gram: OK
+FIDELITY: phase-0-bare, m=1: compression zero, source gap 1: OK
+FIDELITY: phase-1-bare, m=1: compression zero, source gap 1: OK
+FIDELITY: phase-0-local-dressing, m=1: compression zero, source gap 1: OK
+SETTLEMENT: phase-0-bare, m=2, dim(B)=30: strict contraction; min exact Schur pivot=5125276280880/7745912623979: OK
+SETTLEMENT: phase-1-bare, m=2, dim(B)=30: strict contraction; min exact Schur pivot=102658640531311288368/84475723271737750763: OK
+SETTLEMENT: phase-0-local-dressing, m=2, dim(B)=30: strict contraction; min exact Schur pivot=74978641959480/100037557785281: OK
+FIDELITY: m=3: six permutation operators have span dimension 5: OK
+ALL_CHECKS_OK
