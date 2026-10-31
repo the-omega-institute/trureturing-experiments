@@ -1,0 +1,372 @@
+{
+  "enumeration": [
+    {
+      "n": 5,
+      "triangulations": 5,
+      "block_placements": 5,
+      "source_applications": 10
+    },
+    {
+      "n": 6,
+      "triangulations": 14,
+      "block_placements": 6,
+      "source_applications": 30
+    },
+    {
+      "n": 7,
+      "triangulations": 42,
+      "block_placements": 7,
+      "source_applications": 98
+    },
+    {
+      "n": 8,
+      "triangulations": 132,
+      "block_placements": 8,
+      "source_applications": 336
+    },
+    {
+      "n": 9,
+      "triangulations": 429,
+      "block_placements": 9,
+      "source_applications": 1188
+    },
+    {
+      "n": 10,
+      "triangulations": 1430,
+      "block_placements": 10,
+      "source_applications": 4290
+    },
+    {
+      "n": 11,
+      "triangulations": 4862,
+      "block_placements": 11,
+      "source_applications": 15730
+    }
+  ],
+  "local_transport": [
+    {
+      "n": 5,
+      "chords_avoiding_deleted_vertex": 6,
+      "crossing_pairs": 15
+    },
+    {
+      "n": 6,
+      "chords_avoiding_deleted_vertex": 10,
+      "crossing_pairs": 45
+    },
+    {
+      "n": 7,
+      "chords_avoiding_deleted_vertex": 15,
+      "crossing_pairs": 105
+    },
+    {
+      "n": 8,
+      "chords_avoiding_deleted_vertex": 21,
+      "crossing_pairs": 210
+    },
+    {
+      "n": 9,
+      "chords_avoiding_deleted_vertex": 28,
+      "crossing_pairs": 378
+    },
+    {
+      "n": 10,
+      "chords_avoiding_deleted_vertex": 36,
+      "crossing_pairs": 630
+    },
+    {
+      "n": 11,
+      "chords_avoiding_deleted_vertex": 45,
+      "crossing_pairs": 990
+    },
+    {
+      "n": 12,
+      "chords_avoiding_deleted_vertex": 55,
+      "crossing_pairs": 1485
+    },
+    {
+      "n": 13,
+      "chords_avoiding_deleted_vertex": 66,
+      "crossing_pairs": 2145
+    },
+    {
+      "n": 14,
+      "chords_avoiding_deleted_vertex": 78,
+      "crossing_pairs": 3003
+    },
+    {
+      "n": 15,
+      "chords_avoiding_deleted_vertex": 91,
+      "crossing_pairs": 4095
+    },
+    {
+      "n": 16,
+      "chords_avoiding_deleted_vertex": 105,
+      "crossing_pairs": 5460
+    },
+    {
+      "n": 17,
+      "chords_avoiding_deleted_vertex": 120,
+      "crossing_pairs": 7140
+    },
+    {
+      "n": 18,
+      "chords_avoiding_deleted_vertex": 136,
+      "crossing_pairs": 9180
+    },
+    {
+      "n": 19,
+      "chords_avoiding_deleted_vertex": 153,
+      "crossing_pairs": 11628
+    },
+    {
+      "n": 20,
+      "chords_avoiding_deleted_vertex": 171,
+      "crossing_pairs": 14535
+    },
+    {
+      "n": 21,
+      "chords_avoiding_deleted_vertex": 190,
+      "crossing_pairs": 17955
+    },
+    {
+      "n": 22,
+      "chords_avoiding_deleted_vertex": 210,
+      "crossing_pairs": 21945
+    },
+    {
+      "n": 23,
+      "chords_avoiding_deleted_vertex": 231,
+      "crossing_pairs": 26565
+    },
+    {
+      "n": 24,
+      "chords_avoiding_deleted_vertex": 253,
+      "crossing_pairs": 31878
+    },
+    {
+      "n": 25,
+      "chords_avoiding_deleted_vertex": 276,
+      "crossing_pairs": 37950
+    },
+    {
+      "n": 26,
+      "chords_avoiding_deleted_vertex": 300,
+      "crossing_pairs": 44850
+    },
+    {
+      "n": 27,
+      "chords_avoiding_deleted_vertex": 325,
+      "crossing_pairs": 52650
+    },
+    {
+      "n": 28,
+      "chords_avoiding_deleted_vertex": 351,
+      "crossing_pairs": 61425
+    },
+    {
+      "n": 29,
+      "chords_avoiding_deleted_vertex": 378,
+      "crossing_pairs": 71253
+    },
+    {
+      "n": 30,
+      "chords_avoiding_deleted_vertex": 406,
+      "crossing_pairs": 82215
+    }
+  ],
+  "conditioned_fibres": [
+    {
+      "n": 14,
+      "p": 2,
+      "q": 2,
+      "u_observed": true,
+      "P": [
+        5,
+        7
+      ],
+      "Q": [
+        9,
+        11
+      ],
+      "J": [
+        1,
+        2,
+        3,
+        13
+      ],
+      "nonempty_trace_fibres": 2,
+      "source_completions": 2431,
+      "target_completions": 2431
+    },
+    {
+      "n": 14,
+      "p": 2,
+      "q": 2,
+      "u_observed": false,
+      "P": [
+        4,
+        6
+      ],
+      "Q": [
+        8,
+        10
+      ],
+      "J": [
+        1,
+        2,
+        12,
+        13
+      ],
+      "nonempty_trace_fibres": 3,
+      "source_completions": 2431,
+      "target_completions": 2431
+    },
+    {
+      "n": 15,
+      "p": 3,
+      "q": 3,
+      "u_observed": false,
+      "P": [
+        4,
+        6,
+        8
+      ],
+      "Q": [
+        10,
+        12,
+        14
+      ],
+      "J": [
+        1,
+        2
+      ],
+      "nonempty_trace_fibres": 1,
+      "source_completions": 1727,
+      "target_completions": 1727
+    },
+    {
+      "n": 16,
+      "p": 3,
+      "q": 3,
+      "u_observed": true,
+      "P": [
+        5,
+        7,
+        9
+      ],
+      "Q": [
+        11,
+        13,
+        15
+      ],
+      "J": [
+        1,
+        2,
+        3
+      ],
+      "nonempty_trace_fibres": 1,
+      "source_completions": 6071,
+      "target_completions": 6071
+    },
+    {
+      "n": 15,
+      "p": 2,
+      "q": 4,
+      "u_observed": false,
+      "P": [
+        4,
+        6
+      ],
+      "Q": [
+        8,
+        10,
+        12,
+        14
+      ],
+      "J": [
+        1,
+        2
+      ],
+      "nonempty_trace_fibres": 1,
+      "source_completions": 4344,
+      "target_completions": 4344
+    },
+    {
+      "n": 16,
+      "p": 2,
+      "q": 4,
+      "u_observed": true,
+      "P": [
+        5,
+        7
+      ],
+      "Q": [
+        9,
+        11,
+        13,
+        15
+      ],
+      "J": [
+        1,
+        2,
+        3
+      ],
+      "nonempty_trace_fibres": 1,
+      "source_completions": 15483,
+      "target_completions": 15483
+    },
+    {
+      "n": 15,
+      "p": 4,
+      "q": 2,
+      "u_observed": false,
+      "P": [
+        4,
+        6,
+        8,
+        10
+      ],
+      "Q": [
+        12,
+        14
+      ],
+      "J": [
+        1,
+        2
+      ],
+      "nonempty_trace_fibres": 1,
+      "source_completions": 704,
+      "target_completions": 704
+    },
+    {
+      "n": 16,
+      "p": 4,
+      "q": 2,
+      "u_observed": true,
+      "P": [
+        5,
+        7,
+        9,
+        11
+      ],
+      "Q": [
+        13,
+        15
+      ],
+      "J": [
+        1,
+        2,
+        3
+      ],
+      "nonempty_trace_fibres": 1,
+      "source_completions": 2431,
+      "target_completions": 2431
+    }
+  ],
+  "all_assertions_passed": true,
+  "limits": [
+    "Finite experiment; no unbounded or Lean proof.",
+    "Conditioned checks use eight literal P/Q/J placements; the general source-condition discharge remains a proof obligation."
+  ]
+}
