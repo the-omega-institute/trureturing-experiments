@@ -1,0 +1,5 @@
+literal a(1..7) = [6, 36, 58, 158, 420, 1066, 2754]
+transfer a(1..10) = [6, 36, 58, 158, 420, 1066, 2754, 7140, 18430, 47602]
+recurrence verified for n = 8..40
+generating-function numerator verified through degree 40
+ALL_CHECKS_OK
