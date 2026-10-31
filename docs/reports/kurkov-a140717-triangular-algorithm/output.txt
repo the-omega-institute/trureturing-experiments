@@ -1,0 +1,10 @@
+FIDELITY: OEIS printed rows n=0..6 reproduced exactly.
+FIDELITY: T(4,2)=5; R(4,z) coefficients = (1, 3, 5, 4, 1)
+DYCK_BIJECTION: both inverse identities and weight preservation for n=0..10; 23714 paths.
+RECTANGLE_RECURRENCE: direct pair enumeration agrees for 0<=i<j<=10.
+ALGORITHM: all saved outputs and intermediate states agree with the recurrence for every m=1..30.
+CLAIM_SMALL_CASES: every 1<=n<=m<=30 with n<=10 agrees with direct Dyck enumeration; all prefixes stable.
+INDEPENDENT_CROSSCHECK: 321-avoiding permutations, n=0..8, agree by inversion number.
+SOURCE_ERRATA: printed permutation 2341 has 3 inversions; replace it by 2314 in the T(4,2) list.
+SOURCE_ERRATA: printed word UDUUUDD has length 7; UDUUUDDD is a valid missing semilength-4 example.
+ALL_CHECKS_OK
