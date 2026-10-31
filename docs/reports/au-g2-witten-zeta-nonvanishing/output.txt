@@ -1,0 +1,11 @@
+FIDELITY v4 Example 5.5: x^4 f(1/x) = 9 f(x/3); f = [Fraction(2, 1), Fraction(15, 1), Fraction(40, 1), Fraction(45, 1), Fraction(18, 1)]
+FIDELITY v1 section 4: g_0,...,g_10 = 1, 0, -1/2, 0, -33/80, 0, 0, 0, 2387/6400, 0, 1449/6400
+FIDELITY: 41 published recurrence identities; skipped classes: 24
+PARITY IDENTITY: m=0,...,24; odd k=-49,...,49 with 5 not dividing k; 1000 pairs
+CONJECTURE 5.6: all 121 admissible integers -299 <= k <= 1 checked exactly
+EXACT H: k = 1 m = 0 H = 1
+EXACT H: k = -1 m = 1 H = 5/8
+EXACT H: k = -3 m = 2 H = 55/256
+EXACT H: k = -7 m = 4 H = 8525/131072
+EXACT H: k = -9 m = 5 H = 100625/2883584
+ALL_CHECKS_OK
