@@ -1,0 +1,11 @@
+Source: https://oeis.org/A397683/internal (revision 38)
+Independent order algorithms agree: 5308 unit residues; odd 3 <= m <= 161
+Fidelity: all 80 published terms agree; f(11)=4 with x=[3, 4, 6, 7]; f(1)=1
+Full counts: all 1001 positive odd m <= 2001; zero moduli: [3, 7, 9, 27, 49, 81, 243, 343, 729]
+Source prime-power classification: 699 odd prime powers <= 5000
+Exceptional local order formulas: both pairs at every exponent 1..8
+Joint primitive lifting: 236 prime/exponent instances; p < 300, exponents 2..5
+All odd 1 <= m < 20000: f(1)=1; 9985 CRT maximal-order witnesses; zero counts for 14 pure powers
+Pure powers below 20000: [3, 7, 9, 27, 49, 81, 243, 343, 729, 2187, 2401, 6561, 16807, 19683]
+Example modulo 21: x=10; both orders=6
+ALL_CHECKS_OK
