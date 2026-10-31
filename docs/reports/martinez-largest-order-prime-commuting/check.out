@@ -1,0 +1,12 @@
+FIDELITY PSL(2,5): order=60 pi_elements=25 commuting_pairs=145 Pr_5=29/125
+FIDELITY Theorem A, S3 and pi={2}: fraction=1/2; pi_core=1
+COUNTEREXAMPLE q=5: order=60 order_x=10 pi_elements=40 centralizing_pi_elements=10 pi_core=10 normal_closure_x=30 center=1 ratio=1/4 > 1/5; Theorem_A_OK
+COUNTEREXAMPLE q=7: order=84 order_x=14 pi_elements=56 centralizing_pi_elements=14 pi_core=14 normal_closure_x=42 center=1 ratio=1/4 > 1/7; Theorem_A_OK
+COUNTEREXAMPLE q=11: order=132 order_x=22 pi_elements=88 centralizing_pi_elements=22 pi_core=22 normal_closure_x=66 center=1 ratio=1/4 > 1/11; Theorem_A_OK
+COUNTEREXAMPLE q=13: order=156 order_x=26 pi_elements=104 centralizing_pi_elements=26 pi_core=26 normal_closure_x=78 center=1 ratio=1/4 > 1/13; Theorem_A_OK
+COUNTEREXAMPLE q=17: order=204 order_x=34 pi_elements=136 centralizing_pi_elements=34 pi_core=34 normal_closure_x=102 center=1 ratio=1/4 > 1/17; Theorem_A_OK
+COUNTEREXAMPLE q=19: order=228 order_x=38 pi_elements=152 centralizing_pi_elements=38 pi_core=38 normal_closure_x=114 center=1 ratio=1/4 > 1/19; Theorem_A_OK
+COUNTEREXAMPLE q=23: order=276 order_x=46 pi_elements=184 centralizing_pi_elements=46 pi_core=46 normal_closure_x=138 center=1 ratio=1/4 > 1/23; Theorem_A_OK
+COUNTEREXAMPLE q=29: order=348 order_x=58 pi_elements=232 centralizing_pi_elements=58 pi_core=58 normal_closure_x=174 center=1 ratio=1/4 > 1/29; Theorem_A_OK
+COUNTEREXAMPLE q=31: order=372 order_x=62 pi_elements=248 centralizing_pi_elements=62 pi_core=62 normal_closure_x=186 center=1 ratio=1/4 > 1/31; Theorem_A_OK
+ALL_CHECKS_OK
