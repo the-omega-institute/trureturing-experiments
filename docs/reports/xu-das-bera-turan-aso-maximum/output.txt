@@ -1,0 +1,7 @@
+SYMBOLIC: exact curvature identity, corrected polynomial, discriminant -3444/625, lower-bound identity, R(3/4)<=449/490
+OUTLINE CORRECTION: squared expression at m=5,s=1 is -59546/78125; the certified formula uses (1+t)^2 times the UNSQUARED bracket
+FIDELITY: complete bipartite formula and the source bipartite maximum/equality checked for all 434 splits with 3<=n<=30
+PARTITIONS: 2692 positive partitions, all 3<=n<=20 and 2<=k<=n; 20709 strict balancing transfers; no violation of maximum or equality
+GRAPHS: 1019 labeled simple graphs without P2 components, all 3<=n<=5; 3281 colorable (G,k) cases; inequality and isomorphism equality verified
+SCOPE: finite checks and exact algebraic identities; no universal proof or Lean proof is claimed
+ALL_CHECKS_OK
