@@ -10,8 +10,9 @@ python3 docs/reports/krasula-qf-lcd-ideals/check.py
 
 The program checks twelve explicitly constructed algebras over the prime
 fields F_2 and F_3: truncated polynomial rings, two-by-two matrix rings,
-radical-square-zero two-cycle algebras, and three direct products. It validates
-all ring axioms against their exact operation tables. A full-rank matrix for
+radical-square-zero two-cycle algebras, and three direct products. It checks
+multiplication associativity, both distributive laws and the identity against
+the exact operation tables; addition is the coordinate vector-space operation. A full-rank matrix for
 the associative pairing lambda(xy) certifies each algebra is Frobenius. Every
 vector subspace is enumerated once through its reduced row echelon basis;
 closure under basis multiplication selects every left and right ideal.
