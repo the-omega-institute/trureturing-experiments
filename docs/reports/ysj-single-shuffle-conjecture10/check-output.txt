@@ -1,0 +1,14 @@
+PROJECTIONS: symmetry, idempotence, trace 1 checked exactly
+SOURCE FIDELITY: Appendix A, mean of powers = (-1/8)^K I/2, K=1,...,8
+ONE EPOCH: all 6 determinant, trace, Frobenius, Cayley-Hamilton identities
+REPEATED EPOCHS: all 6 squared-product Frobenius norms = 2a; determinant q^6
+INDEPENDENT EPOCHS: all 36 determinants q^6; mean squared Frobenius norm = 2b
+FAMILY GAP: a-b = (1-q)^6 (q+1)^2 g(q)/2048
+SIGN CERTIFICATE: g(q) >= 25q^2 > 0 on [1/2,1]; gap > 0 for q < 1
+RATIONAL SAMPLE: q=3/4; a-b=221039/34359738368
+TRANSFER: exact singular-value square identities and concavity derivatives checked
+DIRECT SPECTRAL CHECK (25): repeated expectation - independent expectation > 1/10^8
+DIRECT SPECTRAL CHECK (26): repeated expectation - independent expectation > 1/10^8
+TOLERANCE: q=1-min(eta/2,1/4); branches eta<=1/2 and eta>=1/2
+For every 0<eta<=1, 3/4<=q<1 and q>=1-eta; B_i have eigenvalues q,1
+ALL_CHECKS_OK
