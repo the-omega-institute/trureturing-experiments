@@ -1,0 +1,12 @@
+block conventions: 302 indices checked by independent integer constructions
+source fidelity: all 78 DATA terms and all 90 displayed array entries match
+source PARI column program: 6321 recurrence entries match (n=0..20, k=0..300)
+triangular-block identification: 6300 pairs match (n=0..20, k=1..300)
+Conjecture 1: 6300 pairs match, including n=0, m=1, j=1 with exponent -1
+Conjecture 2: 6321 coefficients match; original denominator times column is 1 mod x^21
+Conjecture 3: 6020 pairs match (n=1..20, k=0..300)
+separate unnumbered source line: n=1, k=2 gives recurrence 1 versus printed Stirling2 3
+column 4, n=0..8: [1, 4, 13, 40, 121, 364, 1093, 3280, 9841]
+column 6, n=0..8: [1, 6, 25, 90, 301, 966, 3025, 9330, 28501]
+finite exact agreement supports fidelity; it is not a proof of the unbounded claim
+ALL_CHECKS_OK
