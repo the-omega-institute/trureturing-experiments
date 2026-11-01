@@ -1,0 +1,95 @@
+{
+  "arithmetic": "exact integer labels, unordered internal diagonals and finite bitsets",
+  "construction": "ears(P) union all original internal spokes from h to vertices outside P",
+  "limits": "finite carrier checks only; no unbounded theorem, flip-existence proof or Lean validation",
+  "range": [
+    14,
+    18
+  ],
+  "rows": [
+    {
+      "compatible_root_fans": 2786,
+      "conditioned_placements": {
+        "2,2": 1764,
+        "2,4": 735,
+        "3,3": 980,
+        "4,2": 735
+      },
+      "independent_forced_sets": 581,
+      "literal_fans": 6174,
+      "minimum_compatible_root_crossing_count": 7,
+      "n": 14,
+      "positivity_root_witnesses": 4214,
+      "strict_empty_trace_witnesses": 6580
+    },
+    {
+      "compatible_root_fans": 4515,
+      "conditioned_placements": {
+        "2,2": 2700,
+        "2,4": 2100,
+        "3,3": 2800,
+        "4,2": 2100
+      },
+      "independent_forced_sets": 815,
+      "literal_fans": 9420,
+      "minimum_compatible_root_crossing_count": 8,
+      "n": 15,
+      "positivity_root_witnesses": 9700,
+      "strict_empty_trace_witnesses": 16590
+    },
+    {
+      "compatible_root_fans": 7056,
+      "conditioned_placements": {
+        "2,2": 3960,
+        "2,4": 5040,
+        "3,3": 6720,
+        "4,2": 5040
+      },
+      "independent_forced_sets": 1116,
+      "literal_fans": 13952,
+      "minimum_compatible_root_crossing_count": 9,
+      "n": 16,
+      "positivity_root_witnesses": 20760,
+      "strict_empty_trace_witnesses": 42560
+    },
+    {
+      "compatible_root_fans": 10676,
+      "conditioned_placements": {
+        "2,2": 5610,
+        "2,4": 10710,
+        "3,3": 14280,
+        "4,2": 10710
+      },
+      "independent_forced_sets": 1496,
+      "literal_fans": 20128,
+      "minimum_compatible_root_crossing_count": 10,
+      "n": 17,
+      "positivity_root_witnesses": 41310,
+      "strict_empty_trace_witnesses": 105060
+    },
+    {
+      "compatible_root_fans": 15696,
+      "conditioned_placements": {
+        "2,2": 7722,
+        "2,4": 20790,
+        "3,3": 27720,
+        "4,2": 20790
+      },
+      "independent_forced_sets": 1968,
+      "literal_fans": 28368,
+      "minimum_compatible_root_crossing_count": 11,
+      "n": 18,
+      "positivity_root_witnesses": 77022,
+      "strict_empty_trace_witnesses": 242460
+    }
+  ],
+  "schema": "fib-literal-forced-fan-v1",
+  "scope": "all independent P of sizes2,3,4; all source ordered P/Q placements",
+  "totals": {
+    "compatible_root_fans": 40729,
+    "independent_forced_sets": 5976,
+    "literal_fans": 78042,
+    "positivity_root_witnesses": 153006,
+    "strict_empty_trace_witnesses": 413250
+  }
+}
