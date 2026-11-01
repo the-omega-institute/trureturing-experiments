@@ -77,6 +77,12 @@ def main() -> None:
     assert sum(pc_case_counts) == 376
     print("PC_CASES", len(pc_case_counts))
     print("PC_COUNT", sum(pc_case_counts))
+    # The source prints 150 for PU, while its parenthesized bullet counts sum to 152.
+    # The discrepancy does not affect the candidate's schema exclusion.
+    pu_case_counts = (2, 2, 8, 8, 4, 20, 4, 20, 4, 4, 8, 8, 12, 4, 20, 4, 20)
+    assert sum(pu_case_counts) == 152
+    print("PU_PRINTED_COUNT", 150)
+    print("PU_LISTED_COUNT", sum(pu_case_counts))
 
     # The candidate is the 2.1 schema with one independent active formula.
     pc_schema = ("alpha", "delta-cd-minus", "kF", "N0:N0")
