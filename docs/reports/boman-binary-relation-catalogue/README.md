@@ -26,6 +26,15 @@ countermodel references for all 330 consistent closed masks. It checks all
 are consistent with the rule system and 24,832 derive FALSE. The output ends
 with `ALL_CHECKS_OK`.
 
+The report also contains `symbolic-cover.json`, a compact propositional proof
+forest for the fifteen omission cases. Its 123 excluded-middle splits, 137
+profile leaves and one contradiction leaf are replayed by an independent
+checker using only forward Horn steps and single-premise contraposition. The
+maximum branch depth is nine. The interpretation of each node is valid for
+an arbitrary rule-closed truth set; it does not rely on enumerating truth
+assignments. A Lean implementation can replay it by cases and rule
+applications, without `decide` on antecedent masks.
+
 The finite calculation supports the proposed coverage and nine-point bound.
 It does not prove universal rule soundness over every finite carrier or give
 Lean kernel verification. The planned settlement must prove semantic rule

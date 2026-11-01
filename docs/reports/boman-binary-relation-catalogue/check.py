@@ -9,6 +9,8 @@ Every property is re-evaluated here; no source proof or solver is trusted.
 This program is experimental evidence, not a Lean proof.
 """
 from itertools import product
+from pathlib import Path
+import json
 
 ALL_P = 32767
 EMPTY, NO_COMP, FALSE, UNIVERSAL = (1 << i for i in range(15, 19))
@@ -215,6 +217,43 @@ def graph_profile(rows):
     return sum(1 << i for i, value in enumerate(values) if value)
 
 
+
+def check_symbolic_cover(tree, pos, neg, omitted):
+    """Replay a propositional proof for every closed truth set, not valuations.
+
+    Each positive/negative mask is an assumption ledger. Forward steps use a
+    Horn implication. Contraposition has one unknown premise and a known false
+    consequent. A split is excluded middle. A profile leaf establishes that
+    every property still allowed true belongs to that actual model profile.
+    The proof interpretation follows by induction on this finite tree.
+    """
+    for direction, rule_index in tree['steps']:
+        lhs, rhs = RULES[rule_index]
+        if direction == 'forward':
+            assert lhs & pos == lhs
+            pos |= rhs
+        else:
+            assert direction == 'contrapose' and rhs & neg
+            missing = lhs & ~pos
+            assert missing and missing & (missing - 1) == 0
+            neg |= missing
+    if 'contradiction' in tree:
+        assert pos & neg
+        return 0, 0, 1, 0
+    if 'profile' in tree:
+        model = tree['profile']
+        assert model in MAXIMAL_OMISSION[omitted]
+        assert (ALL_P & ~neg) & ~model == 0
+        return 0, 1, 0, 0
+    split = tree['split']
+    assert 0 <= split < 15
+    assert not (pos | neg) & (1 << split)
+    yes = check_symbolic_cover(tree['yes'], pos | (1 << split), neg, omitted)
+    no = check_symbolic_cover(tree['no'], pos, neg | (1 << split), omitted)
+    return (yes[0] + no[0] + 1, yes[1] + no[1], yes[2] + no[2],
+            1 + max(yes[3], no[3]))
+
+
 def main():
     assert len(RULES) == 54
     assert len(WITNESSES) == 38
@@ -263,6 +302,23 @@ def main():
         assert all(sem & l != l or sem & r == r for l, r in RULES)
         print('MATRIX', p, 'n', len(rows), 'rows', ','.join(map(str, rows)),
               'properties', ','.join(map(str, bits(p))))
+
+    # Symbolic proof of the cover, checked independently of mask enumeration.
+    certificate_path = Path(__file__).with_name('symbolic-cover.json')
+    certificate = json.loads(certificate_path.read_text())
+    totals = [0, 0, 0, 0]
+    for i in range(1, 16):
+        reading = check_symbolic_cover(certificate[str(i)], 0,
+                                       FALSE | (1 << (i - 1)), i)
+        print('SYMBOLIC_COVER', i, 'splits', reading[0], 'profile_leaves',
+              reading[1], 'contradiction_leaves', reading[2],
+              'maximum_depth', reading[3])
+        for j in range(3):
+            totals[j] += reading[j]
+        totals[3] = max(totals[3], reading[3])
+    assert totals == [123, 137, 1, 9]
+    print('SYMBOLIC_COVER_TOTAL splits=123 profile_leaves=137',
+          'contradiction_leaves=1 maximum_depth=9')
 
     closures = {a: horn(a) for a in range(1 << 15)}
     consistent = {a: c for a, c in closures.items() if not c & FALSE}

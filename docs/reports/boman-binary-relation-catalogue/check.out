@@ -46,6 +46,22 @@ MATRIX 31572 n 2 rows 1,1 properties 3,5,7,9,10,12,13,14,15
 MATRIX 31738 n 1 rows 0 properties 2,4,5,6,7,8,9,10,12,13,14,15
 MATRIX 32589 n 2 rows 3,3 properties 1,3,4,7,9,10,11,12,13,14,15
 MATRIX 32605 n 1 rows 1 properties 1,3,4,5,7,9,10,11,12,13,14,15
+SYMBOLIC_COVER 1 splits 12 profile_leaves 13 contradiction_leaves 0 maximum_depth 6
+SYMBOLIC_COVER 2 splits 0 profile_leaves 1 contradiction_leaves 0 maximum_depth 0
+SYMBOLIC_COVER 3 splits 0 profile_leaves 1 contradiction_leaves 0 maximum_depth 0
+SYMBOLIC_COVER 4 splits 10 profile_leaves 11 contradiction_leaves 0 maximum_depth 6
+SYMBOLIC_COVER 5 splits 4 profile_leaves 5 contradiction_leaves 0 maximum_depth 4
+SYMBOLIC_COVER 6 splits 5 profile_leaves 6 contradiction_leaves 0 maximum_depth 5
+SYMBOLIC_COVER 7 splits 10 profile_leaves 11 contradiction_leaves 0 maximum_depth 7
+SYMBOLIC_COVER 8 splits 8 profile_leaves 9 contradiction_leaves 0 maximum_depth 6
+SYMBOLIC_COVER 9 splits 10 profile_leaves 11 contradiction_leaves 0 maximum_depth 7
+SYMBOLIC_COVER 10 splits 6 profile_leaves 7 contradiction_leaves 0 maximum_depth 4
+SYMBOLIC_COVER 11 splits 12 profile_leaves 13 contradiction_leaves 0 maximum_depth 7
+SYMBOLIC_COVER 12 splits 16 profile_leaves 17 contradiction_leaves 0 maximum_depth 9
+SYMBOLIC_COVER 13 splits 11 profile_leaves 12 contradiction_leaves 0 maximum_depth 7
+SYMBOLIC_COVER 14 splits 9 profile_leaves 9 contradiction_leaves 1 maximum_depth 6
+SYMBOLIC_COVER 15 splits 10 profile_leaves 11 contradiction_leaves 0 maximum_depth 6
+SYMBOLIC_COVER_TOTAL splits=123 profile_leaves=137 contradiction_leaves=1 maximum_depth=9
 MAXIMAL_OMISSION 1 26806,27022,27190,27406,31572,31738
 MAXIMAL_OMISSION 2 32605
 MAXIMAL_OMISSION 3 31738
