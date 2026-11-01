@@ -1,0 +1,5 @@
+FIDELITY_OK: source canonical identities and scaling for n=2..9; direct ordered sums for n=2..4
+ATTAINMENT_OK: 64 exact (n,d) pairs; includes k=1, d<n, d=n, d>n; 128 exact PD perturbations
+MERGING_OK: 60 rational feasible families; 55 strict merges; 59 annihilators removed; all principal-minor bounds exact
+SCOPE: finite exact checks and algebraic certificates; no proof of the universal dimension bound or Lean proof
+ALL_CHECKS_OK
