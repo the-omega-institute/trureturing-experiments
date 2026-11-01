@@ -1,0 +1,18 @@
+FIDELITY degeneracy example: counts=(4,3,3,3,1); first=4->0; tied second votes=(-2,2,2,2); backtracking returns 00000
+FIDELITY Table I k=5 t=2 N=7: total=120; weighted_failures=0; majority_failures=90
+FIDELITY Table I k=5 t=2 N=9: total=10; weighted_failures=0; majority_failures=0
+BASE k=9 t=4 N=71: column_errors=(28, 29, 33, 33, 32, 33, 32, 32, 32)
+BASE first_votes=(15, 13, 5, 5, 7, 5, 7, 7, 7); second_votes=(-28, 20, 20, 20, 20, 20, 20, 20); A_weights=2 (28 rows); B_weights=0 (43 rows)
+BASE forced decisions: 0->0 then 1->1; algorithm1=FAILURE; DFS stats={'choices': 47, 'invalid_budget': 24, 'states': 24}
+BASE independent assignment DAG, including invalid terminals: stats={'invalid_budget': 8, 'states': 25}; accepted_words=0
+BASE consistent centers among all 512 words: only 000000000; N_wc=71; N_wmaj=101; N_maj=113
+PADDING k=9: FAILURE; unique_center=0; states=24; invalid_budget=24
+PADDING k=10: FAILURE; unique_center=0; states=25; invalid_budget=24
+PADDING k=11: FAILURE; unique_center=0; states=51; invalid_budget=48
+PADDING k=12: FAILURE; unique_center=0; states=154; invalid_budget=144
+PADDING k=13: FAILURE; unique_center=0; states=617; invalid_budget=576
+PADDING k=14: FAILURE; unique_center=0; states=3086; invalid_budget=2880
+XOR k=9: 512 transmitted words checked; majority correct; weighted decoder FAILURE
+XOR k=10: 4 transmitted words checked; majority correct; weighted decoder FAILURE
+XOR k=12: 4 transmitted words checked; majority correct; weighted decoder FAILURE
+ALL_CHECKS_OK
