@@ -1,0 +1,7 @@
+fidelity A103528 n=1..11: [0, 0, 1, 0, 1, 2, 1, 0, 1, 2, 5]
+identity cases checked: 4095
+n=2: A=0, B=2, B_previous=1
+n=11: A=5, B=37, B_previous=26
+n=20: A=8, B=86, B_previous=69
+n=4096: A=0, B=45058, B_previous=45057
+ALL_CHECKS_OK
