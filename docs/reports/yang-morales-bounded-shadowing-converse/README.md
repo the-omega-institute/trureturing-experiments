@@ -16,6 +16,12 @@ python3 docs/reports/yang-morales-bounded-shadowing-converse/check.py
 The stored output is `check.out`. All evidence arithmetic uses integers and
 `fractions.Fraction`.
 
+- Fidelity to the proof of source Theorem A: reproduce its finite
+  variation-of-constants formula
+  $x_n=L^nx_0+\sum_{j=0}^{n-1}L^jr_{n-j}$ and its inverse-normalized
+  version $L^{-n}x_n=x_0+\sum_{i=1}^nL^{-i}r_i$ for $L(z)=2z$ on
+  $\mathbb C$, every five-letter error word over $\{-1/7,0,1/7\}$,
+  and times 1 through 5: 1,215 exact checks of both displayed identities.
 - Fidelity to source Lemma 5: four complex rotations (multipliers $1,-1,i,-i$)
   admit the radius-3 ramp obstruction with strict errors for the continuous
   tolerance $\delta(z)=1/(1+|z|^2)$. The ramp has 31 steps. Its endpoint

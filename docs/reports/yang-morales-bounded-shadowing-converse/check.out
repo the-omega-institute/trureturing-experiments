@@ -1,3 +1,4 @@
+FIDELITY_IDENTITY: source proof of Theorem A; 1215 exact variation-of-constants and inverse-normalization identities
 FIDELITY: source Lemma 5, four unit-modulus rotations; strict ramp errors and incompatible endpoint balls verified
 FAMILY_GRID: 11 stable rates x 12 unstable rates = 132 nondegenerate pairs
 BOUNDED: 5148 periodic coordinate error words; both recurrence directions, four endpoint lengths, zero-tracer bound <= 1/2

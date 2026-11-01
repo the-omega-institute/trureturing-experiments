@@ -26,6 +26,32 @@ def norm_squared(z):
     return z[0] ** 2 + z[1] ** 2
 
 
+def fidelity_source_identity():
+    """Reproduce the finite identity in the source's proof of Theorem A.
+
+    Its notation is r_i = x_i - L(x_{i-1}), bar{x}_n = L^{-n}(x_n):
+    x_n = L^n(x_0) + sum_{j=0}^{n-1} L^j(r_{n-j}),
+    bar{x}_n = x_0 + sum_{i=1}^{n} L^{-i}(r_i).
+    Use L(z)=2z on C and every five-letter rational error word below.
+    """
+    start = F(2, 3)
+    count = 0
+    for errors in product((F(-1, 7), F(0), F(1, 7)), repeat=5):
+        x = [start]
+        for error in errors:
+            x.append(2 * x[-1] + error)
+        for n in range(1, 6):
+            forward = 2 ** n * start + sum(
+                (2 ** j * errors[n - 1 - j] for j in range(n)), F(0))
+            normalized = start + sum(
+                (F(2) ** (-i) * errors[i - 1] for i in range(1, n + 1)), F(0))
+            assert x[n] == forward
+            assert F(2) ** (-n) * x[n] == normalized
+            count += 1
+    print(f"FIDELITY_IDENTITY: source proof of Theorem A; {count} exact "
+          "variation-of-constants and inverse-normalization identities")
+
+
 def fidelity_isometry():
     """Lemma 5's ramp obstruction for four genuine complex isometries.
 
@@ -159,6 +185,7 @@ def splice_obstruction(a, b, scale, delta_power):
 
 
 def main():
+    fidelity_source_identity()
     fidelity_isometry()
     stable = sorted({F(p, q) for q in range(2, 7) for p in range(1, q)})
     unstable = sorted({1 + F(p, q) for q in range(1, 6)
