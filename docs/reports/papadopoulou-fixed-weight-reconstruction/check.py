@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Exact checks for arXiv:2610.30001v1, Conjecture 1 item 2.
 
-Source fidelity: Section IV-C's degeneracy example and Table I, k=5,t=2.
+Source fidelity: Section IV-C's degeneracy example and its weighted-decoder table, k=5,t=2.
 Candidate: a 71-row exact-4 witness, padding, and translation by binary XOR.
 Only Python integers, finite sets, and exact combinatorial counts are used.
 This program is experimental evidence, not a Lean proof.
@@ -146,7 +146,7 @@ def fidelity():
             weighted_failures += decode(subset, 2)[0] != (0,) * 5
             majority_failures += majority(subset) != (0,) * 5
         assert (total, weighted_failures, majority_failures) == (expected_total, 0, expected_majority_failures)
-        print(f'FIDELITY Table I k=5 t=2 N={n}: total={total}; weighted_failures={weighted_failures}; majority_failures={majority_failures}')
+        print(f'FIDELITY weighted-decoder table k=5 t=2 N={n}: total={total}; weighted_failures={weighted_failures}; majority_failures={majority_failures}')
 
 
 def construct():
