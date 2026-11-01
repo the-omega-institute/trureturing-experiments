@@ -1,0 +1,23 @@
+SYMBOLIC source determinant B; three witness determinants B,S,T: OK
+SYMBOLIC 28 decodings; 12 cofactor types; exact loss inequalities: OK
+  type 1: (k**2 - k + 1, k**2 - k, -(k**2))
+  type 2: (k**2 - k, k**2 - k, -(k**2 - 1))
+  type 3: (k**2 - k, k**2 - k, -(k**2 - 2*k + 1))
+  type 4: (k**2 - k, k**2 - k, -(k**2 - k))
+  type 5: (k**2 - k, k**2 - k, -(k**2))
+  type 6: (k**2, k**2 - 2*k + 1, -(k**2 - k))
+  type 7: (k**2, k**2 - 2*k, -(k**2 - 2*k))
+  type 8: (k**2, k**2 - 2*k, -(k**2 - k))
+  type 9: (k**2, k**2 - 2*k, -(k**2))
+  type 10: (k**2, k**2 - k, -(k**2 - k))
+  type 11: (k**2, k**2 - k, -(k**2))
+  type 12: (k**2, k**2, -(k**2))
+EXHAUSTIVE k=3: row_pairs=4096; eligible=84; rows_checked=5376; ceiling=54; primitive_top3=[39, 36, 35]; all_values_ge_T=[54, 45, 39, 36, 35]
+EXHAUSTIVE k=4: row_pairs=15625; eligible=84; rows_checked=10500; ceiling=128; primitive_top3=[100, 96, 91]; all_values_ge_T=[128, 112, 100, 96, 91]
+EXHAUSTIVE k=5: row_pairs=46656; eligible=84; rows_checked=18144; ceiling=250; primitive_top3=[205, 200, 189]; all_values_ge_T=[250, 225, 205, 200, 189]
+EXHAUSTIVE k=6: row_pairs=117649; eligible=84; rows_checked=28812; ceiling=432; primitive_top3=[366, 360, 341]; all_values_ge_T=[432, 396, 366, 360, 341]
+EXHAUSTIVE k=7: row_pairs=262144; eligible=84; rows_checked=43008; ceiling=686; primitive_top3=[595, 588, 559]; all_values_ge_T=[686, 637, 595, 588, 559]
+EXHAUSTIVE k=8: row_pairs=531441; eligible=84; rows_checked=61236; ceiling=1024; primitive_top3=[904, 896, 855]; all_values_ge_T=[1024, 960, 904, 896, 855]
+EXHAUSTIVE k=9: row_pairs=1000000; eligible=84; rows_checked=84000; ceiling=1458; primitive_top3=[1305, 1296, 1241]; all_values_ge_T=[1458, 1377, 1305, 1296, 1241]
+WITNESSES k=3..1000: bounds, determinant identities, gcd=1, strict ordering: OK
+ALL_CHECKS_OK
