@@ -140,6 +140,61 @@ def independent_exp_coefficient(K, target):
     return terms.get(target, Q5())
 
 
+
+def wick_hermite_jet(n, d, e, c, alpha, beta):
+    """Independent Gaussian-moment check, including two weight derivatives.
+
+    After Gaussian exponential tilting, U=sqrt(2a)*W has covariance I+K_t
+    in the unphased variables. Work modulo the cube of t-1/2. Wick's
+    recurrence computes E[product_i H_n(U_i)] without exp(Q) coefficients.
+    """
+    zero = (Q5(),)*3
+    one = (Q5(F(1)), Q5(), Q5())
+    def add(x, y):
+        return tuple(a+b for a,b in zip(x,y))
+    def scale(x, a):
+        return tuple(v*a for v in x)
+    def mul(x, y):
+        return tuple(sum((x[j]*y[k-j] for j in range(k+1)),Q5()) for k in range(3))
+    V = []
+    for i in range(4):
+        row = []
+        for j in range(4):
+            if i == j:
+                row.append((1-d, alpha*(1 if i%2==0 else -1), Q5()))
+            elif i//2 == j//2:
+                row.append((-e, Q5(), -alpha))
+            elif i%2 == j%2:
+                row.append((c, beta*(1 if i%2==0 else -1), Q5()))
+            else:
+                row.append((c, Q5(), -beta))
+        V.append(row)
+    @lru_cache(None)
+    def moment(k):
+        if sum(k) == 0:
+            return one
+        i = next(i for i, x in enumerate(k) if x)
+        ans = zero
+        for j in range(4):
+            count = k[j] - (i == j)
+            if count > 0:
+                v = list(k)
+                v[i] -= 1
+                v[j] -= 1
+                ans = add(ans, scale(mul(V[i][j], moment(tuple(v))), count))
+        return ans
+    ans = zero
+    terms = [(n-2*r, F((-1)**r*factorial(n),2**r*factorial(r)*factorial(n-2*r)))
+             for r in range(n//2+1)]
+    for choices in product(terms,repeat=4):
+        powers = tuple(v[0] for v in choices)
+        coefficient = F(1)
+        for _, value in choices:
+            coefficient *= value
+        ans = add(ans,scale(moment(powers),coefficient))
+    return tuple(v/factorial(n)**4 for v in ans)
+
+
 def source_fidelity():
     q = s.symbols('q')
     a = 7/(3*s.sqrt(5))
@@ -206,6 +261,10 @@ def curvature_checks():
             assert C2.sign() == -1
             if n <= 4:
                 assert C == independent_exp_coefficient(K,target)
+                wick = wick_hermite_jet(n,d,e,c,alpha,beta)
+                assert wick[0] == C
+                assert wick[1] == C1
+                assert 2*wick[2] == C2
                 comparisons += 1
         # The projected exponent support includes 0 and each coordinate vector,
         # and its probability-weighted mean is exactly (1/2,1/2,1/2).
@@ -222,6 +281,7 @@ def curvature_checks():
         assert {(0,0,0),(1,0,0),(0,1,0),(0,0,1)} <= {v for v,_ in support}
         print('CANDIDATE: q='+str(q)+'; n=2,4,6,8: C>0, Cprime=0, Csecond<0; tilt support/mean OK')
     print('INDEPENDENT COEFFICIENT CROSS-CHECKS:',comparisons)
+    print('INDEPENDENT GAUSSIAN WICK CHECKS (value and two derivatives):',comparisons)
     # Separate symbolic chain rule for the norm identity J''=2<M,M''>
     # at M'=0, and the envelope-contact upper bound for its exponential rate.
     t,k,b = s.symbols('t k b',positive=True)
