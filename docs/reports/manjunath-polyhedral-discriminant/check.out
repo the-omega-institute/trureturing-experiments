@@ -1,0 +1,6 @@
+fidelity: Q0..Q4 = [(Fraction(3, 1), Fraction(9, 1)), (Fraction(1, 1), Fraction(8, 1)), (Fraction(-1, 1), Fraction(7, 1)), (Fraction(-1, 1), Fraction(4, 1)), (Fraction(0, 1), Fraction(0, 1))]
+fidelity: quartic discriminant support rows = 16
+root evaluation: (Fraction(-2, 1), Fraction(38, 1)) endpoint multiplicities: [2, 2]
+affine family: checked four rational (t, lambda) instances
+slope obstruction: F forces u=2 and G forces v=1
+ALL_CHECKS_OK
