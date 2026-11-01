@@ -1,0 +1,34 @@
+EXACT_BETTI m=1 q=3 beta={(0, 0): 1} fields_and_reg=[(0, 0), (2, 0), (3, 0)]
+EXACT_BETTI m=1 q=4 beta={(0, 0): 1} fields_and_reg=[(0, 0), (2, 0), (3, 0)]
+EXACT_BETTI m=1 q=5 beta={(0, 0): 1} fields_and_reg=[(0, 0), (2, 0), (3, 0)]
+EXACT_BETTI m=1 q=6 beta={(0, 0): 1} fields_and_reg=[(0, 0), (2, 0), (3, 0)]
+EXACT_BETTI m=2 q=1 beta={(0, 2): 2, (1, 4): 1} fields_and_reg=[(0, 3), (2, 3), (3, 3)]
+EXACT_BETTI m=2 q=2 beta={(0, 4): 3, (1, 6): 2} fields_and_reg=[(0, 5), (2, 5), (3, 5)]
+EXACT_BETTI m=2 q=3 beta={(0, 6): 4, (1, 8): 3} fields_and_reg=[(0, 7), (2, 7), (3, 7)]
+EXACT_BETTI m=2 q=4 beta={(0, 8): 5, (1, 10): 4} fields_and_reg=[(0, 9), (2, 9), (3, 9)]
+EXACT_BETTI m=2 q=5 beta={(0, 10): 6, (1, 12): 5} fields_and_reg=[(0, 11), (2, 11), (3, 11)]
+EXACT_BETTI m=2 q=6 beta={(0, 12): 7, (1, 14): 6} fields_and_reg=[(0, 13), (2, 13), (3, 13)]
+FIDELITY_OK: Theorem 4.7 at m=n=2,q=2..6; Corollary 4.9 at m=n=2,q=1..6
+SMALL_SETTLEMENT_OK: Q4.10 at m=1,2,q=3..6, over Q,F_2,F_3
+ISOLATED_LCM m=2 q=1 distinct_generators=2 below_L=2 degree_L=4
+ISOLATED_LCM m=2 q=2 distinct_generators=3 below_L=2 degree_L=6
+ISOLATED_LCM m=2 q=3 distinct_generators=4 below_L=2 degree_L=8
+ISOLATED_LCM m=2 q=4 distinct_generators=5 below_L=2 degree_L=10
+ISOLATED_LCM m=3 q=1 distinct_generators=6 below_L=2 degree_L=8
+ISOLATED_LCM m=3 q=2 distinct_generators=21 below_L=2 degree_L=14
+ISOLATED_LCM m=3 q=3 distinct_generators=55 below_L=2 degree_L=20
+ISOLATED_LCM m=3 q=4 distinct_generators=120 below_L=2 degree_L=26
+ISOLATED_LCM m=4 q=1 distinct_generators=24 below_L=2 degree_L=14
+ISOLATED_LCM m=4 q=2 distinct_generators=282 below_L=2 degree_L=26
+ISOLATED_LCM m=4 q=3 distinct_generators=2008 below_L=2 degree_L=38
+ISOLATED_LCM m=4 q=4 distinct_generators=10147 below_L=2 degree_L=50
+COLON_IDENTITY m=2 q=2 independent_sets=7 exponent_window=0..1 cases=56
+COLON_IDENTITY m=2 q=3 independent_sets=7 exponent_window=0..2 cases=207
+COLON_IDENTITY m=2 q=4 independent_sets=7 exponent_window=0..3 cases=544
+COLON_IDENTITY m=3 q=2 independent_sets=34 exponent_window=0..1 cases=5504
+COLON_IDENTITY m=3 q=3 independent_sets=34 exponent_window=0..2 cases=122472
+COLON_IDENTITY m=3 q=4 independent_sets=34 exponent_window=0..3 cases=1171456
+COLON_CASES_TOTAL 1300239
+INDUCTION_ARITHMETIC_OK: 2<=m,q<=30,0<=a<=m; exact integers
+SOURCE_CAUTION_CONFIRMED: xyz in J(K_3)^(2) but not J(K_3)^2; unused by square induction
+ALL_CHECKS_OK
