@@ -1,0 +1,9 @@
+# Optimized Hermite midpoint-curvature checks
+
+Run `python3 check.py` with Python 3 and SymPy. All arithmetic uses integers, rational numbers, symbolic radicals, or the exact ordered field Q(sqrt(5)). The stored standard output is `output.txt`.
+
+The source is Congyi Luo, *Near-Gaussian counterexamples to the Ball–Nayar–Tkocz entropy concavity conjecture*, [arXiv:2609.11418v2](https://arxiv.org/abs/2609.11418v2), especially Sections 4, 6–7 and Problem 10.3.
+
+The fidelity checks reproduce the source's optimized exponential-rate factorization and its endpoint values, and the triangular mass/variance correction matrix. Candidate checks evaluate the diagonal coefficient of the four-variable Gaussian generating function and its first two weight derivatives at the midpoint. For each q in {4/7, 29/50, 7/12, 41/70, 3/5, 3/4} and each even degree n in {2,4,6,8}, the coefficient is positive, its first derivative vanishes, and its second derivative is negative. Twelve coefficients are independently recomputed by expanding the ten separate exponential factors. The code also checks the projected tilt distribution's full lattice span and fixed mean, and the exact curvature of its total mass.
+
+These are finite checks of ingredients in a proposed analytic argument. They do not establish eventual positive entropy curvature, the differentiated local-limit expansion, differentiation of entropy under the integral, positivity or strong log-concavity of a whole sequence, or any Lean theorem. The q=4/7 computations do not claim a settlement at that endpoint. The proposed positive settlement needs a general argument over every q in the source interval and arbitrarily large degree; finite enumeration supplies no positive admission basis.

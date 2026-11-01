@@ -1,0 +1,12 @@
+FIDELITY: Section 7 factorization, exponential-rate identity, and endpoint values OK
+FIDELITY: exact mass/variance correction matrix and cancellation OK
+CANDIDATE: q=4/7; n=2,4,6,8: C>0, Cprime=0, Csecond<0; tilt support/mean OK
+CANDIDATE: q=29/50; n=2,4,6,8: C>0, Cprime=0, Csecond<0; tilt support/mean OK
+CANDIDATE: q=7/12; n=2,4,6,8: C>0, Cprime=0, Csecond<0; tilt support/mean OK
+CANDIDATE: q=41/70; n=2,4,6,8: C>0, Cprime=0, Csecond<0; tilt support/mean OK
+CANDIDATE: q=3/5; n=2,4,6,8: C>0, Cprime=0, Csecond<0; tilt support/mean OK
+CANDIDATE: q=3/4; n=2,4,6,8: C>0, Cprime=0, Csecond<0; tilt support/mean OK
+INDEPENDENT COEFFICIENT CROSS-CHECKS: 12
+CANDIDATE: exact log total-mass curvature = -2*(kappa+b)/kappa OK
+LIMITATION: no finite check proves the C2 local-limit remainder, entropy differentiation, or eventual entropy sign
+ALL_CHECKS_OK
