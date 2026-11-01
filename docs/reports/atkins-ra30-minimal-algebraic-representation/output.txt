@@ -1,0 +1,12 @@
+FIDELITY: second subconstituent has 42 vertices, intersection array {6,5,1;1,1,6}
+FIDELITY: all 28224 ordered-base/product conditions match the full 30_65 composition table
+FIDELITY: seven c-cliques of size six, b-perfect-matchings between each pair
+FIDELITY: 3 verified colour automorphisms generate ordered-pair orbits [42, 1260, 252, 210]
+FIDELITY: T^2 = 6I + D; T|W has annihilating polynomial X^2+X-6
+EXCLUSION: r=4, t=2, mu=3, k=10, d=33, m_plus=165/7
+EXCLUSION: r=5, t=2, mu=3/2, k=7, d=32, m_plus=224/11
+EXCLUSION: r=5, t=3, mu=8, k=33, d=136, m_plus=748/7
+EXCLUSION: r=3 has no integer t in 2 <= t <= r-2
+CHECK: 8 integral count-parameter sets below 42, no spectral survivor
+ATTAINMENT PARAMETERS: N=42, r=k=6, mu=1, W multiplicities 21 and 14
+ALL_CHECKS_OK
