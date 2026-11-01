@@ -1,0 +1,13 @@
+FIDELITY n=3 states=64 absorbing=17 max_shortest_flat_preparation=1 source=1
+FIDELITY n=4 states=4096 absorbing=89 max_shortest_flat_preparation=2 source=2
+CONSTRUCTION exhaustive n=1 states=1 max_constructed_length=0 bound=0
+CONSTRUCTION exhaustive n=2 states=4 max_constructed_length=0 bound=2
+CONSTRUCTION exhaustive n=3 states=64 max_constructed_length=3 bound=6
+CONSTRUCTION exhaustive n=4 states=4096 max_constructed_length=8 bound=12
+CONSTRUCTION sampled n=5 states=156 max_constructed_length=15 bound=20
+CONSTRUCTION sampled n=6 states=156 max_constructed_length=24 bound=30
+CONSTRUCTION sampled n=10 states=156 max_constructed_length=80 bound=90
+CONSTRUCTION sampled n=20 states=156 max_constructed_length=360 bound=380
+CONSTRUCTION sampled n=50 states=156 max_constructed_length=2400 bound=2450
+TOTAL exhaustive=4165 additional=780 seed=260704023 exact_integer_arithmetic=True
+ALL_CHECKS_OK
