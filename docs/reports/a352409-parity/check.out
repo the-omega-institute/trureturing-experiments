@@ -1,0 +1,10 @@
+FIDELITY: reproduced all 16 displayed A352409 terms and 7 displayed rows (degrees 0..6).
+SOURCE: independently generated a_0..a_39; both algorithms agree; all 40 are odd; all 40 defining diagonals vanish.
+FIRST_8 = [1, 3, 45, 1267, 51597, 2761539, 182885885, 14415019395]
+PARITY_REFERENCE: exact expansion, leading binomial identity, termwise even localization, and residual evenness passed for n=1..100.
+R_1..R_6 = [0, 2, 84, 3926, 224216, 15542152]
+DEGREE_m_UPDATE: T(H+x^m)=T(H)+1 passed for n=1..100.
+MOD3_TRIAGE: reproduced A352408 terms 1..6 and tested residual divisibility for n=1..100; finite evidence only.
+MOD3_TRIAGE: all 40 generated A352409 coefficients satisfy COMMENTS (1)..(3); no uniform mod3 theorem asserted.
+NORMALIZED_TRANSFER: 188 exact random pairs (seed 352409) passed modulo 2 and 3; p^k/k localization checked for k=1..256.
+ALL_CHECKS_OK
