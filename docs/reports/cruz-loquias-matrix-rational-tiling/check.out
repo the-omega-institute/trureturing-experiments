@@ -1,0 +1,25 @@
+FIDELITY v1 Section 4.2 path 443: [(Fraction(0, 1), Fraction(0, 1)), (Fraction(2, 1), Fraction(0, 1)), (Fraction(1, 1), Fraction(2, 1)), (Fraction(-5, 1), Fraction(3, 1))]
+PARITY recurrence: all four endpoint parities, odd m=9..101, exact floor-error formula verified
+FAMILY m=9: width_bound=64/63; first_finite_tail_certificate=(3, Fraction(1880, 1701)); d=2..5 overlap_bounds>0; printed_power_zero_scale=9/2
+FAMILY m=11: width_bound=34/33; first_finite_tail_certificate=(3, Fraction(12800, 11979)); d=2..5 overlap_bounds>0; printed_power_zero_scale=11/2
+FAMILY m=13: width_bound=148/143; first_finite_tail_certificate=(2, Fraction(1884, 1859)); d=2..5 overlap_bounds>0; printed_power_zero_scale=13/2
+FAMILY m=15: width_bound=202/195; first_finite_tail_certificate=(2, Fraction(2956, 2925)); d=2..5 overlap_bounds>0; printed_power_zero_scale=15/2
+FAMILY m=17: width_bound=88/85; first_finite_tail_certificate=(2, Fraction(4432, 4335)); d=2..5 overlap_bounds>0; printed_power_zero_scale=17/2
+FAMILY m=19: width_bound=334/323; first_finite_tail_certificate=(2, Fraction(6248, 6137)); d=2..5 overlap_bounds>0; printed_power_zero_scale=19/2
+FAMILY m=21: width_bound=412/399; first_finite_tail_certificate=(2, Fraction(2860, 2793)); d=2..5 overlap_bounds>0; printed_power_zero_scale=21/2
+FAMILY m=23: width_bound=166/161; first_finite_tail_certificate=(2, Fraction(11332, 11109)); d=2..5 overlap_bounds>0; printed_power_zero_scale=23/2
+FAMILY m=25: width_bound=592/575; first_finite_tail_certificate=(2, Fraction(14712, 14375)); d=2..5 overlap_bounds>0; printed_power_zero_scale=25/2
+FAMILY m=27: width_bound=694/675; first_finite_tail_certificate=(2, Fraction(18592, 18225)); d=2..5 overlap_bounds>0; printed_power_zero_scale=27/2
+FAMILY m=29: width_bound=268/261; first_finite_tail_certificate=(2, Fraction(23212, 22707)); d=2..5 overlap_bounds>0; printed_power_zero_scale=29/2
+FAMILY m=31: width_bound=922/899; first_finite_tail_certificate=(2, Fraction(28412, 27869)); d=2..5 overlap_bounds>0; printed_power_zero_scale=31/2
+FAMILY m=33: width_bound=1048/1023; first_finite_tail_certificate=(2, Fraction(11488, 11253)); d=2..5 overlap_bounds>0; printed_power_zero_scale=33/2
+FAMILY m=35: width_bound=394/385; first_finite_tail_certificate=(2, Fraction(41176, 40425)); d=2..5 overlap_bounds>0; printed_power_zero_scale=35/2
+FAMILY m=37: width_bound=1324/1295; first_finite_tail_certificate=(2, Fraction(48852, 47915)); d=2..5 overlap_bounds>0; printed_power_zero_scale=37/2
+FAMILY m=39: width_bound=1474/1443; first_finite_tail_certificate=(2, Fraction(57268, 56277)); d=2..5 overlap_bounds>0; printed_power_zero_scale=39/2
+FAMILY m=41: width_bound=544/533; first_finite_tail_certificate=(2, Fraction(66760, 65559)); d=2..5 overlap_bounds>0; printed_power_zero_scale=41/2
+FAMILY m=43: width_bound=1798/1763; first_finite_tail_certificate=(2, Fraction(77072, 75809)); d=2..5 overlap_bounds>0; printed_power_zero_scale=43/2
+FAMILY m=45: width_bound=1972/1935; first_finite_tail_certificate=(2, Fraction(29524, 29025)); d=2..5 overlap_bounds>0; printed_power_zero_scale=45/2
+FAMILY m=47: width_bound=718/705; first_finite_tail_certificate=(2, Fraction(100972, 99405)); d=2..5 overlap_bounds>0; printed_power_zero_scale=47/2
+FAMILY m=49: width_bound=2344/2303; first_finite_tail_certificate=(2, Fraction(114672, 112847)); d=2..5 overlap_bounds>0; printed_power_zero_scale=49/2
+SCOPE finite checks only: odd m=9..49, depths<=12, dyadic r<=6 |t|<=50, integers |n|<=300; no floating point
+ALL_CHECKS_OK
