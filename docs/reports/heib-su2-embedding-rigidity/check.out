@@ -1,0 +1,14 @@
+FIDELITY: Example 26 nonlinear sl2 brackets hold in exact PBW arithmetic;
+          its compact triple fails the fixed dagger, while its Casimir equals Q.
+PBW CHECK: 1093 words of length 0..6; every first inversion agrees; dagger squared is identity.
+FIDELITY: Lemma 31 polynomial spin matrices, n=0..8, satisfy cyclic brackets
+          and skew-adjointness for the source factorial Gram matrix.
+SETTLEMENT CHECK: their positive Casimir is n(n+2)/4, n=0..8.
+SETTLEMENT CHECK: all 96 irreducible-dimension partitions in dimensions 1..9 obey the Casimir bound.
+SETTLEMENT CHECK: all 531441 affine triples with real generator coefficients
+          in {-1,0,1} and imaginary scalar coefficients in {-i,0,i}:
+          exactly 25 Lie maps, 24 embeddings; every embedding has the canonical image.
+SETTLEMENT CHECK: all 125 central-polynomial radial triples of polynomial degree <=2,
+          coefficients -2..2: only zero and the canonical embedding satisfy the brackets.
+LIMIT: finite checks support the route; the full unbounded conjecture is not proved by this program.
+ALL_CHECKS_OK
