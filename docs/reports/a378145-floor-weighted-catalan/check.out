@@ -1,0 +1,10 @@
+FIDELITY: all 66 published DATA terms match the closed formula
+SOURCE_ROW_6: [42, 84, 70, 42, 19, 6, 1]
+FIDELITY: defining Riordan series matches 3321 triangle entries
+FIDELITY: 3240 coefficients above the diagonal vanish
+FIDELITY: all 3160 source recurrence instances match
+TARGET: all 81 identities for 0 <= n <= 80 hold exactly
+FIRST_11_WEIGHTED_SUMS: [1, 2, 5, 14, 42, 132, 429, 1430, 4862, 16796, 58786]
+LAST_WEIGHTED_SUM_n_80: 4462290049988320482463241297506133183499654740
+SCOPE: finite exact checks only; the universal statement remains a proof obligation
+ALL_CHECKS_OK
