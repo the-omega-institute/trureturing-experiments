@@ -12,7 +12,8 @@ python3 check.py > check.out
 
 The program uses exact rational and polynomial arithmetic. It reproduces
 Example 7.2's two-point formula and Lemma 5.2 at zero on 27 configurations.
-It certifies 108 determinants positive by exact Bernstein coefficients after
+It checks the literal dotted-fragment definition against its coordinatewise
+implementation, certifies 108 determinants positive by exact Bernstein coefficients after
 removing endpoint factors, checks 205,160 instances of Lemma 4.7's distance
 identity, and integrates the one-dimensional interval weight measure symbolically
 in all three position regimes. The configurations include every nonempty subset

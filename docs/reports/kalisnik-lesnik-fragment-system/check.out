@@ -27,6 +27,7 @@ CASE: N=2, F=((0, 0), (2, 0), (-2, 0), (0, 2), (0, -2)), four radii, determinant
 CASE: N=3, F=((0, 0, 0),), four radii, determinant positive for all 0<t<1: OK
 CASE: N=3, F=((0, 0, 0), (2, 0, 0)), four radii, determinant positive for all 0<t<1: OK
 CASE: N=3, F=((0, 0, 0), (2, 2, 2)), four radii, determinant positive for all 0<t<1: OK
+FIDELITY: Definition 4.5 literal dotted-fragment comparison: 1154 indices OK
 FIDELITY: Lemma 5.2 (r=0) on 27 configurations: OK
 SETTLEMENT CHECK: 108 exact determinants; 205160 distance identities; N=0 empty matrix: OK
 ALL_CHECKS_OK

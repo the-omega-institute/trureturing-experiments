@@ -136,9 +136,16 @@ def small_cases():
               ((Q(0),Q(0),Q(0)),),
               ((Q(0),Q(0),Q(0)),(Q(2),Q(0),Q(0))),
               ((Q(0),Q(0),Q(0)),(Q(2),Q(2),Q(2)))]
-    determinants = projections = zero = 0
+    determinants = projections = zero = dotted_count = 0
     for f in cases:
         g = half_gap(f)
+        # Compare the coordinatewise implementation to Definition 4.5's literal
+        # sign(p + chg(F)/2*s - q), using its positive-radius equivalent at infinity.
+        h = Q(1) if g == S.oo else g/2
+        for q, p, s in product(f, f, directions(len(f[0]))):
+            literal = tuple(sign(pj+h*sj-qj) for pj,sj,qj in zip(p,s,q))
+            assert dotted(p,s,q) == literal
+            dotted_count += 1
         radii = (Q(0),Q(1,4),Q(1,2),Q(3,4)) if g == S.oo else (
             Q(0),g/4,g/2,3*g/4)
         for r in radii:
@@ -153,6 +160,7 @@ def small_cases():
               % (len(f[0]),f), flush=True)
     # N=0 gives Dir_0 empty and determinant of the empty matrix equal to 1.
     assert directions(0) == [] and S.det(S.zeros(0)) == 1
+    print('FIDELITY: Definition 4.5 literal dotted-fragment comparison: %d indices OK' % dotted_count)
     print('FIDELITY: Lemma 5.2 (r=0) on %d configurations: OK' % zero)
     print('SETTLEMENT CHECK: %d exact determinants; %d distance identities; N=0 empty matrix: OK'
           % (determinants, projections))
