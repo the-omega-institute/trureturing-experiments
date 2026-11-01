@@ -45,7 +45,7 @@ def preimage_of_boundary(y):
         a = tuple(v + (F(2) * t if i != zero else F(0)) for i, v in enumerate(y))
     assert sum(a, F(0)) >= 1
     assert sum(a, F(0)) == 1 or any(v == 0 for v in a)
-    if a[-1] == 0:
+    if q == 1 or a[-1] == 0:
         x = a[:-1]
     else:
         zero = next(i for i in range(d) if a[i] == 0)

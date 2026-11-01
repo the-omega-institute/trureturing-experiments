@@ -1,0 +1,4 @@
+d=1: exact forward-grid points=7, boundary-inverse points=15
+d=2: exact forward-grid points=49, boundary-inverse points=30
+d=3: exact forward-grid points=343, boundary-inverse points=50
+d=4: exact forward-grid points=2401, boundary-inverse points=77
