@@ -1,0 +1,23 @@
+{
+  "classical_countermodel_checks": 746928,
+  "classical_equivalence_checks": 1012284,
+  "distinct_subformulas": 104,
+  "formulas": 91,
+  "guarded_subformula_checks": 5295348,
+  "models": {
+    "1": {
+      "S4": 4,
+      "T": 4,
+      "arbitrary": 16
+    },
+    "2": {
+      "S4": 328,
+      "T": 328,
+      "arbitrary": 5554
+    }
+  },
+  "root_checks": 1012284,
+  "source_fixed_point_checks": 1012284,
+  "source_monotonicity_checks": 1144962
+}
+ALL_CHECKS_OK
