@@ -1,0 +1,12 @@
+FIDELITY A249833: all 23 displayed coefficients agree
+FIDELITY A249833: displayed log(U) expansion through degree 10 agrees
+FIDELITY A249833: displayed U^2 and U^2 log(U) expansions agree
+FIDELITY A370382: all 55 displayed entries agree
+IDENTITY: a(n+1)=B(n,0) for every 0<=n<40; a(0)=1
+INTEGRALITY: factorial-normalized source coefficients 0..40 are integers
+INITIAL: 1,1,2,7,34,210,1574,13866
+a(22)=129593625015740116555072
+a(40)=9918583024110591247271365395191029156723765558988800
+Arithmetic: fractions.Fraction, integer binomial coefficients and factorials only
+Scope: finite consistency checks; no infinite-identity proof is claimed
+ALL_CHECKS_OK
