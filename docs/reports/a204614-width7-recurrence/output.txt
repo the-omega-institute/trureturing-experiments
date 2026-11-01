@@ -1,0 +1,9 @@
+TRANSFER_OK rows=128 states=265 initial_pairs=2470 edges=3051
+INDEPENDENT_BIT_CHECK_OK all_states_weights_edges; three_rows=62031
+SOURCE_FIDELITY_OK displayed_terms=14 bfile_terms=210 indices=1..210
+EXACT_RESIDUAL_BASE_OK 265_zero_residuals indices=48..312
+PREFIX_SUFFIX_AGREEMENT_OK b=T^4*P(T)*1; r(k)=alpha*T^k*b
+STRICT_BOUNDARY_OK residual_at_n47=-79321900236876546048
+CERTIFICATE_SHA256 cdfd396898d80e1a4767bbfef378164009a33a0a236bc288cf19b12f86702b08
+SCOPE exact_finite_checks; unbounded argument and Lean proof not executed
+ALL_CHECKS_OK
