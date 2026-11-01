@@ -1,0 +1,4 @@
+OEIS values n=7..25: exact determinant match
+Derangement recurrence and finite alternating-sum formula: exact match through n=40
+K_n = (-1)^(n+1) * (6*(n-5)! + d_(n-4) + d_(n-5)): exact match for 7<=n<=40
+ALL_CHECKS_OK
