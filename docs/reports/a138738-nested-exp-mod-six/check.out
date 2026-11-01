@@ -1,0 +1,9 @@
+FIDELITY: all 22 DATA terms (n=0..21) match OEIS revision 6
+FIDELITY: displayed EGF expansion through degree 5 matches
+SETTLEMENT CHECK: integral a(n) == 1 (mod 6) for n=0..40
+STABILIZATION CHECK: depth n agrees at coefficient n for n=0..40; depths 40,41,45 agree through degree 40
+INDEPENDENT EXP CHECK: direct power sum agrees through degree 24
+MULTIPLICITY CHECK: c(n) agrees for n=1..20; 490 weighted-partition terms checked
+RECURRENCE CHECK: a(n+1)=sum binom(n,j)c(j+1)a(n-j) for n=0..39
+SHARPNESS CHECK: a(3)-1=6; distinction from A138292: a(6)=1561
+ALL_CHECKS_OK
