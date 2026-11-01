@@ -1,0 +1,4 @@
+fidelity: A126364 n=1..27 and A025565 n=1..27 reproduced exactly
+defect identity and equality/failure threshold checked for every n=2..200
+n=12 witness: a(12)=1161634, 3*a(11)-b(12)=1161632, defect=2
+ALL_CHECKS_OK
