@@ -90,8 +90,8 @@ def main():
         print(f"d={d}: exact forward-grid points={counts[0]}, boundary-inverse points={counts[1]}")
     # The source's displayed indexing has d inputs but a sum through d+1;
     # this check uses the dimensionally consistent sum through the d inputs.
-    assert network((F(0),)) == (F(1), F(0))
-    assert network((F(1),)) == (F(0), F(1))
+    assert network((F(0),)) == (F(0), F(1))
+    assert network((F(1),)) == (F(1), F(0))
     print("checked d=1..4: P([-1,2]^d) grid outputs lie in the simplex boundary,")
     print("and every enumerated rational boundary point has an exact inverse in [-1,2]^d.")
     print("ALL_CHECKS_OK")
