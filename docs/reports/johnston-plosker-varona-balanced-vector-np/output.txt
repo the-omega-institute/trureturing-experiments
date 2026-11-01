@@ -1,0 +1,11 @@
+FIDELITY balanced-partition counts, totals 1..9: [1, 2, 2, 4, 3, 7, 6, 13, 12]
+ORACLE explicit ternary rows versus generating-function Gram: 125 cases
+EXTENSION appended entry iff signed sum: 238 cases
+COMPLETION ternary rows, exact rank, auxiliary barrier: 234 cases
+REDUCTION full final-vector recognition (also sorted): 72 cases
+NO-CARRY subset sum iff bounded-two subset sum: 282 cases
+COMPOSITE (1,) target 0 dimension 17 balanced True
+COMPOSITE (1,) target 1 dimension 17 balanced True
+COMPOSITE (1,) target 2 dimension 17 balanced False
+BINARY SCALE max input bits 127 completion dimension 390 max output bits 129
+ALL_CHECKS_OK
