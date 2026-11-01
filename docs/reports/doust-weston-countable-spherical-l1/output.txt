@@ -1,0 +1,5 @@
+FIDELITY: section 5 dyadic antipodal pairs plus north pole; k=0..12; 729 ordered pairs; infinite tails summed exactly
+CUT_IDENTITY: regular 2n equatorial points plus both poles; n=1..16; 7136 ordered pairs; exact half-lune weights
+DEGENERACIES: all 64 subsets of the six-point octahedron, including empty/singleton/antipodal sets; 672 ordered pairs
+NEGATIVE_CONTROL: half-scale cut weights fail the antipodal distance
+ALL_CHECKS_OK
