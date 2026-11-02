@@ -1,0 +1,4 @@
+decomposition_and_kernel_checks: OK
+bounded_width_obstruction_checks: OK
+cyclic_kernel_bound_checks: OK
+ALL_CHECKS_OK
