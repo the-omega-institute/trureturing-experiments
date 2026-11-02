@@ -120,7 +120,7 @@ def main():
     print(f"exact checks: {len(cases)} spectra/exponents, including n=2,3,4")
 
     # The source's sharp endpoint family A = E_(1,n) attains equality.
-    for lambdas in cases[:3] and [cases[0][0], cases[1][0], cases[2][0]]:
+    for lambdas in [cases[0][0], cases[1][0], cases[2][0]]:
         n = len(lambdas)
         e = [[(Q(0), Q(0)) for _ in range(n)] for _ in range(n)]
         e[0][n - 1] = (Q(1), Q(0))
