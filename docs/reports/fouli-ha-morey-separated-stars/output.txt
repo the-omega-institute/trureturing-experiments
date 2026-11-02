@@ -1,0 +1,44 @@
+Python 3.14.8; SymPy 1.14.0
+FIDELITY QQ: Example 3.6, J:b=(a,b,c,e); (a,b,e) minimal; embedded extension verified
+FAMILY r=2 s=2 QQ: star; J:x1=m; x1!=0; old primes=A,B; m!=A+(f),B+(f); I:f=I; YT=Y intersect T intersect n^2
+FAMILY r=2 s=3 QQ: star; J:x1=m; x1!=0; old primes=A,B; m!=A+(f),B+(f); I:f=I; YT=Y intersect T intersect n^2
+FAMILY r=2 s=4 QQ: star; J:x1=m; x1!=0; old primes=A,B; m!=A+(f),B+(f); I:f=I; YT=Y intersect T intersect n^2
+FAMILY r=3 s=2 QQ: star; J:x1=m; x1!=0; old primes=A,B; m!=A+(f),B+(f); I:f=I; YT=Y intersect T intersect n^2
+FAMILY r=3 s=3 QQ: star; J:x1=m; x1!=0; old primes=A,B; m!=A+(f),B+(f); I:f=I; YT=Y intersect T intersect n^2
+FAMILY r=3 s=4 QQ: star; J:x1=m; x1!=0; old primes=A,B; m!=A+(f),B+(f); I:f=I; YT=Y intersect T intersect n^2
+FAMILY r=4 s=2 QQ: star; J:x1=m; x1!=0; old primes=A,B; m!=A+(f),B+(f); I:f=I; YT=Y intersect T intersect n^2
+FAMILY r=4 s=3 QQ: star; J:x1=m; x1!=0; old primes=A,B; m!=A+(f),B+(f); I:f=I; YT=Y intersect T intersect n^2
+FAMILY r=4 s=4 QQ: star; J:x1=m; x1!=0; old primes=A,B; m!=A+(f),B+(f); I:f=I; YT=Y intersect T intersect n^2
+FIDELITY GF(2): Example 3.6, J:b=(a,b,c,e); (a,b,e) minimal; embedded extension verified
+FAMILY r=2 s=2 GF(2): star; J:x1=m; x1!=0; old primes=A,B; m!=A+(f),B+(f); I:f=I; YT=Y intersect T intersect n^2
+FAMILY r=2 s=3 GF(2): star; J:x1=m; x1!=0; old primes=A,B; m!=A+(f),B+(f); I:f=I; YT=Y intersect T intersect n^2
+FAMILY r=2 s=4 GF(2): star; J:x1=m; x1!=0; old primes=A,B; m!=A+(f),B+(f); I:f=I; YT=Y intersect T intersect n^2
+FAMILY r=3 s=2 GF(2): star; J:x1=m; x1!=0; old primes=A,B; m!=A+(f),B+(f); I:f=I; YT=Y intersect T intersect n^2
+FAMILY r=3 s=3 GF(2): star; J:x1=m; x1!=0; old primes=A,B; m!=A+(f),B+(f); I:f=I; YT=Y intersect T intersect n^2
+FAMILY r=3 s=4 GF(2): star; J:x1=m; x1!=0; old primes=A,B; m!=A+(f),B+(f); I:f=I; YT=Y intersect T intersect n^2
+FAMILY r=4 s=2 GF(2): star; J:x1=m; x1!=0; old primes=A,B; m!=A+(f),B+(f); I:f=I; YT=Y intersect T intersect n^2
+FAMILY r=4 s=3 GF(2): star; J:x1=m; x1!=0; old primes=A,B; m!=A+(f),B+(f); I:f=I; YT=Y intersect T intersect n^2
+FAMILY r=4 s=4 GF(2): star; J:x1=m; x1!=0; old primes=A,B; m!=A+(f),B+(f); I:f=I; YT=Y intersect T intersect n^2
+FIDELITY GF(3): Example 3.6, J:b=(a,b,c,e); (a,b,e) minimal; embedded extension verified
+FAMILY r=2 s=2 GF(3): star; J:x1=m; x1!=0; old primes=A,B; m!=A+(f),B+(f); I:f=I; YT=Y intersect T intersect n^2
+FAMILY r=2 s=3 GF(3): star; J:x1=m; x1!=0; old primes=A,B; m!=A+(f),B+(f); I:f=I; YT=Y intersect T intersect n^2
+FAMILY r=2 s=4 GF(3): star; J:x1=m; x1!=0; old primes=A,B; m!=A+(f),B+(f); I:f=I; YT=Y intersect T intersect n^2
+FAMILY r=3 s=2 GF(3): star; J:x1=m; x1!=0; old primes=A,B; m!=A+(f),B+(f); I:f=I; YT=Y intersect T intersect n^2
+FAMILY r=3 s=3 GF(3): star; J:x1=m; x1!=0; old primes=A,B; m!=A+(f),B+(f); I:f=I; YT=Y intersect T intersect n^2
+FAMILY r=3 s=4 GF(3): star; J:x1=m; x1!=0; old primes=A,B; m!=A+(f),B+(f); I:f=I; YT=Y intersect T intersect n^2
+FAMILY r=4 s=2 GF(3): star; J:x1=m; x1!=0; old primes=A,B; m!=A+(f),B+(f); I:f=I; YT=Y intersect T intersect n^2
+FAMILY r=4 s=3 GF(3): star; J:x1=m; x1!=0; old primes=A,B; m!=A+(f),B+(f); I:f=I; YT=Y intersect T intersect n^2
+FAMILY r=4 s=4 GF(3): star; J:x1=m; x1!=0; old primes=A,B; m!=A+(f),B+(f); I:f=I; YT=Y intersect T intersect n^2
+FIDELITY GF(5): Example 3.6, J:b=(a,b,c,e); (a,b,e) minimal; embedded extension verified
+FAMILY r=2 s=2 GF(5): star; J:x1=m; x1!=0; old primes=A,B; m!=A+(f),B+(f); I:f=I; YT=Y intersect T intersect n^2
+FAMILY r=2 s=3 GF(5): star; J:x1=m; x1!=0; old primes=A,B; m!=A+(f),B+(f); I:f=I; YT=Y intersect T intersect n^2
+FAMILY r=2 s=4 GF(5): star; J:x1=m; x1!=0; old primes=A,B; m!=A+(f),B+(f); I:f=I; YT=Y intersect T intersect n^2
+FAMILY r=3 s=2 GF(5): star; J:x1=m; x1!=0; old primes=A,B; m!=A+(f),B+(f); I:f=I; YT=Y intersect T intersect n^2
+FAMILY r=3 s=3 GF(5): star; J:x1=m; x1!=0; old primes=A,B; m!=A+(f),B+(f); I:f=I; YT=Y intersect T intersect n^2
+FAMILY r=3 s=4 GF(5): star; J:x1=m; x1!=0; old primes=A,B; m!=A+(f),B+(f); I:f=I; YT=Y intersect T intersect n^2
+FAMILY r=4 s=2 GF(5): star; J:x1=m; x1!=0; old primes=A,B; m!=A+(f),B+(f); I:f=I; YT=Y intersect T intersect n^2
+FAMILY r=4 s=3 GF(5): star; J:x1=m; x1!=0; old primes=A,B; m!=A+(f),B+(f); I:f=I; YT=Y intersect T intersect n^2
+FAMILY r=4 s=4 GF(5): star; J:x1=m; x1!=0; old primes=A,B; m!=A+(f),B+(f); I:f=I; YT=Y intersect T intersect n^2
+SCOPE: 4 source-fidelity cases; 36 family instances (2<=r,s<=4), exact Q/F2/F3/F5 arithmetic
+BOUNDARY: finite checks support the supplied characteristic-free family argument; they are not a Lean proof
+ALL_CHECKS_OK
