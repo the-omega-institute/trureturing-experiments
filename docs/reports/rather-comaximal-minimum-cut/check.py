@@ -110,7 +110,7 @@ def enumerate_cuts(n):
 
 
 def main():
-    # Table 2 in the TeX: exact kappa and minimum degree are the listed integers.
+    # Table 3 in the TeX: exact kappa and minimum degree are the listed integers.
     source = [fidelity(n, d) for n, d in
               [(6, 1), (30, 2), (42, 2), (70, 4), (210, 8), (2310, 48)]]
     cases = []
@@ -123,7 +123,7 @@ def main():
                                for x in cases if x['n'] in seed_cases)
     require(seed_delta_deletions == 149844, 'search-seat count independently reproduced')
     result = {
-        'source': 'arXiv:2605.01565v1, Proposition 3.2, Theorem 3.3, Lemma 5.1, Table 2',
+        'source': 'arXiv:2605.01565v1, Proposition 3.2, Theorem 3.3, Lemma 5.1, Table 3',
         'arithmetic': 'exact Python integers and gcd; no floating point',
         'fidelity': source,
         'classification_scope': 'every squarefree composite integer 2 <= n <= 70; all deletions of size <= delta',
