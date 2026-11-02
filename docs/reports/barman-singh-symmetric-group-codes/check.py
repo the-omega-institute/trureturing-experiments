@@ -170,9 +170,65 @@ def dominance_and_support_checks():
           "0<=a<=50, 0<=j<=48")
 
 
+
+
+def incidence_checks():
+    """Check the Boolean-lattice commutator and transfer-matrix regularity."""
+    identities = 0
+    for n in range(2, 11):
+        for r in range((n - 1) // 2 + 1):
+            levels = list(combinations(range(n), r))
+            for S_tuple in levels:
+                S = frozenset(S_tuple)
+                du = Counter()
+                ud = Counter()
+                for x in set(range(n)) - S:
+                    T = S | {x}
+                    for y in T:
+                        du[tuple(sorted(T - {y}))] += 1
+                for y in S:
+                    R = S - {y}
+                    for x in set(range(n)) - R:
+                        ud[tuple(sorted(R | {x}))] += 1
+                diff = {T: du[T] - ud[T] for T in du.keys() | ud.keys()
+                        if du[T] != ud[T]}
+                assert diff == {S_tuple: n - 2 * r}
+                assert n - 2 * r > 0
+                identities += 1
+    transfers = 0
+    for n in range(2, 8):
+        for shape in partitions(n):
+            if len(shape) < 2:
+                continue
+            # Move one point from the last block into the first (largest) block.
+            a, b = shape[0], shape[-1]
+            target = (a + 1,) + shape[1:-1] + ((b - 1,) if b > 1 else ())
+            source_cosets = {coset_key(p, shape)
+                             for p in permutations(range(n))}
+            target_cosets = {coset_key(p, target)
+                             for p in permutations(range(n))}
+            rows = Counter()
+            for P in source_cosets:
+                for x in P[-1]:
+                    first = tuple(sorted(P[0] + (x,)))
+                    last = tuple(y for y in P[-1] if y != x)
+                    Q = (first,) + P[1:-1] + ((last,) if last else ())
+                    assert Q in target_cosets
+                    rows[Q] += 1
+            assert len(rows) == len(target_cosets)
+            assert set(rows.values()) == {a + 1}
+            assert len(source_cosets) * b == len(target_cosets) * (a + 1)
+            transfers += 1
+    print(f"Boolean-lattice commutator: {identities} exact basis-vector identities, "
+          "2<=N<=10, 0<=r<N/2")
+    print(f"One-box transfer: {transfers} Young-partition incidence matrices, "
+          "degrees 2..7; row/column sums agree exactly")
+
+
 if __name__ == '__main__':
     evaluator_crosscheck()
     fidelity()
     small_conjecture()
     dominance_and_support_checks()
+    incidence_checks()
     print('ALL_CHECKS_OK')

@@ -12,4 +12,6 @@ Conjecture: n=7, lambda=(1, 1, 1, 1, 1, 1, 1), unions=4943, integral-candidate-r
 Conjecture: all 8888 allowed union/lambda cases for n=5..7 pass; all 5<=k<=length(lambda) and all r>=0 are covered
 Hook dominance: 59119 cases, 5<=n<=25, 1<=j<length(lambda)
 Integer-support polynomial: 2499 exact sign/identity checks, 0<=a<=50, 0<=j<=48
+Boolean-lattice commutator: 847 exact basis-vector identities, 2<=N<=10, 0<=r<N/2
+One-box transfer: 37 Young-partition incidence matrices, degrees 2..7; row/column sums agree exactly
 ALL_CHECKS_OK

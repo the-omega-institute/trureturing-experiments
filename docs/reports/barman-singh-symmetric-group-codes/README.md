@@ -19,6 +19,9 @@ integers and `fractions.Fraction`. The complete output is `check-output.txt`.
   The moment argument is not used to filter these cases.
 - The hook-dominance inequality passes 59,119 cases through degree 25.
   The support polynomial identity and its signs pass 2,499 integer cases.
+- The Boolean-lattice up/down commutator is checked on every basis vector in
+  degrees 2 through 10 below the middle level. One-box transfer incidence
+  matrices have their required row and column sums in degrees 2 through 7.
 
 These are finite checks. They do not prove the unbounded conjecture, establish
 Young's rule, or verify any Lean proof. The planned positive settlement uses a
