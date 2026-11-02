@@ -35,5 +35,5 @@ The result is an exact algebra check supporting a preregistration outline. No
 Lean proof, statistical simulation, or claim of exhaustive literature novelty
 is part of this artifact.
 
-Code and report: MIT, under the repository license. Source-paper rights remain
+Code and report: Apache-2.0, under the repository license. Source-paper rights remain
 with its author and the arXiv distribution license.
