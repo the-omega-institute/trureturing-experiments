@@ -84,6 +84,14 @@ def counterexample():
         zero(identity)
     print('COUNTEREXAMPLE: five membership-certificate residuals = [0, 0, 0, 0, 0] over Z[t,y,z,w]')
     assert sp.expand(H.subs(t, 0)) == 2*y
+    # These four elements are in I_2; at the origin their cotangent vectors
+    # are independent. Together with I_2 contained in the maximal ideal,
+    # this supplies the generator-bound obstruction after localization.
+    first_order = sp.Matrix([[sp.diff(q, v).subs({t: 0, y: 0, z: 0, w: 0})
+                              for v in (t, y, z, w)]
+                             for q in (t*a, z*a, w*a, H)])
+    assert first_order.det() in (2, -2)
+    print('GENERATOR BOUND: four elements t*a,z*a,w*a,H in I_2 have cotangent determinant', first_order.det(), 'at the origin')
     J = sp.groebner((y, z*z, (w-1)*z, w*(w-1)), y, z, w, domain=sp.QQ)
     assert J.is_zero_dimensional
     # Verify the stated rewrite relations and all products of the proposed basis.

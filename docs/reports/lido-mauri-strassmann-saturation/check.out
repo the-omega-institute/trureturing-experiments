@@ -1,5 +1,6 @@
 FIDELITY Example 3.2.3: one colon certificate, three lifted syzygies, reduction (x^2,xy,y^2): OK
 COUNTEREXAMPLE: five membership-certificate residuals = [0, 0, 0, 0, 0] over Z[t,y,z,w]
+GENERATOR BOUND: four elements t*a,z*a,w*a,H in I_2 have cotangent determinant -2 at the origin
 SPECIAL FIBER: Q[y,z,w]/J has standard monomials [1,z,w]; J is proper and zero-dimensional
 OBSTRUCTION: phi(f)=phi(g)=phi(h)=0; phi(t^2*(w-1))=(0,0,0,-2) != 0; phi(t^3*(w-1))=0
 FAMILY: identities are integral; obstruction coefficient -2 is nonzero in every field of characteristic != 2 (sample primes 3,5,7,11,13 checked)
