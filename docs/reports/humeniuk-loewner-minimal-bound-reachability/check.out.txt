@@ -1,0 +1,8 @@
+FIDELITY Example 3.9: lambda_i=(3,5/2),(1/4,1/2); B2=[[21,1],[1,13]]/4; contacts=0,1,2
+SCALAR_GRID: n=1; k=1,2,3; all A_i in -2..2; B0=max(A_i)+r, r=0..3; routes=620
+MATRIX_GRID R: n=k=2,3; all declared contact/residual grid cases; routes=228; singular_initial_residual=144; nonreal_cases=0
+MATRIX_GRID C: n=k=2,3; all declared contact/residual grid cases; routes=228; singular_initial_residual=144; nonreal_cases=228
+ANCILLARY Remark 3.8: B0=diag(4,3), M=3I, A1=diag(3,2), A2=[[2,-1],[-1,2]]; lambda_i=1,1; contact dimension 0->2 in one update
+TOTAL: target routes=1076; checked maximal updates=1188
+Evidence scope: exact finite instances and symbolic quadratic-form identities; universal claim is not proved by this program.
+ALL_CHECKS_OK
