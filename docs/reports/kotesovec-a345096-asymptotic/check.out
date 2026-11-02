@@ -1,0 +1,10 @@
+FIDELITY: source example a(4)=15 and first 10 entries agree
+IDENTITY: literal floor/ceiling sum equals grouped reduction for n=1..80
+FIDELITY: source prime formula holds at all 168 primes <=1000
+FIDELITY: all 1000 OEIS b-file entries agree
+BFILE_SHA256=30a4fef1f856bf78aa26601ec7f05f9e77cfa8955d55856f87fccb54d3526b2f
+BOUNDS: grouped excess, divisor pairing, and squared relative-error bound pass for n=1..1000
+a(1000)=502851
+a(1000)/(1000^2/2)=502851/500000
+Finite checks only; the all-integer limit requires the stated general argument.
+ALL_CHECKS_OK
