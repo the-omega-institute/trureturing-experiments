@@ -2,7 +2,7 @@
 """Exact finite checks for Barman–Singh, arXiv:2606.21928v2.
 
 Run with Python 3; standard library only. These finite checks do not prove the
-unbounded conjecture. Right cosets retain coefficient multiplicities.
+unbounded conjecture. Cosets gH retain coefficient multiplicities.
 """
 from collections import Counter, defaultdict
 from fractions import Fraction
