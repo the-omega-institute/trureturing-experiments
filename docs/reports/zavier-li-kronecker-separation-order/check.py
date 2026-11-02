@@ -23,6 +23,11 @@ def width(values):
     return max(values) - min(values)
 
 
+def pow2(exp):
+    """Return 2**exp exactly, including for negative exponents."""
+    return 2**exp if exp >= 0 else Fraction(1, 2**(-exp))
+
+
 def check_explicit_three_factor():
     # The source's concrete example is H = diag(2^12,2^-6,2^-6,1,2^-6,1,1,2^6).
     h = [12, -6, -6, 0, -6, 0, 0, 6]
@@ -35,7 +40,7 @@ def check_explicit_three_factor():
     assert width(relative) == 16
     assert 2**width(h) == 262144
     assert 2**width(relative) == 65536
-    assert [2**x for x in relative] == [512, Fraction(1, 128), Fraction(1, 128), 2,
+    assert [pow2(x) for x in relative] == [512, Fraction(1, 128), Fraction(1, 128), 2,
                                          Fraction(1, 128), 2, 2, 512]
 
 
