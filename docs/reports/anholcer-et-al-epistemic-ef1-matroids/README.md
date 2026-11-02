@@ -42,9 +42,12 @@ Dror, Feldman and Segal-Halevi, *On Fair Division under Heterogeneous Matroid
 Constraints*, JAIR 76 (2023), 567–611,
 [DOI 10.1613/JAIR.1.13779](https://doi.org/10.1613/JAIR.1.13779),
 supply the complementary-item obstruction for common nonmatroid constraints
-(arXiv:2010.07280v4, Section 3.3). Their heterogeneous-category obstruction in
-Section 3.2 uses a capacity-zero block, so that individual matroid cannot be
-colored finitely. Their eight-item unequal-capacity illustration has individual
-chromatic numbers 3 and 2. The proposed witness instead meets the individual
-two-colorability hypotheses. These checks do not establish literature priority
-or provide a Lean proof.
+(journal Section 8.3, Proposition 1 and Examples 5–6; also arXiv:2010.07280v4,
+Section 3.3). Their heterogeneous-category obstruction (journal Section 8.2,
+Example 4) uses a capacity-zero block, so that individual matroid cannot be
+colored finitely. Its loopless variant in Remark 2 has four objects in a
+capacity-one block, hence individual chromatic number 4. Their introductory
+eight-item unequal-capacity illustration has individual chromatic numbers 3
+and 2. The proposed witness instead meets the individual two-colorability
+hypotheses. These checks do not establish literature priority or provide a
+Lean proof.
