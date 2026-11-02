@@ -75,7 +75,7 @@ def sl2_elements(q, table, inverse, add, neg):
 
 
 def fidelity_sl2_3():
-    """Reproduce the source's Table 1: SL(2,3), b=7, Smith torsion 6."""
+    """Reproduce the source's Table 2: SL(2,3), b=7, Smith torsion 6."""
     q = 3
     table = [[a * b % q for b in range(q)] for a in range(q)]
     inv = [0, 1, 2]
@@ -97,7 +97,7 @@ def fidelity_sl2_3():
     smith = smith_normal_form(Matrix(rows), domain=ZZ)
     factors = [abs(int(smith[i, i])) for i in range(min(smith.shape)) if smith[i, i]]
     assert factors == [1] * 6 + [6]
-    print(json.dumps({"fidelity": "arXiv:2607.05698v2, Table 1, SL(2,3)",
+    print(json.dumps({"fidelity": "arXiv:2607.05698v2, Table 2, SL(2,3)",
                       "order": 24, "center_order": 2, "b": 7,
                       "nonzero_smith_factors": factors, "conductor": [2, 3]}, sort_keys=True))
 

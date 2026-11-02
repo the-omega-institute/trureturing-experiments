@@ -4,7 +4,7 @@ Run `python3 check.py` with Python 3 and SymPy 1.14.0. The stored output is
 `output.txt`; a successful run exits 0 and ends with `ALL_CHECKS_OK`.
 All evidence uses integers, exact Smith normal form, and finite-field arithmetic.
 
-The fidelity check reproduces the SL(2,3) row of Table 1 in Matthew Fried,
+The fidelity check reproduces the SL(2,3) row of Table 2 in Matthew Fried,
 *Game Conductors of Finite Groups: Determinantal Torsion from Structured Payoff
 Probes*, arXiv:2607.05698v2. It enumerates the 24 matrices, their actual
 centralizers, and the full integer commuting row-difference matrix. Its nonzero
