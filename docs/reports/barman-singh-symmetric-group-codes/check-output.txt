@@ -1,0 +1,15 @@
+Evaluator: 39 class/subgroup cases, n=1..4; literal pairs agree
+Fidelity Example 3.8: lambda=(7, 1, 1), cosets=72, every coefficient=504
+Fidelity Example 3.8: lambda=(6, 2, 1), cosets=252, every coefficient=144
+Fidelity moments j=0,1,2: 1,1,1; |X|=36288
+Conjecture: n=5, lambda=(1, 1, 1, 1, 1), unions=63, integral-candidate-r=0, tilings=0
+Conjecture: n=6, lambda=(2, 1, 1, 1, 1), unions=231, integral-candidate-r=0, tilings=0
+Conjecture: n=6, lambda=(1, 1, 1, 1, 1, 1), unions=561, integral-candidate-r=0, tilings=0
+Conjecture: n=7, lambda=(3, 1, 1, 1, 1), unions=575, integral-candidate-r=10, tilings=0
+Conjecture: n=7, lambda=(2, 2, 1, 1, 1), unions=575, integral-candidate-r=7, tilings=0
+Conjecture: n=7, lambda=(2, 1, 1, 1, 1, 1), unions=1940, integral-candidate-r=0, tilings=0
+Conjecture: n=7, lambda=(1, 1, 1, 1, 1, 1, 1), unions=4943, integral-candidate-r=0, tilings=0
+Conjecture: all 8888 allowed union/lambda cases for n=5..7 pass; all 5<=k<=length(lambda) and all r>=0 are covered
+Hook dominance: 59119 cases, 5<=n<=25, 1<=j<length(lambda)
+Integer-support polynomial: 2499 exact sign/identity checks, 0<=a<=50, 0<=j<=48
+ALL_CHECKS_OK
