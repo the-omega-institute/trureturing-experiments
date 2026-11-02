@@ -9,9 +9,23 @@ limiting variance values supplied by the counterexample calculation.
 from fractions import Fraction
 from math import isqrt
 
+import sympy as sp
+
 
 def perfect_fourth(m: int) -> int:
     return m**4
+
+
+def check_symbolic_identities() -> None:
+    # The row-sum identities hold for the whole proposed family, not only for
+    # the rational fourth-power subsequence used below.
+    N = sp.symbols("N", positive=True)
+    eta = N ** (-sp.Rational(1, 4))
+    r = 1 - eta
+    h = 1 - 2 * r / N
+    s = h / (N + 1)
+    assert sp.simplify(eta + r - 1) == 0
+    assert sp.simplify(2 * r / N + (N + 1) * s - 1) == 0
 
 
 def check_profile(n: int) -> None:
@@ -54,6 +68,7 @@ def check_profile(n: int) -> None:
 
 
 def main() -> None:
+    check_symbolic_identities()
     for m in range(2, 7):
         check_profile(perfect_fourth(m))
 

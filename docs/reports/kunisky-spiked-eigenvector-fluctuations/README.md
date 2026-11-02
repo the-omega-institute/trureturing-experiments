@@ -1,7 +1,8 @@
 # Kunisky spiked eigenvector fluctuations
 
-`check.py` uses only integers and `fractions.Fraction`.  On the infinite
-subsequence `N=m^4`, it verifies the exact isotropy identities
+`check.py` uses SymPy exact algebra, integers, and `fractions.Fraction`.  It
+symbolically verifies the row-sum identities for the full family and, on the
+infinite subsequence `N=m^4`, verifies the exact isotropy identities
 
 \[
 \mathbb E W_N^2=I_{N+2},\qquad
