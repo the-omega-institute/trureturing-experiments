@@ -1,0 +1,5 @@
+triangular zeros: OK (degrees 1..12)
+signed cubic factorisation and sign change: OK
+largest-moved-index checks: OK (46,233 permutations, d=2..9)
+homogeneous degree comparison: OK (d=3..9)
+ALL_CHECKS_OK
