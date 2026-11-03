@@ -62,9 +62,12 @@
   },
   "arithmetic": "integers, F3 and fractions.Fraction; MSB-first 7/8-bit labels; zero-based code indices",
   "coverage": {
+    "all_caches_enumerated": false,
     "all_source_elements_per_source": 4374,
     "charts_per_relabeling": 5184,
     "conditional_masks_per_G0_relabeling": 1979,
+    "exact_covers_per_relabeling": 40,
+    "full_injection_cache_domain": "N=4; declared partial/complete/unread and repeated-index projections; exact extension-count marginalization",
     "full_injections_enumerated": false,
     "full_relabeling_examples": 4,
     "group_adapter_edges_per_source": 1944,
@@ -76,6 +79,572 @@
     "total_charts": 20736
   },
   "experiment_base": "b490f4f17c97645ce7c6495ca8635bce3d3a1af7",
+  "full_injection_partial_cache": {
+    "all_caches_enumerated": false,
+    "domain": "named N=4 attained caches; inverse-bit and G0 quotient-fibre-event pushforwards only",
+    "full_injections_enumerated": false,
+    "inverse_projection_scenarios_per_source": 8,
+    "marginalization": "exact uniform full-injection extension counts; actual 72/243 endpoints and M=1944",
+    "prior": "UJB.9001 full injections (128)_72 and (256)_243; one shared source and maps",
+    "repeated_reads": "same indexed restriction once; repeated targets use one endpoint assignment",
+    "source_prior_values_checked": [
+      "0",
+      "1",
+      "1/3"
+    ],
+    "sources": {
+      "G0": {
+        "attained_partial_cache_native_fixture": {
+          "N": 4,
+          "Read_invocations": 17,
+          "certified_E_assumed": false,
+          "distinct_addresses": 16,
+          "indexed_cache": [
+            [
+              [
+                0,
+                0
+              ],
+              [
+                1,
+                0
+              ],
+              [
+                2,
+                0
+              ],
+              [
+                3,
+                0
+              ],
+              [
+                4,
+                0
+              ],
+              [
+                5,
+                0
+              ],
+              [
+                6,
+                0
+              ],
+              [
+                7,
+                0
+              ],
+              [
+                8,
+                0
+              ],
+              [
+                9,
+                0
+              ],
+              [
+                10,
+                0
+              ],
+              [
+                11,
+                0
+              ],
+              [
+                12,
+                0
+              ],
+              [
+                13,
+                0
+              ],
+              [
+                14,
+                0
+              ]
+            ],
+            [
+              [
+                0,
+                0
+              ]
+            ],
+            [],
+            []
+          ],
+          "literal_operand_max": 17,
+          "literal_operand_sum": 169,
+          "prepared_label_pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              71,
+              242
+            ],
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        "completed_anchor_weighting_discriminator": {
+          "actual_anchor_and_second_left_assignments_enumerated": 5184,
+          "actual_full_prior": "287/575",
+          "actual_occupancy_distribution": "1+Hypergeom(127,63,71)",
+          "difference": "4564/1505925",
+          "incorrect_doubled_likelihood": "32879/65475",
+          "indexed_cache": "N=4; index 0 complete (0,0); index 1 left high bit 0; indices 2,3 unread",
+          "occupancy_strata": 57,
+          "positive_evidence_mass": "575/37453824",
+          "posterior_with_normalized_Q": "287/575",
+          "target": "inverse-left high bit of acquired label 0 at index 0"
+        },
+        "left_inverse_projections": {
+          "distinct_unread": {
+            "N": 4,
+            "actual_left_assignments_enumerated": 5184,
+            "conditional_law": {
+              "(0, 0)": "575/2286",
+              "(0, 1)": "284/1143",
+              "(1, 0)": "284/1143",
+              "(1, 1)": "575/2286"
+            },
+            "distinct_original_indices_marginalized": 2,
+            "inverse_target_original_indices": [
+              2,
+              3
+            ],
+            "left_high_bit_cache_by_original_index": {},
+            "positive_evidence_mass": "1"
+          },
+          "partial_and_unread": {
+            "N": 4,
+            "actual_left_assignments_enumerated": 5184,
+            "conditional_law": {
+              "(0, 0)": "287/1143",
+              "(0, 1)": "280/1143",
+              "(1, 0)": "32/127",
+              "(1, 1)": "32/127"
+            },
+            "distinct_original_indices_marginalized": 2,
+            "inverse_target_original_indices": [
+              0,
+              2
+            ],
+            "left_high_bit_cache_by_original_index": {
+              "0": 0
+            },
+            "positive_evidence_mass": "1/2"
+          },
+          "partial_single": {
+            "N": 4,
+            "actual_left_assignments_enumerated": 72,
+            "conditional_law": {
+              "(0,)": "63/127",
+              "(1,)": "64/127"
+            },
+            "distinct_original_indices_marginalized": 1,
+            "inverse_target_original_indices": [
+              1
+            ],
+            "left_high_bit_cache_by_original_index": {
+              "1": 0
+            },
+            "positive_evidence_mass": "1/2"
+          },
+          "repeated_partial": {
+            "N": 4,
+            "actual_left_assignments_enumerated": 72,
+            "conditional_law": {
+              "(0, 0)": "63/127",
+              "(1, 1)": "64/127"
+            },
+            "distinct_original_indices_marginalized": 1,
+            "inverse_target_original_indices": [
+              1,
+              1
+            ],
+            "left_high_bit_cache_by_original_index": {
+              "1": 0
+            },
+            "positive_evidence_mass": "1/2"
+          },
+          "repeated_unread": {
+            "N": 4,
+            "actual_left_assignments_enumerated": 72,
+            "conditional_law": {
+              "(0, 0)": "1/2",
+              "(1, 1)": "1/2"
+            },
+            "distinct_original_indices_marginalized": 1,
+            "inverse_target_original_indices": [
+              2,
+              2
+            ],
+            "left_high_bit_cache_by_original_index": {},
+            "positive_evidence_mass": "1"
+          },
+          "two_partial_opposite": {
+            "N": 4,
+            "actual_left_assignments_enumerated": 5184,
+            "conditional_law": {
+              "(0, 0)": "434/1775",
+              "(0, 1)": "441/1775",
+              "(1, 0)": "466/1775",
+              "(1, 1)": "434/1775"
+            },
+            "distinct_original_indices_marginalized": 2,
+            "inverse_target_original_indices": [
+              0,
+              1
+            ],
+            "left_high_bit_cache_by_original_index": {
+              "0": 0,
+              "1": 1
+            },
+            "positive_evidence_mass": "284/1143"
+          },
+          "two_partial_zero": {
+            "N": 4,
+            "actual_left_assignments_enumerated": 5184,
+            "conditional_law": {
+              "(0, 0)": "161/625",
+              "(0, 1)": "3472/14375",
+              "(1, 0)": "3472/14375",
+              "(1, 1)": "3728/14375"
+            },
+            "distinct_original_indices_marginalized": 2,
+            "inverse_target_original_indices": [
+              0,
+              1
+            ],
+            "left_high_bit_cache_by_original_index": {
+              "0": 0,
+              "1": 0
+            },
+            "positive_evidence_mass": "575/2286"
+          },
+          "unread_single": {
+            "N": 4,
+            "actual_left_assignments_enumerated": 72,
+            "conditional_law": {
+              "(0,)": "1/2",
+              "(1,)": "1/2"
+            },
+            "distinct_original_indices_marginalized": 1,
+            "inverse_target_original_indices": [
+              2
+            ],
+            "left_high_bit_cache_by_original_index": {},
+            "positive_evidence_mass": "1"
+          }
+        },
+        "mixed_cache_joint_inverse_H": {
+          "H_contains_anchor_marginal": "90241/1980763",
+          "N": 4,
+          "actual_literal_pair_assignments_counted": 3779136,
+          "actual_literal_pair_assignments_enumerated_individually": false,
+          "distinct_H_indices_0_1_2_anchor_agreement": "1/27",
+          "indexed_cache": {
+            "0": "complete label pair (0,0)",
+            "1": "left coordinate 0 = 0; right coordinate 0 = 0",
+            "2": "unread",
+            "3": "unread"
+          },
+          "inverse_zero_marginal": "989115/1980763",
+          "joint_distribution": {
+            "(0, False)": "939546/1980763",
+            "(0, True)": "49569/1980763",
+            "(1, False)": "950976/1980763",
+            "(1, True)": "40672/1980763"
+          },
+          "joint_output_event": "inverse-left high bit at index 0; acquired right label 0 belongs to H(point_0,point_1,point_0)",
+          "pair_count_method": "all 72^2 left pairs; exact actual-right-neighbour intersections and w multiplicities",
+          "positive_evidence_mass": "1980763/257869578240",
+          "product_of_marginals_at_0_True": "89258726715/3923422062169",
+          "repeated_H_indices_0_1_1_anchor_agreement": "1"
+        },
+        "partial_slot_weighting_discriminator": {
+          "actual_full_prior": "63/127",
+          "actual_occupancy_distribution": "Hypergeom(128,64,72)",
+          "difference": "224/73025",
+          "incorrect_extra_support_or_likelihood": "287/575",
+          "indexed_cache": "N=4; index 1 left high bit 0; all other bits/indices unread",
+          "occupancy_strata": 57,
+          "posterior_with_normalized_Q": "63/127",
+          "target": "inverse-left high bit at the SAME partial index"
+        }
+      },
+      "G1": {
+        "attained_partial_cache_native_fixture": {
+          "N": 4,
+          "Read_invocations": 17,
+          "certified_E_assumed": false,
+          "distinct_addresses": 16,
+          "indexed_cache": [
+            [
+              [
+                0,
+                0
+              ],
+              [
+                1,
+                0
+              ],
+              [
+                2,
+                0
+              ],
+              [
+                3,
+                0
+              ],
+              [
+                4,
+                0
+              ],
+              [
+                5,
+                0
+              ],
+              [
+                6,
+                0
+              ],
+              [
+                7,
+                0
+              ],
+              [
+                8,
+                0
+              ],
+              [
+                9,
+                0
+              ],
+              [
+                10,
+                0
+              ],
+              [
+                11,
+                0
+              ],
+              [
+                12,
+                0
+              ],
+              [
+                13,
+                0
+              ],
+              [
+                14,
+                0
+              ]
+            ],
+            [
+              [
+                0,
+                0
+              ]
+            ],
+            [],
+            []
+          ],
+          "literal_operand_max": 17,
+          "literal_operand_sum": 169,
+          "prepared_label_pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              71,
+              107
+            ],
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        "completed_anchor_weighting_discriminator": {
+          "actual_anchor_and_second_left_assignments_enumerated": 5184,
+          "actual_full_prior": "287/575",
+          "actual_occupancy_distribution": "1+Hypergeom(127,63,71)",
+          "difference": "4564/1505925",
+          "incorrect_doubled_likelihood": "32879/65475",
+          "indexed_cache": "N=4; index 0 complete (0,0); index 1 left high bit 0; indices 2,3 unread",
+          "occupancy_strata": 57,
+          "positive_evidence_mass": "575/37453824",
+          "posterior_with_normalized_Q": "287/575",
+          "target": "inverse-left high bit of acquired label 0 at index 0"
+        },
+        "left_inverse_projections": {
+          "distinct_unread": {
+            "N": 4,
+            "actual_left_assignments_enumerated": 5184,
+            "conditional_law": {
+              "(0, 0)": "575/2286",
+              "(0, 1)": "284/1143",
+              "(1, 0)": "284/1143",
+              "(1, 1)": "575/2286"
+            },
+            "distinct_original_indices_marginalized": 2,
+            "inverse_target_original_indices": [
+              2,
+              3
+            ],
+            "left_high_bit_cache_by_original_index": {},
+            "positive_evidence_mass": "1"
+          },
+          "partial_and_unread": {
+            "N": 4,
+            "actual_left_assignments_enumerated": 5184,
+            "conditional_law": {
+              "(0, 0)": "287/1143",
+              "(0, 1)": "280/1143",
+              "(1, 0)": "32/127",
+              "(1, 1)": "32/127"
+            },
+            "distinct_original_indices_marginalized": 2,
+            "inverse_target_original_indices": [
+              0,
+              2
+            ],
+            "left_high_bit_cache_by_original_index": {
+              "0": 0
+            },
+            "positive_evidence_mass": "1/2"
+          },
+          "partial_single": {
+            "N": 4,
+            "actual_left_assignments_enumerated": 72,
+            "conditional_law": {
+              "(0,)": "63/127",
+              "(1,)": "64/127"
+            },
+            "distinct_original_indices_marginalized": 1,
+            "inverse_target_original_indices": [
+              1
+            ],
+            "left_high_bit_cache_by_original_index": {
+              "1": 0
+            },
+            "positive_evidence_mass": "1/2"
+          },
+          "repeated_partial": {
+            "N": 4,
+            "actual_left_assignments_enumerated": 72,
+            "conditional_law": {
+              "(0, 0)": "63/127",
+              "(1, 1)": "64/127"
+            },
+            "distinct_original_indices_marginalized": 1,
+            "inverse_target_original_indices": [
+              1,
+              1
+            ],
+            "left_high_bit_cache_by_original_index": {
+              "1": 0
+            },
+            "positive_evidence_mass": "1/2"
+          },
+          "repeated_unread": {
+            "N": 4,
+            "actual_left_assignments_enumerated": 72,
+            "conditional_law": {
+              "(0, 0)": "1/2",
+              "(1, 1)": "1/2"
+            },
+            "distinct_original_indices_marginalized": 1,
+            "inverse_target_original_indices": [
+              2,
+              2
+            ],
+            "left_high_bit_cache_by_original_index": {},
+            "positive_evidence_mass": "1"
+          },
+          "two_partial_opposite": {
+            "N": 4,
+            "actual_left_assignments_enumerated": 5184,
+            "conditional_law": {
+              "(0, 0)": "434/1775",
+              "(0, 1)": "441/1775",
+              "(1, 0)": "466/1775",
+              "(1, 1)": "434/1775"
+            },
+            "distinct_original_indices_marginalized": 2,
+            "inverse_target_original_indices": [
+              0,
+              1
+            ],
+            "left_high_bit_cache_by_original_index": {
+              "0": 0,
+              "1": 1
+            },
+            "positive_evidence_mass": "284/1143"
+          },
+          "two_partial_zero": {
+            "N": 4,
+            "actual_left_assignments_enumerated": 5184,
+            "conditional_law": {
+              "(0, 0)": "161/625",
+              "(0, 1)": "3472/14375",
+              "(1, 0)": "3472/14375",
+              "(1, 1)": "3728/14375"
+            },
+            "distinct_original_indices_marginalized": 2,
+            "inverse_target_original_indices": [
+              0,
+              1
+            ],
+            "left_high_bit_cache_by_original_index": {
+              "0": 0,
+              "1": 0
+            },
+            "positive_evidence_mass": "575/2286"
+          },
+          "unread_single": {
+            "N": 4,
+            "actual_left_assignments_enumerated": 72,
+            "conditional_law": {
+              "(0,)": "1/2",
+              "(1,)": "1/2"
+            },
+            "distinct_original_indices_marginalized": 1,
+            "inverse_target_original_indices": [
+              2
+            ],
+            "left_high_bit_cache_by_original_index": {},
+            "positive_evidence_mass": "1"
+          }
+        },
+        "partial_slot_weighting_discriminator": {
+          "actual_full_prior": "63/127",
+          "actual_occupancy_distribution": "Hypergeom(128,64,72)",
+          "difference": "224/73025",
+          "incorrect_extra_support_or_likelihood": "287/575",
+          "indexed_cache": "N=4; index 1 left high bit 0; all other bits/indices unread",
+          "occupancy_strata": 57,
+          "posterior_with_normalized_Q": "63/127",
+          "target": "inverse-left high bit at the SAME partial index"
+        }
+      }
+    },
+    "unread_slots": "original prepared slots only; unused coordinates and injection values integrated exactly"
+  },
   "group_sources": {
     "G0": {
       "group_elements": 4374,
@@ -106,9 +675,21 @@
       ]
     }
   },
+  "immutable_theory_sources": {
+    "d07bda9538cfff024c409a259a73559b9b2edd40:docs/develop/theory/RECURSIVE_RELATIONAL_OBSERVATION_POSITIVE_RELATION_CERTIFICATES.md": {
+      "lines": 956,
+      "sha256": "32e7324b78d3784411e4ceb58ff6c414272dfff042728e314d308a7b28aa6dd1"
+    },
+    "d6e6417f0e055ac0701e5853b9eaf70a316ef709:docs/develop/theory/RECURSIVE_RELATIONAL_OBSERVATION_POSITIVE_RELATION_CERTIFICATES.md": {
+      "lines": 524,
+      "sha256": "4486a5797d32ca439e3ea868aa13bab0e800b804d7b961bb0d7a04e80ea1715f"
+    }
+  },
   "limitations": [
     "Finite author validation, not independent review or Lean certification.",
     "No enumeration of all full injections, all masks, arbitrary controllers, or all native words.",
+    "Full-injection tests integrate the original prior exactly for the named projections; they do not test every cache or prove the general law.",
+    "Theory identities are immutable pre-repair inputs; correspondence to terminal corrected definitions remains for the bounded alignment assignment.",
     "Geometry consumes certified acquired E and its actual label associations; acquisition/certification suppliers are reused.",
     "Affine chart invariance for all triples in all charts uses verified affine point maps and symbolic offset cancellation.",
     "G1 inverse ambiguity requires positive G1 prior support; G0 recovery requires certified G0 E and an acquired actual input edge.",
@@ -4924,8 +5505,223 @@
       },
       "G0_geometry": {
         "H_chart_triples_implied_by_affinity": 102036672,
+        "H_fibre_outputs_checked": 19683,
         "H_triples_enumerated": 19683,
         "certificate_pairs": 576,
+        "chart_direction_correspondence": {
+          "canonical_chart_marks_by_intrinsic_class": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              1,
+              1
+            ]
+          ],
+          "chart_contract": "three selected axes, either orientation; fourth has three nonzero components",
+          "declared_P0_chart_H_triples_checked": 19683,
+          "declared_P0_chart_marks_by_intrinsic_class": [
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              1,
+              2,
+              1
+            ],
+            [
+              1,
+              1,
+              1
+            ]
+          ],
+          "declared_P0_chart_points": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              2,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              1,
+              1,
+              0
+            ],
+            [
+              2,
+              1,
+              0
+            ],
+            [
+              0,
+              2,
+              0
+            ],
+            [
+              1,
+              2,
+              0
+            ],
+            [
+              2,
+              2,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              1
+            ],
+            [
+              2,
+              0,
+              1
+            ],
+            [
+              0,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1
+            ],
+            [
+              2,
+              1,
+              1
+            ],
+            [
+              0,
+              2,
+              1
+            ],
+            [
+              1,
+              2,
+              1
+            ],
+            [
+              2,
+              2,
+              1
+            ],
+            [
+              0,
+              0,
+              2
+            ],
+            [
+              1,
+              0,
+              2
+            ],
+            [
+              2,
+              0,
+              2
+            ],
+            [
+              0,
+              1,
+              2
+            ],
+            [
+              1,
+              1,
+              2
+            ],
+            [
+              2,
+              1,
+              2
+            ],
+            [
+              0,
+              2,
+              2
+            ],
+            [
+              1,
+              2,
+              2
+            ],
+            [
+              2,
+              2,
+              2
+            ]
+          ],
+          "source_P0_marks_by_intrinsic_class": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              2,
+              1
+            ],
+            [
+              1,
+              1,
+              1
+            ]
+          ],
+          "source_frame_triple_determinants": [
+            1,
+            2,
+            1,
+            2
+          ],
+          "source_marks_are_chart_marks": false
+        },
         "chart_point_comparisons": 139968,
         "charts": 5184,
         "completion_round_sizes": [
@@ -4936,6 +5732,86 @@
           "0": 36,
           "2": 324,
           "3": 108
+        },
+        "exact_cover_discriminator": {
+          "all_disjoint_nine_line_covers": 40,
+          "direction_occupancy_profiles": {
+            "(3, 6)": 36,
+            "(9,)": 4
+          },
+          "extra_mixed_covers": 36,
+          "mixed_cover_line_indices": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            11,
+            14,
+            17
+          ],
+          "mixed_cover_point_blocks": [
+            [
+              0,
+              9,
+              18
+            ],
+            [
+              1,
+              10,
+              19
+            ],
+            [
+              2,
+              11,
+              20
+            ],
+            [
+              3,
+              12,
+              21
+            ],
+            [
+              4,
+              13,
+              22
+            ],
+            [
+              5,
+              14,
+              23
+            ],
+            [
+              6,
+              7,
+              8
+            ],
+            [
+              15,
+              16,
+              17
+            ],
+            [
+              24,
+              25,
+              26
+            ]
+          ],
+          "old_cover_definition_equals_selected_classes": false,
+          "three_transversal_components": 4
+        },
+        "finite_structure_sizes": {
+          "acquired_relation_edges": 1944,
+          "charts_enumerated_streaming": 5184,
+          "full_line_point_memberships": 351,
+          "full_parallel_line_memberships": 117,
+          "full_plane_point_memberships": 351,
+          "left_label_class_attachments": 72,
+          "one_chart_points": 27,
+          "quotient_incidences": 108,
+          "right_label_class_attachments": 243,
+          "stored_H_entries": 19683
         },
         "full_affine_lines": 117,
         "full_affine_parallel_classes": 13,
@@ -4951,6 +5827,8 @@
         "literal_inverse_edges": 1944,
         "marked_grid_planes": 18,
         "marked_incidences": 108,
+        "observable_left_attachments": 72,
+        "observable_right_attachments": 243,
         "parallel_classes": [
           4,
           9
@@ -5033,6 +5911,12 @@
             ]
           ]
         },
+        "fixed_input_partner_datum": {
+          "compatible_whole_class_matchings": 15,
+          "fixed_input_output_support": 1,
+          "input": 0,
+          "retained_partner": 9
+        },
         "free_w3_z_choices_per_right_class": 27,
         "independently_redrawn_mutual_probability": "1/49",
         "inverse_matchings": 105,
@@ -5042,6 +5926,7 @@
           9,
           8
         ],
+        "literal_components_K8_27": 9,
         "local_bijections_enumerated": 40320,
         "mutual_partner_joint_probability": "1/7",
         "nonaffine_component_transpositions": 36,
@@ -5052,7 +5937,9 @@
           27
         ],
         "same_observation_witnesses": 432,
-        "same_prepared_slot_comparisons": 840240
+        "same_prepared_slot_comparisons": 840240,
+        "twin_quotient_components_K1_1": 9,
+        "twin_quotient_edges": 9
       },
       "left_full_injection": [
         0,
@@ -5467,8 +6354,223 @@
       },
       "G0_geometry": {
         "H_chart_triples_implied_by_affinity": 102036672,
+        "H_fibre_outputs_checked": 19683,
         "H_triples_enumerated": 19683,
         "certificate_pairs": 576,
+        "chart_direction_correspondence": {
+          "canonical_chart_marks_by_intrinsic_class": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              1,
+              1
+            ]
+          ],
+          "chart_contract": "three selected axes, either orientation; fourth has three nonzero components",
+          "declared_P0_chart_H_triples_checked": 19683,
+          "declared_P0_chart_marks_by_intrinsic_class": [
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              1,
+              2,
+              1
+            ],
+            [
+              1,
+              1,
+              1
+            ]
+          ],
+          "declared_P0_chart_points": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              1,
+              2,
+              1
+            ],
+            [
+              2,
+              1,
+              2
+            ],
+            [
+              0,
+              1,
+              1
+            ],
+            [
+              1,
+              0,
+              2
+            ],
+            [
+              2,
+              2,
+              0
+            ],
+            [
+              0,
+              2,
+              0
+            ],
+            [
+              1,
+              1,
+              1
+            ],
+            [
+              2,
+              0,
+              2
+            ],
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              2,
+              2
+            ],
+            [
+              2,
+              1,
+              0
+            ],
+            [
+              0,
+              1,
+              2
+            ],
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              2,
+              2,
+              1
+            ],
+            [
+              0,
+              2,
+              1
+            ],
+            [
+              1,
+              1,
+              2
+            ],
+            [
+              2,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              2
+            ],
+            [
+              1,
+              2,
+              0
+            ],
+            [
+              2,
+              1,
+              1
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              1,
+              0,
+              1
+            ],
+            [
+              2,
+              2,
+              2
+            ],
+            [
+              0,
+              2,
+              2
+            ],
+            [
+              1,
+              1,
+              0
+            ],
+            [
+              2,
+              0,
+              1
+            ]
+          ],
+          "source_P0_marks_by_intrinsic_class": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              1,
+              1,
+              1
+            ],
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              2,
+              1
+            ]
+          ],
+          "source_frame_triple_determinants": [
+            1,
+            2,
+            1,
+            2
+          ],
+          "source_marks_are_chart_marks": false
+        },
         "chart_point_comparisons": 139968,
         "charts": 5184,
         "completion_round_sizes": [
@@ -5479,6 +6581,86 @@
           "0": 36,
           "2": 324,
           "3": 108
+        },
+        "exact_cover_discriminator": {
+          "all_disjoint_nine_line_covers": 40,
+          "direction_occupancy_profiles": {
+            "(3, 6)": 36,
+            "(9,)": 4
+          },
+          "extra_mixed_covers": 36,
+          "mixed_cover_line_indices": [
+            0,
+            1,
+            5,
+            6,
+            10,
+            18,
+            24,
+            33,
+            35
+          ],
+          "mixed_cover_point_blocks": [
+            [
+              1,
+              10,
+              19
+            ],
+            [
+              3,
+              7,
+              20
+            ],
+            [
+              0,
+              13,
+              17
+            ],
+            [
+              5,
+              14,
+              23
+            ],
+            [
+              11,
+              21,
+              25
+            ],
+            [
+              2,
+              12,
+              16
+            ],
+            [
+              6,
+              15,
+              24
+            ],
+            [
+              4,
+              8,
+              18
+            ],
+            [
+              9,
+              22,
+              26
+            ]
+          ],
+          "old_cover_definition_equals_selected_classes": false,
+          "three_transversal_components": 4
+        },
+        "finite_structure_sizes": {
+          "acquired_relation_edges": 1944,
+          "charts_enumerated_streaming": 5184,
+          "full_line_point_memberships": 351,
+          "full_parallel_line_memberships": 117,
+          "full_plane_point_memberships": 351,
+          "left_label_class_attachments": 72,
+          "one_chart_points": 27,
+          "quotient_incidences": 108,
+          "right_label_class_attachments": 243,
+          "stored_H_entries": 19683
         },
         "full_affine_lines": 117,
         "full_affine_parallel_classes": 13,
@@ -5494,6 +6676,8 @@
         "literal_inverse_edges": 1944,
         "marked_grid_planes": 18,
         "marked_incidences": 108,
+        "observable_left_attachments": 72,
+        "observable_right_attachments": 243,
         "parallel_classes": [
           4,
           9
@@ -5576,6 +6760,12 @@
             ]
           ]
         },
+        "fixed_input_partner_datum": {
+          "compatible_whole_class_matchings": 15,
+          "fixed_input_output_support": 1,
+          "input": 0,
+          "retained_partner": 15
+        },
         "free_w3_z_choices_per_right_class": 27,
         "independently_redrawn_mutual_probability": "1/49",
         "inverse_matchings": 105,
@@ -5585,6 +6775,7 @@
           9,
           8
         ],
+        "literal_components_K8_27": 9,
         "local_bijections_enumerated": 40320,
         "mutual_partner_joint_probability": "1/7",
         "nonaffine_component_transpositions": 36,
@@ -5595,7 +6786,9 @@
           27
         ],
         "same_observation_witnesses": 432,
-        "same_prepared_slot_comparisons": 840240
+        "same_prepared_slot_comparisons": 840240,
+        "twin_quotient_components_K1_1": 9,
+        "twin_quotient_edges": 9
       },
       "left_full_injection": [
         11,
@@ -6010,8 +7203,223 @@
       },
       "G0_geometry": {
         "H_chart_triples_implied_by_affinity": 102036672,
+        "H_fibre_outputs_checked": 19683,
         "H_triples_enumerated": 19683,
         "certificate_pairs": 576,
+        "chart_direction_correspondence": {
+          "canonical_chart_marks_by_intrinsic_class": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              1,
+              1
+            ]
+          ],
+          "chart_contract": "three selected axes, either orientation; fourth has three nonzero components",
+          "declared_P0_chart_H_triples_checked": 19683,
+          "declared_P0_chart_marks_by_intrinsic_class": [
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              1,
+              2,
+              1
+            ],
+            [
+              1,
+              1,
+              1
+            ]
+          ],
+          "declared_P0_chart_points": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              1,
+              2,
+              1
+            ],
+            [
+              2,
+              1,
+              2
+            ],
+            [
+              2,
+              0,
+              1
+            ],
+            [
+              0,
+              2,
+              2
+            ],
+            [
+              1,
+              1,
+              0
+            ],
+            [
+              1,
+              0,
+              2
+            ],
+            [
+              2,
+              2,
+              0
+            ],
+            [
+              0,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1
+            ],
+            [
+              2,
+              0,
+              2
+            ],
+            [
+              0,
+              2,
+              0
+            ],
+            [
+              0,
+              1,
+              2
+            ],
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              2,
+              2,
+              1
+            ],
+            [
+              2,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              2,
+              2
+            ],
+            [
+              2,
+              2,
+              2
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              1,
+              0,
+              1
+            ],
+            [
+              1,
+              2,
+              0
+            ],
+            [
+              2,
+              1,
+              1
+            ],
+            [
+              0,
+              0,
+              2
+            ],
+            [
+              0,
+              2,
+              1
+            ],
+            [
+              1,
+              1,
+              2
+            ],
+            [
+              2,
+              0,
+              0
+            ]
+          ],
+          "source_P0_marks_by_intrinsic_class": [
+            [
+              1,
+              2,
+              1
+            ],
+            [
+              1,
+              1,
+              1
+            ],
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              0
+            ]
+          ],
+          "source_frame_triple_determinants": [
+            2,
+            1,
+            2,
+            1
+          ],
+          "source_marks_are_chart_marks": false
+        },
         "chart_point_comparisons": 139968,
         "charts": 5184,
         "completion_round_sizes": [
@@ -6022,6 +7430,86 @@
           "0": 36,
           "2": 324,
           "3": 108
+        },
+        "exact_cover_discriminator": {
+          "all_disjoint_nine_line_covers": 40,
+          "direction_occupancy_profiles": {
+            "(3, 6)": 36,
+            "(9,)": 4
+          },
+          "extra_mixed_covers": 36,
+          "mixed_cover_line_indices": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            19,
+            21,
+            26
+          ],
+          "mixed_cover_point_blocks": [
+            [
+              0,
+              16,
+              23
+            ],
+            [
+              2,
+              15,
+              22
+            ],
+            [
+              1,
+              17,
+              21
+            ],
+            [
+              7,
+              14,
+              18
+            ],
+            [
+              6,
+              13,
+              20
+            ],
+            [
+              8,
+              12,
+              19
+            ],
+            [
+              9,
+              10,
+              11
+            ],
+            [
+              3,
+              4,
+              5
+            ],
+            [
+              24,
+              25,
+              26
+            ]
+          ],
+          "old_cover_definition_equals_selected_classes": false,
+          "three_transversal_components": 4
+        },
+        "finite_structure_sizes": {
+          "acquired_relation_edges": 1944,
+          "charts_enumerated_streaming": 5184,
+          "full_line_point_memberships": 351,
+          "full_parallel_line_memberships": 117,
+          "full_plane_point_memberships": 351,
+          "left_label_class_attachments": 72,
+          "one_chart_points": 27,
+          "quotient_incidences": 108,
+          "right_label_class_attachments": 243,
+          "stored_H_entries": 19683
         },
         "full_affine_lines": 117,
         "full_affine_parallel_classes": 13,
@@ -6037,6 +7525,8 @@
         "literal_inverse_edges": 1944,
         "marked_grid_planes": 18,
         "marked_incidences": 108,
+        "observable_left_attachments": 72,
+        "observable_right_attachments": 243,
         "parallel_classes": [
           4,
           9
@@ -6119,6 +7609,12 @@
             ]
           ]
         },
+        "fixed_input_partner_datum": {
+          "compatible_whole_class_matchings": 15,
+          "fixed_input_output_support": 1,
+          "input": 56,
+          "retained_partner": 66
+        },
         "free_w3_z_choices_per_right_class": 27,
         "independently_redrawn_mutual_probability": "1/49",
         "inverse_matchings": 105,
@@ -6128,6 +7624,7 @@
           9,
           8
         ],
+        "literal_components_K8_27": 9,
         "local_bijections_enumerated": 40320,
         "mutual_partner_joint_probability": "1/7",
         "nonaffine_component_transpositions": 36,
@@ -6138,7 +7635,9 @@
           27
         ],
         "same_observation_witnesses": 432,
-        "same_prepared_slot_comparisons": 840240
+        "same_prepared_slot_comparisons": 840240,
+        "twin_quotient_components_K1_1": 9,
+        "twin_quotient_edges": 9
       },
       "left_full_injection": [
         127,
@@ -6553,8 +8052,223 @@
       },
       "G0_geometry": {
         "H_chart_triples_implied_by_affinity": 102036672,
+        "H_fibre_outputs_checked": 19683,
         "H_triples_enumerated": 19683,
         "certificate_pairs": 576,
+        "chart_direction_correspondence": {
+          "canonical_chart_marks_by_intrinsic_class": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              2,
+              2
+            ]
+          ],
+          "chart_contract": "three selected axes, either orientation; fourth has three nonzero components",
+          "declared_P0_chart_H_triples_checked": 19683,
+          "declared_P0_chart_marks_by_intrinsic_class": [
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              1,
+              2,
+              1
+            ],
+            [
+              1,
+              1,
+              1
+            ]
+          ],
+          "declared_P0_chart_points": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              1,
+              1,
+              0
+            ],
+            [
+              1,
+              0,
+              1
+            ],
+            [
+              2,
+              1,
+              0
+            ],
+            [
+              0,
+              2,
+              2
+            ],
+            [
+              2,
+              1,
+              2
+            ],
+            [
+              0,
+              2,
+              0
+            ],
+            [
+              1,
+              2,
+              0
+            ],
+            [
+              0,
+              2,
+              1
+            ],
+            [
+              2,
+              0,
+              2
+            ],
+            [
+              0,
+              1,
+              1
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              1,
+              1,
+              2
+            ],
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              2,
+              1
+            ],
+            [
+              2,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1
+            ],
+            [
+              0,
+              0,
+              2
+            ],
+            [
+              2,
+              2,
+              1
+            ],
+            [
+              2,
+              2,
+              2
+            ],
+            [
+              2,
+              0,
+              0
+            ],
+            [
+              1,
+              0,
+              2
+            ],
+            [
+              0,
+              1,
+              2
+            ],
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              2,
+              0,
+              1
+            ],
+            [
+              1,
+              2,
+              2
+            ],
+            [
+              2,
+              2,
+              0
+            ]
+          ],
+          "source_P0_marks_by_intrinsic_class": [
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              2,
+              1
+            ]
+          ],
+          "source_frame_triple_determinants": [
+            1,
+            2,
+            1,
+            2
+          ],
+          "source_marks_are_chart_marks": false
+        },
         "chart_point_comparisons": 139968,
         "charts": 5184,
         "completion_round_sizes": [
@@ -6565,6 +8279,86 @@
           "0": 36,
           "2": 324,
           "3": 108
+        },
+        "exact_cover_discriminator": {
+          "all_disjoint_nine_line_covers": 40,
+          "direction_occupancy_profiles": {
+            "(3, 6)": 36,
+            "(9,)": 4
+          },
+          "extra_mixed_covers": 36,
+          "mixed_cover_line_indices": [
+            0,
+            2,
+            3,
+            6,
+            8,
+            14,
+            20,
+            26,
+            31
+          ],
+          "mixed_cover_point_blocks": [
+            [
+              4,
+              6,
+              8
+            ],
+            [
+              2,
+              21,
+              23
+            ],
+            [
+              7,
+              15,
+              17
+            ],
+            [
+              18,
+              19,
+              26
+            ],
+            [
+              1,
+              12,
+              16
+            ],
+            [
+              9,
+              20,
+              24
+            ],
+            [
+              3,
+              13,
+              25
+            ],
+            [
+              10,
+              11,
+              22
+            ],
+            [
+              0,
+              5,
+              14
+            ]
+          ],
+          "old_cover_definition_equals_selected_classes": false,
+          "three_transversal_components": 4
+        },
+        "finite_structure_sizes": {
+          "acquired_relation_edges": 1944,
+          "charts_enumerated_streaming": 5184,
+          "full_line_point_memberships": 351,
+          "full_parallel_line_memberships": 117,
+          "full_plane_point_memberships": 351,
+          "left_label_class_attachments": 72,
+          "one_chart_points": 27,
+          "quotient_incidences": 108,
+          "right_label_class_attachments": 243,
+          "stored_H_entries": 19683
         },
         "full_affine_lines": 117,
         "full_affine_parallel_classes": 13,
@@ -6580,6 +8374,8 @@
         "literal_inverse_edges": 1944,
         "marked_grid_planes": 18,
         "marked_incidences": 108,
+        "observable_left_attachments": 72,
+        "observable_right_attachments": 243,
         "parallel_classes": [
           4,
           9
@@ -6662,6 +8458,12 @@
             ]
           ]
         },
+        "fixed_input_partner_datum": {
+          "compatible_whole_class_matchings": 15,
+          "fixed_input_output_support": 1,
+          "input": 0,
+          "retained_partner": 10
+        },
         "free_w3_z_choices_per_right_class": 27,
         "independently_redrawn_mutual_probability": "1/49",
         "inverse_matchings": 105,
@@ -6671,6 +8473,7 @@
           9,
           8
         ],
+        "literal_components_K8_27": 9,
         "local_bijections_enumerated": 40320,
         "mutual_partner_joint_probability": "1/7",
         "nonaffine_component_transpositions": 36,
@@ -6681,7 +8484,9 @@
           27
         ],
         "same_observation_witnesses": 432,
-        "same_prepared_slot_comparisons": 840240
+        "same_prepared_slot_comparisons": 840240,
+        "twin_quotient_components_K1_1": 9,
+        "twin_quotient_edges": 9
       },
       "left_full_injection": [
         33,
@@ -7004,7 +8809,7 @@
       ]
     }
   },
-  "schema": "rro-intrinsic-recovery-1",
+  "schema": "rro-intrinsic-recovery-2",
   "supplier_sha256": {
     "865f38257ead1b4e857ff915c23b0b04276bd7f3:rro-structural-recovery/exact_checks.py": "687603e5923e00d1c33d2f32bbc98fc99fc70ac8eddf7ea08a3b424c6a81aec5",
     "b490f4f17c97645ce7c6495ca8635bce3d3a1af7:rro-positive-certificates/exact_checks.py": "f2ce18362fa84c3dadbc3fff325d55f4afc5fe8b2f3b6d5b0b7dfad58d679ac3"

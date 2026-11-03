@@ -16,6 +16,10 @@ FINITE_GROUP_POWER_MAP_SEPARATION §§1–3. The experiment base is
 literal helper at `865f38257ead1b4e857ff915c23b0b04276bd7f3` and the positive
 certificate/tree/read helpers at the experiment base, in memory. Their exact
 paths and SHA256 hashes are in the result. Their unrelated checks are not run.
+The result also records the immutable base and theory snapshot
+`d07bda9538cfff024c409a259a73559b9b2edd40` (956 lines), read through Git
+objects. No active theory tree is an input. These source identities do not
+assert correspondence to a subsequent theory revision.
 
 Run from this worktree, using the required cooperative entry:
 
@@ -47,9 +51,20 @@ and 27 nine-element classes on the right, with 108 quotient incidences.
 Disjoint quotient lines have 0,2,3 common transversals in respectively
 36,324,108 cases. Connecting pairs with three transversals recovers four
 parallel classes of nine lines, and the transversal unions give 18 marked
-nine-point planes. Intersections construct affine charts from an origin,
+nine-point planes. Separately, exhaustive backtracking enumerates all 40
+nine-line disjoint covers of the actual 27 points. Four are these direction
+classes; 36 are mixed covers using six lines from one class and three from
+another. A concrete mixed cover is recorded for every relabeling. Disjoint
+covering alone therefore does not define the four parallel classes.
+Intersections construct affine charts from an origin,
 three ordered marked directions and one of two orientations on each axis.
 The resulting origin-free operation is H(p,q,r)=p-q+r.
+The selected-axis chart uses three coordinate directions and a fourth with
+three nonzero components. A separate incidence-only linear normalization
+constructs a marked chart with the public direction set
+P0={(0,0,1),(1,0,0),(1,2,1),(1,1,1)}. Its 27 points and all 19,683 H triples
+are checked per relabeling. The source coordinates are only correctness
+witnesses; the selected-axis chart is not silently identified with P0.
 
 Every one of the 5,184 chart choices is checked against the original source
 coordinates under each of four declared full relabelings: identity, reversed
@@ -60,8 +75,24 @@ directly. All charts are verified affine point by point; cancellation in
 (b+Au)-(b+Av)+(b+Aw) then proves H agrees across their triples, including
 choices not used by the canonical implementation. Its full incidence has
 117 lines, 13 parallel classes and 39 planes; point/line/plane incidences are
-checked. The four marked directions and actual endpoint-label associations
-lift back to exactly E, checked on all 17,496 literal endpoint pairs.
+checked. Lines are {p,q,H(q,p,q)}. For noncollinear p,q,r, the nine plane
+points are H(a,p,b), with a in {p,q,H(q,p,q)} and b in {p,r,H(r,p,r)}.
+Translations through H construct the 13 parallel classes. The plane sets
+are independently compared with chart-space affine spans.
+
+`Geometry.lift()` consumes the acquired left/right class fibres and quotient
+incidence. Its result is exactly E on all 17,496 literal endpoint pairs;
+no hidden lambda or rho is an argument. `H_labels(x,y,z)` returns the whole
+nine-label right fibre representing the output point, and is checked on
+all 19,683 triples. It does not select a hidden twin representative. The
+native controller uses these same methods after label acquisition.
+
+The recorded finite structure sizes include 1,944 input edges, 72 left and
+243 right label-to-class attachments, 108 quotient incidences, a 27-point
+chart and 19,683 stored H entries. Full lines and planes each have 351
+point memberships; parallel classes have 117 line memberships. The 5,184
+chart choices are streamed per relabeling. These are representation counts,
+not byte-storage, runtime, acquisition or optimality bounds.
 
 These constructions commute with relabeling: equal neighborhoods, intersection,
 transversal counts and connected components are preserved by bijections.
@@ -74,8 +105,10 @@ construction, and no literature novelty or Lean certification is asserted.
 Actual group inversion sends an edge (a,t) to (a^-1,t). G0's unique other left
 twin supplies a^-1's label, so certified E and an acquired actual input edge
 recover its inverse labels. Outside that input domain the program refuses.
-G1 has nine K8,27 components, retaining all free (w3,z) choices, and is refused
-by the G0 constructor. For each relabeling the program checks 432 G1 witnesses:
+G1 has nine literal K8,27 components, retaining all free (w3,z) choices,
+and is refused by the G0 constructor. Its twin quotient has nine K1,1
+components and nine incidences, with left/right capacities 8/27. For each
+relabeling the program checks 432 G1 witnesses:
 swap an input's inverse partner with any of six other twins while fixing the
 input. Change the full map once and transport every hidden prepared edge.
 The same E and all 1,945 prepared label pairs remain identical, while that
@@ -89,8 +122,11 @@ any supported prepared label array, a specified input's partner has mass 1/7
 on each other twin. With only its left label acquired, inverse edges have
 189 possibilities of mass 1/189. Mutual partners have joint probability 1/7;
 independent reference redraws would give 1/49. Repeated targets agree surely.
-Separately, inversion pushes an unread uniform edge to a uniform edge in both
-sources. That marginal statement supplies neither pointwise G1 recovery nor
+Retaining a specified input's partner leaves 15 whole-class matchings
+possible but makes that fixed input's output a singleton. A whole inverse
+interface requires additional pairings for its other inputs. Separately,
+inversion pushes an unread uniform edge to a uniform edge in both sources.
+That marginal statement supplies neither pointwise G1 recovery nor
 permission to draw an inverse label or redraw the latent matching.
 
 On the certified-E domain the program reuses PCR.9/UJB's indexed law:
@@ -106,6 +142,51 @@ arrays via all 19,683 point triples; partial/complete/unread and repeated-index
 cases are also exact. Reusing one partial index gives point agreement one;
 an independent redraw would give 1/3. Same-index inverse agreement is one,
 whereas two distinct equally restricted slots agree with probability 1/27.
+
+The full-injection tests also cover declared caches without a certified E.
+They retain the original prior of one shared full injection from 72 endpoints
+to 128 labels and one from 243 endpoints to 256 labels. Exact falling-factorial
+extension counts integrate the unmentioned map values. Every actual edge
+still has mass 1/1944; left-only projections integrate its 27 right choices,
+and unused original slots integrate to one. This is exact marginalization of
+the actual source, not enumeration of all injections or a substitute source.
+
+At fixed N=4, eight inverse-high-bit projection scenarios per source cover
+partial/unread inputs, two partial inputs with equal or opposite observed
+bits, joint unread outputs, and repeated original indices. At most two
+original indices are involved, so 72 or 5,184 actual left assignments are
+enumerated per scenario. The three retained source priors checked are theta
+=0, 1, and 1/3. Distinct targets share the same injection; repeated targets
+use the same sampled endpoint. For example two distinct unread inverse bits
+are both zero with probability 575/2286, not the independent-marginal 1/4.
+
+Two complementary calculations check normalization: direct actual-endpoint
+and full-injection extension counts, and the induced hypergeometric
+occupancy distribution with one cache likelihood followed by normalized Q.
+For an observed left high bit zero at one partial slot, its inverse high bit
+is zero with probability 63/127. An extra partial-support or likelihood factor
+instead gives 287/575, a difference of 224/73025. With slot 0 fully observed
+as (0,0), slot 1's left high bit zero, and slots 2–3 unread, the inverse of
+acquired left label 0 has high bit zero with probability 287/575. Doubling
+the likelihood gives 32879/65475, differing by 4564/1505925. Both occupancy
+integrations have 57 positive strata. The full-injection evidence mass of
+the second cache is 575/37453824. Supported N=4 fixtures attain it through
+the original stationary Read interpreter in each source: 17 invocations,
+16 distinct addresses, operand sum 169, maximum length 17, including a repeat.
+
+A G0 mixed-cache test additionally observes both first bits at slot 1 after
+the complete (0,0) anchor. Exact neighbourhood intersections and w
+multiplicities count all 1,944^2=3,779,136 actual ordered edge pairs; they
+are not individually enumerated. It pushes the shared latent law jointly
+to the anchor's inverse high bit and the event that acquired right label 0
+belongs to H(point_0,point_1,point_0)'s entire right fibre. The four joint
+masses, with denominator 1,980,763, are 49,569 (0,true), 939,546 (0,false),
+40,672 (1,true), and 950,976 (1,false). They do not factor into the marginals.
+The evidence mass is 1980763/257869578240. For H(point_0,point_1,point_1),
+the output is point_0 surely; replacing the second occurrence by a distinct
+unread original slot gives anchor agreement 1/27. These are latent
+pushforward checks on an uncertified cache. They do not provide a controller
+that executes H or G1 inversion without its required acquired information.
 
 One common public controller scans the first 576 slots of a fixed N=580 native
 preparation in either source. The G1 fixture pads its 324-pair certificate by
@@ -142,9 +223,13 @@ serial order. InvolutionDescent, TargetRecoveryCriterion, PushforwardComposition
 and RRO Proposition 92.2 are inspected suppliers for descent, fiber constancy
 and law composition, not fresh compiled applications here.
 
-Only the specified chart choices, literal source domains, local bijections and
-stated finite families are exhaustive. Mixed masks, relabelings and native
-controllers/words are representative. Arbitrary indexed continuation and
+Only the specified chart choices, all 40 exact covers per relabeling,
+literal source domains, local bijections and stated finite families are
+exhaustive. The named full-injection projections integrate the entire
+original prior exactly, but their cache/output families are representative.
+They are not checks of every positive cache or every joint target. Mixed
+masks, relabelings and native controllers/words are representative. Arbitrary
+indexed continuation and
 positive certificate soundness use the existing suppliers. Closure inverses
 retain their fixed public prior, fixed indexed partial cache and at least one
 wholly unread original sample; the unread empty-product law has no general
