@@ -1154,17 +1154,21 @@
     "field_graph.py": "6c4a3c01d01812b8e91eeae96ab746b5428762ee17f86b0792faee9503315ae1",
     "field_io.py": "5fa898cc6569807321a7c0975cf767a9e9047278e80859c6986609955df32e59",
     "field_protocol_checks.py": "ceb6b4e8a72f3ec51d790590da1679247f0570f83fc52bc02ebf6c0aba443cf7",
+    "field_service.py": "e2094909ab99db4af7419ea4da499915ea996a7a0c5ca07be06d439253558a6f",
     "framing.py": "13d043ef5557b713348bbf10e6da126f88540f1a3bf3e823bb6ae84121adc41b",
     "lab.py": "59d3c316b523a1b583b1bd62f5b0b96251f4a129e6f9f09d9a0b7ceb26e3b6fb",
     "laws.py": "fea885964c863393f850a66890c1c0f6c33191828ecd794ac3204d093ceba709",
     "native_checks.py": "eb0b77c4c8b38167baf43e3a50c7159c9a91fb2c0d0c0b292255ee69a1f57e56",
-    "native_engine.py": "2089e4ee678d92225ea746be9ffe582a02aa7688306cbf4c84fb684a74ccb0fc",
+    "native_engine.py": "8b52235700c4d7d290deae7cbe27f94b271b8a94d2948562ac7fc28b2b2bdecb",
     "native_install.py": "a26ceeb8e7695d19549302e3884c2729222f5b5de96b9a7d76a53034e3cc4555",
     "nwmg.py": "cff762dff0ce4ea3f06a356ac948c3ea70751a900edaa7160ea093a91b401517",
     "paid_code.py": "a0fc0939b0f2135c629f81ac8e7642de58bfec417608030bc3b287faaaeff7a6",
     "paid_code_checks.py": "a8e8587978477b02771b742092962ca6480089fb554833fdda11a355fd1268ab",
     "pins.py": "eddd65bbf35bed490267173e96a06423155b543a9fde04d5b89f8e7c1ef3f0d0",
     "primitive_engine.py": "d759774eed2fbe16a1b62456eedd83d4c84d5a61fbdd8bc0230b52d63b40ad6f",
+    "service_checks.py": "b17f76540bb25686b9d64e6c476ce52d7f324e91a3930d1effa31431f67dfc80",
+    "service_domain_checks.py": "aef38dbd32717053ab6a9308ab9884c8faf179527d6a9f8c3ca9a087174ecdb5",
+    "service_native.py": "1a09231d35389b3b3a22dc0b71a52ac434f168cefb7ac86e604a0bb5d0c7cca0",
     "session.py": "de7306df87891d380379c9fd9ae06e7a4befc51276a7b0c5c01d9401db1e12c7"
   },
   "python_minimum": "3.12",
@@ -1880,18 +1884,18 @@
     },
     "candidate-manifest": {
       "bytes": 485,
-      "sha256": "8c5239b471b0a5b7a78f101abb00df3a1add52cc3cb8d9101947b406f7d14f2b"
+      "sha256": "80da2984ce42548b166f0beb35654b5faa4329726ec03a7b43fc0068488bb5a3"
     },
     "candidate:Library/Computability/nearywoodsmurphyglaschick2014wang.md": {
       "bytes": 4148,
       "sha256": "863859e7f3d2110e0559cd6837afc8b63614f456c642ea253f1a8d709d00e345"
     },
     "candidate:docs/develop/theory/RECURSIVE_RELATIONAL_OBSERVATION_MONOTONE_LAB_INDEXED_EXECUTION.md": {
-      "bytes": 175562,
-      "sha256": "324c9f80b10439db6f04c13c4b0b9d32ca9af05f9ef6c64e70b0871960529989"
+      "bytes": 204010,
+      "sha256": "20b0ac8c35fbe5075dd959bb96c37b5d14f1ae7eeffcc489c28f8bff7bdf1579"
     }
   },
-  "theory_sha256": "324c9f80b10439db6f04c13c4b0b9d32ca9af05f9ef6c64e70b0871960529989",
+  "theory_sha256": "20b0ac8c35fbe5075dd959bb96c37b5d14f1ae7eeffcc489c28f8bff7bdf1579",
   "unresolved_obligations": [
     {
       "finding": "The copier now generates a complete non-erasing binary table for every supplied erasing binary table, lowers it through the primary thirteen-instruction compiler, and decodes real LAB output. The acquired successor kernel executes on this path. The fixed ML-S evaluator graph, materialized binary table and complete encoded W_U are supplied separately, with full stack-reference law runs. A full evaluator run through the actual ML-T/NWMG/ML-L/ML-B path and decoded physical ML.5 output has not executed. Those constructor/reference results do not discharge this integrated obligation.",

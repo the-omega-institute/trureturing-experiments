@@ -150,6 +150,9 @@ class NativeEngine(PrimitiveEngine):
         self.native_steps=0;self.native_events=Counter();self.read_ref=None;self.saved_ref=None
         self.address=None;self.read_bit=0
         self.installation=None
+    native_operations=NOPS
+    def make_core(self,r,b,registers):
+        return Core(r,b).build()
     def seal(self,checkpoint=None):
         assert not self.sealed
         # Public source graph includes every reserved cell, code, input object,
@@ -158,7 +161,7 @@ class NativeEngine(PrimitiveEngine):
         source_b={k:Block([],bytearray([v.value]),1) for k,v in self.bits.slots.items()}
         cpu_r={k:Block([getattr(self.cpu,k,None)],bytearray(),0) for k in REFS}
         cpu_b={k:Block([],bytearray([0]),1) for k in BITS}
-        core=Core(cpu_r,cpu_b).build()
+        core=self.make_core(cpu_r,cpu_b,source_r)
         originals=list(self.cells)+list(self.code)+list(self.registers.slots.values())+list(self.bits.slots.values())
         if self.store:originals+=list(self.store.pages)+list(self.store.forks)
         blocks={}
@@ -172,7 +175,7 @@ class NativeEngine(PrimitiveEngine):
             else:raise AssertionError(type(x))
             blocks[x]=b
         for n in core.nodes:
-            blocks[n]=Block([n.a,None,n.zero,n.one],bytearray((NOPS.index(n.op)|(n.imm<<5)).to_bytes(3,'little')),21)
+            blocks[n]=Block([n.a,None,n.zero,n.one],bytearray((self.native_operations.index(n.op)|(n.imm<<5)).to_bytes(3,'little')),21)
         allblocks=list(dict.fromkeys(list(blocks.values())+list(cpu_r.values())+list(cpu_b.values())))
         
         for b in allblocks:b.grant=1
@@ -210,7 +213,7 @@ class NativeEngine(PrimitiveEngine):
     def pc(self,n):raise AssertionError('native control may not be replaced by an observer')
     def microtick(self):
         if not self.sealed:self.seal()
-        n=self.native_pc;opcode=n.bits&31;imm=n.bits>>5;op=NOPS[opcode]
+        n=self.native_pc;opcode=n.bits&31;imm=n.bits>>5;op=self.native_operations[opcode]
         a=n.refs[0];branch=0
         self.native_steps+=1;self.microsteps+=1;self.native_events[op]+=1
         event=self._event
