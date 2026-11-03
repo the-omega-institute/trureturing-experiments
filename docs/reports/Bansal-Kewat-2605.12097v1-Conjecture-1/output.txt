@@ -1,0 +1,7 @@
+SOURCE_FIDELITY Example 6: primal [24,21,2], dual [24,3,13], Gram rank 21
+LCD_CHECK source-search ranges: 303 nontrivial codes and 34 endpoint codes; all full Gram rank
+LCD_CHECK total distinct (a,T,j): 400 ; a in {1,2,3,4,5,6,9}; includes all j and endpoints in each stated grid
+GAP_CHECK all multipliers in grids (a=1,T<=3), (a=2 or 3,T<=2): 950
+NEGATIVE_CONTROLS two non-LCD codes detected
+SCOPE exact finite corroboration only; no universal proof or Lean-kernel verification
+ALL_CHECKS_OK
