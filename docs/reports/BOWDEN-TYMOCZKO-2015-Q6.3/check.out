@@ -1,0 +1,40 @@
+Exact integer checks for Bowden--Tymoczko, arXiv:1501.02027v1
+Convention tested: nonzero ideals d<m; proper nonzero ideals 1<d<m; unrestricted includes d=m.
+fidelity C3,m=30,labels=(6, 15, 10): rank=1, |R_G,alpha|=30
+triangle m= 4: unrestricted=1; nonzero=3; proper_nonzero=3; formula=3; distribution_nonzero={3: 8}; distribution_proper={3: 1}
+triangle m= 6: unrestricted=1; nonzero=2; proper_nonzero=2; formula=2; distribution_nonzero={2: 12, 3: 15}; distribution_proper={2: 6, 3: 2}
+triangle m=12: unrestricted=1; nonzero=2; proper_nonzero=2; formula=2; distribution_nonzero={2: 42, 3: 83}; distribution_proper={2: 30, 3: 34}
+triangle m=30: unrestricted=1; nonzero=1; proper_nonzero=1; formula=1; distribution_nonzero={1: 6, 2: 168, 3: 169}; distribution_proper={1: 6, 2: 132, 3: 78}
+K4      m= 4: unrestricted=1; nonzero=4; proper_nonzero=4; formula=4; distribution_nonzero={4: 64}; distribution_proper={4: 1}
+K4      m= 6: unrestricted=1; nonzero=1; proper_nonzero=1; formula=1; distribution_nonzero={1: 12, 2: 248, 3: 342, 4: 127}; distribution_proper={1: 12, 2: 38, 3: 12, 4: 2}
+K4      m=12: unrestricted=1; nonzero=1; proper_nonzero=1; formula=1; distribution_nonzero={1: 96, 2: 3244, 3: 7524, 4: 4761}; distribution_proper={1: 96, 2: 1444, 3: 1764, 4: 792}
+K4      m=30: unrestricted=1; nonzero=1; proper_nonzero=1; formula=1; distribution_nonzero={1: 6330, 2: 52230, 3: 46992, 4: 12097}; distribution_proper={1: 5394, 2: 26406, 3: 12672, 4: 2184}
+path2   m= 4: unrestricted=1; nonzero=2; proper_nonzero=2; formula=2; distribution_nonzero={2: 2}; distribution_proper={2: 1}
+path2   m= 6: unrestricted=1; nonzero=2; proper_nonzero=2; formula=2; distribution_nonzero={2: 3}; distribution_proper={2: 2}
+path2   m=12: unrestricted=1; nonzero=2; proper_nonzero=2; formula=2; distribution_nonzero={2: 5}; distribution_proper={2: 4}
+path2   m=30: unrestricted=1; nonzero=2; proper_nonzero=2; formula=2; distribution_nonzero={2: 7}; distribution_proper={2: 6}
+path3   m= 4: unrestricted=1; nonzero=3; proper_nonzero=3; formula=3; distribution_nonzero={3: 4}; distribution_proper={3: 1}
+path3   m= 6: unrestricted=1; nonzero=2; proper_nonzero=2; formula=2; distribution_nonzero={2: 2, 3: 7}; distribution_proper={2: 2, 3: 2}
+path3   m=12: unrestricted=1; nonzero=2; proper_nonzero=2; formula=2; distribution_nonzero={2: 4, 3: 21}; distribution_proper={2: 4, 3: 12}
+path3   m=30: unrestricted=1; nonzero=2; proper_nonzero=2; formula=2; distribution_nonzero={2: 12, 3: 37}; distribution_proper={2: 12, 3: 24}
+path4   m= 4: unrestricted=1; nonzero=4; proper_nonzero=4; formula=4; distribution_nonzero={4: 8}; distribution_proper={4: 1}
+path4   m= 6: unrestricted=1; nonzero=3; proper_nonzero=3; formula=3; distribution_nonzero={3: 12, 4: 15}; distribution_proper={3: 6, 4: 2}
+path4   m=12: unrestricted=1; nonzero=3; proper_nonzero=3; formula=3; distribution_nonzero={3: 42, 4: 83}; distribution_proper={3: 30, 4: 34}
+path4   m=30: unrestricted=1; nonzero=2; proper_nonzero=2; formula=2; distribution_nonzero={2: 6, 3: 168, 4: 169}; distribution_proper={2: 6, 3: 132, 4: 78}
+path5   m= 4: unrestricted=1; nonzero=5; proper_nonzero=5; formula=5; distribution_nonzero={5: 16}; distribution_proper={5: 1}
+path5   m= 6: unrestricted=1; nonzero=3; proper_nonzero=3; formula=3; distribution_nonzero={3: 6, 4: 44, 5: 31}; distribution_proper={3: 6, 4: 8, 5: 2}
+path5   m=12: unrestricted=1; nonzero=3; proper_nonzero=3; formula=3; distribution_nonzero={3: 24, 4: 280, 5: 321}; distribution_proper={3: 24, 4: 136, 5: 96}
+path5   m=30: unrestricted=1; nonzero=3; proper_nonzero=3; formula=3; distribution_nonzero={3: 312, 4: 1368, 5: 721}; distribution_proper={3: 288, 4: 768, 5: 240}
+cycle3  m= 4: unrestricted=1; nonzero=3; proper_nonzero=3; formula=3; distribution_nonzero={3: 8}; distribution_proper={3: 1}
+cycle3  m= 6: unrestricted=1; nonzero=2; proper_nonzero=2; formula=2; distribution_nonzero={2: 12, 3: 15}; distribution_proper={2: 6, 3: 2}
+cycle3  m=12: unrestricted=1; nonzero=2; proper_nonzero=2; formula=2; distribution_nonzero={2: 42, 3: 83}; distribution_proper={2: 30, 3: 34}
+cycle3  m=30: unrestricted=1; nonzero=1; proper_nonzero=1; formula=1; distribution_nonzero={1: 6, 2: 168, 3: 169}; distribution_proper={1: 6, 2: 132, 3: 78}
+cycle4  m= 4: unrestricted=1; nonzero=4; proper_nonzero=4; formula=4; distribution_nonzero={4: 16}; distribution_proper={4: 1}
+cycle4  m= 6: unrestricted=1; nonzero=2; proper_nonzero=2; formula=2; distribution_nonzero={2: 6, 3: 44, 4: 31}; distribution_proper={2: 6, 3: 8, 4: 2}
+cycle4  m=12: unrestricted=1; nonzero=2; proper_nonzero=2; formula=2; distribution_nonzero={2: 24, 3: 280, 4: 321}; distribution_proper={2: 24, 3: 136, 4: 96}
+cycle4  m=30: unrestricted=1; nonzero=2; proper_nonzero=2; formula=2; distribution_nonzero={2: 312, 3: 1368, 4: 721}; distribution_proper={2: 288, 3: 768, 4: 240}
+cycle5  m= 4: unrestricted=1; nonzero=5; proper_nonzero=5; formula=5; distribution_nonzero={5: 32}; distribution_proper={5: 1}
+cycle5  m= 6: unrestricted=1; nonzero=3; proper_nonzero=3; formula=3; distribution_nonzero={3: 50, 4: 130, 5: 63}; distribution_proper={3: 20, 4: 10, 5: 2}
+cycle5  m=12: unrestricted=1; nonzero=3; proper_nonzero=3; formula=3; distribution_nonzero={3: 360, 4: 1530, 5: 1235}; distribution_proper={3: 240, 4: 510, 5: 274}
+cycle5  m=30: unrestricted=1; nonzero=2; proper_nonzero=2; formula=2; distribution_nonzero={2: 270, 3: 4950, 4: 8610, 5: 2977}; distribution_proper={2: 270, 3: 3450, 4: 3330, 5: 726}
+ALL_CHECKS_OK
