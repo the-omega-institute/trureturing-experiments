@@ -1,0 +1,1570 @@
+{
+  "acceptance_complete": false,
+  "arithmetic": {
+    "ML_A_direct_N4": {
+      "G0_incidence_tests": 3888,
+      "G0_type_maps": 972,
+      "G1_incidence_tests": 324,
+      "G1_type_maps": 81,
+      "partition_pairs": 225,
+      "zero_pruned_pairs": 224
+    },
+    "ML_A_direct_result": [
+      "1/240734712102912",
+      "1/240734712102912"
+    ],
+    "capacity": {
+      "N": 30,
+      "Z0": "0",
+      "Z1": "1/10253511585095367700979421043817451295901917991020171450984603947270192761114533520234531845702987582882248130560",
+      "literal_lift_counts": [
+        0,
+        92575499208192000
+      ],
+      "triple_census": [
+        {
+          "common_neighbors": {
+            "0": 58128,
+            "9": 1512
+          },
+          "positive_triples": 0,
+          "triples": 59640
+        },
+        {
+          "common_neighbors": {
+            "0": 59136,
+            "27": 504
+          },
+          "positive_triples": 504,
+          "triples": 59640
+        }
+      ]
+    },
+    "capacity_array_sha256": "c211f25fe35af7752be9615d15c498ab61f4e6f45b40dcb5d1768bc21a0475e5",
+    "closed_form_cases": {
+      "distinct_left_indices": {
+        "Z0": "71/1170432",
+        "Z1": "71/1170432"
+      },
+      "empty": {
+        "Z0": "1",
+        "Z1": "1"
+      },
+      "full_repeated_pair": {
+        "Z0": "1/240734712102912",
+        "Z1": "1/240734712102912"
+      },
+      "one_bit": {
+        "Z0": "1/2",
+        "Z1": "1/2"
+      },
+      "one_left": {
+        "Z0": "1/128",
+        "Z1": "1/128"
+      },
+      "same_left_indices": {
+        "Z0": "1/9216",
+        "Z1": "1/9216"
+      }
+    },
+    "framed_host_arithmetic_roundtrips": 181,
+    "label_DP_checks": 127,
+    "limit": "Host exact arithmetic and output flow, not ML-T/NWMG/ML-B evaluator execution.",
+    "normalizer_checks": {
+      "normalizers": 99,
+      "partition_pairs": 709,
+      "zero_pruned_pairs": 476
+    },
+    "partial_mask_N": [
+      4,
+      5,
+      7
+    ],
+    "positive_source_distinction_N4": {
+      "Z0": "37/3898096825726402560",
+      "Z1": "91/3898096825726402560",
+      "literal_C4_injective_lifts": [
+        143856,
+        353808
+      ],
+      "prior_mixtures": {
+        "0": {
+          "conditional": "37/176904",
+          "joint": "37/3898096825726402560"
+        },
+        "1": {
+          "conditional": "1/1944",
+          "joint": "91/3898096825726402560"
+        },
+        "1/3": {
+          "conditional": "55/176904",
+          "joint": "11/779619365145280512"
+        },
+        "1/7": {
+          "conditional": "313/1238328",
+          "joint": "313/27286677780084817920"
+        }
+      }
+    },
+    "priors": [
+      "0",
+      "1/7",
+      "1/3",
+      "1"
+    ],
+    "zero_capacity_N": 73
+  },
+  "execution": {
+    "MLX-bare": {
+      "charges": {
+        "P": 3,
+        "S": 3,
+        "allocations": 23,
+        "arity_tests": 9,
+        "bit_reads": 2,
+        "bit_writes": 9,
+        "equality_tests": 7,
+        "field_reads": 71,
+        "field_writes": 96,
+        "grant_deliveries": 23,
+        "head_navigation_links": 1,
+        "located_fields": 86,
+        "maintenance_ancestor_visits": 7,
+        "navigation_links": 10,
+        "null_tests": 43,
+        "reference_copy_bits": 949,
+        "reference_read_bits": 301,
+        "reference_register_writes": 2,
+        "reference_rewrite_fields": 137,
+        "reference_transport_bits": 89,
+        "reference_widenings": 4,
+        "reference_write_bits": 339,
+        "route_appends": 7
+      },
+      "commits": 2,
+      "final": {
+        "D": 7,
+        "H": 3,
+        "P": 3,
+        "S": 3,
+        "V": 10,
+        "head": 1,
+        "lengths": [
+          0,
+          2
+        ],
+        "marked": [
+          1
+        ],
+        "objects": 20,
+        "pc": 2,
+        "reference_slots": 53
+      },
+      "halted": true,
+      "internal_cuts": 45,
+      "peak_bits": 541,
+      "retained": {
+        "bit_fields": 9,
+        "bits": 397,
+        "grant_bits": 23,
+        "objects": 23,
+        "reference_slots": 73,
+        "reference_width": 5
+      },
+      "routing": {
+        "": "1111",
+        "R": "00",
+        "RL": "1"
+      },
+      "views": {
+        "support_vertices": 10,
+        "terminal_boundary": 4
+      }
+    },
+    "MLX-branch": {
+      "charges": {
+        "P": 3,
+        "S": 2,
+        "allocations": 15,
+        "arity_tests": 9,
+        "bit_writes": 4,
+        "equality_tests": 4,
+        "field_reads": 50,
+        "field_writes": 63,
+        "grant_deliveries": 15,
+        "located_fields": 61,
+        "maintenance_ancestor_visits": 4,
+        "navigation_links": 4,
+        "null_tests": 32,
+        "reference_copy_bits": 470,
+        "reference_read_bits": 179,
+        "reference_register_writes": 4,
+        "reference_rewrite_fields": 86,
+        "reference_transport_bits": 49,
+        "reference_widenings": 3,
+        "reference_write_bits": 192,
+        "route_appends": 4
+      },
+      "commits": 4,
+      "final": {
+        "D": 4,
+        "H": 2,
+        "P": 3,
+        "S": 2,
+        "V": 8,
+        "head": 0,
+        "lengths": [
+          0,
+          1
+        ],
+        "marked": [
+          0
+        ],
+        "objects": 14,
+        "pc": 5,
+        "reference_slots": 40
+      },
+      "halted": true,
+      "internal_cuts": 32,
+      "peak_bits": 287,
+      "retained": {
+        "bit_fields": 4,
+        "bits": 251,
+        "grant_bits": 15,
+        "objects": 15,
+        "reference_slots": 58,
+        "reference_width": 4
+      },
+      "routing": {
+        "": "111",
+        "R": "1"
+      },
+      "views": {
+        "support_vertices": 8,
+        "terminal_boundary": 3
+      }
+    },
+    "MLX-cross": {
+      "charges": {
+        "P": 5,
+        "S": 4,
+        "allocations": 31,
+        "arity_tests": 23,
+        "bit_writes": 12,
+        "equality_tests": 17,
+        "field_reads": 134,
+        "field_writes": 131,
+        "grant_deliveries": 31,
+        "head_navigation_links": 10,
+        "located_fields": 129,
+        "maintenance_ancestor_visits": 12,
+        "navigation_links": 22,
+        "null_tests": 80,
+        "reference_copy_bits": 1028,
+        "reference_read_bits": 613,
+        "reference_register_writes": 10,
+        "reference_rewrite_fields": 148,
+        "reference_transport_bits": 129,
+        "reference_widenings": 4,
+        "reference_write_bits": 490,
+        "route_appends": 12
+      },
+      "commits": 10,
+      "final": {
+        "D": 12,
+        "H": 4,
+        "P": 5,
+        "S": 4,
+        "V": 14,
+        "head": 0,
+        "lengths": [
+          2,
+          1
+        ],
+        "marked": [
+          -2,
+          -1,
+          0
+        ],
+        "objects": 30,
+        "pc": 10,
+        "reference_slots": 76
+      },
+      "halted": true,
+      "internal_cuts": 72,
+      "peak_bits": 575,
+      "retained": {
+        "bit_fields": 12,
+        "bits": 513,
+        "grant_bits": 31,
+        "objects": 31,
+        "reference_slots": 94,
+        "reference_width": 5
+      },
+      "routing": {
+        "": "1100100",
+        "L": "100",
+        "LL": "1",
+        "R": "1"
+      },
+      "views": {
+        "support_vertices": 14,
+        "terminal_boundary": 5
+      }
+    },
+    "MLX-frontier": {
+      "charges": {
+        "P": 2,
+        "S": 6,
+        "allocations": 32,
+        "arity_tests": 18,
+        "bit_writes": 10,
+        "equality_tests": 14,
+        "field_reads": 109,
+        "field_writes": 134,
+        "grant_deliveries": 32,
+        "head_navigation_links": 8,
+        "located_fields": 132,
+        "maintenance_ancestor_visits": 10,
+        "navigation_links": 18,
+        "null_tests": 65,
+        "reference_copy_bits": 2117,
+        "reference_read_bits": 496,
+        "reference_register_writes": 7,
+        "reference_rewrite_fields": 247,
+        "reference_transport_bits": 135,
+        "reference_widenings": 5,
+        "reference_write_bits": 518,
+        "route_appends": 10
+      },
+      "commits": 7,
+      "final": {
+        "D": 10,
+        "H": 6,
+        "P": 2,
+        "S": 6,
+        "V": 15,
+        "head": -1,
+        "lengths": [
+          2,
+          3
+        ],
+        "marked": [],
+        "objects": 31,
+        "pc": 7,
+        "reference_slots": 82
+      },
+      "halted": true,
+      "internal_cuts": 62,
+      "peak_bits": 1129,
+      "retained": {
+        "bit_fields": 10,
+        "bits": 642,
+        "grant_bits": 32,
+        "objects": 32,
+        "reference_slots": 100,
+        "reference_width": 6
+      },
+      "routing": {
+        "": "111100",
+        "L": "0",
+        "LL": "",
+        "R": "00",
+        "RL": "0",
+        "RLL": ""
+      },
+      "views": {
+        "support_vertices": 15,
+        "terminal_boundary": 7
+      }
+    },
+    "MLX-input": {
+      "charges": {
+        "P": 4,
+        "S": 5,
+        "allocations": 44,
+        "arity_tests": 9,
+        "bit_reads": 4,
+        "bit_writes": 23,
+        "equality_tests": 19,
+        "field_reads": 140,
+        "field_writes": 183,
+        "grant_deliveries": 44,
+        "located_fields": 165,
+        "maintenance_ancestor_visits": 19,
+        "navigation_links": 23,
+        "null_tests": 74,
+        "reference_copy_bits": 1848,
+        "reference_read_bits": 682,
+        "reference_rewrite_fields": 216,
+        "reference_transport_bits": 207,
+        "reference_widenings": 5,
+        "reference_write_bits": 752,
+        "route_appends": 19
+      },
+      "commits": 0,
+      "final": {
+        "D": 19,
+        "H": 5,
+        "P": 4,
+        "S": 5,
+        "V": 15,
+        "head": 0,
+        "lengths": [
+          0,
+          4
+        ],
+        "marked": [
+          1,
+          3
+        ],
+        "objects": 39,
+        "pc": 0,
+        "reference_slots": 89
+      },
+      "framed_output": "1101111101001111001001111110001010",
+      "halted": true,
+      "internal_cuts": 93,
+      "peak_bits": 1013,
+      "retained": {
+        "bit_fields": 23,
+        "bits": 733,
+        "grant_bits": 44,
+        "objects": 44,
+        "reference_slots": 111,
+        "reference_width": 6
+      },
+      "routing": {
+        "": "1111111",
+        "R": "00000",
+        "RL": "1000",
+        "RLL": "00",
+        "RLLL": "1"
+      },
+      "views": {
+        "support_vertices": 15,
+        "terminal_boundary": 6
+      }
+    },
+    "MLX-loop": {
+      "charges": {
+        "P": 3,
+        "S": 2,
+        "allocations": 15,
+        "arity_tests": 70,
+        "bit_writes": 4,
+        "equality_tests": 4,
+        "field_reads": 233,
+        "field_writes": 63,
+        "grant_deliveries": 15,
+        "located_fields": 61,
+        "maintenance_ancestor_visits": 4,
+        "navigation_links": 4,
+        "null_tests": 154,
+        "reference_copy_bits": 470,
+        "reference_read_bits": 911,
+        "reference_register_writes": 65,
+        "reference_rewrite_fields": 86,
+        "reference_transport_bits": 49,
+        "reference_widenings": 3,
+        "reference_write_bits": 192,
+        "route_appends": 4
+      },
+      "commits": 65,
+      "final": {
+        "D": 4,
+        "H": 2,
+        "P": 3,
+        "S": 2,
+        "V": 8,
+        "head": 0,
+        "lengths": [
+          0,
+          1
+        ],
+        "marked": [
+          0
+        ],
+        "objects": 14,
+        "pc": 1,
+        "reference_slots": 40
+      },
+      "halted": false,
+      "internal_cuts": 32,
+      "peak_bits": 287,
+      "retained": {
+        "bit_fields": 4,
+        "bits": 251,
+        "grant_bits": 15,
+        "objects": 15,
+        "reference_slots": 58,
+        "reference_width": 4
+      },
+      "routing": {
+        "": "111",
+        "R": "1"
+      },
+      "views": {
+        "support_vertices": 8,
+        "terminal_boundary": 3
+      }
+    }
+  },
+  "exhaustive_B": {
+    "all_jump_targets": true,
+    "bound": 8,
+    "halted": 1232,
+    "input_lengths": [
+      0,
+      1,
+      2
+    ],
+    "instances": 1722,
+    "instruction_commits": 7433,
+    "logical_events": 10642,
+    "nonhalting_boundaries": 490,
+    "primitive_pending_cuts": 76240,
+    "program_lengths": [
+      0,
+      1,
+      2,
+      3
+    ]
+  },
+  "experiment_base": "bfd14367a5cbab3ee85cc0ce13db70dd797213b3",
+  "framing": {
+    "U_values": 257,
+    "V_words": 511,
+    "charges": {
+      "acknowledgements": 4,
+      "allocations": 89,
+      "bit_reads": 137,
+      "bit_writes": 153,
+      "cleanup_fields": 172,
+      "field_reads": 539,
+      "field_writes": 657,
+      "free_list_writes": 143,
+      "grant_deliveries": 89,
+      "input_bits": 11,
+      "navigation_links": 208,
+      "null_tests": 402,
+      "output_bits": 60,
+      "output_ends": 4,
+      "reference_copy_bits": 2311,
+      "reference_read_bits": 2353,
+      "reference_rewrite_fields": 235,
+      "reference_transport_bits": 503,
+      "reference_widenings": 6,
+      "reference_write_bits": 3011
+    },
+    "peak_bits": 1213,
+    "premature_End_Ack_refused": true,
+    "proper_frame_prefixes_wait": true,
+    "rational_values": 6,
+    "reply_kinds": 4,
+    "retained": {
+      "bit_fields": 82,
+      "bits": 955,
+      "grant_bits": 89,
+      "objects": 89,
+      "reference_slots": 112,
+      "reference_width": 7
+    },
+    "selected_value_patterns_per_mask": 2,
+    "within_slot_mask_frames": 65536,
+    "within_slot_masks": 32768
+  },
+  "limits": [
+    "Finite exact checks corroborate ordinary proofs; no infinite-domain completeness or Lean verification.",
+    "P/S and provider are simulations of explicit paid ML-I premises, not physical allocation or hidden-source access.",
+    "No operational minimality, real serial-history recovery, C117 quantum frontend or source reset/fork is claimed.",
+    "Host arithmetic, bit operations, abstract B commits and LAB material/navigation coordinates remain distinct.",
+    "N30/N73 capacities are independent exact combinatorial checks; Bell(30)^2/Bell(73)^2 ML-A schedules were not run."
+  ],
+  "mismatches": [],
+  "non_erasing_compiler": {
+    "limit": "Non-erasing binary transition compiler only; ML-T copier/evaluator not executed.",
+    "multistate_B_commits": 32,
+    "pdf_sha256": "5487d3f1bf8400cabc203153e3dc60b2ae133b3112ad7299c11fc3fc37e0112e",
+    "rule_table_variants": [
+      [
+        0,
+        "L",
+        "L"
+      ],
+      [
+        0,
+        "L",
+        "R"
+      ],
+      [
+        0,
+        "R",
+        "L"
+      ],
+      [
+        0,
+        "R",
+        "R"
+      ],
+      [
+        1,
+        "L",
+        "L"
+      ],
+      [
+        1,
+        "L",
+        "R"
+      ],
+      [
+        1,
+        "R",
+        "L"
+      ],
+      [
+        1,
+        "R",
+        "R"
+      ]
+    ],
+    "single_transition_B_commits": 952,
+    "single_transition_instances": 112,
+    "source": "NWMG arXiv:1304.0053v2 pp.6-9 equations (1)-(3)"
+  },
+  "null_law_real_session": {
+    "N": 9,
+    "Z0": "0",
+    "Z1": "0",
+    "actual_calls": 136,
+    "cache_selected_bits": 135,
+    "inherited_preparation_charges": {
+      "P": 271,
+      "S": 408,
+      "allocations": 47939,
+      "arity_tests": 19039,
+      "bit_writes": 46443,
+      "equality_tests": 46443,
+      "field_reads": 289740,
+      "field_writes": 192435,
+      "grant_deliveries": 47939,
+      "located_fields": 192435,
+      "maintenance_ancestor_visits": 46443,
+      "navigation_links": 64803,
+      "null_tests": 131643,
+      "reference_copy_bits": 2135268,
+      "reference_read_bits": 4256522,
+      "reference_rewrite_fields": 74322,
+      "reference_transport_bits": 701505,
+      "reference_widenings": 15,
+      "reference_write_bits": 2134283,
+      "route_appends": 46443
+    },
+    "limit": "All-promise real-port witness outside both law supports; null output is host-built, not a compiled job.",
+    "literal_forced_relation": "K_(9,1)",
+    "original_indices_preserved": 9,
+    "peak_bits": 2326191,
+    "prior": "0",
+    "provider_primitive_charges": {
+      "field_reads": 18906,
+      "navigation_links": 9317,
+      "null_tests": 18906,
+      "provider_operand_bit_scans": 9317,
+      "reference_read_bits": 302496,
+      "reference_register_writes": 9453
+    },
+    "receipt_census": {
+      "initialized_and_append_fields": 76851,
+      "objects": 19179,
+      "payload_bits": 19042,
+      "receipts": 136,
+      "reference_slots": 19453
+    },
+    "retained": {
+      "bit_fields": 77662,
+      "bits": 1511741,
+      "grant_bits": 78618,
+      "objects": 78618,
+      "reference_slots": 79733,
+      "reference_width": 17
+    },
+    "same_original_port": true,
+    "session_and_call_charges": {
+      "acknowledgements": 136,
+      "allocations": 78618,
+      "bit_reads": 1000902,
+      "bit_tests": 136,
+      "bit_writes": 136284,
+      "cache_selection_steps": 27405,
+      "call_grant_checks": 136,
+      "cleanup_fields": 156144,
+      "consistent_rereads": 1,
+      "field_reads": 2282465,
+      "field_writes": 586084,
+      "free_list_writes": 116701,
+      "grant_deliveries": 78618,
+      "input_bits": 19042,
+      "navigation_links": 1095837,
+      "null_tests": 312557,
+      "original_calls": 136,
+      "output_bits": 952,
+      "output_ends": 136,
+      "port_acknowledgements": 136,
+      "port_ends": 136,
+      "port_logical_operand_bits": 9317,
+      "port_reply_bits": 272,
+      "port_returns": 136,
+      "port_root_returns": 136,
+      "port_wire_bits": 18770,
+      "reference_copy_bits": 4156854,
+      "reference_read_bits": 20181544,
+      "reference_rewrite_fields": 134376,
+      "reference_transport_bits": 1205452,
+      "reference_widenings": 16,
+      "reference_write_bits": 6905416
+    },
+    "source_events": 679,
+    "source_persistent": {
+      "D": 46443,
+      "H": 408,
+      "V": 1088,
+      "objects": 47939,
+      "reference_slots": 51611
+    }
+  },
+  "original_port_menu": {
+    "N": 4,
+    "all_root_words_through_length": 7,
+    "all_slot_suffixes_through_length": 4,
+    "calls": 8248,
+    "distinct_operands_per_fixture": 2062,
+    "fixtures": [
+      {
+        "preparation_events": 304,
+        "replies": {
+          "absent": 1747,
+          "alpha": 63,
+          "beta": 121,
+          "branch": 131
+        },
+        "source_P": 121,
+        "source_S": 183,
+        "source_persistent": {
+          "D": 9393,
+          "H": 183,
+          "V": 488,
+          "objects": 10064,
+          "reference_slots": 11711
+        },
+        "z_sha256": "5dcc1b5872dd9ff1c234501f1fefda01f664164e1583c3e1bb3dbea47588ab31"
+      },
+      {
+        "preparation_events": 304,
+        "replies": {
+          "absent": 1747,
+          "alpha": 63,
+          "beta": 121,
+          "branch": 131
+        },
+        "source_P": 121,
+        "source_S": 183,
+        "source_persistent": {
+          "D": 9393,
+          "H": 183,
+          "V": 488,
+          "objects": 10064,
+          "reference_slots": 11711
+        },
+        "z_sha256": "5e4084eff2f37d637e6502bf9472b0029755bbd130ebb52c8c33bb8148c31fd2"
+      },
+      {
+        "preparation_events": 304,
+        "replies": {
+          "absent": 1747,
+          "alpha": 63,
+          "beta": 121,
+          "branch": 131
+        },
+        "source_P": 121,
+        "source_S": 183,
+        "source_persistent": {
+          "D": 9393,
+          "H": 183,
+          "V": 488,
+          "objects": 10064,
+          "reference_slots": 11711
+        },
+        "z_sha256": "d47c9469fdc7295384b6636115b6350e412ad2eff8bf2f189ef1e89053201dce"
+      },
+      {
+        "preparation_events": 304,
+        "replies": {
+          "absent": 1747,
+          "alpha": 63,
+          "beta": 121,
+          "branch": 131
+        },
+        "source_P": 121,
+        "source_S": 183,
+        "source_persistent": {
+          "D": 9393,
+          "H": 183,
+          "V": 488,
+          "objects": 10064,
+          "reference_slots": 11711
+        },
+        "z_sha256": "cbcd929562e04fee86f0ebbbb29f2eadf6d40aa9b0564deb0061ff41a1d3afe3"
+      }
+    ],
+    "marker_suffixes_through_length": 5,
+    "maximum_operand_length": 130,
+    "operand_bits": 271408,
+    "provider_vertices": 263297
+  },
+  "program_hashes": {
+    "exact_checks.py": "45bc857924fd0dc04445a4c425059fd830b76301743d6ed415995ccca1c0fccd",
+    "framing.py": "e56c7d0ed7be2d69c7ef351de46b42b5a5dc4e1948da0ecc6c1e3b37bf79f680",
+    "lab.py": "c24a88bc045a348cae32219b51afebbb477f89b1b25fd7f82816564ff58cc77e",
+    "laws.py": "fea885964c863393f850a66890c1c0f6c33191828ecd794ac3204d093ceba709",
+    "nwmg.py": "cff762dff0ce4ea3f06a356ac948c3ea70751a900edaa7160ea093a91b401517",
+    "pins.py": "4ce9ed35c232851fafcdaacee8cc9019f76d4c7e2ee9f7b100018aa3e9551e74",
+    "session.py": "de7306df87891d380379c9fd9ae06e7a4befc51276a7b0c5c01d9401db1e12c7"
+  },
+  "python_minimum": "3.12",
+  "real_sessions": {
+    "N": 4,
+    "fixtures": [
+      {
+        "LL_occurrences": 3,
+        "actual_replies": [
+          "branch",
+          "beta",
+          "alpha",
+          "absent",
+          "beta",
+          "branch",
+          "absent",
+          "beta",
+          "beta",
+          "beta",
+          "beta",
+          "beta",
+          "beta",
+          "beta",
+          "beta",
+          "beta",
+          "beta",
+          "beta",
+          "beta",
+          "beta",
+          "beta",
+          "beta",
+          "beta",
+          "beta",
+          "beta",
+          "beta"
+        ],
+        "charges": {
+          "acknowledgements": 26,
+          "allocations": 3204,
+          "bit_reads": 18609,
+          "bit_tests": 24,
+          "bit_writes": 5298,
+          "cache_selection_steps": 1619,
+          "call_grant_checks": 26,
+          "cleanup_fields": 6056,
+          "consistent_rereads": 7,
+          "field_reads": 48855,
+          "field_writes": 23090,
+          "free_list_writes": 4465,
+          "grant_deliveries": 3204,
+          "input_bits": 666,
+          "navigation_links": 22789,
+          "null_tests": 22223,
+          "original_calls": 26,
+          "output_bits": 182,
+          "output_ends": 26,
+          "port_acknowledgements": 26,
+          "port_ends": 26,
+          "port_logical_operand_bits": 294,
+          "port_reply_bits": 52,
+          "port_returns": 26,
+          "port_root_returns": 26,
+          "port_wire_bits": 614,
+          "reference_copy_bits": 98188,
+          "reference_read_bits": 322995,
+          "reference_rewrite_fields": 4770,
+          "reference_transport_bits": 34365,
+          "reference_widenings": 11,
+          "reference_write_bits": 192795
+        },
+        "constant_source_bit": 0,
+        "final_cache": [
+          {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "3": 0,
+            "4": 0,
+            "5": 0,
+            "6": 0,
+            "7": 0,
+            "8": 0,
+            "9": 0,
+            "10": 0,
+            "11": 0,
+            "12": 0,
+            "13": 0,
+            "14": 0
+          },
+          {
+            "0": 0
+          },
+          {},
+          {
+            "14": 0
+          }
+        ],
+        "inherited_preparation_charges": {
+          "P": 121,
+          "S": 183,
+          "allocations": 10064,
+          "arity_tests": 3964,
+          "bit_writes": 9393,
+          "equality_tests": 9393,
+          "field_reads": 59040,
+          "field_writes": 40560,
+          "grant_deliveries": 10064,
+          "located_fields": 40560,
+          "maintenance_ancestor_visits": 9393,
+          "navigation_links": 13053,
+          "null_tests": 27018,
+          "reference_copy_bits": 508929,
+          "reference_read_bits": 734907,
+          "reference_rewrite_fields": 20721,
+          "reference_transport_bits": 124527,
+          "reference_widenings": 13,
+          "reference_write_bits": 384799,
+          "route_appends": 9393
+        },
+        "inherited_source_persistent": {
+          "D": 9393,
+          "H": 183,
+          "V": 488,
+          "objects": 10064,
+          "reference_slots": 11711
+        },
+        "mathematical_predictions": [
+          [
+            "0",
+            "0",
+            "1",
+            "0"
+          ],
+          [
+            "0",
+            "1/2",
+            "1/2",
+            "0"
+          ],
+          [
+            "1",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "1"
+          ],
+          [
+            "0",
+            "1",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "1",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "1"
+          ],
+          [
+            "0",
+            "1",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "1/2",
+            "1/2",
+            "0"
+          ],
+          [
+            "0",
+            "1/2",
+            "1/2",
+            "0"
+          ],
+          [
+            "0",
+            "1/2",
+            "1/2",
+            "0"
+          ],
+          [
+            "0",
+            "1/2",
+            "1/2",
+            "0"
+          ],
+          [
+            "0",
+            "1/2",
+            "1/2",
+            "0"
+          ],
+          [
+            "0",
+            "1/2",
+            "1/2",
+            "0"
+          ],
+          [
+            "0",
+            "1/2",
+            "1/2",
+            "0"
+          ],
+          [
+            "0",
+            "1/2",
+            "1/2",
+            "0"
+          ],
+          [
+            "0",
+            "1/2",
+            "1/2",
+            "0"
+          ],
+          [
+            "0",
+            "1/2",
+            "1/2",
+            "0"
+          ],
+          [
+            "0",
+            "1/2",
+            "1/2",
+            "0"
+          ],
+          [
+            "0",
+            "1/2",
+            "1/2",
+            "0"
+          ],
+          [
+            "0",
+            "1/2",
+            "1/2",
+            "0"
+          ],
+          [
+            "0",
+            "1/2",
+            "1/2",
+            "0"
+          ],
+          [
+            "0",
+            "1",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "575/1143",
+            "568/1143",
+            "0"
+          ],
+          [
+            "0",
+            "30989/61965",
+            "30976/61965",
+            "0"
+          ],
+          [
+            "0",
+            "1",
+            "0",
+            "0"
+          ]
+        ],
+        "original_calls": 26,
+        "original_operands": [
+          "",
+          "LL",
+          "LRR",
+          "LLR",
+          "LL",
+          "LR",
+          "LLL",
+          "LRL",
+          "RLL",
+          "RRLL",
+          "RRRLL",
+          "RRRRLL",
+          "RRRRRLL",
+          "RRRRRRLL",
+          "RRRRRRRLL",
+          "RRRRRRRRLL",
+          "RRRRRRRRRLL",
+          "RRRRRRRRRRLL",
+          "RRRRRRRRRRRLL",
+          "RRRRRRRRRRRRLL",
+          "RRRRRRRRRRRRRLL",
+          "RRRRRRRRRRRRRRLL",
+          "LL",
+          "RRRRRRRRRRRRRRRLL",
+          "RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRLL",
+          "RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRLLL"
+        ],
+        "peak_bits": 55907,
+        "pending_cuts": 182,
+        "provider_observations": {
+          "child_field_reads": 636,
+          "examined_vertices": 318,
+          "navigation_links": 292
+        },
+        "provider_primitive_charges": {
+          "field_reads": 636,
+          "navigation_links": 292,
+          "null_tests": 636,
+          "provider_operand_bit_scans": 292,
+          "reference_read_bits": 8904,
+          "reference_register_writes": 318
+        },
+        "receipt_census": {
+          "initialized_and_append_fields": 2797,
+          "objects": 693,
+          "payload_bits": 666,
+          "receipts": 26,
+          "reference_slots": 747
+        },
+        "retained": {
+          "bit_fields": 3018,
+          "bits": 47490,
+          "grant_bits": 3204,
+          "objects": 3204,
+          "reference_slots": 3439,
+          "reference_width": 12
+        }
+      },
+      {
+        "LL_occurrences": 3,
+        "actual_replies": [
+          "branch",
+          "branch",
+          "absent",
+          "alpha",
+          "branch",
+          "beta",
+          "beta",
+          "absent",
+          "branch",
+          "branch",
+          "branch",
+          "branch",
+          "branch",
+          "branch",
+          "branch",
+          "branch",
+          "branch",
+          "branch",
+          "branch",
+          "branch",
+          "branch",
+          "branch",
+          "branch",
+          "branch",
+          "branch",
+          "beta"
+        ],
+        "charges": {
+          "acknowledgements": 26,
+          "allocations": 3204,
+          "bit_reads": 18609,
+          "bit_tests": 24,
+          "bit_writes": 5298,
+          "cache_selection_steps": 1619,
+          "call_grant_checks": 26,
+          "cleanup_fields": 6056,
+          "consistent_rereads": 7,
+          "field_reads": 48855,
+          "field_writes": 23090,
+          "free_list_writes": 4465,
+          "grant_deliveries": 3204,
+          "input_bits": 666,
+          "navigation_links": 22789,
+          "null_tests": 22223,
+          "original_calls": 26,
+          "output_bits": 182,
+          "output_ends": 26,
+          "port_acknowledgements": 26,
+          "port_ends": 26,
+          "port_logical_operand_bits": 294,
+          "port_reply_bits": 52,
+          "port_returns": 26,
+          "port_root_returns": 26,
+          "port_wire_bits": 614,
+          "reference_copy_bits": 98188,
+          "reference_read_bits": 322995,
+          "reference_rewrite_fields": 4770,
+          "reference_transport_bits": 34365,
+          "reference_widenings": 11,
+          "reference_write_bits": 192795
+        },
+        "constant_source_bit": 1,
+        "final_cache": [
+          {
+            "0": 1,
+            "1": 1,
+            "2": 1,
+            "3": 1,
+            "4": 1,
+            "5": 1,
+            "6": 1,
+            "7": 1,
+            "8": 1,
+            "9": 1,
+            "10": 1,
+            "11": 1,
+            "12": 1,
+            "13": 1,
+            "14": 1
+          },
+          {
+            "0": 1
+          },
+          {},
+          {
+            "14": 1
+          }
+        ],
+        "inherited_preparation_charges": {
+          "P": 121,
+          "S": 183,
+          "allocations": 10064,
+          "arity_tests": 3964,
+          "bit_writes": 9393,
+          "equality_tests": 9393,
+          "field_reads": 59040,
+          "field_writes": 40560,
+          "grant_deliveries": 10064,
+          "located_fields": 40560,
+          "maintenance_ancestor_visits": 9393,
+          "navigation_links": 13053,
+          "null_tests": 27018,
+          "reference_copy_bits": 508929,
+          "reference_read_bits": 734907,
+          "reference_rewrite_fields": 20721,
+          "reference_transport_bits": 124527,
+          "reference_widenings": 13,
+          "reference_write_bits": 384799,
+          "route_appends": 9393
+        },
+        "inherited_source_persistent": {
+          "D": 9393,
+          "H": 183,
+          "V": 488,
+          "objects": 10064,
+          "reference_slots": 11711
+        },
+        "mathematical_predictions": [
+          [
+            "0",
+            "0",
+            "1",
+            "0"
+          ],
+          [
+            "0",
+            "1/2",
+            "1/2",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "1"
+          ],
+          [
+            "1",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "1",
+            "0"
+          ],
+          [
+            "0",
+            "1",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "1",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "1"
+          ],
+          [
+            "0",
+            "1/2",
+            "1/2",
+            "0"
+          ],
+          [
+            "0",
+            "1/2",
+            "1/2",
+            "0"
+          ],
+          [
+            "0",
+            "1/2",
+            "1/2",
+            "0"
+          ],
+          [
+            "0",
+            "1/2",
+            "1/2",
+            "0"
+          ],
+          [
+            "0",
+            "1/2",
+            "1/2",
+            "0"
+          ],
+          [
+            "0",
+            "1/2",
+            "1/2",
+            "0"
+          ],
+          [
+            "0",
+            "1/2",
+            "1/2",
+            "0"
+          ],
+          [
+            "0",
+            "1/2",
+            "1/2",
+            "0"
+          ],
+          [
+            "0",
+            "1/2",
+            "1/2",
+            "0"
+          ],
+          [
+            "0",
+            "1/2",
+            "1/2",
+            "0"
+          ],
+          [
+            "0",
+            "1/2",
+            "1/2",
+            "0"
+          ],
+          [
+            "0",
+            "1/2",
+            "1/2",
+            "0"
+          ],
+          [
+            "0",
+            "1/2",
+            "1/2",
+            "0"
+          ],
+          [
+            "0",
+            "1/2",
+            "1/2",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "1",
+            "0"
+          ],
+          [
+            "0",
+            "568/1143",
+            "575/1143",
+            "0"
+          ],
+          [
+            "0",
+            "30976/61965",
+            "30989/61965",
+            "0"
+          ],
+          [
+            "0",
+            "1",
+            "0",
+            "0"
+          ]
+        ],
+        "original_calls": 26,
+        "original_operands": [
+          "",
+          "LL",
+          "LRR",
+          "LLR",
+          "LL",
+          "LR",
+          "LLL",
+          "LRL",
+          "RLL",
+          "RRLL",
+          "RRRLL",
+          "RRRRLL",
+          "RRRRRLL",
+          "RRRRRRLL",
+          "RRRRRRRLL",
+          "RRRRRRRRLL",
+          "RRRRRRRRRLL",
+          "RRRRRRRRRRLL",
+          "RRRRRRRRRRRLL",
+          "RRRRRRRRRRRRLL",
+          "RRRRRRRRRRRRRLL",
+          "RRRRRRRRRRRRRRLL",
+          "LL",
+          "RRRRRRRRRRRRRRRLL",
+          "RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRLL",
+          "RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRLLL"
+        ],
+        "peak_bits": 55907,
+        "pending_cuts": 182,
+        "provider_observations": {
+          "child_field_reads": 636,
+          "examined_vertices": 318,
+          "navigation_links": 292
+        },
+        "provider_primitive_charges": {
+          "field_reads": 636,
+          "navigation_links": 292,
+          "null_tests": 636,
+          "provider_operand_bit_scans": 292,
+          "reference_read_bits": 8904,
+          "reference_register_writes": 318
+        },
+        "receipt_census": {
+          "initialized_and_append_fields": 2797,
+          "objects": 693,
+          "payload_bits": 666,
+          "receipts": 26,
+          "reference_slots": 747
+        },
+        "retained": {
+          "bit_fields": 3018,
+          "bits": 47490,
+          "grant_bits": 3204,
+          "objects": 3204,
+          "reference_slots": 3439,
+          "reference_width": 12
+        }
+      }
+    ],
+    "limit": "Predict values corroborated by exact host evaluator; no actual compiled evaluator job claimed.",
+    "theta": "1/3"
+  },
+  "schema": 1,
+  "source_manifest": {
+    "0434b0714812f29d6799f8e4ebd958f5eab2f987:Library/Computability/nearywoodsmurphyglaschick2014wang.md": {
+      "bytes": 2238,
+      "sha256": "53d0eb487e0de645e05da928fdae12a2c4abc70b8f784e3f062afead786357a1"
+    },
+    "0434b0714812f29d6799f8e4ebd958f5eab2f987:docs/develop/theory/RECURSIVE_RELATIONAL_OBSERVATION_MONOTONE_LAB_INDEXED_EXECUTION.md": {
+      "bytes": 70731,
+      "sha256": "0f93b9f2634965902d7ea35ee675e1886d2309ec10b017e926ff756f3136fcd2"
+    },
+    "865f38257ead1b4e857ff915c23b0b04276bd7f3:rro-structural-recovery/exact_checks.py": {
+      "bytes": 21933,
+      "sha256": "687603e5923e00d1c33d2f32bbc98fc99fc70ac8eddf7ea08a3b424c6a81aec5"
+    },
+    "b490f4f17c97645ce7c6495ca8635bce3d3a1af7:rro-positive-certificates/exact_checks.py": {
+      "bytes": 16480,
+      "sha256": "f2ce18362fa84c3dadbc3fff325d55f4afc5fe8b2f3b6d5b0b7dfad58d679ac3"
+    },
+    "bfd14367a5cbab3ee85cc0ce13db70dd797213b3:rro-structural-recovery/exact_evaluator.py": {
+      "bytes": 3150,
+      "sha256": "4b7e708fa437cd3973e0e6da36596f999680558e5acb914a3de1639bc78d9a30"
+    },
+    "c27e6de785aefbf37c0789a3f4cf63c6667ff3d7:docs/develop/theory/RECURSIVE_RELATIONAL_OBSERVATION_ATOMIC_GENERATION_ACQUISITION.md": {
+      "bytes": 331019,
+      "sha256": "166b3fda6d5b972ad06bb1de8b7e4c3d3df04eb6d9ee390848b1b404924a0f7f"
+    },
+    "c27e6de785aefbf37c0789a3f4cf63c6667ff3d7:docs/develop/theory/RECURSIVE_RELATIONAL_OBSERVATION_PROCESS_GEOMETRY.md": {
+      "bytes": 466992,
+      "sha256": "99846f1b779379b97a5384694f2f08f33673609cc245e3b7fda7d0f2fcccdc71"
+    },
+    "c27e6de785aefbf37c0789a3f4cf63c6667ff3d7:docs/develop/theory/RECURSIVE_RELATIONAL_OBSERVATION_UNIFIED_JOINT_LAW_BRIDGE.md": {
+      "bytes": 206931,
+      "sha256": "d403b5c4193f09173ef167be4d7cef693f629f88743a2b88b6930b74150bf3b4"
+    }
+  },
+  "theory_pin": "0434b0714812f29d6799f8e4ebd958f5eab2f987",
+  "theory_sha256": "0f93b9f2634965902d7ea35ee675e1886d2309ec10b017e926ff756f3136fcd2",
+  "unresolved_obligations": [
+    {
+      "finding": "The sealed prose gives ML-T bit algorithms and an effective lowering, but no explicit ML-T transition table, copier transition table, W_U instruction sequence or executable input/output decoder. This checker implements the primary thirteen-instruction non-erasing compiler and exercises it on finite transition machines. It has not implemented the complete ML-A-to-ML-T copier and W_U construction. Exact host values and framed host output cannot validate that execution interface.",
+      "id": "ML-N-evaluator-execution",
+      "interface": "Definitions 4.4/4.6; Theorem 4.5; ML-X arithmetic",
+      "required": "Run a public-input ML-A instance through the actual complete ML-T/NWMG/ML-L/ML-B path and decode/print its exact result; preserve every N/mask/prior domain.",
+      "status": "not-executed"
+    },
+    {
+      "finding": "Work/routing and receipt/cache exact censuses, navigation, I/O, pending records, widening, retained material and primitive occurrences are measured for the implemented finite work/Read executions. A full arithmetic-job session, fixed finite-driver/code installation, all mutable loop/cursor backing and their joint peak are not instantiated. These partial vectors cannot certify the complete simultaneous ML.16 account.",
+      "id": "ML-Cost-full-evaluator-session",
+      "interface": "Theorems 6.4/6.6; ML.16",
+      "required": "Census one actual full compiled arithmetic and same-port continuation run, including installed control/code, backing for every counter/cursor/phase, conversion, decoder, buffers, grants, cleanup and width changes.",
+      "status": "not-executed"
+    }
+  ]
+}
