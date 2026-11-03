@@ -6,8 +6,9 @@ identity used in the source's Bessel Stein operator as a fidelity check.
 """
 
 from fractions import Fraction
-from math import gcd
 import sys
+
+import sympy as sp
 
 
 def pmf(M: int, n: int) -> Fraction:
@@ -26,12 +27,40 @@ def death(M: int, n: int) -> Fraction:
 
 def exact_moments(M: int):
     D = M * M + M - 1
-    mean = Fraction(M**3, (M - 1) * D)
-    second = Fraction(M**3 * (M + 1), (M - 1) ** 2 * D)
+    # Differentiate the exact probability generating function, including its
+    # infinite geometric tail, rather than checking the proposed formulas alone.
+    z = sp.Symbol("z")
+    P = sp.Rational(M - 1, D) + sp.Rational(M * (M - 1), D) * z / (1 - z / M)
+    mean = Fraction(sp.diff(P, z).subs(z, 1))
+    second = Fraction((sp.diff(P, z, 2) + sp.diff(P, z)).subs(z, 1))
+    assert mean == Fraction(M**3, (M - 1) * D)
+    assert second == Fraction(M**3 * (M + 1), (M - 1) ** 2 * D)
     variance = second - mean * mean
-    stated_variance = Fraction(M**3 * (2 * M * M - 1), (M - 1) ** 2 * D * D)
-    assert variance == stated_variance
+    assert variance == Fraction(M**3 * (2 * M * M - 1), (M - 1) ** 2 * D * D)
     return mean, second, variance
+
+
+def symbolic_family_identities() -> None:
+    # A symbolic computation independent of the finite parameter checks.
+    M, z = sp.symbols("M z", positive=True)
+    D = M**2 + M - 1
+    P = (M - 1) / D + M * (M - 1) * z / (D * (1 - z / M))
+    mean = sp.diff(P, z).subs(z, 1)
+    second = (sp.diff(P, z, 2) + sp.diff(P, z)).subs(z, 1)
+    variance = sp.factor(second - mean**2)
+    assert sp.factor(P.subs(z, 1) - 1) == 0
+    assert sp.factor(mean - M**3 / ((M - 1) * D)) == 0
+    assert sp.factor(variance - M**3 * (2 * M**2 - 1) / ((M - 1)**2 * D**2)) == 0
+    ratio_sq = sp.factor((M**2 / D)**2 / variance)
+    assert sp.factor(ratio_sq - M * (M - 1)**2 / (2 * M**2 - 1)) == 0
+    # Clearing the positive denominator gives a polynomial with nonnegative
+    # coefficients after M=t+2. This verifies the inequality for every M>=2.
+    t = sp.Symbol("t", nonnegative=True)
+    numerator = sp.factor((ratio_sq - M / 8) * 8 * (2 * M**2 - 1) / M)
+    poly = sp.Poly(sp.expand(numerator.subs(M, t + 2)), t)
+    assert poly.as_expr() == 6 * t**2 + 8 * t + 1
+    assert all(c > 0 for c in poly.all_coeffs())
+    print("symbolic family: exact PGF moments and ratio^2 >= M/8 for every M>=2")
 
 
 def check_family(M: int) -> None:
@@ -101,6 +130,7 @@ def factorial(n: int) -> int:
 
 
 def main() -> int:
+    symbolic_family_identities()
     for M in (2, 3, 10, 100, 1000):
         check_family(M)
         print(f"M={M}: exact normalization, log-concavity, Stein solution, moments, and Gamma/sigma bound OK")

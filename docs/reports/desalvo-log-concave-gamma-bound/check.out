@@ -1,3 +1,4 @@
+symbolic family: exact PGF moments and ratio^2 >= M/8 for every M>=2
 M=2: exact normalization, log-concavity, Stein solution, moments, and Gamma/sigma bound OK
 M=3: exact normalization, log-concavity, Stein solution, moments, and Gamma/sigma bound OK
 M=10: exact normalization, log-concavity, Stein solution, moments, and Gamma/sigma bound OK

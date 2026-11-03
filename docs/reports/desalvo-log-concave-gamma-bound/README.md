@@ -1,6 +1,6 @@
 # DeSalvo Open Problem 8.2: Gamma obstruction
 
-`check.py` uses only exact integer and `fractions.Fraction` arithmetic. It checks the proposed family
+`check.py` uses only exact integer, `fractions.Fraction`, and SymPy rational-polynomial arithmetic (SymPy 1.14.0). It checks the proposed family
 
 \[
 p_0=\frac{M-1}{M^2+M-1},\qquad
@@ -8,7 +8,7 @@ p_{n+1}=\frac{M(M-1)M^{-n}}{M^2+M-1}\quad(M\ge 2),
 \]
 
 including normalization, positivity, log-concavity, the induced death rates, the bounded Stein solution for
-\(A=\{0\}\), and the exact moments. It proves the exact lower bound
+\(A=\{0\}\), and the moments obtained by differentiating the exact probability generating function. Symbolic rational identities and a positive-coefficient polynomial verify the exact lower bound
 
 \[
 \left(\frac{\Gamma}{\sigma}\right)^2\ge
@@ -18,3 +18,5 @@ including normalization, positivity, log-concavity, the induced death rates, the
 so no finite universal constant can satisfy \(\Gamma\le C\sigma/w\) (take \(w=1\)). As a fidelity check,
 the script also verifies the source's Bessel ratio identity exactly for \(k=3,\nu=5\). The output is stored
 in `check.out`; the final line is `ALL_CHECKS_OK`.
+
+Run with Python 3 and SymPy installed: `python3 -B docs/reports/desalvo-log-concave-gamma-bound/check.py`. No floating point is used as evidence. This is a preregistration check, not a Lean proof.
