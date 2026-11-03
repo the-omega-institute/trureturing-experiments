@@ -1,3 +1,4 @@
+RANK_SANITY: dependent, independent and zero integer matrices checked
 FIDELITY vector-atoms q=2, dimension=3, GL-order=168: pair-orbits=5, sizes=[1,7,7,7,42]
 DIM_Q k=1 atoms=2 algebra-size=4 V-dim=2 d=1 rank=2 kernel-dim=0
 DIM_Q k=2 atoms=4 algebra-size=16 V-dim=14 d=1 rank=4 kernel-dim=10

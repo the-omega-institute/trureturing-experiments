@@ -20,7 +20,8 @@ def rank_q(rows):
     pivots = {}
     for data in rows:
         row = list(data)
-        for j, x in enumerate(row):
+        for j in range(len(row)):
+            x = row[j]
             if not x:
                 continue
             if j in pivots:
@@ -141,6 +142,10 @@ def witnesses():
 
 
 if __name__ == '__main__':
+    assert rank_q([[1, 1, 0], [1, 0, 1], [0, 1, -1]]) == 2
+    assert rank_q([[1, 1], [1, -1]]) == 2
+    assert rank_q([[0, 0], [0, 0]]) == 0
+    print('RANK_SANITY: dependent, independent and zero integer matrices checked')
     fidelity()
     dimensions()
     refinements()
