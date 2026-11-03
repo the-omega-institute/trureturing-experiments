@@ -1,10 +1,12 @@
 # Monotone LAB execution: exact finite checks
 
 The implemented finite checks pass. Strict acceptance remains incomplete:
-`--require-all` exits 2 because the complete ML-A evaluator execution and
-its full simultaneous resource account have not been instantiated. Host
-law arithmetic and the acquired successor kernel do not discharge these
-requirements. No theorem counterexample was found in the checked scopes.
+`--require-all` exits 2 because the integrated full ML-A evaluator LAB run and
+its full simultaneous resource account have not been instantiated. The fixed
+constructor, materialized binary table, complete encoded Wang word and full
+stack-reference law runs are documented in [constructor/README.md](constructor/README.md).
+Those reference runs, host law arithmetic and the acquired successor kernel
+do not discharge the integrated requirements. No theorem counterexample was found in the checked scopes.
 
 Python 3.12+, standard library, assertions enabled, the pinned local Git
 objects, and an explicit theory candidate checkout are required. The

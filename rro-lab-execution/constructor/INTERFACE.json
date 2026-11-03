@@ -1,0 +1,457 @@
+{
+  "B_required_backing": [
+    "Immutable graph/table/template/binding bytes and actual installation or paid decoding/fetch/address search, including compressed representation costs.",
+    "PC, instruction/read/write/move phases, table-row cursor, local template and destination/base search state; all widths and saved old/new overlap.",
+    "All represented work, received input, loader and conversion registers/buffers/cursors, returned head/active record offsets, output decoder/framing/Print/End/Ack/Return state.",
+    "Unchanged physical original-port binding, authentic addresses and ordered receipts; original indexed cache and partial/repeated slots.",
+    "Allocator, grants, width changes, routing, busy/pending phases, acknowledgements, cleanup, retained and peak resources at one chronological cut."
+  ],
+  "W_U": {
+    "W_U_halt_PC": 496162138109,
+    "W_U_instructions": 496162138109,
+    "bases_bytes": 188822488,
+    "bases_sha256": "852bad313718b4883caba3c8bd3e373bd8faee3f02c308abe2c3cece874955e7",
+    "code_encoding": "Complete literal-template / resolved-binding block image, not a flat instruction array. Fetch/decompression and backing remain B obligations.",
+    "flat_W_U_materialized": false,
+    "format": "gzip of RROWUC1 + NUL header (8 bytes), uint32 source_binary_states, uint64 non_erasing_states; 16 templates (uint32 size, size*2 <Bbq> rules); uint64 bases[source_binary_states+1]; <BQQ> bindings[source_binary_states]",
+    "image_bytes": 158796932,
+    "image_sha256": "ba621bdfa614087a17efc16f19a86cfc44691e06f66c20640f4c1de9d772b72b",
+    "instruction_PC": "13*c starts non-erasing state c, terminal M at 13*non_erasing_states, stopped PC one past that",
+    "non_erasing_rules": 76332636632,
+    "non_erasing_states": 38166318316,
+    "reference_reader": "constructor_image.Image.transition(state,read_bit) and Image.fetch(zero_based_PC)",
+    "representation_choice": "Complete closed literal-template and resolved-binding encoding, not an installed flat array. All entries are determined independently of numerical input. B must implement and charge code fetch or actual expansion.",
+    "schema": 1,
+    "source_binary_states": 23602810,
+    "template_count": 16,
+    "template_destinations": "-1/-2 are resolved external zero/one destinations in binding; nonnegative destinations are local offsets",
+    "template_states": {
+      "0": 1622,
+      "1": 1618,
+      "10": 1618,
+      "11": 1614,
+      "12": 1622,
+      "13": 1618,
+      "14": 1618,
+      "15": 1614,
+      "2": 1618,
+      "3": 1614,
+      "4": 1622,
+      "5": 1618,
+      "6": 1618,
+      "7": 1614,
+      "8": 1622,
+      "9": 1618
+    },
+    "template_use_counts": [
+      138533,
+      0,
+      0,
+      2297013,
+      8604521,
+      0,
+      0,
+      8176299,
+      0,
+      0,
+      0,
+      0,
+      179818,
+      0,
+      0,
+      4206626
+    ],
+    "uncompressed_image_bytes": 590588102,
+    "uncompressed_image_sha256": "6eceb93c62b1357ef2faf30debd798e615462dfa93dd90235ed1ed4282003a19"
+  },
+  "acceptance": {
+    "ML-Cost-full-evaluator-session": "not-executed",
+    "ML-N-evaluator-execution": "not-executed",
+    "acceptance_complete": false,
+    "implementation_complete": false,
+    "independent_acceptance": false,
+    "long_goal_completed": false
+  },
+  "authority": "Ordinary all-input correspondence, owning theory sections 10-13; no new Lean client or independent acceptance.",
+  "correspondence": {
+    "10.3": "arbitrary finite word transfer and canonical scalar arithmetic",
+    "10.5": "every accepted actual ML-F frame to program input, no reindexing",
+    "11.2": "RGS and old/new subset label DP",
+    "11.3": "fully observed equality partition and literal degree zero pruning",
+    "11.5": "type-map capacities and UJB16.2 full indexed normalizers",
+    "11.6": "complete evaluator, all-input exact output and termination",
+    "12.2": "arbitrary finite represented stack words, controller simulation",
+    "12.4": "four-symbol to aligned binary all-input correspondence",
+    "13.2": "complete block image and existing copier/NWMG correspondence"
+  },
+  "fixed_code": {
+    "RBarishBinaryMachine-LICENSE.txt": {
+      "bytes": 11357,
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+    },
+    "compiler-provenance.md": {
+      "bytes": 2946,
+      "sha256": "a8f67561635eab0efa779863e86ec8d6085f76fcd62461290a0adacb67339718"
+    },
+    "constructor-code/W_U.block.gz.part000": {
+      "bytes": 33554432,
+      "sha256": "3aa86ac1cf4d2237981cbcc62d245fceb6d7111c9c393b4ea4dfcda514649535"
+    },
+    "constructor-code/W_U.block.gz.part001": {
+      "bytes": 33554432,
+      "sha256": "39571fa5233a14110acef5230705b5952e7a08434a56527a4e1ab2fb4eec9fca"
+    },
+    "constructor-code/W_U.block.gz.part002": {
+      "bytes": 33554432,
+      "sha256": "db41d271a775ccfc4ba584077bf009c7b65aaf3b0c63898d67e42239adfc4e53"
+    },
+    "constructor-code/W_U.block.gz.part003": {
+      "bytes": 33554432,
+      "sha256": "4d7ae2e7f471e1fd6a5a79c001e3699f03cc6994e21071f30c3557aca31c632a"
+    },
+    "constructor-code/W_U.block.gz.part004": {
+      "bytes": 24579204,
+      "sha256": "bbaff2fa5273ea7259d3bfa1e81c361cf005aa22ab6b05363af555927b3e0f0a"
+    },
+    "constructor-code/artifacts.json": {
+      "bytes": 1298,
+      "sha256": "8ab7ebab17c3d2915784eabfff7ef2d7f1a94078ad5ffdf4612c4f329336b0c7"
+    },
+    "constructor-code/image-results.json": {
+      "bytes": 1234,
+      "sha256": "82c84d5f3ccdc05c92fccd9efe17f8f727461138f539a03126d74469a3ba9b94"
+    },
+    "constructor-tables/artifacts.json": {
+      "bytes": 1515,
+      "sha256": "1f751c5bcdbd704e1e461b5e971760af8589ed38f58f86e16ff984770f397adf"
+    },
+    "constructor-tables/compiler-results.json": {
+      "bytes": 559,
+      "sha256": "22f0a865443ff0f502cae18ab863a4d6cfc58ab1d5e80e6b3865277a3a059361"
+    },
+    "constructor-tables/evaluator.binary.bin.part000": {
+      "bytes": 33554432,
+      "sha256": "79b59da393576bcd250d1dac2c6c54fadfe462c9f48361485c8a1c6246dd3995"
+    },
+    "constructor-tables/evaluator.binary.bin.part001": {
+      "bytes": 33554432,
+      "sha256": "dd652f87d4a41ca875e7c247a4eee89183d167fce7a1456e49630d9da21d5724"
+    },
+    "constructor-tables/evaluator.binary.bin.part002": {
+      "bytes": 4243126,
+      "sha256": "26e009b0ad04370368bd0691b8a597fd0df9d02a0a885f829095f1c75b748268"
+    },
+    "constructor-tables/evaluator.four.bin.part000": {
+      "bytes": 13181702,
+      "sha256": "eb04e95d02d0eb64b3ca5c21eafcb1c7846925a1f078bea1f3d0d03375f2462a"
+    },
+    "constructor/audit-results.json": {
+      "bytes": 3310,
+      "sha256": "f3f8c2786e46cce987db2a520da6723cfdad6638b3527902fc03937925c0cbe9"
+    },
+    "constructor/constructor-results.json": {
+      "bytes": 4235,
+      "sha256": "0a8ac57a7afa0c01e0140f61638976c493ddb3d7c774d7a3c50c1769df25348e"
+    },
+    "constructor/evaluator.stack.bin": {
+      "bytes": 532868,
+      "sha256": "1b1b7eb890daa523ab871beb77a57cc950c0a8e89923533dc383002a6e2c9d8b"
+    },
+    "constructor/evaluator.stack.json": {
+      "bytes": 740736,
+      "sha256": "12f7ce8d4364f3cbb04bb07333c098a163961c6b6994b2f26b69588869c5c593"
+    },
+    "constructor/regression-results.json": {
+      "bytes": 1112,
+      "sha256": "1ca0101a73a33cbe4e7a334f6fd96044ae3bb828b7f5a09dfc984ab63fda71cc"
+    },
+    "constructor_compiler.py": {
+      "bytes": 11290,
+      "sha256": "b6e3b5a3e7b0d6cc999f3094bfd7f5fd07464c198f86bb48641e25d67239690d"
+    },
+    "constructor_image.py": {
+      "bytes": 7884,
+      "sha256": "b6ec7011a82ad4a9b4b79d5ab6763c32f93170f427ba26a6b75c37f2cd65c8c0"
+    },
+    "constructor_ir.py": {
+      "bytes": 13901,
+      "sha256": "920d9c265c2db2e76a6e268139b35457d05bd116911758d9a5bb660fc1e18fe5"
+    },
+    "constructor_pack.py": {
+      "bytes": 2950,
+      "sha256": "e170a4b2fd5bb69d7d413ac24825364cbd37e3d51bed63ec82994ad89c79c547"
+    },
+    "constructor_reference.c": {
+      "bytes": 2971,
+      "sha256": "43b74714139fe731350ebb1655a67ae4e120663720427d04f9a805d52e03a8b5"
+    },
+    "evaluator_program.py": {
+      "bytes": 17408,
+      "sha256": "33fd87384bae21581556fc776738c6940171c3dca22670f557f26b368558842f"
+    }
+  },
+  "graph_format": {
+    "header": "8-byte magic then little-endian uint32 register_count,state_count,start",
+    "magic": "RROSTACK",
+    "opcodes": {
+      "0": "halt: [0,0,success,0,0,0]",
+      "1": "goto: [1,0,dest,0,0,0]",
+      "2": "push: [2,register,bit,dest,0,0]",
+      "3": "pop: [3,register,empty_dest,zero_dest,one_dest,0]",
+      "4": "peek: [4,register,empty_dest,zero_dest,one_dest,0]"
+    },
+    "rows": "6 little-endian uint32, 24 bytes per state",
+    "stack_convention": "Top is first word bit. Initially register 0 is actual accepted ML-F bits, all other registers empty. JSON register-name indices are fixed."
+  },
+  "input_contract": {
+    "B_initial": "nwmg.encode(copier_initial), existing 10/11 non-erasing encoding; PC=0 and existing ML-L head convention",
+    "binary_initial": "constructor_compiler.initial_binary(bits,361): symbols 0,1,2,3 mapped 00,01,10,11; head=0,state=0",
+    "copier_initial": "copier.initial_word(binary_initial), eight-bit metadata blocks; active header=0",
+    "domain": "Every accepted original ML-F word: N>=4, represented a/b in [0,1], b>0, endpoints and unreduced forms; every 15N original-indexed mask/value cache and finite cylinder list. Acceptedness is a surrounding paid-loader premise; ML-S need not reject arbitrary malformed words.",
+    "four_initial": "constructor_compiler.initial_four(bits,361): separator, received bits mapped to bit0/bit1, then 361 separators, blank elsewhere; head=0,state=0",
+    "grammar": "framing.py parse_arithmetic; u(N), sign=0,u(a),u(b),15N mask bits then selected value bits, u(cylinder_count), V-wrapped cylinders (flag 1 alone is empty; flag 0 then full mask/value frame). V(w)=1^len(w)0w, u(k)=V(canonical MSB binary(k)).",
+    "source_ownership": "No original source port, source identity, hidden generator, reply, law answer or full injection is public code input. Prior and restrictions are actual received data. Physical port/receipts remain same-source session objects."
+  },
+  "name": "ML-S fixed evaluator constructor A",
+  "output_contract": {
+    "W_U_B": "Use actual returned head and copier.decode_records to recover active source-binary tape and coordinate offset; reverse two-bit symbol coding, then framing.parse_arithmetic_output. Python readers are reference definitions requiring B backing, not paid runtime implementations.",
+    "binary": "Even aligned head. Decode 01/10 to bits until actual 11 separator. Ignore no unrepresented zeros.",
+    "four": "Finish head at first symbol of register 0. Read bit0/bit1 until actual next separator.",
+    "graph": "At successful halt, register 0 is framed ML.5; other registers remain finite scratch and must be retained/cleaned according to B.",
+    "law": "Three fractions Z0,Z1,Z then three for each original-order cache/cylinder conjunction. NullEvidence (tail 0) iff Z=0; positive tail 1 has exactly one rational conjunction-mixture/Z per cylinder.",
+    "source_service": "Computed law never supplies a Read reply; original unchanged port call and authentic indexed receipt precede cache update."
+  },
+  "program": {
+    "instruction_set": [
+      "halt",
+      "goto",
+      "push",
+      "pop",
+      "peek"
+    ],
+    "registers": 361,
+    "routine_entries": {
+      "add": 1902,
+      "addword": 19434,
+      "blocks": 4868,
+      "concat": 3646,
+      "conjoin": 4506,
+      "countlabels": 7229,
+      "div": 2221,
+      "encq": 3725,
+      "encu": 3679,
+      "encv": 3658,
+      "eq": 2087,
+      "falling": 10263,
+      "gcd": 2474,
+      "get": 3065,
+      "incident": 10893,
+      "inject": 14993,
+      "lt": 2021,
+      "mixture": 19071,
+      "mul": 2161,
+      "nextpart": 5120,
+      "normalizer": 17533,
+      "odometer": 10478,
+      "popword": 3036,
+      "prepend": 3050,
+      "put": 3223,
+      "qadd": 2766,
+      "readcache": 4008,
+      "readu": 3935,
+      "readv": 3917,
+      "reduce": 2584,
+      "side": 5903,
+      "sub": 1962,
+      "zeros": 3588
+    },
+    "runtime_callbacks": [],
+    "runtime_codegen": false,
+    "start": 0,
+    "states": 22202,
+    "successful_halt": 1901
+  },
+  "reference_evidence": {
+    "literal_full_Wang_LAB_evaluator_run": false,
+    "literal_full_binary_evaluator_run": false,
+    "machine": "Literal five-operation stack graph interpreter constructor_reference.c, not host laws or integrated binary/Wang/LAB execution",
+    "runs": [
+      {
+        "expected_source": "UJB16.2 repeated-edge/full-injection argument; null degree bound; partial <=4-edge inversion supplier",
+        "input_bits": 387,
+        "input_sha256": "37dfee71eda5a8fbee3d373aab446982f15976785ef965ec2e4a1b6ea98c5402",
+        "name": "positive-full",
+        "output_bits": 1308,
+        "output_sha256": "ef3f42dd5c96832e9c78b64f889813604f04ddd344be94fd04986977424b155c",
+        "ratios": [
+          "1",
+          "0"
+        ],
+        "reference": {
+          "gotos": 61937920,
+          "halt_state": 1901,
+          "output_bits": 1308,
+          "peak_stack_bits": 8085,
+          "peeks": 1059730,
+          "pop_instructions": 109016393,
+          "pushes": 92333003,
+          "retained_stack_bits": 6375,
+          "steps": 264347047,
+          "success": true
+        },
+        "values": [
+          "1/240734712102912",
+          "1/240734712102912",
+          "1/240734712102912",
+          "1/240734712102912",
+          "1/240734712102912",
+          "1/240734712102912",
+          "0",
+          "0",
+          "0"
+        ]
+      },
+      {
+        "expected_source": "UJB16.2 repeated-edge/full-injection argument; null degree bound; partial <=4-edge inversion supplier",
+        "input_bits": 386,
+        "input_sha256": "1a4ae049cf81b1f434398aa05cb8eabcf4d8689f7873f8d75f9ae1e870c34764",
+        "name": "positive-partial",
+        "output_bits": 1560,
+        "output_sha256": "846c751c6308a655e918464253b6eee91afcb99e8555830ea3f779361f325bd6",
+        "ratios": [
+          "255/281",
+          "0"
+        ],
+        "reference": {
+          "gotos": 1077163168,
+          "halt_state": 1901,
+          "output_bits": 1560,
+          "peak_stack_bits": 9302,
+          "peeks": 22644002,
+          "pop_instructions": 1954337813,
+          "pushes": 1606631408,
+          "retained_stack_bits": 7845,
+          "steps": 4660776392,
+          "success": true
+        },
+        "values": [
+          "281/61387351586242560",
+          "281/61387351586242560",
+          "281/61387351586242560",
+          "1/240734712102912",
+          "1/240734712102912",
+          "1/240734712102912",
+          "0",
+          "0",
+          "0"
+        ]
+      },
+      {
+        "expected_source": "UJB16.2 repeated-edge/full-injection argument; null degree bound; partial <=4-edge inversion supplier",
+        "input_bits": 839,
+        "input_sha256": "f5518d034eef5bd00c87ff9d43c5ca878ef9d012f47e04bedcbe45163ee3e29d",
+        "name": "null-nine-distinct-left",
+        "output_bits": 145,
+        "output_sha256": "46ab5545c4bd8b8c3eb927a6d7430e757402525268317b63f2f8f948ca9ac423",
+        "ratios": null,
+        "reference": {
+          "gotos": 357157571,
+          "halt_state": 1901,
+          "output_bits": 145,
+          "peak_stack_bits": 7023,
+          "peeks": 592421,
+          "pop_instructions": 545966820,
+          "pushes": 534572126,
+          "retained_stack_bits": 5441,
+          "steps": 1438288939,
+          "success": true
+        },
+        "values": [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ]
+      },
+      {
+        "expected_source": "UJB16.2 repeated-edge/full-injection argument; null degree bound; partial <=4-edge inversion supplier",
+        "input_bits": 141,
+        "input_sha256": "4062f7860aed1ee4efc0854ab4c18cdb8e7ccfb55e5f86cfc27a8628701c2213",
+        "name": "positive-unreduced-endpoint",
+        "output_bits": 618,
+        "output_sha256": "c579132fce7d2bc468e4e3e221cc2eac56504e5d047bae8732c601ff7bddc2b6",
+        "ratios": [],
+        "reference": {
+          "gotos": 29911945,
+          "halt_state": 1901,
+          "output_bits": 618,
+          "peak_stack_bits": 4998,
+          "peeks": 524826,
+          "pop_instructions": 52858757,
+          "pushes": 44597905,
+          "retained_stack_bits": 4998,
+          "steps": 127893434,
+          "success": true
+        },
+        "values": [
+          "1/240734712102912",
+          "1/240734712102912",
+          "1/240734712102912"
+        ]
+      }
+    ]
+  },
+  "schema": 1,
+  "source_pins": {
+    "NWMG": "arXiv:1304.0053v2, pp4-9; citation-only, original 13-instruction construction",
+    "UJB": "c27e6de785aefbf37c0789a3f4cf63c6667ff3d7:UJB15.2-17.1",
+    "license": "Apache-2.0; full text and exact local source hashes in compiler-provenance.md",
+    "stack_compiler_upstream": "RBarish-UTokyo/NPCompleteness-Lean4@3e603e795b44fedcf7d6dd65b7d1e30547ead925"
+  },
+  "table_format": {
+    "binary": {
+      "binary_bytes": 283233736,
+      "binary_rules": 47205620,
+      "binary_sha256": "6203cab30f56cfa7b726a945d559daa40d5a6aa567abc10e3b478f68025e51ba",
+      "binary_states": 23602810,
+      "four_bytes": 51497056,
+      "four_sha256": "d1614280a9606193a7f62e911907dc40f0ddebcbbffd3fed6d514a682ff2f194",
+      "four_states": 2145710,
+      "layout": "11 states per four-symbol state; row-major little-endian RROTABLE",
+      "phase_counts": {
+        "delete": 145872,
+        "finish": 2,
+        "inspect": 7148,
+        "main": 22202,
+        "push": 883243,
+        "rewind": 11854,
+        "seek": 1075389
+      }
+    },
+    "binary_halt": "state_count is sole halt; other destinations are in [0,state_count]",
+    "binary_moves": [
+      -1,
+      1
+    ],
+    "four_halt": "destination 0xffffffff denotes terminal read rule; writes/moves ignored",
+    "four_moves": [
+      -1,
+      0,
+      1
+    ],
+    "four_symbols": {
+      "bit_one": 2,
+      "bit_zero": 1,
+      "blank": 0,
+      "separator": 3
+    },
+    "header": "8-byte magic then little-endian uint32 alphabet_size,state_count",
+    "magic": "RROTABLE",
+    "rows": "row-major state, then read symbol; little-endian <BbI>: uint8 write,int8 move,uint32 destination"
+  }
+}

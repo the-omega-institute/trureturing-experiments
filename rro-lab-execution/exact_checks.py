@@ -542,7 +542,7 @@ def build_result(theory_root, candidate_manifest):
     result['unresolved_obligations'] = [
         {'id':'ML-N-evaluator-execution','interface':'Definitions 4.4/4.6; Theorem 4.5; ML-X arithmetic',
          'status':'not-executed',
-         'finding':'The copier now generates a complete non-erasing binary table for every supplied erasing binary table, lowers it through the primary thirteen-instruction compiler, and decodes real LAB output. The acquired successor kernel executes on this path. ML-A still has no instantiated complete ML-T evaluator table, hence no complete evaluator W_U or decoded full-law run. Exact host law values and an arithmetic kernel do not discharge that obligation.',
+         'finding':'The copier now generates a complete non-erasing binary table for every supplied erasing binary table, lowers it through the primary thirteen-instruction compiler, and decodes real LAB output. The acquired successor kernel executes on this path. The fixed ML-S evaluator graph, materialized binary table and complete encoded W_U are supplied separately, with full stack-reference law runs. A full evaluator run through the actual ML-T/NWMG/ML-L/ML-B path and decoded physical ML.5 output has not executed. Those constructor/reference results do not discharge this integrated obligation.',
          'required':'Run a public-input ML-A instance through the actual complete ML-T/NWMG/ML-L/ML-B path and decode/print its exact result; preserve every N/mask/prior domain.'},
         {'id':'ML-Cost-full-evaluator-session','interface':'Theorems 6.4/6.6; ML.16',
          'status':'not-executed',

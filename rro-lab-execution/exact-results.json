@@ -976,9 +976,17 @@
     "provider_vertices": 263297
   },
   "program_hashes": {
+    "constructor_audit.py": "289d0c092154c2dfc17404bb7aba7b29de84aca8d2b725e478d56205702040f9",
+    "constructor_checks.py": "939f764efe22e598492ed3be5f29df69bbacff1a40bfca1470c26ff50dbff308",
+    "constructor_compiler.py": "b6e3b5a3e7b0d6cc999f3094bfd7f5fd07464c198f86bb48641e25d67239690d",
+    "constructor_image.py": "b6ec7011a82ad4a9b4b79d5ab6763c32f93170f427ba26a6b75c37f2cd65c8c0",
+    "constructor_ir.py": "920d9c265c2db2e76a6e268139b35457d05bd116911758d9a5bb660fc1e18fe5",
+    "constructor_pack.py": "e170a4b2fd5bb69d7d413ac24825364cbd37e3d51bed63ec82994ad89c79c547",
+    "constructor_regressions.py": "67b6d244e3f0ee66d2103d826d47a75f46de990f88ab7ebe0214030496f98969",
     "copier.py": "b571227e74ce3583b09e0fa359df950e2d462385528a973b81b1c50060a22d62",
     "copier_checks.py": "fb5c0b26a6f1b01037845ca44c6ae3d17cacb7b9cbfe5c857defb5701cd1c610",
-    "exact_checks.py": "682929d74081693b326ef0e967a400e74682af266ece971e6335248c88523bf0",
+    "evaluator_program.py": "33fd87384bae21581556fc776738c6940171c3dca22670f557f26b368558842f",
+    "exact_checks.py": "a76e99283b5a20e775a14a3580aafedd3a75541d86c5cb1341b53b6b353ea2f7",
     "framing.py": "13d043ef5557b713348bbf10e6da126f88540f1a3bf3e823bb6ae84121adc41b",
     "lab.py": "59d3c316b523a1b583b1bd62f5b0b96251f4a129e6f9f09d9a0b7ceb26e3b6fb",
     "laws.py": "fea885964c863393f850a66890c1c0f6c33191828ecd794ac3204d093ceba709",
@@ -1698,22 +1706,22 @@
       "sha256": "d403b5c4193f09173ef167be4d7cef693f629f88743a2b88b6930b74150bf3b4"
     },
     "candidate-manifest": {
-      "bytes": 484,
-      "sha256": "acbe1c201b53007c6589a2f6079c05a9d1c921155968c0463c59d509b76801e1"
+      "bytes": 485,
+      "sha256": "b5f5a0be0609f802b5e57e0adbc284fe20b97881e6b2b6872f05802a10f4242e"
     },
     "candidate:Library/Computability/nearywoodsmurphyglaschick2014wang.md": {
-      "bytes": 2675,
-      "sha256": "d76438783121d3c5add314a4c888937b25a65d08b019dc4e14b2903a1cabb4f6"
+      "bytes": 4148,
+      "sha256": "863859e7f3d2110e0559cd6837afc8b63614f456c642ea253f1a8d709d00e345"
     },
     "candidate:docs/develop/theory/RECURSIVE_RELATIONAL_OBSERVATION_MONOTONE_LAB_INDEXED_EXECUTION.md": {
-      "bytes": 76789,
-      "sha256": "0d83c68798d756085caa3df5fb18b07f10df397990062e154d896cd0ca6448fc"
+      "bytes": 106068,
+      "sha256": "53a2056ad651de1f33ae95c1ac3d05df3af2f0533d0e0ad3aeae6c49f7e8ba1a"
     }
   },
-  "theory_sha256": "0d83c68798d756085caa3df5fb18b07f10df397990062e154d896cd0ca6448fc",
+  "theory_sha256": "53a2056ad651de1f33ae95c1ac3d05df3af2f0533d0e0ad3aeae6c49f7e8ba1a",
   "unresolved_obligations": [
     {
-      "finding": "The copier now generates a complete non-erasing binary table for every supplied erasing binary table, lowers it through the primary thirteen-instruction compiler, and decodes real LAB output. The acquired successor kernel executes on this path. ML-A still has no instantiated complete ML-T evaluator table, hence no complete evaluator W_U or decoded full-law run. Exact host law values and an arithmetic kernel do not discharge that obligation.",
+      "finding": "The copier now generates a complete non-erasing binary table for every supplied erasing binary table, lowers it through the primary thirteen-instruction compiler, and decodes real LAB output. The acquired successor kernel executes on this path. The fixed ML-S evaluator graph, materialized binary table and complete encoded W_U are supplied separately, with full stack-reference law runs. A full evaluator run through the actual ML-T/NWMG/ML-L/ML-B path and decoded physical ML.5 output has not executed. Those constructor/reference results do not discharge this integrated obligation.",
       "id": "ML-N-evaluator-execution",
       "interface": "Definitions 4.4/4.6; Theorem 4.5; ML-X arithmetic",
       "required": "Run a public-input ML-A instance through the actual complete ML-T/NWMG/ML-L/ML-B path and decode/print its exact result; preserve every N/mask/prior domain.",
