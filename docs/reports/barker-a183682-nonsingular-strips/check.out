@@ -1,0 +1,20 @@
+source: https://oeis.org/A183682/b183682.txt
+source_bfile_sha256: 83d9f74426b679f0ed9ec4d9439ddcf0746f8da19b031b9840c91f7ad9d0a53b
+all 64 ordered row pairs: exact neighbor table OK
+000: 
+001: 
+010: 101,111
+011: 101,110
+100: 
+101: 010,011,110,111
+110: 011,101
+111: 010,101
+16 binary squares: determinant nonzero iff permanent one OK
+class degrees: A -> (1 A, 1 B); B -> (4 A, 0 B) OK
+quotient matrix: Q^2 = Q + 4 I OK
+8-state propagation and 2-class quotient match all 200 source terms OK
+direct labelled-array enumeration, n=1..5: [12, 32, 80, 208, 528]
+source recurrence, n=3..200: OK; n=2 with literal count(0)=8 fails as expected
+4*x*(3+5*x)/(1-x-4*x^2): exact coefficients x^0..x^200 OK
+finite consistency evidence only; all-height induction remains for Lean implementation
+ALL_CHECKS_OK
