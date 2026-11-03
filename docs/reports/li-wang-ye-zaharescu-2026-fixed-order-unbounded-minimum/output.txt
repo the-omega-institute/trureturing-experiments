@@ -1,0 +1,19 @@
+FIDELITY: source Sections 2-3: all 20 cofactors, two determinant algorithms,
+          primitivity, Bezout, 45 gcds, and nine homogeneous rows verified.
+REAL_REDUCED_JACOBIAN_MINOR 1123741091386468277532
+LOCAL: p=2, modulus=2, reduced_minor=1
+LOCAL: p=3, modulus=27, reduced_minor=1
+LOCAL: p=5, modulus=5, reduced_minor=3
+LOCAL: p=7, modulus=7, reduced_minor=5
+LOCAL: p=11, modulus=11, reduced_minor=2
+COFACTOR_IDENTITY_CASES 3524
+SCOPE: every 1x2 and 2x3 frame with entries in {1,2}; every relation
+       coefficient in {-1,1,2}; every insertion slot; and the source 9x10 frame.
+ORDER_TEN_SCALING_CASES 60 scales=2,10,100
+SINGULARITY_IDENTITY: sum a_j(3 d_j a_j^2 - lambda c_j) = 3 C - lambda L.
+REQUIRED_WITNESS_NOT_SUPPLIED n=10 K=2
+REQUIRED_WITNESS_NOT_SUPPLIED n=10 K=10
+REQUIRED_WITNESS_NOT_SUPPLIED n=10 K=100
+No determinant-one positive order-ten witness is claimed.
+LIMITATION: finite identities do not establish the quantified existence claim.
+ALL_CHECKS_OK
