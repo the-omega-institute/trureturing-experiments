@@ -686,6 +686,21 @@
     "shared_arena_job_census": true,
     "states": 1622
   },
+  "field_runtime_component": {
+    "B_cases": 1722,
+    "B_complete": false,
+    "C_released": false,
+    "full_image_fetches": 4,
+    "limits": [
+      "Host installation has no paid initializer continuation.",
+      "Finite-control multibit updates and field-selector decoding still need literal primitive refinement.",
+      "No particular original-port service/controller or joint source/observer timeline.",
+      "Fixed finite supplied pool is fully retained; no dynamic widening, cleanup or shared-job controller.",
+      "No full compiled evaluator run; both original strict failures remain."
+    ],
+    "protocol_result_sha256": "5029860f2b69a64e82252b3147565a031ceb618e1633f5e76165e701c8b5c4b2",
+    "saved_result_sha256": "e3318790fe4e90a4169ebb6e3c8281e7e357ca90eec64a3cc5c9e4100439cda7"
+  },
   "framing": {
     "U_values": 257,
     "V_words": 511,
@@ -1133,7 +1148,12 @@
     "copier.py": "b571227e74ce3583b09e0fa359df950e2d462385528a973b81b1c50060a22d62",
     "copier_checks.py": "fb5c0b26a6f1b01037845ca44c6ae3d17cacb7b9cbfe5c857defb5701cd1c610",
     "evaluator_program.py": "33fd87384bae21581556fc776738c6940171c3dca22670f557f26b368558842f",
-    "exact_checks.py": "77e5b92226f2fa92d46ce9fd394f280e67c78cb289744ccfc71f3cb051989f4c",
+    "exact_checks.py": "86ca5474fe6aebadcc1ca2a226e8fb447b007ba62f55d182fcd5e8b06c99987a",
+    "field_checks.py": "464cd66c0f32dc9ed6170e657d10cdaa9f9be34ab99b22c8aa31782c300d8bbd",
+    "field_decoder.py": "1bc35d4702e141c89001985e3ce8c87278f9d84422fa2f8ba3aa71fa08100d3c",
+    "field_graph.py": "6c4a3c01d01812b8e91eeae96ab746b5428762ee17f86b0792faee9503315ae1",
+    "field_io.py": "5fa898cc6569807321a7c0975cf767a9e9047278e80859c6986609955df32e59",
+    "field_protocol_checks.py": "ceb6b4e8a72f3ec51d790590da1679247f0570f83fc52bc02ebf6c0aba443cf7",
     "framing.py": "13d043ef5557b713348bbf10e6da126f88540f1a3bf3e823bb6ae84121adc41b",
     "lab.py": "59d3c316b523a1b583b1bd62f5b0b96251f4a129e6f9f09d9a0b7ceb26e3b6fb",
     "laws.py": "fea885964c863393f850a66890c1c0f6c33191828ecd794ac3204d093ceba709",
@@ -1141,6 +1161,7 @@
     "paid_code.py": "a0fc0939b0f2135c629f81ac8e7642de58bfec417608030bc3b287faaaeff7a6",
     "paid_code_checks.py": "a8e8587978477b02771b742092962ca6480089fb554833fdda11a355fd1268ab",
     "pins.py": "eddd65bbf35bed490267173e96a06423155b543a9fde04d5b89f8e7c1ef3f0d0",
+    "primitive_engine.py": "d759774eed2fbe16a1b62456eedd83d4c84d5a61fbdd8bc0230b52d63b40ad6f",
     "session.py": "de7306df87891d380379c9fd9ae06e7a4befc51276a7b0c5c01d9401db1e12c7"
   },
   "python_minimum": "3.12",
@@ -1856,18 +1877,18 @@
     },
     "candidate-manifest": {
       "bytes": 485,
-      "sha256": "b3d9e8aa2319c46a5f7f479d68c753c5c5af83f4f90115f6c86796e4942158f5"
+      "sha256": "4b8448af07fe2225a7f368c032347d52562bfaf3a340e575d6d069f1448be943"
     },
     "candidate:Library/Computability/nearywoodsmurphyglaschick2014wang.md": {
       "bytes": 4148,
       "sha256": "863859e7f3d2110e0559cd6837afc8b63614f456c642ea253f1a8d709d00e345"
     },
     "candidate:docs/develop/theory/RECURSIVE_RELATIONAL_OBSERVATION_MONOTONE_LAB_INDEXED_EXECUTION.md": {
-      "bytes": 117399,
-      "sha256": "a25218e28509d517af08b6fe7cccdd90fccb008796d68f5f60c58ffe816f3cab"
+      "bytes": 139382,
+      "sha256": "bb367006dd99b2f53024b7b435d3fa365521690b764f105127374e7a0b402eb7"
     }
   },
-  "theory_sha256": "a25218e28509d517af08b6fe7cccdd90fccb008796d68f5f60c58ffe816f3cab",
+  "theory_sha256": "bb367006dd99b2f53024b7b435d3fa365521690b764f105127374e7a0b402eb7",
   "unresolved_obligations": [
     {
       "finding": "The copier now generates a complete non-erasing binary table for every supplied erasing binary table, lowers it through the primary thirteen-instruction compiler, and decodes real LAB output. The acquired successor kernel executes on this path. The fixed ML-S evaluator graph, materialized binary table and complete encoded W_U are supplied separately, with full stack-reference law runs. A full evaluator run through the actual ML-T/NWMG/ML-L/ML-B path and decoded physical ML.5 output has not executed. Those constructor/reference results do not discharge this integrated obligation.",

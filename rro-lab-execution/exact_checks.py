@@ -542,6 +542,25 @@ def paid_code_component():
             'scope':saved['scope']}
 
 
+def field_runtime_component():
+    data=(HERE/'field-results.json').read_bytes()
+    saved=json.loads(data)
+    for name,digest in saved['source_hashes'].items():
+        assert hashlib.sha256((HERE/name).read_bytes()).hexdigest()==digest, ('stale field component',name)
+    protocol_data=(HERE/'field-protocol-results.json').read_bytes()
+    protocol=json.loads(protocol_data)
+    for name,digest in protocol['source_hashes'].items():
+        assert hashlib.sha256((HERE/name).read_bytes()).hexdigest()==digest, ('stale field protocol',name)
+    assert saved['B_complete'] is False and saved['C_released'] is False
+    assert protocol['B_complete'] is False and protocol['C_released'] is False
+    return {'saved_result_sha256':hashlib.sha256(data).hexdigest(),
+            'protocol_result_sha256':hashlib.sha256(protocol_data).hexdigest(),
+            'B_complete':False,'C_released':False,
+            'B_cases':saved['B']['finite_cases']['instances'],
+            'full_image_fetches':len(saved['full_image']['cases']),
+            'limits':saved['limits']}
+
+
 def build_result(theory_root, candidate_manifest):
     source_manifest(theory_root, candidate_manifest)
     old, general, positive = suppliers()
@@ -555,6 +574,7 @@ def build_result(theory_root, candidate_manifest):
               'acquired_arithmetic_kernel_session':kernel_session(),
               'framing':framing_checks(),
               'paid_code_component':paid_code_component(),
+              'field_runtime_component':field_runtime_component(),
               'arithmetic':arithmetic_checks(old,general,evaluator),
               'original_port_menu':port_menu_checks(old,positive),
               'real_sessions':session_checks(old,evaluator),
