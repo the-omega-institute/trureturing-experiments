@@ -1,0 +1,10 @@
+FIDELITY Lin Examples 5.3/5.10: spectrum={-1:3,0:1,1:2,7:1}; Ay=-y; W=1; n_-(A+I)+1=1
+WITNESS r=2: A= [[0, 0, 2, -1, -1], [0, 0, -1, 2, -1], [2, -1, 0, 0, 0], [-1, 2, 0, 0, 0], [-1, -1, 0, 0, 0]]
+WITNESS r=2: spectrum={-3,-sqrt(3),0,sqrt(3),3}; inertia=(2,2,1); weak_combinations=12; W=2; n_-+1=3
+FAMILY r=2: exact weak_combinations=12; W=2; gap=1
+FAMILY r=3: exact weak_combinations=56; W=2; gap=2
+FAMILY r=2..7: exact Gram identity, characteristic polynomial and inertia all match
+RANDOM seed=261100789: 72 original-pattern and 72 diagonal-relaxed exact rational realizations, r=2..7; Bv=0, strict dominance, full row rank, inertia=(r,r,1), explicit hyperbolic congruence
+RANDOM first four r=2 realizations: independently enumerated W=2
+LIMIT: finite exact checks support the proposed general argument; no Lean settlement proof is included
+ALL_CHECKS_OK
