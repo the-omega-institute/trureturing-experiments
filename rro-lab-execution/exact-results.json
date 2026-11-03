@@ -1157,6 +1157,9 @@
     "framing.py": "13d043ef5557b713348bbf10e6da126f88540f1a3bf3e823bb6ae84121adc41b",
     "lab.py": "59d3c316b523a1b583b1bd62f5b0b96251f4a129e6f9f09d9a0b7ceb26e3b6fb",
     "laws.py": "fea885964c863393f850a66890c1c0f6c33191828ecd794ac3204d093ceba709",
+    "native_checks.py": "eb0b77c4c8b38167baf43e3a50c7159c9a91fb2c0d0c0b292255ee69a1f57e56",
+    "native_engine.py": "2089e4ee678d92225ea746be9ffe582a02aa7688306cbf4c84fb684a74ccb0fc",
+    "native_install.py": "a26ceeb8e7695d19549302e3884c2729222f5b5de96b9a7d76a53034e3cc4555",
     "nwmg.py": "cff762dff0ce4ea3f06a356ac948c3ea70751a900edaa7160ea093a91b401517",
     "paid_code.py": "a0fc0939b0f2135c629f81ac8e7642de58bfec417608030bc3b287faaaeff7a6",
     "paid_code_checks.py": "a8e8587978477b02771b742092962ca6480089fb554833fdda11a355fd1268ab",
@@ -1877,18 +1880,18 @@
     },
     "candidate-manifest": {
       "bytes": 485,
-      "sha256": "4b8448af07fe2225a7f368c032347d52562bfaf3a340e575d6d069f1448be943"
+      "sha256": "8c5239b471b0a5b7a78f101abb00df3a1add52cc3cb8d9101947b406f7d14f2b"
     },
     "candidate:Library/Computability/nearywoodsmurphyglaschick2014wang.md": {
       "bytes": 4148,
       "sha256": "863859e7f3d2110e0559cd6837afc8b63614f456c642ea253f1a8d709d00e345"
     },
     "candidate:docs/develop/theory/RECURSIVE_RELATIONAL_OBSERVATION_MONOTONE_LAB_INDEXED_EXECUTION.md": {
-      "bytes": 139382,
-      "sha256": "bb367006dd99b2f53024b7b435d3fa365521690b764f105127374e7a0b402eb7"
+      "bytes": 175562,
+      "sha256": "324c9f80b10439db6f04c13c4b0b9d32ca9af05f9ef6c64e70b0871960529989"
     }
   },
-  "theory_sha256": "bb367006dd99b2f53024b7b435d3fa365521690b764f105127374e7a0b402eb7",
+  "theory_sha256": "324c9f80b10439db6f04c13c4b0b9d32ca9af05f9ef6c64e70b0871960529989",
   "unresolved_obligations": [
     {
       "finding": "The copier now generates a complete non-erasing binary table for every supplied erasing binary table, lowers it through the primary thirteen-instruction compiler, and decodes real LAB output. The acquired successor kernel executes on this path. The fixed ML-S evaluator graph, materialized binary table and complete encoded W_U are supplied separately, with full stack-reference law runs. A full evaluator run through the actual ML-T/NWMG/ML-L/ML-B path and decoded physical ML.5 output has not executed. Those constructor/reference results do not discharge this integrated obligation.",
