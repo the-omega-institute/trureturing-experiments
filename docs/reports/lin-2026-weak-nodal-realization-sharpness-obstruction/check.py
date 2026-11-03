@@ -170,7 +170,7 @@ def family(r):
 
 
 def main():
-    # Fidelity: Lin Example 5.3 and Example 5.10 (label ex:wdone).
+    # Fidelity: Lin Example 5.3 and Example 5.11 (label ex:wdone).
     A = S.zeros(7)
     A[0, 0] = 6
     for i in range(1, 7):
@@ -184,7 +184,7 @@ def main():
     assert len(domains) == 4 and len(covers) == 1
     assert max(map(len, covers)) == 1
     assert inertia(A + S.eye(7)) == (4, 0, 3)
-    print('FIDELITY Lin Examples 5.3/5.10: spectrum={-1:3,0:1,1:2,7:1}; Ay=-y; W=1; n_-(A+I)+1=1')
+    print('FIDELITY Lin Examples 5.3/5.11: spectrum={-1:3,0:1,1:2,7:1}; Ay=-y; W=1; n_-(A+I)+1=1')
 
     E, A, y = family(2)
     assert A * y == S.zeros(5, 1)
