@@ -8,7 +8,7 @@ builds. Validation covers the stated finite cases through the author's exact run
 alternate-hashseed comparison; it does not constitute independent review or
 Lean certification.
 
-The mathematical input is trureturing revision
+The pinned supplier input is trureturing revision
 `d6e6417f0e055ac0701e5853b9eaf70a316ef709`: UJB Proposition 3.2 and
 §§5,9,12,15–18, POSITIVE_RELATION_CERTIFICATES §§1–7, and
 FINITE_GROUP_POWER_MAP_SEPARATION §§1–3. The experiment base is
@@ -16,10 +16,12 @@ FINITE_GROUP_POWER_MAP_SEPARATION §§1–3. The experiment base is
 literal helper at `865f38257ead1b4e857ff915c23b0b04276bd7f3` and the positive
 certificate/tree/read helpers at the experiment base, in memory. Their exact
 paths and SHA256 hashes are in the result. Their unrelated checks are not run.
-The result also records the immutable base and theory snapshot
-`d07bda9538cfff024c409a259a73559b9b2edd40` (956 lines), read through Git
-objects. No active theory tree is an input. These source identities do not
-assert correspondence to a subsequent theory revision.
+The corrected theory snapshot is `d7a888c0b7a8e20e6c074bd6ee4471ef87fb8727`,
+read from its Git object. The checker records its SHA256 and verifies the
+incidence, chart, full-incidence, controller, full-injection-law and boundary
+section markers used by this experiment. The pinned supplier snapshots remain
+separate inputs; the result's `correspondence` object binds them to the
+corrected declarations without treating prose as an executable proof.
 
 Run from this worktree, using the required cooperative entry:
 
@@ -38,6 +40,33 @@ The JSON omits timing and interpreter patch versions so identical mathematical
 inputs give identical bytes. Arithmetic uses integers, F3 and exact fractions.
 Labels are MSB-first binary integers in 7/8 bits. Program indices are zero-based;
 reported native sample indices explicitly marked `1based` are one-based.
+
+The result's `correspondence` object is the cross-artifact contract. It maps
+Definitions 8.1–8.3 and Lemmas/Theorems 8.2, 8.4–8.6 to the acquired quotient,
+all 72/243 label-to-fibre attachments, the 108 quotient incidences, the 5,184
+incidence charts, all 19,683 ternary entries, the 117 full lines, the 39 full
+planes and the 13 full parallel classes. The reverse check compares the
+fibre-valued lift with all 1,944 literal edges and represents each geometric
+output by its entire acquired nine-label right fibre; hidden injections are
+not checker inputs.
+
+It maps Proposition 8.7 and Theorem 10.3 to the two native fixtures: both use
+the original stationary Read interpreter at fixed `N=580`, with 576 scanned
+slots, 8,640 scan invocations, operand sum 37,337,760 and maximum operand
+length 8,641. Preparation events, paid draws, cache rows, rereads and the
+separate distinct-address tariff remain recorded as resources. G0 produces a
+pointwise inverse only after an acquired edge; G1 retains the missing partner
+boundary.
+
+It maps Definitions 9.1 and 9.3–9.4, Theorems 9.4–9.5, Proposition 9.6 and
+Example 9.7 to the full original injection prior. The named N=4 projections
+use one shared source and maps, integrate unused injection values by exact
+extension counts, preserve original indices, and check partial, complete,
+unread, joint and repeated-index targets. The exact values include `63/127`,
+`287/575`, `32879/65475`, same-index agreement `1`, and the shared-H
+repeated/distinct agreements `1` and `1/27`. These are representative
+projections on the full positive-cache domain; they do not enumerate every
+cache, full injection, controller or native word.
 
 The program reconstructs all 4,374 elements of each actual group S_i, checks
 inversion, classifies orders, and obtains the 1,944 literal edges from squares

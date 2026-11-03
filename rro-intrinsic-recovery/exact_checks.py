@@ -25,6 +25,9 @@ ROOT = Path(__file__).resolve().parent.parent
 EXPERIMENT_BASE = 'b490f4f17c97645ce7c6495ca8635bce3d3a1af7'
 THEORY_BASE = 'd6e6417f0e055ac0701e5853b9eaf70a316ef709'
 THEORY_PRE_REPAIR = 'd07bda9538cfff024c409a259a73559b9b2edd40'
+THEORY_CORRECTED = 'd7a888c0b7a8e20e6c074bd6ee4471ef87fb8727'
+THEORY_PATH = 'docs/develop/theory/RECURSIVE_RELATIONAL_OBSERVATION_POSITIVE_RELATION_CERTIFICATES.md'
+THEORY_REPO = ROOT.parent / 'trureturing'
 SUPPLIER_BASE = '865f38257ead1b4e857ff915c23b0b04276bd7f3'
 BLOBS = {}
 
@@ -1115,16 +1118,147 @@ def full_injection_check(E0, inv0, E1, inv1):
             'unread_slots': 'original prepared slots only; unused coordinates and injection values integrated exactly'}
 
 
+def corrected_theory_source():
+    raw = subprocess.check_output(['git', '-C', str(THEORY_REPO), 'show',
+                                   THEORY_CORRECTED + ':' + THEORY_PATH])
+    text = raw.decode()
+    sections = {
+        'incidence_and_chart': ('**Definition 8.1', '**Lemma 8.2',
+                                '**Definition 8.3', '**Theorem 8.4'),
+        'full_affine_incidence_and_reverse': ('**Theorem 8.5', '**Theorem 8.6'),
+        'controller_and_costs': ('**Proposition 8.7',),
+        'full_injection_joint_law': ('**Definition 9.3', '**Theorem 9.4',
+                                     '**Theorem 9.5', '**Proposition 9.6',
+                                     '**Example 9.7'),
+        'boundaries_and_interfaces': ('**Proposition 10.1', '**Proposition 10.2',
+                                      '**Theorem 10.3'),
+    }
+    assert all(marker in text for markers in sections.values() for marker in markers)
+    return {'revision': THEORY_CORRECTED, 'sha256': sha256(raw).hexdigest(),
+            'sections': {name: list(markers) for name, markers in sections.items()}}
+
+
 def theory_identities():
-    path = 'docs/develop/theory/RECURSIVE_RELATIONAL_OBSERVATION_POSITIVE_RELATION_CERTIFICATES.md'
     versions = {}
     contents = []
-    for rev in (THEORY_BASE, THEORY_PRE_REPAIR):
-        raw = subprocess.check_output(['git', '-C', str(ROOT.parent/'trureturing'), 'show', rev+':'+path])
-        versions[rev+':'+path] = {'sha256': sha256(raw).hexdigest(), 'lines': len(raw.splitlines())}
+    for rev in (THEORY_BASE, THEORY_PRE_REPAIR, THEORY_CORRECTED):
+        raw = subprocess.check_output(['git', '-C', str(THEORY_REPO), 'show', rev+':'+THEORY_PATH])
+        versions[rev+':'+THEORY_PATH] = {'sha256': sha256(raw).hexdigest(), 'lines': len(raw.splitlines())}
         contents.append(raw)
     assert contents[1].startswith(contents[0])
+    assert contents[2].startswith(contents[0])
     return versions
+
+
+def correspondence_check(cases, native0, native1, full_injection):
+    """Bind corrected theory declarations to the existing exact result fields."""
+    source = corrected_theory_source()
+    geo = cases['identity']['G0_geometry']
+    cover = geo['exact_cover_discriminator']
+    conditional = cases['identity']['G0_conditional']
+    h_conditional = cases['identity']['G0_H_conditional']
+    g1 = cases['identity']['G1_domain_and_inverse']
+    assert geo['reverse_edges'] == 1944
+    assert geo['observable_left_attachments'] == 72
+    assert geo['observable_right_attachments'] == 243
+    assert geo['marked_incidences'] == 108
+    assert geo['charts'] == 5184 and geo['H_triples_enumerated'] == 19683
+    assert geo['full_affine_lines'] == 117 and geo['full_affine_planes'] == 39
+    assert geo['full_affine_parallel_classes'] == 13
+    assert geo['full_lines_per_point'] == 13
+    assert geo['full_lines_per_plane'] == 12
+    assert geo['full_planes_per_line'] == 4
+    assert geo['H_fibre_outputs_checked'] == 19683
+    assert cover['all_disjoint_nine_line_covers'] == 40
+    assert cover['three_transversal_components'] == 4
+    assert cover['extra_mixed_covers'] == 36
+    assert geo['disjoint_line_transversal_counts'] == {0: 36, 2: 324, 3: 108}
+    assert conditional['positive_masks'] == 1979
+    assert conditional['same_slot_agreement'] == '1'
+    assert conditional['distinct_partial_slot_agreement'] == '1/27'
+    assert h_conditional['repeated_point_input_agreement']['indexed'] == '1'
+    assert g1['literal_components_K8_27'] == 9
+    assert g1['twin_quotient_components_K1_1'] == 9
+    assert g1['inverse_matchings'] == 105
+    assert g1['mutual_partner_joint_probability'] == '1/7'
+    assert g1['repeated_input_agreement'] == '1'
+    assert full_injection['inverse_projection_scenarios_per_source'] == 8
+    assert full_injection['source_prior_values_checked'] == ['0', '1', '1/3']
+    for source_name in ('G0', 'G1'):
+        source_cases = full_injection['sources'][source_name]
+        assert source_cases['partial_slot_weighting_discriminator']['actual_full_prior'] == '63/127'
+        assert source_cases['completed_anchor_weighting_discriminator']['actual_full_prior'] == '287/575'
+        assert source_cases['partial_slot_weighting_discriminator']['incorrect_extra_support_or_likelihood'] == '287/575'
+        assert source_cases['completed_anchor_weighting_discriminator']['incorrect_doubled_likelihood'] == '32879/65475'
+    mixed = full_injection['sources']['G0']['mixed_cache_joint_inverse_H']
+    assert mixed['actual_literal_pair_assignments_counted'] == 1944**2
+    assert mixed['repeated_H_indices_0_1_1_anchor_agreement'] == '1'
+    assert mixed['distinct_H_indices_0_1_2_anchor_agreement'] == '1/27'
+    assert native0['scan_Read_invocations'] == native1['scan_Read_invocations'] == 8640
+    assert native0['scan_literal_operand_sum'] == native1['scan_literal_operand_sum'] == 37337760
+    assert native0['scan_literal_operand_max'] == native1['scan_literal_operand_max'] == 8641
+    assert native0['N'] == native1['N'] == 580
+    assert native0['pointwise_inverse_recoverable'] is True
+    assert native1['pointwise_inverse_recoverable'] is False
+    return {
+        'corrected_theory': source,
+        'incidence_chart_full_incidence': {
+            'theory': 'Definitions 8.1--8.3; Lemmas/Theorems 8.2, 8.4--8.6',
+            'result_fields': ['G0_geometry', 'exact_cover_discriminator',
+                              'chart_direction_correspondence'],
+            'acquired_relation_edges': geo['finite_structure_sizes']['acquired_relation_edges'],
+            'left_label_class_attachments': geo['observable_left_attachments'],
+            'right_label_class_attachments': geo['observable_right_attachments'],
+            'quotient_incidences': geo['finite_structure_sizes']['quotient_incidences'],
+            'charts_per_relabeling': geo['charts'],
+            'H_entries': geo['H_triples_enumerated'],
+            'full_lines': geo['full_affine_lines'],
+            'full_planes': geo['full_affine_planes'],
+            'full_parallel_classes': geo['full_affine_parallel_classes'],
+        },
+        'acquired_reverse_and_fibre_output': {
+            'theory': 'Theorem 8.6 and Proposition 8.7',
+            'lift_edges': geo['reverse_edges'],
+            'H_fibre_outputs': geo['H_fibre_outputs_checked'],
+            'output_representation': 'whole acquired right-label fibre',
+            'hidden_maps_are_inputs': False,
+        },
+        'source_controller_resource_contract': {
+            'theory': 'Proposition 8.7 and Theorem 10.3(a),(d)',
+            'native_result_fields': ['native_G0', 'native_G1'],
+            'N': native0['N'],
+            'scan_slots': native0['scan_slots'],
+            'scan_Read_invocations': native0['scan_Read_invocations'],
+            'scan_literal_operand_sum': native0['scan_literal_operand_sum'],
+            'scan_literal_operand_max': native0['scan_literal_operand_max'],
+            'preparation_events': native0['preparation_events'],
+            'paid_preparer_draws': native0['paid_preparer_draws'],
+            'G0_inverse_requires_acquired_edge': native0['pointwise_inverse_recoverable'],
+            'G1_inverse_requires_missing_partner': not native1['pointwise_inverse_recoverable'],
+        },
+        'full_injection_cache_joint_repeated_law': {
+            'theory': 'Definitions 9.1, 9.3--9.4; Theorems 9.4--9.5; Proposition 9.6; Example 9.7',
+            'result_fields': ['full_injection_partial_cache', 'G0_conditional',
+                              'G0_H_conditional', 'G1_domain_and_inverse'],
+            'domain': full_injection['domain'],
+            'source_prior_values_checked': full_injection['source_prior_values_checked'],
+            'projection_scenarios_per_source': full_injection['inverse_projection_scenarios_per_source'],
+            'same_index_inverse_agreement': '1',
+            'distinct_index_shared_injection_is_joint': True,
+            'repeated_H_index_agreement': mixed['repeated_H_indices_0_1_1_anchor_agreement'],
+            'distinct_H_index_agreement': mixed['distinct_H_indices_0_1_2_anchor_agreement'],
+            'all_caches_enumerated': full_injection['all_caches_enumerated'],
+            'full_injections_enumerated': full_injection['full_injections_enumerated'],
+        },
+        'validation_coverage': {
+            'relabelings': len(cases),
+            'exact_covers_per_relabeling': cover['all_disjoint_nine_line_covers'],
+            'charts_per_relabeling': geo['charts'],
+            'full_injection_projection_scenarios_per_source': full_injection['inverse_projection_scenarios_per_source'],
+            'representative_only': True,
+            'all_cache_or_all_controller_claim': False,
+        },
+    }
 
 
 def main():
@@ -1148,10 +1282,12 @@ def main():
     native0 = native_acquisition(geom.E, transport(positive.g0_witness(E0), lm, rm))
     native1 = native_acquisition(transport(E1, lm, rm), transport(positive.g1_witness(E1), lm, rm))
     full_injection = full_injection_check(E0, inv0, E1, inv1)
-    result = {'schema': 'rro-intrinsic-recovery-2',
+    correspondence = correspondence_check(cases, native0, native1, full_injection)
+    result = {'schema': 'rro-intrinsic-recovery-3',
               'immutable_theory_sources': theory_identities(),
-              'full_injection_partial_cache': full_injection, 'theory_revision': THEORY_BASE,
+              'full_injection_partial_cache': full_injection, 'theory_revision': THEORY_CORRECTED,
               'experiment_base': EXPERIMENT_BASE, 'supplier_sha256': BLOBS,
+              'correspondence': correspondence,
               'arithmetic': 'integers, F3 and fractions.Fraction; MSB-first 7/8-bit labels; zero-based code indices',
               'group_sources': {'G0': g0, 'G1': g1}, 'relabelings': cases,
               'native_representative_relabeling': name, 'native_G0': native0, 'native_G1': native1,
@@ -1170,7 +1306,7 @@ def main():
               'limitations': ['Finite author validation, not independent review or Lean certification.',
                               'No enumeration of all full injections, all masks, arbitrary controllers, or all native words.',
                               'Full-injection tests integrate the original prior exactly for the named projections; they do not test every cache or prove the general law.',
-                              'Theory identities are immutable pre-repair inputs; correspondence to terminal corrected definitions remains for the bounded alignment assignment.',
+                              'The corrected theory snapshot and declaration-to-result correspondence are recorded and section markers are checked; the finite projections remain representative.',
                               'Geometry consumes certified acquired E and its actual label associations; acquisition/certification suppliers are reused.',
                               'Affine chart invariance for all triples in all charts uses verified affine point maps and symbolic offset cancellation.',
                               'G1 inverse ambiguity requires positive G1 prior support; G0 recovery requires certified G0 E and an acquired actual input edge.',

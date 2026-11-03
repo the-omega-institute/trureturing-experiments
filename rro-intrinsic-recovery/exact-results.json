@@ -61,6 +61,109 @@
     }
   },
   "arithmetic": "integers, F3 and fractions.Fraction; MSB-first 7/8-bit labels; zero-based code indices",
+  "correspondence": {
+    "acquired_reverse_and_fibre_output": {
+      "H_fibre_outputs": 19683,
+      "hidden_maps_are_inputs": false,
+      "lift_edges": 1944,
+      "output_representation": "whole acquired right-label fibre",
+      "theory": "Theorem 8.6 and Proposition 8.7"
+    },
+    "corrected_theory": {
+      "revision": "d7a888c0b7a8e20e6c074bd6ee4471ef87fb8727",
+      "sections": {
+        "boundaries_and_interfaces": [
+          "**Proposition 10.1",
+          "**Proposition 10.2",
+          "**Theorem 10.3"
+        ],
+        "controller_and_costs": [
+          "**Proposition 8.7"
+        ],
+        "full_affine_incidence_and_reverse": [
+          "**Theorem 8.5",
+          "**Theorem 8.6"
+        ],
+        "full_injection_joint_law": [
+          "**Definition 9.3",
+          "**Theorem 9.4",
+          "**Theorem 9.5",
+          "**Proposition 9.6",
+          "**Example 9.7"
+        ],
+        "incidence_and_chart": [
+          "**Definition 8.1",
+          "**Lemma 8.2",
+          "**Definition 8.3",
+          "**Theorem 8.4"
+        ]
+      },
+      "sha256": "b743b02e1bc88546a4889ba9ecbff039b00134265339b488c72c31e00888f5af"
+    },
+    "full_injection_cache_joint_repeated_law": {
+      "all_caches_enumerated": false,
+      "distinct_H_index_agreement": "1/27",
+      "distinct_index_shared_injection_is_joint": true,
+      "domain": "named N=4 attained caches; inverse-bit and G0 quotient-fibre-event pushforwards only",
+      "full_injections_enumerated": false,
+      "projection_scenarios_per_source": 8,
+      "repeated_H_index_agreement": "1",
+      "result_fields": [
+        "full_injection_partial_cache",
+        "G0_conditional",
+        "G0_H_conditional",
+        "G1_domain_and_inverse"
+      ],
+      "same_index_inverse_agreement": "1",
+      "source_prior_values_checked": [
+        "0",
+        "1",
+        "1/3"
+      ],
+      "theory": "Definitions 9.1, 9.3--9.4; Theorems 9.4--9.5; Proposition 9.6; Example 9.7"
+    },
+    "incidence_chart_full_incidence": {
+      "H_entries": 19683,
+      "acquired_relation_edges": 1944,
+      "charts_per_relabeling": 5184,
+      "full_lines": 117,
+      "full_parallel_classes": 13,
+      "full_planes": 39,
+      "left_label_class_attachments": 72,
+      "quotient_incidences": 108,
+      "result_fields": [
+        "G0_geometry",
+        "exact_cover_discriminator",
+        "chart_direction_correspondence"
+      ],
+      "right_label_class_attachments": 243,
+      "theory": "Definitions 8.1--8.3; Lemmas/Theorems 8.2, 8.4--8.6"
+    },
+    "source_controller_resource_contract": {
+      "G0_inverse_requires_acquired_edge": true,
+      "G1_inverse_requires_missing_partner": true,
+      "N": 580,
+      "native_result_fields": [
+        "native_G0",
+        "native_G1"
+      ],
+      "paid_preparer_draws": 580,
+      "preparation_events": 43504,
+      "scan_Read_invocations": 8640,
+      "scan_literal_operand_max": 8641,
+      "scan_literal_operand_sum": 37337760,
+      "scan_slots": 576,
+      "theory": "Proposition 8.7 and Theorem 10.3(a),(d)"
+    },
+    "validation_coverage": {
+      "all_cache_or_all_controller_claim": false,
+      "charts_per_relabeling": 5184,
+      "exact_covers_per_relabeling": 40,
+      "full_injection_projection_scenarios_per_source": 8,
+      "relabelings": 4,
+      "representative_only": true
+    }
+  },
   "coverage": {
     "all_caches_enumerated": false,
     "all_source_elements_per_source": 4374,
@@ -683,13 +786,17 @@
     "d6e6417f0e055ac0701e5853b9eaf70a316ef709:docs/develop/theory/RECURSIVE_RELATIONAL_OBSERVATION_POSITIVE_RELATION_CERTIFICATES.md": {
       "lines": 524,
       "sha256": "4486a5797d32ca439e3ea868aa13bab0e800b804d7b961bb0d7a04e80ea1715f"
+    },
+    "d7a888c0b7a8e20e6c074bd6ee4471ef87fb8727:docs/develop/theory/RECURSIVE_RELATIONAL_OBSERVATION_POSITIVE_RELATION_CERTIFICATES.md": {
+      "lines": 1397,
+      "sha256": "b743b02e1bc88546a4889ba9ecbff039b00134265339b488c72c31e00888f5af"
     }
   },
   "limitations": [
     "Finite author validation, not independent review or Lean certification.",
     "No enumeration of all full injections, all masks, arbitrary controllers, or all native words.",
     "Full-injection tests integrate the original prior exactly for the named projections; they do not test every cache or prove the general law.",
-    "Theory identities are immutable pre-repair inputs; correspondence to terminal corrected definitions remains for the bounded alignment assignment.",
+    "The corrected theory snapshot and declaration-to-result correspondence are recorded and section markers are checked; the finite projections remain representative.",
     "Geometry consumes certified acquired E and its actual label associations; acquisition/certification suppliers are reused.",
     "Affine chart invariance for all triples in all charts uses verified affine point maps and symbolic offset cancellation.",
     "G1 inverse ambiguity requires positive G1 prior support; G0 recovery requires certified G0 E and an acquired actual input edge.",
@@ -8809,10 +8916,10 @@
       ]
     }
   },
-  "schema": "rro-intrinsic-recovery-2",
+  "schema": "rro-intrinsic-recovery-3",
   "supplier_sha256": {
     "865f38257ead1b4e857ff915c23b0b04276bd7f3:rro-structural-recovery/exact_checks.py": "687603e5923e00d1c33d2f32bbc98fc99fc70ac8eddf7ea08a3b424c6a81aec5",
     "b490f4f17c97645ce7c6495ca8635bce3d3a1af7:rro-positive-certificates/exact_checks.py": "f2ce18362fa84c3dadbc3fff325d55f4afc5fe8b2f3b6d5b0b7dfad58d679ac3"
   },
-  "theory_revision": "d6e6417f0e055ac0701e5853b9eaf70a316ef709"
+  "theory_revision": "d7a888c0b7a8e20e6c074bd6ee4471ef87fb8727"
 }
