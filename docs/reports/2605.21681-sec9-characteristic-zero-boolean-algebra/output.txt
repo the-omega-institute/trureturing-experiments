@@ -1,0 +1,21 @@
+FIDELITY vector-atoms q=2, dimension=3, GL-order=168: pair-orbits=5, sizes=[1,7,7,7,42]
+DIM_Q k=1 atoms=2 algebra-size=4 V-dim=2 d=1 rank=2 kernel-dim=0
+DIM_Q k=2 atoms=4 algebra-size=16 V-dim=14 d=1 rank=4 kernel-dim=10
+DIM_Q k=2 atoms=4 algebra-size=16 V-dim=14 d=2 rank=10 kernel-dim=4
+DIM_Q k=2 atoms=4 algebra-size=16 V-dim=14 d=3 rank=14 kernel-dim=0
+DIM_Q k=3 atoms=8 algebra-size=256 V-dim=254 d=1 rank=8 kernel-dim=246
+DIM_Q k=3 atoms=8 algebra-size=256 V-dim=254 d=2 rank=36 kernel-dim=218
+DIM_Q k=3 atoms=8 algebra-size=256 V-dim=254 d=3 rank=92 kernel-dim=162
+DIM_Q k=3 atoms=8 algebra-size=256 V-dim=254 d=4 rank=162 kernel-dim=92
+DIM_Q k=3 atoms=8 algebra-size=256 V-dim=254 d=5 rank=218 kernel-dim=36
+DIM_Q k=3 atoms=8 algebra-size=256 V-dim=254 d=6 rank=246 kernel-dim=8
+DIM_Q k=3 atoms=8 algebra-size=256 V-dim=254 d=7 rank=254 kernel-dim=0
+INVARIANCE: compressed test rows closed under every adjacent atom swap for k=1,2,3
+REFINEMENT: all onto atom maps with fine-atoms<=4, d=1,2,3: 50648 basis/tuple equalities; pullbacks injective
+WITNESS d=1 partition-atoms=4 support=4 all-1-tuple-tests=0 separating-2-tuple-test=1
+WITNESS d=2 partition-atoms=5 support=8 all-2-tuple-tests=0 separating-3-tuple-test=1
+WITNESS d=3 partition-atoms=6 support=16 all-3-tuple-tests=0 separating-4-tuple-test=1
+WITNESS d=4 partition-atoms=7 support=32 all-4-tuple-tests=0 separating-5-tuple-test=1
+WITNESS d=5 partition-atoms=8 support=64 all-5-tuple-tests=0 separating-6-tuple-test=1
+CHARACTERISTICS: integer identities and reductions mod 2,3,5,7 agree
+ALL_CHECKS_OK
