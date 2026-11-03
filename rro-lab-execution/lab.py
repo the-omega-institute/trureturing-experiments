@@ -171,7 +171,11 @@ class Lab:
     def __init__(self, arena=None, capture_cuts=True):
         self.a = arena or Arena()
         self.root = self.a.node()
+        # Ownership is audit metadata; actual references remain object identities.
+        self.owned = {self.root}
         self.events = []
+        self.event_counts = Counter()
+        self.maintenance_visits = 0
         self.pending = None
         self.cuts = []
         self.capture_cuts = capture_cuts
@@ -236,6 +240,7 @@ class Lab:
         self.cut('Reserve')
         if kind == 'P':
             marker = a.node(target)
+            self.owned.add(marker)
             self.pending['fresh'].append(marker)
             self.cut('ReservedP')
             a.write(target, 'left', marker, True)
@@ -245,12 +250,14 @@ class Lab:
             header = a.alloc('route_header')
             a.write(header, 'head', None, True)
             a.write(header, 'tail', None, True)
+            self.owned.update((marker, right, header))
             self.pending['fresh'].extend((marker, right, header))
             self.cut('ReservedS')
             a.write(old, 'left', marker, True)
             a.write(target, 'right', right, True)
             a.write(target, 'header', header, True)
         self.events.append((kind, addr))
+        self.event_counts[kind] += 1
         a.charges[kind] += 1
         self.cut('EditComplete')
         child = target
@@ -259,12 +266,14 @@ class Lab:
             if a.test('null', parent is None):
                 break
             a.charges['maintenance_ancestor_visits'] += 1
+            self.maintenance_visits += 1
             left, right = a.read(parent, 'left'), a.read(parent, 'right')
             side = 0 if a.test('equality', child is left) else 1
             assert child is (left if side == 0 else right)
             header = a.read(parent, 'header')
             assert header is not None
             cell = a.alloc('route_cell')
+            self.owned.add(cell)
             self.pending.update(cursor=parent, append=cell)
             a.write(cell, 'bit', side, True)
             a.write(cell, 'next', None, True)
@@ -291,7 +300,7 @@ class Lab:
 
     def routing(self):
         out = {}
-        for o in self.a.objects:
+        for o in self.owned:
             if o.kind != 'source' or o.fields['header'] is None:
                 continue
             h = o.fields['header']
@@ -311,7 +320,7 @@ class Lab:
         assert self.routing() == expected
 
     def persistent(self):
-        objs = [o for o in self.a.objects if o.kind in ('source', 'route_header', 'route_cell')]
+        objs = [o for o in self.owned if o.kind in ('source', 'route_header', 'route_cell')]
         return {'V': sum(o.kind == 'source' for o in objs),
                 'H': sum(o.kind == 'route_header' for o in objs),
                 'D': sum(o.kind == 'route_cell' for o in objs),
@@ -329,10 +338,13 @@ def encode_comb(minus, plus):
 
 
 class Machine:
-    def __init__(self, program, bits='', arena=None):
-        self.lab = Lab(arena)
+    def __init__(self, program, bits='', arena=None, audit=True):
+        arena = arena or Arena()
+        self.audit = audit
+        self.lab = Lab(arena, capture_cuts=audit)
         self.program = tuple(program)
         self.pc, self.arm, self.commits = 0, '+', 0
+        self.head_navigation = 0
         self.busy = None
         self.trace = []
         self.input = Buffer(self.lab.a, 'input_header')
@@ -358,6 +370,8 @@ class Machine:
         assert self.pc == self.busy['old_pc'] and self.head is self.busy['old_head']
         self.busy['phase'] = phase
         assert {'proposed_head','new_arm','next_pc'} <= self.busy.keys()
+        if not self.audit:
+            return
         self.micro_boundaries.append({'phase':phase,'commits':self.commits,
                                       'old_pc':self.pc,'old_head':self.lab.address(self.head),
                                       'pending_edit':self.lab.pending is not None})
@@ -391,13 +405,13 @@ class Machine:
         assert l.logical() == encode_comb([values[-j-1] for j in range(nm)], [values[j] for j in range(np)])
         l.validate_routes()
         c, b = nm+np, sum(values.values())
-        p, s = a.charges['P'], a.charges['S']
+        p, s = (l.event_counts[k] for k in ('P','S'))
         counts = l.persistent()
         d = 1+np*(np+1)//2+nm*(nm+1)//2+sum(2+(j if j >= 0 else -j-1) for j, v in values.items() if v)
         assert (p, s, counts['V'], counts['H'], counts['D']) == (2+b, 1+c, 5+2*c+b, 1+c, d)
-        assert a.charges['located_fields'] == 3+4*p+11*s+counts['V']+4*d
+        assert sum(o.writes for o in l.owned) == 3+4*p+11*s+counts['V']+4*d
         assert counts['reference_slots'] == 4*counts['V']+2*counts['H']+d
-        assert a.charges['maintenance_ancestor_visits'] == d
+        assert l.maintenance_visits == d
         self.trace.append({'head': h, 'pc': pc, 'marked': sorted(j for j, v in values.items() if v),
                            'lengths': [nm, np], 'P': p, 'S': s, **counts})
 
@@ -427,13 +441,16 @@ class Machine:
             if outward:
                 new_head = a.read(old_head, 'left', True)
                 a.charges['head_navigation_links'] += 1
+                self.head_navigation += 1
             else:
                 parent = a.read(old_head, 'parent', True)
                 a.charges['head_navigation_links'] += 1
+                self.head_navigation += 1
                 if a.test('equality', parent is l.root):
                     new_arm = '-' if old_arm == '+' else '+'
                     new_head = a.read(l.root, 'left' if new_arm == '-' else 'right', True)
                     a.charges['head_navigation_links'] += 1
+                    self.head_navigation += 1
                 else:
                     new_head = parent
             self.busy.update(phase='Plan',proposed_head=new_head,new_arm=new_arm,next_pc=new_pc)
@@ -447,8 +464,9 @@ class Machine:
         a.charges['reference_register_writes'] += 1
         self.commits += 1
         self.busy = None
-        self.boundary()
-        assert a.charges['head_navigation_links'] <= 2*self.commits
+        if self.audit:
+            self.boundary()
+        assert self.head_navigation <= 2*self.commits
         return True
 
     def run(self, bound):

@@ -1,5 +1,129 @@
 {
   "acceptance_complete": false,
+  "acquired_arithmetic_kernel_session": {
+    "B_commits": 19324,
+    "NM_steps": 2516,
+    "acquired_original_index_coordinate": [
+      0,
+      0
+    ],
+    "copier": {
+      "binary_states": 1618,
+      "block_control_states": 192,
+      "block_width": 8,
+      "source_states": 1
+    },
+    "decoded_little_endian": "01",
+    "full_evaluator": false,
+    "full_resource_account": false,
+    "inherited_preparation_charges": {
+      "P": 121,
+      "S": 183,
+      "allocations": 10064,
+      "arity_tests": 3964,
+      "bit_writes": 9393,
+      "equality_tests": 9393,
+      "field_reads": 59040,
+      "field_writes": 40560,
+      "grant_deliveries": 10064,
+      "located_fields": 40560,
+      "maintenance_ancestor_visits": 9393,
+      "navigation_links": 13053,
+      "null_tests": 27018,
+      "reference_copy_bits": 508929,
+      "reference_read_bits": 734907,
+      "reference_rewrite_fields": 20721,
+      "reference_transport_bits": 124527,
+      "reference_widenings": 13,
+      "reference_write_bits": 384799,
+      "route_appends": 9393
+    },
+    "input_little_endian": "1",
+    "observer_partial_charges": {
+      "P": 156,
+      "S": 233,
+      "acknowledgements": 5,
+      "allocations": 45860,
+      "arity_tests": 27481,
+      "bit_reads": 578,
+      "bit_tests": 4,
+      "bit_writes": 45111,
+      "cache_selection_steps": 240,
+      "call_grant_checks": 4,
+      "cleanup_fields": 380,
+      "consistent_rereads": 3,
+      "equality_tests": 48315,
+      "field_reads": 300715,
+      "field_writes": 184427,
+      "free_list_writes": 271,
+      "grant_deliveries": 45860,
+      "head_navigation_links": 7484,
+      "input_bits": 33,
+      "located_fields": 182361,
+      "maintenance_ancestor_visits": 44637,
+      "navigation_links": 53546,
+      "null_tests": 145828,
+      "original_calls": 4,
+      "output_bits": 33,
+      "output_ends": 5,
+      "port_acknowledgements": 4,
+      "port_ends": 4,
+      "port_logical_operand_bits": 8,
+      "port_reply_bits": 8,
+      "port_returns": 4,
+      "port_root_returns": 4,
+      "port_wire_bits": 20,
+      "reference_copy_bits": 2058629,
+      "reference_read_bits": 4388860,
+      "reference_register_writes": 19324,
+      "reference_rewrite_fields": 71409,
+      "reference_transport_bits": 668241,
+      "reference_widenings": 15,
+      "reference_write_bits": 2028307,
+      "route_appends": 44637
+    },
+    "observer_partial_retained": {
+      "bit_fields": 44968,
+      "bits": 859228,
+      "grant_bits": 45860,
+      "objects": 45860,
+      "reference_slots": 48025,
+      "reference_width": 16
+    },
+    "provider_primitive_charges": {
+      "field_reads": 24,
+      "navigation_links": 8,
+      "null_tests": 24,
+      "provider_operand_bit_scans": 8,
+      "reference_read_bits": 336,
+      "reference_register_writes": 12
+    },
+    "receipts": {
+      "initialized_and_append_fields": 135,
+      "objects": 33,
+      "payload_bits": 28,
+      "receipts": 4,
+      "reference_slots": 43
+    },
+    "same_original_port": true,
+    "scope": "Acquired successor kernel only; full evaluator, code/control and I/O/decoder backing not certified.",
+    "simultaneous_partial_peak_bits": 1320626,
+    "source_retained": {
+      "bit_fields": 9393,
+      "bits": 183635,
+      "grant_bits": 10064,
+      "objects": 10064,
+      "reference_slots": 11727,
+      "reference_width": 14
+    },
+    "work": {
+      "D": 44637,
+      "H": 233,
+      "V": 623,
+      "objects": 45493,
+      "reference_slots": 47595
+    }
+  },
   "arithmetic": {
     "ML_A_direct_N4": {
       "G0_incidence_tests": 3888,
@@ -532,6 +656,36 @@
     ]
   },
   "experiment_base": "bfd14367a5cbab3ee85cc0ce13db70dd797213b3",
+  "explicit_copier": {
+    "B_code_length": 21087,
+    "LAB_B_commits": 5668,
+    "LAB_NM_steps": 738,
+    "LAB_decoded_output": "000",
+    "LAB_erasing_input": "1",
+    "LAB_persistent": {
+      "D": 11930,
+      "H": 121,
+      "V": 324,
+      "objects": 12375,
+      "reference_slots": 13468
+    },
+    "full_evaluator": false,
+    "full_resource_account": false,
+    "immediately_halted_source": true,
+    "instances": 28,
+    "non_erasing_steps": 82370,
+    "partial_peak_bits": 261583,
+    "partial_retained": {
+      "bit_fields": 11999,
+      "bits": 214873,
+      "grant_bits": 12460,
+      "objects": 12460,
+      "reference_slots": 13601,
+      "reference_width": 14
+    },
+    "shared_arena_job_census": true,
+    "states": 1622
+  },
   "framing": {
     "U_values": 257,
     "V_words": 511,
@@ -822,12 +976,14 @@
     "provider_vertices": 263297
   },
   "program_hashes": {
-    "exact_checks.py": "45bc857924fd0dc04445a4c425059fd830b76301743d6ed415995ccca1c0fccd",
-    "framing.py": "e56c7d0ed7be2d69c7ef351de46b42b5a5dc4e1948da0ecc6c1e3b37bf79f680",
-    "lab.py": "c24a88bc045a348cae32219b51afebbb477f89b1b25fd7f82816564ff58cc77e",
+    "copier.py": "b571227e74ce3583b09e0fa359df950e2d462385528a973b81b1c50060a22d62",
+    "copier_checks.py": "fb5c0b26a6f1b01037845ca44c6ae3d17cacb7b9cbfe5c857defb5701cd1c610",
+    "exact_checks.py": "682929d74081693b326ef0e967a400e74682af266ece971e6335248c88523bf0",
+    "framing.py": "13d043ef5557b713348bbf10e6da126f88540f1a3bf3e823bb6ae84121adc41b",
+    "lab.py": "59d3c316b523a1b583b1bd62f5b0b96251f4a129e6f9f09d9a0b7ceb26e3b6fb",
     "laws.py": "fea885964c863393f850a66890c1c0f6c33191828ecd794ac3204d093ceba709",
     "nwmg.py": "cff762dff0ce4ea3f06a356ac948c3ea70751a900edaa7160ea093a91b401517",
-    "pins.py": "4ce9ed35c232851fafcdaacee8cc9019f76d4c7e2ee9f7b100018aa3e9551e74",
+    "pins.py": "eddd65bbf35bed490267173e96a06423155b543a9fde04d5b89f8e7c1ef3f0d0",
     "session.py": "de7306df87891d380379c9fd9ae06e7a4befc51276a7b0c5c01d9401db1e12c7"
   },
   "python_minimum": "3.12",
@@ -1514,16 +1670,9 @@
     "limit": "Predict values corroborated by exact host evaluator; no actual compiled evaluator job claimed.",
     "theta": "1/3"
   },
-  "schema": 1,
+  "schema": 2,
+  "sealed_theory_pin": "0434b0714812f29d6799f8e4ebd958f5eab2f987",
   "source_manifest": {
-    "0434b0714812f29d6799f8e4ebd958f5eab2f987:Library/Computability/nearywoodsmurphyglaschick2014wang.md": {
-      "bytes": 2238,
-      "sha256": "53d0eb487e0de645e05da928fdae12a2c4abc70b8f784e3f062afead786357a1"
-    },
-    "0434b0714812f29d6799f8e4ebd958f5eab2f987:docs/develop/theory/RECURSIVE_RELATIONAL_OBSERVATION_MONOTONE_LAB_INDEXED_EXECUTION.md": {
-      "bytes": 70731,
-      "sha256": "0f93b9f2634965902d7ea35ee675e1886d2309ec10b017e926ff756f3136fcd2"
-    },
     "865f38257ead1b4e857ff915c23b0b04276bd7f3:rro-structural-recovery/exact_checks.py": {
       "bytes": 21933,
       "sha256": "687603e5923e00d1c33d2f32bbc98fc99fc70ac8eddf7ea08a3b424c6a81aec5"
@@ -1547,20 +1696,31 @@
     "c27e6de785aefbf37c0789a3f4cf63c6667ff3d7:docs/develop/theory/RECURSIVE_RELATIONAL_OBSERVATION_UNIFIED_JOINT_LAW_BRIDGE.md": {
       "bytes": 206931,
       "sha256": "d403b5c4193f09173ef167be4d7cef693f629f88743a2b88b6930b74150bf3b4"
+    },
+    "candidate-manifest": {
+      "bytes": 484,
+      "sha256": "acbe1c201b53007c6589a2f6079c05a9d1c921155968c0463c59d509b76801e1"
+    },
+    "candidate:Library/Computability/nearywoodsmurphyglaschick2014wang.md": {
+      "bytes": 2675,
+      "sha256": "d76438783121d3c5add314a4c888937b25a65d08b019dc4e14b2903a1cabb4f6"
+    },
+    "candidate:docs/develop/theory/RECURSIVE_RELATIONAL_OBSERVATION_MONOTONE_LAB_INDEXED_EXECUTION.md": {
+      "bytes": 76789,
+      "sha256": "0d83c68798d756085caa3df5fb18b07f10df397990062e154d896cd0ca6448fc"
     }
   },
-  "theory_pin": "0434b0714812f29d6799f8e4ebd958f5eab2f987",
-  "theory_sha256": "0f93b9f2634965902d7ea35ee675e1886d2309ec10b017e926ff756f3136fcd2",
+  "theory_sha256": "0d83c68798d756085caa3df5fb18b07f10df397990062e154d896cd0ca6448fc",
   "unresolved_obligations": [
     {
-      "finding": "The sealed prose gives ML-T bit algorithms and an effective lowering, but no explicit ML-T transition table, copier transition table, W_U instruction sequence or executable input/output decoder. This checker implements the primary thirteen-instruction non-erasing compiler and exercises it on finite transition machines. It has not implemented the complete ML-A-to-ML-T copier and W_U construction. Exact host values and framed host output cannot validate that execution interface.",
+      "finding": "The copier now generates a complete non-erasing binary table for every supplied erasing binary table, lowers it through the primary thirteen-instruction compiler, and decodes real LAB output. The acquired successor kernel executes on this path. ML-A still has no instantiated complete ML-T evaluator table, hence no complete evaluator W_U or decoded full-law run. Exact host law values and an arithmetic kernel do not discharge that obligation.",
       "id": "ML-N-evaluator-execution",
       "interface": "Definitions 4.4/4.6; Theorem 4.5; ML-X arithmetic",
       "required": "Run a public-input ML-A instance through the actual complete ML-T/NWMG/ML-L/ML-B path and decode/print its exact result; preserve every N/mask/prior domain.",
       "status": "not-executed"
     },
     {
-      "finding": "Work/routing and receipt/cache exact censuses, navigation, I/O, pending records, widening, retained material and primitive occurrences are measured for the implemented finite work/Read executions. A full arithmetic-job session, fixed finite-driver/code installation, all mutable loop/cursor backing and their joint peak are not instantiated. These partial vectors cannot certify the complete simultaneous ML.16 account.",
+      "finding": "Per-root work/routing censuses now remain valid across sequential jobs in one arena. An acquired successor kernel, its real original-port continuation and a simultaneous partial storage peak execute together. The complete evaluator job, installed finite-driver/code/control, and every framing/conversion/decoder/counter backing are still not instantiated. These partial vectors cannot certify complete ML.16.",
       "id": "ML-Cost-full-evaluator-session",
       "interface": "Theorems 6.4/6.6; ML.16",
       "required": "Census one actual full compiled arithmetic and same-port continuation run, including installed control/code, backing for every counter/cursor/phase, conversion, decoder, buffers, grants, cleanup and width changes.",

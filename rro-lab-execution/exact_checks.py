@@ -19,10 +19,11 @@ from framing import (BadFrame, NeedMore, Reader, Receive, Print, REPLIES, arithm
                      arithmetic_output, parse_arithmetic, parse_arithmetic_output,
                      parse_reply, parse_command, rational, reply, u, v, words)
 from lab import Arena, Buffer, Lab, Machine, reference_run
+from copier_checks import contracts as copier_contracts, kernel_session
 from laws import Evaluator, capacity_witness, conjoin, labels, repeated_full_direct
 from nwmg import compile_non_erasing, encode
 from pins import (BASE, EXPERIMENT_PIN, POSITIVE_PIN, ROOT, SOURCES, SUPPLIER_PIN,
-                  THEORY_HASH, THEORY_PATH, THEORY_PIN, source_manifest, suppliers)
+                  THEORY_PATH, THEORY_PIN, source_manifest, suppliers)
 from session import OriginalPort, Session, classify, prepare_source
 
 assert sys.version_info >= (3, 12)
@@ -520,14 +521,18 @@ def null_law_session(old):
             'limit':'All-promise real-port witness outside both law supports; null output is host-built, not a compiled job.'}
 
 
-def build_result():
-    source_manifest()
+def build_result(theory_root, candidate_manifest):
+    source_manifest(theory_root, candidate_manifest)
     old, general, positive = suppliers()
     evaluator = Evaluator(old,general)
-    result = {'schema':1, 'theory_pin':THEORY_PIN,'theory_sha256':THEORY_HASH,
+    result = {'schema':2, 'sealed_theory_pin':THEORY_PIN,
+              'theory_sha256':SOURCES['candidate:'+THEORY_PATH]['sha256'],
               'experiment_base':EXPERIMENT_PIN, 'python_minimum':'3.12',
               'execution':execution_checks(), 'exhaustive_B':exhaustive_b_checks(),
-              'non_erasing_compiler':compiler_checks(), 'framing':framing_checks(),
+              'non_erasing_compiler':compiler_checks(),
+              'explicit_copier':copier_contracts(),
+              'acquired_arithmetic_kernel_session':kernel_session(),
+              'framing':framing_checks(),
               'arithmetic':arithmetic_checks(old,general,evaluator),
               'original_port_menu':port_menu_checks(old,positive),
               'real_sessions':session_checks(old,evaluator),
@@ -537,11 +542,11 @@ def build_result():
     result['unresolved_obligations'] = [
         {'id':'ML-N-evaluator-execution','interface':'Definitions 4.4/4.6; Theorem 4.5; ML-X arithmetic',
          'status':'not-executed',
-         'finding':'The sealed prose gives ML-T bit algorithms and an effective lowering, but no explicit ML-T transition table, copier transition table, W_U instruction sequence or executable input/output decoder. This checker implements the primary thirteen-instruction non-erasing compiler and exercises it on finite transition machines. It has not implemented the complete ML-A-to-ML-T copier and W_U construction. Exact host values and framed host output cannot validate that execution interface.',
+         'finding':'The copier now generates a complete non-erasing binary table for every supplied erasing binary table, lowers it through the primary thirteen-instruction compiler, and decodes real LAB output. The acquired successor kernel executes on this path. ML-A still has no instantiated complete ML-T evaluator table, hence no complete evaluator W_U or decoded full-law run. Exact host law values and an arithmetic kernel do not discharge that obligation.',
          'required':'Run a public-input ML-A instance through the actual complete ML-T/NWMG/ML-L/ML-B path and decode/print its exact result; preserve every N/mask/prior domain.'},
         {'id':'ML-Cost-full-evaluator-session','interface':'Theorems 6.4/6.6; ML.16',
          'status':'not-executed',
-         'finding':'Work/routing and receipt/cache exact censuses, navigation, I/O, pending records, widening, retained material and primitive occurrences are measured for the implemented finite work/Read executions. A full arithmetic-job session, fixed finite-driver/code installation, all mutable loop/cursor backing and their joint peak are not instantiated. These partial vectors cannot certify the complete simultaneous ML.16 account.',
+         'finding':'Per-root work/routing censuses now remain valid across sequential jobs in one arena. An acquired successor kernel, its real original-port continuation and a simultaneous partial storage peak execute together. The complete evaluator job, installed finite-driver/code/control, and every framing/conversion/decoder/counter backing are still not instantiated. These partial vectors cannot certify complete ML.16.',
          'required':'Census one actual full compiled arithmetic and same-port continuation run, including installed control/code, backing for every counter/cursor/phase, conversion, decoder, buffers, grants, cleanup and width changes.'},
     ]
     result['acceptance_complete'] = False
@@ -559,11 +564,14 @@ def build_result():
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--theory-root',type=Path,required=True,
+                        help='Actual candidate checkout; both authorized candidate files must match the content manifest.')
+    parser.add_argument('--candidate-manifest',type=Path,default=HERE/'theory-candidate.json')
     parser.add_argument('--output',type=Path)
     parser.add_argument('--check',type=Path)
     parser.add_argument('--require-all',action='store_true')
     args = parser.parse_args()
-    result = build_result()
+    result = build_result(args.theory_root, args.candidate_manifest)
     data = json.dumps(result,sort_keys=True,indent=2,ensure_ascii=False)+'\n'
     if args.output:
         args.output.write_text(data)

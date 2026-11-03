@@ -92,7 +92,7 @@ def parse_mask(reader, n):
 
 
 def cylinder_word(cache):
-    # ML-F leaves the conflict-flag position unspecified; use its leading bit.
+    # ML-F: leading one is the entire empty event; zero precedes a full mask.
     return '1' if cache is None else '0'+mask_word(cache)
 
 

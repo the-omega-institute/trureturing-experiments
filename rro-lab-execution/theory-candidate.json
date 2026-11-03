@@ -1,0 +1,14 @@
+{
+  "files": {
+    "Library/Computability/nearywoodsmurphyglaschick2014wang.md": {
+      "bytes": 2675,
+      "sha256": "d76438783121d3c5add314a4c888937b25a65d08b019dc4e14b2903a1cabb4f6"
+    },
+    "docs/develop/theory/RECURSIVE_RELATIONAL_OBSERVATION_MONOTONE_LAB_INDEXED_EXECUTION.md": {
+      "bytes": 76789,
+      "sha256": "0d83c68798d756085caa3df5fb18b07f10df397990062e154d896cd0ca6448fc"
+    }
+  },
+  "schema": 1,
+  "sealed_unit1": "0434b0714812f29d6799f8e4ebd958f5eab2f987"
+}
