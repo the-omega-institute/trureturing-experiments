@@ -521,6 +521,27 @@ def null_law_session(old):
             'limit':'All-promise real-port witness outside both law supports; null output is host-built, not a compiled job.'}
 
 
+
+def paid_code_component():
+    from paid_code_checks import check_small
+    from paid_code import decoder_program
+    data=(HERE/'paid-code-results.json').read_bytes()
+    saved=json.loads(data)
+    for name,expected in saved['source_hashes'].items():
+        assert hashlib.sha256((HERE/name).read_bytes()).hexdigest()==expected, ('stale paid component',name)
+    assert saved['A_interface_sha256']==hashlib.sha256((HERE/'constructor/INTERFACE.json').read_bytes()).hexdigest()
+    assert saved['full']['program']==decoder_program().manifest()
+    graph=(HERE/'paid-code/decoder.graph.json').read_bytes()
+    assert hashlib.sha256(graph).hexdigest()==saved['full']['program']['sha256']
+    assert saved['B_complete'] is False and saved['C_released'] is False
+    return {'small':check_small(), 'full_saved_result_sha256':hashlib.sha256(data).hexdigest(),
+            'full_cases':len(saved['full']['cases']),
+            'raw_image_sha256':saved['full']['raw_sha256'],
+            'retained_component_storage':saved['full']['storage'],
+            'B_complete':False,'C_released':False,
+            'scope':saved['scope']}
+
+
 def build_result(theory_root, candidate_manifest):
     source_manifest(theory_root, candidate_manifest)
     old, general, positive = suppliers()
@@ -533,6 +554,7 @@ def build_result(theory_root, candidate_manifest):
               'explicit_copier':copier_contracts(),
               'acquired_arithmetic_kernel_session':kernel_session(),
               'framing':framing_checks(),
+              'paid_code_component':paid_code_component(),
               'arithmetic':arithmetic_checks(old,general,evaluator),
               'original_port_menu':port_menu_checks(old,positive),
               'real_sessions':session_checks(old,evaluator),

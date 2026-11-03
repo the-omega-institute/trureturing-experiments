@@ -975,6 +975,153 @@
     "operand_bits": 271408,
     "provider_vertices": 263297
   },
+  "paid_code_component": {
+    "B_complete": false,
+    "C_released": false,
+    "full_cases": 44,
+    "full_saved_result_sha256": "f570ae2704b2099cca40fe1eb0c049744992a5555bcf42e868b5a3ef2e6370ed",
+    "raw_image_sha256": "6eceb93c62b1357ef2faf30debd798e615462dfa93dd90235ed1ed4282003a19",
+    "retained_component_storage": {
+      "bit_fields": 4724855584,
+      "bits": 4735356079,
+      "grant_bits": 407771,
+      "objects": 407771,
+      "reference_slots": 531196,
+      "reference_width": 19
+    },
+    "scope": "Code-decoder component and its recorded tariffs; no complete installed ML-I interpreter, LAB/ML-Q session or simultaneous source/observer account.",
+    "small": {
+      "cases": [
+        {
+          "instruction": "R",
+          "pc": 0,
+          "ticks": 29974
+        },
+        {
+          "instruction": [
+            "J",
+            8
+          ],
+          "pc": 1,
+          "ticks": 30885
+        },
+        {
+          "instruction": "R",
+          "pc": 2,
+          "ticks": 48566
+        },
+        {
+          "instruction": "M",
+          "pc": 3,
+          "ticks": 48697
+        },
+        {
+          "instruction": [
+            "J",
+            13
+          ],
+          "pc": 7,
+          "ticks": 49090
+        },
+        {
+          "instruction": "R",
+          "pc": 8,
+          "ticks": 50525
+        },
+        {
+          "instruction": [
+            "J",
+            13
+          ],
+          "pc": 12,
+          "ticks": 50918
+        },
+        {
+          "instruction": "R",
+          "pc": 13,
+          "ticks": 30299
+        },
+        {
+          "instruction": [
+            "J",
+            21
+          ],
+          "pc": 14,
+          "ticks": 31210
+        },
+        {
+          "instruction": [
+            "J",
+            21034
+          ],
+          "pc": 21033,
+          "ticks": 51824
+        },
+        {
+          "instruction": "M",
+          "pc": 21034,
+          "ticks": 333
+        },
+        {
+          "instruction": null,
+          "pc": 21035,
+          "ticks": 267
+        }
+      ],
+      "charges": {
+        "acknowledgements": 14,
+        "bit_tests": 25065,
+        "boolean_gate_evaluations": 573184,
+        "bounded_register_selection_tests": 5749050,
+        "code_bit_reads": 582624,
+        "code_payload_bit_reads": 3440,
+        "code_reference_read_bits": 355883,
+        "control_bit_reads": 33632368,
+        "control_bit_writes": 3738477,
+        "directory_reference_read_bits": 264880,
+        "grant_deliveries": 1695,
+        "input_bits": 896,
+        "installation_reference_bits": 78804,
+        "installed_bit_initializations": 4297504,
+        "installed_code_payload_bits": 4194304,
+        "installed_reference_initializations": 7164,
+        "microsteps": 511904,
+        "navigation_links": 24080,
+        "output_bits": 938,
+        "output_ends": 14,
+        "page_selection_tests": 51600,
+        "reference_register_read_bits": 56309440,
+        "reference_register_write_bits": 431079,
+        "register_bit_reads": 479263,
+        "register_bit_writes": 478912,
+        "returns": 14,
+        "store_header_bit_reads": 36345184
+      },
+      "falsifiers": [
+        "premature-return",
+        "incremental-census-corruption",
+        "audit-erasure-preserves-output",
+        "per-primitive-independent-tariffs"
+      ],
+      "storage": {
+        "bit_fields": 4297504,
+        "bits": 4378003,
+        "grant_bits": 1695,
+        "objects": 1695,
+        "reference_slots": 7164,
+        "reference_width": 11
+      },
+      "store": {
+        "allocated_pages": 128,
+        "bit_fields": 4194304,
+        "directory_objects": 127,
+        "height": 7,
+        "logical_bytes": 517877,
+        "objects": 255,
+        "reference_fields": 254
+      }
+    }
+  },
   "program_hashes": {
     "constructor_audit.py": "289d0c092154c2dfc17404bb7aba7b29de84aca8d2b725e478d56205702040f9",
     "constructor_checks.py": "939f764efe22e598492ed3be5f29df69bbacff1a40bfca1470c26ff50dbff308",
@@ -986,11 +1133,13 @@
     "copier.py": "b571227e74ce3583b09e0fa359df950e2d462385528a973b81b1c50060a22d62",
     "copier_checks.py": "fb5c0b26a6f1b01037845ca44c6ae3d17cacb7b9cbfe5c857defb5701cd1c610",
     "evaluator_program.py": "33fd87384bae21581556fc776738c6940171c3dca22670f557f26b368558842f",
-    "exact_checks.py": "a76e99283b5a20e775a14a3580aafedd3a75541d86c5cb1341b53b6b353ea2f7",
+    "exact_checks.py": "77e5b92226f2fa92d46ce9fd394f280e67c78cb289744ccfc71f3cb051989f4c",
     "framing.py": "13d043ef5557b713348bbf10e6da126f88540f1a3bf3e823bb6ae84121adc41b",
     "lab.py": "59d3c316b523a1b583b1bd62f5b0b96251f4a129e6f9f09d9a0b7ceb26e3b6fb",
     "laws.py": "fea885964c863393f850a66890c1c0f6c33191828ecd794ac3204d093ceba709",
     "nwmg.py": "cff762dff0ce4ea3f06a356ac948c3ea70751a900edaa7160ea093a91b401517",
+    "paid_code.py": "a0fc0939b0f2135c629f81ac8e7642de58bfec417608030bc3b287faaaeff7a6",
+    "paid_code_checks.py": "a8e8587978477b02771b742092962ca6480089fb554833fdda11a355fd1268ab",
     "pins.py": "eddd65bbf35bed490267173e96a06423155b543a9fde04d5b89f8e7c1ef3f0d0",
     "session.py": "de7306df87891d380379c9fd9ae06e7a4befc51276a7b0c5c01d9401db1e12c7"
   },
@@ -1707,18 +1856,18 @@
     },
     "candidate-manifest": {
       "bytes": 485,
-      "sha256": "b5f5a0be0609f802b5e57e0adbc284fe20b97881e6b2b6872f05802a10f4242e"
+      "sha256": "b3d9e8aa2319c46a5f7f479d68c753c5c5af83f4f90115f6c86796e4942158f5"
     },
     "candidate:Library/Computability/nearywoodsmurphyglaschick2014wang.md": {
       "bytes": 4148,
       "sha256": "863859e7f3d2110e0559cd6837afc8b63614f456c642ea253f1a8d709d00e345"
     },
     "candidate:docs/develop/theory/RECURSIVE_RELATIONAL_OBSERVATION_MONOTONE_LAB_INDEXED_EXECUTION.md": {
-      "bytes": 106068,
-      "sha256": "53a2056ad651de1f33ae95c1ac3d05df3af2f0533d0e0ad3aeae6c49f7e8ba1a"
+      "bytes": 117399,
+      "sha256": "a25218e28509d517af08b6fe7cccdd90fccb008796d68f5f60c58ffe816f3cab"
     }
   },
-  "theory_sha256": "53a2056ad651de1f33ae95c1ac3d05df3af2f0533d0e0ad3aeae6c49f7e8ba1a",
+  "theory_sha256": "a25218e28509d517af08b6fe7cccdd90fccb008796d68f5f60c58ffe816f3cab",
   "unresolved_obligations": [
     {
       "finding": "The copier now generates a complete non-erasing binary table for every supplied erasing binary table, lowers it through the primary thirteen-instruction compiler, and decodes real LAB output. The acquired successor kernel executes on this path. The fixed ML-S evaluator graph, materialized binary table and complete encoded W_U are supplied separately, with full stack-reference law runs. A full evaluator run through the actual ML-T/NWMG/ML-L/ML-B path and decoded physical ML.5 output has not executed. Those constructor/reference results do not discharge this integrated obligation.",
