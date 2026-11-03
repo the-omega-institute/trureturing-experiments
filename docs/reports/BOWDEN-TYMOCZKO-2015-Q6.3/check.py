@@ -14,8 +14,6 @@ from __future__ import annotations
 
 from collections import Counter
 from itertools import product
-from math import isqrt
-from fractions import Fraction
 
 
 def prime_powers(m: int) -> list[tuple[int, int, int]]:
@@ -66,19 +64,6 @@ def fixed_label_rank(n: int, edges: list[tuple[int, int]], labels: tuple[int, ..
         zero_edges = {j for j, d in enumerate(labels) if d % q == 0}
         ranks.append(components(n, edges, zero_edges))
     return max(ranks)
-
-
-def set_partitions(n: int):
-    """Yield each set partition of range(n) once, in canonical block order."""
-    if n == 0:
-        yield ()
-        return
-    for previous in set_partitions(n - 1):
-        yield (frozenset({0}),) + tuple(previous)
-        for i in range(len(previous)):
-            blocks = list(previous)
-            blocks[i] = blocks[i] | {n - 1}
-            yield (frozenset({0}),) + tuple(blocks) if False else tuple(blocks)
 
 
 def canonical_partitions(n: int) -> list[tuple[frozenset[int], ...]]:
