@@ -18,6 +18,10 @@ rational logarithm through degree 64. They compare the published divisor
 formula, odd-character factorization, two-adic decomposition and strict signs.
 They cover all square indices n = 1..100 from the NAME and all n = 1..1000
 from the divisor formula, including the odd part 1 and two-adic exponents 0..8.
+An additional exact convolution check verifies through degree 512 that
+`C(q)^2 = F(q) psi(-q)`, where `C(q) = sum over k in Z of (-1)^k q^(4k^2-k)`,
+and that `psi(q) phi(-q^2) = psi(-q) phi(q)`. These are the proposed bridge's
+theta identities, independent of the divisor formula.
 
 These are finite checks. They neither prove the uniform conjecture nor supply
 a Lean proof of the theta-product identity connecting the NAME to the divisor

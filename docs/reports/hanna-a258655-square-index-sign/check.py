@@ -70,6 +70,35 @@ def logarithm_by_definition(f):
     return answer
 
 
+def convolution(f, g):
+    return [sum(f[j] * g[N - j] for j in range(N + 1)) for N in range(len(f))]
+
+
+def theta_bridge_check(degree):
+    phi, phi2, phi_minus2 = ([0] * (degree + 1) for _ in range(3))
+    for k in range(-isqrt(degree) - 1, isqrt(degree) + 2):
+        if k * k <= degree:
+            phi[k * k] += 1
+        if 2 * k * k <= degree:
+            phi2[2 * k * k] += 1
+            phi_minus2[2 * k * k] += (-1) ** abs(k)
+    psi, psi_minus, c = ([0] * (degree + 1) for _ in range(3))
+    k = 0
+    while k * (k + 1) // 2 <= degree:
+        t = k * (k + 1) // 2
+        psi[t] += 1
+        psi_minus[t] += (-1) ** t
+        k += 1
+    for k in range(-isqrt(degree) - 1, isqrt(degree) + 2):
+        t = 4 * k * k - k
+        if t <= degree:
+            c[t] += (-1) ** abs(k)
+    require(convolution(psi, phi_minus2) == convolution(psi_minus, phi),
+            'Gauss auxiliary product identity')
+    require(convolution(c, c) == convolution(theta_coefficients(degree), psi_minus),
+            'NAME theta bridge C^2 = F psi(-q)')
+
+
 def chi(d):
     require(d % 2 == 1, 'odd character domain')
     return 1 if d % 8 in (1, 7) else -1
@@ -137,6 +166,9 @@ def main():
     print('NAME: exact qF\' / F recurrence through degree 10000 agrees with the divisor formula.')
     print('LOG_DEFINITION: rational truncated log(1+H) agrees through degree 64.')
     print('NAME_SQUARE_SIGNS: all n = 1..100 match the source table and strict signs.')
+
+    theta_bridge_check(512)
+    print('THETA_BRIDGE: C(q)^2 = F(q) psi(-q) and the auxiliary identity pass through degree 512.')
 
     units = (1, 3, 5, 7)
     require(all(chi(x * y) == chi(x) * chi(y) for x in units for y in units),
