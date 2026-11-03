@@ -4,7 +4,7 @@ Source: Jingjie Yang, Mikołaj Bojańczyk and Bartek Klin, *The Finite Length Pr
 
 Run `python3 check.py` with Python 3.10 or later; only the standard library is required. The recorded output is in [output.txt](output.txt). Arithmetic is integral, including fraction-free row elimination computing ranks over the rationals. No floating point is used.
 
-The fidelity check reproduces the five ordered-pair orbit types of vector atoms over the two-element field (Section 2, Example 5), using all 168 elements of GL(3,2). The orbit sizes are 1, 7, 7, 7 and 42. Every infinite-dimensional pair type is already represented in dimension three; every finite linear automorphism extends to the infinite-dimensional space.
+The fidelity check reproduces the five ordered-pair orbit types of vector atoms over the two-element field (Section 2, Example 2.5), using all 168 elements of GL(3,2). The orbit sizes are 1, 7, 7, 7 and 42. Every infinite-dimensional pair type is already represented in dimension three; every finite linear automorphism extends to the infinite-dimensional space.
 
 For the Boolean construction, an algebra with n atoms is represented by bit masks, excluding the empty and full masks from the basis. The row indexed by a tuple tests whether all tuple atoms lie in a basis subset. A row depends only on the nonempty set of distinct tuple entries; repetition realizes every such set of size at most d. The program computes the ranks of these integer incidence matrices over the rationals. Restriction to the first k binary coordinates gives n = 2^k atoms and an algebra of size 2^(2^k).
 

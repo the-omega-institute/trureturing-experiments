@@ -45,7 +45,7 @@ def test_matrix(n, d):
 
 
 def fidelity():
-    # Source Section 2, Example 5 (vector atoms): in A^2 there is the independent
+    # Source Section 2, Example 2.5 (vector atoms): in A^2 there is the independent
     # orbit and 2+|F_2| other orbits. GL(3,2) already realizes all five types.
     bases = [(a, b, c) for a, b, c in product(range(1, 8), repeat=3)
              if b != a and c not in (a, b, a ^ b)]
