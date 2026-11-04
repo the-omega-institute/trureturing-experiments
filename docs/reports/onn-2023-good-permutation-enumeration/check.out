@@ -1,0 +1,42 @@
+FIDELITY Theorem 1.2 examples: OK; ranked supmodular inputs=55
+LOCAL_CASES all 24 rank arrangements: OK
+ENUM 1x1: count=1; visited=2; rejected_completions=0; classes={}
+ENUM 1x2: count=2; visited=4; rejected_completions=0; classes={}
+ENUM 1x3: count=6; visited=8; rejected_completions=0; classes={}
+ENUM 1x4: count=24; visited=16; rejected_completions=0; classes={}
+ENUM 1x5: count=120; visited=32; rejected_completions=0; classes={}
+ENUM 1x6: count=720; visited=64; rejected_completions=0; classes={}
+ENUM 1x7: count=5040; visited=128; rejected_completions=0; classes={}
+ENUM 1x8: count=40320; visited=256; rejected_completions=0; classes={}
+ENUM 1x9: count=362880; visited=512; rejected_completions=0; classes={}
+ENUM 1x10: count=3628800; visited=1024; rejected_completions=0; classes={}
+ENUM 1x11: count=39916800; visited=2048; rejected_completions=0; classes={}
+ENUM 1x12: count=479001600; visited=4096; rejected_completions=0; classes={}
+ENUM 2x1: count=2; visited=4; rejected_completions=0; classes={}
+ENUM 2x2: count=8; visited=49; rejected_completions=16; classes={1: 6, 0: 1, 2: 1}
+ENUM 2x3: count=32; visited=549; rejected_completions=688; classes={1: 15, 0: 1, 2: 15, 3: 1}
+ENUM 2x4: count=128; visited=6017; rejected_completions=40192; classes={1: 28, 2: 70, 0: 1, 3: 28, 4: 1}
+ENUM 2x5: count=512; visited=63973; rejected_completions=3628288; classes={1: 45, 2: 210, 0: 1, 3: 210, 4: 45, 5: 1}
+ENUM 2x6: count=2048; visited=664305; rejected_completions=478999552; classes={1: 66, 2: 495, 3: 924, 0: 1, 4: 495, 5: 66, 6: 1}
+ENUM 3x1: count=6; visited=8; rejected_completions=0; classes={}
+ENUM 3x2: count=32; visited=549; rejected_completions=688; classes={1: 15, 0: 1, 2: 15, 3: 1}
+ENUM 3x3: count=72; visited=21652; rejected_completions=362808; classes={'A': 36, 'B': 36}
+ENUM 3x4: count=0; visited=442231; rejected_completions=479001600; classes={}
+ENUM 4x1: count=24; visited=16; rejected_completions=0; classes={}
+ENUM 4x2: count=128; visited=6017; rejected_completions=40192; classes={1: 28, 2: 70, 0: 1, 3: 28, 4: 1}
+ENUM 4x3: count=0; visited=442231; rejected_completions=479001600; classes={}
+ENUM 5x1: count=120; visited=32; rejected_completions=0; classes={}
+ENUM 5x2: count=512; visited=63973; rejected_completions=3628288; classes={1: 45, 2: 210, 0: 1, 3: 210, 4: 45, 5: 1}
+ENUM 6x1: count=720; visited=64; rejected_completions=0; classes={}
+ENUM 6x2: count=2048; visited=664305; rejected_completions=478999552; classes={1: 66, 2: 495, 3: 924, 0: 1, 4: 495, 5: 66, 6: 1}
+ENUM 7x1: count=5040; visited=128; rejected_completions=0; classes={}
+ENUM 8x1: count=40320; visited=256; rejected_completions=0; classes={}
+ENUM 9x1: count=362880; visited=512; rejected_completions=0; classes={}
+ENUM 10x1: count=3628800; visited=1024; rejected_completions=0; classes={}
+ENUM 11x1: count=39916800; visited=2048; rejected_completions=0; classes={}
+ENUM 12x1: count=479001600; visited=4096; rejected_completions=0; classes={}
+ALL_SMALL_CASES ordered_dimensions=35, m*n<=12: OK
+TWO_CHAINS exact set equality in both orientations for widths 1..6: OK
+3x3 complete 9! classification: A=36, B=36, center=5: OK
+3x4 and 4x3 count=0, agreeing with source Theorem 1.3: OK
+ALL_CHECKS_OK
