@@ -32,8 +32,8 @@ interchanges. There are 141 cases with p>=q and six with p<q. All input
 numerator coefficients through degree 2(d+1)+2 satisfy the comparison and
 the normalization (1+t)^p phi(sigma) = (1+t)^q H.
 
-For all 147 small inputs and four source examples, 165 construction steps the program separately enumerates the convex
-hull B of P at height zero and the two exchanged apices (v,1) and
+For 165 construction steps across all 147 small inputs and four source examples,
+the program separately enumerates the convex hull B of P at height zero and the two exchanged apices (v,1) and
 (sigma(v),-1). It checks the entire central slice, every noncentral slice,
 fixed-point counts, multiplicities (p,q+1), and phi_B=(1+t)phi_P.
 First steps use dilations k=0,...,4. Further balancing steps use k=0,1,2.
