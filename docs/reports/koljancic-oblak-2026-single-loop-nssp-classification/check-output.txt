@@ -1,0 +1,110 @@
+Exact arithmetic: SymPy 1.14.0; no floating point evidence
+FIDELITY Example 5.9: displayed A,X satisfy both equations; adjacency rank=25/25
+FIDELITY Example 5.10: displayed A verification rank=16/16
+ALLOW n=1 k=1 right_internal_product=1 jacobian_det=-1
+ALLOW n=2 k=1 right_internal_product=1 jacobian_det=1
+ALLOW n=2 k=2 right_internal_product=1 jacobian_det=1
+ALLOW n=3 k=1 right_internal_product=1 jacobian_det=-1
+ALLOW n=3 k=3 right_internal_product=1 jacobian_det=1
+ALLOW n=4 k=1 right_internal_product=1 jacobian_det=-1
+ALLOW n=4 k=2 right_internal_product=1 jacobian_det=-1
+ALLOW n=4 k=3 right_internal_product=1 jacobian_det=1
+ALLOW n=4 k=4 right_internal_product=1 jacobian_det=1
+ALLOW n=5 k=1 right_internal_product=1 jacobian_det=-1
+ALLOW n=5 k=3 right_internal_product=2 jacobian_det=1
+ALLOW n=5 k=5 right_internal_product=1 jacobian_det=-1
+ALLOW n=6 k=1 right_internal_product=1 jacobian_det=1
+ALLOW n=6 k=2 right_internal_product=1 jacobian_det=1
+ALLOW n=6 k=3 right_internal_product=1 jacobian_det=-1
+ALLOW n=6 k=4 right_internal_product=1 jacobian_det=-1
+ALLOW n=6 k=5 right_internal_product=1 jacobian_det=1
+ALLOW n=6 k=6 right_internal_product=1 jacobian_det=1
+ALLOW n=7 k=1 right_internal_product=1 jacobian_det=-1
+ALLOW n=7 k=3 right_internal_product=1 jacobian_det=1
+ALLOW n=7 k=5 right_internal_product=1 jacobian_det=-1
+ALLOW n=7 k=7 right_internal_product=1 jacobian_det=1
+ALLOW n=8 k=1 right_internal_product=1 jacobian_det=-1
+ALLOW n=8 k=2 right_internal_product=1 jacobian_det=-1
+ALLOW n=8 k=3 right_internal_product=2 jacobian_det=100
+ALLOW n=8 k=4 right_internal_product=1 jacobian_det=1
+ALLOW n=8 k=5 right_internal_product=1 jacobian_det=-1
+ALLOW n=8 k=6 right_internal_product=2 jacobian_det=-2
+ALLOW n=8 k=7 right_internal_product=1 jacobian_det=1
+ALLOW n=8 k=8 right_internal_product=1 jacobian_det=1
+ALLOW n=9 k=1 right_internal_product=1 jacobian_det=-1
+ALLOW n=9 k=3 right_internal_product=1 jacobian_det=1
+ALLOW n=9 k=5 right_internal_product=2 jacobian_det=-162
+ALLOW n=9 k=7 right_internal_product=1 jacobian_det=1
+ALLOW n=9 k=9 right_internal_product=1 jacobian_det=-1
+ALLOW n=10 k=1 right_internal_product=1 jacobian_det=1
+ALLOW n=10 k=2 right_internal_product=1 jacobian_det=1
+ALLOW n=10 k=3 right_internal_product=1 jacobian_det=-1
+ALLOW n=10 k=4 right_internal_product=1 jacobian_det=-1
+ALLOW n=10 k=5 right_internal_product=1 jacobian_det=1
+ALLOW n=10 k=6 right_internal_product=1 jacobian_det=1
+ALLOW n=10 k=7 right_internal_product=1 jacobian_det=-1
+ALLOW n=10 k=8 right_internal_product=1 jacobian_det=-1
+ALLOW n=10 k=9 right_internal_product=1 jacobian_det=1
+ALLOW n=10 k=10 right_internal_product=1 jacobian_det=1
+ALLOW n=11 k=1 right_internal_product=1 jacobian_det=-1
+ALLOW n=11 k=3 right_internal_product=2 jacobian_det=147968
+ALLOW n=11 k=5 right_internal_product=1 jacobian_det=-1
+ALLOW n=11 k=7 right_internal_product=1 jacobian_det=1
+ALLOW n=11 k=9 right_internal_product=2 jacobian_det=-1
+ALLOW n=11 k=11 right_internal_product=1 jacobian_det=1
+ALLOW n=12 k=1 right_internal_product=1 jacobian_det=-1
+ALLOW n=12 k=2 right_internal_product=1 jacobian_det=-1
+ALLOW n=12 k=3 right_internal_product=1 jacobian_det=1
+ALLOW n=12 k=4 right_internal_product=1 jacobian_det=1
+ALLOW n=12 k=5 right_internal_product=1 jacobian_det=-1
+ALLOW n=12 k=6 right_internal_product=1 jacobian_det=-1
+ALLOW n=12 k=7 right_internal_product=1 jacobian_det=1
+ALLOW n=12 k=8 right_internal_product=1 jacobian_det=1
+ALLOW n=12 k=9 right_internal_product=1 jacobian_det=-1
+ALLOW n=12 k=10 right_internal_product=1 jacobian_det=-1
+ALLOW n=12 k=11 right_internal_product=1 jacobian_det=1
+ALLOW n=12 k=12 right_internal_product=1 jacobian_det=1
+ALLOW_SUMMARY: 63/63 exact nonzero determinants, n=1..12; direct arbitrary-X ranks n<=7
+OBSTRUCTION n=3 k=2 X11=1
+OBSTRUCTION n=5 k=2 X11=1
+OBSTRUCTION n=5 k=4 X11=1
+OBSTRUCTION n=7 k=2 X11=1
+OBSTRUCTION n=7 k=4 X11=1
+OBSTRUCTION n=7 k=6 X11=1
+OBSTRUCTION n=9 k=2 X11=1
+OBSTRUCTION n=9 k=4 X11=1
+OBSTRUCTION n=9 k=6 X11=1
+OBSTRUCTION n=9 k=8 X11=1
+OBSTRUCTION n=11 k=2 X11=1
+OBSTRUCTION n=11 k=4 X11=1
+OBSTRUCTION n=11 k=6 X11=1
+OBSTRUCTION n=11 k=8 X11=1
+OBSTRUCTION n=11 k=10 X11=1
+OBSTRUCTION_SUMMARY: 15/15 exact nonsymmetric signed-weight witnesses, odd n<=11, even k
+NONREQUIRE r=2 s=2 exact_radical_commutant=OK
+NONREQUIRE r=2 s=3 exact_radical_commutant=OK
+NONREQUIRE r=2 s=4 exact_radical_commutant=OK
+NONREQUIRE r=2 s=5 exact_radical_commutant=OK
+NONREQUIRE r=2 s=6 exact_radical_commutant=OK
+NONREQUIRE r=3 s=2 exact_radical_commutant=OK
+NONREQUIRE r=3 s=3 exact_radical_commutant=OK
+NONREQUIRE r=3 s=4 exact_radical_commutant=OK
+NONREQUIRE r=3 s=5 exact_radical_commutant=OK
+NONREQUIRE r=3 s=6 exact_radical_commutant=OK
+NONREQUIRE r=4 s=2 exact_radical_commutant=OK
+NONREQUIRE r=4 s=3 exact_radical_commutant=OK
+NONREQUIRE r=4 s=4 exact_radical_commutant=OK
+NONREQUIRE r=4 s=5 exact_radical_commutant=OK
+NONREQUIRE r=4 s=6 exact_radical_commutant=OK
+NONREQUIRE r=5 s=2 exact_radical_commutant=OK
+NONREQUIRE r=5 s=3 exact_radical_commutant=OK
+NONREQUIRE r=5 s=4 exact_radical_commutant=OK
+NONREQUIRE r=5 s=5 exact_radical_commutant=OK
+NONREQUIRE r=5 s=6 exact_radical_commutant=OK
+NONREQUIRE r=6 s=2 exact_radical_commutant=OK
+NONREQUIRE r=6 s=3 exact_radical_commutant=OK
+NONREQUIRE r=6 s=4 exact_radical_commutant=OK
+NONREQUIRE r=6 s=5 exact_radical_commutant=OK
+NONREQUIRE r=6 s=6 exact_radical_commutant=OK
+NONREQUIRE_SUMMARY: 25/25 connected exact-support symmetric witnesses, r,s=2..6
+ALL_CHECKS_OK
