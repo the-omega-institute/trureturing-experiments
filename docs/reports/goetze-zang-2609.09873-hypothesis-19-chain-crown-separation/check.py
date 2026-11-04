@@ -2,7 +2,6 @@
 """Exact finite checks for Goetze--Zang Hypothesis 19, crown hosts."""
 from fractions import Fraction
 from itertools import combinations
-from math import ceil, log2
 
 
 def crown(n):
@@ -89,7 +88,7 @@ def exhaustive_induced_number(n):
 
 
 def binary_layer_masks(n):
-    k = ceil(log2(n))
+    k = (n - 1).bit_length()
     codes = [format(i, f"0{k}b") for i in range(n)]
     layers = []
     for bit in range(k):
