@@ -231,6 +231,25 @@ At x=1, II47.11 gives U=lambda Uminus, xi=2q>0 and g=d^2 q directly. Since q<=1,
 
 For an arbitrary whole U use published II42.3: every finite phase replacement has the same E, same complex negative active trace, same q,x and same true distance xi; g is their weighted mean plus nonnegative recovery variance. The strict phase bound therefore gives strict original g>H>V. Published III48.5 may then be used to exclude negative-active global minimizers on this prefix, but no pointwise purification of arbitrary mixed effects is inferred.
 
+## Exact attained-gain corollary
+
+For 0<x<1 define the original negative canonical amplitude and attained joint gain
+
+\[
+\Gamma_0=\sqrt p(sx+h)+\sqrt q\,c\sqrt{1-x^2},\quad
+G_{\rm can}=e^2p+d^2q-4\Gamma_0^2,\quad
+I_-=\max_{\mathcal T_x}(\Gamma-\Gamma_0).
+\]
+
+The maximum exists by II47.1: the same triangle is compact, XY>=x^2>0 and Gamma is continuous. Apply the proved all-point strict inequality at an actual maximizing triangle point. It gives exactly
+
+\[
+G_{\rm can}-V(\xi)-8\Gamma_0I_--4I_-^2
+>H(\xi)-V(\xi)>0.
+\]
+
+The strict maximum-point argument includes every determinant-negative slice and does not replace Iminus by the failed Jminus envelope. No uniform positive margin as xi tends to zero is assumed.
+
 ## Sources and remaining scope
 
 The fixed mathematical supplier is main commit 6b6539921bf3fde0f84f85fdda6c284b5891ae98: source23, I37.5, II42/46/47, III48.5, IV49. source_manifest.json seals their Git blobs and bytes. The permitted sealed comparator source is 4174415b64cd87a3770a85c30ec83cba6312cf7d:Continuation III, SHA256 2e595777683f204a62fdf5076591f0ee334ac069b279a84fbaeec4b256cc02e9, 44051 bytes. Its Lemma50.4 is the sole sealed mathematical input and its relevant algebra/signs are reproduced above. The negative-canonical gap, its independent in-flight task, and the positive-prefix candidate are not premises.
