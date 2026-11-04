@@ -1,0 +1,15 @@
+D(1) = 1; zero-free classes = [(1,)]
+D(2) = 2; zero-free classes = [(2,), (1, 1)]
+D(3) = 2; zero-free classes = [(3,), (1, 1, 1)]
+D(4) = 2; zero-free classes = [(2, 2), (1, 1, 1, 1)]
+D(5) = 1; zero-free classes = [(1, 1, 1, 1, 1)]
+D(6) = 1; zero-free classes = [(1, 1, 1, 1, 1, 1)]
+D(7) = 4; zero-free classes = [(3, 2, 2), (3, 1, 1, 1, 1), (2, 2, 1, 1, 1), (1, 1, 1, 1, 1, 1, 1)]
+D(8) = 1; zero-free classes = [(1, 1, 1, 1, 1, 1, 1, 1)]
+DIRECT_CHARACTER_TABLE_CHECK_OK {1: 1, 2: 2, 3: 2, 4: 2, 5: 1, 6: 1, 7: 4, 8: 1}
+family (r,s)=(12,9), n=82, 3n+1=11^2+11*7+7^2, hook j=36: direct=0, closed=0
+family (r,s)=(73,52), n=2705, 3n+1=54^2+54*50+50^2, hook j=1326: direct=None, closed=0
+family (r,s)=(428,303), n=91810, 3n+1=305^2+305*301+301^2, hook j=45753: direct=None, closed=0
+family (r,s)=(2497,1766), n=3118757, 3n+1=1768^2+1768*1764+1764^2, hook j=1558495: direct=None, closed=0
+p(82) = 20506255; full D(82) table is outside this check
+ALL_CHECKS_OK
