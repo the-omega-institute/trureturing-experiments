@@ -168,6 +168,16 @@ def define_evaluator(a):
         fori(a,'j',v('n'),occurrence);a.ifzero(v('ok'));a.ret();a.endif()
         a.ifzero(v('source'));a.set(v('lr'),36);a.set(v('rr'),27);a.set(v('lc'),2);a.set(v('rc'),9)
         a.otherwise();a.set(v('lr'),9);a.set(v('rr'),9);a.set(v('lc'),8);a.set(v('rc'),27);a.endif()
+        # Actual partitions are surjective onto their distinguished blocks.
+        # Recheck on every call, after distinct-edge degree rejection. The
+        # overlap r=s=1 takes the left-centred branch deterministically.
+        a.op('eq',v('star'),v('r'),1);a.ifzero(v('star'));a.otherwise()
+        a.g.mark('inject.star.left')
+        a.op('falling',v('J'),27,v('s'));a.op('mul',v('J'),72,v('J'));a.ret();a.endif()
+        a.op('eq',v('star'),v('s'),1);a.ifzero(v('star'));a.otherwise()
+        a.g.mark('inject.star.right')
+        a.op('falling',v('J'),8,v('r'));a.op('mul',v('J'),243,v('J'));a.ret();a.endif()
+        a.g.mark('inject.general')
         a.op('add',v('mapsize'),v('r'),v('s'));a.op('zeros',v('map'),v('mapsize'));a.set(v('more'),1)
         a.loop();a.breakzero(v('more'));a.op('zeros',v('lo'),v('lr'));a.op('zeros',v('ro'),v('rr'));a.set(v('weight'),1)
         def vertex(k):

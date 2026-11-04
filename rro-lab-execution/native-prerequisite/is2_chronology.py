@@ -25,7 +25,15 @@ class ChronologyDirect(im.Direct):
     receipts = ServiceDirect.receipts
 
     def __init__(self, program, capacity, kernel, connection, native_limit):
-        assert program.fingerprint() == 'db4fb22177743a3aafd286c5431b42d09460ab47cfe4ca488d40dd1f28600b4a'
+        assert program.fingerprint() == '326af82c315be2e1fb83cf6df5bcffdbb75888543473a3d3261f7d3d4a8d8d30'
+        for name, index in {'is2.start':2163, 'is2.print':62776,
+                            'is2.returned':62818, 'service.return':1445,
+                            'evaluate.begin':2156}.items():
+            assert program.entries[name] is program.nodes[index]
+        returned = program.entries['is2.returned']
+        assert returned.op == 'put' and returned.args == ('eval.busy', 0)
+        assert returned.zero is returned.one is program.entries['service.return']
+        assert {'output.return', 'is2.received', 'eval.input'} <= set(program.refs)
         self.native_limit = native_limit
         super().__init__(program, '', capacity, kernel,
                          connection=connection, service_return=True)
