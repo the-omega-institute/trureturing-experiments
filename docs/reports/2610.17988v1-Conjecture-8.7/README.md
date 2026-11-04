@@ -16,7 +16,7 @@ identities `D(t) K_m(t) = D(t^m)` for `1 <= p,q <= 5` and odd `1 <= m <= 9`,
 including coefficientwise effectiveness of the geometric-sum kernel.
 
 Geometric fidelity checks reproduce the source's orthogonally and diagonally
-reflected squares (Examples 2.2–2.3), pyramid, bipyramid, and effective polytope
+reflected squares (Examples 2.3–2.4), pyramid, bipyramid, and effective polytope
 with an obstructing face (Examples 5.1–5.3). The last example is four-dimensional;
 its integer fibers are counted directly from the tetrahedron inequalities.
 Twenty-seven additional random symmetric lattice polytopes have dimensions

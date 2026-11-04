@@ -169,8 +169,8 @@ def source_examples():
     tetrahedron = [(0, 0, 0), (2, 0, 0), (1, 1, 0), (1, 0, 1)]
     txi = [v + (z,) for v in tetrahedron for z in range(2)]
     return [
-        ('source-Example-2.2-orthogonal-square', square, ((-1, 0), (0, 1)), (1, 0)),
-        ('source-Example-2.3-diagonal-square', square, ((0, 1), (1, 0)), (0, 0)),
+        ('source-Example-2.3-orthogonal-square', square, ((-1, 0), (0, 1)), (1, 0)),
+        ('source-Example-2.4-diagonal-square', square, ((0, 1), (1, 0)), (0, 0)),
         ('source-Example-5.1-pyramid', pyramid, ((0, 1, 0), (1, 0, 0), (0, 0, 1)), (0, 0, 0)),
         ('source-Example-5.2-bipyramid', bipyramid, ((-1, 0, -1), (0, 1, 0), (0, 0, 1)), (1, 0, 0)),
         ('source-Example-5.3-TxI', txi,
@@ -251,10 +251,10 @@ def main():
         if name.endswith('orthogonal-square'):
             assert [a - b for a, b in phi[:9]] == [1, -1, 2, -2, 2, -2, 2, -2, 2]
             assert [a + b for a, b in phi[:9]] == [1, 1, 0, 0, 0, 0, 0, 0, 0]
-            print('FIDELITY Example 2.2: phi(sigma) = (1+t^2)/(1+t), degrees 0..8 reproduced')
+            print('FIDELITY Example 2.3: phi(sigma) = (1+t^2)/(1+t), degrees 0..8 reproduced')
         if name.endswith('diagonal-square'):
             assert phi == [ONE, ONE] + [ZERO] * (len(phi) - 2)
-            print('FIDELITY Example 2.3: phi = (1+t)*trivial, degrees 0..56 reproduced')
+            print('FIDELITY Example 2.4: phi = (1+t)*trivial, degrees 0..56 reproduced')
         if name.endswith('5.1-pyramid'):
             assert all(F == (k // 2 + 1) ** 2 for k, (_, F) in enumerate(counts))
             assert [a + b for a, b in phi] == [1, 1] + [0] * (len(phi) - 2)
