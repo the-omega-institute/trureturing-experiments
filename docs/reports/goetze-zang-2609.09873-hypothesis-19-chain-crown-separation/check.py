@@ -144,8 +144,8 @@ def main():
         assert exact == upper
         print(f"n={n}: c_u=2, ic_u={exact}, binary_upper={upper}, {method}")
 
-    print("component lemma: every induced chain component has |S∩T|≤1 (all finite S,T checked for n≤5)")
-    for n in (3, 4, 5):
+    print("component lemma: every induced chain component has |S∩T|≤1 (all finite S,T checked for n≤8)")
+    for n in range(3, 9):
         for left in range(1, 1 << n):
             for right in range(1, 1 << n):
                 if (left & right).bit_count() > 1:
