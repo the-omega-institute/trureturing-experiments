@@ -37,8 +37,11 @@ def source_recursion_check():
     integrated = expected
     ratio_terms = p * sp.log(b / a) + q * sp.log((1 - a) / (1 - b))
     assert sp.simplify(sp.logcombine(integrated - ratio_terms, force=True)) == 0
-    interval = (1 + ratio_terms) / (b - a)
-    assert interval == (1 + ratio_terms) / (b - a)
+    interval_from_integral = (1 + integrated) / (b - a)
+    ratio_interval = (1 + ratio_terms) / (b - a)
+    assert sp.simplify(
+        sp.logcombine((interval_from_integral - ratio_interval) * (b - a), force=True)
+    ) == 0
 
 
 def alternating_recursion_check():
