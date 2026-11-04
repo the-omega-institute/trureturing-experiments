@@ -1,6 +1,6 @@
 # Original negative attained-triangle certificate
 
-The mathematical claim is an ordinary exact-arithmetic result. It has no Lean/kernel verification. Independent mathematical review and main-repository exposition are separate deliveries. The experiment inherits the repository's Apache-2.0 license; it embeds no third-party source code.
+The mathematical claim is an ordinary exact-arithmetic result. It has no Lean/kernel verification. Fresh independent three-CLI mathematical review remains pending. The complete canonical ordinary-paper exposition and its supplier consumer are linked below. The experiment inherits the repository's Apache-2.0 license; it embeds no third-party source code.
 
 ## Claim and original-model correspondence
 
@@ -258,4 +258,55 @@ The mature ingredients are Cauchy--Schwarz, the quadratic chord identity, Sylves
 
 The unchanged II47 J-only completion route fails at xi=59/25,q=1/5,x=51/100. The rational checker reproduces all six supplied enclosures and Glow.upper<-1/5. This validates a known method failure; it is not an original E,U counterexample or an additional new result. The actual joined comparison is proved by the matrix certificate instead.
 
-Complete two-sign ordering, full firstloss/equality, alpha/beta identification and the complete AURIC theory remain outside this result. Independent three-seat review and authorized main-paper retention remain pending. No push, PR, merge, or goal-state change is part of this experiment.
+The negative certificate itself has no positive-prefix or global-purity premise. Its original-domain global consumer is stated below. Fresh independent three-CLI review remains pending; no Lean/kernel verification, publication, or complete AURIC reconstruction is asserted.
+
+
+## Canonical ordinary-paper consumer
+
+The complete proof and continuous certificate-to-original-math correspondence are
+[Continuation IV, Sections 52--53](https://github.com/the-omega-institute/trureturing/blob/ca97e48479780f4d7237ede687aad29df5a9f802/docs/develop/theory/QUANTUM_REALITY_FOUR_PATH_FULL_RECORD_RECOVERY_BOUND_CONTINUATION_IV.md#52-strict-negative-attained-triangle-comparison-on-the-original-level).
+Section 52 includes the entire H comparator construction, all populations and
+actual triangle boundaries through 61/25, the x=1 endpoint, arbitrary whole-U
+transport, and the strict attained-gain inequality. The certificate and both
+programs remain the original exact research source at checkpoint
+014b9c9e939cc6979ef80769c4ded6dec91eb1ff. No new numerical inequality is
+introduced by this consumer.
+
+At the published source pin 4008fb9289d85582c68b23a5810474e4463c64ea,
+III48.5 applies only to attained global minimizers through 13/4. IV51.2 gives
+the positive-active pure comparison and exactly the two geometric equality
+orbits through xiStar, with 59/25<xiStar<239/100. Combining those precise
+statements with the negative theorem yields m=N and A_xi=G_xi on
+0<xi<=xiStar for the entire original Dens2 x U(4). The proof chooses a global
+minimizer by compactness and then uses III48.5; it does not purify arbitrary
+mixed inputs pointwise. Any equality input is itself a global minimizer and
+is therefore among the two pure geometric orbits. All common scalar
+representatives remain included.
+
+The original sets B and S in I39.3 are exactly (xiStar,4), so
+alpha=beta=xiStar and neither failure set contains its endpoint. This follows
+from the global prefix and the actual same-level competitors of I36.5 using
+IV49.1's negative determinant above xiStar and I37.23's strict sign gap.
+It is a deduction, not an assumed firstness identification.
+
+Compactness localizes every global minimizer at nearby levels to the two
+endpoint geometric orbits. III48.5 then makes it pure phase. The complete
+IV49 chart and its unique fixed-feedback effect force every such minimizer
+to satisfy the reduced stationary equation. Immediately to the right its
+only improving roots are b=+sqrt(u(t)) and b=-sqrt(u(t)) near each selected
+orientation. The exact objective is independent of that orientation and
+even in b. All four actual branches therefore have one value and, by
+attainment and exhaustion, are precisely the global minimizing scalar
+orbits. Section 53.3 supplies the full proof, domain and value expansion.
+This closes immediate-right classification on an existential neighborhood;
+it does not evaluate all right-side branches on (xiStar,4).
+
+The first-boundary and global-consumer statements are ordinary mathematics
+pending fresh independent complete three-CLI review. No kernel or whole-goal
+completion follows from an arithmetic verifier or repository gate. The
+original negative-canonical research remains separate; its sealed III50.4
+comparator is fully restated in the canonical proof, while none of its
+negative-canonical gap assertions is assumed. Its original reconciliation is
+still required before later publication integration of that separate paper.
+The experiments repository is public; no visibility or settings change is
+part of the retained source.

@@ -45,5 +45,23 @@
   ],
   "original_model": "Dens2 x U4; ordinary transpose; true minimum of both sign distances; one whole U and common scalar",
   "latest_dev_context_only": "b52262a023c4db9bb30a128ebfd80ea4ef4c1a53",
-  "license": "Apache-2.0 inherited from experiments repository"
+  "license": "Apache-2.0 inherited from experiments repository",
+  "integration_sources": [
+    {
+      "commit": "4008fb9289d85582c68b23a5810474e4463c64ea",
+      "path": "docs/develop/theory/QUANTUM_REALITY_FOUR_PATH_FULL_RECORD_RECOVERY_BOUND_CONTINUATION_IV.md",
+      "bytes": 60465,
+      "sha256": "1f0a94cec6fd669fec40b88be449889a81a76cddd8456e766f60c6e1d034dbd1",
+      "use": "Published IV49 and IV51.2; III48.5 is unchanged at the existing supplier pin."
+    },
+    {
+      "commit": "ca97e48479780f4d7237ede687aad29df5a9f802",
+      "path": "docs/develop/theory/QUANTUM_REALITY_FOUR_PATH_FULL_RECORD_RECOVERY_BOUND_CONTINUATION_IV.md",
+      "bytes": 87809,
+      "sha256": "e5bdc4cce3169095e28ce7ad0db9cfa3a23737a5c73a348f99705648645cfca8",
+      "use": "Complete ordinary negative proof and exact global consumer in Sections 52--53; pending fresh independent three-CLI review."
+    }
+  ],
+  "repository_visibility": "PUBLIC",
+  "integration_scope": "Original certificate and program semantics unchanged; main ordinary-paper retention and exact supplier composition only."
 }
