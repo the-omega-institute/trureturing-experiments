@@ -1,0 +1,16 @@
+FIDELITY A369673 N=0..14: 15/15 published terms matched
+FIDELITY A127428 n=0..30: 31/31 published terms matched
+C.1 N=0..400: 401/401 exact integer-square checks passed
+C.2 n=0..199: 200/200 nondivisibility checks passed
+C.3 n=0..100: 101/101 direct factorial-valuation checks passed
+C.4 n=0..99: 100/100 direct factorial-valuation checks passed
+PAIRING even m=0..200 and odd m=0..199: 401/401 identities passed
+LIFTING j=1..5000: 5000/5000 exact valuations passed
+FACTORIAL BRIDGE r=0..201: 202/202 identities and factorial steps passed
+EDGE a(0)=2; b(0)=0; 0!=1; empty Q product=1
+SAMPLE N=0 a(N)=2 v5=0
+SAMPLE N=1 a(N)=9 v5=0
+SAMPLE N=2 a(N)=100 v5=2
+SAMPLE N=4 a(N)=231200 v5=2
+SAMPLE N=6 a(N)=31258240000 v5=4
+ALL_CHECKS_OK

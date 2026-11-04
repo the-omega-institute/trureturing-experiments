@@ -1,0 +1,9 @@
+All labelled simple graphs: (vertices, graphs, orders) = [(1, 1, 1), (2, 2, 4), (3, 8, 48), (4, 64, 1536), (5, 1024, 122880)]
+Graph/shear symplectic and closed-neighbourhood checks: 1099
+Per-order reversed vertex-separation identities and valid bags: 124469
+Independent introduce/forget pathwidth optima checked: 1099
+Source Corollary 1: exact rank/count cuts, all graph shears up to 4 modes: 6297
+Source five-mode TMS-chain occupation profiles: [2, 2, 2, 2, 1] [5, 4, 3, 2, 1]
+Source TMS-chain fidelity (modes, forward memory, reverse memory): [(2, 2, 2), (3, 2, 3), (4, 2, 4), (5, 2, 5), (6, 2, 6), (7, 2, 7), (8, 2, 8)]
+Source Corollary 1: additional exact non-shear rank/count cuts: 921
+ALL_CHECKS_OK

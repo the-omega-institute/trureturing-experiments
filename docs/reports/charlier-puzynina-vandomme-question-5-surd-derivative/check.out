@@ -1,0 +1,70 @@
+FIDELITY: Thue-Morse return-word set = 0110, 011001, 011010, 01101001
+FIDELITY: derivative prefix = 12341243123431241234124
+INPUT: 242448 block-periodicity checks; exact row/column period m for 4<=m<=12
+RAYS: 1310 primitive directions in the three residue classes checked by literal enumeration
+FAMILY: m=4, N=1, exact-gcd checks=1, adjacent derivative blocks=01^1
+FAMILY: m=4, N=2, exact-gcd checks=2, adjacent derivative blocks=01^2
+FAMILY: m=4, N=3, exact-gcd checks=3, adjacent derivative blocks=01^3
+FAMILY: m=4, N=4, exact-gcd checks=4, adjacent derivative blocks=01^4
+FAMILY: m=4, N=5, exact-gcd checks=5, adjacent derivative blocks=01^5
+FAMILY: m=4, N=6, exact-gcd checks=6, adjacent derivative blocks=01^6
+FAMILY: m=4, N=7, exact-gcd checks=7, adjacent derivative blocks=01^7
+FAMILY: m=5, N=1, exact-gcd checks=1, adjacent derivative blocks=01^1
+FAMILY: m=5, N=2, exact-gcd checks=2, adjacent derivative blocks=01^2
+FAMILY: m=5, N=3, exact-gcd checks=3, adjacent derivative blocks=01^3
+FAMILY: m=5, N=4, exact-gcd checks=4, adjacent derivative blocks=01^4
+FAMILY: m=5, N=5, exact-gcd checks=5, adjacent derivative blocks=01^5
+FAMILY: m=5, N=6, exact-gcd checks=6, adjacent derivative blocks=01^6
+FAMILY: m=5, N=7, exact-gcd checks=7, adjacent derivative blocks=01^7
+FAMILY: m=6, N=1, exact-gcd checks=1, adjacent derivative blocks=01^1
+FAMILY: m=6, N=2, exact-gcd checks=2, adjacent derivative blocks=01^2
+FAMILY: m=6, N=3, exact-gcd checks=3, adjacent derivative blocks=01^3
+FAMILY: m=6, N=4, exact-gcd checks=4, adjacent derivative blocks=01^4
+FAMILY: m=6, N=5, exact-gcd checks=5, adjacent derivative blocks=01^5
+FAMILY: m=6, N=6, exact-gcd checks=6, adjacent derivative blocks=01^6
+FAMILY: m=6, N=7, exact-gcd checks=7, adjacent derivative blocks=01^7
+FAMILY: m=7, N=1, exact-gcd checks=1, adjacent derivative blocks=01^1
+FAMILY: m=7, N=2, exact-gcd checks=2, adjacent derivative blocks=01^2
+FAMILY: m=7, N=3, exact-gcd checks=3, adjacent derivative blocks=01^3
+FAMILY: m=7, N=4, exact-gcd checks=4, adjacent derivative blocks=01^4
+FAMILY: m=7, N=5, exact-gcd checks=5, adjacent derivative blocks=01^5
+FAMILY: m=7, N=6, exact-gcd checks=6, adjacent derivative blocks=01^6
+FAMILY: m=7, N=7, exact-gcd checks=7, adjacent derivative blocks=01^7
+FAMILY: m=8, N=1, exact-gcd checks=1, adjacent derivative blocks=01^1
+FAMILY: m=8, N=2, exact-gcd checks=2, adjacent derivative blocks=01^2
+FAMILY: m=8, N=3, exact-gcd checks=3, adjacent derivative blocks=01^3
+FAMILY: m=8, N=4, exact-gcd checks=4, adjacent derivative blocks=01^4
+FAMILY: m=8, N=5, exact-gcd checks=5, adjacent derivative blocks=01^5
+FAMILY: m=8, N=6, exact-gcd checks=6, adjacent derivative blocks=01^6
+FAMILY: m=8, N=7, exact-gcd checks=7, adjacent derivative blocks=01^7
+FAMILY: m=9, N=1, exact-gcd checks=1, adjacent derivative blocks=01^1
+FAMILY: m=9, N=2, exact-gcd checks=2, adjacent derivative blocks=01^2
+FAMILY: m=9, N=3, exact-gcd checks=3, adjacent derivative blocks=01^3
+FAMILY: m=9, N=4, exact-gcd checks=4, adjacent derivative blocks=01^4
+FAMILY: m=9, N=5, exact-gcd checks=5, adjacent derivative blocks=01^5
+FAMILY: m=9, N=6, exact-gcd checks=6, adjacent derivative blocks=01^6
+FAMILY: m=9, N=7, exact-gcd checks=7, adjacent derivative blocks=01^7
+FAMILY: m=10, N=1, exact-gcd checks=1, adjacent derivative blocks=01^1
+FAMILY: m=10, N=2, exact-gcd checks=2, adjacent derivative blocks=01^2
+FAMILY: m=10, N=3, exact-gcd checks=3, adjacent derivative blocks=01^3
+FAMILY: m=10, N=4, exact-gcd checks=4, adjacent derivative blocks=01^4
+FAMILY: m=10, N=5, exact-gcd checks=5, adjacent derivative blocks=01^5
+FAMILY: m=10, N=6, exact-gcd checks=6, adjacent derivative blocks=01^6
+FAMILY: m=10, N=7, exact-gcd checks=7, adjacent derivative blocks=01^7
+FAMILY: m=11, N=1, exact-gcd checks=1, adjacent derivative blocks=01^1
+FAMILY: m=11, N=2, exact-gcd checks=2, adjacent derivative blocks=01^2
+FAMILY: m=11, N=3, exact-gcd checks=3, adjacent derivative blocks=01^3
+FAMILY: m=11, N=4, exact-gcd checks=4, adjacent derivative blocks=01^4
+FAMILY: m=11, N=5, exact-gcd checks=5, adjacent derivative blocks=01^5
+FAMILY: m=11, N=6, exact-gcd checks=6, adjacent derivative blocks=01^6
+FAMILY: m=11, N=7, exact-gcd checks=7, adjacent derivative blocks=01^7
+FAMILY: m=12, N=1, exact-gcd checks=1, adjacent derivative blocks=01^1
+FAMILY: m=12, N=2, exact-gcd checks=2, adjacent derivative blocks=01^2
+FAMILY: m=12, N=3, exact-gcd checks=3, adjacent derivative blocks=01^3
+FAMILY: m=12, N=4, exact-gcd checks=4, adjacent derivative blocks=01^4
+FAMILY: m=12, N=5, exact-gcd checks=5, adjacent derivative blocks=01^5
+FAMILY: m=12, N=6, exact-gcd checks=6, adjacent derivative blocks=01^6
+FAMILY: m=12, N=7, exact-gcd checks=7, adjacent derivative blocks=01^7
+FAMILY TOTAL: 63 (m,N) pairs; 252 exact-gcd and adjacent-block checks; max coordinate bits=2460
+COMPOSITE CONTROL: m=4, N=2 uses c_2=551=19*29
+ALL_CHECKS_OK

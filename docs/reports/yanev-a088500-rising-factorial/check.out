@@ -1,0 +1,8 @@
+Source: OEIS A088500, revision 24, Jan 12 2026; offset 0
+Fidelity: all 20 published initial terms agree exactly
+First ten: 1,2,10,76,772,9808,149552,2660544,54093696,1237306560
+Exact EGF inversion, weighted Stirling sum, and primitive constants agree for n=0..50
+Source recurrence agrees for n=1..50; n=0 empty product checked
+Integral check uses exact polynomial antiderivatives; no numerical quadrature
+These finite algebra checks do not prove the conjecture for all n or integrability
+ALL_CHECKS_OK

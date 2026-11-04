@@ -1,0 +1,10 @@
+FIDELITY: C_n spectrum (1, -1/(n-1) repeated n-1), n=2..8: OK
+FIDELITY: J_2 + J_(2k-2) and J_k + J_k cospectral, different entries, k=3..6: OK
+SYMBOLIC: affine block, row sum, eigenvalue bounds, size obstruction, I-ray perturbation identities: OK
+FAMILY: 25 exact instances, k=4..7, r=2,3, three interior parameters plus (4,2,1/40): OK
+RIGIDITY REDUCTION: unique admissible component-size partition in every tested instance: OK
+SEGMENTS: support obstruction; exact nonextremality witnesses for A and three I-ray points each: OK
+NOMINATED: N=8, t=1/40, diagonal=1/40, within-block off-diagonal=13/40, trace=1/5, lambda=-3/10: OK
+BOUNDARY CONTROL: at t=1/k^2, unequal blocks are cospectral mates, k=4..6: OK
+SCOPE: finite exact checks plus symbolic identities; arbitrary-real-matrix DS and full family remain prose proof obligations.
+ALL_CHECKS_OK

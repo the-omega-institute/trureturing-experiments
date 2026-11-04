@@ -1,0 +1,26 @@
+FIDELITY survey Section 1.1: single arrow, A^2 != 0, A^3 = 0, index 3
+GRAPH SANITY literal-loop=0, directed-2-cycle=2, shortcut-triangle=1
+FAMILY m= 2, dim= 4, Ann=span(z), det=1, connected=both, balances=2,1; fields=Q,F2,F3,F5,F7
+FAMILY m= 3, dim= 5, Ann=span(z), det=1, connected=both, balances=3,1; fields=Q,F2,F3,F5,F7
+FAMILY m= 4, dim= 6, Ann=span(z), det=1, connected=both, balances=4,1; fields=Q,F2,F3,F5,F7
+FAMILY m= 5, dim= 7, Ann=span(z), det=1, connected=both, balances=5,1; fields=Q,F2,F3,F5,F7
+FAMILY m= 6, dim= 8, Ann=span(z), det=1, connected=both, balances=6,1; fields=Q,F2,F3,F5,F7
+FAMILY m= 7, dim= 9, Ann=span(z), det=1, connected=both, balances=7,1; fields=Q,F2,F3,F5,F7
+FAMILY m= 8, dim=10, Ann=span(z), det=1, connected=both, balances=8,1; fields=Q,F2,F3,F5,F7
+FAMILY m= 9, dim=11, Ann=span(z), det=1, connected=both, balances=9,1; fields=Q,F2,F3,F5,F7
+FAMILY m=10, dim=12, Ann=span(z), det=1, connected=both, balances=10,1; fields=Q,F2,F3,F5,F7
+FAMILY m=11, dim=13, Ann=span(z), det=1, connected=both, balances=11,1; fields=Q,F2,F3,F5,F7
+FAMILY m=12, dim=14, Ann=span(z), det=1, connected=both, balances=12,1; fields=Q,F2,F3,F5,F7
+FAMILY m=13, dim=15, Ann=span(z), det=1, connected=both, balances=13,1; fields=Q,F2,F3,F5,F7
+FAMILY m=14, dim=16, Ann=span(z), det=1, connected=both, balances=14,1; fields=Q,F2,F3,F5,F7
+FAMILY m=15, dim=17, Ann=span(z), det=1, connected=both, balances=15,1; fields=Q,F2,F3,F5,F7
+FAMILY m=16, dim=18, Ann=span(z), det=1, connected=both, balances=16,1; fields=Q,F2,F3,F5,F7
+FAMILY m=17, dim=19, Ann=span(z), det=1, connected=both, balances=17,1; fields=Q,F2,F3,F5,F7
+FAMILY m=18, dim=20, Ann=span(z), det=1, connected=both, balances=18,1; fields=Q,F2,F3,F5,F7
+FAMILY m=19, dim=21, Ann=span(z), det=1, connected=both, balances=19,1; fields=Q,F2,F3,F5,F7
+FAMILY m=20, dim=22, Ann=span(z), det=1, connected=both, balances=20,1; fields=Q,F2,F3,F5,F7
+EXPLICIT m=2 row matrix B = [[0, 1, 0, 0], [1, 0, 1, 0], [0, 0, 0, 1], [0, 0, 0, 0]]
+EXPLICIT m=2 row matrix F = [[0, 1, 0, 0], [1, 0, 1, -1], [0, 0, 0, 1], [0, 0, 0, 0]]
+EXACT FAMILY CHECKS 95; m=2..20; bounded-walk cross-check m=2..6, lengths<=7
+SCOPE finite computations support the preregistration; the all-field/all-m argument is prose, not Lean-verified
+ALL_CHECKS_OK

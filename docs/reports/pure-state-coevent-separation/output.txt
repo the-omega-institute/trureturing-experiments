@@ -1,0 +1,4 @@
+checked three exact normalized overlaps
+checked source and phase protocols: null events, primitive supports, disjointness
+checked one- and two-atom zero-vector extensions
+ALL_CHECKS_OK

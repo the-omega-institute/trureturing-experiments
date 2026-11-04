@@ -1,0 +1,14 @@
+FIDELITY: source seven-edge example values [[9,2,2],[3,8,2],[3,2,2]]; goods-EF1
+FIDELITY: seven cyclic five-edge blocks are trees; source nonlinear values 2,2
+CYCLE r=2: rank=2, loopless, chi=2 each; exactly 2 feasible allocations; 9 rational parameter pairs fail goods/chores EF1; threshold controls pass
+WITNESS E={1,2,3,4}: values 6 and 2; every high-bundle deletion leaves 3 > 2
+ROBUSTNESS: all 256 corners of the positive 8-coordinate radius-1/10 box fail both EF1 notions
+CYCLE r=3: rank=3, loopless, chi=2 each; exactly 2 feasible allocations; 9 rational parameter pairs fail goods/chores EF1; threshold controls pass
+CYCLE r=4: rank=4, loopless, chi=2 each; exactly 2 feasible allocations; 9 rational parameter pairs fail goods/chores EF1; threshold controls pass
+CYCLE r=5: rank=5, loopless, chi=2 each; exactly 2 feasible allocations; 9 rational parameter pairs fail goods/chores EF1; threshold controls pass
+CYCLE r=6: rank=6, loopless, chi=2 each; exactly 2 feasible allocations; 9 rational parameter pairs fail goods/chores EF1; threshold controls pass
+CYCLE r=7: rank=7, loopless, chi=2 each; exactly 2 feasible allocations; 9 rational parameter pairs fail goods/chores EF1; threshold controls pass
+CYCLE r=8: rank=8, loopless, chi=2 each; exactly 2 feasible allocations; 9 rational parameter pairs fail goods/chores EF1; threshold controls pass
+MATROID AXIOMS: exhaustive heredity and exchange for each matroid at r=2,3,4
+SCOPE: finite exact checks for r=2..8; infinite-family argument is in the preregistration
+ALL_CHECKS_OK

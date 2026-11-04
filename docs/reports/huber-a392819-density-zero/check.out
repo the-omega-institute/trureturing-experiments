@@ -1,0 +1,17 @@
+Independent trial-division/SPF factorization agreement: 1 <= n <= 3000
+Fidelity: all 51 source terms, and no omissions, through 2610
+Fidelity: source examples 54 = 2*3^3 and 840 = 2^3*3*5*7 reproduced
+Individual/lcm equivalence and prime-square-or-successor-product cover: all 1 <= n <= 100000
+Excluded reductions: 12 disproves product divisibility; 54 disproves containment in refactorable numbers
+Cutoff y=2: smooth and total count bounds hold for every 1 <= X <= 100000; divisor-cover counts checked at six X
+Cutoff y=3: smooth and total count bounds hold for every 1 <= X <= 100000; divisor-cover counts checked at six X
+Cutoff y=5: smooth and total count bounds hold for every 1 <= X <= 100000; divisor-cover counts checked at six X
+Cutoff y=10: smooth and total count bounds hold for every 1 <= X <= 100000; divisor-cover counts checked at six X
+Cutoff y=20: smooth and total count bounds hold for every 1 <= X <= 100000; divisor-cover counts checked at six X
+Cutoff y=50: smooth and total count bounds hold for every 1 <= X <= 100000; divisor-cover counts checked at six X
+Observed counting ratio at X=100: 8/100 = 2/25
+Observed counting ratio at X=1000: 30/1000 = 3/100
+Observed counting ratio at X=10000: 122/10000 = 61/5000
+Observed counting ratio at X=100000: 465/100000 = 93/20000
+Finite checks support the stated argument; they do not prove natural density zero
+ALL_CHECKS_OK

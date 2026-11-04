@@ -1,0 +1,4 @@
+fidelity: 78 published A380944 terms reproduced
+claim: 273 pairs with 0 <= n <= 12 and 0 <= m <= 20
+lemma-4: 273 exact inclusion-exclusion instances
+ALL_CHECKS_OK

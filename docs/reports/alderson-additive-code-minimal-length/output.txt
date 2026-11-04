@@ -1,0 +1,13 @@
+FIDELITY: 30 source null planes; 35 forbidden points, each covered 6 times
+FIDELITY: source code cardinality=64; every coordinate has 8 symbols
+FIDELITY: source pair distances={24: 1120, 30: 896}
+FIDELITY: source extension pair distances={25: 1120, 30: 224, 31: 672}
+REFUTATION CHECK: faithful F_2-linear (10,2,8)_(8/2) code, cardinality=64
+REFUTATION CHECK: pair distances={8: 1120, 10: 896}
+REFUTATION CHECK: nonlinear extension pair distances={9: 1120, 10: 224, 11: 672}
+ADDITIVE BLOCKING: all 1395 dimension-3 subspaces meet the minimum-weight set
+FAMILY CHECK: 2-cover has 10 planes; 3-cover has 15 planes
+FAMILY CHECK: lambda=2..32; n=5*lambda; d=4*lambda; extension d+1; faithful
+CONSTRUCTION LIMIT: no three disjoint singular planes; no positive 1-cover
+SCOPE: finite checks support the outline; they do not prove the infinite family or global minimality of 10
+ALL_CHECKS_OK

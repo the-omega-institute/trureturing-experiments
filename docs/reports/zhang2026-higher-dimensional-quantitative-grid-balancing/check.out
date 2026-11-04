@@ -1,0 +1,15 @@
+FIDELITY Section 6 periodic quotient tau=12321; C3 box C3 tau=11664
+CROSS_CHECK sympy Bareiss cofactors agree on five boxes (N=1,6,8,12,24)
+CHECK tau(1,2,12)=2107560; tau(2,3,4)=76752081000; sigma deficit=12
+CHECK tau(1,1,64)=1; tau(4,4,4)=172685928902844729688524604506636288; sigma deficit=81
+DOMAIN d=3; 1<=N<=200; all positive integer triples modulo coordinate permutations
+BOXES sorted=778; ordered=3722
+PAIRS strict_sorted=2234; strict_ordered=58761; equality_sorted=778
+INEQUALITY every comparable pair passes tau_m^2*4^deficit >= tau_n^2*5^deficit
+MIN_RATIO n=(3, 8, 8); m=(4, 6, 8); N=192; sigma_deficit=8
+MIN_RATIO exact=log(325182314220096562201258075393064382315722765437885966431885053232471775711113569743792783272812098894728423014400000/5272524617770935394550217443600234281411446722081839000371805534844055866192236960667643330462910318116864000000000)/8
+MIN_RATIO certified_decimal_enclosure=[0.515234586178623, 0.515234586178624]
+C3 certified_decimal_enclosure=[0.111571775657104, 0.111571775657105]
+DEGENERATE all-one equality included; all zero-deficit pairs have equal sorted tuples
+SCOPE finite evidence only; neither a universal proof nor a Lean verification
+ALL_CHECKS_OK

@@ -1,0 +1,9 @@
+FIDELITY source_notes=20 source_support_terms=58 source_gap_terms=35
+INDEPENDENT_FOLD_AND_LITERAL_PRODUCT n=0..4095 cases=4096
+GAPS n=0..1048575 support=191674 adjacent_pairs=191673
+GAP_HISTOGRAM 1:178789 2:6918 3:2056 5:2056 9:626 17:626 33:197 65:197 129:65 257:65 513:23 1025:23 2049:9 4097:9 8193:4 16385:4 32769:2 65537:2 131073:1 262145:1
+SUFFIX_EXTREMA q=-9..9 excluding -2,-1,1 lengths=0..9 cases=160
+BFILE matched_rows=13496 last_index=13496 last_value=65535
+BFILE_SHA256 19dccec712be3f3db495ef80027a947b1d40d6d03032e8a35c47858c045adf5e
+KERNEL_CHECKED false; finite checks do not establish the universal claim
+ALL_CHECKS_OK

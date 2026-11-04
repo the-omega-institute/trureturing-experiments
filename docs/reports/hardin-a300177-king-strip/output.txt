@@ -1,0 +1,12 @@
+Exact matrix identity: M^3 = 7 M^2 + 7 M + 6 I
+Literal enumeration n=1: states=(3, 1, 0), a(n)=4
+Literal enumeration n=2: states=(24, 7, 1), a(n)=32
+Literal enumeration n=3: states=(192, 56, 7), a(n)=255
+Literal enumeration n=4: states=(1530, 447, 56), a(n)=2033
+Literal enumeration n=5: states=(12198, 3563, 447), a(n)=16208
+Literal enumeration n=6: states=(97248, 28406, 3563), a(n)=129217
+Fidelity: all 19 displayed OEIS A300177 terms reproduced
+Full two-row-symbol DP equals three-state counts for 1 <= n <= 210
+Recurrence checked for 4 <= n <= 210
+Exact generating-function coefficient identity checked through x^210
+ALL_CHECKS_OK

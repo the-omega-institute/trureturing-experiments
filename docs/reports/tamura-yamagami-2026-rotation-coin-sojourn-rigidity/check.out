@@ -1,0 +1,9 @@
+Python 3.14.8 SymPy 1.14.0
+70 symbolic returning words: enumeration = recurrence, all nine bins
+Exact polynomial Gram certificate: 2*c**4*s**6*(-c + s)**2*(c + s)**2*(c**2 + s**2) * I_2
+Source fidelity: Gamma_8(2,4,6)=M/16; w=1/128; Z=3/128; mu=1/3
+Balanced matrix coefficient and state-independent Gram weights: m=1,...,8 (n<=32)
+Exact rational-complex phase covariance: even n=2,...,12, every bin
+Degeneracies: diagonal Z_8=0; anti-diagonal support {0,8}, total Gram=I_2
+Formal-series inverse identity: exact polynomial reduction by excursion quadratics
+ALL_CHECKS_OK

@@ -1,0 +1,18 @@
+source=OEIS A185765; revision=9; submitted=2011-02-03
+source_bfile_sha256=5f896080c6229febd918c1e8a53fa3f8b7dc504c3421b0fe5f35559667e428c4
+states=680; edges=3456; bit_oracle=OK
+literal_arrays_n=1; examined=4096; admissible=680
+literal_arrays_n=2; examined=262144; admissible=3456
+source_3x6_examples=4; all_admissible=OK
+bfile_terms_matched=200; range=1..200; forward_propagation=OK
+first_16_counts=[680, 3456, 19992, 118248, 725352, 4430912, 27172072, 166155112, 1017804600, 6228062600, 38135220896, 233413737792, 1428998627808, 8747287514112, 53549280280392, 327801163275208]
+T^0Q(T)1_stats=(680, -23144, 9540)
+T^1Q(T)1_stats=(680, 27200, 23192)
+T^2Q(T)1_stats=(680, -4160, 14932)
+T^3Q(T)1_stats=(680, 0, 10640)
+T^4Q(T)1_stats=(376, 0, 344)
+T^5Q(T)1_stats=(0, 0, 0)
+recurrence_checked_n=13..200; residual_at_n12=-4160
+finite_certificate=T^5Q(T)1=0 and 1^T T^k Q(T)1=0 for k=3,4
+scope=exact finite checks; the all-length Lean proof is not supplied
+ALL_CHECKS_OK

@@ -1,0 +1,9 @@
+FIDELITY: all 50 OEIS coefficients and the 51-term MSE f_10 prefix match
+FIDELITY: source stabilization bound holds for f_1 through f_16, degree <= 100
+POLYNOMIAL: zeros on 0..100 = [0, 3, 5, 8]
+PROFILE_DP: exact binomial-weight counts match all 101 polynomial coefficients
+PROFILE_DP: states visited = 2339
+COEFFICIENT: a(100) = 531636508630289228
+CONSTRUCTION: valid profiles for all 99997 nonexceptional indices in 1..100000
+CONSTRUCTION: rejected indices = [0, 3, 5, 8]
+ALL_CHECKS_OK

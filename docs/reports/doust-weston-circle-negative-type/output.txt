@@ -1,0 +1,8 @@
+FIDELITY: 11 odd cycles C_3 through C_23; both source identities exact
+FIDELITY: source C5 threshold polynomial and full characteristic polynomial exact
+CANDIDATE: symbolic zero-sum decomposition, endpoint square and obstruction exact
+CANDIDATE: derivative rewrite exact; analytic sign uses q>0 and 0<t<1
+CANDIDATE: 81 rational gap parameters; all 16 geodesic distances exact
+CANDIDATE: 1875 endpoint vectors and 45 strict obstruction cases exact
+NEGATIVE CONTROL: reversing the square sign is rejected
+ALL_CHECKS_OK

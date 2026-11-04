@@ -1,0 +1,7 @@
+FIDELITY: Theorem D path product 65/48; determinant 25/256; inverse nonedge zero
+GRAPH: connected, 9 edges, exactly two maximal cliques, no induced cycle of length >=4
+SYMBOLIC: unit relations, frame/clique/separator determinants, transfer 25/16-a*b, Schur certificate, inverse sparsity
+LIMITS: exact rational functions; same prescribed A0; clique ranks 3; five distinct limiting points; all prescribed entries >1
+COUNTEREXAMPLE: canonical limits 25/16 and 34/25; difference 81/400
+EXACT_CROSSCHECK: 245 rational instances, m=2..6 and 7x7 circle parameters
+ALL_CHECKS_OK

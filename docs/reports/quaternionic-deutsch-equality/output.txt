@@ -1,0 +1,7 @@
+FIDELITY Theorem 2.1: exact quaternionic Buzano triples = 1197
+DIM=1 frames=8 states=4 admissible_pairs_states=256 lower_equalities=64 excluded_zero_coefficients=0
+DIM=2 frames=8 states=16 admissible_pairs_states=1024 lower_equalities=0 excluded_zero_coefficients=0
+DIM=3 frames=8 states=64 admissible_pairs_states=4096 lower_equalities=0 excluded_zero_coefficients=0
+NULL_ATOMS: zero frame vector destroys domain; nonzero subunit vector preserves equality
+SATURATION_IDENTITY: exact factor coefficients [-1,-1,2]; roots 1 and -1/2
+ALL_CHECKS_OK

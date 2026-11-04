@@ -1,0 +1,14 @@
+FIDELITY: all 38 published terms reproduced exactly
+STABILIZATION: source updates preserve degrees < N+2, N=0..511
+NORMALIZATION: b(N+1)=x*P_N and P_N=x^N*S_N, N=0..8
+CRITICAL IDENTITY: P_N(rho)=rho in Z[rho]/(rho^2+rho-1), N=0..8
+SUPPORT: monic, degree 2^(N+1)-1, positive throughout [N+1,D_N], N=0..8
+TREES/GAPS: 4096 explicit trees; exact digit/gap identities for k=2..20
+TREE DOMINANCE: 72 coefficientwise polynomial inequalities
+ALL-INDEX LOWER-BOUND INGREDIENT: 5184 adjacent-coefficient inequalities
+ROOT BRACKET n=64: 8078659209/5000000000 <= a(n)^(1/n) < 16157318419/10000000000 (integer powers)
+ROOT BRACKET n=128: 8104184261/5000000000 <= a(n)^(1/n) < 16208368523/10000000000 (integer powers)
+ROOT BRACKET n=256: 4053709121/2500000000 <= a(n)^(1/n) < 3242967297/2000000000 (integer powers)
+ROOT BRACKET n=512: 16208022451/10000000000 <= a(n)^(1/n) < 4052005613/2500000000 (integer powers)
+FINITE CHECKS ONLY: the ordinary infinite limit still requires the analytic proof
+ALL_CHECKS_OK

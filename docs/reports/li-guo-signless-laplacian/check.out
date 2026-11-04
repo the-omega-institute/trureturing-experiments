@@ -1,0 +1,40 @@
+Python exact integers/Fraction; SymPy 1.14.0; no floating-point evidence
+FIDELITY: Lemma 2.5(1), K_n, 2 <= n <= 8: exact characteristic polynomials match
+C_3: Phi_degree=2; inertia=(1, 2, 0); TQ=n-1+sec(pi/n); R=3; REFUTATION; rational_gap_interval=[1,1]
+C_4: Phi_degree=4; inertia=(1, 1, 2); TQ=n; R=4; equality; rational_gap_interval=[0,0]
+C_5: Phi_degree=4; inertia=(3, 2, 0); TQ=n+1-sec(pi/n); R=5; strictly_below; rational_gap_interval=[-11803399/50000000,-23606797/100000000]
+C_6: Phi_degree=4; inertia=(3, 3, 0); TQ=n; R=6; equality; rational_gap_interval=[0,0]
+C_7: Phi_degree=6; inertia=(3, 4, 0); TQ=n-1+sec(pi/n); R=7; REFUTATION; rational_gap_interval=[5495813/50000000,10991627/100000000]
+C_8: Phi_degree=8; inertia=(3, 3, 2); TQ=n; R=8; equality; rational_gap_interval=[-1/100000000,1/100000000]
+C_9: Phi_degree=6; inertia=(5, 4, 0); TQ=n+1-sec(pi/n); R=9; strictly_below; rational_gap_interval=[-3208889/50000000,-6417777/100000000]
+C_10: Phi_degree=8; inertia=(5, 5, 0); TQ=n; R=10; equality; rational_gap_interval=[-1/100000000,1/100000000]
+C_11: Phi_degree=10; inertia=(5, 6, 0); TQ=n-1+sec(pi/n); R=11; REFUTATION; rational_gap_interval=[4221711/100000000,263857/6250000]
+C_12: Phi_degree=8; inertia=(5, 5, 2); TQ=n; R=12; equality; rational_gap_interval=[-1/100000000,1/100000000]
+C_13: Phi_degree=12; inertia=(7, 6, 0); TQ=n+1-sec(pi/n); R=13; strictly_below; rational_gap_interval=[-187049/6250000,-2992783/100000000]
+C_14: Phi_degree=12; inertia=(7, 7, 0); TQ=n; R=14; equality; rational_gap_interval=[-1/100000000,1/100000000]
+C_15: Phi_degree=8; inertia=(7, 8, 0); TQ=n-1+sec(pi/n); R=15; REFUTATION; rational_gap_interval=[2234059/100000000,111703/5000000]
+C_16: Phi_degree=16; inertia=(7, 7, 2); TQ=n; R=16; equality; rational_gap_interval=[-1/100000000,1/100000000]
+C_17: Phi_degree=16; inertia=(9, 8, 0); TQ=n+1-sec(pi/n); R=17; strictly_below; rational_gap_interval=[-216523/12500000,-1732183/100000000]
+C_18: Phi_degree=12; inertia=(9, 9, 0); TQ=n; R=18; equality; rational_gap_interval=[-1/100000000,1/100000000]
+C_19: Phi_degree=18; inertia=(9, 10, 0); TQ=n-1+sec(pi/n); R=19; REFUTATION; rational_gap_interval=[172841/12500000,1382729/100000000]
+C_20: Phi_degree=16; inertia=(9, 9, 2); TQ=n; R=20; equality; rational_gap_interval=[-1/100000000,1/100000000]
+C_21: Phi_degree=12; inertia=(11, 10, 0); TQ=n+1-sec(pi/n); R=21; strictly_below; rational_gap_interval=[-564767/50000000,-1129533/100000000]
+C_22: Phi_degree=20; inertia=(11, 11, 0); TQ=n; R=22; equality; rational_gap_interval=[-1/100000000,1/100000000]
+C_23: Phi_degree=22; inertia=(11, 12, 0); TQ=n-1+sec(pi/n); R=23; REFUTATION; rational_gap_interval=[470081/50000000,940163/100000000]
+C_24: Phi_degree=16; inertia=(11, 11, 2); TQ=n; R=24; equality; rational_gap_interval=[-1/100000000,1/100000000]
+C_25: Phi_degree=20; inertia=(13, 12, 0); TQ=n+1-sec(pi/n); R=25; strictly_below; rational_gap_interval=[-397399/50000000,-794797/100000000]
+C_26: Phi_degree=24; inertia=(13, 13, 0); TQ=n; R=26; equality; rational_gap_interval=[-1/100000000,1/100000000]
+C_27: Phi_degree=18; inertia=(13, 14, 0); TQ=n-1+sec(pi/n); R=27; REFUTATION; rational_gap_interval=[680767/100000000,10637/1562500]
+C_28: Phi_degree=24; inertia=(13, 13, 2); TQ=n; R=28; equality; rational_gap_interval=[-1/100000000,1/100000000]
+C_29: Phi_degree=28; inertia=(15, 14, 0); TQ=n+1-sec(pi/n); R=29; strictly_below; rational_gap_interval=[-589661/100000000,-29483/5000000]
+C_30: Phi_degree=16; inertia=(15, 15, 0); TQ=n; R=30; equality; rational_gap_interval=[-1/100000000,1/100000000]
+C_31: Phi_degree=30; inertia=(15, 16, 0); TQ=n-1+sec(pi/n); R=31; REFUTATION; rational_gap_interval=[515713/100000000,257857/50000000]
+C_32: Phi_degree=32; inertia=(15, 15, 2); TQ=n; R=32; equality; rational_gap_interval=[-1/100000000,1/100000000]
+C_33: Phi_degree=20; inertia=(17, 16, 0); TQ=n+1-sec(pi/n); R=33; strictly_below; rational_gap_interval=[-113717/25000000,-454867/100000000]
+C_34: Phi_degree=32; inertia=(17, 17, 0); TQ=n; R=34; equality; rational_gap_interval=[-1/100000000,1/100000000]
+C_35: Phi_degree=24; inertia=(17, 18, 0); TQ=n-1+sec(pi/n); R=35; REFUTATION; rational_gap_interval=[404197/100000000,202099/50000000]
+C_3: exact Q eigenvalues {4:1, 1:2}; TQ=4 > R=3; violation=1
+FIDELITY: Lemma 2.5(4), Theorem 2.14 and Remark 2 checked for 3 <= n <= 35
+FAMILY CHECK: all 9 orders 4*k+3 for 0 <= k <= 8 violate Conjecture 2.22
+SCOPE: finite exact checks only; no Lean proof and no all-orders certification
+ALL_CHECKS_OK

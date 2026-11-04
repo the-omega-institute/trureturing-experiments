@@ -1,0 +1,7 @@
+FIDELITY: source Section 2 example lambda=(5,5,3,1)
+s(A_lambda) coefficients in increasing degree: (15, 13, 24, 33, 38, 41, 40, 37, 30, 14, 3)
+COEFFICIENTWISE: 273 partitions (all sizes <=12, plus source example)
+PAIRED FAMILY: 2875 distinct valid selected types checked
+RATIONAL BOUNDS: 1092 cases at primes 2,3,5,7
+INDEPENDENT GROUP ENUMERATION: 30 cases; |A|<=32 (p=2), <=27 (p=3), <=25 (p=5)
+ALL_CHECKS_OK

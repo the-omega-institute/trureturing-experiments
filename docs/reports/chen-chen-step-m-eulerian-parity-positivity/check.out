@@ -1,0 +1,11 @@
+OEIS m=-5: displayed rows 1..10 reproduced; rows 1..400 checked
+  positive even entries=40200; negative odd interiors=39601; two-step column identities=397
+OEIS m=-4: displayed rows 1..10 reproduced; rows 1..400 checked
+  positive even entries=40200; negative odd interiors=39601; two-step column identities=397
+OEIS m=-3: displayed rows 1..10 reproduced; rows 1..400 checked
+  positive even entries=40200; negative odd interiors=39601; two-step column identities=397
+FIDELITY_OK: 165 displayed entries, two implementations
+GENERAL_ROUTE_OK: integer r=3..32, rows 1..80, 49200 positive even entries
+Reflection, exact row sums, even alternating sums, second-column identities and bounds: OK
+Scope: finite exact checks only; the unbounded assertion requires the proposed induction.
+ALL_CHECKS_OK

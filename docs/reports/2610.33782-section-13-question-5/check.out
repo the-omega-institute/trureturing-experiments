@@ -1,0 +1,9 @@
+Python exact arithmetic; SymPy 1.14.0; no floating point
+FIDELITY: both source endpoint identities and the circular factorization OK
+TWIST SYSTEM: t'_beta = rho_beta*sin(s)/(R*sin(mu)) OK
+SOURCE CORRECTION: printed t'_beta has wrong sign and lacks 1/R; G_12 lacks cancellation of R
+SYMBOLIC: R*det(q, velocity_jump) = C dot (Aq-q) OK
+SYMBOLIC: equal Larmor radii imply the radial-jump identity for every rotation OK
+EXACT CASES: 66 circular orbit configurations; orders 2,3,4,6; every nonzero step; two table radii and three weak-field radii each OK
+SENSITIVITY: noncircular ellipse normal is nonradial (det = 18/25) OK
+ALL_CHECKS_OK

@@ -1,0 +1,12 @@
+FIDELITY: all 23 published %S/%T/%U terms reproduced exactly (n=1..23)
+FIRST_TEN: 1,2,10,90,1190,20930,462070,12326790,386855630,14000898310
+INDEPENDENT: ordinary Fraction substitution agrees with integer Bell recursion for n=0..24
+DIVISIBILITY: n=3..60, failures=[]
+MODULAR: recursion modulo 2 agrees with integer reduction and polynomial witness through n=60
+MODULAR: recursion modulo 5 agrees with integer reduction and polynomial witness through n=60
+MODULAR: recursion modulo 10 agrees with integer reduction and polynomial witness through n=60
+EXACT_RESIDUAL_ORDINARY: 0,0,0,-5/3,-5/12,1/3,1/9
+EXACT_RESIDUAL_EGF: 0,0,0,-10,-10,40,80
+DEGREE: deg(P)=2, deg(x-J)=3, so residual coefficients above degree 6 are zero
+SCOPE: finite arithmetic checks and exact polynomial identity; no Lean proof of the conjecture
+ALL_CHECKS_OK

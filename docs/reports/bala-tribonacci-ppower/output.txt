@@ -1,0 +1,8 @@
+SOURCE_FIDELITY terms=38 eligible_primes_below_620=37 OK
+ALGORITHM_CROSSCHECK direct_recurrence=polynomial=matrix cases=2107 OK
+CONJECTURE_GRID primes=all_eligible_below_620 n=1..20 k=1..6 cases=4440 OK
+EXTRA_GRID two_algorithms n=37,128,p,p^2,p^3,p+1 k=1,2,4,6 cases=888 OK
+INDEPENDENT_DIRECT_RECURRENCE p=3,5 n=1..5 k=1..3 cases=30 OK
+EXAMPLE p=3 n=1 k=2: 1+44+2555757=2555802=9*283978 OK
+NEGATIVE_CONTROLS ineligible_p=2 residual=1; ineligible_p=7 residual=6 OK
+ALL_CHECKS_OK

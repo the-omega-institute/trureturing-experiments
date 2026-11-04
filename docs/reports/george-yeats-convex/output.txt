@@ -1,0 +1,21 @@
+FIDELITY: singleton, full five-variable diamond formula (13 convex sets),
+          antichain formula (1+stxyz)^n for 1 <= n <= 8: OK
+INDEPENDENT_CENSUS: n=1, naturally-labelled posets=1, SP classes=1: OK
+INDEPENDENT_CENSUS: n=2, naturally-labelled posets=2, SP classes=2: OK
+INDEPENDENT_CENSUS: n=3, naturally-labelled posets=7, SP classes=5: OK
+INDEPENDENT_CENSUS: n=4, naturally-labelled posets=40, SP classes=15: OK
+INDEPENDENT_CENSUS: n=5, naturally-labelled posets=357, SP classes=48: OK
+INDEPENDENT_CENSUS: n=6, naturally-labelled posets=4824, SP classes=167: OK
+SPECIALIZATION: n=1, SP isomorphism classes=1, connected=1, collisions=0: OK
+SPECIALIZATION: n=2, SP isomorphism classes=2, connected=1, collisions=0: OK
+SPECIALIZATION: n=3, SP isomorphism classes=5, connected=3, collisions=0: OK
+SPECIALIZATION: n=4, SP isomorphism classes=15, connected=9, collisions=0: OK
+SPECIALIZATION: n=5, SP isomorphism classes=48, connected=30, collisions=0: OK
+SPECIALIZATION: n=6, SP isomorphism classes=167, connected=103, collisions=0: OK
+SPECIALIZATION: n=7, SP isomorphism classes=602, connected=375, collisions=0: OK
+SPECIALIZATION: n=8, SP isomorphism classes=2256, connected=1400, collisions=0: OK
+STRUCTURE: 3096 classes; degree/support, connected t^1 y^n witness,
+           downset filter, unique-downset cuts and two-coordinate block extraction: OK
+DISJOINT_UNION: 926 ordered summand pairs with total size <= 7: OK
+SCOPE: exact finite verification through 8 elements; no unbounded or Lean proof is asserted.
+ALL_CHECKS_OK
