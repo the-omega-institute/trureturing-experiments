@@ -1885,7 +1885,7 @@
     },
     "candidate-manifest": {
       "bytes": 485,
-      "sha256": "f953c6bd17e9353547ac2c1351d014d9c562cdca96d0d3ba6f5397863a6144bc"
+      "sha256": "67e37c7ba9651c3a29663b7bf440870fdbfb12ece7dc67da08186da1f5545347"
     },
     "candidate:Library/Computability/nearywoodsmurphyglaschick2014wang.md": {
       "bytes": 4148,
@@ -1893,10 +1893,10 @@
     },
     "candidate:docs/develop/theory/RECURSIVE_RELATIONAL_OBSERVATION_MONOTONE_LAB_INDEXED_EXECUTION.md": {
       "bytes": 218862,
-      "sha256": "761f2f0b4971f905a7980a10cf171b1aec4a04fffffbf31c89fe2fd50096c526"
+      "sha256": "d6cd351bad7d793f9057681f6ff1c97ea204630d70d95cea6f2011c56a256443"
     }
   },
-  "theory_sha256": "761f2f0b4971f905a7980a10cf171b1aec4a04fffffbf31c89fe2fd50096c526",
+  "theory_sha256": "d6cd351bad7d793f9057681f6ff1c97ea204630d70d95cea6f2011c56a256443",
   "unresolved_obligations": [
     {
       "finding": "The copier now generates a complete non-erasing binary table for every supplied erasing binary table, lowers it through the primary thirteen-instruction compiler, and decodes real LAB output. The acquired successor kernel executes on this path. The fixed ML-S evaluator graph, materialized binary table and complete encoded W_U are supplied separately, with full stack-reference law runs. A full evaluator run through the actual ML-T/NWMG/ML-L/ML-B path and decoded physical ML.5 output has not executed. Those constructor/reference results do not discharge this integrated obligation.",

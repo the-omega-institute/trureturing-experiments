@@ -3062,7 +3062,7 @@
   },
   "independent_acceptance": false,
   "schema": 1,
-  "seconds": 34.443999040988274,
+  "seconds": 36.008578500011936,
   "source_binding": {
     "default_engine_compatibility": true,
     "fresh_compatibility": {
@@ -3099,13 +3099,13 @@
     "ML-Cost-full-evaluator-session"
   ],
   "theory_binding": {
-    "candidate_manifest_sha256": "f953c6bd17e9353547ac2c1351d014d9c562cdca96d0d3ba6f5397863a6144bc",
+    "candidate_manifest_sha256": "67e37c7ba9651c3a29663b7bf440870fdbfb12ece7dc67da08186da1f5545347",
     "manifest_entry": {
       "bytes": 218862,
-      "sha256": "761f2f0b4971f905a7980a10cf171b1aec4a04fffffbf31c89fe2fd50096c526"
+      "sha256": "d6cd351bad7d793f9057681f6ff1c97ea204630d70d95cea6f2011c56a256443"
     },
     "theory_bytes": 218862,
-    "theory_sha256": "761f2f0b4971f905a7980a10cf171b1aec4a04fffffbf31c89fe2fd50096c526"
+    "theory_sha256": "d6cd351bad7d793f9057681f6ff1c97ea204630d70d95cea6f2011c56a256443"
   },
   "unit_complete": true,
   "whole_family": {
