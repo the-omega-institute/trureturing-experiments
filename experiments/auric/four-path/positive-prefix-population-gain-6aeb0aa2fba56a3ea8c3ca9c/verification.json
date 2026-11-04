@@ -1,0 +1,106 @@
+{
+  "verification": "PASS",
+  "arithmetic": "exact Fraction intervals; 128-bit outward square roots; original-expression automatic differentiation",
+  "certificate_sha256": "805c0440967290782472db704ae189da2ccb833f0a5f8c606a2fc0f7b307441c",
+  "verifier_sha256": "4197ab42c466ab6970f555495ad1e9057267841bcadaea339ac3f8a2b1c7f519",
+  "results": [
+    {
+      "name": "root_selector_left",
+      "input_leaves": 1,
+      "verified_subleaves": 1,
+      "lower": "-19788212581/1000000000000",
+      "upper": "-989410629/50000000000"
+    },
+    {
+      "name": "root_selector_right",
+      "input_leaves": 1,
+      "verified_subleaves": 1,
+      "lower": "7770443283/250000000000",
+      "upper": "31081773133/1000000000000"
+    },
+    {
+      "name": "root_determinant_negative",
+      "input_leaves": 9,
+      "verified_subleaves": 9,
+      "lower": "-1544434997/1000000000000",
+      "upper": "-256218203/500000000000"
+    },
+    {
+      "name": "selector_lower",
+      "input_leaves": 1,
+      "verified_subleaves": 1,
+      "lower": "-172463421/156250000",
+      "upper": "-1103765894399/1000000000000"
+    },
+    {
+      "name": "selector_upper_low_slab",
+      "input_leaves": 1,
+      "verified_subleaves": 1,
+      "lower": "86480131981/1000000000000",
+      "upper": "43240065991/500000000000"
+    },
+    {
+      "name": "early_nonnegative",
+      "input_leaves": 36,
+      "verified_subleaves": 36,
+      "lower": "50535847/40000000000",
+      "upper": "3121013841/15625000000"
+    },
+    {
+      "name": "small_population_nonnegative",
+      "input_leaves": 5,
+      "verified_subleaves": 5,
+      "lower": "14621251833/1000000000000",
+      "upper": "11340435571/100000000000"
+    },
+    {
+      "name": "upper_population_nonnegative",
+      "input_leaves": 11,
+      "verified_subleaves": 11,
+      "lower": "298558131/250000000000",
+      "upper": "107998849743/500000000000"
+    },
+    {
+      "name": "negative_part_bound",
+      "input_leaves": 31,
+      "verified_subleaves": 31,
+      "lower": "-10881990591/200000000000",
+      "upper": "10378584627/250000000000"
+    },
+    {
+      "name": "gain_small",
+      "input_leaves": 11,
+      "verified_subleaves": 11,
+      "lower": "50064049107/500000000000",
+      "upper": "111183377027/500000000000"
+    },
+    {
+      "name": "gain_middle",
+      "input_leaves": 2,
+      "verified_subleaves": 2,
+      "lower": "21588527029/125000000000",
+      "upper": "29161688861/125000000000"
+    },
+    {
+      "name": "gain_large",
+      "input_leaves": 12,
+      "verified_subleaves": 12,
+      "lower": "47703840711/250000000000",
+      "upper": "301579215851/1000000000000"
+    },
+    {
+      "name": "slope_low_slab",
+      "input_leaves": 197,
+      "verified_subleaves": 409,
+      "lower": "2988309/250000000000",
+      "upper": "214989446321/500000000000"
+    },
+    {
+      "name": "slope_high_slab",
+      "input_leaves": 312,
+      "verified_subleaves": 705,
+      "lower": "37314247/500000000000",
+      "upper": "429967066371/1000000000000"
+    }
+  ]
+}
