@@ -1,0 +1,27 @@
+Python 3; SymPy 1.14.0; coefficient domain QQ
+Source: OEIS A263634 revision 166, modified 2025-11-05; Kurkov 2025-03-30
+FIDELITY n=1: EXAMPLE polynomial and coefficient row agree
+FIDELITY n=2: EXAMPLE polynomial and coefficient row agree
+FIDELITY n=3: EXAMPLE polynomial and coefficient row agree
+FIDELITY n=4: EXAMPLE polynomial and coefficient row agree
+FIDELITY n=5: EXAMPLE polynomial and coefficient row agree
+FIDELITY n=6: EXAMPLE polynomial and coefficient row agree
+SYMBOLIC_IDENTITY n=1: R(n,1)-L_n = 0; terms=1
+L_1 = x1
+SYMBOLIC_IDENTITY n=2: R(n,1)-L_n = 0; terms=2
+L_2 = -x1**2 + x2
+SYMBOLIC_IDENTITY n=3: R(n,1)-L_n = 0; terms=3
+L_3 = 2*x1**3 - 3*x1*x2 + x3
+SYMBOLIC_IDENTITY n=4: R(n,1)-L_n = 0; terms=5
+L_4 = -6*x1**4 + 12*x1**2*x2 - 4*x1*x3 - 3*x2**2 + x4
+SYMBOLIC_IDENTITY n=5: R(n,1)-L_n = 0; terms=7
+L_5 = 24*x1**5 - 60*x1**3*x2 + 20*x1**2*x3 + 30*x1*x2**2 - 5*x1*x4 - 10*x2*x3 + x5
+SYMBOLIC_IDENTITY n=6: R(n,1)-L_n = 0; terms=11
+L_6 = -120*x1**6 + 360*x1**4*x2 - 120*x1**3*x3 - 270*x1**2*x2**2 + 30*x1**2*x4 + 120*x1*x2*x3 - 6*x1*x5 + 30*x2**3 - 15*x2*x4 - 10*x3**2 + x6
+SYMBOLIC_IDENTITY n=7: R(n,1)-L_n = 0; terms=15
+L_7 = 720*x1**7 - 2520*x1**5*x2 + 840*x1**4*x3 + 2520*x1**3*x2**2 - 210*x1**3*x4 - 1260*x1**2*x2*x3 + 42*x1**2*x5 - 630*x1*x2**3 + 210*x1*x2*x4 + 140*x1*x3**2 - 7*x1*x6 + 210*x2**2*x3 - 21*x2*x5 - 35*x3*x4 + x7
+SYMBOLIC_IDENTITY n=8: R(n,1)-L_n = 0; terms=22
+L_8 = -5040*x1**8 + 20160*x1**6*x2 - 6720*x1**5*x3 - 25200*x1**4*x2**2 + 1680*x1**4*x4 + 13440*x1**3*x2*x3 - 336*x1**3*x5 + 10080*x1**2*x2**3 - 2520*x1**2*x2*x4 - 1680*x1**2*x3**2 + 56*x1**2*x6 - 5040*x1*x2**2*x3 + 336*x1*x2*x5 + 560*x1*x3*x4 - 8*x1*x7 - 630*x2**4 + 420*x2**2*x4 + 560*x2*x3**2 - 28*x2*x6 - 56*x3*x5 - 35*x4**2 + x8
+QUOTIENT_FAMILY: 36 exact symbolic pairs; n,k >= 1, n+k-1 <= 8
+Scope: finite exact checks only; the universal identity remains unproved here.
+ALL_CHECKS_OK
