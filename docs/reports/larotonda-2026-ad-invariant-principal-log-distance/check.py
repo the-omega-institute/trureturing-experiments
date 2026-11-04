@@ -33,8 +33,8 @@ same_exp(a5, b5)
 assert sum(b5) == 0 and max(map(abs, b5)) == Q(8,5)
 # A traceless logarithm has eigenangles (2/5 + 2*k_j)*pi and sum k_j=-1.
 # Consequently some k_j <= -1, and its absolute eigenangle is at least 8/5*pi.
-for k in range(-25, 0):
-    assert abs(Q(2,5)+2*k) >= Q(8,5)
+m = s.symbols('m', integer=True, nonnegative=True)
+assert s.simplify(s.Abs(s.Rational(2,5)+2*(-1-m)) - (s.Rational(8,5)+2*m)) == 0
 print('FIDELITY Section 4 SU(5): principal op/pi=2/5, trace/(i*pi)=2;')
 print('  traceless shifted log op/pi=8/5, trace=0; same exponential checked exactly')
 
@@ -121,6 +121,7 @@ print(f'FAMILY: {family_count} exact parameter tests, dimensions 2..8, both sign
 t=s.symbols('t',real=True)
 gamma=s.diag(*[s.exp(s.I*s.pi*t*s.Rational(v.numerator,v.denominator)) for v in b2])
 assert s.simplify(gamma.subs(t,0)) == s.eye(2)
+assert s.simplify(gamma.conjugate().T*gamma) == s.eye(2)
 endpoint=s.diag(*[s.exp(s.I*s.pi*s.Rational(v.numerator,v.denominator)) for v in a2])
 assert all(s.simplify(v)==0 for v in gamma.subs(t,1)-endpoint)
 velocity=s.simplify(gamma.conjugate().T*gamma.diff(t))
