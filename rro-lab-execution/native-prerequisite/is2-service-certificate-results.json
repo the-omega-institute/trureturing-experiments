@@ -1,0 +1,525 @@
+{
+  "bundle_exit": 0,
+  "candidate": "IS2-immutable-spines-direct-native/v1",
+  "caps": {
+    "accepted_input_bits": 1024,
+    "installation_events": 20000000,
+    "installed_source_blocks": 100000,
+    "modeled_objects": 500000,
+    "monitored_host_peak_bytes": 2147483648,
+    "native_steps": 4000000,
+    "reserve_cells": 16384,
+    "retained_output_bits": 4096,
+    "source_bits": 60,
+    "source_calls": 8,
+    "static_field_nodes": 100000,
+    "wall_seconds": 600
+  },
+  "checks": [
+    "static full-source linking and three prospective expressions",
+    "actual tiny native service input/computation/End/Ack/indirect Return/old Read/receipt/cache/Close"
+  ],
+  "elapsed_seconds": 3.3593556249979883,
+  "full_evaluator_executions": 0,
+  "full_fixed_installations": 0,
+  "full_original_or_replacement_sessions": 0,
+  "interface": {
+    "cache_before_and_after": [
+      [
+        1,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ]
+    ],
+    "census": {
+      "bits": 3809491,
+      "objects": 247436,
+      "reference_width": 18,
+      "refs": 741440,
+      "total_bits": 17402847
+    },
+    "close": true,
+    "computed_frame": "011110101",
+    "connection_census": {
+      "bit_fields": 81,
+      "bits": 1025,
+      "grant_bits": 97,
+      "objects": 97,
+      "reference_slots": 121,
+      "reference_width": 7
+    },
+    "events": {
+      "ack": 9,
+      "address": 23206,
+      "bfield": 2139,
+      "br": 9825,
+      "bw": 6980,
+      "code": 1436,
+      "control_write": 203652,
+      "controller_selection": 203652,
+      "end": 9,
+      "equal": 104,
+      "goto": 58752,
+      "grant_tests": 510101,
+      "handoff_pc_write": 1,
+      "jump": 1427,
+      "literal": 4841,
+      "native_label_bits": 4276692,
+      "native_operand_reference_reads": 78058,
+      "null": 8099,
+      "paid_input_latch_writes": 2658,
+      "paid_resume_signals": 886,
+      "portsend": 30,
+      "return": 9,
+      "rfield": 7748,
+      "rr": 45997,
+      "rw": 13820,
+      "save": 104,
+      "send": 61,
+      "sourceack": 7,
+      "sourcecall": 7,
+      "successor_read": 203652,
+      "test": 4836,
+      "vfield": 4898,
+      "wait": 887,
+      "wfield": 8421
+    },
+    "field_nodes": 9176,
+    "fresh_old_slot_receipt": true,
+    "graph_sha256": "15a504a7733f7691c8338de4129bc89acc977b305e32514e70c6a0f6497c24bd",
+    "handoffs": [
+      {
+        "bits": "111010001011101111111111111111111111111111111111111111111111111111111111111100000000000000000000000000000000000000000000000000000000000011010111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111100111111111111111111111111111111111111111111111111111111111111000000000000000000000000000000000000000000000000000000000000101",
+        "current_read_grants": true,
+        "native_steps": 171046,
+        "same_chain": true
+      }
+    ],
+    "input_sha256": "37dfee71eda5a8fbee3d373aab446982f15976785ef965ec2e4a1b6ea98c5402",
+    "installation_events": 4698848,
+    "native_nodes": 32829,
+    "native_steps": 203652,
+    "occurrences": [
+      [
+        "",
+        "branch"
+      ],
+      [
+        "LL",
+        "beta"
+      ],
+      [
+        "LRR",
+        "alpha"
+      ],
+      [
+        "LLR",
+        "absent"
+      ],
+      [
+        "LRL",
+        "beta"
+      ],
+      [
+        "RRRRRRRRRRRRRRRLL",
+        "beta"
+      ],
+      [
+        "LL",
+        "beta"
+      ]
+    ],
+    "original_root_preserved": true,
+    "returns": [
+      {
+        "Ack": true,
+        "End": true,
+        "actual_indirect_return": true,
+        "busy_before_cleanup": 1,
+        "native_steps": 200870,
+        "output": "101101010110011011000101101110110011011001011110101"
+      }
+    ],
+    "scope": "native interface witness, computes N+1; no fixed evaluator run or full acquisition schedule",
+    "source_census": {
+      "bit_fields": 9393,
+      "bits": 183635,
+      "grant_bits": 10064,
+      "objects": 10064,
+      "reference_slots": 11727,
+      "reference_width": 14
+    },
+    "source_unchanged": true
+  },
+  "monitored_peak_host_bytes": 149176320,
+  "owned_jobs_joined": true,
+  "prospective": [
+    {
+      "E": 3261345999424187726218910545118010858512817586176375,
+      "E_F": 244562584912076855181626,
+      "K_expression": "5+L+2^E+2^E_F",
+      "L": 387,
+      "N": 4,
+      "U_out": 6471936,
+      "U_push_expression": "2^E",
+      "U_step_expression": "2^E",
+      "acquisition_calls": 74,
+      "acquisition_operand_bits": 2176,
+      "appended_continuation": [
+        "Read(LL)",
+        "Close"
+      ],
+      "complete_calls": 75,
+      "complete_operand_bits": 2178,
+      "frontend_bound_expression": "2^E_F",
+      "frontend_word_bound": 5215150656,
+      "input_sha256": "37dfee71eda5a8fbee3d373aab446982f15976785ef965ec2e4a1b6ea98c5402",
+      "logical_word_bound": 9059294442844965906163640403105585718091159961600,
+      "m": 25280,
+      "owner_backing": {
+        "H_reserved": null,
+        "W_backed": null,
+        "absent_owner": "existing host/resource owner of complete chronology, including inherited overlapping jobs",
+        "existing_live_original_session_manifest": null,
+        "host_layout_upper_bounds": null
+      },
+      "represented_prior": [
+        1,
+        3
+      ],
+      "t": 2,
+      "total_input_bits": 5376,
+      "whole_native_work_expression": "I_install + F_native*(2^E+2^E_F+2*L+2*U_out+64) + provider_work"
+    },
+    {
+      "E": 3253092437874348546267670321946008018298550469263735,
+      "E_F": 224715089010335365988666,
+      "K_expression": "5+L+2^E+2^E_F",
+      "L": 386,
+      "N": 4,
+      "U_out": 6455552,
+      "U_push_expression": "2^E",
+      "U_step_expression": "2^E",
+      "acquisition_calls": 73,
+      "acquisition_operand_bits": 2115,
+      "appended_continuation": [
+        "Read(LL)",
+        "Close"
+      ],
+      "complete_calls": 74,
+      "complete_operand_bits": 2117,
+      "frontend_bound_expression": "2^E_F",
+      "frontend_word_bound": 4999055616,
+      "input_sha256": "1a4ae049cf81b1f434398aa05cb8eabcf4d8689f7873f8d75f9ae1e870c34764",
+      "logical_word_bound": 9036367882984301517410195338738911161940417970176,
+      "m": 25216,
+      "owner_backing": {
+        "H_reserved": null,
+        "W_backed": null,
+        "absent_owner": "existing host/resource owner of complete chronology, including inherited overlapping jobs",
+        "existing_live_original_session_manifest": null,
+        "host_layout_upper_bounds": null
+      },
+      "represented_prior": [
+        1,
+        3
+      ],
+      "t": 2,
+      "total_input_bits": 5249,
+      "whole_native_work_expression": "I_install + F_native*(2^E+2^E_F+2*L+2*U_out+64) + provider_work"
+    },
+    {
+      "E": 7070485831349191789489768858706485620431425162445175,
+      "E_F": 44666665685474872606720316,
+      "K_expression": "5+L+2^E+2^E_F",
+      "L": 839,
+      "N": 9,
+      "U_out": 13959424,
+      "U_push_expression": "2^E",
+      "U_step_expression": "2^E",
+      "acquisition_calls": 149,
+      "acquisition_operand_bits": 9676,
+      "appended_continuation": [
+        "Read(LL)",
+        "Close"
+      ],
+      "complete_calls": 150,
+      "complete_operand_bits": 9678,
+      "frontend_bound_expression": "2^E_F",
+      "frontend_word_bound": 70479630400,
+      "input_sha256": "f5518d034eef5bd00c87ff9d43c5ca878ef9d012f47e04bedcbe45163ee3e29d",
+      "logical_word_bound": 19640238420414421637471580163073571167865069895680,
+      "m": 54528,
+      "owner_backing": {
+        "H_reserved": null,
+        "W_backed": null,
+        "absent_owner": "existing host/resource owner of complete chronology, including inherited overlapping jobs",
+        "existing_live_original_session_manifest": null,
+        "host_layout_upper_bounds": null
+      },
+      "represented_prior": [
+        1,
+        3
+      ],
+      "t": 2,
+      "total_input_bits": 21507,
+      "whole_native_work_expression": "I_install + F_native*(2^E+2^E_F+2*L+2*U_out+64) + provider_work"
+    }
+  ],
+  "source_hashes": {
+    "constructor_ir.py": "920d9c265c2db2e76a6e268139b35457d05bd116911758d9a5bb660fc1e18fe5",
+    "evaluator_program.py": "33fd87384bae21581556fc776738c6940171c3dca22670f557f26b368558842f",
+    "field_service.py": "e2094909ab99db4af7419ea4da499915ea996a7a0c5ca07be06d439253558a6f",
+    "native-prerequisite/immutable_spine.py": "8fa24e415edc01b3a521f41f1680d340d86c5e2f4f149faa7ec8684b346550e1",
+    "native-prerequisite/is2_service_certificate.py": "6b3b265367e49fb3a70d0a1f328e6c62e906c336deae1d2fff101c0dcb60312c",
+    "native_install.py": "0ab4e62dcfa620510cf3e93852358f14346a810faf6fa6c5e28b9f0436da7cb9",
+    "service_native.py": "b767a1387544b15f2e34d25a4550cfaf0914668e51f9b249f863b969606f8380"
+  },
+  "static": {
+    "composed_bits": 57,
+    "composed_field_nodes": 62069,
+    "composed_field_sha256": "db4fb22177743a3aafd286c5431b42d09460ab47cfe4ca488d40dd1f28600b4a",
+    "composed_native_nodes": 225718,
+    "composed_refs": 604,
+    "routines_including_main": 34,
+    "stack_registers": 360,
+    "stack_sha256": "7257d4ad4b5730860ad811d41c3057ea6accdf1c413dbf7af75be206a5b24595",
+    "stack_states": 10983
+  },
+  "status": "bounded-interface-complete; full-session-resource-offer-absent"
+}

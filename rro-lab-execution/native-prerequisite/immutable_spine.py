@@ -146,12 +146,14 @@ def field_graph(p):
 # Literal native operations already in ML-P. The graph below is specialized to
 # fixed field selectors; it does not execute field_graph.Engine or its word ALU.
 OPS=('rr','rw','br','bw','address','rfield','wfield','bfield','vfield',
-     'literal','nil','save','null','equal','test','goto','send','end','ack','return','fault','wait')
+     'literal','nil','save','null','equal','test','goto','send','end','ack','return','fault','wait',
+     'code','jump','portsend','sourcecall','sourceack')
 
 class Direct:
-    def __init__(self,p,bits,capacity,kernel):
+    def __init__(self,p,bits,capacity,kernel,*,connection=None,service_return=False):
         assert capacity>=0
         self.p=p;self.bits_input=bits;self.output=[];self.events=Counter();self.steps=0
+        self.connection=connection;self.service_return=service_return;self.boundary_observer=None
         self.source_blocks=[];self.native=[];self.boundary={};self.sources=[]
         def block(refs=4,width=8):
             b=Block([None]*refs,bytearray((width+7)//8),width);b.grant=1;self.source_blocks.append(b);return b
@@ -164,7 +166,9 @@ class Direct:
         source_input=[block() for _ in bits]
         for b,ch in zip(source_input,bits):b.put(0,int(ch))
         for a,b in zip(source_input,source_input[1:]):a.refs[1]=b
-        self.source_regs['received'].refs[0]=source_input[0] if source_input else None
+        if 'received' in self.source_regs:
+            self.source_regs['received'].refs[0]=source_input[0] if source_input else None
+        else:assert not bits
         self.source_pool=pool;self.source_input=source_input
         def node(op,a=None,i=0,z=None,o=None):
             b=block(4,21);b.refs[:]=[a,None,z,z if o is None else o]
@@ -191,7 +195,11 @@ class Direct:
             elif op=='set':actions=addr(a[0])+[rr(a[2]),('wfield',None,a[1])]
             elif op=='read':actions=addr(a[1])+[('bfield',None,a[2]),bw(a[0])]
             elif op=='write':actions=addr(a[0])+[br(a[2]),('vfield',None,a[1])]
-            elif op=='emit':actions=[br(a[0]),('send',None,0)]
+            elif op=='bind':actions=[('code',entries[field_ids[a[1]]],0),rw(a[0])]
+            elif op=='indirect':actions=[rr(a[0])];end=node('jump',z=z,o=o)
+            elif op=='emit':actions=[br(a[0]),('portsend' if len(a)==2 and a[1]==1 else 'send',None,0)]
+            elif op in ('end','ack') and a and a[0]==1:
+                end=node('sourcecall' if op=='end' else 'sourceack',z=z,o=o)
             elif op in ('end','ack','return','wait','fault'):end=node(op,z=z,o=o)
             elif op!='goto':raise AssertionError(op)
             first=seq(actions,end);entries[i].refs[2:]=[first,first]
@@ -260,6 +268,11 @@ class Direct:
         required=[n,self.cpu]
         if a is not None:required.append(a)
         if op in ('rfield','wfield','bfield','vfield'):required.append(self.address)
+        if op in ('portsend','sourcecall','sourceack'):
+            required.extend((self.regs['port.cell'],self.regs['port.cell'].refs[0]))
+        if op=='return' and self.service_return:
+            required.extend((self.regs['output.return'],self.regs['output.return'].refs[0]))
+        if op=='jump':required.append(self.rr)
         if any(x is None or not x.grant for x in required):self.refused=True;self.events['grant_refusals']+=1;return
         self.steps+=1;self.events[op]+=1;self.events['grant_tests']+=len(required)
         self.events['native_label_bits']+=21;self.events['native_operand_reference_reads']+=int(a is not None)
@@ -272,7 +285,7 @@ class Direct:
         elif op=='address':self.address=self.rr
         elif op=='rfield':self.rr=self.address.refs[i]
         elif op=='wfield':
-            if self.address is self.regs['work.root'].refs[0]:
+            if 'work.root' in self.regs and self.address is self.regs['work.root'].refs[0]:
                 if i==1 and self.address.refs[1] is None and self.rr is not None:self.events['work_P']+=1
                 if i==3 and self.address.refs[3] is None and self.rr is not None:self.events['work_S']+=1
             self.address.refs[i]=self.rr
@@ -281,18 +294,24 @@ class Direct:
         elif op=='literal':self.bit=i
         elif op=='nil':self.rr=None
         elif op=='save':self.saved=self.rr
+        elif op=='code':self.rr=a
         elif op=='null':branch=int(self.rr is None)
         elif op=='equal':branch=int(self.rr is self.saved)
         elif op=='test':branch=self.bit
         elif op=='send':self.output.append(str(self.bit))
+        elif op=='portsend':self.connection.send(self.bit,self.regs['port.cell'].refs[0])
+        elif op=='sourcecall':self.connection.invoke(self.regs['port.cell'].refs[0])
+        elif op=='sourceack':self.connection.ack(self.regs['port.cell'].refs[0])
         elif op=='end':self.ended=True;self.acked=False
         elif op=='ack':assert self.ended;self.acked=True
         elif op=='return':assert self.acked
+        elif op=='jump':pass
         elif op=='wait':self.done=True
         elif op=='fault':self.refused=True;return
         elif op!='goto':raise AssertionError(op)
         self.events['controller_selection']+=1;self.events['successor_read']+=1;self.events['control_write']+=1
-        self.pc=n.refs[3 if branch else 2]
+        self.pc=(self.regs['output.return'].refs[0] if op=='return' and self.service_return
+                 else self.rr if op=='jump' else n.refs[3 if branch else 2])
         self.cut_checks+=1
         assert ''.join(str(b.bit(0)) for b in self.received)==self.bits_input
         if self.pc in self.boundary:
@@ -301,6 +320,7 @@ class Direct:
                 newpool=self.regs['pool'].refs[0]
                 if newpool is not self.last_pool:self.allocated.append(self.last_pool);self.last_pool=newpool
             label=self.labels.get(idx,'')
+            if self.boundary_observer:self.boundary_observer(self,label)
             if label.startswith('q.') or label=='print':
                 for name,slot in self.regs.items():
                     if name.startswith('stack.'):
