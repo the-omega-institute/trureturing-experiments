@@ -102,7 +102,8 @@ class Installer:
     a transition. This initial ML-I controller is supplied finite primitive
     control, counted from the first cut, with its original current-rights premise.
     """
-    def __init__(self,sources,kernel,entry=None):
+    def __init__(self,sources,kernel,entry=None,storage=None):
+        self.storage=storage
         assert sources
         self.sources=sources  # independent inspection, never consulted by tick
         self.head=sources[0];self.cursor=self.head
@@ -154,6 +155,7 @@ class Installer:
         start1.zero=start1.one=dispatch;self.pc=start1
         n=len(sources);seed_nodes=1+sum(len(x) for x in kernel.wires.values())+len(self.nodes)
         self.width=(3*n+seed_nodes+64).bit_length()
+        if self.storage is not None:self.storage.state.width[self.storage.installation_owner]=self.width
         # Source Block has its own next directory slot; each Source descriptor
         # has block/next/forward. The header includes every runtime/installer latch.
         self.base=dict(objects=2*n+1,refs=sum(len(x.block.refs)+4 for x in sources)+15,
@@ -170,7 +172,7 @@ class Installer:
         elif op=='shape':branch=int((len(self.material.refs),self.material.width)==LAYOUTS[i]);self.event('arity_tests')
         elif op=='allocate':
             refs,bits=LAYOUTS[i]
-            self.pending=Block([None]*refs,bytearray((bits+7)//8),bits)
+            self.pending=(self.storage.block if self.storage is not None else Block)([None]*refs,bytearray((bits+7)//8),bits)
             self.accounted.update(objects=1,refs=refs+1,bits=bits)
             self.event('allocations')
         elif op=='grant':self.pending.grant=1;self.event('grant_deliveries')

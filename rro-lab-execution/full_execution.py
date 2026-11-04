@@ -31,6 +31,7 @@ from paid_code import CodeStore
 from service_native import OriginalConnection, ServiceEngine
 from service_checks import receipts, cache
 from session import OriginalPort, prepare_source
+from packed_constructor import PackedStorage
 from lab import Arena
 from pins import source_manifest
 
@@ -233,11 +234,12 @@ def run_case(name, capacity, theory_root, output):
     trace = Chronology()
     kernel = None
     try:
-        source = prepare_source(bits)
+        storage = PackedStorage()
+        source = prepare_source(bits,storage=storage)
         source_state = (source.logical(), tuple(source.events), source.routing())
         preparation = Counter(source.a.charges)
         port = OriginalPort(source)
-        connection = OriginalConnection(port)
+        connection = OriginalConnection(port,storage=storage)
         trace.point('source-prepared')
         with tempfile.TemporaryDirectory(prefix='rro-full-execution-') as td:
             packed = Path(td)/'W_U.block.gz'
@@ -250,7 +252,7 @@ def run_case(name, capacity, theory_root, output):
             p = service_graph(store.height, 361)
             kernel = BitKernel()
             e = MeasuredEngine(p, capacity, bindings={'image.root': store.root},
-                               store=store, kernel=kernel, connection=connection)
+                               store=store, kernel=kernel, connection=connection,storage=storage)
             trace.engine = e
             e.seal(trace.checkpoint)
             trace.point('installed')
@@ -394,6 +396,7 @@ def run_case(name, capacity, theory_root, output):
                     'uncompressed_image_bytes': len(raw), 'uncompressed_image_sha256': sha(raw)},
                 'theory_binding': {'root': str(theory_root), 'manifest': file_identity(HERE/'theory-candidate.json'),
                     'volume': file_identity(theory_root/'docs/develop/theory/RECURSIVE_RELATIONAL_OBSERVATION_MONOTONE_LAB_INDEXED_EXECUTION.md')},
+                'packed_storage': storage.metrics(),
                 'source_hashes': {p.name: file_identity(p) for p in sorted(HERE.glob('*.py'))},
                 'runtime': {'python': sys.version, 'assertions_enabled': __debug__,
                     'scope_descriptors_inherited': len(os.environ.get('WORKTREE_SCOPE_FDS','').split(','))},

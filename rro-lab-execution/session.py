@@ -9,9 +9,9 @@ TO_BITS = str.maketrans('LR', '01')
 TO_WORD = str.maketrans('01', 'LR')
 
 
-def prepare_source(bits):
+def prepare_source(bits, *, storage=None):
     """UJB5.3's actual P/S preparer, including all inherited routing overhead."""
-    lab = Lab(capture_cuts=False)
+    lab = Lab(Arena(storage=storage),capture_cuts=False)
     for j in range(len(bits)):
         p = lab.at('R'*j)
         assert lab.grow('P', p) and lab.grow('S', p)

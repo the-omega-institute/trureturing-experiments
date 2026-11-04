@@ -144,7 +144,8 @@ class NativeEngine(PrimitiveEngine):
     install_b/install_input remain source preparers. No prepared target is ever
     executed: after seal, native operations read only relocated target fields.
     """
-    def __init__(self,*args,kernel=None,**kwargs):
+    def __init__(self,*args,kernel=None,storage=None,**kwargs):
+        self.storage=storage
         super().__init__(*args,**kwargs)
         self.sealed=False;self.kernel=kernel.independent_header() if kernel is not None else None;self.owns_kernel=kernel is None
         self.native_steps=0;self.native_events=Counter();self.read_ref=None;self.saved_ref=None
@@ -184,7 +185,10 @@ class NativeEngine(PrimitiveEngine):
             s.block.refs[:]=[byblock[v if isinstance(v,Block) else blocks[v]] if v is not None else None for v in s.block.refs]
         for a,b in zip(sources,sources[1:]):a.next=b
         if self.kernel is None:self.kernel=BitKernel()
-        self.installation=Installer(sources,self.kernel,byblock[blocks[core.entry]])
+        if self.storage is not None:
+            sources,source_map=self.storage.import_sources(sources)
+            byblock={b:source_map[s] for b,s in byblock.items()}
+        self.installation=Installer(sources,self.kernel,byblock[blocks[core.entry]],storage=self.storage)
         self.installation.run(checkpoint);self.installation.verify()
         target=lambda b:byblock[b].forward
         self.forward_observer={x:target(blocks[x]) for x in self.cells}

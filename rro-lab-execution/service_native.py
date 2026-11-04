@@ -36,8 +36,8 @@ class OriginalConnection:
     not a service parser/selector/continuation. Only that unchanged call obtains
     source information. Its own private provider operations stay unchanged.
     """
-    def __init__(self,port):
-        self.port=port;self.a=Arena(registers=8);self.calls=0
+    def __init__(self,port,*,storage=None):
+        self.port=port;self.a=Arena(registers=8,storage=storage);self.calls=0
         self.binding=self.a.alloc('service_original_connection')
         for key,value in (('reply',None),('source',port.root)):
             self.a.write(self.binding,key,value)

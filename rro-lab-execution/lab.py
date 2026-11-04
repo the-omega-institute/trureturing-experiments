@@ -18,7 +18,9 @@ class Obj:
 
 class Arena:
     """Widen actual reference records; retain all allocated material and grants."""
-    def __init__(self, registers=16):
+    def __init__(self, registers=16, storage=None):
+        self.storage=storage
+        self.storage_owner=storage.owner() if storage is not None else None
         self.objects = []
         self.identities = set()
         self.reference_fields = 0
@@ -57,7 +59,8 @@ class Arena:
             self.charges['reference_rewrite_fields'] += n
             self.sample(overlap=n*needed)
             self.width = needed
-        o = Obj(kind)
+            if self.storage is not None:self.storage.state.width[self.storage_owner]=needed
+        o = self.storage.obj(self.storage_owner,kind) if self.storage is not None else Obj(kind)
         self.objects.append(o)
         self.identities.add(o)
         self.charges['allocations'] += 1
