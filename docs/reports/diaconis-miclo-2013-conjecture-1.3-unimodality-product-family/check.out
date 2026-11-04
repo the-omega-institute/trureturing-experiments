@@ -1,0 +1,4 @@
+source Fourier-block identity: exact
+middle block signs: p(-1) > 33/100 and p(-239/500) < -1/20000
+endpoint Schur certificates: exact rational interval margins
+ALL_CHECKS_OK
