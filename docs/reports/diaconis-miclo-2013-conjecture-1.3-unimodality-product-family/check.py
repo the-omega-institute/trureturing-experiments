@@ -94,6 +94,7 @@ def schur_inside(coeffs, radius):
 
 
 for a in (F(1, 5), F(3, 10)):
+    assert a < R  # the trivial character's mean-zero eigenvalue
     for t in roots:
         assert schur_inside(block_polynomial(a, t), R)
 
@@ -139,4 +140,5 @@ for k in range(1, 6):
 print("source Fourier-block identity: exact")
 print(f"middle block signs: p(-1) > 33/100 and p(-239/500) < -1/20000")
 print("endpoint Schur certificates: exact rational interval margins")
+print("44-state witness: endpoint gaps > 261/500 and middle gap < 261/500")
 print("ALL_CHECKS_OK")
