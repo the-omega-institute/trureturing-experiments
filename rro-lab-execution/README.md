@@ -8,6 +8,13 @@ stack-reference law runs are documented in [constructor/README.md](constructor/R
 Those reference runs, host law arithmetic and the acquired successor kernel
 do not discharge the integrated requirements. No theorem counterexample was found in the checked scopes.
 
+The assigned B integration author check is `integration_checks.py`. It runs
+one actual installed service Read session, binds the unchanged original port,
+compares an independent Arena event ledger with direct censuses at each
+source-call boundary, and re-runs the finite whole-family author checks. Its
+result is `integration-results.json`; it closes the three assigned B
+integration outcomes while retaining the two strict full-run omissions.
+
 Python 3.12+, standard library, assertions enabled, the pinned local Git
 objects, and an explicit theory candidate checkout are required. The
 candidate's theory and bibliography bytes must match `theory-candidate.json`.

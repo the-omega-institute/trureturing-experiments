@@ -1156,6 +1156,7 @@
     "field_protocol_checks.py": "ceb6b4e8a72f3ec51d790590da1679247f0570f83fc52bc02ebf6c0aba443cf7",
     "field_service.py": "e2094909ab99db4af7419ea4da499915ea996a7a0c5ca07be06d439253558a6f",
     "framing.py": "13d043ef5557b713348bbf10e6da126f88540f1a3bf3e823bb6ae84121adc41b",
+    "integration_checks.py": "e048e080f710a0897aefee36a82c9b76f70b0aa9c87e9774ba564681b3390a82",
     "lab.py": "59d3c316b523a1b583b1bd62f5b0b96251f4a129e6f9f09d9a0b7ceb26e3b6fb",
     "laws.py": "fea885964c863393f850a66890c1c0f6c33191828ecd794ac3204d093ceba709",
     "native_checks.py": "eb0b77c4c8b38167baf43e3a50c7159c9a91fb2c0d0c0b292255ee69a1f57e56",
@@ -1884,18 +1885,18 @@
     },
     "candidate-manifest": {
       "bytes": 485,
-      "sha256": "80da2984ce42548b166f0beb35654b5faa4329726ec03a7b43fc0068488bb5a3"
+      "sha256": "f953c6bd17e9353547ac2c1351d014d9c562cdca96d0d3ba6f5397863a6144bc"
     },
     "candidate:Library/Computability/nearywoodsmurphyglaschick2014wang.md": {
       "bytes": 4148,
       "sha256": "863859e7f3d2110e0559cd6837afc8b63614f456c642ea253f1a8d709d00e345"
     },
     "candidate:docs/develop/theory/RECURSIVE_RELATIONAL_OBSERVATION_MONOTONE_LAB_INDEXED_EXECUTION.md": {
-      "bytes": 204010,
-      "sha256": "20b0ac8c35fbe5075dd959bb96c37b5d14f1ae7eeffcc489c28f8bff7bdf1579"
+      "bytes": 218862,
+      "sha256": "761f2f0b4971f905a7980a10cf171b1aec4a04fffffbf31c89fe2fd50096c526"
     }
   },
-  "theory_sha256": "20b0ac8c35fbe5075dd959bb96c37b5d14f1ae7eeffcc489c28f8bff7bdf1579",
+  "theory_sha256": "761f2f0b4971f905a7980a10cf171b1aec4a04fffffbf31c89fe2fd50096c526",
   "unresolved_obligations": [
     {
       "finding": "The copier now generates a complete non-erasing binary table for every supplied erasing binary table, lowers it through the primary thirteen-instruction compiler, and decodes real LAB output. The acquired successor kernel executes on this path. The fixed ML-S evaluator graph, materialized binary table and complete encoded W_U are supplied separately, with full stack-reference law runs. A full evaluator run through the actual ML-T/NWMG/ML-L/ML-B path and decoded physical ML.5 output has not executed. Those constructor/reference results do not discharge this integrated obligation.",
