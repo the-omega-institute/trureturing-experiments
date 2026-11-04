@@ -257,7 +257,7 @@ def small_checks(sources):
     for P in all_cases:
         check_bound(P,2*(P.d+1)+2)
         branches['p>=q' if P.p>=P.q else 'p<q'] += 1
-    selected = sources+intervals[:3]+planar[::max(1,len(planar)//10)]+spatial
+    selected = sources+all_cases
     constructions = 0
     for P in selected:
         B = check_construction(P)

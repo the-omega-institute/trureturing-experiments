@@ -4,6 +4,6 @@ SOURCE pyramid p,q= 3 1 L,N= ([1, 5, 14, 30, 55], [1, 1, 4, 4, 9]) h*= [1, 1] H=
 SOURCE bipyramid p,q= 3 1 L,N= ([1, 6, 19, 44, 85], [1, 2, 5, 8, 13]) h*= [1, 2, 1] H= [1, 2, 2, 2, 1] through degree 10
 SOURCE Example 5.6 p,q= 4 3 L,N= ([1, 8, 35, 113, 302, 707, 1498], [1, 0, 5, 1, 14, 5, 30]) h*= [1, 1, 0, 1, 1] H= [1, 0, 1, 1, 0, 1] phi_2= (1, -1)
 SMALL exhaustive intervals= 21 planar generating sets= 102 random spatial= 24 seed= 261085 branches= {'p>=q': 141, 'p<q': 6}
-CONSTRUCTION directly enumerated steps= 56 first steps k=0..4; additional balancing steps k=0..2
+CONSTRUCTION directly enumerated steps= 165 first steps k=0..4; additional balancing steps k=0..2
 All small input coefficient windows i=0..2(d+1)+2 passed; finite evidence only.
 ALL_CHECKS_OK
