@@ -1,0 +1,41 @@
+harmonic oscillator phase cross-check: OK
+source harmonic oscillator energy C1: OK
+source harmonic oscillator null form: OK
+source harmonic oscillator integrating factor: OK
+source harmonic oscillator compatibility: OK
+normalization Dx = 1: OK
+Riccati A: OK
+Riccati B: OK
+inversion invariance x: OK
+inversion invariance A: OK
+inversion invariance B: OK
+inversion reverses normalization: OK
+first integral 1: OK
+first integral 2: OK
+independence dv wedge dw coefficient = 1/(vw): OK
+jet Jacobian determinant = 2ay: OK
+jet inverse y: OK
+jet inverse z: OK
+scalar jet Phi for symbolic p,q: OK
+elementary solution Riccati: OK
+elementary U logarithmic derivative: OK
+two independent solution parameters: each Riccati coordinate depends nontrivially on its own parameter: OK
+Cartan closed-horizontal identity 0: OK
+constant coordinate coefficient identity 0: OK
+inversion negates dlog 0: OK
+Cartan closed-horizontal identity 1: OK
+constant coordinate coefficient identity 1: OK
+inversion negates dlog 1: OK
+Cartan closed-horizontal identity 2: OK
+constant coordinate coefficient identity 2: OK
+inversion negates dlog 2: OK
+nonresonant number-field basis: irreducible t^4-10t^2+1, degree 4: OK
+Phi member m=1: OK
+Phi member m=2: OK
+Phi member m=3: OK
+Phi member m=4: OK
+Phi member m=5: OK
+diagnostic weights: 125 distinct monomials per m=1,...,5: OK
+denominator-safe m=1 point (x,y,z,Phi) = (1/4, 1, -20/3, 328/9)
+universal exclusion uses the coprime-eigenpolynomial and inversion argument in README; no finite search is its proof
+ALL_CHECKS_OK
