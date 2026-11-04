@@ -36,12 +36,12 @@ def forward_probability(M, word):
 
 def ambiguous(u):
     return ([Q(1, 2), Q(1, 2)],
-            [[Q(1, 2) + u / 8, Q(1, 2) - u / 8], [Q(1, 4), Q(3, 4)]],
+            [[Q(1, 2) + u * Q(1, 8), Q(1, 2) - u * Q(1, 8)], [Q(1, 4), Q(3, 4)]],
             [[Q(1, 4), Q(3, 4)], [Q(1, 4), Q(3, 4)]])
 
 
 def identifiable(u, v):
-    p, q = Q(1, 2) + u / 8, Q(1, 2) + v / 8
+    p, q = Q(1, 2) + u * Q(1, 8), Q(1, 2) + v * Q(1, 8)
     return ([p, 1 - p], [[q, 1 - q], [Q(1, 4), Q(3, 4)]],
             [[Q(1, 4), Q(3, 4)], [Q(3, 4), Q(1, 4)]])
 
@@ -111,6 +111,7 @@ print('RECOVERY: P(z1=0)=3/4-p/2; P(z2=0)=5/8+p/8-p*q/2; inverse guarded by p>1/
 negative = blend(tag, identifiable(u, 0), ambiguous(u))
 positive = blend(tag, ambiguous(u), identifiable(u, v))
 for family in [negative, positive]:
+    assert all(not s.sympify(x).atoms(s.Float) for x in flat(family))
     assert all(s.Poly(x, tag, u, v).total_degree() <= 2 for x in flat(family))
     pi, A, B = family
     assert s.expand(sum(pi)-1) == 0
