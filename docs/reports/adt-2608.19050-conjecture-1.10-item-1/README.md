@@ -9,3 +9,9 @@ python3 check.py
 ```
 
 The stored output ends in `ALL_CHECKS_OK`.
+
+As a separate diagnostic reading, a double precision Newton iteration of the
+published recurrence through `n = 100000` gives
+`b_n / n^2 = 0.4883419588484151`; direct minimization of the variational
+function gives `0.4883197421891127`. These decimals are recorded only as a
+sanity reading; the check above uses no floating point as evidence.
