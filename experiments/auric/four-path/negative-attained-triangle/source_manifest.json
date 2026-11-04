@@ -1,0 +1,49 @@
+{
+  "sources": [
+    {
+      "commit": "6b6539921bf3fde0f84f85fdda6c284b5891ae98",
+      "path": "docs/develop/theory/QUANTUM_REALITY_FOUR_PATH_FULL_RECORD_RECOVERY_BOUND.md",
+      "bytes": 176778,
+      "sha256": "1d8240ccf970f2232d782bb92cade08197f8b4e29d10b31a05d4ff57ebd9ad03",
+      "git_blob": "0fd799b7b6668f48cfac5dae94a304dcb25c955b"
+    },
+    {
+      "commit": "6b6539921bf3fde0f84f85fdda6c284b5891ae98",
+      "path": "docs/develop/theory/QUANTUM_REALITY_FOUR_PATH_FULL_RECORD_RECOVERY_BOUND_CONTINUATION_I.md",
+      "bytes": 212198,
+      "sha256": "d3d4e98dcb38a0058f8ef5c6d4baf0d789d7db4e20692bbedbcea0c29404b58d",
+      "git_blob": "efc9a380243e9e3c993c5429d6152596546d45d4"
+    },
+    {
+      "commit": "6b6539921bf3fde0f84f85fdda6c284b5891ae98",
+      "path": "docs/develop/theory/QUANTUM_REALITY_FOUR_PATH_FULL_RECORD_RECOVERY_BOUND_CONTINUATION_II.md",
+      "bytes": 196314,
+      "sha256": "2805fddb142e79115fd8c785f9bc1f6ea1af3a227e5fbd7a10beb4439f957e8a",
+      "git_blob": "73135ab6d85bf53486b789e13cef89c1b95188ed"
+    },
+    {
+      "commit": "6b6539921bf3fde0f84f85fdda6c284b5891ae98",
+      "path": "docs/develop/theory/QUANTUM_REALITY_FOUR_PATH_FULL_RECORD_RECOVERY_BOUND_CONTINUATION_III.md",
+      "bytes": 20170,
+      "sha256": "18dec89b823820098df02afb786a9ce2dd66199ab3a9ddf75855ebaa1a185465",
+      "git_blob": "170f282dd1d53cf79610f427bfa164dbbdf1f033"
+    },
+    {
+      "commit": "6b6539921bf3fde0f84f85fdda6c284b5891ae98",
+      "path": "docs/develop/theory/QUANTUM_REALITY_FOUR_PATH_FULL_RECORD_RECOVERY_BOUND_CONTINUATION_IV.md",
+      "bytes": 36222,
+      "sha256": "2770edb4c64a2e1bbc455ce94e61c744321b2b97021ba44f499bcd8ddeb3597a",
+      "git_blob": "38997469ad1dd59e3789ef8a67724f99f8fe9496"
+    },
+    {
+      "commit": "4174415b64cd87a3770a85c30ec83cba6312cf7d",
+      "path": "docs/develop/theory/QUANTUM_REALITY_FOUR_PATH_FULL_RECORD_RECOVERY_BOUND_CONTINUATION_III.md",
+      "bytes": 44051,
+      "sha256": "2e595777683f204a62fdf5076591f0ee334ac069b279a84fbaeec4b256cc02e9",
+      "use": "Only Lemma50.4 comparator algebra, independently checked. No negative-canonical gap premise."
+    }
+  ],
+  "original_model": "Dens2 x U4; ordinary transpose; true minimum of both sign distances; one whole U and common scalar",
+  "latest_dev_context_only": "b52262a023c4db9bb30a128ebfd80ea4ef4c1a53",
+  "license": "Apache-2.0 inherited from experiments repository"
+}

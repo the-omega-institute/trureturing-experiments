@@ -4,6 +4,7 @@ Python >=3.12; python-flint==0.9.0. No binary floating point enters acceptance.
 import sys,json,time,hashlib,argparse
 from fractions import Fraction as F
 from flint import arb,ctx,fmpq
+assert sys.version_info >= (3,12)
 ctx.prec=128
 
 def A(x):

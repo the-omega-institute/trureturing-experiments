@@ -4,6 +4,7 @@ Verifies the finite binary partition and its polynomial positivity tests.
 import sys,json,time,hashlib
 from fractions import Fraction as F
 from math import isqrt
+assert sys.version_info >= (3,12)
 class I:
     def __init__(self,l,h=None):
         if isinstance(l,I):self.l,self.h=l.l,l.h
@@ -139,7 +140,9 @@ def main():
                 l,r=box[j];m=(l+r)/2;lb=list(box);rb=list(box);lb[j]=(l,m);rb[j]=(m,r)
                 stack.extend([(lb,left),(rb,right)])
     assert leaves==cert['leaves']
-    out={'status':'verified','arithmetic':'exact fractions; square roots bracketed on rational mesh 1e-40 by integer isqrt','leaves':leaves,'polynomial_lower_bounds':[str(x) for x in minima],'auxiliary':auxiliary()}
+    clean_bounds=[F(12,5),F(49,5),F(1,10),F(3,500)]
+    assert all(v>b for v,b in zip(minima,clean_bounds))
+    out={'status':'verified','arithmetic':'exact fractions; square roots bracketed on rational mesh 1e-40 by integer isqrt','leaves':leaves,'polynomial_lower_bounds':[str(x) for x in minima],'simple_strict_bounds':dict(zip(['W','B0','P','Q'],map(str,clean_bounds))),'auxiliary':auxiliary()}
     with open(sys.argv[2],'w') as f:json.dump(out,f,indent=2);f.write('\n')
     print(json.dumps({'status':out['status'],'leaves':leaves,'seconds':time.monotonic()-start,'minimum_positive':all(x>0 for x in minima)}))
 if __name__=='__main__':main()
