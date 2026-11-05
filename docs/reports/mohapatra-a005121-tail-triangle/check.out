@@ -1,0 +1,27 @@
+Source: OEIS A005121, revision 88, timestamp 2026-11-05T17:38:02-05:00
+Fidelity: all 19 published DATA terms reproduced by the Lengyel recurrence
+Fidelity: the 4 strict partition chains for n=3 reproduced; chains checked through n=6
+Independent Stirling inclusion-exclusion check: 1 <= k <= n <= 12
+Required OEIS/triangle comparison:
+n=1: OEIS=1 Lengyel=1 R(n,n)=1
+n=2: OEIS=1 Lengyel=1 R(n,n)=1
+n=3: OEIS=4 Lengyel=4 R(n,n)=4
+n=4: OEIS=32 Lengyel=32 R(n,n)=32
+n=5: OEIS=436 Lengyel=436 R(n,n)=436
+n=6: OEIS=9012 Lengyel=9012 R(n,n)=9012
+n=7: OEIS=262760 Lengyel=262760 R(n,n)=262760
+n=8: OEIS=10270696 Lengyel=10270696 R(n,n)=10270696
+n=9: OEIS=518277560 Lengyel=518277560 R(n,n)=518277560
+n=10: OEIS=32795928016 Lengyel=32795928016 R(n,n)=32795928016
+n=11: OEIS=2542945605432 Lengyel=2542945605432 R(n,n)=2542945605432
+n=12: OEIS=237106822506952 Lengyel=237106822506952 R(n,n)=237106822506952
+First five triangle rows:
+n=1: [1]
+n=2: [1, 1]
+n=3: [2, 2, 4]
+n=4: [8, 12, 12, 32]
+n=5: [64, 112, 132, 128, 436]
+Diagonal equality and row/Stirling identity: n=1,...,50
+Truncated tail equations, elimination, and Stirling columns: N=1,...,12
+All computations use exact integers; finite checks are not an all-index proof
+ALL_CHECKS_OK
