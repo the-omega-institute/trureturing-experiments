@@ -1,0 +1,24 @@
+Exact arithmetic: Q(i), symbolic real u,v; no floating point
+Python 3.14.8; SymPy 1.14.0
+M_1,1: fidelity outer=2, Jordan=2, conjugation=4
+M_1,1: dim_C inn=1, dim_R fixed=1, dim_R span(D)=1, joined_rank=1
+M_1,1: source u(1) dimension=1
+M_1,2: fidelity outer=16, Jordan=64, conjugation=16
+M_1,2: dim_C inn=4, dim_R fixed=4, dim_R span(D)=4, joined_rank=4
+M_2,1: fidelity outer=16, Jordan=64, conjugation=16
+M_2,1: dim_C inn=4, dim_R fixed=4, dim_R span(D)=4, joined_rank=4
+M_2,1: source u(2) dimension=4
+M_2,2: fidelity outer=128, Jordan=2048, conjugation=64
+M_2,2: dim_C inn=7, dim_R fixed=7, dim_R span(D)=7, joined_rank=7
+M_2,2_indefinite: fidelity outer=128, Jordan=2048, conjugation=64
+M_2,2_indefinite: dim_C inn=7, dim_R fixed=7, dim_R span(D)=7, joined_rank=7
+M_2,2_indefinite: source trace form <E12|E12>=-2 < 0
+dual_numbers_nonsemisimple: fidelity outer=16, Jordan=64, conjugation=16
+dual_numbers_nonsemisimple: dim_C inn=2, dim_R fixed=2, dim_R span(D)=2, joined_rank=2
+zero_product_dim_0: fidelity outer=0, Jordan=0, conjugation=0
+zero_product_dim_0: dim_C inn=0, dim_R fixed=0, dim_R span(D)=0, joined_rank=0
+zero_product_dim_1: fidelity outer=2, Jordan=2, conjugation=4
+zero_product_dim_1: dim_C inn=0, dim_R fixed=0, dim_R span(D)=0, joined_rank=0
+zero_product_dim_2: fidelity outer=16, Jordan=64, conjugation=16
+zero_product_dim_2: dim_C inn=0, dim_R fixed=0, dim_R span(D)=0, joined_rank=0
+ALL_CHECKS_OK
