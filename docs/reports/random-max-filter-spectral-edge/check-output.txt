@@ -1,0 +1,6 @@
+FIDELITY: uniform covariance inverse, dimensions 1 through 24: exact
+SPACINGS: diagonal 2/((n+1)(n+2)), off-diagonal 1/((n+1)(n+2)), n=1..32: exact
+PACKETS: 1078 all admissible positions and even lengths for n=3..24: exact
+CONSTANTS: iterated packet bound g^2/4; normal pi/2; half-normal pi/8; distortion factors: exact
+SCOPE: these algebra checks support the outline; Gaussian local L2 convergence and the spectral limit are not certified here
+ALL_CHECKS_OK
