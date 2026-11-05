@@ -1,0 +1,10 @@
+Exact arithmetic: Fraction coefficients; SymPy QQ polynomials and Sturm isolation
+SymPy version: 1.14.0
+Random seed: 20261105
+Fidelity: source differential-operator identity, degrees 1..4: 34 cases
+Permutation identity and atom lower bounds, all multisets on {-1,0,1} x {0,1,2}, degrees 1..4: 370 pairs
+One-root replacement: random exact rational inputs, degrees 1..12: 144 comparisons
+One-root replacement: zero/repeated/mixed-sign boundary inputs, degrees 1..12: 72 comparisons
+Maximum unnormalized CDF discrepancy: 1 (bound 1, hence d_K <= 1/n)
+Zero-atom pitfall: (x^2-1) boxtimes_2 x(x-1) = x^2; only the lower bound is used
+ALL_CHECKS_OK
