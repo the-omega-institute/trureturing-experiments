@@ -16,4 +16,6 @@ The exhaustive check computes actual three-point sumsets for every translation c
 
 For `h = 2,...,6`, the minima are `N(h,3) = h+1` and `N_2(h,3) = N_3(h,3) = h`. Each tested inequality fails by the exact integer comparison `h^n > h+1`. The extra `h=1` control gives minima 2 in one dimension and 1 in dimensions two and three; it is outside Problem 3's inherited `h ≥ 2` domain.
 
-These are exhaustive finite checks. They do not establish the infinite family for all `h ≥ 2` and `n ≥ 2`; that is the proposed subsequent proof, using affine rank and the published three-point counting result. No Lean proof is included.
+These are exhaustive finite checks. They do not establish the infinite family for all `h ≥ 2` and `n ≥ 2`. No Lean proof is included.
+
+The candidate is withdrawn from preregistration because the universal inequality is already refuted in Henry Shin, *Iterated-sumset spectra: The complete exponent law and its rank geometry*, [arXiv:2609.01690v1](https://arxiv.org/html/2609.01690v1), Corollary 10.8, equation (199). That corollary explicitly identifies Nathanson’s Problem 3 and proves its failure for `k=4` and every `h,n ≥ 2`, with the same inclusive endpoint convention. The data here concerns `k=3` and is retained as an independent finite check, not a new settlement of the already-refuted universal assertion.
