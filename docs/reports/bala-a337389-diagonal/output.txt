@@ -1,0 +1,15 @@
+Source: OEIS A337389 revision #40; Bala final FORMULA conjecture.
+Arithmetic: fractions.Fraction and integers only; no floating point.
+Fidelity: all 36 displayed entries and all 55 published prefix entries match.
+Reproduced rows, n=0..5 and k=0..5:
+1 1 1 1 1 1
+2 3 4 5 6 7
+6 19 34 51 70 91
+20 141 328 587 924 1345
+70 1107 3334 7123 12870 20995
+252 8953 34904 89055 184756 337877
+Parameters: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 101, 1000000, -1, -4, 1/2
+Identity: 1116 pairs, n=0..30, three independently specified expressions agree.
+Additional source fidelity: 1044 recurrence instances match exactly.
+Finite evidence only: no unbounded proof or Lean settlement is claimed.
+ALL_CHECKS_OK

@@ -1,0 +1,28 @@
+FIDELITY: Example 4.1 formula (star), 57 guarded triples in [0,3]^3; xy=xz gives 3/4
+S: arity 1, generated term functions 3, spectrum values 1/3,2/3,1
+S: arity 2, generated term functions 6, spectrum values 1/3,5/9,2/3,7/9,8/9,1
+S: arity 3, generated term functions 10, spectrum values 1/3,5/9,17/27,2/3,7/9,23/27,8/9,1
+S: arity 4, generated term functions 15, spectrum values 1/3,5/9,17/27,2/3,7/9,65/81,23/27,8/9,1
+S: arity 5, generated term functions 21, spectrum values 1/3,5/9,17/27,2/3,7/9,65/81,23/27,8/9,1
+S: arity 6, generated term functions 28, spectrum values 1/3,5/9,17/27,2/3,7/9,65/81,23/27,8/9,1
+S: all eleven comparison types checked; term-condition failure t(x,y)=xy at a=0,b=a,u=0,v=a
+C: modulus 3^1, 3 unary coefficient residues, exact uniform fibers
+C: modulus 3^2, 9 unary coefficient residues, exact uniform fibers
+C: modulus 3^3, 27 unary coefficient residues, exact uniform fibers
+C: modulus 3^4, 81 unary coefficient residues, exact uniform fibers
+C: modulus 3^5, 243 unary coefficient residues, exact uniform fibers
+C: modulus 3^6, 9 unary coefficient residues, exact uniform fibers
+C: modulus 3^7, 10 unary coefficient residues, exact uniform fibers
+C: modulus 3^8, 11 unary coefficient residues, exact uniform fibers
+C: 819 complete binary coefficient vectors over moduli 3,9,27
+C=Z/6561Z: all nine native equations (3^(8-j)+1)x=x attain 1,1/3,1/9,1/27,1/81,1/243,1/729,1/2187,1/6561
+C: 532170 one-parameter linear term-condition instances over Z/3Z and Z/9Z
+POWER LAW: 190 native normal-form equations, direct products of 2 or 3 S coordinates
+FAMILY: d=1, common cardinality 6561, nine spectral knots and nine positive slopes; inverse and nonabelian witness checked
+FAMILY: d=2, common cardinality 43046721, nine spectral knots and nine positive slopes; inverse and nonabelian witness checked
+FAMILY: d=3, common cardinality 282429536481, nine spectral knots and nine positive slopes; inverse and nonabelian witness checked
+FAMILY: d=4, common cardinality 1853020188851841, nine spectral knots and nine positive slopes; inverse and nonabelian witness checked
+FAMILY: d=5, common cardinality 12157665459056928801, nine spectral knots and nine positive slopes; inverse and nonabelian witness checked
+FAMILY: d=6, common cardinality 79766443076872509863361, nine spectral knots and nine positive slopes; inverse and nonabelian witness checked
+SCOPE: finite checks above; the arbitrary-arity normal-form induction, general linear cancellation, power law and all-d homeomorphism argument remain proposed proofs
+ALL_CHECKS_OK

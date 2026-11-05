@@ -1,0 +1,9 @@
+FIDELITY: source VI.1 and Table III / Appendix d=3 reproduced exactly
+DOMAIN: d=2,3; every admissible partition; n_j in {0,1/8,...,1}
+OCCUPATIONS: 210 inputs; endpoint inputs=98; repeated inputs=90
+CONTINUOUS_POLYTOPES: 375; ordering-chamber vertices=2587
+MAJORIZATION: 7644 exact partial-sum comparisons including equal totals
+HOMOTOPY: 5174 exact supporting-gradient checks for both strictly concave endpoints
+COVERAGE: chamberwise affine partial sums certify every feasible b for these inputs
+LIMIT: finite occupation grid and dimensions 2,3; no general-dimensional proof or entropy numerics
+ALL_CHECKS_OK

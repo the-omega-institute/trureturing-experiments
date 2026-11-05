@@ -1,0 +1,8 @@
+FIDELITY Legendre recurrence: degrees 2..20, every coefficient exact
+FIDELITY source 33-pair graph: vertices=33 edges=61; all adjacency entries exact
+SMALL EXACT PROGRAMS: 52 orthonormal frames, n=3..10, N=1..n; Delta=1/N
+MOMENTS: all 75 simple graphs on 1..4 vertices; 5421 exact variance/compression forms
+NEARBY-POINT COMPRESSION: 72 exact block tests; diagonal defect=(p-q)/r
+NORMALIZATION: S^2 Gegenbauer means exact through degree 16
+BOUNDARY CHECK: diagonal loss is explicitly permitted; no convergence at t=1 assumed
+ALL_CHECKS_OK

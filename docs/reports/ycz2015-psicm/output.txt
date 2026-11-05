@@ -1,0 +1,10 @@
+DOMAIN: 0 < a_low = 774853/1470000 <= a <= 155/294 ; x = 1/64
+FIDELITY: source Remark 4 identity verified symbolically; sign for every integer n >= 1; n=1..32 cross-check
+R(r) > 394328567/231912450 > 5/3
+R'(r) > -64
+-psi''(u) < 511623041024/32798729601 < 16 < 18; R''(r) > 4078
+DERIVATIVE: G_a'' product rule and substitution identities verified symbolically
+INTERVAL: P(r) in [ 857398127/7707033600000 , 317587/2466250752 ]; all three multiplier coefficients positive
+UNIFORM: G_a''(1/64) > 249085992523/481689600000 > 1/2 for every a in [155/294-1/10000,155/294]
+SETTLEMENT CHECK: (-G_a)''(1/64) < -1/2; violates the n=2 CM condition in the conjectured sufficient direction
+ALL_CHECKS_OK

@@ -1,0 +1,16 @@
+Arithmetic: Python integers/Fraction and SymPy exact expressions; no floating point
+FIDELITY: function-algebra idempotents = 2^n; F_3,F_5; n=1..5; 10 cases
+FAMILY: m=4..9,n=3..8 over Q,F_3,F_5,F_7; 144 cases; all 16 ordered S-products each
+FAMILY: dim A^2=dim B^2=1; Ann(A)=Ann(B)=0; dim S=4; dim S^2=2
+HEREDITY: A_4 over F_3; 212 subspaces, 50 closed; all have verified natural bases
+HEREDITY: B_3 over F_3; 28 subspaces, 10 closed; all have verified natural bases
+HEREDITY: A_4 over F_5; 1120 subspaces, 110 closed; all have verified natural bases
+HEREDITY: B_3 over F_5; 64 subspaces, 14 closed; all have verified natural bases
+SYMBOLIC: lifts multiply to (ac-bd)z+(a+b)(c+d)t; all annihilator coordinates cancel
+SYMBOLIC: Q1^(-1)Q2=[[1,1],[-1,-1]] is nonzero and square-zero
+OBSTRUCTION: F_3; 81 ordered quotient pairs; 21 zero-product pairs; 0 independent
+OBSTRUCTION: F_5; 625 ordered quotient pairs; 65 zero-product pairs; 0 independent
+OBSTRUCTION: F_7; 2401 ordered quotient pairs; 133 zero-product pairs; 0 independent
+OBSTRUCTION: F_11; 14641 ordered quotient pairs; 341 zero-product pairs; 0 independent
+OBSTRUCTION: F_13; 28561 ordered quotient pairs; 481 zero-product pairs; 0 independent
+ALL_CHECKS_OK

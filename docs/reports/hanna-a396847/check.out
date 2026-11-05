@@ -1,0 +1,10 @@
+FIDELITY: all 36 published coefficients and the full F_2 expansion agree
+STABILIZATION: degrees 0..40 checked through exponent 61
+BRIDGE: full F_1, F_2, F_3 evaluation equals scalar recursion at four rationals
+SMALL CASES: lower trapping invariant holds for 63 increasing exponent lists
+UPPER ORBIT: F_15(356/1000) <= 861701822816469940744335134135/1000000000000000000000000000000 < 862/1000
+TAIL: (87/100)^53 / (1 - 87/100) < 1/200; 862/1000 + 1/200 < 87/100
+LOWER ORBIT: F_11(357/1000) >= 1653493773472349502191991892877/1000000000000000000000000000000 > 1
+RADIUS BRACKET: 356/1000 < R < 357/1000, conditional on the stated series/orbit bridge
+No assertion certifies the longer decimal printed in OEIS or proves the infinite claim.
+ALL_CHECKS_OK

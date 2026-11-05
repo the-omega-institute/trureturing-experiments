@@ -1,0 +1,20 @@
+FIDELITY: integral_0^infinity exp(-2u) du = 1/2; source bound and ODE verified
+COMPRESSED_WORD: independently expanded stages 1..5 agree at counts and sampled positions
+FREQUENCY n=1 T=5 raw=4/5 smoothed=507/640 target=1
+FREQUENCY n=2 T=69 raw=8/69 smoothed=8/69 target=0
+FREQUENCY n=3 T=939 raw=866/939 smoothed=110843/120192 target=1
+FREQUENCY n=4 T=17067 raw=898/17067 smoothed=898/17067 target=0
+FREQUENCY n=5 T=447927 raw=431678/447927 smoothed=55254779/57334656 target=1
+FREQUENCY n=6 T=16587543 raw=431870/16587543 smoothed=431870/16587543 target=0
+FREQUENCY n=7 T=829421999 raw=813265878/829421999 smoothed=104098032379/106166015872 target=1
+FREQUENCY n=8 T=53912563119 raw=813266902/53912563119 smoothed=813266902/53912563119 target=0
+ENDPOINT_BOUNDS: exact stages 1..40, both parities, three affine families
+RETURN n=1 q=17164 compact=[-1,1] separation_center=33140785/2 delta=1/8 gap=1
+RETURN n=2 q=16588267 compact=[-2,2] separation_center=107791949739/2 delta=1/8 gap=1
+RETURN n=3 q=53912567290 compact=[-3,3] separation_center=892899948780533/2 delta=1/8 gap=1
+RETURN n=4 q=446503886978990 compact=[-4,4] separation_center=15796414513594960469/2 delta=1/8 gap=1
+RETURN n=5 q=7898653760684509905 compact=[-5,5] separation_center=529036031583130931672471/2 delta=1/8 gap=1
+SMOOTHING: exact polynomial test kernel; recurrence and full interval support certificates
+EVENNESS: exact samples; symmetric endpoint means equal one-sided endpoint means
+LIMITATION: finite checks do not certify the infinite limits or C-infinity regularity
+ALL_CHECKS_OK

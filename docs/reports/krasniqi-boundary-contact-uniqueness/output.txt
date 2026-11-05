@@ -1,0 +1,8 @@
+FIDELITY: source q1,...,q4 identities and q0,...,q9 generating recurrence: OK
+FIDELITY: source binomial d0=q1, d1=q1-q2 and d0,...,d8 reconstruction: OK
+LOG_RELAXATION: |delta-delta0|<1/10^12 and derivative bound 51793/135<500: OK
+PARTITION: 238 closed leaves; maximum depth 17; 134 positive, 87 M, 1 U, 16 k: OK
+UNIFORM_FINITE_INTERVAL: minimum Bernstein coefficient = 6583/11943936
+TAIL: minimum Bernstein coefficient of dP6/dt at t=16 = 45599851/571536000
+SCOPE: exact polynomial premises verified; source integral and analytic bridges require Lean proof
+ALL_CHECKS_OK

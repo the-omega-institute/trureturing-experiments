@@ -1,0 +1,20 @@
+n=2 edges=((0, 1),) delta_positive=1 rescale_square=1 charpoly=X**2 - 2; sharp exact scaling
+n=3 edges=((0, 1),) delta_positive=1 rescale_square=1 charpoly=X*(X**2 - 2); sharp exact scaling
+n=3 edges=((0, 1), (0, 2)) delta_positive=1 rescale_square=1 charpoly=X*(X**2 - 6); strict exact rational isolation
+n=3 edges=((0, 1), (0, 2), (1, 2)) delta_positive=2 rescale_square=1 charpoly=(X - 4)*(X + 2)**2; sharp exact scaling
+n=4 edges=((0, 1),) delta_positive=1 rescale_square=1 charpoly=X**2*(X**2 - 2); sharp exact scaling
+n=4 edges=((0, 1), (0, 2)) delta_positive=1 rescale_square=1 charpoly=X**2*(X**2 - 6); strict exact rational isolation
+n=4 edges=((0, 1), (0, 2), (0, 3)) delta_positive=1 rescale_square=1 charpoly=X**2*(X**2 - 12); strict exact rational isolation
+n=4 edges=((0, 1), (0, 2), (1, 2)) delta_positive=2 rescale_square=1 charpoly=X*(X - 4)*(X + 2)**2; sharp exact scaling
+n=4 edges=((0, 1), (2, 3)) delta_positive=1 rescale_square=1 charpoly=(X**2 - 2)**2; sharp exact scaling
+n=4 edges=((0, 1), (0, 2), (1, 3)) delta_positive=1 rescale_square=1 charpoly=(X - 3)*(X - 1)*(X + 1)*(X + 3); strict exact rational isolation
+n=4 edges=((0, 1), (0, 2), (0, 3), (1, 2)) delta_positive=1 rescale_square=1 charpoly=(X + 2)*(X**3 - 2*X**2 - 14*X + 8); strict exact rational isolation
+n=4 edges=((0, 1), (0, 2), (1, 3), (2, 3)) delta_positive=2 rescale_square=1 charpoly=X**2*(X - 4)*(X + 4); sharp exact scaling
+n=4 edges=((0, 1), (0, 2), (0, 3), (1, 2), (1, 3)) delta_positive=2 rescale_square=6 charpoly=X*(X + 1)*(3*X**2 - 3*X - 10)/3; strict exact rational isolation
+n=4 edges=((0, 1), (0, 2), (0, 3), (1, 2), (1, 3), (2, 3)) delta_positive=3 rescale_square=6 charpoly=(X - 3)*(X + 1)**3; sharp exact scaling
+coverage: labeled_graphs=76; isomorphism_classes=19; classes_with_edges=14
+source fidelity: Lemma 1 on 19 classes; Theorem 4 on 4 tree classes; regular positive-degree scaling on 8 classes
+expected settlement: strict comparison and sqrt(2 delta_+) lower bound certified for every graph on at most four vertices
+boundary: all edgeless graphs in this range have both energies zero
+scope: finite checks only; the universal claim needs a general proof
+ALL_CHECKS_OK

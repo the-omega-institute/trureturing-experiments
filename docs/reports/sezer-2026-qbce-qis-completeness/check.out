@@ -1,0 +1,11 @@
+FIDELITY Section 10.2: dep(g,dep(h,z)) = dep(g*h,z), exactly
+FIDELITY Theorem 6.2: POVM obedience-gap identity, exactly
+WITNESS: all six density matrices PSD, trace 1, rank one; noncommuting pairs
+TRACE_NORMS: ||P-A||_1 = 6/5; ||P-B||_1 = 8/5; 6/5 < 8/5
+FAMILY identities: ||w||^2=1; dual tests=c0*s^2,c1*s^2; (P-C)^2=s^2 I
+PURE BLOCK identities: complement diagonal=-d; det at d=0=-x^2-y^2; R=r*C
+COEFFICIENTWISE: 245 signed rational cases, all exact
+PRODUCTS: n=2,3,4, every player marginal and scaled block checked exactly
+OUTCOMES: Tr(p*rho)=p; arbitrary real obedience coefficients use the same two-ray cone
+SCOPE: symbolic identities support the prose family argument; finite cases are not a universal Lean proof
+ALL_CHECKS_OK

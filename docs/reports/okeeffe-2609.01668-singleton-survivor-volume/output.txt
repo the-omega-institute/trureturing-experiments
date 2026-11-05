@@ -1,0 +1,16 @@
+FIDELITY N=2: 1-P_sync=(1-gamma)/(2*(2-gamma)), symbolic residual=0
+EXACT N=2: 4 negative gamma values; gamma=0; original-facet vertices independently enumerated=True; OK
+EXACT N=3: 4 negative gamma values; gamma=0; original-facet vertices independently enumerated=True; OK
+EXACT N=4: 4 negative gamma values; gamma=0; original-facet vertices independently enumerated=True; OK
+EXACT N=5: 4 negative gamma values; gamma=0; original-facet vertices independently enumerated=True; OK
+EXACT N=6: 4 negative gamma values; gamma=0; original-facet vertices independently enumerated=False; OK
+EXACT N=7: 4 negative gamma values; gamma=0; original-facet vertices independently enumerated=False; OK
+EXACT N=8: 4 negative gamma values; gamma=0; original-facet vertices independently enumerated=False; OK
+EXACT N=9: 4 negative gamma values; gamma=0; original-facet vertices independently enumerated=False; OK
+EXACT N=10: 4 negative gamma values; gamma=0; original-facet vertices independently enumerated=False; OK
+EXACT direct-voltage/event-coordinate comparisons=1080; no disagreements
+EXACT unit-triangular Jacobian checks N=2..10: determinant=1
+MONTE_CARLO N=6 gamma=-1/2 seed=260901674 trials=10000000 grid_denominator=1073741824 survivors=570 observed=57/1000000 formula=27/495040 standardized_error_squared=205801472/185629875 (<36)
+MONTE_CARLO N=7 gamma=-1/2 seed=260901675 trials=10000000 grid_denominator=1073741824 survivors=19 observed=19/10000000 formula=27/7235200 standardized_error_squared=219556487168/24418708875 (<36)
+MONTE_CARLO N=7 gamma=-1/2 seed=260901675 trials=100000000 grid_denominator=1073741824 survivors=347 observed=347/100000000 formula=27/7235200 standardized_error_squared=224168159296/122093544375 (<36)
+ALL_CHECKS_OK

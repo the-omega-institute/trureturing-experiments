@@ -1,0 +1,6 @@
+Fidelity: all 30 displayed r values and 40 displayed z values agree with the formal EGF
+Source label z(n), n=0..40 contains 40 displayed entries (indices 0..39); EGF also gives z(40)=0
+Settlement checks: all 1001 indices 0..1000; numerator, denominator, coefficient bridge, cancellation, and LODA gcd formula; zero discrepancies
+Published b-file: all 404 rows 0..403 agree; sha256=513e2f71231546b181fd885e9619ac665c6e02c2053e66c9bb477b546bf19a36
+First five rationals: 1, 3/4, 5/4, 105/32, 189/16
+ALL_CHECKS_OK

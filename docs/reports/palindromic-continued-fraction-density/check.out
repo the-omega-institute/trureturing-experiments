@@ -1,0 +1,13 @@
+FIDELITY: [1,1,1]=[1,2]=3/2; 36 two-digit examples and squares; 192 Fibonacci-derived source prefixes (n=2..9)
+ARITHMETIC: 3279 positive words of length 1..7; rational CF, transpose, determinant, and m=1..5 criterion agree
+WEIGHTED TRANSPOSE: 324 matrix-pair cases, m=2..5
+CONCRETE: m=2 r=2 s=3; alphabet=2,3,4,6; scanned_digits=5188 qualifying_prefixes=15
+  k=0 W_length=1 t=2 actual_next=4 ratio=1/2 lower=1/2
+  k=1 W_length=5 t=20 actual_next=30 ratio=2/3 lower=2/3
+  k=2 W_length=32 t=192 actual_next=256 ratio=3/4 lower=3/4
+  k=3 W_length=259 t=2072 actual_next=2590 ratio=4/5 lower=4/5
+COUNTERFAMILY: 24 parameter triples; 124512 prefix positions; 96 designated pairs checked against the COMPLETE finite prefix lists
+APERIODICITY FINITE SCREEN: all tail starts 0..32 and periods 1..32 rejected for each parameter triple; not an infinite aperiodicity certificate
+LENGTH/RATIO: exact recurrence and (k+1)/(k+2), k=0..99
+SCOPE: finite evidence only; the infinite construction, aperiodicity and limsup=1 require the mathematical argument in the preregistration
+ALL_CHECKS_OK

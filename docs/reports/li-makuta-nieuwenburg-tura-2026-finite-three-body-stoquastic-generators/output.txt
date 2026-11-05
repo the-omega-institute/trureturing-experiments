@@ -1,0 +1,54 @@
+Python exact arithmetic; SymPy 1.14.0
+RANDOM_ANGLE_PAIR half_angle_tangents=(1/2,2) sin_cos=((4/5, 3/5), (4/5, -3/5))
+RANDOM_ANGLE_PAIR half_angle_tangents=(10/13,9/7) sin_cos=((260/269, 69/269), (63/65, -16/65))
+SYMBOLIC inverse_coordinates=True collinear_difference=True quadratic_cones_m=2..12 complete_ray_sets=True
+GENERIC n=3 angles_sin_cos=((4/5, 3/5), (4/5, -3/5)) rank=6 lineality=3 rays=6 expected=6 exact_ray_set_match=True
+GENERIC n=3 angles_sin_cos=((260/269, 69/269), (63/65, -16/65)) rank=6 lineality=3 rays=6 expected=6 exact_ray_set_match=True
+GENERIC n=4 angles_sin_cos=((4/5, 3/5), (4/5, -3/5)) rank=6 lineality=3 rays=7 expected=7 exact_ray_set_match=True
+GENERIC n=4 angles_sin_cos=((260/269, 69/269), (63/65, -16/65)) rank=6 lineality=3 rays=7 expected=7 exact_ray_set_match=True
+GENERIC n=5 angles_sin_cos=((4/5, 3/5), (4/5, -3/5)) rank=6 lineality=3 rays=8 expected=8 exact_ray_set_match=True
+GENERIC n=5 angles_sin_cos=((260/269, 69/269), (63/65, -16/65)) rank=6 lineality=3 rays=8 expected=8 exact_ray_set_match=True
+GENERIC n=6 angles_sin_cos=((4/5, 3/5), (4/5, -3/5)) rank=6 lineality=3 rays=9 expected=9 exact_ray_set_match=True
+GENERIC n=6 angles_sin_cos=((260/269, 69/269), (63/65, -16/65)) rank=6 lineality=3 rays=9 expected=9 exact_ray_set_match=True
+FIDELITY source_Section_VI_two_body_hyperplanes=True n=3..6 both_angle_pairs rays=3 lineality=2
+COLLINEAR n=3 sin_cos=(3/5, 4/5) epsilon=1 rank=3 lineality=6 rays=3 exact_ray_set_match=True
+COLLINEAR n=3 sin_cos=(3/5, 4/5) epsilon=-1 rank=3 lineality=6 rays=3 exact_ray_set_match=True
+COLLINEAR n=3 sin_cos=(4/5, -3/5) epsilon=1 rank=3 lineality=6 rays=3 exact_ray_set_match=True
+COLLINEAR n=3 sin_cos=(4/5, -3/5) epsilon=-1 rank=3 lineality=6 rays=3 exact_ray_set_match=True
+COLLINEAR n=3 sin_cos=(-56/65, 33/65) epsilon=1 rank=3 lineality=6 rays=3 exact_ray_set_match=True
+COLLINEAR n=3 sin_cos=(-56/65, 33/65) epsilon=-1 rank=3 lineality=6 rays=3 exact_ray_set_match=True
+COLLINEAR n=3 sin_cos=(1, 0) epsilon=1 rank=3 lineality=6 rays=3 exact_ray_set_match=True
+COLLINEAR n=3 sin_cos=(1, 0) epsilon=-1 rank=3 lineality=6 rays=3 exact_ray_set_match=True
+DIAGONAL n=3 epsilon=1 cone=R^9 lineality=9
+DIAGONAL n=3 epsilon=-1 cone=R^9 lineality=9
+COLLINEAR n=4 sin_cos=(3/5, 4/5) epsilon=1 rank=3 lineality=6 rays=3 exact_ray_set_match=True
+COLLINEAR n=4 sin_cos=(3/5, 4/5) epsilon=-1 rank=3 lineality=6 rays=3 exact_ray_set_match=True
+COLLINEAR n=4 sin_cos=(4/5, -3/5) epsilon=1 rank=3 lineality=6 rays=3 exact_ray_set_match=True
+COLLINEAR n=4 sin_cos=(4/5, -3/5) epsilon=-1 rank=3 lineality=6 rays=3 exact_ray_set_match=True
+COLLINEAR n=4 sin_cos=(-56/65, 33/65) epsilon=1 rank=3 lineality=6 rays=3 exact_ray_set_match=True
+COLLINEAR n=4 sin_cos=(-56/65, 33/65) epsilon=-1 rank=3 lineality=6 rays=3 exact_ray_set_match=True
+COLLINEAR n=4 sin_cos=(1, 0) epsilon=1 rank=3 lineality=6 rays=3 exact_ray_set_match=True
+COLLINEAR n=4 sin_cos=(1, 0) epsilon=-1 rank=3 lineality=6 rays=3 exact_ray_set_match=True
+DIAGONAL n=4 epsilon=1 cone=R^9 lineality=9
+DIAGONAL n=4 epsilon=-1 cone=R^9 lineality=9
+COLLINEAR n=5 sin_cos=(3/5, 4/5) epsilon=1 rank=3 lineality=6 rays=3 exact_ray_set_match=True
+COLLINEAR n=5 sin_cos=(3/5, 4/5) epsilon=-1 rank=3 lineality=6 rays=3 exact_ray_set_match=True
+COLLINEAR n=5 sin_cos=(4/5, -3/5) epsilon=1 rank=3 lineality=6 rays=3 exact_ray_set_match=True
+COLLINEAR n=5 sin_cos=(4/5, -3/5) epsilon=-1 rank=3 lineality=6 rays=3 exact_ray_set_match=True
+COLLINEAR n=5 sin_cos=(-56/65, 33/65) epsilon=1 rank=3 lineality=6 rays=3 exact_ray_set_match=True
+COLLINEAR n=5 sin_cos=(-56/65, 33/65) epsilon=-1 rank=3 lineality=6 rays=3 exact_ray_set_match=True
+COLLINEAR n=5 sin_cos=(1, 0) epsilon=1 rank=3 lineality=6 rays=3 exact_ray_set_match=True
+COLLINEAR n=5 sin_cos=(1, 0) epsilon=-1 rank=3 lineality=6 rays=3 exact_ray_set_match=True
+DIAGONAL n=5 epsilon=1 cone=R^9 lineality=9
+DIAGONAL n=5 epsilon=-1 cone=R^9 lineality=9
+COLLINEAR n=6 sin_cos=(3/5, 4/5) epsilon=1 rank=3 lineality=6 rays=3 exact_ray_set_match=True
+COLLINEAR n=6 sin_cos=(3/5, 4/5) epsilon=-1 rank=3 lineality=6 rays=3 exact_ray_set_match=True
+COLLINEAR n=6 sin_cos=(4/5, -3/5) epsilon=1 rank=3 lineality=6 rays=3 exact_ray_set_match=True
+COLLINEAR n=6 sin_cos=(4/5, -3/5) epsilon=-1 rank=3 lineality=6 rays=3 exact_ray_set_match=True
+COLLINEAR n=6 sin_cos=(-56/65, 33/65) epsilon=1 rank=3 lineality=6 rays=3 exact_ray_set_match=True
+COLLINEAR n=6 sin_cos=(-56/65, 33/65) epsilon=-1 rank=3 lineality=6 rays=3 exact_ray_set_match=True
+COLLINEAR n=6 sin_cos=(1, 0) epsilon=1 rank=3 lineality=6 rays=3 exact_ray_set_match=True
+COLLINEAR n=6 sin_cos=(1, 0) epsilon=-1 rank=3 lineality=6 rays=3 exact_ray_set_match=True
+DIAGONAL n=6 epsilon=1 cone=R^9 lineality=9
+DIAGONAL n=6 epsilon=-1 cone=R^9 lineality=9
+ALL_CHECKS_OK

@@ -1,0 +1,988 @@
+{
+  "all_stages_n_14_through_18": [
+    {
+      "chain_length": 1,
+      "stages": [
+        {
+          "automorphisms": 1,
+          "connected": true,
+          "deleted": 13,
+          "mate": 12,
+          "order": 14,
+          "pseudosimilar": true
+        },
+        {
+          "automorphisms": 1,
+          "connected": true,
+          "order": 13
+        }
+      ],
+      "starting_order": 14
+    },
+    {
+      "chain_length": 2,
+      "stages": [
+        {
+          "automorphisms": 1,
+          "connected": true,
+          "deleted": 14,
+          "mate": 12,
+          "order": 15,
+          "pseudosimilar": true
+        },
+        {
+          "automorphisms": 1,
+          "connected": true,
+          "deleted": 13,
+          "mate": 12,
+          "order": 14,
+          "pseudosimilar": true
+        },
+        {
+          "automorphisms": 1,
+          "connected": true,
+          "order": 13
+        }
+      ],
+      "starting_order": 15
+    },
+    {
+      "chain_length": 3,
+      "stages": [
+        {
+          "automorphisms": 1,
+          "connected": true,
+          "deleted": 15,
+          "mate": 12,
+          "order": 16,
+          "pseudosimilar": true
+        },
+        {
+          "automorphisms": 1,
+          "connected": true,
+          "deleted": 14,
+          "mate": 12,
+          "order": 15,
+          "pseudosimilar": true
+        },
+        {
+          "automorphisms": 1,
+          "connected": true,
+          "deleted": 13,
+          "mate": 12,
+          "order": 14,
+          "pseudosimilar": true
+        },
+        {
+          "automorphisms": 1,
+          "connected": true,
+          "order": 13
+        }
+      ],
+      "starting_order": 16
+    },
+    {
+      "chain_length": 4,
+      "stages": [
+        {
+          "automorphisms": 1,
+          "connected": true,
+          "deleted": 16,
+          "mate": 12,
+          "order": 17,
+          "pseudosimilar": true
+        },
+        {
+          "automorphisms": 1,
+          "connected": true,
+          "deleted": 15,
+          "mate": 12,
+          "order": 16,
+          "pseudosimilar": true
+        },
+        {
+          "automorphisms": 1,
+          "connected": true,
+          "deleted": 14,
+          "mate": 12,
+          "order": 15,
+          "pseudosimilar": true
+        },
+        {
+          "automorphisms": 1,
+          "connected": true,
+          "deleted": 13,
+          "mate": 12,
+          "order": 14,
+          "pseudosimilar": true
+        },
+        {
+          "automorphisms": 1,
+          "connected": true,
+          "order": 13
+        }
+      ],
+      "starting_order": 17
+    },
+    {
+      "chain_length": 5,
+      "stages": [
+        {
+          "automorphisms": 1,
+          "connected": true,
+          "deleted": 17,
+          "mate": 12,
+          "order": 18,
+          "pseudosimilar": true
+        },
+        {
+          "automorphisms": 1,
+          "connected": true,
+          "deleted": 16,
+          "mate": 12,
+          "order": 17,
+          "pseudosimilar": true
+        },
+        {
+          "automorphisms": 1,
+          "connected": true,
+          "deleted": 15,
+          "mate": 12,
+          "order": 16,
+          "pseudosimilar": true
+        },
+        {
+          "automorphisms": 1,
+          "connected": true,
+          "deleted": 14,
+          "mate": 12,
+          "order": 15,
+          "pseudosimilar": true
+        },
+        {
+          "automorphisms": 1,
+          "connected": true,
+          "deleted": 13,
+          "mate": 12,
+          "order": 14,
+          "pseudosimilar": true
+        },
+        {
+          "automorphisms": 1,
+          "connected": true,
+          "order": 13
+        }
+      ],
+      "starting_order": 18
+    }
+  ],
+  "core": {
+    "A_permutations_tested": 720,
+    "K_connected": true,
+    "automorphism_maps": [
+      [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      [
+        1,
+        2,
+        3,
+        4,
+        5,
+        0,
+        7,
+        8,
+        9,
+        10,
+        11,
+        6
+      ],
+      [
+        2,
+        3,
+        4,
+        5,
+        0,
+        1,
+        8,
+        9,
+        10,
+        11,
+        6,
+        7
+      ],
+      [
+        3,
+        4,
+        5,
+        0,
+        1,
+        2,
+        9,
+        10,
+        11,
+        6,
+        7,
+        8
+      ],
+      [
+        4,
+        5,
+        0,
+        1,
+        2,
+        3,
+        10,
+        11,
+        6,
+        7,
+        8,
+        9
+      ],
+      [
+        5,
+        0,
+        1,
+        2,
+        3,
+        4,
+        11,
+        6,
+        7,
+        8,
+        9,
+        10
+      ]
+    ],
+    "automorphisms": 6
+  },
+  "family_m_1_through_100": [
+    {
+      "automorphisms": 1,
+      "connected": true,
+      "endpoint_cards_isomorphic": false,
+      "m": 1,
+      "order": 13
+    },
+    {
+      "automorphisms": 1,
+      "connected": true,
+      "endpoint_cards_isomorphic": true,
+      "m": 2,
+      "order": 14
+    },
+    {
+      "automorphisms": 1,
+      "connected": true,
+      "endpoint_cards_isomorphic": true,
+      "m": 3,
+      "order": 15
+    },
+    {
+      "automorphisms": 1,
+      "connected": true,
+      "endpoint_cards_isomorphic": true,
+      "m": 4,
+      "order": 16
+    },
+    {
+      "automorphisms": 1,
+      "connected": true,
+      "endpoint_cards_isomorphic": true,
+      "m": 5,
+      "order": 17
+    },
+    {
+      "automorphisms": 1,
+      "connected": true,
+      "endpoint_cards_isomorphic": true,
+      "m": 6,
+      "order": 18
+    },
+    {
+      "automorphisms": 1,
+      "connected": true,
+      "endpoint_cards_isomorphic": true,
+      "m": 7,
+      "order": 19
+    },
+    {
+      "automorphisms": 1,
+      "connected": true,
+      "endpoint_cards_isomorphic": true,
+      "m": 8,
+      "order": 20
+    },
+    {
+      "automorphisms": 1,
+      "connected": true,
+      "endpoint_cards_isomorphic": true,
+      "m": 9,
+      "order": 21
+    },
+    {
+      "automorphisms": 1,
+      "connected": true,
+      "endpoint_cards_isomorphic": true,
+      "m": 10,
+      "order": 22
+    },
+    {
+      "automorphisms": 1,
+      "connected": true,
+      "endpoint_cards_isomorphic": true,
+      "m": 11,
+      "order": 23
+    },
+    {
+      "automorphisms": 1,
+      "connected": true,
+      "endpoint_cards_isomorphic": true,
+      "m": 12,
+      "order": 24
+    },
+    {
+      "automorphisms": 1,
+      "connected": true,
+      "endpoint_cards_isomorphic": true,
+      "m": 13,
+      "order": 25
+    },
+    {
+      "automorphisms": 1,
+      "connected": true,
+      "endpoint_cards_isomorphic": true,
+      "m": 14,
+      "order": 26
+    },
+    {
+      "automorphisms": 1,
+      "connected": true,
+      "endpoint_cards_isomorphic": true,
+      "m": 15,
+      "order": 27
+    },
+    {
+      "automorphisms": 1,
+      "connected": true,
+      "endpoint_cards_isomorphic": true,
+      "m": 16,
+      "order": 28
+    },
+    {
+      "automorphisms": 1,
+      "connected": true,
+      "endpoint_cards_isomorphic": true,
+      "m": 17,
+      "order": 29
+    },
+    {
+      "automorphisms": 1,
+      "connected": true,
+      "endpoint_cards_isomorphic": true,
+      "m": 18,
+      "order": 30
+    },
+    {
+      "automorphisms": 1,
+      "connected": true,
+      "endpoint_cards_isomorphic": true,
+      "m": 19,
+      "order": 31
+    },
+    {
+      "automorphisms": 1,
+      "connected": true,
+      "endpoint_cards_isomorphic": true,
+      "m": 20,
+      "order": 32
+    },
+    {
+      "automorphisms": 1,
+      "connected": true,
+      "endpoint_cards_isomorphic": true,
+      "m": 21,
+      "order": 33
+    },
+    {
+      "automorphisms": 1,
+      "connected": true,
+      "endpoint_cards_isomorphic": true,
+      "m": 22,
+      "order": 34
+    },
+    {
+      "automorphisms": 1,
+      "connected": true,
+      "endpoint_cards_isomorphic": true,
+      "m": 23,
+      "order": 35
+    },
+    {
+      "automorphisms": 1,
+      "connected": true,
+      "endpoint_cards_isomorphic": true,
+      "m": 24,
+      "order": 36
+    },
+    {
+      "automorphisms": 1,
+      "connected": true,
+      "endpoint_cards_isomorphic": true,
+      "m": 25,
+      "order": 37
+    },
+    {
+      "automorphisms": 1,
+      "connected": true,
+      "endpoint_cards_isomorphic": true,
+      "m": 26,
+      "order": 38
+    },
+    {
+      "automorphisms": 1,
+      "connected": true,
+      "endpoint_cards_isomorphic": true,
+      "m": 27,
+      "order": 39
+    },
+    {
+      "automorphisms": 1,
+      "connected": true,
+      "endpoint_cards_isomorphic": true,
+      "m": 28,
+      "order": 40
+    },
+    {
+      "automorphisms": 1,
+      "connected": true,
+      "endpoint_cards_isomorphic": true,
+      "m": 29,
+      "order": 41
+    },
+    {
+      "automorphisms": 1,
+      "connected": true,
+      "endpoint_cards_isomorphic": true,
+      "m": 30,
+      "order": 42
+    },
+    {
+      "automorphisms": 1,
+      "connected": true,
+      "endpoint_cards_isomorphic": true,
+      "m": 31,
+      "order": 43
+    },
+    {
+      "automorphisms": 1,
+      "connected": true,
+      "endpoint_cards_isomorphic": true,
+      "m": 32,
+      "order": 44
+    },
+    {
+      "automorphisms": 1,
+      "connected": true,
+      "endpoint_cards_isomorphic": true,
+      "m": 33,
+      "order": 45
+    },
+    {
+      "automorphisms": 1,
+      "connected": true,
+      "endpoint_cards_isomorphic": true,
+      "m": 34,
+      "order": 46
+    },
+    {
+      "automorphisms": 1,
+      "connected": true,
+      "endpoint_cards_isomorphic": true,
+      "m": 35,
+      "order": 47
+    },
+    {
+      "automorphisms": 1,
+      "connected": true,
+      "endpoint_cards_isomorphic": true,
+      "m": 36,
+      "order": 48
+    },
+    {
+      "automorphisms": 1,
+      "connected": true,
+      "endpoint_cards_isomorphic": true,
+      "m": 37,
+      "order": 49
+    },
+    {
+      "automorphisms": 1,
+      "connected": true,
+      "endpoint_cards_isomorphic": true,
+      "m": 38,
+      "order": 50
+    },
+    {
+      "automorphisms": 1,
+      "connected": true,
+      "endpoint_cards_isomorphic": true,
+      "m": 39,
+      "order": 51
+    },
+    {
+      "automorphisms": 1,
+      "connected": true,
+      "endpoint_cards_isomorphic": true,
+      "m": 40,
+      "order": 52
+    },
+    {
+      "automorphisms": 1,
+      "connected": true,
+      "endpoint_cards_isomorphic": true,
+      "m": 41,
+      "order": 53
+    },
+    {
+      "automorphisms": 1,
+      "connected": true,
+      "endpoint_cards_isomorphic": true,
+      "m": 42,
+      "order": 54
+    },
+    {
+      "automorphisms": 1,
+      "connected": true,
+      "endpoint_cards_isomorphic": true,
+      "m": 43,
+      "order": 55
+    },
+    {
+      "automorphisms": 1,
+      "connected": true,
+      "endpoint_cards_isomorphic": true,
+      "m": 44,
+      "order": 56
+    },
+    {
+      "automorphisms": 1,
+      "connected": true,
+      "endpoint_cards_isomorphic": true,
+      "m": 45,
+      "order": 57
+    },
+    {
+      "automorphisms": 1,
+      "connected": true,
+      "endpoint_cards_isomorphic": true,
+      "m": 46,
+      "order": 58
+    },
+    {
+      "automorphisms": 1,
+      "connected": true,
+      "endpoint_cards_isomorphic": true,
+      "m": 47,
+      "order": 59
+    },
+    {
+      "automorphisms": 1,
+      "connected": true,
+      "endpoint_cards_isomorphic": true,
+      "m": 48,
+      "order": 60
+    },
+    {
+      "automorphisms": 1,
+      "connected": true,
+      "endpoint_cards_isomorphic": true,
+      "m": 49,
+      "order": 61
+    },
+    {
+      "automorphisms": 1,
+      "connected": true,
+      "endpoint_cards_isomorphic": true,
+      "m": 50,
+      "order": 62
+    },
+    {
+      "automorphisms": 1,
+      "connected": true,
+      "endpoint_cards_isomorphic": true,
+      "m": 51,
+      "order": 63
+    },
+    {
+      "automorphisms": 1,
+      "connected": true,
+      "endpoint_cards_isomorphic": true,
+      "m": 52,
+      "order": 64
+    },
+    {
+      "automorphisms": 1,
+      "connected": true,
+      "endpoint_cards_isomorphic": true,
+      "m": 53,
+      "order": 65
+    },
+    {
+      "automorphisms": 1,
+      "connected": true,
+      "endpoint_cards_isomorphic": true,
+      "m": 54,
+      "order": 66
+    },
+    {
+      "automorphisms": 1,
+      "connected": true,
+      "endpoint_cards_isomorphic": true,
+      "m": 55,
+      "order": 67
+    },
+    {
+      "automorphisms": 1,
+      "connected": true,
+      "endpoint_cards_isomorphic": true,
+      "m": 56,
+      "order": 68
+    },
+    {
+      "automorphisms": 1,
+      "connected": true,
+      "endpoint_cards_isomorphic": true,
+      "m": 57,
+      "order": 69
+    },
+    {
+      "automorphisms": 1,
+      "connected": true,
+      "endpoint_cards_isomorphic": true,
+      "m": 58,
+      "order": 70
+    },
+    {
+      "automorphisms": 1,
+      "connected": true,
+      "endpoint_cards_isomorphic": true,
+      "m": 59,
+      "order": 71
+    },
+    {
+      "automorphisms": 1,
+      "connected": true,
+      "endpoint_cards_isomorphic": true,
+      "m": 60,
+      "order": 72
+    },
+    {
+      "automorphisms": 1,
+      "connected": true,
+      "endpoint_cards_isomorphic": true,
+      "m": 61,
+      "order": 73
+    },
+    {
+      "automorphisms": 1,
+      "connected": true,
+      "endpoint_cards_isomorphic": true,
+      "m": 62,
+      "order": 74
+    },
+    {
+      "automorphisms": 1,
+      "connected": true,
+      "endpoint_cards_isomorphic": true,
+      "m": 63,
+      "order": 75
+    },
+    {
+      "automorphisms": 1,
+      "connected": true,
+      "endpoint_cards_isomorphic": true,
+      "m": 64,
+      "order": 76
+    },
+    {
+      "automorphisms": 1,
+      "connected": true,
+      "endpoint_cards_isomorphic": true,
+      "m": 65,
+      "order": 77
+    },
+    {
+      "automorphisms": 1,
+      "connected": true,
+      "endpoint_cards_isomorphic": true,
+      "m": 66,
+      "order": 78
+    },
+    {
+      "automorphisms": 1,
+      "connected": true,
+      "endpoint_cards_isomorphic": true,
+      "m": 67,
+      "order": 79
+    },
+    {
+      "automorphisms": 1,
+      "connected": true,
+      "endpoint_cards_isomorphic": true,
+      "m": 68,
+      "order": 80
+    },
+    {
+      "automorphisms": 1,
+      "connected": true,
+      "endpoint_cards_isomorphic": true,
+      "m": 69,
+      "order": 81
+    },
+    {
+      "automorphisms": 1,
+      "connected": true,
+      "endpoint_cards_isomorphic": true,
+      "m": 70,
+      "order": 82
+    },
+    {
+      "automorphisms": 1,
+      "connected": true,
+      "endpoint_cards_isomorphic": true,
+      "m": 71,
+      "order": 83
+    },
+    {
+      "automorphisms": 1,
+      "connected": true,
+      "endpoint_cards_isomorphic": true,
+      "m": 72,
+      "order": 84
+    },
+    {
+      "automorphisms": 1,
+      "connected": true,
+      "endpoint_cards_isomorphic": true,
+      "m": 73,
+      "order": 85
+    },
+    {
+      "automorphisms": 1,
+      "connected": true,
+      "endpoint_cards_isomorphic": true,
+      "m": 74,
+      "order": 86
+    },
+    {
+      "automorphisms": 1,
+      "connected": true,
+      "endpoint_cards_isomorphic": true,
+      "m": 75,
+      "order": 87
+    },
+    {
+      "automorphisms": 1,
+      "connected": true,
+      "endpoint_cards_isomorphic": true,
+      "m": 76,
+      "order": 88
+    },
+    {
+      "automorphisms": 1,
+      "connected": true,
+      "endpoint_cards_isomorphic": true,
+      "m": 77,
+      "order": 89
+    },
+    {
+      "automorphisms": 1,
+      "connected": true,
+      "endpoint_cards_isomorphic": true,
+      "m": 78,
+      "order": 90
+    },
+    {
+      "automorphisms": 1,
+      "connected": true,
+      "endpoint_cards_isomorphic": true,
+      "m": 79,
+      "order": 91
+    },
+    {
+      "automorphisms": 1,
+      "connected": true,
+      "endpoint_cards_isomorphic": true,
+      "m": 80,
+      "order": 92
+    },
+    {
+      "automorphisms": 1,
+      "connected": true,
+      "endpoint_cards_isomorphic": true,
+      "m": 81,
+      "order": 93
+    },
+    {
+      "automorphisms": 1,
+      "connected": true,
+      "endpoint_cards_isomorphic": true,
+      "m": 82,
+      "order": 94
+    },
+    {
+      "automorphisms": 1,
+      "connected": true,
+      "endpoint_cards_isomorphic": true,
+      "m": 83,
+      "order": 95
+    },
+    {
+      "automorphisms": 1,
+      "connected": true,
+      "endpoint_cards_isomorphic": true,
+      "m": 84,
+      "order": 96
+    },
+    {
+      "automorphisms": 1,
+      "connected": true,
+      "endpoint_cards_isomorphic": true,
+      "m": 85,
+      "order": 97
+    },
+    {
+      "automorphisms": 1,
+      "connected": true,
+      "endpoint_cards_isomorphic": true,
+      "m": 86,
+      "order": 98
+    },
+    {
+      "automorphisms": 1,
+      "connected": true,
+      "endpoint_cards_isomorphic": true,
+      "m": 87,
+      "order": 99
+    },
+    {
+      "automorphisms": 1,
+      "connected": true,
+      "endpoint_cards_isomorphic": true,
+      "m": 88,
+      "order": 100
+    },
+    {
+      "automorphisms": 1,
+      "connected": true,
+      "endpoint_cards_isomorphic": true,
+      "m": 89,
+      "order": 101
+    },
+    {
+      "automorphisms": 1,
+      "connected": true,
+      "endpoint_cards_isomorphic": true,
+      "m": 90,
+      "order": 102
+    },
+    {
+      "automorphisms": 1,
+      "connected": true,
+      "endpoint_cards_isomorphic": true,
+      "m": 91,
+      "order": 103
+    },
+    {
+      "automorphisms": 1,
+      "connected": true,
+      "endpoint_cards_isomorphic": true,
+      "m": 92,
+      "order": 104
+    },
+    {
+      "automorphisms": 1,
+      "connected": true,
+      "endpoint_cards_isomorphic": true,
+      "m": 93,
+      "order": 105
+    },
+    {
+      "automorphisms": 1,
+      "connected": true,
+      "endpoint_cards_isomorphic": true,
+      "m": 94,
+      "order": 106
+    },
+    {
+      "automorphisms": 1,
+      "connected": true,
+      "endpoint_cards_isomorphic": true,
+      "m": 95,
+      "order": 107
+    },
+    {
+      "automorphisms": 1,
+      "connected": true,
+      "endpoint_cards_isomorphic": true,
+      "m": 96,
+      "order": 108
+    },
+    {
+      "automorphisms": 1,
+      "connected": true,
+      "endpoint_cards_isomorphic": true,
+      "m": 97,
+      "order": 109
+    },
+    {
+      "automorphisms": 1,
+      "connected": true,
+      "endpoint_cards_isomorphic": true,
+      "m": 98,
+      "order": 110
+    },
+    {
+      "automorphisms": 1,
+      "connected": true,
+      "endpoint_cards_isomorphic": true,
+      "m": 99,
+      "order": 111
+    },
+    {
+      "automorphisms": 1,
+      "connected": true,
+      "endpoint_cards_isomorphic": true,
+      "m": 100,
+      "order": 112
+    }
+  ],
+  "fidelity": {
+    "active_deletions": 4,
+    "predeletion_orders": [
+      17,
+      16,
+      15,
+      14
+    ],
+    "source_example": "3.1",
+    "starting_edges": 29,
+    "starting_order": 17,
+    "terminal_order": 13
+  },
+  "networkx_version": "3.6.1",
+  "scope": "Finite corroboration only; does not prove the unbounded statement."
+}
+ALL_CHECKS_OK

@@ -1,0 +1,13 @@
+Python: 3.14.8 SymPy: 1.14.0
+FIDELITY: dyadic 3 triads; plastic 12 ordered triads; p_(62,63)(21/20)>0
+FACTORED_THROUGH: 10
+FACTORED_THROUGH: 20
+FACTORED_THROUGH: 30
+FACTORED_THROUGH: 40
+FACTORED_THROUGH: 50
+FACTORED_THROUGH: 60
+EXACT_FACTORIZATION: 1830 polynomials; 1<=n<=60; 0<=m<n; 60 m=0 Eisenstein cases; 149 nontrivial cyclotomic parts
+COMMON_POSITIVE_ROOT_PAIRS: 12 exactly (3g,g),(5g,4g), g=1..12
+FINITE_CYCLIC_COMPONENT_CHECKS: 5490
+SCOPE: finite exact evidence only; the unrestricted assertion is not proved here
+ALL_CHECKS_OK

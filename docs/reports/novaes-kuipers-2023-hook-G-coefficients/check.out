@@ -1,0 +1,19 @@
+FIDELITY Section II.6 example, nu=(3,1,1,1):
+  rho=(3, 1, 1, 1): G=1
+  rho=(2, 1, 1): G=t^2
+  rho=(3, 1): G=t^2
+  rho=(2,): G=t^4
+EXACT_IDENTITY all ordered pairs of nonempty hooks, each size <= 8:
+  hooks=36, ordered_pairs=1296, nonzero=104, zero=1192
+  target_size=1: checked=36, nonzero=1
+  target_size=2: checked=72, nonzero=2
+  target_size=3: checked=108, nonzero=5
+  target_size=4: checked=144, nonzero=8
+  target_size=5: checked=180, nonzero=13
+  target_size=6: checked=216, nonzero=18
+  target_size=7: checked=252, nonzero=25
+  target_size=8: checked=288, nonzero=32
+LR_TABLEAU_CACHE unique_triples=3504
+All sums and tableau counts used exact integer arithmetic.
+Finite checks do not prove the all-partition assertion.
+ALL_CHECKS_OK

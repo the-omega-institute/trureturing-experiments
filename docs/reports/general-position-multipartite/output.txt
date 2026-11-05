@@ -1,0 +1,10 @@
+FIDELITY: source K_(8,8), K_(5,5) coefficient lists reproduced
+FIDELITY: source small-part theorem checked for 2 <= t <= 100, 1 <= n <= 4 (396 pairs)
+GRAPH_COUNTS: BFS geodesics and all subsets agree on 14 graphs; 108716 subsets; largest order 16
+CLASSIFICATION: 2 <= t <= 15, 1 <= n <= 400: 5600 pairs agree
+CLASSIFICATION: log-concave=134; unimodal=1649; nonunimodal=3951
+STRUCTURE: every checked LC failure is at t+1; increasing prefix and junction test agree
+THRESHOLD_BOUNDARIES: exact junction tests; monotonicity is a separate proof obligation
+N_t=2:9, 3:17, 4:44, 5:165, 6:868, 7:5796, 8:45405, 9:403255, 10:3991746, 11:43545678, 12:518918491, 13:6706022505, 14:93405312120, 15:1394852659336
+FAMILY: n=2t+4 has a strict valley at t+1 for 2 <= t <= 15
+ALL_CHECKS_OK

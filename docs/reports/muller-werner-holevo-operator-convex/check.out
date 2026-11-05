@@ -1,0 +1,66 @@
+Exact arithmetic: Python fractions and SymPy 1.14.0; no floating point
+SOURCE_SPECTRA d=2 product_rank=1 entangled_eigenvalues=1,0
+SOURCE_SPECTRA d=3 product_rank=4 entangled_eigenvalues=1/3,1/12
+SOURCE_SPECTRA d=4 product_rank=9 entangled_eigenvalues=1/6,1/18
+SOURCE_SPECTRA d=5 product_rank=16 entangled_eigenvalues=1/10,3/80
+SOURCE_SPECTRA d=6 product_rank=25 entangled_eigenvalues=1/15,2/75
+PURITY_IDENTITY dims=(2,) all_matrix_unit_pairs=16
+PURITY_IDENTITY dims=(3,) all_matrix_unit_pairs=81
+PURITY_IDENTITY dims=(4,) all_matrix_unit_pairs=256
+PURITY_IDENTITY dims=(2, 2) all_matrix_unit_pairs=256
+PURITY_IDENTITY dims=(2, 3) all_matrix_unit_pairs=1296
+PURITY_IDENTITY dims=(3, 2) all_matrix_unit_pairs=1296
+PURITY_IDENTITY dims=(3, 3) all_matrix_unit_pairs=6561
+PURITY_IDENTITY dims=(2, 2, 2) all_matrix_unit_pairs=4096
+PURITY_IDENTITY dims=(2, 2, 3) all_matrix_unit_pairs=20736
+PURITY_IDENTITY dims=(2, 3, 2) all_matrix_unit_pairs=20736
+PURITY_IDENTITY dims=(2, 3, 3) all_matrix_unit_pairs=104976
+PURITY_IDENTITY dims=(3, 2, 2) all_matrix_unit_pairs=20736
+PURITY_IDENTITY dims=(3, 2, 3) all_matrix_unit_pairs=104976
+PURITY_IDENTITY dims=(3, 3, 2) all_matrix_unit_pairs=104976
+PURITY_IDENTITY dims=(3, 3, 3) all_matrix_unit_pairs=531441
+TRACE_CASE dims=(2, 2) sample=0
+TRACE_CASE dims=(2, 2) sample=1
+TRACE_CASE dims=(2, 2) sample=2
+TRACE_CASE dims=(2, 2) sample=3
+TRACE_CASE dims=(2, 2) sample=4
+TRACE_FUNCTIONS dims=(2, 2) states=6 pure_product_equality=OK
+TRACE_CASE dims=(2, 3) sample=0
+TRACE_CASE dims=(2, 3) sample=1
+TRACE_CASE dims=(2, 3) sample=2
+TRACE_CASE dims=(2, 3) sample=3
+TRACE_CASE dims=(2, 3) sample=4
+TRACE_FUNCTIONS dims=(2, 3) states=6 pure_product_equality=OK
+TRACE_CASE dims=(3, 3) sample=0
+TRACE_CASE dims=(3, 3) sample=1
+TRACE_CASE dims=(3, 3) sample=2
+TRACE_CASE dims=(3, 3) sample=3
+TRACE_CASE dims=(3, 3) sample=4
+TRACE_FUNCTIONS dims=(3, 3) states=6 pure_product_equality=OK
+TRACE_CASE dims=(2, 2, 2) sample=0
+TRACE_CASE dims=(2, 2, 2) sample=1
+TRACE_CASE dims=(2, 2, 2) sample=2
+TRACE_CASE dims=(2, 2, 2) sample=3
+TRACE_CASE dims=(2, 2, 2) sample=4
+TRACE_FUNCTIONS dims=(2, 2, 2) states=6 pure_product_equality=OK
+TRACE_CASE dims=(2, 3, 2) sample=0
+TRACE_CASE dims=(2, 3, 2) sample=1
+TRACE_CASE dims=(2, 3, 2) sample=2
+TRACE_CASE dims=(2, 3, 2) sample=3
+TRACE_CASE dims=(2, 3, 2) sample=4
+TRACE_FUNCTIONS dims=(2, 3, 2) states=6 pure_product_equality=OK
+TRACE_CASE dims=(3, 3, 3) sample=0
+TRACE_CASE dims=(3, 3, 3) sample=1
+TRACE_CASE dims=(3, 3, 3) sample=2
+TRACE_CASE dims=(3, 3, 3) sample=3
+TRACE_CASE dims=(3, 3, 3) sample=4
+TRACE_FUNCTIONS dims=(3, 3, 3) states=6 pure_product_equality=OK
+TRACE_CASE dims=(4, 4) sample=0
+TRACE_CASE dims=(4, 4) sample=1
+TRACE_CASE dims=(4, 4) sample=2
+TRACE_CASE dims=(4, 4) sample=3
+TRACE_CASE dims=(4, 4) sample=4
+TRACE_FUNCTIONS dims=(4, 4) states=6 pure_product_equality=OK
+TRACE_FUNCTIONS exhaustive_real_ternary_two_qubit_projectors=40 total_states=82
+SUMMARY dimension_tuples=15 bilinear_coefficients=922435 density_inputs=82
+ALL_CHECKS_OK

@@ -1,0 +1,607 @@
+{
+  "arithmetic": "exact Python integers and gcd; no floating point",
+  "boundary": "finite checks are fidelity helpers and do not prove the universal classification",
+  "case_count": 24,
+  "cases": [
+    {
+      "checked_deletions_by_size": [
+        1,
+        3
+      ],
+      "delta": 1,
+      "minimum_cuts": [
+        [
+          3
+        ]
+      ],
+      "n": 6,
+      "primes": [
+        2,
+        3
+      ],
+      "vertices": 3
+    },
+    {
+      "checked_deletions_by_size": [
+        1,
+        5
+      ],
+      "delta": 1,
+      "minimum_cuts": [
+        [
+          5
+        ]
+      ],
+      "n": 10,
+      "primes": [
+        2,
+        5
+      ],
+      "vertices": 5
+    },
+    {
+      "checked_deletions_by_size": [
+        1,
+        7
+      ],
+      "delta": 1,
+      "minimum_cuts": [
+        [
+          7
+        ]
+      ],
+      "n": 14,
+      "primes": [
+        2,
+        7
+      ],
+      "vertices": 7
+    },
+    {
+      "checked_deletions_by_size": [
+        1,
+        6,
+        15
+      ],
+      "delta": 2,
+      "minimum_cuts": [
+        [
+          5,
+          10
+        ]
+      ],
+      "n": 15,
+      "primes": [
+        3,
+        5
+      ],
+      "vertices": 6
+    },
+    {
+      "checked_deletions_by_size": [
+        1,
+        8,
+        28
+      ],
+      "delta": 2,
+      "minimum_cuts": [
+        [
+          7,
+          14
+        ]
+      ],
+      "n": 21,
+      "primes": [
+        3,
+        7
+      ],
+      "vertices": 8
+    },
+    {
+      "checked_deletions_by_size": [
+        1,
+        11
+      ],
+      "delta": 1,
+      "minimum_cuts": [
+        [
+          11
+        ]
+      ],
+      "n": 22,
+      "primes": [
+        2,
+        11
+      ],
+      "vertices": 11
+    },
+    {
+      "checked_deletions_by_size": [
+        1,
+        13
+      ],
+      "delta": 1,
+      "minimum_cuts": [
+        [
+          13
+        ]
+      ],
+      "n": 26,
+      "primes": [
+        2,
+        13
+      ],
+      "vertices": 13
+    },
+    {
+      "checked_deletions_by_size": [
+        1,
+        21,
+        210
+      ],
+      "delta": 2,
+      "minimum_cuts": [
+        [
+          5,
+          25
+        ]
+      ],
+      "n": 30,
+      "primes": [
+        2,
+        3,
+        5
+      ],
+      "vertices": 21
+    },
+    {
+      "checked_deletions_by_size": [
+        1,
+        12,
+        66
+      ],
+      "delta": 2,
+      "minimum_cuts": [
+        [
+          11,
+          22
+        ]
+      ],
+      "n": 33,
+      "primes": [
+        3,
+        11
+      ],
+      "vertices": 12
+    },
+    {
+      "checked_deletions_by_size": [
+        1,
+        17
+      ],
+      "delta": 1,
+      "minimum_cuts": [
+        [
+          17
+        ]
+      ],
+      "n": 34,
+      "primes": [
+        2,
+        17
+      ],
+      "vertices": 17
+    },
+    {
+      "checked_deletions_by_size": [
+        1,
+        10,
+        45,
+        120,
+        210
+      ],
+      "delta": 4,
+      "minimum_cuts": [
+        [
+          7,
+          14,
+          21,
+          28
+        ]
+      ],
+      "n": 35,
+      "primes": [
+        5,
+        7
+      ],
+      "vertices": 10
+    },
+    {
+      "checked_deletions_by_size": [
+        1,
+        19
+      ],
+      "delta": 1,
+      "minimum_cuts": [
+        [
+          19
+        ]
+      ],
+      "n": 38,
+      "primes": [
+        2,
+        19
+      ],
+      "vertices": 19
+    },
+    {
+      "checked_deletions_by_size": [
+        1,
+        14,
+        91
+      ],
+      "delta": 2,
+      "minimum_cuts": [
+        [
+          13,
+          26
+        ]
+      ],
+      "n": 39,
+      "primes": [
+        3,
+        13
+      ],
+      "vertices": 14
+    },
+    {
+      "checked_deletions_by_size": [
+        1,
+        29,
+        406
+      ],
+      "delta": 2,
+      "minimum_cuts": [
+        [
+          7,
+          35
+        ]
+      ],
+      "n": 42,
+      "primes": [
+        2,
+        3,
+        7
+      ],
+      "vertices": 29
+    },
+    {
+      "checked_deletions_by_size": [
+        1,
+        23
+      ],
+      "delta": 1,
+      "minimum_cuts": [
+        [
+          23
+        ]
+      ],
+      "n": 46,
+      "primes": [
+        2,
+        23
+      ],
+      "vertices": 23
+    },
+    {
+      "checked_deletions_by_size": [
+        1,
+        18,
+        153
+      ],
+      "delta": 2,
+      "minimum_cuts": [
+        [
+          17,
+          34
+        ]
+      ],
+      "n": 51,
+      "primes": [
+        3,
+        17
+      ],
+      "vertices": 18
+    },
+    {
+      "checked_deletions_by_size": [
+        1,
+        14,
+        91,
+        364,
+        1001
+      ],
+      "delta": 4,
+      "minimum_cuts": [
+        [
+          11,
+          22,
+          33,
+          44
+        ]
+      ],
+      "n": 55,
+      "primes": [
+        5,
+        11
+      ],
+      "vertices": 14
+    },
+    {
+      "checked_deletions_by_size": [
+        1,
+        20,
+        190
+      ],
+      "delta": 2,
+      "minimum_cuts": [
+        [
+          19,
+          38
+        ]
+      ],
+      "n": 57,
+      "primes": [
+        3,
+        19
+      ],
+      "vertices": 20
+    },
+    {
+      "checked_deletions_by_size": [
+        1,
+        29
+      ],
+      "delta": 1,
+      "minimum_cuts": [
+        [
+          29
+        ]
+      ],
+      "n": 58,
+      "primes": [
+        2,
+        29
+      ],
+      "vertices": 29
+    },
+    {
+      "checked_deletions_by_size": [
+        1,
+        31
+      ],
+      "delta": 1,
+      "minimum_cuts": [
+        [
+          31
+        ]
+      ],
+      "n": 62,
+      "primes": [
+        2,
+        31
+      ],
+      "vertices": 31
+    },
+    {
+      "checked_deletions_by_size": [
+        1,
+        16,
+        120,
+        560,
+        1820
+      ],
+      "delta": 4,
+      "minimum_cuts": [
+        [
+          13,
+          26,
+          39,
+          52
+        ]
+      ],
+      "n": 65,
+      "primes": [
+        5,
+        13
+      ],
+      "vertices": 16
+    },
+    {
+      "checked_deletions_by_size": [
+        1,
+        45,
+        990
+      ],
+      "delta": 2,
+      "minimum_cuts": [
+        [
+          11,
+          55
+        ]
+      ],
+      "n": 66,
+      "primes": [
+        2,
+        3,
+        11
+      ],
+      "vertices": 45
+    },
+    {
+      "checked_deletions_by_size": [
+        1,
+        24,
+        276
+      ],
+      "delta": 2,
+      "minimum_cuts": [
+        [
+          23,
+          46
+        ]
+      ],
+      "n": 69,
+      "primes": [
+        3,
+        23
+      ],
+      "vertices": 24
+    },
+    {
+      "checked_deletions_by_size": [
+        1,
+        45,
+        990,
+        14190,
+        148995
+      ],
+      "delta": 4,
+      "minimum_cuts": [
+        [
+          7,
+          21,
+          49,
+          63
+        ]
+      ],
+      "n": 70,
+      "primes": [
+        2,
+        5,
+        7
+      ],
+      "vertices": 45
+    }
+  ],
+  "classification_scope": "every squarefree composite integer 2 <= n <= 70; all deletions of size <= delta",
+  "fidelity": [
+    {
+      "distinguished_cut": [
+        3
+      ],
+      "minimum_degree": 1,
+      "n": 6,
+      "support_classes": 2,
+      "vertices": 3
+    },
+    {
+      "distinguished_cut": [
+        5,
+        25
+      ],
+      "minimum_degree": 2,
+      "n": 30,
+      "support_classes": 6,
+      "vertices": 21
+    },
+    {
+      "distinguished_cut": [
+        7,
+        35
+      ],
+      "minimum_degree": 2,
+      "n": 42,
+      "support_classes": 6,
+      "vertices": 29
+    },
+    {
+      "distinguished_cut": [
+        7,
+        21,
+        49,
+        63
+      ],
+      "minimum_degree": 4,
+      "n": 70,
+      "support_classes": 6,
+      "vertices": 45
+    },
+    {
+      "distinguished_cut": [
+        7,
+        49,
+        77,
+        91,
+        119,
+        133,
+        161,
+        203
+      ],
+      "minimum_degree": 8,
+      "n": 210,
+      "support_classes": 14,
+      "vertices": 161
+    },
+    {
+      "distinguished_cut": [
+        11,
+        121,
+        143,
+        187,
+        209,
+        253,
+        319,
+        341,
+        407,
+        451,
+        473,
+        517,
+        583,
+        649,
+        671,
+        737,
+        781,
+        803,
+        869,
+        913,
+        979,
+        1067,
+        1111,
+        1133,
+        1177,
+        1199,
+        1243,
+        1331,
+        1397,
+        1441,
+        1507,
+        1529,
+        1573,
+        1639,
+        1661,
+        1727,
+        1793,
+        1837,
+        1859,
+        1903,
+        1969,
+        1991,
+        2057,
+        2101,
+        2123,
+        2167,
+        2189,
+        2299
+      ],
+      "minimum_degree": 48,
+      "n": 2310,
+      "support_classes": 30,
+      "vertices": 1829
+    }
+  ],
+  "search_seat_seven_case_delta_deletions": 149844,
+  "source": "arXiv:2605.01565v1, Proposition 3.2, Theorem 3.3, Lemma 5.1, Table 3",
+  "total_deletions_checked": 171395
+}
+ALL_CHECKS_OK

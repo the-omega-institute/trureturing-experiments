@@ -1,0 +1,19 @@
+source=A185768; revision=9; updated=2025-10-03T03:09:59-04:00
+C=[1, -1, -179, -341, 6316, 6138, -92272, 87872, 479803, -1815915, 852208, 6873004, -8175787, -6036792, 5492010, 12389568, -3504328, -38808492, 4735254, 36745560, 36433267, -12744011, -28480781, -9986028, 2174189, 3904760, 845298, 118044, 60864, 3296, 32]
+printed_formula_coefficients_and_threshold=OK
+literal_two_row_arrays_checked=262144; valid=11400
+tuple_and_bitmask_state_edge_bijection=OK
+states=11400; directed_edges=99464
+canonical_tuple_graph_sha256=23017a3a67e27c4c2176a69edcbcbe6dd58db4f4fe81ca54078bf7e5d8e56552
+displayed_prefix_1_to_14=OK
+published_bfile_1_to_200_tuple_backward_and_mask_forward=OK
+first_14=[11400, 99464, 1071200, 12760448, 166155112, 2212654240, 29857704328, 404009799752, 5470539659856, 74057459086320, 1002612561951160, 13573903623389016, 183767715146185232, 2487947552529036000]
+two_displayed_3_by_9_examples=OK
+r_36: sum=0; nonzero_coordinates=11400; max_abs=11325359904
+r_37: sum=0; nonzero_coordinates=6424; max_abs=147270912
+r_38: sum=0; nonzero_coordinates=0; max_abs=0
+seeded_identity_T_to_8_P_of_T_one_zero=OK
+two_scalar_boundary_identities_n_37_and_38=OK
+residual_linearity_r37_T_r36_and_r38_T_r37=OK
+scalar_recurrence_all_tested_n_37_to_200=OK
+ALL_CHECKS_OK

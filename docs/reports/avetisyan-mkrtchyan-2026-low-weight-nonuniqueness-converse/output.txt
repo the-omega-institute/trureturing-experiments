@@ -1,0 +1,9 @@
+FIDELITY equation (35): all three weight-zero line identities OK
+FIDELITY equations (36)-(37): all four restricted multiset identities OK
+CONVERSE admissible subsets: 160 (weights 0: 8; 1: 40; 2: 112)
+CONVERSE selected-line parity/multiset identities: 472
+CONVERSE nonzero numerator and denominator restrictions: 1920
+CONVERSE maximum factors per side: 16
+CONVERSE minimum denominator argument at nontriviality witness: 998000
+CONVERSE every numerator has a zero argument at the nontriviality witness
+ALL_CHECKS_OK

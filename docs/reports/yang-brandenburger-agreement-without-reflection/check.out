@@ -1,0 +1,8 @@
+FIDELITY {"source": "Example 1, Section 2", "A_terminal": ["b", "c"], "B_terminal": ["a", "b", "c"], "common_certainty": ["b", "c"], "q_A": "1", "q_B": "0"}
+SOURCE_BOUNDARY {"source": "Example 2, Section 3", "finding": "Displayed Bob family is not 1-closed", "conull_missing_event": ["a", "c", "d"], "p_B_Omega": "1", "relevance": "Not a counterexample to the target, which retains 1-closedness"}
+NONVACUITY {"states": 4, "common_certainty": "Omega", "q_A": "1/2", "q_B": "1/2", "reflection_A": false, "reflection_B": false}
+SMALL_CASES {"averaging_tests": 2, "common_certainty_cases": 2, "distinct_1_closed_models": 1, "event_state_tests": 2, "failures": 0, "locally_consistent_pair_state_tests": 1, "n": 1, "preorders": 1, "support_tests": 1}
+SMALL_CASES {"averaging_tests": 88, "common_certainty_cases": 512, "distinct_1_closed_models": 12, "event_state_tests": 608, "failures": 0, "locally_consistent_pair_state_tests": 152, "n": 2, "preorders": 4, "support_tests": 152}
+SMALL_CASES {"averaging_tests": 3536, "common_certainty_cases": 174936, "distinct_1_closed_models": 151, "event_state_tests": 217512, "failures": 0, "locally_consistent_pair_state_tests": 27189, "n": 3, "preorders": 29, "support_tests": 27189}
+TOTAL {"event_state_tests": 218122, "failures": 0, "scope": "All labelled preorders n<=3; surjective ranks; two weight choices"}
+ALL_CHECKS_OK

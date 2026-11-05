@@ -1,0 +1,9 @@
+A389474 source displayed terms matched = 24 ; generated through index 403 ; coefficients sha256 = e727c305b280ad1cc0b7d0e37166ad858cd917056286927b787d0818b61f9e0d
+A389475 source displayed terms matched = 23 ; generated through index 403 ; coefficients sha256 = c2cb20d119423fdcba261ba0ab03f3f9db3d896cc686f936dacadce399b2802c
+A389472 source displayed terms matched = 41 ; generated through index 1211 ; coefficients sha256 = db15f74466ce576ff47394ef8ac64eb9894c1cb1ac0f25efb0bb65a9b181849a
+A389474 (3): equation and square congruence at degrees 0..403; 400 requested coefficients at degrees 4..403
+A389474 (4): degrees 0..403 for k=1..135; k>=135 vanish in this truncation by order
+A389475 (4.a), (4.b): defining equation and both congruences checked at degrees 0..403
+A389472 mod 3: 403 target indices n=2..404, coefficients through 1211; defining equation through degree 1211; existing parity line also checked
+A389474 square coefficients, degrees 2..10: 1,2,9,36,252,1296,8586,49680,342144
+ALL_CHECKS_OK

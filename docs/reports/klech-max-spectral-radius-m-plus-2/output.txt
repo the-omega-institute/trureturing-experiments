@@ -1,0 +1,12 @@
+Exact arithmetic: Python integers and SymPy rational/algebraic root isolation; no floating-point evidence
+HH source formula and all conjectured tuple polynomials: 48 exact cases, 3<=m<=12
+Endpoint deficit identity: exact polynomial expansion agrees
+m=3: strongly connected labelled graphs=39; characteristic polynomials=6
+  source fidelity: minimum rho is largest real root of X^3-2X-1; attaining graphs=12
+  clause 1: exact maximum and complete bouquet equality class; labelled maximizers=3
+m=4: strongly connected labelled graphs=688; characteristic polynomials=20
+  source fidelity: minimum rho is largest real root of X^4-2X-1; attaining graphs=24
+  clause 1: exact maximum and complete bouquet equality class; labelled maximizers=24
+  clause 2: loopless graphs=316; exact maximum and complete bouquet equality class; labelled maximizers=4
+Scope: finite diagnostics only; the unbounded positive settlement requires the preregistered general argument
+ALL_CHECKS_OK

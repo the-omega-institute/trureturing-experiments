@@ -1,0 +1,7 @@
+q_n endpoint identities and signs: OK (symbolic plus n=3..100)
+spectral-distance identities: OK (exact symbolic elimination)
+H_n characteristic polynomial and rank at n=3: OK (exact SymPy algebra)
+connected rank >= 6 family K_{3n}: OK (exact distance >= 2/3 for n=3..10)
+six-vertex order certificate: 750/1024 > 2/3
+seven-vertex order certificate: 1366/1024 > 2/3
+ALL_CHECKS_OK

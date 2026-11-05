@@ -1,0 +1,21 @@
+FIDELITY: all 47 published terms agree
+FIDELITY: all five published matrix-square example rows agree
+IDENTITY: rows 0..30, all 496 entries agree
+BOUNDARIES: negative/exterior columns, zero column and monomial diagonal agree
+FIRST_RETURN: exact polynomial identity holds for rows 1..30
+PATH_CHECK: row 0, 1 individually enumerated paths
+PATH_CHECK: row 1, 2 individually enumerated paths
+PATH_CHECK: row 2, 4 individually enumerated paths
+PATH_CHECK: row 3, 9 individually enumerated paths
+PATH_CHECK: row 4, 23 individually enumerated paths
+PATH_CHECK: row 5, 65 individually enumerated paths
+PATH_CHECK: row 6, 197 individually enumerated paths
+PATH_CHECK: row 7, 626 individually enumerated paths
+ROW 0: [1]
+ROW 1: [1, 2]
+ROW 2: [3, 4, 3]
+ROW 3: [16, 20, 9, 4]
+ROW 4: [127, 156, 63, 16, 5]
+ROW 5: [1363, 1664, 648, 144, 25, 6]
+LIMIT: finite checks do not establish the universal conjecture
+ALL_CHECKS_OK

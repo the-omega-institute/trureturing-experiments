@@ -1,0 +1,11 @@
+Determinant implementation: 10 exact Leibniz comparisons OK
+Fidelity: section 8 factorial expansion agrees with literal recurrence in 539 cases (2<=d<=12, 0<=n<=48)
+Fidelity: Theorem 8.2 weighted permutation formula checked by direct enumeration in 63 cases (2<=d<=8, 0<=n<=8)
+Conjecture 9.5(3): 960 exact determinant checks OK (3<=d<=12, 1<=n<=24, x=0,1,2,3)
+Residue factorization: 77 nonzero cases with positive factors; 163 zero cases OK
+Exact polynomial constancy: 48 finite (d,n) pairs certified by 1056 integer evaluations (3<=d<=8, 1<=n<=8)
+Shifted moment/Pochhammer identity: 420 exact rational checks OK
+Finite positive LDL identity: 405 exact rational entry checks OK
+Representative determinants for d=3, x=0, n=1..7: [1, 0, -4, -144, 0, 298598400, 34398535680000]
+Finite checks only; no universal or Lean proof is claimed.
+ALL_CHECKS_OK

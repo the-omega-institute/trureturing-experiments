@@ -1,0 +1,5 @@
+FIDELITY Section 2 modal alternatives: box(p)={0}; neg(box(p))={1}; local MEM=true; neither conclusion globally true
+FIDELITY Theorem 4.2: frames=1099; stable_sets=9074; all n=1..5 component interior/cover identities hold
+FILTRATION: formulas=122; models=1148; quotients=140056; strict_quotients=120224; all truth/stability/connectivity/bound checks hold
+SCOPE: finite exact checks only; canonical completeness and the unbounded filtration theorem remain proof obligations
+ALL_CHECKS_OK

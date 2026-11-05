@@ -1,0 +1,51 @@
+Exact arithmetic: rational functions over Q(a,b,y0,y1,y2); b,y0,y1,y2 nonzero.
+Source: arXiv:2605.13090v1, relations (11)-(19), Theorem 4.2(b), Question 4.3.
+SOURCE_RELATIONS k=2 n=3: 11:2, 12:0, 13:4, 14:0, 15:0, 16:2, 17:1, 18:1, 19:2
+SOURCE_RELATIONS k=3 n=3: 11:2, 12:0, 13:6, 14:0, 15:0, 16:3, 17:3, 18:3, 19:3
+SOURCE_RELATIONS k=3 n=4: 11:3, 12:2, 13:9, 14:18, 15:6, 16:6, 17:6, 18:6, 19:6
+FIDELITY Theorem 4.2(b) a=-1: product is I_3 (symbolic b,y0).
+FIDELITY Theorem 4.2(b) a=0: product is I_3 (symbolic b,y0).
+FIDELITY Theorem 4.2(b) a=1: product is I_3 (symbolic b,y0).
+QUOTIENT k=2 relation=11 lhs=() rhs=()
+QUOTIENT k=2 relation=11 lhs=() rhs=()
+QUOTIENT k=2 relation=13 lhs=() rhs=()
+QUOTIENT k=2 relation=13 lhs=() rhs=()
+QUOTIENT k=2 relation=13 lhs=() rhs=()
+QUOTIENT k=2 relation=13 lhs=() rhs=()
+QUOTIENT k=2 relation=16 lhs=(0,) rhs=(0,)
+QUOTIENT k=2 relation=16 lhs=(1,) rhs=(1,)
+QUOTIENT k=2 relation=17 lhs=(0,) rhs=(0,)
+QUOTIENT k=2 relation=18 lhs=(1,) rhs=(1,)
+QUOTIENT k=2 relation=19 lhs=() rhs=()
+QUOTIENT k=2 relation=19 lhs=() rhs=()
+QUOTIENT_ALL_RELATIONS k=2 n=3: 11:2, 12:0, 13:4, 14:0, 15:0, 16:2, 17:1, 18:1, 19:2
+HANDOFF k=2 n=3 y1=-y0: w=(rho_1^0 rho_1^1)^2 maps to I_3; quotient normal form=(0,1,0,1).
+HANDOFF unrestricted y: image(w)=Matrix([[y1**2/y0**2, 0, 0], [0, y0**2/y1**2, 0], [0, 0, 1]])
+QUOTIENT k=3 relation=11 lhs=() rhs=()
+QUOTIENT k=3 relation=11 lhs=() rhs=()
+QUOTIENT k=3 relation=13 lhs=() rhs=()
+QUOTIENT k=3 relation=13 lhs=() rhs=()
+QUOTIENT k=3 relation=13 lhs=() rhs=()
+QUOTIENT k=3 relation=13 lhs=() rhs=()
+QUOTIENT k=3 relation=13 lhs=() rhs=()
+QUOTIENT k=3 relation=13 lhs=() rhs=()
+QUOTIENT k=3 relation=16 lhs=(0,) rhs=(0,)
+QUOTIENT k=3 relation=16 lhs=(1,) rhs=(1,)
+QUOTIENT k=3 relation=16 lhs=(2,) rhs=(2,)
+QUOTIENT k=3 relation=17 lhs=(0,) rhs=(0,)
+QUOTIENT k=3 relation=18 lhs=(1,) rhs=(1,)
+QUOTIENT k=3 relation=17 lhs=(0,) rhs=(0,)
+QUOTIENT k=3 relation=18 lhs=(2,) rhs=(2,)
+QUOTIENT k=3 relation=17 lhs=(1,) rhs=(1,)
+QUOTIENT k=3 relation=18 lhs=(2,) rhs=(2,)
+QUOTIENT k=3 relation=19 lhs=() rhs=()
+QUOTIENT k=3 relation=19 lhs=() rhs=()
+QUOTIENT k=3 relation=19 lhs=() rhs=()
+QUOTIENT_ALL_RELATIONS k=3 n=3: 11:2, 12:0, 13:6, 14:0, 15:0, 16:3, 17:3, 18:3, 19:3
+GENERIC k=3 n=3: P=diag(y1/y0,y0/y1,1), Q=diag(y2/y0,y0/y2,1).
+GENERIC quotient reduced word=(0, 1, 0, 2, 1, 0, 2, 0); length=8; nonempty.
+GENERIC commutator image=Matrix([[1, 0, 0], [0, 1, 0], [0, 0, 1]])
+INDEPENDENT S4 action: u=(01), v=(12), t=(23); all 20 source relations hold.
+INDEPENDENT S4 image of kernel word=(2, 3, 0, 1); nonidentity.
+GENERIC conclusion: one fixed nontrivial kernel word for every a, b!=0, y0*y1*y2!=0; no parameter collision or root-of-unity assumption.
+ALL_CHECKS_OK

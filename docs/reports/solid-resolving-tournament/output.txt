@@ -1,0 +1,23 @@
+FIDELITY Theorem 2.1: all tournaments and all landmark sets, n=1..4; 1098 comparisons OK
+FIDELITY Proposition 3.2: 3 dimension histogram {3: 8} OK
+FIDELITY Proposition 3.2: 4 dimension histogram {3: 8, 4: 56} OK
+FIDELITY Proposition 3.2: 5 dimension histogram {4: 440, 5: 584} OK
+FIDELITY Proposition 3.3: transitive orientations n=2..11 OK
+CLASSIFICATION 3 strong orbits {2: 2} nonstrong 6 OK
+STRONG PROFILE 3 2 D=021/102/210 R 2 profiles 1 chains 1 OK
+CLASSIFICATION 4 strong orbits {4: 24} nonstrong 40 OK
+STRONG PROFILE 4 4 D=0221/1032/1102/2110 R 3 profiles 3 chains 2 OK
+CLASSIFICATION 5 strong orbits {8: 120, 10: 120, 12: 120, 40: 40, 41: 120, 76: 24} nonstrong 480 OK
+STRONG PROFILE 5 8 D=02221/10332/11032/11102/21110 R 3 profiles 7 chains 3 OK
+STRONG PROFILE 5 10 D=02121/10232/21043/11102/21110 R 4 profiles 6 chains 3 OK
+STRONG PROFILE 5 12 D=02211/10322/11022/21103/21110 R 3 profiles 9 chains 4 OK
+STRONG PROFILE 5 40 D=02221/10212/11022/12102/21110 R 2 profiles 8 chains 4 OK
+STRONG PROFILE 5 41 D=01221/20213/11022/12102/21110 R 3 profiles 8 chains 4 OK
+STRONG PROFILE 5 76 D=02211/10221/11022/21102/22110 R 2 profiles 11 chains 5 OK
+NONSTRONG PROFILE 3 cases 6 terminal sizes {1: 6} width histogram {0: 6} OK
+NONSTRONG PROFILE 4 cases 40 terminal sizes {1: 32, 3: 8} width histogram {0: 32, 1: 8} OK
+NONSTRONG PROFILE 5 cases 480 terminal sizes {1: 320, 3: 40, 4: 120} width histogram {0: 320, 2: 40, 3: 120} OK
+DIRECT Conjecture 3.4 n=6: all 32768 labelled tournaments; dimension histogram {4: 1440, 5: 21984, 6: 9344} OK
+SCOPE: exact helper certificates for the general profile/terminal-component argument;
+no enumeration of all tournaments at orders 7..11, no kernel proof claimed.
+ALL_CHECKS_OK

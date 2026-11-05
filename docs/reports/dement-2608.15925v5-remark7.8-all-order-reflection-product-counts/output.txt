@@ -1,0 +1,16 @@
+Exact source checks: e,i,j,k coded 0,1,2,3; unsigned product is XOR.
+n  sym local nonlocal local_product product nonlocal_product per_axis_product
+1 1 1 0 1 1 0 1
+2 18 9 9 6 6 0 4
+3 106 43 63 25 34 9 16
+4 498 165 333 87 138 51 56
+5 2146 571 1575 274 490 216 184
+6 8898 1869 7029 813 1626 813 584
+ALL_SIX_TABLE3_COLUMNS_MATCH_n_1_TO_6
+ALL_UNORDERED_TRIPLES_CROSS_CHECK_n_1_TO_3
+INVERSE_TRANSITIONS: 64 target/letter cases, exactly 24 integral parity-compatible edges
+M*w = [0, 1, 3, 2, 2, 3, 1, 0]
+M^2*w = [1, 3, 8, 6, 6, 8, 3, 1]
+M^3*w = [3, 9, 24, 18, 18, 24, 9, 3] = 3*M^2*w
+UNPRUNED_INTEGER_STATE_DP_AND_MATRIX_MATCH_n_1_TO_10
+ALL_CHECKS_OK

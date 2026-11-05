@@ -1,0 +1,16 @@
+FIDELITY source ex:12-points-P5: 12 points, Hilbert=[1,6,9,12,12], h=(1,5,3,3)
+SKEWNESS six determinants: [1, 1/2, 1/2, 1/2, 1/2, 1/2]
+IDENTITIES A(A-I)=B(B-I)=-I/2
+GROUP matrix closure=24; independent permutation closure=24; faithful action; orbit=6; stabilizer=4; noncommuting A,B
+GEOMETRY k=1: all 60 source primitive-projection formulas and inverses checked by ambient incidence
+GEOMETRY k=2: all 60 source primitive-projection formulas and inverses checked by ambient incidence
+GEOMETRY k=3: all 60 source primitive-projection formulas and inverses checked by ambient incidence
+FULL GROUPOID from infinity: 120 morphisms, 24 in each target fiber; isotropy equals difference group
+AMPLIFICATION k=2, n=3: skewness; 24 distinct projective blocks; primitive formulas preserved
+AMPLIFICATION k=3, n=5: skewness; 24 distinct projective blocks; primitive formulas preserved
+AMPLIFICATION k=4, n=7: skewness; 24 distinct projective blocks; primitive formulas preserved
+AMPLIFICATION k=5, n=9: skewness; 24 distinct projective blocks; primitive formulas preserved
+AMPLIFICATION k=6, n=11: skewness; 24 distinct projective blocks; primitive formulas preserved
+NONDEGENERACY k=2: free orbit=24; determinant=-1/4; 120 distinct points; ambient vector rank=8 (P^7)
+SCOPE finite checks k=2..6; all-k family requires the stated symbolic block-homomorphism argument
+ALL_CHECKS_OK

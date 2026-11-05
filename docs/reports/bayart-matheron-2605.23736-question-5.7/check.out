@@ -1,0 +1,13 @@
+FIDELITY Fact 1.2 mixed-radix iterate cases: 50518; cylinder preimages: OK
+N=1: one-step=5/3; all-power maximum=5/3; inverse-density L2 moment=16/15
+N=2: one-step=5/3; all-power maximum=7/3; inverse-density L2 moment=192/175
+N=3: one-step=5/3; all-power maximum=3; inverse-density L2 moment=4096/3675
+N=4: one-step=5/3; all-power maximum=11/3; inverse-density L2 moment=16384/14553
+N=5: one-step=5/3; all-power maximum=13/3; inverse-density L2 moment=262144/231231
+N=6: one-step=5/3; all-power maximum=5; inverse-density L2 moment=1048576/920205
+N=7: one-step=5/3; all-power maximum=17/3; inverse-density L2 moment=268435456/234652275
+N=8: one-step=5/3; all-power maximum=19/3; inverse-density L2 moment=3221225472/2807136475
+COUNTEREXAMPLE all-atom/all-power ratios checked: 87380
+Exact telescoping and inverse-density estimates: N=1..128 OK
+Scope: finite checks; analytic limits and functional extension require the subsequent proof
+ALL_CHECKS_OK

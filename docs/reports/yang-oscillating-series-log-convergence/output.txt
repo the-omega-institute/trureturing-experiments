@@ -1,0 +1,10 @@
+FIDELITY Lemma 4.1, theta=sqrt(2): N=1..512, 512 exact witnesses
+KERNEL deficit and integer powers: 24672 exact (a,y) pairs
+ORBIT closed-arc counts, all coprime 1<=p<=q<=20: 17190 configurations
+BLOCK M=4: mass majorant <= 2613742722/1000000000 <= 10*sqrt(M)=20
+BLOCK M=16: mass majorant <= 7037986128/1000000000 <= 10*sqrt(M)=40
+BLOCK M=64: mass majorant <= 17275099842/1000000000 <= 10*sqrt(M)=80
+BLOCK M=256: mass majorant <= 37490042983/1000000000 <= 10*sqrt(M)=160
+BLOCK M=1024: mass majorant <= 76988441402/1000000000 <= 10*sqrt(M)=320
+BLOCK M=4096: mass majorant <= 156305802760/1000000000 <= 10*sqrt(M)=640
+ALL_CHECKS_OK

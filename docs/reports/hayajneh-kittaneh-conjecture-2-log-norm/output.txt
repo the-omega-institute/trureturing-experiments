@@ -1,0 +1,10 @@
+FIDELITY: Theorem 3 on the family: F(R)^2-F(L)^2 = 2*(v-u)*b^2 >= 0
+FIDELITY: t=1/2 gives R=L^T, hence equality in every unitarily invariant norm
+FAMILY: determinant formulas and trace-norm squared gap = 4*(v-u)*(1-b^2) verified
+FAMILY: v*(1-u)-(v-u) = u*(1-v) > 0, so the b^2 interval is nonempty
+EXACT EXP BOUND: 389/500 < exp(-1/4) < 39/50
+WITNESS: t=3/4, b=7/8, A_eps=diag(exp(-1+eps),exp(-eps))
+UNIFORM 0<=eps<=1/10000: det(L)<-3/8; det(R)<-1/200; trace-norm squared gap>1/4
+DOMAIN: B has eigenvalues 1/8,15/8; for 0<eps<=1/10000 both A eigenvalues lie strictly in (exp(-1),1)
+BOUNDARY eps=0: continuous (t,b) family and concrete source-admissible counterexample certified
+ALL_CHECKS_OK

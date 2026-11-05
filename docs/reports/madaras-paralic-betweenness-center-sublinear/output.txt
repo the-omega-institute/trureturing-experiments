@@ -1,0 +1,20 @@
+Exact arithmetic: integer path counts and Fraction; NetworkX 3.5 tree enumeration
+Fidelity Example 1: three maximizers, each of betweenness 9
+n=1: centers[1..4]=(1, 0, 0, 0); trees=1; f(n)=1
+n=2: centers[1..4]=(0, 1, 0, 0); trees=1; f(n)=2
+n=3: centers[1..4]=(1, 0, 0, 0); trees=1; f(n)=1
+n=4: centers[1..4]=(1, 1, 0, 0); trees=2; f(n)=2
+n=5: centers[1..4]=(3, 0, 0, 0); trees=3; f(n)=1
+n=6: centers[1..4]=(4, 2, 0, 0); trees=6; f(n)=2
+n=7: centers[1..4]=(9, 1, 1, 0); trees=11; f(n)=3
+n=8: centers[1..4]=(18, 5, 0, 0); trees=23; f(n)=2
+n=9: centers[1..4]=(45, 2, 0, 0); trees=47; f(n)=2
+n=10: centers[1..4]=(93, 10, 2, 1); trees=106; f(n)=4
+n=11: centers[1..4]=(225, 10, 0, 0); trees=235; f(n)=2
+n=12: centers[1..4]=(512, 39, 0, 0); trees=551; f(n)=2
+n=13: centers[1..4]=(1244, 56, 1, 0); trees=1301; f(n)=3
+Checked all 2288 nonisomorphic trees of orders 1 through 13
+Cut identity, centroid bound, path containment, imbalance spacing, reciprocal packing: PASS
+Proposed strict bound k < 2*sqrt(2*(n-1))+3: PASS (integer square comparison)
+Finite checks do not certify the universal or asymptotic assertion
+ALL_CHECKS_OK

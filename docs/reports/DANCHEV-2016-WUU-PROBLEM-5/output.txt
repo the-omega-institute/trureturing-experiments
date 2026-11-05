@@ -1,0 +1,15 @@
+FIDELITY T_2(F_2): elements=8 units=2 WUU=True
+CLAIM_INSTANCE T_2(F_2): radical=2 idempotents=6 commutator_tests=48
+FIDELITY T_3(F_2): elements=64 units=8 WUU=True
+CLAIM_INSTANCE T_3(F_2): radical=8 idempotents=26 commutator_tests=1664
+FIDELITY T_2(F_3): elements=27 units=12 WUU=False
+FIDELITY T_3(F_3): elements=729 units=216 WUU=False
+CORNERS M_2(Z/2Z): idempotents=8 pairs=26 premise_true=20 nonzero_nilpotent_ab=0 power_tests=896
+CORNERS M_2(Z/3Z): idempotents=14 pairs=110 premise_true=62 nonzero_nilpotent_ab=0 power_tests=12312
+CORNERS M_2(Z/4Z): idempotents=26 pairs=386 premise_true=290 nonzero_nilpotent_ab=96 power_tests=100352
+CORNERS M_2(Z/5Z): idempotents=32 pairs=752 premise_true=272 nonzero_nilpotent_ab=0 power_tests=380000
+CORNERS M_2(Z/6Z): idempotents=112 pairs=2860 premise_true=1240 nonzero_nilpotent_ab=0 power_tests=2757888
+CORNERS M_2(Z/7Z): idempotents=58 pairs=2746 premise_true=730 nonzero_nilpotent_ab=0 power_tests=3783976
+CORNERS T_3(F_2): idempotents=26 pairs=98 premise_true=98 nonzero_nilpotent_ab=4 power_tests=14848
+BOUNDARY finite instances and identities only; universal theorem not certified
+ALL_CHECKS_OK

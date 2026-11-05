@@ -1,0 +1,12 @@
+Arithmetic: integers and fractions; outward scale = 10^240; no floats
+FIDELITY: r(x) < 4/(3x+sqrt(x^2+8)), x = 0, 1/100, 1
+FIDELITY: Proposition 10 alternating derivatives at z=1, n=0..4, k=0..12
+F_0^(40)(1/100)/40!: -2995/10^29 < coefficient < -2994/10^29 < 0
+F_1^(70)(1/100)/70!: -4604/10^55 < coefficient < -4603/10^55 < 0
+REFUTATION SAMPLE n=0, x=1/100, k=40: -299459/10^31 < coefficient < -299456/10^31 < 0
+REFUTATION SAMPLE n=1, x=1/100, k=70: -460349/10^57 < coefficient < -460346/10^57 < 0
+REFUTATION SAMPLE n=2, x=1/100, k=96: -970618/10^82 < coefficient < -970615/10^82 < 0
+REFUTATION SAMPLE n=3, x=1/100, k=121: -797881/10^108 < coefficient < -797878/10^108 < 0
+REFUTATION SAMPLE n=4, x=1/100, k=146: -596533/10^136 < coefficient < -596530/10^136 < 0
+Scope: finite exact witnesses for n=0..4; all-index/every-center argument is analytic
+ALL_CHECKS_OK

@@ -1,0 +1,11 @@
+Symbolic gap identity: exact residual 0
+Definitions: n=1 normalizations; independent counts and exact psi division for 2<=n<=300
+Source fidelity: Theorem 1 for 299 integers; k=1 RHS equivalence
+Conjecture and gap identity: 3588 pairs, 2<=n<=300, 1<=k<=12
+Prime equality: 62 primes x 12 exponents; strict gaps for 237 composites x 12 exponents
+Independent rational boundary grid: 676 triples, including R=1 and x=y=R
+Example n=2, k=4: exact gap=0
+Example n=4, k=4: exact gap=69942696083/324135000
+Example n=6, k=4: exact gap=2512497828529/972405000
+Finite checks and symbolic algebra do not certify the universal Lean claim.
+ALL_CHECKS_OK

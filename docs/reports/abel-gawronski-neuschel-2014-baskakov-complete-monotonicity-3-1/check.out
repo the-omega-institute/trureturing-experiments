@@ -1,0 +1,27 @@
+FIDELITY source squared-Baskakov finite identity n=1: exact equality
+FIDELITY source squared-Baskakov finite identity n=2: exact equality
+FIDELITY source squared-Baskakov finite identity n=3: exact equality
+GEOMETRIC alpha=1 r=2: exact rational identity
+GEOMETRIC alpha=1 r=4: exact rational identity
+GEOMETRIC alpha=1 r=6: exact rational identity
+GEOMETRIC alpha=1 r=8: exact rational identity
+KERNEL r=2: exact rational Laplace identity
+KERNEL r=4: exact rational Laplace identity
+KERNEL r=6: exact rational Laplace identity
+KERNEL r=8: exact rational Laplace identity
+SURVIVING r=2,4,6: nonnegative densities via 1/2, 1-cos(u), (4/3)(cos(u)-1)^2(cos(u)+2)
+NEGATIVE KERNEL t=10*pi: bracket = 6+10*cos(5*sqrt(2)*pi) < 6-5*sqrt(2) < 0
+JET denominator coefficients: 6305,16472,18620,11816,4550,1064,140,8
+JET (-1)^75 F^(75)(2)/75! = -52526631898460004553579116030127113870398461748869136952441542820718397538730226967476064508798375739888524672284671945933858519867009460198016371252290979899412571544360280998730562833801497863350200902760105459773399085006189628378378200422549498764460032/5971272752406635198335037650984602315373584133088805945082956233211240357254169221231945309126500341954953982384688207970068724139728071148678107386256454373050766884139731876758922927797376701745018724028252191182332596447986352668381276805956701415889487094545984291471540927886962890625
+JET exact sign: negative (two recurrences agree through order 75)
+FAMILY n=c=1, x=2/1: positive derivative 75 (exact)
+FAMILY n=c=2, x=2/2: positive derivative 75 (exact)
+FAMILY n=c=3, x=2/3: positive derivative 75 (exact)
+FAMILY n=c=4, x=2/4: positive derivative 75 (exact)
+FAMILY n=c=5, x=2/5: positive derivative 75 (exact)
+FAMILY n=c=6, x=2/6: positive derivative 75 (exact)
+FAMILY n=c=7, x=2/7: positive derivative 75 (exact)
+FAMILY n=c=8, x=2/8: positive derivative 75 (exact)
+FAMILY symbolic n=c>0 identity checked; integer n>=1 yields infinitely many counterexamples
+INTERVAL alpha near 1: analytic uniform-differentiation obligation; no numeric epsilon claimed
+ALL_CHECKS_OK

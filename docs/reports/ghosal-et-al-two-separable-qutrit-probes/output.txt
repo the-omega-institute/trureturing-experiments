@@ -1,0 +1,13 @@
+Fidelity: antisymmetric Kraus realization equals N on all 9 matrix units.
+Fidelity: Theorem 6 output, both marginals, and P tensor P compression reproduced exactly.
+Settlement certificate: eleven unit product projectors average to (I9+2 rho)/11.
+Probe spectrum: 3/11 (multiplicity 1), 1/11 (multiplicity 8).
+Obstruction certificates: rank-one local images have zero coefficient determinant; psi determinant = 1/2.
+Compressed target partial-transpose minimum eigenvalue: -1/8.
+Unitary-block certificates: det(I2-b b*)=1-||b||^2 and trace=2-||b||^2.
+Family: sigma_t=(11t/2) sigma+(1-11t/2) I9/9 for 0 <= t <= 2/11.
+Partial-transpose eigenvalues: (2-11t)/18 once, (2+7t)/18 three times, (1-t)/9 five times.
+Symbolic dilution identity: (L tensor L-N tensor N)(sigma_t)=t (L tensor L-N tensor N)(rho), for every unital L.
+Target endpoint output is full rank, with minimum eigenvalue 1/11.
+Scope: exact algebraic certificates; compactness, Pinsker and the operational Stein bridge are analytic proof obligations.
+ALL_CHECKS_OK

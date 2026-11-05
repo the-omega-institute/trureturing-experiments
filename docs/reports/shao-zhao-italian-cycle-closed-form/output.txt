@@ -1,0 +1,12 @@
+FIDELITY: source cycle tables n=3..12 reproduced in full
+FIDELITY: Theorem 7.1 j=0..5, source domain respected, 347 coefficients
+SOURCE_TOTALS n=3..12: [23, 60, 167, 467, 1297, 3612, 10058, 28003, 77970, 217095]
+BRUTE_FORCE: all 88560 labelled ternary functions for n=3..10, every coefficient agrees
+DEFICIT_ROW n=3: [1, 3, 6, 7, 6, 0, 0]
+DEFICIT_ROW n=4: [1, 4, 10, 16, 19, 8, 2, 0, 0]
+FORMULA: n=3..60, 0<=j<=2n, 3712 coefficients agree with independent weighted DP
+POLYNOMIAL_COROLLARY: n=3..60, 0<=j<n, 1827 exact checks
+REPOSITORY_RECURRENCE: five initial values and all 53 recurrences with base n=3..55 agree
+LIMIT: these finite exact checks do not establish a universal theorem; no Lean proof was run
+CHECK_SHA256: ecec4f3ab19529fea7a0dd2f7760965642c6318ca660d2f80abf909df1ab76c3
+ALL_CHECKS_OK

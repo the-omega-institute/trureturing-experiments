@@ -1,0 +1,12 @@
+FIDELITY even-iterate identity: 45927 exact equalities; 729 map pairs, 9 points, n=0..6
+FIDELITY robust-lattice map: 84 contraction equalities; g([1/2,1])=[1/2,1] exactly
+OBSTRUCTION H not contained in F(H): all 729 continuous PL map pairs on the 3-point rational knot/value grid
+OBSTRUCTION H not contained in F(H): all 65536 continuous PL map pairs on the 4-point rational knot/value grid
+GRID necessary two-surjection constraints: all 11398 assignments, 1<=|P|,|Q|<=5
+  |P|=1, counts for |Q|=1..5: 1 0 0 0 0
+  |P|=2, counts for |Q|=1..5: 0 4 0 0 0
+  |P|=3, counts for |Q|=1..5: 0 0 36 0 0
+  |P|=4, counts for |Q|=1..5: 0 0 0 576 0
+  |P|=5, counts for |Q|=1..5: 0 0 0 0 14400
+SCOPE finite exact checks only; no dense-orbit or general omega-limit theorem is certified here
+ALL_CHECKS_OK
