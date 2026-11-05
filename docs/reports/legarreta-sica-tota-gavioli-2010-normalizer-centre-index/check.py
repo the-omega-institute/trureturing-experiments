@@ -78,6 +78,25 @@ def normalizer(G, H):
     return frozenset(g for g in G[0] if conjugate_set(G, H, g) == H)
 
 
+def subgroup_generators(G, H):
+    els, mul, inv, e = G
+    gens = []
+    K = frozenset({e})
+    for x in H:
+        if x not in K:
+            gens.append(x)
+            K = subgroup_generated(G, gens)
+    assert K == H
+    return tuple(gens)
+
+
+def normalizer_fast(G, H):
+    els, mul, inv, e = G
+    gens = subgroup_generators(G, H)
+    return frozenset(g for g in els
+                     if all(mul(mul(g, h), inv(g)) in H for h in gens))
+
+
 def normalizer_data(G, subs=None):
     if subs is None:
         subs = all_subgroups(G)
@@ -112,7 +131,10 @@ def report_product(label, G, A_subs, B_subs, A, B):
     norms = set()
     for H1 in A_subs:
         for H2 in B_subs:
-            norms.add(frozenset((a, b) for a in normalizer(A, H1) for b in normalizer(B, H2)))
+            H = frozenset((a, b) for a in H1 for b in H2)
+            coordinate_norm = frozenset((a, b) for a in normalizer(A, H1) for b in normalizer(B, H2))
+            assert normalizer_fast(G, H) == coordinate_norm
+            norms.add(coordinate_norm)
     classes = []
     unseen = set(norms)
     while unseen:
