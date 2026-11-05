@@ -1,0 +1,5 @@
+source_ratio_exact=3/10 + 3*sqrt(5)/10
+renewal_minorant_exact=verified_through_n=256
+fibonacci_potential_exact=verified_k=8..14
+conditional_survival_exact=verified_k=8..11
+ALL_CHECKS_OK

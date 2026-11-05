@@ -1,0 +1,12 @@
+SOURCE https://oeis.org/A281428/b281428.txt
+BFILE_SHA256 b58d03b3c9a9f7cbe84fed4bffc05c595b66cbdeb8ca69a4249b48d7cff20115
+FIDELITY_BFILE matched 201 values, indices 0..200
+PREFIX [1, 1, 17, 865, 88865, 15335425, 3993275825, 1462392957025, 716611617346625, 452780458211706625, 358439197464543820625]
+FIDELITY_MOD385 [1, 1, 17, 95, 315, 105, 0, 0, 0, 0, 0, 0, 0, 0]; zero for all checked n=6..200
+FIDELITY_SCALAR_RECURRENCE n=2..200
+IDENTITIES parity and (4-9*x^2)*C^6-3*C^2-1 through degree 400
+LITERAL_FIXED_POINT C=cosh(integral_0^x C^4), S=sinh(integral_0^x C^4), degree 0..400
+INDEPENDENT_ROOT_AND_DENOMINATORS 201 even coefficients; only primes 2,3
+EXPECTED_SETTLEMENT 133 moduli 1<=N<=400, gcd(N,6)=1; 13400 comparisons at ceil(N/2)<=n<=200
+LIMIT finite exact checks only; universal claim and negation are not proved in Lean
+ALL_CHECKS_OK

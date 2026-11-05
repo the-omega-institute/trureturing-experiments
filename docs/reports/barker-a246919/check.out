@@ -1,0 +1,12 @@
+Arithmetic: Python integers and SymPy exact rational algebra
+Source: https://oeis.org/A246919 ; revision 27, 2026-06-28
+FIDELITY: source PARI program reproduces all 53 printed terms
+MAXIMUM: complete admissible factor-pair enumeration agrees for n=1..300
+CROSS_CHECK: direct original-equation scan agrees as sets for n=1..80
+GENERATING_FUNCTION: exact coefficients agree for n=0..10000
+FIDELITY: all 10000 source b-file terms agree
+BFILE_SHA256: 7d7f15f0a8a94f25ecd29188cc8e0860793cf5cc9977049167e9b592440ab6e6
+SYMBOLIC_IDENTITY: residue-class sum minus printed rational function = 0
+SEPARATE_SOURCE_CORRECTION: printed recurrence at n=16 gives 45; actual maximum=49
+SCOPE: finite checks and exact symbolic identity; no Lean proof of the conjecture
+ALL_CHECKS_OK

@@ -1,0 +1,38 @@
+C1: order=1 subgroups=1 normals=1 comparisons=1 strict=0 tp=1
+C2: order=2 subgroups=2 normals=2 comparisons=4 strict=0 tp=1
+C3: order=3 subgroups=2 normals=2 comparisons=4 strict=0 tp=1
+C4: order=4 subgroups=3 normals=3 comparisons=9 strict=0 tp=1
+C5: order=5 subgroups=2 normals=2 comparisons=4 strict=0 tp=1
+C6: order=6 subgroups=4 normals=4 comparisons=16 strict=0 tp=1
+C7: order=7 subgroups=2 normals=2 comparisons=4 strict=0 tp=1
+C8: order=8 subgroups=4 normals=4 comparisons=16 strict=0 tp=1
+C9: order=9 subgroups=3 normals=3 comparisons=9 strict=0 tp=1
+C10: order=10 subgroups=4 normals=4 comparisons=16 strict=0 tp=1
+C11: order=11 subgroups=2 normals=2 comparisons=4 strict=0 tp=1
+C12: order=12 subgroups=6 normals=6 comparisons=36 strict=0 tp=1
+C2xC2: order=4 subgroups=5 normals=5 comparisons=25 strict=0 tp=1
+D3(order 6): order=6 subgroups=6 normals=3 comparisons=18 strict=6 tp=1/2
+C4xC2: order=8 subgroups=8 normals=8 comparisons=64 strict=0 tp=1
+C2xC2xC2: order=8 subgroups=16 normals=16 comparisons=256 strict=0 tp=1
+D4(order 8): order=8 subgroups=10 normals=6 comparisons=60 strict=20 tp=1/2
+Q8: order=8 subgroups=6 normals=6 comparisons=36 strict=0 tp=1
+C3xC3: order=9 subgroups=6 normals=6 comparisons=36 strict=0 tp=1
+D5(order 10): order=10 subgroups=8 normals=3 comparisons=24 strict=10 tp=1/4
+C6xC2: order=12 subgroups=10 normals=10 comparisons=100 strict=0 tp=1
+D6(order 12): order=12 subgroups=16 normals=7 comparisons=112 strict=51 tp=1/4
+A4: order=12 subgroups=10 normals=3 comparisons=30 strict=14 tp=2/9
+Dic12: order=12 subgroups=8 normals=5 comparisons=40 strict=9 tp=1/2
+D7(order 14): order=14 subgroups=10 normals=3 comparisons=30 strict=14 tp=1/8
+D8(order 16): order=16 subgroups=19 normals=7 comparisons=133 strict=68 tp=1/8
+S4: order=24 subgroups=30 normals=4 comparisons=120 strict=75 tp=1/32
+S3xS3: order=36 subgroups=60 normals=10 comparisons=600 strict=426 tp=1/256
+FIDELITY Lemma 4.2(ii): tp(D_3)=1/2
+FIDELITY Lemma 4.2(ii): tp(D_4)=1/2
+FIDELITY Lemma 4.2(ii): tp(D_5)=1/4
+FIDELITY Lemma 4.2(ii): tp(D_6)=1/4
+FIDELITY Lemma 4.2(ii): tp(D_7)=1/8
+FIDELITY Lemma 4.2(ii): tp(D_8)=1/8
+FIDELITY Lemma 4.2(iv): tp(A4)=2/9
+SUMMARY groups=28 all_order_at_most_12_types=24 subgroup_normal_pairs=1807 strict_pairs=693
+All arithmetic evidence uses integers and fractions.Fraction; no floating point.
+ALL_CHECKS_OK

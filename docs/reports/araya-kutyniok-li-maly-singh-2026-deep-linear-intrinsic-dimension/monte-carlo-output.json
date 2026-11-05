@@ -1,0 +1,107 @@
+{
+  "seed": 261039674,
+  "role": "floating-point diagnostic; not proof",
+  "distribution": "iid N(0,1) p-by-d columns, Haar span by QR; independent g ~ N(0,I_p)",
+  "sufficient_event": "lambda_max(Q^T B Q)<-1/4 and ||g||^2<4",
+  "rows": [
+    {
+      "D": 1,
+      "M": 1,
+      "d": 1,
+      "p": 2,
+      "u": "12 e_1",
+      "samples": 100000,
+      "negative_restriction": 50194,
+      "strict_sufficient_miss_event": 29032,
+      "scalar_supremum_below_c": 48836
+    },
+    {
+      "D": 1,
+      "M": 2,
+      "d": 1,
+      "p": 4,
+      "u": "12 e_1",
+      "samples": 100000,
+      "negative_restriction": 50052,
+      "strict_sufficient_miss_event": 14780,
+      "scalar_supremum_below_c": 47916
+    },
+    {
+      "D": 1,
+      "M": 3,
+      "d": 1,
+      "p": 6,
+      "u": "12 e_1",
+      "samples": 100000,
+      "negative_restriction": 49922,
+      "strict_sufficient_miss_event": 6338,
+      "scalar_supremum_below_c": 47232
+    },
+    {
+      "D": 1,
+      "M": 4,
+      "d": 1,
+      "p": 8,
+      "u": "12 e_1",
+      "samples": 100000,
+      "negative_restriction": 49885,
+      "strict_sufficient_miss_event": 2182,
+      "scalar_supremum_below_c": 46665
+    },
+    {
+      "D": 2,
+      "M": 1,
+      "d": 1,
+      "p": 3,
+      "u": "12 e_1",
+      "samples": 100000,
+      "negative_restriction": 49969,
+      "strict_sufficient_miss_event": 14588,
+      "scalar_supremum_below_c": 48633
+    },
+    {
+      "D": 2,
+      "M": 2,
+      "d": 2,
+      "p": 6,
+      "u": "12 e_1",
+      "samples": 100000,
+      "negative_restriction": 10976,
+      "strict_sufficient_miss_event": 122,
+      "scalar_supremum_below_c": 9984
+    },
+    {
+      "D": 2,
+      "M": 3,
+      "d": 2,
+      "p": 9,
+      "u": "12 e_1",
+      "samples": 100000,
+      "negative_restriction": 12441,
+      "strict_sufficient_miss_event": 16,
+      "scalar_supremum_below_c": 10977
+    },
+    {
+      "D": 2,
+      "M": 4,
+      "d": 2,
+      "p": 12,
+      "u": "12 e_1",
+      "samples": 100000,
+      "negative_restriction": 13105,
+      "strict_sufficient_miss_event": 2,
+      "scalar_supremum_below_c": 11203
+    },
+    {
+      "D": 20,
+      "M": 30,
+      "d": 20,
+      "p": 630,
+      "u": "12 e_1",
+      "samples": 5000,
+      "negative_restriction": 0,
+      "strict_sufficient_miss_event": 0,
+      "scalar_supremum_below_c": 0
+    }
+  ]
+}

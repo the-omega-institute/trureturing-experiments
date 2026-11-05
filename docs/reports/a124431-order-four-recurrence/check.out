@@ -1,0 +1,10 @@
+SOURCE_PREFIX_OK: OEIS revision 41, all 25 listed terms, n=0..24
+SOURCE_FIDELITY_OK: Deutsch peakless colored path counts, n=0..12; a(3)=27+2=29
+INITIAL_VALUES: 1,3,9,29,97,331,1145,4001,14089
+RECURRENCE_OK: both COMMENT and FORMULA versions, n=4..250 (247 cases)
+PARITY_SPLIT_OK: n=0..100
+CONSTANT_TERM_AND_ALGEBRAIC_GF_OK: all coefficients x^0..x^60
+CENTRAL_BINOMIAL_CONVOLUTION_OK: degree=0..100
+DIFFERENTIAL_OPERATOR_OK: polynomial identity exact; ODE coefficients x^0..x^250
+EVIDENCE_SCOPE: finite exact checks; no unbounded theorem or Lean proof is asserted
+ALL_CHECKS_OK

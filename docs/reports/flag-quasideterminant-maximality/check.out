@@ -1,0 +1,13 @@
+PRESENTATION: all 16 RE entries and the six relations have identical rank-6 row spaces over Q(q)
+ORE: all 4 degree-3 critical overlaps in the four-generator presentation agree
+ORE IDENTIFICATION: both directions between the RE and iterated Ore presentations checked
+FIDELITY: source Theorem 2.1 at n=2: [I1,I2]=0, using I1=b and I2=c-d*b^(-1)*a
+CENTRAL WITNESS: t=a+q^2*d commutes with a,b,c,d,b^(-1),I1,I2
+DENOMINATOR: b*I2=I2*b=Delta=bc-ad+(1-q^(-2))*a^2
+SPECIALIZATION: all six relations vanish under a=0,b=u,c=v,d=w
+INDEPENDENCE: symbolic left inverses for (i,j,k)->(i+j,j,k) and (N+i-j,j,k); nonzero coefficient q^(2k)
+NONCOMMUTATIVE: [b,a]=(q^2-1)*ab is a nonzero PBW term, also at q=2
+PARAMETER: q is indeterminate over Q; the same identities specialize to q=2, s=3/4
+SCOPE: exact algebra checks support the generic family outline; no formal Lean settlement is asserted
+ENVIRONMENT: Python 3.14.8, SymPy 1.14.0
+ALL_CHECKS_OK

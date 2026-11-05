@@ -1,0 +1,20 @@
+FIDELITY HC Appendix 2 n=5 transition-count matrix: [(4, 1, 0, 0), (1, 3, 0, 1), (1, 0, 4, 0), (0, 0, 0, 5)]
+FIDELITY Section 3.1: all five block-count examples agree
+FIDELITY HC active indices: [6, 7, 8, 9]
+GRAPH n=1: all 24 rules preserve parity, absorb constants, and reach a constant from every state
+GRAPH n=3: all 24 rules preserve parity, absorb constants, and reach a constant from every state
+GRAPH n=5: all 24 rules preserve parity, absorb constants, and reach a constant from every state
+GRAPH n=7: all 24 rules preserve parity, absorb constants, and reach a constant from every state
+GRAPH n=9: all 24 rules preserve parity, absorb constants, and reach a constant from every state
+GRAPH n=11: all 24 rules preserve parity, absorb constants, and reach a constant from every state
+GRAPH_TOTAL rule/configuration pairs=65520; selections=677232
+PATH n=1: HC and reflected HC verified; maximum prescribed length=0; bound=1
+PATH n=3: HC and reflected HC verified; maximum prescribed length=1; bound=9
+PATH n=5: HC and reflected HC verified; maximum prescribed length=3; bound=25
+PATH n=7: HC and reflected HC verified; maximum prescribed length=6; bound=49
+PATH n=9: HC and reflected HC verified; maximum prescribed length=10; bound=81
+PATH n=11: HC and reflected HC verified; maximum prescribed length=15; bound=121
+PATH n=13: HC and reflected HC verified; maximum prescribed length=21; bound=169
+PATH n=15: HC and reflected HC verified; maximum prescribed length=28; bound=225
+PATH_TOTAL initial words=43690; both orientations checked
+ALL_CHECKS_OK

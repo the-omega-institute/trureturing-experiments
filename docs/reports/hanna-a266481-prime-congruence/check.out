@@ -1,0 +1,17 @@
+FIDELITY A266481: a(0)..a(22) match all 23 displayed terms
+FIDELITY A266526: T(1)..T(20) match all 20 displayed terms
+FIDELITY A266521: connected rows 1..6 match exactly
+SOURCE_NOTE A266521 example exp(A(x,y)) prints (1+y)*x; its NAME and first connected row instead give (1+y)^2*x
+DIRECT_NAME_LIMIT a(0)..a(6): [1, 1, 5, 55, 993, 25501, 857773]
+CONNECTED_DEGREE_BOUND checked for 1<=m<=30
+PRUFER_SLOT_TREES T(1)..T(6): [1, 4, 42, 752, 19360, 654912]
+ALL_SLOT_FORESTS a(0)..a(5): [1, 1, 5, 55, 993, 25501]
+GLOBAL_FIXED_FORESTS p=2, blocks=1, total=5, fixed=1
+GLOBAL_FIXED_FORESTS p=2, blocks=2, total=993, fixed=1
+GLOBAL_FIXED_FORESTS p=3, blocks=1, total=55, fixed=1
+GLOBAL_FIXED_FORESTS p=5, blocks=1, total=25501, fixed=1
+NEGATIVE_CONTROL reciprocal two-vertex arrows are rejected
+PRIME_CONGRUENCE 53 pairs: every prime p<=30 and n>=0 with p*n<=30
+PRIOR_ART_HYPOTHESIS logarithmic weight w_4 = 376/3 is not integral
+Finite checks only; the all-index theorem remains a preregistered proof obligation.
+ALL_CHECKS_OK

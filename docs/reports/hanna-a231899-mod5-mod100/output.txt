@@ -1,0 +1,15 @@
+Fidelity: all 19 DATA terms and b-file indices 0..40 agree.
+Independent Bell and source Lagrange recurrences agree at 0..40.
+Congruences: mod 5 at 5..40; mod 100 at 10..40.
+Initial a_0..a_10: [1, 1, 1, 7, 106, 2590, 89500, 4061830, 230971450, 15931539370, 1301850919000]
+F_4: coefficients = 1,1,1/2,7/6,53/12
+R_4: degree 40; all 41 normalized coefficients integral and divisible by 5.
+F_9: coefficients = 1,1,1/2,7/6,53/12,259/12,4475/36,406183/504,23097145/4032,1593153937/36288
+R_9: degree 225; all 226 normalized coefficients integral and divisible by 100.
+R_9 normalized coefficients at 9..15: -1301850919000,-83427063990000,-7576062984979500,-797207176461504600,-92429727810268992000,-11568255207014755048800,-1546549868706068453584500
+v2(F_9 coefficients): [0, 0, -1, -1, -2, -2, -2, -3, -6, -6]
+v2(F_9 derivative coefficients): [0, 0, -1, 0, -2, -1, -3, -3, -6]
+Factorial lower-bound inequality checked for n=16..10000 (finite supplement).
+General-theorem exclusions: [y^4]A(log(1+y))=23/8; w_4=27/2; w_17=114101705219927291073/2242240.
+These finite checks do not establish the unbounded conjectures.
+ALL_CHECKS_OK

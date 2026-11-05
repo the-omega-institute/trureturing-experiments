@@ -1,0 +1,34 @@
+FIDELITY beta_W(1/2,0)=3/4: exact rational antiderivative checked
+FIDELITY Lemma 2.3: strict two-sided frequency bounds, 24 cases
+ASYMPTOTIC CHECKS b=3/4, theta=3*pi/4; intervals are rigorous finite readings
+d=2 uses alpha=gamma+1/2 in the partial semiclassical limit, not a square-domain expansion
+PROFILE d=1 gamma=1 alpha=1 G=[0.0654498469, 0.0654498470]
+  n=4 t=[13.067974, 13.067975] normalized=[0.0498248099, 0.0498248100] t*(normalized-G)=[-0.204188, -0.204187]
+  n=8 t=[25.634345, 25.634346] normalized=[0.0572387582, 0.0572387583] t*(normalized-G)=[-0.210486, -0.210485]
+  n=16 t=[50.767086, 50.767087] normalized=[0.0612396268, 0.0612396269] t*(normalized-G)=[-0.213741, -0.213740]
+PROFILE d=1 gamma=2 alpha=2 G=[0.6168502750, 0.6168502751]
+  n=4 t=[13.067974, 13.067975] normalized=[0.5362149377, 0.5362149378] t*(normalized-G)=[-1.053741, -1.053740]
+  n=8 t=[25.634345, 25.634346] normalized=[0.5744413079, 0.5744413080] t*(normalized-G)=[-1.087127, -1.087126]
+  n=16 t=[50.767086, 50.767087] normalized=[0.5950564276, 0.5950564277] t*(normalized-G)=[-1.106411, -1.106410]
+PROFILE d=2 gamma=1 alpha=3/2 G=[0.3296894548, 0.3297159633]
+  n=4 t=[13.067974, 13.067975] normalized=[0.2783876618, 0.2783876619] t*(normalized-G)=[-0.670757, -0.670410]
+    actual finite rectangle ell=100000000 normalized enclosure=[0.2783871981, 0.2783881255]
+  n=8 t=[25.634345, 25.634346] normalized=[0.3025091918, 0.3025091919] t*(normalized-G)=[-0.697428, -0.696748]
+    actual finite rectangle ell=100000000 normalized enclosure=[0.3025079065, 0.3025104772]
+  n=16 t=[50.767086, 50.767087] normalized=[0.3156856222, 0.3156856223] t*(normalized-G)=[-0.712280, -0.710933]
+    actual finite rectangle ell=100000000 normalized enclosure=[0.3156820231, 0.3156892214]
+PROFILE d=2 gamma=2 alpha=5/2 G=[0.6727794147, 0.6727794666]
+  n=4 t=[13.067974, 13.067975] normalized=[0.6658857574, 0.6658857575] t*(normalized-G)=[-0.090087, -0.090086]
+    actual finite rectangle ell=100000000 normalized enclosure=[0.6658799178, 0.6658915970]
+  n=8 t=[25.634345, 25.634346] normalized=[0.6724928788, 0.6724928789] t*(normalized-G)=[-0.007347, -0.007345]
+    actual finite rectangle ell=100000000 normalized enclosure=[0.6724605430, 0.6725252147]
+  n=16 t=[50.767086, 50.767087] normalized=[0.6734899522, 0.6734899526] t*(normalized-G)=[0.036069, 0.036072]
+    actual finite rectangle ell=100000000 normalized enclosure=[0.6733089352, 0.6736709696]
+STRICT THRESHOLD SAMPLES (finite checks; universal conjecture remains a research target)
+  d=1 gamma=1 betaW=[0.6211844599, 0.6211844600] b=[0.6211854599, 0.6211854600] t=[12.892675, 12.892676] R-W=[0.6413198519, 0.6413198520]
+  d=1 gamma=2 betaW=[0.4848591602, 0.4848591603] b=[0.4848601602, 0.4848601603] t=[12.683897, 12.683898] R-W=[88.1501700196, 88.1501700202]
+  d=2 gamma=1 betaW=[0.5407895304, 0.5407895305] b=[0.5407905304, 0.5407905305] t=[12.772462, 12.772463] ell=100000000 (R_rectangle/ell-W)_lower=[2.7200039600, 2.7200039601]
+    partial-limit error upper R_gamma/ell=[0.0000044936, 0.0000044937]
+  d=2 gamma=2 betaW=[0.4431722883, 0.4431722884] b=[0.4431732883, 0.4431732884] t=[12.615297, 12.615298] ell=100000000 (R_rectangle/ell-W)_lower=[66.6672750830, 66.6672750840]
+    partial-limit error upper R_gamma/ell=[0.0005497842, 0.0005497843]
+ALL_CHECKS_OK

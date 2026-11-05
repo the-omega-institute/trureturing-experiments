@@ -1,0 +1,9 @@
+Python 3.14.8; SymPy 1.14.0; exact arithmetic only
+SOURCE_BINARY: symbolic residual=ones(2); det=-u*(1-v)-v; 81 exact grid points, only (0,0) feasible
+FAMILY n=4: rank=3; pairwise 0<overlap<1; symbolic PD lift; exact residual box, 2 vertices; 3 rational p values
+FAMILY n=5: rank=4; pairwise 0<overlap<1; symbolic PD lift; exact residual box, 4 vertices; 3 rational p values
+FAMILY n=6: rank=5; pairwise 0<overlap<1; symbolic PD lift; exact residual box, 8 vertices; 3 rational p values
+FAMILY n=7: rank=6; pairwise 0<overlap<1; symbolic PD lift; exact residual box, 16 vertices; 3 rational p values
+FAMILY n=8: rank=7; pairwise 0<overlap<1; symbolic PD lift; exact residual box, 32 vertices; 3 rational p values
+INSTRUMENT n=4,p=1/2: exact normalized inputs, Kraus completeness, zero error, outcome-independent pure outputs, residual POVM success=(0,0,0,1/3)
+ALL_CHECKS_OK

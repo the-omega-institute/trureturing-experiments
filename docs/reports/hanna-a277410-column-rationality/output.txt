@@ -1,0 +1,13 @@
+Python 3.14.8; SymPy 1.14.0; exact rational arithmetic
+FIDELITY: 78 source triangle entries (rows 1..12) match
+SOURCE_EQUATIONS: original and fixed-point equations hold modulo t^13
+COLUMN k=0: rates/degrees, ODE, initial zeros, rational identity OK; deg(D*C)=1, deg(P)=0, LC=1
+COLUMN k=1: rates/degrees, ODE, initial zeros, rational identity OK; deg(D*C)=4, deg(P)=2, LC=-2
+COLUMN k=2: rates/degrees, ODE, initial zeros, rational identity OK; deg(D*C)=9, deg(P)=6, LC=24
+COLUMN k=3: rates/degrees, ODE, initial zeros, rational identity OK; deg(D*C)=16, deg(P)=12, LC=-3456
+COLUMN k=4: rates/degrees, ODE, initial zeros, rational identity OK; deg(D*C)=25, deg(P)=20, LC=9953280
+COLUMN k=5: rates/degrees, ODE, initial zeros, rational identity OK; deg(D*C)=36, deg(P)=30, LC=-859963392000
+COLUMN k=6: rates/degrees, ODE, initial zeros, rational identity OK; deg(D*C)=49, deg(P)=42, LC=3120635156889600000
+SOURCE_NUMERATORS: P_0,...,P_5 reproduced exactly
+SCOPE: finite exact checks for k=0,...,6; no uniform proof claimed
+ALL_CHECKS_OK

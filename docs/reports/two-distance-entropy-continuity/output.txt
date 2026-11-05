@@ -1,0 +1,8 @@
+FIDELITY: Theorem 3, d=2..5, denominator n=1..6,
+  every unordered simplex pair including identical states: 40399
+SETTLEMENT IDENTITY + SOURCE SHARPNESS: d=2..10,
+  e=a/n, v=b/n, 1<=b<=a<=n<=24, 2*ceil(e/v)<=d: 14010
+  integer ratio: 4416 ; noninteger ratio: 9594
+  e=1 endpoint: 1550 ; equal-state extension: checked
+NEGATIVE CONTROLS: omitted remainder and floor-for-ceiling both detected
+ALL_CHECKS_OK

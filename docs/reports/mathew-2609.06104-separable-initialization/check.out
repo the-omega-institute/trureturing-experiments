@@ -1,0 +1,5 @@
+m=1; N=1; auxiliary_qubits=1; source_squares=OK; Clifford_and_conserved_square=OK; covariance_inner=0; ground_product_peak=2*sqrt(2); separable_bound_squared=8; benchmark_squared=16
+m=2; N=6; auxiliary_qubits=2; source_squares=OK; Clifford_and_conserved_square=OK; covariance_inner=-2; ground_product_peak=4*sqrt(2); separable_bound_squared=32; benchmark_squared=32
+m=3; N=15; auxiliary_qubits=2; source_squares=OK; Clifford_and_conserved_square=OK; covariance_inner=-2; ground_product_peak=10*sqrt(2)/3; separable_bound_squared=40; benchmark_squared=48
+m=4; N=28; auxiliary_qubits=3; source_squares=OK; Clifford_and_conserved_square=OK; covariance_inner=-4; ground_product_peak=4*sqrt(2); separable_bound_squared=64; benchmark_squared=64
+ALL_CHECKS_OK

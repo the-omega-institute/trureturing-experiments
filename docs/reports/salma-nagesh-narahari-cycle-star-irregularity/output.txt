@@ -1,0 +1,8 @@
+FIDELITY Theorem 3.2: k=3, 1<=m<=40, 40 source labelings verified
+GRAPH_FIDELITY 60 source/cyclic edge-set isomorphisms verified
+EXACT_MINIMA 3<=k<=12, 1<=m<=6: 60 minima equal source values
+CONSTRUCTION 4<=k<=160, 1<=m<=80: 12560 labelings verified
+BRANCHES large=3320 small=9240; exact inventories/reserves verified
+CONJECTURE_PIECEWISE 8<=k<=160, 1<=m<=80: 12240 identities verified
+ARITHMETIC integers only; finite checks are not an unbounded proof
+ALL_CHECKS_OK

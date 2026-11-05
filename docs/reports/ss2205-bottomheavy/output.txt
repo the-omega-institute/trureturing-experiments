@@ -1,0 +1,12 @@
+FIDELITY S_B[6,4] coefficients = (15, 24, 34, 38, 43, 42, 43, 38, 35, 26, 20, 14, 10, 6, 4, 2, 1)
+FIDELITY c_B[7,5] coefficients = (21, 36, 51, 60, 70, 74, 79, 78, 79, 74, 71, 62, 56, 44, 35, 26, 20, 14, 10, 6, 4, 2, 1)
+FIDELITY S[4,3] coefficients = (3, 2, 1)
+FIDELITY both printed type-B examples are nonunimodal and bottom heavy
+SETTLEMENT all four recurrences: 0 <= n <= 50, -3 <= k <= 53
+SETTLEMENT polynomial cases = 11628 ; reflected comparisons = 1187487
+BRIDGE h/e expansions: 0 <= n <= 8, 0 <= k <= n+1; identities = 216
+STRUCTURE products: 0..4 factors, each length 1..6; products = 1555
+STRUCTURE common-left-endpoint comparisons, d <= D <= d+12 = 161736
+STRUCTURE weighted sums of two products, weights 0..3; cases = 7056
+LIMIT finite integer checks only; no universal proof or Lean proof is asserted
+ALL_CHECKS_OK

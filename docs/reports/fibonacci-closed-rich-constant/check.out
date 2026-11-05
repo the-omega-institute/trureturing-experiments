@@ -1,0 +1,20 @@
+EXACT_CONSTANT (2 + 5*sqrt(5))/121
+SMALL n=1 factors=2 M_n=2 ratio=2
+SMALL n=5 factors=6 M_n=6 ratio=6/25
+SMALL n=6 factors=7 M_n=9 ratio=1/4
+SMALL n=13 factors=14 M_n=26 ratio=2/13
+SMALL n=21 factors=22 M_n=62 ratio=62/441
+SMALL n=33 factors=34 M_n=150 ratio=50/363
+SMALL n=48 factors=49 M_n=273 ratio=91/768
+SMALL n=64 factors=65 M_n=505 ratio=505/4096
+FIDELITY Table_1_rows=33 exact_prefix_counts_and_minima=OK
+PREDICATES distinct_words=2144 overlapping_occurrence_crosscheck=OK
+SMALL_BOUND all_factors_lengths=1..64 checked_factors=2144 least_ratio=91/768 at_length=48 Cl=273
+SPECIAL k=7 length=48 Cl=273 ratio=91/768
+SPECIAL k=8 length=79 Cl=716 ratio=716/6241
+SPECIAL k=9 length=129 Cl=1870 ratio=1870/16641
+SPECIAL k=10 length=210 Cl=4897 ratio=4897/44100
+SPECIAL k=11 length=341 Cl=12816 ratio=12816/116281
+SPECIAL k=12 length=553 Cl=33554 ratio=33554/305809
+SCOPE finite checks support C5.3; the universal lower bound and exact infimum remain unproved
+ALL_CHECKS_OK

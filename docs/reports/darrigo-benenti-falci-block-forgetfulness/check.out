@@ -1,0 +1,3 @@
+fidelity: exp(-4*exp(-1))/2 + 1/2
+boundary_cases: 80
+ALL_CHECKS_OK

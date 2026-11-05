@@ -1,0 +1,31 @@
+finite family=IA agents=2 prime=2: Table1, type, Delta_A, E, two products OK
+finite family=IA agents=3 prime=2: Table1, type, Delta_A, E, two products OK
+finite family=IA agents=4 prime=2: Table1, type, Delta_A, E, two products OK
+finite family=IA agents=2 prime=3: Table1, type, Delta_A, E, two products OK
+finite family=IA agents=3 prime=3: Table1, type, Delta_A, E, two products OK
+finite family=IA agents=4 prime=3: Table1, type, Delta_A, E, two products OK
+finite family=IA agents=2 prime=5: Table1, type, Delta_A, E, two products OK
+finite family=IA agents=3 prime=5: Table1, type, Delta_A, E, two products OK
+finite family=IA agents=4 prime=5: Table1, type, Delta_A, E, two products OK
+finite family=IA agents=2 prime=7: Table1, type, Delta_A, E, two products OK
+finite family=IA agents=3 prime=7: Table1, type, Delta_A, E, two products OK
+finite family=IA agents=4 prime=7: Table1, type, Delta_A, E, two products OK
+finite family=Det agents=2 prime=3: Table1, type, Delta_A, E, two products OK
+finite family=Det agents=3 prime=3: Table1, type, Delta_A, E, two products OK
+finite family=Det agents=4 prime=3: Table1, type, Delta_A, E, two products OK
+finite family=Det agents=2 prime=5: Table1, type, Delta_A, E, two products OK
+finite family=Det agents=3 prime=5: Table1, type, Delta_A, E, two products OK
+finite family=Det agents=4 prime=5: Table1, type, Delta_A, E, two products OK
+finite family=Det agents=2 prime=7: Table1, type, Delta_A, E, two products OK
+finite family=Det agents=3 prime=7: Table1, type, Delta_A, E, two products OK
+finite family=Det agents=4 prime=7: Table1, type, Delta_A, E, two products OK
+finite family=Mix agents=2 prime=5: Table1, type, Delta_A, E, two products OK
+finite family=Mix agents=3 prime=5: Table1, type, Delta_A, E, two products OK
+finite family=Mix agents=4 prime=5: Table1, type, Delta_A, E, two products OK
+finite family=Mix agents=2 prime=7: Table1, type, Delta_A, E, two products OK
+finite family=Mix agents=3 prime=7: Table1, type, Delta_A, E, two products OK
+finite family=Mix agents=4 prime=7: Table1, type, Delta_A, E, two products OK
+FIDELITY source_models=27 table_entries=14000 classical_axiom_valuations=7593612
+PROPOSED_BASIS factor_models=27 direct_products=54: all centrality and guards OK
+EXHAUSTIVE Boolean_carrier=4 agents=2 prime=2 type=IA candidates=66049 MCL_models=784 E_models=122 CL_models=121 Delta_models=2: E iff CL or Delta_A OK
+ALL_CHECKS_OK

@@ -1,0 +1,12 @@
+FIDELITY: all 19 displayed OEIS values (n=0..18) agree
+FIDELITY: a(11)=21794641505; a(11) mod 125=5
+FIDELITY: a(13)=20088655029078; a(13) mod 216=6
+FIDELITY: source Theorem I holds for all n=1..2001
+SETTLEMENT CHECK: all m=2..1000 pass exact quotient and modular-power routes
+DOMAIN CHECK: 500 even and 499 odd parameters included; no primality restriction
+OUTLINE CHECK: integrality expansion, cubic truncation, integer cancellation,
+and explicit divisibility witness hold for every m=2..128
+SYMBOLIC CHECK: (X+1)^2*(1-2*X+3*X^2)=1+4*X^3+3*X^4
+BOUNDARY: m=1 gives remainder 0, so the source lower bound m>=2 matters
+SCOPE: finite checks and one polynomial identity; no Lean proof of the universal claim
+ALL_CHECKS_OK

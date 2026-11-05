@@ -1,0 +1,12 @@
+Exact arithmetic: integer enumeration and SymPy rational polynomial algebra
+FIDELITY_OK: equal orbital averages; F(P3)-F(K2 disjoint K1)=y(1-x)
+BASE_OK: both five-vertex polynomials and both conditioning identities
+FAMILY_OK: r=2; connected, faithful C2; universal counts 2,3
+FAMILY_OK: r=3; connected, faithful C2; universal counts 3,4
+FAMILY_OK: r=4; connected, faithful C2; universal counts 4,5
+FAMILY_OK: r=5; connected, faithful C2; universal counts 5,6
+IE_OK: seven-vertex graph 1; all 131072 edge subsets
+IE_OK: seven-vertex graph 2; all 131072 edge subsets
+EXPANDED_2F = 3*x**7 + x**6 - 52*x**5*y + 144*x**4*y + 207*x**3*y**2 - 388*x**3*y - 699*x**2*y**2 + 820*x**2*y - 158*x*y**3 + 1300*x*y**2 - 1184*x*y + 262*y**3 - 1120*y**2 + 864*y
+COLORINGS_OK: all 15 palettes 0<=y<=x<=4; base and r=2; fixed counts and quotient counts
+ALL_CHECKS_OK

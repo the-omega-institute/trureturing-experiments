@@ -1,0 +1,14 @@
+SOURCE_FIDELITY: 148 strongly connected skeletons; 12060 count vectors; n=1..6
+FAMILY_GEOMETRY: q=2; cycles=2; dimension=1; active=1; chamber_fraction=1/2
+FAMILY_GEOMETRY: q=3; cycles=3; dimension=2; active=3; chamber_fraction=1/6
+FAMILY_GEOMETRY: q=4; cycles=4; dimension=3; active=7; chamber_fraction=1/24
+FAMILY_GEOMETRY: q=5; cycles=5; dimension=4; active=15; chamber_fraction=1/120
+FAMILY_GEOMETRY: q=6; cycles=6; dimension=5; active=31; chamber_fraction=1/720
+EXACT_FINITE_LAW: q=2; n=10; p_supported=1; Pr(N)=319/512; tie_free_order_fraction=1/2 when nonempty
+EXACT_FINITE_LAW: q=3; n=10; p_supported=1; Pr(N)=14318/59049; tie_free_order_fraction=1/6 when nonempty
+EXACT_FINITE_LAW: q=4; n=10; p_supported=1; Pr(N)=54979/524288; tie_free_order_fraction=1/24 when nonempty
+EXACT_FINITE_LAW: q=5; n=10; p_supported=1; Pr(N)=432518/9765625; tie_free_order_fraction=1/120 when nonempty
+ALL_SIZES: 4352 count vectors; q=2..5; n=1..10
+ZERO_CASES: no-loop singleton obstruction; dimension-deficient looped triangle forces N2=N3
+SCOPE: exact finite checks and Gaussian chamber algebra; not a proof of the unbounded probabilistic limit
+ALL_CHECKS_OK

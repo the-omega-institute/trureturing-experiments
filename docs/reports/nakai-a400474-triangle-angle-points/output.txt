@@ -1,0 +1,12 @@
+FIDELITY: literal source program n=3..30 agrees; a(6)=6; a(9)=16
+SOURCE_PREFIX n=3..14: 0,0,0,6,6,12,16,20,24,34,38,48
+FIDELITY: all 998 published b-file entries n=3..1000 equal the closed form
+IDENTITY: independent distinct-triple optimization n=3..199 agrees
+FLOOR_VECTORS_CHECKED: 3940394
+REMOVALS: corrected H(n,r) for every 0<=r<n, n=3..199 agrees
+DIRECT_SETS: disjointness and subtraction n=3..22 agree
+EXCHANGE: donor/receiver inequalities n=6..199 agree
+THRESHOLD_REGRESSION: H(6,5)=6 whereas F(5)=8; F requires r<=floor(n/2)
+DEGREE_CASE: equilateral=10446; (59.7,59.7,60.6) degrees=10562
+GEOMETRY: circle-arc/angle-triple bijection is an unproved formalization obligation
+ALL_CHECKS_OK

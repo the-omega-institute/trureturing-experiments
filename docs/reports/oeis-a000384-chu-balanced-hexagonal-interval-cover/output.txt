@@ -1,0 +1,6 @@
+construction n=1..30: OK
+exhaustive minimum n=1: k=2
+exhaustive minimum n=2: k=4
+exhaustive minimum n=3: k=6
+counting lower bound n=1..30: OK
+ALL_CHECKS_OK

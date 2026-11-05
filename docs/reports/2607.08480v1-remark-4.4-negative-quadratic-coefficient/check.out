@@ -1,0 +1,13 @@
+FIDELITY: star polynomial reproduced for 2 <= n <= 10
+FIDELITY: Theorem 4.1 verified on 1099 graphs; 870 meet its hypothesis
+WITNESS: n=113, edges=6221, alpha=4, connected=True, no_isolates=True
+WITNESS: independence_sequence=(1, 113, 107, 295, 300); all 816 independent sets counted
+WITNESS: quotient=(1, 112, -5, 300); Q(-1)=-416; exact_multiplicity=1; b=-5
+TRIAGE ONLY: strict coefficient valley 113 > 107 < 295
+PRIOR ART: Levit-Mandrescu joining size 25 gives P(-1)=71, not the required root
+FAMILY: -b at t=u+5 is 5*u**2 + 26*u + 5, positive for every integer u>=0
+FAMILY: -Q(-1) at t=u+5 is 23*u**2 + 196*u + 416, positive for every integer u>=0
+FAMILY: s1-s2 at t=u+5 is 5*u**2 + 26*u + 6, positive for every integer u>=0
+FAMILY: s3-s2 at t=u+5 is 6*u**2 + 70*u + 188, positive for every integer u>=0
+FAMILY: H(-1)=6(t-1)^2; P=(1+x)Q; Q(-1)=-(t-1)(23t-11); b=t(24-5t)
+ALL_CHECKS_OK

@@ -1,0 +1,18 @@
+FIDELITY: Theorem 1 finite two-point case, epsilon=1/4, n=0..32;
+  L1 residual norm=(1/4)^n and L2 squared residual=(1/4)^(2n)(I-E).
+  Corollary 3 L1 contraction: 169 exact rational inputs.
+BLOCKS: 2673 exact residual identities (j=0..80, n=0..32).
+  Positive stochastic symmetric blocks; B=1; Petz R=phi; fixed projection E.
+  Geometric weights: each finite sum plus its exact tail is 1.
+MOVING_TRUNCATION n=1 N=9 norm=81/121 lower=7/11>1/2
+MOVING_TRUNCATION n=2 N=17 norm=83521/130321 lower=11/19>1/2
+MOVING_TRUNCATION n=4 N=33 norm=1406408618241/2251875390625 lower=19/35>1/2
+MOVING_TRUNCATION n=8 N=65 norm=101534516782101416168212890625/164890958756244164895763202881 lower=35/67>1/2
+MOVING_TRUNCATION n=16 N=129 norm=34583642216577291571477807030708570031653745592819805473285538058241/56582412563588086787946403396904160652993080725936197832718205906561 lower=67/131>1/2
+TRUNCATIONS: exact formula ||T_N^n-E_N||_1=(1-2/(N+2))^(2n).
+  n=0,1,2,4,8,16,32; N=1,2,4,8,16,32,64,128.
+  Moving N(n)=8n+1 gives norms >1/2 for n=1..128.
+  Explicit near-1 witnesses: n=1..64, eta=1/d, d=2..16.
+  Infinite norm=1 and strong L1 convergence require the stated tail/limit argument;
+  finite truncations alone do not certify an infinite supremum or a limit.
+ALL_CHECKS_OK

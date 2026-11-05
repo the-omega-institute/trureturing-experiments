@@ -1,0 +1,9 @@
+FIDELITY h=3 x0=1: x=[1,9,9/10,90/109,9810/12781]; square readouts=[16,169,19321]
+FIDELITY h=10 x0=10: readouts=[2,9/5,49,1521]; failures=[2,3]
+DIRECT exact Fraction checks: h=1..80, x0=1..160, n=2..7; 12800 starts
+FINITE-STATE/CRT checks: every class for h=1..40,50,65, and its shift by M; 10589 classes
+h=65: M=4225; counts=(3507,714,4); densities=(3507/4225,714/4225,4/4225)
+h=65 two-failure classes: [1365, 2015, 2210, 2860]
+h=65 coincident-prime classes: [520, 1170, 3055, 3705]
+h=65 x0=1365: failing readouts at n=2,3 are 484/13 and 214369/5
+ALL_CHECKS_OK

@@ -1,0 +1,20 @@
+Exact binary-polynomial field arithmetic; field laws exhaustively verified for q=2,4,8,16.
+Fidelity: Proposition 6.1 and Theorem 6.2 even-characteristic rank recurrence.
+GF(2) n=0: rank_counts=[1]; exhaustive B and independently exhaustive C; inverse, rank, Gram, Frobenius, truncation OK
+GF(2) n=1: rank_counts=[1]; exhaustive B and independently exhaustive C; inverse, rank, Gram, Frobenius, truncation OK
+GF(2) n=2: rank_counts=[1, 1]; exhaustive B and independently exhaustive C; inverse, rank, Gram, Frobenius, truncation OK
+GF(2) n=3: rank_counts=[1, 5]; exhaustive B and independently exhaustive C; inverse, rank, Gram, Frobenius, truncation OK
+GF(2) n=4: rank_counts=[1, 17, 10]; exhaustive B and independently exhaustive C; inverse, rank, Gram, Frobenius, truncation OK
+GF(2) n=5: rank_counts=[1, 49, 142]; exhaustive B and independently exhaustive C; inverse, rank, Gram, Frobenius, truncation OK
+GF(4) n=0: rank_counts=[1]; exhaustive B and independently exhaustive C; inverse, rank, Gram, Frobenius, truncation OK
+GF(4) n=1: rank_counts=[1]; exhaustive B and independently exhaustive C; inverse, rank, Gram, Frobenius, truncation OK
+GF(4) n=2: rank_counts=[1, 3]; exhaustive B and independently exhaustive C; inverse, rank, Gram, Frobenius, truncation OK
+GF(4) n=3: rank_counts=[1, 27]; exhaustive B and independently exhaustive C; inverse, rank, Gram, Frobenius, truncation OK
+GF(4) n=4: rank_counts=[1, 171, 324]; exhaustive B and independently exhaustive C; inverse, rank, Gram, Frobenius, truncation OK
+GF(8) n=0: rank_counts=[1]; exhaustive B and independently exhaustive C; inverse, rank, Gram, Frobenius, truncation OK
+GF(8) n=1: rank_counts=[1]; exhaustive B and independently exhaustive C; inverse, rank, Gram, Frobenius, truncation OK
+GF(8) n=2: rank_counts=[1, 7]; exhaustive B and independently exhaustive C; inverse, rank, Gram, Frobenius, truncation OK
+GF(8) n=3: rank_counts=[1, 119]; exhaustive B and independently exhaustive C; inverse, rank, Gram, Frobenius, truncation OK
+GF(4) -> GF(16), generator=6: all 496 size-4 square-zero matrices commute with embedding
+GF(4) -> GF(16), generator=7: all 496 size-4 square-zero matrices commute with embedding
+ALL_CHECKS_OK

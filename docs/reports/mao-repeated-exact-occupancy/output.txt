@@ -1,0 +1,23 @@
+FIDELITY source section 8: n=9, sizes=(3, 2, 2, 1), configurations=979776
+  t=1 exact: mean=938/243, variance=1083523/472392, raw1_to_4=(Fraction(938, 243), Fraction(33425, 1944), Fraction(164287, 1944), Fraction(871871, 1944))
+  t=1 threshold: mean=1403/243, variance=357553/472392, raw1_to_4=(Fraction(1403, 243), Fraction(66275, 1944), Fraction(49949, 243), Fraction(2456579, 1944))
+  t=2 exact: mean=131/81, variance=41155/52488, raw1_to_4=(Fraction(131, 81), Fraction(2203, 648), Fraction(2597, 324), Fraction(13315, 648))
+  t=2 threshold: mean=155/81, variance=6895/13122, raw1_to_4=(Fraction(155, 81), Fraction(2035, 486), Fraction(541, 54), Fraction(12481, 486))
+  t=3 exact: mean=68/243, variance=105163/472392, raw1_to_4=(Fraction(68, 243), Fraction(65, 216), Fraction(667, 1944), Fraction(277, 648))
+  t=3 threshold: mean=8/27, variance=1345/5832, raw1_to_4=(Fraction(8, 27), Fraction(619, 1944), Fraction(235, 648), Fraction(877, 1944))
+  t=4 exact: mean=4/243, variance=956/59049, raw1_to_4=(Fraction(4, 243), Fraction(4, 243), Fraction(4, 243), Fraction(4, 243))
+  t=4 threshold: mean=4/243, variance=956/59049, raw1_to_4=(Fraction(4, 243), Fraction(4, 243), Fraction(4, 243), Fraction(4, 243))
+FIDELITY_OK: 72 exact identities; fully occupied inequality r=1,...,9
+WITNESS n=r=2, T=4, all m_i=1, t=2
+  ordered_pattern_pairs=36, surviving_pairs=6, denominators=8,8
+  E[X]=3/4, E[(X)_2]=3/4, E[X]^2=9/16, excess=3/16, variance=15/16
+  FAMILY k=1: u_k=1, u_k-u_k^2=0, variance=1
+  FAMILY k=2: u_k=3/4, u_k-u_k^2=3/16, variance=15/16
+  FAMILY k=3: u_k=5/8, u_k-u_k^2=15/64, variance=55/64
+  FAMILY k=4: u_k=35/64, u_k-u_k^2=1015/4096, variance=3255/4096
+  FAMILY k=5: u_k=63/128, u_k-u_k^2=4095/16384, variance=12159/16384
+  FAMILY k=6: u_k=231/512, u_k-u_k^2=64911/262144, variance=183183/262144
+  FAMILY k=7: u_k=429/1024, u_k-u_k^2=255255/1048576, variance=694551/1048576
+FAMILY_OK: pattern pairs k=1,...,5; all samples k=1,...,7; recurrence k=1,...,100
+INFINITE_SCOPE: finite checks support the outlined bijection/induction; no infinite proof claimed
+ALL_CHECKS_OK

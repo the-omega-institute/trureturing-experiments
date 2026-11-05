@@ -1,0 +1,13 @@
+FIDELITY: source fundamental block determinant and vectorization verified symbolically
+FIDELITY: actual camera tuple n=8, rank=8, 0 maximal minors and 1 cofactor determinants vanish
+FIDELITY: actual camera tuple n=9, rank=8, 1 maximal minors and 9 cofactor determinants vanish
+FIDELITY: actual camera tuple n=10, rank=8, 10 maximal minors and 45 cofactor determinants vanish
+CONTROL: rank-eight kernel spanned by I3 is rejected by cofactor determinant at n=8,9
+BOUNDARY: n=9, rank=8, kernel rank-one only; 1 minors and 9 cofactor determinants vanish
+BOUNDARY: n=10, rank=8, kernel rank-one only; 10 minors and 45 cofactor determinants vanish
+BOUNDARY: n=9 rank-one Segre matrix has identically zero eight-row cofactors
+DEFORMATION: all 88 E00-compatible grid pairs; branch counts=[36, 36, 16]; symbolic identities and nonzero specializations at t=-1,1,2
+DEFORMATION: all three branches also verified with independent exact symbolic parameters
+RECONSTRUCTION: all 61 F0-compatible grid pairs; ordinary/first-epipole/second-epipole/both=[36, 12, 12, 1]
+SCOPE: exact symbolic identities and bounded rational tests; no all-n proof or Zariski-closure certificate is claimed
+ALL_CHECKS_OK
