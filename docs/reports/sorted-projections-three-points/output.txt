@@ -1,0 +1,7 @@
+LOWER source three-dipole cancellation: explicit distinct triples agree on three planar directions
+RESIDUAL witnesses: A,B runs <=24; C odd runs <=25; D minor=3; E determinant=-19440
+REDUCTION all multiplicities for 0<=k<=8: 43065; five cases {'A': 13299, 'B': 23760, 'C': 2772, 'D': 2772, 'E': 462}
+SOURCE k=2: matching tuples=216; rational fallbacks=0; separates triples
+SOURCE k=3: matching tuples=7776; rational fallbacks=0; separates triples
+SOURCE k=4: matching tuples=279936; rational fallbacks=0; separates triples
+ALL_CHECKS_OK
