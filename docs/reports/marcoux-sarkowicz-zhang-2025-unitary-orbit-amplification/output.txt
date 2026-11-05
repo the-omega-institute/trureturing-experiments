@@ -1,0 +1,10 @@
+FIDELITY: 404 exact spectral-repetition checks, including repeated eigenvalues
+FIDELITY_SCOPE: Section 3.1 matching proposition/corollary; orbit interpretation uses the cited self-adjoint theorem
+AMPLIFICATION: 32 exact padded regroupings, m=1..4 and r=1..4
+POLAR_BLOCKS: 3 exact unitary compressions, polar estimates, residual identities, and Neumann bounds
+CONDITIONAL_FAMILY: all q>=1, lambda=1+8q, error=1/(8q^2), perturb=1/(32q), retained=(7q-1)/(8q^2)>g/4
+GCD: dimensions N=2,4,8,16,32 with the next 20 positive multiples of 3 each
+IRREDUCIBILITY: exact scalar joint commutants in dimensions 2..8
+SEED_NOT_COMPUTED: no concrete N,S,T,delta_1,delta_3 or positive gap is certified
+CHECK_SCOPE: source fidelity and conditional family mechanism only; no settlement certificate
+ALL_CHECKS_OK
