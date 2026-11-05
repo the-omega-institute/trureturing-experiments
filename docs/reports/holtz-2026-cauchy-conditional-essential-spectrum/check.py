@@ -91,5 +91,26 @@ assert Fraction(2, 3) < 1
 assert Fraction(22, 7) / 4 < 1
 assert Fraction(75, 256) * Fraction(22, 7) < 1
 print('NORM eta = 1/2, 1, 3: exact squares 2/pi, pi/4, 75pi/256 are strictly below one')
+# Quantitative Gamma remainder normalization. Brent's log-Gamma theorem
+# supplies the analytic O(|z|^-3) error; here only the exact algebra that
+# cancels an apparent 1/x term and yields the 1/x^2 coefficient is checked.
+a = s.symbols('a', positive=True)
+zeta = s.symbols('zeta', positive=True)
+log_modulus_correction = ((2*a-1)/2*s.log(1+a*a*zeta*zeta)
+    + 2/zeta*s.atan(a*zeta)-2*a + a*zeta*zeta/(6*(1+a*a*zeta*zeta)))
+coefficient_b = s.limit(log_modulus_correction/zeta**2, zeta, 0)
+coefficient_x = s.simplify(4*coefficient_b.subs(a, eta/2))
+same(coefficient_x, eta*(eta-1)*(eta-2)/6)
+same(s.Rational(1,2)+coefficient_x/eta**2, (eta**2+2)/(6*eta))
+print('GAMMA REMAINDER algebra: density coefficient eta(eta-1)(eta-2)/6; alpha coefficient (eta^2+2)/(6eta)')
+
+# Exact numerical-free bounds appearing in the convention-separation
+# witness eta=1, lambda=sqrt(pi)/4. The Fredholm index theorem itself is
+# not certified by these scalar inequalities.
+assert sum(Fraction(6**(2*j), s.factorial(2*j)) for j in range(3)) == 73
+assert 73 > 68
+assert Fraction(220,81) < 3
+print('CONVENTION GUARD scalar bounds: cosh(6)>73>68 and 220/81<3<pi')
+
 print('LIMIT: exact checks test fidelity and symbol identities, not compactness or Fredholmness')
 print('ALL_CHECKS_OK')

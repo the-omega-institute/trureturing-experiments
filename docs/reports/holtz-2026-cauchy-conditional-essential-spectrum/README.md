@@ -17,8 +17,11 @@ python3 numerical.py > numerical.out
 the Cauchy interval-mass ratio 2/3, and the edge-gamma moments. For η = n/2,
 1 ≤ n ≤ 8, it evaluates the Mellin integral for arbitrary symbolic real ξ and
 obtains Γ(η+1/2+iξ)/(Γ(η)η^(1/2+iξ)). It also checks 56 nonnegative Mellin
-moments, the logarithmic Jacobian, elementary remainder coefficients, and
-the inverse-symbol algebra. Its final line is `ALL_CHECKS_OK`.
+moments, the logarithmic Jacobian, elementary remainder coefficients, the inverse-symbol algebra, and the cancellation and coefficient in the
+log-Gamma remainder. The analytic remainder theorem itself is supplied by
+Brent, arXiv:1609.03682v2, Section 2, Theorem 1; the script checks its application algebra.
+It also checks two rational inequalities used to separate the Fredholm and
+Weyl conventions, without certifying an operator index. Its final line is `ALL_CHECKS_OK`.
 These identities do not establish the infinite-dimensional essential spectrum.
 
 `numerical.py` uses floating point arithmetic solely as diagnostics. Its
