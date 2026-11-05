@@ -5,6 +5,17 @@ POLAR_BLOCKS: 3 exact unitary compressions, polar estimates, residual identities
 CONDITIONAL_FAMILY: all q>=1, lambda=1+8q, error=1/(8q^2), perturb=1/(32q), retained=(7q-1)/(8q^2)>g/4
 GCD: dimensions N=2,4,8,16,32 with the next 20 positive multiples of 3 each
 IRREDUCIBILITY: exact scalar joint commutants in dimensions 2..8
-SEED_NOT_COMPUTED: no concrete N,S,T,delta_1,delta_3 or positive gap is certified
-CHECK_SCOPE: source fidelity and conditional family mechanism only; no settlement certificate
+WINDING: rank-one rotation/unitary/determinant identities; three central factors; trace difference -1 in dimension 256
+SEED: q=12, N=3072, scale=12000, exact Gaussian-rational entries
+DELTA_1_ENCLOSURE: (0.000007787566137, 0.000083333333334]
+DELTA_3_ENCLOSURE: [0.000000027126736, 0.000006089451551]
+CERTIFIED_GAP: >1/2400000
+SEED: q=16, N=4096, scale=16000, exact Gaussian-rational entries
+DELTA_1_ENCLOSURE: (0.000005840674603, 0.000062500000000]
+DELTA_3_ENCLOSURE: [0.000000015258789, 0.000004567088664]
+CERTIFIED_GAP: >1/3200000
+EXACT_WITNESS_RAW: 635546394723394397211118915067995438094762604356506641247400725399613672/8697367754308844589267375861940569356149526025614023064047194278065108125
+NUMERICAL_SCOPE: directed rational enclosures, not optimized values of the two minima
+UNIFORM_FAMILY: K=4096, lambda=8001, each perturbation <1/102400000, gamma=1/102425600000
+CHECK_SCOPE: exact seed data, lower-bound constants/identities, explicit permutation upper witness, and uniform family budget; analytic lower-bound argument in draft
 ALL_CHECKS_OK

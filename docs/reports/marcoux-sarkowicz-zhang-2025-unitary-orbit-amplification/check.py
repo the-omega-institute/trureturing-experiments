@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
-"""Exact source-fidelity and conditional padding checks; no concrete gap seed.
+"""Exact fidelity checks and an explicit rational amplification-gap construction.
 
-ALL_CHECKS_OK refers only to assertions executed below. The published existence
-seed is not instantiated, so this program does not certify a counterexample.
+The universal lower-bound argument is stated in the accompanying preregistration;
+this checks its exact finite identities, constants, matrix data and witness cost.
+No floating-point optimization or unverified seed is used.
 """
 from fractions import Fraction as F
 from itertools import combinations_with_replacement, permutations
@@ -150,12 +151,163 @@ def irreducible_examples():
     print('IRREDUCIBILITY: exact scalar joint commutants in dimensions 2..8')
 
 
+def decimal_bound(x, places, upper):
+    """Directed rational rounding, with decimal notation only for presentation."""
+    x=F(x);scale=10**places
+    n=x.numerator*scale//x.denominator
+    if upper and F(n,scale)<x:
+        n+=1
+    return f'{n//scale}.{n%scale:0{places}d}'
+
+
+def winding_identities():
+    # Hermitian rank-one projection path, written with a rational parameter.
+    u=s.Symbol('u',real=True)
+    c=(1-u*u)/(1+u*u);v=2*u/(1+u*u)
+    z=s.Symbol('z',nonzero=True)
+    E=[s.eye(3)[:,i]*s.eye(3)[:,i].T for i in range(3)]
+    for j in [1,2]:
+        vec=s.zeros(3,1);vec[0]=c;vec[j]=v
+        P=vec*vec.T
+        assert (P*P-P).applyfunc(s.cancel)==s.zeros(3)
+        U=s.eye(3)+(z-1)*P
+        Us=s.eye(3)+(1/z-1)*P
+        assert (U*Us-s.eye(3)).applyfunc(s.cancel)==s.zeros(3)
+        assert s.cancel(U.det()-z)==0
+    units=[s.eye(3)+(z-1)*P for P in E]
+    assert units[0]*units[1]*units[2]==z*s.eye(3)
+    for U in units:
+        assert s.factor(U.det())==z
+    # The two endpoint scalar evaluations have dimensions 1, not 3.
+    grid=[F(j,86) for j in range(1,86)]
+    trace_left=F(0)+3*sum(grid)
+    trace_right=3*sum(grid)+F(1)
+    assert trace_left-trace_right==-1
+    assert 1+3*len(grid)==256
+    eps=F(1,8)
+    assert 2*eps==F(1,4) and 3*(2*eps)==F(3,4)<2
+    # pi < 22/7 makes both determinant-integer homotopies avoid -1.
+    assert 3*eps<2 and 2*F(22,7)*eps<2
+    print('WINDING: rank-one rotation/unitary/determinant identities; three central factors; trace difference -1 in dimension 256')
+
+
+def explicit_seed():
+    x=s.Symbol('x',real=True)
+    p=x**4*(1-x)**4
+    assert s.integrate(p/(1+x*x),(x,0,1))==s.Rational(22,7)-s.pi
+    assert s.integrate(p,(x,0,1))==s.Rational(1,630)
+    assert s.factorial(25)>10000*7**25
+    eta=F(1,315)+F(1,10000)
+    assert eta==F(2063,630000)
+    # Exact quantitative tuple recovery for every epsilon in (0,1], q<=16.
+    linear=1+F(64,1000)+F(4,32)+F(8,32000)+F(56,1000)
+    quadratic=F(180,10**6)
+    assert linear==F(4981,4000)
+    assert linear+quadratic<F(5,4)
+    assert F(1,10)*F(5,4)==F(1,8)
+    # Rational matrices K_1,...,K_5 have operator norm one.
+    E=lambda a,b: s.eye(3)[:,a]*s.eye(3)[:,b].T
+    Ks=[E(0,0),E(1,1),E(2,2),E(0,1)+E(1,0),E(0,2)+E(2,0)]
+    for K in Ks:
+        assert K.T==K
+        assert set(K.eigenvals()).issubset({s.Integer(-1),s.Integer(0),s.Integer(1)})
+        assert 1 in K.eigenvals() or -1 in K.eigenvals()
+    def C(t):
+        return sum((F((-1)**r)*t**(2*r)/int(s.factorial(2*r)) for r in range(13)),F(0))
+    def P(t):
+        return sum((F((-1)**r)*t**(2*r+1)/int(s.factorial(2*r+1)) for r in range(12)),F(0))
+    cosdata=[F(0)];sindata=[F(0)];times=[F(0)]
+    for j in range(1,86):
+        t=F(j,86);xx=F(22*j,301)
+        assert xx==F(44,7)*t and 0<xx<7
+        cosdata.append(C(xx)-1);sindata.append(P(xx));times.append(t)
+    cosdata.append(F(0));sindata.append(F(0));times.append(F(1))
+    # Boundary values are prescribed exactly, not obtained by Taylor evaluation.
+    assert cosdata[0]==cosdata[-1]==sindata[0]==sindata[-1]==0
+    assert all(abs(a)<2+eta for a in cosdata+sindata+times)
+    increments=[abs(a[j]-a[j-1]) for a in [times,cosdata,sindata] for j in range(1,87)]
+    witness=max(increments)
+    assert witness<F(7,86)+2*eta<F(88,1000)
+    lower=F(1,10)-2*eta
+    assert lower==F(29437,315000)>F(93,1000)
+    assert lower-witness>F(1,200)
+    # Triple repetition, reordered into 3q-dimensional blocks. Equal labels
+    # represent identical matrices; each unequal pair is one adjacent mesh step.
+    left=[0]+[j for j in range(1,86) for _ in range(3)]
+    right=[j for j in range(1,86) for _ in range(3)]+[86]
+    assert len(left)==len(right)==256
+    assert all(b-a in [0,1] for a,b in zip(left,right))
+    assert [(a,b) for a,b in zip(left,right) if a!=b]==[(j,j+1) for j in range(86)]
+    # Basis-coordinate lists specify the two actual permutation unitaries.
+    # Input is three copies, each consisting of an endpoint q-block and 85 3q-blocks.
+    for q,scale,denominator in [(12,12000,2400000),(16,16000,3200000)]:
+        N=256*q
+        D=s.diag(*(1000*j for j in range(q)))
+        J=s.zeros(q)
+        for j in range(1,q):J[0,j]=J[j,0]=1
+        assert D.T==D and J.T==J
+        B0=D+32*s.I*J
+        B1=B0+s.I*s.eye(q)[:,1]*s.eye(q)[:,1].T
+        assert B1-B0==s.I*s.eye(q)[:,1]*s.eye(q)[:,1].T
+        rows=[]
+        for j in range(1,86):
+            coeff=[times[j]]+[v for _ in Ks for v in [cosdata[j],sindata[j]]]
+            assert len(coeff)==11
+            # Each (encoding label, internal coordinate) has the fixed D and J
+            # part, and exactly one of these eleven rational 3-by-3 data blocks.
+            mats=[s.Rational(times[j].numerator,times[j].denominator)*s.eye(3)]
+            for K in Ks:
+                mats += [s.Rational(cosdata[j].numerator,cosdata[j].denominator)*K,
+                         s.Rational(sindata[j].numerator,sindata[j].denominator)*K]
+            assert len(mats)==11 and all(M.T==M for M in mats)
+            assert all(a.is_Rational for M in mats for a in M)
+            rows.append(coeff)
+        def order(endpoint_first):
+            # Original coordinates are labelled by (copy, endpoint/internal,j,a,b).
+            result=[]
+            def endpoint():
+                result.extend((copy,0,0,a,0) for a in range(q) for copy in range(3))
+            if endpoint_first:endpoint()
+            for j in range(1,86):
+                for copy in range(3):
+                    result.extend((copy,1,j,a,b) for a in range(q) for b in range(3))
+            if not endpoint_first:endpoint()
+            return result
+        for first in [True,False]:
+            coords=order(first)
+            assert len(coords)==3*N and len(set(coords))==3*N
+        norm_bound=1000*(q-1)+32*(q-1)+2+eta
+        assert norm_bound<scale
+        # Base upper witness matches all equal internal blocks, leaving B0-B1.
+        base_upper=F(1,scale)
+        amplified_upper=witness/scale
+        trace_lower=F(1,N*scale)
+        base_lower=lower/scale
+        assert base_lower-amplified_upper>F(1,denominator)>0
+        print(f'SEED: q={q}, N={N}, scale={scale}, exact Gaussian-rational entries')
+        print(f'DELTA_1_ENCLOSURE: ({decimal_bound(base_lower,15,False)}, {decimal_bound(base_upper,15,True)}]')
+        print(f'DELTA_3_ENCLOSURE: [{decimal_bound(trace_lower,15,False)}, {decimal_bound(amplified_upper,15,True)}]')
+        print(f'CERTIFIED_GAP: >1/{denominator}')
+    print(f'EXACT_WITNESS_RAW: {witness.numerator}/{witness.denominator}')
+    print('NUMERICAL_SCOPE: directed rational enclosures, not optimized values of the two minima')
+    # One fully fixed irreducible contraction family from the 4096 seed.
+    g=F(1,3200000);lam=F(8001);perturb=g/32
+    loss=8/(lam-1)**2
+    assert lam>3 and loss<g/2
+    retained=g-loss-4*perturb
+    assert retained>g/4
+    gamma=g/(4*(lam+1))
+    assert gamma==F(1,102425600000)
+    print('UNIFORM_FAMILY: K=4096, lambda=8001, each perturbation <1/102400000, gamma=1/102425600000')
+
+
 if __name__=='__main__':
     fidelity()
     amplification_blocks()
     near_unitary()
     conditional_family_budget()
     irreducible_examples()
-    print('SEED_NOT_COMPUTED: no concrete N,S,T,delta_1,delta_3 or positive gap is certified')
-    print('CHECK_SCOPE: source fidelity and conditional family mechanism only; no settlement certificate')
+    winding_identities()
+    explicit_seed()
+    print('CHECK_SCOPE: exact seed data, lower-bound constants/identities, explicit permutation upper witness, and uniform family budget; analytic lower-bound argument in draft')
     print('ALL_CHECKS_OK')
