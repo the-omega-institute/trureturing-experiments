@@ -1,0 +1,24 @@
+Arithmetic: integer/Boolean only; Z3 4.15.4 QF_LIA
+FIDELITY source M^(1): 6 rows, 10 columns, 180 interactions, CAN(2,10,2)=6
+FAMILY b=3: 7 parameters, 6 constraints, 5 valid covering rows, free-column frequencies=(2,3)
+FAMILY b=4: 9 parameters, 12 constraints, 6 valid covering rows, free-column frequencies=(2,4)
+FAMILY b=5: 11 parameters, 20 constraints, 7 valid covering rows, free-column frequencies=(2,5)
+FAMILY b=6: 13 parameters, 30 constraints, 8 valid covering rows, free-column frequencies=(2,6)
+FAMILY b=7: 15 parameters, 42 constraints, 9 valid covering rows, free-column frequencies=(2,7)
+FAMILY b=8: 17 parameters, 56 constraints, 10 valid covering rows, free-column frequencies=(2,8)
+FAMILY b=9: 19 parameters, 72 constraints, 11 valid covering rows, free-column frequencies=(2,9)
+EXACT b=3: valid complete tests=36, required interactions=78; rows<=4: UNSAT; optimum=5; all optimal row-multisets=2; possible z-one-counts=[2, 3]; other counts [0, 1, 4, 5]: UNSAT
+EXACT b=4: valid complete tests=70, required interactions=132; rows<=5: UNSAT; optimum=6; all optimal row-multisets=2; possible z-one-counts=[2, 4]; other counts [0, 1, 3, 5, 6]: UNSAT
+BALANCE b=4: every balanced cover with <=6 rows UNSAT; 7 rows SAT; explicit z counts=(4,3)
+MATRIX b=4 (x_1,...,x_4,y_1,...,y_4,z):
+1 1 1 1 0 0 0 0 1
+0 0 0 0 1 1 1 1 1
+1 0 0 0 1 0 0 0 0
+0 1 0 0 0 1 0 0 0
+0 0 1 0 0 0 1 0 0
+0 0 0 1 0 0 0 1 0
+EXACT b=5: valid complete tests=136, required interactions=200; rows<=6: UNSAT; optimum=7; all optimal row-multisets=2; possible z-one-counts=[2, 5]; other counts [0, 1, 3, 4, 6, 7]: UNSAT
+BOUNDARY b=1: optimum=4; balanced optimum SAT; displayed b+2 rows fail coverage
+BOUNDARY b=2: optimum=5; balanced optimum SAT; displayed b+2 rows fail coverage
+BOUNDARY b=3: optimum=5; both optimal z columns have counts=(2,3), hence balanced
+ALL_CHECKS_OK
