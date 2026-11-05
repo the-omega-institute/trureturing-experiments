@@ -30,6 +30,12 @@ def check_variance_combination():
     for v in [Q(0), Q(1, 1000), Q(1, 17), Q(1, 10), Q(1), Q(7, 3)]:
         bound = exact_min(Q(1, 1) / (1 + v), 16 * v)
         assert bound <= Q(17, 18)
+    # Rational variances on either side of v★ provide an exact near-crossover
+    # check for the two competing trials.
+    for v in [Q(59, 1000), Q(60, 1000)]:
+        bound = exact_min(Q(1, 1) / (1 + v), 16 * v)
+        assert bound < Q(17, 18)
+        print(f"near crossover v={v}: exact combined bound = {bound}")
     print("variance combination: exact C = 4*(sqrt(5)-2), rational C = 17/18")
 
 
