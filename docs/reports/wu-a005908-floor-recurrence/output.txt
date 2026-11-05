@@ -1,0 +1,11 @@
+FIDELITY_OK: all 30 displayed OEIS terms, indices 0..29
+FLOOR_OK: exact squared inequalities for m=0..10000
+FINITE_IDENTITY_OK: recurrence at every n=5..3999
+FINITE_GF_OK: D*A=N at every degree 0..3999
+FINITE_COMPANION_OK: v_n=floor(phi*u_n), n=0..3999
+SYMBOLIC_GF_OK: factorization, companion, error and centered-error identities
+SYMBOLIC_ENERGY_OK: E_next=s*E, initial energy, square completion
+EXACT_BOUNDS_OK: 8/15<s<3/4, 0<c, 2*c<1, K*c^2-s*E0=s*(15*s-8)/20>0
+DATA_SHA256: c6ea19d1650b080488c87203cb3c7aa4a4e24d61f90626eed9aed1cbd5944664
+SCOPE: finite checks and exact algebra; no all-index Lean proof or settlement claimed
+ALL_CHECKS_OK

@@ -1,0 +1,10 @@
+Source Conjecture 9.3 table, t=2..12: 4, 12, 48, 216, 864, 4320, 17280, 90720, 362880, 1959552, 7838208
+Independent labelled balance count: t=2, n=6, count=4
+Independent labelled balance count: t=3, n=9, count=12
+Independent labelled balance count: t=4, n=12, count=48
+Independent labelled balance count: t=5, n=15, count=216
+Exact even and odd ratio/error identities: r=1..200, all passed
+Uniform exact bound |a(t+2)/a(t)-24| <= 24/t: t=2..400, all passed
+Source charged-sector normalization: 24/27 = 8/9
+Finite checks support the outline; the unbounded limit is not certified here.
+ALL_CHECKS_OK

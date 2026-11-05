@@ -1,0 +1,31 @@
+FIDELITY Remark 2.7: 192837465 packs 15243 at starts 1,5 and additionally 3
+FIDELITY Proposition 5.25: pattern=125634 overlap=2 j=1 count=1
+FIDELITY Proposition 5.25: pattern=125634 overlap=2 j=2 count=15
+FIDELITY Proposition 5.25: pattern=125634 overlap=2 j=3 count=675
+FIDELITY Proposition 5.25: pattern=125634 overlap=2 j=4 count=61425
+FIDELITY Proposition 5.25: pattern=125634 overlap=2 j=5 count=9398025
+DIRECT permutations: target j=1, all 9! actual permutations, count=1
+TARGET j=1 n=9 count=1 ideal_states=10
+TARGET j=2 n=15 count=30 ideal_states=25
+TARGET j=3 n=21 count=3630 ideal_states=68
+TARGET j=4 n=27 count=1049070 ideal_states=197
+TARGET j=5 n=33 count=554958030 ideal_states=584
+TARGET j=6 n=39 count=466719703230 ideal_states=1745
+TARGET j=7 n=45 count=571731636456750 ideal_states=5228
+TARGET j=8 n=51 count=961080880883796750 ideal_states=15677
+TARGET j=9 n=57 count=2123027665872307020750 ideal_states=47024
+EXACT polynomial identity: 121*C(j-3,0)+168*C(j-3,1)+72*C(j-3,2)=(6j-7)^2
+STRUCTURE j=2: chains, seven-element head, remainder/gluing OK; |Q|=8
+STRUCTURE j=3: chains, seven-element head, remainder/gluing OK; |Q|=14
+STRUCTURE j=4: chains, seven-element head, remainder/gluing OK; |Q|=20
+STRUCTURE j=5: chains, seven-element head, remainder/gluing OK; |Q|=26
+STRUCTURE j=6: chains, seven-element head, remainder/gluing OK; |Q|=32
+STRUCTURE j=7: chains, seven-element head, remainder/gluing OK; |Q|=38
+STRUCTURE j=8: chains, seven-element head, remainder/gluing OK; |Q|=44
+STRUCTURE j=9: chains, seven-element head, remainder/gluing OK; |Q|=50
+STRUCTURE j=10: chains, seven-element head, remainder/gluing OK; |Q|=56
+STRUCTURE j=11: chains, seven-element head, remainder/gluing OK; |Q|=62
+STRUCTURE j=12: chains, seven-element head, remainder/gluing OK; |Q|=68
+GLUING: 76 naturally labelled DAG presentations on 0..4 vertices checked
+Finite exact evidence only; the universal claim has no Lean proof in this check.
+ALL_CHECKS_OK

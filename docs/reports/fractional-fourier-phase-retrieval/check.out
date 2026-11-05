@@ -1,0 +1,17 @@
+Python 3.14.8 ; SymPy 1.14.0 ; exact arithmetic only
+FIDELITY source 3x8 example: analysis rank=8, nullity=1
+FIDELITY source 3x8 example: normalized kernel generator= [[1, 5/4 - I/2, I], [5/4 + I/2, 1, 3*I/4], [-I, -3*I/4, -1]]
+FIDELITY source 3x8 example: determinant= 9/8 ; HMW returns INJECTIVE
+SOURCE DISCREPANCY M=3: four displayed bases are unitary; analysis rank=6, not 8
+SOURCE DISCREPANCY M=3: rank-two nullspace generator = [[0, 1, -1], [1, 0, 0], [-1, 0, 0]]
+SOURCE DISCREPANCY M=3: orthogonal unit collision gives [[1/2, 1/4, 1/4], [1/3, 1/3, 1/3], [1/6, 5/12, 5/12], [1/3, 1/3, 1/3]]
+SOURCE DISCREPANCY M=3: claimed successful HMW test does not reproduce
+WITNESS M=4: labels=[0,1,2,4]; exact S eigenvalues= [-4 + 2*sqrt(2), -4, -4, -4 - 2*sqrt(2)]
+WITNESS M=4: orthogonal unit states, all coordinates nonzero
+WITNESS M=4: all four column-basis intensity vectors= [3/8, 1/8, 3/8, 1/8]
+WITNESS M=4: Hermitian certificate rank=2, eigenvalues +1 and -1
+FAMILY: arbitrary real coordinates give equal signed imaginary-coherence intensities
+FAMILY: symbolic affine-grid relative phase = (-1)^p, for all integer p and Q>=1
+FAMILY: label checks M=4..128; affine-grid boundary/nearby cases= 320
+BOUNDARY: M=3 has no mode 4; general eigenbasis existence is sourced, not numerically inferred
+ALL_CHECKS_OK

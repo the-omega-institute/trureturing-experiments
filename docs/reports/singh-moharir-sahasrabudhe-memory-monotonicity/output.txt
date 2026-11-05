@@ -1,0 +1,9 @@
+FIDELITY homogeneous closed form: {1: 11, 2: 1629}
+SMALL DOMAIN: N=1,2; T=1,2,3; all stochastic half-grid rows;
+  c_i in {1/8,1/4}; d_i in {1/16,1/8}; every per-link M-subset of {1,...,T}.
+COUNTS: {'augmented_systems': 26108, 'memory_pairs': 592}
+MINIMUM STRICT COORDINATE GAIN: 1/105
+DELAY COMPARISON: every architecture at each M has the same exact solution;
+  hence every cross-architecture pair in this finite domain is compared.
+LARGER EXAMPLES: N=3, T=5; identity, cycle, reducible networks; 105 exact systems.
+ALL_CHECKS_OK

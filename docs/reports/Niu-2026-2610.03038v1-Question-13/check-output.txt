@@ -1,0 +1,21 @@
+Python exact arithmetic; SymPy 1.14.0
+a_n from Theorem 2 for 1 <= n <= 40:
+{"1": 0, "2": 2, "3": 16, "4": 182, "5": 2400, "6": 35310, "7": 562848, "8": 9540674, "9": 169777504, "10": 3142665968, "11": 60099912320, "12": 1181283863632, "13": 23767586624960, "14": 487947659276790, "15": 10195163202404160, "16": 216335108170636650, "17": 4653803620322450880, "18": 101343766487960918460, "19": 2231268469684932939360, "20": 49614581272087698764820, "21": 1113193995290046100704000, "22": 25182027272872748947465680, "23": 573940816765415137673047296, "24": 13171499602413957155290038192, "25": 304201390905391663212164401920, "26": 7067040650584008555707794560320, "27": 165074324307073700902731941114368, "28": 3875444655020876381819725292169920, "29": 91414466508167192156821695625314176, "30": 2165836108320334512591644119000754758, "31": 51526678834132776100764629053841843840, "32": 1230621262635301162176409773597044205690, "33": 29498642222396395794870827010410258222976, "34": 709534204427635002993194179926901895153796, "35": 17121997094918813388471655936061616433632032, "36": 414446265805354532178541690535931939939407980, "37": 10061063195818715630245673720464984334816303168, "38": 244915331774514790815217105039654861148077269380, "39": 5977562001394510716086817801287396888483324939200, "40": 146255518884418161141827339009980687797277168581020}
+BRUTE n=1: odd=0, total=1, recurrence_matches=True
+BRUTE n=2: odd=2, total=5, recurrence_matches=True
+BRUTE n=3: odd=16, total=42, recurrence_matches=True
+BRUTE n=4: odd=182, total=462, recurrence_matches=True
+BRUTE n=5: odd=2400, total=6006, recurrence_matches=True
+SOURCE_FINITE_SUM_MATCH 1 <= n <= 140
+FIRST_ORDER_FIT n=2..39: [{"degree": 0, "rank": 2, "columns": 2, "nullity": 0}, {"degree": 1, "rank": 4, "columns": 4, "nullity": 0}, {"degree": 2, "rank": 6, "columns": 6, "nullity": 0}, {"degree": 3, "rank": 8, "columns": 8, "nullity": 0}, {"degree": 4, "rank": 10, "columns": 10, "nullity": 0}, {"degree": 5, "rank": 12, "columns": 12, "nullity": 0}, {"degree": 6, "rank": 14, "columns": 14, "nullity": 0}, {"degree": 7, "rank": 16, "columns": 16, "nullity": 0}, {"degree": 8, "rank": 18, "columns": 18, "nullity": 0}, {"degree": 9, "rank": 20, "columns": 20, "nullity": 0}, {"degree": 10, "rank": 22, "columns": 22, "nullity": 0}, {"degree": 11, "rank": 24, "columns": 24, "nullity": 0}, {"degree": 12, "rank": 26, "columns": 26, "nullity": 0}]
+FIRST_ORDER_FIT n=20..100: [{"degree": 0, "rank": 2, "columns": 2, "nullity": 0}, {"degree": 1, "rank": 4, "columns": 4, "nullity": 0}, {"degree": 2, "rank": 6, "columns": 6, "nullity": 0}, {"degree": 3, "rank": 8, "columns": 8, "nullity": 0}, {"degree": 4, "rank": 10, "columns": 10, "nullity": 0}, {"degree": 5, "rank": 12, "columns": 12, "nullity": 0}, {"degree": 6, "rank": 14, "columns": 14, "nullity": 0}, {"degree": 7, "rank": 16, "columns": 16, "nullity": 0}, {"degree": 8, "rank": 18, "columns": 18, "nullity": 0}, {"degree": 9, "rank": 20, "columns": 20, "nullity": 0}, {"degree": 10, "rank": 22, "columns": 22, "nullity": 0}, {"degree": 11, "rank": 24, "columns": 24, "nullity": 0}, {"degree": 12, "rank": 26, "columns": 26, "nullity": 0}]
+FINITE_WINDOW_LIMIT: coefficient degrees <= 12 only; no unbounded or eventual conclusion from fits
+HYPERGEOMETRIC_SOLUTION_RESIDUAL 0
+ORDER_REDUCTION_RESIDUAL 0
+GOSPER_FACTORIZATION_RESIDUAL 0
+ROOT_B_MINUS_ROOT_A ['-5/3', '-1/6', '-37/24', '-4/3', '1/6', '-29/24', '-17/8', '-5/8', '-2']
+LEADING_COEFFICIENT_DIFFERENCE -448 ; polynomial degree obstruction d+3 > 1
+SOURCE_TELESCOPING_CERTIFICATE_RESIDUAL 0
+THREE_ROW_CORNER_INDUCTION_RESIDUAL 0
+SCOPE: exact finite counts and rational identities; neither claim nor its negation has been proved in Lean
+ALL_CHECKS_OK

@@ -1,0 +1,12 @@
+FIDELITY Delta(F,2;4)=9; avoiding colors on [8]: (0, 1, 2, 3, 0, 1, 2, 3)
+EXACT_ALGEBRA a=4,8,...,40; n=1,...,64; identities and phase bounds: 640
+FIBONACCI u_n=F_(3n)/2, parity, six-step recurrence: n=0,...,200
+FIDELITY Delta(G,3;2)>50000; all gaps: [1, 4, 17, 72, 305, 1292, 5473, 23184]
+G colors on [50000]; counts: [25000, 25000] longest lengths: [2, 2]
+SETTLEMENT_CHECK F on [100000]; distinct Fibonacci gaps: 24 [1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597, 2584, 4181, 6765, 10946, 17711, 28657, 46368, 75025]
+F color counts: [25000, 25000, 25000, 25000] longest lengths: [2, 2, 2, 2]
+FAMILY_CHECK a= 4 N=10000; gaps: [1, 4, 17, 72, 305, 1292, 5473] longest lengths: [2, 2]
+FAMILY_CHECK a= 8 N=10000; gaps: [1, 8, 65, 528, 4289] longest lengths: [2, 2]
+FAMILY_CHECK a= 12 N=10000; gaps: [1, 12, 145, 1752] longest lengths: [2, 2]
+FAMILY_CHECK a= 16 N=10000; gaps: [1, 16, 257, 4128] longest lengths: [2, 2]
+ALL_CHECKS_OK

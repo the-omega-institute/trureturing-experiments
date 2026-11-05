@@ -1,0 +1,4 @@
+fidelity: two-dimensional NV formula and comparison reproduced
+exact checks: 5 spectra/exponents, including n=2,3,4
+sharpness: E_(1,n) equality verified for n=2,3,4
+ALL_CHECKS_OK

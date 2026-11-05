@@ -1,0 +1,27 @@
+FIDELITY OEIS DATA: all 35 displayed entries agree
+SIMULTANEOUS round=0 row_length=2 stable_prefix_length=1
+SIMULTANEOUS round=1 row_length=3 stable_prefix_length=2
+SIMULTANEOUS round=2 row_length=4 stable_prefix_length=2
+SIMULTANEOUS round=3 row_length=6 stable_prefix_length=3
+SIMULTANEOUS round=4 row_length=9 stable_prefix_length=4
+SIMULTANEOUS round=5 row_length=13 stable_prefix_length=4
+SIMULTANEOUS round=6 row_length=20 stable_prefix_length=5
+SIMULTANEOUS round=7 row_length=31 stable_prefix_length=6
+SIMULTANEOUS round=8 row_length=47 stable_prefix_length=6
+SIMULTANEOUS round=9 row_length=72 stable_prefix_length=7
+SIMULTANEOUS round=10 row_length=111 stable_prefix_length=8
+SIMULTANEOUS round=11 row_length=170 stable_prefix_length=8
+SIMULTANEOUS round=12 row_length=261 stable_prefix_length=9
+SIMULTANEOUS round=13 row_length=402 stable_prefix_length=10
+SIMULTANEOUS round=14 row_length=618 stable_prefix_length=10
+SIMULTANEOUS round=15 row_length=950 stable_prefix_length=11
+SIMULTANEOUS round=16 row_length=1462 stable_prefix_length=12
+SIMULTANEOUS round=17 row_length=2249 stable_prefix_length=12
+SIMULTANEOUS round=18 row_length=3459 stable_prefix_length=13
+SIMULTANEOUS round=19 row_length=5322 stable_prefix_length=14
+FIDELITY OEIS EXAMPLE: full rounds 0..4 and stated prefixes at rounds 5,6 agree
+EXPECTED SETTLEMENT: 998 alternating 3,2 coefficients and 996 lag-2 recurrence checks agree
+EXACT HELPERS: rational interval endpoints and B^2 + I = 4*B agree
+OEIS BFILE: all 1000 entries agree; sha256=99653600407d6ca5b734aaa71ade9f2e6e57d35294bedc5107cf028b0899574d
+FINITE AUDIT ONLY: infinite stabilization and all-index induction remain to be formalized
+ALL_CHECKS_OK

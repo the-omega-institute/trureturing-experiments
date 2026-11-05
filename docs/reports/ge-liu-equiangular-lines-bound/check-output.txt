@@ -1,0 +1,19 @@
+SOURCE exceptional branch: 46*sqrt(3) + 90; floor=169
+SOURCE exceptional branch: 30*sqrt(5) + 68; floor=135
+SOURCE cycle excess identity: every n=4,...,1000 gives 1
+GEOMETRY F_2: points=15, lines=15, degree=3, exact incidence identity OK
+GEOMETRY adjacency charpoly = x^10 (x^2-4)^9 (x^2-9)
+GEOMETRY Gram: 30 unit vectors, rank=21, off-diagonal magnitude=1/5; PSD by exact spectrum
+FAMILY symbolic: dimensions, multiplicities, quartic-branch equality, exact excess and E>=k^6/32 OK
+t=3 k=8 q=32 N=67650 d=50226 quartic=41328 linear=56503 excess=11147
+t=4 k=16 q=128 N=4227330 d=3162306 quartic=591328 linear=3359949 excess=867381
+t=5 k=32 q=512 N=268960770 d=201589506 quartic=8918976 linear=207889177 excess=61071593
+t=6 k=64 q=2048 N=17188261890 d=12889099266 quartic=138436480 linear=13090491441 excess=4097770449
+t=7 k=128 q=8192 N=1099645861890 d=824700841986 quartic=2181136128 linear=831143817313 excess=268502044577
+t=8 k=256 q=32768 N=70370891726850 d=52777631924226 quartic=34628566528 linear=52983794548929 excess=17387097177921
+t=9 k=512 q=131072 N=4503633987371010 d=3377716900593666 quartic=551904869376 linear=3384314003915137 excess=1119319983455873
+t=10 k=1024 q=524288 N=288230925908574210 d=216173056992477186 quartic=8813279180800 linear=216384163493446401 excess=71846762415127809
+t=11 k=2048 q=2097152 N=18446752869806768130 d=13835062453331820546 quartic=140874952470528 linear=13841817854920361473 excess=4604935014886406657
+t=12 k=4096 q=8388608 N=1180591761454916435970 d=885443785906815238146 quartic=2252899425968128 linear=885659958706108894209 excess=294931802748807541761
+SCOPE: full q>=32 incidence matrices were not enumerated; family existence uses the classical symplectic construction
+ALL_CHECKS_OK

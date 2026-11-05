@@ -1,0 +1,16 @@
+Independent modular/string periodic check: all 1022 nonempty words of length <= 9 agree
+Primitive periodic avoiders: length=2, words=2, representative=01
+Primitive periodic avoiders: length=10, words=10, representative=0010011011
+Primitive periodic avoiders: length=42, words=42, representative=001001001101100100100110110110010011011011
+Fidelity: all 48 Table 1 counts reproduced exactly; a_48=7966
+Complete primitive-period spectrum for 1 <= period <= 48: [2, 10, 42]
+Fidelity: DMRSS Theorem 12, k=1, period=10: primitive and avoids
+Fidelity: DMRSS Theorem 12, k=2, period=42: primitive and avoids
+Fidelity: DMRSS Theorem 12, k=3, period=178: primitive and avoids
+Fidelity: DMRSS Theorem 12, k=4, period=754: primitive and avoids
+Suitable pair level=0: binary weights=(5,8), base periods=(10,42)
+Suitable pair level=1: binary weights=(89,144), base periods=(178,754)
+Suitable pair level=2: binary weights=(1597,2584), base periods=(3194,13530)
+Cyclic descent helper: all 131070 auxiliary words of length <= 16; 44 avoid the forbidden factors and satisfy a terminal case or three parsings
+Scope: additional n=0 prefix-conjugacy assertion fails (00 versus 01); not the target
+ALL_CHECKS_OK

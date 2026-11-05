@@ -1,0 +1,8 @@
+Native open-word DP: edges 0..200; brute-force distributions agree at 0..8
+Initial counts a_star(0)..a_star(13): 3,5,15,29,91,197,627,1477,4671,11693,36487,95405,293695,792525
+Source fidelity: all 200 entries of Hardin OEIS b188350.txt agree (n=1..200)
+Two-state endpoint transfer agrees with every native energy coefficient at 0..200
+Formal GF and normalized root: exact generalized-binomial coefficients agree through degree 200
+Published order-four recurrence: residual zero for every n=5..200
+Central-binomial constant-term counts agree for j=0..6
+ALL_CHECKS_OK

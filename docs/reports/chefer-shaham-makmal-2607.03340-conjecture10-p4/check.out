@@ -1,0 +1,15 @@
+graph=P4; edges=01,02,23; root=01; p=2; continuation=0,2,3; leaf_degree=1
+angles=(pi/2,-pi,-3*pi/8,3*pi/8) in (gamma1,gamma2,beta1,beta2) order
+special_state={'0000': '1/2', '0011': '-I/2', '1100': '-I/2', '1111': '1/2'}
+special_root_expectation=0
+special_norm_squared=1
+special_other_edge_expectations=['1/2', '0']
+fidelity_Lemma_7_special=PASS
+nearby_angle_shifts=(2*atan(1/100),2*atan(1/97),atan(1/101),atan(1/103))
+nearby_root_expectation=4532808865055386329699672853/6485560649008405461294892502500
+nearby_root_expectation_positive=PASS; all_16_amplitudes_nonzero=PASS
+nearby_norm_squared=1
+fidelity_Lemma_7_nearby=PASS
+fidelity_Lemma_7_p1_distance3_Z1Z3=0; single_Z_expectations=0; bit_flip=PASS
+zero_angle_root_expectation=1/2
+ALL_CHECKS_OK

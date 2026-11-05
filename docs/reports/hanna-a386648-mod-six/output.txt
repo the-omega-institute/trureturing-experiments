@@ -1,0 +1,12 @@
+FIDELITY: all 20 displayed OEIS A386648 values match
+ORIGINAL_EQUATION: coefficients 0..36 equal 1,0,...,0 exactly
+INTEGRALITY: all 36 computed EGF coefficients are integers
+LAMBERT_FIDELITY: W*exp(W)=-x through degree 36
+FORMULA_2: equivalent source equation verified through degree 36
+TAIL_REDUCTION: every EGF tail coefficient is divisible by 6 through degree 36
+CLOSED_CONGRUENCE: coefficient formula holds for n=2..36
+CONJECTURE: 30 residue checks at n=7..36; mismatches=0
+RESIDUES_7_TO_36: [2, 3, 4, 3, 2, 5, 2, 3, 4, 3, 2, 5, 2, 3, 4, 3, 2, 5, 2, 3, 4, 3, 2, 5, 2, 3, 4, 3, 2, 5]
+ARITHMETIC_HELPER: closed formula has the predicted residues for n=7..10000
+BOUNDARY: finite exact checks only; no all-index Lean proof is claimed
+ALL_CHECKS_OK

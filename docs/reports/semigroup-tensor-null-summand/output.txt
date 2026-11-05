@@ -1,0 +1,9 @@
+FIDELITY Example 4.3: b(0..5)= [1, 1, 29, 209, 1289, 7769]
+FIDELITY null multiplicity at n=2: 28; b(n)=6^n-7 for 2<=n<=12
+EXHAUSTIVE GF(2): 1023 nonempty singular-matrix families; 3069 tensor cases n=1,2,3
+Closed families: 92; closed families without identity: 79
+All n=1 cases also match exhaustive enumeration of every null-image idempotent
+UNIFORM exact integer threshold n=5: lower_bound=14, computed_mu=28
+JORDAN exact coordinate-chain decompositions: 25 cases, 2<=d<=6, 1<=n<=5
+m_Z=d^n-2(d-1)^n+(d-2)^n; b=d^n-(d-1)^n in every case
+ALL_CHECKS_OK

@@ -1,0 +1,12 @@
+EVALUATOR: 3584 exact tower/modulus comparisons; capped checks OK
+FIDELITY A(1,1..8): (1, 3, 5, 7, 9, 11, 13, 15)
+FIDELITY A(2,1..8): (1, 11, 29, 55, 89, 131, 181, 239)
+FIDELITY A(3,1..8): (1, 59, 29, 119, 289, 563, 965, 1519)
+FIDELITY quotient example: n=7 m=3 residue_mod_q2=181 digit=12
+FIDELITY quotient example: n=8 m=4 residue_mod_q2=239 digit=14
+CLAIM literal integers: 202 cases (n=2..200,m=2; n=2..4,m=3)
+CLAIM generic modular evaluator: 2189 cases (n=2..200,m=2..12)
+OUTLINE odd-exponent binomial residue: 39999 cases
+BOUNDARY m=1 fails for n=2..20: 19 cases
+LIMIT: finite exact checks only; the unbounded claim has no Lean proof here
+ALL_CHECKS_OK

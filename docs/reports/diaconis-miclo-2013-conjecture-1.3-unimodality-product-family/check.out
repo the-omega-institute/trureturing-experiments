@@ -1,0 +1,5 @@
+source Fourier-block identity: exact
+middle block signs: p(-1) > 33/100 and p(-239/500) < -1/20000
+endpoint Schur certificates: exact rational interval margins
+44-state witness: endpoint gaps > 261/500 and middle gap < 261/500
+ALL_CHECKS_OK

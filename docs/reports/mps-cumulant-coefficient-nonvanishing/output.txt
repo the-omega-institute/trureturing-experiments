@@ -1,0 +1,22 @@
+FIDELITY: full source R_2,...,R_6 reproduced from recurrence
+FIDELITY: Example 1.6 has 42 terms and its exact a_8 coefficient agrees
+SOURCE TYPO: Remark 1.5 prints T_3*T_6; recurrence gives T_3*T_5; both vanish on symmetric laws
+K_2 = p
+K_4 = -p*(3*p - 1)
+K_6 = p*(30*p**2 - 15*p + 1)
+K_8 = -p*(630*p**3 - 420*p**2 + 63*p - 1)
+P = 56700*p**4 - 56700*p**3 + 18165*p**2 - 1950*p + 41
+P(1/100) = 23260367/1000000 ; P(1/20) = -28513/1600
+P' <= -2103/20 < 0 on [1/100,1/20]; exact Sturm root count = 1
+At the unique root p0: K2,K4,K6 > 0; K8 = -21*K6^2/(20*K4) < 0
+At p0: a6 < 0, a8 < 0, a10 = 0; no zero-K4 or Gaussian loophole
+Three-point moment-determinacy certificate: E[X^2*(X^2-1)^2]=0; masses uniquely recovered
+Gaussian addition preserves cumulants of orders 3..10 and the cancellation
+Scaling multiplies a6,a8,a10 by b^8,b^10,b^12 respectively
+Log-density Hessian = -1/sigma^2 + posterior_Var/sigma^4
+Posterior support [-1,1]: 1-Var = w0+(wp-wm)^2 >= 0
+sigma>1: (log f)'' <= -(sigma^2-1)/sigma^4 < 0
+Normalized K4 is strictly decreasing for sigma>1, proving distinct normalized laws
+Analytic obligations beyond exact algebra: finite Gaussian-mixture density is positive analytic;
+its everywhere finite MGF implies moment determinacy (classical MGF criterion).
+ALL_CHECKS_OK

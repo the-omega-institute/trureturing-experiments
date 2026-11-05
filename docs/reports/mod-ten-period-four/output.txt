@@ -1,0 +1,13 @@
+A357397 fidelity: coefficients 0..19 match revision 13
+A357398 fidelity: coefficients 0..16 match revision 13
+F implicit equation: exact zero residual through degree 32
+A original NAME equation: exact zero residual through degree 16
+Independent rational construction = F(exp(x)-1): degrees 0..16
+F[0..4] = [1, 1, 1, 5, 37]
+Degree-four summands r=1..4 = [[0, 0, -1, -4, -33], [0, 0, 1, -4, 0], [0, 0, 0, 8, -48], [0, 0, 0, 0, 81]]
+A factorial coefficients a[0..8] = [1, 1, 3, 37, 1083, 53701, 3934443, 395502997, 51998075643]
+Polynomial coefficients modulo 5 = [3, 1, 3, 2, 2]
+Oddness, exponential residue formula, and last digits: indices 1..32
+a[1..16] modulo 10 = [1, 3, 7, 3, 1, 3, 7, 3, 1, 3, 7, 3, 1, 3, 7, 3]
+Evidence scope: finite exact arithmetic; no all-index or Lean proof
+ALL_CHECKS_OK

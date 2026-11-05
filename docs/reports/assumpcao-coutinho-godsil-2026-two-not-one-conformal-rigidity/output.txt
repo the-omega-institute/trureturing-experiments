@@ -1,0 +1,13 @@
+FIDELITY_OK: source equations (1),(2), symbolic adjoint identity, row sums, trace
+uniform spectrum: [0, 3, 5, 5, 5]
+X spectrum: [0, 0, 5/9, 5/9, 8/9]
+I-X spectrum: [1/9, 4/9, 4/9, 1, 1]
+X trace: 2 ; every edge quadratic value: 10/9
+SYMBOLIC_UPPER_CERTIFICATE_OK: tr(L(w) X) = (10/9) sum(w) = 10 on Delta_E
+Y spectrum: [0, 1/9, 4/9, 4/9, 1]
+SYMBOLIC_LOWER_CERTIFICATE_OK: tr(L(w) Y) = (8/9) sum(w) = 8 on Delta_E
+perturbed weights: [6/5, 6/5, 6/5, 6/5, 6/5, 6/5, 3/5, 3/5, 3/5]
+perturbed spectrum: [0, 18/5, 21/5, 21/5, 6]
+NOT_ONE_RIGID_OK: lambda_2 = 18/5 > 3
+BOUNDARY_OK: all nine simplex vertices; additional zero eigenvalues are allowed
+ALL_CHECKS_OK

@@ -1,0 +1,12 @@
+FIDELITY Proposition 5.4: D_{2,4}(X) is not magic positive.
+D_{2,4}(X) exact magic coefficients: 1, -5/6, 1/6, 0
+SOURCE TYPO: the displayed +X^3 in the rank-two proof must be omitted; D_{2,4}(-1)=0.
+FIDELITY exact lattice counts: n=2..7, 1<=k<=floor(n/2), t=0..3; 48 cases
+FIDELITY Proposition 5.4 ranks 1 and 2 through n=28; 52 parameter pairs
+THRESHOLD n=2..28, every admissible k and integer s=1..n-k+2; 196 parameter pairs; 3136 dilations
+IDENTITY S(-r)=(-1)^(r-1) binom(m-1,r-1): n=2..60; 900 parameter pairs; 9455 evaluations
+DEGREE, leading coefficient, D(0), D(1), D(-m), and S(mX) checked; 900 parameter pairs
+RATIONAL THRESHOLD s=m-1/2,m,m+1/2; 2700 dilations
+Arithmetic: Python integers and fractions.Fraction only; no floating point.
+Finite checks support the proposed uniform argument; no Lean proof is claimed.
+ALL_CHECKS_OK

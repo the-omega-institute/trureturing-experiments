@@ -1,0 +1,18 @@
+FIDELITY matrix-unit order=2: complete mappings=2=Latin squares
+FIDELITY matrix-unit order=3: complete mappings=12=Latin squares
+DEGREE1 B1/PB1: literal diagram products admit identity complete mappings
+COUNTS telephone k=0..10; index parity n=1..40; S2/S3 obstructions: OK
+SUBSETS rank=2: base=6, induction checked through n=38
+SUBSETS rank=3: base=7, induction checked through n=39
+SUPPORT B: full n=1..5, sampled n=6: OK
+SUPPORT PB: full n=1..5, sampled n=6: OK
+BOUNDARY PB2 rank=1: adjacent through sets with only singleton complements are incompatible
+ANCHORED B6 rank=2: indices=45, cycles={2: 21, 3: 1}, triangle=[(0, 1), (0, 1), (1, 0)]
+ANCHORED B7 rank=3: indices=105, cycles={2: 51, 3: 1}, triangle=[(0, 1, 2), (0, 1, 2), (1, 0, 2)]
+FULL B1: explicit complete mapping on 1 diagrams
+FULL B4: explicit complete mapping on 105 diagrams
+FULL B2/B3: unit-ideal obstruction verified on every diagram product
+FULL PB1: explicit complete mapping on 2 diagrams
+FULL PB4: explicit complete mapping on 764 diagrams
+FULL PB2/PB3: unit-ideal obstruction verified on every diagram product
+ALL_CHECKS_OK

@@ -1,0 +1,5 @@
+fidelity r=4,n=2 coefficients: [0, 1, 35]
+source witness r=3,m=1 determinant coefficients: [0, 0, 0, 0, 0, -16, 19110, 938700, 15309000, 79380000]
+checked exact determinant coefficients for r=3..15, m=1..15
+checked [x^5] identity and strict negativity
+ALL_CHECKS_OK

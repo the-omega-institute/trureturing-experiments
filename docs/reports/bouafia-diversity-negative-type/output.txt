@@ -1,0 +1,18 @@
+FIDELITY: weighted-star formula and Theorem 4 output verified; energy = 1483/1600
+GEOMETRY: all metric axioms and squared-distance/Hamming identities verified
+WITNESS q=19/20: full weighting = 14476484000/42931124559, 84799120000/186034873089, -101751788000/558104619267, -21051416000/558104619267, 305206400000/558104619267
+WITNESS: active sets = [(0, 1, 2, 3, 4), (0, 1, 4)]
+WITNESS: output = 15961/61601, 22820/61601, 0, 0, 22820/61601
+WITNESS: C = 11018319/12320200 ; C-(Zp)[3] = 1735461/492808000
+WITNESS: strict energy improvement = 1707687919/246404000000000
+FAMILY: numerator 0 signed Bernstein lower bound = 2
+FAMILY: numerator 1 signed Bernstein lower bound = 9539901/3200000
+FAMILY: numerator 2 signed Bernstein lower bound = 76313841/64000000
+FAMILY: numerator 3 signed Bernstein lower bound = 7894281/32000000
+FAMILY: numerator 4 signed Bernstein lower bound = 286131/80000
+FAMILY: determinants, two solve identities, signs and residual = -(q - 1)**2*(q + 1)*(q**2 + q + 1)/(2*q**4 + q**2 + 1)
+MECHANISM: removed-block Schur off-diagonal = 2*q**5*(q - 1)*(q + 1)/(2*q**4 + q**2 + 1)
+FAMILY: exact energy expansion and epsilon=delta/(1-C+2delta) improvement verified
+SCALE ZERO: recursion is optimal here; positive-scale residual has coefficient -3/2
+WITNESS: all 31 nonempty principal minors positive
+ALL_CHECKS_OK

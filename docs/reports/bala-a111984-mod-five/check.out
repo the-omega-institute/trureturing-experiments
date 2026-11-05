@@ -1,0 +1,10 @@
+FIDELITY: matched all 18 displayed OEIS A111984 terms (indices 0..17)
+ROOT: independent exact recurrences agree on 1105 integral coefficients (0..1104)
+DEFINING_EQUATION: A^3 = F through degree 1104
+INTEGRALITY_ROUTE: Jacobi, F = E^3 mod 9, A = E mod 3 through degree 1104
+SUPPORT: H in classes 0,1; H^2 in 0,1,2; B*B(x^5) = H^2 through degree 1104
+CONGRUENCE: 5 divides a(5*n+4) for n=0..220 (221 cases)
+CONGRUENCE: 5 divides a(5*n+3) for n=0..220 (221 cases)
+CONTROLS: each proposed extra zero class 0,1,2 fails already at its first index
+COEFFICIENT_SHA256 (one decimal integer per LF-terminated line): 016c2f92b5f040079d331dd03130f5984c70da89c6ee64bce16771e81195c255
+ALL_CHECKS_OK

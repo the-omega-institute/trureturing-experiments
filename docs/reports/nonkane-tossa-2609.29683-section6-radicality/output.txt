@@ -1,0 +1,111 @@
+Singular for arm64-Darwin version 4.4.1 (44105, 64 bit) Nov 11 2025 16:12:34
+METHOD: primdec.lib radical(I), equality by two-way exact Groebner containment
+RANGE: r=2,3; n=0,1,2,3,4; z=0,...,n; every partition of n-z
+field=Q=Q(zeta_2) r=2 n=0 z=0 mu=() radical=1
+field=Q=Q(zeta_2) r=2 n=1 z=0 mu=(1,) radical=1
+field=Q=Q(zeta_2) r=2 n=1 z=1 mu=() radical=1
+field=Q=Q(zeta_2) r=2 n=2 z=0 mu=(2,) radical=1
+field=Q=Q(zeta_2) r=2 n=2 z=0 mu=(1, 1) radical=1
+field=Q=Q(zeta_2) r=2 n=2 z=1 mu=(1,) radical=1
+field=Q=Q(zeta_2) r=2 n=2 z=2 mu=() radical=1
+field=Q=Q(zeta_2) r=2 n=3 z=0 mu=(3,) radical=1
+field=Q=Q(zeta_2) r=2 n=3 z=0 mu=(2, 1) radical=1
+field=Q=Q(zeta_2) r=2 n=3 z=0 mu=(1, 1, 1) radical=1
+field=Q=Q(zeta_2) r=2 n=3 z=1 mu=(2,) radical=1
+field=Q=Q(zeta_2) r=2 n=3 z=1 mu=(1, 1) radical=1 fidelity=PASS
+field=Q=Q(zeta_2) r=2 n=3 z=2 mu=(1,) radical=1
+field=Q=Q(zeta_2) r=2 n=3 z=3 mu=() radical=1
+field=Q=Q(zeta_2) r=2 n=4 z=0 mu=(4,) radical=1
+field=Q=Q(zeta_2) r=2 n=4 z=0 mu=(3, 1) radical=1
+field=Q=Q(zeta_2) r=2 n=4 z=0 mu=(2, 2) radical=1
+field=Q=Q(zeta_2) r=2 n=4 z=0 mu=(2, 1, 1) radical=1
+field=Q=Q(zeta_2) r=2 n=4 z=0 mu=(1, 1, 1, 1) radical=1
+field=Q=Q(zeta_2) r=2 n=4 z=1 mu=(3,) radical=1
+field=Q=Q(zeta_2) r=2 n=4 z=1 mu=(2, 1) radical=1
+field=Q=Q(zeta_2) r=2 n=4 z=1 mu=(1, 1, 1) radical=1
+field=Q=Q(zeta_2) r=2 n=4 z=2 mu=(2,) radical=1
+field=Q=Q(zeta_2) r=2 n=4 z=2 mu=(1, 1) radical=1
+field=Q=Q(zeta_2) r=2 n=4 z=3 mu=(1,) radical=1
+field=Q=Q(zeta_2) r=2 n=4 z=4 mu=() radical=1
+field=F_2 r=2 n=0 z=0 mu=() radical=1
+field=F_2 r=2 n=1 z=0 mu=(1,) radical=1
+field=F_2 r=2 n=1 z=1 mu=() radical=1
+field=F_2 r=2 n=2 z=0 mu=(2,) radical=1
+field=F_2 r=2 n=2 z=0 mu=(1, 1) radical=0
+field=F_2 r=2 n=2 z=1 mu=(1,) radical=1
+field=F_2 r=2 n=2 z=2 mu=() radical=1
+field=F_2 r=2 n=3 z=0 mu=(3,) radical=1
+field=F_2 r=2 n=3 z=0 mu=(2, 1) radical=0
+field=F_2 r=2 n=3 z=0 mu=(1, 1, 1) radical=0
+field=F_2 r=2 n=3 z=1 mu=(2,) radical=1
+field=F_2 r=2 n=3 z=1 mu=(1, 1) radical=0 fidelity=PASS witness=x1*x2*(x1-x2) nonmember=1 power_2_member=1
+field=F_2 r=2 n=3 z=2 mu=(1,) radical=1
+field=F_2 r=2 n=3 z=3 mu=() radical=1
+field=F_2 r=2 n=4 z=0 mu=(4,) radical=1
+field=F_2 r=2 n=4 z=0 mu=(3, 1) radical=0
+field=F_2 r=2 n=4 z=0 mu=(2, 2) radical=0
+field=F_2 r=2 n=4 z=0 mu=(2, 1, 1) radical=0
+field=F_2 r=2 n=4 z=0 mu=(1, 1, 1, 1) radical=0
+field=F_2 r=2 n=4 z=1 mu=(3,) radical=1
+field=F_2 r=2 n=4 z=1 mu=(2, 1) radical=0
+field=F_2 r=2 n=4 z=1 mu=(1, 1, 1) radical=0
+field=F_2 r=2 n=4 z=2 mu=(2,) radical=1
+field=F_2 r=2 n=4 z=2 mu=(1, 1) radical=0
+field=F_2 r=2 n=4 z=3 mu=(1,) radical=1
+field=F_2 r=2 n=4 z=4 mu=() radical=1
+field=Q(zeta_3) r=3 n=0 z=0 mu=() radical=1
+field=Q(zeta_3) r=3 n=1 z=0 mu=(1,) radical=1
+field=Q(zeta_3) r=3 n=1 z=1 mu=() radical=1
+field=Q(zeta_3) r=3 n=2 z=0 mu=(2,) radical=1
+field=Q(zeta_3) r=3 n=2 z=0 mu=(1, 1) radical=1
+field=Q(zeta_3) r=3 n=2 z=1 mu=(1,) radical=1
+field=Q(zeta_3) r=3 n=2 z=2 mu=() radical=1
+field=Q(zeta_3) r=3 n=3 z=0 mu=(3,) radical=1
+field=Q(zeta_3) r=3 n=3 z=0 mu=(2, 1) radical=1
+field=Q(zeta_3) r=3 n=3 z=0 mu=(1, 1, 1) radical=1
+field=Q(zeta_3) r=3 n=3 z=1 mu=(2,) radical=1
+field=Q(zeta_3) r=3 n=3 z=1 mu=(1, 1) radical=1 fidelity=PASS
+field=Q(zeta_3) r=3 n=3 z=2 mu=(1,) radical=1
+field=Q(zeta_3) r=3 n=3 z=3 mu=() radical=1
+field=Q(zeta_3) r=3 n=4 z=0 mu=(4,) radical=1
+field=Q(zeta_3) r=3 n=4 z=0 mu=(3, 1) radical=1
+field=Q(zeta_3) r=3 n=4 z=0 mu=(2, 2) radical=1
+field=Q(zeta_3) r=3 n=4 z=0 mu=(2, 1, 1) radical=1
+field=Q(zeta_3) r=3 n=4 z=0 mu=(1, 1, 1, 1) radical=1
+field=Q(zeta_3) r=3 n=4 z=1 mu=(3,) radical=1
+field=Q(zeta_3) r=3 n=4 z=1 mu=(2, 1) radical=1
+field=Q(zeta_3) r=3 n=4 z=1 mu=(1, 1, 1) radical=1
+field=Q(zeta_3) r=3 n=4 z=2 mu=(2,) radical=1
+field=Q(zeta_3) r=3 n=4 z=2 mu=(1, 1) radical=1
+field=Q(zeta_3) r=3 n=4 z=3 mu=(1,) radical=1
+field=Q(zeta_3) r=3 n=4 z=4 mu=() radical=1
+field=F_3 r=3 n=0 z=0 mu=() radical=1
+field=F_3 r=3 n=1 z=0 mu=(1,) radical=1
+field=F_3 r=3 n=1 z=1 mu=() radical=1
+field=F_3 r=3 n=2 z=0 mu=(2,) radical=1
+field=F_3 r=3 n=2 z=0 mu=(1, 1) radical=0
+field=F_3 r=3 n=2 z=1 mu=(1,) radical=1
+field=F_3 r=3 n=2 z=2 mu=() radical=1
+field=F_3 r=3 n=3 z=0 mu=(3,) radical=1
+field=F_3 r=3 n=3 z=0 mu=(2, 1) radical=0
+field=F_3 r=3 n=3 z=0 mu=(1, 1, 1) radical=0
+field=F_3 r=3 n=3 z=1 mu=(2,) radical=1
+field=F_3 r=3 n=3 z=1 mu=(1, 1) radical=0 fidelity=PASS witness=x1*x2*(x1-x2) nonmember=1 power_3_member=1
+field=F_3 r=3 n=3 z=2 mu=(1,) radical=1
+field=F_3 r=3 n=3 z=3 mu=() radical=1
+field=F_3 r=3 n=4 z=0 mu=(4,) radical=1
+field=F_3 r=3 n=4 z=0 mu=(3, 1) radical=0
+field=F_3 r=3 n=4 z=0 mu=(2, 2) radical=0
+field=F_3 r=3 n=4 z=0 mu=(2, 1, 1) radical=0
+field=F_3 r=3 n=4 z=0 mu=(1, 1, 1, 1) radical=0
+field=F_3 r=3 n=4 z=1 mu=(3,) radical=1
+field=F_3 r=3 n=4 z=1 mu=(2, 1) radical=0
+field=F_3 r=3 n=4 z=1 mu=(1, 1, 1) radical=0
+field=F_3 r=3 n=4 z=2 mu=(2,) radical=1
+field=F_3 r=3 n=4 z=2 mu=(1, 1) radical=0
+field=F_3 r=3 n=4 z=3 mu=(1,) radical=1
+field=F_3 r=3 n=4 z=4 mu=() radical=1
+TOTAL cases=104 radical=82 nonradical=22
+FIDELITY: source Examples 4.1 and 4.3 polynomial ideal presentations reproduced
+BOUNDARY: finite fields test the literal polynomial definition, not the standing infinite-field group realization
+ALL_CHECKS_OK

@@ -1,0 +1,19 @@
+FIDELITY: Proposition 2.1 cycle witnesses, 411 exact cases; nonempty x of lengths 1..3, alphabet sizes 2..4, q=1/4,1/3,2/5
+NONEMPTINESS: one-state constant-word witnesses and strict-threshold controls passed
+GRID: F_2, n=0, totalDegree<=3, polynomials=2, grids-per-polynomial=1, nonzero-grid-pairs=1
+GRID: F_2, n=1, totalDegree<=4, polynomials=32, grids-per-polynomial=1, nonzero-grid-pairs=24
+GRID: F_2, n=2, totalDegree<=3, polynomials=1024, grids-per-polynomial=1, nonzero-grid-pairs=960
+GRID: F_2, n=3, totalDegree<=2, polynomials=1024, grids-per-polynomial=1, nonzero-grid-pairs=1016
+GRID: F_3, n=0, totalDegree<=2, polynomials=3, grids-per-polynomial=4, nonzero-grid-pairs=8
+GRID: F_3, n=1, totalDegree<=4, polynomials=243, grids-per-polynomial=4, nonzero-grid-pairs=882
+GRID: F_3, n=2, totalDegree<=2, polynomials=729, grids-per-polynomial=4, nonzero-grid-pairs=2888
+GRID: F_5, n=0, totalDegree<=2, polynomials=5, grids-per-polynomial=26, nonzero-grid-pairs=104
+GRID: F_5, n=1, totalDegree<=3, polynomials=625, grids-per-polynomial=26, nonzero-grid-pairs=15944
+GRID: F_5, n=2, totalDegree<=1, polynomials=125, grids-per-polynomial=26, nonzero-grid-pairs=3224
+GRID_TOTAL: polynomials=3812, polynomial-grid-pairs=25612, nonzero=25051, vanishing=561
+COMPLEMENT: 1-P^(p-1) nonzero iff P=0 at every enumerated grid point
+ALPHABET_INVARIANCE: 620 exhaustive binary-word/ordered-subalphabet comparisons, lengths 0..4, ambient sizes 2..4
+BOOLEAN_BLOCKS: 70 distinct ordered codeword pairs, block widths 1..3, 388 affine-literal evaluations
+NFA_SEMANTICS: epsilon-free, one initial state; multiple accepting paths allowed
+LIMIT: finite checks validate the listed suppliers, not the density limit or the unbounded circuit lower bound
+ALL_CHECKS_OK

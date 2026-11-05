@@ -1,0 +1,10 @@
+n=2: distributions=9, weights=9
+n=3: distributions=10, weights=27
+n=4: distributions=5, weights=81
+FIDELITY_PROP_3_1=5454
+CANONICAL_IDENTITY_AND_GAUGE=5454
+TIGHTNESS_AT_TARGET=756
+BOUNDED_RATIO_REVERSE_TILTS=206
+CONSTANT_SHIFT_INVARIANCE=10908
+SCOPE: finite rational atoms only; no claim of an infinite-dimensional proof
+ALL_CHECKS_OK

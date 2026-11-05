@@ -1,0 +1,23 @@
+FIDELITY: Example 6.6 deletion identity verified as an exact polynomial identity
+POSITIVITY: sorted-square Robinson decomposition verified exactly
+IDENTITY: H power sums = Robinson triple sum, n=1, terms=0
+IDENTITY: H power sums = Robinson triple sum, n=2, terms=0
+IDENTITY: H power sums = Robinson triple sum, n=3, terms=10
+IDENTITY: H power sums = Robinson triple sum, n=4, terms=40
+IDENTITY: H power sums = Robinson triple sum, n=5, terms=100
+IDENTITY: H power sums = Robinson triple sum, n=6, terms=200
+IDENTITY: H power sums = Robinson triple sum, n=7, terms=350
+SAMPLES: Robinson >= 0 on all 343 integer triples in [-3,3]^3
+GRAM: complete degree-9 basis, 55 monomials; parity sizes 15,15,15,10; cross blocks zero
+LDL: block=15, reconstruction exact, pivots all positive
+FLOOR_1E9_PIVOTS: [234635012, 4837568, 83691, 86419, 187694598, 29913962, 879731, 39334, 26850362, 470290, 1957, 330440, 158345, 158016, 69021606]
+LDL: block=10, reconstruction exact, pivots all positive
+FLOOR_1E9_PIVOTS: [7016415, 1297527, 30401, 1526629, 1189725, 159087, 202848, 11454, 4701, 20630]
+COST_DATA: {"representative_matrix_entries": 325, "representative_LDL_entries": 350, "max_numerator_bits": 261, "max_denominator_bits": 274, "LDL_rational_text_bytes": 10971}
+SEPARATION: L(H)=-3231/1000000000; L(p18)=3
+FAMILY: L(F_epsilon)=3*epsilon-3231/1000000000 < 0 iff epsilon<1077/1000000000
+WITNESS: epsilon=1/10000000; L(F^(3))=-2931/1000000000
+TAIL: exact substitution for m=1,2,3; N=1,4,9; powers j=2,...,18
+EXTRACTION: coefficient of t^(2k) equals F^(3), k=0,...,4
+FLAT_SPHERE: exact p18=n^-8 for n=1,...,32, after H vanishes
+ALL_CHECKS_OK

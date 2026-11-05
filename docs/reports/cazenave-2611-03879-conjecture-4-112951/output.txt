@@ -1,0 +1,15 @@
+FIDELITY K2: adjacency=[1,-1] Laplacian=[2,0] R=1 slack=0
+FIDELITY K_n: R=n/2 for 2<=n<=9 (exact fractions)
+ORDER 2: connected_unlabeled=1 target_certificates=PASS R_gt_sqrt_delta=0 R_eq_sqrt_delta=1 graph6_sha256=fae4bfc454bd04363dcd5222772f2973b1193e1ff6f676e822a427323a677ef9
+ORDER 3: connected_unlabeled=2 target_certificates=PASS R_gt_sqrt_delta=1 R_eq_sqrt_delta=1 graph6_sha256=5966edf890849db6cb03626431916231a81a30c9db9a4781a4a8f2e5dc7e6129
+ORDER 4: connected_unlabeled=6 target_certificates=PASS R_gt_sqrt_delta=5 R_eq_sqrt_delta=1 graph6_sha256=d7da485669f2dc74b81c02f18774a07430937684896833d59f138b10debb5005
+ORDER 5: connected_unlabeled=21 target_certificates=PASS R_gt_sqrt_delta=20 R_eq_sqrt_delta=1 graph6_sha256=8169b01acd1570bf0d464cb7b4cf17ebb263035dc664de84ce41b8dd9618e301
+ORDER 6: connected_unlabeled=112 target_certificates=PASS R_gt_sqrt_delta=111 R_eq_sqrt_delta=1 graph6_sha256=9fd4d2161400fc5f302fe1adc8c2b1230c312a15b15d0e2a343a02d75dd5cbfa
+ORDER 7: connected_unlabeled=853 target_certificates=PASS R_gt_sqrt_delta=852 R_eq_sqrt_delta=1 graph6_sha256=eca7b9f61b5f54fe98f23f8b4e2baf77be08cd392911e0655fc8b7a72640fae1
+ORDER 8: connected_unlabeled=11117 target_certificates=PASS R_gt_sqrt_delta=11116 R_eq_sqrt_delta=1 graph6_sha256=37010dfb9ca35c86bcbfd488c3e4cadcb3e918dc8c6acebd81ea966e79c35a84
+ORDER 9: connected_unlabeled=261080 target_certificates=PASS R_gt_sqrt_delta=261079 R_eq_sqrt_delta=1 graph6_sha256=fe73f2b8aad1a653b6f3bee799efff369cc486688df5aeade62ce0b3b5889eb5
+TOTAL_CONNECTED_UNLABELED=273192
+GRAPH6_STREAM_SHA256=1db123260718a0b5d4d75bee3b14eb186322f5d75cbb57e7504517cd8ea37075
+MINIMUM_TARGET_SLACK=0 (all graphs certified >=0; exact equality at K2)
+EVIDENCE=exact certificates plus classical spectral comparison/interlacing; no Lean proof
+ALL_CHECKS_OK

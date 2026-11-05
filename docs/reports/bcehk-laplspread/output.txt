@@ -1,0 +1,23 @@
+Python exact arithmetic; SymPy 1.14.0
+check.py sha256=c37f6d846b9c1342f26d3284250e053c90313946f9f50d636cb8483fff3d6366
+FIDELITY directed cycle n=2: spread=0
+FIDELITY directed cycle n=3: spread=0
+FIDELITY directed cycle n=4: spread=1
+FIDELITY directed cycle n=6: spread=3/2
+C14 n=2: labeled_balanced=2, zero=2, positive=0, positive_spread_lower_bound=None
+C14 n=3: labeled_balanced=10, zero=4, positive=6, positive_spread_lower_bound=2
+C14 n=4: labeled_balanced=152, zero=2, positive=150, positive_spread_lower_bound=1
+C14 variance parameters: 930 exact checks, 5<=n<=64
+FIDELITY Figure 3: alpha=0, beta in [818065/162463, 537362/106717], rounds to 5.035
+C20 base adjacency: [[0, 0, 1, 0, 0], [1, 0, 1, 1, 1], [1, 1, 0, 1, 1], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0]]
+C20 compressed characteristic polynomial: z**4 - 9*z**3 + 437*z**2/20 - 19*z/2
+C20 x=[2, 26, -26, -1, -1], y=[0, 0, 0, 1, -1], Rayleigh(x)=3408/679, Rayleigh(y)=0, excess=13/679
+C20 independent-cluster blowup m=1: order=5, spread>=3408/679, spread-order>=13/679
+C20 independent-cluster blowup m=2: order=10, spread>=6816/679, spread-order>=26/679
+C20 independent-cluster blowup m=3: order=15, spread>=10224/679, spread-order>=39/679
+C20 independent-cluster blowup m=4: order=20, spread>=13632/679, spread-order>=52/679
+C20 independent-cluster blowup m=5: order=25, spread>=17040/679, spread-order>=65/679
+C20 independent-cluster blowup m=6: order=30, spread>=20448/679, spread-order>=78/679
+C20 independent-cluster blowup m=7: order=35, spread>=3408/97, spread-order>=13/97
+C20 independent-cluster blowup m=8: order=40, spread>=27264/679, spread-order>=104/679
+ALL_CHECKS_OK

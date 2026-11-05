@@ -1,0 +1,7 @@
+FIDELITY: f(2z,z) = 1/(1+binom(2z,z)/2^(2z)), z=1..100; 100 identities
+BINOMIAL: n=2..200; 328350 source-domain pairs; 19900 stronger adjacent checks; all strict
+ULC: 786 exact rows, lengths 3..8; identity, inward pairs, block domination and strictness
+REAL-X EXTENSION: 305 rational x in [2,40]; 18430 source-cap pairs; all strict
+POISSON-BINOMIAL: 116 exact interior laws, 2..7 Bernoulli coordinates; all strict
+SCOPE: finite exact checks passed; no universal claim or Lean proof certified by this program
+ALL_CHECKS_OK

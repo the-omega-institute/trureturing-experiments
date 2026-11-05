@@ -1,0 +1,11 @@
+FIDELITY: equal-order coefficient ratios, exact identities = 576
+EXACT SERIES: ODE/derivative/contiguous coefficient checks = 680
+SYMBOLIC: weighted Wronskian, quotient derivative, both endpoint coefficients = 0 residual
+FIDELITY: equal-order infinite-series derivative signs = 256
+GRID: orders = -3/4,-1/2,-1/4,0,1/2,1,3/2,2
+GRID: scale pairs = 1/2,1;1,1;1,2;2,2
+GRID: positive points = 1/8,1/4,1/2,1,2,4,8,16
+GRID: parameter families = 144 ; exact derivative signs = 1152 ; literal constant cases = 128 ; tail cutoff = 128
+GRID: sign patterns = ++++++++:42; +++++---:12; ++++----:27; +++-----:22; ++------:8; +-------:1; --------:16; 00000000:16
+SCOPE: exact finite checks and symbolic identities; no universal or kernel proof claimed
+ALL_CHECKS_OK

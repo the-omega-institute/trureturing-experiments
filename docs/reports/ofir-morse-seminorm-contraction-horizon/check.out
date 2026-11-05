@@ -1,0 +1,24 @@
+STRUCTURE: P^2=P; H^2=H=H^transpose; HPH=T; T^2=HT=TH=T
+STRUCTURE: pi=(59,30,1)/90; pi*S=pi; (I-L)H=I-L; x*x=14; x*T*x=15
+FIDELITY Proposition 1: P: coe=induced_linf=1; scrambling=False
+FIDELITY Proposition 1: S: coe=induced_linf=29/30; scrambling=True
+FIDELITY Proposition 1: A_1: coe=induced_linf=59/60; scrambling=True
+SCALAR: Bernoulli and quadratic upper bounds: exact grid, j=0..100
+FAMILY: K=1: all j=1..1 exact; positive; stationary; nu(A^K)>=57/56>113/112
+FAMILY: K=2: all j=1..2 exact; positive; stationary; nu(A^K)>=227/224>113/112
+FAMILY: K=3: all j=1..3 exact; positive; stationary; nu(A^K)>=85/84>113/112
+FAMILY: K=4: all j=1..4 exact; positive; stationary; nu(A^K)>=453/448>113/112
+FAMILY: K=5: all j=1..5 exact; positive; stationary; nu(A^K)>=283/280>113/112
+FAMILY: K=6: all j=1..6 exact; positive; stationary; nu(A^K)>=97/96>113/112
+FAMILY: K=7: all j=1..7 exact; positive; stationary; nu(A^K)>=99/98>113/112
+FAMILY: K=8: all j=1..8 exact; positive; stationary; nu(A^K)>=905/896>113/112
+FAMILY: K=9: all j=1..9 exact; positive; stationary; nu(A^K)>=509/504>113/112
+FAMILY: K=10: all j=1..10 exact; positive; stationary; nu(A^K)>=1131/1120>113/112
+FAMILY: K=11: all j=1..11 exact; positive; stationary; nu(A^K)>=311/308>113/112
+FAMILY: K=12: all j=1..12 exact; positive; stationary; nu(A^K)>=1357/1344>113/112
+FAMILY: K=20: all j=1..20 exact; positive; stationary; nu(A^K)>=323/320>113/112
+FAMILY: K=50: all j=1..50 exact; positive; stationary; nu(A^K)>=5651/5600>113/112
+FAMILY: K=100: all j=1..100 exact; positive; stationary; nu(A^K)>=11301/11200>113/112
+FIDELITY Corollary 2: K=1, ||H A_1^512||_F^2<1, hence nu(A_1^512)<1
+CHECKED: 15 horizons; 248 positive-length matrix powers; exact arithmetic only
+ALL_CHECKS_OK
