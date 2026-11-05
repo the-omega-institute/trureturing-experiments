@@ -32,5 +32,9 @@ five residual cases. After pairing distinct same-parity permutations, each
 parity leaves an empty class, a single permutation run, or one copy of each of
 its three permutations. The residual cases are empty/run, run/run, odd run of
 length ≥3/triad, run of length 1/triad, and triad/triad. The two exceptional
-witness minors are 3 and −19440. The finite checks support a proposed uniform
+witness minors are 3 and −19440. Structural alternatives use coordinate
+pairing in the one-versus-triad case (rank 7) and a triangle with edge
+directions e₁+e₂, e₂+e₃, e₃+e₁ in the two-triad case (determinant 27).
+The latter admits a direct proof from independence of rank-one images.
+The finite checks support a proposed uniform
 argument; they do not prove the assertion for every ambient dimension.

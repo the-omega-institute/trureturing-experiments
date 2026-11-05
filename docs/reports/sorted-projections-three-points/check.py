@@ -200,7 +200,15 @@ def matrix_checks():
     e = sp.Matrix(full_matrix([0,3,4,1,2,5],
         axes(3)+[(1,2,4),(3,-1,2),(-2,5,1)], 3))
     assert e.det() == -19440
+    # Structural alternatives: coordinate pairing for D and an edge-labelled
+    # triangle for E. The ordinary proof uses ranks of permutation differences.
+    d_axis = full_matrix([0,1,2,5], [(1,0),(1,0),(0,1),(0,1)], 2)
+    assert exact_rank_mod(d_axis) == 7
+    e_triangle = sp.Matrix(full_matrix([0,3,4,1,2,5],
+        axes(3)+[(1,1,0),(0,1,1),(1,0,1)], 3))
+    assert e_triangle.det() == 27
     print('RESIDUAL witnesses: A,B runs <=24; C odd runs <=25; D minor=3; E determinant=-19440')
+    print('STRUCTURAL alternatives: D coordinate-pair rank=7; E triangle determinant=27')
 
 
 def lower_bound_check():
