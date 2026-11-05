@@ -16,4 +16,4 @@ The program checks the proposed radius eta=(1/6)(min(r,1-r)/72)^N on 480 sample 
 
 Producer: independent codex-cli research seat, flight 85a1c20d458e04c23a439a8e, repo-prior-exposed. The program is an independently written implementation of the displayed formulas, with no copied source code. The paper and companion release supply the cited mathematical identities and margins.
 
-check.py SHA-256: a8932a3a3ac4fafd6b633a8c0b8568948e5eb9cb4abd096e03f341bf158800d6
+check.py SHA-256: 472ea4cb71514594b22430cc34019388db5a82107887425071f3fb200caa4962

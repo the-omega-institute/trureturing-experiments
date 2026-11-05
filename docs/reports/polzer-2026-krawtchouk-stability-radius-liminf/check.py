@@ -69,7 +69,7 @@ def triangle(m, n, k, N):
 
 
 def tensor_coefficient(N, r, m, n, k):
-    """Average Y_S Y_T using Y_i^2 = r + (1-r)Y_i (P1, Corollary 3.2)."""
+    """Average Y_S Y_T using Y_i^2 = r + (1-r)Y_i (P1, cor:kraw)."""
     result = Q(0)
     for h in range(min(m, n) + 1):
         ell = k - m - n + 2 * h
