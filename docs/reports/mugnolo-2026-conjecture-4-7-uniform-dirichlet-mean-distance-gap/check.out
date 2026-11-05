@@ -1,0 +1,7 @@
+variance combination: exact C = 4*(sqrt(5)-2), rational C = 17/18
+Cantelli step: exact two-point checks passed
+path (one Dirichlet endpoint): exact lambda*rho^2 = pi^2/16; high-precision = 0.616850275068084913677155687492
+star (any number of unit arms, Dirichlet centre): exact lambda*rho^2 = pi^2/16; high-precision = 0.616850275068084913677155687492
+cycle (unit circumference, one Dirichlet vertex): exact lambda*rho^2 = pi^2/16; high-precision = 0.616850275068084913677155687492
+figure-eight (two unit loops, Dirichlet junction): exact lambda*rho^2 = pi^2/16; high-precision = 0.616850275068084913677155687492
+ALL_CHECKS_OK
