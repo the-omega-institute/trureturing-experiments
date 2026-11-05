@@ -118,7 +118,12 @@ def exact_search(b):
     s.push()
     s.add(total == optimum)
     solutions = []
-    while s.check() == z3.sat:
+    while True:
+        outcome = s.check()
+        assert outcome != z3.unknown, s.reason_unknown()
+        if outcome == z3.unsat:
+            break
+        assert outcome == z3.sat
         m = s.model()
         values = [m.eval(v).as_long() for v in counts]
         assert all(v in (0, 1) for v in values)
