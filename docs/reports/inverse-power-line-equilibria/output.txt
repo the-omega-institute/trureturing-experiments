@@ -1,0 +1,9 @@
+FIDELITY Lemma 2.3 inverse-square formula: 81 exact pairs
+TRUNCATION aligned force-difference and reciprocal residual: 8190 exact cases
+TRUNCATION non-equilibrium example a=(0,1,3,6,7), n=1, s=3: residual=-171647/216000
+EXPECTED SETTLEMENT arithmetic-progression symmetric-force checks: 3780 exact cases
+EXPECTED SETTLEMENT induced ground-state identity: 6003 exhaustive exact cases
+EXPECTED SETTLEMENT local sublevel flux sign: exact check OK
+EXPECTED SETTLEMENT restricted near-energy and integral bounds: 5832 exact cases
+SCOPE: finite algebra and bounds only; no certificate of the infinite rigidity theorem
+ALL_CHECKS_OK
