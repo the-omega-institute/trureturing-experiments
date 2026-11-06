@@ -175,7 +175,27 @@ while True:
         break
     projection = more
 assert len(projection) == 8
-print('CENTER: 80640 permutation/Frobenius pairs screened; central scalars of S=[1,-1]')
+# A semilinear permutation twists diagonal coefficients. Transitivity does
+# NOT force a central diagonal to be a constant scalar. The K-linear shift
+# by two forces separate constants on even and odd labels; check all 64.
+center_diagonals = []
+for a,b in product(range(8),repeat=2):
+    d = tuple(a if i % 2 == 0 else b for i in range(8))
+    z = (d,I[1],I[2])
+    if all(compose(z,g) == compose(g,z) for g in SGEN):
+        assert in_replacement(z)
+        center_diagonals.append((a,b))
+assert center_diagonals == [(a,3*a % 8) for a in range(8)]
+z = (tuple(1 if i % 2 == 0 else 3 for i in range(8)),I[1],I[2])
+zpower = I
+for e in range(1,9):
+    zpower = compose(zpower,z)
+    assert (zpower == I) == (e == 8)
+assert all(act(compose(z,g),v) == act(compose(g,z),v) for g in SGEN for v in basis)
+print('CENTER: all 80640 permutation/Frobenius pairs and all 64 remaining diagonal candidates checked')
+print('CENTER RESULT: Z(S) has 8 elements, exponent pairs (even,odd)='+str(center_diagonals))
+print('CENTER RESULT: diag(zeta on even labels, zeta^3 on odd labels) is central of order 8')
+print('EXPECTED-ROUTE CHECK FAILED: the proposed |Z(S)|=2 and center-order nonconjugacy obstruction are false')
 
 
 # Reproduce Theorem B/4.5 by enumerating ALL binary-tree subset orbit shapes,
@@ -249,5 +269,5 @@ for j in range(3,65):
     assert e == 99*2**(m-7)-1 == 3*2**k+3*2**(k-5)-1
 assert 2**(8-1)==128
 print('FAMILY INGREDIENTS: order exponents checked for j=3..64; first instance dim_F3=128, order=2^197')
-print('LIMIT: no enumeration or kernel verification of the dimension-128 instance or infinite family')
+print('LIMIT: no settlement of Question 9.3; the proposed nonconjugacy proof fails its exact center check')
 print('ALL_CHECKS_OK')
