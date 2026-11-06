@@ -1,0 +1,9 @@
+Python 3.14.8; SymPy 1.14.0; exact rational and symbolic algebra only
+FIDELITY Proposition 6.2(e): omega=2+9*sqrt(2)/4; Jzzz=-1323*sqrt(2)/64
+FIDELITY cubic=-49/(64*sqrt(omega)); Laplacian Penrose identities verified
+IMPLICIT coefficients: e^2=B1^2/w; e^3=-B1^2*B2/w^2
+EQUAL_LAWS exact global gaps: A0-A=w*(u-1)^2/u; P-P0=p*(u-1)^2/u
+SMALL_CASES generators=256; profiles=768; equal=156; unequal=612; sparse=576
+SMALL_CASES zero cubic iff equal laws; unequal laws have a nonzero residual germ
+SINGLETON_CASES 9; both laws=1; d=0; reduced value=q_j-2*sqrt(omega)*e
+ALL_CHECKS_OK

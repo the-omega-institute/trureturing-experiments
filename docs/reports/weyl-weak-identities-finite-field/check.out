@@ -1,0 +1,16 @@
+PBW: independent word reductions agree on 255 words of length <= 7
+FIDELITY: Lemma 6, equations (8)-(9), and (10): all integral basis evaluations vanish (8, 8, 16); multilinearity gives the identities on span(P,Q)
+FIDELITY F_2: exhaustive triples=64, quadruples=256; generators vanish
+FAMILY F_2: all 16 pairs in V^2; h_q vanishes; free degree-2 component = -[x,y] != 0; [P,Q]=1 != 0
+ENVELOPE F_2: 64 scalar polynomials of degree <= 5; vanishing iff divisible by t^q-t; all scalars are commutator values
+FIDELITY F_3: exhaustive triples=729, quadruples=6561; generators vanish
+FAMILY F_3: all 81 pairs in V^2; h_q vanishes; free degree-2 component = -[x,y] != 0; [P,Q]=1 != 0
+ENVELOPE F_3: 729 scalar polynomials of degree <= 5; vanishing iff divisible by t^q-t; all scalars are commutator values
+FAMILY F_4: all 256 pairs in V^2; h_q vanishes; free degree-2 component = -[x,y] != 0; [P,Q]=1 != 0
+ENVELOPE F_4: 1024 scalar polynomials of degree <= 4; vanishing iff divisible by t^q-t; all scalars are commutator values
+FAMILY F_5: all 625 pairs in V^2; h_q vanishes; free degree-2 component = -[x,y] != 0; [P,Q]=1 != 0
+ENVELOPE F_5: 3125 scalar polynomials of degree <= 4; vanishing iff divisible by t^q-t; all scalars are commutator values
+FAMILY F_8: all 4096 pairs in V^2; h_q vanishes; free degree-2 component = -[x,y] != 0; [P,Q]=1 != 0
+FAMILY F_9: all 6561 pairs in V^2; h_q vanishes; free degree-2 component = -[x,y] != 0; [P,Q]=1 != 0
+SCOPE: nonmembership uses the general degree >= 3 filtration argument; finite checks do not certify the infinite ideal or a complete finite-field basis
+ALL_CHECKS_OK

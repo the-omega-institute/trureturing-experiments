@@ -1,0 +1,4 @@
+known_family_local_identity: OK
+symbolic_h_identities: OK
+defect_growth_perturbation: OK (a_i=7/5, |w_i|/|w_prev|=7/3)
+ALL_CHECKS_OK

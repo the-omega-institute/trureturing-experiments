@@ -1,0 +1,25 @@
+ARITHMETIC exact integers; SymPy exact algebra and rational root isolation
+CHECK_SHA256 08584d0be66df7df6c8205f3e08d876d9a4f531c61bfbace4f7d43abd6e95368
+FIDELITY K2: mu2=0; rank=2; m=1; slack=0; lap_charpoly=lambda*(lambda - 2)
+FIDELITY K3: mu2=3; rank=3; m=3; slack=0; lap_charpoly=lambda*(lambda - 3)**2
+FIDELITY P3: mu2=1; rank=2; m=2; slack=1; lap_charpoly=lambda*(lambda - 3)*(lambda - 1)
+FIDELITY P4: mu2=2; rank=4; m=3; slack=0; lap_charpoly=lambda*(lambda - 2)*(lambda**2 - 4*lambda + 2)
+FIDELITY K1,3: mu2=1; rank=2; m=3; slack=3; lap_charpoly=lambda*(lambda - 4)*(lambda - 1)**2
+SOURCE_EQUALITIES_OK K2 K3 P4
+INERTIA_CROSSCHECK_OK 729 symmetric integer 3x3 matrices
+EQUALITY n=2; graph6=A_; rank=2; m=1
+ORDER n=2; connected_unlabelled=1; verified=1; failures=0; zero_slack=1
+EQUALITY n=3; graph6=Bw; rank=3; m=3
+ORDER n=3; connected_unlabelled=2; verified=2; failures=0; zero_slack=1
+EQUALITY n=4; graph6=CU; rank=4; m=3
+ORDER n=4; connected_unlabelled=6; verified=6; failures=0; zero_slack=1
+ORDER n=5; connected_unlabelled=21; verified=21; failures=0; zero_slack=0
+ORDER n=6; connected_unlabelled=112; verified=112; failures=0; zero_slack=0
+ORDER n=7; connected_unlabelled=853; verified=853; failures=0; zero_slack=0
+ORDER n=8; connected_unlabelled=11117; verified=11117; failures=0; zero_slack=0
+ORDER n=9; connected_unlabelled=261080; verified=261080; failures=0; zero_slack=0
+GRAPH6_STREAM_SHA256 1db123260718a0b5d4d75bee3b14eb186322f5d75cbb57e7504517cd8ea37075
+EXHAUSTIVE_OK connected simple graphs 2<=n<=9; total=273192; failures=0
+MINIMUM_SLACK 0 (exact; attained by K2, K3 and P4)
+BOUNDARY no conclusion for n>9 from this computation; no Lean proof
+ALL_CHECKS_OK

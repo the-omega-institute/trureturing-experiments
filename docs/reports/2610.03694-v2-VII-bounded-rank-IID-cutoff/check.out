@@ -1,0 +1,10 @@
+FIDELITY: equation (1), all 12 setting/outcome pairs; Bell probabilities = 1/4
+FIDELITY: four Pauli sign matrices independent; sum K_mu = 4P
+PRODUCTS: 5690 words, lengths 0..4, two rotations; targets and p_w = 4^(-N) agree
+NEGATIVE_CONTROL: reversing map order fails an allowed length-2 word
+NORMALIZATION: 96 exact, uniquely solvable endpoint-padding steps through length 4
+CUTOFF_CASES: 36 complete exact linear datasets, ranks 4..9, scanned through 2D
+CUTOFF_CASES: every dataset passing through D-3 also passed the full scan
+TRIAGE_ALGEBRAIC_SHARPNESS: first failure D-3 for D=4..9 and epsilon=-1,+1
+TRIAGE_BOUNDARY: these delay lines are not certified GPT realizations; physical sharpness is open
+ALL_CHECKS_OK

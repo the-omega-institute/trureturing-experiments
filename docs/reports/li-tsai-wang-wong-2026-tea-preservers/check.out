@@ -1,0 +1,7 @@
+FIDELITY: Lemma 2.1(a.2), beta=1/2: 6561 parallel equivalences; phase TEA failure (5,5,16)
+SETTLEMENT_SCREEN: rows=2, alphabet=9, maps=6561, input_TEA_pairs=233, scalar_sup_seminorms=65
+SETTLEMENT_SCREEN: rows=1, alphabet=5, maps=25, input_TEA_pairs=233, scalar_sup_seminorms=1
+SETTLEMENT_SCREEN: rows=3, alphabet=5, maps=15625, input_TEA_pairs=233, scalar_sup_seminorms=481
+LEMMA_1: rational phase perturbation p(v_t)^2=p(v_-t)^2=256/257 < p(midpoint)^2=1
+NONUNITAL_MODEL: rational local cutoffs sum to one; all nine orthogonal corners reconstruct a
+ALL_CHECKS_OK

@@ -1,0 +1,14 @@
+FIDELITY: exact triword sets in Combe Section 1.1 (journal Section 2.1), d=1,2,3: OK
+d=1: vertices=2, maximal_chains=1, chain_edge_lengths=[1]; covers/state recurrence/longest length: OK
+d=2: vertices=5, maximal_chains=2, chain_edge_lengths=[2, 3]; covers/state recurrence/longest length: OK
+d=3: vertices=12, maximal_chains=8, chain_edge_lengths=[3, 4, 5]; covers/state recurrence/longest length: OK
+d=4: vertices=28, maximal_chains=51, chain_edge_lengths=[4, 5, 6, 7]; covers/state recurrence/longest length: OK
+d=5: vertices=64, maximal_chains=460, chain_edge_lengths=[5, 6, 7, 8, 9]; covers/state recurrence/longest length: OK
+d=6: vertices=144, maximal_chains=5425, chain_edge_lengths=[6, 7, 8, 9, 10, 11]; covers/state recurrence/longest length: OK
+d=7: vertices=320, maximal_chains=79206, chain_edge_lengths=[7, 8, 9, 10, 11, 12, 13]; covers/state recurrence/longest length: OK
+d=8: vertices=704, maximal_chains=1377985, chain_edge_lengths=[8, 9, 10, 11, 12, 13, 14, 15]; covers/state recurrence/longest length: OK
+FIDELITY: 4*#Tr(d)=2^d*(d+3), and longest chain length 2d-1, d=1..8: OK
+SETTLEMENT: interval-derived maximal-chain counts, n=0..7: [1, 2, 8, 51, 460, 5425, 79206, 1377985]
+FORMAL SERIES (exact rational truncation): W exp(W)=x and defining e.g.f. through x^12: OK
+OEIS recurrence and F(n,0) versus series, n=0..12: OK
+ALL_CHECKS_OK

@@ -1,0 +1,9 @@
+TELESCOPING_CHECK: literal sums agree with residual formula for 0 <= k <= 10000
+FIDELITY_EXAMPLE: a(5)=2; 1/180 < 1/125 < 1/72
+FIDELITY_TABLE: (k, largest n) = (1,4), (2,5), (3,7), (4,8), (5,10)
+FIDELITY_DATA: all 68 displayed source terms reproduced
+CONJECTURE_CHECK: exact agreement for every 3 <= n <= 10000 (9998 cases)
+ROOT_CERTIFICATE: rational interval of width 1/10^80; both endpoint floors agree in every case
+ENDPOINTS: a(1)=1, a(2)=1, a(3)=1, a(10000)=6932
+SCOPE: finite exact checks support the outline; no unbounded or Lean proof is claimed
+ALL_CHECKS_OK

@@ -1,0 +1,157 @@
+FIDELITY chains n=1..6 dimensions=[1, 2, 2, 2, 2, 2]
+FIDELITY antichains n=1..5 dimensions=[1, 2, 3, 4, 5]
+FIDELITY complete_bipartite=(1,1) sweepdim=2
+FIDELITY complete_bipartite=(1,2) sweepdim=3
+FIDELITY complete_bipartite=(2,2) sweepdim=4
+FIDELITY complete_bipartite=(2,3) sweepdim=5
+GRID sizes=(1,) points=1 convex=2 sweepdim=1
+GRID sizes=(2,) points=2 convex=4 sweepdim=2
+GRID sizes=(5,) points=5 convex=16 sweepdim=2
+GRID sizes=(2, 2) points=4 convex=13 sweepdim=3
+GRID sizes=(2, 3) points=6 convex=33 sweepdim=4
+GRID sizes=(3, 3) points=9 convex=114 sweepdim=5
+GRID sizes=(2, 2, 2) points=8 convex=101 sweepdim=6
+GRID sizes=(2, 2, 3) points=12 convex=526 sweepdim=7
+GRID sizes=(2, 2, 2, 2) points=16 convex=3938 sweepdim=10
+GRID sizes=(3,) points=3 convex=7 sweepdim=2
+GRID sizes=(4,) points=4 convex=11 sweepdim=2
+GRID sizes=(1, 1) points=1 convex=2 sweepdim=1
+GRID sizes=(1, 2) points=2 convex=4 sweepdim=2
+GRID sizes=(1, 3) points=3 convex=7 sweepdim=2
+GRID sizes=(1, 4) points=4 convex=11 sweepdim=2
+GRID sizes=(2, 1) points=2 convex=4 sweepdim=2
+GRID sizes=(2, 4) points=8 convex=71 sweepdim=4
+GRID sizes=(3, 1) points=3 convex=7 sweepdim=2
+GRID sizes=(3, 2) points=6 convex=33 sweepdim=4
+GRID sizes=(3, 4) points=12 convex=321 sweepdim=6
+GRID sizes=(4, 1) points=4 convex=11 sweepdim=2
+GRID sizes=(4, 2) points=8 convex=71 sweepdim=4
+GRID sizes=(4, 3) points=12 convex=321 sweepdim=6
+GRID sizes=(1, 1, 1) points=1 convex=2 sweepdim=1
+GRID sizes=(1, 1, 2) points=2 convex=4 sweepdim=2
+GRID sizes=(1, 1, 3) points=3 convex=7 sweepdim=2
+GRID sizes=(1, 1, 4) points=4 convex=11 sweepdim=2
+GRID sizes=(1, 2, 1) points=2 convex=4 sweepdim=2
+GRID sizes=(1, 2, 2) points=4 convex=13 sweepdim=3
+GRID sizes=(1, 2, 3) points=6 convex=33 sweepdim=4
+GRID sizes=(1, 2, 4) points=8 convex=71 sweepdim=4
+GRID sizes=(1, 3, 1) points=3 convex=7 sweepdim=2
+GRID sizes=(1, 3, 2) points=6 convex=33 sweepdim=4
+GRID sizes=(1, 3, 3) points=9 convex=114 sweepdim=5
+GRID sizes=(1, 3, 4) points=12 convex=321 sweepdim=6
+GRID sizes=(1, 4, 1) points=4 convex=11 sweepdim=2
+GRID sizes=(1, 4, 2) points=8 convex=71 sweepdim=4
+GRID sizes=(1, 4, 3) points=12 convex=321 sweepdim=6
+GRID sizes=(2, 1, 1) points=2 convex=4 sweepdim=2
+GRID sizes=(2, 1, 2) points=4 convex=13 sweepdim=3
+GRID sizes=(2, 1, 3) points=6 convex=33 sweepdim=4
+GRID sizes=(2, 1, 4) points=8 convex=71 sweepdim=4
+GRID sizes=(2, 2, 1) points=4 convex=13 sweepdim=3
+GRID sizes=(2, 3, 1) points=6 convex=33 sweepdim=4
+GRID sizes=(2, 3, 2) points=12 convex=526 sweepdim=7
+GRID sizes=(2, 4, 1) points=8 convex=71 sweepdim=4
+GRID sizes=(3, 1, 1) points=3 convex=7 sweepdim=2
+GRID sizes=(3, 1, 2) points=6 convex=33 sweepdim=4
+GRID sizes=(3, 1, 3) points=9 convex=114 sweepdim=5
+GRID sizes=(3, 1, 4) points=12 convex=321 sweepdim=6
+GRID sizes=(3, 2, 1) points=6 convex=33 sweepdim=4
+GRID sizes=(3, 2, 2) points=12 convex=526 sweepdim=7
+GRID sizes=(3, 3, 1) points=9 convex=114 sweepdim=5
+GRID sizes=(3, 4, 1) points=12 convex=321 sweepdim=6
+GRID sizes=(4, 1, 1) points=4 convex=11 sweepdim=2
+GRID sizes=(4, 1, 2) points=8 convex=71 sweepdim=4
+GRID sizes=(4, 1, 3) points=12 convex=321 sweepdim=6
+GRID sizes=(4, 2, 1) points=8 convex=71 sweepdim=4
+GRID sizes=(4, 3, 1) points=12 convex=321 sweepdim=6
+GRID sizes=(1, 1, 1, 1) points=1 convex=2 sweepdim=1
+GRID sizes=(1, 1, 1, 2) points=2 convex=4 sweepdim=2
+GRID sizes=(1, 1, 1, 3) points=3 convex=7 sweepdim=2
+GRID sizes=(1, 1, 1, 4) points=4 convex=11 sweepdim=2
+GRID sizes=(1, 1, 2, 1) points=2 convex=4 sweepdim=2
+GRID sizes=(1, 1, 2, 2) points=4 convex=13 sweepdim=3
+GRID sizes=(1, 1, 2, 3) points=6 convex=33 sweepdim=4
+GRID sizes=(1, 1, 2, 4) points=8 convex=71 sweepdim=4
+GRID sizes=(1, 1, 3, 1) points=3 convex=7 sweepdim=2
+GRID sizes=(1, 1, 3, 2) points=6 convex=33 sweepdim=4
+GRID sizes=(1, 1, 3, 3) points=9 convex=114 sweepdim=5
+GRID sizes=(1, 1, 3, 4) points=12 convex=321 sweepdim=6
+GRID sizes=(1, 1, 4, 1) points=4 convex=11 sweepdim=2
+GRID sizes=(1, 1, 4, 2) points=8 convex=71 sweepdim=4
+GRID sizes=(1, 1, 4, 3) points=12 convex=321 sweepdim=6
+GRID sizes=(1, 2, 1, 1) points=2 convex=4 sweepdim=2
+GRID sizes=(1, 2, 1, 2) points=4 convex=13 sweepdim=3
+GRID sizes=(1, 2, 1, 3) points=6 convex=33 sweepdim=4
+GRID sizes=(1, 2, 1, 4) points=8 convex=71 sweepdim=4
+GRID sizes=(1, 2, 2, 1) points=4 convex=13 sweepdim=3
+GRID sizes=(1, 2, 2, 2) points=8 convex=101 sweepdim=6
+GRID sizes=(1, 2, 2, 3) points=12 convex=526 sweepdim=7
+GRID sizes=(1, 2, 3, 1) points=6 convex=33 sweepdim=4
+GRID sizes=(1, 2, 3, 2) points=12 convex=526 sweepdim=7
+GRID sizes=(1, 2, 4, 1) points=8 convex=71 sweepdim=4
+GRID sizes=(1, 3, 1, 1) points=3 convex=7 sweepdim=2
+GRID sizes=(1, 3, 1, 2) points=6 convex=33 sweepdim=4
+GRID sizes=(1, 3, 1, 3) points=9 convex=114 sweepdim=5
+GRID sizes=(1, 3, 1, 4) points=12 convex=321 sweepdim=6
+GRID sizes=(1, 3, 2, 1) points=6 convex=33 sweepdim=4
+GRID sizes=(1, 3, 2, 2) points=12 convex=526 sweepdim=7
+GRID sizes=(1, 3, 3, 1) points=9 convex=114 sweepdim=5
+GRID sizes=(1, 3, 4, 1) points=12 convex=321 sweepdim=6
+GRID sizes=(1, 4, 1, 1) points=4 convex=11 sweepdim=2
+GRID sizes=(1, 4, 1, 2) points=8 convex=71 sweepdim=4
+GRID sizes=(1, 4, 1, 3) points=12 convex=321 sweepdim=6
+GRID sizes=(1, 4, 2, 1) points=8 convex=71 sweepdim=4
+GRID sizes=(1, 4, 3, 1) points=12 convex=321 sweepdim=6
+GRID sizes=(2, 1, 1, 1) points=2 convex=4 sweepdim=2
+GRID sizes=(2, 1, 1, 2) points=4 convex=13 sweepdim=3
+GRID sizes=(2, 1, 1, 3) points=6 convex=33 sweepdim=4
+GRID sizes=(2, 1, 1, 4) points=8 convex=71 sweepdim=4
+GRID sizes=(2, 1, 2, 1) points=4 convex=13 sweepdim=3
+GRID sizes=(2, 1, 2, 2) points=8 convex=101 sweepdim=6
+GRID sizes=(2, 1, 2, 3) points=12 convex=526 sweepdim=7
+GRID sizes=(2, 1, 3, 1) points=6 convex=33 sweepdim=4
+GRID sizes=(2, 1, 3, 2) points=12 convex=526 sweepdim=7
+GRID sizes=(2, 1, 4, 1) points=8 convex=71 sweepdim=4
+GRID sizes=(2, 2, 1, 1) points=4 convex=13 sweepdim=3
+GRID sizes=(2, 2, 1, 2) points=8 convex=101 sweepdim=6
+GRID sizes=(2, 2, 1, 3) points=12 convex=526 sweepdim=7
+GRID sizes=(2, 2, 2, 1) points=8 convex=101 sweepdim=6
+GRID sizes=(2, 2, 3, 1) points=12 convex=526 sweepdim=7
+GRID sizes=(2, 3, 1, 1) points=6 convex=33 sweepdim=4
+GRID sizes=(2, 3, 1, 2) points=12 convex=526 sweepdim=7
+GRID sizes=(2, 3, 2, 1) points=12 convex=526 sweepdim=7
+GRID sizes=(2, 4, 1, 1) points=8 convex=71 sweepdim=4
+GRID sizes=(3, 1, 1, 1) points=3 convex=7 sweepdim=2
+GRID sizes=(3, 1, 1, 2) points=6 convex=33 sweepdim=4
+GRID sizes=(3, 1, 1, 3) points=9 convex=114 sweepdim=5
+GRID sizes=(3, 1, 1, 4) points=12 convex=321 sweepdim=6
+GRID sizes=(3, 1, 2, 1) points=6 convex=33 sweepdim=4
+GRID sizes=(3, 1, 2, 2) points=12 convex=526 sweepdim=7
+GRID sizes=(3, 1, 3, 1) points=9 convex=114 sweepdim=5
+GRID sizes=(3, 1, 4, 1) points=12 convex=321 sweepdim=6
+GRID sizes=(3, 2, 1, 1) points=6 convex=33 sweepdim=4
+GRID sizes=(3, 2, 1, 2) points=12 convex=526 sweepdim=7
+GRID sizes=(3, 2, 2, 1) points=12 convex=526 sweepdim=7
+GRID sizes=(3, 3, 1, 1) points=9 convex=114 sweepdim=5
+GRID sizes=(3, 4, 1, 1) points=12 convex=321 sweepdim=6
+GRID sizes=(4, 1, 1, 1) points=4 convex=11 sweepdim=2
+GRID sizes=(4, 1, 1, 2) points=8 convex=71 sweepdim=4
+GRID sizes=(4, 1, 1, 3) points=12 convex=321 sweepdim=6
+GRID sizes=(4, 1, 2, 1) points=8 convex=71 sweepdim=4
+GRID sizes=(4, 1, 3, 1) points=12 convex=321 sweepdim=6
+GRID sizes=(4, 2, 1, 1) points=8 convex=71 sweepdim=4
+GRID sizes=(4, 3, 1, 1) points=12 convex=321 sweepdim=6
+EXHAUSTIVE_RANGE dimensions=1..4 factor_sizes=1..4 points<=12 additional_cases=127
+BOOLEAN n=0 points=1 sweep_count=1
+BOOLEAN n=1 points=2 sweep_count=2
+BOOLEAN n=2 points=4 sweep_count=3
+BOOLEAN n=3 points=8 sweep_count=6
+BOOLEAN n=4 points=16 sweep_count=10
+BOOLEAN n=5 points=32 sweep_count=20
+BOOLEAN n=6 points=64 sweep_count=35
+BOOLEAN n=7 points=128 sweep_count=70
+BOOLEAN n=8 points=256 sweep_count=126
+BOOLEAN n=9 points=512 sweep_count=252
+BOOLEAN n=10 points=1024 sweep_count=462
+BOOLEAN n=11 points=2048 sweep_count=924
+BOOLEAN n=12 points=4096 sweep_count=1716
+ALL_CHECKS_OK

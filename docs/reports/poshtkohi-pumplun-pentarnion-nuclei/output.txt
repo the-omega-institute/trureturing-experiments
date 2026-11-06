@@ -1,0 +1,9 @@
+FIDELITY: Theorem 3.9 associator reproduced; determinant = 54
+SYMBOLIC: scalar inclusion, conjugation, elimination and radical identities verified
+LEFT_MINOR = 2*B*U*(U*b + V*a)*(U*c + W*a)*(V*c + W*b)
+MIDDLE_MINOR_NONZERO_GAMMA = 2*A*B*C*a*gamma**3*(A*W + B*V)*(A*W + B*V + C*U)
+MIDDLE_MINOR_ZERO_GAMMA = -a*b*c*(U*b + V*a)
+GRID: 126 admissible tuples; 46 indefinite; 22 with gamma=0; 1154 outside source domain
+All three nuclei are the scalar line in every tested case: left and middle by nonzero minors, right by the checked conjugation identity.
+No Lean proof of the claim or its negation is included.
+ALL_CHECKS_OK

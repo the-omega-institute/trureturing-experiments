@@ -1,0 +1,17 @@
+# Finite-configuration convergence for the double-cap relaxation
+
+Target: Czifra, Dúcz, Matolcsi, Varga and Zsámboki, *Improved bounds for the double cap conjecture*, arXiv:2605.28709v1, equation (3.11). The assertion concerns the infimum over all finite configurations, not the value of any one configuration.
+
+Run `python3 check.py`. Python's standard library is sufficient. The final line must be `ALL_CHECKS_OK`; the recorded output is `check.out`. SHA-256 of `check.py`: 97c7f6faf7b6d11269953e2df6ab112151bed4836e51195774652b9da601957d.
+
+The exact checks use integers and fractions, including pairs of integers representing Q(sqrt(5)). They reproduce the source's Legendre recurrence through degree 20 and the complete adjacency matrix of its 33-pair configuration (33 vertices, 61 edges). The coordinates and adjacency were transcribed from the authors' supplementary data, also displayed in the paper's Table 1. No upstream software is incorporated.
+
+For 52 orthonormal frames with 3 <= n <= 10 and 1 <= N <= n, the program checks the feasible polynomial f(t)=t^2/N and its nonnegative Gegenbauer coefficients, together with the matching singleton law and N*p=1 upper bound. Thus these small source programs have Delta=1/N. The case N=n reproduces the finite-frame calculation behind the source's alpha_n <= 1/n bound. This is a restricted family of small cases, not a computation of alpha_n or of the all-configuration infimum.
+
+It also checks finite Bernoulli moment and covariance identities on all 75 simple graphs with 1..4 vertices (5,421 quadratic forms), nonnegative row-stochastic compression, 72 exact diagonal-defect block calculations, and spherical coefficient means on S^2 through degree 16. These checks can detect sign or normalization errors in the proposed general argument. They do not establish the infinite-dimensional compactness, the complete-positive kernel theorem, or the conjecture.
+
+`spectral_diagnostic.py` is a separate exploratory calculation, requiring NumPy. Run `python3 spectral_diagnostic.py`; it downloads the authors' data package and computes a single Legendre recurrence sweep through degree 65,536 for their 14-, 20-, and 33-pair configurations. Its output is `spectral_diagnostic.out`. All these readings use floating point and are diagnostics only. They test the source's spectral-tail convergence beta_k -> w_1 on its own configurations; they do not certify an all-degree inequality, solve the infinite program, or estimate a rate for inf_X Delta(G_X).
+
+The supplied q_1 values are 0.29953289647618553, 0.29746021635846454, and 0.2952841077945141. They are quoted witness values, not newly computed optima. At the last degree block, the maximum absolute deviations |beta_k-w_1| are respectively 0.013154786259438257, 0.01194541617367895, and 0.012740558879445658. The configurations are not asserted to be nested. The 33-pair data contain 1,090,720 listed independent sets and 39,621 listed congruences; no full primal optimization or rerun of the authors' complete interval certificate is claimed.
+
+Sources: https://arxiv.org/abs/2605.28709v1 and https://static.renyi.hu/ai-shared/daniel/witsenhausen/ (data package `double_cap.zip`). The arXiv record identifies a CC BY licence for the article. No separate licence for supplementary software was identified; this report uses mathematical coordinate/adjacency data and independently written code only.

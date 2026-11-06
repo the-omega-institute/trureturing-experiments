@@ -1,0 +1,9 @@
+FIDELITY_OK: source Lemmas 2-3 reflection and midpoint identities (all x,y)
+FAMILY_ENSEMBLE_OK: normalized nonnegative weights on 24/25 <= s < 1; mean M and exact energy E
+TANGENT_OK: exact derivatives and 625(s-24/25)^2+1200(s-24/25) >= 0
+FAMILY_GAP_OK: gap > a[L-11/2+7a] > 7a^2 > 0 for every 0<a<=1/50
+EXACT_WITNESS_OK: B=(1,-527/625), M=(576/625,-576/625), c=7/25
+EXACT_LOG_GAP_NATS_LOWER_BOUND: 4330451/100000000
+INTERIOR_REALIZATION_OK: correlations B_t; effect trace=1 and determinant=c^2 t(2-t)/4>0
+SCOPE: boundary rigidity and compact-roof lower semicontinuity use the accompanying analytic argument; no numerical optimizer or Lean proof is claimed
+ALL_CHECKS_OK

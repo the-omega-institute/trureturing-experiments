@@ -1,0 +1,18 @@
+Python 3.14.8 SymPy 1.14.0
+FIDELITY: published Heine contiguous relation, symbolic coefficients n=0..4: OK
+INTEGRAL: 8.3 n=0 denominator=1 integer_coefficients=True terms=1
+INTEGRAL: 8.3 n=1 denominator=1 integer_coefficients=True terms=6
+INTEGRAL: 8.3 n=2 denominator=1 integer_coefficients=True terms=34
+INTEGRAL: 8.3 n=3 denominator=1 integer_coefficients=True terms=209
+INTEGRAL: 8.3 n=4 denominator=1 integer_coefficients=True terms=678
+INTEGRAL: 8.4 n=0 denominator=1 integer_coefficients=True terms=1
+INTEGRAL: 8.4 n=1 denominator=1 integer_coefficients=True terms=4
+INTEGRAL: 8.4 n=2 denominator=1 integer_coefficients=True terms=24
+INTEGRAL: 8.4 n=3 denominator=1 integer_coefficients=True terms=162
+INTEGRAL: 8.4 n=4 denominator=1 integer_coefficients=True terms=530
+FIDELITY: exact rational grid 0 both published continued fractions n=0..12: OK
+FIDELITY: exact rational grid 1 both published continued fractions n=0..12: OK
+FIDELITY: exact rational grid 2 both published continued fractions n=0..12: OK
+FIDELITY: exact rational grid 3 both published continued fractions n=0..12: OK
+FIDELITY: exact rational grid 4 both published continued fractions n=0..12: OK
+ALL_CHECKS_OK

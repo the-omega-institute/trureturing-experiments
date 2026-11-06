@@ -1,0 +1,4 @@
+source recurrence: exact logarithmic integral identity OK
+Alt_n finite permutation and two-block decomposition: n <= 100 OK
+rescaled H=A/v+Bv and C^2/16=M/8: exact symbolic identity OK
+ALL_CHECKS_OK

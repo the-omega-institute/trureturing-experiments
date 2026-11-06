@@ -1,0 +1,19 @@
+FIDELITY: all 24 OEIS data terms agree with literal multinomial expansion,
+          four-coordinate multiplication, and the quartic recurrence.
+SOURCE_DATA_0_23: [1, 2, 9, 38, 185, 922, 4689, 23998, 123217, 633458, 3258489, 16765718, 86273225, 443967370, 2284733313, 11757749038, 60508271137, 311391065570, 1602499602537, 8246883961094, 42440638964825, 218410733951098, 1123999345270833, 5784397706237854]
+SOURCE_MISPRINT: the displayed example says exponent 3 and a(3)=9;
+                 (9,4,4,2) is the exponent-2 vector; exponent 3 is (38, 23, 21, 12)
+SOURCE_MISPRINT: formula initial indices a(3)=9,a(4)=38 should be a(2)=9,a(3)=38.
+SOURCE_DISCREPANCY: p=2 zero indices through 20: [1, 3, 5, 7, 9, 11, 13, 15, 17, 19]
+                    their gap is 2, whereas the COMMENTS list says (4).
+PRIME: 241 trial primes <= isqrt(p): [2, 3, 5, 7, 11, 13]
+SPLITTING: sqrt2=22, sqrt3=56; conjugates in (++,-+,+-,--) order: [80, 36, 209, 165]
+ORBIT: length=240; distinct full states=240; return state= (1, 0, 0, 0)
+ZERO_RESIDUES: []
+RESIDUES_0_239: [1, 2, 9, 38, 185, 199, 110, 139, 66, 110, 169, 71, 45, 62, 52, 98, 113, 60, 33, 51, 137, 52, 54, 22, 227, 103, 158, 199, 162, 97, 68, 57, 44, 36, 57, 188, 225, 22, 207, 16, 60, 70, 15, 233, 64, 186, 37, 129, 16, 135, 193, 83, 142, 89, 89, 239, 87, 131, 206, 36, 44, 8, 42, 218, 176, 132, 224, 176, 59, 216, 67, 124, 165, 160, 1, 23, 34, 7, 142, 90, 181, 177, 223, 169, 13, 25, 180, 53, 172, 10, 183, 203, 46, 148, 233, 237, 195, 23, 194, 60, 137, 197, 25, 136, 144, 205, 75, 188, 198, 175, 54, 240, 221, 73, 186, 121, 212, 193, 199, 218, 121, 40, 13, 216, 153, 221, 125, 204, 187, 72, 165, 134, 77, 40, 37, 33, 233, 98, 37, 229, 105, 74, 69, 87, 107, 65, 154, 21, 194, 75, 53, 233, 164, 74, 61, 125, 193, 44, 222, 81, 181, 32, 11, 55, 96, 164, 22, 64, 136, 173, 197, 20, 110, 111, 104, 63, 208, 93, 202, 99, 76, 227, 27, 153, 55, 170, 228, 113, 27, 238, 82, 189, 45, 122, 238, 86, 66, 226, 127, 25, 60, 215, 227, 106, 222, 47, 195, 118, 52, 213, 179, 25, 78, 126, 218, 172, 74, 61, 198, 238, 105, 219, 40, 201, 24, 167, 71, 10, 230, 153, 39, 175, 100, 111, 190, 58, 180, 215, 214, 42]
+INDEPENDENT_CHECKS: nominated table, quartic recurrence, and all four
+                    coordinates from split-conjugate powers agree.
+CERTIFICATE_SCOPE: the exact zero-free full-state cycle certifies all indices
+                   once recurrence-to-source identification and iteration
+                   periodicity are proved; no Lean proof is supplied here.
+ALL_CHECKS_OK

@@ -1,0 +1,11 @@
+FIDELITY Example 18: all 60 terms and all 18 listed zeros match
+CERTIFICATE k=61: 9685 states; 11-gap masks=0
+CERTIFICATE k=61: 9685 states; 15-gap masks=0
+COLLISION S_739=S_9685=92196811829875935758365998383; first state-cycle length=8946
+PERIOD FIDELITY: Finch (2002), k=61, period 8946 reproduced
+DIRECT CHECK: all 9685 packed states agree with scalar recurrence
+DIRECT CHECK: 10-gap representative starts=[2780]
+ATTAINMENT r=2780: (0,1,2,2)^10 followed by 0; suffix=7750511730148792110
+RESULT k=61: exact maximal gap count 10 < source upper bound 15
+INFINITE SCOPE: invariant state list + forbidden suffix covers the entire orbit
+ALL_CHECKS_OK

@@ -1,0 +1,15 @@
+SOURCE_FIDELITY d=2: depolarizing and dephasing, n=1..8, lambda=0,1/4,1/2,1 OK
+SOURCE_FIDELITY d=3: depolarizing and dephasing, n=1..8, lambda=0,1/4,1/2,1 OK
+SOURCE_FIDELITY d=4: depolarizing and dephasing, n=1..8, lambda=0,1/4,1/2,1 OK
+SOURCE_FIDELITY d=5: depolarizing and dephasing, n=1..8, lambda=0,1/4,1/2,1 OK
+FAMILY d=2: 11 profiles, Choi normalization/spectrum, primal certificates, cyclic symmetry and exact reduced optima OK
+SEPARATION d=2, q=3/4: F_MISC=7/8, F_DISC=11/16; epsilon=1/4; largest dimensions MISC=2, DISC=1
+FAMILY d=3: 29 profiles, Choi normalization/spectrum, primal certificates, cyclic symmetry and exact reduced optima OK
+SEPARATION d=3, q=3/4: F_MISC=7/8, F_DISC=5/8; epsilon=1/4; largest dimensions MISC=2, DISC=1
+FAMILY d=4: 4 profiles, Choi normalization/spectrum, primal certificates, cyclic symmetry and exact reduced optima OK
+SEPARATION d=4, q=3/4: F_MISC=7/8, F_DISC=19/32; epsilon=1/4; largest dimensions MISC=2, DISC=1
+FAMILY d=6: 4 profiles, Choi normalization/spectrum, primal certificates, cyclic symmetry and exact reduced optima OK
+SEPARATION d=6, q=3/4: F_MISC=7/8, F_DISC=9/16; epsilon=1/4; largest dimensions MISC=2, DISC=1
+SYMBOLIC: off-diagonal interval certificate and dimension-uniform strict margins OK
+EXACT_CHECK_COUNTS source_parameter_triples=128 family_profiles=48
+ALL_CHECKS_OK

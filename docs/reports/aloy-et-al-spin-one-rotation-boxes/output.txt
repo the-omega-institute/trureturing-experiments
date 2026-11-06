@@ -1,0 +1,7 @@
+FIDELITY_OK: source Theorem 6 appendix realization gives sin(theta/2)^4
+SYMBOLIC_OK: reversal-transpose preserves the polynomial and diagonalizes every normalized sum
+SUPPORT_OK: all 7 nonempty supports; exact POVM-sum and Born identities
+EXHAUSTIVE_OK: outcomes=3; all_multisets=5984; normalized_families=91; support_ranks={1: 3, 2: 15, 3: 73}
+EXHAUSTIVE_OK: outcomes=4; all_multisets=52360; normalized_families=575; support_ranks={1: 4, 2: 29, 3: 542}
+SCOPE: symbolic identities plus the specified finite Gram catalog; no Lean proof or universal factorization certificate
+ALL_CHECKS_OK

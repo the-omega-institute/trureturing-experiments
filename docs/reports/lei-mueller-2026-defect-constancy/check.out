@@ -1,0 +1,28 @@
+Python 3.14.8 SymPy 1.14.0
+SOURCE_EXAMPLE_7_2_DISCREPANCY: charpoly=(x - 1)*(x**2 - 4*x + 2)
+SOURCE_EXAMPLE_7_2_DISCREPANCY: a=1 b=1 delta=0; source states a=2 delta=1
+FIDELITY Example 7.10 p=2 r=3 m=0 vertices=3 a=1 b=1 delta=0 SC=yes
+FIDELITY Example 7.10 p=2 r=3 m=1 vertices=6 a=1 b=1 delta=0 SC=yes
+FIDELITY Example 7.10 p=2 r=3 m=2 vertices=12 a=1 b=1 delta=0 SC=yes
+FIDELITY Example 7.10 p=2 r=3 m=3 vertices=24 a=1 b=1 delta=0 SC=yes
+FAMILY c=3: p h q m sheets vertices a b delta rank(I-lift) SC
+2 1 2 0 1 6 2 1 1 5 yes
+2 1 2 1 2 12 5 3 2 9 yes
+2 1 2 2 4 24 5 3 2 21 yes
+SIMPLE_STRUCTURE p=2 h=1 vertices=36 0/1=yes diagonal=0 quotient=A complement=invariant SC_all_tested_levels=yes
+SIMPLE_EXACT p=2 h=1: base a=4 b=3 delta=1; level1 a=14 b=12 delta=2; increase=1 >= 1
+2 2 4 0 1 12 2 1 1 11 yes
+2 2 4 1 2 24 5 3 2 21 yes
+2 2 4 2 4 48 11 7 4 41 yes
+2 2 4 3 8 96 11 7 4 89 yes
+SIMPLE_STRUCTURE p=2 h=2 vertices=72 0/1=yes diagonal=0 quotient=A complement=invariant SC_all_tested_levels=yes
+3 1 3 0 1 9 2 1 1 8 yes
+3 1 3 1 3 27 8 5 3 22 yes
+3 1 3 2 9 81 8 5 3 76 yes
+SIMPLE_STRUCTURE p=3 h=1 vertices=54 0/1=yes diagonal=0 quotient=A complement=invariant SC_all_tested_levels=yes
+3 2 9 0 1 27 2 1 1 26 yes
+3 2 9 1 3 81 8 5 3 76 yes
+3 2 9 2 9 243 26 17 9 226 yes
+3 2 9 3 27 729 26 17 9 712 yes
+SIMPLE_STRUCTURE p=3 h=2 vertices=162 0/1=yes diagonal=0 quotient=A complement=invariant SC_all_tested_levels=yes
+ALL_CHECKS_OK

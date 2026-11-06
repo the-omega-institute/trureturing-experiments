@@ -1,0 +1,5 @@
+tree_function_fidelity: T=t*exp(T) through degree 14
+colored_egf_fidelity: M_0=1, [y]M_1=q, [y]M_2=2*q+q^2
+colours=2: exact D_n coefficient n=1..6 is -2*(n!)^2
+colours=3: exact D_n coefficient n=1..6 is -2*(n!)^2
+ALL_CHECKS_OK

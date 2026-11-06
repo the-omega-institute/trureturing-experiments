@@ -1,0 +1,72 @@
+Python 3.14.8 NumPy 2.4.2 mpmath 1.3.0
+FLOATING POINT DIAGNOSTICS; not proof or exact evidence
+ETA 0.5 proposed essential norm/radius 0.797884560803
+FULL Q eta=0.5 tail_length=6 core=48 tail_nodes=96 N=240 norm=0.9993842665 eigenvalue_near_1=(0.9993733573,+0)
+FULL Q eta=0.5 tail_length=10 core=48 tail_nodes=160 N=368 norm=1.000011416 eigenvalue_near_1=(1.000011225,+0)
+TAIL eta=0.5 shift=2 length=8 h=0.0833333 N=192
+  Q_tail-W finite-window HS difference = 0.0011238935
+  xi=0 phi=(0.79788456,+0) residual_Q=0.13090953 residual_W=0.13077547 ||Qp||=0.72964355
+  xi=0.5 phi=(0.65573353,+0.067459198) residual_Q=0.16963835 residual_W=0.16954249 ||Qp||=0.64508558
+  xi=1 phi=(0.38466012,+0.15879442) residual_Q=0.18816457 residual_W=0.18812646 ||Qp||=0.45648736
+TAIL eta=0.5 shift=4 length=8 h=0.0833333 N=216
+  Q_tail-W finite-window HS difference = 2.0404338e-05
+  xi=0 phi=(0.79788456,+0) residual_Q=0.13077823 residual_W=0.13077575 ||Qp||=0.7295654
+  xi=0.5 phi=(0.65573353,+0.067459198) residual_Q=0.16954449 residual_W=0.16954271 ||Qp||=0.64503691
+  xi=1 phi=(0.38466012,+0.15879442) residual_Q=0.18812736 residual_W=0.18812664 ||Qp||=0.45648988
+TAIL eta=0.5 shift=4 length=16 h=0.0833333 N=312
+  Q_tail-W finite-window HS difference = 2.0404344e-05
+  xi=0 phi=(0.79788456,+0) residual_Q=0.047579999 residual_W=0.047578853 ||Qp||=0.77657609
+  xi=0.5 phi=(0.65573353,+0.067459198) residual_Q=0.094884297 residual_W=0.094883878 ||Qp||=0.65710715
+  xi=1 phi=(0.38466012,+0.15879442) residual_Q=0.10266567 residual_W=0.10266555 ||Qp||=0.4289424
+TAIL eta=0.5 shift=4 length=32 h=0.0833333 N=504
+  Q_tail-W finite-window HS difference = 2.0404344e-05
+  xi=0 phi=(0.79788456,+0) residual_Q=0.017361963 residual_W=0.017361537 ||Qp||=0.79203229
+  xi=0.5 phi=(0.65573353,+0.067459198) residual_Q=0.049838591 residual_W=0.049838491 ||Qp||=0.65886865
+  xi=1 phi=(0.38466012,+0.15879442) residual_Q=0.053046777 residual_W=0.05304675 ||Qp||=0.41963332
+ETA 1 proposed essential norm/radius 0.886226925453
+FULL Q eta=1 tail_length=6 core=48 tail_nodes=96 N=240 norm=0.9995980869 eigenvalue_near_1=(0.9995936515,+0)
+FULL Q eta=1 tail_length=10 core=48 tail_nodes=160 N=368 norm=1.000015321 eigenvalue_near_1=(1.000015243,+0)
+TAIL eta=1 shift=2 length=8 h=0.0833333 N=192
+  Q_tail-W finite-window HS difference = 0.0010600674
+  xi=0 phi=(0.88622693,+0) residual_Q=0.091537873 residual_W=0.091436393 ||Qp||=0.83728284
+  xi=0.5 phi=(0.79073891,+0.027425085) residual_Q=0.13110951 residual_W=0.13103884 ||Qp||=0.76820433
+  xi=1 phi=(0.57531519,+0.088210678) residual_Q=0.16543058 residual_W=0.16539144 ||Qp||=0.60025159
+TAIL eta=1 shift=4 length=8 h=0.0833333 N=216
+  Q_tail-W finite-window HS difference = 1.9547537e-05
+  xi=0 phi=(0.88622693,+0) residual_Q=0.091438257 residual_W=0.091436394 ||Qp||=0.83724651
+  xi=0.5 phi=(0.79073891,+0.027425085) residual_Q=0.13104014 residual_W=0.13103884 ||Qp||=0.76818063
+  xi=1 phi=(0.57531519,+0.088210678) residual_Q=0.16539215 residual_W=0.16539144 ||Qp||=0.60025425
+TAIL eta=1 shift=4 length=16 h=0.0833333 N=312
+  Q_tail-W finite-window HS difference = 1.9547537e-05
+  xi=0 phi=(0.88622693,+0) residual_Q=0.031410822 residual_W=0.031410001 ||Qp||=0.87202693
+  xi=0.5 phi=(0.79073891,+0.027425085) residual_Q=0.068635964 residual_W=0.068635632 ||Qp||=0.78531222
+  xi=1 phi=(0.57531519,+0.088210678) residual_Q=0.09022322 residual_W=0.090223072 ||Qp||=0.58811522
+TAIL eta=1 shift=4 length=32 h=0.0833333 N=504
+  Q_tail-W finite-window HS difference = 1.9547537e-05
+  xi=0 phi=(0.88622693,+0) residual_Q=0.010840657 residual_W=0.010840343 ||Qp||=0.88244574
+  xi=0.5 phi=(0.79073891,+0.027425085) residual_Q=0.035077967 residual_W=0.035077884 ||Qp||=0.78972479
+  xi=1 phi=(0.57531519,+0.088210678) residual_Q=0.046692004 residual_W=0.04669197 ||Qp||=0.58372734
+ETA 3 proposed essential norm/radius 0.9593687887
+FULL Q eta=3 tail_length=6 core=48 tail_nodes=96 N=240 norm=0.9998351837 eigenvalue_near_1=(0.9998345822,+0)
+FULL Q eta=3 tail_length=10 core=48 tail_nodes=160 N=368 norm=1.000019637 eigenvalue_near_1=(1.000019626,+0)
+TAIL eta=3 shift=2 length=8 h=0.0833333 N=192
+  Q_tail-W finite-window HS difference = 0.0018104538
+  xi=0 phi=(0.95936879,+0) residual_Q=0.043698865 residual_W=0.043628052 ||Qp||=0.93800014
+  xi=0.5 phi=(0.92071625,+0.0041514743) residual_Q=0.065746036 residual_W=0.065693384 ||Qp||=0.90374095
+  xi=1 phi=(0.81539158,+0.017972253) residual_Q=0.097107462 residual_W=0.097067129 ||Qp||=0.80943181
+TAIL eta=3 shift=4 length=8 h=0.0833333 N=216
+  Q_tail-W finite-window HS difference = 3.3360551e-05
+  xi=0 phi=(0.95936879,+0) residual_Q=0.043629353 residual_W=0.043628052 ||Qp||=0.93799192
+  xi=0.5 phi=(0.92071625,+0.0041514743) residual_Q=0.06569435 residual_W=0.065693384 ||Qp||=0.90373679
+  xi=1 phi=(0.81539158,+0.017972253) residual_Q=0.097067868 residual_W=0.097067129 ||Qp||=0.80943821
+TAIL eta=3 shift=4 length=16 h=0.0833333 N=312
+  Q_tail-W finite-window HS difference = 3.3360551e-05
+  xi=0 phi=(0.95936879,+0) residual_Q=0.014674723 residual_W=0.014674205 ||Qp||=0.95362484
+  xi=0.5 phi=(0.92071625,+0.0041514743) residual_Q=0.031180681 residual_W=0.031180417 ||Qp||=0.91621206
+  xi=1 phi=(0.81539158,+0.017972253) residual_Q=0.050379078 residual_W=0.050378903 ||Qp||=0.81408379
+TAIL eta=3 shift=4 length=32 h=0.0833333 N=504
+  Q_tail-W finite-window HS difference = 3.3360551e-05
+  xi=0 phi=(0.95936879,+0) residual_Q=0.0050103213 residual_W=0.0050101278 ||Qp||=0.95788583
+  xi=0.5 phi=(0.92071625,+0.0041514743) residual_Q=0.015216137 residual_W=0.015216069 ||Qp||=0.91956575
+  xi=1 phi=(0.81539158,+0.017972253) residual_Q=0.025597602 residual_W=0.025597559 ||Qp||=0.81521614
+NUMERICAL_DIAGNOSTICS_COMPLETE

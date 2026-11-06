@@ -1,0 +1,6 @@
+FIDELITY Prop_2_1: 320 exact Gaussian-integer cases, all orientations r=4..6; 16 zero cases excluded
+CARTAN/root identity: (rank, beta cases, nonzero tau<=1): [(4, 243, 29), (5, 729, 45), (6, 2187, 65), (7, 6561, 89), (8, 19683, 117)]
+SIGNED BASES: 2639 exact column families; all subsets of <=3 signed roots for r=2..4
+SINGULAR GRAM: 210 exhaustive binary-beta pairs in affine D4; exact pseudoinverses
+ACTUAL UNSTABLE FAMILY: 510 exact squared-gap checks, ranks 4..9, endpoint dimensions <=6
+ALL_CHECKS_OK

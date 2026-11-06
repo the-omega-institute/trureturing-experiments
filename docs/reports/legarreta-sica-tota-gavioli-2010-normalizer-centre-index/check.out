@@ -1,0 +1,6 @@
+S: order=16 subgroups=15 normalizers=5 omega=4 centre=2 index=8
+P_3: order=27 subgroups=10 normalizers=2 omega=2 centre=3 index=9
+P_5: order=125 subgroups=14 normalizers=2 omega=2 centre=5 index=25
+S x P_3: order=432 subgroups=150 normalizers=10 omega=8 centre=6 index=72
+listed S normalizer orders: [4, 4, 8, 8, 16]
+ALL_CHECKS_OK

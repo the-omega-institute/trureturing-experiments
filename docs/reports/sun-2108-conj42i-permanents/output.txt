@@ -1,0 +1,14 @@
+FIDELITY Remark 4.2: 64 exact determinant identities; n=2..9, q=0,1,2,3, shifts=0,1
+FIDELITY_CROSSCHECK Leibniz determinants agree for n=2..6
+TARGET p=3: per(A0)=4; per(A1)=8; residues=1,2; both congruences OK
+TARGET p=5: per(A0)=1152; per(A1)=1568; residues=2,3; both congruences OK
+TARGET p=7: per(A0)=1335008; per(A1)=1632544; residues=3,4; both congruences OK
+TARGET p=11: per(A0)=37154032517376; per(A1)=42164608801024; residues=5,6; both congruences OK
+TARGET p=13: per(A0)=613680867638476800; per(A1)=683353973472423936; residues=6,7; both congruences OK
+TARGET p=17: per(A0)=945776134421421651222708224; per(A1)=1027450150728092835655335936; residues=8,9; both congruences OK
+TARGET p=19: per(A0)=76727326832534669646258960695296; per(A1)=82645332184249204904990253940736; residues=9,10; both congruences OK
+PERMANENT_CROSSCHECK direct permutation sums p<=7; Ryser p<=13
+SIGN_REDUCTION 151986 entries; all odd primes p<=101, shifts=0,1
+CIRCULANT_INGREDIENT 3152 functions; exhaustive p=3,5
+FIXED_PERMUTATIONS centralizer consists of translations for p=3,5,7
+ALL_CHECKS_OK

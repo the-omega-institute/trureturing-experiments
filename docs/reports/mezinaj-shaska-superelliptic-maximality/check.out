@@ -1,0 +1,31 @@
+FIDELITY r=3 n=2 d=4 delta=0 N_evaluation=10 affine=14 infinity=2 genus=1 projective=16 maximal=True
+FIDELITY r=3 n=4 d=4 delta=0 N_evaluation=20 affine=24 infinity=4 genus=3 projective=28 maximal=True
+COUNTEREXAMPLE p=3 r=3 q=9 modulus=[1, 0, 1] d=6 roots=6 nonroots=3 delta=0 affine=12 infinity=2 projective=14 genus=2 HW_maximum=22 gap=8
+F9 coordinate vector [a,b] means a+b*i, i^2=2
+F9 evaluations=[((0, 0), (1, 0)), ((1, 0), (1, 0)), ((2, 0), (1, 0)), ((0, 1), (0, 0)), ((1, 1), (0, 0)), ((2, 1), (0, 0)), ((0, 2), (0, 0)), ((1, 2), (0, 0)), ((2, 2), (0, 0))]
+F9 root_derivatives=[((0, 1), (0, 1)), ((1, 1), (0, 1)), ((2, 1), (0, 1)), ((0, 2), (0, 2)), ((1, 2), (0, 2)), ((2, 2), (0, 2))]
+F9 affine_points=[((0, 0), (1, 0)), ((0, 0), (2, 0)), ((1, 0), (1, 0)), ((1, 0), (2, 0)), ((2, 0), (1, 0)), ((2, 0), (2, 0)), ((0, 1), (0, 0)), ((1, 1), (0, 0)), ((2, 1), (0, 0)), ((0, 2), (0, 0)), ((1, 2), (0, 0)), ((2, 2), (0, 0))]
+F9 infinity=[(1, 0), (2, 0)]
+FIDELITY r=5 n=2 d=6 delta=0 N_evaluation=38 affine=44 infinity=2 genus=2 projective=46 maximal=True
+FIDELITY r=5 n=3 d=6 delta=0 N_evaluation=57 affine=63 infinity=3 genus=4 projective=66 maximal=True
+FIDELITY r=5 n=6 d=6 delta=0 N_evaluation=114 affine=120 infinity=6 genus=10 projective=126 maximal=True
+COUNTEREXAMPLE p=5 r=5 q=25 modulus=[1, 1, 1] d=20 roots=20 nonroots=5 delta=0 affine=30 infinity=2 projective=32 genus=9 HW_maximum=116 gap=84
+FIDELITY r=7 n=2 d=8 delta=0 N_evaluation=82 affine=90 infinity=2 genus=3 projective=92 maximal=True
+FIDELITY r=7 n=4 d=8 delta=0 N_evaluation=164 affine=172 infinity=4 genus=9 projective=176 maximal=True
+FIDELITY r=7 n=8 d=8 delta=0 N_evaluation=328 affine=336 infinity=8 genus=21 projective=344 maximal=True
+COUNTEREXAMPLE p=7 r=7 q=49 modulus=[1, 0, 1] d=42 roots=42 nonroots=7 delta=0 affine=56 infinity=2 projective=58 genus=20 HW_maximum=330 gap=272
+FIDELITY r=9 n=2 d=10 delta=0 N_evaluation=142 affine=152 infinity=2 genus=4 projective=154 maximal=True
+FIDELITY r=9 n=5 d=10 delta=0 N_evaluation=355 affine=365 infinity=5 genus=16 projective=370 maximal=True
+FIDELITY r=9 n=10 d=10 delta=0 N_evaluation=710 affine=720 infinity=10 genus=36 projective=730 maximal=True
+COUNTEREXAMPLE p=3 r=9 q=81 modulus=[1, 0, 1, 1, 1] d=72 roots=72 nonroots=9 delta=0 affine=90 infinity=2 projective=92 genus=35 HW_maximum=712 gap=620
+FIDELITY r=11 n=2 d=12 delta=0 N_evaluation=218 affine=230 infinity=2 genus=5 projective=232 maximal=True
+FIDELITY r=11 n=3 d=12 delta=0 N_evaluation=327 affine=339 infinity=3 genus=10 projective=342 maximal=True
+FIDELITY r=11 n=4 d=12 delta=0 N_evaluation=436 affine=448 infinity=4 genus=15 projective=452 maximal=True
+FIDELITY r=11 n=6 d=12 delta=0 N_evaluation=654 affine=666 infinity=6 genus=25 projective=672 maximal=True
+FIDELITY r=11 n=12 d=12 delta=0 N_evaluation=1308 affine=1320 infinity=12 genus=55 projective=1332 maximal=True
+COUNTEREXAMPLE p=11 r=11 q=121 modulus=[1, 0, 1] d=110 roots=110 nonroots=11 delta=0 affine=132 infinity=2 projective=134 genus=54 HW_maximum=1310 gap=1176
+FIDELITY r=13 n=2 d=14 delta=0 N_evaluation=310 affine=324 infinity=2 genus=6 projective=326 maximal=True
+FIDELITY r=13 n=7 d=14 delta=0 N_evaluation=1085 affine=1099 infinity=7 genus=36 projective=1106 maximal=True
+FIDELITY r=13 n=14 d=14 delta=0 N_evaluation=2170 affine=2184 infinity=14 genus=78 projective=2198 maximal=True
+COUNTEREXAMPLE p=13 r=13 q=169 modulus=[1, 3, 1] d=156 roots=156 nonroots=13 delta=0 affine=182 infinity=2 projective=184 genus=77 HW_maximum=2172 gap=1988
+ALL_CHECKS_OK

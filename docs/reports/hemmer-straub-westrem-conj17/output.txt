@@ -1,0 +1,25 @@
+FIDELITY equations (1.2) and (1.4): exact Ev multiplicities and R3(10) match
+FIDELITY Table 1 mu=(8,): (1, 1, 1, 1, 1)
+FIDELITY Table 1 mu=(6, 2): (20, 10, 4, 2, 4)
+FIDELITY Table 1 mu=(4, 4): (14, 4, 2, 0, 6)
+FIDELITY Table 1 mu=(4, 2, 2): (56, 4, 0, 4, 8)
+FIDELITY Section 2.1 lambda=(1,1,1,1): L=48, R=48
+n= 0 partitions= 1 left=1 right=1 expected=1
+n= 1 partitions= 1 left=0 right=0 expected=0
+n= 2 partitions= 2 left=3 right=3 expected=3
+n= 3 partitions= 3 left=0 right=0 expected=0
+n= 4 partitions= 5 left=6 right=6 expected=6
+n= 5 partitions= 7 left=0 right=0 expected=0
+n= 6 partitions=11 left=10 right=10 expected=10
+n= 7 partitions=15 left=0 right=0 expected=0
+n= 8 partitions=22 left=15 right=15 expected=15
+n= 9 partitions=30 left=0 right=0 expected=0
+n=10 partitions=42 left=21 right=21 expected=21
+n=11 partitions=56 left=0 right=0 expected=0
+n=12 partitions=77 left=28 right=28 expected=28
+EXACT weighted checks: all 272 partitions for 0<=n<=12
+INDEPENDENT rim-hook character comparisons: 1003 distinct pairs for 0<=n<=7
+INDEPENDENT two-variable character check: every Ev type for 0<=n<=12
+BOUNDARY: n=0 is a generating-series convention; the conjecture quantifies n>=1
+BOUNDARY: finite computations establish no universal theorem and no Lean proof
+ALL_CHECKS_OK

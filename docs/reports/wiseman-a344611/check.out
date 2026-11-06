@@ -1,0 +1,29 @@
+Exact enumeration: n=0..20; source fidelity: four OEIS prefixes, A344611 difference and weight-8 example.
+n A344611 A160786 A344743 A236914 p(2n) p(2n+1)
+0 1 1 0 0 1 1
+1 2 2 0 1 2 3
+2 4 4 1 3 5 7
+3 8 8 3 7 11 15
+4 15 16 7 14 22 30
+5 27 29 15 27 42 56
+6 48 52 29 49 77 101
+7 81 90 54 86 135 176
+8 135 151 96 146 231 297
+9 220 248 165 242 385 490
+10 352 400 275 392 627 792
+11 553 632 449 623 1002 1255
+12 859 985 716 973 1575 1958
+13 1313 1512 1123 1498 2436 3010
+14 1986 2291 1732 2274 3718 4565
+15 2969 3431 2635 3411 5604 6842
+16 4394 5084 3955 5059 8349 10143
+17 6439 7456 5871 7427 12310 14883
+18 9357 10836 8620 10801 17977 21637
+19 13479 15613 12536 15572 26015 31185
+20 19273 22316 18065 22267 37338 44583
+Map validity, inverse recovery, injectivity and branch disjointness: 61515 source partitions checked.
+Strictness witness (n-1,n-1,3): checked for n=4..20; equality at n=0..3.
+Complement identity: A344611+A344743=p(2n), but A160786+A236914=p(2n+1).
+A344743 conjecture is not equivalent: at n=1 it asserts 0 >= 1, which is false.
+Finite checks only; no Lean proof of claim or its negation is supplied.
+ALL_CHECKS_OK

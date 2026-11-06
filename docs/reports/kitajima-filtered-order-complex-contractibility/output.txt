@@ -1,0 +1,22 @@
+FIDELITY Example 2.12: chains n=1..6, all 1<=k<=n collapse to a point: OK
+FAMILY t=2 elements=21 rank_sizes=[2, 5, 8, 4, 2]
+  Delta^3 f=[21, 99, 151, 72] Betti_F2=[1, 0, 0, 0] elementary_collapses=171
+  Delta^4 f=[21, 103, 201, 169, 52] Betti_F2=[1, 0, 1, 0, 0]
+  order_maps, components, covers, extrema, rank_windows, cone_intersections: OK
+FAMILY t=3 elements=27 rank_sizes=[2, 6, 11, 6, 2]
+  Delta^3 f=[27, 139, 221, 108] Betti_F2=[1, 0, 0, 0] elementary_collapses=247
+  Delta^4 f=[27, 143, 291, 250, 78] Betti_F2=[1, 0, 2, 0, 0]
+  order_maps, components, covers, extrema, rank_windows, cone_intersections: OK
+FAMILY t=4 elements=33 rank_sizes=[2, 7, 14, 8, 2]
+  Delta^3 f=[33, 179, 291, 144] Betti_F2=[1, 0, 0, 0] elementary_collapses=323
+  Delta^4 f=[33, 183, 381, 331, 104] Betti_F2=[1, 0, 3, 0, 0]
+  order_maps, components, covers, extrema, rank_windows, cone_intersections: OK
+FAMILY t=5 elements=39 rank_sizes=[2, 8, 17, 10, 2]
+  Delta^3 f=[39, 219, 361, 180] Betti_F2=[1, 0, 0, 0] elementary_collapses=399
+  Delta^4 f=[39, 223, 471, 412, 130] Betti_F2=[1, 0, 4, 0, 0]
+  order_maps, components, covers, extrema, rank_windows, cone_intersections: OK
+FAMILY t=6 elements=45 rank_sizes=[2, 9, 20, 12, 2]
+  Delta^3 f=[45, 259, 431, 216] Betti_F2=[1, 0, 0, 0] elementary_collapses=475
+  Delta^4 f=[45, 263, 561, 493, 156] Betti_F2=[1, 0, 5, 0, 0]
+  order_maps, components, covers, extrema, rank_windows, cone_intersections: OK
+ALL_CHECKS_OK

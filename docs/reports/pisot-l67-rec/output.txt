@@ -1,0 +1,10 @@
+FIDELITY: all 42 displayed OEIS A048585 terms agree
+ROUNDING: 12^2/9 = 16; ceiling leaves 16 unchanged
+DIRECT CEILING VS LINEAR: 10002 terms, indices 0..10001, agree
+PUBLISHED ORDER-FOUR IDENTITY: indices 4..10001, all agree
+DETERMINANTS AND ERROR BOUNDS: indices 0..9999, all agree
+BASES (v,S,D,v-4S) at 7,8,9: [(41, 9, 8, 5), (60, 13, -4, 8), (88, 19, -9, 12)]
+INITIAL (E,U) at 0..6: [(5, 6), (3, 7), (0, 9), (8, 12), (12, 16), (7, 22), (17, 31)]
+FIRST_1002_TERMS_SHA256 (decimal lines, no final newline): 298c5047d0e92dc30ca9eac41872a8b60fd764d1999c0f1641e1c2cb5cccce1c
+SCOPE: exact finite checks only; the unbounded outline is not Lean-verified
+ALL_CHECKS_OK

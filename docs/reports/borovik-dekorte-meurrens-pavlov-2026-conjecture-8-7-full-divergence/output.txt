@@ -1,0 +1,16 @@
+FIDELITY: all 17 monomial counts in source Table 3 reproduced exactly
+FIDELITY: Proposition 3.9 agrees for all 343 spins in [0,6]^3
+FAMILY basis 1: symbolic-r rational-function residual = 0
+FAMILY basis 2: symbolic-r rational-function residual = 0
+FAMILY basis 3: symbolic-r rational-function residual = 0
+FAMILY basis 4: symbolic-r rational-function residual = 0
+FAMILY basis 5: symbolic-r rational-function residual = 0
+OPERATOR: all five polynomial images match; order <= 4 <= 6; no ∂H23
+FIDELITY: supplementary critical-weight D2 at Δ=(2,2,2) agrees on all five inputs
+r=2: normalized images in basis (T,J) = [(9, 1), (-9, -1), (-9, -1), (-18, -2), (0, 2)]
+r=3: normalized images in basis (T,J) = [(20, 1), (-20, -1), (-20, -1), (-32, 2), (0, 9)]
+AMBIENT: real P and complex Z satisfy all nine cone constraints
+AMBIENT: blocks (V1,V2,V3,H12,H13,H23) = [1/2, 1, -1, -2, 1, 4]
+AMBIENT r=2: K=-64, inputs=[16, -64, -32, 128, -64], C1² outputs=[320, -320, -320, -640, -512]
+AMBIENT r=3: K=-256, inputs=[64, -256, -128, 512, -256], C1² outputs=[4096, -4096, -4096, -10240, -9216]
+ALL_CHECKS_OK

@@ -1,0 +1,32 @@
+n=1 A=2 presentation_mass=2 A/leading=2/7
+n=2 A=4 presentation_mass=8 A/leading=1/5
+n=3 A=8 presentation_mass=20 A/leading=4/21
+n=4 A=16 presentation_mass=44 A/leading=1/5
+n=5 A=32 presentation_mass=84 A/leading=8/35
+n=6 A=58 presentation_mass=156 A/leading=29/120
+n=7 A=108 presentation_mass=268 A/leading=27/98
+n=8 A=190 presentation_mass=460 A/leading=19/64
+n=9 A=336 presentation_mass=748 A/leading=1/3
+n=10 A=560 presentation_mass=1228 A/leading=7/20
+n=11 A=948 presentation_mass=1932 A/leading=237/616
+n=12 A=1574 presentation_mass=3084 A/leading=787/1920
+n=13 A=2568 presentation_mass=4748 A/leading=321/728
+n=14 A=4116 presentation_mass=7436 A/leading=147/320
+n=15 A=6596 presentation_mass=11276 A/leading=1649/3360
+n=16 A=10444 presentation_mass=17420 A/leading=2611/5120
+n=17 A=16320 presentation_mass=26124 A/leading=15/28
+n=18 A=25488 presentation_mass=39948 A/leading=177/320
+n=19 A=39216 presentation_mass=59404 A/leading=129/224
+n=20 A=60690 presentation_mass=90124 A/leading=6069/10240
+n=21 A=92204 presentation_mass=133132 A/leading=3293/5376
+n=22 A=141060 presentation_mass=200716 A/leading=7053/11264
+n=23 A=212104 presentation_mass=294924 A/leading=26513/41216
+n=24 A=322508 presentation_mass=442380 A/leading=80627/122880
+FIDELITY_OK: all 21 arXiv source values and OEIS terms 22..24
+LITERAL_CROSSCHECK_OK: all binary words of lengths 1..14
+SOURCE_EXAMPLES_OK
+MATCHING_AND_INTERSECTION_OK: 34884 presentation pairs; explicit sets through n=8
+CUTOFF_BONFERRONI_OK: 84 cases, 4<=n<=24 and 0<=D<=3
+PARITY_SUM_IDENTITIES_OK: 1<=k<=100
+ASYMPTOTIC_SCOPE: finite checks support the lemmas; the infinite limit requires a proof
+ALL_CHECKS_OK

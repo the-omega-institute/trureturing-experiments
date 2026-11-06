@@ -1,0 +1,9 @@
+FIDELITY A389142 revision 11: all 54 displayed terms reproduced
+FIDELITY A111097 example: n=3, unique maximizer k=5 in 1..100; P=36/125
+COMBINATORIAL BRIDGE: exhaustive draw counts n=1..5, k=1..6 agree with falling-factorial probability
+FINITE MAXIMUM: n=2..60, every k in 1..(2*M+10), unique maximum M
+BOUNDARY SIGNS: H_n(M)>0>H_n(M+1) for n=2..300, exact integers
+TRUNCATION: exact rational bounds and Pascal recurrence, m=0..40, t=0,1/7,1/2,6/7,1
+SYMBOLIC CERTIFICATES: all six residue-class polynomial identities exact
+RATIO AND GEOMETRIC IDENTITY: n=2..20, k=n..n+30, exact rationals
+ALL_CHECKS_OK

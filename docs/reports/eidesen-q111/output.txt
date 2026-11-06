@@ -1,0 +1,6 @@
+FIDELITY Proposition 8.1 at n=2: A has order 16, dim 4; U_A has dim 2, L=8, S=1, maximal eigenspace dim 4
+{"G": 25600, "bad": {"E": 32, "L": 6400, "S": 5}, "blocks_exact_projective_and_irreducible": true, "clifford_coset_partition_checked": true, "direct_full_64d_enumeration": {"G": 25600, "bad": {"E": 32, "L": 6400, "S": 5}, "good": {"E": 16, "L": 6400, "S": 5}}, "good": {"E": 16, "L": 6400, "S": 5}, "m": 5, "t": 1}
+{"G": 295936, "bad": {"E": 32, "L": 73984, "S": 17}, "blocks_exact_projective_and_irreducible": true, "clifford_coset_partition_checked": true, "good": {"E": 16, "L": 73984, "S": 17}, "m": 17, "t": 2}
+{"G": 1401856, "bad": {"E": 32, "L": 350464, "S": 37}, "blocks_exact_projective_and_irreducible": true, "clifford_coset_partition_checked": true, "good": {"E": 16, "L": 350464, "S": 37}, "m": 37, "t": 3}
+{"G": 4326400, "bad": {"E": 32, "L": 1081600, "S": 65}, "blocks_exact_projective_and_irreducible": true, "clifford_coset_partition_checked": true, "good": {"E": 16, "L": 1081600, "S": 65}, "m": 65, "t": 4}
+ALL_CHECKS_OK

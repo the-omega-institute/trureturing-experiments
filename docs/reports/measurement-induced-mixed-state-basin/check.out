@@ -1,0 +1,13 @@
+ARXIV: 1808.08151v1; all evidence uses exact rational/symbolic algebra
+SYMPY_VERSION: 1.14.0
+FIDELITY: protocol derives all three coordinates of source Eq. (10); residuals 0
+FIDELITY: source Eq. (9) purity and determinant; residuals 0
+DEFECT: d_next = d (d + 2a + 2b)/(1+c)^2; residual 0
+TRANSFORM: all three rational coordinate conjugacies; residuals 0
+LYAPUNOV: D^2 (V - V_next) = displayed nonnegative certificate; residual 0
+COERCIVITY: R >= (A+B)/4; V >= (A+B)/4, C; D <= 1+8V; exact certificates
+C-CONTROL: D B_next - 4C = 4C(A+B+C) >= 0; exact certificate
+RATIONAL FIDELITY: 1603 distinct interior triples, common denominators 1..6
+RATIONAL LYAPUNOV: 216 nonnegative initial triples, six exact steps each
+BOUNDARIES: exact C0/C1, pure-sphere examples, near-pure transient purification
+ALL_CHECKS_OK

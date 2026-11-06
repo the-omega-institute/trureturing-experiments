@@ -1,0 +1,110 @@
+[
+  {
+    "group": "S",
+    "d": 4,
+    "nodes": 1760,
+    "d_squared_lambda_min": 1.5683563923358355,
+    "target": 1.5707963267948966,
+    "node_doubling_change": 4.638166219983475e-06,
+    "relative_trace_error": 7.87555800796369e-07
+  },
+  {
+    "group": "B",
+    "d": 4,
+    "nodes": 440,
+    "d_squared_lambda_min": 0.38521086941365695,
+    "target": 0.39269908169872414,
+    "node_doubling_change": 2.1665028648865103e-07,
+    "relative_trace_error": 6.227834716932001e-06
+  },
+  {
+    "group": "S",
+    "d": 8,
+    "nodes": 440,
+    "d_squared_lambda_min": 1.5596315553984756,
+    "target": 1.5707963267948966,
+    "node_doubling_change": 9.66267146296218e-07,
+    "relative_trace_error": 1.2320994384529271e-05
+  },
+  {
+    "group": "B",
+    "d": 8,
+    "nodes": 440,
+    "d_squared_lambda_min": 0.3806560638522273,
+    "target": 0.39269908169872414,
+    "node_doubling_change": 2.912647900643606e-11,
+    "relative_trace_error": 6.172478800525738e-06
+  },
+  {
+    "group": "S",
+    "d": 16,
+    "nodes": 440,
+    "d_squared_lambda_min": 1.5603044012647436,
+    "target": 1.5707963267948966,
+    "node_doubling_change": 9.728662320185322e-12,
+    "relative_trace_error": 1.2105854645949599e-05
+  },
+  {
+    "group": "B",
+    "d": 16,
+    "nodes": 440,
+    "d_squared_lambda_min": 0.3822816145519139,
+    "target": 0.39269908169872414,
+    "node_doubling_change": 3.348432642269472e-13,
+    "relative_trace_error": 6.064669967664749e-06
+  },
+  {
+    "group": "S",
+    "d": 32,
+    "nodes": 440,
+    "d_squared_lambda_min": 1.5639974340434915,
+    "target": 1.5707963267948966,
+    "node_doubling_change": 2.97895041967422e-12,
+    "relative_trace_error": 1.169738142059451e-05
+  },
+  {
+    "group": "B",
+    "d": 32,
+    "nodes": 440,
+    "d_squared_lambda_min": 0.385470728327036,
+    "target": 0.39269908169872414,
+    "node_doubling_change": 3.1780134079895106e-13,
+    "relative_trace_error": 5.859981291322924e-06
+  },
+  {
+    "group": "S",
+    "d": 64,
+    "nodes": 440,
+    "d_squared_lambda_min": 1.566958223350318,
+    "target": 1.5707963267948966,
+    "node_doubling_change": 3.1230573682705653e-12,
+    "relative_trace_error": 1.0957989433957316e-05
+  },
+  {
+    "group": "B",
+    "d": 64,
+    "nodes": 440,
+    "d_squared_lambda_min": 0.3882417536924142,
+    "target": 0.39269908169872414,
+    "node_doubling_change": 8.41737790580055e-12,
+    "relative_trace_error": 5.489472537090201e-06
+  },
+  {
+    "group": "S",
+    "d": 96,
+    "nodes": 440,
+    "d_squared_lambda_min": 1.568134360991361,
+    "target": 1.5707963267948966,
+    "node_doubling_change": 4.75068873129203e-11,
+    "relative_trace_error": 1.0306609705135195e-05
+  },
+  {
+    "group": "B",
+    "d": 96,
+    "nodes": 440,
+    "d_squared_lambda_min": 0.38945597855526304,
+    "target": 0.39269908169872414,
+    "node_doubling_change": 3.4699965123508036e-11,
+    "relative_trace_error": 5.163073737990409e-06
+  }
+]

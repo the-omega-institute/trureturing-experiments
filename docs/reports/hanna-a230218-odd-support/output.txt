@@ -1,0 +1,12 @@
+OEIS A230218: 521 exact terms, indices 0..520
+OEIS b-file sha256: 4f6facf9960662a653be9aa37c1a411d64128d405637d20bdfeecb7d100fdc89
+Fidelity: reconstructed a(0)..a(64) match the table exactly
+Initial coefficients: [1, 1, -3, 14, -85, 504, -4424, 6796, -878157]
+Defining integer rows: zero for n=2..64
+Binary reconstruction and OEIS parity agree exactly for n=0..520
+Positive odd support through 520: [1, 2, 4, 8, 16, 32, 64, 128, 256, 512]
+Comparison identity: [x^n]C^(n^2+n+1) = binom(n^2,n) + 2 binom(n^2,n-1), n=2..40
+Exact binomial parity: even for n=2..300
+Binary obstruction, including both valuation cases: n=2..100000
+Finite exact checks support the proposed general argument; they do not prove it.
+ALL_CHECKS_OK

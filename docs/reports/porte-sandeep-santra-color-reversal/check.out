@@ -1,0 +1,6 @@
+SOURCE_FIDELITY_OK involution B_aa=B for all 1024 P4 states
+P4_MASK=41 GLOBAL_DISTANCE=8 WORD=[1, 2, 3, 0, 3, 0, 1, 2]
+P4_MASK=41 ENDPOINT_DISTANCE=10 WORD=[0, 1, 0, 2, 0, 1, 3, 2, 3, 2]
+POTENTIAL_GAP=2 (selective endpoint reversal exceeds global reversal)
+DISJOINT_P4_FAMILY_OK costs global=8k selective_endpoints=10k for k=1..8
+ALL_CHECKS_OK

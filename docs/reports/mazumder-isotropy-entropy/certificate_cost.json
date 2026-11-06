@@ -1,0 +1,26 @@
+{
+  "lean_version": "4.35.0",
+  "method": "by decide; kernel reduction, no native_decide",
+  "matrix_dimension": 19,
+  "direction_offset": 349504,
+  "direction_count": 32,
+  "expected_rank_histogram": {
+    "16": 21,
+    "18": 11
+  },
+  "exit_code": 0,
+  "tactic_reduction_ms": 3760,
+  "kernel_type_checking_ms": 7210,
+  "process_wall_ms": 23660,
+  "process_user_ms": 3670,
+  "process_system_ms": 5300,
+  "maximum_resident_bytes": 1159053312,
+  "program_sha256": "bb42d432344a8467fe175fe3e156dd880bea7ee41e6c5f8be4411ded0bb03bb9",
+  "extrapolation": {
+    "direction_count": 524288,
+    "multiplier": 16384,
+    "kernel_ms": 118128640,
+    "reduction_plus_kernel_ms": 179732480,
+    "status": "ASSUMED-UNVERIFIED; linear extrapolation from a bounded interval, not a full run; excludes imports, checker soundness and analytic bridges"
+  }
+}

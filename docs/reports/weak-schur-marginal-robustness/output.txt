@@ -1,0 +1,17 @@
+BINDING WSS CONTROL: Young-image spans equal central-character blocks, d=2,3,4 and n=2,3
+FIDELITY: source marginal-failure proposition (i),(ii), 24 exact cases OK
+WSS CROSS-CHECK: n=2,3 character projectors agree with exact RSK laws
+MARGINAL BOUND: k(k-1)/(4d), 84 exact cases, 4<=d<=32, 2<=k<=min(d/2,8) OK
+MARGINAL CROSS-CHECK: direct word enumeration agrees with occupancy multiplicities
+EXPLICIT d=4: 6 components; pair diagonal=5/64, off-diagonal=11/192; TD=1/16
+SPECTRUM/RANK: 3/(2d),1/(2d) each repeated d/2; TV=1/4; positive tensor lower bound OK
+WSS MIXTURE: all 6 (d=4) and 20 (d=6) components and their mean have identical laws, 1<=n<=5
+d=4 n=1: target_error=3/4; own_spectrum_error=5/8; reverse_triangle_OK
+d=4 n=2: target_error=85/128; own_spectrum_error=127/256; reverse_triangle_OK
+d=4 n=3: target_error=37/64; own_spectrum_error=313/768; reverse_triangle_OK
+d=4 n=4: target_error=2089/4096; own_spectrum_error=197/512; reverse_triangle_OK
+d=4 n=5: target_error=5091/10240; own_spectrum_error=56853/163840; reverse_triangle_OK
+d=4 n=6: target_error=749897/1572864; own_spectrum_error=251443/786432; reverse_triangle_OK
+d=4 n=7: target_error=3328197/7340032; own_spectrum_error=312893/1048576; reverse_triangle_OK
+LIMIT SCOPE: finite checks only; fixed-d noiseless WSS consistency is a required proof ingredient
+ALL_CHECKS_OK

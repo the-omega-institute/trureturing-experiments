@@ -1,0 +1,16 @@
+A301310: b-file fidelity n=0..100: 101/101 exact matches
+A301310: n=1..200: 200/200 divisible by 10
+A301310: n=1..200: independent Newton/numerator equality, tail vanishing, reciprocity, and z(z+1) factorization all checked
+A301310: a(0..3)=[1, 10, 360, 21840]; Q(1..3)=[[1], [0, 6, 0], [0, 4, 52, 4, 0]]
+A301310: a(200) decimal_digits=651; a(0..200) JSON sha256=7e62e1eb2a299dc5ac8dfc3a37d7f18c97eee455af353d5ccb1fc3ded85a5a57
+A301311: b-file fidelity n=0..100: 101/101 exact matches
+A301311: n=1..200: 200/200 divisible by 10
+A301311: n=1..200: independent Newton/numerator equality, tail vanishing, reciprocity, and z(z+1) factorization all checked
+A301311: a(0..3)=[1, 10, 370, 22570]; Q(1..3)=[[1], [1, 4, 1], [1, 12, 34, 12, 1]]
+A301311: a(200) decimal_digits=651; a(0..200) JSON sha256=680c313e9baf345416624777c13cd5bf2a34eb20403498377076b2b9baff2586
+A301432: b-file fidelity n=0..100: 101/101 exact matches
+A301432: n=1..200: 200/200 divisible by 21
+A301432: n=1..200: independent Newton/numerator equality, tail vanishing, reciprocity, and z(z+1) factorization all checked
+A301432: a(0..3)=[1, 21, 1512, 182448]; Q(1..3)=[[1], [0, 6, 0], [0, 4, 52, 4, 0]]
+A301432: a(200) decimal_digits=711; a(0..200) JSON sha256=75ea69ada244911cc66ed8a3ecc5d516429056180a84f3fabf139b0e99bd58d6
+ALL_CHECKS_OK
