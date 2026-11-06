@@ -1,0 +1,40 @@
+Python 3.14; SymPy 1.14.0; exact arithmetic only
+EXHAUSTIVE_DIAGONAL n=1 cases=9 equality=9 strict=0
+EXHAUSTIVE_DIAGONAL n=2 cases=81 equality=63 strict=18
+EXHAUSTIVE_DIAGONAL n=3 cases=729 equality=159 strict=570
+EXHAUSTIVE_DIAGONAL n=4 cases=6561 equality=577 strict=5984
+MATRIX source_rank_one_t=1/3: n=1 rank_difference=1 commute=True d_squared=1/9 S_m_interval=[1/9,1/9] equality=True
+MATRIX source_rank_one_t=2: n=1 rank_difference=1 commute=True d_squared=4 S_m_interval=[4,4] equality=True
+MATRIX source_rank_one_t=1/3: n=2 rank_difference=1 commute=True d_squared=1/9 S_m_interval=[1/9,1/9] equality=True
+MATRIX source_rank_one_t=2: n=2 rank_difference=1 commute=True d_squared=4 S_m_interval=[4,4] equality=True
+MATRIX source_rank_one_t=1/3: n=3 rank_difference=1 commute=True d_squared=1/9 S_m_interval=[1/9,1/9] equality=True
+MATRIX source_rank_one_t=2: n=3 rank_difference=1 commute=True d_squared=4 S_m_interval=[4,4] equality=True
+MATRIX source_rank_one_t=1/3: n=4 rank_difference=1 commute=True d_squared=1/9 S_m_interval=[1/9,1/9] equality=True
+MATRIX source_rank_one_t=2: n=4 rank_difference=1 commute=True d_squared=4 S_m_interval=[4,4] equality=True
+MATRIX n2_rank_two_equality: n=2 rank_difference=2 commute=True d_squared=1 S_m_interval=[1,1] equality=True
+MATRIX n2_crossed_improves: n=2 rank_difference=1 commute=True d_squared=1 S_m_interval=[4,4] equality=False
+MATRIX separated_equality: n=2 rank_difference=1 commute=True d_squared=1 S_m_interval=[1,1] equality=True
+MATRIX near_equality_noncommuting: n=2 rank_difference=2 commute=False d_squared=1 S_m_interval=[9607/8972,14645/13677] equality=False
+MATRIX noncommuting_rank_one: n=2 rank_difference=1 commute=False d_squared=9 S_m_interval=[16,16] equality=False
+MATRIX separated_equality: n=3 rank_difference=1 commute=True d_squared=1 S_m_interval=[1,1] equality=True
+MATRIX near_equality_noncommuting: n=3 rank_difference=2 commute=False d_squared=1 S_m_interval=[158992757/148316132,133302787/124351284] equality=False
+MATRIX noncommuting_rank_one: n=3 rank_difference=1 commute=False d_squared=9 S_m_interval=[16,16] equality=False
+MATRIX rank_two_near_equality: n=3 rank_difference=2 commute=True d_squared=1 S_m_interval=[10001/10000,10001/10000] equality=False
+MATRIX connected_rank_one_near_equality: n=3 rank_difference=1 commute=True d_squared=9801/10000 S_m_interval=[1,1] equality=False
+MATRIX identical_normal_pair: n=3 rank_difference=0 commute=True d_squared=0 S_m_interval=[0,0] equality=True
+MATRIX separated_equality: n=4 rank_difference=1 commute=True d_squared=1 S_m_interval=[1,1] equality=True
+MATRIX near_equality_noncommuting: n=4 rank_difference=2 commute=False d_squared=1 S_m_interval=[158992757/148316132,133302787/124351284] equality=False
+MATRIX noncommuting_rank_one: n=4 rank_difference=1 commute=False d_squared=9 S_m_interval=[16,16] equality=False
+MATRIX rank_two_near_equality: n=4 rank_difference=2 commute=True d_squared=1 S_m_interval=[10001/10000,10001/10000] equality=False
+MATRIX connected_rank_one_near_equality: n=4 rank_difference=1 commute=True d_squared=9801/10000 S_m_interval=[1,1] equality=False
+MATRIX identical_normal_pair: n=4 rank_difference=0 commute=True d_squared=0 S_m_interval=[0,0] equality=True
+MATRIX repeated_common_labels: n=4 rank_difference=1 commute=True d_squared=1 S_m_interval=[1,1] equality=True
+MATRIX rank_one_path_0_1_2: n=3 rank_difference=1 commute=True d_squared=1 S_m_interval=[4,4] equality=False
+RANDOM_NORMAL n=2 independent_bases=12 common_basis=4 seed=260909177
+RANDOM_NORMAL n=3 independent_bases=12 common_basis=4 seed=260909177
+RANDOM_NORMAL n=4 independent_bases=12 common_basis=4 seed=260909177
+MATRIX_TOTAL n=1 equality=2 strict=0
+MATRIX_TOTAL n=2 equality=10 strict=13
+MATRIX_TOTAL n=3 equality=8 strict=17
+MATRIX_TOTAL n=4 equality=9 strict=16
+ALL_CHECKS_OK
