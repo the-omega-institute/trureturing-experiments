@@ -1,0 +1,9 @@
+FIDELITY: all 8 signed source splittings of (6,10); greedy gcd(12,3)=3
+IDEAL: 144 superlevel implications; 1296 meet/join bounds
+SPLITTING: 15625 ordered vector pairs, 3 coordinates, exact rationals
+DIAGONAL: 16 infinite formula families; 54016 projected points
+SUPERLEVELS: 112 exact support counts; thresholds through 1/16
+NONVANISHING: H has exactly M entries >=1/2 on M selected rows, M=1,2,4,8,16,32
+CONTROL: beta=1/m is constant and positive on each infinite row; H selects one point per row
+BOUNDARY: finite projections do not prove the infinite quotient or the Bezout realization
+ALL_CHECKS_OK
