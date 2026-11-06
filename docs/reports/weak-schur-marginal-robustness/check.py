@@ -8,7 +8,7 @@ No finite experiment asserts the n-to-infinity conclusion.
 """
 from collections import Counter, defaultdict
 from fractions import Fraction as Q
-from itertools import combinations, product
+from itertools import combinations, permutations, product
 from math import comb, factorial, prod
 
 
@@ -86,7 +86,72 @@ def marginal_tv(d, k):
     return total
 
 
+def young_span_control():
+    # The binding convention takes the span of all Young-symmetrizer images.
+    # Check that span against independently known central character projectors.
+    for d in (2, 3, 4):
+        for n in (2, 3):
+            words = list(product(range(d), repeat=n))
+            lookup = {w: i for i, w in enumerate(words)}
+            perms = list(permutations(range(n)))
+            ident = tuple(range(n))
+            signs = {p: (-1)**sum(p[i] > p[j] for i in range(n) for j in range(i+1,n))
+                     for p in perms}
+            actions = {}
+            for p in perms:
+                inv = tuple(p.index(i) for i in range(n))
+                actions[p] = [lookup[tuple(w[inv[i]] for i in range(n))] for w in words]
+            for lam in ([(2,), (1,1)] if n == 2 else [(3,), (2,1), (1,1,1)]):
+                if len(lam) > d:
+                    continue
+                if len(lam) == 1:
+                    coefficients, den = {p: 1 for p in perms}, factorial(n)
+                elif lam[0] == 1:
+                    coefficients, den = signs, factorial(n)
+                else:
+                    coefficients = {p: (2 if p == ident else
+                                        -1 if all(p[i] != i for i in range(n)) else 0)
+                                    for p in perms}
+                    den = 3
+                trace_num = sum(coefficients[p]*sum(a == i for i,a in enumerate(actions[p]))
+                                for p in perms)
+                assert trace_num % den == 0
+                target_rank = trace_num // den
+                boxes = [(r,c) for r, size in enumerate(lam) for c in range(size)]
+                pivots = {}
+                for filling in perms:
+                    t = [boxes[filling[i]] for i in range(n)]
+                    row = [p for p in perms if all(t[p[i]][0] == t[i][0] for i in range(n))]
+                    col = [p for p in perms if all(t[p[i]][1] == t[i][1] for i in range(n))]
+                    for j in range(len(words)):
+                        vector = defaultdict(int)
+                        for c in col:
+                            for r in row:
+                                vector[actions[r][actions[c][j]]] += signs[c]
+                        vector = {i:a for i,a in vector.items() if a}
+                        central = defaultdict(int)
+                        for p in perms:
+                            for i,a in vector.items():
+                                central[actions[p][i]] += coefficients[p]*a
+                        assert {i:a for i,a in central.items() if a} == {i:den*a for i,a in vector.items()}
+                        v = {i:Q(a) for i,a in vector.items()}
+                        for pivot, b in sorted(pivots.items()):
+                            a = v.get(pivot, Q(0))
+                            if a:
+                                for i,x in b.items():
+                                    y = v.get(i,Q(0))-a*x
+                                    if y: v[i] = y
+                                    else: v.pop(i,None)
+                        if v:
+                            pivot = min(v)
+                            a = v[pivot]
+                            pivots[pivot] = {i:x/a for i,x in v.items()}
+                assert len(pivots) == target_rank, (d,n,lam,len(pivots),target_rank)
+    print('BINDING WSS CONTROL: Young-image spans equal central-character blocks, d=2,3,4 and n=2,3')
+
+
 def run():
+    young_span_control()
     # Fidelity: source Proposition “Marginal constraints admit exact failure
     # at epsilon=0”, parts (i),(ii): tau=sum_i p_i |i><i|^tensor n.
     for p in [(Q(3, 4), Q(1, 4)), (Q(1, 2), Q(1, 3), Q(1, 6)),

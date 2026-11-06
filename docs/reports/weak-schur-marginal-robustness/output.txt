@@ -1,3 +1,4 @@
+BINDING WSS CONTROL: Young-image spans equal central-character blocks, d=2,3,4 and n=2,3
 FIDELITY: source marginal-failure proposition (i),(ii), 24 exact cases OK
 WSS CROSS-CHECK: n=2,3 character projectors agree with exact RSK laws
 MARGINAL BOUND: k(k-1)/(4d), 84 exact cases, 4<=d<=32, 2<=k<=min(d/2,8) OK
