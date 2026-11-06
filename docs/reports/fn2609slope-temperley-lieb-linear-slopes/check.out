@@ -1,0 +1,12 @@
+L=2: D=8; gamma=1; a_L=1
+L=3: D=21; gamma=2/3; a_L=2
+Table 2 OBC L=3: mu_plus=-1/2; mu_minus=3/2
+L=4: D=55; gamma=1 - sqrt(2)/3; a_L=sqrt(457)/28 + 53/28
+Table 2 OBC L=4: gamma rounds to 0.5286 (exact rational enclosure)
+Ground-space bounds and subadditivity: all m,n>=1 with m+n<=4
+L=3: all insertion Gram/action identities and local error bounds exact
+L=4: all insertion Gram/action identities and local error bounds exact
+L=5: all insertion Gram/action identities and local error bounds exact
+Insertion-error constants: 12*S before normalization; 36 after gamma>=1/3
+Finite checks support the mechanism; they do not establish the infinite-length limits.
+ALL_CHECKS_OK
