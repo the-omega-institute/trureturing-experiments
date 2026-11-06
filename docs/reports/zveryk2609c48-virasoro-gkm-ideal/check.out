@@ -4,5 +4,6 @@ SINGULAR: q=1, five PBW coefficients; L_1..L_8 annihilate P f_1; joint L_1/L_2 k
 ACTION: 300 exact commutator checks on PBW levels 0..4, modes -2..2 passed
 CARTAN: P H_1=0, with final terms -6 delta L_-4 + 6 delta L_-4; e_2 commutes with every factor
 SURVIVAL DETECTOR: negative Witt action gives P(t)=(1/4)t^(-3), nonzero without PBW independence
+FULL PRESENTATION: 3654 exact generator-relation checks at q=1 and two highest weights; expanded adjoint singular vector annihilated
 LIMIT: finite algebra checks; nonzero survival and ideal/Cartan disjointness require the stated presentation argument
 ALL_CHECKS_OK

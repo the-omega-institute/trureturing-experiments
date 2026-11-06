@@ -14,4 +14,6 @@ For q=1 through 100, the program verifies the proposed Cartan matrix, determinan
 
 A separate negative-Witt action L₋ᵣ(tᵏ)=−ktᵏ⁻ʳ gives P(t)=(1/4)t⁻³. This detects a nonzero negative word without assuming PBW independence.
 
+The recursive representation of the full q=1 presentation is also checked on negative words of length at most two, modes -3 through 3, and two Cartan highest weights. All 3,654 exact generator-relation checks pass. The expanded adjoint singular vector is annihilated by both raising generators and positive modes 1 through 5 in these representations. These finite checks support the recursive construction; they do not replace its universal verification.
+
 This program does not prove triangular decomposition, nonzero survival in the defining quotient, the universal family statement, or ideal/Cartan disjointness. Those require the presentation and weight arguments in the preregistration. No Lean settlement proof is included.

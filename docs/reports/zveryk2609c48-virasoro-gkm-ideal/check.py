@@ -97,6 +97,100 @@ def cartan_action(word, delta):
     return v
 
 
+# The full-presentation check at q=1, with no cutoff on intermediate words.
+# Negative words use -1,-2 for f_1,f_2 and positive r for L_-r.
+@lru_cache(None)
+def normal_a(word):
+    for i in range(len(word)-1):
+        a,b=word[i:i+2]
+        if 0<a<b:
+            return add((1,normal_a(word[:i]+(b,a)+word[i+2:])),
+                       (b-a,normal_a(word[:i]+(a+b,)+word[i+2:])))
+    return {word:F(1)}
+
+
+def full_presentation_check():
+    matrix=((-F(4,3),-F(1)),(-F(1),-F(2,3)))
+    degree=(-F(81,8),F(105,8))
+    central=(F(1),-F(1))
+    seeds=[()]+[(a,) for a in (-1,-2,1,2)]+[(a,b) for a in (-1,-2,1,2) for b in (-1,-2,1,2)]
+    seeds=sorted({w for word in seeds for w in normal_a(word)})
+    checks=0
+    for highest in [(F(0),F(0)),(F(2),F(3))]:
+        def h_action(h,word):
+            value=sum(h[i]*highest[i] for i in range(2))
+            for token in word:
+                if token<0:
+                    value-=sum(h[i]*matrix[i][-token-1] for i in range(2))
+                else:
+                    value+=F(token,3)*sum(h)
+            return {word:value} if value else {}
+        def left(token,v):
+            return add(*[(c,normal_a((token,)+word)) for word,c in v.items()])
+        @lru_cache(None)
+        def raising(i,word):
+            if not word:return {}
+            a,tail=word[0],word[1:]
+            out=left(a,raising(i,tail))
+            if a==-i-1:
+                h=(F(1),F(0)) if i==0 else (F(0),F(1))
+                out=add((1,out),(1,h_action(h,tail)))
+            return out
+        @lru_cache(None)
+        def t_action(m,word):
+            if m<0:return normal_a((-m,)+word)
+            if m==0:return h_action(degree,word)
+            if not word:return {}
+            a,tail=word[0],word[1:]
+            if a<0:return left(a,t_action(m,tail))
+            return add((1,left(a,t_action(m,tail))),
+                       (m+a,t_action(m-a,tail)),
+                       (m**3-m if m==a else 0,h_action(central,tail)))
+        def apply(op,v):return add(*[(c,op(word)) for word,c in v.items()])
+        def comm(op1,op2,word):
+            return add((1,apply(op1,op2(word))),(-1,apply(op2,op1(word))))
+        def op_h(h):return lambda word:h_action(h,word)
+        def op_e(i):return lambda word:raising(i,word)
+        def op_f(i):return lambda word:normal_a((-i-1,)+word)
+        def op_t(m):return lambda word:t_action(m,word)
+        for word in seeds:
+            for m in range(-3,4):
+                for n in range(-3,4):
+                    lhs=comm(op_t(m),op_t(n),word)
+                    rhs=add((m-n,t_action(m+n,word)),
+                            (m**3-m if m==-n else 0,h_action(central,word)))
+                    assert lhs==rhs,('full Virasoro',highest,m,n,word,lhs,rhs)
+                    checks+=1
+            for i in range(2):
+                for k in range(2):
+                    hi=(F(1),F(0)) if i==0 else (F(0),F(1))
+                    rhs=h_action(hi,word) if i==k else {}
+                    assert comm(op_e(i),op_f(k),word)==rhs
+                    assert comm(op_h(hi),op_e(k),word)==add((matrix[i][k],raising(k,word)))
+                    assert comm(op_h(hi),op_f(k),word)==add((-matrix[i][k],op_f(k)(word)))
+                    checks+=3
+                for r in range(1,4):
+                    assert not comm(op_e(i),op_t(-r),word)
+                    assert not comm(op_f(i),op_t(r),word)
+                    checks+=2
+                hi=(F(1),F(0)) if i==0 else (F(0),F(1))
+                for m in range(-3,4):
+                    assert comm(op_h(hi),op_t(m),word)==add((-F(m,3),t_action(m,word)))
+                    checks+=1
+        # Expand the iterated adjoint word in the negative associative algebra.
+        def ad_negative(r,v):
+            return add((1,left(r,v)),(-1,add(*[(c,normal_a(word+(r,))) for word,c in v.items()])))
+        singular={}
+        for word,coeff in { (1,1,1,1):F(1),(2,1,1):-F(3),(2,2):-F(7,4),(3,1):F(3),(4,):F(3,2)}.items():
+            term={(-1,):F(1)}
+            for r in reversed(word):term=ad_negative(r,term)
+            singular=add((1,singular),(coeff,term))
+        assert singular
+        assert all(not apply(op_t(m),singular) for m in range(1,6))
+        assert all(not apply(op_e(i),singular) for i in range(2))
+    print(f'FULL PRESENTATION: {checks} exact generator-relation checks at q=1 and two highest weights; expanded adjoint singular vector annihilated')
+
+
 def main():
     # Fidelity: source equation (3.1), r=s=2. The square-root term
     # has coefficient r^2-s^2=0 and is exactly absent, even at c=4.
@@ -176,6 +270,7 @@ def main():
         detector += coeff * scalar
     assert detector == F(1,4)
     print('SURVIVAL DETECTOR: negative Witt action gives P(t)=(1/4)t^(-3), nonzero without PBW independence')
+    full_presentation_check()
     print('LIMIT: finite algebra checks; nonzero survival and ideal/Cartan disjointness require the stated presentation argument')
     print('ALL_CHECKS_OK')
 
