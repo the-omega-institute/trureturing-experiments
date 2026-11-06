@@ -69,6 +69,8 @@ def solve(cutoff):
         bn = -raw / slope
         assert bn.denominator == 1, (n, bn)
         b.append(bn.numerator)
+        # Re-evaluate the source equation directly after the recurrence step.
+        assert coeff_sum(b, m, n) == 0, (n, m, coeff_sum(b, m, n))
     return b, divisibility
 
 
