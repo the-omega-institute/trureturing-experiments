@@ -1,0 +1,17 @@
+FIDELITY: geometric difference q_d=(1-a)/(1+a)*a^|d| and source entropy identity: exact algebra OK
+FINITE: lengths 1..6, every integer weight 1..4; log-concave cases=282, nonmonotone=160; antidiagonals, all majorization prefixes, entropy bounds OK
+ENTROPY point mass: increment in [-0.000000000001, 0.000000000001]
+ENTROPY uniform length 9: increment in [0.489336453287, 0.489336453288]
+ENTROPY binomial n=8: increment in [0.348203908479, 0.348203908480]
+ENTROPY asymmetric nonmonotone: increment in [0.367366152622, 0.367366152623]
+ENTROPY truncated geometric a=1/2 n=12: increment in [0.634839330549, 0.634839330550]
+ENTROPY truncated geometric a=9/10 n=20: increment in [0.567532221015, 0.567532221016]
+ENTROPY truncated geometric a=9/10 n=80: increment in [0.690303773036, 0.690303773037]
+INFINITE geometric a=1/3: increment in [0.562335144618, 0.562335144619]; gap to log(2) in [0.130812035941, 0.130812035942]
+INFINITE geometric a=1/2: increment in [0.636514168294, 0.636514168295]; gap to log(2) in [0.056633012265, 0.056633012266]
+INFINITE geometric a=9/10: increment in [0.691761498852, 0.691761498853]; gap to log(2) in [0.001385681707, 0.001385681708]
+INFINITE geometric a=99/100: increment in [0.693134554563, 0.693134554564]; gap to log(2) in [0.000012625996, 0.000012625997]
+INFINITE geometric a=999/1000: increment in [0.693147055434, 0.693147055435]; gap to log(2) in [0.000000125125, 0.000000125126]
+LOG(2) in [0.693147180559, 0.693147180560]
+SCOPE: finite enumeration and exact interval checks; no universal theorem or equality classification certified
+ALL_CHECKS_OK
