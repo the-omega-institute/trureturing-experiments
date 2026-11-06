@@ -12,4 +12,6 @@ Positive modes 1 through 8 annihilate P applied to the highest-weight vector. Th
 
 For q=1 through 100, the program verifies the proposed Cartan matrix, determinant, central and degree pairings, condition (4.3), a strictly positive root-separating functional, and negative rank-one highest weights. These are finite checks of the family formulas. The iterated adjoint action of P on H₁ is zero: its last two contributions are −6δL₋₄ and +6δL₋₄, with δ=−1/3.
 
+A separate negative-Witt action L₋ᵣ(tᵏ)=−ktᵏ⁻ʳ gives P(t)=(1/4)t⁻³. This detects a nonzero negative word without assuming PBW independence.
+
 This program does not prove triangular decomposition, nonzero survival in the defining quotient, the universal family statement, or ideal/Cartan disjointness. Those require the presentation and weight arguments in the preregistration. No Lean settlement proof is included.

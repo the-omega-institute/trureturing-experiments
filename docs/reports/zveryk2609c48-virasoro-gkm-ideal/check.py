@@ -163,6 +163,19 @@ def main():
     assert all(not cartan_action(w,delta) for w in [(1,1,1,1),(2,1,1),(2,2)])
     assert -6*delta+6*delta == 0
     print('CARTAN: P H_1=0, with final terms -6 delta L_-4 + 6 delta L_-4; e_2 commutes with every factor')
+    # A negative-Witt detector needs no PBW independence theorem.
+    # On Laurent monomials, L_-r(t^k)=-k*t^(k-r).
+    # In the semidirect representation f_1 sends 1 to t and f_2 to zero.
+    detector = F(0)
+    for word, coeff in p.items():
+        exponent, scalar = 1, F(1)
+        for r in reversed(word):
+            scalar *= -exponent
+            exponent -= r
+        assert exponent == -3
+        detector += coeff * scalar
+    assert detector == F(1,4)
+    print('SURVIVAL DETECTOR: negative Witt action gives P(t)=(1/4)t^(-3), nonzero without PBW independence')
     print('LIMIT: finite algebra checks; nonzero survival and ideal/Cartan disjointness require the stated presentation argument')
     print('ALL_CHECKS_OK')
 

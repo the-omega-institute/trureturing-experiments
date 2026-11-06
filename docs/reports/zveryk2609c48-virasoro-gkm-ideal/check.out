@@ -3,5 +3,6 @@ FAMILY: q=1..100 exact Cartan, symmetry, (4.3), central/degree independence, and
 SINGULAR: q=1, five PBW coefficients; L_1..L_8 annihilate P f_1; joint L_1/L_2 kernel at level 4 has dimension 1
 ACTION: 300 exact commutator checks on PBW levels 0..4, modes -2..2 passed
 CARTAN: P H_1=0, with final terms -6 delta L_-4 + 6 delta L_-4; e_2 commutes with every factor
+SURVIVAL DETECTOR: negative Witt action gives P(t)=(1/4)t^(-3), nonzero without PBW independence
 LIMIT: finite algebra checks; nonzero survival and ideal/Cartan disjointness require the stated presentation argument
 ALL_CHECKS_OK
