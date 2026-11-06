@@ -1,0 +1,13 @@
+FIELD: F_3[t]/(t^2+1), zeta order=8, Frobenius involutive
+FIDELITY Lemma 5.3: Sigma normal form sum(d)=shift, |Sigma|=8^8=16777216
+FIDELITY Section 5.2: (zeta_0*g_3)^8=zeta*I, Singer element order=64
+NORMALIZER: all 8 Sigma generator conjugates are in Sigma; theta^2=1
+REPLACEMENT: 2048 exact closure checks; 32768 F_3-basis composition checks
+LOCAL ORBITS: Sigma and S representative stabilizers=[1,1]; 8192 transporter checks
+CENTER: 80640 permutation/Frobenius pairs screened; central scalars of S=[1,-1]
+FIDELITY Theorem B/4.5: all tree subset shapes, n=1..5, k=0..5, exponents and orbit counts agree
+FIDELITY Corollary 5.11: j=3, |R|=32, stabilizers=[2,1,2], transitive
+FIDELITY Corollary 5.11: j=4, |R|=2048, stabilizers=[2,1,2], transitive
+FAMILY INGREDIENTS: order exponents checked for j=3..64; first instance dim_F3=128, order=2^197
+LIMIT: no enumeration or kernel verification of the dimension-128 instance or infinite family
+ALL_CHECKS_OK
