@@ -1,0 +1,13 @@
+THEOREM_9 n=1 profiles=1 finest_shapes=[((1,), 1)]
+THEOREM_9 n=2 profiles=16 finest_shapes=[((1, 1), 2), ((2,), 14)]
+THEOREM_9 n=3 profiles=46656 finest_shapes=[((1, 1, 1), 384), ((1, 2), 504), ((3,), 45768)]
+PROBLEM_D n=1 shapes=1 prime_compatible=1 cell_order_variants=4 all_static_blocks_exact=True
+PROBLEM_D n=2 shapes=3 prime_compatible=2 cell_order_variants=4 all_static_blocks_exact=True
+PROBLEM_D n=3 shapes=10 prime_compatible=6 cell_order_variants=4 all_static_blocks_exact=True
+PROBLEM_D n=4 shapes=40 prime_compatible=20 cell_order_variants=4 all_static_blocks_exact=True
+PROBLEM_D n=5 shapes=170 prime_compatible=80 cell_order_variants=4 all_static_blocks_exact=True
+PROBLEM_D n=6 shapes=785 prime_compatible=340 cell_order_variants=4 all_static_blocks_exact=True
+PROBLEM_D n=7 shapes=3770 prime_compatible=1570 cell_order_variants=4 all_static_blocks_exact=True
+SUPPLIED_EXAMPLE n=5 exact_blocks=[(1, 1), (3, 3), (12, 12), (31, 31)]
+CONSTRUCTION_PROFILES_CHECKED=19116
+ALL_CHECKS_OK
