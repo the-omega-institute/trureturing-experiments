@@ -156,6 +156,7 @@ def check_extension(a, f, g):
     check_iso(a, ca, rho, (f, g), (cf, cg), 'rho')
     kc = twist(ca, cf, cg)
     sigma = {x: (b.join(x, b.center), b.join(b.neg(x), b.center)) for x in b.e}
+    require(sigma[b.center] == kc.center, 'sigma/center')
     check_iso(b, kc, sigma, (b.f, b.neg), (kc.f, kc.neg), 'sigma')
     # Test the multiplication step identified in the candidate's argument.
     for x, y in product(b.e, repeat=2):
