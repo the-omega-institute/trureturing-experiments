@@ -168,9 +168,9 @@ def main():
         for n in range(1, 30):
             radius = (n - 1) // 2
             exact_all_words_bound = Fraction(1) + Fraction(2 * rank, q - 1) * (q ** radius - 1)
-            claimed_bound = (Fraction(1) + Fraction(2 * rank, q - 1)) * Fraction(q ** n, 1) ** Fraction(1, 2)
-            # Avoid a floating square root: square both positive sides when needed.
-            assert exact_all_words_bound <= claimed_bound
+            coefficient = Fraction(1) + Fraction(2 * rank, q - 1)
+            # Avoid floating roots: square the nonnegative rational sides.
+            assert exact_all_words_bound * exact_all_words_bound <= coefficient * coefficient * q ** n
 
     summary = {
         "source": "arXiv:2609.00382v2, Section 5, Problem 5.1",
