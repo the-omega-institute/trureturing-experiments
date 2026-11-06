@@ -10,7 +10,7 @@ has zero vanishing ideal in its finite-entry coordinates.
 Run `python3 check.py`. The program uses only Python's standard library,
 integers, and exact rational arithmetic. Its output is in `check.out`.
 
-The fidelity checks reproduce Example 5.6's dominant coefficient 62 and
+The fidelity checks reproduce Example 5.3's dominant coefficient 62 and
 Example 5.17's coefficient polynomials, determinant expansion, and exceptional
 lifts at three rational epsilon values. The tied 2 by 2 case includes both
 cancellation and strictly positive dominant determinants at the same

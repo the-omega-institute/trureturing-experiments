@@ -1,5 +1,5 @@
 TIE_FIRST: same valuation A=0 admits Delta=0 and Delta=1; tie does not force equality
-FIDELITY Example 5.6: permanent=9 dominant_coefficient=62
+FIDELITY Example 5.3: permanent=9 dominant_coefficient=62
 FIDELITY Example 5.17: D=(1,r-s,r-s), exact determinants, epsilon cancellations OK
 EXHAUSTIVE n=1 total=3 tropical_TN=3 finite_minors=3 tied_minors=0 zero_minors=0
 EXHAUSTIVE n=2 total=144 tropical_TN=113 finite_minors=493 tied_minors=19 zero_minors=72

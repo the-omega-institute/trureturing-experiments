@@ -180,7 +180,7 @@ def fidelity():
     c = [[2, 3, 1], [4, 5, 6], [7, 8, 9]]
     w, opts = dominant(b, tuple(range(3)), tuple(range(3)), tuple(permutations(range(3))))
     assert w == 9 and delta(c, range(3), range(3), opts) == 62
-    print('FIDELITY Example 5.6: permanent=9 dominant_coefficient=62')
+    print('FIDELITY Example 5.3: permanent=9 dominant_coefficient=62')
     print('FIDELITY Example 5.17: D=(1,r-s,r-s), exact determinants, epsilon cancellations OK')
 
 
