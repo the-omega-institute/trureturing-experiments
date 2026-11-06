@@ -232,9 +232,19 @@ def main():
     a.check_rl()
     f = lambda x: (min(x), min(x))
     g = lambda x: (max(x), max(x))
+    neg = lambda x: a.imp(x, a.zero)
+    for x in a.e:
+        require(neg(neg(x)) == x, 'source FAIRL involutivity', x)
+        require(a.le(f(x), x), 'source FAIRL1', x)
+        require(g(x) == neg(f(neg(x))), 'source derived g', x)
+    for x, y in product(a.e, repeat=2):
+        require(a.imp(x, y) == tuple(min(2, 2 - xx + yy) for xx, yy in zip(x, y)),
+                'source displayed residual', x, y)
+        require(f(a.join(f(x), y)) == a.join(f(x), f(y)), 'source FARL14', x, y)
+        require(f(a.imp(f(x), y)) == a.imp(f(x), f(y)), 'source FARL17', x, y)
     require(farl(a, f, g), 'source L3-square example')
     size = check_extension(a, f, g)
-    print(f'Source fidelity: L3 x L3, scaled integer coordinates 0,1,2: FARL; twist size={size}; rho and sigma preserve every operation')
+    print(f'Source fidelity: L3 x L3, scaled integer coordinates 0,1,2: FAIRL and FARL; twist size={size}; rho and sigma preserve every operation')
     print(f'Total exhaustive family expansions: {total}; plus the source L3-square example')
     print('ALL_CHECKS_OK')
 
