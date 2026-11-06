@@ -2,7 +2,7 @@
 
 Independent exact checks for the first future-work item of Faris Chaudhry,
 Anthea Monod and Keisuke Yano, *Explicit Bounds on Hoffman Constants for Sparse
-Polyhedral Regularizers*, arXiv:2610.15241v1, Section 9. The distance aggregation
+Polyhedral Regularizers*, arXiv:2610.15241v1, Section 8. The distance aggregation
 is the maximum in Equation (20), rather than a sum of squared distances.
 
 Run with Python 3 and SymPy 1.14.0:
