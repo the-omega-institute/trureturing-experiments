@@ -152,7 +152,7 @@ def check_grid(a, b, exhaustive=False):
             identities += 1
 
     # The rectangle pairing-one graph is connected. Its bipartite double is
-    # connected because there is a triangle: fix row pair and use 3 column pairs.
+    # connected: row pairs 12,23,13 and column pairs 12,23,13 give a triangle.
     cs = sorted({coord(w) for w in rectangles})
 
     def pairing_mask(c):
