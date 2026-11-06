@@ -1,0 +1,27 @@
+FIDELITY source Proposition 3, Eq. (20): tau=1; 49 exact points
+FAMILY symbolic: kernel=(e,1,-1-e); KKT exact; det=2+2e+2e^2, trace=4+2e+2e^2
+FAMILY 0<e<=1: det>=2 and trace<=8 imply sigma_min(A)^2>=1/4
+FAMILY e=1, eta=1/6, tau^2=2*sqrt(30) + 12, exact attaining point verified
+FAMILY e=1/2, eta=1/14, tau^2=2*sqrt(182) + 28, exact attaining point verified
+FAMILY e=1/3, eta=1/26, tau^2=10*sqrt(26) + 52, exact attaining point verified
+FAMILY e=1/5, eta=1/62, tau^2=2*sqrt(3782) + 124, exact attaining point verified
+FAMILY e=1/10, eta=1/222, tau^2=2*sqrt(49062) + 444, exact attaining point verified
+FAMILY e=1/100, eta=1/20202, tau^2=2*sqrt(408100602) + 40404, exact attaining point verified
+CELL 00: n=2, active=3, vertices=2, eta=9/38, tau^2=2*sqrt(1102)/9 + 76/9
+CELL 01: n=2, active=3, vertices=2, eta=1/14, tau^2=2*sqrt(182) + 28
+CELL 02: n=2, active=3, vertices=2, eta=1/14, tau^2=2*sqrt(182) + 28
+CELL 03: n=2, active=3, vertices=2, eta=32/73, tau^2=sqrt(2993)/16 + 73/16
+CELL 04: n=2, active=3, vertices=2, eta=25/62, tau^2=2*sqrt(2294)/25 + 124/25
+CELL 05: n=2, active=3, vertices=2, eta=13/38, tau^2=10*sqrt(38)/13 + 76/13
+CELL 06: n=2, active=3, vertices=2, eta=1/14, tau^2=2*sqrt(182) + 28
+CELL 07: n=2, active=3, vertices=2, eta=25/62, tau^2=2*sqrt(2294)/25 + 124/25
+CELL 08: n=2, active=3, vertices=2, eta=2/7, tau^2=sqrt(35) + 7
+CELL 09: n=2, active=3, vertices=2, eta=9/26, tau^2=2*sqrt(442)/9 + 52/9
+CELL 10: n=2, active=3, vertices=2, eta=2/7, tau^2=sqrt(35) + 7
+CELL 11: n=2, active=3, vertices=2, eta=8/37, tau^2=sqrt(1073)/4 + 37/4
+CELL 12: n=2, active=4, vertices=4, eta=14/115, tau^2=sqrt(11615)/7 + 115/7
+CELL 13: n=2, active=4, vertices=4, eta=1/2 - sqrt(5)/10, tau^2=sqrt(5)*sqrt(10*sqrt(5) + 50)/10 + sqrt(5) + sqrt(10*sqrt(5) + 50)/2 + 5
+CELL 14: n=2, active=4, vertices=3, eta=47/84 - sqrt(697)/84, tau^2=sqrt(697)*sqrt(21*sqrt(697) + 777)/378 + sqrt(697)/9 + 47*sqrt(21*sqrt(697) + 777)/378 + 47/9
+CELL 15: n=2, active=4, vertices=1, eta=29/115, tau^2=2*sqrt(9890)/29 + 230/29
+SMALL_CELLS 16 deterministic random/fixed cells, 576 exact rational points; all attaining witnesses verified
+ALL_CHECKS_OK
