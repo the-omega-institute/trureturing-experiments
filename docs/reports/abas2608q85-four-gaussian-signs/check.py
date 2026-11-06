@@ -113,11 +113,37 @@ def check_rank_three():
     R = gram(vectors)
     rank, value = formula(R)
     alpha = sp.asin(sp.sqrt(3) / 3)
+    # In one one-negative octant the cut x+y+z=0 bounds a quadrilateral
+    # with vertices e1, e2, (0,1,-1)/sqrt(2), (1,0,-1)/sqrt(2).  Triangulate
+    # it and use the exact solid-angle formula
+    # 2*atan(|det(a,b,c)|/(1+a.b+b.c+c.a)).  The two triangle areas are
+    # pi/4 and 2*atan((3-sqrt(2))/7), whose tangent addition identity is
+    # exactly the tangent of 2*asin(1/sqrt(3)); hence A=2*alpha.
+    A0 = sp.Matrix([1, 0, 0])
+    A1 = sp.Matrix([0, 1, 0])
+    A2 = sp.Matrix([0, 1, -1]) / sp.sqrt(2)
+    A3 = sp.Matrix([1, 0, -1]) / sp.sqrt(2)
+
+    def spherical_triangle_area(a, b, c):
+        det = sp.Abs(sp.det(sp.Matrix.hstack(a, b, c)))
+        den = 1 + a.dot(b) + b.dot(c) + c.dot(a)
+        return 2 * sp.atan(det / den)
+
+    triangle_one = spherical_triangle_area(A0, A1, A2)
+    triangle_two = spherical_triangle_area(A0, A2, A3)
+    x = (3 - sp.sqrt(2)) / 7
+    tan_sum = (1 + 2 * x / (1 - x**2)) / (1 - 2 * x / (1 - x**2))
+    assert sp.simplify(triangle_one - sp.pi / 4) == 0
+    assert sp.simplify(triangle_two - 2 * sp.atan(x)) == 0
+    assert sp.simplify(tan_sum - 2 * sp.sqrt(2)) == 0
     # In one one-negative octant, the cut x+y+z=0 bounds a spherical
-    # triangle of area A=2*alpha (the exact spherical-triangle formula).
+    # quadrilateral of area A=2*alpha.
+    # Both sides are in (0, pi), so the exact tangent identity selects the
+    # principal branch.  This is the only inverse-trigonometric branch choice.
+    quadrilateral_area = 2 * alpha
     # There are six one/two-negative octants.  The two all-equal octants
     # contribute signed area pi, hence total signed area 4*pi-24*alpha.
-    direct = sp.simplify((4 * sp.pi - 24 * alpha) / (4 * sp.pi))
+    direct = sp.simplify((4 * sp.pi - 12 * quadrilateral_area) / (4 * sp.pi))
     assert rank == 3 and sp.simplify(value - direct) == 0
     return rank, value, direct
 
