@@ -1,0 +1,17 @@
+FIDELITY: standard S_3 character and 17 tableaux in Figure 3.1 reproduced
+ORDINARY m=1: tableaux=30, distinct_weights=26, signed-operator agreement
+SET_VALUED m=1: tableaux=179, max_excess=4, beta^0 agrees with singleton closure
+ORDINARY m=2: tableaux=184, distinct_weights=125, signed-operator agreement
+SET_VALUED m=2: tableaux=1629, max_excess=4, beta^0 agrees with singleton closure
+ORDINARY m=3: tableaux=638, distinct_weights=350, signed-operator agreement
+ORDINARY m=4: tableaux=1645, distinct_weights=753, signed-operator agreement
+ORDINARY m=5: tableaux=3536, distinct_weights=1386, signed-operator agreement
+ORDINARY m=6: tableaux=6720, distinct_weights=2301, signed-operator agreement
+ROOT SUBSETS: all 64 rejected; actual [a,b,c,ab,bc,abc]=[1,1,1,2,2,2]
+GAPS: all 27 strictly dominant three-gap patterns in {1,2,3}^3 checked
+ABC STRINGS: application-order exponents [(0, 2, 2, 2), (2, 2, 2, 0)] ; no odd mixed string survives
+FAMILY n=4: all 1 consecutive blocks checked, including set-valued closure
+FAMILY n=5: all 2 consecutive blocks checked, including set-valued closure
+FAMILY n=6: all 3 consecutive blocks checked, including set-valued closure
+FAMILY n=7: all 4 consecutive blocks checked, including set-valued closure
+ALL_CHECKS_OK
