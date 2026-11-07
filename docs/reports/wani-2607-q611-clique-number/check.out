@@ -1,0 +1,4 @@
+ring_cases=5 vertices=[6,13,14,21,30]
+published_values=304,4605,1905
+exhaustive_vectors=2958 maximal_support_cliques={3: 4, 4: 12, 5: 81, 6: 2646}
+ALL_CHECKS_OK
