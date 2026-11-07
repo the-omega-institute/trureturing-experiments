@@ -1,0 +1,5 @@
+Fidelity: source H_ell count d_(3ell)=ell+2 and |H_ell|=6ell-2 checked for ell=2..8
+Counterexample family: Q_r has exactly four size-(2r+2) downset types for r=8..20
+Forcing certificate: every witness has a Q_r downset and size at least 3r+4
+Bound gap: (3r+4) - (2r+11) = r-7; n+f(4) excess is r+2
+ALL_CHECKS_OK
