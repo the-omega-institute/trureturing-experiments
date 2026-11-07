@@ -1,0 +1,12 @@
+FIDELITY: all 53 displayed OEIS terms reproduced
+FIDELITY: all 1000 b-file rows match their canonical SHA-256
+OVERLAP: finite square/decagonal sets intersect exactly at 1; union counts it once
+INTERLEAVING: both strict inequalities checked at k=2..30000
+ENUMERATION: all three residue formulas match n=1..30000
+DIFFERENCE: step-three second difference is 8 at n=7..30000
+RECURRENCE: literal conjecture checked at n=8..30000
+POLYNOMIALS: denominator and numerator factorizations agree exactly in Z[x]
+GENERATING FUNCTION: coefficients of QF equal the printed numerator at degrees 0..30000
+INITIAL: a(1..8) = 1,4,9,10,16,25,27,36
+ARITHMETIC: integers and fractions.Fraction only; no floating point
+ALL_CHECKS_OK
