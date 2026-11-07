@@ -1,0 +1,22 @@
+{
+  "chain_sizes": [
+    3,
+    30
+  ],
+  "interior_instances": 406,
+  "implication_checks": 9450,
+  "certificate_lengths_checked": 12180,
+  "first_diagram": {
+    "C": 3,
+    "A": 6,
+    "B": 6,
+    "D0": 12
+  },
+  "last_diagram": {
+    "C": 30,
+    "A": 60,
+    "B": 60,
+    "D0": 120
+  },
+  "claim_obstruction": "forced mixed join plus zero-transfer invariant"
+}
