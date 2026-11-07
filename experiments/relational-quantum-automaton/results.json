@@ -28,22 +28,22 @@
   "states": [
     {
       "bloch": [
-        0.0,
-        0.0,
-        1.0
+        0,
+        0,
+        1
       ],
-      "norm_squared": 1.0,
+      "norm_squared": 1,
       "probabilities": [
-        1.0,
-        0.0
+        1,
+        0
       ],
       "word": "I"
     },
     {
       "bloch": [
         0.9999999999999998,
-        0.0,
-        0.0
+        0,
+        0
       ],
       "norm_squared": 0.9999999999999998,
       "probabilities": [
@@ -54,22 +54,22 @@
     },
     {
       "bloch": [
-        0.0,
-        0.0,
-        -1.0
+        0,
+        0,
+        -1
       ],
-      "norm_squared": 1.0,
+      "norm_squared": 1,
       "probabilities": [
-        0.0,
-        1.0
+        0,
+        1
       ],
       "word": "X"
     },
     {
       "bloch": [
-        0.0,
+        0,
         0.9999999999999998,
-        0.0
+        0
       ],
       "norm_squared": 0.9999999999999998,
       "probabilities": [
@@ -81,8 +81,8 @@
     {
       "bloch": [
         -0.9999999999999998,
-        0.0,
-        0.0
+        0,
+        0
       ],
       "norm_squared": 0.9999999999999998,
       "probabilities": [
@@ -93,9 +93,9 @@
     },
     {
       "bloch": [
-        0.0,
+        0,
         -0.9999999999999996,
-        0.0
+        0
       ],
       "norm_squared": 0.9999999999999996,
       "probabilities": [
@@ -111,5 +111,107 @@
     "max_norm_error": 4.440892098500626e-16,
     "max_probability_error": 4.440892098500626e-16,
     "projective_orbit_size": 6
-  }
+  },
+  "closure_trace": [
+    {
+      "round": 0,
+      "records": 1,
+      "edges": 0,
+      "passed": [
+        "R0",
+        "R4"
+      ],
+      "waiting": [
+        "R1",
+        "R2",
+        "R3",
+        "R5"
+      ],
+      "failed": [],
+      "status": [
+        "PASS",
+        "WAIT",
+        "WAIT",
+        "WAIT",
+        "PASS",
+        "WAIT"
+      ],
+      "fixed_point": false
+    },
+    {
+      "round": 1,
+      "records": 3,
+      "edges": 1,
+      "passed": [
+        "R0",
+        "R1",
+        "R4"
+      ],
+      "waiting": [
+        "R2",
+        "R3",
+        "R5"
+      ],
+      "failed": [],
+      "status": [
+        "PASS",
+        "PASS",
+        "WAIT",
+        "WAIT",
+        "PASS",
+        "WAIT"
+      ],
+      "fixed_point": false
+    },
+    {
+      "round": 2,
+      "records": 5,
+      "edges": 3,
+      "passed": [
+        "R0",
+        "R1",
+        "R2",
+        "R4"
+      ],
+      "waiting": [
+        "R3",
+        "R5"
+      ],
+      "failed": [],
+      "status": [
+        "PASS",
+        "PASS",
+        "PASS",
+        "WAIT",
+        "PASS",
+        "WAIT"
+      ],
+      "fixed_point": false
+    },
+    {
+      "round": 3,
+      "records": 6,
+      "edges": 6,
+      "passed": [
+        "R0",
+        "R1",
+        "R2",
+        "R3",
+        "R4",
+        "R5"
+      ],
+      "waiting": [],
+      "failed": [],
+      "status": [
+        "PASS",
+        "PASS",
+        "PASS",
+        "PASS",
+        "PASS",
+        "PASS"
+      ],
+      "fixed_point": true
+    }
+  ],
+  "fixed_point": true
 }
