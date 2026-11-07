@@ -3,6 +3,6 @@ SEED k=2: Fplus=[0.117733431,0.117733432], Fminus=[0.170226207,0.170226208], del
 SEED k=3: Fplus=[0.058031035,0.058031036], Fminus=[0.046365430,0.046365431], delta_next=[0.264010587,0.264010588]; proposed upper/lower bounds verified
 SEED k=4: Fplus=[0.015831581,0.015831582], Fminus=[0.006783876,0.006783877], delta_next=[0.109356766,0.109356767]; proposed upper/lower bounds verified
 SEED: C(A_*,k) and stronger analytic bounds verified for k=5..150 (finite test only)
-DIOPHANTINE: all 2289 eligible (prefix,j,k) cases for a_2..a_5 in {1,2,3}, j=3,4 passed
+DIOPHANTINE: all 2346 eligible (prefix,j,k) cases for a_2..a_5 in {1,2,3}, j=3,4 passed
 TAIL/GROWTH: J=160 exponential majorant and induction ratio certified; cylinder exclusion <=2/(i^2+1); summable tail <2/N
 ALL_CHECKS_OK

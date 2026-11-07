@@ -253,7 +253,7 @@ def diophantine_small():
             assert len(odds) == 2 and odds[0][0] != odds[1][0]
             assert all(0 < n <= q and abs(n*g-m).hi < Q(2,q) for n,m in odds)
             D = (digits[j+1]+1)*(digits[j+2]+1)*(digits[j+3]+2)
-            for k in range((q+2)//2,(cs[j+1][1]+1)//2):
+            for k in range((q+2)//2,(cs[j+1][1]+2)//2):
                 if not q <= 2*k-1 < cs[j+1][1]:
                     continue
                 s,t = ordered(g,k)
