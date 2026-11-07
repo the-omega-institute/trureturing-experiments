@@ -1,0 +1,19 @@
+GF(2): p=2, n=1, modulus=[0, 1], components=2, cycle_lengths={1: 2}; two multiplications, lift and applicable invariant/four-cycle checks OK
+GF(3): p=3, n=1, modulus=[0, 1], components=3, cycle_lengths={1: 3}; two multiplications, lift and applicable invariant/four-cycle checks OK
+GF(5): p=5, n=1, modulus=[0, 1], components=6, cycle_lengths={1: 5, 4: 1}; two multiplications, lift and applicable invariant/four-cycle checks OK
+GF(7): p=7, n=1, modulus=[0, 1], components=7, cycle_lengths={1: 7}; two multiplications, lift and applicable invariant/four-cycle checks OK
+GF(4): p=2, n=2, modulus=[1, 1, 1], components=4, cycle_lengths={1: 4}; two multiplications, lift and applicable invariant/four-cycle checks OK
+GF(8): p=2, n=3, modulus=[1, 1, 0, 1], components=9, cycle_lengths={1: 8, 6: 1}; two multiplications, lift and applicable invariant/four-cycle checks OK
+GF(9): p=3, n=2, modulus=[1, 0, 1], components=10, cycle_lengths={1: 9, 4: 1}; two multiplications, lift and applicable invariant/four-cycle checks OK
+GF(16): p=2, n=4, modulus=[1, 1, 0, 0, 1], components=17, cycle_lengths={1: 16, 8: 1}; two multiplications, lift and applicable invariant/four-cycle checks OK
+GF(25): p=5, n=2, modulus=[2, 0, 1], components=28, cycle_lengths={1: 25, 4: 1, 5: 2}; two multiplications, lift and applicable invariant/four-cycle checks OK
+GF(27): p=3, n=3, modulus=[1, 2, 0, 1], components=29, cycle_lengths={1: 27, 6: 1, 12: 1}; two multiplications, lift and applicable invariant/four-cycle checks OK
+GF(32): p=2, n=5, modulus=[1, 0, 1, 0, 0, 1], components=33, cycle_lengths={1: 32, 30: 1}; two multiplications, lift and applicable invariant/four-cycle checks OK
+GF(49): p=7, n=2, modulus=[1, 0, 1], components=54, cycle_lengths={1: 49, 4: 1, 6: 1, 8: 2, 20: 1}; two multiplications, lift and applicable invariant/four-cycle checks OK
+GF(64): p=2, n=6, modulus=[1, 1, 0, 0, 0, 0, 1], components=70, cycle_lengths={1: 64, 6: 2, 12: 2, 51: 2}; two multiplications, lift and applicable invariant/four-cycle checks OK
+FIDELITY: source Example 5.3 Z_5 four-cycle and g two-cycle reproduced
+FIDELITY: Section 8 GF(9) and GF(49) component inequalities reproduced
+GF(16) eight-cycle: [(14, 11), (5, 8), (13, 14), (3, 10), (9, 13), (4, 15), (11, 9), (2, 12)]
+GF(16) exact successors: [(5, 8), (13, 14), (3, 10), (9, 13), (4, 15), (11, 9), (2, 12), (14, 11)]
+Characteristic-two degree split checked for 3 <= n <= 256
+ALL_CHECKS_OK
