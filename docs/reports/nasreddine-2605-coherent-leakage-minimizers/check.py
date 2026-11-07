@@ -24,6 +24,8 @@ def fidelity():
     count = 0
     for den in range(3, 13):
         for num in range(1, den):
+            if 2 * num >= den:
+                continue
             q = s.Rational(num, den)
             m = s.Matrix([[1 - q, s.sqrt(q * (1 - q))],
                           [s.sqrt(q * (1 - q)), q]])
