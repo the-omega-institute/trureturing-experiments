@@ -175,10 +175,10 @@ def main():
         print(f'GF({f.q}): p={p}, n={f.n}, modulus={h}, '
               f'components={len(cs)}, cycle_lengths={dict(sorted(lengths.items()))}; '
               'two multiplications, lift and applicable invariant/four-cycle checks OK')
-    # Fidelity: Example 5.3, verbatim vertex coordinates from the source.
+    # Fidelity: Example 5.2, verbatim vertex coordinates from the source.
     verify_cycle(fields[5].phi, [(4, 3), (2, 2), (4, 4), (3, 1)])
     assert fields[5].g(3) == 4 and fields[5].g(4) == 3
-    print('FIDELITY: source Example 5.3 Z_5 four-cycle and g two-cycle reproduced')
+    print('FIDELITY: source Example 5.2 Z_5 four-cycle and g two-cycle reproduced')
     assert len(cycles(product(range(9), repeat=2), fields[9].phi)) > 9
     assert len(cycles(product(range(49), repeat=2), fields[49].phi)) > 49
     print('FIDELITY: Section 8 GF(9) and GF(49) component inequalities reproduced')

@@ -11,7 +11,7 @@ GF(27): p=3, n=3, modulus=[1, 2, 0, 1], components=29, cycle_lengths={1: 27, 6: 
 GF(32): p=2, n=5, modulus=[1, 0, 1, 0, 0, 1], components=33, cycle_lengths={1: 32, 30: 1}; two multiplications, lift and applicable invariant/four-cycle checks OK
 GF(49): p=7, n=2, modulus=[1, 0, 1], components=54, cycle_lengths={1: 49, 4: 1, 6: 1, 8: 2, 20: 1}; two multiplications, lift and applicable invariant/four-cycle checks OK
 GF(64): p=2, n=6, modulus=[1, 1, 0, 0, 0, 0, 1], components=70, cycle_lengths={1: 64, 6: 2, 12: 2, 51: 2}; two multiplications, lift and applicable invariant/four-cycle checks OK
-FIDELITY: source Example 5.3 Z_5 four-cycle and g two-cycle reproduced
+FIDELITY: source Example 5.2 Z_5 four-cycle and g two-cycle reproduced
 FIDELITY: Section 8 GF(9) and GF(49) component inequalities reproduced
 GF(16) eight-cycle: [(14, 11), (5, 8), (13, 14), (3, 10), (9, 13), (4, 15), (11, 9), (2, 12)]
 GF(16) exact successors: [(5, 8), (13, 14), (3, 10), (9, 13), (4, 15), (11, 9), (2, 12), (14, 11)]

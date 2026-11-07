@@ -1,6 +1,6 @@
 # Structure-graph cycles over finite extension fields
 
-Source: A. M. Chernev and N. A. Chernev, *On the Connected Components of Structure Graphs of Associative Rings*, arXiv:2611.07521v1, Hypothesis 6.1, Definition 3.1, Example 5.3 and Section 8. The map is Φ(a,b)=(a+b,ab).
+Source: A. M. Chernev and N. A. Chernev, *On the Connected Components of Structure Graphs of Associative Rings*, arXiv:2611.07521v1, Hypothesis 6.1, Definition 3.1, Example 5.2 and Section 8. The map is Φ(a,b)=(a+b,ab).
 
 Run `python3 check.py`. The standard-library program uses integer coefficient arithmetic in explicit polynomial quotient fields. Every modulus is checked for irreducibility by monic trial division; every multiplication is compared between shift-and-reduce and coefficient convolution followed by polynomial long division. No source program was copied.
 
