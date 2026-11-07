@@ -1,0 +1,43 @@
+OK: source X spectrum (4,3,1,1)
+OK: source Y spectrum (4,3,1,1)
+OK: source product entries
+OK: source product singular values >=1 Hermitian
+OK: source product singular values >=1 (all principal minors exact)
+OK: source product singular values <=16 Hermitian
+OK: source product singular values <=16 (all principal minors exact)
+OK: source attained singular extrema
+OK: source rho_Y partial transpose
+OK: source rho_Y partial-transpose spectrum
+OK: source rho_Y is PPT Hermitian
+OK: source rho_Y is PPT (all principal minors exact)
+SOURCE_FIDELITY_OK: kappa(X)=kappa(Y)=4; kappa(XY)=16; rho_Y is PPT
+OK: A orthonormal eigenbasis
+OK: B orthonormal eigenbasis
+OK: A diagonalization
+OK: A Hermitian
+OK: A trace normalization
+OK: A top eigenvector
+OK: A bottom eigenvector
+OK: B diagonalization
+OK: B Hermitian
+OK: B trace normalization
+OK: B top eigenvector
+OK: B bottom eigenvector
+OK: k>b>1 and T>0 for every t>0
+OK: rho trace one
+OK: rho negative PT expectation
+OK: sigma trace one
+OK: sigma negative PT expectation
+OK: nonzero commutator coefficient
+OK: AB block decomposition in Bell basis
+OK: family middle singular values >=1 Hermitian
+OK: family middle singular values >=1 (all principal minors exact)
+OK: family middle singular values <=k^2 Hermitian
+OK: family middle singular values <=k^2 (all principal minors exact)
+OK: positive normalization cancels in condition number
+OK: positive product normalization cancels in condition number
+OK: OLC additivity on the positive domain
+FAMILY_OK: every real k>3; both states NPT; noncommuting; kappa=k; kappa(product)=k^2
+EXACT_CHECK_COUNT: 37
+PYTHON: 3.14.8 SYMPY: 1.14.0
+ALL_CHECKS_OK
