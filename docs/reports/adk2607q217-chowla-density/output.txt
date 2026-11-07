@@ -1,0 +1,13 @@
+Literal subset oracle agrees with sorted element orders for 2 <= n <= 12
+Source cyclic divisor formula and iff criterion: all 3999 moduli 2..4000
+CRT finite-prime mixture Y=7: 105/210 = 1/2; residual=8/35
+CRT finite-prime mixture Y=11: 1155/2310 = 1/2; residual=16/77
+CRT finite-prime mixture Y=13: 15015/30030 = 1/2; residual=192/1001
+Empirical source density N=4000: 2312/4000 = 289/500
+Empirical source density N=20000: 11241/20000 = 11241/20000
+Empirical source density N=200000: 109607/200000 = 109607/200000
+Proposed limit enclosure m=2: [-3/8, 51/70]; empirical N=200000 lies inside
+Proposed limit enclosure m=3: [312212/18253053, 74020897/111546435]; empirical N=200000 lies inside
+Proposed limit enclosure m=4: [8463603013931405067799/96236620602590335165760, 3367175278030850211973/5331290061791225953785]; empirical N=200000 lies inside
+Follow-up upper-bound witness: P=111546435, phi(P)=36495360, 3*(phi(P)+1)=109486083 < P
+ALL_CHECKS_OK
