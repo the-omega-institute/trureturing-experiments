@@ -1,0 +1,18 @@
+FIDELITY source matrix: benchmark r=(65+sqrt(193))/100; tau=delta_0 gives exactly sigma
+EXACT source_figures_1_2: tau=('1',); dimension=2; radius in [788924439/1000000000, 788924440/1000000000]; exp(4*F(('3/4', '1/4')))=2432079/6250000; upper^4<=certificate
+EXACT source_figures_1_2: tau=('1/2', '1/2'); dimension=4; radius in [789343392/1000000000, 789343393/1000000000]; exp(4*F(('3/4', '1/4')))=2432079/6250000; upper^4<=certificate
+EXACT source_figures_1_2: tau=('1/3', '1/3', '1/3'); dimension=8; radius in [789577429/1000000000, 789577430/1000000000]; exp(4*F(('3/4', '1/4')))=2432079/6250000; upper^4<=certificate
+CEILING source_figures_1_2: all 22 laws of support within {0,1,2}, reduced denominator<=4 passed
+EXACT positive_asymmetric: tau=('1',); dimension=2; radius in [741421356/1000000000, 741421357/1000000000]; exp(2*F(('1/2', '1/2')))=14/25; upper^2<=certificate
+EXACT positive_asymmetric: tau=('1/2', '1/2'); dimension=4; radius in [744517898/1000000000, 744517899/1000000000]; exp(2*F(('1/2', '1/2')))=14/25; upper^2<=certificate
+EXACT positive_asymmetric: tau=('1/3', '1/3', '1/3'); dimension=8; radius in [746258650/1000000000, 746258651/1000000000]; exp(2*F(('1/2', '1/2')))=14/25; upper^2<=certificate
+CEILING positive_asymmetric: all 22 laws of support within {0,1,2}, reduced denominator<=4 passed
+EXACT irreducible_with_zero: tau=('1',); dimension=2; radius in [551956281/1000000000, 551956282/1000000000]; exp(8*F(('3/8', '5/8')))=161051/18662400; upper^8<=certificate
+EXACT irreducible_with_zero: tau=('1/2', '1/2'); dimension=4; radius in [552331959/1000000000, 552331960/1000000000]; exp(11*F(('4/11', '7/11')))=2109375/1438646272; upper^11<=certificate
+EXACT irreducible_with_zero: tau=('1/3', '1/3', '1/3'); dimension=8; radius in [552423002/1000000000, 552423003/1000000000]; exp(11*F(('4/11', '7/11')))=2109375/1438646272; upper^11<=certificate
+CEILING irreducible_with_zero: all 22 laws of support within {0,1,2}, reduced denominator<=4 passed
+FIDELITY Theorem 4.1(ii): strict enhancement certified in all 57 non-Dirac cases
+BOUNDARY 5 finite-entropy vertices improve under epsilon=1/100; zero-diagonal vertex has entropy -infinity
+TELESCOPING 1644 exact prefix identities and tail-error inequalities passed, including N=0
+SCOPE 66 direct finite-memory spectral intervals; no universal conclusion follows from enumeration
+ALL_CHECKS_OK
