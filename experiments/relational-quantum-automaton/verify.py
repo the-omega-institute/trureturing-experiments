@@ -139,8 +139,59 @@ def orbit(max_depth: int = 12) -> list[dict[str, object]]:
     return records
 
 
+def closure_trace(records: list[dict[str, object]]) -> list[dict[str, object]]:
+    """Return the finite rule-generation trace used by the visual auditor."""
+    requirements = (0, 1, 2, 3, 0, 3)
+    trace: list[dict[str, object]] = []
+    for round_number in range(4):
+        visible = [
+            row
+            for row in records
+            if row["word"] == "I" or len(str(row["word"])) <= round_number
+        ]
+        p0_values = [float(row["probabilities"][0]) for row in visible]
+        p1_values = [float(row["probabilities"][1]) for row in visible]
+        phase_present = any(abs(float(row["bloch"][1])) > EPS for row in visible)
+        edges = (0, 1, 3, 6)[round_number]
+        evidence = (
+            all(abs(float(row["norm_squared"]) - 1.0) <= EPS for row in visible),
+            round_number >= 1
+            and any(
+                abs(p0 - 0.5) <= EPS and abs(p1 - 0.5) <= EPS
+                for p0, p1 in zip(p0_values, p1_values)
+            ),
+            round_number >= 2 and edges >= 3 and phase_present,
+            round_number >= 3 and edges == 6,
+            all(
+                p0 >= -EPS and p1 >= -EPS and abs(p0 + p1 - 1.0) <= EPS
+                for p0, p1 in zip(p0_values, p1_values)
+            ),
+            round_number >= 3 and edges == 6,
+        )
+        status = []
+        for index, passed in enumerate(evidence):
+            if round_number < requirements[index]:
+                status.append("WAIT")
+            else:
+                status.append("PASS" if passed else "FAIL")
+        trace.append(
+            {
+                "round": round_number,
+                "records": len(visible),
+                "edges": edges,
+                "passed": [f"R{i}" for i, value in enumerate(status) if value == "PASS"],
+                "waiting": [f"R{i}" for i, value in enumerate(status) if value == "WAIT"],
+                "failed": [f"R{i}" for i, value in enumerate(status) if value == "FAIL"],
+                "status": status,
+                "fixed_point": round_number == 3 and len(visible) == len(records),
+            }
+        )
+    return trace
+
+
 def certificate() -> dict[str, object]:
     records = orbit()
+    trace = closure_trace(records)
     max_norm_error = max(abs(float(row["norm_squared"]) - 1.0) for row in records)
     max_sphere_error = max(
         abs(sum(component * component for component in row["bloch"]) - 1.0)
@@ -183,6 +234,8 @@ def certificate() -> dict[str, object]:
             "max_born_identity_error": max_born_error,
         },
         "states": records,
+        "closure_trace": trace,
+        "fixed_point": bool(trace[-1]["fixed_point"]),
     }
 
 
