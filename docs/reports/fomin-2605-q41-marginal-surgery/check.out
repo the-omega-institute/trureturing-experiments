@@ -1,0 +1,21 @@
+FIDELITY K10: n=12, k=4, proper crossings=24, distinct points=24
+WITNESS: n=10, k=5, proper crossings=25, distinct points=25
+Distinct vertices; no collinear triples, parallel edges, or vertex on another edge
+EDGE 0: [5, 2, 7, 3, 8]
+EDGE 1: [6, 8, 3, 9, 4]
+EDGE 2: [7, 4, 9, 5, 0]
+EDGE 3: [8, 0, 5, 1, 6]
+EDGE 4: [9, 6, 1, 7, 2]
+EDGE 5: [0, 2, 7, 3, 8]
+EDGE 6: [1, 8, 3, 9, 4]
+EDGE 7: [2, 4, 9, 5, 0]
+EDGE 8: [3, 0, 5, 1, 6]
+EDGE 9: [4, 6, 1, 7, 2]
+K9/1 [0, 5]: ['first', 'first']; K9/2=False; cycles=[[0, 6, 7, 8, 9], [1, 2, 3, 4, 5]]
+K9/1 [1, 6]: ['first', 'first']; K9/2=False; cycles=[[0, 1, 7, 8, 9], [2, 3, 4, 5, 6]]
+K9/1 [2, 7]: ['first', 'first']; K9/2=False; cycles=[[0, 1, 2, 8, 9], [3, 4, 5, 6, 7]]
+K9/1 [3, 8]: ['first', 'first']; K9/2=False; cycles=[[0, 1, 2, 3, 9], [4, 5, 6, 7, 8]]
+K9/1 [4, 9]: ['first', 'first']; K9/2=False; cycles=[[0, 1, 2, 3, 4], [5, 6, 7, 8, 9]]
+K9/2 positive control: connected; K10 example: 7 successful candidates
+Full exact crossing parameters and surgery incidences: result.json
+ALL_CHECKS_OK
