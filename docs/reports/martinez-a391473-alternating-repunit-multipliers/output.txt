@@ -1,0 +1,21 @@
+Fidelity: brute-force least positive multipliers (no formula used)
+length repunit multiplier product
+1 1 1 1
+2 11 11 121
+3 111 19 2109
+4 1111 371 412181
+5 11111 1891 21010901
+6 111111 36911 4101218121
+7 1111111 189091 210101090101
+8 11111111 3690911 41010121812121
+Independent remainder/parity BFS, lengths 1..6:
+1 1 1
+2 11 121
+3 19 2109
+4 371 412181
+5 1891 21010901
+6 36911 4101218121
+Both formulas agree with every published term of lengths 3..17.
+Exact construction, geometric sums, digit patterns, and carry checks: lengths 3..200.
+Finite checks support the proposed proof; universal minimality requires the carry argument.
+ALL_CHECKS_OK
