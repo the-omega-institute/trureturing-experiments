@@ -1,0 +1,43 @@
+{
+  "artifacts": {
+    "W_U.block.gz": {
+      "encoding": "identity",
+      "logical": {
+        "bytes": 158796932,
+        "sha256": "ba621bdfa614087a17efc16f19a86cfc44691e06f66c20640f4c1de9d772b72b"
+      },
+      "packed": {
+        "bytes": 158796932,
+        "sha256": "ba621bdfa614087a17efc16f19a86cfc44691e06f66c20640f4c1de9d772b72b"
+      },
+      "parts": [
+        {
+          "bytes": 33554432,
+          "path": "W_U.block.gz.part000",
+          "sha256": "3aa86ac1cf4d2237981cbcc62d245fceb6d7111c9c393b4ea4dfcda514649535"
+        },
+        {
+          "bytes": 33554432,
+          "path": "W_U.block.gz.part001",
+          "sha256": "39571fa5233a14110acef5230705b5952e7a08434a56527a4e1ab2fb4eec9fca"
+        },
+        {
+          "bytes": 33554432,
+          "path": "W_U.block.gz.part002",
+          "sha256": "db41d271a775ccfc4ba584077bf009c7b65aaf3b0c63898d67e42239adfc4e53"
+        },
+        {
+          "bytes": 33554432,
+          "path": "W_U.block.gz.part003",
+          "sha256": "4d7ae2e7f471e1fd6a5a79c001e3699f03cc6994e21071f30c3557aca31c632a"
+        },
+        {
+          "bytes": 24579204,
+          "path": "W_U.block.gz.part004",
+          "sha256": "bbaff2fa5273ea7259d3bfa1e81c361cf005aa22ab6b05363af555927b3e0f0a"
+        }
+      ]
+    }
+  },
+  "schema": 1
+}

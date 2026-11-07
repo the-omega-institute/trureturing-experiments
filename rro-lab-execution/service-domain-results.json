@@ -1,0 +1,2179 @@
+{
+  "B_complete": false,
+  "C_released": false,
+  "D_complete": false,
+  "checks": "pass",
+  "default_engine_compatibility": {
+    "current_source_sha256": "8b52235700c4d7d290deae7cbe27f94b271b8a94d2948562ac7fc28b2b2bdecb",
+    "default_native_engine_fully_normalized_AST_equal": true,
+    "fresh_actual_output": [
+      1
+    ],
+    "fresh_native_steps": 836,
+    "old_source_sha256": "2089e4ee678d92225ea746be9ffe582a02aa7688306cbf4c84fb684a74ccb0fc",
+    "scope": "default engine factory refactor only; specialized service has separate current author checks",
+    "unchanged_component_results": {
+      "field-protocol-results.json": {
+        "bytes": 7904,
+        "sha256": "5029860f2b69a64e82252b3147565a031ceb618e1633f5e76165e701c8b5c4b2"
+      },
+      "field-results.json": {
+        "bytes": 9708,
+        "sha256": "e3318790fe4e90a4169ebb6e3c8281e7e357ca90eec64a3cc5c9e4100439cda7"
+      },
+      "native-results.json": {
+        "bytes": 31690,
+        "sha256": "14f742e8db0ed27b4be8cb44cc53dd4af573fc6c657eaf1bc87615e3736a672a"
+      },
+      "paid-code-results.json": {
+        "bytes": 11375,
+        "sha256": "f570ae2704b2099cca40fe1eb0c049744992a5555bcf42e868b5a3ef2e6370ed"
+      }
+    }
+  },
+  "independent_acceptance": false,
+  "instances": [
+    {
+      "N": 4,
+      "actual_ordered_receipts": [
+        [
+          "LL",
+          "beta"
+        ],
+        [
+          "RRRRRRRRRRRRRRRLL",
+          "beta"
+        ],
+        [
+          "LL",
+          "beta"
+        ],
+        [
+          "RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRLL",
+          "beta"
+        ],
+        [
+          "RRLL",
+          "beta"
+        ],
+        [
+          "RLL",
+          "beta"
+        ],
+        [
+          "RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRLL",
+          "beta"
+        ]
+      ],
+      "attained_cache": [
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "field_actions": 37572,
+      "installation_steps": 45048792,
+      "invocations": 7,
+      "native_steps": 5971627,
+      "pending_cuts": {
+        "actual_return_latch": {
+          "bits": [
+            0,
+            1
+          ],
+          "captured": [
+            0,
+            0
+          ],
+          "occupied": 1,
+          "retained": {
+            "connection": {
+              "bit_fields": 7,
+              "bits": 110,
+              "grant_bits": 11,
+              "objects": 11,
+              "reference_slots": 23,
+              "reference_width": 4
+            },
+            "installation": {
+              "bits": 19161883,
+              "objects": 1354178,
+              "reference_width": 21,
+              "refs": 5537840,
+              "total_bits": 136810701
+            },
+            "same_original_source": {
+              "bit_fields": 9393,
+              "bits": 183635,
+              "grant_bits": 10064,
+              "objects": 10064,
+              "reference_slots": 11727,
+              "reference_width": 14
+            }
+          }
+        },
+        "output_bit_occupied": {
+          "bx": 1,
+          "native_steps": 342988,
+          "occupied": 1
+        },
+        "port_bit_occupied": {
+          "bx": 0,
+          "native_steps": 297643,
+          "occupied": 1
+        }
+      },
+      "predict_actual_input_sha256": "772682598d344fa54c09e6a3b22d3f71ddcc05575580de7492e3c5a475fb4552",
+      "predict_new_calls": 0,
+      "recipe": {
+        "branch": 0,
+        "edges": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            9
+          ],
+          [
+            2,
+            18
+          ]
+        ],
+        "injection_samples": 1,
+        "left_full_injection": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49,
+          50,
+          51,
+          52,
+          53,
+          54,
+          55,
+          56,
+          57,
+          58,
+          59,
+          60,
+          61,
+          62,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          70,
+          71
+        ],
+        "observer_receives_maps": false,
+        "right_full_injection": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49,
+          50,
+          51,
+          52,
+          53,
+          54,
+          55,
+          56,
+          57,
+          58,
+          59,
+          60,
+          61,
+          62,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          70,
+          71,
+          72,
+          73,
+          74,
+          75,
+          76,
+          77,
+          78,
+          79,
+          80,
+          81,
+          82,
+          83,
+          84,
+          85,
+          86,
+          87,
+          88,
+          89,
+          90,
+          91,
+          92,
+          93,
+          94,
+          95,
+          96,
+          97,
+          98,
+          99,
+          100,
+          101,
+          102,
+          103,
+          104,
+          105,
+          106,
+          107,
+          108,
+          109,
+          110,
+          111,
+          112,
+          113,
+          114,
+          115,
+          116,
+          117,
+          118,
+          119,
+          120,
+          121,
+          122,
+          123,
+          124,
+          125,
+          126,
+          127,
+          128,
+          129,
+          130,
+          131,
+          132,
+          133,
+          134,
+          135,
+          136,
+          137,
+          138,
+          139,
+          140,
+          141,
+          142,
+          143,
+          144,
+          145,
+          146,
+          147,
+          148,
+          149,
+          150,
+          151,
+          152,
+          153,
+          154,
+          155,
+          156,
+          157,
+          158,
+          159,
+          160,
+          161,
+          162,
+          163,
+          164,
+          165,
+          166,
+          167,
+          168,
+          169,
+          170,
+          171,
+          172,
+          173,
+          174,
+          175,
+          176,
+          177,
+          178,
+          179,
+          180,
+          181,
+          182,
+          183,
+          184,
+          185,
+          186,
+          187,
+          188,
+          189,
+          190,
+          191,
+          192,
+          193,
+          194,
+          195,
+          196,
+          197,
+          198,
+          199,
+          200,
+          201,
+          202,
+          203,
+          204,
+          205,
+          206,
+          207,
+          208,
+          209,
+          210,
+          211,
+          212,
+          213,
+          214,
+          215,
+          216,
+          217,
+          218,
+          219,
+          220,
+          221,
+          222,
+          223,
+          224,
+          225,
+          226,
+          227,
+          228,
+          229,
+          230,
+          231,
+          232,
+          233,
+          234,
+          235,
+          236,
+          237,
+          238,
+          239,
+          240,
+          241,
+          242
+        ]
+      },
+      "retained": {
+        "connection": {
+          "bit_fields": 321,
+          "bits": 3907,
+          "grant_bits": 337,
+          "objects": 337,
+          "reference_slots": 361,
+          "reference_width": 9
+        },
+        "installation": {
+          "bits": 19161883,
+          "objects": 1354178,
+          "reference_width": 21,
+          "refs": 5537840,
+          "total_bits": 136810701
+        },
+        "same_original_source": {
+          "bit_fields": 9393,
+          "bits": 183635,
+          "grant_bits": 10064,
+          "objects": 10064,
+          "reference_slots": 11727,
+          "reference_width": 14
+        }
+      },
+      "source_bits_sha256": "83a3e801f12e6586a4babe152c39757195a4bd43a053b43022653852521b947c",
+      "source_unchanged": true,
+      "unique_addresses": 5
+    },
+    {
+      "N": 4,
+      "actual_ordered_receipts": [
+        [
+          "LL",
+          "beta"
+        ],
+        [
+          "RRRRRRRRRRRRRRRLL",
+          "beta"
+        ],
+        [
+          "LL",
+          "beta"
+        ],
+        [
+          "RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRLL",
+          "beta"
+        ],
+        [
+          "RRLL",
+          "beta"
+        ],
+        [
+          "RLL",
+          "beta"
+        ],
+        [
+          "RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRLL",
+          "beta"
+        ]
+      ],
+      "attained_cache": [
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "field_actions": 37572,
+      "installation_steps": 45048792,
+      "invocations": 7,
+      "native_steps": 5971627,
+      "pending_cuts": {
+        "actual_return_latch": {
+          "bits": [
+            0,
+            1
+          ],
+          "captured": [
+            0,
+            0
+          ],
+          "occupied": 1,
+          "retained": {
+            "connection": {
+              "bit_fields": 7,
+              "bits": 110,
+              "grant_bits": 11,
+              "objects": 11,
+              "reference_slots": 23,
+              "reference_width": 4
+            },
+            "installation": {
+              "bits": 19161883,
+              "objects": 1354178,
+              "reference_width": 21,
+              "refs": 5537840,
+              "total_bits": 136810701
+            },
+            "same_original_source": {
+              "bit_fields": 9393,
+              "bits": 183635,
+              "grant_bits": 10064,
+              "objects": 10064,
+              "reference_slots": 11727,
+              "reference_width": 14
+            }
+          }
+        },
+        "output_bit_occupied": {
+          "bx": 1,
+          "native_steps": 342988,
+          "occupied": 1
+        },
+        "port_bit_occupied": {
+          "bx": 0,
+          "native_steps": 297643,
+          "occupied": 1
+        }
+      },
+      "predict_actual_input_sha256": "772682598d344fa54c09e6a3b22d3f71ddcc05575580de7492e3c5a475fb4552",
+      "predict_new_calls": 0,
+      "recipe": {
+        "branch": 1,
+        "edges": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            81
+          ],
+          [
+            2,
+            162
+          ]
+        ],
+        "injection_samples": 1,
+        "left_full_injection": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49,
+          50,
+          51,
+          52,
+          53,
+          54,
+          55,
+          56,
+          57,
+          58,
+          59,
+          60,
+          61,
+          62,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          70,
+          71
+        ],
+        "observer_receives_maps": false,
+        "right_full_injection": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49,
+          50,
+          51,
+          52,
+          53,
+          54,
+          55,
+          56,
+          57,
+          58,
+          59,
+          60,
+          61,
+          62,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          70,
+          71,
+          72,
+          73,
+          74,
+          75,
+          76,
+          77,
+          78,
+          79,
+          80,
+          81,
+          82,
+          83,
+          84,
+          85,
+          86,
+          87,
+          88,
+          89,
+          90,
+          91,
+          92,
+          93,
+          94,
+          95,
+          96,
+          97,
+          98,
+          99,
+          100,
+          101,
+          102,
+          103,
+          104,
+          105,
+          106,
+          107,
+          108,
+          109,
+          110,
+          111,
+          112,
+          113,
+          114,
+          115,
+          116,
+          117,
+          118,
+          119,
+          120,
+          121,
+          122,
+          123,
+          124,
+          125,
+          126,
+          127,
+          128,
+          129,
+          130,
+          131,
+          132,
+          133,
+          134,
+          135,
+          136,
+          137,
+          138,
+          139,
+          140,
+          141,
+          142,
+          143,
+          144,
+          145,
+          146,
+          147,
+          148,
+          149,
+          150,
+          151,
+          152,
+          153,
+          154,
+          155,
+          156,
+          157,
+          158,
+          159,
+          160,
+          161,
+          162,
+          163,
+          164,
+          165,
+          166,
+          167,
+          168,
+          169,
+          170,
+          171,
+          172,
+          173,
+          174,
+          175,
+          176,
+          177,
+          178,
+          179,
+          180,
+          181,
+          182,
+          183,
+          184,
+          185,
+          186,
+          187,
+          188,
+          189,
+          190,
+          191,
+          192,
+          193,
+          194,
+          195,
+          196,
+          197,
+          198,
+          199,
+          200,
+          201,
+          202,
+          203,
+          204,
+          205,
+          206,
+          207,
+          208,
+          209,
+          210,
+          211,
+          212,
+          213,
+          214,
+          215,
+          216,
+          217,
+          218,
+          219,
+          220,
+          221,
+          222,
+          223,
+          224,
+          225,
+          226,
+          227,
+          228,
+          229,
+          230,
+          231,
+          232,
+          233,
+          234,
+          235,
+          236,
+          237,
+          238,
+          239,
+          240,
+          241,
+          242
+        ]
+      },
+      "retained": {
+        "connection": {
+          "bit_fields": 321,
+          "bits": 3907,
+          "grant_bits": 337,
+          "objects": 337,
+          "reference_slots": 361,
+          "reference_width": 9
+        },
+        "installation": {
+          "bits": 19161883,
+          "objects": 1354178,
+          "reference_width": 21,
+          "refs": 5537840,
+          "total_bits": 136810701
+        },
+        "same_original_source": {
+          "bit_fields": 9393,
+          "bits": 183635,
+          "grant_bits": 10064,
+          "objects": 10064,
+          "reference_slots": 11727,
+          "reference_width": 14
+        }
+      },
+      "source_bits_sha256": "e200625011e202606ddf893a9b55a50aa575d25096f1091b100a07a6a9d5ee4c",
+      "source_unchanged": true,
+      "unique_addresses": 5
+    },
+    {
+      "N": 9,
+      "actual_ordered_receipts": [
+        [
+          "LL",
+          "beta"
+        ],
+        [
+          "RRRRRRRRRRRRRRRLL",
+          "beta"
+        ],
+        [
+          "LL",
+          "beta"
+        ],
+        [
+          "RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRLL",
+          "beta"
+        ],
+        [
+          "RRLL",
+          "beta"
+        ],
+        [
+          "RLL",
+          "beta"
+        ],
+        [
+          "RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRLL",
+          "beta"
+        ]
+      ],
+      "attained_cache": [
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "field_actions": 73415,
+      "installation_steps": 45048792,
+      "invocations": 7,
+      "native_steps": 11679454,
+      "pending_cuts": {
+        "actual_return_latch": {
+          "bits": [
+            0,
+            1
+          ],
+          "captured": [
+            0,
+            0
+          ],
+          "occupied": 1,
+          "retained": {
+            "connection": {
+              "bit_fields": 7,
+              "bits": 110,
+              "grant_bits": 11,
+              "objects": 11,
+              "reference_slots": 23,
+              "reference_width": 4
+            },
+            "installation": {
+              "bits": 19161883,
+              "objects": 1354178,
+              "reference_width": 21,
+              "refs": 5537840,
+              "total_bits": 136810701
+            },
+            "same_original_source": {
+              "bit_fields": 46443,
+              "bits": 920414,
+              "grant_bits": 47939,
+              "objects": 47939,
+              "reference_slots": 51627,
+              "reference_width": 16
+            }
+          }
+        },
+        "output_bit_occupied": {
+          "bx": 1,
+          "native_steps": 520144,
+          "occupied": 1
+        },
+        "port_bit_occupied": {
+          "bx": 0,
+          "native_steps": 474799,
+          "occupied": 1
+        }
+      },
+      "predict_actual_input_sha256": "dac7d2089fcbd4d43bf2fbf084e3a8b427d70b24a1bd56c3b160ae3c1a95cf77",
+      "predict_new_calls": 0,
+      "recipe": {
+        "all_promise_array_outside_both_prior_supports": true,
+        "witness": "nine distinct complete left labels at one common complete right label; right degree eight"
+      },
+      "retained": {
+        "connection": {
+          "bit_fields": 621,
+          "bits": 7868,
+          "grant_bits": 637,
+          "objects": 637,
+          "reference_slots": 661,
+          "reference_width": 10
+        },
+        "installation": {
+          "bits": 19161883,
+          "objects": 1354178,
+          "reference_width": 21,
+          "refs": 5537840,
+          "total_bits": 136810701
+        },
+        "same_original_source": {
+          "bit_fields": 46443,
+          "bits": 920414,
+          "grant_bits": 47939,
+          "objects": 47939,
+          "reference_slots": 51627,
+          "reference_width": 16
+        }
+      },
+      "source_bits_sha256": "85bfd61330263cbfd6aa9bbcb27d54a88693710d7840dcf6b98763d09c00d200",
+      "source_unchanged": true,
+      "unique_addresses": 5
+    },
+    {
+      "grant": false,
+      "receipts": 0,
+      "recipe": {
+        "initial_missing_Read_grant": true
+      },
+      "refusal": true,
+      "retained": {
+        "connection": {
+          "bit_fields": 0,
+          "bits": 11,
+          "grant_bits": 1,
+          "objects": 1,
+          "reference_slots": 10,
+          "reference_width": 1
+        },
+        "installation": {
+          "bits": 19161883,
+          "objects": 1354178,
+          "reference_width": 21,
+          "refs": 5537840,
+          "total_bits": 136810701
+        },
+        "same_original_source": {
+          "bit_fields": 9393,
+          "bits": 183635,
+          "grant_bits": 10064,
+          "objects": 10064,
+          "reference_slots": 11727,
+          "reference_width": 14
+        }
+      },
+      "source_calls": 0
+    }
+  ],
+  "returned_output": {
+    "cases": [
+      {
+        "actual_frame": "010",
+        "actual_word": "",
+        "field_actions": 77980,
+        "installation_steps": 45013800,
+        "native_steps": 12414367,
+        "retained": {
+          "bits": 19133251,
+          "objects": 1355198,
+          "reference_width": 21,
+          "refs": 5543636,
+          "total_bits": 136904805
+        }
+      },
+      {
+        "actual_frame": "0111001",
+        "actual_word": "01",
+        "field_actions": 301803,
+        "installation_steps": 45013800,
+        "native_steps": 48031046,
+        "retained": {
+          "bits": 19133251,
+          "objects": 1355198,
+          "reference_width": 21,
+          "refs": 5543636,
+          "total_bits": 136904805
+        }
+      }
+    ],
+    "scope": "installed actual comb/header decoder plus service Arithmetic framing; arbitrary output-word component fixture, not evaluator execution"
+  },
+  "schema": 1,
+  "scope": "actual installed Read and attained Predict input on specified same-source configurations; no full evaluator arithmetic return",
+  "seconds": 650.5735253749881,
+  "source_hashes": {
+    "field_service.py": "e2094909ab99db4af7419ea4da499915ea996a7a0c5ca07be06d439253558a6f",
+    "framing.py": "13d043ef5557b713348bbf10e6da126f88540f1a3bf3e823bb6ae84121adc41b",
+    "native_engine.py": "8b52235700c4d7d290deae7cbe27f94b271b8a94d2948562ac7fc28b2b2bdecb",
+    "service_checks.py": "b17f76540bb25686b9d64e6c476ce52d7f324e91a3930d1effa31431f67dfc80",
+    "service_domain_checks.py": "aef38dbd32717053ab6a9308ab9884c8faf179527d6a9f8c3ca9a087174ecdb5",
+    "service_native.py": "1a09231d35389b3b3a22dc0b71a52ac434f168cefb7ac86e604a0bb5d0c7cca0",
+    "session.py": "de7306df87891d380379c9fd9ae06e7a4befc51276a7b0c5c01d9401db1e12c7"
+  },
+  "strict_original_omissions": [
+    "ML-N-evaluator-execution",
+    "ML-Cost-full-evaluator-session"
+  ]
+}

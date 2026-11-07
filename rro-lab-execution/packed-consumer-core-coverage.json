@@ -1,0 +1,9 @@
+{
+  "core_packed_source_sha256": "b37f11367444c5f1608674fcd078393ff1c1b3297236a4e57bcaf06b46cbf127",
+  "core_result_sha256": "0159a890c21d16a367f8a63826633d2cda379445c32cb8b53598dc4eb5c754fa",
+  "current_packed_source_sha256": "d342f1fbc409d61cbf320e178b520db8c0785d415f230825258d09af431b3c0a",
+  "only_backend_delta": "PackedState.modeled_census counts occupied grant fields, including zero-valued pending grant",
+  "schema": 1,
+  "scope": "core consumers do not call PackedState.modeled_census; record-census group checks the changed method; no raw old manifest certifies changed bytes",
+  "unchanged_consumer_AST_sha256": "07cecdef41318df48812c5831076fe290b11c690015c3ca42873c26efed76cc5"
+}

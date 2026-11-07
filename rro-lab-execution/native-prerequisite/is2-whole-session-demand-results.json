@@ -1,0 +1,1666 @@
+{
+  "B_ticks": 0,
+  "H_reserved": null,
+  "W_backed": null,
+  "all_six_outcomes_complete": false,
+  "bundle_exit": 0,
+  "caps": {
+    "B_ticks": 0,
+    "chronology_runs": 0,
+    "evaluator_ticks": 0,
+    "installations": 0,
+    "monitored_RSS_bytes": 2147483648,
+    "provider_calls": 0,
+    "seconds": 600
+  },
+  "chronology_runs": 0,
+  "elapsed_seconds": 135.46475975005887,
+  "evaluator_ticks": 0,
+  "full_run_release_ready": false,
+  "host_upper_complete": false,
+  "identity": "IS2-source-specific-whole-session-demand/v1",
+  "monitored_peak_RSS_bytes": 70254592,
+  "native_installations": 0,
+  "ordinary_proof_location": "docs/develop/theory/RECURSIVE_RELATIONAL_OBSERVATION_IMMUTABLE_SPINE_NATIVE_REALIZATION.md \u00a7\u00a715\u201318",
+  "own_sites": {
+    "add": {
+      "instructions": 71,
+      "pushes": 20
+    },
+    "addword": {
+      "instructions": 47,
+      "pushes": 24
+    },
+    "blocks": {
+      "instructions": 81,
+      "pushes": 42
+    },
+    "concat": {
+      "instructions": 23,
+      "pushes": 4
+    },
+    "conjoin": {
+      "instructions": 113,
+      "pushes": 62
+    },
+    "countlabels": {
+      "instructions": 809,
+      "pushes": 498
+    },
+    "div": {
+      "instructions": 95,
+      "pushes": 41
+    },
+    "encq": {
+      "instructions": 60,
+      "pushes": 33
+    },
+    "encu": {
+      "instructions": 31,
+      "pushes": 11
+    },
+    "encv": {
+      "instructions": 32,
+      "pushes": 9
+    },
+    "eq": {
+      "instructions": 33,
+      "pushes": 9
+    },
+    "falling": {
+      "instructions": 70,
+      "pushes": 34
+    },
+    "gcd": {
+      "instructions": 30,
+      "pushes": 8
+    },
+    "get": {
+      "instructions": 52,
+      "pushes": 25
+    },
+    "incident": {
+      "instructions": 4111,
+      "pushes": 1
+    },
+    "inject": {
+      "instructions": 705,
+      "pushes": 446
+    },
+    "lt": {
+      "instructions": 25,
+      "pushes": 8
+    },
+    "main": {
+      "instructions": 420,
+      "pushes": 250
+    },
+    "mixture": {
+      "instructions": 88,
+      "pushes": 48
+    },
+    "mul": {
+      "instructions": 32,
+      "pushes": 9
+    },
+    "nextpart": {
+      "instructions": 222,
+      "pushes": 128
+    },
+    "normalizer": {
+      "instructions": 457,
+      "pushes": 281
+    },
+    "odometer": {
+      "instructions": 114,
+      "pushes": 59
+    },
+    "popword": {
+      "instructions": 25,
+      "pushes": 4
+    },
+    "prepend": {
+      "instructions": 26,
+      "pushes": 7
+    },
+    "put": {
+      "instructions": 103,
+      "pushes": 57
+    },
+    "qadd": {
+      "instructions": 73,
+      "pushes": 40
+    },
+    "readcache": {
+      "instructions": 158,
+      "pushes": 89
+    },
+    "readu": {
+      "instructions": 45,
+      "pushes": 14
+    },
+    "readv": {
+      "instructions": 29,
+      "pushes": 5
+    },
+    "reduce": {
+      "instructions": 50,
+      "pushes": 24
+    },
+    "side": {
+      "instructions": 388,
+      "pushes": 237
+    },
+    "sub": {
+      "instructions": 70,
+      "pushes": 19
+    },
+    "zeros": {
+      "instructions": 30,
+      "pushes": 10
+    }
+  },
+  "owned_jobs_joined": true,
+  "rows": [
+    {
+      "H_reserved": null,
+      "I": 5376,
+      "K": 265424734388161,
+      "K_bit_length": 48,
+      "L": 387,
+      "N": 4,
+      "S": 2178,
+      "W_backed": null,
+      "acquisition_operand_bits": 2176,
+      "acquisition_reads": 74,
+      "case": "positive-full",
+      "chosen_K_fits_Py_ssize_t": true,
+      "chosen_K_pointer_array_bytes_fit_Py_ssize_t": true,
+      "chosen_common_objects_fit_64bit_names": true,
+      "chosen_reserve_payload_bytes": 132712367194080500,
+      "common_with_B": {
+        "A": 3450521555226913,
+        "C": 4246795778432702,
+        "O": 796274205140176
+      },
+      "connection": {
+        "A": 4893,
+        "C": 4581,
+        "O": 4733
+      },
+      "cylinder_lengths": [
+        121,
+        1
+      ],
+      "evaluator": {
+        "Y": 6471936,
+        "body_costs": {
+          "add": {
+            "instructions": 93862,
+            "pushes": 26440
+          },
+          "addword": {
+            "instructions": 1304409386199,
+            "pushes": 360819319873
+          },
+          "blocks": {
+            "instructions": 37351434,
+            "pushes": 10079376
+          },
+          "concat": {
+            "instructions": 148854574,
+            "pushes": 25887752
+          },
+          "conjoin": {
+            "instructions": 8816210962,
+            "pushes": 2469477546
+          },
+          "div": {
+            "instructions": 493005528,
+            "pushes": 136384130
+          },
+          "encq": {
+            "instructions": 1304260489274,
+            "pushes": 360793420199
+          },
+          "encu": {
+            "instructions": 55966870,
+            "pushes": 15743698
+          },
+          "encv": {
+            "instructions": 42304,
+            "pushes": 11898
+          },
+          "eq": {
+            "instructions": 92573,
+            "pushes": 25127
+          },
+          "falling": {
+            "instructions": 746441430,
+            "pushes": 210253776
+          },
+          "gcd": {
+            "instructions": 1303013689794,
+            "pushes": 360463276734
+          },
+          "get": {
+            "instructions": 5852304,
+            "pushes": 1576722
+          },
+          "incident": {
+            "instructions": 4111,
+            "pushes": 1
+          },
+          "inject": {
+            "instructions": 7953487366230,
+            "pushes": 2201865509340
+          },
+          "lt": {
+            "instructions": 92565,
+            "pushes": 25126
+          },
+          "main": {
+            "instructions": 958573387946884,
+            "pushes": 265424734369056
+          },
+          "mixture": {
+            "instructions": 1304868782539,
+            "pushes": 360980855710
+          },
+          "mul": {
+            "instructions": 124127868,
+            "pushes": 34965578
+          },
+          "normalizer": {
+            "instructions": 113937270080352,
+            "pushes": 31550323406346
+          },
+          "odometer": {
+            "instructions": 183946740,
+            "pushes": 49476030
+          },
+          "popword": {
+            "instructions": 900,
+            "pushes": 144
+          },
+          "prepend": {
+            "instructions": 936,
+            "pushes": 252
+          },
+          "put": {
+            "instructions": 6085362,
+            "pushes": 1634506
+          },
+          "qadd": {
+            "instructions": 1304372178439,
+            "pushes": 360840968232
+          },
+          "readcache": {
+            "instructions": 9198140820,
+            "pushes": 2572932358
+          },
+          "readu": {
+            "instructions": 14972972,
+            "pushes": 2589798
+          },
+          "readv": {
+            "instructions": 11281,
+            "pushes": 1945
+          },
+          "reduce": {
+            "instructions": 1303999700900,
+            "pushes": 360736045018
+          },
+          "side": {
+            "instructions": 235756599552,
+            "pushes": 66161858688
+          },
+          "sub": {
+            "instructions": 92540,
+            "pushes": 25118
+          },
+          "zeros": {
+            "instructions": 5739340,
+            "pushes": 1557936
+          }
+        },
+        "calls_after_guard": {
+          "addword": {
+            "concat": 1,
+            "encq": 1,
+            "encv": 1
+          },
+          "blocks": {
+            "add": 2,
+            "get": 1,
+            "lt": 2
+          },
+          "conjoin": {
+            "add": 1,
+            "eq": 1,
+            "get": 2,
+            "lt": 1,
+            "mul": 1,
+            "put": 1
+          },
+          "countlabels": {
+            "add": 18,
+            "blocks": 1,
+            "div": 3,
+            "eq": 2,
+            "get": 9,
+            "lt": 9,
+            "mul": 4,
+            "put": 5,
+            "sub": 4,
+            "zeros": 4
+          },
+          "div": {
+            "add": 2,
+            "lt": 1,
+            "sub": 1
+          },
+          "encq": {
+            "concat": 1,
+            "encu": 2,
+            "reduce": 1
+          },
+          "encu": {
+            "encv": 1
+          },
+          "eq": {
+            "sub": 1
+          },
+          "falling": {
+            "add": 1,
+            "lt": 1,
+            "mul": 1,
+            "sub": 1
+          },
+          "gcd": {
+            "div": 1
+          },
+          "get": {
+            "popword": 2,
+            "sub": 1
+          },
+          "inject": {
+            "add": 11,
+            "eq": 1,
+            "get": 12,
+            "incident": 1,
+            "lt": 6,
+            "mul": 4,
+            "odometer": 1,
+            "put": 5,
+            "sub": 2,
+            "zeros": 6
+          },
+          "lt": {
+            "sub": 1
+          },
+          "main": {
+            "add": 2,
+            "addword": 7,
+            "concat": 3,
+            "conjoin": 1,
+            "encu": 2,
+            "lt": 1,
+            "mixture": 2,
+            "mul": 3,
+            "normalizer": 2,
+            "readcache": 2,
+            "readu": 4,
+            "readv": 1
+          },
+          "mixture": {
+            "mul": 4,
+            "qadd": 1,
+            "sub": 1
+          },
+          "mul": {
+            "add": 1
+          },
+          "nextpart": {
+            "add": 5,
+            "get": 2,
+            "lt": 4,
+            "put": 2,
+            "sub": 2
+          },
+          "normalizer": {
+            "add": 1,
+            "blocks": 2,
+            "countlabels": 0,
+            "falling": 2,
+            "inject": 2,
+            "lt": 3,
+            "mul": 6,
+            "nextpart": 0,
+            "qadd": 2,
+            "side": 2
+          },
+          "odometer": {
+            "add": 1,
+            "get": 1,
+            "lt": 2,
+            "put": 2,
+            "sub": 1
+          },
+          "put": {
+            "popword": 3,
+            "prepend": 3,
+            "sub": 1
+          },
+          "qadd": {
+            "add": 1,
+            "mul": 3,
+            "reduce": 1
+          },
+          "readcache": {
+            "add": 3,
+            "get": 1,
+            "lt": 2,
+            "mul": 1,
+            "put": 2,
+            "zeros": 1
+          },
+          "readu": {
+            "readv": 1
+          },
+          "reduce": {
+            "div": 2,
+            "gcd": 1
+          },
+          "side": {
+            "add": 12,
+            "eq": 1,
+            "get": 4,
+            "lt": 5,
+            "mul": 3,
+            "put": 1,
+            "zeros": 1
+          },
+          "zeros": {
+            "sub": 1
+          }
+        },
+        "entry_bits": 34,
+        "evaluator_instructions_upper": 958573387946884,
+        "evaluator_pushes_upper": 265424734369056,
+        "m0": 328,
+        "maps_per_inject_upper": 972,
+        "multipliers": {
+          "add": 1322,
+          "addword": 1,
+          "blocks": 6,
+          "concat": 6471938,
+          "conjoin": 62,
+          "countlabels": 11565,
+          "div": 1322,
+          "encq": 1,
+          "encu": 1322,
+          "encv": 1322,
+          "eq": 1,
+          "falling": 6,
+          "gcd": 2643,
+          "get": 62,
+          "incident": 1,
+          "inject": 9730,
+          "lt": 1,
+          "main": 4,
+          "mixture": 1,
+          "mul": 1322,
+          "nextpart": 36,
+          "normalizer": 6,
+          "odometer": 10,
+          "popword": 36,
+          "prepend": 36,
+          "put": 62,
+          "qadd": 1,
+          "readcache": 62,
+          "readu": 1322,
+          "readv": 389,
+          "reduce": 1,
+          "side": 576,
+          "sub": 1322,
+          "zeros": 62
+        },
+        "records": 60,
+        "right_partitions_upper": 1,
+        "subset_entries": 1,
+        "w": 1320
+      },
+      "execution_transitions_upper": 122697398567391616,
+      "frontend": {
+        "F0": 2163,
+        "exact_extractions": 18713,
+        "field_actions_upper": 650654208,
+        "initialization_extractions": 81,
+        "validation_extractions": 1232
+      },
+      "frozen_entries_upper": 265424734369835,
+      "full_run_release_ready": false,
+      "full_session_executed": false,
+      "guard_observations": [
+        {
+          "countlabels_allowed_labels_upper": 2,
+          "r": 1,
+          "right_blocks_if_count_positive_upper": 1,
+          "right_full": true,
+          "right_partitions_visited_upper": 1,
+          "valid": true
+        },
+        {
+          "countlabels_allowed_labels_upper": 2,
+          "r": 1,
+          "right_blocks_if_count_positive_upper": 1,
+          "right_full": true,
+          "right_partitions_visited_upper": 1,
+          "valid": true
+        },
+        {
+          "normalizer_returns_before_side": true,
+          "valid": false
+        }
+      ],
+      "host_upper_complete": false,
+      "input_latch_writes": 16362,
+      "input_signals": 5454,
+      "installation_transitions_upper": 59455140565341020,
+      "native_census": {
+        "A": 3450521550083876,
+        "C": 4246795761859261,
+        "O": 796274203942196
+      },
+      "original_source": {
+        "A": 11727,
+        "C": 9393,
+        "O": 10064
+      },
+      "output_bits_upper": 12944403,
+      "prior_widths": [
+        1,
+        2
+      ],
+      "q": 75,
+      "receipt_bits": 4581,
+      "represented_prior": [
+        1,
+        3
+      ],
+      "run_join_calls": 5455,
+      "run_join_characters_upper": 70611718365,
+      "sha256": "37dfee71eda5a8fbee3d373aab446982f15976785ef965ec2e4a1b6ea98c5402",
+      "source_blocks": 265424734614541,
+      "t": 2
+    },
+    {
+      "H_reserved": null,
+      "I": 5249,
+      "K": 16197911821818875,
+      "K_bit_length": 54,
+      "L": 386,
+      "N": 4,
+      "S": 2117,
+      "W_backed": null,
+      "acquisition_operand_bits": 2115,
+      "acquisition_reads": 73,
+      "case": "positive-partial",
+      "chosen_K_fits_Py_ssize_t": true,
+      "chosen_K_pointer_array_bytes_fit_Py_ssize_t": true,
+      "chosen_common_objects_fit_64bit_names": true,
+      "chosen_reserve_payload_bytes": 8098955910909437500,
+      "common_with_B": {
+        "A": 210572853691826066,
+        "C": 259166589177324001,
+        "O": 48593735467432191
+      },
+      "connection": {
+        "A": 4764,
+        "C": 4456,
+        "O": 4606
+      },
+      "cylinder_lengths": [
+        121,
+        1
+      ],
+      "evaluator": {
+        "Y": 6455552,
+        "body_costs": {
+          "add": {
+            "instructions": 93862,
+            "pushes": 26440
+          },
+          "addword": {
+            "instructions": 1304408632535,
+            "pushes": 360819188801
+          },
+          "blocks": {
+            "instructions": 37351434,
+            "pushes": 10079376
+          },
+          "concat": {
+            "instructions": 148477742,
+            "pushes": 25822216
+          },
+          "conjoin": {
+            "instructions": 8816210962,
+            "pushes": 2469477546
+          },
+          "countlabels": {
+            "instructions": 24541081640280,
+            "pushes": 6806489710320
+          },
+          "div": {
+            "instructions": 493005528,
+            "pushes": 136384130
+          },
+          "encq": {
+            "instructions": 1304260112442,
+            "pushes": 360793354663
+          },
+          "encu": {
+            "instructions": 55966870,
+            "pushes": 15743698
+          },
+          "encv": {
+            "instructions": 42304,
+            "pushes": 11898
+          },
+          "eq": {
+            "instructions": 92573,
+            "pushes": 25127
+          },
+          "falling": {
+            "instructions": 746441430,
+            "pushes": 210253776
+          },
+          "gcd": {
+            "instructions": 1303013689794,
+            "pushes": 360463276734
+          },
+          "get": {
+            "instructions": 5852304,
+            "pushes": 1576722
+          },
+          "incident": {
+            "instructions": 4111,
+            "pushes": 1
+          },
+          "inject": {
+            "instructions": 214531629934950,
+            "pushes": 59391531647100
+          },
+          "lt": {
+            "instructions": 92565,
+            "pushes": 25126
+          },
+          "main": {
+            "instructions": 58503114650468336,
+            "pushes": 16197911821800220
+          },
+          "mixture": {
+            "instructions": 1304868782539,
+            "pushes": 360980855710
+          },
+          "mul": {
+            "instructions": 124127868,
+            "pushes": 34965578
+          },
+          "nextpart": {
+            "instructions": 896407344,
+            "pushes": 241398864
+          },
+          "normalizer": {
+            "instructions": 7307004931175296,
+            "pushes": 2023111209905520
+          },
+          "odometer": {
+            "instructions": 183946740,
+            "pushes": 49476030
+          },
+          "popword": {
+            "instructions": 900,
+            "pushes": 144
+          },
+          "prepend": {
+            "instructions": 936,
+            "pushes": 252
+          },
+          "put": {
+            "instructions": 6085362,
+            "pushes": 1634506
+          },
+          "qadd": {
+            "instructions": 1304372178439,
+            "pushes": 360840968232
+          },
+          "readcache": {
+            "instructions": 9198140820,
+            "pushes": 2572932358
+          },
+          "readu": {
+            "instructions": 14934634,
+            "pushes": 2583188
+          },
+          "readv": {
+            "instructions": 11252,
+            "pushes": 1940
+          },
+          "reduce": {
+            "instructions": 1303999700900,
+            "pushes": 360736045018
+          },
+          "side": {
+            "instructions": 235756599552,
+            "pushes": 66161858688
+          },
+          "sub": {
+            "instructions": 92540,
+            "pushes": 25118
+          },
+          "zeros": {
+            "instructions": 5739340,
+            "pushes": 1557936
+          }
+        },
+        "calls_after_guard": {
+          "addword": {
+            "concat": 1,
+            "encq": 1,
+            "encv": 1
+          },
+          "blocks": {
+            "add": 2,
+            "get": 1,
+            "lt": 2
+          },
+          "conjoin": {
+            "add": 1,
+            "eq": 1,
+            "get": 2,
+            "lt": 1,
+            "mul": 1,
+            "put": 1
+          },
+          "countlabels": {
+            "add": 18,
+            "blocks": 1,
+            "div": 3,
+            "eq": 2,
+            "get": 9,
+            "lt": 9,
+            "mul": 4,
+            "put": 5,
+            "sub": 4,
+            "zeros": 4
+          },
+          "div": {
+            "add": 2,
+            "lt": 1,
+            "sub": 1
+          },
+          "encq": {
+            "concat": 1,
+            "encu": 2,
+            "reduce": 1
+          },
+          "encu": {
+            "encv": 1
+          },
+          "eq": {
+            "sub": 1
+          },
+          "falling": {
+            "add": 1,
+            "lt": 1,
+            "mul": 1,
+            "sub": 1
+          },
+          "gcd": {
+            "div": 1
+          },
+          "get": {
+            "popword": 2,
+            "sub": 1
+          },
+          "inject": {
+            "add": 11,
+            "eq": 1,
+            "get": 12,
+            "incident": 1,
+            "lt": 6,
+            "mul": 4,
+            "odometer": 1,
+            "put": 5,
+            "sub": 2,
+            "zeros": 6
+          },
+          "lt": {
+            "sub": 1
+          },
+          "main": {
+            "add": 2,
+            "addword": 7,
+            "concat": 3,
+            "conjoin": 1,
+            "encu": 2,
+            "lt": 1,
+            "mixture": 2,
+            "mul": 3,
+            "normalizer": 2,
+            "readcache": 2,
+            "readu": 4,
+            "readv": 1
+          },
+          "mixture": {
+            "mul": 4,
+            "qadd": 1,
+            "sub": 1
+          },
+          "mul": {
+            "add": 1
+          },
+          "nextpart": {
+            "add": 5,
+            "get": 2,
+            "lt": 4,
+            "put": 2,
+            "sub": 2
+          },
+          "normalizer": {
+            "add": 1,
+            "blocks": 2,
+            "countlabels": 1,
+            "falling": 2,
+            "inject": 2,
+            "lt": 3,
+            "mul": 6,
+            "nextpart": 1,
+            "qadd": 2,
+            "side": 2
+          },
+          "odometer": {
+            "add": 1,
+            "get": 1,
+            "lt": 2,
+            "put": 2,
+            "sub": 1
+          },
+          "put": {
+            "popword": 3,
+            "prepend": 3,
+            "sub": 1
+          },
+          "qadd": {
+            "add": 1,
+            "mul": 3,
+            "reduce": 1
+          },
+          "readcache": {
+            "add": 3,
+            "get": 1,
+            "lt": 2,
+            "mul": 1,
+            "put": 2,
+            "zeros": 1
+          },
+          "readu": {
+            "readv": 1
+          },
+          "reduce": {
+            "div": 2,
+            "gcd": 1
+          },
+          "side": {
+            "add": 12,
+            "eq": 1,
+            "get": 4,
+            "lt": 5,
+            "mul": 3,
+            "put": 1,
+            "zeros": 1
+          },
+          "zeros": {
+            "sub": 1
+          }
+        },
+        "entry_bits": 34,
+        "evaluator_instructions_upper": 58503114650468336,
+        "evaluator_pushes_upper": 16197911821800220,
+        "m0": 328,
+        "maps_per_inject_upper": 26244,
+        "multipliers": {
+          "add": 1322,
+          "addword": 1,
+          "blocks": 6,
+          "concat": 6455554,
+          "conjoin": 62,
+          "countlabels": 11565,
+          "div": 1322,
+          "encq": 1,
+          "encu": 1322,
+          "encv": 1322,
+          "eq": 1,
+          "falling": 6,
+          "gcd": 2643,
+          "get": 62,
+          "incident": 1,
+          "inject": 262450,
+          "lt": 1,
+          "main": 4,
+          "mixture": 1,
+          "mul": 1322,
+          "nextpart": 36,
+          "normalizer": 16,
+          "odometer": 10,
+          "popword": 36,
+          "prepend": 36,
+          "put": 62,
+          "qadd": 1,
+          "readcache": 62,
+          "readu": 1322,
+          "readv": 388,
+          "reduce": 1,
+          "side": 576,
+          "sub": 1322,
+          "zeros": 62
+        },
+        "records": 60,
+        "right_partitions_upper": 15,
+        "subset_entries": 16,
+        "w": 1320
+      },
+      "execution_transitions_upper": 7488398680088039040,
+      "frontend": {
+        "F0": 2163,
+        "exact_extractions": 18264,
+        "field_actions_upper": 635073408,
+        "initialization_extractions": 81,
+        "validation_extractions": 1230
+      },
+      "frozen_entries_upper": 16197911821800997,
+      "full_run_release_ready": false,
+      "full_session_executed": false,
+      "guard_observations": [
+        {
+          "countlabels_allowed_labels_upper": 2,
+          "r": 1,
+          "right_blocks_if_count_positive_upper": 2,
+          "right_full": false,
+          "right_partitions_visited_upper": 15,
+          "valid": true
+        },
+        {
+          "countlabels_allowed_labels_upper": 2,
+          "r": 1,
+          "right_blocks_if_count_positive_upper": 1,
+          "right_full": true,
+          "right_partitions_visited_upper": 1,
+          "valid": true
+        },
+        {
+          "normalizer_returns_before_side": true,
+          "valid": false
+        }
+      ],
+      "host_upper_complete": false,
+      "input_latch_writes": 15978,
+      "input_signals": 5326,
+      "installation_transitions_upper": 3628332248149820956,
+      "native_census": {
+        "A": 210572853686683158,
+        "C": 259166589160750685,
+        "O": 48593735466234338
+      },
+      "original_source": {
+        "A": 11727,
+        "C": 9393,
+        "O": 10064
+      },
+      "output_bits_upper": 12911628,
+      "prior_widths": [
+        1,
+        2
+      ],
+      "q": 74,
+      "receipt_bits": 4456,
+      "represented_prior": [
+        1,
+        3
+      ],
+      "run_join_calls": 5327,
+      "run_join_characters_upper": 68780242356,
+      "sha256": "1a4ae049cf81b1f434398aa05cb8eabcf4d8689f7873f8d75f9ae1e870c34764",
+      "source_blocks": 16197911822045255,
+      "t": 2
+    },
+    {
+      "H_reserved": null,
+      "I": 21507,
+      "K": 738876698120943,
+      "K_bit_length": 50,
+      "L": 839,
+      "N": 9,
+      "S": 9678,
+      "W_backed": null,
+      "acquisition_operand_bits": 9676,
+      "acquisition_reads": 149,
+      "case": "null-nine-distinct-left",
+      "chosen_K_fits_Py_ssize_t": true,
+      "chosen_K_pointer_array_bytes_fit_Py_ssize_t": true,
+      "chosen_common_objects_fit_64bit_names": true,
+      "chosen_reserve_payload_bytes": 369438349060471500,
+      "common_with_B": {
+        "A": 9605397083808504,
+        "C": 11822027198209489,
+        "O": 2216630096391772
+      },
+      "connection": {
+        "A": 20418,
+        "C": 19806,
+        "O": 20108
+      },
+      "cylinder_lengths": [
+        271,
+        1
+      ],
+      "evaluator": {
+        "Y": 13959424,
+        "body_costs": {
+          "add": {
+            "instructions": 184742,
+            "pushes": 52040
+          },
+          "addword": {
+            "instructions": 9940367744727,
+            "pushes": 2749613612097
+          },
+          "blocks": {
+            "instructions": 288362789,
+            "pushes": 77690151
+          },
+          "concat": {
+            "instructions": 321066798,
+            "pushes": 55837704
+          },
+          "conjoin": {
+            "instructions": 76562898812,
+            "pushes": 21430411046
+          },
+          "div": {
+            "instructions": 1909566168,
+            "pushes": 528219010
+          },
+          "encq": {
+            "instructions": 9940046594618,
+            "pushes": 2749557750951
+          },
+          "encu": {
+            "instructions": 216733590,
+            "pushes": 60962258
+          },
+          "encv": {
+            "instructions": 83264,
+            "pushes": 23418
+          },
+          "eq": {
+            "instructions": 182173,
+            "pushes": 49447
+          },
+          "falling": {
+            "instructions": 5294641715,
+            "pushes": 1491407016
+          },
+          "gcd": {
+            "instructions": 9935472928194,
+            "pushes": 2748323550654
+          },
+          "get": {
+            "instructions": 25480904,
+            "pushes": 6859727
+          },
+          "inject": {
+            "instructions": 50298683040,
+            "pushes": 14025589300
+          },
+          "lt": {
+            "instructions": 182165,
+            "pushes": 49446
+          },
+          "main": {
+            "instructions": 2663360054441964,
+            "pushes": 738876698045112
+          },
+          "mixture": {
+            "instructions": 9942657901259,
+            "pushes": 2750328110750
+          },
+          "mul": {
+            "instructions": 480781948,
+            "pushes": 135431498
+          },
+          "normalizer": {
+            "instructions": 288066052845692,
+            "pushes": 79952117371511
+          },
+          "popword": {
+            "instructions": 1900,
+            "pushes": 304
+          },
+          "prepend": {
+            "instructions": 1976,
+            "pushes": 532
+          },
+          "put": {
+            "instructions": 26560327,
+            "pushes": 7124411
+          },
+          "qadd": {
+            "instructions": 9940734591239,
+            "pushes": 2749786335272
+          },
+          "readcache": {
+            "instructions": 80180552870,
+            "pushes": 22409024788
+          },
+          "readu": {
+            "instructions": 63577268,
+            "pushes": 10977838
+          },
+          "readv": {
+            "instructions": 24389,
+            "pushes": 4205
+          },
+          "reduce": {
+            "instructions": 9939292060580,
+            "pushes": 2749379988698
+          },
+          "side": {
+            "instructions": 3095852502512,
+            "pushes": 868399736688
+          },
+          "sub": {
+            "instructions": 182140,
+            "pushes": 49438
+          },
+          "zeros": {
+            "instructions": 24957290,
+            "pushes": 6774376
+          }
+        },
+        "calls_after_guard": {
+          "addword": {
+            "concat": 1,
+            "encq": 1,
+            "encv": 1
+          },
+          "blocks": {
+            "add": 2,
+            "get": 1,
+            "lt": 2
+          },
+          "conjoin": {
+            "add": 1,
+            "eq": 1,
+            "get": 2,
+            "lt": 1,
+            "mul": 1,
+            "put": 1
+          },
+          "countlabels": {
+            "add": 18,
+            "blocks": 1,
+            "div": 3,
+            "eq": 2,
+            "get": 9,
+            "lt": 9,
+            "mul": 4,
+            "put": 5,
+            "sub": 4,
+            "zeros": 4
+          },
+          "div": {
+            "add": 2,
+            "lt": 1,
+            "sub": 1
+          },
+          "encq": {
+            "concat": 1,
+            "encu": 2,
+            "reduce": 1
+          },
+          "encu": {
+            "encv": 1
+          },
+          "eq": {
+            "sub": 1
+          },
+          "falling": {
+            "add": 1,
+            "lt": 1,
+            "mul": 1,
+            "sub": 1
+          },
+          "gcd": {
+            "div": 1
+          },
+          "get": {
+            "popword": 2,
+            "sub": 1
+          },
+          "inject": {
+            "add": 11,
+            "eq": 0,
+            "get": 12,
+            "incident": 0,
+            "lt": 6,
+            "mul": 4,
+            "odometer": 0,
+            "put": 5,
+            "sub": 2,
+            "zeros": 6
+          },
+          "lt": {
+            "sub": 1
+          },
+          "main": {
+            "add": 2,
+            "addword": 7,
+            "concat": 3,
+            "conjoin": 1,
+            "encu": 2,
+            "lt": 1,
+            "mixture": 2,
+            "mul": 3,
+            "normalizer": 2,
+            "readcache": 2,
+            "readu": 4,
+            "readv": 1
+          },
+          "mixture": {
+            "mul": 4,
+            "qadd": 1,
+            "sub": 1
+          },
+          "mul": {
+            "add": 1
+          },
+          "nextpart": {
+            "add": 5,
+            "get": 2,
+            "lt": 4,
+            "put": 2,
+            "sub": 2
+          },
+          "normalizer": {
+            "add": 1,
+            "blocks": 2,
+            "countlabels": 0,
+            "falling": 2,
+            "inject": 2,
+            "lt": 3,
+            "mul": 6,
+            "nextpart": 0,
+            "qadd": 2,
+            "side": 2
+          },
+          "odometer": {
+            "add": 1,
+            "get": 1,
+            "lt": 2,
+            "put": 2,
+            "sub": 1
+          },
+          "put": {
+            "popword": 3,
+            "prepend": 3,
+            "sub": 1
+          },
+          "qadd": {
+            "add": 1,
+            "mul": 3,
+            "reduce": 1
+          },
+          "readcache": {
+            "add": 3,
+            "get": 1,
+            "lt": 2,
+            "mul": 1,
+            "put": 2,
+            "zeros": 1
+          },
+          "readu": {
+            "readv": 1
+          },
+          "reduce": {
+            "div": 2,
+            "gcd": 1
+          },
+          "side": {
+            "add": 12,
+            "eq": 1,
+            "get": 4,
+            "lt": 5,
+            "mul": 3,
+            "put": 1,
+            "zeros": 1
+          },
+          "zeros": {
+            "sub": 1
+          }
+        },
+        "entry_bits": 74,
+        "evaluator_instructions_upper": 2663360054441964,
+        "evaluator_pushes_upper": 738876698045112,
+        "m0": 648,
+        "maps_per_inject_upper": 0,
+        "multipliers": {
+          "add": 2602,
+          "addword": 1,
+          "blocks": 11,
+          "concat": 13959426,
+          "conjoin": 137,
+          "countlabels": 23130,
+          "div": 2602,
+          "encq": 1,
+          "encu": 2602,
+          "encv": 2602,
+          "eq": 1,
+          "falling": 11,
+          "gcd": 5203,
+          "get": 137,
+          "incident": 1,
+          "inject": 20,
+          "lt": 1,
+          "main": 4,
+          "mixture": 1,
+          "mul": 2602,
+          "nextpart": 121,
+          "normalizer": 11,
+          "odometer": 20,
+          "popword": 76,
+          "prepend": 76,
+          "put": 137,
+          "qadd": 1,
+          "readcache": 137,
+          "readu": 2602,
+          "readv": 841,
+          "reduce": 1,
+          "side": 1936,
+          "sub": 2602,
+          "zeros": 137
+        },
+        "records": 135,
+        "right_partitions_upper": 1,
+        "subset_entries": 1,
+        "w": 2600
+      },
+      "execution_transitions_upper": 340910103550755520,
+      "frontend": {
+        "F0": 2163,
+        "exact_extractions": 74987,
+        "field_actions_upper": 2601681984,
+        "initialization_extractions": 163,
+        "validation_extractions": 2668
+      },
+      "frozen_entries_upper": 738876698046795,
+      "full_run_release_ready": false,
+      "full_session_executed": false,
+      "guard_observations": [
+        {
+          "distinct_edges_at_one_right": 9,
+          "map_settings": 0,
+          "r": 9,
+          "s": 1,
+          "valid": true
+        },
+        {
+          "distinct_edges_at_one_right": 9,
+          "map_settings": 0,
+          "r": 9,
+          "s": 1,
+          "valid": true
+        },
+        {
+          "normalizer_returns_before_side": true,
+          "valid": false
+        }
+      ],
+      "host_upper_complete": false,
+      "input_latch_writes": 64980,
+      "input_signals": 21660,
+      "installation_transitions_upper": 165508380441484188,
+      "native_census": {
+        "A": 9605397078610042,
+        "C": 11822027181583773,
+        "O": 2216630095140542
+      },
+      "original_source": {
+        "A": 51627,
+        "C": 46443,
+        "O": 47939
+      },
+      "output_bits_upper": 27919904,
+      "prior_widths": [
+        1,
+        2
+      ],
+      "q": 150,
+      "receipt_bits": 19806,
+      "represented_prior": [
+        1,
+        3
+      ],
+      "run_join_calls": 21661,
+      "run_join_characters_upper": 604773040544,
+      "sha256": "f5518d034eef5bd00c87ff9d43c5ca878ef9d012f47e04bedcbe45163ee3e29d",
+      "source_blocks": 738876698347323,
+      "t": 2
+    }
+  ],
+  "schema": 1,
+  "source_checks": {
+    "checks": [
+      {
+        "changed_paths": [
+          "docs/develop/theory/RECURSIVE_RELATIONAL_OBSERVATION_IMMUTABLE_SPINE_NATIVE_REALIZATION.md"
+        ],
+        "command": "git diff --check",
+        "cwd": "/Users/auricstudio/trureturing-cad0ceaa-op",
+        "exit": 0
+      },
+      {
+        "changed_paths": [
+          "rro-lab-execution/native-prerequisite/is2_chronology.py",
+          "rro-lab-execution/native-prerequisite/is2_whole_session_demand.py"
+        ],
+        "command": "git diff --check",
+        "cwd": "/Users/auricstudio/trureturing-experiments-robin-8e46",
+        "exit": 0
+      }
+    ],
+    "prefix_bytes_preserved": 91627,
+    "prefix_sha256": "a6f7a6f36757034d50e958808f13cb97bfca7f21602a08a0ae6fd2b13ca89bda",
+    "theory_LF": 2369
+  },
+  "source_hashes": {
+    "constructor_ir.py": "920d9c265c2db2e76a6e268139b35457d05bd116911758d9a5bb660fc1e18fe5",
+    "evaluator_program.py": "33fd87384bae21581556fc776738c6940171c3dca22670f557f26b368558842f",
+    "field_graph.py": "6c4a3c01d01812b8e91eeae96ab746b5428762ee17f86b0792faee9503315ae1",
+    "field_io.py": "5fa898cc6569807321a7c0975cf767a9e9047278e80859c6986609955df32e59",
+    "field_service.py": "e2094909ab99db4af7419ea4da499915ea996a7a0c5ca07be06d439253558a6f",
+    "lab.py": "28be97644c484f46984b7757e0ed8407b9608275e546d0361a1015eba622ed4a",
+    "native-prerequisite/immutable_spine.py": "8fa24e415edc01b3a521f41f1680d340d86c5e2f4f149faa7ec8684b346550e1",
+    "native-prerequisite/is2_chronology.py": "19d7e13e45e8794880ae5d9a5b7c8cf7065ed467e7568ecaa4aefca88737c1cc",
+    "native-prerequisite/is2_service_certificate.py": "6b3b265367e49fb3a70d0a1f328e6c62e906c336deae1d2fff101c0dcb60312c",
+    "native-prerequisite/is2_whole_session_demand.py": "b78d02ad5c80d3cd7e75812033761c7ba826369d180a321ef7dc62ef7ab5b869",
+    "native_bits.c": "6fe240a31621ddfa6c43237c26d4b314f7cf28b12c27d8e77c956dd0e79d9645",
+    "native_engine.py": "996316168cdba25e1bc4e4168878dde02cf2351034362da2a674a6a713dbed5c",
+    "native_install.py": "0ab4e62dcfa620510cf3e93852358f14346a810faf6fa6c5e28b9f0436da7cb9",
+    "service_native.py": "b767a1387544b15f2e34d25a4550cfaf0914668e51f9b249f863b969606f8380",
+    "session.py": "7f6bd6fa3e0d5804378d6d4e10895a5ea09fc5d45197f7357dbffeb4f30a0bed"
+  },
+  "syntactic_calls": {
+    "addword": {
+      "concat": 1,
+      "encq": 1,
+      "encv": 1
+    },
+    "blocks": {
+      "add": 2,
+      "get": 1,
+      "lt": 2
+    },
+    "conjoin": {
+      "add": 1,
+      "eq": 1,
+      "get": 2,
+      "lt": 1,
+      "mul": 1,
+      "put": 1
+    },
+    "countlabels": {
+      "add": 18,
+      "blocks": 1,
+      "div": 3,
+      "eq": 2,
+      "get": 9,
+      "lt": 9,
+      "mul": 4,
+      "put": 5,
+      "sub": 4,
+      "zeros": 4
+    },
+    "div": {
+      "add": 2,
+      "lt": 1,
+      "sub": 1
+    },
+    "encq": {
+      "concat": 1,
+      "encu": 2,
+      "reduce": 1
+    },
+    "encu": {
+      "encv": 1
+    },
+    "eq": {
+      "sub": 1
+    },
+    "falling": {
+      "add": 1,
+      "lt": 1,
+      "mul": 1,
+      "sub": 1
+    },
+    "gcd": {
+      "div": 1
+    },
+    "get": {
+      "popword": 2,
+      "sub": 1
+    },
+    "inject": {
+      "add": 11,
+      "eq": 1,
+      "get": 12,
+      "incident": 1,
+      "lt": 6,
+      "mul": 4,
+      "odometer": 1,
+      "put": 5,
+      "sub": 2,
+      "zeros": 6
+    },
+    "lt": {
+      "sub": 1
+    },
+    "main": {
+      "add": 2,
+      "addword": 7,
+      "concat": 3,
+      "conjoin": 1,
+      "encu": 2,
+      "lt": 1,
+      "mixture": 2,
+      "mul": 3,
+      "normalizer": 2,
+      "readcache": 2,
+      "readu": 4,
+      "readv": 1
+    },
+    "mixture": {
+      "mul": 4,
+      "qadd": 1,
+      "sub": 1
+    },
+    "mul": {
+      "add": 1
+    },
+    "nextpart": {
+      "add": 5,
+      "get": 2,
+      "lt": 4,
+      "put": 2,
+      "sub": 2
+    },
+    "normalizer": {
+      "add": 1,
+      "blocks": 2,
+      "countlabels": 2,
+      "falling": 2,
+      "inject": 2,
+      "lt": 3,
+      "mul": 6,
+      "nextpart": 2,
+      "qadd": 2,
+      "side": 2
+    },
+    "odometer": {
+      "add": 1,
+      "get": 1,
+      "lt": 2,
+      "put": 2,
+      "sub": 1
+    },
+    "put": {
+      "popword": 3,
+      "prepend": 3,
+      "sub": 1
+    },
+    "qadd": {
+      "add": 1,
+      "mul": 3,
+      "reduce": 1
+    },
+    "readcache": {
+      "add": 3,
+      "get": 1,
+      "lt": 2,
+      "mul": 1,
+      "put": 2,
+      "zeros": 1
+    },
+    "readu": {
+      "readv": 1
+    },
+    "reduce": {
+      "div": 2,
+      "gcd": 1
+    },
+    "side": {
+      "add": 12,
+      "eq": 1,
+      "get": 4,
+      "lt": 5,
+      "mul": 3,
+      "put": 1,
+      "zeros": 1
+    },
+    "zeros": {
+      "sub": 1
+    }
+  }
+}

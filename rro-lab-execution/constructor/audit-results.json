@@ -1,0 +1,110 @@
+{
+  "W_U_image_cases": {
+    "W_U_instructions_compared": 336560,
+    "images": 16,
+    "non_erasing_states_compared": 25888,
+    "transition_cases": 51776
+  },
+  "compiler_cases": {
+    "binary_steps": 17460,
+    "four_steps_including_halt": 4455,
+    "instances": 180
+  },
+  "full_image_closure": {
+    "W_U_instructions_covered": 496162138109,
+    "coverage_method": "Every resolved source binding and every literal template transition, with checked contiguous bases; Cartesian instantiation covers all expanded rows.",
+    "flat_W_U_materialized": false,
+    "non_erasing_rules_covered": 76332636632,
+    "non_erasing_states_covered": 38166318316,
+    "resolved_bindings": 23602810,
+    "template_transition_cases": 51776
+  },
+  "graph_operations": {
+    "goto": 7318,
+    "halt": 2,
+    "peek": 95,
+    "pop": 7053,
+    "push": 7734
+  },
+  "graph_registers": 361,
+  "graph_sha256": "1b1b7eb890daa523ab871beb77a57cc950c0a8e89923533dc383002a6e2c9d8b",
+  "graph_states": 22202,
+  "independent_literal_correspondence": {
+    "entries": 972,
+    "literal_degrees": [
+      {
+        "left": [
+          27
+        ],
+        "right": [
+          8
+        ]
+      },
+      {
+        "left": [
+          27
+        ],
+        "right": [
+          8
+        ]
+      }
+    ],
+    "ones": 108,
+    "type_capacities": [
+      2,
+      9
+    ]
+  },
+  "input_output_encodings": [
+    {
+      "B_input_bits": 24000,
+      "accepted_ML_F_bits": 387,
+      "binary_input_bits": 1498,
+      "four_input_symbols": 749,
+      "full_literal_binary_run": false,
+      "name": "positive-full",
+      "non_erasing_initial_input_bits": 12000,
+      "output_bits": 1308,
+      "primitive_reference_steps": 264347047,
+      "reference_machine": "Literal five-op finite Boolean-stack graph; complete full-law run."
+    },
+    {
+      "B_input_bits": 23968,
+      "accepted_ML_F_bits": 386,
+      "binary_input_bits": 1496,
+      "four_input_symbols": 748,
+      "full_literal_binary_run": false,
+      "name": "positive-partial",
+      "non_erasing_initial_input_bits": 11984,
+      "output_bits": 1560,
+      "primitive_reference_steps": 4660776392,
+      "reference_machine": "Literal five-op finite Boolean-stack graph; complete full-law run."
+    },
+    {
+      "B_input_bits": 38464,
+      "accepted_ML_F_bits": 839,
+      "binary_input_bits": 2402,
+      "four_input_symbols": 1201,
+      "full_literal_binary_run": false,
+      "name": "null-nine-distinct-left",
+      "non_erasing_initial_input_bits": 19232,
+      "output_bits": 145,
+      "primitive_reference_steps": 1438288939,
+      "reference_machine": "Literal five-op finite Boolean-stack graph; complete full-law run."
+    },
+    {
+      "B_input_bits": 16128,
+      "accepted_ML_F_bits": 141,
+      "binary_input_bits": 1006,
+      "four_input_symbols": 503,
+      "full_literal_binary_run": false,
+      "name": "positive-unreduced-endpoint",
+      "non_erasing_initial_input_bits": 8064,
+      "output_bits": 618,
+      "primitive_reference_steps": 127893434,
+      "reference_machine": "Literal five-op finite Boolean-stack graph; complete full-law run."
+    }
+  ],
+  "primitive_cases": 204,
+  "scope": "Author finite checks and ordinary all-input proof in theory \u00a7\u00a710\u201313; no Lean, independent review, paid runtime or complete LAB execution."
+}
