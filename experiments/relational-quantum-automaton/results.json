@@ -1,0 +1,115 @@
+{
+  "checks": {
+    "H_squared_is_identity": true,
+    "S_fourth_power_is_identity": true,
+    "X_squared_is_identity": true,
+    "Z_squared_is_identity": true,
+    "binary_split_closure": true,
+    "born_readout_identity": true,
+    "projective_orbit_has_six_states": true,
+    "three_coordinate_closure": true,
+    "unit_closure": true
+  },
+  "model": {
+    "closure_chain": [
+      "unit",
+      "binary split",
+      "three relational coordinates"
+    ],
+    "generators": [
+      "H",
+      "S",
+      "X",
+      "Z"
+    ],
+    "starting_state": "|0> = (1,0)",
+    "state_space": "C^2 modulo global phase"
+  },
+  "states": [
+    {
+      "bloch": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "norm_squared": 1.0,
+      "probabilities": [
+        1.0,
+        0.0
+      ],
+      "word": "I"
+    },
+    {
+      "bloch": [
+        0.9999999999999998,
+        0.0,
+        0.0
+      ],
+      "norm_squared": 0.9999999999999998,
+      "probabilities": [
+        0.4999999999999999,
+        0.4999999999999999
+      ],
+      "word": "H"
+    },
+    {
+      "bloch": [
+        0.0,
+        0.0,
+        -1.0
+      ],
+      "norm_squared": 1.0,
+      "probabilities": [
+        0.0,
+        1.0
+      ],
+      "word": "X"
+    },
+    {
+      "bloch": [
+        0.0,
+        0.9999999999999998,
+        0.0
+      ],
+      "norm_squared": 0.9999999999999998,
+      "probabilities": [
+        0.4999999999999999,
+        0.4999999999999999
+      ],
+      "word": "HS"
+    },
+    {
+      "bloch": [
+        -0.9999999999999998,
+        0.0,
+        0.0
+      ],
+      "norm_squared": 0.9999999999999998,
+      "probabilities": [
+        0.4999999999999999,
+        0.4999999999999999
+      ],
+      "word": "HZ"
+    },
+    {
+      "bloch": [
+        0.0,
+        -0.9999999999999996,
+        0.0
+      ],
+      "norm_squared": 0.9999999999999996,
+      "probabilities": [
+        0.4999999999999998,
+        0.4999999999999998
+      ],
+      "word": "HSH"
+    }
+  ],
+  "summary": {
+    "max_bloch_sphere_error": 8.881784197001252e-16,
+    "max_born_identity_error": 2.220446049250313e-16,
+    "max_norm_error": 4.440892098500626e-16,
+    "max_probability_error": 4.440892098500626e-16,
+    "projective_orbit_size": 6
+  }
+}
