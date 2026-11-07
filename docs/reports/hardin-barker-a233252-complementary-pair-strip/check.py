@@ -2,6 +2,7 @@
 """Exact fidelity and settlement checks for OEIS A233252."""
 from fractions import Fraction
 from itertools import product
+import sympy as sp
 
 SOURCE = [10, 1184, 166400, 23896064, 3439984640, 495341010944,
           71328837140480, 10271348253261824, 1479074079750225920,
@@ -133,6 +134,10 @@ def main():
         lhs = Fraction(a)
         rhs = Fraction(8 * (144 ** (n - 1)) + 2 * (16 ** (n - 1)))
         assert lhs == rhs
+    x = sp.symbols("x")
+    gf = sp.Rational(2) * x * (5 - 208 * x) / ((1 - 16 * x) * (1 - 144 * x))
+    expansion = sp.series(gf, x, 0, len(SOURCE) + 1).removeO()
+    assert [sp.expand(expansion).coeff(x, n) for n in range(1, len(SOURCE) + 1)] == SOURCE
     # First values and the literal normalization convention are recorded for auditability.
     print("literal_brute_force_n1_n3", brute)
     print("canonical_pair_colorings_n1_n3", [normalized_count(n)[1] for n in (1, 2, 3)])
