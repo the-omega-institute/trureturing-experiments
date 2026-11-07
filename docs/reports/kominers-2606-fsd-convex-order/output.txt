@@ -1,0 +1,17 @@
+FIDELITY H8: self-dual; W(1,z)=1+14*z^4+z^8; P(z)=4*z^2*(1-z^2)^2; all hinge tests pass
+FAMILY m=3..64: exact coefficient laws, parity fibers, means, variances; variance excess=m*(m-3)/16; strict for every checked m>=4
+ENUMERATED m=3: |C|=8; full support; d=2; isodual; even=False
+ENUMERATED m=4: |C|=16; full support; d=2; isodual; even=True
+ENUMERATED m=5: |C|=32; full support; d=2; isodual; even=False
+ENUMERATED m=6: |C|=64; full support; d=2; isodual; even=True
+ENUMERATED m=7: |C|=128; full support; d=2; isodual; even=False
+ENUMERATED m=8: |C|=256; full support; d=2; isodual; even=True
+WITNESS words=00000000,00000011,00000101,00000110,00001001,00001010,00001100,00001111,11110000,11110011,11110101,11110110,11111001,11111010,11111100,11111111
+WITNESS half-weight multiplicities=(1,6,2,6,1)/16; mean=2; E[(K-2)^2]=5/4 > E[(B-2)^2]=1
+WITNESS W-(1+z^2)^4=2*z^2*(1-z^2)^2; at z=1/2: 697/256-625/256=9/32
+STRENGTHENING k=1: presentations=2; FSD with d>=3=0; hinge failures=0; doubly-even FSD=0 (all self-dual)
+STRENGTHENING k=2: presentations=16; FSD with d>=3=0; hinge failures=0; doubly-even FSD=0 (all self-dual)
+STRENGTHENING k=3: presentations=512; FSD with d>=3=24; hinge failures=0; doubly-even FSD=0 (all self-dual)
+STRENGTHENING k=4: presentations=65536; FSD with d>=3=4416; hinge failures=0; doubly-even FSD=24 (all self-dual)
+STRENGTHENING LIMIT: finite d>=3 checks do not settle all lengths; doubly-even linear FSD implies self-dual by polarization and dimension
+ALL_CHECKS_OK
