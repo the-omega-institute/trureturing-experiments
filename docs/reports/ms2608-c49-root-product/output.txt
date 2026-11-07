@@ -1,4 +1,4 @@
-FIDELITY: standard S_3 character and 17 tableaux in Figure 3.1 reproduced
+FIDELITY: standard S_3 character and 17 tableaux in Figure 1 reproduced
 ORDINARY m=1: tableaux=30, distinct_weights=26, signed-operator agreement
 SET_VALUED m=1: tableaux=179, max_excess=4, beta^0 agrees with singleton closure
 ORDINARY m=2: tableaux=184, distinct_weights=125, signed-operator agreement

@@ -102,15 +102,15 @@ def as_simple(wt):
 
 
 def main():
-    # Source's explicit standard-crystal character following Definition 3.3.
+    # Source's explicit standard-crystal character following Example 3.3.
     c=Counter((s.bit_count()-1,tuple(int(bool(s&(1<<i))) for i in range(3))) for s in range(1,8))
     assert c==Counter({(0,(1,0,0)):1,(0,(0,1,0)):1,(0,(0,0,1)):1,(1,(1,1,0)):1,(1,(1,0,1)):1,(1,(0,1,1)):1,(2,(1,1,1)):1})
     assert closure((1,0,0),(0,1,0))=={(s,) for s in range(1,8)}
-    # Source Figure 3.1: the component of {1} tensor {1} has these 17 states.
+    # Source Figure 1: the component of {1} tensor {1} has these 17 states.
     expected={(1,1),(1,3),(1,2),(1,7),(3,2),(1,6),(1,5),(2,2),(3,6),(1,4),(3,4),(2,6),(7,4),(2,4),(6,4),(5,4),(4,4)}
     actual=closure((2,0,0),(0,1,0))
     assert actual==expected
-    print('FIDELITY: standard S_3 character and 17 tableaux in Figure 3.1 reproduced')
+    print('FIDELITY: standard S_3 character and 17 tableaux in Figure 1 reproduced')
     word=(1,0,2,1);roots=[(0,1),(1,2),(2,3),(0,2),(1,3),(0,3)]
     dims=[30,184,638,1645,3536,6720];weights=[26,125,350,753,1386,2301]
     for m in range(1,7):
