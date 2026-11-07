@@ -169,6 +169,21 @@ def check_published_values():
     assert formula((10, 10, 10, 1, 1))[0] == 1905
 
 
+def source_closed_form(a):
+    t = len(a)
+    if t == 3:
+        return max(a) + 2  # max(q_i) + 1
+    if t == 4:
+        stars = []
+        tris = []
+        for k in range(4):
+            others = [j for j in range(4) if j != k]
+            stars.append(a[k] * (1 + sum(a[j] for j in others)) + 3)
+            tris.append(4 + sum(a[x] * a[y] for x, y in combinations(others, 2)))
+        return max(stars + tris)
+    raise ValueError(t)
+
+
 def check_small_exhaustive():
     alphabet = (1, 2, 3, 4, 6, 7, 8, 10)
     checked = 0
@@ -180,6 +195,8 @@ def check_small_exhaustive():
         maximal_counts[t] = len(_CLIQUE_CACHE[t][2])
         for a in combinations_with_replacement(alphabet, t):
             assert formula(a)[0] == exact_support_clique_number(a), (t, a)
+            if t in (3, 4):
+                assert formula(a)[0] == source_closed_form(a), (t, a, formula(a)[0], source_closed_form(a))
             checked += 1
     assert checked == 2958, checked
     assert maximal_counts == {3: 4, 4: 12, 5: 81, 6: 2646}, maximal_counts
