@@ -1,0 +1,15 @@
+Exact arithmetic: Python integers/Fraction and SymPy 1.14.0
+INPUT rook/Shrikhande: degree=6, A=(x-6)(x-2)^6(x+2)^9; K4 counts=8,0
+FIDELITY Theorem 39 and expected NL: G=G'=K2, H=rook, H'=Shrikhande, corona, order=36, spectra=A,L,Q,NL equal
+FIDELITY Theorem 39 and expected NL: G=G'=K2, H=rook, H'=Shrikhande, neighborhood, order=36, spectra=A,L,Q,NL equal
+FIDELITY Theorem 39 and expected NL: G=G'=K2, H=rook, H'=Shrikhande, edge, order=20, spectra=A,L,Q,NL equal
+BASE VARIATION rook/Shrikhande with H=H'=K2: corona, order=64, NL charpolys equal
+BASE VARIATION rook/Shrikhande with H=H'=K2: neighborhood, order=64, NL charpolys equal
+BASE VARIATION rook/Shrikhande with H=H'=K2: edge, order=128, NL charpolys equal
+SIMULTANEOUS VARIATION nonisomorphic 10-vertex factors: corona, order=120, NL charpolys equal
+SIMULTANEOUS VARIATION nonisomorphic 10-vertex factors: neighborhood, order=120, NL charpolys equal
+SIMULTANEOUS VARIATION nonisomorphic 10-vertex factors: edge, order=220, NL charpolys equal
+TOTALIZATION direct f(D)(D-A)f(D) agrees with rational surrogate including isolated duplicate vertices
+SMALL exhaustive all regular labeled graphs on 0..4 vertices: graphs=14, groups=10, ordered factor quadruples=676, normalized reference comparisons=588
+Finite diagnostics only; no proof of the universally quantified assertion is claimed.
+ALL_CHECKS_OK
