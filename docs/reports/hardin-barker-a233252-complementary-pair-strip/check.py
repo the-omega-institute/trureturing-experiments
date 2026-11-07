@@ -37,12 +37,26 @@ def pair_color(p):
 
 
 def normalized_count(n):
-    """Enumerate pair-colorings, canonicalize first occurrences, count signs exactly."""
+    """Enumerate literal six-color arrays via canonical pair assignments and signs."""
     vs = vertices(n)
     a = graph_adjacency(n)
     assignment = {(0, 0): 0}
     total = 0
     pair_colorings = 0
+
+    def literal_legal(colors):
+        if colors[(0, 0)] != 0:
+            return False
+        for u, v in edges(n):
+            if colors[u] == colors[v] or colors[v] == 5 - colors[u]:
+                return False
+        for pos, v in enumerate(vs):
+            earlier = vs[:pos]
+            if colors[v] in (2, 3, 4) and not any(colors[u] == 1 for u in earlier):
+                return False
+            if colors[v] == 3 and not any(colors[u] == 2 for u in earlier):
+                return False
+        return True
 
     def visit(pos):
         nonlocal total, pair_colorings
@@ -55,7 +69,23 @@ def normalized_count(n):
                 return
             k = len(order)
             pair_colorings += 1
-            total += 1 << (4 * n - k)
+            fixed = {first[c] for c in order}
+            free = [v for v in vs if v not in fixed]
+            representatives = (0, 1, 2)
+            complements = (5, 4, 3)
+            seen = set()
+            for bits in product((0, 1), repeat=len(free)):
+                colors = {}
+                for c in order:
+                    colors[first[c]] = representatives[c]
+                for v, bit in zip(free, bits):
+                    c = assignment[v]
+                    colors[v] = complements[c] if bit else representatives[c]
+                key = tuple(colors[v] for v in vs)
+                assert key not in seen
+                seen.add(key)
+                assert literal_legal(colors)
+                total += 1
             return
         v = vs[pos]
         if v == (0, 0):
@@ -104,7 +134,7 @@ def main():
         rhs = Fraction(8 * (144 ** (n - 1)) + 2 * (16 ** (n - 1)))
         assert lhs == rhs
     # First values and the literal normalization convention are recorded for auditability.
-    print("brute_force_n1_n3", brute)
+    print("literal_brute_force_n1_n3", brute)
     print("canonical_pair_colorings_n1_n3", [normalized_count(n)[1] for n in (1, 2, 3)])
     print("closed_form_first_12", SOURCE)
     print("ALL_CHECKS_OK")
