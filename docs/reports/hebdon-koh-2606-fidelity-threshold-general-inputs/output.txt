@@ -1,0 +1,9 @@
+n=2: Eq.(17) fidelity and full 4-outcome payoff identity: OK (2 players)
+n=4: Eq.(17) fidelity and full 16-outcome payoff identity: OK (4 players)
+n=6: Eq.(17) fidelity and full 64-outcome payoff identity: OK (6 players)
+classification algebra: endpoints B(1/2+|z|), 2-F; threshold 2n/(3n-1): OK
+family: F=(1+cos(delta)^2)/2 -> 1; gain=B*cos(delta)*(1-cos(delta))/2>0: OK
+family: rank 2; partial-transpose negative eigenvalue -cos(delta)/2 across every cut: OK
+n=2 witness: eigenvalues 25/26,1/26,0,0; NPT eigenvalue -6/13; F=313/338: OK
+n=2 witness: payoffs 939/676 -> 975/676; strict gain 9/169: OK
+ALL_CHECKS_OK
