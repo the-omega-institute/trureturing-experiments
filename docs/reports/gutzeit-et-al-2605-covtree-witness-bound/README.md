@@ -1,7 +1,7 @@
 # Gutzeit–Shaban–Yeats–Zalel Covtree witness-bound check
 
 `check.py` uses only exact integer and `Fraction` arithmetic. It reproduces the
-height-two family count from Proposition 6.3 of arXiv:2605.00622v1 and checks
+height-two family count from the source arXiv:2605.00622v1 and checks
 the proposed Section 6 bound on the family
 
 \[
