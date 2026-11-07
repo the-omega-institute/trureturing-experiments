@@ -1,0 +1,9 @@
+FIDELITY: zeta_2(2,5)=7/18; zeta_2(3,3)=25/64
+RING_IDEAL_COUNTS: 88 cases; Z/(2^n), 1<=n<=8, 2<=k<=12
+SLACK_BIJECTION: 30 exhaustive cases; 1<=n<=6, 2<=k<=6
+ORDERED_SCALE_IDENTITIES: 420 exact cases; 1<=a<b<=8, 2<=k<=16
+PROFILE_IDENTIFICATION: 1287 profiles; 0<=size<=5, lengths 1..8; k=2..16 signatures distinct
+TELESCOPING: 9009 exact cases; CANCELLATION: 9002 exact cases
+BOUNDARY: length 1, repeated lengths, and empty profiles included
+SCOPE: finite exact evidence only; no numerical limit test and no Lean proof
+ALL_CHECKS_OK
