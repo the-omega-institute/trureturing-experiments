@@ -1,0 +1,3 @@
+A183683 exact first terms: 48,208,832,3472,14144,58448,239424,986128,4047680,16650448
+A183683 exact recurrence and quotient checks: 200 terms
+ALL_CHECKS_OK
