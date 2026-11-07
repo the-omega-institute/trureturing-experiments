@@ -12,6 +12,10 @@ class RelationalQuantumAutomatonTests(unittest.TestCase):
         result = certificate()
         self.assertEqual(result["summary"]["projective_orbit_size"], 6)
         self.assertTrue(all(result["checks"].values()))
+        self.assertTrue(result["fixed_point"])
+        trace = result["closure_trace"]
+        self.assertEqual([row["records"] for row in trace], [1, 3, 5, 6])
+        self.assertEqual(trace[-1]["status"], ["PASS"] * 6)
 
     def test_hadamard_is_its_own_inverse(self):
         square = matrix_multiply(GATES["H"], GATES["H"])
