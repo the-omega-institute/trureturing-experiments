@@ -1,0 +1,139 @@
+{
+  "source": {
+    "head": "e9bc93b639e2ded73d3f665ee902f78097b4da28",
+    "files": {
+      "tools/scripts/worktree/worktree_protocol.py": "2a84a3a037da2f1654596eea589c2eb418706d7446a2d06776eda6ffec02fc69",
+      "tools/scripts/worktree/worktree_pool.py": "51f9cf14d52a9049eb9c12ec9a6ca8bdad286ef53a785501bdd01b9c49bb093a",
+      "tools/scripts/worktree/worktree_preservation.py": "3fe11dc05d9d7011e56b71d8e5d2352d613cb6d8808ab52df005cbeff7a1576e"
+    }
+  },
+  "manifest": {
+    "revision": "1533c8bdaf8c36bb1d6a28129a52e8e14d29c7b7",
+    "sha256": "bd4de64ada72ae0d043a4836143c5f79a9b10f56f484ece50be23f15cef9f43e",
+    "files": 393567,
+    "directories": 6793,
+    "maximum_fanout": 147197,
+    "logical_bytes": 1226680947,
+    "modes": {
+      "100644": 393398,
+      "100755": 161,
+      "120000": 8
+    }
+  },
+  "environment": {
+    "python": "3.12.13 (main, Mar 10 2026, 18:18:07) [Clang 21.1.4 ]",
+    "executable": "/Users/auricstudio/.local/bin/python3",
+    "platform": "macOS-26.6.2-arm64-arm-64bit",
+    "git": "git version 2.50.1 (Apple Git-155)",
+    "device": 16777230
+  },
+  "fixture": "/Users/auricstudio/.assignment5-sc1-cmolyrk7",
+  "regular_allocation_limit": 2147483648,
+  "passed": true,
+  "final_failure": {
+    "reason": "removal_final-native_failed:CalledProcessError:exit=255, timeout=None; Command '['git', '-C', '/Users/auricstudio/.assignment5-sc1-cmolyrk7/main', 'worktree', 'remove', '--force', '--force', '--', '/Users/auricstudio/.assignment5-sc1-cmolyrk7/final-fault']' returned non-zero exit status 255.; stderr=\"error: failed to delete '/Users/auricstudio/.assignment5-sc1-cmolyrk7/final-fault': Operation not permitted\\n\"; root=True, pointer=True, registered=False",
+    "state": {
+      "root": true,
+      "pointer": true,
+      "registered": false
+    },
+    "native_calls": [
+      {
+        "phase": "payload",
+        "timeout_seconds": 299.99992299999576,
+        "exit": 0,
+        "wall_seconds": 0.003808791982010007,
+        "user_cpu_seconds": 0.0006060000000003285,
+        "system_cpu_seconds": 0.0011820000000000164
+      },
+      {
+        "phase": "final-native",
+        "timeout_seconds": 299.90337658289354,
+        "exit": 255,
+        "wall_seconds": 0.017168582999147475,
+        "user_cpu_seconds": 0.005919999999999703,
+        "system_cpu_seconds": 0.00802199999999953
+      }
+    ],
+    "refs_preserved": true,
+    "orphan_retry_refused": true
+  },
+  "interrupt": {
+    "exit": -2,
+    "wall_seconds": 0.04207679198589176,
+    "user_cpu_seconds": 0.0011839999999998518,
+    "system_cpu_seconds": 0.038607999999999976,
+    "reported_reason": "removal_payload_failed:CalledProcessError:exit=-2, timeout=None; Command '['/bin/rm', '-rf', '--', './payload']' died with <Signals.SIGINT: 2>.; stderr=''; root=True, pointer=True, registered=True",
+    "initial_files": 20000,
+    "remaining_files": 19814,
+    "state": {
+      "root": true,
+      "pointer": true,
+      "registered": true
+    },
+    "ordinary_qualified_retry": true,
+    "refs_preserved": true
+  },
+  "representative": {
+    "initial": {
+      "regular_files": 393568,
+      "directories": 6794,
+      "logical_bytes": 1226681035,
+      "allocated_regular_bytes": 1612054528,
+      "symlinks": 1
+    },
+    "entire_fixture": {
+      "regular_files": 393610,
+      "directories": 6817,
+      "logical_bytes": 1226710567,
+      "allocated_regular_bytes": 1612234752,
+      "symlinks": 1
+    },
+    "generation_seconds": 221.98420533305034,
+    "generated_regular_allocated_bytes": 1612050432,
+    "conservative_peak_regular_allocation_bound": 1628827648,
+    "allocation_bound_satisfied": true,
+    "representation": "Exact paths, logical sizes and directory shape; synthetic first-block bytes with punched holes; eight manifest symlinks are regular stand-ins. Additional .lake symlink targets only an owned external sentinel.",
+    "wall_seconds": 122.4676321670413,
+    "user_cpu_seconds": 0.3058139999999998,
+    "system_cpu_seconds": 75.414144,
+    "native_calls": [
+      {
+        "phase": "payload",
+        "timeout_seconds": 299.9999390000012,
+        "exit": 0,
+        "wall_seconds": 122.23058483400382,
+        "user_cpu_seconds": 0.21572000000000013,
+        "system_cpu_seconds": 75.32178900000001
+      },
+      {
+        "phase": "final-native",
+        "timeout_seconds": 177.6762953751022,
+        "exit": 0,
+        "wall_seconds": 0.01576600002590567,
+        "user_cpu_seconds": 0.005846000000000018,
+        "system_cpu_seconds": 0.00716099999999642
+      }
+    ],
+    "final_state": {
+      "root": false,
+      "pointer": false,
+      "registered": false
+    },
+    "refs_preserved": true,
+    "external_target_preserved": true,
+    "deadline_seconds": 300
+  },
+  "all_dummy_ref_oids": "refs/heads/dev 55654060ba56a3ef828169d43432e2f4660ddf98\nrefs/heads/final-fault 624370305034e482b22c2754e78c21e2cce8c7f7\nrefs/heads/interrupt-fault d490a798d6cb24a0f24c5de1165fce79fc1649e6\nrefs/heads/representative 91f432a208f0df9be3375e19cd3304fcfef7dbc3",
+  "source_revalidated": true,
+  "limitations": [
+    "Single candidate run under shared-host conditions; no general speed ratio or all-workload guarantee.",
+    "Synthetic empty-index fixture; no tracked-index or source-content throughput claim.",
+    "Sparse logical sizes preserve namespace and first-block allocation, not historical physical layout.",
+    "Allocation bound covers regular st_blocks*512, not filesystem-internal metadata or shared-volume usage.",
+    "Historical storage cause and registration-loss timing/actor remain unknown."
+  ],
+  "cleanup_seconds": 0.0036509159253910184,
+  "fixture_removed": true,
+  "owned_jobs_running": 0
+}
