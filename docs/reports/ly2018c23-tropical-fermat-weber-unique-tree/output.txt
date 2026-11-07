@@ -1,0 +1,8 @@
+FIDELITY Proposition 10 n=3: objective=6, unique class=[0], deletion gap=4
+WITNESS N=5: objective=8, pair distance=4, deletion objectives=12 vs 6, gap=6
+WITNESS: all ultrametric inequalities; identical resolved triplets; common root height=10
+WITNESS: ambient uniqueness certificate; nonstar; normalization by 20 verified exactly
+GENERATED seed=337: 110 binary trees, N=4,...,14, ten per N; all certificates passed
+PARTITIONS: 1028 exact certificates; (coordinates, partitions)=[(3, 1), (4, 7), (5, 36), (6, 171), (7, 813)]
+BOUNDARY: finite exact certificates validate these cases; the universal theorem remains a Lean obligation
+ALL_CHECKS_OK
