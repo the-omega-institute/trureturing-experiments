@@ -1,0 +1,50 @@
+GROUP C1: order=1 center=1 derived=1 irreducible_degrees=[1] delta=1
+GROUP C2: order=2 center=2 derived=1 irreducible_degrees=[1, 1] delta=1
+GROUP C3: order=3 center=3 derived=1 irreducible_degrees=[1, 1, 1] delta=1
+GROUP C4: order=4 center=4 derived=1 irreducible_degrees=[1, 1, 1, 1] delta=1
+GROUP C5: order=5 center=5 derived=1 irreducible_degrees=[1, 1, 1, 1, 1] delta=1
+GROUP C6: order=6 center=6 derived=1 irreducible_degrees=[1, 1, 1, 1, 1, 1] delta=1
+GROUP C7: order=7 center=7 derived=1 irreducible_degrees=[1, 1, 1, 1, 1, 1, 1] delta=1
+GROUP C8: order=8 center=8 derived=1 irreducible_degrees=[1, 1, 1, 1, 1, 1, 1, 1] delta=1
+GROUP C9: order=9 center=9 derived=1 irreducible_degrees=[1, 1, 1, 1, 1, 1, 1, 1, 1] delta=1
+GROUP C10: order=10 center=10 derived=1 irreducible_degrees=[1, 1, 1, 1, 1, 1, 1, 1, 1, 1] delta=1
+GROUP C11: order=11 center=11 derived=1 irreducible_degrees=[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1] delta=1
+GROUP C12: order=12 center=12 derived=1 irreducible_degrees=[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1] delta=1
+GROUP C13: order=13 center=13 derived=1 irreducible_degrees=[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1] delta=1
+GROUP C14: order=14 center=14 derived=1 irreducible_degrees=[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1] delta=1
+GROUP C15: order=15 center=15 derived=1 irreducible_degrees=[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1] delta=1
+GROUP C2xC2: order=4 center=4 derived=1 irreducible_degrees=[1, 1, 1, 1] delta=2
+GROUP C4xC2: order=8 center=8 derived=1 irreducible_degrees=[1, 1, 1, 1, 1, 1, 1, 1] delta=2
+GROUP C2xC2xC2: order=8 center=8 derived=1 irreducible_degrees=[1, 1, 1, 1, 1, 1, 1, 1] delta=3
+GROUP C3xC3: order=9 center=9 derived=1 irreducible_degrees=[1, 1, 1, 1, 1, 1, 1, 1, 1] delta=2
+GROUP C6xC2: order=12 center=12 derived=1 irreducible_degrees=[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1] delta=2
+GROUP D6: order=6 center=1 derived=3 irreducible_degrees=[1, 1, 2] delta=2
+GROUP D8: order=8 center=2 derived=2 irreducible_degrees=[1, 1, 1, 1, 2] delta=2
+GROUP Q8: order=8 center=2 derived=2 irreducible_degrees=[1, 1, 1, 1, 2] delta=2
+GROUP D10: order=10 center=1 derived=5 irreducible_degrees=[1, 1, 2, 2] delta=2
+GROUP A4: order=12 center=1 derived=4 irreducible_degrees=[1, 1, 1, 3] delta=3
+GROUP D12: order=12 center=2 derived=3 irreducible_degrees=[1, 1, 1, 1, 2, 2] delta=2
+GROUP Dic12: order=12 center=2 derived=3 irreducible_degrees=[1, 1, 1, 1, 2, 2] delta=2
+GROUP D14: order=14 center=1 derived=7 irreducible_degrees=[1, 1, 2, 2, 2] delta=2
+GROUP D8xC2: order=16 center=4 derived=2 irreducible_degrees=[1, 1, 1, 1, 1, 1, 1, 1, 2, 2] delta=3
+GROUP Q8xC2: order=16 center=4 derived=2 irreducible_degrees=[1, 1, 1, 1, 1, 1, 1, 1, 2, 2] delta=3
+GROUP D8xC3: order=24 center=6 derived=2 irreducible_degrees=[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2] delta=2
+GROUP Q8xC3: order=24 center=6 derived=2 irreducible_degrees=[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2] delta=2
+GROUP D12xC2: order=24 center=4 derived=3 irreducible_degrees=[1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2] delta=3
+GROUP Dic12xC2: order=24 center=4 derived=3 irreducible_degrees=[1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2] delta=3
+GROUP D8xC4: order=32 center=8 derived=2 irreducible_degrees=[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2] delta=3
+GROUP Q8xC4: order=32 center=8 derived=2 irreducible_degrees=[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2] delta=3
+GROUP D6xC2: order=12 center=2 derived=3 irreducible_degrees=[1, 1, 1, 1, 2, 2] delta=2
+FIDELITY: delta(S3 x C2)=2; delta(S3)+delta(C2)=3; C2xC2 has no faithful irreducible
+IDENTITY: all 45 eligible unordered pairs (self-pairs included) in 37 presentations
+PAIR D8 ~ Q8: equal centers, delta=2
+PAIR D12 ~ Dic12: equal centers, delta=2
+PAIR D12 ~ D6xC2: equal centers, delta=2
+PAIR Dic12 ~ D6xC2: equal centers, delta=2
+PAIR D8xC2 ~ Q8xC2: equal centers, delta=3
+PAIR D8xC3 ~ Q8xC3: equal centers, delta=2
+PAIR D12xC2 ~ Dic12xC2: equal centers, delta=3
+PAIR D8xC4 ~ Q8xC4: equal centers, delta=3
+COVERAGE: all 28 isomorphism types with order <=15; eight central direct-factor cases and S3xC2
+LIMITATION: finite sanity checks do not prove the universal claim
+ALL_CHECKS_OK
