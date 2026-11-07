@@ -1,0 +1,11 @@
+FIDELITY: all 5 displayed source polynomials and reductions reproduced
+FIDELITY: all 22 published A192744 terms reproduced (n=0..21)
+a(0)..a(10): 1,1,3,8,29,133,762,5215,41257,369032,3676209
+REDUCTION: literal substitution equals monic remainder at n=0..200
+COORDINATES: independent pair construction agrees at n=0..200
+FORCING: g(n)=(n-1)*(n-1)! at n=2..200 (199 cases)
+2014 CONJECTURE: zero residual at every n=4..200 (197 cases)
+2015 CONJECTURE: zero residual at every n=3..200 (198 cases)
+ARITHMETIC: integers only; no floating point and no fitted recurrence
+SCOPE: finite exact checks; no claim of a Lean proof or an unbounded proof
+ALL_CHECKS_OK

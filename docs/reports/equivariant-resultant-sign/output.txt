@@ -1,0 +1,7 @@
+FIDELITY source_section=4 degree=3 n=4 p=q=2 binary_factor_cases=5 values=[-3, -1863, -31899, 0, 0]
+SMALL_CASES all_ordered_positive_block_compositions total_n=2..5 d=1..3 plus_(2,2,2)_d=1,2 tuples=92
+FACTORS partition_tuples=198 distinct_chain_degree_shapes=52 extracted_constants=51 divided_difference_checks=635
+MACAULAY determinants=594 dense_Bareiss_crosschecks=419 max_matrix_dimension=1365
+SIGN_CONTROL simultaneous_identity=+1 swapped_linear_polynomials=-1
+SCOPE finite_exact_checks_only; no assertion of a universal proof or completed Lean settlement
+ALL_CHECKS_OK

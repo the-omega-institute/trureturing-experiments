@@ -1,0 +1,29 @@
+FIDELITY complete_graph n=1 exact_treewidth=0 states=2
+FIDELITY complete_graph n=2 exact_treewidth=1 states=4
+FIDELITY complete_graph n=3 exact_treewidth=2 states=8
+FIDELITY complete_graph n=4 exact_treewidth=3 states=16
+FIDELITY complete_graph n=5 exact_treewidth=4 states=32
+FIDELITY complete_graph n=6 exact_treewidth=5 states=64
+FIDELITY complete_graph n=7 exact_treewidth=6 states=128
+FIDELITY path n=2 exact_treewidth=1 states=4
+FIDELITY star n=2 exact_treewidth=1 states=4
+FIDELITY path n=3 exact_treewidth=1 states=8
+FIDELITY star n=3 exact_treewidth=1 states=8
+FIDELITY path n=4 exact_treewidth=1 states=16
+FIDELITY star n=4 exact_treewidth=1 states=16
+FIDELITY path n=5 exact_treewidth=1 states=32
+FIDELITY star n=5 exact_treewidth=1 states=32
+FIDELITY path n=6 exact_treewidth=1 states=64
+FIDELITY star n=6 exact_treewidth=1 states=64
+FIDELITY path n=7 exact_treewidth=1 states=128
+FIDELITY star n=7 exact_treewidth=1 states=128
+FIDELITY path n=8 exact_treewidth=1 states=256
+FIDELITY star n=8 exact_treewidth=1 states=256
+FAMILY r=4 exact_widths=[3, 3, 1, 3] k=2 rhs=3 lhs=3 violation=0 2_connected=True
+FAMILY r=5 exact_widths=[4, 4, 1, 4] k=2 rhs=3 lhs=4 violation=1 2_connected=True
+INSTANCE_R5 {"G": {"edges": [[0, 1], [0, 2], [0, 3], [0, 4], [0, 5], [1, 2], [1, 3], [1, 4], [1, 6], [2, 3], [2, 4], [3, 4], [5, 6], [5, 7], [5, 8], [5, 9], [6, 7], [6, 8], [6, 9], [7, 8], [7, 9], [8, 9]], "elimination_order": [2, 0, 1, 3, 4, 5, 6, 7, 8, 9], "path_bags": [[0, 1, 2, 3, 4], [0, 1, 5, 6], [5, 6, 7, 8, 9]], "vertices": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9], "width": 4}, "G_prime": {"edges": [[5, 6], [5, 7], [5, 8], [5, 9], [5, 10], [6, 7], [6, 8], [6, 9], [6, 11], [7, 8], [7, 9], [8, 9], [10, 11]], "elimination_order": [7, 8, 9, 5, 6, 10, 11], "path_bags": [[5, 6, 7, 8, 9], [5, 6, 10], [6, 10, 11]], "vertices": [5, 6, 7, 8, 9, 10, 11], "width": 4}, "H_completed": {"edges": [[0, 1], [0, 2], [0, 3], [0, 4], [0, 10], [1, 2], [1, 3], [1, 4], [1, 11], [2, 3], [2, 4], [3, 4]], "elimination_order": [2, 3, 4, 10, 0, 1, 11], "path_bags": [[0, 10], [0, 1, 2, 3, 4], [1, 11]], "vertices": [0, 1, 2, 3, 4, 10, 11], "width": 4}, "S_completed": {"edges": [[10, 11], [10, 12], [11, 13]], "elimination_order": [12, 10, 11, 13], "path_bags": [[12, 10], [10, 11], [11, 13]], "vertices": [10, 11, 12, 13], "width": 1}}
+FAMILY r=6 exact_widths=[5, 5, 1, 5] k=2 rhs=3 lhs=5 violation=2 2_connected=True
+FAMILY r=7 exact_widths=[6, 6, 1, 6] k=2 rhs=3 lhs=6 violation=3 2_connected=True
+STRUCTURAL family r=8..40: explicit_bags_cliques_boundary_and_2_connectivity_OK
+UNBOUNDED_FAMILY: the argument for all r>=5 is in README.md; finite checks do not prove it
+ALL_CHECKS_OK

@@ -1,0 +1,9 @@
+FIDELITY: Theorem 3.1 quotient diagonal and finite Lemma 1.2
+B moduli: [(), (2,), (3,), (4,), (2, 2), (5,), (6,), (7,), (8,), (2, 4), (2, 2, 2), (9,), (3, 3), (16,), (2, 8), (4, 4), (2, 2, 4), (2, 2, 2, 2)]
+groups: 18 quotient coordinates: 1066
+EXTENSION: every pure A<=B and pure embedding A->D in the stated ranges
+D moduli: [(), (2,), (3,), (4,), (2, 2)]
+pure diagrams: 558 total quotient points: 9930
+NEGATIVE CONTROL: nonpure C2<=C4 identity into C2 has no homomorphic extension
+LIMIT: finite checks do not prove regularity, infinite compactness, or back-and-forth
+ALL_CHECKS_OK

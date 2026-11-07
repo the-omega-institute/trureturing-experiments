@@ -1,0 +1,4 @@
+S4 fidelity: Elek's Example magic word has one positional subword for s_2
+B2 counterexample: unique reduced word, Boolean interval of size 4, magic count = 2
+I_2(m) family: exact normal-form obstruction verified for every m = 4,...,100
+ALL_CHECKS_OK

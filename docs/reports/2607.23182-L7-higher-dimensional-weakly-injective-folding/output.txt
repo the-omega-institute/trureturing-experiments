@@ -1,0 +1,25 @@
+FIDELITY Example A: d=1; determinants=(Fraction(1, 1), Fraction(-1, 1), Fraction(1, 1)); exact targets=5; chamber fibers=1,3,1; adjacent directional differences=((0, 2), (2, 0))
+FIDELITY: Example A formula, continuity, branch images, fibers and SB failure checked
+EXPLICIT rational pair: d=2; determinants=(Fraction(1, 1), Fraction(-1, 1), Fraction(1, 1)); exact targets=15; chamber fibers=1,3,1; adjacent directional differences=((0, 2), (2, 0))
+EXPLICIT rational triple: d=3; determinants=(Fraction(3, 1), Fraction(-4, 1), Fraction(12, 1)); exact targets=45; chamber fibers=1,3,1; adjacent directional differences=((0, 2), (2, 0))
+FAMILY k=0: d=2; determinants=(Fraction(1, 2), Fraction(-2, 3), Fraction(3, 4)); exact targets=15; chamber fibers=1,3,1; adjacent directional differences=((0, 2), (2, 0))
+FAMILY k=1: d=2; determinants=(Fraction(2, 3), Fraction(-3, 4), Fraction(4, 5)); exact targets=15; chamber fibers=1,3,1; adjacent directional differences=((0, 2), (2, 0))
+FAMILY k=2: d=2; determinants=(Fraction(3, 4), Fraction(-4, 5), Fraction(5, 6)); exact targets=15; chamber fibers=1,3,1; adjacent directional differences=((0, 2), (2, 0))
+FAMILY k=3: d=2; determinants=(Fraction(4, 5), Fraction(-5, 6), Fraction(6, 7)); exact targets=15; chamber fibers=1,3,1; adjacent directional differences=((0, 2), (2, 0))
+FAMILY k=4: d=2; determinants=(Fraction(5, 6), Fraction(-6, 7), Fraction(7, 8)); exact targets=15; chamber fibers=1,3,1; adjacent directional differences=((0, 2), (2, 0))
+FAMILY k=5: d=2; determinants=(Fraction(6, 7), Fraction(-7, 8), Fraction(8, 9)); exact targets=15; chamber fibers=1,3,1; adjacent directional differences=((0, 2), (2, 0))
+FAMILY k=6: d=2; determinants=(Fraction(7, 8), Fraction(-8, 9), Fraction(9, 10)); exact targets=15; chamber fibers=1,3,1; adjacent directional differences=((0, 2), (2, 0))
+FAMILY k=7: d=2; determinants=(Fraction(8, 9), Fraction(-9, 10), Fraction(10, 11)); exact targets=15; chamber fibers=1,3,1; adjacent directional differences=((0, 2), (2, 0))
+CONTINUITY d=2: constraint rank=8; full compatible dimension=10
+FAMILY k=0: d=3; determinants=(Fraction(1, 2), Fraction(-2, 3), Fraction(3, 4)); exact targets=45; chamber fibers=1,3,1; adjacent directional differences=((0, 2), (2, 0))
+FAMILY k=1: d=3; determinants=(Fraction(2, 3), Fraction(-3, 4), Fraction(4, 5)); exact targets=45; chamber fibers=1,3,1; adjacent directional differences=((0, 2), (2, 0))
+FAMILY k=2: d=3; determinants=(Fraction(3, 4), Fraction(-4, 5), Fraction(5, 6)); exact targets=45; chamber fibers=1,3,1; adjacent directional differences=((0, 2), (2, 0))
+FAMILY k=3: d=3; determinants=(Fraction(4, 5), Fraction(-5, 6), Fraction(6, 7)); exact targets=45; chamber fibers=1,3,1; adjacent directional differences=((0, 2), (2, 0))
+FAMILY k=4: d=3; determinants=(Fraction(5, 6), Fraction(-6, 7), Fraction(7, 8)); exact targets=45; chamber fibers=1,3,1; adjacent directional differences=((0, 2), (2, 0))
+FAMILY k=5: d=3; determinants=(Fraction(6, 7), Fraction(-7, 8), Fraction(8, 9)); exact targets=45; chamber fibers=1,3,1; adjacent directional differences=((0, 2), (2, 0))
+FAMILY k=6: d=3; determinants=(Fraction(7, 8), Fraction(-8, 9), Fraction(9, 10)); exact targets=45; chamber fibers=1,3,1; adjacent directional differences=((0, 2), (2, 0))
+FAMILY k=7: d=3; determinants=(Fraction(8, 9), Fraction(-9, 10), Fraction(10, 11)); exact targets=45; chamber fibers=1,3,1; adjacent directional differences=((0, 2), (2, 0))
+CONTINUITY d=3: constraint rank=18; full compatible dimension=18
+SETTLEMENT CHECK: 18 exact rational maps in dimensions 2 and 3; 540 targets
+GENERAL SCOPE: finite checks and affine identities; arbitrary-d existence awaits Lean proof
+ALL_CHECKS_OK

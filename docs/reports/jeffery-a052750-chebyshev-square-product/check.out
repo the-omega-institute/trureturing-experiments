@@ -1,0 +1,25 @@
+Python 3.14.8; SymPy 1.14.0; arithmetic=exact ZZ/QQ
+FIDELITY b052750[0..12]=1,1,5,49,729,14641,371293,11390625,410338673,16983563041,794280046581,41426511213649,2384185791015625
+FIDELITY P4=X^4-X^3-3*X^2+2*X+1; discriminant=729
+n= 1 field_degree= 2 cyclotomic_product=1 resultant=1 individual_factors=1:OK
+n= 2 field_degree= 4 cyclotomic_product=5 resultant=5 individual_factors=2:OK
+n= 3 field_degree= 6 cyclotomic_product=49 resultant=49 individual_factors=3:OK
+n= 4 field_degree= 6 cyclotomic_product=729 resultant=729 individual_factors=4:OK
+n= 5 field_degree=10 cyclotomic_product=14641 resultant=14641 individual_factors=5:OK
+n= 6 field_degree=12 cyclotomic_product=371293 resultant=371293 individual_factors=6:OK
+n= 7 field_degree= 8 cyclotomic_product=11390625 resultant=11390625 individual_factors=7:OK
+n= 8 field_degree=16 cyclotomic_product=410338673 resultant=410338673 individual_factors=8:OK
+n= 9 field_degree=18 cyclotomic_product=16983563041 resultant=16983563041 individual_factors=9:OK
+n=10 field_degree=12 cyclotomic_product=794280046581 resultant=794280046581 individual_factors=10:OK
+n=11 field_degree=22 cyclotomic_product=41426511213649 resultant=41426511213649 individual_factors=11:OK
+n=12 field_degree=20 cyclotomic_product=2384185791015625 resultant=2384185791015625 individual_factors=12:OK
+n=13 field_degree=18 cyclotomic_product=150094635296999121 resultant=150094635296999121 individual_factors=13:OK
+n=14 field_degree=28 cyclotomic_product=10260628712958602189 resultant=10260628712958602189 individual_factors=14:OK
+n=15 field_degree=30 cyclotomic_product=756943935220796320321 resultant=756943935220796320321 individual_factors=15:OK
+n=16 field_degree=20 cyclotomic_product=59938945498865420543457 resultant=59938945498865420543457 individual_factors=16:OK
+n=17 field_degree=24 cyclotomic_product=5070942774902496337890625 resultant=5070942774902496337890625 individual_factors=17:OK
+n=18 field_degree=36 cyclotomic_product=456487940826035155404146917 resultant=456487940826035155404146917 individual_factors=18:OK
+n=19 field_degree=24 cyclotomic_product=43567528752021332753202420081 resultant=43567528752021332753202420081 individual_factors=19:OK
+n=20 field_degree=40 cyclotomic_product=4394336169668803158610484050361 resultant=4394336169668803158610484050361 individual_factors=20:OK
+CHECKED target n=1..20; no conclusion about untested n follows from these checks
+ALL_CHECKS_OK

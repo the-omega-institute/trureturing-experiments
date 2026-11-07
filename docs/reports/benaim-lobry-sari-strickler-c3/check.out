@@ -1,0 +1,5 @@
+fidelity: source order A1,A3,A2 and propagator entries reproduced
+cyclic reduction: exact for every N in 3..8
+root bounds: p(v)=-u and p(v+u^(1/N))>=0 algebra verified for N=3..8
+limits: exact d<0, d=0, d>0 endpoint expressions and m->infinity checked
+ALL_CHECKS_OK

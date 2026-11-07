@@ -1,0 +1,6 @@
+rounds=250 retained_prefix=3000 stable_terms=200
+oeis_revision_22_prefix_match=41
+lag_four_identities_checked=192
+phase_coefficients=2,2,3,2 repeated
+B2_minus_6B_plus_I=zero_matrix
+ALL_CHECKS_OK

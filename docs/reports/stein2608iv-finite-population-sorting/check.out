@@ -1,0 +1,15 @@
+FIDELITY Corollary 1.1: S=1/4 L=3/4 EA=3/8 m=1/2 EB=5/8
+FIDELITY Section IV final table: S=2/25 #S=2 L=97/100 #L=2 m=21/40
+EXACT expectation for that population: EA=12577/31500 EB=18923/28500
+GRID N=1 populations=3 labelled_permutations=3
+GRID N=2 populations=6 labelled_permutations=12
+GRID N=3 populations=10 labelled_permutations=60
+GRID N=4 populations=15 labelled_permutations=360
+GRID N=5 populations=21 labelled_permutations=2520
+GRID N=6 populations=28 labelled_permutations=20160
+GRID N=7 populations=36 labelled_permutations=181440
+GRID_TOTAL populations=119 labelled_permutations=204555 odd_populations=70 constant_populations=21
+TWO_SPECIES_TOTAL populations=35 labelled_permutations=46232
+Verified covariance count, expected counts/weights, both closed forms, singleton rule, weak inequalities, strictness for nonconstant populations and constant equality.
+Finite checks support the proposed general argument; no Lean proof is claimed.
+ALL_CHECKS_OK

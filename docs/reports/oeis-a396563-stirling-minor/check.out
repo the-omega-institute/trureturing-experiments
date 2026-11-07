@@ -1,0 +1,13 @@
+Source: Mikhail Kurkov, OEIS A396563, revision 15; 2026-06-01 13:43:04
+Fidelity row n=0: [1, 2, 4, 8, 16, 32, 64]
+Fidelity row n=1: [1, 11, 85, 575, 3661, 22631, 137845]
+Fidelity row n=2: [1, 35, 725, 11935, 173901, 2360295, 30673525]
+Fidelity row n=3: [1, 85, 3850, 129360, 3665151, 93355395, 2216707900]
+Fidelity row n=4: [1, 175, 15190, 929334, 46149327, 2000578965, 79000290160]
+Fidelity row n=5: [1, 322, 48804, 5012406, 405247689, 27912905328, 1717078544896]
+FIDELITY_OK: all 42 displayed array values reproduced
+IDENTITY_OK: 245 triples, 0<=n,k<=6 and 1<=m<=5
+BRIDGES_OK: subset normalization, elementary/complete determinants, Stirling moments, and 11956 chain instances
+BOUNDARIES_OK: all n=0 and all k=0 cases in the stated box
+EXAMPLE_OK: B(2,2,2) = literal_sum(2,2,2) = 725
+ALL_CHECKS_OK

@@ -1,0 +1,10 @@
+source Theorem 1 optimal pair: MM^T=I; strict-fit supremum=3*sqrt(2)/4; square=9/8
+source value rational isolation: 53/50 < 3*sqrt(2)/4 < 17/16
+source Noperthedron generators: norm(C1)=1; 98/100 < norm(C2),norm(C3) < 99/100
+octahedron: frames=7, all_pairs=49, min_F=28/29, max_F=1, nu_finite=29/28, ratio_identity=OK
+cube: frames=7, all_pairs=49, min_F=83/87, max_F=1, nu_finite=87/83, ratio_identity=OK
+tetrahedron: frames=7, all_pairs=49, min_F=1, max_F=1, nu_finite=1, ratio_identity=OK
+containment LPs with exact primal and dual certificates: 588
+Scope: finite dictionaries only; no continuum or Noperthedron non-Rupert certificate
+check.py sha256: 5d89a91d0d14d2718f31e4504583a5f586dacb8fef1f01750ace3373c679c924
+ALL_CHECKS_OK

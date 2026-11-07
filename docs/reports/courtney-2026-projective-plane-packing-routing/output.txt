@@ -1,0 +1,11 @@
+FIDELITY q=2 N=7 d=r=3 nu=1 A=J-I eigenvalues=6,-1 multiplicities=1,6
+FANO_BFS states=5040 generators=35 transitions=176400 diameter=4 histogram={0: 1, 1: 35, 2: 581, 3: 2919, 4: 1504}
+CONSTRUCTION q=2 exhaustive_cases=5040 max_moves=9 bound=9
+FIDELITY q=3 N=13 d=r=4 nu=1 A=J-I eigenvalues=12,-1 multiplicities=1,12
+CONSTRUCTION q=3 tested_cases=1092 max_moves=13 bound=13 exhaustive=False
+PG23_BFS_NOT_RUN states=6227020800 generators=299 full_transitions=1861879219200 one_byte_distance_storage=6227020800 eight_byte_queue_storage=49816166400
+FIDELITY q=5 N=31 d=r=6 nu=1 A=J-I eigenvalues=30,-1 multiplicities=1,30
+CONSTRUCTION q=5 tested_cases=1497 max_moves=21 bound=21 exhaustive=False
+FIDELITY q=7 N=57 d=r=8 nu=1 A=J-I eigenvalues=56,-1 multiplicities=1,56
+CONSTRUCTION q=7 tested_cases=2654 max_moves=29 bound=29 exhaustive=False
+ALL_CHECKS_OK

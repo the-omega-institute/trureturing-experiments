@@ -1,0 +1,11 @@
+# Hardin A185768: width-nine trace recurrence
+
+Run `python3 check.py` with Python 3 from this directory. It uses only the standard library, exact integer arithmetic, and the adjacent `source.json`; it requires no network. Successful output ends with `ALL_CHECKS_OK`.
+
+R. H. Hardin's [OEIS A185768](https://oeis.org/A185768), revision 9 (2025-10-03), defines the number of (n+1)-by-9 binary arrays with distinct traces at every horizontally or vertically adjacent pair of contiguous 2-by-2 blocks. Its FORMULA gives an empirical order-30 recurrence for n>36. Source data are attributed to R. H. Hardin and the OEIS Foundation, subject to the [OEIS End-User License Agreement](https://oeis.org/LICENSE). `source.json` contains the quoted definition and formula, both displayed examples, the displayed prefix and all 200 values of the linked b-file, with its original SHA-256.
+
+The tuple implementation enumerates admissible ordered row pairs and extensions using the literal array predicate. An independent bit-mask implementation classifies traces by disjoint masks for their values 0, 1 and 2. The program verifies the exact state/edge bijection between these representations, checks every one of the 262,144 two-row binary arrays, and compares the tuple backward transfer and bit-mask forward transfer with all 200 source counts. It also checks the two displayed three-row examples.
+
+There are 11,400 states and 99,464 directed edges. For the outgoing transfer T, let v_k=T^k 1 and r_k=Σ C_j v_(k-j), where C is parsed and checked against the source formula. The checks establish Σ r_36=Σ r_37=0 and r_38=0 coordinatewise, and verify the two residual-shift identities. The earlier vectors are not zero: r_36 has 11,400 nonzero coordinates, and r_37 has 6,424.
+
+These are consumed finite certificates for the proposed universal argument: the literal-array/path bijection gives a(k+1)=Σ v_k, and linearity propagates the seeded polynomial identity T^8 P(T)1=0 to every subsequent length. The scalar boundary identities cover n=37 and n=38. The check does not claim that P(T)=0 on all vectors and does not use finite scalar agreement as an infinite proof. No Lean proof or kernel verification is supplied by this report.

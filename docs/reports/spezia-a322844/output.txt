@@ -1,0 +1,47 @@
+Python 3.14.8; SymPy 1.14.0
+FIDELITY: A317614 M(2), M(3), first 10 trace terms; A322844 first 20 terms: OK
+n= 0 trace=0 e2=0 rank=0 higher=0: OK
+n= 1 trace=1 e2=0 rank=1 higher=0: OK
+n= 2 trace=4 e2=-5 rank=2 higher=0: OK
+n= 3 trace=15 e2=-6 rank=2 higher=0: OK
+n= 4 trace=32 e2=-68 rank=2 higher=0: OK
+n= 5 trace=65 e2=-50 rank=2 higher=0: OK
+n= 6 trace=108 e2=-333 rank=2 higher=0: OK
+n= 7 trace=175 e2=-196 rank=2 higher=0: OK
+n= 8 trace=256 e2=-1040 rank=2 higher=0: OK
+n= 9 trace=369 e2=-540 rank=2 higher=0: OK
+n=10 trace=500 e2=-2525 rank=2 higher=0: OK
+n=11 trace=671 e2=-1210 rank=2 higher=0: OK
+n=12 trace=864 e2=-5220 rank=2 higher=0: OK
+n=13 trace=1105 e2=-2366 rank=2 higher=0: OK
+n=14 trace=1372 e2=-9653 rank=2 higher=0: OK
+n=15 trace=1695 e2=-4200 rank=2 higher=0: OK
+n=16 trace=2048 e2=-16448 rank=2 higher=0: OK
+n=17 trace=2465 e2=-6936 rank=2 higher=0: OK
+n=18 trace=2916 e2=-26325 rank=2 higher=0: OK
+n=19 trace=3439 e2=-10830 rank=2 higher=0: OK
+n=20 trace=4000 e2=-40100 rank=2 higher=0: OK
+n=21 trace=4641 e2=-16170 rank=2 higher=0: OK
+n=22 trace=5324 e2=-58685 rank=2 higher=0: OK
+n=23 trace=6095 e2=-23276 rank=2 higher=0: OK
+n=24 trace=6912 e2=-83088 rank=2 higher=0: OK
+n=25 trace=7825 e2=-32500 rank=2 higher=0: OK
+n=26 trace=8788 e2=-114413 rank=2 higher=0: OK
+n=27 trace=9855 e2=-44226 rank=2 higher=0: OK
+n=28 trace=10976 e2=-153860 rank=2 higher=0: OK
+n=29 trace=12209 e2=-58870 rank=2 higher=0: OK
+n=30 trace=13500 e2=-202725 rank=2 higher=0: OK
+n=31 trace=14911 e2=-76880 rank=2 higher=0: OK
+n=32 trace=16384 e2=-262400 rank=2 higher=0: OK
+n=33 trace=17985 e2=-98736 rank=2 higher=0: OK
+n=34 trace=19652 e2=-334373 rank=2 higher=0: OK
+n=35 trace=21455 e2=-124950 rank=2 higher=0: OK
+n=36 trace=23328 e2=-420228 rank=2 higher=0: OK
+n=37 trace=25345 e2=-156066 rank=2 higher=0: OK
+n=38 trace=27436 e2=-521645 rank=2 higher=0: OK
+n=39 trace=29679 e2=-192660 rank=2 higher=0: OK
+n=40 trace=32000 e2=-640400 rank=2 higher=0: OK
+FIRST_SIGNED_E2: -5,-6,-68,-50,-333,-196,-1040,-540
+COUNTS: principal_2_minors=10660, principal_3_minors=101270, higher_coefficients=741, small_exhaustive_minors=1816
+SCOPE: 0<=n<=40; all 3<=k<=42; direct principal 2- and 3-minors; all principal k>=3 minors for n<=10
+ALL_CHECKS_OK

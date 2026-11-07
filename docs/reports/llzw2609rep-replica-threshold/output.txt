@@ -1,0 +1,6 @@
+DEGREE_COMPLETION k=1..5 N=0..4 vectors=1704 OK
+REGULAR_EXHAUSTIVE v=2..4 matrices=23 nonempty_cores=1297 witnesses=2540
+BRUTE_LEGAL_PLACEMENTS v=2..3 objects_per_primary=2 checked=23 identity=OK
+SOURCE_FIDELITY Appendix_B SBIBD(7,4,2) p=2 Gamma=3 threshold=4 failure_sets=28 q3_rank=56/64 objects=224
+PG3_EXACT rho=3 v=40 k=13 lambda=4 p=3 no_separated_triples=OK failure_sets=10700 Gamma=8 predicted_threshold=9 objects=13520 objects_per_primary=338 alive_XOR_ambiguity=OK
+ALL_CHECKS_OK

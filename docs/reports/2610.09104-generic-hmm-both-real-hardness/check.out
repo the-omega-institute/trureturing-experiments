@@ -1,0 +1,8 @@
+FIDELITY: source hidden-path sum = forward procedure, 7533 exact cases
+EQUAL_EMISSION: 63 symbolic word identities, lengths 0 through 5
+RECOVERY: P(z1=0)=3/4-p/2; P(z2=0)=5/8+p/8-p*q/2; inverse guarded by p>1/2
+PARAMETERIZATIONS: both selector blends are stochastic polynomial maps of degree at most 2
+RIVALS_AND_SEPARATION: 7 distinct-entry ambiguous rivals; 49 uniquely recovered identifiable models
+DIMENSION_INPUTS: active projection is the identity on (0,1)^2; baseline has one free coordinate
+REDUCTION_TABLE: infeasible -> (N YES,E NO); feasible -> (N NO,E YES); empty/singleton/finite/positive-dimensional witnesses screened
+ALL_CHECKS_OK

@@ -1,0 +1,11 @@
+CONTROLS: exact feasible/infeasible systems; strict zero boundary; all 81 order-two decisions agree with the determinant criterion
+FIDELITY Example 3.2: good principal blocks by size = [4, 6, 0, 0] ; exact ordinary orders = [2]; det = -5/4 ; displayed inverse reproduced
+EXHAUSTIVE n=3, every entry in {-1,0,1}: matrices = 19683
+  ordinary exact-order membership counts = {1: 72, 2: 4}
+  strict exact-order membership counts = {1: 2, 2: 1}
+EXHAUSTIVE n=4, diagonal 1 and every off-diagonal entry in {-1,0}: matrices = 4096
+  ordinary exact-order membership counts = {1: 180, 2: 100, 3: 0}
+  strict exact-order membership counts = {1: 6, 2: 0, 3: 1}
+Every qualifying matrix passed the row/column bound and all deletions of fewer than k vertices.
+Finite tests only: no assertion about untested real matrices or unbounded dimensions is certified by this program.
+ALL_CHECKS_OK

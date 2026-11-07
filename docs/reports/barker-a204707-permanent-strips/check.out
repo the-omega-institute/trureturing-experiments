@@ -1,0 +1,15 @@
+ROW_PAIRS 64 checked; all neighbor lists and quotient degrees match
+SOURCE b204707.txt terms=210 sha256=183319a395da6f70dad5a1db9a45ce6f255491867a91869109b0f41523c8ae52
+SOURCE b183682.txt terms=200 sha256=83d9f74426b679f0ed9ec4d9439ddcf0746f8da19b031b9840c91f7ad9d0a53b
+BRUTE n=1 labelled_arrays=64 a=13 b=12 decomposition=OK
+BRUTE n=2 labelled_arrays=512 a=33 b=32 decomposition=OK
+BRUTE n=3 labelled_arrays=4096 a=81 b=80 decomposition=OK
+BRUTE n=4 labelled_arrays=32768 a=209 b=208 decomposition=OK
+BRUTE n=5 labelled_arrays=262144 a=529 b=528 decomposition=OK
+FIDELITY offset=1; consecutive a(1)=13; arbitrary-column a(1)=7
+FIDELITY all 7 source n=4 example arrays satisfy the literal predicate
+TRANSFER all 210 A204707 terms and all 200 A183682 terms match exactly
+RADICAL exact Q(sqrt(17)) values match for every 1<=n<=210
+GF exact polynomial identity and coefficients through x^210 verified; Q^2=Q+4I
+FINITE_CHECKS_ONLY: no all-height theorem or Lean proof is claimed
+ALL_CHECKS_OK

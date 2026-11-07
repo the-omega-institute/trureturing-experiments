@@ -1,0 +1,11 @@
+Fidelity: all 12 published A295462 terms reproduced exactly (n=0..11).
+Landau 30-cell table: [0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 0, 1, 1]
+First bad gap 1: interval [3/4, 23/30), floors (11, 1, 7, 4), F=1.
+First bad gap 2: interval [5/8, 19/30), floors (9, 1, 6, 3), F=1.
+First bad gap 3: interval [9/16, 17/30), floors (8, 1, 5, 3), F=1.
+Exact integer recurrence: integrality, both source divisibilities, parity,
+and direct v2 agree for all n=0..4095; odd indices=69.
+Independent factorial/Fraction evaluation agrees for n=0..256.
+Valuation/digit-sum/spacing checks: all n=0..65535;
+sparse=250, first-bad gap counts=[37338, 18644, 9304], max v2=16.
+ALL_CHECKS_OK

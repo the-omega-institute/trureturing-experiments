@@ -1,0 +1,40 @@
+Fidelity: S_(2,5) length 1 has positive kernel vector (3,1,1,1,1,1,1,1); top = 0.
+Fidelity: u=1/9, v=-1/9, Phi_A(0)=11/9, Phi_B(0)=7/9.
+Matching polynomial: 216*X^3 + 288*X^2 + 111*X - 2; unique positive root in (1/60,1/50).
+Fidelity cross-check: full rational Ricci characteristic polynomial = quotient times leaf factors (12 cases).
+S_(2,5) length=1: certified [0.000000000000, 0.000000000001] (exact endpoints in intervals.csv)
+S_(2,5) length=2: certified [0.008599221172, 0.008599221173] (exact endpoints in intervals.csv)
+S_(2,5) length=3: certified [0.012287302803, 0.012287302804] (exact endpoints in intervals.csv)
+S_(2,5) length=4: certified [0.014205196300, 0.014205196301] (exact endpoints in intervals.csv)
+S_(2,5) length=5: certified [0.015306853022, 0.015306853023] (exact endpoints in intervals.csv)
+S_(2,5) length=10: certified [0.016979921525, 0.016979921526] (exact endpoints in intervals.csv)
+S_(2,5) length=20: certified [0.017231083280, 0.017231083281] (exact endpoints in intervals.csv)
+S_(2,5) length=50: certified [0.017237147748, 0.017237147749] (exact endpoints in intervals.csv)
+S_(2,5) length=100: certified [0.017237147837, 0.017237147838] (exact endpoints in intervals.csv)
+S_(2,5) length=200: certified [0.017237147837, 0.017237147838] (exact endpoints in intervals.csv)
+S_(2,5) length 200: |lambda-L| < 1/10^10; L in [0.017237147837, 0.017237147838].
+S_(4,6) length=1: certified [0.109915970498, 0.109915970499] (exact endpoints in intervals.csv)
+S_(4,6) length=2: certified [0.071257229877, 0.071257229878] (exact endpoints in intervals.csv)
+S_(4,6) length=3: certified [0.054236485650, 0.054236485651] (exact endpoints in intervals.csv)
+S_(4,6) length=4: certified [0.044743057242, 0.044743057243] (exact endpoints in intervals.csv)
+S_(4,6) length=5: certified [0.038792582612, 0.038792582613] (exact endpoints in intervals.csv)
+S_(4,6) length=10: certified [0.027721178719, 0.027721178720] (exact endpoints in intervals.csv)
+S_(4,6) length=20: certified [0.025655969121, 0.025655969122] (exact endpoints in intervals.csv)
+S_(4,6) length=50: certified [0.025627983566, 0.025627983567] (exact endpoints in intervals.csv)
+S_(4,6) length=100: certified [0.025627983529, 0.025627983530] (exact endpoints in intervals.csv)
+S_(4,6) length=200: certified [0.025627983529, 0.025627983530] (exact endpoints in intervals.csv)
+S_(4,6) length 200: |lambda-L| < 1/10^10; L in [0.025627983529, 0.025627983530].
+S_(1,4) length=1: certified [-0.154782003716, -0.154782003715] (exact endpoints in intervals.csv)
+S_(1,4) length=2: certified [-0.068574043713, -0.068574043712] (exact endpoints in intervals.csv)
+S_(1,4) length=3: certified [-0.033878121651, -0.033878121650] (exact endpoints in intervals.csv)
+S_(1,4) length=4: certified [-0.017323162263, -0.017323162262] (exact endpoints in intervals.csv)
+S_(1,4) length=5: certified [-0.008425287548, -0.008425287547] (exact endpoints in intervals.csv)
+S_(1,4) length=10: certified [0.004483140759, 0.004483140760] (exact endpoints in intervals.csv)
+S_(1,4) length=20: certified [0.006977754985, 0.006977754986] (exact endpoints in intervals.csv)
+S_(1,4) length=50: certified [0.007160230574, 0.007160230575] (exact endpoints in intervals.csv)
+S_(1,4) length=100: certified [0.007160363094, 0.007160363095] (exact endpoints in intervals.csv)
+S_(1,4) length=200: certified [0.007160363095, 0.007160363096] (exact endpoints in intervals.csv)
+S_(1,4) length 200: |lambda-L| < 1/10^10; L in [0.007160363095, 0.007160363096].
+Fidelity: S_(3,3) top = 0 at every length 1..200 (positive vector and exact top enclosure).
+Scope: 600 exact spectral enclosures; no universal theorem inferred from this finite check.
+ALL_CHECKS_OK

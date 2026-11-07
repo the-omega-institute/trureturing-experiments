@@ -1,0 +1,28 @@
+FIDELITY random-graph fresh sorts k=0: 1
+FIDELITY random-graph fresh sorts k=1: 2
+FIDELITY random-graph fresh sorts k=2: 4
+FIDELITY random-graph fresh sorts k=3: 8
+FIDELITY random-graph fresh sorts k=4: 16
+FIDELITY random-graph fresh sorts k=5: 32
+FIDELITY random-graph fresh sorts k=6: 64
+FIDELITY random-graph fresh sorts k=7: 128
+FIDELITY random-graph fresh sorts k=8: 256
+NOM unordered-two-sets power=0: 1 (partition and Venn checks agree)
+NOM unordered-two-sets power=1: 1 (partition and Venn checks agree)
+NOM unordered-two-sets power=2: 3 (partition and Venn checks agree)
+NOM unordered-two-sets power=3: 16 (partition and Venn checks agree)
+RADO vertex power=0: 1; by distinct vertices={0: 1}
+RADO vertex power=1: 1; by distinct vertices={1: 1}
+RADO vertex power=2: 3; by distinct vertices={1: 1, 2: 2}
+RADO vertex power=3: 15; by distinct vertices={1: 1, 2: 6, 3: 8}
+RADO vertex power=4: 127; by distinct vertices={1: 1, 2: 14, 3: 48, 4: 64}
+RADO vertex power=5: 1895; by distinct vertices={1: 1, 2: 30, 3: 200, 4: 640, 5: 1024}
+SUPPORT size=0: 1 distinct square-orbit witnesses
+SUPPORT size=1: 2 distinct square-orbit witnesses
+SUPPORT size=2: 3 distinct square-orbit witnesses
+SUPPORT size=3: 4 distinct square-orbit witnesses
+SUPPORT size=4: 5 distinct square-orbit witnesses
+SUPPORT size=5: 6 distinct square-orbit witnesses
+NOM ordered-distinct-two-tuples square: 7
+SEPARATION proposed finite signatures: nominal=(3,16), Rado=(3,15)
+ALL_CHECKS_OK

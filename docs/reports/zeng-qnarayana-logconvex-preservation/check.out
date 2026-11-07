@@ -1,0 +1,5 @@
+theta=1, q=1/2 rows: [[Fraction(1, 1)], [Fraction(1, 1), Fraction(1, 1)], [Fraction(1, 1), Fraction(7, 4), Fraction(1, 4)], [Fraction(1, 1), Fraction(35, 16), Fraction(35, 64), Fraction(1, 64)]]
+factorial outputs: [Fraction(1, 1), Fraction(3, 1), Fraction(6, 1), Fraction(289, 32)]
+formal q minor: 8*q**2 + 2*q - 6
+structural family and strict input checks: ok
+ALL_CHECKS_OK

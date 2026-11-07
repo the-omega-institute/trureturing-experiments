@@ -1,0 +1,13 @@
+FIDELITY Remark 4.4: B1*B2*B3=-1; scalar(P3)=c1*c2*c3-s1*s2*s3
+TRIANGLE all 6 return permutations: exact polynomial agreement; star condition fails
+RATIONAL ROTATION all 6 permutations: exact agreement for dependent non-monomial bivectors
+UNIVERSAL k=1: 1 permutations; independent c_i,s_i; all tracial coefficients agree
+UNIVERSAL k=2: 2 permutations; independent c_i,s_i; all tracial coefficients agree
+UNIVERSAL k=3: 6 permutations; independent c_i,s_i; all tracial coefficients agree
+UNIVERSAL k=4: 24 permutations; independent c_i,s_i; all tracial coefficients agree
+UNIVERSAL k=5: 120 permutations; independent c_i,s_i; all tracial coefficients agree
+UNIVERSAL k=6: 720 permutations; independent c_i,s_i; all tracial coefficients agree
+UNIVERSAL TOTAL 873 permutations for 1<=k<=6; odd exceptional coefficient exactly zero
+GEOMETRIC n=2..4, all signatures and canonical bivector subset families: 142 families, 326 orders, exact agreement
+LIMIT: finite exact checks support the preregistration; no unbounded theorem is certified here
+ALL_CHECKS_OK

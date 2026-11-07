@@ -1,0 +1,20 @@
+FIDELITY equation (18): determinant = -phi_prime(x+y)*psi_prime(x)
+FIDELITY Remark 14: all three printed Gaussian relations vanish
+FIDELITY footnote 4: inverse, Jacobian and normalized beta--gamma density identity
+FAMILY lambda>0: inverse, determinant -(lambda+1), three relations,
+  mixed equation C_second(u)-lambda*D_second(v)=0, and 3-parameter solution verified
+  independence coefficient determinant = -lambda (nonzero for lambda>0)
+INVARIANT: R_tilde(a(x),b(y))=R(x,y); Gaussian R=-1/lambda
+KV family 1: R at two positive-domain points = -1/3, -1/8
+  difference = -5/24 < 0 for alpha,beta,delta>0
+KV family 2: R at two positive-domain points = -2/7, -4/45
+  difference = -62/315 < 0 for alpha,beta,delta>0
+KV family 3: R at two positive-domain points = -1/2, -1/5
+  difference = -3/10 < 0 for alpha,beta,delta>0
+KV family 4: R at two positive-domain points = -2*(delta + 1)/(delta + 7), -4*(delta + 1)/(3*(delta + 15))
+  difference = -2*(delta + 1)*(delta + 31)/(3*(delta + 7)*(delta + 15)) < 0 for alpha,beta,delta>0
+OBSTRUCTION: constant r gives r*p=(r-1)*q; r=1 forces p=0.
+  For nonzero r, common s>x1,x2 forces f_prime(x1)=f_prime(x2).
+  Hence f is affine, incompatible with a decreasing bijection (0,infinity)->(0,infinity).
+GAUSSIAN lambda=1: exponent (u^2+v^2)/4 and absolute Jacobian 2
+ALL_CHECKS_OK

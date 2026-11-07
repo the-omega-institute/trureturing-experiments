@@ -1,0 +1,7 @@
+FIDELITY: all 45 displayed A269454 terms through 7523 reproduced exactly
+FIDELITY: universal half-totient exponent and bound checked on 300 distinct odd-prime pairs with p,q <= 101
+SETTLEMENT CHECK: 53 admitted safe primes <= 10000; all 1378 unordered distinct pairs satisfy the conjectured identity
+BOUNDARY: 52 pairs containing 5; 15 pairs with p,q <= 200 independently checked by successive residues
+EXAMPLES: ord_55(2)=20=phi(55)/2; excluded pair (7,23) has ord_161(2)=33<phi(161)/2=66
+SCOPE: finite exact checks only; the universal assertion remains unproved by this program
+ALL_CHECKS_OK

@@ -1,0 +1,5 @@
+symbolic_family_identities=ok
+exact_witness=a=1/2,b=3/4
+C_pi=1/2,C_q=4/9
+open_family_constraints=0<a<1,0<b<1,a/2<b<2a,a!=b
+ALL_CHECKS_OK

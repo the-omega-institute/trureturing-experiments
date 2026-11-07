@@ -1,0 +1,16 @@
+FIDELITY ex:separation-placement sigma 0 (time,cuts) ('39/5', '2')
+FIDELITY ex:separation-placement sigma 1/10 (time,cuts) ('8', '2')
+FIDELITY ex:separation-placement sigma 1/5 (time,cuts) ('41/5', '1')
+FIDELITY ex:separation-placement sigma 1/2 (time,cuts) ('17/2', '1')
+FIDELITY ex:separation-placement sigma 1 (time,cuts) ('9', '0')
+FIDELITY ex:separation-placement sigma 2 (time,cuts) ('9', '0')
+ADMISSIBILITY: finite boundary comparisons 1600 ; all n>=3 covered by increments 1+i*epsilon and (j-i)*epsilon
+PURE BRANCHING: 15
+BELLMAN: states 51 nonleaf 24 alternative corner comparisons 720 exact action ties 0 minimum positive margin 1/1000
+BASE root actions: ['6307/500', '12713/1000', '12743/1000', '6511/500']
+UNIQUE root optimum: 6307/500 cuts 4 tree ('B', ('C', 0, ('C', 2, ('L',))), ('C', 0, ('C', 1, ('L',))))
+EXHAUSTION: trees by size 1..12 [0, 0, 0, 0, 6, 17, 64, 53, 170, 152, 170, 138] total 770
+EXHAUSTION: unique optimum across all 16 corners; comparisons 12304 minimum competitor gap 1/1000
+GAIN ROBUSTNESS: prefix multisets 51 ; all threshold signs persist under independent +/-1/10 perturbations
+check.py sha256 09df48fa4604a8889cf68ac70e2ef96e8f03c11f932dff6c5a4603cd5db261c9
+ALL_CHECKS_OK

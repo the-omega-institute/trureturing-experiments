@@ -1,0 +1,6 @@
+FIDELITY a=3/5, b=4/5: lambda_min(measured_PT)=-6/25
+FIDELITY a=sqrt(2)/2, b=sqrt(2)/2: lambda_min(measured_PT)=-1/4
+FIDELITY symbolic Proposition 1 characteristic polynomial: OK
+SYMBOLIC orthogonality, norm, expectation=-Gram determinant, minors, Hermiticity: OK
+EXHAUSTIVE alphabet={0,1,-1,i,-i}, six coordinates: {'zero': 1, 'product': 744, 'entangled': 14880}
+ALL_CHECKS_OK

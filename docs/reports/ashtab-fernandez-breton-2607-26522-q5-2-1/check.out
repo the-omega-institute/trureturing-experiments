@@ -1,0 +1,8 @@
+FIDELITY: source parity identity m(2Z) = m(2Z+1) = 1/2; 32 periodic algebras
+FAMILY: q=2..6, r=2..6, qr<=12; 12 models, 19600 subsets, 226624 shifts
+FAMILY: support mass 1, subgroup invariance, good-shift mass 1, both separations all hold
+AVERAGES: exact finite additivity on 3279 disjoint pairs
+WINDOWS: 3590 exhaustive subset/shift checks; N=1..6, k=-3..3
+WINDOWS: q=2..6, N=1..64; H mass 1, H-1 mass 0, 2H average floor(N/2)/N
+SCOPE: finite exact checks; full-powerset ultrafilter-limit existence is not a computational result
+ALL_CHECKS_OK

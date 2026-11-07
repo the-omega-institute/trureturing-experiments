@@ -1,0 +1,23 @@
+fidelity k=1: represents 1..1 by 1/0 specialization
+fidelity k=2: represents 1..2 by 1/0 specialization
+fidelity k=3: represents 1..3 by 1/0 specialization
+fidelity k=4: represents 1..4 by 1/0 specialization
+exhaustive k=1 t=1 input_box=[-2,2] positive_values=2 bound=4
+exhaustive k=1 t=2 input_box=[-4,4] positive_values=4 bound=12
+exhaustive k=1 t=3 input_box=[-8,8] positive_values=8 bound=32
+exhaustive k=1 t=4 input_box=[-16,16] positive_values=16 bound=80
+exhaustive k=2 t=1 input_box=[-2,2] positive_values=3 bound=16
+exhaustive k=2 t=2 input_box=[-4,4] positive_values=8 bound=72
+exhaustive k=2 t=3 input_box=[-8,8] positive_values=21 bound=256
+exhaustive k=2 t=4 input_box=[-16,16] positive_values=55 bound=800
+exhaustive k=3 t=1 input_box=[-2,2] positive_values=4 bound=48
+exhaustive k=3 t=2 input_box=[-4,4] positive_values=12 bound=324
+exhaustive k=3 t=3 input_box=[-8,8] positive_values=37 bound=1536
+exhaustive k=3 t=4 input_box=[-16,16] positive_values=112 bound=6000
+exhaustive k=4 t=1 input_box=[-2,2] positive_values=4 bound=128
+exhaustive k=4 t=2 input_box=[-4,4] positive_values=14 bound=1296
+exhaustive k=4 t=3 input_box=[-8,8] positive_values=48 bound=8192
+exhaustive k=4 t=4 input_box=[-16,16] positive_values=165 bound=40000
+asymptotic sample k=4 t=64 bound_bits=91 available_bits=129
+finite test set [1, 2, 7, 14, 29, 9591] represented by F_9591; F_9591 is non-universal
+ALL_CHECKS_OK

@@ -1,0 +1,12 @@
+FIELD GF(2^2) modulus=0x7 irreducible=OK
+LOWER r=2 all_m<6 basis_size=5 linear_moments=15 zero; det_alternating_3=0
+FIDELITY Theorem_5.2 n=8 multiplier=1+x^3+xy pole_order=6 Gram=[[0, 1, 1], [1, 0, 0], [1, 0, 1]] determinant=1 threshold=6
+FIELD GF(2^4) modulus=0x13 irreducible=OK
+LOWER r=4 all_m<70 basis_size=64 linear_moments=192 zero; det_alternating_3=0
+UPPER r=4 n=64 g=6 a=6 beta=2 weights=[14, 12, 2] support=41 pole_order=70 nonzero_evaluations=64 Gram=[[0, 4, 0], [4, 0, 5], [0, 5, 3]] determinant=5
+THRESHOLD r=4 exact=70; source_Theorem_5.1_bounds=[70,73]; residue_basis_checked=69
+FIELD GF(2^6) modulus=0x43 irreducible=OK
+LOWER r=8 all_m<558 basis_size=530 linear_moments=1590 zero; det_alternating_3=0
+UPPER r=8 n=512 g=28 a=14 beta=34 weights=[55, 21, 34] support=433 pole_order=558 nonzero_evaluations=512 Gram=[[0, 9, 0], [9, 0, 59], [0, 59, 2]] determinant=4
+THRESHOLD r=8 exact=558; source_Theorem_5.1_bounds=[558,565]; residue_basis_checked=539
+ALL_CHECKS_OK

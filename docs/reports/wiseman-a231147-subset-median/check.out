@@ -1,0 +1,19 @@
+n=5 coefficients: [1, 1, 5, 4, 9, 4, 5, 1, 1]
+n=1: subsets=1, coefficients_match=True, bijection=True
+n=2: subsets=3, coefficients_match=True, bijection=True
+n=3: subsets=7, coefficients_match=True, bijection=True
+n=4: subsets=15, coefficients_match=True, bijection=True
+n=5: subsets=31, coefficients_match=True, bijection=True
+n=6: subsets=63, coefficients_match=True, bijection=True
+n=7: subsets=127, coefficients_match=True, bijection=True
+n=8: subsets=255, coefficients_match=True, bijection=True
+n=9: subsets=511, coefficients_match=True, bijection=True
+n=10: subsets=1023, coefficients_match=True, bijection=True
+n=11: subsets=2047, coefficients_match=True, bijection=True
+n=12: subsets=4095, coefficients_match=True, bijection=True
+n=13: subsets=8191, coefficients_match=True, bijection=True
+n=14: subsets=16383, coefficients_match=True, bijection=True
+n=15: subsets=32767, coefficients_match=True, bijection=True
+n=16: subsets=65535, coefficients_match=True, bijection=True
+checked_nonempty_subsets=131054
+ALL_CHECKS_OK

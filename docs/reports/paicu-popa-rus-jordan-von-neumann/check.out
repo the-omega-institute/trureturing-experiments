@@ -1,0 +1,5 @@
+FIDELITY: Example 4.1: Q(x^4/12) = x^2*y^2; symbolic identity verified
+POLYNOMIALS: all degree <= 8 cocycles: 45 coefficients, constraint rank 37, nullity 8; all reconstruction identities verified
+NEGATIVE CONTROL: omitting the (x-t) factor fails u_second = a/2
+CORNERS: 3 exact rational shifts of abs(x-c); 6591 cocycle triples, 507 reconstruction pairs; negative, zero and positive arguments included
+ALL_CHECKS_OK

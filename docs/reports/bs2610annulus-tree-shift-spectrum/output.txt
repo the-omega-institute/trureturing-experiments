@@ -1,0 +1,7 @@
+SMALL_TREES=874; GRAM_IDENTITIES=6787; INVERSE_COLUMNS=11826
+FAMILY_GENERATION_ENUMERATIONS=90; EXACT_EXTREMA_DEPTHS=0..80
+FAMILY_RADII_SQUARED: R_minus^2=1; R_plus^2=2 (from exact growth profiles)
+ROOTLESS_WINDOW: ancestor coordinates vanish; descendant formula and residual hold
+INTERIOR_RADIUS z=5/4: generation norm-square ratio=32/25; depth-80 lower bound>10^8
+LIMIT: finite checks support identities; no infinite spectrum is inferred from truncations
+ALL_CHECKS_OK

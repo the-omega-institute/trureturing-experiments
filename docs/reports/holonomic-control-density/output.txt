@@ -1,0 +1,9 @@
+FIDELITY: rational unitary two-band family; F=-P[theta_off,x,theta_off,y] and tr(F)=0 exactly
+GENERATORS: three elementary commutator identities and delta^2 curvature scaling hold exactly
+SPAN: all 57 ordered positive band tuples, 2<=d<=6; 9893 projected commutators; rank=sum(d_mu^2)-1; maximum rank 25
+INTERPOLATION MODEL: bands (2,1), r=4; scaled curvature determinant = delta^8 * D(delta)
+D(delta) = -4*(2*delta**2 - 3*delta + 2)*(2*delta**2 + 3*delta + 2)*(18*delta**4 - 21*delta**3 + 34*delta**2 - 4*delta + 8)*(18*delta**4 + 21*delta**3 + 34*delta**2 + 4*delta + 8)/((delta**2 + 4)**2*(4*delta**2 + 1)**2*(9*delta**2 + 4)**2)
+D(0) = -4
+D(1/100) = -64051212080992140432020324/16020810142269225313855081
+LIMIT: finite exact algebra checks; no conclusion about C^2 density follows from these computations alone
+ALL_CHECKS_OK

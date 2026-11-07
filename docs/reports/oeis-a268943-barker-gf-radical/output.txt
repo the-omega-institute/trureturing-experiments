@@ -1,0 +1,9 @@
+Literal full-state DP vs rational GF: q=2..10, n=0..210, 1899 comparisons (at n=0 use 1+GF): PASS
+Three-state transition vs full-state DP: 1881 checks: PASS
+Exhaustive words: 430982; 43 counts; bounds {2: 10, 3: 8, 4: 7, 5: 7, 8: 6}: PASS
+Source fidelity: 19 displayed terms and all 210 b-file terms: PASS
+Source fidelity: all 16 example columns; wrap and overlapping-event guards: PASS
+Barker radical expression in Q[s]/(s^2-17), n=0..210: PASS
+Characteristic polynomial factorization and 1+GF coefficients: PASS
+Fried unequal-event relation vs cyclic-successor relation at q=8,n=4: 3976 vs 3928: DISTINCT
+ALL_CHECKS_OK

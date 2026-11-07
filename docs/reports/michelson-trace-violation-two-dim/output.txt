@@ -1,0 +1,9 @@
+FIDELITY: Proposition 5.43 rank-one squared-quotient limit = (a+b)^2/(4ab)
+MEAN FIDELITY: exact principal-root formulas verify a noncommuting Riccati pair
+SYMBOLIC: both determinant identities and the off-diagonal/contrast identity hold
+EXACT SCALAR GRID: 2800 cases satisfy (1-t^2) F2^2 <= F0 F4
+EXACT COMPLEX GRID: 756 vector/density/eigenvalue cases satisfy the squared bound
+UNITARY CHECK: quadratic quantities agree for a non-diagonal complex X
+SHARPNESS: exact trace polynomials and squared-quotient limit = 1/(1-d^2)
+SCOPE: exact algebra and finite checks; no kernel verification or exhaustive proof of all matrices
+ALL_CHECKS_OK

@@ -1,0 +1,33 @@
+FIDELITY: post-Definition-3.16 weak finite degree; N=1..4, |Sigma|=1..3, n=1..4; representations=79170; PASS
+FIDELITY: Sigma empty has no positive-length representation; PASS
+EXTERNAL: r=2, m=2, n=2, Sigma={x:x(0)=1}, A=0..1, h=-6..6; min_colors=2, max_colors=2; PASS
+EXTERNAL: r=2, m=3, n=3, Sigma={x:x(0)=1}, A=0..2, h=-9..9; min_colors=3, max_colors=3; PASS
+EXTERNAL: r=2, m=4, n=4, Sigma={x:x(0)=1}, A=0..3, h=-12..12; min_colors=4, max_colors=4; PASS
+EXTERNAL: r=2, m=5, n=5, Sigma={x:x(0)=1}, A=0..4, h=-15..15; min_colors=5, max_colors=5; PASS
+EXTERNAL: r=2, m=6, n=6, Sigma={x:x(0)=1}, A=0..5, h=-18..18; min_colors=6, max_colors=6; PASS
+EXTERNAL: r=3, m=2, n=2, Sigma={x:x(0)=1}, A=0..1, h=-6..6; min_colors=2, max_colors=2; PASS
+EXTERNAL: r=3, m=3, n=3, Sigma={x:x(0)=1}, A=0..2, h=-9..9; min_colors=3, max_colors=3; PASS
+EXTERNAL: r=3, m=4, n=4, Sigma={x:x(0)=1}, A=0..3, h=-12..12; min_colors=4, max_colors=4; PASS
+EXTERNAL: r=3, m=5, n=5, Sigma={x:x(0)=1}, A=0..4, h=-15..15; min_colors=5, max_colors=5; PASS
+EXTERNAL: r=3, m=6, n=6, Sigma={x:x(0)=1}, A=0..5, h=-18..18; min_colors=6, max_colors=6; PASS
+EXTERNAL: r=4, m=2, n=2, Sigma={x:x(0)=1}, A=0..1, h=-6..6; min_colors=2, max_colors=2; PASS
+EXTERNAL: r=4, m=3, n=3, Sigma={x:x(0)=1}, A=0..2, h=-9..9; min_colors=3, max_colors=3; PASS
+EXTERNAL: r=4, m=4, n=4, Sigma={x:x(0)=1}, A=0..3, h=-12..12; min_colors=4, max_colors=4; PASS
+EXTERNAL: r=4, m=5, n=5, Sigma={x:x(0)=1}, A=0..4, h=-15..15; min_colors=5, max_colors=5; PASS
+EXTERNAL: r=4, m=6, n=6, Sigma={x:x(0)=1}, A=0..5, h=-18..18; min_colors=6, max_colors=6; PASS
+EXTERNAL: r=5, m=2, n=2, Sigma={x:x(0)=1}, A=0..1, h=-6..6; min_colors=2, max_colors=2; PASS
+EXTERNAL: r=5, m=3, n=3, Sigma={x:x(0)=1}, A=0..2, h=-9..9; min_colors=3, max_colors=3; PASS
+EXTERNAL: r=5, m=4, n=4, Sigma={x:x(0)=1}, A=0..3, h=-12..12; min_colors=4, max_colors=4; PASS
+EXTERNAL: r=5, m=5, n=5, Sigma={x:x(0)=1}, A=0..4, h=-15..15; min_colors=5, max_colors=5; PASS
+EXTERNAL: r=5, m=6, n=6, Sigma={x:x(0)=1}, A=0..5, h=-18..18; min_colors=6, max_colors=6; PASS
+EXTERNAL: r=6, m=2, n=2, Sigma={x:x(0)=1}, A=0..1, h=-6..6; min_colors=2, max_colors=2; PASS
+EXTERNAL: r=6, m=3, n=3, Sigma={x:x(0)=1}, A=0..2, h=-9..9; min_colors=3, max_colors=3; PASS
+EXTERNAL: r=6, m=4, n=4, Sigma={x:x(0)=1}, A=0..3, h=-12..12; min_colors=4, max_colors=4; PASS
+EXTERNAL: r=6, m=5, n=5, Sigma={x:x(0)=1}, A=0..4, h=-15..15; min_colors=5, max_colors=5; PASS
+EXTERNAL: r=6, m=6, n=6, Sigma={x:x(0)=1}, A=0..5, h=-18..18; min_colors=6, max_colors=6; PASS
+NEGATIVE CONTROL: repeating one periodic parameter gives only 2 colors; PASS
+DENSE WORDS: r=2, all nonempty words of lengths 1..4 occur; words=30, concatenation_length=98; PASS
+DENSE WORDS: r=3, all nonempty words of lengths 1..4 occur; words=120, concatenation_length=426; PASS
+DENSE WORDS: r=4, all nonempty words of lengths 1..4 occur; words=340, concatenation_length=1252; PASS
+ORBIT: simultaneous zero-window checks=27, arbitrary clopen truth tables on [-2,2]; PASS
+ALL_CHECKS_OK

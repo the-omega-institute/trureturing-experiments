@@ -1,0 +1,23 @@
+SOURCE_FIDELITY arxiv=2608.05688v2 admissible_unordered_grids_ab_le_120=14
+FULL_TRANSVECTION_CLOSURE a=4 b=6 centers=65535 expected=65535 Sp_order=59980383884075203672726385914533642240000
+GRID a=4 b=6 n=24 k=8 distance=4 code_rank=8 logical_gram_rank=8 distinct_rectangles=45 pairing_graph_connected=1 rank_one_identities=90
+GRID a=4 b=10 n=40 k=16 distance=4 code_rank=12 logical_gram_rank=16 distinct_rectangles=135 pairing_graph_connected=1 rank_one_identities=270
+GRID a=4 b=14 n=56 k=24 distance=4 code_rank=16 logical_gram_rank=24 distinct_rectangles=273 pairing_graph_connected=1 rank_one_identities=546
+GRID a=4 b=18 n=72 k=32 distance=4 code_rank=20 logical_gram_rank=32 distinct_rectangles=459 pairing_graph_connected=1 rank_one_identities=918
+GRID a=4 b=22 n=88 k=40 distance=4 code_rank=24 logical_gram_rank=40 distinct_rectangles=693 pairing_graph_connected=1 rank_one_identities=1386
+GRID a=4 b=26 n=104 k=48 distance=4 code_rank=28 logical_gram_rank=48 distinct_rectangles=975 pairing_graph_connected=1 rank_one_identities=1950
+GRID a=4 b=30 n=120 k=56 distance=4 code_rank=32 logical_gram_rank=56 distinct_rectangles=1305 pairing_graph_connected=1 rank_one_identities=2610
+GRID a=6 b=8 n=48 k=24 distance=4 code_rank=12 logical_gram_rank=24 distinct_rectangles=420 pairing_graph_connected=1 rank_one_identities=420
+GRID a=6 b=12 n=72 k=40 distance=4 code_rank=16 logical_gram_rank=40 distinct_rectangles=990 pairing_graph_connected=1 rank_one_identities=990
+GRID a=6 b=16 n=96 k=56 distance=4 code_rank=20 logical_gram_rank=56 distinct_rectangles=1800 pairing_graph_connected=1 rank_one_identities=1800
+GRID a=6 b=20 n=120 k=72 distance=4 code_rank=24 logical_gram_rank=72 distinct_rectangles=2850 pairing_graph_connected=1 rank_one_identities=2850
+GRID a=8 b=10 n=80 k=48 distance=4 code_rank=16 logical_gram_rank=48 distinct_rectangles=1260 pairing_graph_connected=1 rank_one_identities=1260
+GRID a=8 b=14 n=112 k=72 distance=4 code_rank=20 logical_gram_rank=72 distinct_rectangles=2548 pairing_graph_connected=1 rank_one_identities=2548
+GRID a=10 b=12 n=120 k=80 distance=4 code_rank=20 logical_gram_rank=80 distinct_rectangles=2970 pairing_graph_connected=1 rank_one_identities=2970
+FULL_TRANSVECTION_CLOSURE a=6 b=4 centers=65535 expected=65535 Sp_order=59980383884075203672726385914533642240000
+GRID a=6 b=4 n=24 k=8 distance=4 code_rank=8 logical_gram_rank=8 distinct_rectangles=45 pairing_graph_connected=1 rank_one_identities=90
+FULL_TRANSVECTION_CLOSURE a=4 b=4 centers=255 expected=255 Sp_order=47377612800
+GRID a=4 b=4 n=16 k=4 distance=4 code_rank=6 logical_gram_rank=4 distinct_rectangles=9 pairing_graph_connected=1 rank_one_identities=36
+SATURATION_ENLARGEMENT dim_U=4 cases=240 closure=63
+SCOPE finite checks only; all-parameter fullness remains a proof obligation
+ALL_CHECKS_OK

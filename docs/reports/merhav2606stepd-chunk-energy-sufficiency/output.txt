@@ -1,0 +1,16 @@
+SOURCE_FIDELITY Proposition_2 M=6957 mean=6957/8 Q_k=158993104/48399849 V_nol=110593255/145199547 strict_total_energy_improvement=OK
+ALL_KERNEL_MATRIX energies=(0, 1) exp_beta=2 k=1 d=1 kernel_dimension=2 ring_configurations=4 normalization=OK global_conditional_projection=OK covariance_pair_count=OK variance_gap_gram=OK
+ALL_KERNEL_MATRIX energies=(0, 1) exp_beta=2 k=2 d=1 kernel_dimension=4 ring_configurations=16 normalization=OK global_conditional_projection=OK covariance_pair_count=OK variance_gap_gram=OK
+ALL_KERNEL_MATRIX energies=(0, 1) exp_beta=2 k=2 d=2 kernel_dimension=4 ring_configurations=16 normalization=OK global_conditional_projection=OK covariance_pair_count=OK variance_gap_gram=OK
+ALL_KERNEL_MATRIX energies=(0, 1) exp_beta=2 k=3 d=1 kernel_dimension=8 ring_configurations=64 normalization=OK global_conditional_projection=OK covariance_pair_count=OK variance_gap_gram=OK
+ALL_KERNEL_MATRIX energies=(0, 1) exp_beta=2 k=3 d=3 kernel_dimension=8 ring_configurations=64 normalization=OK global_conditional_projection=OK covariance_pair_count=OK variance_gap_gram=OK
+ALL_KERNEL_MATRIX energies=(0, 1) exp_beta=2 k=4 d=1 kernel_dimension=16 ring_configurations=256 normalization=OK global_conditional_projection=OK covariance_pair_count=OK variance_gap_gram=OK
+ALL_KERNEL_MATRIX energies=(0, 1) exp_beta=2 k=4 d=2 kernel_dimension=16 ring_configurations=256 normalization=OK global_conditional_projection=OK covariance_pair_count=OK variance_gap_gram=OK
+ALL_KERNEL_MATRIX energies=(0, 1) exp_beta=2 k=4 d=4 kernel_dimension=16 ring_configurations=256 normalization=OK global_conditional_projection=OK covariance_pair_count=OK variance_gap_gram=OK
+ALL_KERNEL_MATRIX energies=(0, 0, 1) exp_beta=3 k=1 d=1 kernel_dimension=3 ring_configurations=9 normalization=OK global_conditional_projection=OK covariance_pair_count=OK variance_gap_gram=OK
+ALL_KERNEL_MATRIX energies=(0, 0, 1) exp_beta=3 k=2 d=1 kernel_dimension=9 ring_configurations=81 normalization=OK global_conditional_projection=OK covariance_pair_count=OK variance_gap_gram=OK
+ALL_KERNEL_MATRIX energies=(0, 0, 1) exp_beta=3 k=2 d=2 kernel_dimension=9 ring_configurations=81 normalization=OK global_conditional_projection=OK covariance_pair_count=OK variance_gap_gram=OK
+ALL_KERNEL_MATRIX energies=(0, 0, 1) exp_beta=3 k=3 d=1 kernel_dimension=27 ring_configurations=729 normalization=OK global_conditional_projection=OK covariance_pair_count=OK variance_gap_gram=OK
+ALL_KERNEL_MATRIX energies=(0, 0, 1) exp_beta=3 k=3 d=3 kernel_dimension=27 ring_configurations=729 normalization=OK global_conditional_projection=OK covariance_pair_count=OK variance_gap_gram=OK
+NONDEGENERATE_EXAMPLE M=20 Z=3/2 mu=320/81 R=(142544/6561,49664/6561) projected_R=(128288/6561,47360/6561) V=15117/51200 projected_V=6969/25600 improvement=1179/51200 n8_ring_variances=(20156/2187,18584/2187)
+ALL_CHECKS_OK

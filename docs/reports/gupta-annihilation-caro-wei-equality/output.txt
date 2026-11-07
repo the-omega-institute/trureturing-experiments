@@ -1,0 +1,21 @@
+Exact arithmetic: Python integers and fractions.Fraction; no floats.
+FIDELITY Gupta Corollary 1, K4: (Delta,alpha,a,R,W) = (3, 1, 2, 1, Fraction(1, 1))
+FIDELITY Gupta Theorem 2 excluded K2: Delta*alpha=1 < a+R=2.
+TARGET K4 (Delta,alpha,a,R,W) = (3, 1, 2, 1, Fraction(1, 1))
+TARGET P3 (Delta,alpha,a,R,W) = (2, 2, 2, 2, Fraction(4, 3))
+TARGET P4 (Delta,alpha,a,R,W) = (2, 2, 2, 2, Fraction(5, 3))
+TARGET P6 (Delta,alpha,a,R,W) = (2, 3, 3, 3, Fraction(7, 3))
+TARGET C3 (Delta,alpha,a,R,W) = (2, 1, 1, 1, Fraction(1, 1))
+TARGET C4 (Delta,alpha,a,R,W) = (2, 2, 2, 2, Fraction(4, 3))
+TARGET C5 (Delta,alpha,a,R,W) = (2, 2, 2, 2, Fraction(5, 3))
+TARGET C7 (Delta,alpha,a,R,W) = (2, 3, 3, 3, Fraction(7, 3))
+EXHAUSTIVE labelled connected n = 3 graphs = 4
+EXHAUSTIVE labelled connected n = 4 graphs = 38
+EXHAUSTIVE labelled connected n = 5 graphs = 728
+EXHAUSTIVE labelled connected n = 6 graphs = 26704
+EXHAUSTIVE total = 27474 equality occurrences = {'C3': 1, 'C4': 3, 'C5': 12, 'K4': 1, 'P3': 3, 'P4': 12, 'P6': 360}
+PATHS 3<=n<=300 equality orders = [3, 4, 6]
+CYCLES 3<=n<=300 equality orders = [3, 4, 5, 7]
+Residue: sorted-list and independent multiplicity implementations agree throughout.
+Scope: finite evidence only; the preregistered settlement needs a general argument.
+ALL_CHECKS_OK

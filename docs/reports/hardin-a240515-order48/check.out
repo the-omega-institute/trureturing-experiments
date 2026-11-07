@@ -1,0 +1,5 @@
+small_counts [5, 10, 28, 99]
+states 256 edges 626
+annihilator_residuals 256 all_zero True
+oeis_terms_checked 210 recurrence_indices 49..210
+ALL_CHECKS_OK

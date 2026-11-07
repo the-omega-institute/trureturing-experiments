@@ -1,0 +1,8 @@
+FIDELITY A039755 rows n=0..4: [[1], [1, 1], [1, 4, 1], [1, 13, 9, 1], [1, 40, 58, 16, 1]]
+FIDELITY A198631 numerators n=0..12: [1, 1, 0, -1, 0, 1, 0, -17, 0, 31, 0, -691, 0]
+FIDELITY source r(n), n=0..12: 1, 1/2, 0, -1/4, 0, 1/2, 0, -17/8, 0, 31/2, 0, -691/4, 0
+TRANSFORM and literal numerator normalization: all n=0..80
+EXACT reduced denominators and second logistic recurrence: all n=0..80
+COLUMN EGF: all 0 <= n,k <= 16; exact coefficient products
+SCOPE: finite corroboration only; no all-index settlement is certified
+ALL_CHECKS_OK

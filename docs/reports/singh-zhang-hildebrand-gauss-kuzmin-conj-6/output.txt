@@ -1,0 +1,14 @@
+NUMERIC_BRIDGE: 5460 words; lengths 1..6, digits 1..4; matrix, scalar continuant, reversal, determinant, endpoint ratio agree
+FIDELITY: source illustration endpoints 5/19 and 6/23 agree; chi=552; exact ratio=552/551
+SOURCE_CORRECTION: the illustration rewrites the endpoint ratio as 551/550; that rewrite is false and is not used
+FIDELITY_TABLE: N=10, n=4, f=10, delta=1/21; source Tables 4/5/6 agree
+FIDELITY_TABLE: N=20, n=4, f=30, delta=2/323; source Tables 4/5/6 agree
+FIDELITY_TABLE: N=10, n=5, f=8, delta=2/63; source Tables 4/5/6 agree
+FIDELITY_TABLE: N=10, n=6, f=23, delta=23/210; source Tables 4/5/6 agree
+NORMALIZATION: N=10,n=4, ordered_bad=240, n!*f=240
+POLYNOMIAL: n=3, monomials=17, orbit=3, stabilizer=identity/reversal, coefficient pattern and comparison degree OK
+POLYNOMIAL: n=4, monomials=40, orbit=12, stabilizer=identity/reversal, coefficient pattern and comparison degree OK
+POLYNOMIAL: n=5, monomials=93, orbit=60, stabilizer=identity/reversal, coefficient pattern and comparison degree OK
+POLYNOMIAL: n=6, monomials=214, orbit=360, stabilizer=identity/reversal, coefficient pattern and comparison degree OK
+POLYNOMIAL: n=7, monomials=489, orbit=2520, stabilizer=identity/reversal, coefficient pattern and comparison degree OK
+ALL_CHECKS_OK

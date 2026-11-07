@@ -1,0 +1,21 @@
+sympy 1.14.0 ; arithmetic: QQ and exact polynomial identities
+UNIVERSAL: quadratic, discriminant, crossing identity, departure coefficient, Re R bound OK
+CYCLOTOMIC: n=8, exact restriction and endpoint checks OK
+CYCLOTOMIC: n=10, exact restriction and endpoint checks OK
+CYCLOTOMIC: n=12, exact restriction and endpoint checks OK
+CYCLOTOMIC: n=14, exact restriction and endpoint checks OK
+CYCLOTOMIC: n=16, exact restriction and endpoint checks OK
+CYCLOTOMIC: n=18, exact restriction and endpoint checks OK
+CYCLOTOMIC: n=20, exact restriction and endpoint checks OK
+CYCLOTOMIC: n=22, exact restriction and endpoint checks OK
+CYCLOTOMIC: n=24, exact restriction and endpoint checks OK
+CYCLOTOMIC: n=26, exact restriction and endpoint checks OK
+CYCLOTOMIC: n=28, exact restriction and endpoint checks OK
+CYCLOTOMIC: n=30, exact restriction and endpoint checks OK
+CYCLOTOMIC: n=32, exact restriction and endpoint checks OK
+CYCLOTOMIC: n=34, exact restriction and endpoint checks OK
+CYCLOTOMIC: n=36, exact restriction and endpoint checks OK
+CYCLOTOMIC: n=38, exact restriction and endpoint checks OK
+CYCLOTOMIC: n=40, exact restriction and endpoint checks OK
+EXACT_SMALL_CASES: 81 admissible (n,m), 2352 original-matrix rows, n<=40
+ALL_CHECKS_OK

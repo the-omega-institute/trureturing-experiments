@@ -1,0 +1,7 @@
+FIDELITY: source unitary-scaling identity and free gap 3*pi**2/L**2: OK
+QUANTIZATION: symbolic root coefficients and factor 16*pi**2: OK
+BARRIERS: all 942 cases (1-3 blocks, kappa=1,2,3, exp(kappa*width)=2,3, gaps=0,1/2); 834 asymmetric: OK
+STEP: all six exact symmetric-step coefficients agree with 32*pi**2/(kappa*sinh(kappa*width)): OK
+SCOPE: exact helper identities and finite barrier family; not a proof of the universal analytic claim
+CHECK_SHA256: e4563e6b33a683509d6e87db37878daa76257e97d4d19965976664604a552e95
+ALL_CHECKS_OK

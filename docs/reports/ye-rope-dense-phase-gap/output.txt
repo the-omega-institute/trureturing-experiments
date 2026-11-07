@@ -1,0 +1,7 @@
+FIDELITY n=16,m=4: rank=4; twelve zeros; spectrum 1,u,u,u^2; u=(x-1)/(x+1)
+FIDELITY L=2: gamma=2/(x^2+1), exactly the source formula
+QUOTIENT 1085 signed resonances, 2<=n<=32: exact phase multiplicities and B_L tensor J_g/g labels
+MODE_ORDER 61 periods, 4<=L<=64: exact cooperative difference identities, both parities, nonnegative shifted generator
+QUADRATURE 512 exact polynomial cases: left-rule error <= mesh times total variation
+SCOPE finite exact identities only; the unbounded joint limit remains for the post-filing probe
+ALL_CHECKS_OK

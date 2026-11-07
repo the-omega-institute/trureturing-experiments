@@ -1,0 +1,22 @@
+FIDELITY Remark 2.7: starts 1, 5 prescribed; start 3 also present
+FIDELITY Section 7(11): all 16 displayed exact counts reproduced
+SOURCE_COUNTS 1,6,71,1266,30206,902796,32420011,1359292626,65164480466,3515569641156,210779736073446,13903319821066836,1000559812125494076,78012524487061315416,6550837823204594551731,589404446176366002280146
+PERMUTATIONS n=1 count=1
+PERMUTATIONS n=2 count=6
+ORIGINAL_WINDOWS n=1 count=1 ideals=6 grid=match recurrence=match
+ORIGINAL_WINDOWS n=2 count=6 ideals=13 grid=match recurrence=match
+ORIGINAL_WINDOWS n=3 count=71 ideals=28 grid=match recurrence=match
+ORIGINAL_WINDOWS n=4 count=1266 ideals=59 grid=match recurrence=match
+ORIGINAL_WINDOWS n=5 count=30206 ideals=122 grid=match recurrence=match
+ORIGINAL_WINDOWS n=6 count=902796 ideals=249 grid=match recurrence=match
+ORIGINAL_WINDOWS n=7 count=32420011 ideals=504 grid=match recurrence=match
+ORIGINAL_WINDOWS n=8 count=1359292626 ideals=1015 grid=match recurrence=match
+ORIGINAL_WINDOWS n=9 count=65164480466 ideals=2038 grid=match recurrence=match
+ORIGINAL_WINDOWS n=10 count=3515569641156 ideals=4085 grid=match recurrence=match
+GRID_BRIDGE n=1..5 v=0..5: all 30 grid counts match B_n(v+2)
+MOD5 n=1..256 k=0..65: u -> v -> w -> w verified
+BALLOT_PARITY n=1..256 r=0..20: all 5376 entries agree
+CATALAN ballot identity and binary parity n=1..256: agree
+MOD10 n=1..256: all residues agree; exceptions=1,3,7,15,31,63,127,255
+SCOPE: original window counts checked through n=10; recurrence through n=256; no infinite proof
+ALL_CHECKS_OK

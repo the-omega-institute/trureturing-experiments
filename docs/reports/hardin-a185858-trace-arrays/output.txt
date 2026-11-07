@@ -1,0 +1,13 @@
+EXHAUSTIVE n=1 arrays=512 valid=512 normalized=4 all_trace_fibers=OK
+EXHAUSTIVE n=2 arrays=4096 valid=2816 normalized=22 all_trace_fibers=OK
+EXHAUSTIVE n=3 arrays=32768 valid=15872 normalized=124 all_trace_fibers=OK
+EXHAUSTIVE n=4 arrays=262144 valid=88832 normalized=694 all_trace_fibers=OK
+EXHAUSTIVE n=5 arrays=2097152 valid=498176 normalized=3892 all_trace_fibers=OK
+EXHAUSTIVE_TOTAL arrays=2396672
+FIDELITY first_20_OEIS_terms=OK
+ROW_TRANSFER_VS_WEIGHTED_WORDS n=1..200=OK
+INTEGRAL_NORMALIZATION n=1..200=OK
+CLAIMED_RECURRENCE n=3..200=OK
+GENERATING_FUNCTION_PRODUCT coefficients=0..200=OK
+RADICAL_FORMULA exact_Q_sqrt13 n=1..200=OK
+ALL_CHECKS_OK

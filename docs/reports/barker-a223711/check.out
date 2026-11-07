@@ -1,0 +1,19 @@
+Source: OEIS A223711 revision 9; Hardin (2013), Barker conjectures (2018).
+Arithmetic: Python integers and fractions.Fraction; no floating point.
+Literal arrays n=0: total=1, admissible=1, unimodal_sum_words=1; fibers and unique forms OK
+Literal arrays n=1: total=4, admissible=4, unimodal_sum_words=3; fibers and unique forms OK
+Literal arrays n=2: total=16, admissible=16, unimodal_sum_words=9; fibers and unique forms OK
+Literal arrays n=3: total=64, admissible=53, unimodal_sum_words=22; fibers and unique forms OK
+Literal arrays n=4: total=256, admissible=155, unimodal_sum_words=46; fibers and unique forms OK
+Literal arrays n=5: total=1024, admissible=418, unimodal_sum_words=86; fibers and unique forms OK
+Literal arrays n=6: total=4096, admissible=1066, unimodal_sum_words=148; fibers and unique forms OK
+Literal arrays n=7: total=16384, admissible=2611, unimodal_sum_words=239; fibers and unique forms OK
+Literal arrays n=8: total=65536, admissible=6205, unimodal_sum_words=367; fibers and unique forms OK
+Exact polynomial cross-products: peak-class GF, source GF, partial fractions OK
+Fidelity: all 28 displayed terms and all 210 Hardin b-file entries match
+Expected-settlement finite check: source formula = GF coefficients for n=1..210
+Auxiliary n=0 count is 1; source GF coefficient at n=0 is 0
+Empirical source order-five recurrence: n=6..210 OK
+b223711.txt sha256=e25b38d15d0240c5db74e4443d52e918fd75f9a264f690daa68b8aac609acf84
+Boundary: no Lean proof or all-n enumeration proof is asserted by this script
+ALL_CHECKS_OK

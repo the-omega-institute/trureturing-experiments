@@ -1,0 +1,21 @@
+Source: Mwafise, OEIS A401496 revision 9; definition A401493 revision 10.
+Fidelity: reproduce total labeled Riordan count (4^(n-1)+2)/3,
+OEIS complement counts, and Pascal adjacency from binomial parity.
+n presentations distinct_Riordan complement_compatible unit_side canonical_presentations
+1 1 1 1 1 1
+2 2 2 2 1 1
+3 8 6 4 2 4
+4 32 22 12 6 16
+5 128 86 28 14 48
+6 512 342 92 46 160
+7 2048 1366 220 110 448
+8 8192 5462 732 366 1408
+9 32768 21846 1756 878 3840
+10 131072 87382 5852 2926 11776
+All 14 published A401496 values and 13 A113836 values agree.
+Recurrence, difference, sum, A113836, intended parity forms, and g.f.: n=1..200 OK.
+SOURCE_TYPO: literal 38^1 gives a(3)=6, but direct count is 4;
+SOURCE_TYPO: literal 108^1 gives a(4)=16, but direct count is 12.
+The intended products 3*8^k and 10*8^(k-1) pass; no literal-typo refutation is proposed.
+Finite diagnostics only; no all-order proof or Lean probe was performed.
+ALL_CHECKS_OK

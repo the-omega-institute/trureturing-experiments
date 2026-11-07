@@ -1,0 +1,19 @@
+Exact arithmetic: Python integers; SymPy Gaussian integers and Q[x]/Phi_n
+FIDELITY Sylvester n=1: det^2=1=1^1
+FIDELITY Sylvester n=2: det^2=4=2^2
+FIDELITY Sylvester n=4: det^2=256=4^4
+FIDELITY Sylvester n=8: det^2=16777216=8^8
+FOURIER n=1: exact Gram=nI, |det|^2=1; equality p=3,4,6,8
+FOURIER n=2: exact Gram=nI, |det|^2=4; equality p=3,4,6,8
+FOURIER n=3: exact Gram=nI, |det|^2=27; equality p=3,4,6,8
+FOURIER n=4: exact Gram=nI, |det|^2=256; equality p=3,4,6,8
+FOURIER n=5: exact Gram=nI, |det|^2=3125; equality p=3,4,6,8
+FOURIER n=6: exact Gram=nI, |det|^2=46656; equality p=3,4,6,8
+FOURIER n=7: exact Gram=nI, |det|^2=823543; equality p=3,4,6,8
+FOURIER n=8: exact Gram=nI, |det|^2=16777216; equality p=3,4,6,8
+EXHAUSTIVE binary matrices n<=2, n<=m<=3: 94; p=2,4,6,8
+RANDOM Gaussian-integer matrices n=1..4, m=n..n+3: 384; seed=260800983
+All tested frames: source Cauchy-Binet identity, Gram-Hadamard and crude bound; proposed sharp bound p=2,4,6,8
+Known n=1 identity and n=2 constant C(2,p)^p=2^(p-2) reproduced
+Scope: finite checks do not prove the universal real-p or infinite-coordinate claim
+ALL_CHECKS_OK

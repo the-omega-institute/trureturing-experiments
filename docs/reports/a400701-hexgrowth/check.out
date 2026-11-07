@@ -1,0 +1,10 @@
+FIDELITY: A400701 n=0..50: 51 published terms matched
+FIDELITY: A374338 n=1..52: 52 published terms matched
+NATIVE UPDATE CROSS-CHECK: 24 full-set equalities, horizons 1..12, two seeds
+SHAPE: 198 full-set equalities, horizons 2..100, two seeds
+A400701 IDENTITY: all 99 horizons n=2..100 matched
+A374338 THREE RESIDUE FORMULAS: all 100 horizons n=1..100 matched
+EUCLIDEAN CIRCLE CHECK: 18 displacement cases and 8 full-set iterations matched
+CONGRUENCE COUNT: 99 square-minus-corners counts; 95 triangle recurrences matched
+AT n=100: A400701=10575; A374338=10168; difference=407
+ALL_CHECKS_OK

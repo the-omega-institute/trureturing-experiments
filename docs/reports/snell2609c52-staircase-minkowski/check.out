@@ -1,0 +1,26 @@
+n=2 d=1 N=3 active_bases=10 vertices=4 facets=4 mass_split_samples=12 H_EQUALS_MINKOWSKI_OK
+n=3 d=1 N=4 active_bases=20 vertices=7 facets=6 mass_split_samples=30 H_EQUALS_MINKOWSKI_OK
+n=3 d=2 N=5 active_bases=35 vertices=9 facets=6 mass_split_samples=47 H_EQUALS_MINKOWSKI_OK
+n=4 d=1 N=5 active_bases=35 vertices=10 facets=7 mass_split_samples=57 H_EQUALS_MINKOWSKI_OK
+n=4 d=2 N=6 active_bases=56 vertices=14 facets=8 mass_split_samples=107 H_EQUALS_MINKOWSKI_OK
+n=4 d=3 N=7 active_bases=84 vertices=16 facets=8 mass_split_samples=138 H_EQUALS_MINKOWSKI_OK
+n=5 d=1 N=6 active_bases=56 vertices=13 facets=8 mass_split_samples=93 H_EQUALS_MINKOWSKI_OK
+FIDELITY Example 53: dimension=6 vertices=19 facets=9
+SOURCE_TYPO Example 53 x_1=5 conflicts with Definition 36; x_1=1 checked
+FIDELITY Theorem 51: extremal matrix and vertex formula checked
+n=5 d=2 N=7 active_bases=84 vertices=19 facets=9 mass_split_samples=192 H_EQUALS_MINKOWSKI_OK
+n=5 d=3 N=8 active_bases=120 vertices=23 facets=10 mass_split_samples=278 H_EQUALS_MINKOWSKI_OK
+n=5 d=4 N=9 active_bases=165 vertices=25 facets=10 mass_split_samples=327 H_EQUALS_MINKOWSKI_OK
+n=6 d=1 N=7 active_bases=84 vertices=16 facets=9 mass_split_samples=138 H_EQUALS_MINKOWSKI_OK
+n=6 d=2 N=8 active_bases=120 vertices=24 facets=10 mass_split_samples=302 H_EQUALS_MINKOWSKI_OK
+n=6 d=3 N=9 active_bases=165 vertices=30 facets=11 mass_split_samples=467 H_EQUALS_MINKOWSKI_OK
+n=6 d=4 N=10 active_bases=220 vertices=34 facets=12 mass_split_samples=597 H_EQUALS_MINKOWSKI_OK
+n=6 d=5 N=11 active_bases=286 vertices=36 facets=12 mass_split_samples=668 H_EQUALS_MINKOWSKI_OK
+n=7 d=1 N=8 active_bases=120 vertices=19 facets=10 mass_split_samples=192 H_EQUALS_MINKOWSKI_OK
+n=7 d=2 N=9 active_bases=165 vertices=29 facets=11 mass_split_samples=437 H_EQUALS_MINKOWSKI_OK
+n=7 d=3 N=10 active_bases=220 vertices=37 facets=12 mass_split_samples=705 H_EQUALS_MINKOWSKI_OK
+n=7 d=4 N=11 active_bases=286 vertices=43 facets=13 mass_split_samples=948 H_EQUALS_MINKOWSKI_OK
+n=7 d=5 N=12 active_bases=364 vertices=47 facets=14 mass_split_samples=1130 H_EQUALS_MINKOWSKI_OK
+n=7 d=6 N=13 active_bases=455 vertices=49 facets=14 mass_split_samples=1227 H_EQUALS_MINKOWSKI_OK
+EXACT_SUMMARY cases=21 active_bases=3150 mass_splits=8092
+ALL_CHECKS_OK

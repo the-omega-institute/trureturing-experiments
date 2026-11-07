@@ -1,0 +1,24 @@
+n=8: 1 admissible m, 1001 grid points each OK
+n=10: 1 admissible m, 1001 grid points each OK
+n=12: 2 admissible m, 1001 grid points each OK
+n=14: 2 admissible m, 1001 grid points each OK
+n=16: 3 admissible m, 1001 grid points each OK
+n=18: 3 admissible m, 1001 grid points each OK
+n=20: 4 admissible m, 1001 grid points each OK
+n=22: 4 admissible m, 1001 grid points each OK
+n=24: 5 admissible m, 1001 grid points each OK
+n=26: 5 admissible m, 1001 grid points each OK
+n=28: 6 admissible m, 1001 grid points each OK
+n=30: 6 admissible m, 1001 grid points each OK
+n=32: 7 admissible m, 1001 grid points each OK
+n=34: 7 admissible m, 1001 grid points each OK
+n=36: 8 admissible m, 1001 grid points each OK
+n=38: 8 admissible m, 1001 grid points each OK
+n=40: 9 admissible m, 1001 grid points each OK
+NUMERICAL_DIAGNOSTIC: dps=120; grid w=j/1000, j=0,...,1000
+pairs 81 strict-interior samples 80919
+min Re R 0.95833333333333333333333333333333333
+min positive outward distance 1.2137550505466478477799822381955114e-11
+max characteristic residual 2.660214297e-122
+max endpoint error 1.530776362e-121
+HIGH_PRECISION_CHECKS_OK

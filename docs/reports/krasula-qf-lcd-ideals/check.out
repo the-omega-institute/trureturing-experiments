@@ -1,0 +1,20 @@
+Source: Dominik Krasula, Free and projective LCD codes, arXiv:2609.15423v1.
+Fidelity: Theorem 19 (finite Frobenius LCD ideals) and Theorem 15 (size condition).
+Settlement checks: both-sided classification and each proposed annihilator/orbit identity.
+F_2[t]/(t^1): |R|=2, pairing_rank=1, subspaces=2, left=2, right=2, two-sided=2, left_LCD=2, right_LCD=2, central_idempotents=2; OK
+F_2[t]/(t^2): |R|=4, pairing_rank=2, subspaces=5, left=3, right=3, two-sided=3, left_LCD=2, right_LCD=2, central_idempotents=2; OK
+F_2[t]/(t^3): |R|=8, pairing_rank=3, subspaces=16, left=4, right=4, two-sided=4, left_LCD=2, right_LCD=2, central_idempotents=2; OK
+F_3[t]/(t^2): |R|=9, pairing_rank=2, subspaces=6, left=3, right=3, two-sided=3, left_LCD=2, right_LCD=2, central_idempotents=2; OK
+F_3[t]/(t^3): |R|=27, pairing_rank=3, subspaces=28, left=4, right=4, two-sided=4, left_LCD=2, right_LCD=2, central_idempotents=2; OK
+M_2(F_2): |R|=16, pairing_rank=4, subspaces=67, left=5, right=5, two-sided=2, left_LCD=2, right_LCD=2, central_idempotents=2; OK
+M_2(F_3): |R|=81, pairing_rank=4, subspaces=212, left=6, right=6, two-sided=2, left_LCD=2, right_LCD=2, central_idempotents=2; OK
+two-cycle radical-square-zero/F_2: |R|=16, pairing_rank=4, subspaces=67, left=11, right=11, two-sided=7, left_LCD=2, right_LCD=2, central_idempotents=2; OK
+two-cycle radical-square-zero/F_3: |R|=81, pairing_rank=4, subspaces=212, left=13, right=13, two-sided=7, left_LCD=2, right_LCD=2, central_idempotents=2; OK
+(F_2[t]/(t^2)) x (F_2[t]/(t^1)): |R|=8, pairing_rank=3, subspaces=16, left=6, right=6, two-sided=6, left_LCD=4, right_LCD=4, central_idempotents=4; OK
+(M_2(F_2)) x (F_2[t]/(t^1)): |R|=32, pairing_rank=5, subspaces=374, left=10, right=10, two-sided=4, left_LCD=4, right_LCD=4, central_idempotents=4; OK
+(two-cycle radical-square-zero/F_2) x (F_2[t]/(t^1)): |R|=32, pairing_rank=5, subspaces=374, left=22, right=22, two-sided=14, left_LCD=4, right_LCD=4, central_idempotents=4; OK
+Sidedness control: in the two-cycle QF algebra, (a_01) has l(I) != r(I) and l^2(I) != I; OK
+Semiprimeness control: (F_2[eps]/eps^2) x 0 is a proper LCD ideal containing a nonzero square-zero ideal; OK
+TOTAL rings=12, subspaces=1379, left_ideals=89, right_ideals=89, left_LCD=30, right_LCD=30
+Scope: exhaustive for the listed finite algebras; no claim of an exhaustive list of QF rings or a proof for arbitrary/infinite QF rings.
+ALL_CHECKS_OK

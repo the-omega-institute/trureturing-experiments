@@ -1,0 +1,9 @@
+FIDELITY regular-simplex energy formula: 80 exact cases
+FIDELITY two-point mass formula: 152 rational masses
+KERNELS exhaustive nonzero symmetric kernels: 756
+OPTIMIZATION exact simplex maxima: 6804
+OPTIMIZATION returned measures with zero masses: 6594
+RATIO exact exponent-pair comparisons: 27216
+RATIO comparisons with 0 < r < s < 2: 15876
+SCOPE finite kernels only; compact-set and arbitrary-exponent proof remains unformalized
+ALL_CHECKS_OK

@@ -1,0 +1,10 @@
+FIDELITY: all 14 OEIS A156216 displayed terms, degrees 0..13, agree
+FIDELITY: Lucas ghosts of 1/(1-x-x^2), degrees 1..40, agree
+A156216 prefix: 1,1,5,26,634,32928,5704263,2470113915,2978904483553,9401949327631932,79268874871208384494,1762019469678472912173354,103537245443913551792800303420,16030602885085486700462431379649694
+POLYNOMIAL BOX: 3125 inputs, a_1..a_5 in -2..2, degrees 0..24: OK
+SIGNED LEDGER BOX: 625 inputs, b_1..b_4 in -2..2, degrees 0..40: OK
+INDEPENDENT EXPONENTIAL: 12 signed inputs, exact sum H^j/j!, degrees 0..24: OK
+FERMAT LIFT: z=-30..30, p=2,3,5,7,11, r=1..4: OK
+No positivity condition; zero/negative ghosts, negative Euler exponents and p=2 included
+Finite exact checks only; no universal proof is claimed
+ALL_CHECKS_OK

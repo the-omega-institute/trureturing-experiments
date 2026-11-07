@@ -1,0 +1,44 @@
+grid: n=2 alpha=0 beta=0 exact_facets=4 pulling_simplices=1 exact_volume=1/6 scipy_boundary_simplices=4 OK
+grid: n=2 alpha=0 beta=1/3 exact_facets=4 pulling_simplices=1 exact_volume=2/27 scipy_boundary_simplices=4 OK
+grid: n=2 alpha=0 beta=2/3 exact_facets=4 pulling_simplices=1 exact_volume=1/54 scipy_boundary_simplices=4 OK
+grid: n=2 alpha=1/3 beta=0 exact_facets=4 pulling_simplices=1 exact_volume=2/27 scipy_boundary_simplices=4 OK
+grid: n=2 alpha=1/3 beta=1/3 exact_facets=4 pulling_simplices=1 exact_volume=8/243 scipy_boundary_simplices=4 OK
+grid: n=2 alpha=1/3 beta=2/3 exact_facets=4 pulling_simplices=1 exact_volume=2/243 scipy_boundary_simplices=4 OK
+grid: n=2 alpha=2/3 beta=0 exact_facets=4 pulling_simplices=1 exact_volume=1/54 scipy_boundary_simplices=4 OK
+grid: n=2 alpha=2/3 beta=1/3 exact_facets=4 pulling_simplices=1 exact_volume=2/243 scipy_boundary_simplices=4 OK
+grid: n=2 alpha=2/3 beta=2/3 exact_facets=4 pulling_simplices=1 exact_volume=1/486 scipy_boundary_simplices=4 OK
+grid: n=3 alpha=0 beta=0 exact_facets=8 pulling_simplices=4 exact_volume=5/24 scipy_boundary_simplices=17 OK
+grid: n=3 alpha=0 beta=1/3 exact_facets=11 pulling_simplices=6 exact_volume=7/54 scipy_boundary_simplices=17 OK
+grid: n=3 alpha=0 beta=2/3 exact_facets=11 pulling_simplices=6 exact_volume=13/216 scipy_boundary_simplices=17 OK
+grid: n=3 alpha=1/3 beta=0 exact_facets=11 pulling_simplices=6 exact_volume=7/54 scipy_boundary_simplices=17 OK
+grid: n=3 alpha=1/3 beta=1/3 exact_facets=15 pulling_simplices=7 exact_volume=2/27 scipy_boundary_simplices=17 OK
+grid: n=3 alpha=1/3 beta=2/3 exact_facets=15 pulling_simplices=7 exact_volume=5/162 scipy_boundary_simplices=17 OK
+grid: n=3 alpha=2/3 beta=0 exact_facets=11 pulling_simplices=6 exact_volume=13/216 scipy_boundary_simplices=17 OK
+grid: n=3 alpha=2/3 beta=1/3 exact_facets=15 pulling_simplices=7 exact_volume=5/162 scipy_boundary_simplices=17 OK
+grid: n=3 alpha=2/3 beta=2/3 exact_facets=15 pulling_simplices=7 exact_volume=7/648 scipy_boundary_simplices=17 OK
+grid: n=4 alpha=0 beta=0 exact_facets=10 pulling_simplices=17 exact_volume=23/120 scipy_boundary_simplices=86 OK
+grid: n=4 alpha=0 beta=1/3 exact_facets=14 pulling_simplices=26 exact_volume=71/540 scipy_boundary_simplices=98 OK
+grid: n=4 alpha=0 beta=2/3 exact_facets=14 pulling_simplices=26 exact_volume=73/1080 scipy_boundary_simplices=98 OK
+grid: n=4 alpha=1/3 beta=0 exact_facets=14 pulling_simplices=26 exact_volume=71/540 scipy_boundary_simplices=98 OK
+grid: n=4 alpha=1/3 beta=1/3 exact_facets=22 pulling_simplices=38 exact_volume=106/1215 scipy_boundary_simplices=110 OK
+grid: n=4 alpha=1/3 beta=2/3 exact_facets=22 pulling_simplices=38 exact_volume=211/4860 scipy_boundary_simplices=106 OK
+grid: n=4 alpha=2/3 beta=0 exact_facets=14 pulling_simplices=26 exact_volume=73/1080 scipy_boundary_simplices=98 OK
+grid: n=4 alpha=2/3 beta=1/3 exact_facets=22 pulling_simplices=38 exact_volume=211/4860 scipy_boundary_simplices=106 OK
+grid: n=4 alpha=2/3 beta=2/3 exact_facets=22 pulling_simplices=38 exact_volume=203/9720 scipy_boundary_simplices=110 OK
+random-0: n=2 alpha=1/2 beta=1/10 exact_facets=4 pulling_simplices=1 exact_volume=49/96 scipy_boundary_simplices=4 OK
+random-1: n=2 alpha=1/5 beta=1/10 exact_facets=4 pulling_simplices=1 exact_volume=1944/625 scipy_boundary_simplices=4 OK
+random-2: n=2 alpha=4/5 beta=7/10 exact_facets=4 pulling_simplices=1 exact_volume=27/5000 scipy_boundary_simplices=4 OK
+random-0: n=3 alpha=1/10 beta=1/2 exact_facets=15 pulling_simplices=7 exact_volume=85/1536 scipy_boundary_simplices=17 OK
+random-1: n=3 alpha=2/5 beta=3/10 exact_facets=15 pulling_simplices=7 exact_volume=12411/5000 scipy_boundary_simplices=17 OK
+random-2: n=3 alpha=1/10 beta=2/5 exact_facets=15 pulling_simplices=7 exact_volume=19317771/320000 scipy_boundary_simplices=17 OK
+random-0: n=4 alpha=1/10 beta=7/10 exact_facets=22 pulling_simplices=38 exact_volume=775109979/160000000 scipy_boundary_simplices=110 OK
+random-1: n=4 alpha=2/5 beta=7/10 exact_facets=22 pulling_simplices=38 exact_volume=506378103/12800000 scipy_boundary_simplices=106 OK
+random-2: n=4 alpha=2/5 beta=2/5 exact_facets=22 pulling_simplices=38 exact_volume=1283769/156250 scipy_boundary_simplices=110 OK
+search-seat-example: n=4 alpha=1/2 beta=1/2 exact_facets=22 pulling_simplices=38 exact_volume=31/640 scipy_boundary_simplices=106 OK
+paper-C1-fidelity: n=2 alpha=0 beta=2/5 exact_facets=4 pulling_simplices=1 exact_volume=2/75 scipy_boundary_simplices=4 OK
+paper-C1-fidelity: n=3 alpha=0 beta=2/5 exact_facets=11 pulling_simplices=6 exact_volume=184/2025 scipy_boundary_simplices=17 OK
+paper-C1-fidelity: n=4 alpha=0 beta=2/5 exact_facets=14 pulling_simplices=26 exact_volume=952/3645 scipy_boundary_simplices=98 OK
+Symbolic envelope-integral/volume algebra: n=2..20 OK
+Exact hull and volume cases: 40; source C1 fidelity cases: 12
+SciPy comparisons are numerical diagnostics; facet coverage and volumes above are exact.
+ALL_CHECKS_OK

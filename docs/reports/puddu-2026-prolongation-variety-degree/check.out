@@ -1,0 +1,60 @@
+Python exact algebra; SymPy 1.14.0
+check.py sha256 16a6f45a8ebb0aca4195e38523ebbabfe7a9edccd1c1a72a6fad6e5b309d4ead
+Global Groebner backend: Singular, ring characteristic 0, coefficient field QQ
+Fidelity: source Section 4 first three jet pairs and cubic m=1,2 gcds
+n=2 m=0 gcd=(ab)^0 local_lengths=0,0 Bezout_degree=4 global_QQ_length=4
+n=2 m=1 gcd=(ab)^1 local_lengths=1,1 Bezout_degree=7 global_QQ_length=7
+n=2 m=2 gcd=(ab)^0 local_lengths=0,0 Bezout_degree=16 global_QQ_length=16
+n=2 m=3 gcd=(ab)^0 local_lengths=0,0 Bezout_degree=25 global_QQ_length=25
+n=2 m=4 gcd=(ab)^1 local_lengths=1,1 Bezout_degree=34 global_QQ_length=34
+n=2 m=5 gcd=(ab)^0 local_lengths=0,0 Bezout_degree=49 global_QQ_length=49
+n=2 m=6 gcd=(ab)^0 local_lengths=0,0 Bezout_degree=64 global_QQ_length=64
+n=2 m=7 gcd=(ab)^1 local_lengths=1,1 Bezout_degree=79 global_QQ_length=79
+n=2 m=8 gcd=(ab)^0 local_lengths=0,0 Bezout_degree=100 global_QQ_length=100
+n=2 m=9 gcd=(ab)^0 local_lengths=0,0 Bezout_degree=121 global_QQ_length=121
+n=2 m=10 gcd=(ab)^1 local_lengths=1,1 Bezout_degree=142 global_QQ_length=142
+n=2 m=11 gcd=(ab)^0 local_lengths=0,0 Bezout_degree=169 global_QQ_length=169
+n=2 m=12 gcd=(ab)^0 local_lengths=0,0 Bezout_degree=196 global_QQ_length=196
+n=3 m=0 gcd=(ab)^0 local_lengths=0,0 Bezout_degree=9 global_QQ_length=9
+n=3 m=1 gcd=(ab)^2 local_lengths=4,4 Bezout_degree=17 global_QQ_length=17
+n=3 m=2 gcd=(ab)^1 local_lengths=4,4 Bezout_degree=41 global_QQ_length=41
+n=3 m=3 gcd=(ab)^0 local_lengths=0,0 Bezout_degree=81 global_QQ_length=81
+n=3 m=4 gcd=(ab)^0 local_lengths=0,0 Bezout_degree=121 global_QQ_length=121
+n=3 m=5 gcd=(ab)^2 local_lengths=4,4 Bezout_degree=161 global_QQ_length=161
+n=3 m=6 gcd=(ab)^1 local_lengths=4,4 Bezout_degree=217 global_QQ_length=217
+n=3 m=7 gcd=(ab)^0 local_lengths=0,0 Bezout_degree=289 global_QQ_length=289
+n=3 m=8 gcd=(ab)^0 local_lengths=0,0 Bezout_degree=361 global_QQ_length=361
+n=3 m=9 gcd=(ab)^2 local_lengths=4,4 Bezout_degree=433 global_QQ_length=433
+n=3 m=10 gcd=(ab)^1 local_lengths=4,4 Bezout_degree=521 global_QQ_length=521
+n=3 m=11 gcd=(ab)^0 local_lengths=0,0 Bezout_degree=625 global_QQ_length=625
+n=3 m=12 gcd=(ab)^0 local_lengths=0,0 Bezout_degree=729 global_QQ_length=729
+n=4 m=0 gcd=(ab)^0 local_lengths=0,0 Bezout_degree=16 global_QQ_length=16
+n=4 m=1 gcd=(ab)^3 local_lengths=9,9 Bezout_degree=31 global_QQ_length=31
+n=4 m=2 gcd=(ab)^2 local_lengths=12,12 Bezout_degree=76 global_QQ_length=76
+n=4 m=3 gcd=(ab)^1 local_lengths=9,9 Bezout_degree=151 global_QQ_length=151
+n=4 m=4 gcd=(ab)^0 local_lengths=0,0 Bezout_degree=256 global_QQ_length=256
+n=4 m=5 gcd=(ab)^0 local_lengths=0,0 Bezout_degree=361 global_QQ_length=361
+n=4 m=6 gcd=(ab)^3 local_lengths=9,9 Bezout_degree=466 global_QQ_length=466
+n=4 m=7 gcd=(ab)^2 local_lengths=12,12 Bezout_degree=601 global_QQ_length=601
+n=4 m=8 gcd=(ab)^1 local_lengths=9,9 Bezout_degree=766 global_QQ_length=766
+n=4 m=9 gcd=(ab)^0 local_lengths=0,0 Bezout_degree=961 global_QQ_length=961
+n=4 m=10 gcd=(ab)^0 local_lengths=0,0 Bezout_degree=1156 global_QQ_length=1156
+n=4 m=11 gcd=(ab)^3 local_lengths=9,9 Bezout_degree=1351 global_QQ_length=1351
+n=4 m=12 gcd=(ab)^2 local_lengths=12,12 Bezout_degree=1576 global_QQ_length=1576
+n=5 m=0 gcd=(ab)^0 local_lengths=0,0 Bezout_degree=25 global_QQ_length=25
+n=5 m=1 gcd=(ab)^4 local_lengths=16,16 Bezout_degree=49 global_QQ_length=49
+n=5 m=2 gcd=(ab)^3 local_lengths=24,24 Bezout_degree=121 global_QQ_length=121
+n=5 m=3 gcd=(ab)^2 local_lengths=24,24 Bezout_degree=241 global_QQ_length=241
+n=5 m=4 gcd=(ab)^1 local_lengths=16,16 Bezout_degree=409 global_QQ_length=409
+n=5 m=5 gcd=(ab)^0 local_lengths=0,0 Bezout_degree=625 global_QQ_length=625
+n=5 m=6 gcd=(ab)^0 local_lengths=0,0 Bezout_degree=841 global_QQ_length=841
+n=5 m=7 gcd=(ab)^4 local_lengths=16,16 Bezout_degree=1057 global_QQ_length=1057
+n=5 m=8 gcd=(ab)^3 local_lengths=24,24 Bezout_degree=1321 global_QQ_length=1321
+n=5 m=9 gcd=(ab)^2 local_lengths=24,24 Bezout_degree=1633 global_QQ_length=1633
+n=5 m=10 gcd=(ab)^1 local_lengths=16,16 Bezout_degree=1993 global_QQ_length=1993
+n=5 m=11 gcd=(ab)^0 local_lengths=0,0 Bezout_degree=2401 global_QQ_length=2401
+n=5 m=12 gcd=(ab)^0 local_lengths=0,0 Bezout_degree=2809 global_QQ_length=2809
+52 gcd cases; rational root isolation through j=13; two rational local Groebner quotients per point
+52 independent global QQ Groebner quotient dimensions agree. Specialized sections can be nonreduced.
+Generic distinct-point degree follows from the stated Bezout/transversality bridge; it is not a direct generic-point enumeration.
+ALL_CHECKS_OK
