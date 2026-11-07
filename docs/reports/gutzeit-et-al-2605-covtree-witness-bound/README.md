@@ -12,5 +12,6 @@ where `L_s` is `s` incomparable minimal elements below one maximum. The four
 size-`n` downset types are enumerated symbolically by component choices. The
 forcing certificate uses the `A_n`, `L_r\sqcup L_r`, and
 `L_{r+1}\sqcup A_r` downsets: the `A_n` copy supplies `n` global minima, and
-overlapping predecessor sets would create a forbidden two-maximum type. Thus
-the three stars are disjoint and form a downset of size `3r+4`.
+overlapping predecessor sets would create a forbidden two-maximum type after
+the required unused minima are added to reach size `n`. Thus the three stars
+are disjoint and form a downset of size `3r+4`.

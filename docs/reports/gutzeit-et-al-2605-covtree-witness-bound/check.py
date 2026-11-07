@@ -51,10 +51,10 @@ def forcing_certificate(r: int) -> dict[str, int | Fraction]:
     The L_r+L_r type supplies two maxima with disjoint predecessor sets of
     r minima each. The L_(r+1)+A_r type supplies a third maximum with r+1
     minimal predecessors. Any overlap with either predecessor set would,
-    after adding unused minima to reach n, create a two-maximum downset with
-    overlapping pasts; that is not one of the four listed types. Therefore
-    the three predecessor sets are disjoint and the union of the three stars
-    is a downset of size 3r+4.
+    after adding the required unused minima to reach n including both maxima,
+    create a two-maximum downset with overlapping pasts; that is not one of
+    the four listed types. Therefore the three predecessor sets are disjoint
+    and the union of the three stars is a downset of size 3r+4.
     """
     n = 2 * r + 2
     minima_required = n
@@ -101,6 +101,13 @@ def main() -> None:
         assert cert["witness_lower"] > cert["proposed_bound"]
         assert cert["gap"] == r - 7
         assert cert["excess_over_n"] == r + 2
+        for t in range(1, r + 1):
+            # Overlap t between two L_r pasts needs t extra minima; there are
+            # t+2 available outside their past union.
+            assert (2 * r + 2) - (2 * r - t) >= t
+            # Overlap t between L_r and L_(r+1) needs t-1 extra minima; there
+            # are t+1 available outside their past union.
+            assert (2 * r + 2) - (2 * r + 1 - t) >= t - 1
 
     print("Fidelity: source H_ell count d_(3ell)=ell+2 and |H_ell|=6ell-2 checked for ell=2..8")
     print("Counterexample family: Q_r has exactly four size-(2r+2) downset types for r=8..20")
