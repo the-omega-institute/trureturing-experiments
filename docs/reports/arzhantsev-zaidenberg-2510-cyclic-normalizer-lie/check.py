@@ -84,6 +84,8 @@ def check_counterexample_family():
             if gcd(d, e) != 1:
                 continue
             ep, k, a, b, m = witness_data(d, e)
+            exact_k = Fraction(e * ep - 1, d)
+            assert exact_k.denominator == 1 and exact_k.numerator == k
             if k >= 2:
                 # Lemma 2: e' >= 2a+1, and Lemma 3's mixed degree is below m.
                 assert ep >= 2 * a + 1, (d, e, ep, a, b)
