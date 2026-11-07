@@ -1,0 +1,6 @@
+FIDELITY pure-family spectrum and exact entropy identity: 65 cases
+SYMBOLIC_CORE determinant, primitive derivative, monotonicity and merging identities: OK
+SCALAR_GRID two-term merging: 1875 exact comparisons
+SCALAR_GRID full collapse, n=1..3: 30384 comparisons; 1452 equalities, all single-channel
+DISPLAYED_FAMILY equation (14), dp,dq=1..3: 243 exact certificates; 81 singular endpoints; 81 saturated floors
+ALL_CHECKS_OK
