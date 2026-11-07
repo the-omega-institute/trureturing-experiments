@@ -1,0 +1,8 @@
+FIDELITY: 28 A379459 terms, 28 A379460 terms, 11 A006351 terms match OEIS DATA
+EGF: (2 log(1+x)-x)(F(t)) = t through degree 32, exactly over Q
+IDENTITIES: U(r,0)=a(r+2) and V(r,0)=a(r+1) for every r=0..30
+U(r,0), r=0..6: 2, 8, 52, 472, 5504, 78416, 1320064
+V(r,0), r=0..6: 1, 2, 8, 52, 472, 5504, 78416
+a(32) = 8528194104569546669443653844698126901288370176
+SCOPE: finite indexing/fidelity checks; no proof of the unbounded conjecture
+ALL_CHECKS_OK
