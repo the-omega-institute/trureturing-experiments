@@ -98,7 +98,7 @@ for i,(f,(xx,yy1,yy2)) in enumerate(zip(functions,points),1):
 r,p,q=s.symbols('r p q')
 zero(s.expand(r*(q-p)-q)-(-r*p+(r-1)*q))
 print('OBSTRUCTION: constant r gives r*p=(r-1)*q; r=1 forces p=0.')
-print('  For r!=1, common s>x1,x2 forces f_prime(x1)=f_prime(x2).')
+print('  For nonzero r, common s>x1,x2 forces f_prime(x1)=f_prime(x2).')
 print('  Hence f is affine, incompatible with a decreasing bijection (0,infinity)->(0,infinity).')
 
 # At lambda=1 the unnormalized standard Gaussian density transforms with |J|=2.
