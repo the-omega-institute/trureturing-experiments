@@ -1,0 +1,6 @@
+FIDELITY Proposition 3.6: q=1/2, roots 1 and 3/2; ratio=2/3>1/2
+GRID: roots in {-4,-3,-2,-1,0,1,2,3,4}; degrees 0..6; 21 rational q values
+COUNTS: multisets=5005, endpoint=135, excluded=4870, tail_checks=124875, reconstructions=405, type_i=55
+BOUNDARIES: opposite-sign roots survive; nonzero multiplicities fail; zero scalar included
+SCOPE: finite exact checks support the outline; no analytic or Lean proof is claimed
+ALL_CHECKS_OK
