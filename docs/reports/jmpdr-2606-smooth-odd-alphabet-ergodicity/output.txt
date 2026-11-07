@@ -1,0 +1,5 @@
+integration identities checked: 8160
+characteristic polynomial and normalized eigenvectors: exact
+decoded frequency gap f0-fD=(q-lambda)/(2q)>0 for every q>=3
+q=1 is the source {1,3} case; q=2 is the unresolved spectral-tie boundary
+ALL_CHECKS_OK
