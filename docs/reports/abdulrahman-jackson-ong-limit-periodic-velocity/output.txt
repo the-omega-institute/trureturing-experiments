@@ -1,0 +1,9 @@
+SYMBOLIC: C* C = I; A=(C* sigma_z C+sigma_z)/2; A*=A; A^2=|a|^2 I
+LOCAL: 480 exact coin/cap cases, including zero and unit transmission
+FIDELITY: source remark (D), U^t delta_0^- = delta_-t^- for 0<=t<=20; Q-norm^2=t^2
+FIDELITY: 2N/(N+N/delta)=3/4<1 for 1<=N<=12, delta=3/5
+GLOBAL: 3600 basis-vector checks of U* X U-X=h_j A_j on the full integer line
+MEANS: 360 profile/cap cases; all words of lengths 1..4 over transmissions {0,3/5,1}
+MEANS: exact positive/negative period increments and periodic remainder r_j-M*j
+SCOPE: general limit-periodic conclusion uses the ordinary proof outline; no Lean proof is claimed
+ALL_CHECKS_OK

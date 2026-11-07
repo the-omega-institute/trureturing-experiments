@@ -1,0 +1,13 @@
+FIDELITY Section 4 SU(5): principal op/pi=2/5, trace/(i*pi)=2;
+  traceless shifted log op/pi=8/5, trace=0; same exponential checked exactly
+FIDELITY Theorem 2.1: 1225 diagonal Frobenius comparisons passed
+REFUTATION n=2 c=4: H/pi=(4/5,1/2), Hprime/pi=(-6/5,1/2)
+  principal length^2/pi^2=153/20; competitor length^2/pi^2=73/20; gap=-4
+CROSSCHECK n=3: threshold c>3; c=4 gives principal 1249/200, competitor 1089/200
+FAMILY symbolic: c>0 gap/pi^2=-c; -1/n<c<0 gap/pi^2=c, n>=2
+ADMISSIBILITY n=2: quadratic split and nontrivial unitary invariance checked symbolically
+  c=4: Q=Tr(H^2)+4(Tr H)^2 >= Tr(H^2) >= op(H)^2
+FAMILY: 56 exact parameter tests, dimensions 2..8, both signs of c
+CURVE: unitary, endpoints I and exp(iH); left velocity=iHprime;
+  length=pi*sqrt(73/20) < pi*sqrt(153/20), entirely exact
+ALL_CHECKS_OK

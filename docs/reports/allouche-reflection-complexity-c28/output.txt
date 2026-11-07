@@ -1,0 +1,9 @@
+Fidelity: source Example 4 / equation (rt), Thue--Morse r(0..14) = [1, 2, 3, 4, 6, 6, 10, 10, 13, 12, 16, 16, 20, 20, 22]
+Exhaustive family: alphabet=1, prefix length=0..3, period length=1..5: 20 presentations
+Exhaustive family: alphabet=2, prefix length=0..3, period length=1..5: 930 presentations
+Exhaustive family: alphabet=3, prefix length=0..2, period length=1..3: 507 presentations
+Checked 1457 ultimately periodic presentations, 24769 consecutive-length comparisons (n=0..16); 1090 presentations lack reversal closure in the range.
+Observed 2160 negative reflection-complexity steps; integer subtraction preserved.
+Verified: marked-mirror factor bijection/count; orbit identity; quotient endpoints; palindromic loops; connectivity after loop deletion; palindromic sum and difference inequalities.
+Scope: finite exact checks; neither Cassaigne's infinite-language theorem nor the universal bounded-difference conjecture is proved by this program.
+ALL_CHECKS_OK

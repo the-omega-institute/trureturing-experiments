@@ -1,0 +1,9 @@
+FIDELITY: E(chain3)=-8319/4096; kappa_star(-1/2)=725/4096; arm witnesses n=2..16 OK
+ENDPOINT CERTIFICATES: octahedron=-813/64; C>=271/128; q<=327/160; K<=407/80
+GAP: C-C1>=47/640; eventual endpoint deficit fraction>=47/6606>1/141
+STABILITY CERTIFICATE: intra=68718952448; negative_row<=13153337422/3; Cstab=34359476224
+FAMILY: symbolic validity, strict exclusion, and endpoint deficit identities OK
+PROFILE CHECK: 331695 exact cases; 1 equality cases remain nonexcluded
+GEOMETRY CHECK: 15 oriented examples retain axial endpoints; singleton and cross-tail bounds OK
+NONZERO KERNEL: two-pile quadratic coefficient is exactly -kappa(r), with linear pile costs
+ALL_CHECKS_OK

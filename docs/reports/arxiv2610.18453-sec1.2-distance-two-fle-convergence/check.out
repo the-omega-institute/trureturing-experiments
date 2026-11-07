@@ -1,0 +1,4 @@
+exact terminal-edge identity checks: 534
+simulation C4 opposite: terminal normalized vectors (n=100,1000,5000) = [(100, [Fraction(92, 101), Fraction(92, 101), Fraction(10, 101), Fraction(10, 101)]), (1000, [Fraction(860, 1001), Fraction(860, 1001), Fraction(142, 1001), Fraction(142, 1001)]), (5000, [Fraction(4232, 5001), Fraction(4232, 5001), Fraction(770, 5001), Fraction(770, 5001)])]
+simulation K2,3: terminal normalized vectors (n=100,1000,5000) = [(100, [Fraction(52, 101), Fraction(23, 101), Fraction(28, 101), Fraction(52, 101), Fraction(23, 101), Fraction(28, 101)]), (1000, [Fraction(81, 143), Fraction(190, 1001), Fraction(246, 1001), Fraction(81, 143), Fraction(190, 1001), Fraction(246, 1001)]), (5000, [Fraction(2842, 5001), Fraction(980, 5001), Fraction(1181, 5001), Fraction(2842, 5001), Fraction(980, 5001), Fraction(1181, 5001)])]
+ALL_CHECKS_OK

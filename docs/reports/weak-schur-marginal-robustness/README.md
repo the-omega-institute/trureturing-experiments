@@ -1,0 +1,11 @@
+# Fixed-k marginal robustness of weak Schur sampling
+
+Source: V. Visnevskyi and L. Mančinska, *Robustness of quantum spectrum estimation: weak Schur sampling under noisy inputs*, arXiv:2610.03582v3, Section 7, intermediate noise classes and open question (3).
+
+Run `python3 check.py`. The program uses only Python's standard library, integer arithmetic and `fractions.Fraction`. The stored output ends in `ALL_CHECKS_OK`.
+
+The fidelity control reproduces the source's marginal-failure proposition: a mixture of constant eigenbasis words has the target single-copy marginals and deterministically produces the one-row Schur label, with error (1-p_1). Exact RSK probabilities are independently compared with central-character projector formulas for two and three registers. For d=2,3,4 and n=2,3, exact rational row reduction also verifies that the binding conventions’ spans of all Young-symmetrizer images equal the corresponding central-character projector ranges. This checks the proposed block construction independently in these dimensions; the general Schur–Weyl identification remains a proof obligation.
+
+For even d = 2r, let S be a uniformly random r-element subset of the d coordinates, let ρ = I_d/d, and let σ_S = (ρ + diag(1_S)/r)/2. The checked input Ω_n is the uniform mixture of the tensor powers σ_S^⊗n. Occupancy-pattern counts compute the entire diagonal k-register marginal exactly; direct word enumeration checks those counts independently in smaller cases. All 84 tested pairs satisfy TD((Ω_n)_k, ρ^⊗k) ≤ k(k−1)/(4d). The program checks that all six components at d = 4 and all twenty at d = 6, for 1 ≤ n ≤ 5, have the same WSS distribution as their mixture. Each component spectrum consists of 3/(2d) and 1/(2d), each repeated r times, and its total variation distance from the uniform spectrum is exactly 1/4.
+
+These are finite exact checks, not a proof of asymptotic convergence or non-robustness. The proposed argument additionally needs the general collision bound, unitary invariance of Schur projectors and fixed-dimension noiseless spectrum-estimation consistency. The question concerns a dimension-independent noise floor under the fixed-k average marginal constraint. It does not settle the other intermediate noise classes, nor exclude dimension-dependent bounds.

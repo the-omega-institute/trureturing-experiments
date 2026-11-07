@@ -1,0 +1,7 @@
+SOURCE_FIDELITY_OK: Table 1, three n=3 rows, 12 exact instances
+ALL_SMALL_CASES_OK: every ordered positive tripartition with 3<=N<=9, r in [Fraction(1, 1), Fraction(1, 2), Fraction(1, 3), Fraction(1, 5)]; 336 cases
+FULL_GAUSSIAN_DETERMINANTS_OK: every ordered positive tripartition with 3<=N<=5 at r=1/2; 10 cases
+PAGE_ME_FACTORIZATION_OK: 160 exact configurations; asymptotic constants and error coefficients checked
+BOUNDARY_OK: a=1 gives exp(12 GM)=1
+LIMITATION: finite exact checks and algebraic factorization are not a proof of the quantified claim or logarithm bounds
+ALL_CHECKS_OK

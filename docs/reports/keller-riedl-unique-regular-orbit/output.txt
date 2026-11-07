@@ -1,0 +1,16 @@
+FIELD: F_3[t]/(t^2+1), zeta order=8, Frobenius involutive
+FIDELITY Lemma 5.3: Sigma normal form sum(d)=shift, |Sigma|=8^8=16777216
+FIDELITY Section 5.2: (zeta_0*g_3)^8=zeta*I, Singer element order=64
+NORMALIZER: all 8 Sigma generator conjugates are in Sigma; theta^2=1
+REPLACEMENT: 2048 exact closure checks; 32768 F_3-basis composition checks
+LOCAL ORBITS: Sigma and S representative stabilizers=[1,1]; 8192 transporter checks
+CENTER: all 80640 permutation/Frobenius pairs and all 64 remaining diagonal candidates checked
+CENTER RESULT: Z(S) has 8 elements, exponent pairs (even,odd)=[(0, 0), (1, 3), (2, 6), (3, 1), (4, 4), (5, 7), (6, 2), (7, 5)]
+CENTER RESULT: diag(zeta on even labels, zeta^3 on odd labels) is central of order 8
+EXPECTED-ROUTE CHECK FAILED: the proposed |Z(S)|=2 and center-order nonconjugacy obstruction are false
+FIDELITY Theorem B/4.5: all tree subset shapes, n=1..5, k=0..5, exponents and orbit counts agree
+FIDELITY Corollary 5.11: j=3, |R|=32, stabilizers=[2,1,2], transitive
+FIDELITY Corollary 5.11: j=4, |R|=2048, stabilizers=[2,1,2], transitive
+FAMILY INGREDIENTS: order exponents checked for j=3..64; first instance dim_F3=128, order=2^197
+LIMIT: no settlement of Question 9.3; the proposed nonconjugacy proof fails its exact center check
+ALL_CHECKS_OK

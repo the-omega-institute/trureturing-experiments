@@ -1,0 +1,4 @@
+OBSTRUCTION_WITNESSES n=2..12: {'G_not_G': 286, 'G_not_P': 286, 'P_not_G': 459, 'P_not_P': 286, 'one_negative_formula': 385}
+SMALL_CASES sorted rational grid {-2,-1,-1/2,0,1/2,1,2}, n=2..6: {'G_to_G': 4557, 'G_to_P': 4557, 'P_to_G': 3792, 'P_to_P': 5858, 'source_endpoint_identities': 3416, 'source_newton': 944, 'vectors': 1708}
+FIDELITY Theorem 1.1 n=3 k=2 x=(1,2,3), cubed: 225/4 >= 48
+ALL_CHECKS_OK

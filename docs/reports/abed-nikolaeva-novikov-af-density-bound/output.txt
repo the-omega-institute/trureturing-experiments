@@ -1,0 +1,11 @@
+ARITHMETIC: exact integers and SymPy rationals over Q(i); SymPy 1.14.0
+FIDELITY Proposition 5.44(d): P minors = [2, 913, 16006]
+FIDELITY Re(X) minors = [11662/2097, 6082302974/109935225, 36535906/7329015]
+FIDELITY quotient = 39575293/14716047 > 67/25
+FAMILY n=1, t=1/100: exact identities, positivity, rank support; 99/100 < quotient < 1
+FAMILY n=2, t=1/400: exact identities, positivity, rank support; 199/100 < quotient < 2
+FAMILY n=3, t=1/900: exact identities, positivity, rank support; 299/100 < quotient < 3
+FAMILY n=4, t=1/1600: exact identities, positivity, rank support; 399/100 < quotient < 4
+FAMILY n=5, t=1/2500: exact identities, positivity, rank support; 499/100 < quotient < 5
+GRID 2x2: 320 inputs with P>0; 224 accretive; all satisfy Re(X) <= 2|X| exactly
+ALL_CHECKS_OK

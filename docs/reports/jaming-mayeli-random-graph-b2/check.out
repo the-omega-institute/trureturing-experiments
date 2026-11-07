@@ -1,0 +1,4 @@
+FIDELITY_OK path_P3_laplacian=D-A spectrum_charpoly=lambda*(lambda-1)*(lambda-3) B2=True
+EXACT_SMALL_CONNECTED_GRAPHS checked=43 b2=4 all_pair_sum_tests=exact
+EXACT_N5_SAMPLES b2_statuses=[False, False, False, False]
+ALL_CHECKS_OK

@@ -1,0 +1,152 @@
+{
+  "allowed_squares": [
+    [
+      0,
+      1,
+      2,
+      0
+    ],
+    [
+      0,
+      2,
+      1,
+      0
+    ],
+    [
+      0,
+      2,
+      2,
+      1
+    ],
+    [
+      1,
+      0,
+      0,
+      2
+    ],
+    [
+      1,
+      2,
+      2,
+      0
+    ],
+    [
+      2,
+      0,
+      0,
+      1
+    ],
+    [
+      2,
+      0,
+      1,
+      2
+    ],
+    [
+      2,
+      1,
+      0,
+      2
+    ]
+  ],
+  "direct_arrays_enumerated": {
+    "1": 729,
+    "2": 19683,
+    "3": 531441
+  },
+  "direct_raw_counts": {
+    "1": 12,
+    "2": 16,
+    "3": 20
+  },
+  "gf_coefficients_checked": [
+    0,
+    210
+  ],
+  "isolated_rows": [
+    "000",
+    "001",
+    "002",
+    "011",
+    "012",
+    "022",
+    "100",
+    "110",
+    "111",
+    "112",
+    "122",
+    "200",
+    "210",
+    "211",
+    "220",
+    "221",
+    "222"
+  ],
+  "normalized_counts_first_eight": [
+    3,
+    4,
+    5,
+    7,
+    9,
+    13,
+    17,
+    25
+  ],
+  "ordered_row_pairs_checked": 729,
+  "oriented_edges": 12,
+  "p3_two_step_extensions_per_start": [
+    2,
+    2,
+    2
+  ],
+  "parity_formula_checked": [
+    1,
+    210
+  ],
+  "raw_counts_first_eight": [
+    12,
+    16,
+    20,
+    28,
+    36,
+    52,
+    68,
+    100
+  ],
+  "recurrence_checked": [
+    4,
+    210
+  ],
+  "scope": "Exact finite checks; no all-height or Lean proof is claimed.",
+  "source": "OEIS A209721 revision 43, 2022-07-15",
+  "source_bfile_sha256": "511ec05d36dab7acd6f05528e93ac43f224529a32a98cfc8d1f27763dd4bb020",
+  "source_bfile_terms_matched": 210,
+  "squares_checked": 81,
+  "undirected_edges": [
+    [
+      "010",
+      "202"
+    ],
+    [
+      "121",
+      "202"
+    ],
+    [
+      "101",
+      "020"
+    ],
+    [
+      "020",
+      "212"
+    ],
+    [
+      "021",
+      "102"
+    ],
+    [
+      "120",
+      "201"
+    ]
+  ]
+}
+ALL_CHECKS_OK

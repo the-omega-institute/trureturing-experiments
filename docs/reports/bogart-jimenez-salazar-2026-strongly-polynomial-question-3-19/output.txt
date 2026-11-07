@@ -1,0 +1,16 @@
+FIDELITY Proposition 3.7(1): 30 exact full-map enumerations OK
+FULL_MAP m=3 n=0 hom=0
+FULL_MAP m=3 n=1 hom=30
+FULL_MAP m=3 n=2 hom=352
+FULL_MAP m=4 n=0 hom=0
+FULL_MAP m=4 n=1 hom=54
+FULL_MAP m=4 n=2 hom=1040
+FULL_MAP m=5 n=0 hom=0
+FULL_MAP m=5 n=1 hom=102
+FULL_MAP m=5 n=2 hom=3232
+CONSTRUCTION: 9 full-map enumerations OK
+COMMON_NEIGHBORS: 42 exact cases, 3<=m<=8 and 0<=n<=6, OK
+COLORING_FIBERS: 76 labelled graphs on <=4 vertices; 608 evaluations OK
+COEFFICIENTS: q=0..30, degree q+5, c0=2, c1=2q+10, c2=(q+3)(q+2)+2^(q+3) OK
+FORWARD_DIFFERENCES: orders 0..10 of residual equal 2^(q+3), exactly OK
+ALL_CHECKS_OK

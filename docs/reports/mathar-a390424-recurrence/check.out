@@ -1,0 +1,14 @@
+Fidelity: all 23 source coefficients (n=0..22) match.
+Initial coefficients: 1,4,26,176,1209,8360,57998,403048,2803322
+Fidelity: source Pell/binomial formula matches for n=1..80.
+Boundary n=5 summands: 2090000,-5164848,4415488,-1546272,223488,-23808
+Boundary n=5 residual: -5952
+Recurrence: zero residual at every n=6..80.
+Certificate: derivative formulas and rational substitution identity verified.
+Certificate: cleared numerator divisible by x*t^3-t+1, remainder=0.
+Certificate: quotient bidegree (x,t)= 6 8
+Euler coefficient rows: [(20, -50, 0), (-511, 946, 120), (4922, -5830, -1720), (-21788, 10704, 6272), (42416, 14160, -704), (-26784, -53568, -23808)]
+Certificate: all six coefficient polynomials equal the conjectured weights.
+Certificate: forcing degree=5; six derivatives annihilate the forcing.
+Scope: finite coefficient checks and exact polynomial certificate; no Lean proof.
+ALL_CHECKS_OK

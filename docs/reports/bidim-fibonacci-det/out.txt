@@ -1,0 +1,12 @@
+recurrences_and_lemma_2_5: 10609 Gaussian-integer entries OK
+fidelity_Example_4_1: det(0, 0) = (0, 2) (real, imaginary) OK
+fidelity_Example_4_1: det(1, 0) = (-7, 1) (real, imaginary) OK
+fidelity_Example_4_1: det(0, 1) = (7, 1) (real, imaginary) OK
+fidelity_Example_4_1: det(1, 1) = (0, -4) (real, imaginary) OK
+scalar_identities_and_strict_increase: 0 <= r < 100 OK
+mixed_identity_and_nonvanishing: 10000 pairs, 0 <= m,n < 100 OK
+boundary_pairs_included: 199; minimum_abs_imaginary: 1
+fidelity_Theorem_4_3: 100 diagonal determinants OK
+SOURCE_DISCREPANCY_Proposition_4_6: printed=(-7, -2), Definition_3_1_and_Example_4_1=(-7, 1)
+scope: finite exact checks only; no proof of the universal conjecture
+ALL_CHECKS_OK

@@ -1,0 +1,8 @@
+FIDELITY: 28 semisuspended initial segments (1 <= n <= 7) match Corollary 3.10
+FIDELITY: H(2,0)=cc, H(2,1)=d, H(2,2)=0
+FIDELITY: 3186 word tests reproduce Corollaries 3.17 and 3.18
+SUPPORT: 21372 (n,i,word) cases, every 1 <= n <= 14 and 0 <= i <= n
+IDENTITY: 11146 trailing-c coefficient identities, every applicable case through degree 14
+ARITHMETIC: Python integers only; empty sums are 0; H(0,0)=1
+SCOPE: finite evidence, not a proof for unbounded n
+ALL_CHECKS_OK

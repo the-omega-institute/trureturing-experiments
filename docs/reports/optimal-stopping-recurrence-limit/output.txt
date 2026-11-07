@@ -1,0 +1,13 @@
+SOURCE_FIDELITY: n=1..8; permutations=46233; recurrence checks=36; f=-x*log(x) solves source ODE and f(1)=0
+FAMILY: alpha=1/2 theta=1/4 q=1/2 c=1/4; n=1..500; row-entry checks=125250; active rows=497
+FAMILY: alpha=1/3 theta=2/5 q=2/3 c=1/5; n=1..160; row-entry checks=12880; active rows=159
+FAMILY: alpha=3/4 theta=1/5 q=3/7 c=1/7; n=1..160; row-entry checks=12880; active rows=147
+FAMILY: alpha=1/8 theta=4/5 q=1/3 c=1/30; n=1..160; row-entry checks=12880; active rows=159
+EXACT_INTERIOR: n=16; F_n(floor(n/2))=7/18; gap to 1/2=1/9 < 1/(2m)
+EXACT_INTERIOR: n=64; F_n(floor(n/2))=29/66; gap to 1/2=2/33 < 1/(2m)
+EXACT_INTERIOR: n=256; F_n(floor(n/2))=121/258; gap to 1/2=4/129 < 1/(2m)
+EXACT_INTERIOR: n=1024; F_n(floor(n/2))=497/1026; gap to 1/2=8/513 < 1/(2m)
+EXACT_INTERIOR: n=4096; F_n(floor(n/2))=2017/4098; gap to 1/2=16/2049 < 1/(2m)
+TOTAL_FAMILY_ROW_ENTRY_CHECKS=163890
+SYMBOLIC: ODE invariant derivative=0; general solution verified; jump=c; endpoint constant solution verified
+ALL_CHECKS_OK

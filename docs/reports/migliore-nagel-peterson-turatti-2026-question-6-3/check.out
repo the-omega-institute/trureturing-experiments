@@ -1,0 +1,24 @@
+Python 3.14.8 SymPy 1.14.0 field=Q exact
+r=2 points=((1, 0), (1, 1)) hilbert=[1, 0, 0] power_maps=4 jordan_length_multiplicity={1: 1}
+r=2 points=((0, 1), (1, 0)) hilbert=[1, 0, 0] power_maps=4 jordan_length_multiplicity={1: 1}
+NEGATIVE_CONTROL r=3 tangent_rank=1 maximal_rank=2
+r=3 points=((1, 0), (1, 1), (1, 2)) hilbert=[2, 2, 0, 0] power_maps=10 jordan_length_multiplicity={2: 2}
+NEGATIVE_CONTROL r=3 tangent_rank=1 maximal_rank=2
+r=3 points=((0, 1), (1, 0), (1, 1)) hilbert=[2, 2, 0, 0] power_maps=10 jordan_length_multiplicity={2: 2}
+NEGATIVE_CONTROL r=4 tangent_rank=2 maximal_rank=3
+r=4 points=((1, 0), (1, 1), (1, 2), (1, 3)) hilbert=[3, 4, 3, 0, 0] power_maps=18 jordan_length_multiplicity={1: 1, 3: 3}
+NEGATIVE_CONTROL r=4 tangent_rank=2 maximal_rank=3
+r=4 points=((0, 1), (1, 0), (1, 1), (1, 2)) hilbert=[3, 4, 3, 0, 0] power_maps=18 jordan_length_multiplicity={1: 1, 3: 3}
+NEGATIVE_CONTROL r=5 tangent_rank=3 maximal_rank=4
+r=5 points=((1, 0), (1, 1), (1, 2), (1, 3), (1, 4)) hilbert=[4, 6, 6, 4, 0, 0] power_maps=28 jordan_length_multiplicity={2: 2, 4: 4}
+NEGATIVE_CONTROL r=5 tangent_rank=3 maximal_rank=4
+r=5 points=((0, 1), (1, 0), (1, 1), (1, 2), (1, 3)) hilbert=[4, 6, 6, 4, 0, 0] power_maps=28 jordan_length_multiplicity={2: 2, 4: 4}
+NEGATIVE_CONTROL r=6 tangent_rank=4 maximal_rank=5
+r=6 points=((1, 0), (1, 1), (1, 2), (1, 3), (1, 4), (1, 5)) hilbert=[5, 8, 9, 8, 5, 0, 0] power_maps=40 jordan_length_multiplicity={1: 1, 3: 3, 5: 5}
+NEGATIVE_CONTROL r=6 tangent_rank=4 maximal_rank=5
+r=6 points=((0, 1), (1, 0), (1, 1), (1, 2), (1, 3), (1, 4)) hilbert=[5, 8, 9, 8, 5, 0, 0] power_maps=40 jordan_length_multiplicity={1: 1, 3: 3, 5: 5}
+FIDELITY_OK: source Hilbert symmetry, initial dimension, support, WLP
+SLP_OK: 200 exact induced power maps on 10 actual line configurations
+MODEL_OK: differential ranks and predicted Jordan blocks agree
+BOUNDARY_OK: r=1 tested; tangent and zero-form negative controls detected
+ALL_CHECKS_OK

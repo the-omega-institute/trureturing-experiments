@@ -1,0 +1,13 @@
+Python 3.14.8 SymPy 1.14.0
+FIDELITY: driven thermal qubit matrix, normality, and all three zero sectors OK (gamma_th=q^2)
+thermal_matrix = [[0, 0, 0, 0], [0, -q**2, -nu, 0], [0, nu, -q**2, 0], [0, 0, 0, -2*q**2]]
+FAMILY: exact polynomial identities valid for positive r,t,a,b,h; requested subdomain is 0<r<t
+full_generator = [[0, 0, 0, 0], [0, -2*r**2 - 2*t**2, -2*h, 0], [0, 2*h, -2*r**2 - 2*t**2, 0], [0, 0, 0, -4*r**2]]
+D_S = [[0, 0, -8*a*h*r, -8*a*b*r**2], [0, 0, 0, 0], [-8*a*h*r, 0, 0, 0], [-8*a*b*r**2, 0, 0, 0]]
+D_J = [[0, 0, 0, -8*a*b*r**2], [0, 0, 0, -8*b*r**3 + 8*b*r*t**2], [0, 0, 0, 0], [-8*a*b*r**2, -8*b*r**3 + 8*b*r*t**2, 0, 0]]
+D_SJ = [[0, 0, 8*a*h*r, 16*a*b*r**2], [0, 0, 0, 8*b*r**3 - 8*b*r*t**2], [8*a*h*r, 0, 0, 0], [16*a*b*r**2, 8*b*r**3 - 8*b*r*t**2, 0, 0]]
+nonzero_entries = (-8*a*h*r, -8*a*b*r**2, 16*a*b*r**2)
+COMPUTATIONAL_BASIS: normality, decomposition, nonzero sectors and independent Kronecker assembly OK
+CHARACTERISTIC_POLYNOMIAL: lambda*(lambda + 4*r**2)*(4*h**2 + lambda**2 + 4*lambda*r**2 + 4*lambda*t**2 + 4*r**4 + 8*r**2*t**2 + 4*t**4)
+STATIONARY: I/2 OK
+ALL_CHECKS_OK

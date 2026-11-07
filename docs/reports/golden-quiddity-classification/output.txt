@@ -1,0 +1,13 @@
+FIDELITY_OK: Definition 2.2 examples; signed golden pentagons; Proposition 3.1 on integer tuples [-3,3], lengths 1..4
+IDENTITIES_OK: U^1..U^5; zero contraction on [-5,5]^2; 43 parameters in each zero-quadruple family, including 81-digit values
+EXHAUSTIVE n=1 tuples=5 quiddities=0 irreducibles=0
+EXHAUSTIVE n=2 tuples=25 quiddities=1 irreducibles=0
+EXHAUSTIVE n=3 tuples=125 quiddities=0 irreducibles=0
+EXHAUSTIVE n=4 tuples=625 quiddities=9 irreducibles=9
+EXHAUSTIVE n=5 tuples=3125 quiddities=2 irreducibles=2
+EXHAUSTIVE n=6 tuples=15625 quiddities=85 irreducibles=0
+EXHAUSTIVE n=7 tuples=78125 quiddities=42 irreducibles=0
+EXHAUSTIVE n=8 tuples=390625 quiddities=881 irreducibles=0
+EXHAUSTIVE n=9 tuples=1953125 quiddities=720 irreducibles=0
+EXHAUSTIVE_OK: 2441405 tuples; 1740 scalar words independently checked by 4x4 integer matrices; all irreducibles match the displayed list; all long solutions admit the proposed strictly shorter splice
+ALL_CHECKS_OK

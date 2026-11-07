@@ -1,0 +1,8 @@
+Python 3.14.8 SymPy 1.14.0
+ARITHMETIC: exact integers, rationals, cyclotomic polynomial quotients and algebraic square roots
+SOURCE_FIDELITY: 40 exact vacuum/PGM cases, n=2..9; Eqs. (6)-(8) agree
+ATTAINMENT: 252 parameter cases; 1680 individual states; 568 Fourier/PVM entries
+RANGE: n=2..9, every 1<=d<n; leakage fractions 0,1/4,1/2,3/4,1 of threshold, and two plateau points
+EXAMPLE: n=4 d=2 epsilon=1/10; each projected weight=9/10; success=4/5
+SCOPE: finite exact checks support the outline; no universal theorem or Lean proof is claimed
+ALL_CHECKS_OK

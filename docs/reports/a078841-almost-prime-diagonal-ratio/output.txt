@@ -1,0 +1,11 @@
+SOURCE A078841 terms=1001 sha256=dbd55c9151f0b2840b36efe4ae1d93e7cccd6249f73ba636f7c6aa5d860b5c55
+SOURCE A101695 terms=1000 sha256=62aa01f436c5e62b6625b729b95e0b5bc400801ced1583617a538f874dc2b762
+MONOID bound=4437/16 elements=1001 largest_odd_prime=547 b_1000=4437/16
+FIDELITY all 1001 official A078841 terms match independent Fraction enumeration
+FIDELITY all 1000 official A101695 terms match Fraction enumeration
+IDENTITY A101695(n+1)=2*A078841(n) checked for every n=0..999
+INDEPENDENT_INTEGER_SIEVE limit=1105920 main_n=0..16 companion_n=1..17
+EDGE_CASE Omega(1)=0; zero excluded; A078841(0)=1; A101695(1)=2
+DIAGNOSTIC exact_main_ratio_999=3944/1971
+SCOPE finite fidelity and rank checks; neither asymptotic limit is certified
+ALL_CHECKS_OK

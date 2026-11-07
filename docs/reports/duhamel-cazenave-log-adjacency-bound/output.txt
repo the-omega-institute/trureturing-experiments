@@ -1,0 +1,13 @@
+FIDELITY: source equation (1) is an equality on K_n, 2 <= n <= 10; exact adjacency and D-A characteristic polynomials verified
+SEED m=7: vertices=14 edges=49 degrees=7 basis_det=-6272
+SEED adjacency spectrum: [7, 5, 0, 0, 0, 0, 0, 0, -2, -2, -2, -2, -2, -2]
+SEED Laplacian spectrum: [0, 2, 7, 7, 7, 7, 7, 7, 9, 9, 9, 9, 9, 9]
+SEED characteristic polynomials: t^6*(t+2)^6*(t-7)*(t-5); t*(t-2)*(t-7)^6*(t-9)^6
+FAMILY: invariant-subspace formulas checked symbolically; exact matrices/eigenbases/characteristic polynomials checked for 2 <= m <= 14
+EXP CERTIFICATE: sum(k=0..3) (5/2)^k/k! = 443/48 > 9
+FAMILY LOG CERTIFICATE: (m-2)-(5+2*(m-7)/9)=7*(m-7)/9 >= 0 for m>=7
+CONCLUSION (using exp Taylor lower bound and log(1+x)<=x): m-2 > 2*ln(m+2) for every integer m>=7
+OPTIONAL TREE: n=514 edges=513; quotient and all 510 leaf-difference equations verified
+TREE spectra: adjacency roots of (t^2-t-256)*(t^2+t-256), plus 0^510; Laplacian roots of t*(t-257)*(t^2-259*t+2), plus 1^510
+TREE bounds: (sqrt(1025)-1)/2 > 31/2 > 14; (259+sqrt(67073))/2 < 259 < exp(7), since 9893/30 > 259
+ALL_CHECKS_OK

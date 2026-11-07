@@ -1,0 +1,14 @@
+Exact arithmetic: Python 3.14; SymPy 1.14.0
+FIDELITY Example 3.1 A: singleton certificates; 4 larger principal blocks fail via x=1; exact order 2 (ordinary); det=-11
+FIDELITY Example 3.1 B: singleton certificates; 4 larger principal blocks fail via x=1; exact order 2 (strict); det=-27
+SYMBOLIC: small-block margin=s-1; large-block row-sum bound=-s
+SYMBOLIC: actual entries and both inverse products in the nested projection algebra verified
+SYMBOLIC: between-cluster inverse entry=b/C
+FULL s=2 m=2 n=24 k=22: det=1*11^22*97; inertia=(22 positive,2 negative,0 zero); inverse_between=4/97
+PRINCIPAL TYPES s=2 m=2: 5 nonempty small types; 163 larger types; strict/ordinary cutoff=2
+FULL s=2 m=3 n=36 k=34: det=-1*11^33*145; inertia=(33 positive,3 negative,0 zero); inverse_between=4/145
+PRINCIPAL TYPES s=2 m=3: 9 nonempty small types; 2187 larger types; strict/ordinary cutoff=2
+FULL s=3 m=2 n=54 k=51: det=1*26^52*379; inertia=(52 positive,2 negative,0 zero); inverse_between=7/379
+PRINCIPAL TYPES s=3 m=2: 9 nonempty small types; 774 larger types; strict/ordinary cutoff=3
+PARAMETERS: all 361 pairs 2<=s,m<=20 satisfy the exact sign and cutoff identities
+ALL_CHECKS_OK

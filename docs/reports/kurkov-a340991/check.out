@@ -1,0 +1,3 @@
+OEIS A340991 row 4: [0, 7, 29, 36, 16]
+Checked universal recursion for primes and a signed arbitrary sequence through n=10.
+ALL_CHECKS_OK

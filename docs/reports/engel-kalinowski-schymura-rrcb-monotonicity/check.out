@@ -1,0 +1,14 @@
+FIDELITY Example 1: RCB=1 RRCB=2
+FIDELITY Example 2: RCB=2 RRCB=3
+FIDELITY Example 1: two coincident rectangles keep two distinct labels
+SMALL LEDM n=1: RCB=0 RRCB=0
+SMALL LEDM n=2: RCB=2 RRCB=2
+SMALL LEDM n=3: RCB=3 RRCB=3
+SMALL LEDM n=4: RCB=4 RRCB=4
+SMALL LEDM n=5: RCB=4 RRCB=5
+SMALL monotonicity: every 1 <= n <= m <= 5, both LEDM branches
+EXHAUSTIVE all 81 nonnegative 2x2 matrices with entries 0,1,2: maximal/raw minima agree
+EXHAUSTIVE 395 refined families of size <= 2, including empty/repeated rectangles
+BOUNDARIES zero matrices, empty restrictions, one-cell matrices, repeated real coordinates checked
+RESTRICTIONS 12664 labelled family/submatrix checks; exact touching-label sets preserved
+ALL_CHECKS_OK

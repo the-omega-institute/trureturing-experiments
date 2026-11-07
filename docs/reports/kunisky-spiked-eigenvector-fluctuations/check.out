@@ -1,0 +1,8 @@
+N=16: E[W^2]=I, covariance norm=1, alpha^2=1/9
+N=81: E[W^2]=I, covariance norm=2/3, alpha^2=3/83
+N=256: E[W^2]=I, covariance norm=1/2, alpha^2=2/129
+N=625: E[W^2]=I, covariance norm=2/5, alpha^2=5/627
+N=1296: E[W^2]=I, covariance norm=1/3, alpha^2=3/649
+predicted covariance limit = 1
+actual fluctuation variance = 7/16
+ALL_CHECKS_OK

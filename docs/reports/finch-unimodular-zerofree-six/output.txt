@@ -1,0 +1,12 @@
+SOURCE arXiv:2605.03691v4 (12 June 2026), Sections 1 and 5
+FIDELITY n=2 alpha=beta=2: raw=32, orbits=1, canonical=[(1, 1, 1, 2)]
+FIDELITY n=2 alpha=beta=3: raw=96, orbits=3, canonical=[(1, 1, 2, 3), (1, 2, 1, 3), (1, 2, 2, 3)]
+WITNESS A = [[3, 2, 2, 2, 2, 2], [2, 3, 2, 2, 2, 2], [2, 2, 3, 2, 2, 2], [2, 2, 2, 1, 2, 2], [2, 2, 2, 2, 1, 2], [2, 2, 2, 2, 2, 1]]
+WITNESS B = [[-1, -2, -2, 2, 2, 2], [-2, -1, -2, 2, 2, 2], [-2, -2, -1, 2, 2, 2], [2, 2, 2, -3, -2, -2], [2, 2, 2, -2, -3, -2], [2, 2, 2, -2, -2, -3]]
+WITNESS AB=BA=I_6; det A=det B=-1 (Bareiss and all 720 permutations); exact Gauss-Jordan inverse=B; all entries nonzero; alpha=beta=3
+FAMILY canonical balanced signs: m=1..8, k=2..10, 72 pairs checked
+POLYNOMIAL all coefficients of AB=BA=I in Z[t] checked separately for m=1..8
+FAMILY all balanced sign placements: m=1..4, k=2..4, 294 pairs checked
+BOUNDARIES empty dimension has maximum 0; k=1 has zero entries; unbalanced signs fail AB=I
+SCOPE finite exact computation; no Lean proof or all-dimensions kernel theorem claimed
+ALL_CHECKS_OK

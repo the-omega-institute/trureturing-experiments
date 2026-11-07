@@ -1,0 +1,14 @@
+Arithmetic: integers, fractions.Fraction, SymPy exact rationals/polynomials
+SymPy version: 1.14.0
+FIDELITY q=2: source R1 and R2 reproduced
+IDENTITY q=2: coefficients, branch, primitive, degrees, symbolic boundary norm OK
+FIDELITY q=3: source R1 and R2 reproduced
+IDENTITY q=3: coefficients, branch, primitive, degrees, symbolic boundary norm OK
+FIDELITY q=4: source R1 and R2 reproduced
+IDENTITY q=4: coefficients, branch, primitive, degrees, symbolic boundary norm OK
+FIDELITY q=5: source R1 and R2 reproduced
+IDENTITY q=5: coefficients, branch, primitive, degrees, symbolic boundary norm OK
+FIDELITY q=6: source R1 and R2 reproduced
+IDENTITY q=6: coefficients, branch, primitive, degrees, symbolic boundary norm OK
+FIDELITY: p=4 boundary, p=6 at x=1, and separately normalized Narayana endpoint OK
+ALL_CHECKS_OK

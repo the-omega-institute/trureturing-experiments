@@ -1,0 +1,18 @@
+FIDELITY S3xC1: order=6 center=1 vertices=5 omega=chi=2
+FIDELITY S3xC2: order=12 center=2 vertices=10 omega=chi=4
+FIDELITY S3xC3: order=18 center=3 vertices=15 omega=chi=6
+FIDELITY S3xC4: order=24 center=4 vertices=20 omega=chi=8
+FIDELITY S3xC5: order=30 center=5 vertices=25 omega=chi=10
+FIDELITY S3xC6: order=36 center=6 vertices=30 omega=chi=12
+PGL2 F3: order=24 center=1 vertices=23 involutions(split,nonsplit)=(6,3) deletion_max=(2, 2, 2) character_sum=-1 omega=chi=3
+PRODUCT PGL2(F3)xC3: center=3 vertices=69 omega=chi=9
+PRODUCT PGL2(F3)xC5: center=5 vertices=115 omega=chi=15
+PGL2 F5: order=120 center=1 vertices=119 involutions(split,nonsplit)=(15,10) deletion_max=(4, 4, 3) character_sum=-1 omega=chi=5
+PRODUCT PGL2(F5)xC3: center=3 vertices=357 omega=chi=15
+PRODUCT PGL2(F5)xC5: center=5 vertices=595 omega=chi=25
+PGL2 F7: order=336 center=1 vertices=335 involutions(split,nonsplit)=(28,21) deletion_max=(6, 6, 4) character_sum=-1 omega=chi=7
+PRODUCT PGL2(F7)xC3: center=3 vertices=1005 omega=chi=21
+PRODUCT PGL2(F7)xC5: center=5 vertices=1675 omega=chi=35
+PGL2 F9: order=720 center=1 vertices=719 involutions(split,nonsplit)=(45,36) deletion_max=(8, 8, 5) character_sum=-1 omega=chi=9
+PGL2 F11: order=1320 center=1 vertices=1319 involutions(split,nonsplit)=(66,55) deletion_max=(10, 10, 6) character_sum=-1 omega=chi=11
+ALL_CHECKS_OK

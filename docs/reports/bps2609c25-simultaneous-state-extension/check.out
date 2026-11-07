@@ -1,0 +1,5 @@
+SOURCE Proposition 2.9: 38 atoms, 21 blocks; critical half-state verified; no two-valued critical state (32 cases)
+SOURCE end-block transport at marginals (1/2,1/4,1/4): [['1/4', '0', '1/4'], ['0', '1/4', '0'], ['1/4', '0', '0']]
+TRANSPORT: 125482 graphs/marginals, 32651 feasible; all m,n=1..3, denominator=4
+CUT/LIFT: 1534 subset cuts and 8271 rational common-source marginals; all partition pairs on 1..4 points
+ALL_CHECKS_OK

@@ -1,0 +1,10 @@
+TIE_FIRST: same valuation A=0 admits Delta=0 and Delta=1; tie does not force equality
+FIDELITY Example 5.3: permanent=9 dominant_coefficient=62
+FIDELITY Example 5.17: D=(1,r-s,r-s), exact determinants, epsilon cancellations OK
+EXHAUSTIVE n=1 total=3 tropical_TN=3 finite_minors=3 tied_minors=0 zero_minors=0
+EXHAUSTIVE n=2 total=144 tropical_TN=113 finite_minors=493 tied_minors=19 zero_minors=72
+EXHAUSTIVE n=3 total=110592 tropical_TN=11211 finite_minors=170737 tied_minors=18710 zero_minors=42272
+EXHAUSTIVE n=4 total=4096 tropical_TN=196 finite_minors=8030 tied_minors=2388 zero_minors=5494
+BOX_VERTICES n=3 vertices=512 all_19_minors_positive minimum=163/2
+SCOPE finite exact checks and full-box interval bounds; universal theorem remains unproved in Lean
+ALL_CHECKS_OK

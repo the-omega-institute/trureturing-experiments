@@ -1,0 +1,19 @@
+normalized_error_envelope=0,3,12,33,84,207,504,1221,2952
+N=1 r=1/2 arrays=9 eta=1/864 reference_min=1/2 coefficient_comparisons=72 all_invariants=OK
+N=2 r=1/2 arrays=15 eta=1/124416 reference_min=1/4 coefficient_comparisons=405 all_invariants=OK
+N=3 r=1/2 arrays=21 eta=1/17915904 reference_min=1/12 coefficient_comparisons=1344 all_invariants=OK
+N=4 r=1/2 arrays=27 eta=1/2579890176 reference_min=1/32 coefficient_comparisons=3375 all_invariants=OK
+N=5 r=1/2 arrays=33 eta=1/371504185344 reference_min=1/80 coefficient_comparisons=7128 all_invariants=OK
+N=6 r=1/2 arrays=39 eta=1/53496602689536 reference_min=1/240 coefficient_comparisons=13377 all_invariants=OK
+N=7 r=1/2 arrays=45 eta=1/7703510787293184 reference_min=1/672 coefficient_comparisons=23040 all_invariants=OK
+N=8 r=1/2 arrays=51 eta=1/1109305553370218496 reference_min=1/1792 coefficient_comparisons=37179 all_invariants=OK
+N=1 r=1/3 arrays=9 eta=1/1296 reference_min=1/3 coefficient_comparisons=72 all_invariants=OK
+N=2 r=1/3 arrays=15 eta=1/279936 reference_min=1/9 coefficient_comparisons=405 all_invariants=OK
+N=3 r=1/3 arrays=21 eta=1/60466176 reference_min=1/27 coefficient_comparisons=1344 all_invariants=OK
+N=4 r=1/3 arrays=27 eta=1/13060694016 reference_min=1/108 coefficient_comparisons=3375 all_invariants=OK
+N=5 r=1/3 arrays=33 eta=1/2821109907456 reference_min=1/405 coefficient_comparisons=7128 all_invariants=OK
+N=6 r=1/3 arrays=39 eta=1/609359740010496 reference_min=1/1458 coefficient_comparisons=13377 all_invariants=OK
+N=7 r=1/3 arrays=45 eta=1/131621703842267136 reference_min=1/5103 coefficient_comparisons=23040 all_invariants=OK
+N=8 r=1/3 arrays=51 eta=1/28430288029929701376 reference_min=1/20412 coefficient_comparisons=37179 all_invariants=OK
+total_parameter_pairs=16 total_sample_arrays=480 fidelity_corner=OK tensor_formula=OK triangle_zeros=OK factorial_bound=OK scaled_recurrence=OK final_constants=OK
+ALL_CHECKS_OK

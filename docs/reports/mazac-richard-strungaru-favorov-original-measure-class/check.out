@@ -1,0 +1,12 @@
+Arithmetic: integers and fractions; cyclotomic quotient arithmetic is exact
+FIDELITY Lemma3 alpha=1/8 M=4: time gap, Fourier gap, nonzero, periodic OK
+FIDELITY Lemma3 alpha=1/8 M=8: time gap, Fourier gap, nonzero, periodic OK
+FIDELITY Lemma3 alpha=1/8 M=16: time gap, Fourier gap, nonzero, periodic OK
+FIDELITY Lemma3 alpha=1/8 M=32: time gap, Fourier gap, nonzero, periodic OK
+UNIFORM_LATTICE 528 rational offsets: certified two-sided tails and translate reindexing OK
+DIPOLES 1932 exact divided differences; all M<=8, shifts, t, truncations OK
+DECAY n=1..64: original tau bounds, exact cube roots, geometric majorants OK
+FOURIER all integer M,R<=16: quadratic variation coefficient bound OK
+Scope: finite fidelity and estimate checks; no Lean proof or infinite-family certification
+check.py sha256: 01ebbc4627474d1d70578adbc72f54c673df92bf5af83461a358937e72f581f1
+ALL_CHECKS_OK

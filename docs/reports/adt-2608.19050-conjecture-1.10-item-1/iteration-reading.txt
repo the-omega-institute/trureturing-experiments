@@ -1,0 +1,7 @@
+Diagnostic recurrence iteration (not evidence used by check.py):
+n=10       b_n/n^2 = 0.5675443101274983
+n=100      b_n/n^2 = 0.49958781217212983
+n=1000     b_n/n^2 = 0.4898057555241753
+n=10000    b_n/n^2 = 0.48850481290670433
+n=100000   b_n/n^2 = 0.4883419588484151
+Variational minimization reading: 0.4883197421891127.

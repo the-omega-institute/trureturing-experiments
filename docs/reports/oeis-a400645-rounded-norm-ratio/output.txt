@@ -1,0 +1,15 @@
+fidelity: all 51 terms of OEIS A400645 revision 21 reproduced
+positive-index prefix a_1..a_26: [0, 0, 0, 1, 1, 1, 2, 2, 3, 4, 5, 7, 9, 12, 16, 21, 28, 37, 48, 63, 83, 109, 143, 188, 247, 324]
+finite recurrence, positivity, growth, midpoint and error checks: n=4..4095
+exact relative envelope checks: 263965; 4<=m<=4096, 0<=k<=min(64,4096-m)
+exact algebra: radical, reciprocal reduction, distinct roots and octic substitution OK
+root location: 17/10 < r < 7/4; other roots are 1/r and a unit-circle conjugate pair
+p(17/10) = -1509/10000
+left projection identity: all four numerator remainders modulo p are zero
+positive-tail certificate: (7/17)*324^2 - 120*324 = 73872/17
+finite tail-envelope checks: j=0..4069
+largest octic root exact isolating interval: 993028115323066552289/756718590238153038134 985524596874466051589/751000673681073809325
+source decimal check: nearest 10-place rational is 13122819079/10000000000
+finite ratio enclosure: |a_(n+1)/a_n - sqrt(r)| < 1/10^10 for n=128..4095
+scope: finite checks and exact algebra only; no certification of the infinite limit
+ALL_CHECKS_OK

@@ -1,0 +1,6 @@
+FIDELITY: source Section 2 pushforward/integral identity: 16824 exact cases
+ROUTE: empirical conjugacy and endpoint shift: 29052 exact cases
+ROUTE: geometric normalization, exact tails, shifted weights: 5236 exact cases
+ROUTE: alternating symbolic blocks: 24 exact endpoint inequalities
+LIMIT: finite checks support identities only; manifold existence remains unformalized
+ALL_CHECKS_OK

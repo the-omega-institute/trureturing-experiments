@@ -1,0 +1,34 @@
+FIDELITY constant m=1 unique_shortest=0 minimal_dimension=2
+FIDELITY constant m=2 unique_shortest=00 minimal_dimension=2
+FIDELITY constant m=3 unique_shortest=000 minimal_dimension=2
+FIDELITY constant m=4 unique_shortest=0000 minimal_dimension=3
+FIDELITY constant m=5 unique_shortest=00000 minimal_dimension=3
+FIDELITY constant m=6 unique_shortest=000000 minimal_dimension=3
+FIDELITY constant m=7 unique_shortest=0000000 minimal_dimension=3
+FIDELITY constant m=8 unique_shortest=00000000 minimal_dimension=3
+FIDELITY constant m=9 unique_shortest=000000000 minimal_dimension=4
+FIDELITY constant m=10 unique_shortest=0000000000 minimal_dimension=4
+FIDELITY constant m=11 unique_shortest=00000000000 minimal_dimension=4
+FIDELITY constant m=12 unique_shortest=000000000000 minimal_dimension=4
+FAMILY m=2 unique_shortest=01 image_ranks=[2, 1, 1] dimension_threshold=2
+FAMILY m=3 unique_shortest=001 image_ranks=[3, 2, 1, 1] dimension_threshold=2
+FAMILY m=4 unique_shortest=0001 image_ranks=[4, 3, 2, 1, 1] dimension_threshold=3
+FAMILY m=5 unique_shortest=00001 image_ranks=[5, 4, 3, 2, 1, 1] dimension_threshold=3
+FAMILY m=6 unique_shortest=000001 image_ranks=[6, 5, 4, 3, 2, 1, 1] dimension_threshold=3
+FAMILY m=7 unique_shortest=0000001 image_ranks=[7, 6, 5, 4, 3, 2, 1, 1] dimension_threshold=3
+FAMILY m=8 unique_shortest=00000001 image_ranks=[8, 7, 6, 5, 4, 3, 2, 1, 1] dimension_threshold=3
+FAMILY m=9 unique_shortest=000000001 image_ranks=[9, 8, 7, 6, 5, 4, 3, 2, 1, 1] dimension_threshold=4
+FAMILY m=10 unique_shortest=0000000001 image_ranks=[10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 1] dimension_threshold=4
+FAMILY m=11 unique_shortest=00000000001 image_ranks=[11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 1] dimension_threshold=4
+FAMILY m=12 unique_shortest=000000000001 image_ranks=[12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 1] dimension_threshold=4
+CPTP_EXACT kind=marker m=2 d=2 eps=1/12 choi_margin=1/4 reachable_span=2
+CPTP_EXACT kind=marker m=3 d=2 eps=1/16 choi_margin=1/4 reachable_span=3
+CPTP_EXACT kind=marker m=4 d=3 eps=1/30 choi_margin=1/6 reachable_span=4
+CPTP_EXACT kind=marker m=5 d=3 eps=1/36 choi_margin=1/6 reachable_span=5
+CPTP_EXACT kind=marker m=6 d=3 eps=1/42 choi_margin=1/6 reachable_span=6
+CPTP_EXACT kind=marker m=7 d=3 eps=1/48 choi_margin=1/6 reachable_span=7
+CPTP_EXACT kind=marker m=8 d=3 eps=1/54 choi_margin=1/6 reachable_span=8
+CPTP_EXACT kind=constant m=8 d=3 eps=1/54 choi_margin=1/6 reachable_span=8
+SOURCE_VALUE qc(0^8)=3; FAMILY_VALUE predicted qc(0001)=3; enumerated_word_tests=32733
+SCOPE finite exact checks; universal lower bound and all-length settlement await Lean proof
+ALL_CHECKS_OK

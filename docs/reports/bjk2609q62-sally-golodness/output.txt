@@ -1,0 +1,20 @@
+Exact arithmetic: integers and modular inverses in F_2, F_3; no floating point
+FIDELITY Theorem A(b), m=5 n=4 F_2: B_coeff=[1, 3, 2]
+BAR m=5 n=4 F_2: ranks(d_1..d_5)=[0, 2, 10, 46, 194] beta_A=[1, 2, 4, 8, 16]; regular-element transfer predicts beta_R=[1, 3, 6, 12, 24]
+FIDELITY Theorem A(b), m=5 n=4 F_3: B_coeff=[1, 3, 2]
+BAR m=5 n=4 F_3: ranks(d_1..d_5)=[0, 2, 10, 46, 194] beta_A=[1, 2, 4, 8, 16]; regular-element transfer predicts beta_R=[1, 3, 6, 12, 24]
+FIDELITY Theorem A(b), m=6 n=5 F_2: B_coeff=[1, 6, 8, 3]
+BAR m=6 n=5 F_2: ranks(d_1..d_5)=[0, 2, 14, 84, 460] beta_A=[1, 3, 9, 27, 81]; regular-element transfer predicts beta_R=[1, 4, 12, 36, 108]
+FIDELITY Theorem A(b), m=6 n=5 F_3: B_coeff=[1, 6, 8, 3]
+BAR m=6 n=5 F_3: ranks(d_1..d_5)=[0, 2, 14, 84, 460] beta_A=[1, 3, 9, 27, 81]; regular-element transfer predicts beta_R=[1, 4, 12, 36, 108]
+FIDELITY Theorem A(c), m=7 n=6 F_2: B_coeff=[1, 9, 17, 12, 3]
+BAR m=7 n=6 F_2: ranks(d_1..d_5)=[0, 2, 19, 141, 946] beta_A=[1, 4, 15, 56, 209]; regular-element transfer predicts beta_R=[1, 5, 19, 71, 265]
+FIDELITY Theorem A(c), m=7 n=6 F_3: B_coeff=[1, 9, 17, 12, 3]
+BAR m=7 n=6 F_3: ranks(d_1..d_5)=[0, 2, 19, 141, 946] beta_A=[1, 4, 15, 56, 209]; regular-element transfer predicts beta_R=[1, 5, 19, 71, 265]
+APERY_AND_SERRE: 66 pairs, 5<=m<=15, 4<=n<m; series through degree 30
+DUAL m=5 n=4: H[0..6]=[1, 2, 2, 2, 2, 2, 2]; two-relation rank verified d=2..4 in F_2,F_3
+DUAL m=6 n=5: H[0..6]=[1, 3, 7, 17, 41, 99, 239]; two-relation rank verified d=2..4 in F_2,F_3
+DUAL m=7 n=6: H[0..6]=[1, 4, 14, 49, 171, 597, 2084]; two-relation rank verified d=2..4 in F_2,F_3
+DUAL m=8 n=7: H[0..6]=[1, 5, 23, 106, 488, 2247, 10346]; two-relation rank verified d=2..4 in F_2,F_3
+DUAL m=9 n=8: H[0..6]=[1, 6, 34, 193, 1095, 6213, 35252]; two-relation rank verified d=2..4 in F_2,F_3
+ALL_CHECKS_OK

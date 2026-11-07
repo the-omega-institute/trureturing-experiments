@@ -1,0 +1,8 @@
+FIDELITY Theorem 3.5: p=1/2, x=e1, y=e2, lhs=rhs=4
+DIAGONAL ranks=1..3, entries=-2..2, functions=8, checks=130200
+MATRIX entries=-2..2, rational-spectrum matrices=53
+MATRIX pairs=1561, noncommuting=224, singular_sums=437, checks=12488
+EXCLUDED pairs with irrational eigenvalues of A+B=1248
+JENSEN scalar contraction checks=648
+BOUNDARIES include zero, singular sums, f(0)>0, endpoint-discontinuous f
+ALL_CHECKS_OK

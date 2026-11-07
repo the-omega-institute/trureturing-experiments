@@ -1,0 +1,11 @@
+FIDELITY Example 3.3: RP = X^2; RPMinus = {(1, 1)}
+SEMIGROUP: positive powers reproduce source; adjoining identity changes this example
+FAMILY: 8 exact polynomial certificates and 3 fixed-point evaluations passed
+DOMAIN: 0 < t < 1/2, -1 <= x,y <= 1; strict increase has positive term 1-2t
+FORWARD: 0 < a <= x < 1 gives 1-f_t(x) <= (1-t*a)*(1-x)
+BACKWARD: 0 <= z <= r < 1 gives f_t(z) >= (1+t*(1-r^2))*z
+RATIONAL: 12 forward orbits (5 steps); 9 inverse brackets
+WITNESS BOUNDS: 12 exact geometric bounds; largest N = 512
+RELATION TABLE: R is proper in I^2; product formulas give both incomparability witnesses
+LIMIT: polynomial identities and rational bounds checked; RP identities require topology
+ALL_CHECKS_OK

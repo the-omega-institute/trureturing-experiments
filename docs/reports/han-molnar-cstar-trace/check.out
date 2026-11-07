@@ -1,0 +1,8 @@
+FIDELITY rank-one formula: 720 exact cases
+SETTLEMENT corner-inverse and projection identities: 308 exact cases
+STRICTNESS Schur-resolvent gap: exact rational nonnegativity and zero iff off-diagonal zero
+INVERTIBLE witness: -1/10 < H(X) < -1/20 (exact rational interval certificate)
+WITNESS p=1/2; B=diag(1,1/4); X=(1/5)[[1,1],[1,1]]+(1/10000)I
+LIMIT H((2/5)P)=-(2/5)log(5/4)<0 (exact sign)
+SCOPE finite matrix evidence; no proof of the general C*-algebra implication
+ALL_CHECKS_OK

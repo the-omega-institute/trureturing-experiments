@@ -1,0 +1,5 @@
+FIDELITY: checkerboard composition, uniform-product law, absorption; 15017 pairs, 1 <= n <= 5
+SAMPLING IDENTITY: all 1313 labeled order types, 1 <= n <= 3
+SINGULAR FAMILY: Delta/Delta and Delta/antidiagonal exact expectations; n = 1,2,4,8,16,32,64; error^2 <= 1/(8n)
+NONCOMMUTING STEP KERNELS: Q-then-P rectangle = 1/18, reversed = 1/6; exact order-statistic expectations checked
+ALL_CHECKS_OK

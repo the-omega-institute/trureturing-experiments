@@ -1,0 +1,9 @@
+# Samurai shadow-envelope checks
+
+Run `python3 docs/reports/sy2609sam-samurai-shadow-envelope/check.py` from the repository root. Python 3 and SymPy are required. All evidence uses integers, rational arithmetic or exact algebra in Q(sqrt(2)); no floating point is used. The saved output is `check.out`.
+
+The source is Steininger and Yurkevich, *The Nieuwland number of the Octahedron*, arXiv:2609.10788v1. The checker reproduces its displayed octahedral orthonormal projection pair and its strict-fit supremum 3*sqrt(2)/4, with rational isolation 53/50 < 3*sqrt(2)/4 < 17/16. This checks the optimal pair's threshold, without independently proving the global upper bound over all projections. It also verifies the three rational Noperthedron generator norm readings in arXiv:2508.18475v2, §2.1.
+
+For the octahedron, cube and tetrahedron, the program takes seven explicitly specified rational orthonormal two-frames. It solves every ordered shadow-containment problem with translations. Each optimum is accompanied by an exact feasible primal point and a nonnegative dual combination giving the same lower bound. On these finite shadow dictionaries it checks max F=1 and max F/min F equal to the strict-passage supremum. The values are 29/28 for the octahedron, 87/83 for the cube and 1 for the tetrahedron. It checks the source's Proposition 8 bound using diameter, together with translation invariance, positive homogeneity and strictness on interior homotheties. There are 588 independently certified LP optima.
+
+These checks test the proposed envelope construction on finite families. They do not establish compactness, the identity over the continuum of projections, any Noperthedron passage result, or the existence of the claimed samurai function. Those remain mathematical proof obligations. The finite values are not estimates asserted equal to the full Nieuwland numbers.

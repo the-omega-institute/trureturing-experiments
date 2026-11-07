@@ -1,0 +1,3 @@
+# FFD Krylov-Gram nonvanishing check
+
+`check.py` uses exact rational Gaussian arithmetic and a direct Pauli-word implementation. It reproduces the six-unit-coupling block and `Delta = -16` from Corollary 5 of Ruh–Elman–Chapman (arXiv:2610.03557v1), then checks the positive-coupling family `(b_1,b_2,b_3,b_4,b_5)=(3,1,1,1,4)` with arbitrary positive later couplings for chain lengths `m=5,6,7,10,15`. The leading four-by-four Gram block has positive two-by-two principal determinants while the displayed `Delta` is exactly zero. All arithmetic is integer/rational; no floating point is used as evidence.

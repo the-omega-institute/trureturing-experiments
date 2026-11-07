@@ -1,0 +1,4 @@
+fidelity: OEIS rows 1-10 reproduced exactly
+count bridge: 1600 entries agree
+tail band: 1353600 pairs, counts {1: 1015150, 2: 338450}
+ALL_CHECKS_OK

@@ -1,0 +1,31 @@
+EXACT_INTEGER_BACKEND gmpy2 2.3.2
+CHART E classes 16 valuation (0, -1, 5, -5, 2, 0, -1) shifted (0, -1, 2, -5, 4, 0, -1) precision (7, 6, 10, 0, 7, 3, 4) endpoint (3, 1)
+CHART O classes 16 valuation (0, -1, 4, -4, 2, 0, -1) shifted (0, -1, 2, -4, 3, 0, -1) precision (7, 6, 10, 2, 8, 5, 5) endpoint (1, 3)
+CHART_CERTIFICATE_OK classes=32 modulus=128
+EXACT_ALGEBRA_OK invariant, error identity, all 10 symbolic residue recurrences
+RATIONAL_AND_SOMOS5_CROSS_CHECK_OK n=0..100
+ORBIT 0 v2x 0 v2y 0 gcd_exponent 0 x_bits 1 y_bits 1
+ORBIT 100 v2x 500 v2y 520 gcd_exponent 500 x_bits 6074 y_bits 6084
+ORBIT 200 v2x 2000 v2y 2040 gcd_exponent 2000 x_bits 24422 y_bits 24443
+ORBIT 300 v2x 4500 v2y 4560 gcd_exponent 4500 x_bits 55045 y_bits 55077
+ORBIT 400 v2x 8000 v2y 8080 gcd_exponent 8000 x_bits 97943 y_bits 97984
+ORBIT 500 v2x 12500 v2y 12600 gcd_exponent 12500 x_bits 153115 y_bits 153167
+ORBIT 600 v2x 18000 v2y 18120 gcd_exponent 18000 x_bits 220561 y_bits 220624
+ORBIT 700 v2x 24500 v2y 24640 gcd_exponent 24500 x_bits 300283 y_bits 300356
+ORBIT 800 v2x 32000 v2y 32160 gcd_exponent 32000 x_bits 392279 y_bits 392362
+ORBIT 900 v2x 40500 v2y 40680 gcd_exponent 40500 x_bits 496549 y_bits 496644
+ORBIT 1000 v2x 50000 v2y 50200 gcd_exponent 50000 x_bits 613094 y_bits 613199
+ORBIT 1100 v2x 60500 v2y 60720 gcd_exponent 60500 x_bits 741914 y_bits 742029
+ORBIT 1200 v2x 72000 v2y 72240 gcd_exponent 72000 x_bits 883009 y_bits 883135
+ORBIT 1300 v2x 84500 v2y 84760 gcd_exponent 84500 x_bits 1036378 y_bits 1036514
+ORBIT 1400 v2x 98000 v2y 98280 gcd_exponent 98000 x_bits 1202022 y_bits 1202168
+ORBIT 1500 v2x 112500 v2y 112800 gcd_exponent 112500 x_bits 1379940 y_bits 1380097
+ORBIT 1600 v2x 128000 v2y 128320 gcd_exponent 128000 x_bits 1570133 y_bits 1570301
+ORBIT 1700 v2x 144500 v2y 144840 gcd_exponent 144500 x_bits 1772601 y_bits 1772779
+ORBIT 1800 v2x 162000 v2y 162360 gcd_exponent 162000 x_bits 1987343 y_bits 1987532
+ORBIT 1900 v2x 180500 v2y 180880 gcd_exponent 180500 x_bits 2214360 y_bits 2214559
+ORBIT 2000 v2x 200000 v2y 200400 gcd_exponent 200000 x_bits 2453652 y_bits 2453862
+SOURCE_FIDELITY_OK exact x,y,g tables n=0..8; det M=14=2*7
+SOURCE_GCD_TABLE [1, 1, 1, 1, 2, 2, 4, 8, 8]
+DIRECT_INTEGER_CHECK_OK n=0..2000 exact divisions, positivity, both valuation formulas, entire gcd, exponent monotonicity
+ALL_CHECKS_OK

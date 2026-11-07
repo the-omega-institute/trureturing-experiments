@@ -1,0 +1,7 @@
+mass_disk_projection = 1
+q(1/16) = 211/256
+q(3/16) = 139/256
+q(1/8) = 43/64
+jensen_ratio = 29584/29329 > 1
+curvature_negative_at_lambda_1_over_32 = True
+ALL_CHECKS_OK

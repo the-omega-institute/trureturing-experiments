@@ -1,0 +1,8 @@
+FIDELITY: quarter-value digamma/radical identity verified exactly
+INTEGER LIMITS: x=0,...,8 give x! exactly; 548 finite-sum checks
+INTEGER LIMITS: x=-1,...,-8 give beta(-x)/Gamma(-x) exactly; 512 finite-sum checks
+RATIONAL INTERVALS: x=-1 and x=-2 satisfy explicit O(1/n) bounds for n=1,...,128
+COEFFICIENTS: recurrence and GammaSeq product identity verified symbolically for k=0,...,12
+RATIONAL/COMPLEX CONVENTIONS: 96 exact finite-sum cross-checks
+SCOPE: symbolic limits cover integer x=-8,...,8 only; no full complex-plane limit is certified
+ALL_CHECKS_OK

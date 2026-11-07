@@ -1,0 +1,19 @@
+NORMALIZED_DIVISORS: exact factor_list((1+z)^n), n=1..11: only (z+1)^k
+METHOD: all admissible fixed-point flags; all binary splits; all unordered atom multisets
+FIDELITY Remark 4.20: t=2, j=1, lengths=[2, 3]
+EXHAUSTIVE t=2, a=1, j=1, sites=8, atom_types=2, factorizations_by_length={2: 1, 3: 1}, lengths=[2, 3]
+FIDELITY Remark 4.20: t=2, j=2, lengths=[2, 3, 4, 5]
+EXHAUSTIVE t=2, a=1, j=2, sites=32, atom_types=4, factorizations_by_length={2: 2, 3: 1, 4: 1, 5: 1}, lengths=[2, 3, 4, 5]
+FIDELITY Remark 4.20: t=2, j=3, lengths=[2, 3, 4, 5, 6, 7]
+EXHAUSTIVE t=2, a=1, j=3, sites=128, atom_types=11, factorizations_by_length={2: 7, 3: 2, 4: 3, 5: 1, 6: 1, 7: 1}, lengths=[2, 3, 4, 5, 6, 7]
+EXHAUSTIVE t=2, a=1, j=4, sites=512, atom_types=36, factorizations_by_length={2: 25, 3: 10, 4: 9, 5: 3, 6: 3, 7: 1, 8: 1, 9: 1}, lengths=[2, 3, 4, 5, 6, 7, 8, 9]
+EXHAUSTIVE t=2, a=1, j=5, sites=2048, atom_types=127, factorizations_by_length={2: 91, 3: 39, 4: 35, 5: 12, 6: 10, 7: 3, 8: 3, 9: 1, 10: 1, 11: 1}, lengths=[2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+FIDELITY Remark 4.20: t=3, j=1, lengths=[2, 3]
+EXHAUSTIVE t=3, a=3/2, j=1, sites=8, atom_types=2, factorizations_by_length={2: 1, 3: 1}, lengths=[2, 3]
+FIDELITY Remark 4.20: t=3, j=2, lengths=[2, 3, 4, 5]
+EXHAUSTIVE t=3, a=3/2, j=2, sites=32, atom_types=4, factorizations_by_length={2: 2, 3: 1, 4: 1, 5: 1}, lengths=[2, 3, 4, 5]
+FIDELITY Remark 4.20: t=3, j=3, lengths=[2, 3, 4, 5, 6, 7]
+EXHAUSTIVE t=3, a=3/2, j=3, sites=128, atom_types=11, factorizations_by_length={2: 7, 3: 2, 4: 3, 5: 1, 6: 1, 7: 1}, lengths=[2, 3, 4, 5, 6, 7]
+EXHAUSTIVE t=3, a=3/2, j=4, sites=512, atom_types=36, factorizations_by_length={2: 25, 3: 10, 4: 9, 5: 3, 6: 3, 7: 1, 8: 1, 9: 1}, lengths=[2, 3, 4, 5, 6, 7, 8, 9]
+EXHAUSTIVE t=3, a=3/2, j=5, sites=2048, atom_types=127, factorizations_by_length={2: 91, 3: 39, 4: 35, 5: 12, 6: 10, 7: 3, 8: 3, 9: 1, 10: 1, 11: 1}, lengths=[2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+ALL_CHECKS_OK

@@ -1,0 +1,7 @@
+FIDELITY: source periodic zero-growth result; period=6; sep(N,3/2)=4 for N>=6 (exact period certificate).
+FIDELITY: 90 exact cov(2eps)<=span(eps)<=sep(eps)<=cov(eps) checks.
+GEOMETRY: 8255 distinct exact rational slopes; four uniform tail-height cutoffs checked.
+LOWER: 8001 modular witnesses (2<=n<m<=128); 18 exact Euclidean checks across three c>r>0 choices.
+LOWER: floor(sqrt(N))-1 endpoint separation certificates for 4<=N<=1000 and six square-boundary horizons.
+UPPER: 312 rational cell-diameter and reciprocal-cover counts; 1024 tail frequencies checked per case, N<=1000000.
+ALL_CHECKS_OK

@@ -1,0 +1,20 @@
+FIDELITY C_1: singleton_profile=[0]; cosets=1; unshifted_subgroup_pairs=0; zero_sum_free_multisets=1; length_counts=[1, 0]
+FIDELITY C_2: singleton_profile=[0, 1]; cosets=3; unshifted_subgroup_pairs=1; zero_sum_free_multisets=2; length_counts=[1, 1, 0]
+FIDELITY C_3: singleton_profile=[0, 2, 2]; cosets=4; unshifted_subgroup_pairs=1; zero_sum_free_multisets=5; length_counts=[1, 2, 2, 0]
+FIDELITY C_4: singleton_profile=[0, 3, 2, 3]; cosets=7; unshifted_subgroup_pairs=3; zero_sum_free_multisets=10; length_counts=[1, 3, 4, 2, 0]
+FIDELITY C_5: singleton_profile=[0, 4, 4, 4, 4]; cosets=6; unshifted_subgroup_pairs=1; zero_sum_free_multisets=25; length_counts=[1, 4, 8, 8, 4, 0]
+FIDELITY C_6: singleton_profile=[0, 5, 4, 3, 4, 5]; cosets=12; unshifted_subgroup_pairs=5; zero_sum_free_multisets=38; length_counts=[1, 5, 12, 14, 4, 2, 0]
+FIDELITY C_7: singleton_profile=[0, 6, 6, 6, 6, 6, 6]; cosets=8; unshifted_subgroup_pairs=1; zero_sum_free_multisets=97; length_counts=[1, 6, 18, 30, 24, 12, 6, 0]
+FIDELITY C_8: singleton_profile=[0, 7, 6, 7, 4, 7, 6, 7]; cosets=15; unshifted_subgroup_pairs=6; zero_sum_free_multisets=146; length_counts=[1, 7, 24, 46, 40, 16, 8, 4, 0]
+FIDELITY C_9: singleton_profile=[0, 8, 8, 6, 8, 8, 6, 8, 8]; cosets=13; unshifted_subgroup_pairs=3; zero_sum_free_multisets=285; length_counts=[1, 8, 32, 74, 86, 42, 24, 12, 6, 0]
+FIDELITY C_10: singleton_profile=[0, 9, 8, 9, 8, 5, 8, 9, 8, 9]; cosets=18; unshifted_subgroup_pairs=5; zero_sum_free_multisets=434; length_counts=[1, 9, 40, 104, 140, 84, 28, 16, 8, 4, 0]
+FIDELITY C_11: singleton_profile=[0, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10]; cosets=12; unshifted_subgroup_pairs=1; zero_sum_free_multisets=921; length_counts=[1, 10, 50, 150, 250, 200, 120, 70, 40, 20, 10, 0]
+FIDELITY C_12: singleton_profile=[0, 11, 10, 9, 8, 11, 6, 11, 8, 9, 10, 11]; cosets=28; unshifted_subgroup_pairs=12; zero_sum_free_multisets=1080; length_counts=[1, 11, 60, 196, 352, 256, 100, 48, 28, 16, 8, 4, 0]
+C4_LITERAL: ordered_sequences=341; lengths_by_total=[[0], [1, 2, 3], [1, 2], [1, 2, 3]]; alpha=[1,3]; beta=[0,1,2,3]; retained=[0,2]; d_beta=3; d_retained=2
+FAMILY C_4: d_beta=3; d_even=2; extremal_totals=[1, 3]
+FAMILY C_6: d_beta=5; d_even=4; extremal_totals=[1, 5]
+FAMILY C_8: d_beta=7; d_even=6; extremal_totals=[1, 3, 5, 7]
+FAMILY C_10: d_beta=9; d_even=8; extremal_totals=[1, 3, 7, 9]
+FAMILY C_12: d_beta=11; d_even=10; extremal_totals=[1, 5, 7, 11]
+COROLLARY_2_15_GCD_FAILURE: p=2; a=2; b=0; g1=1; g1prime=2; gcds=1,2
+ALL_CHECKS_OK

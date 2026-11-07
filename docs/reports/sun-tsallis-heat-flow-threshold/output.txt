@@ -1,0 +1,15 @@
+FIDELITY: Remark 20 Gaussian entropy second derivative agrees exactly
+IDENTITY: square coefficients and exact threshold factorization agree
+d=2: q_d=2/9; A/D=-1/8; D/angular=32/15; three strict below-endpoint signs OK
+d=3: q_d=8/19; A/D=-4/15; D/angular=45*pi/32; three strict below-endpoint signs OK
+d=4: q_d=6/11; A/D=-3/8; D/angular=32/7; three strict below-endpoint signs OK
+d=5: q_d=32/51; A/D=-16/35; D/angular=2275*pi/2048; three strict below-endpoint signs OK
+d=6: q_d=50/73; A/D=-25/48; D/angular=320/143; three strict below-endpoint signs OK
+d=7: q_d=8/11; A/D=-4/7; D/angular=427329*pi/1048576; three strict below-endpoint signs OK
+d=8: q_d=98/129; A/D=-49/80; D/angular=448/663; three strict below-endpoint signs OK
+d=9: q_d=128/163; A/D=-64/99; D/angular=3586275*pi/33554432; three strict below-endpoint signs OK
+d=10: q_d=54/67; A/D=-27/40; D/angular=360/2261; three strict below-endpoint signs OK
+d=11: q_d=200/243; A/D=-100/143; D/angular=1590892875*pi/68719476736; three strict below-endpoint signs OK
+d=12: q_d=242/289; A/D=-121/168; D/angular=352/10925; three strict below-endpoint signs OK
+LIMIT: heat-convolution estimates, C2 passage, and positive-time persistence require analytic proof
+ALL_CHECKS_OK

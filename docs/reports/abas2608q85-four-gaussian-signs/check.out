@@ -1,0 +1,6 @@
+source_theorem_7_1_omega_pi_over_2 = 2/(3*pi)
+finite_sign_patterns_checked = 14
+rank1 rank = 1 formula = 1 direct_area = 1
+rank2 rank = 2 formula = 0 direct_area = 0
+rank3 rank = 3 formula = (pi - 6*asin(sqrt(3)/3))/pi direct_area = (pi - 6*asin(sqrt(3)/3))/pi
+ALL_CHECKS_OK

@@ -1,0 +1,16 @@
+FIDELITY Theorem 2.5: P + omega partitions for all naturally labeled posets
+  n=1..5 poset counts: [1, 2, 7, 40, 357] total: 407
+  tail indices 0..6*n-1; strict successors also tested beyond the window
+CLASSIFICATION greatest-element counts: [1, 1, 2, 7, 40]
+  maximal-assignment partitions: 868
+  no-copy lower-cone-plus-ray checks: 912
+  merged-tail escape witnesses: 337295
+COUNTEREXAMPLE connected star maxima=2: ray heights 1..8 OK
+COUNTEREXAMPLE connected star maxima=3: ray heights 1..8 OK
+COUNTEREXAMPLE connected star maxima=4: ray heights 1..8 OK
+COUNTEREXAMPLE connected star maxima=5: ray heights 1..8 OK
+COUNTEREXAMPLE connected star maxima=6: ray heights 1..8 OK
+  separated-ray incomparable pairs: 7140
+  merged-tail forced-upper-bound triples: 15120
+SCOPE finite exact checks; infinite conclusion requires the preregistered proof
+ALL_CHECKS_OK

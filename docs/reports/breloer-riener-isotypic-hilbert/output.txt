@@ -1,0 +1,19 @@
+FIDELITY Example 5.11 I^(1), degrees 0..9: [1, 2, 4, 6, 10, 14, 22, 30, 44, 60]
+FIDELITY Example 5.11 I^(2), degrees 0..9: [1, 2, 5, 10, 20, 36, 65, 110, 185, 300]
+FIDELITY Example 5.11 I^(3), degrees 0..9: [1, 2, 4, 6, 8, 10, 12, 14, 16, 18]
+FIDELITY I^(3) stabilizes at two sites: OK
+FAMILY r=2: local counts h_m=rm+1 for m=1..7; orbits degrees 0..7: [1, 3, 11, 32, 90, 231, 576, 1363]
+FAMILY r=2: H*P1^(r-1)=P2^r through degree 16: OK
+FAMILY r=2, degrees 0..8: [1, 3, 11, 32, 90, 231, 576, 1363, 3141]
+FAMILY r=2: plane equations on {-1,0,1}^(r+1), axis intersection, symbolic exponent separation: OK
+FAMILY r=3: local counts h_m=rm+1 for m=1..7; orbits degrees 0..7: [1, 4, 17, 58, 186, 546, 1532, 4082]
+FAMILY r=3: H*P1^(r-1)=P2^r through degree 16: OK
+FAMILY r=3: plane equations on {-1,0,1}^(r+1), axis intersection, symbolic exponent separation: OK
+FAMILY r=4: local counts h_m=rm+1 for m=1..7; orbits degrees 0..7: [1, 5, 24, 93, 332, 1084, 3349, 9808]
+FAMILY r=4: H*P1^(r-1)=P2^r through degree 16: OK
+FAMILY r=4: plane equations on {-1,0,1}^(r+1), axis intersection, symbolic exponent separation: OK
+FAMILY r=5: local counts h_m=rm+1 for m=1..7; orbits degrees 0..7: [1, 6, 32, 138, 540, 1928, 6467, 20512]
+FAMILY r=5: H*P1^(r-1)=P2^r through degree 16: OK
+FAMILY r=5: plane equations on {-1,0,1}^(r+1), axis intersection, symbolic exponent separation: OK
+SCOPE: finite exact checks; analytic nonmembership is the preregistered argument.
+ALL_CHECKS_OK
