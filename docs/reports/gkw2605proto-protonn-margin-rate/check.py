@@ -8,9 +8,6 @@ floating-point root is needed.
 """
 
 from fractions import Fraction
-from math import prod
-
-
 def occupancy_expectation(k: int, n: int) -> Fraction:
     """Expected number of good centers in the three-prototype event."""
     # The center is in [1/4,3/4] (mass 1/4), one prototype is in each
