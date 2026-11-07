@@ -1,0 +1,9 @@
+FIDELITY: both source identities before Corollary 2 hold for 1<=n<=1024; equation (1.1) for f=1 checked on rational x with denominators 1..7.
+SMALL_CASES: quotient counts and fractional-part identity for X<=128; hole counts for all even 2<=T<=256; fixed f takes values 1 or 2.
+BLOCK 0: T=1024; X=1048576; holes=512; current weighted mass > T/8=128; next endpoint h(X)=0
+BLOCK 1: T=1048576; X=1099511627776; holes=524288; current weighted mass > T/8=131072; next endpoint h(X)=0
+C_h enclosure: [64429593175572116468667149/316912650057057350374175801344, 64429593463802492620510093/316912650057057350374175801344]; infinite tail beyond the two blocks <= 1/1099511627776
+ERROR 0: exact S_h(X)=0; exact E_f(X)=0-1048576*C_h; rational enclosure=[-64429593463802492620510093/302231454903657293676544, -64429593175572116468667149/302231454903657293676544]; E_f(X)<-sqrt(X)/16=-64
+ERROR 1: exact S_h(X)=223316594; exact E_f(X)=223316594-1099511627776*C_h; rational enclosure=[-62967574263398680630157/288230376151711744, -62967286033022528787213/288230376151711744]; E_f(X)<-sqrt(X)/16=-65536
+EXPONENTS: epsilon=1/20; 2/5+epsilon=9/20; (1/2)-(9/20)=1/20>0. Infinite-scale implication is the prose argument.
+ALL_CHECKS_OK
