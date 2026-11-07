@@ -1,0 +1,12 @@
+FIDELITY u=2 v=1: OEIS prefix n=0..19; independent e.g.f. expansion n=0..40: OK
+FIDELITY u=2 v=3: OEIS prefix n=0..16; independent e.g.f. expansion n=0..40: OK
+FIDELITY source residue lists: A258899 starts n=0; A258903 starts n=1: OK
+FIDELITY displayed periods: A258899 mod 11 from n=11; A258903 mod 7 from n=7, through n+T=240: OK
+FACTORIAL proper-term quotient/product and divisibility checks: 43350: OK
+TAIL u,v=1..4, m=1..60, 2m+4<=n<=240: 168960: OK
+TOTIENT SHIFT same parameters, n+phi(m)<=240: 151328: OK
+POWER z=0..20, m=1..60, m<=n, n+phi(m)<=240: 242088: OK
+PRIOR-ART applicability: inverse-Stirling g3(A258899)=-2/3; g4(A258903)=21/2: OK
+DANESH Theorem 3.1(ii) fails at p=5,r=8: d8=421176 and 5363064; valuation 0 < ell_5(8)-1=1: OK
+KALLAT integral-cycle condition fails: w4(A258899)=23/3; w5(A258903)=-3269/4: OK
+ALL_CHECKS_OK

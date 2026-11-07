@@ -1,0 +1,5 @@
+Exact source fidelity: 75 rooted labeled trees, all labeled trees of sizes 2..4
+Exact scaling/minor checks: 284 induced minors on 20 labeled trees
+Exact MY determinant, unit Jacobian, rate identity, inverse transport: 75 roots
+Exact logarithmic kernel limits: 2
+ALL_CHECKS_OK

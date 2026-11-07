@@ -1,0 +1,11 @@
+FIDELITY: source Lemma 1 merge-loss identity, 660 exact rational cases
+REDUCTION: every positive target for all a_i in 1..4, n in 1..3: 570 instances
+EXHAUSTIVE: a=[1], T=1, B=3, optimum_U=3, partitions=16, good=4, crossing=12, optimizers=1, feasible=14, window_yes=True
+EXHAUSTIVE: a=[1, 3], T=2, B=12, optimum_U=13, partitions=1024, good=16, crossing=1008, optimizers=2, feasible=1016, window_yes=False
+EXHAUSTIVE: a=[1, 3], T=3, B=13, optimum_U=13, partitions=1024, good=16, crossing=1008, optimizers=2, feasible=1016, window_yes=True
+EXHAUSTIVE: a=[2, 3, 7], T=5, B=44, optimum_U=44, partitions=65536, good=64, crossing=65472, optimizers=3, feasible=65507, window_yes=True
+EXHAUSTIVE: a=[2, 4, 8], T=5, B=50, optimum_U=51, partitions=65536, good=64, crossing=65472, optimizers=3, feasible=65507, window_yes=False
+Arithmetic: integers, Fraction, and exact prime-log coefficient identities; no floating point
+Scope: finite checks of the proposed reduction; no complexity theorem or Lean proof
+check.py sha256=40e6718e2614bcb249662b44c8699320ed7f01c0d990fadc6642bd5eed026046
+ALL_CHECKS_OK

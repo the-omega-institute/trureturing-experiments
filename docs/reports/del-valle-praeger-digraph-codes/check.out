@@ -1,0 +1,5 @@
+K3,3 graph code: [9,4,4]
+lifted digraph: 36 vertices, 216 arcs, rank 168, dimension 48, minimum distance 8
+B1 dimension 4; B2 dimension 2; reverse arcs 0; reachable vertices 36
+symmetry generators checked: 9
+ALL_CHECKS_OK

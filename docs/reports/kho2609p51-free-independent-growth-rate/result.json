@@ -1,0 +1,61 @@
+{
+  "cases": [
+    {
+      "admissible_middle_count": 3,
+      "conjugate_length": 9,
+      "k": 1,
+      "lower_bound": 2,
+      "middle_length": 1,
+      "q": 3,
+      "rank": 2
+    },
+    {
+      "admissible_middle_count": 61,
+      "conjugate_length": 17,
+      "k": 2,
+      "lower_bound": 54,
+      "middle_length": 4,
+      "q": 3,
+      "rank": 2
+    },
+    {
+      "bounded_independence_generators": 3,
+      "bounded_nontrivial_products_checked": 936,
+      "junctions_checked": 3,
+      "k": 1,
+      "rank": 2
+    },
+    {
+      "admissible_middle_count": 5,
+      "conjugate_length": 9,
+      "k": 1,
+      "lower_bound": 4,
+      "middle_length": 1,
+      "q": 5,
+      "rank": 3
+    },
+    {
+      "admissible_middle_count": 521,
+      "conjugate_length": 17,
+      "k": 2,
+      "lower_bound": 500,
+      "middle_length": 4,
+      "q": 5,
+      "rank": 3
+    },
+    {
+      "bounded_independence_generators": 5,
+      "bounded_nontrivial_products_checked": 8200,
+      "junctions_checked": 10,
+      "k": 1,
+      "rank": 3
+    }
+  ],
+  "exact_target_rates": {
+    "2": "sqrt(3)",
+    "3": "sqrt(5)"
+  },
+  "normal_form": "stack reduction in the free group on signed basis letters",
+  "source": "arXiv:2609.00382v2, Section 5, Problem 5.1",
+  "upper_bound_checked": true
+}

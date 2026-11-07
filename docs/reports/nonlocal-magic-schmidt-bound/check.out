@@ -1,0 +1,5 @@
+FIDELITY_CHECK_OK: sum_P Xi_P = 1 for the exact witness
+COUNTEREXAMPLE_OK: S(a)=16831552, S(Pa)=16734816, gap=96736
+FAMILY_CHECK_OK: exact gap holds at t=3, 13/4, 7/2
+OPEN_FAMILY_OK: perturbation_bound=18790912/625 < 96736
+ALL_CHECKS_OK

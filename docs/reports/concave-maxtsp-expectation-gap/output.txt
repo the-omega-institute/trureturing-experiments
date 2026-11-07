@@ -1,0 +1,11 @@
+FIDELITY Eq.(6.4) beta integral = gamma-product: 450 exact cases OK
+FIDELITY Eqs.(6.23)-(6.24) reference edge multiplicities and expectation: 95 exact cases OK
+ENVELOPE N*mu_m-E(hbar) = mu_m*p*(1-p)*(m-1)/(m*(m-1+p)): 95 exact cases OK
+BOUND envelope <= 2*p*(1-p)/N <= 1/(2*N): all envelope cases OK
+SYMBOLIC neighboring-moment coefficient identity: integer polynomial expansion OK
+POINTWISE p=1/2 N=4 integer_grid=0..6 configurations=35 tours=105 matchings=105 OK
+POINTWISE p=1/2 N=6 integer_grid=0..7 configurations=28 tours=1680 matchings=420 OK
+POINTWISE p=1/2 N=8 integer_grid=0..8 configurations=9 tours=22680 matchings=945 OK
+TOTAL exact tour comparisons=24465 matching comparisons=1470
+SCOPE finite checks and a symbolic identity; no integration of the optimal tour, no Lean proof, and no universal settlement claimed
+ALL_CHECKS_OK

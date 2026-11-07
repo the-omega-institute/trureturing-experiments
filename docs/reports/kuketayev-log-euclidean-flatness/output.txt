@@ -1,0 +1,20 @@
+FIDELITY Section 5.2: Gaussian bivariate V(r) = 1 identically
+IDENTITY v(r) = m22 + r^2*(m40+m04-6*m22)/4 + r*q*(m31-m13)
+ATOMIC 72 labels: total mass 1; centered; covariance I; all fourth moments exact
+MOMENTS m22=1; m31=3/N; m13=-3/N; m40=m04=3-7/(2N); N=t^2+5t+4
+SETTLEMENT v_t(r)=1-7r^2/(4N)+6r*sqrt(1-r^2)/N; v_t'(0)=6/N>0
+RATIONAL normalized v(h) = (3*h**2 - 16*h + 36)*(9*h**2 + 16*h + 12)/(27*(h**2 + 4)**2)
+RATIONAL v(0)=1; v'(0)=8/9; |h|<2; rho(h)=h/(1+h^2/4)
+EXACT r=0; q=1; v=1
+EXACT r=3/5; q=4/5; v=4/3
+EXACT r=-3/5; q=4/5; v=12/25
+EXACT r=5/13; q=12/13; v=5828/4563
+BASELINE p=2: complete 1x1 off-diagonal covariance = I
+BASELINE p=3: complete 3x3 off-diagonal covariance = I
+BASELINE p=4: complete 6x6 off-diagonal covariance = I
+BASELINE p=5: complete 10x10 off-diagonal covariance = I
+BASELINE p=6: complete 15x15 off-diagonal covariance = I
+BASELINE p=7: complete 21x21 off-diagonal covariance = I
+BASELINE p=8: complete 28x28 off-diagonal covariance = I
+BLOCK leading log derivative independent of appended coordinates (symbolic p=2,3,4)
+ALL_CHECKS_OK

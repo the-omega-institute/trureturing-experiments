@@ -1,0 +1,9 @@
+FIDELITY published DATA: 66 entries, zero mismatches
+FIDELITY published rectangular examples: 72 entries, zero mismatches
+BLOCK triangular inequalities versus source isqrt: 2465 indices, zero mismatches
+FIDELITY independent recursive source evaluation: 729 pairs, zero mismatches
+DIFFERENCE LAW n=1..14, q=1..600: 8400 pairs, zero mismatches
+CONJECTURE 4 n=0..14, k=0..50, m=0..5: 4590 triples, zero mismatches
+TABLE rows=0..14, columns=0..2465; exact Python integers only
+SOURCE NOTE unused Stirling FORMULA at n=1,k=3: NAME gives 3; c(4,3)=6
+ALL_CHECKS_OK

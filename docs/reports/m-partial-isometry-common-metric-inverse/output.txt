@@ -1,0 +1,18 @@
+Python 3.14.8 SymPy 1.14.0
+FIDELITY Lemma 2.8: canonical S, TST=T, STS=S, ST=I-beta_2(T)
+FIDELITY source Q6 example: displayed TS reproduced exactly
+RATIONAL T = [[7/5, 0], [24/5, 0]]
+RATIONAL S = [[-161/5, 48/5], [0, 0]]
+RATIONAL TS = [[-1127/25, 336/25], [-3864/25, 1152/25]]
+RATIONAL ST = [[1, 0], [0, 0]]
+RATIONAL beta_2=diag(0,1); T beta_1=24T; rank=1; nonnormal
+FAMILY r=2+t, t>=0: a>0, b>0, a^2+b^2=r
+FAMILY beta_2=diag(0,1); T beta_2=0; T beta_1=(r-1)T != 0
+FAMILY TST=T; STS=S; P^2=P; Q^2=Q; Q=diag(1,0)
+FAMILY P_12=2ab>0; P_21=ab(2-r)<=0; r=25 is the rational witness
+COMMON METRIC GQ=Q*G forces u=v=0 and positivity forces p,q>0
+COMMON METRIC (GP-P*G)_12=ab(2p+tq)>0 for every allowed metric
+RATIONAL COMMON METRIC 336p=-3864q is impossible for p,q>0
+INDIVIDUAL METRICS Q is standard-selfadjoint; W=P*P+(I-P)*(I-P) symmetrizes P
+INDIVIDUAL METRICS x*Wx=||Px||^2+||(I-P)x||^2>0 for x!=0
+ALL_CHECKS_OK

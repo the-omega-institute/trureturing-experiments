@@ -1,0 +1,59 @@
+WOLFRAM_TRUTH_TABLE [0, 1, 0, 1, 1, 0, 0, 1]
+SOURCE_FIDELITY Rule74 n=4 states=16 periodic=5 nonperiodic=11 fixed=1
+FULL_GRAPH n=4 states=16 periodic=10 nonperiodic=6 z=3/8
+FULL_GRAPH n=5 states=32 periodic=32 nonperiodic=0 z=0
+FULL_GRAPH n=6 states=64 periodic=56 nonperiodic=8 z=1/8
+FULL_GRAPH n=7 states=128 periodic=128 nonperiodic=0 z=0
+FULL_GRAPH n=8 states=256 periodic=226 nonperiodic=30 z=15/128
+FULL_GRAPH n=9 states=512 periodic=512 nonperiodic=0 z=0
+FULL_GRAPH n=10 states=1024 periodic=992 nonperiodic=32 z=1/32
+FULL_GRAPH n=11 states=2048 periodic=2048 nonperiodic=0 z=0
+FULL_GRAPH n=12 states=4096 periodic=4000 nonperiodic=96 z=3/128
+FULL_GRAPH n=13 states=8192 periodic=8192 nonperiodic=0 z=0
+FULL_GRAPH n=14 states=16384 periodic=16256 nonperiodic=128 z=1/128
+FULL_GRAPH n=15 states=32768 periodic=32768 nonperiodic=0 z=0
+FULL_GRAPH n=16 states=65536 periodic=65026 nonperiodic=510 z=255/32768
+FULL_GRAPH n=17 states=131072 periodic=131072 nonperiodic=0 z=0
+FULL_GRAPH n=18 states=262144 periodic=261632 nonperiodic=512 z=1/512
+FULL_GRAPH n=19 states=524288 periodic=524288 nonperiodic=0 z=0
+FULL_GRAPH n=20 states=1048576 periodic=1047040 nonperiodic=1536 z=3/2048
+FULL_GRAPH n=21 states=2097152 periodic=2097152 nonperiodic=0 z=0
+FULL_GRAPH n=22 states=4194304 periodic=4192256 nonperiodic=2048 z=1/2048
+COLLISION_AND_PARITY_INVARIANCE_CHECK sizes=4..12 OK
+COMPRESSED_GRAPH n=4 m=2 periodic_per_sector=1 nonperiodic_in_union=6
+COMPRESSED_GRAPH n=6 m=3 periodic_per_sector=4 nonperiodic_in_union=8
+COMPRESSED_GRAPH n=8 m=4 periodic_per_sector=1 nonperiodic_in_union=30
+COMPRESSED_GRAPH n=10 m=5 periodic_per_sector=16 nonperiodic_in_union=32
+COMPRESSED_GRAPH n=12 m=6 periodic_per_sector=16 nonperiodic_in_union=96
+COMPRESSED_GRAPH n=14 m=7 periodic_per_sector=64 nonperiodic_in_union=128
+COMPRESSED_GRAPH n=16 m=8 periodic_per_sector=1 nonperiodic_in_union=510
+COMPRESSED_GRAPH n=18 m=9 periodic_per_sector=256 nonperiodic_in_union=512
+COMPRESSED_GRAPH n=20 m=10 periodic_per_sector=256 nonperiodic_in_union=1536
+COMPRESSED_GRAPH n=22 m=11 periodic_per_sector=1024 nonperiodic_in_union=2048
+COMPRESSED_GRAPH n=24 m=12 periodic_per_sector=256 nonperiodic_in_union=7680
+COMPRESSED_GRAPH n=26 m=13 periodic_per_sector=4096 nonperiodic_in_union=8192
+COMPRESSED_GRAPH n=28 m=14 periodic_per_sector=4096 nonperiodic_in_union=24576
+COMPRESSED_GRAPH n=30 m=15 periodic_per_sector=16384 nonperiodic_in_union=32768
+COMPRESSED_GRAPH n=32 m=16 periodic_per_sector=1 nonperiodic_in_union=131070
+SOURCE_RANGE n=13 formula_z=0 below_1/100=True
+SOURCE_RANGE n=14 formula_z=1/128 below_1/100=True
+SOURCE_RANGE n=15 formula_z=0 below_1/100=True
+SOURCE_RANGE n=16 formula_z=255/32768 below_1/100=True
+SOURCE_RANGE n=17 formula_z=0 below_1/100=True
+SOURCE_RANGE n=18 formula_z=1/512 below_1/100=True
+SOURCE_RANGE n=19 formula_z=0 below_1/100=True
+SOURCE_RANGE n=20 formula_z=3/2048 below_1/100=True
+SOURCE_RANGE n=21 formula_z=0 below_1/100=True
+SOURCE_RANGE n=22 formula_z=1/2048 below_1/100=True
+SOURCE_RANGE n=23 formula_z=0 below_1/100=True
+SOURCE_RANGE n=24 formula_z=15/32768 below_1/100=True
+SOURCE_RANGE n=25 formula_z=0 below_1/100=True
+SOURCE_RANGE n=26 formula_z=1/8192 below_1/100=True
+SOURCE_RANGE n=27 formula_z=0 below_1/100=True
+SOURCE_FIGURE13 n=22 z=1/2048 printed_decimal_as_fraction=12207/25000000 rounding_error=1/800000000
+SOURCE_FIGURE13 n=24 z=15/32768 printed_decimal_as_fraction=2861/6250000 rounding_error=47/12800000000
+EXACT_MONOTONICITY_AND_ENVELOPE_CHECK even_sizes=4..512 OK
+BEYOND_SOURCE n=28 nonperiodic=24576 z=3/32768
+BEYOND_SOURCE n=30 nonperiodic=32768 z=1/32768
+BEYOND_SOURCE n=32 nonperiodic=131070 z=65535/2147483648
+ALL_CHECKS_OK

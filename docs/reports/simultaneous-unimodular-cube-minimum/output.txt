@@ -1,0 +1,11 @@
+FIDELITY: all 20 seed cofactors agree with two exact algorithms
+FIDELITY: equations (3.3)-(3.5) and (3.8) reproduced; D12 = 1123741091386468277532
+CONE: all 180 lower-cofactor nonvanishing witnesses verified
+REPLACEMENT: all 91125 small matrices satisfy Laplace and cofactor scaling
+SINGULARITY: criterion checked on 6936 simultaneous det-one matrices
+REPLACEMENT: determinant-preserving changed-row pairs for 552 lower blocks
+ONE REPLACEMENT: [[1, 0, 0], [1, 1, 0], [1, 1, 1]] -> [[1, 0, 5], [1, 1, 0], [1, 1, 1]] ; determinant pairs (1,1) -> (1,1)
+ONE UNIT BORDER: [[1, 0, 5, 7], [1, 1, 0, 0], [1, 1, 1, 2], [1, 1, 0, 1]] ; determinant pair (1,1), k1=k3=1
+FIDELITY: source Lemma 7.1 holds in all 196830 specified exact bordering cases
+SCOPE: finite algebraic checks; no positive order-ten witness or unboundedness proof
+ALL_CHECKS_OK

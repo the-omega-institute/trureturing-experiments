@@ -1,0 +1,12 @@
+RUNS: 9841 words over {0,1,2} of lengths 0..8; independent endpoints agree
+UNEQUAL_BOUNDARY: 9600 eligible pairs of nonempty words of lengths <= 4
+FIDELITY: all 11 complete displayed W rows and 7 displayed S rows agree
+FIDELITY: A381587 flattened first 20 rows has 9259 terms as its source states
+FIDELITY: printed prefixes A381356=98, A381587=87, A306346=88 agree
+IDENTITY: flattened and row-only definitions agree through W_27
+IDENTITY: seed replacement, reversal conjugacy, and RUNS-prefix formula hold for n=1..24
+S_23_LENGTH: 30400
+FINITE_STABILIZATION: every completed run at each tested stage persists in all later tested words and rows
+W_25_CERTIFIED_FINITE_PREFIX: 10797 entries, matching the source's stated prefix length
+SCOPE: these checks are finite; infinite run finiteness and row convergence remain proof obligations
+ALL_CHECKS_OK

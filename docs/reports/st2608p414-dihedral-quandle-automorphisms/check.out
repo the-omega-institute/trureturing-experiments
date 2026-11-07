@@ -1,0 +1,10 @@
+FIDELITY R4: 8 permutation automorphisms, BPS generators and D4 relations; model images=8
+m=1: affine=8, kernel=4, lifts=8, mixed_products=6, basis_pairs_per_lift=16, order_blocks=4, arbitrary_blocks=40, trace=20; OK
+m=2: affine=32, kernel=4, lifts=8, mixed_products=6, basis_pairs_per_lift=64, order_blocks=8, arbitrary_blocks=40, trace=120; OK
+m=3: affine=48, kernel=4, lifts=8, mixed_products=6, basis_pairs_per_lift=144, order_blocks=12, arbitrary_blocks=40, trace=228; OK
+m=4: affine=128, kernel=4, lifts=8, mixed_products=6, basis_pairs_per_lift=256, order_blocks=16, arbitrary_blocks=40, trace=816; OK
+m=5: affine=160, kernel=4, lifts=8, mixed_products=6, basis_pairs_per_lift=400, order_blocks=20, arbitrary_blocks=40, trace=700; OK
+m=6: affine=192, kernel=4, lifts=8, mixed_products=6, basis_pairs_per_lift=576, order_blocks=24, arbitrary_blocks=40, trace=1104; OK
+m=7: affine=336, kernel=4, lifts=8, mixed_products=6, basis_pairs_per_lift=784, order_blocks=28, arbitrary_blocks=40, trace=1232; OK
+m=8: affine=512, kernel=4, lifts=8, mixed_products=6, basis_pairs_per_lift=1024, order_blocks=32, arbitrary_blocks=40, trace=2592; OK
+ALL_CHECKS_OK

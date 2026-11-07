@@ -1,0 +1,12 @@
+A393858 source=https://oeis.org/A393858/b393858.txt sha256=05594b3789c3fc050eb02c5490487b8b2287b3ad4f8270c0ee67305321797bff
+q=6: first 80 exact integers match the published table; literal rational composition through degree 12 equals X
+q=6: a(1..8)=[1, 1, 8, 323, 71744, 93490314, 727730885904, 33959564479215663]
+q=6: parity iff power of two holds for every 1<=n<=500; all 500 coefficients equal 1 mod 7
+q=6: odd indices=[1, 2, 4, 8, 16, 32, 64, 128, 256]
+q=6: both B(X+X^2)=X and B+B^2=X hold through degree 500 over F2
+A393859 source=https://oeis.org/A393859/b393859.txt sha256=424e685866ec17f989dbb492172a384fd95b08707847d94f36e2dd699f961d93
+q=7: first 80 exact integers match the published table; literal rational composition through degree 12 equals X
+q=7: a(1..8)=[1, 1, 9, 481, 167937, 404407577, 6800120127457, 800088549123479905]
+q=7: all 500 coefficients equal 1 mod 8
+Arithmetic: integers, Fraction and exact quotient rings only; finite checks do not prove the unbounded conjectures.
+ALL_CHECKS_OK

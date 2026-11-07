@@ -1,0 +1,4 @@
+n=4 strongly-complementary triangle has an exact orthogonal lift
+F_32 cubic Sidon support: 496 distinct nonzero pair sums; q-1=31 >= r=22, words=4194304 > dim M_n(C)=1048576
+skew Hadamard recursion verified at orders 1..128
+ALL_CHECKS_OK

@@ -1,0 +1,5 @@
+fidelity: A027182 data and row example agree (a(2)=150)
+closed_form: n=0..25
+recurrence: n=5..30 (therefore every published n>=6 is covered)
+operator_factorization: exact SymPy polynomial identities
+ALL_CHECKS_OK

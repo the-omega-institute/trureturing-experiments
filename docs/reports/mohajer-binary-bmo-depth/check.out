@@ -1,0 +1,19 @@
+FIDELITY input oscillations level 0 : 5
+FIDELITY input oscillations level 1 : 5,5
+FIDELITY input oscillations level 2 : 4,0,15/8,35/8
+FIDELITY input oscillations level 3 : 4,0,0,0,5/2,0,9/2,0
+FIDELITY input oscillations level 4 : 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+FIDELITY depth-four input=5 output=41/8 ratio=41/40
+CERTIFICATE pair (1, 2) coefficients -7,5,5,-3,0,0,0,0 weight 24
+CERTIFICATE pair (1, 4) coefficients -5,5,0,0,5,-3,-1,-1 weight 22
+CERTIFICATE pair (2, 3) coefficients -7,-3,5,5,0,0,0,0 weight 32
+CERTIFICATE pair (2, 4) coefficients -5,3,5,-3,5,-3,-1,-1 weight 32
+CERTIFICATE pair (4, 5) coefficients -5,3,-1,-1,5,5,-3,-3 weight 32
+CERTIFICATE pair (4, 6) coefficients -5,3,-1,-1,5,-3,5,-3 weight 32
+SYMBOLIC domination sign cones: 192
+ORBITS automorphisms=128 stabilizer=16 sizes=2,4,1,8,2,4 marked_tails=168
+SIZE_TWO opposite-half certificates=16; same-half estimate is the triangle inequality
+SHARPNESS depths=1,2,3 input=output=1
+EXACT_SAMPLES ternary_grid=6561 rational_samples=4096 total=10657
+EXACT_SAMPLES mixed_tail_2=559 mixed_tail_3=1638 root_ties=272
+ALL_CHECKS_OK

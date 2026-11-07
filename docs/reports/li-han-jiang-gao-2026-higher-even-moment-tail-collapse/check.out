@@ -1,0 +1,10 @@
+m=2 t=2 a=9/16: K=37/16, p=7/55, LP1=7/55, LP2=7/55, support=[(Fraction(-3, 4), Fraction(20, 33)), (Fraction(3, 4), Fraction(4, 15)), (2, Fraction(7, 55))]
+m=2 t=3 a=1/4: K=7, p=3/35, LP1=3/35, LP2=3/35, support=[(Fraction(-1, 2), Fraction(5, 7)), (Fraction(1, 2), Fraction(1, 5)), (3, Fraction(3, 35))]
+m=2 t=3 a=4/9: K=49/9, p=5/77, LP1=5/77, LP2=5/77, support=[(Fraction(-2, 3), Fraction(27, 44)), (Fraction(2, 3), Fraction(9, 28)), (3, Fraction(5, 77))]
+m=3 t=2 a=9/16: K=2125/256, p=7/55, LP1=7/55, LP2=7/55, support=[(Fraction(-3, 4), Fraction(20, 33)), (Fraction(3, 4), Fraction(4, 15)), (2, Fraction(7, 55))]
+m=3 t=3 a=1/4: K=125/2, p=3/35, LP1=3/35, LP2=3/35, support=[(Fraction(-1, 2), Fraction(5, 7)), (Fraction(1, 2), Fraction(1, 5)), (3, Fraction(3, 35))]
+m=3 t=3 a=4/9: K=3841/81, p=5/77, LP1=5/77, LP2=5/77, support=[(Fraction(-2, 3), Fraction(27, 44)), (Fraction(2, 3), Fraction(9, 28)), (3, Fraction(5, 77))]
+m=4 t=2 a=9/16: K=133813/4096, p=7/55, LP1=7/55, LP2=7/55, support=[(Fraction(-3, 4), Fraction(20, 33)), (Fraction(3, 4), Fraction(4, 15)), (2, Fraction(7, 55))]
+m=4 t=3 a=1/4: K=4499/8, p=3/35, LP1=3/35, LP2=3/35, support=[(Fraction(-1, 2), Fraction(5, 7)), (Fraction(1, 2), Fraction(1, 5)), (3, Fraction(3, 35))]
+m=4 t=3 a=4/9: K=310609/729, p=5/77, LP1=5/77, LP2=5/77, support=[(Fraction(-2, 3), Fraction(27, 44)), (Fraction(2, 3), Fraction(9, 28)), (3, Fraction(5, 77))]
+ALL_CHECKS_OK

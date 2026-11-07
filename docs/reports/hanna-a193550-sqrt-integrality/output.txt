@@ -1,0 +1,9 @@
+FIDELITY: all 17 displayed A coefficients and 10 displayed B coefficients match
+FIDELITY: B coefficients 0..499 are integers, reproducing the source's initial 500 terms
+B[0..9] = [1, 1, 6, 97, 2782, 122670, 7687932, 649446621, 71136143478, 9806113041658]
+INDEPENDENCE: direct finite fraction matches weighted-path computation through degree 40
+STABILIZATION: depths 40 and 45 and a nontrivial normalized terminal tail agree through degree 40
+MODULAR: A = Catalan modulo 8 through degree 500; F = Catalan^2 modulo 8 through degree 499
+LIFT: D + U*D^2 = 1, V^2 = 1 + 4*U, and (C*V)^2 = F through degree 40
+EXPECTED SETTLEMENT CHECK: no failure in the tested finite ranges; no all-order claim is certified
+ALL_CHECKS_OK

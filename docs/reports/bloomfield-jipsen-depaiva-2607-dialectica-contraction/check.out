@@ -1,0 +1,10 @@
+FIDELITY: Dprime(2) tensor table = [[0, 0, 0, 0], [0, 1, 1, 3], [0, 1, 2, 3], [0, 3, 3, 3]]
+FIDELITY: Dprime(3) cardinality = 10; distributivity failures = 22
+FIDELITY: first distributivity witness = ((0, 2, 1), (0, 1, 0), (0, 2, 2))
+FIDELITY: source Set selector checked on 104 relations
+EXACT WITNESS: exhaustively checked 19683 natural candidate functions; accepted = 0
+EXACT WITNESS: separately admissible stage-function counts = [768, 81, 81]
+EXACT WITNESS: at (0,1), leaf s allows {1}; leaf t allows {0}
+FAMILY: all 64 positive block-size triples in [1,4]^3 exclude contraction
+SCOPE: exact finite checks only; the arbitrary-size family needs the general argument
+ALL_CHECKS_OK

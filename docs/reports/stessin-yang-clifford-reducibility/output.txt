@@ -1,0 +1,7 @@
+source Pauli characteristic polynomial and anticommutation: OK
+m=3, d=8: 64 Clifford monomials, nonidentity traces zero
+m=3, d=8: quartic residual zero for every 64 monomial
+m=3, d=8: symbolic characteristic factors match fourth-power/square pattern
+m=4, d=16: 256 Clifford monomials, nonidentity traces zero
+m=4, d=16: quartic residual zero for every 256 monomial
+ALL_CHECKS_OK

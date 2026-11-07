@@ -1,0 +1,23 @@
+FIDELITY n=2 normalized_permutations=1 minimum=1
+FIDELITY n=3 normalized_permutations=2 minimum=9
+FIDELITY n=4 normalized_permutations=6 minimum=48
+FIDELITY n=5 normalized_permutations=24 minimum=50
+FIDELITY n=6 normalized_permutations=120 minimum=2205
+FIDELITY n=7 normalized_permutations=720 minimum=147
+FIDELITY n=8 normalized_permutations=5040 minimum=1120
+FIDELITY source_displayed_order_4_example abs_det=48
+FAMILY n=3 det=9 det_I_plus_P=2 identity=OK rational_crosscheck=OK
+FAMILY n=5 det=50 det_I_plus_P=2 identity=OK rational_crosscheck=OK
+FAMILY n=7 det=147 det_I_plus_P=2 identity=OK rational_crosscheck=OK
+FAMILY n=9 det=324 det_I_plus_P=2 identity=OK rational_crosscheck=OK
+FAMILY n=11 det=605 det_I_plus_P=2 identity=OK rational_crosscheck=OK
+FAMILY n=13 det=1014 det_I_plus_P=2 identity=OK rational_crosscheck=OK
+FAMILY n=15 det=1575 det_I_plus_P=2 identity=OK rational_crosscheck=OK
+FAMILY n=17 det=2312 det_I_plus_P=2 identity=OK rational_crosscheck=OK
+FAMILY n=19 det=3249 det_I_plus_P=2 identity=OK rational_crosscheck=OK
+FAMILY n=21 det=4410 det_I_plus_P=2 identity=OK rational_crosscheck=OK
+FAMILY n=23 det=5819 det_I_plus_P=2 identity=OK rational_crosscheck=OK
+FAMILY n=25 det=7500 det_I_plus_P=2 identity=OK rational_crosscheck=OK
+FAMILY n=27 det=9477 det_I_plus_P=2 identity=OK rational_crosscheck=OK
+GENERAL_MARGIN_CHECKS matrices=144 determinant_factorization=OK divisibility=OK
+ALL_CHECKS_OK

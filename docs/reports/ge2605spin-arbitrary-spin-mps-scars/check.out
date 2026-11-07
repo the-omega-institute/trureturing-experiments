@@ -1,0 +1,20 @@
+ARITHMETIC: SymPy exact integers, rationals, I and radicals; no floats
+SOURCE_FIDELITY: (2S,N)=(1,4), full_dimension=16, nonzero_input=7, residual_targets=15, leakage_targets=0, H_Psi=0, TI=true, blockade=true, nonzero=true
+SOURCE_FIDELITY: (2S,N)=(2,4), full_dimension=81, nonzero_input=7, residual_targets=19, leakage_targets=8, H_Psi=0, TI=true, blockade=true, nonzero=true
+SOURCE_FIDELITY: (2S,N)=(3,4), full_dimension=256, nonzero_input=7, residual_targets=23, leakage_targets=8, H_Psi=0, TI=true, blockade=true, nonzero=true
+SOURCE_FIDELITY: (2S,N)=(4,4), full_dimension=625, nonzero_input=7, residual_targets=23, leakage_targets=8, H_Psi=0, TI=true, blockade=true, nonzero=true
+SYMBOLIC_LOCAL: 36/36 scalar residuals zero modulo r^2=2S; q symbolic; omitted E_2 rejected
+EXTENSION: (2S,N)=(5,2), full_dimension=36, nonzero_input=3, residual_targets=6, leakage_targets=2, H_Psi=0, TI=true, blockade=true, nonzero=true
+EXTENSION: (2S,N)=(5,4), full_dimension=1296, nonzero_input=7, residual_targets=23, leakage_targets=8, H_Psi=0, TI=true, blockade=true, nonzero=true
+EXTENSION: (2S,N)=(6,4), full_dimension=2401, nonzero_input=7, residual_targets=23, leakage_targets=8, H_Psi=0, TI=true, blockade=true, nonzero=true
+EXTENSION: (2S,N)=(7,4), full_dimension=4096, nonzero_input=7, residual_targets=23, leakage_targets=8, H_Psi=0, TI=true, blockade=true, nonzero=true
+EXTENSION: (2S,N)=(8,4), full_dimension=6561, nonzero_input=7, residual_targets=23, leakage_targets=8, H_Psi=0, TI=true, blockade=true, nonzero=true
+EXTENSION: (2S,N)=(5,6), full_dimension=46656, nonzero_input=18, residual_targets=78, leakage_targets=30, H_Psi=0, TI=true, blockade=true, nonzero=true
+DEGENERATE_COUPLING: (2S,N)=(5,4), full_dimension=1296, nonzero_input=7, residual_targets=23, leakage_targets=8, H_Psi=0, TI=true, blockade=true, nonzero=true
+DEGENERATE_COUPLING: (2S,N)=(5,4), full_dimension=1296, nonzero_input=7, residual_targets=23, leakage_targets=8, H_Psi=0, TI=true, blockade=true, nonzero=true
+DEGENERATE_COUPLING: (2S,N)=(5,4), full_dimension=1296, nonzero_input=1, residual_targets=0, leakage_targets=0, H_Psi=0, TI=true, blockade=true, nonzero=true
+GAP_POLYNOMIAL: N=2, words=4, trace_crosscheck=True, palindromic=true, coefficient_rank=2, first_Taylor_rank=2, family_sample_rank=2
+GAP_POLYNOMIAL: N=4, words=16, trace_crosscheck=True, palindromic=true, coefficient_rank=3, first_Taylor_rank=3, family_sample_rank=3
+GAP_POLYNOMIAL: N=6, words=64, trace_crosscheck=True, palindromic=true, coefficient_rank=4, first_Taylor_rank=4, family_sample_rank=4
+GAP_POLYNOMIAL: N=8, words=256, trace_crosscheck=False, palindromic=true, coefficient_rank=5, first_Taylor_rank=5, family_sample_rank=5
+ALL_CHECKS_OK

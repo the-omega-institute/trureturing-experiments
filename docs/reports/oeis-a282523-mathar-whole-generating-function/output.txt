@@ -1,0 +1,13 @@
+Local fidelity: 512 triples, 64 terminal checks, 832 quotient entries, 13 initial entries OK
+Exact polynomial certificate: 117 column coefficients and 9 numerator coefficients OK
+Independent raw transfer: p(T)f=0 in all 64 coordinates OK
+Source fidelity a(1..21): 8,43,206,1097,5675,29433,153037,794716,4128244,21444844,111394775,578646848,3005807582,15613798271,81106596833,421311892656,2188523765507,11368386235590,59053598944793,306756604030647,1593461123288541
+Literal exhaustive count: n=1, boards=8, a(n)=8
+Literal exhaustive count: n=2, boards=64, a(n)=43
+Literal exhaustive count: n=3, boards=512, a(n)=206
+Literal exhaustive count: n=4, boards=4096, a(n)=1097
+Literal exhaustive count: n=5, boards=32768, a(n)=5675
+Literal exhaustive count: n=6, boards=262144, a(n)=29433
+Raw/quotient equality through n=210 and Q*A=P through degree 210 OK
+Boundary: finite exact evidence only; no kernel verification of the all-height counting bridge
+ALL_CHECKS_OK

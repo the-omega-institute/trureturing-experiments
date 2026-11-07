@@ -1,0 +1,11 @@
+FIDELITY T2: n=1722630, d=1313, x=1590019, A=2625, B=2626, length=3442635, source_N=3442636
+FIDELITY T3: n=2009280, d=1418, x=1003931, A=2835, B=2836, length=4015725, source_N=4015726
+SYMBOLIC T4: d=30030*t + 2192; n=901800900*t**2 + 131651520*t + 4804800; x=515314800*t**2 + 75225150*t + 2745287; k=17160*t + 1253
+IDENTITIES T4: 7*x + (30030*t + 2191) = 4*n; (30030*t + 2193)*x + 9 = (17160*t + 1253)*n
+SYMBOLIC T5: d=30030*t - 2192; n=901800900*t**2 - 131651520*t + 4804800; x=386486100*t**2 - 56426370*t + 2059513; k=12870*t - 940
+IDENTITIES T5: 7*x + (30030*t - 2191) = 3*n; (30030*t - 2193)*x + 9 = (12870*t - 940)*n
+FIRST T4: t=0, n=4804800, d=2192, x=2745287, multiplicities=(4802609,4802607), lower_bound_N=9605217, published_upper_bound=9605217
+FAMILY T4: exact checks for every integer t in [0,1000]
+FIRST T5: t=1, n=774954180, d=27838, x=332119243, multiplicities=(774926341,774926343), lower_bound_N=1549852685, published_upper_bound=1549852685
+FAMILY T5: exact checks for every integer t in [1,1000]
+ALL_CHECKS_OK

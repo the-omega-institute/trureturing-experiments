@@ -1,0 +1,14 @@
+G_6 covariance scalar: 9/10
+G_6 binary probability sum: 1
+G_6 h3 argument: 343/400
+witness norm: 1
+outcome q0: 29/40
+outcome q1: 11/40
+branch-parameter average: 1/20
+h3 branch 0 argument: 3193/3364
+h3 branch 1 argument: 313/484
+exact Renyi-3 certificate: lhs < rhs
+certificate bit lengths: lhs=775, rhs=775
+family weighted parameter: 1/32
+family parameter ordering: 0 < p0 < p < p1 < 1/6
+ALL_CHECKS_OK

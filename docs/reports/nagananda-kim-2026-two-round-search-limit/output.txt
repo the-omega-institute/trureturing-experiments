@@ -1,0 +1,73 @@
+FIDELITY: source binomial law, finite-n feasibility, expected-cost identity: 24 pairs OK
+FRONTIER n=1 p=1/8 batches=2 branch-states=3: (1/8,0)
+OPT n=1 p=1/8 gamma=1/16: lower=-11/16 deterministic=0 randomized=0
+OPT n=1 p=1/8 gamma=3/32: lower=-19/32 deterministic=0 randomized=0
+OPT n=1 p=1/8 gamma=1/8: lower=-1/2 deterministic=0 randomized=0
+FRONTIER n=1 p=1/4 batches=2 branch-states=3: (1/4,0)
+OPT n=1 p=1/4 gamma=1/8: lower=-1/2 deterministic=0 randomized=0
+OPT n=1 p=1/4 gamma=3/16: lower=-3/8 deterministic=0 randomized=0
+OPT n=1 p=1/4 gamma=1/4: lower=-1/4 deterministic=0 randomized=0
+FRONTIER n=1 p=1/2 batches=2 branch-states=3: (1/2,0)
+OPT n=1 p=1/2 gamma=1/4: lower=-1/4 deterministic=0 randomized=0
+OPT n=1 p=1/2 gamma=3/8: lower=-1/8 deterministic=0 randomized=0
+OPT n=1 p=1/2 gamma=1/2: lower=0 deterministic=0 randomized=0
+FRONTIER n=2 p=1/8 batches=8 branch-states=10: (1/8,0); (15/64,1)
+OPT n=2 p=1/8 gamma=15/128: lower=-67/128 deterministic=0 randomized=0
+OPT n=2 p=1/8 gamma=1/8: lower=-1/2 deterministic=0 randomized=0
+OPT n=2 p=1/8 gamma=45/256: lower=-89/256 deterministic=1 randomized=13/28
+OPT n=2 p=1/8 gamma=15/64: lower=-11/64 deterministic=1 randomized=1
+FRONTIER n=2 p=1/4 batches=8 branch-states=10: (1/4,0); (7/16,1)
+OPT n=2 p=1/4 gamma=7/32: lower=-5/16 deterministic=0 randomized=0
+OPT n=2 p=1/4 gamma=1/4: lower=-1/4 deterministic=0 randomized=0
+OPT n=2 p=1/4 gamma=21/64: lower=-3/32 deterministic=1 randomized=5/12
+OPT n=2 p=1/4 gamma=7/16: lower=1/8 deterministic=1 randomized=1
+FRONTIER n=2 p=1/2 batches=8 branch-states=10: (1/2,0); (3/4,1)
+OPT n=2 p=1/2 gamma=3/8: lower=-1/8 deterministic=0 randomized=0
+OPT n=2 p=1/2 gamma=1/2: lower=0 deterministic=0 randomized=0
+OPT n=2 p=1/2 gamma=9/16: lower=1/16 deterministic=1 randomized=1/4
+OPT n=2 p=1/2 gamma=3/4: lower=1/4 deterministic=1 randomized=1
+FRONTIER n=3 p=1/8 batches=128 branch-states=41: (1/8,0); (15/64,1); (169/512,79/64)
+OPT n=3 p=1/8 gamma=1/8: lower=-1/2 deterministic=0 randomized=0
+OPT n=3 p=1/8 gamma=169/1024: lower=-389/1024 deterministic=1 randomized=3239/13440
+OPT n=3 p=1/8 gamma=507/2048: lower=-271/2048 deterministic=79/64 randomized=19829/26880
+OPT n=3 p=1/8 gamma=169/512: lower=59/512 deterministic=79/64 randomized=79/64
+FRONTIER n=3 p=1/4 batches=128 branch-states=41: (1/4,0); (7/16,1); (37/64,23/16)
+OPT n=3 p=1/4 gamma=1/4: lower=-1/4 deterministic=0 randomized=0
+OPT n=3 p=1/4 gamma=37/128: lower=-11/64 deterministic=1 randomized=115/672
+OPT n=3 p=1/4 gamma=111/256: lower=15/128 deterministic=1 randomized=1081/1344
+OPT n=3 p=1/4 gamma=37/64: lower=13/32 deterministic=23/16 randomized=23/16
+FRONTIER n=3 p=1/2 batches=128 branch-states=41: (1/2,0); (3/4,1); (7/8,3/2)
+OPT n=3 p=1/2 gamma=7/16: lower=-1/16 deterministic=0 randomized=0
+OPT n=3 p=1/2 gamma=1/2: lower=0 deterministic=0 randomized=0
+OPT n=3 p=1/2 gamma=21/32: lower=5/32 deterministic=1 randomized=5/8
+OPT n=3 p=1/2 gamma=7/8: lower=3/8 deterministic=3/2 randomized=3/2
+CONVERSE: ALL two-round deterministic procedures and randomized convex envelopes: 33 cases OK
+CONSTRUCTION n=2 lambda=1/4 gamma=1/16 h=1 m=1: success=1/8 cost=9/8
+CONSTRUCTION n=2 lambda=1/2 gamma=1/8 h=2 m=1: success=7/16 cost=23/16
+CONSTRUCTION n=3 lambda=1/4 gamma=1/16 h=2 m=2: success=23/144 cost=167/72
+CONSTRUCTION n=3 lambda=1/2 gamma=1/8 h=2 m=2: success=11/36 cost=47/18
+CONSTRUCTION n=4 lambda=1/4 gamma=1/16 h=2 m=2: success=31/256 cost=287/128
+CONSTRUCTION n=4 lambda=1/2 gamma=1/8 h=3 m=2: success=169/512 cost=681/256
+CONSTRUCTION n=5 lambda=1/4 gamma=1/16 h=2 m=2: success=39/400 cost=917/400
+CONSTRUCTION n=5 lambda=1/2 gamma=1/8 h=3 m=2: success=271/1000 cost=2813/1000
+CONSTRUCTION n=6 lambda=1/4 gamma=1/16 h=3 m=2: success=1657/13824 cost=10873/4608
+CONSTRUCTION n=6 lambda=1/2 gamma=1/8 h=4 m=2: success=6095/20736 cost=19919/6912
+CONSTRUCTION n=7 lambda=1/4 gamma=1/16 h=3 m=2: success=2269/21952 cost=50711/21952
+CONSTRUCTION n=7 lambda=1/2 gamma=1/8 h=4 m=2: success=9855/38416 cost=106397/38416
+CONSTRUCTION n=8 lambda=1/4 gamma=1/16 h=4 m=2: success=125055/1048576 cost=2472317/1048576
+CONSTRUCTION n=8 lambda=1/2 gamma=1/8 h=5 m=2: success=4515151/16777216 cost=2964755/1048576
+CONSTRUCTION n=9 lambda=1/4 gamma=1/16 h=4 m=2: success=178991/1679616 cost=1018799/419904
+CONSTRUCTION n=9 lambda=1/2 gamma=1/8 h=6 m=2: success=173035963/612220032 cost=26880767/8503056
+CONSTRUCTION n=10 lambda=1/4 gamma=1/16 h=4 m=2: success=246559/2560000 cost=1526559/640000
+CONSTRUCTION n=10 lambda=1/2 gamma=1/8 h=6 m=2: success=330959861/1280000000 cost=48954119/16000000
+CONSTRUCTION n=11 lambda=1/4 gamma=1/16 h=5 m=2: success=780860651/7256313856 cost=100365893/41229056
+CONSTRUCTION n=11 lambda=1/2 gamma=1/8 h=7 m=2: success=342132935/1247178944 cost=1940448291/623589472
+CONSTRUCTION n=12 lambda=1/4 gamma=1/16 h=5 m=2: success=1211952623/12230590464 cost=152860945/63700992
+CONSTRUCTION n=12 lambda=1/2 gamma=1/8 h=7 m=2: success=583789393/2293235712 cost=3474881689/1146617856
+CONSTRUCTION n=13 lambda=1/4 gamma=1/16 h=6 m=2: success=111995028757/1028071702528 cost=12059626695/4942652416
+CONSTRUCTION n=13 lambda=1/2 gamma=1/8 h=8 m=2: success=55688233301/208827064576 cost=160652706239/52206766144
+CONSTRUCTION n=14 lambda=1/4 gamma=1/16 h=6 m=2: success=175422357881/1727094849536 cost=18580828559/7710244864
+CONSTRUCTION n=14 lambda=1/2 gamma=1/8 h=8 m=2: success=94506012523/377801998336 cost=284273461023/94450499584
+CONSTRUCTION: exhaustive configurations, singleton decoding, unconditional success, collision and upper bounds: 26 cases OK
+BALANCED BLOCKS: exact integer pair-count bound: 4160 cases OK
+ALL_CHECKS_OK

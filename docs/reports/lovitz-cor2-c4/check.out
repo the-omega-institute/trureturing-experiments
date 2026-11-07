@@ -1,0 +1,5 @@
+source_small_case: 2x2 identity is a rank-2 correlation factor
+rank_three_product_family: rank(P)=3 and P=Q Schur R exactly
+P=
+Matrix([[1, 0, 1/2, sqrt(10)/5], [0, 1, 1/2, sqrt(10)/5], [1/2, 1/2, 1, 3*sqrt(10)/10], [sqrt(10)/5, sqrt(10)/5, 3*sqrt(10)/10, 1]])
+ALL_CHECKS_OK

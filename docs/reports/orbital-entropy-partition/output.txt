@@ -1,0 +1,10 @@
+FIDELITY: source 3x3 matrix characteristic polynomial and pinched spectrum exact;
+          Definition 4 averaging example and endpoint entropy values exact
+SMALL: 375 complete input/partition cases, d=2,3, occupation denominator 8
+       165 exact source matrices; 865 chamber vertices checked
+       majorization inequalities certify the entire continuous d=3 feasible rectangle;
+       strict concavity gives its unique entropy maximizer, with an enumerated partition witness
+ENDPOINT FAMILY: 50 exact projection maximizers through d=8, lambda=(m,1,...,1)
+                 ranks, characteristic polynomials, commutation, partitions, sharp entropy bound agree
+VARIATION: 5 exact nonzero commutator tests confirm the first-variation sign
+ALL_CHECKS_OK

@@ -1,0 +1,93 @@
+{
+  "base": {
+    "chromatic_number": 4,
+    "edges": 20,
+    "triangles": 0,
+    "vertices": 11
+  },
+  "counterexample": {
+    "G_edges": 408,
+    "G_max_degree": 26,
+    "G_min_degree": 22,
+    "X_edges": 120,
+    "all_labelled_three_colourings": 6,
+    "binary_pair_minors": {
+      "-1": 40,
+      "1": 80
+    },
+    "independence_number_G": 2,
+    "normalized_three_colourings": 1,
+    "possible_star_rows_across_all_colourings": 0,
+    "vertices": 33
+  },
+  "family_checks": [
+    {
+      "G_edges": 408,
+      "X_edges": 120,
+      "independence_number_G": 2,
+      "independent_ordered_centre_pairs_excluded": 240,
+      "t": 1,
+      "vertices": 33
+    },
+    {
+      "G_edges": 1665,
+      "X_edges": 480,
+      "independence_number_G": 2,
+      "independent_ordered_centre_pairs_excluded": 960,
+      "t": 2,
+      "vertices": 66
+    },
+    {
+      "G_edges": 3771,
+      "X_edges": 1080,
+      "independence_number_G": 2,
+      "independent_ordered_centre_pairs_excluded": 2160,
+      "t": 3,
+      "vertices": 99
+    },
+    {
+      "G_edges": 6726,
+      "X_edges": 1920,
+      "independence_number_G": 2,
+      "independent_ordered_centre_pairs_excluded": 3840,
+      "t": 4,
+      "vertices": 132
+    }
+  ],
+  "rigidity_local": {
+    "compatible_ordered_pairs": 66,
+    "fibre_functions": 27
+  },
+  "scope": "Exact finite corroboration; infinite-family and arbitrary-field arguments are in the preregistration, not kernel-verified here.",
+  "source_fidelity": {
+    "chromatic_number": 6,
+    "complement_Myc_vertices": 11,
+    "displayed_rational_pair_minors_nonzero": 20,
+    "edges": 35,
+    "independence_number": 2,
+    "rational_minors": [
+      "-77/40",
+      "206/525",
+      "-7/18",
+      "5/3",
+      "377/252",
+      "379/120",
+      "613/180",
+      "-106/63",
+      "-179/315",
+      "-107/210",
+      "253/210",
+      "146/45",
+      "10/3",
+      "341/525",
+      "-39/175",
+      "-6/5",
+      "-3/10",
+      "-4/3",
+      "-3/5",
+      "-1"
+    ],
+    "source": "arXiv:2609.30081v2, Example 5.10"
+  }
+}
+ALL_CHECKS_OK

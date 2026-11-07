@@ -1,0 +1,19 @@
+Exact arithmetic over prime fields F_2, F_3, F_5; no floating point.
+FIDELITY: 114 checks reproduce Proposition 6.2 and the zero/full cases.
+EXHAUSTIVE: 500 comparisons, every local subspace on C3/C4 ordered pairs.
+DETERMINISTIC: 90 further cycle comparisons, orders 3 through 8.
+COMPLETE: p=3, n=4, m=4, delta=13, P=4
+COMPLETE: p=3, n=4, m=5, delta=28, P=10
+COMPLETE: p=3, n=5, m=5, delta=61, P=25
+STRICT_FAMILY: p=3, n=5, m=6, delta=72, P=30
+STRICT_FAMILY: p=3, n=6, m=7, delta=98, P=42
+COMPLETE: p=5, n=4, m=4, delta=13, P=4
+COMPLETE: p=5, n=4, m=5, delta=28, P=10
+COMPLETE: p=5, n=5, m=5, delta=61, P=25
+STRICT_FAMILY: p=5, n=5, m=6, delta=72, P=30
+STRICT_FAMILY: p=5, n=6, m=7, delta=98, P=42
+EQUALITY_FAMILY: 6 nondegenerate odd-cycle/augmentation comparisons.
+PRODUCT_COMPARISONS: 600 systematic + 6 equality = 606; failures=0.
+Each comparison checks Lemma 7.4, Proposition 7.5(b), the defect identity, and its zero criterion.
+Finite checks support the general argument; they are not a universal or Lean proof.
+ALL_CHECKS_OK

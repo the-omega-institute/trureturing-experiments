@@ -1,0 +1,8 @@
+FIDELITY: source S_3 initial terms and all 40 Table 1 entries reproduced at n <= 3000
+FIDELITY: nonnegative Mobius sums and factorial denominator bound: 120000 cases
+EMPIRICAL_LCMS k=1..40: 1,1,2,6,12,60,30,210,840,2520,1260,13860,13860,180180,90090,30030,240240,4084080,6126120,116396280,58198140,58198140,29099070,669278610,892371480,4461857400,2230928700,20078358300,20078358300,582272390700,291136195350,9025222055850,144403552893600,48134517631200,24067258815600,24067258815600,36100888223400,1335732864265800,333933216066450,333933216066450
+TARGET: radical lower divisor and lcm upper divisor for the 40 truncated repair factors
+SHARPNESS: 19 prime-power pairs with p^j+1 <= 40; full residue formula at n <= 3000
+POLYNOMIAL: 612 exact quotient congruences, 3 <= k <= 18, 1 <= a,n <= 3
+SCOPE: finite arithmetic checks only; no universal claim or infinite lcm is certified here
+ALL_CHECKS_OK

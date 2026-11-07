@@ -1,0 +1,8 @@
+FIDELITY: both OEIS displayed coefficient lists agree at indices 0..14
+A245658 initial coefficients: [1, 1, 22, 1624, 264962, 79136637, 38671111558]
+SOURCE: triangular transform = 1 and A^3 = B through degree 100
+INTEGRALITY ROUTE: kernel congruence and B = C^3 modulo 9 verified through degree 100
+PARITY: Y = 1 + xY^4 and fourth-power Frobenius agree through degree 100
+ODD INDICES: [0, 1, 5, 21, 85]
+Expected settlement remains an all-index proof obligation; this is finite evidence.
+ALL_CHECKS_OK

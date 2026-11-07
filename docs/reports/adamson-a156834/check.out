@@ -1,0 +1,11 @@
+FIDELITY: all 51 OEIS A156834 published terms reproduced
+PREFIX: 1,2,3,5,5,12,7,17,19,30,11,63,13,56,99,89,17,154,19,269,237,132,23,509,301,182,379,783,29,1230,31,881,813,306,2125,2431,37,380,1299,4157,41,4822,43,3695,6175,552,47,8529,5587,6266,2787
+FIDELITY: paper section 5.2 rows 1..11 reproduced
+FIDELITY: Pascal interleaving equals Proposition 6 for all 1 <= k <= n <= 256
+FIDELITY: matrix-times-totient equals published divisor sum for n=1..256
+EXACT: totient sieve equals trial factorization for n=1..10000; coprime count for n=1..200
+EXACT: totient divisor sum, binomial equality criterion, and excess identity hold for n=1..10000
+SETTLEMENT CHECK: n=2..10000; primes=1229; composites=8770; mismatches=0
+BOUNDARY: a(1)=1 and 1 is not prime; n>1 is essential
+SCOPE: finite exact checks; the unbounded claim is reserved for a later Lean proof
+ALL_CHECKS_OK

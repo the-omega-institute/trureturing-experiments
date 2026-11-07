@@ -1,0 +1,11 @@
+FIDELITY: source Lemma 2.1, periods 1..4, 27742 exact cases; weight sum = 3
+ENDPOINT: r=0, A(N_even)/N_even=0, A(N_odd)/N_odd=1/2
+ENDPOINT: r=1, A(N_even)/N_even=1/8, A(N_odd)/N_odd=121/128
+ENDPOINT: r=2, A(N_even)/N_even=121/32768, A(N_odd)/N_odd=2147451001/2147483648
+ENDPOINT: r=3, A(N_even)/N_even=2147451001/9223372036854775808, A(N_odd)/N_odd=170141183460469231722463931681176780921/170141183460469231731687303715884105728
+DENSITY: A(k) checked for k=0..300; 222 tail endpoint cases
+DIGITS: q=3..9, k=1..24, m in {0,3,8,18} with m<=k; 490 prefix families, 26523 points
+SHIFT: 58464 independent-word separated pairs, lengths 1..3; 336 exact finite-window cover budgets, lengths 1..8
+LOCAL: 7980 exact periodic tail-orbit checks, q=3..9, delta in {1,1/2,1/7,1/100,1/1000}; no loss of future active digits
+LIMITS: finite checks only; unbounded limits and compactness require the general argument
+ALL_CHECKS_OK

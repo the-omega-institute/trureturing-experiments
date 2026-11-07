@@ -1,0 +1,89 @@
+FIDELITY: Appendix E Proposition 18: injective; chamber-wise PI; global collision (1,1)=(2,2)
+REDUCED f 64 input cells; four distinct nonempty rules; {'I': 56, 'N': 4, 'R': 2, 'S': 2}
+REDUCED g 64 input cells; four distinct nonempty rules; {'I': 54, 'N': 2, 'R': 4, 'S': 4}
+GMM: positive weights; sum=1; distinct components; covariance principal minors positive
+DENSITY: four component-specific reflection identities, as exact quadratic polynomials
+PI f : chamber-wise PI on all 64 cells; global collisions [('I', 1, 'R', 1), ('I', 2, 'S', 2), ('N', 1, 'S', 1), ('N', 2, 'R', 2)]
+PI g : chamber-wise PI on all 64 cells; global collisions [('I', 1, 'R', 1), ('I', 2, 'S', 2), ('N', 1, 'S', 1), ('N', 2, 'R', 2)]
+CELL (0, 0) sample -5 -5 f I g I preimage_count 1 density_kernels_equal
+CELL (0, 1) sample -5 -7/2 f I g I preimage_count 1 density_kernels_equal
+CELL (0, 2) sample -5 -2 f I g I preimage_count 1 density_kernels_equal
+CELL (0, 3) sample -5 -1/2 f I g I preimage_count 1 density_kernels_equal
+CELL (0, 4) sample -5 1/2 f I g I preimage_count 1 density_kernels_equal
+CELL (0, 5) sample -5 2 f I g I preimage_count 1 density_kernels_equal
+CELL (0, 6) sample -5 7/2 f I g I preimage_count 1 density_kernels_equal
+CELL (0, 7) sample -5 5 f I g I preimage_count 1 density_kernels_equal
+CELL (1, 0) sample -7/2 -5 f I g I preimage_count 1 density_kernels_equal
+CELL (1, 1) sample -7/2 -7/2 f N g N preimage_count 1 density_kernels_equal
+CELL (1, 2) sample -7/2 -2 f I g I preimage_count 1 density_kernels_equal
+CELL (1, 3) sample -7/2 -1/2 f I g I preimage_count 1 density_kernels_equal
+CELL (1, 4) sample -7/2 1/2 f I g I preimage_count 1 density_kernels_equal
+CELL (1, 5) sample -7/2 2 f I g I preimage_count 1 density_kernels_equal
+CELL (1, 6) sample -7/2 7/2 f I g I preimage_count 1 density_kernels_equal
+CELL (1, 7) sample -7/2 5 f I g I preimage_count 1 density_kernels_equal
+CELL (2, 0) sample -2 -5 f I g I preimage_count 1 density_kernels_equal
+CELL (2, 1) sample -2 -7/2 f I g I preimage_count 1 density_kernels_equal
+CELL (2, 2) sample -2 -2 f I g I preimage_count 1 density_kernels_equal
+CELL (2, 3) sample -2 -1/2 f I g I preimage_count 1 density_kernels_equal
+CELL (2, 4) sample -2 1/2 f I g I preimage_count 1 density_kernels_equal
+CELL (2, 5) sample -2 2 f I g I preimage_count 1 density_kernels_equal
+CELL (2, 6) sample -2 7/2 f I g I preimage_count 1 density_kernels_equal
+CELL (2, 7) sample -2 5 f I g I preimage_count 1 density_kernels_equal
+CELL (3, 0) sample -1/2 -5 f I g I preimage_count 1 density_kernels_equal
+CELL (3, 1) sample -1/2 -7/2 f I g I preimage_count 1 density_kernels_equal
+CELL (3, 2) sample -1/2 -2 f I g I preimage_count 1 density_kernels_equal
+CELL (3, 3) sample -1/2 -1/2 f empty g empty preimage_count 0 density_kernels_equal
+CELL (3, 4) sample -1/2 1/2 f I,N g R,S preimage_count 2 density_kernels_equal
+CELL (3, 5) sample -1/2 2 f I g I preimage_count 1 density_kernels_equal
+CELL (3, 6) sample -1/2 7/2 f S g S preimage_count 1 density_kernels_equal
+CELL (3, 7) sample -1/2 5 f I g I preimage_count 1 density_kernels_equal
+CELL (4, 0) sample 1/2 -5 f I g I preimage_count 1 density_kernels_equal
+CELL (4, 1) sample 1/2 -7/2 f I g I preimage_count 1 density_kernels_equal
+CELL (4, 2) sample 1/2 -2 f I g I preimage_count 1 density_kernels_equal
+CELL (4, 3) sample 1/2 -1/2 f empty g empty preimage_count 0 density_kernels_equal
+CELL (4, 4) sample 1/2 1/2 f I,N g R,S preimage_count 2 density_kernels_equal
+CELL (4, 5) sample 1/2 2 f I g I preimage_count 1 density_kernels_equal
+CELL (4, 6) sample 1/2 7/2 f S g S preimage_count 1 density_kernels_equal
+CELL (4, 7) sample 1/2 5 f I g I preimage_count 1 density_kernels_equal
+CELL (5, 0) sample 2 -5 f I g I preimage_count 1 density_kernels_equal
+CELL (5, 1) sample 2 -7/2 f I g I preimage_count 1 density_kernels_equal
+CELL (5, 2) sample 2 -2 f I g I preimage_count 1 density_kernels_equal
+CELL (5, 3) sample 2 -1/2 f I g I preimage_count 1 density_kernels_equal
+CELL (5, 4) sample 2 1/2 f I g I preimage_count 1 density_kernels_equal
+CELL (5, 5) sample 2 2 f I g I preimage_count 1 density_kernels_equal
+CELL (5, 6) sample 2 7/2 f I g I preimage_count 1 density_kernels_equal
+CELL (5, 7) sample 2 5 f I g I preimage_count 1 density_kernels_equal
+CELL (6, 0) sample 7/2 -5 f I g I preimage_count 1 density_kernels_equal
+CELL (6, 1) sample 7/2 -7/2 f I g I preimage_count 1 density_kernels_equal
+CELL (6, 2) sample 7/2 -2 f I g I preimage_count 1 density_kernels_equal
+CELL (6, 3) sample 7/2 -1/2 f R g R preimage_count 1 density_kernels_equal
+CELL (6, 4) sample 7/2 1/2 f R g R preimage_count 1 density_kernels_equal
+CELL (6, 5) sample 7/2 2 f I g I preimage_count 1 density_kernels_equal
+CELL (6, 6) sample 7/2 7/2 f N g N preimage_count 1 density_kernels_equal
+CELL (6, 7) sample 7/2 5 f I g I preimage_count 1 density_kernels_equal
+CELL (7, 0) sample 5 -5 f I g I preimage_count 1 density_kernels_equal
+CELL (7, 1) sample 5 -7/2 f I g I preimage_count 1 density_kernels_equal
+CELL (7, 2) sample 5 -2 f I g I preimage_count 1 density_kernels_equal
+CELL (7, 3) sample 5 -1/2 f I g I preimage_count 1 density_kernels_equal
+CELL (7, 4) sample 5 1/2 f I g I preimage_count 1 density_kernels_equal
+CELL (7, 5) sample 5 2 f I g I preimage_count 1 density_kernels_equal
+CELL (7, 6) sample 5 7/2 f I g I preimage_count 1 density_kernels_equal
+CELL (7, 7) sample 5 5 f I g I preimage_count 1 density_kernels_equal
+NONINJECTIVE: every regular point of Q+ has two distinct interior preimages, for both maps
+LOCALIZED SYMMETRY component 1 : g=f composed with local reflection on all 64 input cells
+LOCALIZED SYMMETRY component 2 : g=f composed with local reflection on all 64 input cells
+CHAMBERS f [(('I',), 54), (('N',), 1), ((), 2), (('I', 'N'), 2), (('S',), 2), (('R',), 2), (('N',), 1)]
+USB f x=4,y=1/2 R uniquely leaves; I uniquely enters
+USB f x=1/2,y=4 S uniquely leaves; I uniquely enters
+USB f x=4,y=7/2 N uniquely leaves; I uniquely enters
+CHAMBERS g [(('I',), 54), (('N',), 1), ((), 2), (('R', 'S'), 2), (('S',), 2), (('R',), 2), (('N',), 1)]
+USB g x=4,y=1/2 R uniquely leaves; I uniquely enters
+USB g x=1/2,y=4 S uniquely leaves; I uniquely enters
+USB g x=4,y=7/2 N uniquely leaves; I uniquely enters
+MST ALGEBRA: four common covariance stabilizers; only I fixes the mean difference; translation=0
+MST OBLIGATION: finite Gaussian-mixture identifiability, not assumed or established by this finite check
+MID OBSTRUCTION: f != g on (0,1)^2; conditional on MST no common affine link
+LID DISTINCTION: identical latent laws admit alpha=Id; this is not a failure of LID
+FAMILY: all kernel equalities are coefficientwise per component, hence hold for every lambda in (0,1)
+FAMILY: component-fixing from weights uses lambda != 1/2; the same MST algebra then applies
+ALL_CHECKS_OK

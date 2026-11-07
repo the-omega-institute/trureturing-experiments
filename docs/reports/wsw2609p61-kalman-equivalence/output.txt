@@ -1,0 +1,10 @@
+chains n=1: 1 reducts, 1 FARL expansions checked
+chains n=2: 1 reducts, 1 FARL expansions checked
+chains n=3: 2 reducts, 4 FARL expansions checked
+chains n=4: 6 reducts, 18 FARL expansions checked
+chains n=5: 22 reducts, 95 FARL expansions checked
+Boolean square: 2 FARL expansions checked
+Non-distributive six-element source: 3 FARL expansions; all twists have 27 elements
+Source fidelity: L3 x L3, scaled integer coordinates 0,1,2: FAIRL and FARL; twist size=36; rho and sigma preserve every operation
+Total exhaustive family expansions: 124; plus the source L3-square example
+ALL_CHECKS_OK

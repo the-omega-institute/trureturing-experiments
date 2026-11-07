@@ -1,0 +1,5 @@
+source Proposition 3 cases: 33
+equation (2) coefficient cases: 359
+finite coefficient formula cases: 309
+Conjecture 2 highest-coefficient cases: 50
+ALL_CHECKS_OK

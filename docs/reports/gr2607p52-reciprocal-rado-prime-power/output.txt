@@ -1,0 +1,16 @@
+ENUMERATOR_CROSSCHECK direct brute-force comparisons: 240
+DENOMINATOR_LEMMA exact multisets checked: 21942
+FIDELITY Remark 3.2 k=3 N=34 avoids; tuples: 9135
+FIDELITY Theorem 3.1 k=3 N=27 stats={'nodes': 39, 'size_cut': 32}
+FIDELITY Theorem 3.1 k=5 N=75 stats={'nodes': 273, 'size_cut': 199}
+NEGATIVE_CONTROL block colouring fails at M with repeated M, k=3,5,7
+CANDIDATE p=3 m=1 k=3 N=29 no monochromatic solution stats={'nodes': 40, 'size_cut': 31, 'multiplicity_splits': 3, 'valuation_cut': 2}
+CANDIDATE p=3 m=2 k=9 N=245 no monochromatic solution stats={'nodes': 364, 'size_cut': 317, 'multiplicity_splits': 12, 'valuation_cut': 22}
+CANDIDATE p=5 m=1 k=5 N=77 no monochromatic solution stats={'nodes': 118, 'size_cut': 95, 'multiplicity_splits': 7, 'valuation_cut': 8}
+CANDIDATE p=5 m=2 k=25 N=1877 no monochromatic solution stats={'nodes': 2838, 'size_cut': 2641, 'multiplicity_splits': 37, 'valuation_cut': 122}
+CANDIDATE p=7 m=1 k=7 N=149 no monochromatic solution stats={'nodes': 228, 'size_cut': 193, 'multiplicity_splits': 10, 'valuation_cut': 14}
+CANDIDATE p=7 m=2 k=49 N=7205 no monochromatic solution stats={'nodes': 10854, 'size_cut': 10379, 'multiplicity_splits': 73, 'valuation_cut': 328}
+TAIL_IDENTITIES_AND_MULTIPLICITIES exact k=3..100: OK
+RESIDUAL_VALUATIONS p=3,5,7,11,13 m=1..4: OK
+BOUNDARY candidate colouring k=7 N=150 has solution: 21 (140, 140, 150, 150, 150, 150, 150)
+ALL_CHECKS_OK

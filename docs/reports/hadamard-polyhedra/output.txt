@@ -1,0 +1,13 @@
+FIDELITY: Walsh H4 row-cone and row-polytope descriptions reproduced exactly
+SYMBOLIC: radius, support slack, parameter recovery, convex-product, and Lagrange identities exact
+SPECTRAL: common rational eigenbasis det=6; symmetry, row sums, characteristic polynomial exact
+SPECTRAL: all square-corner entries >= 1/6; A(1,1)=I
+FAMILY m=10: hull_edges=14, nominated_facets=10, exact_product_certificates=169
+FAMILY m=11: hull_edges=15, nominated_facets=11, exact_product_certificates=196
+FAMILY m=16: hull_edges=20, nominated_facets=16, exact_product_certificates=361
+FAMILY m=32: hull_edges=36, nominated_facets=32, exact_product_certificates=1225
+FAMILY m=64: hull_edges=68, nominated_facets=64, exact_product_certificates=4489
+FAMILY: 55 values m=10..64; 101860 exact generator-product certificates
+OBSTRUCTION INPUT: each tested polygon/cone has >9 nominated facets; a 3x3 realization has 9 entry forms
+SCOPE: general facet-count argument and extension to every integer m>=10 are prose proof obligations, not Lean-checked here
+ALL_CHECKS_OK

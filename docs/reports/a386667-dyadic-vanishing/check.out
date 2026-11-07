@@ -1,0 +1,27 @@
+SOURCE_FIDELITY A[1..10] = 1,4,34,360,4271,54292,723030,9957288,140645083,2026330944
+SOURCE_FIDELITY A083563 B[1..10] = 2,3,6,18,54,183,636,2316,8610,32763
+SOURCE_EQUATIONS original A^2=A((x+4A^2)^2), A(f)=x, f(A)=x: through degree 128
+DYADIC n=2 k=0 degree=3 coefficient=0 inverse_coefficient=0
+DYADIC n=3 k=0 degree=7 coefficient=0 inverse_coefficient=0
+DYADIC n=3 k=1 degree=6 coefficient=0 inverse_coefficient=0
+DYADIC n=4 k=0 degree=15 coefficient=0 inverse_coefficient=0
+DYADIC n=4 k=1 degree=14 coefficient=0 inverse_coefficient=0
+DYADIC n=4 k=2 degree=12 coefficient=0 inverse_coefficient=0
+DYADIC n=5 k=0 degree=31 coefficient=0 inverse_coefficient=0
+DYADIC n=5 k=1 degree=30 coefficient=0 inverse_coefficient=0
+DYADIC n=5 k=2 degree=28 coefficient=0 inverse_coefficient=0
+DYADIC n=5 k=3 degree=24 coefficient=0 inverse_coefficient=0
+DYADIC n=6 k=0 degree=63 coefficient=0 inverse_coefficient=0
+DYADIC n=6 k=1 degree=62 coefficient=0 inverse_coefficient=0
+DYADIC n=6 k=2 degree=60 coefficient=0 inverse_coefficient=0
+DYADIC n=6 k=3 degree=56 coefficient=0 inverse_coefficient=0
+DYADIC n=6 k=4 degree=48 coefficient=0 inverse_coefficient=0
+DYADIC n=7 k=0 degree=127 coefficient=0 inverse_coefficient=0
+DYADIC n=7 k=1 degree=126 coefficient=0 inverse_coefficient=0
+DYADIC n=7 k=2 degree=124 coefficient=0 inverse_coefficient=0
+DYADIC n=7 k=3 degree=120 coefficient=0 inverse_coefficient=0
+DYADIC n=7 k=4 degree=112 coefficient=0 inverse_coefficient=0
+DYADIC n=7 k=5 degree=96 coefficient=0 inverse_coefficient=0
+BOUNDARY n=2 k=1 (excluded): 24
+EXACT_CASES 21 ; no assertion beyond n=7 follows from this finite computation
+ALL_CHECKS_OK

@@ -1,0 +1,6 @@
+fidelity: decimal K_10 trajectory and Theorem (proportion) checked
+C_80 = 2355169/2560000  (against 3/4=3/4, 15/16=15/16)
+C_320 = 246471427/327680000  (against 3/4=3/4, 15/16=15/16)
+C_1280 = 38517137157/41943040000  (against 3/4=3/4, 15/16=15/16)
+residue families: 76 attracted classes and 8 obstructing classes checked
+ALL_CHECKS_OK

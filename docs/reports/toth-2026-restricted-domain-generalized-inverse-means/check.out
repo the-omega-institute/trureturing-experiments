@@ -1,0 +1,4 @@
+Example 2: exact strict increase and mean identity verified
+Affine half-plane: exact positive-definite and boundary checks verified
+Non-affine disc: exact strict increase and Jensen failure verified
+ALL_CHECKS_OK

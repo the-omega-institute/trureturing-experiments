@@ -1,0 +1,14 @@
+n=1: graphs=1, matching_forcing_numbers=1, nonempty_interval_classes=1
+n=2: graphs=4, matching_forcing_numbers=5, nonempty_interval_classes=7
+n=3: graphs=64, matching_forcing_numbers=128, nonempty_interval_classes=237
+n=4: graphs=4096, matching_forcing_numbers=16640, nonempty_interval_classes=37934
+Fidelity Corollary 2.2 and Theorem 5.1: 4165 graphs passed
+Product inequality: 4165 graphs passed; violations=0
+Published fixed-k implication: 4696 applicable pairs passed
+Interval construction: 16774 matchings, 38179 nonempty classes passed
+Fidelity Remark 5.6: n=3, k=2, perfect_matchings=3, f=1, F=1
+Fidelity Remark 5.6: n=4, k=3, perfect_matchings=3, f=1, F=1
+Fidelity Remark 5.6: n=5, k=2, perfect_matchings=21, f=2, F=3
+Fidelity Remark 5.6: n=7, k=3, perfect_matchings=41, f=2, F=4
+Finite sanity checks only; no universal conclusion follows from enumeration.
+ALL_CHECKS_OK

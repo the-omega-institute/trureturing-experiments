@@ -1,0 +1,33 @@
+FIDELITY p=2 n=3 distribution={22: 1, 64: 1} mean=43
+FIDELITY p=2 n=4 distribution={88: 15, 256: 1} mean=197/2
+FIDELITY p=2 n=5 distribution={184: 868, 352: 155, 1024: 1} mean=841/4
+FIDELITY p=3 n=3 distribution={105: 2, 729: 1} mean=313
+FIDELITY p=3 n=4 distribution={945: 80, 6561: 1} mean=3043/3
+FIDELITY p=5 n=3 distribution={745: 4, 15625: 1} mean=3721
+SIGNED_POLYNOMIAL p=2 highest_y_degree=16 coefficient=x^8
+SIGNED_POLYNOMIAL p=3 highest_y_degree=81 coefficient=x^27
+SIGNED_POLYNOMIAL p=5 highest_y_degree=625 coefficient=x^125
+SIGNED_POLYNOMIAL p=7 highest_y_degree=2401 coefficient=x^343
+SIGNED_POLYNOMIAL p=11 highest_y_degree=14641 coefficient=x^1331
+SIGNED_POLYNOMIAL p=13 highest_y_degree=28561 coefficient=x^2197
+CONSTRUCTION p=2 n=1 modulus=[0, 1] rank=4 nonzero_radicals={2: 1} pairs=4 cocycle_quadruples=16
+CONSTRUCTION p=2 n=2 modulus=[1, 1, 1] rank=16 nonzero_radicals={4: 3} pairs=16 cocycle_quadruples=256
+CONSTRUCTION p=2 n=3 modulus=[1, 0, 1, 1] rank=22 nonzero_radicals={2: 7} pairs=64 cocycle_quadruples=4096
+CONSTRUCTION p=2 n=4 modulus=[1, 0, 0, 1, 1] rank=88 nonzero_radicals={4: 14, 16: 1} pairs=256 cocycle_quadruples=0
+CONSTRUCTION p=2 n=5 modulus=[1, 0, 0, 1, 0, 1] rank=184 nonzero_radicals={2: 16, 8: 15} pairs=1024 cocycle_quadruples=0
+CONSTRUCTION p=2 n=6 modulus=[1, 0, 0, 0, 0, 1, 1] rank=484 nonzero_radicals={4: 49, 16: 14} pairs=4096 cocycle_quadruples=0
+CONSTRUCTION p=2 n=7 modulus=[1, 0, 0, 0, 0, 0, 1, 1] rank=760 nonzero_radicals={2: 64, 8: 63} pairs=16384 cocycle_quadruples=0
+CONSTRUCTION p=2 n=8 modulus=[1, 0, 0, 0, 1, 1, 0, 1, 1] rank=1528 nonzero_radicals={4: 234, 16: 21} pairs=65536 cocycle_quadruples=0
+CONSTRUCTION p=3 n=1 modulus=[0, 1] rank=9 nonzero_radicals={3: 2} pairs=9 cocycle_quadruples=81
+CONSTRUCTION p=3 n=2 modulus=[1, 0, 1] rank=81 nonzero_radicals={9: 8} pairs=81 cocycle_quadruples=6561
+CONSTRUCTION p=3 n=3 modulus=[1, 0, 2, 1] rank=729 nonzero_radicals={27: 26} pairs=729 cocycle_quadruples=0
+CONSTRUCTION p=3 n=4 modulus=[1, 0, 1, 1, 1] rank=945 nonzero_radicals={9: 78, 81: 2} pairs=6561 cocycle_quadruples=0
+CONSTRUCTION p=3 n=5 modulus=[1, 0, 0, 0, 2, 1] rank=2889 nonzero_radicals={3: 162, 27: 80} pairs=59049 cocycle_quadruples=0
+CONSTRUCTION p=5 n=1 modulus=[0, 1] rank=25 nonzero_radicals={5: 4} pairs=25 cocycle_quadruples=625
+CONSTRUCTION p=5 n=2 modulus=[1, 1, 1] rank=625 nonzero_radicals={25: 24} pairs=625 cocycle_quadruples=0
+CONSTRUCTION p=5 n=3 modulus=[1, 0, 1, 1] rank=745 nonzero_radicals={5: 124} pairs=15625 cocycle_quadruples=0
+CONSTRUCTION p=7 n=1 modulus=[0, 1] rank=49 nonzero_radicals={7: 6} pairs=49 cocycle_quadruples=2401
+CONSTRUCTION p=7 n=2 modulus=[1, 0, 1] rank=2401 nonzero_radicals={49: 48} pairs=2401 cocycle_quadruples=0
+CONSTRUCTION p=7 n=3 modulus=[1, 0, 1, 1] rank=2737 nonzero_radicals={7: 342} pairs=117649 cocycle_quadruples=0
+COVERAGE fields=19 exhaustive_field_pairs=290183
+ALL_CHECKS_OK

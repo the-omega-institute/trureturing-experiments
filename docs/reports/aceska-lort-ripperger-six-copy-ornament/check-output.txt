@@ -1,0 +1,73 @@
+{
+  "all_oriented_graph_counts": {
+    "1": 1,
+    "2": 3,
+    "3": 27,
+    "4": 729
+  },
+  "arithmetic": "Python integers only; no floating point",
+  "exhaustive_graphs": 760,
+  "maximum_exhaustive_threshold": 28856472338804772962515,
+  "named_cases": {
+    "directed_edge": {
+      "added_vertices": 12,
+      "copies": 6,
+      "cross_edges": 412,
+      "old_order_threshold": 1644167175,
+      "selected_old_labels": 103,
+      "tested_orders": 3
+    },
+    "directed_four_cycle": {
+      "added_vertices": 24,
+      "copies": 6,
+      "cross_edges": 888,
+      "old_order_threshold": 76092819304051900414,
+      "selected_old_labels": 222,
+      "tested_orders": 3
+    },
+    "directed_triangle": {
+      "added_vertices": 18,
+      "copies": 6,
+      "cross_edges": 600,
+      "old_order_threshold": 118747255799806,
+      "selected_old_labels": 150,
+      "tested_orders": 3
+    },
+    "inward_K_1_4": {
+      "added_vertices": 30,
+      "copies": 6,
+      "cross_edges": 2620,
+      "old_order_threshold": 17968566688387137080951570761,
+      "selected_old_labels": 655,
+      "tested_orders": 3
+    },
+    "isolated_vertex": {
+      "added_vertices": 6,
+      "copies": 6,
+      "cross_edges": 72,
+      "old_order_threshold": 190,
+      "selected_old_labels": 18,
+      "tested_orders": 3
+    },
+    "transitive_tournament_5": {
+      "added_vertices": 30,
+      "copies": 6,
+      "cross_edges": 3544,
+      "old_order_threshold": 50157123329991349829384536624,
+      "selected_old_labels": 886,
+      "tested_orders": 3
+    }
+  },
+  "scope": "Every labeled oriented graph on 1 through 4 vertices; three old orders per graph. Sparse zero rows cover all unused old vertices. These finite checks do not prove the unbounded theorem.",
+  "source_fidelity": {
+    "figure_1a_wheel_weights": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "remark_1_cycle_labelings": 11820
+  }
+}
+ALL_CHECKS_OK

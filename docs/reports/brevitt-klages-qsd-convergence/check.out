@@ -1,0 +1,10 @@
+FIDELITY_OK: source master equation, mass law, and QSD generating function
+GENERATING_FUNCTIONS_OK: U(1)=V(1)=1, u0=7/30, v0=51/10
+EIGENIDENTITIES_OK: Tu=(73/80)u and Tv=-(73/80)v for every index
+POSITIVE_FAMILY_OK: all 0<delta<=1/1000, margin=4151/69000, common ratio=4/5
+TWO_CYCLE_OK: F(a_delta)=b_delta, F(b_delta)=a_delta, a0-b0=146*delta/(15*(1-delta**2))
+INDEPENDENT_COORDINATE_CHECK_OK: k=0..100; self-loop=3/16; both adjacent transitions positive
+SAMPLE: a0=7153/30030, b0=6847/29970, gap=29200/2999997
+SAMPLE_SURVIVAL: 72927/80080, 73073/79920
+CHECK_SHA256: 3f820517d8465ce1b64c6d9e306939231d469ea5459a3554921c5f6be5b17dd4
+ALL_CHECKS_OK

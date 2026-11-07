@@ -1,0 +1,5 @@
+OEIS A397594 b-file prefix reproduced: degrees 0..24
+exact source identities checked: formula (1) through n=39; formula (2) through n=100
+odd indices for 4 <= n <= 100: [5, 7, 9, 15, 17, 31, 33, 63, 65]
+first coefficients: [1, 3, 27, 528, 16512, 705195, 37887834, 2442170091, 183244178880, 15675764998821]
+ALL_CHECKS_OK

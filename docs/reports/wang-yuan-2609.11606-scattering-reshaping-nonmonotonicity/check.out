@@ -1,0 +1,7 @@
+increase k=1: tau=1, tau_grouped=2, grouped_modes=3
+decrease k=1: tau=3, tau_grouped=2, grouped_modes=3
+increase k=2: tau=1, tau_grouped=3, grouped_modes=4
+decrease k=2: tau=4, tau_grouped=2, grouped_modes=3
+increase k=3: tau=1, tau_grouped=4, grouped_modes=5
+decrease k=3: tau=5, tau_grouped=2, grouped_modes=3
+ALL_CHECKS_OK
