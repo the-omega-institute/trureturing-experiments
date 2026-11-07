@@ -1,0 +1,4 @@
+checked 2661 counterexample-family pairs for d <= 100
+fidelity: cyclic weights and triangular normalizer generators
+witness: (d,e,e')=(4,3,3), D=2*x*y*(x*d/dx-y*d/dy)
+ALL_CHECKS_OK
