@@ -1,0 +1,17 @@
+Python 3.14.8 SymPy 1.14.0
+FIDELITY: det(D F0) = -2 as an exact polynomial identity
+FIDELITY: the three source preimages all map to (-1/4, 0, 0)
+SETTLEMENT: (2,-1/2,5/4) and (-2,1,2) both map to (0,1,0)
+PENCIL: N=2; J^2=-I; det(aI+bJ)=(a^2+b^2)^1; inverse numerator checked
+PENCIL: N=4; J^2=-I; det(aI+bJ)=(a^2+b^2)^2; inverse numerator checked
+FAMILY: N=4; padded det=-2; DG=(aI+bJ)DF; symbolic collision preserved
+PENCIL: N=6; J^2=-I; det(aI+bJ)=(a^2+b^2)^3; inverse numerator checked
+FAMILY: N=6; padded det=-2; DG=(aI+bJ)DF; symbolic collision preserved
+PENCIL: N=8; J^2=-I; det(aI+bJ)=(a^2+b^2)^4; inverse numerator checked
+FAMILY: N=8; padded det=-2; DG=(aI+bJ)DF; symbolic collision preserved
+PENCIL: N=10; J^2=-I; det(aI+bJ)=(a^2+b^2)^5; inverse numerator checked
+FAMILY: N=10; padded det=-2; DG=(aI+bJ)DF; symbolic collision preserved
+PENCIL: N=12; J^2=-I; det(aI+bJ)=(a^2+b^2)^6; inverse numerator checked
+FAMILY: N=12; padded det=-2; DG=(aI+bJ)DF; symbolic collision preserved
+POSITIVITY: 288 exact rational nonzero coefficient pairs checked
+ALL_CHECKS_OK
