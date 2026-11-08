@@ -1,0 +1,25 @@
+Exact polynomial identity: P - H^2 G = xyz D Q
+Universal symbolic coefficient in a=k-1: 12*a**3 + 9*a**2 - 156*a - 57
+Positive-sign expansion at k=5+h: 12*h^3 + 153*h^2 + 492*h + 231
+k=1: minimal tie=6; all c_r=0 through r=2; c_(k+2)=-57; convolution OK
+k=2: minimal tie=6; all c_r=0 through r=3; c_(k+2)=-192; convolution OK
+k=3: minimal tie=6; all c_r=0 through r=4; c_(k+2)=-237; convolution OK
+k=4: minimal tie=6; all c_r=0 through r=5; c_(k+2)=-120; convolution OK
+k=5: minimal tie=6; all c_r=0 through r=6; c_(k+2)=231; convolution OK
+k=6: minimal tie=6; all c_r=0 through r=7; c_(k+2)=888; convolution OK
+k=7: minimal tie=6; all c_r=0 through r=8; c_(k+2)=1923; convolution OK
+k=8: minimal tie=6; all c_r=0 through r=9; c_(k+2)=3408; convolution OK
+k=9: minimal tie=6; all c_r=0 through r=10; c_(k+2)=5415; convolution OK
+k=10: minimal tie=6; all c_r=0 through r=11; c_(k+2)=8016; convolution OK
+k=11: minimal tie=6; all c_r=0 through r=12; c_(k+2)=11283; convolution OK
+k=12: minimal tie=6; all c_r=0 through r=13; c_(k+2)=15288; convolution OK
+k=13: minimal tie=6; all c_r=0 through r=14; c_(k+2)=20103; convolution OK
+k=14: minimal tie=6; all c_r=0 through r=15; c_(k+2)=25800; convolution OK
+k=15: minimal tie=6; all c_r=0 through r=16; c_(k+2)=32451; convolution OK
+Fidelity q=3, d=3, n=4, radius 2: A=3, B=6 (source q and 6)
+Fidelity q=4, d=3, n=4, radius 2: A=4, B=6 (source q and 6)
+Fidelity q=5, d=3, n=4, radius 2: A=5, B=6 (source q and 6)
+Fidelity q=6, d=3, n=4, radius 2: A=6, B=6 (source q and 6)
+Fidelity q=7, d=3, n=4, radius 2: A=7, B=6 (source q and 6)
+Exhaustive 6^4 words, d=3, t=3: A=189, B=246, A-B=-57
+ALL_CHECKS_OK
