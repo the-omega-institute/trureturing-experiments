@@ -1,0 +1,16 @@
+ENUMERATION k=2 maximal_intersecting=2
+ENUMERATION k=3 maximal_intersecting=4
+ENUMERATION k=4 maximal_intersecting=12
+ENUMERATION k=5 maximal_intersecting=81
+ENUMERATION k=6 maximal_intersecting=2646
+FIDELITY Remark 4.5: weights 2^|A|; family costs=10,10,10,12; pair bound=6
+FIDELITY Boolean weights: i=2^(k-1)-1 for k=2..6
+MIXED INSTANCE c=8,t=(1/2,1/2,1/2,2): minimum=19; stars=25,25,25,52
+EXHAUSTIVE PARAMETER GRID k=2..4 over (1/2,1,2): vectors=117
+MIXED EXACT seed=261108022, k=2: vectors=33, mismatches=0
+MIXED EXACT seed=261108022, k=3: vectors=33, mismatches=0
+MIXED EXACT seed=261108022, k=4: vectors=33, mismatches=0
+MIXED EXACT seed=261108022, k=5: vectors=33, mismatches=0
+MIXED EXACT seed=261108022, k=6: vectors=33, mismatches=0
+UNMIXED EXACT k=2..6: vectors=80; Theorem 4.4 and Proposition 6.5 agree
+ALL_CHECKS_OK
