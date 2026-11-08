@@ -1,0 +1,4 @@
+power weights w_n=n: exhaustive parent laws, recurrence, bound, variance identity, and finite S=C passed through n=8
+c=1/2, gamma=3/4: exhaustive parent laws, recurrence, bound, variance identity, and finite S=C passed through n=3
+gamma=3/4 family: exact p_n realization and unbounded n p_n witness passed
+ALL_CHECKS_OK
