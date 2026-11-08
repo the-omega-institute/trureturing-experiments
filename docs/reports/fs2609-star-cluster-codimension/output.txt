@@ -1,0 +1,40 @@
+Python 3.14.8
+Singular for arm64-Darwin version 4.4.1 (44105, 64 bit) Nov 11 2025 16:12:34
+Source: Faber--Schober, arXiv:2609.01501v1, Proposition 4.3, Corollary 4.4, Question 4.5
+Ordered tuples: 117; stage distributions: 306; exact model/coefficient/support/fidelity checks passed
+Minimal-prime and ambient-codimension checks Q/F2: (1, 1)
+Minimal-prime and ambient-codimension checks Q/F2: (1, 2)
+Minimal-prime and ambient-codimension checks Q/F2: (1, 3)
+Minimal-prime and ambient-codimension checks Q/F2: (2, 2)
+Minimal-prime and ambient-codimension checks Q/F2: (2, 3)
+Minimal-prime and ambient-codimension checks Q/F2: (3, 3)
+Minimal-prime and ambient-codimension checks Q/F2: (1, 1, 1)
+Minimal-prime and ambient-codimension checks Q/F2: (1, 1, 2)
+Minimal-prime and ambient-codimension checks Q/F2: (1, 1, 3)
+Minimal-prime and ambient-codimension checks Q/F2: (1, 2, 2)
+Minimal-prime and ambient-codimension checks Q/F2: (1, 2, 3)
+Minimal-prime and ambient-codimension checks Q/F2: (1, 3, 3)
+Minimal-prime and ambient-codimension checks Q/F2: (2, 2, 2)
+Minimal-prime and ambient-codimension checks Q/F2: (2, 2, 3)
+Minimal-prime and ambient-codimension checks Q/F2: (2, 3, 3)
+Minimal-prime and ambient-codimension checks Q/F2: (3, 3, 3)
+Minimal-prime and ambient-codimension checks Q/F2: (1, 1, 1, 1)
+Minimal-prime and ambient-codimension checks Q/F2: (1, 1, 1, 2)
+Minimal-prime and ambient-codimension checks Q/F2: (1, 1, 1, 3)
+Minimal-prime and ambient-codimension checks Q/F2: (1, 1, 2, 2)
+Minimal-prime and ambient-codimension checks Q/F2: (1, 1, 2, 3)
+Minimal-prime and ambient-codimension checks Q/F2: (1, 1, 3, 3)
+Minimal-prime and ambient-codimension checks Q/F2: (1, 2, 2, 2)
+Minimal-prime and ambient-codimension checks Q/F2: (1, 2, 2, 3)
+Minimal-prime and ambient-codimension checks Q/F2: (1, 2, 3, 3)
+Minimal-prime and ambient-codimension checks Q/F2: (1, 3, 3, 3)
+Minimal-prime and ambient-codimension checks Q/F2: (2, 2, 2, 2)
+Minimal-prime and ambient-codimension checks Q/F2: (2, 2, 2, 3)
+Minimal-prime and ambient-codimension checks Q/F2: (2, 2, 3, 3)
+Minimal-prime and ambient-codimension checks Q/F2: (2, 3, 3, 3)
+Minimal-prime and ambient-codimension checks Q/F2: (3, 3, 3, 3)
+Permutation orbits: 31; Singular stage decompositions: 142
+Support-gap illustration q=(1,1,4,4): {"6": 1, "12": 8, "18": 4}
+Scope: finite exact checks, not a universal proof or Lean verification
+check.py sha256: e71382d49cfc11016c27b8e4291ebd65fc38fb62320f47772f143f57570561df
+ALL_CHECKS_OK
