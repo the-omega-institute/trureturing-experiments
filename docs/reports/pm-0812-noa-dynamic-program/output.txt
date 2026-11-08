@@ -1,0 +1,58 @@
+SOURCE_DATA_BOUNDARY: literal chapter caption is not a lattice: ('chapter-caption-literal', 1, 5)
+LATTICE Boolean-0 m=1 h=0 orthomodular=True all_nOA=True
+CLOSURE max_changes=0 max_sweeps=1 word_bound=0
+SOURCE 3OA holds=True valuations=1 witness=None
+SOURCE 4OA holds=True valuations=1 witness=None
+SOURCE 5OA holds=True valuations=1 witness=None
+LATTICE Boolean-1 m=2 h=1 orthomodular=True all_nOA=True
+CLOSURE max_changes=0 max_sweeps=1 word_bound=4
+SOURCE 3OA holds=True valuations=8 witness=None
+SOURCE 4OA holds=True valuations=16 witness=None
+SOURCE 5OA holds=True valuations=32 witness=None
+LATTICE Boolean-2 m=4 h=2 orthomodular=True all_nOA=True
+CLOSURE max_changes=0 max_sweeps=1 word_bound=32
+SOURCE 3OA holds=True valuations=64 witness=None
+SOURCE 4OA holds=True valuations=256 witness=None
+SOURCE 5OA holds=True valuations=1024 witness=None
+LATTICE Boolean-3 m=8 h=3 orthomodular=True all_nOA=True
+CLOSURE max_changes=0 max_sweeps=1 word_bound=192
+SOURCE 3OA holds=True valuations=512 witness=None
+SOURCE 4OA holds=True valuations=4096 witness=None
+SOURCE 5OA holds=True valuations=32768 witness=None
+LATTICE O6 m=6 h=3 orthomodular=False all_nOA=False
+CLOSURE max_changes=4 max_sweeps=2 word_bound=108
+SOURCE 3OA holds=False valuations=9 witness=(['a', 'b', '0'], [])
+SOURCE 4OA holds=False valuations=9 witness=(['a', 'b', '0'], ['0'])
+SOURCE 5OA holds=False valuations=9 witness=(['a', 'b', '0'], ['0', '0'])
+CERTIFICATE n=7 x,y,c=['0', 'b', '0'] tail=['a', 'b', "a'", "b'"]
+LATTICE MO2 m=6 h=2 orthomodular=True all_nOA=True
+CLOSURE max_changes=0 max_sweeps=1 word_bound=72
+SOURCE 3OA holds=True valuations=216 witness=None
+SOURCE 4OA holds=True valuations=1296 witness=None
+SOURCE 5OA holds=True valuations=7776 witness=None
+LATTICE L28-13-7-OMLp-oa3f m=28 h=3 orthomodular=True all_nOA=False
+CLOSURE max_changes=7 max_sweeps=2 word_bound=2352
+SOURCE 3OA holds=False valuations=12725 witness=(['6', 'C', "3'"], [])
+SOURCE 4OA holds=False valuations=351413 witness=(['6', 'C', "3'"], ['0'])
+SOURCE 5OA holds=False valuations=9834677 witness=(['6', 'C', "3'"], ['0', '0'])
+CERTIFICATE n=8 x,y,c=['0', '3', "3'"] tail=['6', '7', '9', 'B', 'C']
+LATTICE L36-17-10-oa3p4f m=36 h=3 orthomodular=True all_nOA=False
+CLOSURE max_changes=6 max_sweeps=2 word_bound=3888
+SOURCE 3OA holds=True valuations=46656 witness=None
+SOURCE 4OA holds=False valuations=1214429 witness=(['2', '4', "9'"], ['1'])
+SOURCE 5OA holds=False valuations=43671389 witness=(['2', '4', "9'"], ['0', '1'])
+CERTIFICATE n=8 x,y,c=['0', '1', "9'"] tail=['1', '2', '4', '5', '6']
+LATTICE L46-7-22-13-oa4p5f m=46 h=3 orthomodular=True all_nOA=False
+CLOSURE max_changes=9 max_sweeps=2 word_bound=6348
+SOURCE 3OA holds=True valuations=97336 witness=None
+SOURCE 4OA holds=True valuations=4477456 witness=None
+SOURCE 5OA holds=False valuations=156817239 witness=(['A', 'I', "D'"], ['1', '4'])
+CERTIFICATE n=12 x,y,c=['0', '1', "D'"] tail=['1', '2', '3', '4', 'A', 'B', 'D', 'E', 'I']
+LATTICE L46-9-22-13-oa4p5f m=46 h=3 orthomodular=True all_nOA=False
+CLOSURE max_changes=11 max_sweeps=2 word_bound=6348
+SOURCE 3OA holds=True valuations=97336 witness=None
+SOURCE 4OA holds=True valuations=4477456 witness=None
+SOURCE 5OA holds=False valuations=161290550 witness=(['C', 'D', "E'"], ['1', '2'])
+CERTIFICATE n=12 x,y,c=['0', '1', "E'"] tail=['1', '2', '3', '5', 'C', 'D', 'E', 'F', 'H']
+FIDELITY_OK: O6 fails 3OA; source 13-7 fails 3OA; L36 passes 3OA and fails 4OA; both L46 examples pass 4OA and fail 5OA
+ALL_CHECKS_OK
