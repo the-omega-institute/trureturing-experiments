@@ -1,0 +1,23 @@
+EXHAUSTIVE points=0 unlabeled_posets=1 hereditary_families=1 critical=0 max_elements=1 proper_separating_d_normalizations=0
+EXHAUSTIVE points=1 unlabeled_posets=1 hereditary_families=1 critical=1 max_elements=2 proper_separating_d_normalizations=0
+EXHAUSTIVE points=2 unlabeled_posets=2 hereditary_families=2 critical=1 max_elements=4 proper_separating_d_normalizations=0
+EXHAUSTIVE points=3 unlabeled_posets=5 hereditary_families=7 critical=2 max_elements=8 proper_separating_d_normalizations=2
+EXHAUSTIVE points=4 unlabeled_posets=16 hereditary_families=57 critical=7 max_elements=16 proper_separating_d_normalizations=23
+EXHAUSTIVE points=5 unlabeled_posets=63 hereditary_families=1074 critical=57 max_elements=32 proper_separating_d_normalizations=233
+EXHAUSTIVE_PREFIX points=6 posets=50 hereditary_families=18943 critical=101
+EXHAUSTIVE_PREFIX points=6 posets=100 hereditary_families=26293 critical=280
+EXHAUSTIVE_PREFIX points=6 posets=150 hereditary_families=47785 critical=474
+EXHAUSTIVE_PREFIX points=6 posets=200 hereditary_families=54863 critical=698
+EXHAUSTIVE_PREFIX points=6 posets=250 hereditary_families=57059 critical=829
+EXHAUSTIVE_PREFIX points=6 posets=300 hereditary_families=69431 critical=1072
+EXHAUSTIVE points=6 unlabeled_posets=318 hereditary_families=69697 critical=1092 max_elements=64 proper_separating_d_normalizations=5764
+SOURCE_S n=2 points=6 elements=13 cardinality_height_Wprime2=OK direct_critical=True proper_endomorphisms=57
+SOURCE_S n=3 points=7 elements=14 cardinality_height_Wprime2=OK direct_critical=True proper_endomorphisms=65
+SOURCE_S n=4 points=8 elements=15 cardinality_height_Wprime2=OK direct_critical=True proper_endomorphisms=77
+SOURCE_S n=5 points=9 elements=16 cardinality_height_Wprime2=OK direct_critical=True proper_endomorphisms=97
+SOURCE_S n=6 points=10 elements=17 cardinality_height_Wprime2=OK direct_critical=True proper_endomorphisms=133
+SOURCE_S n=7 points=11 elements=18 cardinality_height_Wprime2=OK direct_critical=True proper_endomorphisms=201
+SOURCE_S n=8 points=12 elements=19 cardinality_height_Wprime2=OK direct_critical=True proper_endomorphisms=333
+TOTAL representations=70839 critical=1160 fold_normalizations=6022
+ALGEBRA_SIZE_HISTOGRAM {1: 1, 2: 1, 3: 1, 4: 3, 5: 8, 6: 31, 7: 150, 8: 576, 9: 1550, 10: 2972, 11: 4316, 12: 5236, 13: 5829, 14: 6097, 15: 6009, 16: 5701, 17: 5181, 18: 4608, 19: 4049, 20: 3517, 21: 2981, 22: 2528, 23: 2083, 24: 1711, 25: 1356, 26: 1095, 27: 831, 28: 668, 29: 494, 30: 380, 31: 255, 32: 179, 33: 111, 34: 77, 35: 46, 36: 36, 37: 26, 38: 26, 39: 21, 40: 26, 41: 19, 42: 18, 43: 13, 44: 10, 45: 6, 46: 4, 47: 1, 48: 1, 64: 1}
+ALL_CHECKS_OK
