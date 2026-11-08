@@ -169,7 +169,10 @@ def check_model(
         )
         assert_exact_equal(left, right, f"finite S=C for {label}, N={N}")
 
-    print(f"{label}: exhaustive parent laws, recurrence, bound, variance identity, and finite S=C passed through n={limit}")
+    checked = "recurrence, variance identity, and finite S=C"
+    if check_bound:
+        checked = "recurrence, bound, variance identity, and finite S=C"
+    print(f"{label}: exhaustive parent laws, {checked} passed through n={limit}")
 
 
 def check_gamma_family_identity() -> None:
