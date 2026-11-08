@@ -1,0 +1,8 @@
+FIDELITY source example: C(2,2,1,1) = 58
+PARTITION_COUNTS sizes 1..15: 1,2,3,5,7,11,15,22,30,42,56,77,101,135,176
+PARTITION_CHECKS all 683 partitions of sizes 1..15 passed
+FIDELITY complete OEIS DATA field: all 66 terms match literal partition encoding; revision 98
+OEIS_TERMS: 1,2,3,4,6,7,8,10,12,14,15,16,20,24,26,28,30,31,32,36,40,42,48,52,56,58,60,62,63,64,72,80,84,96,100,104,106,112,116,120,122,124,126,127,128,136,144,160,164,168,170,192,200,208,212,224,228,232,234,240,244,248,250,252,254,255
+RECURRENCE_IDENTITY, inverse staircase, code decoding, and injectivity: all 1 <= n < 32768 passed
+BOUNDED_SET_EQUALITY: the tested b-values below 4096 are exactly the 271 partition codes below that bound
+ALL_CHECKS_OK
