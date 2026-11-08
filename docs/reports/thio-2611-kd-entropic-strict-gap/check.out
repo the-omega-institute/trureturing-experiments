@@ -1,0 +1,22 @@
+FIDELITY_OK: Appendix B matrices (58) and U_0, all displayed KD coordinates and marginals
+EXACT_CASE_OK d=2 case=0 KD-real-nullity=3 vertex=0 t=1/1048576 gap>2^-60 abs(B-finite-difference+2V)<1/1000 A(t)/t<1/1000
+EXACT_CASE_OK d=2 case=1 KD-real-nullity=3 vertex=0 t=1/1048576 gap>2^-60 abs(B-finite-difference+2V)<1/1000 A(t)/t<1/1000
+EXACT_CASE_OK d=2 case=2 KD-real-nullity=3 vertex=0 t=1/1048576 gap>2^-60 abs(B-finite-difference+2V)<1/1000 A(t)/t<1/1000
+EXACT_CASE_OK d=3 case=0 KD-real-nullity=5 vertex=5 t=1/1048576 gap>2^-60 abs(B-finite-difference+2V)<1/1000 A(t)/t<1/1000
+EXACT_CASE_OK d=3 case=1 KD-real-nullity=5 vertex=3 t=1/1048576 gap>2^-60 abs(B-finite-difference+2V)<1/1000 A(t)/t<1/1000
+EXACT_CASE_OK d=3 case=2 KD-real-nullity=5 vertex=5 t=1/1048576 gap>2^-60 abs(B-finite-difference+2V)<1/1000 A(t)/t<1/1000
+EXACT_CASE_OK d=4 case=0 KD-real-nullity=7 vertex=6 t=1/1048576 gap>2^-60 abs(B-finite-difference+2V)<1/1000 A(t)/t<1/1000
+EXACT_CASE_OK d=4 case=1 KD-real-nullity=7 vertex=6 t=1/1048576 gap>2^-60 abs(B-finite-difference+2V)<1/1000 A(t)/t<1/1000
+EXACT_CASE_OK d=4 case=2 KD-real-nullity=7 vertex=3 t=1/1048576 gap>2^-60 abs(B-finite-difference+2V)<1/1000 A(t)/t<1/1000
+All certificates above use exact arithmetic; finite cases do not establish Haar-a.e. quantifiers.
+FLOAT_DIAGNOSTICS_ONLY (not certificates; numerical Haar QR and local optimization)
+FLOAT d=2 case=0 vertex_h=0.333488582670 feasible_pure_F=0.245991211691 fd_B=-0.864506498 minus2V=-0.864506371
+FLOAT d=2 case=1 vertex_h=0.305373290452 feasible_pure_F=0.221630159336 fd_B=-0.876172299 minus2V=-0.876172246
+FLOAT d=2 case=2 vertex_h=0.644944432996 feasible_pure_F=0.623026603182 fd_B=-0.183414077 minus2V=-0.183413912
+FLOAT d=3 case=0 vertex_h=0.955654224125 feasible_pure_F=0.873644875092 fd_B=-0.546591031 minus2V=-0.546590556
+FLOAT d=3 case=1 vertex_h=0.627166307022 feasible_pure_F=0.486748760375 fd_B=-1.295333082 minus2V=-1.295332689
+FLOAT d=3 case=2 vertex_h=1.022581566269 feasible_pure_F=0.994218126660 fd_B=-0.275976698 minus2V=-0.275976469
+FLOAT d=4 case=0 vertex_h=0.693459360117 feasible_pure_F=0.515181532856 fd_B=-1.876271907 minus2V=-1.876271555
+FLOAT d=4 case=1 vertex_h=0.938728498478 feasible_pure_F=0.839727879849 fd_B=-0.932902651 minus2V=-0.932902409
+FLOAT d=4 case=2 vertex_h=1.141344363242 feasible_pure_F=1.054656228549 fd_B=-0.765670568 minus2V=-0.765670128
+ALL_CHECKS_OK
