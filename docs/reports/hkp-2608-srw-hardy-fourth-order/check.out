@@ -1,0 +1,33 @@
+Q_difference = 0
+laplacian_coefficient_difference = 0
+reciprocal_symbol_coefficients = OK
+FIDELITY: Lemma 11 SRW covariance identity = 1/d, d=3,...,8, symbolic coordinates
+harmonic_quartic_and_direct_fourth_derivatives = OK, d=3,...,8
+small_lattice_direction_exact_cases = 191
+axis_and_diagonal_sign_formulas = OK
+NUMERICAL_DIAGNOSTICS_ONLY: 42 decimal digits; 40-term Bessel tail; no certified error bound
+d=3 direction=(1, 0, 0) scale=4 r^6_residual=1.003121811072553
+d=3 direction=(1, 0, 0) scale=8 r^6_residual=0.7916297730513454
+d=3 direction=(1, 0, 0) scale=12 r^6_residual=0.6985462220458917
+sample_max_abs < 100; finite samples do not establish an asymptotic bound
+d=3 direction=(1, 1, 0) scale=4 r^6_residual=0.3334999886372131
+d=3 direction=(1, 1, 0) scale=8 r^6_residual=0.3325234541697565
+d=3 direction=(1, 1, 0) scale=12 r^6_residual=0.3363891628941857
+sample_max_abs < 100; finite samples do not establish an asymptotic bound
+d=3 direction=(1, 1, 1) scale=4 r^6_residual=0.1819785583069703
+d=3 direction=(1, 1, 1) scale=8 r^6_residual=0.1801506814643858
+d=3 direction=(1, 1, 1) scale=12 r^6_residual=0.1790109629009578
+sample_max_abs < 100; finite samples do not establish an asymptotic bound
+d=4 direction=(1, 0, 0, 0) scale=4 r^6_residual=8.63510247853718
+d=4 direction=(1, 0, 0, 0) scale=8 r^6_residual=6.939129582009977
+d=4 direction=(1, 0, 0, 0) scale=12 r^6_residual=5.844509724378976
+sample_max_abs < 100; finite samples do not establish an asymptotic bound
+d=4 direction=(1, 1, 0, 0) scale=4 r^6_residual=2.585236719626
+d=4 direction=(1, 1, 0, 0) scale=8 r^6_residual=2.344071831646189
+d=4 direction=(1, 1, 0, 0) scale=12 r^6_residual=2.342188798339474
+sample_max_abs < 100; finite samples do not establish an asymptotic bound
+d=4 direction=(1, 1, 1, 1) scale=4 r^6_residual=0.7149916207136891
+d=4 direction=(1, 1, 1, 1) scale=8 r^6_residual=0.6555761227403672
+d=4 direction=(1, 1, 1, 1) scale=12 r^6_residual=0.6416226515388448
+sample_max_abs < 100; finite samples do not establish an asymptotic bound
+ALL_CHECKS_OK
