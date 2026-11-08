@@ -1,0 +1,21 @@
+Clifford classes modulo scalar phase: 24; unitarity and H/S closure exact
+Z conjugation: each of +/-X, +/-Y, +/-Z has multiplicity 4
+Fidelity, Proposition III.5: twirl=(I+SWAP)/3; spectrum 2/3 (3), 0 (1)
+Uniform-projector first moment: I/2 exactly
+Full two-copy Clifford twirl: all 16 matrix units checked exactly
+Tensor collision: n=1, dimension=4, exact norm=2/3
+Tensor collision: n=2, dimension=16, exact norm=4/9
+Tensor collision: n=3, dimension=64, exact norm=8/27
+Tensor collision: n=4, dimension=256, exact norm=16/81
+Commuting collision union inequality: n=2, t=2, tuples=16
+Commuting collision union inequality: n=3, t=2, tuples=64
+Commuting collision union inequality: n=3, t=3, tuples=512
+Commuting collision union inequality: n=3, t=4, tuples=4096
+Commuting collision union inequality: n=4, t=2, tuples=256
+Commuting collision union inequality: n=4, t=3, tuples=4096
+Commuting collision union inequality: n=4, t=4, tuples=65536
+DNP universal t=2: n=2, min_overlap=0, epsilon=40/9, nonvacuous=False
+DNP universal t=2: n=3, min_overlap=14/27, epsilon=467/189, nonvacuous=False
+DNP universal t=2: n=4, min_overlap=398/567, epsilon=1153/810, nonvacuous=False
+DNP universal t=2: n=5, min_overlap=22/27, epsilon=25349/30132, nonvacuous=True
+ALL_CHECKS_OK
