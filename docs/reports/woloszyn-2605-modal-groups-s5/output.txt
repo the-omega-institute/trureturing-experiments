@@ -1,0 +1,13 @@
+FIDELITY C1: |G|=1; membership_inside=1; outside_extension_witnesses=0; nonabelian_product=OK
+FIDELITY C2: |G|=2; membership_inside=7; outside_extension_witnesses=1; nonabelian_product=OK
+FIDELITY C3: |G|=3; membership_inside=25; outside_extension_witnesses=2; nonabelian_product=OK
+FIDELITY C4: |G|=4; membership_inside=55; outside_extension_witnesses=9; nonabelian_product=OK
+FIDELITY C5: |G|=5; membership_inside=121; outside_extension_witnesses=4; nonabelian_product=OK
+FIDELITY C2^2: |G|=4; membership_inside=43; outside_extension_witnesses=21; nonabelian_product=OK
+FIDELITY C2^3: |G|=8; membership_inside=211; outside_extension_witnesses=301; nonabelian_product=OK
+FIDELITY S3: |G|=6; membership_inside=151; outside_extension_witnesses=65; nonabelian_product=OK
+FREE_BASIS_PROJECTION reduced_words_checked=44816
+HNN_TWO_GENERATOR solved_relations_checked=64
+MODAL_COUNTABILITY_PATTERN {'countable': True, 'uncountable': False}
+SCOPE: finite algebra and modal pattern checked; infinite bridges require proofs
+ALL_CHECKS_OK
