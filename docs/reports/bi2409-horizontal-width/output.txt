@@ -1,0 +1,21 @@
+FIDELITY word=((2, 0, 1), (2, 0, 1)) order=1
+FIDELITY word=((3, 0, 1), (3, 0, 2)) order=3
+FIDELITY word=((2, 0, 1), (3, 0, 1)) order=4
+FIDELITY word=((2, 0, 1), (3, 0, 2)) order=6
+FIDELITY word=((3, 0, 1), (4, 0, 2)) order=12
+FIDELITY word=((3, 0, 1), (4, 2, 3)) order=6
+SOURCE_ANOMALY Corollary 5.5 displays order 2 for tau_0(2),1(2)*tau_0(4),2(4); exact order is 4
+FIDELITY S6 cycle=(2,4,5,3); residues 0,1 fixed; negative blocks checked
+PAIRS generators=120 moduli=2..9 ordered_pairs=14400
+PAIRS orders=[1, 2, 3, 4, 6, 12]; displacement inclusion and cardinal bound hold
+WORDS moduli=2..4 lengths=0..4 count=11111; |D|<=3^length including empty word
+FAMILY n=2..128 q=-3..3 all residues: factorization, involution, exact D, fixed points checked
+WITNESS B=0 n=2 displacements=2 explicit_factors=1 lower_bound=1 fixed_point_free=True
+WITNESS B=1 n=4 displacements=4 explicit_factors=2 lower_bound=2 fixed_point_free=True
+WITNESS B=2 n=10 displacements=10 explicit_factors=5 lower_bound=3 fixed_point_free=True
+WITNESS B=3 n=28 displacements=28 explicit_factors=14 lower_bound=4 fixed_point_free=True
+WITNESS B=4 n=82 displacements=82 explicit_factors=41 lower_bound=5 fixed_point_free=True
+WITNESS B=5 n=244 displacements=244 explicit_factors=122 lower_bound=6 fixed_point_free=True
+WITNESS B=6 n=730 displacements=730 explicit_factors=365 lower_bound=7 fixed_point_free=True
+WITNESS B=7 n=2188 displacements=2188 explicit_factors=1094 lower_bound=8 fixed_point_free=True
+ALL_CHECKS_OK
