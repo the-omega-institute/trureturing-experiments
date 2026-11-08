@@ -1,0 +1,74 @@
+CENTRAL_MOMENTS: exact symbolic identities for degrees 1 through 6
+RECIPROCAL_IDENTITIES: symmetric pairing and exact geometric remainder
+UPPER_CERTIFICATE: coefficients in descending powers of z=n-3: [40, 1084, 13388, 99009, 484718, 1639762, 3880584, 6347425, 6883430, 4501560, 1394840, 50080]
+LOWER_CERTIFICATE: coefficients in descending powers of z=n-3: [1120, 46928, 932176, 11660832, 102899870, 679866931, 3483079839, 14134840232, 46005088504, 120792332859, 255897925487, 435032032522, 586417085916, 613945294592, 482419274848, 268315711104, 94408709120, 15840993280]
+UNIFORM_CERTIFICATES: both rational identities exact; all shifted coefficients positive
+ROUNDING: period-four fractional pattern and floor translations checked exactly
+n=1: floor(M)=1; formula=OK; exact_bounds=initial case
+n=2: floor(M)=4; formula=OK; exact_bounds=initial case
+n=3: floor(M)=16; formula=OK; exact_bounds=OK
+n=4: floor(M)=43; formula=OK; exact_bounds=OK
+n=5: floor(M)=91; formula=OK; exact_bounds=OK
+n=6: floor(M)=166; formula=OK; exact_bounds=OK
+n=7: floor(M)=275; formula=OK; exact_bounds=OK
+n=8: floor(M)=422; formula=OK; exact_bounds=OK
+n=9: floor(M)=614; formula=OK; exact_bounds=OK
+n=10: floor(M)=857; formula=OK; exact_bounds=OK
+n=11: floor(M)=1158; formula=OK; exact_bounds=OK
+n=12: floor(M)=1521; formula=OK; exact_bounds=OK
+n=13: floor(M)=1953; formula=OK; exact_bounds=OK
+n=14: floor(M)=2460; formula=OK; exact_bounds=OK
+n=15: floor(M)=3049; formula=OK; exact_bounds=OK
+n=16: floor(M)=3724; formula=OK; exact_bounds=OK
+n=17: floor(M)=4492; formula=OK; exact_bounds=OK
+n=18: floor(M)=5359; formula=OK; exact_bounds=OK
+n=19: floor(M)=6332; formula=OK; exact_bounds=OK
+n=20: floor(M)=7415; formula=OK; exact_bounds=OK
+n=21: floor(M)=8615; formula=OK; exact_bounds=OK
+n=22: floor(M)=9938; formula=OK; exact_bounds=OK
+n=23: floor(M)=11391; formula=OK; exact_bounds=OK
+n=24: floor(M)=12978; formula=OK; exact_bounds=OK
+n=25: floor(M)=14706; formula=OK; exact_bounds=OK
+n=26: floor(M)=16581; formula=OK; exact_bounds=OK
+n=27: floor(M)=18610; formula=OK; exact_bounds=OK
+n=28: floor(M)=20797; formula=OK; exact_bounds=OK
+n=29: floor(M)=23149; formula=OK; exact_bounds=OK
+n=30: floor(M)=25672; formula=OK; exact_bounds=OK
+n=31: floor(M)=28373; formula=OK; exact_bounds=OK
+n=32: floor(M)=31256; formula=OK; exact_bounds=OK
+n=33: floor(M)=34328; formula=OK; exact_bounds=OK
+n=34: floor(M)=37595; formula=OK; exact_bounds=OK
+n=35: floor(M)=41064; formula=OK; exact_bounds=OK
+n=36: floor(M)=44739; formula=OK; exact_bounds=OK
+n=37: floor(M)=48627; formula=OK; exact_bounds=OK
+n=38: floor(M)=52734; formula=OK; exact_bounds=OK
+n=39: floor(M)=57067; formula=OK; exact_bounds=OK
+n=40: floor(M)=61630; formula=OK; exact_bounds=OK
+n=41: floor(M)=66430; formula=OK; exact_bounds=OK
+n=42: floor(M)=71473; formula=OK; exact_bounds=OK
+n=43: floor(M)=76766; formula=OK; exact_bounds=OK
+n=44: floor(M)=82313; formula=OK; exact_bounds=OK
+n=45: floor(M)=88121; formula=OK; exact_bounds=OK
+n=46: floor(M)=94196; formula=OK; exact_bounds=OK
+n=47: floor(M)=100545; formula=OK; exact_bounds=OK
+n=48: floor(M)=107172; formula=OK; exact_bounds=OK
+n=49: floor(M)=114084; formula=OK; exact_bounds=OK
+n=50: floor(M)=121287; formula=OK; exact_bounds=OK
+n=51: floor(M)=128788; formula=OK; exact_bounds=OK
+n=52: floor(M)=136591; formula=OK; exact_bounds=OK
+n=53: floor(M)=144703; formula=OK; exact_bounds=OK
+n=54: floor(M)=153130; formula=OK; exact_bounds=OK
+n=55: floor(M)=161879; formula=OK; exact_bounds=OK
+n=56: floor(M)=170954; formula=OK; exact_bounds=OK
+n=57: floor(M)=180362; formula=OK; exact_bounds=OK
+n=58: floor(M)=190109; formula=OK; exact_bounds=OK
+n=59: floor(M)=200202; formula=OK; exact_bounds=OK
+n=60: floor(M)=210645; formula=OK; exact_bounds=OK
+n=61: floor(M)=221445; formula=OK; exact_bounds=OK
+n=62: floor(M)=232608; formula=OK; exact_bounds=OK
+n=63: floor(M)=244141; formula=OK; exact_bounds=OK
+n=64: floor(M)=256048; formula=OK; exact_bounds=OK
+FIDELITY: all 42 published OEIS data terms reproduced from reciprocal sums
+INITIAL_CASES: M(1)=1; H(2)=481/280; M(2)=1960/481; floors=1,4
+FINITE_CLAIM: n=1..64 checked with Fractions; only integral mean in this range is n=1
+ALL_CHECKS_OK
