@@ -37,6 +37,16 @@ def exact_checks():
     assert F((Q(1),Q(0),Q(0)), Q(0)) == (Q(0),Q(0),Q(1))
     assert F((Q(0),Q(0),Q(0)), Q(0)) == (Q(0),Q(0),Q(0))
     print('FIDELITY: density-matrix derivation of Eq. (8), purity, ideal cycle, C0: exact')
+    # The Appendix's printed inverse is not the inverse of Eq. (8).
+    parent=(Q(0),Q(0),Q(1,2)); target=F(parent,Q(0))
+    assert target==(Q(4,5),Q(0),Q(0))
+    # Its w formula reads W, not U, at epsilon=0, hence returns w=0.
+    appendix_w=S.Integer(0)
+    appendix_u=S.sqrt(2*(1+appendix_w**2)*S.Rational(4,5))
+    assert appendix_u**2==S.Rational(8,5)>1
+    assert inverses_approx(target,Q(0))==[parent]
+    print('SOURCE_ERRATUM: Appendix inverse at epsilon=0 sends F(0,0,1/2)=(4/5,0,0) to (sqrt(8/5),0,0), outside the ball; use Eq. (8)')
+
 
     t = S.symbols('t', positive=True)
     a, b = S.symbols('a b', real=True)
