@@ -188,7 +188,9 @@ def main():
             assert stage_poly == direct
     print(f'Ordered tuples: {ordered}; stage distributions: {stages}; exact model/coefficient/support/fidelity checks passed')
     algebra_stages = orbits = 0
-    with tempfile.TemporaryDirectory(prefix='fs2609q45-') as folder:
+    scratch_root = Path('/tmp/op-fs2609q45')
+    scratch_root.mkdir(parents=True, exist_ok=True)
+    with tempfile.TemporaryDirectory(prefix='singular-', dir=scratch_root) as folder:
         scratch = Path(folder)
         for n in range(2, 5):
             for q in combinations_with_replacement(range(1,4), n):

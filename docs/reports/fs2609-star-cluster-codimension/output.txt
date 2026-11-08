@@ -36,5 +36,5 @@ Minimal-prime and ambient-codimension checks Q/F2: (3, 3, 3, 3)
 Permutation orbits: 31; Singular stage decompositions: 142
 Support-gap illustration q=(1,1,4,4): {"6": 1, "12": 8, "18": 4}
 Scope: finite exact checks, not a universal proof or Lean verification
-check.py sha256: e71382d49cfc11016c27b8e4291ebd65fc38fb62320f47772f143f57570561df
+check.py sha256: 8c782fd782bc985c8c88e0529c065148a8b0f011585af6b47c0cb1d3beab7a13
 ALL_CHECKS_OK
