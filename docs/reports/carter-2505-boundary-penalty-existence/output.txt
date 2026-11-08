@@ -1,0 +1,9 @@
+FIDELITY Proposition 4: 64 rational rank-one paths
+TRACE_IDENTITY all 7380 vector pairs, lengths 1..4, entries -1,0,1
+BLOCK_REDUCTION 160 rational pairs, dimensions 1..4
+GENERAL_POSITION 228 maximal-minor bounds and exact products
+JOINT_PENALTY 75 range/kernel and trace/off-diagonal bounds
+STRICT_THRESHOLD 20 analytic maximizers, 120 certified log comparisons
+BOUNDARY_AND_BELOW 64 exact path values: equality limit; subthreshold divergence
+MIXED_BOUNDARY 60 certified decreases, shrinking rates 1,2,5
+ALL_CHECKS_OK
