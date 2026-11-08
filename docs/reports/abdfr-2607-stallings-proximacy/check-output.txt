@@ -1,0 +1,11 @@
+FIDELITY Remark 3.3: 32 exact Z^2 prefix obstructions; Q1 identity k=0,c=1
+METRIC d=2: 162 grid edges; BFS radius 4 has 129 vertices; 729 constructed pair paths
+MONOID/REGULAR d=2: 200 box endpoints (48 positive reachable states); 9331 words length <=5; 175 normal forms
+AUTOMATIC d=2: 1050 signed right-adjacent normal-form pairs; max synchronous distance=2
+METRIC d=3: 648 grid edges; BFS radius 4 has 321 vertices; 6561 constructed pair paths
+MONOID/REGULAR d=3: 1000 box endpoints (120 positive reachable states); 37449 words length <=5; 875 normal forms
+AUTOMATIC d=3: 7000 signed right-adjacent normal-form pairs; max synchronous distance=2
+REFUTATION: 900 family instances d=2..10,N=1..100; exact minimum distance=N; both lengths=2N+1
+POSITIVE WORDS: 8190 T-words length <=11 are geodesic; 10 unique-witness endpoint buckets
+INDEXING: witness lengths agree, so source printed |w′| and map-domain |w| test identical indices
+ALL_CHECKS_OK
