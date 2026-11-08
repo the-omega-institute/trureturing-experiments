@@ -1,0 +1,8 @@
+Arithmetic: fractions.Fraction; no floating point; seed=377
+SOURCE_EXAMPLE {"constructed_schedule": [], "d": 5, "direct_max": 2, "direct_schedules": 32, "example": 1, "feasible": false, "horizon": 5, "m": 2, "matroid_subsets": 0, "max_drop": 2, "max_prefix_average": "1", "mincut": 2, "minimizer": [0, 2, 3, 4], "ordinary_output_rank": 3, "p": 3, "rank_drops": [0, 2, 1, 0, 0], "s": 1, "tail_rank": 0}
+SOURCE_EXAMPLE {"constructed_schedule": [[0, 0], [1, 1]], "d": 4, "direct_max": 2, "direct_schedules": 16, "example": 2, "feasible": true, "horizon": 4, "m": 2, "matroid_subsets": 256, "max_drop": 2, "max_prefix_average": "1", "mincut": 2, "minimizer": [0, 1, 2, 3], "ordinary_output_rank": 2, "p": 2, "rank_drops": [0, 2, 0, 0], "s": 1, "tail_rank": 0}
+RANDOM_SUMMARY {"all_ground_subsets": 4364, "all_ground_subsets_systems": 98, "feasible": 45, "full_horizon_exhaustive_systems": 112, "full_horizon_schedules": 8380, "infeasible": 75, "systems": 120}
+OBSTRUCTION_FAMILY {"k": 2, "minimum_sparsity": 2, "original_necessary_integer_bound": 1, "exact_max_ranks": [1, 2]}
+OBSTRUCTION_FAMILY {"k": 3, "minimum_sparsity": 3, "original_necessary_integer_bound": 2, "exact_max_ranks": [1, 2, 3]}
+OBSTRUCTION_FAMILY {"k": 4, "minimum_sparsity": 4, "original_necessary_integer_bound": 2, "exact_max_ranks": [1, 2, 3, 4]}
+ALL_CHECKS_OK
