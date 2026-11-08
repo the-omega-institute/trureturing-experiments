@@ -1,0 +1,12 @@
+C4 maximal disconnected supports: 13, 24
+C5 maximal disconnected supports: 124, 134, 135, 235, 245
+C5 pair coverage: every edge once; every nonedge twice; all 10 covered
+Graph-resonance formula: 1088 graphs, 32704 nonempty supports checked
+Coordinate-subspace equality: C4 unique among 64; C5 unique among 1024
+Proposition 3.28 sample: 160 rational subspace presentations; 20 exact equalities; 140 witnessed inequalities
+Proposition 3.28 decomposable-bivector identity: exact polynomial identity checked
+C5 pencil A intersection determinants: [2, 3, 2, 3, 2]; all nonzero
+Dimension-four obstruction: contraction factorization and homogeneous cubic checked
+C5 gluing: 203 zero/line-coincidence patterns; any surviving nonedge forces rank <=4
+LIMIT: finite/symbolic checks only; arbitrary-K rigidity and algebraic-closure root step remain paper mathematics
+ALL_CHECKS_OK
