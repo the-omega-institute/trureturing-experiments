@@ -1,0 +1,10 @@
+EXACT_SYZYGY_OK: integer polynomial remainder 0; H has 136 terms
+DFINITE_CERTIFICATE_OK: (theta-3)(theta-4) kills the forcing; c4 is nonzero
+SOURCE_BRANCH_ALGEBRA_OK: reflection and square-root identities modulo P
+SOURCE_FIDELITY_OK: quartic, NAME square-root branch, FORMULA (3.a), and 1030 b-file terms
+RECURRENCE_OK: 1025 checks, n=6..1030; n=5 also holds with a(0)=0
+LEADING_COEFFICIENT_OK: p0(n)>0 for every integer n>=6
+FIRST_TERMS: 1,1,5,11,80,207,1710,4755,41900,121364,1112045,3306877,31105060,94211002,902982060
+BFILE_SHA256: 133da258f0d59884cb94f19625c528dafe92b66eaae956134adaac4bd8a083c1
+ARITHMETIC: integers and SymPy exact rational polynomials; no floating point
+ALL_CHECKS_OK
