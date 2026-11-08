@@ -1,0 +1,16 @@
+FIDELITY all-white n=4..8: 8,10,12,14,16; displayed n=9 grid: 26
+FIDELITY source known value: n=15, clues=80
+FIDELITY source known value: n=20, clues=144
+FIDELITY source known value: n=25, clues=228
+FIDELITY source known value: n=30, clues=332
+CONSTRUCTION n=35: clues=456, symmetric=True, connected=True, minimum-run>=4
+CONSTRUCTION n=40: clues=600, symmetric=True, connected=True, minimum-run>=4
+CONSTRUCTION n=45: clues=764, symmetric=True, connected=True, minimum-run>=4
+CONSTRUCTION n=150: clues=8828, symmetric=True, connected=True, minimum-run>=4
+EXHAUSTIVE n=15: 32768 masks, 296 legal lines, 87616 ordered pairs
+EXHAUSTIVE minimum pair deficits by t=0..9: [0, 1, 1, 1, 1, 1, 2, 2, 2, 3]
+EXHAUSTIVE row-T plus column-S deficit bounds: [9, 10, 9, 8, 7, 6, 7, 6, 5, 6]
+EXHAUSTIVE upper bound=80; attained=80
+SUMMATION exact integer cases checked for k=3..100 and every t=0..3k
+SCOPE finite checks support, but do not prove, the unbounded conjecture
+ALL_CHECKS_OK
