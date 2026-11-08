@@ -1,0 +1,7 @@
+FIDELITY: source §2.3 exposed-interval radii = 2^j, j=1..64; exact tails n=1..32
+POLYTOPES: 2793 product-grid/box pairs, 201390 faces; 343 independent 3D grid checks
+FINITE A: 255 cube subsets with disc K: 247 infinite-radius witnesses; segment K: 12 finite and 243 infinite
+NONPOLYTOPAL A: 125 circle-cylinder/disc pairs, R1=c=a/b and R2=0; 125 two-disc/segment pairs, R1=R2=c=h/b
+PROJECTION: 62 rational curved-face projections to a nonexposed endpoint; squared error 4/(k²+1)
+CENTROID: 285 difference-body vertex tests for simplex dimensions 0..8, including singleton
+ALL_CHECKS_OK
