@@ -1,0 +1,6 @@
+FIDELITY Prop.6.23: configurations=512, flips_per_configuration=512, boundary=10, asymptotic_sectors=4
+MODEL: 81 exact path-generation identities; max incident generators=5; 3-site Lagrangian/symplectic test=OK
+COMB BOUNDARY: wall_patterns=27, flips_per_pattern=4096, exact_tests=110592, min_energy_change=0, max_affected=16
+ORBITS: exact wall-shift pairs=59049, zero_energy_moves=OK; mutual cylinder approximations=4096
+INFINITE SCOPE: finite checks do not prove the infinite boundary or non-T0 assertion; those require the stated general argument and future Lean probe.
+ALL_CHECKS_OK
