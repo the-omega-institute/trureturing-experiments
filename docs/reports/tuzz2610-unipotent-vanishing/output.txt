@@ -1,0 +1,15 @@
+EXHAUSTIVE p=3: 31 subspaces K, dim(V)<=3, criterion and contraction support OK
+TENSOR p=3: middle coefficient=2, inversion signs and cube polarization OK
+EXHAUSTIVE p=5: 67 subspaces K, dim(V)<=3, criterion and contraction support OK
+TENSOR p=5: middle coefficient=2, inversion signs and cube polarization OK
+EXHAUSTIVE p=7: 119 subspaces K, dim(V)<=3, criterion and contraction support OK
+TENSOR p=7: middle coefficient=2, inversion signs and cube polarization OK
+FIDELITY Example 5.6 p=5: dim(K)=2, dim(Q)=2, rank(Omega)=1, |U|=5
+FIDELITY Proposition 5.7(1) M=2 p=5: dim(Q)=4, rank(Omega)=4, |U|=625
+FIDELITY Example 5.6 p=7: dim(K)=2, dim(Q)=2, rank(Omega)=1, |U|=7
+FIDELITY Proposition 5.7(1) M=2 p=7: dim(Q)=4, rank(Omega)=4, |U|=2401
+SEEDED p=3: 240 cases, dim(V)=4,5, criterion and contraction support OK
+SEEDED p=5: 240 cases, dim(V)=4,5, criterion and contraction support OK
+SEEDED p=7: 240 cases, dim(V)=4,5, criterion and contraction support OK
+SCOPE: linear criterion and tensor identities checked; no exhaustive group-algebra automorphism check; no Lean proof
+ALL_CHECKS_OK
