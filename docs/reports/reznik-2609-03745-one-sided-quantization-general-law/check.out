@@ -1,0 +1,5 @@
+FIDELITY: source Example 1, n=0..5; 8568 rational partitions; G_n*=1/(2(n+1)).
+ATOMIC: 1815 exact law/rung-budget cases; dynamic program equals exhaustive optimum; full-support ladders have zero loss.
+MIXED: 12869 exact square-decomposition cases, n=1..8; positive atom at B=1 is included at equality; G_n*=1/(8n), nG_n*=1/8.
+SCOPE: these exact checks support fidelity and small cases; no universal asymptotic theorem or literature novelty is certified.
+ALL_CHECKS_OK
