@@ -1,0 +1,15 @@
+EXACT exhaustive meet-in-the-middle; integer permutations and support masks; no floating point
+PATH n=3 halves_examined=6 endpoint_words=2 meeting_distribution=[1, 1] multiplicities=OK
+CYCLE n=3 half_words_examined=9 full_identity_words=12 formula=12 marked_pairs=24 marked_per_edge=8 multiplicities=OK bijection=OK source_verified_range
+PATH n=4 halves_examined=36 endpoint_words=6 meeting_distribution=[1, 4, 1] multiplicities=OK
+CYCLE n=4 half_words_examined=64 full_identity_words=72 formula=72 marked_pairs=144 marked_per_edge=36 multiplicities=OK bijection=OK source_verified_range
+PATH n=5 halves_examined=320 endpoint_words=20 meeting_distribution=[1, 9, 9, 1] multiplicities=OK
+CYCLE n=5 half_words_examined=625 full_identity_words=400 formula=400 marked_pairs=800 marked_per_edge=160 multiplicities=OK bijection=OK source_verified_range
+PATH n=6 halves_examined=3750 endpoint_words=70 meeting_distribution=[1, 16, 36, 16, 1] multiplicities=OK
+CYCLE n=6 half_words_examined=7776 full_identity_words=2100 formula=2100 marked_pairs=4200 marked_per_edge=700 multiplicities=OK bijection=OK source_verified_range
+PATH n=7 halves_examined=54432 endpoint_words=252 meeting_distribution=[1, 25, 100, 100, 25, 1] multiplicities=OK
+CYCLE n=7 half_words_examined=117649 full_identity_words=10584 formula=10584 marked_pairs=21168 marked_per_edge=3024 multiplicities=OK bijection=OK extension
+PATH n=8 halves_examined=941192 endpoint_words=924 meeting_distribution=[1, 36, 225, 400, 225, 36, 1] multiplicities=OK
+CYCLE n=8 half_words_examined=2097152 full_identity_words=51744 formula=51744 marked_pairs=103488 marked_per_edge=12936 multiplicities=OK bijection=OK extension
+FIDELITY: all simple cycle sizes 3..6 stated as verified in Conjecture 1(ii); extended through 8
+ALL_CHECKS_OK
