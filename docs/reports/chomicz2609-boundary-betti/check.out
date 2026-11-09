@@ -1,0 +1,11 @@
+FIDELITY Example 2.9: primary a=(17,7,15,4); secondary a=(7,5,3,2);
+  all four displayed secondary critical fibers reproduced exactly.
+SOURCE boundary i=2: (False, 16, 29, 7, 1)
+SOURCE boundary i=3: (False, 11, 29, 7, 1)
+EXHAUSTIVE generators in [2,40]: 28106 minimally generated gcd-one unordered tuples;
+  85 secondary unordered tuples; 680 source-compatible ordered tuples;
+  1360 boundary cases: 196 Betti, 1164 connected; no failures.
+  Every checked fiber and component partition agrees with a second implementation.
+EXAMPLE Betti=True: ((16, 24, 10, 15), 2, (True, 4, 4, 3, 2))
+EXAMPLE Betti=False: ((10, 15, 14, 21), 2, (False, 4, 5, 3, 1))
+ALL_CHECKS_OK
