@@ -1,0 +1,21 @@
+FIDELITY inclusion-exclusion and E(Y_n): 600 exact cases
+FIDELITY strong dominance: N=4,n=2,3,4,denominator=6; 12012 majorized ordered pairs checked
+WITNESS N=4 n=5 words=1024 D= 10000000000
+p prefixes: [48, 96, 98, 100]
+q prefixes: [50, 96, 99, 100]
+P_p numerators k=1..4: [509608000, 7874904000, 1560192000, 55296000]
+P_q numerators k=1..4: [518463220, 7873379340, 1566757440, 41400000]
+Delta numerators k=1..4: [-8855220, 1524660, -6565440, 13896000]
+CDF difference numerators k=1..4: [-8855220, -7330560, -13896000, 0]
+NO_THRESHOLD: Delta_2>0 forces c<2, whereas Delta_3<0 requires c>=3
+FAMILY 0<t<=1/100: positive sorted normalized vectors, p_t majorized by q_t
+Delta_1 coefficients (t^0 upward): 0,0,-10,120,-560,780
+Delta_1/t^2 enclosure: -1257/125 <= bracket <= -439961/50000
+Delta_2 coefficients (t^0 upward): 0,0,5,-360,1270,-2340
+Delta_2/t^2 enclosure: 69883/50000 <= bracket <= 5127/1000
+Delta_3 coefficients (t^0 upward): 0,0,-10,360,-1670,1560
+Delta_3/t^2 enclosure: -10167/1000 <= bracket <= -159961/25000
+Delta_4 coefficients (t^0 upward): 0,0,15,-120,960
+Delta_4/t^2 enclosure: 69/5 <= bracket <= 1887/125
+FAMILY sign pattern (-,+,-,+) certified on the full real interval
+ALL_CHECKS_OK
