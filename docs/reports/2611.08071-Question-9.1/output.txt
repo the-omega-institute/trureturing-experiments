@@ -1,0 +1,12 @@
+FIDELITY Gamma_7: listed facets and minimal nonfaces agree; normal; dual diameter=3=n-d; completion dimension=4
+N=7: K f=(7, 21, 28, 14); relative f=(62, 346, 568, 284); completion f=(62, 346, 570, 285)
+N=7: relative normal at all 1261 faces; all 409 codimension>=2 links connected; every ridge degree=2
+N=7: stellar crosscheck equal; all maximal cliques size=4; both dual graphs connected; added faces=[[0, 1, 2, 3], [0, 2, 3], [1, 2, 3]]
+N=7: completion bad facet stars=[(2, 3)]; bad codimension>=2 links=[(2, 3)]; edge 35 link components=[2,6]
+N=7: old edge 35 link auxiliary labels=[(40, (2, 3, 5)), (44, (3, 4, 5)), (46, (3, 5, 6)), (59, (2, 3, 4, 5)), (60, (2, 3, 5, 6)), (61, (3, 4, 5, 6))]
+N=8: K f=(8, 28, 40, 20); relative f=(88, 512, 848, 424); completion f=(88, 512, 850, 425)
+N=8: relative normal at all 1873 faces; all 601 codimension>=2 links connected; every ridge degree=2
+N=8: stellar crosscheck equal; all maximal cliques size=4; both dual graphs connected; added faces=[[0, 1, 2, 3], [0, 2, 3], [1, 2, 3]]
+N=8: completion bad facet stars=[(2, 3)]; bad codimension>=2 links=[(2, 3)]; edge 35 link components=[2,6]
+N=8: old edge 35 link auxiliary labels=[(53, (2, 3, 5)), (59, (3, 4, 5)), (62, (3, 5, 6)), (82, (2, 3, 4, 5)), (83, (2, 3, 5, 6)), (85, (3, 4, 5, 6))]
+ALL_CHECKS_OK
