@@ -1,0 +1,11 @@
+Source Example 6.4: 625 exact coordinatewise meet checks
+Spikes n=1..129: strict positivity, monotonicity, retained value at 0
+Quadratic order-density witnesses: 216 exact continuous-interval checks
+Degree 2: verified interpolation bound ||e|| <= (11)/n for 0 <= e <= b_n, n >= 3
+Degree 3: verified interpolation bound ||e|| <= (37)/n for 0 <= e <= b_n, n >= 4
+Degree 4: verified interpolation bound ||e|| <= (287/2)/n for 0 <= e <= b_n, n >= 5
+Degree 5: verified interpolation bound ||e|| <= (507)/n for 0 <= e <= b_n, n >= 6
+Degree 6: verified interpolation bound ||e|| <= (5989/3)/n for 0 <= e <= b_n, n >= 7
+Degree 7: verified interpolation bound ||e|| <= (21743/3)/n for 0 <= e <= b_n, n >= 8
+Degree 8: verified interpolation bound ||e|| <= (114859/4)/n for 0 <= e <= b_n, n >= 9
+ALL_CHECKS_OK
