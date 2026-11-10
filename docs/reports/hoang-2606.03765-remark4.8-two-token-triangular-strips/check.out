@@ -1,0 +1,25 @@
+FIDELITY Corollary 4.4: K3 disjoint K1 realizes H_1
+FIDELITY Corollary 4.4: K3 disjoint K2 realizes H_2
+BRUTE_FORCE all labelled hosts of orders 0..6: 33868; H_n realization counts {1: 84, 2: 70}
+FIDELITY complement/state adjacency agrees for every host of orders 0..5
+SEARCH_CROSS_CHECK 10 connected target isomorphism classes of orders 1..4 agree with exhaustive hosts of orders 0..5
+INDUCED_CYCLES H_1: {3: 1}; none of length >=5
+INDUCED_CYCLES H_2: {3: 2, 4: 3}; none of length >=5
+INDUCED_CYCLES H_3: {3: 3, 4: 6}; none of length >=5
+INDUCED_CYCLES H_4: {3: 4, 4: 9}; none of length >=5
+INDUCED_CYCLES H_5: {3: 5, 4: 12}; none of length >=5
+INDUCED_CYCLES H_6: {3: 6, 4: 15}; none of length >=5
+INDUCED_CYCLES H_7: {3: 7, 4: 18}; none of length >=5
+INDUCED_CYCLES H_8: {3: 8, 4: 21}; none of length >=5
+INDUCED_CYCLES H_9: {3: 9, 4: 24}; none of length >=5
+INDUCED_CYCLES H_10: {3: 10, 4: 27}; none of length >=5
+LOCAL_OBSTRUCTION six forced blockers induce exactly C6
+EXACT_REALIZATION_SEARCH n=1; states=3; active_root_order_bound=4; search_nodes=3; realizable=True
+EXACT_REALIZATION_SEARCH n=2; states=6; active_root_order_bound=7; search_nodes=7; realizable=True
+EXACT_REALIZATION_SEARCH n=3; states=9; active_root_order_bound=10; search_nodes=19; realizable=False
+EXACT_REALIZATION_SEARCH n=4; states=12; active_root_order_bound=13; search_nodes=27; realizable=False
+EXACT_REALIZATION_SEARCH n=5; states=15; active_root_order_bound=16; search_nodes=43; realizable=False
+EXACT_REALIZATION_SEARCH n=6; states=18; active_root_order_bound=19; search_nodes=65; realizable=False
+EXACT_REALIZATION_SEARCH n=7; states=21; active_root_order_bound=22; search_nodes=97; realizable=False
+LIMIT: finite checks do not prove the uniform claim for every n>=6
+ALL_CHECKS_OK
