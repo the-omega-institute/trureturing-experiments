@@ -1,0 +1,95 @@
+{
+  "arxiv": "2605.12634v3",
+  "cases": [
+    {
+      "d": 3,
+      "r": 1,
+      "m": 4,
+      "t_e": 4,
+      "t": 5,
+      "outside_checks": 24
+    },
+    {
+      "d": 4,
+      "r": 2,
+      "m": 7,
+      "t_e": 5,
+      "t": 6,
+      "outside_checks": 84
+    },
+    {
+      "d": 5,
+      "r": 2,
+      "m": 11,
+      "t_e": 6,
+      "t": 7,
+      "outside_checks": 220
+    },
+    {
+      "d": 6,
+      "r": 3,
+      "m": 21,
+      "t_e": 7,
+      "t": 8,
+      "outside_checks": 840
+    },
+    {
+      "d": 7,
+      "r": 3,
+      "m": 36,
+      "t_e": 8,
+      "t": 9,
+      "outside_checks": 2520
+    },
+    {
+      "d": 8,
+      "r": 4,
+      "m": 71,
+      "t_e": 9,
+      "t": 10,
+      "outside_checks": 9940
+    },
+    {
+      "d": 9,
+      "r": 4,
+      "m": 127,
+      "t_e": 10,
+      "t": 11,
+      "outside_checks": 32004
+    },
+    {
+      "d": 10,
+      "r": 5,
+      "m": 253,
+      "t_e": 11,
+      "t": 12,
+      "outside_checks": 127512
+    },
+    {
+      "d": 11,
+      "r": 5,
+      "m": 463,
+      "t_e": 12,
+      "t": 13,
+      "outside_checks": 427812
+    },
+    {
+      "d": 12,
+      "r": 6,
+      "m": 925,
+      "t_e": 13,
+      "t": 14,
+      "outside_checks": 1709400
+    },
+    {
+      "d": 13,
+      "r": 6,
+      "m": 1717,
+      "t_e": 14,
+      "t": 15,
+      "outside_checks": 5892744
+    }
+  ],
+  "total_outside_checks": 8203100,
+  "status": "finite-corroboration-only"
+}

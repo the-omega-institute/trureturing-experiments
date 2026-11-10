@@ -1,0 +1,16 @@
+FIDELITY Proposition 5.11: t(E_8)=5, t_e(E_8)=4; 24 outside checks
+FAMILY d=3 r=1 m=4 t_e=4 t=5 outside_checks=24
+FAMILY d=4 r=2 m=7 t_e=5 t=6 outside_checks=84
+FAMILY d=5 r=2 m=11 t_e=6 t=7 outside_checks=220
+FAMILY d=6 r=3 m=21 t_e=7 t=8 outside_checks=840
+FAMILY d=7 r=3 m=36 t_e=8 t=9 outside_checks=2520
+FAMILY d=8 r=4 m=71 t_e=9 t=10 outside_checks=9940
+FAMILY d=9 r=4 m=127 t_e=10 t=11 outside_checks=32004
+FAMILY d=10 r=5 m=253 t_e=11 t=12 outside_checks=127512
+FAMILY d=11 r=5 m=463 t_e=12 t=13 outside_checks=427812
+FAMILY d=12 r=6 m=925 t_e=13 t=14 outside_checks=1709400
+FAMILY d=13 r=6 m=1717 t_e=14 t=15 outside_checks=5892744
+NEGATIVE_CONTROL rejected a repeated block in distinct edges
+{"arxiv":"2605.12634v3","family":[{"d":3,"independent_set_checks":24,"m":4,"outside_checks":24,"r":1,"t":5,"t_e":4},{"d":4,"independent_set_checks":84,"m":7,"outside_checks":84,"r":2,"t":6,"t_e":5},{"d":5,"independent_set_checks":220,"m":11,"outside_checks":220,"r":2,"t":7,"t_e":6},{"d":6,"independent_set_checks":840,"m":21,"outside_checks":840,"r":3,"t":8,"t_e":7},{"d":7,"independent_set_checks":2520,"m":36,"outside_checks":2520,"r":3,"t":9,"t_e":8},{"d":8,"independent_set_checks":null,"m":71,"outside_checks":9940,"r":4,"t":10,"t_e":9},{"d":9,"independent_set_checks":null,"m":127,"outside_checks":32004,"r":4,"t":11,"t_e":10},{"d":10,"independent_set_checks":null,"m":253,"outside_checks":127512,"r":5,"t":12,"t_e":11},{"d":11,"independent_set_checks":null,"m":463,"outside_checks":427812,"r":5,"t":13,"t_e":12},{"d":12,"independent_set_checks":null,"m":925,"outside_checks":1709400,"r":6,"t":14,"t_e":13},{"d":13,"independent_set_checks":null,"m":1717,"outside_checks":5892744,"r":6,"t":15,"t_e":14}],"fidelity":"Proposition 5.11","independent_set_checks":3688,"total_outside_checks":8203100}
+TOTAL bit-mask CFF outside-column checks=8203100; independent set checks=3688
+ALL_CHECKS_OK
