@@ -1,0 +1,12 @@
+FIDELITY: Z pinned-square counts, 7007 cases; four-square coverage 0..4096
+FAMILY d=5: m=1, shells=[1, 2, 3], points=14, cube_cases=36, distance_identities=224, strict_refutation_range=False
+FAMILY d=6: m=2, shells=[1, 2, 3], points=84, cube_cases=36, distance_identities=1428, strict_refutation_range=False
+FAMILY d=7: m=3, shells=[1, 2, 3], points=584, cube_cases=36, distance_identities=10512, strict_refutation_range=False
+FAMILY d=8: m=4, shells=[1, 2, 3], points=4368, cube_cases=36, distance_identities=82992, strict_refutation_range=False
+FAMILY d=9: m=5, shells=[1, 2, 3], points=33824, cube_cases=36, distance_identities=676480, strict_refutation_range=True
+FAMILY d=10: m=6, shells=[1, 2], points=4160, cube_cases=24, distance_identities=74880, strict_refutation_range=True
+FAMILY d=11: m=7, shells=[1, 2], points=16512, cube_cases=24, distance_identities=313728, strict_refutation_range=True
+FAMILY d=12: m=8, shells=[1], points=256, cube_cases=12, distance_identities=4352, strict_refutation_range=True
+THRESHOLD d=9: theta=19/36, Hausdorff target=5 > 9*theta=19/4; theta>1/2
+SCOPE: finite exact tests support the outline; they do not certify infinite dimensions or limits
+ALL_CHECKS_OK
