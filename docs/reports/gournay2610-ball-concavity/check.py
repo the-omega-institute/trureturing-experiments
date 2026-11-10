@@ -16,7 +16,7 @@ def step(word, side, mask):
     return word + ((side, mask),)
 
 
-def bfs(k, radius):
+def bfs(k, radius, elements=False):
     balls = [{()}]
     for _ in range(radius):
         old = balls[-1]
@@ -24,7 +24,7 @@ def bfs(k, radius):
                             for s in range(2) for i in range(k)})
     for n, ball in enumerate(balls):
         assert all(sum(mask.bit_count() for _, mask in w) <= n for w in ball)
-    return [len(b) for b in balls]
+    return balls if elements else [len(b) for b in balls]
 
 
 def recurrence(k, radius):
@@ -130,7 +130,7 @@ def main():
     for n in range(5):
         p = distribution(2,n)
         assert sum(p.values()) == 1 and all(x > 0 for x in p.values())
-        assert len(p) == bfs(2,n)[n]
+        assert set(p) == bfs(2,n,elements=True)[n]
         assert sum(x*x for x in p.values()) == distribution(2,2*n)[()]
     print('SOURCE_FIDELITY: support(P^n)=B_n and return/L2 identity, k=2, 0<=n<=4')
     for k, radius in [(1,8),(2,8),(3,6)]:
