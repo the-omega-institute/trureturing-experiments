@@ -1,0 +1,13 @@
+SOURCE integral=-35877/320; maxima=13/800,301/80; sign switch=7/10
+FAMILY gamma=2; b=10000; r=1/10000; theta=7/8; C=640000/49
+IDEAL z=7/1600; D=3486827/819200000; final_v=-124488831542243501079/131533373440000000000; sign=-
+IDEAL z=1/8; D=35597/320000; final_v=34306409/10240000; sign=+
+IDEAL z=1/2; D=7499/20000; final_v=-5089531/30625; sign=-
+IDEAL z=7/8; D=249371/320000; final_v=2153055641/501760000; sign=+
+UNIFORM ideal_u>=509/1280000; D>=509/160000
+ACTUAL epsilon=2^(-650000); all five lengths positive; sign pattern=+++--
+GRONWALL L=60000; mismatch<=30000*epsilon; five-stage error<=150000*2^(-50000)
+CERTIFIED margins: positivity, bounded continuation, four strict signs, negative integral
+CONSEQUENCE via local existence, Gronwall, continuous dependence and IVT: >=3 positive Neumann solutions
+SCOPE: exact rational analytic certificates; ODE/IVT bridges are mathematical, not Lean-verified
+ALL_CHECKS_OK
