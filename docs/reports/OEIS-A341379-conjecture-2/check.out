@@ -1,0 +1,13 @@
+SOURCE_FIDELITY: all 11 displayed a(n) and all 11 displayed A(x)^2 coefficients agree
+EXACT_SOURCE_EQUATION: degrees 0..24, literal rational exponential expansion agrees
+EXACT_BFILE_FIDELITY: degrees 0..24 agree; b-file indices 0..125 parsed
+FROBENIUS_CHECK: eight deterministic arbitrary inputs through degree 64
+MOD3_SOURCE_CROSSCHECK: unreduced exponents and grouped recurrence agree at 0..64
+MOD3_BFILE: all 126 residues agree
+MOD3_ALL_SMALL_CASES: all 2001 indices 0..2000 have residue 2 at n=5 mod 6, else 1
+AUXILIARY_IDENTITIES: E^2, A^3=1, nonlinear reduction, F, F^2=0, E^2*F, correction at 0..2000
+NONVANISHING: 2001/2001 labelled coefficients are nonzero mod 3
+CONJECTURE_1_FINITE_CHECK: published range 4..125 agrees; no all-index parity proof claimed
+BFILE_SHA256: e78a0c920c01105790dbc6141c66fb9510cf47402451a6eee73b586319a03bb7
+EVIDENCE_LIMIT: finite exact checks; no Lean proof of claim or negation
+ALL_CHECKS_OK
