@@ -15,7 +15,7 @@ The stored output is `output.txt`. Every arithmetic comparison uses integers or
 `fractions.Fraction`; no floating point, numerical optimization or random input
 is used. Successful execution ends with `ALL_CHECKS_OK`.
 
-The source fidelity checks reproduce the antichain result of Section 5 of
+The source fidelity checks reproduce the antichain result of Section 6 of
 David Lewis and Victor Souza, *The order dimension of divisibility*,
 arXiv:2001.08549v2, and the introduction's dimension formula for divisor sets
 of `2, 4, 6, 12, 30`. The antichain dimension check requires at least two

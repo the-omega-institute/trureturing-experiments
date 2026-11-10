@@ -102,7 +102,7 @@ def dimension(elements):
 
 
 def main():
-    # Source fidelity: Section 5 says alpha > 1/2 gives an antichain of
+    # Source fidelity: Section 6 says alpha > 1/2 gives an antichain of
     # dimension 2. Its dimension statement concerns at least two vertices.
     fidelity_cases = 0
     for alpha in (Fraction(3, 5), Fraction(2, 3), Fraction(3, 4), Fraction(9, 10)):
