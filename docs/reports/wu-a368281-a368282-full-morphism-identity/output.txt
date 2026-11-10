@@ -1,0 +1,21 @@
+IDENTITY m=1 k=0..10000 S(10000)=6180 OK
+IDENTITY m=2 k=0..10000 S(10000)=7320 OK
+IDENTITY m=3 k=0..10000 S(10000)=7914 OK
+IDENTITY m=4 k=0..10000 S(10000)=8284 OK
+IDENTITY m=5 k=0..10000 S(10000)=8541 OK
+IDENTITY m=6 k=0..10000 S(10000)=8730 OK
+FIDELITY Shallit Table 1 g_0..g_11 and k_0..k_11 OK
+BFILE word m=1 b005614.txt comparisons=10000 offset=0 OK
+BFILE word m=2 b285431.txt comparisons=10000 offset=1 OK
+BFILE recurrence and partial sums m=1 b005206.txt k=0..10000 OK
+BFILE recurrence and partial sums m=2 b286389.txt k=0..10000 OK
+BFILE recurrence and partial sums m=3 b366860.txt k=0..10000 OK
+BFILE recurrence and partial sums m=4 b366870.txt k=0..10000 OK
+BFILE recurrence and partial sums m=5 b366871.txt k=0..10000 OK
+BFILE table b368281.txt all=87 cells OK; m=6 k=1..8
+BFILE table b368282.txt all=87 cells OK; m=6 k=0..7
+PUBLISHED_DATA_LIMIT table b-files have 87 entries each; no separate m=6
+recurrence b-file located; m=6 k=0..10000 checked by independent constructions
+SMALL_CASES m=1..64 k=0..10000 identities=640064 OK
+BLOCK_CASES ones=606344 terminal_zeros=33656 OK
+ALL_CHECKS_OK
