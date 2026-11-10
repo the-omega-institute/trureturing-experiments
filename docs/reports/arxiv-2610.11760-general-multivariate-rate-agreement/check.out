@@ -1,0 +1,13 @@
+FIDELITY: Laplace CF=1/(1+t^2), reciprocal derivatives=(2t,2), variance=2
+FIDELITY: source exponent at d=2, alpha=(1,1), beta=(2,2) is 1/5
+FAMILY: Sigma eigenvalues={1/2,3/2}, covariance=1/2; dependent and nondegenerate
+CLASS: derivative squared bounds=4/3<4; N_1^2((1,1),2)
+MOMENT: E[(1+X1^2)(1+X2^2)]=9/2+2 theta^2<=13/2 for 0<=theta<=1
+CDF: F0(x,y)-F1(x,y)>=exp(-1/8)/(16*pi*sqrt(3)) on [0,1/2] x [1/4,infinity)
+CDF: integral over strips of height T >= exp(-1/8)*T/(32*pi*sqrt(3)) -> infinity
+CDF RISK: equivalent positive finite-sample densities + infinite separation => R_CDF(n)=infinity
+W1: translation coupling + first mean => W1(mu_theta,mu_eta)=abs(theta-eta)
+W1 LOWER: delta=1/(2*sqrt(n)); observation KL<=1/6; TV<1/2; R_W1(n)>=1/(16*sqrt(n))
+W1 UPPER: clipped first-coordinate sample mean gives R_W1(n)<=sqrt(3/n)
+SCOPE: exact symbolic certificates and a mathematical outline; no Lean settlement proof
+ALL_CHECKS_OK
