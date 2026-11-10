@@ -1,0 +1,10 @@
+recurrence_cases=27
+symbolic_leading_coefficients=verified
+cover n=3 r=2 s=1: E_steps=1; exact record-squeeze inequality verified (lower < E_steps <= 11/6)
+cover n=3 r=3 s=2: E_steps=0; exact record-squeeze inequality verified (lower < E_steps <= 0)
+cover n=4 r=2 s=1: E_steps=3; exact record-squeeze inequality verified (lower < E_steps <= 25/6)
+cover n=4 r=3 s=2: E_steps=5/2; exact record-squeeze inequality verified (lower < E_steps <= 49/10)
+cover n=5 r=2 s=1: E_steps=11/2; exact record-squeeze inequality verified (lower < E_steps <= 137/20)
+cover n=5 r=3 s=2: E_steps=43593/4930; exact record-squeeze inequality verified (lower < E_steps <= 7381/560)
+fidelity_johnson_graph_degree=verified
+ALL_CHECKS_OK
