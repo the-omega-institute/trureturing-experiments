@@ -1,0 +1,15 @@
+FIDELITY source Proposition 1: all 1100 labelled graphs on 0..5 vertices
+PACKING chi(G)>=t*k: 4834 admissible (G,k,t) cases, all passed
+GEOMETRY p=1: vertices=3, dimension=6, pairs_with_diagonal=6, diameter_squared=1, edges=3
+GEOMETRY p=2: vertices=35, dimension=28, pairs_with_diagonal=630, diameter_squared=1, edges=315
+POLYNOMIAL p=2: all tested evaluations and degree<=1 multilinearizations passed
+GEOMETRY p=3: vertices=462, dimension=66, pairs_with_diagonal=106953, diameter_squared=1, edges=46200
+POLYNOMIAL p=3: all tested evaluations and degree<=2 multilinearizations passed
+REUSE FormalBook borsuk_theorem p=37: source_dimension=10585, target_dimension=10878, ceil(partition_bound)=3137001950
+BOUND p=37: d=10878, 2*d=21756
+BOUND p=37: L=3*(27/16)^37/(2*149)=273892744995340833777347939263771534786080723599733441/106329953106594011138842304723987387660514623488
+BOUND p=37: L>2*d, cross-multiplied margin=271579430535553774471011286082196465180138567451128513
+BOUND p=37: ceil(vertices/dimension_bound)=230424994
+BOUND all p>=37 induction polynomial, coefficients in ascending powers of (p-37): [31337892, 2660884, 75072, 704]
+BOUND exact binomial estimates additionally checked for primes [37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97]
+ALL_CHECKS_OK
