@@ -1,0 +1,31 @@
+Exact arithmetic: fractions.Fraction and sympy 1.14.0
+Source: Shapiro, arXiv:2611.09301v1, Conjecture 1.2(a), equation (1.1)
+Sampling: a[j-i]((i+j)/(2*N)), 0 <= i,j < N
+FIDELITY_OK: symmetric frozen 3-by-3 charpoly = (t-b)*((t-b)^2-2*c^2)
+DENSE_CROSSCHECK_OK: literal matrices vs independent continuants, N=1..12
+SHIFTED_CONTINUANT_OK: 1325 leading determinants, N=1..50
+FACTORIAL_BOUNDS_OK: r=1..128; epsilon = 1/559872
+ROW_BOUND_AND_CONNECTED_PATH_OK: N=1..50
+SUBSEQUENCE_CERTIFICATES: f(z)=max(0,1-|z|/epsilon)
+m=1 N=4 det=-15/4096 roots_in_epsilon_disk=0 integral_f=0; N=6 zero_multiplicity=3 integral_f>=1/2
+m=2 N=8 det=31185/4294967296 roots_in_epsilon_disk=0 integral_f=0; N=10 zero_multiplicity=5 integral_f>=1/2
+m=3 N=12 det=-2127125/150289495621632 roots_in_epsilon_disk=0 integral_f=0; N=14 zero_multiplicity=7 integral_f>=1/2
+m=4 N=16 det=33204585038625/1208925819614629174706176 roots_in_epsilon_disk=0 integral_f=0; N=18 zero_multiplicity=9 integral_f>=1/2
+m=5 N=20 det=-1871941686137523/35184372088832000000000000000 roots_in_epsilon_disk=0 integral_f=0; N=22 zero_multiplicity=11 integral_f>=1/2
+m=6 N=24 det=4335344803054890625/42105093914743153835050590510514176 roots_in_epsilon_disk=0 integral_f=0; N=26 zero_multiplicity=13 integral_f>=1/2
+m=7 N=28 det=-738040306663751078686359375/3705719954712498677540044832093299248480649216 roots_in_epsilon_disk=0 integral_f=0; N=30 zero_multiplicity=15 integral_f>=1/2
+m=8 N=32 det=2417365540958597329268481285237890625/6277101735386680763835789423207666416102355444464034512896 roots_in_epsilon_disk=0 integral_f=0; N=34 zero_multiplicity=17 integral_f>=1/2
+m=9 N=36 det=-42147521795034723535106450139453125/56612005643533373309916242480851036594106830914338571681792 roots_in_epsilon_disk=0 integral_f=0; N=38 zero_multiplicity=19 integral_f>=1/2
+m=10 N=40 det=9793693150801272070808722351021078084545597/6805647338418769269267492148635364229120000000000000000000000000000000 roots_in_epsilon_disk=0 integral_f=0; N=42 zero_multiplicity=21 integral_f>=1/2
+m=11 N=44 det=-6853443347327880461903985489317711473066647099609375/2464148257570972234441943257121043481675823379938138407480041045311801971437469696 roots_in_epsilon_disk=0 integral_f=0; N=46 zero_multiplicity=23 integral_f>=1/2
+m=12 N=48 det=24139153816100279499218662131010346782240715166015625/4491088177843570204730561841129134066114778652395653998070352508760608077436686434304 roots_in_epsilon_disk=0 integral_f=0; N=50 zero_multiplicity=25 integral_f>=1/2
+EXACT_CHARPOLY N=4: (4096*t**4 - 4096*t**3 - 960*t**2 + 480*t - 15)/4096
+EXACT_CHARPOLY N=6: t**3*(3*t + 2)*(9*t**2 - 15*t + 5)/27
+EXACT_CHARPOLY N=8: (4294967296*t**8 - 4294967296*t**7 - 3875536896*t**6 + 2906652672*t**5 + 291962880*t**4 - 145981440*t**3 + 5322240*t**2 - 1330560*t + 31185)/4294967296
+EXACT_CHARPOLY N=10: t**5*(50*t**2 + 70*t + 21)*(125*t**3 - 300*t**2 + 210*t - 42)/6250
+EXACT_CHARPOLY N=12: (150289495621632*t**12 - 150289495621632*t**11 - 243959511121920*t**10 + 203299592601600*t**9 + 77970014208000*t**8 - 51980009472000*t**7 - 3284847820800*t**6 + 1642423910400*t**5 - 52276224000*t**4 + 17425408000*t**3 - 735134400*t**2 + 122522400*t - 2127125)/150289495621632
+EXACT_CHARPOLY N=14: t**7*(686*t**3 + 1470*t**2 + 945*t + 180)*(2401*t**4 - 7546*t**3 + 8085*t**2 - 3465*t + 495)/1647086
+SMALL_INSTANCES_OK: matrices N=4 and exact spectrum N=6
+AFFINE_FAMILY_OK: three exact nonzero complex scales, N=1..8
+Scope: finite checks; the proposed infinite-family argument is not a Lean proof.
+ALL_CHECKS_OK
