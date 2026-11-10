@@ -1,0 +1,15 @@
+product_A1(): rank=0 chambers=1 panels=[] apartments=1 A_dims=[0, 1] B_dims=[0, 1] B12=OK B11=OK triangular_panel_residue_threshold=OK
+product_A1(2,): rank=1 chambers=2 panels=[1] apartments=1 A_dims=[0, 1, 2] B_dims=[0, 1, 2] B12=OK B11=OK triangular_panel_residue_threshold=OK
+product_A1(3,): rank=1 chambers=3 panels=[1] apartments=3 A_dims=[0, 2, 3] B_dims=[0, 1, 3] B12=OK B11=OK triangular_panel_residue_threshold=OK
+product_A1(4,): rank=1 chambers=4 panels=[1] apartments=6 A_dims=[0, 3, 4] B_dims=[0, 1, 4] B12=OK B11=OK triangular_panel_residue_threshold=OK
+product_A1(7,): rank=1 chambers=7 panels=[1] apartments=21 A_dims=[0, 6, 7] B_dims=[0, 1, 7] B12=OK B11=OK triangular_panel_residue_threshold=OK
+product_A1(2, 2): rank=2 chambers=4 panels=[2, 2] apartments=1 A_dims=[0, 1, 3, 4] B_dims=[0, 1, 3, 4] B12=OK B11=OK triangular_panel_residue_threshold=OK
+product_A1(3, 3): rank=2 chambers=9 panels=[3, 3] apartments=9 A_dims=[0, 4, 8, 9] B_dims=[0, 1, 5, 9] B12=OK B11=OK triangular_panel_residue_threshold=OK
+product_A1(2, 3, 4): rank=3 chambers=24 panels=[12, 8, 6] apartments=18 A_dims=[0, 6, 17, 23, 24] B_dims=[0, 1, 7, 18, 24] B12=OK B11=OK triangular_panel_residue_threshold=OK
+product_A1(2, 3, 5): rank=3 chambers=30 panels=[15, 10, 6] apartments=30 A_dims=[0, 8, 22, 29, 30] B_dims=[0, 1, 8, 22, 30] B12=OK B11=OK triangular_panel_residue_threshold=OK
+thin_A2: rank=2 chambers=6 panels=[3, 3] apartments=1 A_dims=[0, 1, 5, 6] B_dims=[0, 1, 5, 6] B12=OK B11=OK triangular_panel_residue_threshold=OK
+thin_A3: rank=3 chambers=24 panels=[12, 12, 12] apartments=1 A_dims=[0, 1, 12, 23, 24] B_dims=[0, 1, 12, 23, 24] B12=OK B11=OK triangular_panel_residue_threshold=OK
+GL3_F2_flags: rank=2 chambers=21 panels=[7, 7] apartments=28 A_dims=[0, 8, 20, 21] B_dims=[0, 1, 13, 21] B12=OK B11=OK triangular_panel_residue_threshold=OK
+GL3_F3_flags: rank=2 chambers=52 panels=[13, 13] apartments=234 A_dims=[0, 27, 51, 52] B_dims=[0, 1, 25, 52] B12=OK B11=OK triangular_panel_residue_threshold=OK
+Checked 13 explicitly constructed buildings, every order -1 <= r <= rank.
+ALL_CHECKS_OK
