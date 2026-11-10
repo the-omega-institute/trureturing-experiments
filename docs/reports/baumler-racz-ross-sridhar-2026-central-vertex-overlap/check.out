@@ -1,0 +1,15 @@
+n=0: maps=1; tails/means/covariances/variance OK; E[D]=1
+n=1: maps=1; tails/means/covariances/variance OK; E[D]=1
+n=2: maps=2; tails/means/covariances/variance OK; E[D]=1
+n=3: maps=6; tails/means/covariances/variance OK; E[D]=7/6
+n=4: maps=24; tails/means/covariances/variance OK; E[D]=29/24
+n=5: maps=120; tails/means/covariances/variance OK; E[D]=31/24
+n=6: maps=720; tails/means/covariances/variance OK; E[D]=937/720
+n=7: maps=5040; tails/means/covariances/variance OK; E[D]=6847/5040
+n=8: maps=40320; tails/means/covariances/variance OK; E[D]=55043/40320
+K=10, n=100, m=5: E[S_n]/K=101/50; |E[S_(K-1)]/K-f(2)| < 1/20 (exact rational enclosure)
+K=100, n=10000, m=50: E[S_n]/K=10001/5000; |E[S_(K-1)]/K-f(2)| < 1/100 (exact rational enclosure)
+K=1000, n=1000000, m=500: E[S_n]/K=1000001/500000; |E[S_(K-1)]/K-f(2)| < 1/100 (exact rational enclosure)
+Fidelity urn laws=36; parent maps=46234; covariance inequalities=630; tie-robust rank checks=316646
+Finite checks support the route; they do not prove the asymptotic claim.
+ALL_CHECKS_OK
