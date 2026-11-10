@@ -1,0 +1,20 @@
+SYMBOLIC: source Appendix E SOS identity; telescoping t=1..5: exact
+FIDELITY M=2: Emax=1/2; V=1; Emax^2/V=1/4
+FIDELITY M=3: Emax=1/2; V=3/4; Emax^2/V=1/3
+FIDELITY M=4: Emax=1/2; V=2/3; Emax^2/V=3/8
+FIDELITY M=5: Emax=1/2; V=5/8; Emax^2/V=2/5
+FIDELITY M=6: Emax=1/2; V=3/5; Emax^2/V=5/12
+FIDELITY M=7: Emax=1/2; V=7/12; Emax^2/V=3/7
+FIDELITY M=8: Emax=1/2; V=4/7; Emax^2/V=7/16
+FIDELITY M=9: Emax=1/2; V=9/16; Emax^2/V=4/9
+FIDELITY M=10: Emax=1/2; V=5/9; Emax^2/V=9/20
+EQUALITY: scaled and cyclically permuted source cascades M=2..5: exact
+GRID M=2: tuples=55; all-nondegenerate strict=45; positive-V equalities=3; min squared strict gap=1/32
+GRID M=3: tuples=220; all-nondegenerate strict=165; positive-V equalities=2; min squared strict gap=1/24
+GRID M=4: tuples=715; all-nondegenerate strict=495; positive-V equalities=0; min squared strict gap=2765/46656
+GRID M=5: tuples=2002; all-nondegenerate strict=1287; positive-V equalities=0; min squared strict gap=2542/32805
+MIXTURE M=2: components=2; Emax=7/12; V=2; all-nondegenerate mass=3/4
+MIXTURE M=3: components=10; Emax=11/12; V=23/6; all-nondegenerate mass=1/2
+MIXTURE M=4: components=40; Emax=85/72; V=35/6; all-nondegenerate mass=1/2
+MIXTURE M=5: components=40; Emax=11/9; V=19/3; all-nondegenerate mass=1/2
+ALL_CHECKS_OK
