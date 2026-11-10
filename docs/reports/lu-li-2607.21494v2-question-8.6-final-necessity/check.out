@@ -1,0 +1,40 @@
+FIDELITY G1: n=9, dim M=6, dim W=7; Af=f, Df=2f, sum f=0, f in W and perpendicular to M; walk rank=6
+  DH reduction: [('pendant', 8, 3), ('true-twin', 4, 5), ('pendant', 5, 0), ('pendant', 0, 1), ('pendant', 1, 2), ('pendant', 2, 3), ('true-twin', 3, 6), ('pendant', 6, 7)]
+  connected induced subsets checked: 78
+COUNTEREXAMPLE G1 corona^1: n=18, edges=19, dim M=12, dim W=14; M and W equal the two lifted copies; leaf polynomial verified
+  DH reduction: [('pendant', 9, 0), ('pendant', 10, 1), ('pendant', 11, 2), ('pendant', 12, 3), ('pendant', 13, 4), ('pendant', 14, 5), ('pendant', 15, 6), ('pendant', 16, 7), ('pendant', 17, 8), ('pendant', 8, 3), ('true-twin', 4, 5), ('pendant', 5, 0), ('pendant', 0, 1), ('pendant', 1, 2), ('pendant', 2, 3), ('true-twin', 3, 6), ('pendant', 6, 7)]
+  connected induced subsets checked: 4427
+  degree=1: columns=[9, 10, 11, 12, 13, 14, 15, 16, 17], outside_rows=[0, 1, 2, 3, 4, 5, 6, 7, 8], minor=I_9, determinant=1; all real lambda excluded
+  degree=2: columns=[8], outside_rows=[17], minor=I_1, determinant=1; all real lambda excluded
+  degree=3: columns=[1, 2, 4, 5, 6, 7], outside_rows=[10, 11, 13, 14, 15, 16], minor=I_6, determinant=1; all real lambda excluded
+  degree=4: columns=[0], outside_rows=[9], minor=I_1, determinant=1; all real lambda excluded
+  degree=5: columns=[3], outside_rows=[12], minor=I_1, determinant=1; all real lambda excluded
+  hidden plane: A=[[1,1],[1,0]], D=diag(3,1), orthogonal to M
+COUNTEREXAMPLE G1 corona^2: n=36, edges=37, dim M=24, dim W=28; M and W equal the two lifted copies; leaf polynomial verified
+  DH reduction: [('pendant', 18, 0), ('pendant', 19, 1), ('pendant', 20, 2), ('pendant', 21, 3), ('pendant', 22, 4), ('pendant', 23, 5), ('pendant', 24, 6), ('pendant', 25, 7), ('pendant', 26, 8), ('pendant', 27, 9), ('pendant', 9, 0), ('pendant', 28, 10), ('pendant', 10, 1), ('pendant', 29, 11), ('pendant', 11, 2), ('pendant', 30, 12), ('pendant', 12, 3), ('pendant', 31, 13), ('pendant', 13, 4), ('pendant', 32, 14), ('pendant', 14, 5), ('pendant', 33, 15), ('pendant', 15, 6), ('pendant', 34, 16), ('pendant', 16, 7), ('pendant', 35, 17), ('pendant', 17, 8), ('pendant', 8, 3), ('true-twin', 4, 5), ('pendant', 5, 0), ('pendant', 0, 1), ('pendant', 1, 2), ('pendant', 2, 3), ('true-twin', 3, 6), ('pendant', 6, 7)]
+  degree=1: columns=[18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35], outside_rows=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17], minor=I_18, determinant=1; all real lambda excluded
+  degree=2: columns=[9, 10, 11, 12, 13, 14, 15, 16, 17], outside_rows=[27, 28, 29, 30, 31, 32, 33, 34, 35], minor=I_9, determinant=1; all real lambda excluded
+  degree=3: columns=[8], outside_rows=[26], minor=I_1, determinant=1; all real lambda excluded
+  degree=4: columns=[1, 2, 4, 5, 6, 7], outside_rows=[19, 20, 22, 23, 24, 25], minor=I_6, determinant=1; all real lambda excluded
+  degree=5: columns=[0], outside_rows=[18], minor=I_1, determinant=1; all real lambda excluded
+  degree=6: columns=[3], outside_rows=[21], minor=I_1, determinant=1; all real lambda excluded
+FIDELITY G2: n=9, dim M=6, dim W=7; Af=f, Df=2f, sum f=0, f in W and perpendicular to M; walk rank=6
+  DH reduction: [('pendant', 8, 3), ('true-twin', 4, 5), ('pendant', 5, 0), ('false-twin', 0, 2), ('pendant', 1, 2), ('pendant', 2, 3), ('true-twin', 3, 6), ('pendant', 6, 7)]
+  connected induced subsets checked: 174
+COUNTEREXAMPLE G2 corona^1: n=18, edges=20, dim M=12, dim W=14; M and W equal the two lifted copies; leaf polynomial verified
+  DH reduction: [('pendant', 9, 0), ('pendant', 10, 1), ('pendant', 11, 2), ('pendant', 12, 3), ('pendant', 13, 4), ('pendant', 14, 5), ('pendant', 15, 6), ('pendant', 16, 7), ('pendant', 17, 8), ('pendant', 8, 3), ('true-twin', 4, 5), ('pendant', 5, 0), ('false-twin', 0, 2), ('pendant', 1, 2), ('pendant', 2, 3), ('true-twin', 3, 6), ('pendant', 6, 7)]
+  connected induced subsets checked: 9287
+  degree=1: columns=[9, 10, 11, 12, 13, 14, 15, 16, 17], outside_rows=[0, 1, 2, 3, 4, 5, 6, 7, 8], minor=I_9, determinant=1; all real lambda excluded
+  degree=2: columns=[8], outside_rows=[17], minor=I_1, determinant=1; all real lambda excluded
+  degree=3: columns=[1, 2, 4, 5, 6, 7], outside_rows=[10, 11, 13, 14, 15, 16], minor=I_6, determinant=1; all real lambda excluded
+  degree=5: columns=[0], outside_rows=[9], minor=I_1, determinant=1; all real lambda excluded
+  degree=6: columns=[3], outside_rows=[12], minor=I_1, determinant=1; all real lambda excluded
+COUNTEREXAMPLE G2 corona^2: n=36, edges=38, dim M=24, dim W=28; M and W equal the two lifted copies; leaf polynomial verified
+  DH reduction: [('pendant', 18, 0), ('pendant', 19, 1), ('pendant', 20, 2), ('pendant', 21, 3), ('pendant', 22, 4), ('pendant', 23, 5), ('pendant', 24, 6), ('pendant', 25, 7), ('pendant', 26, 8), ('pendant', 27, 9), ('pendant', 9, 0), ('pendant', 28, 10), ('pendant', 10, 1), ('pendant', 29, 11), ('pendant', 11, 2), ('pendant', 30, 12), ('pendant', 12, 3), ('pendant', 31, 13), ('pendant', 13, 4), ('pendant', 32, 14), ('pendant', 14, 5), ('pendant', 33, 15), ('pendant', 15, 6), ('pendant', 34, 16), ('pendant', 16, 7), ('pendant', 35, 17), ('pendant', 17, 8), ('pendant', 8, 3), ('true-twin', 4, 5), ('pendant', 5, 0), ('false-twin', 0, 2), ('pendant', 1, 2), ('pendant', 2, 3), ('true-twin', 3, 6), ('pendant', 6, 7)]
+  degree=1: columns=[18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35], outside_rows=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17], minor=I_18, determinant=1; all real lambda excluded
+  degree=2: columns=[9, 10, 11, 12, 13, 14, 15, 16, 17], outside_rows=[27, 28, 29, 30, 31, 32, 33, 34, 35], minor=I_9, determinant=1; all real lambda excluded
+  degree=3: columns=[8], outside_rows=[26], minor=I_1, determinant=1; all real lambda excluded
+  degree=4: columns=[1, 2, 4, 5, 6, 7], outside_rows=[19, 20, 22, 23, 24, 25], minor=I_6, determinant=1; all real lambda excluded
+  degree=6: columns=[0], outside_rows=[18], minor=I_1, determinant=1; all real lambda excluded
+  degree=7: columns=[3], outside_rows=[21], minor=I_1, determinant=1; all real lambda excluded
+ALL_CHECKS_OK
