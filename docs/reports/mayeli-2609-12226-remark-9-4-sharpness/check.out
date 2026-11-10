@@ -1,0 +1,5 @@
+FIDELITY: 128 subsets, 31 interval matrices: exact trace/correlation formulas agree
+SPATIAL FAMILY: 30 rational-scale cases, 2040 shifts; gap/run/trace bounds pass
+EXAMPLE: a=1, gamma=1/2, R=64, A=[3, 5, 9, 10, 11, 12, 13, 14, 15], M=2, runs=3, D=9/4+(-159399844/12006225)/pi^2
+TENSOR: four transverse identity sizes reproduce the normalized concentration matrix
+ALL_CHECKS_OK
