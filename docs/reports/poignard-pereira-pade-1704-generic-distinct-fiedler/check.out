@@ -1,0 +1,6 @@
+exact witness: P3 weights (1,2)
+charpoly: lambda*(lambda**2 - 6*lambda + 6)
+fiedler eigenvalue: 3 - sqrt(3)
+fiedler vector: (-sqrt(3)/2 - 1/2, -1/2 + sqrt(3)/2, 1)
+symbolic positive-quadrant discriminant: 4*a**2 - 4*a*b + 4*b**2
+ALL_CHECKS_OK
