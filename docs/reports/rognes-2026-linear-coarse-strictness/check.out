@@ -1,0 +1,8 @@
+SOURCE_FIDELITY: 16641 integer input pairs satisfy Example 2.2 sum and Theorem 2.1 sum
+PRECISE_PHI: 16641 integer input pairs have no exact completion
+EXPANDED_APPROXIMATION: 49794 soundness/diagonal checks
+COARSE_SEPARATION: 640 family members; finite collection moduli 2..17, N=1237476240
+RANK_SPLITTING: 12174 exact finite interval pairs; p=2..13, j=0..4, lengths<=H_(j+1)+4p+5
+TRANSFER_CONFIGURATIONS: 840 exact tuple invariants for N=p(M+H_r+1)
+SCOPE: finite checks only; arbitrary quantified approximations require the unbounded invariance proof
+ALL_CHECKS_OK
