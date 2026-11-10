@@ -1,0 +1,8 @@
+FIDELITY: Example 3.2 Franel recurrence, n=1..30: OK
+FAMILY: polynomial residual and factorwise norm certificate 2*n+5-r: OK
+BASIS: det(M_b)=b*(b^2+4)/200; b=2 inverse and 273/512 margin: OK
+BOUNDARY: exact T-P formula, positive limit for r>4/3, x>=10 certificate: OK
+PRODUCTS: three b=2 basis solutions, n=0..14; baseline and Pochhammer denominator: OK
+DIRECT_RECURRENCE: r=2, plus-minus-plus, delta=1/2048, n=0..10000 positive; last numerator bits=71581, denominator bits=87403; trace_sha256=03c34aa3a5e2ea56d003c49933e20bebe42015bcdc1201aaa728cbcc24dd1469
+DIRECT_RECURRENCE: r=2, minus-plus-minus, delta=1/2048, n=0..10000 positive; last numerator bits=71568, denominator bits=87390; trace_sha256=7d95a053ba6b6b141d9f14c7d46b489e2423b6734a11c0e479ea888a691a5150
+ALL_CHECKS_OK
