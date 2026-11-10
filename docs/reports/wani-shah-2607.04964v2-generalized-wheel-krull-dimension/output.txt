@@ -1,0 +1,2 @@
+checked 228 exact (n,m,q,family) cases; source q=1 formulas reproduced
+ALL_CHECKS_OK
