@@ -21,4 +21,4 @@ For N = 4, L = 3, η = 1/(96·2^k), k = 0,…,5, exact polygon calculations give
 - squared W¹,² error divided by η: less than 43000;
 - maximum squared gradient of the approximants: less than 2400.
 
-The stored output contains the unreduced descriptions as exact rational results and ends with `ALL_CHECKS_OK`. The program checks additional bounds derived from wall-strip and graph-band areas. These finite checks support the general proof outline; they do not establish the assertion for all widths, domains, dimensions, or Sobolev exponents. The planned positive settlement rests on the general incidence and thin-slab arguments.
+The stored output contains the full exact rational results and ends with `ALL_CHECKS_OK`. The program checks additional bounds derived from wall-strip and graph-band areas. These finite checks support the general proof outline; they do not establish the assertion for all widths, domains, dimensions, or Sobolev exponents. The planned positive settlement rests on the general incidence and thin-slab arguments.
