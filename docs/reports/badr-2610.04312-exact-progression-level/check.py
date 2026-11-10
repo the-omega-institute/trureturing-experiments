@@ -46,6 +46,9 @@ def main():
                     ('outer', X**d+Y**d+Z**d, d)]
         for name, form, D in families:
             assert (form.subs({X: 0, Y: 0, Z: 1}) == 0) == (name == 'inner')
+            for coordinate in (X, Y, Z):
+                equations = [s.diff(form, v) for v in (X, Y, Z)] + [coordinate-1]
+                assert list(s.groebner(equations, X, Y, Z, domain=s.QQ)) == [1]
             largest_first_witness = 0
             for kind in ('AP', 'GP'):
                 for a, b in product((-2, -1, 1, 2), repeat=2):
