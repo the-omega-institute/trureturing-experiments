@@ -1,0 +1,8 @@
+FIDELITY: source Section 6 3x3 resonance example reproduced exactly
+THIRD_ORDER: P=z^3-i*z-1+i, T^3=I, [A,T]^3=(1-i)I; shortest word=3
+SMALL_CASES: 15 adversarial and 12 seeded random polynomials; n=1..4
+REPEATED_ROOT_BOUNDARY: dim ker(ad_J2)=2, dim ker(ad_J2^2)=3; support criterion unchanged
+EXACT_COUNTS: diagonal=108, jordan=32, conjugated=12, cyclic=45, inverse=16, nilpotent_spaces=109, nonnilpotent_spaces=43
+ARITHMETIC: SymPy 1.14.0; integers/rationals/Gaussian rationals; random seed=260829574
+SCOPE: finite checks only; no universal proof or Lean proof is claimed
+ALL_CHECKS_OK
