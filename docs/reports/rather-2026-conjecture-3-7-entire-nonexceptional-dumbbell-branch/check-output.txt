@@ -1,0 +1,18 @@
+KNOWN_EXCEPTION n=2 m=2 first_isomorphic_return=1 labeled_return=2 permutation=(1, 2, 3, 0)
+PASS n=2 m=3 first_isomorphic_return=7 states_checked=8 fidelity=Thm3.3,Thm3.5
+PASS n=2 m=4 first_isomorphic_return=8 states_checked=9 fidelity=Thm3.3,Thm3.5
+PASS n=2 m=5 first_isomorphic_return=9 states_checked=10 fidelity=Thm3.3,Thm3.5
+PASS n=2 m=6 first_isomorphic_return=10 states_checked=11 fidelity=Thm3.3,Thm3.5
+PASS n=3 m=3 first_isomorphic_return=8 states_checked=9 fidelity=Thm3.3,Thm3.5
+PASS n=3 m=4 first_isomorphic_return=9 states_checked=10 fidelity=Thm3.3,Thm3.5
+PASS n=3 m=5 first_isomorphic_return=10 states_checked=11 fidelity=Thm3.3,Thm3.5
+PASS n=3 m=6 first_isomorphic_return=11 states_checked=12 fidelity=Thm3.3,Thm3.5
+PASS n=4 m=4 first_isomorphic_return=10 states_checked=11 fidelity=Thm3.3,Thm3.5
+PASS n=4 m=5 first_isomorphic_return=11 states_checked=12 fidelity=Thm3.3,Thm3.5
+PASS n=4 m=6 first_isomorphic_return=12 states_checked=13 fidelity=Thm3.3,Thm3.5
+PASS n=5 m=5 first_isomorphic_return=12 states_checked=13 fidelity=Thm3.3,Thm3.5
+PASS n=5 m=6 first_isomorphic_return=13 states_checked=14 fidelity=Thm3.3,Thm3.5
+PASS n=6 m=6 first_isomorphic_return=14 states_checked=15 fidelity=Thm3.3,Thm3.5
+SUMMARY nonexceptional_pairs=14 facet_classifications=74 recurrence_and_terminal_checks=74 literal_vertex_limit=12
+SCOPE finite exact checks only; no universal or Lean proof claimed
+ALL_CHECKS_OK
