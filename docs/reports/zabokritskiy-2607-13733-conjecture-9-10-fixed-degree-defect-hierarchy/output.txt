@@ -1,0 +1,8 @@
+Fixed-point distributions: direct enumeration of 5914 permutations, 0<=n<=7: OK
+Fidelity: Eq. (69), d=7: 1/7, 6/35, 29/140, 23/105: OK
+Recursion versus independent fixed-point average: 373 anchor partitions, 1<=d<=14: OK
+Marked-fixed-point identity: 914 vertex partitions, 1<=d<=16: OK
+Truncated hierarchy: 56 (d,k) pairs, 2k+3<=d<=16: OK
+Nonnegative anchor weights: 4050; coverage inequalities: 5373; exact low-defect coverages: 342: OK
+Triage only: threshold d=2k+2 fails on (2^(k+1)), 0<=k<=7: OK
+ALL_CHECKS_OK
