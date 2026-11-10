@@ -1,0 +1,10 @@
+FIDELITY Example 4.1(1), b=1: 42 zeros through t=20; product=quintuple sum
+TARGET coefficients a_0..a_30: [1, -1, 0, 0, 0, -1, 0, 1, 0, 0, 0, 1, -1, 0, 0, 0, 0, 0, 0, -1, 1, -1, 1, 0, 1, -1, 0, 1, -1, -1, 0]
+TARGET 63 zeros, t=0..20, degrees 6..638; all 639 coefficients agree independently
+RELATED (1, 3, 4) modulus 13 residues (2, 4, 10) 63 zeros
+RELATED (2, 3, 5) modulus 19 residues (4, 5, 16) 63 zeros
+RELATED (3, 5, 8) modulus 49 residues (8, 10, 46) 63 zeros
+FAMILY 16 coprime pairs 1<=A<B<=8 with A!=B mod 3; t=0..5
+LATTICE finite nonempty shells: 47 points: 164
+LATTICE all three combined maps square to I over the rationals; signs reverse
+ALL_CHECKS_OK
