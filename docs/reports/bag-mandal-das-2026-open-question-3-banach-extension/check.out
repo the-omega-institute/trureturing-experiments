@@ -1,0 +1,5 @@
+SOURCE_FIDELITY diag(0,2,3): 1500 exact power/norm-square cases OK
+DIFFERENCE_OF_POWERS: 3906 exact cases (dimensions 0..3, N=1..6) OK
+RESOLVENT_BRANCHES: 2916 contracting and 1440 expanding exact rational cases OK
+MIXED_GAP_OBSTRUCTION diag(1/2,2): 32 exact squared-weight cases OK
+ALL_CHECKS_OK
