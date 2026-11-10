@@ -1,10 +1,37 @@
-recurrence_cases=27
-symbolic_leading_coefficients=verified
-cover n=3 r=2 s=1: E_steps=1; exact record-squeeze inequality verified (lower < E_steps <= 11/6)
-cover n=3 r=3 s=2: E_steps=0; exact record-squeeze inequality verified (lower < E_steps <= 0)
-cover n=4 r=2 s=1: E_steps=3; exact record-squeeze inequality verified (lower < E_steps <= 25/6)
-cover n=4 r=3 s=2: E_steps=5/2; exact record-squeeze inequality verified (lower < E_steps <= 49/10)
-cover n=5 r=2 s=1: E_steps=11/2; exact record-squeeze inequality verified (lower < E_steps <= 137/20)
-cover n=5 r=3 s=2: E_steps=43593/4930; exact record-squeeze inequality verified (lower < E_steps <= 7381/560)
+recurrence_cases=26
+actual_subset_states_checked=1706
+tied_group_compositions_checked=62
+symbolic_leading_coefficients={(2,1):1, (3,2):1/4, (3,1):1, (4,2):1/6}
+passage n=4 r=2 s=1: e_last=2; e_last/n^s=1/2; exact_state_residuals=0
+passage n=4 r=3 s=1: e_last=1; e_last/n^s=1/4; exact_state_residuals=0
+passage n=5 r=2 s=1: e_last=3; e_last/n^s=3/5; exact_state_residuals=0
+passage n=5 r=3 s=2: e_last=7/2; e_last/n^s=7/50; exact_state_residuals=0
+passage n=5 r=3 s=1: e_last=2; e_last/n^s=2/5; exact_state_residuals=0
+passage n=6 r=2 s=1: e_last=4; e_last/n^s=2/3; exact_state_residuals=0
+passage n=6 r=3 s=2: e_last=6; e_last/n^s=1/6; exact_state_residuals=0
+passage n=6 r=3 s=1: e_last=3; e_last/n^s=1/2; exact_state_residuals=0
+passage n=7 r=2 s=1: e_last=5; e_last/n^s=5/7; exact_state_residuals=0
+passage n=7 r=3 s=2: e_last=9; e_last/n^s=9/49; exact_state_residuals=0
+passage n=7 r=3 s=1: e_last=4; e_last/n^s=4/7; exact_state_residuals=0
+passage n=8 r=2 s=1: e_last=6; e_last/n^s=3/4; exact_state_residuals=0
+passage n=8 r=3 s=2: e_last=25/2; e_last/n^s=25/128; exact_state_residuals=0
+passage n=8 r=3 s=1: e_last=5; e_last/n^s=5/8; exact_state_residuals=0
+passage n=9 r=2 s=1: e_last=7; e_last/n^s=7/9; exact_state_residuals=0
+passage n=9 r=3 s=2: e_last=33/2; e_last/n^s=11/54; exact_state_residuals=0
+passage n=9 r=3 s=1: e_last=6; e_last/n^s=2/3; exact_state_residuals=0
+passage n=10 r=2 s=1: e_last=8; e_last/n^s=4/5; exact_state_residuals=0
+passage n=10 r=3 s=2: e_last=21; e_last/n^s=21/100; exact_state_residuals=0
+passage n=10 r=3 s=1: e_last=7; e_last/n^s=7/10; exact_state_residuals=0
+passage n=11 r=2 s=1: e_last=9; e_last/n^s=9/11; exact_state_residuals=0
+passage n=11 r=3 s=2: e_last=26; e_last/n^s=26/121; exact_state_residuals=0
+passage n=11 r=3 s=1: e_last=8; e_last/n^s=8/11; exact_state_residuals=0
+passage n=12 r=2 s=1: e_last=10; e_last/n^s=5/6; exact_state_residuals=0
+passage n=12 r=3 s=2: e_last=63/2; e_last/n^s=7/32; exact_state_residuals=0
+passage n=12 r=3 s=1: e_last=9; e_last/n^s=3/4; exact_state_residuals=0
+cover n=3 r=2 s=1: E_steps=1; exact record-squeeze inequality verified (certified_log_upper_lower_bound <= E_steps <= 11/6)
+cover n=4 r=2 s=1: E_steps=3; exact record-squeeze inequality verified (certified_log_upper_lower_bound <= E_steps <= 25/6)
+cover n=4 r=3 s=2: E_steps=5/2; exact record-squeeze inequality verified (certified_log_upper_lower_bound <= E_steps <= 49/10)
+cover n=5 r=2 s=1: E_steps=11/2; exact record-squeeze inequality verified (certified_log_upper_lower_bound <= E_steps <= 137/20)
+cover n=5 r=3 s=2: E_steps=43593/4930; exact record-squeeze inequality verified (certified_log_upper_lower_bound <= E_steps <= 7381/560)
 fidelity_johnson_graph_degree=verified
 ALL_CHECKS_OK

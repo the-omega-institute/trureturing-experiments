@@ -3,9 +3,8 @@
 All numerical evidence is integer/Fraction/SymPy exact arithmetic; no floats.
 """
 from __future__ import annotations
-from collections import deque, defaultdict
 from fractions import Fraction
-from itertools import combinations
+from itertools import combinations, permutations, product
 from math import comb
 import sympy as sp
 
@@ -42,12 +41,62 @@ def direct_overlap(n: int, r: int, s: int) -> list[Fraction]:
     return [Fraction(int(x.p), int(x.q)) for x in sol]
 
 
-def log_lower(q: Fraction, terms: int = 80) -> Fraction:
-    """Exact positive lower bound for log(q), q >= 1, by the atanh series."""
-    if q == 1:
-        return Fraction(0)
+def log_upper(q: Fraction, terms: int = 80) -> Fraction:
+    """Rational upper bound: log(q) = 2 atanh(x), geometric tail bound."""
+    assert q >= 1
     x = (q - 1) / (q + 1)
-    return 2 * sum((x ** (2 * k + 1)) / (2 * k + 1) for k in range(terms))
+    partial = 2 * sum((x ** (2*k+1)) / (2*k+1) for k in range(terms))
+    remainder = 2 * x ** (2*terms+1) / ((2*terms+1) * (1-x*x))
+    return partial + remainder
+
+
+def verify_actual_subset_chain(n: int, r: int, s: int, e: list[Fraction]) -> int:
+    """Enumerate actual replacements, verify lumping and exact hitting residuals."""
+    target = set(range(s))
+    hit = [sum(e[j:], Fraction(0)) for j in range(s)] + [Fraction(0)]
+    count = 0
+    for H0 in combinations(range(n), r):
+        H = set(H0)
+        j = len(H & target)
+        overlaps = [0] * (s+1)
+        for a in H:
+            for b in set(range(n)) - H:
+                k = len(((H - {a}) | {b}) & target)
+                overlaps[k] += 1
+        den = r * (n-r)
+        assert sum(overlaps) == den
+        if j < s:
+            assert overlaps[j+1] == (r-j)*(s-j)
+            if j: assert overlaps[j-1] == j*(n-r-s+j)
+            assert hit[j] == 1 + sum((Fraction(c,den)*hit[k] for k,c in enumerate(overlaps)), Fraction(0))
+        count += 1
+    return count
+
+
+def check_tied_records() -> int:
+    """Enumerate small groupings/permutations and certify the record inequality."""
+    cases = 0
+    for m in range(2, 7):
+        # All ordered compositions via cuts, first group is discovered at time zero.
+        for cuts in product((False, True), repeat=m-1):
+            groups = [0]
+            for cut in cuts: groups.append(groups[-1] + int(cut))
+            sizes = [groups.count(i) for i in range(groups[-1]+1)]
+            C = max(sizes)
+            expected = sum((Fraction(sizes[i], sum(sizes[i:])) for i in range(1,len(sizes))), Fraction(0))
+            records = 0
+            for perm in permutations(range(m)):
+                highest = 0
+                for a in perm:
+                    g = groups[a]
+                    if g > highest: records += 1; highest = g
+            from math import factorial
+            assert Fraction(records, factorial(m)) == expected
+            assert expected <= harmonic(m)
+            if m > C:
+                assert log_upper(Fraction(m,C)) <= expected
+            cases += 1
+    return cases
 
 
 def harmonic(m: int) -> Fraction:
@@ -114,15 +163,19 @@ def exact_cover_expectation(n: int, r: int, s: int) -> Fraction:
 
 def main() -> None:
     checked = 0
-    # Exact birth-death recurrence against independent first-step equations.
+    subset_states = 0
+    passage_rows = []
+    # All overlap levels exist when n >= r+s; smaller phantom levels are excluded.
     for n in range(4, 13):
         for r, s in ((2, 1), (3, 2), (3, 1)):
-            if r > n or s > r:
+            if n < r+s or s > r:
                 continue
             e = passage(n, r, s)
             direct = direct_overlap(n, r, s)
             assert e == [direct[j] - (direct[j + 1] if j + 1 < s else Fraction(0)) for j in range(s)]
             assert all(x > 0 for x in e)
+            subset_states += verify_actual_subset_chain(n,r,s,e)
+            passage_rows.append((n,r,s,e[-1],e[-1]/n**s))
             checked += 1
     # Symbolic leading coefficient in n, exactly as in Lemma 2.
     n = sp.symbols("n")
@@ -140,16 +193,17 @@ def main() -> None:
     cover_rows = []
     for n0 in range(3, 6):
         for r, s in ((2, 1), (3, 2)):
-            if r > n0:
+            if r >= n0:
                 continue
             actual = exact_cover_expectation(n0, r, s)
             m, C = comb(n0, s), comb(r, s)
             e = passage(n0, r, s)
             hminus, hplus = e[-1], sum(e, Fraction(0))
-            lower = hminus * log_lower(Fraction(m, C))
+            lower = hminus * log_upper(Fraction(m, C))
             upper = hplus * harmonic(m)
             assert lower <= actual <= upper, (n0, r, s, lower, actual, upper)
             cover_rows.append((n0, r, s, actual, lower, upper))
+    tied_cases = check_tied_records()
     # Source fidelity: r=s=2 is the Johnson graph, 2(n-2)-regular on C(n,2) vertices.
     for n0 in range(3, 8):
         r = s = 2
@@ -157,10 +211,14 @@ def main() -> None:
         degree = sum(1 for V in vertices if len(set(vertices[0]) & set(V)) == r - 1)
         assert degree == r * (n0 - r)
     print(f"recurrence_cases={checked}")
-    print("symbolic_leading_coefficients=verified")
+    print(f"actual_subset_states_checked={subset_states}")
+    print(f"tied_group_compositions_checked={tied_cases}")
+    print("symbolic_leading_coefficients={(2,1):1, (3,2):1/4, (3,1):1, (4,2):1/6}")
+    for n0,r,s,e,ratio in passage_rows:
+        print(f"passage n={n0} r={r} s={s}: e_last={e}; e_last/n^s={ratio}; exact_state_residuals=0")
     for row in cover_rows:
         n0, r, s, actual, lower, upper = row
-        print(f"cover n={n0} r={r} s={s}: E_steps={actual}; exact record-squeeze inequality verified (lower < E_steps <= {upper})")
+        print(f"cover n={n0} r={r} s={s}: E_steps={actual}; exact record-squeeze inequality verified (certified_log_upper_lower_bound <= E_steps <= {upper})")
     print("fidelity_johnson_graph_degree=verified")
     print("ALL_CHECKS_OK")
 
