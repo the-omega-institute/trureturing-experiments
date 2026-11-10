@@ -1,0 +1,9 @@
+FIDELITY: source five-point determinant, generic gauging, exceptional gauging OK
+FAMILY m=3: metric, spectrum, unique positive curvature, failure of negative type,
+  exact energy/variance identities, three scale regimes, TV=1/2; 126 rational simplex points OK
+FAMILY m=4: metric, spectrum, unique positive curvature, failure of negative type,
+  exact energy/variance identities, three scale regimes, TV=1/2; 330 rational simplex points OK
+FAMILY m=5: metric, spectrum, unique positive curvature, failure of negative type,
+  exact energy/variance identities, three scale regimes, TV=1/2; 715 rational simplex points OK
+GENERAL: arbitrary-m transition factorization OK
+ALL_CHECKS_OK

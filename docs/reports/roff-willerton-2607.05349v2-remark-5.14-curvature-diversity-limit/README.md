@@ -1,0 +1,11 @@
+# Curvature probabilities and diversity at small scales
+
+Source: Emily Roff and Simon Willerton, *The microscopic weighting on a metric space*, arXiv:2607.05349v2, Remark 5.14, https://arxiv.org/abs/2607.05349v2. The conjectural sentence is present in v2 (4 November 2026) and absent from v1 (6 July 2026).
+
+Run `python3 check.py` with Python 3.12 or newer and SymPy (checked with Python 3.14.8 and SymPy 1.14.0). The stored standard output is `check.out`; successful execution ends with `ALL_CHECKS_OK`.
+
+The source fidelity check reproduces the determinant and gauging formulas in its five-point example, including the exceptional gauging. For each of m = 3, 4, 5, the program checks the shortest-path metric of the complete bipartite graph K_{m,m}, its characteristic polynomial, the unique strictly positive curvature probability, and an explicit failure of negative type. It independently expands the exponential similarity energy using the exact variable r = exp(-t), verifies the variance decomposition and transition factorization, and certifies the coefficient signs on both open scale regimes by rational substitutions. It checks the two part-uniform probabilities, the threshold mixtures, and the total-variation gap 1/2 from the curvature probability. Exact rational simplex grids provide an additional independent objective evaluation. An arbitrary-m factorization is also checked symbolically.
+
+These are integer, rational and symbolic calculations; no floating-point values support the conclusions. The finite grids alone do not establish global optimization. The exact variance identity and its signs give the global optimization argument for each checked dimension; the general family and limit argument require the mathematical derivation in the preregistration and subsequent Lean verification. No Lean proof is supplied by this report.
+
+The target is the broad wording of Remark 5.14. The source announces a focus on negative-type spaces in Section 4. These bipartite metrics fail negative type, so this report does not refute the interpretation restricted to that class. Invariant probabilities outside negative type already appear in Nickolas–Wolf, arXiv:0809.0744, Theorem 3.8; no novelty of that obstruction is asserted.
