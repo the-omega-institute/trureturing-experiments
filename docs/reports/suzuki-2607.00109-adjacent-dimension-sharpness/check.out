@@ -1,0 +1,7 @@
+FIDELITY interpolation: 27 rational certified instances; all gaps > 1/10^24
+FIDELITY C^(d+2) angular inclusion: d=2..100, k=0..40; 4059 identities
+FEJER family: M=1..32; sum-of-squares expansion, mean, harmonic budget and both parity gains exact
+TARGET MODES: d=2..100; nonnegative angular index and correct phase. Gain thresholds delta=1/q, q=2..100
+LEGENDRE SINE IDENTITY: n=0..8; coefficients x^(2m+1), m=0..16; 153 exact matches
+SCOPE: finite fidelity and family identities only; no numerical quadrature, no Lean proof, no certification of the infinite sharpness theorem
+ALL_CHECKS_OK
