@@ -1,0 +1,43 @@
+Exact arithmetic: Python >= 3.12; SymPy 1.14.0
+Source: Gutkovskiy OEIS NAME/FORMULA; Eldar b-files, n=0..10000.
+Source digests hash comma-separated integer values followed by one newline.
+m=3: closed form=-3/2 + sqrt(21)/2; quadratic and periodic-CF identities exact
+  root bracket=[791287847477920003/1000000000000000000,1582575694955840007/2000000000000000000]; 30-period rational CF bracket=[169660011996034599600/214409980561174701049,214409980561174701049/270963317893186234249]
+  FIDELITY A366860: all 10001 b-file values agree; values_sha256=1640df58179f288b880ac85d99179c6522db5ecdfe34feb14bc65fe2b12cd348
+  n=10: a(n)=8; a(n)/n=4/5
+  n=100: a(n)=79; a(n)/n=79/100
+  n=1000: a(n)=791; a(n)/n=791/1000
+  n=10000: a(n)=7914; a(n)/n=3957/5000
+  n=100000: a(n)=79129; a(n)/n=79129/100000
+  n=1000000: a(n)=791288; a(n)/n=98911/125000
+  finite tail 10000..1000000: min=3801/4804 at n=14412; max=2641/3337 at n=10011
+  |a(n)/n-c| < 1/1000 throughout that finite tail; certified upper bound=472452966180949989/3337000000000000000000
+  endpoint root-error upper bound from quadratic residual=10921/46875000000
+m=4: closed form=-2 + 2*sqrt(2); quadratic and periodic-CF identities exact
+  root bracket=[331370849898476039/400000000000000000,414213562373095049/500000000000000000]; 30-period rational CF bracket=[65467555105469489418600/79026329715516201199301,79026329715516201199301/95393218491883573553951]
+  FIDELITY A366870: all 10001 b-file values agree; values_sha256=611ec1e8339fc5db5e2402a11c7019c39dd44a3e884b9d9ae464933f9f318934
+  n=10: a(n)=8; a(n)/n=4/5
+  n=100: a(n)=84; a(n)/n=21/25
+  n=1000: a(n)=828; a(n)/n=207/250
+  n=10000: a(n)=8284; a(n)/n=2071/2500
+  n=100000: a(n)=82843; a(n)/n=82843/100000
+  n=1000000: a(n)=828428; a(n)/n=207107/250000
+  finite tail 10000..1000000: min=468/565 at n=11300; max=2165/2613 at n=10452
+  |a(n)/n-c| < 1/1000 throughout that finite tail; certified upper bound=127969215282110093/1045200000000000000000
+  endpoint root-error upper bound from quadratic residual=309449/250000000000
+m=5: closed form=-5/2 + 3*sqrt(5)/2; quadratic and periodic-CF identities exact
+  root bracket=[1708203932499369089/2000000000000000000,170820393249936909/200000000000000000]; 30-period rational CF bracket=[8930598758318277734786400/10456127150171604205009201,10456127150171604205009201/12242246901835259751966481]
+  FIDELITY A366871: all 10001 b-file values agree; values_sha256=9865622a033400a4ce893d0d792c1c85b5fa6ab1719c6d0c8aa7c365af807e92
+  n=10: a(n)=9; a(n)/n=9/10
+  n=100: a(n)=85; a(n)/n=17/20
+  n=1000: a(n)=855; a(n)/n=171/200
+  n=10000: a(n)=8541; a(n)/n=8541/10000
+  n=100000: a(n)=85410; a(n)/n=8541/10000
+  n=1000000: a(n)=854101; a(n)/n=854101/1000000
+  finite tail 10000..1000000: min=895/1048 at n=10480; max=1846/2161 at n=10805
+  |a(n)/n-c| < 1/1000 throughout that finite tail; certified upper bound=571301868863398671/4322000000000000000000
+  endpoint root-error upper bound from quadratic residual=6481799/5000000000000
+General-family structural checks: m=3..40, n=0..5000.
+Oscillation subtraction, factorization, and root-difference identities: exact.
+Finite checks do not prove convergence; the all-index argument remains for the later probe.
+ALL_CHECKS_OK
