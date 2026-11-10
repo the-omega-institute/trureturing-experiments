@@ -1,0 +1,76 @@
+FIDELITY n=5: all 10 panmagic permutations affine; exact Q-rank=9; target dimension=9; sum_b P_2,b=sum_b P_3,b=J
+FIDELITY affine panmagic iff a,a-1,a+1 units: every affine map at 2<=n<=60 checked
+n support_cardinality product_formula panmagic_dimension prime equality
+5 9 9 9 True True
+7 25 25 25 True True
+11 81 81 81 True True
+13 121 121 121 True True
+17 225 225 225 True True
+19 289 289 289 True True
+23 441 441 441 True True
+25 209 209 529 False False
+29 729 729 729 True True
+31 841 841 841 True True
+35 225 225 1089 False False
+37 1225 1225 1225 True True
+41 1521 1521 1521 True True
+43 1681 1681 1681 True True
+47 2025 2025 2025 True True
+49 1201 1201 2209 False False
+53 2601 2601 2601 True True
+55 729 729 2809 False False
+59 3249 3249 3249 True True
+61 3481 3481 3481 True True
+65 1089 1089 3969 False False
+67 4225 4225 4225 True True
+71 4761 4761 4761 True True
+73 5041 5041 5041 True True
+77 2025 2025 5625 False False
+79 5929 5929 5929 True True
+83 6561 6561 6561 True True
+85 2025 2025 6889 False False
+89 7569 7569 7569 True True
+91 3025 3025 7921 False False
+95 2601 2601 8649 False False
+97 9025 9025 9025 True True
+101 9801 9801 9801 True True
+103 10201 10201 10201 True True
+107 11025 11025 11025 True True
+109 11449 11449 11449 True True
+113 12321 12321 12321 True True
+115 3969 3969 12769 False False
+119 5625 5625 13689 False False
+121 9761 9761 14161 False False
+125 5209 5209 15129 False False
+127 15625 15625 15625 True True
+131 16641 16641 16641 True True
+133 7225 7225 17161 False False
+137 18225 18225 18225 True True
+139 18769 18769 18769 True True
+143 9801 9801 19881 False False
+145 6561 6561 20449 False False
+149 21609 21609 21609 True True
+SUPPORT_AND_CRT 49 Polya orders checked, including 16 composites
+EXACT_Q_RANK n=5 affine=9 panmagic=9
+EXACT_Q_RANK n=7 affine=25 panmagic=25
+EXACT_Q_RANK n=11 affine=81 panmagic=81
+EXACT_Q_RANK n=13 affine=121 panmagic=121
+EXACT_Q_RANK n=25 affine=209 panmagic=529
+EXACT_Q_RANK n=35 affine=225 panmagic=1089
+INTEGER_WITNESS n=25 p=5 phi=20 four_zero_line_families=True all_affine_inner_products_zero=True norm_squared=12500 positive_perturbation=True
+INTEGER_WITNESS n=35 p=5 phi=24 four_zero_line_families=True all_affine_inner_products_zero=True norm_squared=29400 positive_perturbation=True
+INTEGER_WITNESS n=49 p=7 phi=42 four_zero_line_families=True all_affine_inner_products_zero=True norm_squared=100842 positive_perturbation=True
+INTEGER_WITNESS n=55 p=5 phi=40 four_zero_line_families=True all_affine_inner_products_zero=True norm_squared=121000 positive_perturbation=True
+INTEGER_WITNESS n=65 p=5 phi=48 four_zero_line_families=True all_affine_inner_products_zero=True norm_squared=202800 positive_perturbation=True
+INTEGER_WITNESS n=77 p=7 phi=60 four_zero_line_families=True all_affine_inner_products_zero=True norm_squared=355740 positive_perturbation=True
+INTEGER_WITNESS n=85 p=5 phi=64 four_zero_line_families=True all_affine_inner_products_zero=True norm_squared=462400 positive_perturbation=True
+INTEGER_WITNESS n=91 p=7 phi=72 four_zero_line_families=True all_affine_inner_products_zero=True norm_squared=596232 positive_perturbation=True
+INTEGER_WITNESS n=95 p=5 phi=72 four_zero_line_families=True all_affine_inner_products_zero=True norm_squared=649800 positive_perturbation=True
+INTEGER_WITNESS n=115 p=5 phi=88 four_zero_line_families=True all_affine_inner_products_zero=True norm_squared=1163800 positive_perturbation=True
+INTEGER_WITNESS n=119 p=7 phi=96 four_zero_line_families=True all_affine_inner_products_zero=True norm_squared=1359456 positive_perturbation=True
+INTEGER_WITNESS n=121 p=11 phi=110 four_zero_line_families=True all_affine_inner_products_zero=True norm_squared=1610510 positive_perturbation=True
+INTEGER_WITNESS n=125 p=5 phi=100 four_zero_line_families=True all_affine_inner_products_zero=True norm_squared=1562500 positive_perturbation=True
+INTEGER_WITNESS n=133 p=7 phi=108 four_zero_line_families=True all_affine_inner_products_zero=True norm_squared=1910412 positive_perturbation=True
+INTEGER_WITNESS n=143 p=11 phi=120 four_zero_line_families=True all_affine_inner_products_zero=True norm_squared=2453880 positive_perturbation=True
+INTEGER_WITNESS n=145 p=5 phi=112 four_zero_line_families=True all_affine_inner_products_zero=True norm_squared=2354800 positive_perturbation=True
+ALL_CHECKS_OK
