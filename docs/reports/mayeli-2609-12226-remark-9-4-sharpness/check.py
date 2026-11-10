@@ -5,6 +5,7 @@ Only integers and Fraction are used. A pair (u,v) represents u+v/pi^2.
 No finite check is asserted to prove the asymptotic existential claim.
 """
 from fractions import Fraction as Q
+from itertools import product
 
 
 def floor_root(n, p):
@@ -89,9 +90,19 @@ def check_fidelity():
         # Source Proposition 9.3, one-dimensional half-band specialization.
         expected = (Q(N, 4), -2*sum((Q(N-k, k*k) for k in range(1, N, 2)), Q(0)))
         assert direct_defect(range(N)) == expected
+    boxes = 0
+    for d in [1, 2, 3]:
+        for N in [3, 5, 7]:
+            M = (N-1)//2
+            box = set(product(range(-M, M+1), repeat=d))
+            for m in range(1, N):
+                shifted = {(n[0]-m,)+n[1:] for n in box}
+                # The exact displayed lattice count in Proposition 9.3.
+                assert len(box ^ shifted) == 2*m*N**(d-1)
+                boxes += 1
     # The full infinite symmetric-difference identity reduces exactly to this
     # finite formula, using sum_{k odd, k in Z} 1/k^2 = pi^2/4.
-    print(f"FIDELITY: {subsets} subsets, 31 interval matrices: exact trace/correlation formulas agree")
+    print(f"FIDELITY: {subsets} subsets, 31 interval matrices, {boxes} box translations: source formulas agree")
 
 
 def digitization(a, R):
