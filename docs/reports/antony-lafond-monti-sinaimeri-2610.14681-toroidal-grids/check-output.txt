@@ -1,0 +1,7 @@
+FIDELITY: C_n for 3 <= n <= 32, labels and literal caterpillar distances: 10910 ordered pairs OK
+SCALAR: 0 <= a <= 6, a <= b <= 8, all in-range x <= y <= z and w: 12357 premises OK
+TOROIDAL: all 100 ordered (m,n) with 3 <= m,n <= 12: 33750 vertex/extreme-pair obstructions OK
+GENERAL PRODUCTS: 36 ordered pairs from C3,C4,K4,K5,K2,3,2C3: 8356 obstructions OK
+NEGATIVE CONTROL: represented cycles do not trigger the obstruction
+SCOPE: exact finite checks supporting a general argument; no unbounded theorem certified here
+ALL_CHECKS_OK
