@@ -1,0 +1,15 @@
+FIDELITY: Section 9 quintic: rational point, genus 6, degree 4, four simple zeros; smoothness checked exactly
+PB_NUMERICAL_PRECONDITION: 19206 exact comparisons, 4<=d<=100, 2<=e<=100, D in {d-1,d}
+SMALL_CASE: d=4, center=inner, threshold=3, largest first irreducible index=2
+SMALL_CASE: d=4, center=outer, threshold=4, largest first irreducible index=1
+SMALL_CASE: d=5, center=inner, threshold=4, largest first irreducible index=2
+SMALL_CASE: d=5, center=outer, threshold=5, largest first irreducible index=3
+SMALL_CASE: d=6, center=inner, threshold=5, largest first irreducible index=4
+SMALL_CASE: d=6, center=outer, threshold=6, largest first irreducible index=2
+SMALL_CASE: d=7, center=inner, threshold=6, largest first irreducible index=2
+SMALL_CASE: d=7, center=outer, threshold=7, largest first irreducible index=3
+SMALL_CASE: d=8, center=inner, threshold=7, largest first irreducible index=2
+SMALL_CASE: d=8, center=outer, threshold=8, largest first irreducible index=1
+SAMPLED_LOWER_BOUND: 240 progression configurations; 290 exact rational fiber factorizations
+SCOPE: finite algebraic checks only; Hilbert irreducibility and the universal threshold are not proved by this program
+ALL_CHECKS_OK
