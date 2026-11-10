@@ -1,0 +1,9 @@
+Fidelity: size-16 example and Lemma 2.11 bipartition example OK
+Fidelity: Table 2 charge 0000 counts n=0..12: [1, 0, 0, 0, 1, 0, 0, 0, 2, 0, 0, 0, 3]
+Fidelity: Table 2 charge 0001 counts n=0..8: [1, 1, 1, 2, 0, 1, 2, 1, 2]
+Direct target counts n=0..12: [1, 2, 2, 3, 4, 3, 5, 7, 2, 5, 7, 4, 7]
+Equation (5.5) constant-term discrepancy: LHS=2, RHS=1; not used
+Residue multisets: ['0001', '0023', '0113', '0122', '0333', '1112', '1233', '2223']
+Signed beta-set/charge/size/identity cases: 2772
+Three-square-to-partition construction: every n=0..512 OK, including n=0
+ALL_CHECKS_OK
