@@ -1,0 +1,21 @@
+Python=3.14; SymPy=1.14.0
+All mathematical evidence is exact; decimal spectral radii are diagnostics only.
+FIDELITY: source Example 1 averaged matrix reproduced exactly at alpha=pi/3
+FIDELITY: eigenvalues=1-omega/4,1-3*omega/4; Omega=8/3; omega_opt=2; rho_opt=1/2
+SYMBOLIC all-m: trace, determinant, three Jury expressions, negative discriminant and scalar-threshold gap identities verified
+SYMBOLIC all-m: Omega-4=(33*m-48)/(16*(m+1)); limit Omega=97/16
+EXACT m=2: dimension=5; abs(det A)=3136; det(P)=-2; Omega=35/8
+EXACT m=2: full symbolic characteristic polynomial and similarity verified
+EXACT m=2 omega=17/4: scalar eigenvalues=-185/648 (twice),47/81; block trace=19/324,det=91/108
+EXACT GRID m=2: 4095 rational interior points pass; at Omega+1/10000 determinant>1
+NUMERIC DIAGNOSTIC ONLY m=2: max interior rho=0.99991315904; rho(Omega+1/10000)=1.0000648142
+EXACT m=3: dimension=7; abs(det A)=175616; det(P)=-3; Omega=307/64
+EXACT m=3: full symbolic characteristic polynomial and similarity verified
+EXACT GRID m=3: 4095 rational interior points pass; at Omega+1/10000 determinant>1
+NUMERIC DIAGNOSTIC ONLY m=3: max interior rho=0.999936202226; rho(Omega+1/10000)=1.00006316805
+EXACT m=4: dimension=9; abs(det A)=9834496; det(P)=-4; Omega=101/20
+EXACT m=4: full symbolic characteristic polynomial and similarity verified
+EXACT GRID m=4: 4095 rational interior points pass; at Omega+1/10000 determinant>1
+NUMERIC DIAGNOSTIC ONLY m=4: max interior rho=0.999949503353; rho(Omega+1/10000)=1.00006234497
+check.py sha256=8c9040662fb0fd89b88e9cc09bcc5a71b0972d7bb9c997c4d1466c68afb96b0f
+ALL_CHECKS_OK
