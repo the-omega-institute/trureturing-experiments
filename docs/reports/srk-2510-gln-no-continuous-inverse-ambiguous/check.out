@@ -1,0 +1,7 @@
+FIDELITY Theorem 1.3: (order, nonselfinverse, number_of_roots) [(1, 0, 1), (2, 0, 2), (3, 2, 0), (4, 2, 0), (5, 4, 2), (6, 4, 4), (7, 6, 0), (8, 6, 0)]
+FIDELITY even-torus formula: exact torsion points checked 15616
+SETTLEMENT ingredient: det(A^-1)=det(A)^-1 on exact GL_n(Q) examples 70
+SETTLEMENT rank-one obstruction: squares modulo 4 are [0, 1]
+ROUTE CHECK: a split surjection Z^2 -> Z alone does not give rank-one functoriality
+LIMIT: topology and naturality for GL_n(C) remain unverified; this is not a settlement
+ALL_CHECKS_OK
