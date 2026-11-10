@@ -1,0 +1,24 @@
+SEED t=3 order=19 edges=57 chi=4 critical=True nu_ind=3
+SEED t=4 order=22 edges=77 chi=4 critical=True nu_ind=3
+SEED t=5 order=25 edges=100 chi=4 critical=True nu_ind=3
+SEED t=6 order=28 edges=126 chi=4 critical=True nu_ind=3
+EXHAUSTIVE n=0 graphs=1 OK
+EXHAUSTIVE n=1 graphs=1 OK
+EXHAUSTIVE n=2 graphs=2 OK
+EXHAUSTIVE n=3 graphs=8 OK
+EXHAUSTIVE n=4 graphs=64 OK
+EXHAUSTIVE n=5 graphs=1024 OK
+EXHAUSTIVE n=6 graphs=32768 OK
+TOTAL graphs=33868 triangle_free=6229 critical_nonempty=89 paw_free=7079
+BOUNDARY Mycielski(K1) is not vertex-critical; lifting lemma restricted to q>=2
+HIGH_LEVEL q=5 orders=[5, 6, 7, 8, 9] chi=5 nu_ind=1 connected=True
+HIGH_LEVEL q=6 orders=[6, 7, 8, 9, 10] chi=6 nu_ind=1 connected=True
+HIGH_LEVEL q=7 orders=[7, 8, 9, 10, 11] chi=7 nu_ind=1 connected=True
+HIGH_LEVEL q=8 orders=[8, 9, 10, 11, 12] chi=8 nu_ind=1 connected=True
+HIGH_LEVEL q=9 orders=[9, 10, 11, 12, 13] chi=9 nu_ind=1 connected=True
+PARAMETER k=4 r_k=3 triangle_free_cutoff=7
+PARAMETER k=5 r_k=16 triangle_free_cutoff=33
+PARAMETER k=6 r_k=97 triangle_free_cutoff=195
+PARAMETER k=7 r_k=680 triangle_free_cutoff=1361
+PARAMETER k=8 r_k=5441 triangle_free_cutoff=10883
+ALL_CHECKS_OK
