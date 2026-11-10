@@ -1,0 +1,18 @@
+FIDELITY complete K_2: integer optimum=1
+FIDELITY complete K_3: integer optimum=2
+FIDELITY complete K_4: integer optimum=3
+FIDELITY complete K_5: integer optimum=4
+FIDELITY weighted K_3: IP=1, LP=1, ratio=1
+FIDELITY weighted K_4: IP=2, LP=3/2, ratio=4/3
+FIDELITY weighted K_5: IP=3, LP=2, ratio=3/2
+FIDELITY weighted K_6: IP=4, LP=5/2, ratio=8/5
+BINARY exhaustive n=0: 1 cases; all vertex demands; edge demands by monotonicity
+BINARY exhaustive n=1: 10 cases; all vertex demands; edge demands by monotonicity
+BINARY exhaustive n=2: 1628 cases; all vertex demands; edge demands by monotonicity
+BINARY exhaustive n=3: 3619896 cases; all vertex demands; edge demands by monotonicity
+INTEGER exhaustive n=0: 1 cases; every feasible demand vector
+INTEGER exhaustive n=1: 36 cases; every feasible demand vector
+INTEGER exhaustive n=2: 381456 cases; every feasible demand vector
+ADDITIONAL seeded exact tests: 20000; n<=8; costs /7; coordinates /12
+ROUNDING_CHECKS=4023028
+ALL_CHECKS_OK
