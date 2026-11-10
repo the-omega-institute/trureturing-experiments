@@ -1,0 +1,87 @@
+FIDELITY source section 4: S3, order=6, normal=3, total=6, ndeg=1/2
+DIRECT p=3 B=1 t=1 r=2 order=6 normal=3 total=6 ndeg=1/2
+DIRECT p=3 B=2 t=1 r=2 order=12 normal=5 total=8 ndeg=5/8
+DIRECT p=3 B=3 t=1 r=2 order=24 normal=7 total=10 ndeg=7/10
+DIRECT p=3 B=4 t=1 r=2 order=48 normal=9 total=12 ndeg=3/4
+DIRECT p=5 B=1 t=1 r=4 order=10 normal=3 total=8 ndeg=3/8
+DIRECT p=5 B=2 t=1 r=4 order=20 normal=5 total=10 ndeg=1/2
+DIRECT p=5 B=3 t=1 r=4 order=40 normal=7 total=12 ndeg=7/12
+DIRECT p=5 B=4 t=1 r=4 order=80 normal=9 total=14 ndeg=9/14
+DIRECT p=5 B=2 t=2 r=2 order=20 normal=4 total=14 ndeg=2/7
+DIRECT p=5 B=3 t=2 r=2 order=40 normal=6 total=16 ndeg=3/8
+DIRECT p=5 B=4 t=2 r=2 order=80 normal=8 total=18 ndeg=4/9
+DIRECT p=7 B=1 t=1 r=6 order=14 normal=3 total=10 ndeg=3/10
+DIRECT p=7 B=2 t=1 r=6 order=28 normal=5 total=12 ndeg=5/12
+DIRECT p=7 B=3 t=1 r=6 order=56 normal=7 total=14 ndeg=1/2
+DIRECT p=7 B=4 t=1 r=6 order=112 normal=9 total=16 ndeg=9/16
+DIRECT p=11 B=1 t=1 r=10 order=22 normal=3 total=14 ndeg=3/14
+DIRECT p=11 B=2 t=1 r=10 order=44 normal=5 total=16 ndeg=5/16
+DIRECT p=11 B=3 t=1 r=10 order=88 normal=7 total=18 ndeg=7/18
+DIRECT p=11 B=4 t=1 r=10 order=176 normal=9 total=20 ndeg=9/20
+DIRECT p=13 B=1 t=1 r=12 order=26 normal=3 total=16 ndeg=3/16
+DIRECT p=13 B=2 t=1 r=12 order=52 normal=5 total=18 ndeg=5/18
+DIRECT p=13 B=3 t=1 r=12 order=104 normal=7 total=20 ndeg=7/20
+DIRECT p=13 B=4 t=1 r=12 order=208 normal=9 total=22 ndeg=9/22
+DIRECT p=13 B=2 t=2 r=5 order=52 normal=4 total=30 ndeg=2/15
+DIRECT p=13 B=3 t=2 r=5 order=104 normal=6 total=32 ndeg=3/16
+DIRECT p=13 B=4 t=2 r=5 order=208 normal=8 total=34 ndeg=4/17
+DIRECT p=17 B=1 t=1 r=16 order=34 normal=3 total=20 ndeg=3/20
+DIRECT p=17 B=2 t=1 r=16 order=68 normal=5 total=22 ndeg=5/22
+DIRECT p=17 B=3 t=1 r=16 order=136 normal=7 total=24 ndeg=7/24
+DIRECT p=17 B=4 t=1 r=16 order=272 normal=9 total=26 ndeg=9/26
+DIRECT p=17 B=2 t=2 r=4 order=68 normal=4 total=38 ndeg=2/19
+DIRECT p=17 B=3 t=2 r=4 order=136 normal=6 total=40 ndeg=3/20
+DIRECT p=17 B=4 t=2 r=4 order=272 normal=8 total=42 ndeg=4/21
+DIRECT p=17 B=3 t=3 r=2 order=136 normal=5 total=56 ndeg=5/56
+DIRECT p=17 B=4 t=3 r=2 order=272 normal=7 total=58 ndeg=7/58
+DIRECT p=17 B=4 t=4 r=3 order=272 normal=6 total=74 ndeg=3/37
+DIRECT p=5 B=5 t=2 r=2 order=160 normal=10 total=20 ndeg=1/2
+DIRECT_CASES=37 MAX_ORDER=272
+PARAMETERS u=1 v=2 t=2 p=5 r=2 B=5 predicted_normal=10 predicted_total=20 ratio=1/2
+PARAMETERS u=1 v=3 t=4 p=17 r=3 B=18 predicted_normal=34 predicted_total=102 ratio=1/3
+PARAMETERS u=2 v=3 t=2 p=5 r=2 B=10 predicted_normal=20 predicted_total=30 ratio=2/3
+PARAMETERS u=1 v=4 t=6 p=193 r=125 B=195 predicted_normal=386 predicted_total=1544 ratio=1/4
+PARAMETERS u=2 v=4 t=4 p=17 r=3 B=35 predicted_normal=68 predicted_total=136 ratio=1/2
+PARAMETERS u=3 v=4 t=2 p=5 r=2 B=15 predicted_normal=30 predicted_total=40 ratio=3/4
+PARAMETERS u=1 v=5 t=8 p=257 r=3 B=260 predicted_normal=514 predicted_total=2570 ratio=1/5
+PARAMETERS u=2 v=5 t=6 p=193 r=125 B=388 predicted_normal=772 predicted_total=1930 ratio=2/5
+PARAMETERS u=3 v=5 t=4 p=17 r=3 B=52 predicted_normal=102 predicted_total=170 ratio=3/5
+PARAMETERS u=4 v=5 t=2 p=5 r=2 B=20 predicted_normal=40 predicted_total=50 ratio=4/5
+PARAMETERS u=1 v=6 t=10 p=12289 r=10302 B=12293 predicted_normal=24578 predicted_total=147468 ratio=1/6
+PARAMETERS u=2 v=6 t=8 p=257 r=3 B=517 predicted_normal=1028 predicted_total=3084 ratio=1/3
+PARAMETERS u=3 v=6 t=6 p=193 r=125 B=581 predicted_normal=1158 predicted_total=2316 ratio=1/2
+PARAMETERS u=4 v=6 t=4 p=17 r=3 B=69 predicted_normal=136 predicted_total=204 ratio=2/3
+PARAMETERS u=5 v=6 t=2 p=5 r=2 B=25 predicted_normal=50 predicted_total=60 ratio=5/6
+PARAMETERS u=1 v=7 t=12 p=12289 r=1331 B=12294 predicted_normal=24578 predicted_total=172046 ratio=1/7
+PARAMETERS u=2 v=7 t=10 p=12289 r=10302 B=24582 predicted_normal=49156 predicted_total=172046 ratio=2/7
+PARAMETERS u=3 v=7 t=8 p=257 r=3 B=774 predicted_normal=1542 predicted_total=3598 ratio=3/7
+PARAMETERS u=4 v=7 t=6 p=193 r=125 B=774 predicted_normal=1544 predicted_total=2702 ratio=4/7
+PARAMETERS u=5 v=7 t=4 p=17 r=3 B=86 predicted_normal=170 predicted_total=238 ratio=5/7
+PARAMETERS u=6 v=7 t=2 p=5 r=2 B=30 predicted_normal=60 predicted_total=70 ratio=6/7
+PARAMETERS u=1 v=8 t=14 p=65537 r=81 B=65543 predicted_normal=131074 predicted_total=1048592 ratio=1/8
+PARAMETERS u=2 v=8 t=12 p=12289 r=1331 B=24583 predicted_normal=49156 predicted_total=196624 ratio=1/4
+PARAMETERS u=3 v=8 t=10 p=12289 r=10302 B=36871 predicted_normal=73734 predicted_total=196624 ratio=3/8
+PARAMETERS u=4 v=8 t=8 p=257 r=3 B=1031 predicted_normal=2056 predicted_total=4112 ratio=1/2
+PARAMETERS u=5 v=8 t=6 p=193 r=125 B=967 predicted_normal=1930 predicted_total=3088 ratio=5/8
+PARAMETERS u=6 v=8 t=4 p=17 r=3 B=103 predicted_normal=204 predicted_total=272 ratio=3/4
+PARAMETERS u=7 v=8 t=2 p=5 r=2 B=35 predicted_normal=70 predicted_total=80 ratio=7/8
+PARAMETERS u=1 v=9 t=16 p=65537 r=3 B=65544 predicted_normal=131074 predicted_total=1179666 ratio=1/9
+PARAMETERS u=2 v=9 t=14 p=65537 r=81 B=131080 predicted_normal=262148 predicted_total=1179666 ratio=2/9
+PARAMETERS u=3 v=9 t=12 p=12289 r=1331 B=36872 predicted_normal=73734 predicted_total=221202 ratio=1/3
+PARAMETERS u=4 v=9 t=10 p=12289 r=10302 B=49160 predicted_normal=98312 predicted_total=221202 ratio=4/9
+PARAMETERS u=5 v=9 t=8 p=257 r=3 B=1288 predicted_normal=2570 predicted_total=4626 ratio=5/9
+PARAMETERS u=6 v=9 t=6 p=193 r=125 B=1160 predicted_normal=2316 predicted_total=3474 ratio=2/3
+PARAMETERS u=7 v=9 t=4 p=17 r=3 B=120 predicted_normal=238 predicted_total=306 ratio=7/9
+PARAMETERS u=8 v=9 t=2 p=5 r=2 B=40 predicted_normal=80 predicted_total=90 ratio=8/9
+PARAMETERS u=1 v=10 t=18 p=786433 r=125 B=786441 predicted_normal=1572866 predicted_total=15728660 ratio=1/10
+PARAMETERS u=2 v=10 t=16 p=65537 r=3 B=131081 predicted_normal=262148 predicted_total=1310740 ratio=1/5
+PARAMETERS u=3 v=10 t=14 p=65537 r=81 B=196617 predicted_normal=393222 predicted_total=1310740 ratio=3/10
+PARAMETERS u=4 v=10 t=12 p=12289 r=1331 B=49161 predicted_normal=98312 predicted_total=245780 ratio=2/5
+PARAMETERS u=5 v=10 t=10 p=12289 r=10302 B=61449 predicted_normal=122890 predicted_total=245780 ratio=1/2
+PARAMETERS u=6 v=10 t=8 p=257 r=3 B=1545 predicted_normal=3084 predicted_total=5140 ratio=3/5
+PARAMETERS u=7 v=10 t=6 p=193 r=125 B=1353 predicted_normal=2702 predicted_total=3860 ratio=7/10
+PARAMETERS u=8 v=10 t=4 p=17 r=3 B=137 predicted_normal=272 predicted_total=340 ratio=4/5
+PARAMETERS u=9 v=10 t=2 p=5 r=2 B=45 predicted_normal=90 predicted_total=100 ratio=9/10
+PARAMETER_CASES=45; EXAMPLE order=5120 predicted_normal=20 predicted_total=30
+BOUNDARY x=1: the trivial finite group has exactly one subgroup, which is normal
+ALL_CHECKS_OK
