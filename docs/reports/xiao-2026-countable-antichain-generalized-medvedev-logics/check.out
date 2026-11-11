@@ -1,0 +1,27 @@
+FIDELITY Proposition 3.1: P_0(1) ~= C(2)^(1-), points=1
+FIDELITY Proposition 3.1: P_0(2) ~= C(2)^(2-), points=3
+FIDELITY Proposition 3.1: P_0(3) ~= C(2)^(3-), points=7
+FIDELITY Proposition 3.1: P_0(4) ~= C(2)^(4-), points=15
+FIDELITY Proposition 3.1: P_0(5) ~= C(2)^(5-), points=31
+FIDELITY Proposition 3.1: P_0(6) ~= C(2)^(6-), points=63
+FRAME n=5: H edges=5, A points=11, F points=12
+FRAME n=6: H edges=9, A points=16, F points=17
+EXHAUSTIVE k=1: generated subframe of F_5^(-) ->> A_5: rooted maps=10, DFS nodes=8261
+EXHAUSTIVE k=2 necessary coloring: n=5, m=5, active coatom groups=(1, 5), feasible=0, DFS nodes=1
+EXHAUSTIVE k=2 necessary coloring: n=5, m=5, active coatom groups=(2, 5), feasible=0, DFS nodes=1
+EXHAUSTIVE k=2 necessary coloring: n=5, m=5, active coatom groups=(5, 5), feasible=0, DFS nodes=4
+EXHAUSTIVE k=1: generated subframe of F_5^(-) ->> A_6: rooted maps=0, DFS nodes=22867
+EXHAUSTIVE k=2 necessary coloring: n=5, m=6, active coatom groups=(1, 5), feasible=0, DFS nodes=1
+EXHAUSTIVE k=2 necessary coloring: n=5, m=6, active coatom groups=(2, 5), feasible=0, DFS nodes=1
+EXHAUSTIVE k=2 necessary coloring: n=5, m=6, active coatom groups=(5, 5), feasible=0, DFS nodes=7
+EXHAUSTIVE k=1: generated subframe of F_6^(-) ->> A_5: rooted maps=0, DFS nodes=44096
+EXHAUSTIVE k=2 necessary coloring: n=6, m=5, active coatom groups=(1, 6), feasible=0, DFS nodes=1
+EXHAUSTIVE k=2 necessary coloring: n=6, m=5, active coatom groups=(2, 6), feasible=0, DFS nodes=1
+EXHAUSTIVE k=2 necessary coloring: n=6, m=5, active coatom groups=(6, 6), feasible=0, DFS nodes=4
+EXHAUSTIVE k=1: generated subframe of F_6^(-) ->> A_6: rooted maps=12, DFS nodes=150511
+EXHAUSTIVE k=2 necessary coloring: n=6, m=6, active coatom groups=(1, 6), feasible=0, DFS nodes=1
+EXHAUSTIVE k=2 necessary coloring: n=6, m=6, active coatom groups=(2, 6), feasible=0, DFS nodes=1
+EXHAUSTIVE k=2 necessary coloring: n=6, m=6, active coatom groups=(6, 6), feasible=0, DFS nodes=7
+k=2 other active group types (1,1),(1,2),(2,2): <=4 colors, impossible for m>=5
+Finite results test the proposed obstruction; they do not prove the unbounded-power theorem.
+ALL_CHECKS_OK

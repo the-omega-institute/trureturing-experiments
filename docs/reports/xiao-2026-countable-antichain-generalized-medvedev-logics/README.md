@@ -1,0 +1,15 @@
+# Exact checks for Xiao's generalized Medvedev antichain question
+
+Run `python3 docs/reports/xiao-2026-countable-antichain-generalized-medvedev-logics/check.py` from the repository root. The program uses only Python's standard library, integer arithmetic, finite sets and exhaustive search. Its complete output is `check.out`; success ends with `ALL_CHECKS_OK`.
+
+The source is Han Xiao, *Non-finite Axiomatizability of Generalized Medvedev Logics*, arXiv:2606.31893v1, EPTCS 447, 770–781, DOI 10.4204/EPTCS.447.43. Section 6 asks whether a countably infinite antichain exists under inclusion. These checks support a proposed construction; they do not settle the infinite assertion.
+
+For fidelity, the program reproduces Proposition 3.1 for one through six atoms: nonempty subsets ordered by reverse inclusion are isomorphic to the corresponding topless power of the two-element chain. It checks every ordered pair of elements.
+
+For the proposed family, H_n is the simple graph complementary to C_n. The rooted incidence poset A_n has a root, one point for each unordered edge, and a maximal point for each vertex. An edge lies below precisely its endpoints. F_n adds a greatest element. The 12- and 17-point generators F_5 and F_6 therefore have 11- and 16-point topless frames. These are the sizes tested.
+
+The p-morphism search enumerates assignments in reverse topological order and enforces the exact condition f(↑x) = ↑f(x) at each node. Requiring the root to map to the root makes every completed map surjective. It finds 10 self-maps of A_5 and 12 of A_6, and no map in either direction between distinct indices. Non-root principal upsets have at most three points. Any surjective p-morphism from an arbitrary generated subframe restricts to a surjection on the principal upset of a preimage of the target root. Thus the single-power search covers every generated subframe, rather than only the entire frame.
+
+For the square powers the program exhausts necessary maximal-point color constraints, using arc consistency and surjectivity propagation with integer bitsets. A principal upset has active coordinate groups with respectively 1, 2 or n coatoms. Colors at coatoms from different coordinates must be equal or adjacent in H_m: their common predecessor has just those two coatoms above it. Within a full n-point group the same necessary restriction holds on edges of H_n. Every target maximal color must occur. Target cycle rotations permit fixing one color to zero. All two-active-coordinate types (1,n), (2,n), (n,n) are infeasible for n,m in {5,6}; the other types have at most four coatoms. A single active coordinate reduces to the preceding single-power search. Infeasibility of these necessary constraints is sufficient for p-morphism nonexistence; feasible colorings would require a further extension check and are never accepted as actual p-morphisms.
+
+The tests do not enumerate formulas or check their validity. They do not certify unbounded powers, an infinite antichain, or a Lean theorem. Those require the general coordinate-support argument and the Jankov–de Jongh characteristic-formula theorem.
