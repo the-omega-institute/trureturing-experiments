@@ -1,0 +1,27 @@
+FIDELITY Proposition 2.5: 2800 words; equal cylinder diameters
+FIDELITY Section 2: affine branches equal the printed series partial sums
+BASE b=4/7 F(b)=157/168 right_limit=11/12 jump=1/56
+BASE alternating orbit=4/7 -> 6/7 -> 2/7 -> 4/7
+BASE exact approach and output error bounds: N=2..100
+FAMILY j=2 b_j=5/7 F(b_j)=1669/2016 right_limit=119/144 jump=1/672 alternating_code=(j,(2,2,4)^infinity) interior=True
+FAMILY j=3 b_j=17/42 F(b_j)=2677/6048 right_limit=191/432 jump=1/2016 alternating_code=(j,(2,2,4)^infinity) interior=True
+FAMILY j=4 b_j=2/7 F(b_j)=3685/12096 right_limit=263/864 jump=1/4032 alternating_code=(j,(2,2,4)^infinity) interior=True
+FAMILY j=5 b_j=31/140 F(b_j)=4693/20160 right_limit=67/288 jump=1/6720 alternating_code=(j,(2,2,4)^infinity) interior=True
+FAMILY j=6 b_j=19/105 F(b_j)=5701/30240 right_limit=407/2160 jump=1/10080 alternating_code=(j,(2,2,4)^infinity) interior=True
+FAMILY j=7 b_j=15/98 F(b_j)=6709/42336 right_limit=479/3024 jump=1/14112 alternating_code=(j,(2,2,4)^infinity) interior=True
+FAMILY j=8 b_j=13/98 F(b_j)=7717/56448 right_limit=551/4032 jump=1/18816 alternating_code=(j,(2,2,4)^infinity) interior=True
+FAMILY j=9 b_j=59/504 F(b_j)=8725/72576 right_limit=623/5184 jump=1/24192 alternating_code=(j,(2,2,4)^infinity) interior=True
+FAMILY j=10 b_j=11/105 F(b_j)=9733/90720 right_limit=139/1296 jump=1/30240 alternating_code=(j,(2,2,4)^infinity) interior=True
+FAMILY j=11 b_j=73/770 F(b_j)=10741/110880 right_limit=767/7920 jump=1/36960 alternating_code=(j,(2,2,4)^infinity) interior=True
+FAMILY j=12 b_j=20/231 F(b_j)=11749/133056 right_limit=839/9504 jump=1/44352 alternating_code=(j,(2,2,4)^infinity) interior=True
+FAMILY j=13 b_j=29/364 F(b_j)=12757/157248 right_limit=911/11232 jump=1/52416 alternating_code=(j,(2,2,4)^infinity) interior=True
+FAMILY j=14 b_j=47/637 F(b_j)=13765/183456 right_limit=983/13104 jump=1/61152 alternating_code=(j,(2,2,4)^infinity) interior=True
+FAMILY j=15 b_j=101/1470 F(b_j)=14773/211680 right_limit=211/3024 jump=1/70560 alternating_code=(j,(2,2,4)^infinity) interior=True
+FAMILY j=16 b_j=9/140 F(b_j)=15781/241920 right_limit=1127/17280 jump=1/80640 alternating_code=(j,(2,2,4)^infinity) interior=True
+FAMILY j=17 b_j=115/1904 F(b_j)=16789/274176 right_limit=1199/19584 jump=1/91392 alternating_code=(j,(2,2,4)^infinity) interior=True
+FAMILY j=18 b_j=61/1071 F(b_j)=17797/308448 right_limit=1271/22032 jump=1/102816 alternating_code=(j,(2,2,4)^infinity) interior=True
+FAMILY j=19 b_j=43/798 F(b_j)=18805/344736 right_limit=1343/24624 jump=1/114912 alternating_code=(j,(2,2,4)^infinity) interior=True
+FAMILY j=20 b_j=34/665 F(b_j)=19813/383040 right_limit=283/5472 jump=1/127680 alternating_code=(j,(2,2,4)^infinity) interior=True
+No floating point arithmetic; limit bounds are exact rational identities.
+These checks are finite evidence, not a Lean proof of any limit or universal claim.
+ALL_CHECKS_OK
