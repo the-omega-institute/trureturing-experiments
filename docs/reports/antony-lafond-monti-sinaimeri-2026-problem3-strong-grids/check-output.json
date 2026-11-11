@@ -1,0 +1,300 @@
+{
+  "large_grid_embeddings": {
+    "tested_dimensions": 16
+  },
+  "obstruction": {
+    "checked_orders": 5040,
+    "cycle_order_representatives": [
+      "abdc",
+      "acbd",
+      "acdb",
+      "adbc",
+      "bdac"
+    ],
+    "edges": [
+      [
+        "a",
+        "b"
+      ],
+      [
+        "a",
+        "d"
+      ],
+      [
+        "a",
+        "x"
+      ],
+      [
+        "b",
+        "c"
+      ],
+      [
+        "b",
+        "x"
+      ],
+      [
+        "b",
+        "y"
+      ],
+      [
+        "c",
+        "d"
+      ],
+      [
+        "c",
+        "y"
+      ],
+      [
+        "c",
+        "z"
+      ],
+      [
+        "d",
+        "z"
+      ]
+    ],
+    "embedding_coordinates": {
+      "a": [
+        2,
+        1
+      ],
+      "b": [
+        1,
+        0
+      ],
+      "c": [
+        0,
+        1
+      ],
+      "d": [
+        1,
+        2
+      ],
+      "x": [
+        2,
+        0
+      ],
+      "y": [
+        0,
+        0
+      ],
+      "z": [
+        0,
+        2
+      ]
+    },
+    "nonedges": 11,
+    "obstruction_vertices": [
+      "a",
+      "b",
+      "c",
+      "d",
+      "x",
+      "y",
+      "z"
+    ],
+    "permissible_cycle_orders": 16,
+    "permissible_orders": 0,
+    "twin_pairs": []
+  },
+  "source_skew_grid_cases": [
+    {
+      "m": 1,
+      "n": 1,
+      "vertices": 1
+    },
+    {
+      "m": 3,
+      "n": 2,
+      "vertices": 6
+    },
+    {
+      "m": 2,
+      "n": 3,
+      "vertices": 6
+    },
+    {
+      "m": 5,
+      "n": 4,
+      "vertices": 20
+    },
+    {
+      "m": 4,
+      "n": 5,
+      "vertices": 20
+    }
+  ],
+  "thin_witnesses": [
+    {
+      "interval": [
+        2,
+        3
+      ],
+      "m": 1,
+      "n": 2,
+      "vertices": 2
+    },
+    {
+      "interval": [
+        2,
+        3
+      ],
+      "m": 1,
+      "n": 3,
+      "vertices": 3
+    },
+    {
+      "interval": [
+        2,
+        3
+      ],
+      "m": 1,
+      "n": 4,
+      "vertices": 4
+    },
+    {
+      "interval": [
+        2,
+        3
+      ],
+      "m": 1,
+      "n": 5,
+      "vertices": 5
+    },
+    {
+      "interval": [
+        2,
+        3
+      ],
+      "m": 1,
+      "n": 6,
+      "vertices": 6
+    },
+    {
+      "interval": [
+        2,
+        3
+      ],
+      "m": 2,
+      "n": 1,
+      "vertices": 2
+    },
+    {
+      "interval": [
+        2,
+        3
+      ],
+      "m": 2,
+      "n": 2,
+      "vertices": 4
+    },
+    {
+      "interval": [
+        2,
+        3
+      ],
+      "m": 2,
+      "n": 3,
+      "vertices": 6
+    },
+    {
+      "interval": [
+        2,
+        3
+      ],
+      "m": 2,
+      "n": 4,
+      "vertices": 8
+    },
+    {
+      "interval": [
+        2,
+        3
+      ],
+      "m": 2,
+      "n": 5,
+      "vertices": 10
+    },
+    {
+      "interval": [
+        2,
+        3
+      ],
+      "m": 2,
+      "n": 6,
+      "vertices": 12
+    },
+    {
+      "interval": [
+        2,
+        3
+      ],
+      "m": 3,
+      "n": 1,
+      "vertices": 3
+    },
+    {
+      "interval": [
+        2,
+        3
+      ],
+      "m": 3,
+      "n": 2,
+      "vertices": 6
+    },
+    {
+      "interval": [
+        2,
+        3
+      ],
+      "m": 4,
+      "n": 1,
+      "vertices": 4
+    },
+    {
+      "interval": [
+        2,
+        3
+      ],
+      "m": 4,
+      "n": 2,
+      "vertices": 8
+    },
+    {
+      "interval": [
+        2,
+        3
+      ],
+      "m": 5,
+      "n": 1,
+      "vertices": 5
+    },
+    {
+      "interval": [
+        2,
+        3
+      ],
+      "m": 5,
+      "n": 2,
+      "vertices": 10
+    },
+    {
+      "interval": [
+        2,
+        3
+      ],
+      "m": 6,
+      "n": 1,
+      "vertices": 6
+    },
+    {
+      "interval": [
+        2,
+        3
+      ],
+      "m": 6,
+      "n": 2,
+      "vertices": 12
+    }
+  ]
+}
