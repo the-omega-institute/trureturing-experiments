@@ -1,0 +1,10 @@
+Fidelity: A030101(100)=19; A030101 first 16 values match; A179697 example k=90 verified.
+Boundary: k=0 satisfies both raw equations and is explicitly excluded from positive membership.
+Reversal diagnostics: all 1<=n<=65535; shift implementation, odd-part involution, parity, and bounds pass.
+Published table: all 498 entries satisfy both equations, normal form, and target; maximum=206158430202.
+Table sha256: 487c73e3bb68e7953c648c915c45e1f96c5ce34325a6a588f40f4890fd1d1d7d
+Exhaustive exact scan: 1<=k<=10000000; 43 solutions; matches the entire published table prefix in this interval.
+Solutions: 90,186,378,762,1530,3066,6138,12282,23130,24570,46170,49146,92250,95418,98298,184410,190650,196602,368730,381114,387450,393210,737370,762042,774522,786426,1474650,1523898,1548666,1561338,1572858,2949210,3047610,3096954,3121914,3145722,5898330,5921370,6095034,6193530,6243066,6268410,6291450
+Normal-form equivalence and prefix/suffix hold for every scanned k; this is finite evidence only.
+Small odd palindromes (p,R(3p),5p): [(1, 3, 5), (3, 9, 15), (5, 15, 25), (7, 21, 35)]
+ALL_CHECKS_OK
