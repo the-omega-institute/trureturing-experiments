@@ -1,0 +1,58 @@
+{
+ "A233156": {
+  "rows": 3,
+  "columns": 27,
+  "literal_n1_n2": [
+   27,
+   96
+  ],
+  "bfile_checked": 210,
+  "source_start": 5,
+  "holds_from": 5,
+  "fails_at_or_after_source_start": [],
+  "last_failure_before": 4,
+  "hankel_rank_tail": 2
+ },
+ "A233157": {
+  "rows": 4,
+  "columns": 81,
+  "literal_n1_n2": [
+   81,
+   384
+  ],
+  "bfile_checked": 210,
+  "source_start": 8,
+  "holds_from": 8,
+  "fails_at_or_after_source_start": [],
+  "last_failure_before": 7,
+  "hankel_rank_tail": 3
+ },
+ "A233158": {
+  "rows": 5,
+  "columns": 243,
+  "literal_n1_n2": [
+   243,
+   1536
+  ],
+  "bfile_checked": 210,
+  "source_start": 12,
+  "holds_from": 12,
+  "fails_at_or_after_source_start": [],
+  "last_failure_before": 11,
+  "hankel_rank_tail": 7
+ },
+ "A233159": {
+  "rows": 6,
+  "columns": 729,
+  "literal_n1_n2": [
+   729,
+   6144
+  ],
+  "bfile_checked": 210,
+  "source_start": 16,
+  "holds_from": 16,
+  "fails_at_or_after_source_start": [],
+  "last_failure_before": 15,
+  "hankel_rank_tail": 9
+ }
+}
