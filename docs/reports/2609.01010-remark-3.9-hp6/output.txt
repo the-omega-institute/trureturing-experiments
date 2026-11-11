@@ -1,0 +1,11 @@
+FIDELITY: Lemma 3.3 gamma table: 8/8; Theorem 3.4 ternary triples: 27/27
+FIDELITY: Example 3.11 standard order-seven matrix: exact Q1 certificate OK
+EXHAUSTIVE: order=1 labeled_HP_matrices=1 square_completion_branch=0
+EXHAUSTIVE: order=2 labeled_HP_matrices=3 square_completion_branch=0
+EXHAUSTIVE: order=3 labeled_HP_matrices=23 square_completion_branch=0
+EXHAUSTIVE: order=4 labeled_HP_matrices=431 square_completion_branch=0
+EXHAUSTIVE: order=5 labeled_HP_matrices=19091 square_completion_branch=0
+EXHAUSTIVE: order=6 labeled_HP_matrices=1955943 square_completion_branch=108501
+SMALL_BLOCK_DECOMPOSITIONS: 459
+ARITHMETIC: integers only; identities scaled by 4; no floating point
+ALL_CHECKS_OK
