@@ -1,0 +1,13 @@
+Arithmetic: Python integers and fractions.Fraction; no floating point
+Source fidelity: A125790 first 5 rows x 5 columns; A391910 rows 0..4
+P vs direct defining recurrence: 189 pairs, n=0..8, m=0..20
+P recurrence checks: 2400 pairs, n=1..30, m=1..80
+T vs literal binary-sign sum: 341 pairs, n=0..30, k=0..10
+Published unsigned transform: 341 pairs, n=0..30, m=0..10
+Published signed transform: 341 pairs, n=0..30, m=0..10
+Target shifted parity transform: 330 pairs, n=1..30, m=0..10
+Target n=3, m=1: terms=1/2, 0, 15/2; sum=8
+Target n=4, m=2: terms=0, 45/8, 0, 603/8; sum=81
+Target n=30, m=10: sum=17449402268886407318558803753801 = 11^30
+Finite checks do not prove the unbounded assertion
+ALL_CHECKS_OK
