@@ -1,0 +1,59 @@
+{
+ "A233152": {
+  "width": 5,
+  "legal_rows": 48,
+  "literal_n1_n2": [
+   48,
+   648
+  ],
+  "initial": [
+   48,
+   648,
+   8856,
+   121176
+  ],
+  "bfile_checked": 210,
+  "recurrence_holds_from": 3,
+  "fails_in_range": [],
+  "hankel_rank_r_plus_2": 2
+ },
+ "A233153": {
+  "width": 6,
+  "legal_rows": 96,
+  "literal_n1_n2": [
+   96,
+   1944
+  ],
+  "initial": [
+   96,
+   1944,
+   40392,
+   842616,
+   17587584
+  ],
+  "bfile_checked": 210,
+  "recurrence_holds_from": 4,
+  "fails_in_range": [],
+  "hankel_rank_r_plus_2": 3
+ },
+ "A233154": {
+  "width": 7,
+  "legal_rows": 192,
+  "literal_n1_n2": [
+   192,
+   5832
+  ],
+  "initial": [
+   192,
+   5832,
+   184248,
+   5871528,
+   187446312,
+   5986203912
+  ],
+  "bfile_checked": 210,
+  "recurrence_holds_from": 5,
+  "fails_in_range": [],
+  "hankel_rank_r_plus_2": 4
+ }
+}

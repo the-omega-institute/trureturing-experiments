@@ -1,0 +1,72 @@
+{
+  "array_encoding": "unsigned 16-bit little-endian, C row-major, zero-based indices",
+  "arrays": {
+    "denominators.u16le": {
+      "bytes": 384,
+      "sha256": "904c8029c79ccf3dfe0b18ee019645e4b02509ba1907c6b6cab3c70ee10c9cc2",
+      "shape": [
+        192
+      ]
+    },
+    "input-wedges.u16le": {
+      "bytes": 40320,
+      "sha256": "a796686bc0bf9f5ab18a1651cf8491044e5f51197f66bb69b95e148e07994f92",
+      "shape": [
+        192,
+        105
+      ]
+    },
+    "matrix.u16le": {
+      "bytes": 7257600,
+      "sha256": "d1b015669a9df51431a8fa8d7e88a977754f0e624760317f28d8b5a900b0afde",
+      "shape": [
+        2304,
+        1575
+      ]
+    },
+    "pivot-rows.u16le": {
+      "bytes": 3150,
+      "sha256": "964c5d9faa2479b19edafc7f60b3a9469e5c14da32e7e33b146a6742fbb8f591",
+      "shape": [
+        1575
+      ]
+    }
+  },
+  "central_kernel_dimension": 105,
+  "central_witnesses": {
+    "a=1": {
+      "B_plus=B_minus": "(80*s^6+12*s^4+6*s^2+1)/576",
+      "L": "-(44*s^2+1)/12",
+      "L^2-4*B": "s^2*(41+962*s^2-40*s^4)/72",
+      "small_range": "0<abs(s)<=1/4"
+    },
+    "a=2": {
+      "B_plus=B_minus": "(2*s^6+6*s^4+9*s^2+1)/9",
+      "L": "-2*(5*s^2+1)/3",
+      "L^2-4*B": "4*s^2*(1+19*s^2-2*s^4)/9",
+      "small_range": "0<abs(s)<=1"
+    },
+    "cases": "a=1,2; sigma=-1,+1; phase=1,i; both real-Gram budgets",
+    "large_range": "abs(s)>a^2/4: x=0, L=-2*s, B_plus=B_minus=a^4/16"
+  },
+  "full_map_dimension": 1680,
+  "householder_denominator_count": 192,
+  "householder_denominator_minmax": [
+    5,
+    26
+  ],
+  "i_image": 469,
+  "input_wedge_rank_mod_1009": 105,
+  "maximal_minor_mod_1009": 796,
+  "minor_columns": "all columns in original order",
+  "minor_rows": "leftmost pivot columns of RREF(matrix transpose), increasing order",
+  "prime": 1009,
+  "rank_mod_1009": 1575,
+  "scalar_field": "Q (real and imaginary parts of Q(i) before reduction)",
+  "source_sha256": {
+    "auric-shared-d-frame-central-pb-precheck/independent_precheck.py": "6c9f0fab048b4fbb1e1eea026e802746881891f8138ac9b58129ba80f9d3d6ef",
+    "auric-shared-d-frame-central-pb-precheck/retain_certificate.py": "285aa0174c76bf3320d6f3047d759ab0eb9680b924b4a69a4ca7777359f0afb6",
+    "auric-shared-d-frame-central-pb/central_pb.py": "70b4b19feb6d09b1cf8e0186da31ae3848fe90027f42a9399200253a7156c311",
+    "auric-shared-d-frame-central-pb/frame_kernel.py": "8f6224dc5c64959c57d375f82f10f6f6605eec11232b86c0614ae9261b6d0331"
+  }
+}
