@@ -189,6 +189,30 @@ def main():
     assert determinant([[b ** n for b in (1, 2, 5)] for n in (2, 5, 9)]) != 0
     vandermonde += 1
     print(f"EXPONENTIAL_SUM: {vandermonde} exact positive-base nonsingular moment matrices")
+    separators = 0
+    for roots in [(), (2,), (3,), (2, 3)]:
+        coefficients = [1]
+        for n in roots:
+            new = [0] * (len(coefficients) + 1)
+            for j, c in enumerate(coefficients):
+                new[j] -= (2 ** n) * c
+                new[j + 1] += c
+            coefficients = new
+        positive, negative = [], []
+        for j, c in enumerate(coefficients):
+            for _ in range(abs(c)):
+                star = complete_bipartite(1, 2 ** j)
+                if c > 0:
+                    positive = disjoint_union(positive, star)
+                else:
+                    negative = disjoint_union(negative, star)
+        for n in range(2, 5):
+            value = sum(c * (2 ** n) ** j for j, c in enumerate(coefficients))
+            difference = hom(cycle(2 * n), positive) - hom(cycle(2 * n), negative)
+            assert difference == 2 * value
+            assert (difference == 0) == (n in roots)
+            separators += 1
+    print(f"FINITE_CYCLE_SEPARATORS: {separators} exact polynomial/star-union cases, including the empty set")
     print("LIMIT: these are finite arithmetic checks; the infinite-family theorem needs the proposed general proof")
     print("ALL_CHECKS_OK")
 

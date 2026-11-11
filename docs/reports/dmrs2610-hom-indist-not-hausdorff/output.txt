@@ -6,5 +6,6 @@ COSPECTRAL: K1,6 versus K2,3 plus two isolated vertices; charpoly=[1, 0, -6, 0, 
 ZERO_EIGENVALUES: K1,4 and C4 have different orders but equal positive-length cycle traces
 SPARSE_SMALL_CASES: 76 labelled targets; moments 4,10,18 determine moments 4,6,...,18; 11 signatures
 EXPONENTIAL_SUM: 16 exact positive-base nonsingular moment matrices
+FINITE_CYCLE_SEPARATORS: 12 exact polynomial/star-union cases, including the empty set
 LIMIT: these are finite arithmetic checks; the infinite-family theorem needs the proposed general proof
 ALL_CHECKS_OK
