@@ -1,0 +1,29 @@
+{
+  "status": "passed",
+  "structural_assertions": 48,
+  "symbolic_equalities": 23,
+  "floating_comparisons": 55,
+  "negative_controls": 3,
+  "source_gates": 234,
+  "native_pulses": 26174,
+  "logical_qubits": 5,
+  "native_sites": 9,
+  "reference_site_one_based": 5,
+  "second_quadrature_pulses": 327,
+  "second_quadrature_sites_one_based": [
+    5
+  ],
+  "full_encoded_operator_residual": 5.968084631224825e-14,
+  "final_separator_leakage_norm": 2.2557089964784338e-14,
+  "max_remote_rotation_residual": 7.346482413582128e-16,
+  "witness_pulses_by_setting": [
+    7,
+    28
+  ],
+  "max_sampled_measurement_tv": 0.0004516650525496768,
+  "pulse_list_sha256": "ff7bbecb30cf95d84f9d16b42b241a454fc286c655a715d18d23df4050a7fdc1",
+  "python": "3.13.5",
+  "sympy": "1.14.0",
+  "numpy": "2.3.5",
+  "scope": "ideal native-model symbolic identities and finite floating checks; no Lean, QPU, optimal-pulse or quantum-speedup certificate"
+}

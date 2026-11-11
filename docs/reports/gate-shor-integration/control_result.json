@@ -1,0 +1,136 @@
+{
+  "status": "passed",
+  "exact_assertions": 860,
+  "modular_rank_assertions": 458,
+  "numerical_assertions": 6,
+  "negative_controls": 3,
+  "rank_certificates": [
+    {
+      "n": 1,
+      "dimension": 2,
+      "phase_site_one_based": null,
+      "rank_mod_prime": 1,
+      "prime": 1009,
+      "word_ancestry_sha256": "43041ec06078b9c7701bd04c69a52aa4aa9ec19ee208b3d624d05289ca03219a"
+    },
+    {
+      "n": 1,
+      "dimension": 2,
+      "phase_site_one_based": 1,
+      "rank_mod_prime": 3,
+      "prime": 1009,
+      "word_ancestry_sha256": "656e03e8197e9fade1397712c44ea9497a345103c7a5a109861b826890dcdb41"
+    },
+    {
+      "n": 2,
+      "dimension": 3,
+      "phase_site_one_based": null,
+      "rank_mod_prime": 3,
+      "prime": 1009,
+      "word_ancestry_sha256": "656e03e8197e9fade1397712c44ea9497a345103c7a5a109861b826890dcdb41"
+    },
+    {
+      "n": 2,
+      "dimension": 3,
+      "phase_site_one_based": 1,
+      "rank_mod_prime": 8,
+      "prime": 1009,
+      "word_ancestry_sha256": "9c0da29471e9c6cbc2f4b50a4b5dd1cd16885ff0fd77931a754610da685cb7ce"
+    },
+    {
+      "n": 3,
+      "dimension": 5,
+      "phase_site_one_based": null,
+      "rank_mod_prime": 10,
+      "prime": 1009,
+      "word_ancestry_sha256": "f8d782b480ceff7084f5c8020e8558b22227852117cf8774b3dc5405e68a983a"
+    },
+    {
+      "n": 3,
+      "dimension": 5,
+      "phase_site_one_based": 1,
+      "rank_mod_prime": 24,
+      "prime": 1009,
+      "word_ancestry_sha256": "a8a9a29295b0d76513bb523a97d57e547521b804ecc45b7bca6df92b1d308232"
+    },
+    {
+      "n": 4,
+      "dimension": 8,
+      "phase_site_one_based": null,
+      "rank_mod_prime": 28,
+      "prime": 1009,
+      "word_ancestry_sha256": "3e6a79c2fd2fd938fb75fcfcd664c2eaaee8444fda8fec291413f8c483bc854f"
+    },
+    {
+      "n": 4,
+      "dimension": 8,
+      "phase_site_one_based": 1,
+      "rank_mod_prime": 63,
+      "prime": 1009,
+      "word_ancestry_sha256": "e44eab0ccbd020fbf5c4fa7be71bd6cbe07cf99a493ac8e2fc40c2c59a99930f"
+    },
+    {
+      "n": 5,
+      "dimension": 13,
+      "phase_site_one_based": null,
+      "rank_mod_prime": 78,
+      "prime": 1009,
+      "word_ancestry_sha256": "752b0bb7965fbe5db07d4a93b5457dbd1ac92bc5b7308fd723de40f867c24fc0"
+    },
+    {
+      "n": 5,
+      "dimension": 13,
+      "phase_site_one_based": 1,
+      "rank_mod_prime": 168,
+      "prime": 1009,
+      "word_ancestry_sha256": "498721c3abbad6c689d0e02c216c392c89bf79804983d8fdf56ea7ca69bb0844"
+    },
+    {
+      "n": 3,
+      "dimension": 5,
+      "phase_site_one_based": 2,
+      "rank_mod_prime": 24,
+      "prime": 1009,
+      "word_ancestry_sha256": "2cd440f78fe571f32e6c54d02d011b601ca55ae465b5eb382e43d077b93839de"
+    },
+    {
+      "n": 3,
+      "dimension": 5,
+      "phase_site_one_based": 3,
+      "rank_mod_prime": 24,
+      "prime": 1009,
+      "word_ancestry_sha256": "50b6505db8d55bbcc7575cfec33a3e373ce8ea013bf583f3201f29c0dbe8e6c6"
+    }
+  ],
+  "compiled_order_probe": {
+    "ordinary_qubits": 5,
+    "native_sites": 9,
+    "legal_hilbert_dimension": 89,
+    "clock_size": 8,
+    "target_map": "(x,y)->(x+y,x) mod 2",
+    "input_target": [
+      1,
+      0
+    ],
+    "source_H_P_CX_count": 234,
+    "routed_adjacent_CNOTs": 771,
+    "native_pulses": 7328,
+    "all_input_operator_residual": 2.093965356737605e-14,
+    "final_leakage_norm": 1.369638150465642e-14,
+    "clock_probabilities": [
+      0.34374999999999023,
+      0.014514565439601721,
+      0.06249999999999803,
+      0.23548543456039112,
+      0.03124999999999941,
+      0.23548543456039112,
+      0.062499999999998015,
+      0.014514565439601496
+    ],
+    "uses_repeated_small_powers": true
+  },
+  "python": "3.13.5",
+  "numpy": "2.3.5",
+  "sympy": "1.14.0",
+  "scope": "symbolic finite identities; exact finite-field Lie-word lower bounds; floating ideal-pulse simulation; no Lean, hardware, large-N factoring or speedup certificate"
+}

@@ -1,0 +1,44 @@
+{
+  "status": "passed",
+  "exact_assertions": 5033,
+  "numerical_assertions": 7,
+  "negative_controls": 3,
+  "legal_word_lengths": [
+    1,
+    8
+  ],
+  "legal_words_checked": 141,
+  "sweep_cycles_checked": 22,
+  "moduli_checked": [
+    2,
+    128
+  ],
+  "three_site_uncorrected_peaks": [
+    1,
+    3,
+    5
+  ],
+  "three_site_corrected_peaks": [
+    0,
+    2,
+    4
+  ],
+  "clock_dimension": 6,
+  "selected_pisano_periods": {
+    "2": 3,
+    "3": 8,
+    "5": 20,
+    "7": 16,
+    "10": 60,
+    "15": 40,
+    "16": 24,
+    "31": 30,
+    "64": 96,
+    "127": 256,
+    "128": 192
+  },
+  "python": "3.13.5",
+  "numpy": "2.3.5",
+  "sympy": "1.14.0",
+  "scope": "exact finite assertions and bounded floating checks; no compiled gate circuit, QPU, Lean, or speedup certification"
+}
