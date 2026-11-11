@@ -1,0 +1,13 @@
+FIDELITY Newton degree-4 identity and Lemma 3.1: m=0..10 over F9 OK
+NORMAL_FORM exact symbolic Hessian product rule and H(fourth powers)=0 OK
+FAMILY symbolic Hessians, two nonzero reducible summands, square difference: six (a,b) pairs OK
+RANK_F3 a=4 b=4 points=6561 strata={"(False, False, 0)": 65, "(False, False, 2)": 1024, "(False, True, 4)": 1584, "(True, False, 4)": 1584, "(True, True, 7)": 2304}
+RANK_F3 a=4 b=5 points=19683 strata={"(False, False, 0)": 113, "(False, False, 2)": 2560, "(False, True, 4)": 5346, "(True, False, 5)": 3888, "(True, True, 8)": 7776}
+RANK_F3 a=5 b=4 points=19683 strata={"(False, False, 0)": 113, "(False, False, 2)": 2560, "(False, True, 5)": 3888, "(True, False, 4)": 5346, "(True, True, 8)": 7776}
+RANK_F9 600 seeded extension-field points OK (finite diagnostics only)
+NULLCONES explicit isotropic spanning vectors in dimensions 4..6 over F9 OK
+SYM_UPPER_BOUND a=4 b=4: AB=e4(list_48)-e4(list_48) OK
+SYM_UPPER_BOUND a=4 b=5: AB=e4(list_54)-e4(list_54) OK
+SYM_UPPER_BOUND a=5 b=4: AB=e4(list_54)-e4(list_54) OK
+SCOPE: nonmembership and minimum top fan-in require the geometric argument; finite checks alone do not prove them.
+ALL_CHECKS_OK
