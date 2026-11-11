@@ -1,0 +1,10 @@
+FIDELITY: source Lemma A.1 and determinant 1, lengths 1..6: OK
+FAMILY: transfer, relative-trace, sum and product identities, symbolic h,q,t,s,E: OK
+SEMIGROUP CROSS-CHECK: 44 matrices, 592 qualifying ordered pairs: OK
+DENSITY GRID: levels 0..7 match the exact dyadic midpoint enumeration: OK
+TAIL BOUNDS: uniform single- and double-component isolation, radius r_n/4: OK
+INTERVAL CROSS-CHECK: target n=1..12, summand indices 0..16: OK
+INPUT WORDS: relative-trace invariant, h=5/2,3,4, lengths 1..4: OK
+OBSTRUCTIONS: n=1..6, h=5/2,3,4, perturbation lengths 1..16 and odd parity: OK
+SCOPE: topology, elliptic recurrence and the infinite quantifiers use the README argument; no Lean settlement claimed.
+ALL_CHECKS_OK
