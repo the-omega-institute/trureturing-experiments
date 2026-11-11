@@ -1,0 +1,62 @@
+{
+  "adapter_sha256": "df2f3f363b42becc817da765f20bc60df3c8f6ebf8ed815103665b8ed0673d9d",
+  "array_encoding": "unsigned 16-bit little-endian, C row-major, zero-based indices",
+  "arrays": {
+    "nonunital-denominators.u16le": {
+      "bytes": 384,
+      "sha256": "904c8029c79ccf3dfe0b18ee019645e4b02509ba1907c6b6cab3c70ee10c9cc2",
+      "shape": [
+        192
+      ]
+    },
+    "nonunital-input-wedges.u16le": {
+      "bytes": 46080,
+      "sha256": "aa03f960a69e8a8622c6ba462af10bad87146d9a8e767233f842ee4016ff3812",
+      "shape": [
+        192,
+        120
+      ]
+    },
+    "nonunital-matrix.u16le": {
+      "bytes": 8294400,
+      "sha256": "f3f2a2584bdf4ce42b289481a46e04f7b9c831ef893f6f672853c0c432668e68",
+      "shape": [
+        2304,
+        1800
+      ]
+    },
+    "nonunital-pivot-rows.u16le": {
+      "bytes": 3600,
+      "sha256": "147028df380e6f0dbd40884d9926dd80d277dc6e54c865b6e932f237cbe6b921",
+      "shape": [
+        1800
+      ]
+    }
+  },
+  "column_order": "(input wedge, output basis), output basis fastest",
+  "denominator_minmax": [
+    5,
+    26
+  ],
+  "exact_central_kernel_dimension": 120,
+  "frames": 48,
+  "full_map_dimension": 1920,
+  "i_image": 469,
+  "input_basis": "B_0,...,B_14,I4 (original traceless basis unchanged)",
+  "input_coord": "(chi(a),Tr(a)/4)",
+  "input_wedge_rank_mod_1009": 120,
+  "input_wedges": "lexicographic i<j<16; no 1/2",
+  "maximal_minor_mod_1009": 20,
+  "minor_columns": "all 1800 columns in original order",
+  "minor_rows": "leftmost pivot columns of RREF(matrix transpose), increasing",
+  "output_basis": "original B_0,...,B_14; scalar output removed",
+  "prime": 1009,
+  "quotient_nullity": 0,
+  "rank_mod_1009": 1800,
+  "rational_lift": "Z[1/(2 product_j d_j)]; all d_j between 5 and 26; 1009 prime",
+  "row_order": "(frame, elementary leg, offdiagonal output coordinate), lexicographic",
+  "source_commit": "651b00b5abcfc10de377ae180bcfde38752bdffd",
+  "source_path": "experiments/auric-shared-d-frame-central-pb/frame_kernel.py",
+  "source_sha256": "8f6224dc5c64959c57d375f82f10f6f6605eec11232b86c0614ae9261b6d0331",
+  "status": "exact modular certificate; research calculation, not independent verification or Lean"
+}

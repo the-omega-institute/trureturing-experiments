@@ -1,0 +1,75 @@
+{
+  "exact_checks": {
+    "abstract_exterior_polynomial_residual": 0,
+    "cauchy_psd_all_principal_minors": [
+      "225",
+      "148",
+      "85/4",
+      "32976",
+      "18549/4",
+      "229",
+      "0"
+    ],
+    "pure_counterwitness_by_sigma": {
+      "-1": {
+        "budget_squares": [
+          0,
+          1
+        ],
+        "left": 2,
+        "mass": 7
+      },
+      "1": {
+        "budget_squares": [
+          0,
+          1
+        ],
+        "left": 2,
+        "mass": 7
+      }
+    },
+    "spectral_squared_margin": "347/10000",
+    "symbolic_orbit_spanning_determinant": "2*epsilon**15",
+    "zero_response_cauchy_psd_principal_minors": [
+      81,
+      4,
+      0
+    ],
+    "zero_response_spectral_squared_margin": "491/10000"
+  },
+  "finite_diagnostics": {
+    "alpha_values": [
+      0,
+      2
+    ],
+    "analytic_upper_bound_on_that_ratio": 114.5,
+    "control_samples": 1200,
+    "epsilon_values": [
+      0.01,
+      0.001,
+      1e-06
+    ],
+    "mass_values": [
+      0.3333333333333333,
+      1.0,
+      3.5,
+      11.0
+    ],
+    "max_abs_trace_L": 5.544606093969278e-16,
+    "max_lhs_over_budget_sum": 0.006167975728107044,
+    "max_mass_error": 1.0658141036401503e-14,
+    "max_norm_L_squared_over_T_squared": 0.14217092844127813,
+    "max_relative_direct_gram_vs_exterior_error": 4.531699366753855e-14,
+    "min_gram_monotonicity_margin": 2.0724502533103411e-16,
+    "raw_pb_evaluations": 4800,
+    "scope": "finite diagnostics only; universal result uses analytic inequalities",
+    "seed": 17245,
+    "sigma_instances_per_sample": 2
+  },
+  "identity": "auric-mixed-orbit-pb-research",
+  "lean_or_kernel_validation": false,
+  "numpy_version": "2.5.4",
+  "pinned_revision": "17245b37e7cf1381419fb570b94b23b421efd1fd",
+  "python_version": "3.12.13",
+  "sympy_version": "1.14.0"
+}

@@ -1,0 +1,53 @@
+{
+  "ambient": {
+    "actor_row_symbolic_T_alpha_N7_axes": 6,
+    "ambient_dimensions": [
+      4,
+      5,
+      7
+    ],
+    "full_complex_q_ambient_cases": 12,
+    "full_product_spectator_budget_identity": true,
+    "sampling_is_not_a_universal_PB_proof": true,
+    "zero_budget_remaining_leakage_detected": true
+  },
+  "certificate": {
+    "all_supplied_arrays_match": true,
+    "denominator_range": [
+      5,
+      26
+    ],
+    "direct_map_evaluation_matches": true,
+    "hashes": {
+      "nonunital-denominators.u16le": "904c8029c79ccf3dfe0b18ee019645e4b02509ba1907c6b6cab3c70ee10c9cc2",
+      "nonunital-input-wedges.u16le": "aa03f960a69e8a8622c6ba462af10bad87146d9a8e767233f842ee4016ff3812",
+      "nonunital-matrix.u16le": "f3f2a2584bdf4ce42b289481a46e04f7b9c831ef893f6f672853c0c432668e68",
+      "nonunital-pivot-rows.u16le": "147028df380e6f0dbd40884d9926dd80d277dc6e54c865b6e932f237cbe6b921"
+    },
+    "independent_numpy_minor": 20,
+    "integer_gaussian_frame_and_coordinate_checks": true,
+    "rank_mod_1009": 1800,
+    "rref_rows_match": true,
+    "shape": [
+      2304,
+      1800
+    ],
+    "wedge_rank_mod_1009": 120,
+    "wedge_shape": [
+      192,
+      120
+    ]
+  },
+  "elapsed_seconds": 19.338,
+  "numpy": "2.5.4",
+  "python": "3.12.13 (main, Mar 10 2026, 18:18:07) [Clang 21.1.4 ]",
+  "source_pin": "c0e3af176ddfd7c2fbff8f1c5d7075ff2baf20a9",
+  "status": "passed: independent calculation; no Lean certification",
+  "strict_witnesses": {
+    "both_sigmas_all_four_legs": true,
+    "positive_budget_and_strict_gap_formulas": true,
+    "small_and_large_nonzero_s": true,
+    "universal_symbolic_full_M4_cases": 16
+  },
+  "sympy": "1.14.0"
+}
