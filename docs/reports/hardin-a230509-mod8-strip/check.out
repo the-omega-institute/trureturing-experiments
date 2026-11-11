@@ -1,0 +1,21 @@
+FIDELITY_N4: [(0, 1, 7, 2, 6, 3, 5, 4), (0, 7, 1, 6, 2, 5, 3, 4)]
+LITERAL_ENUMERATION: n=1..4 agrees with source, including both n=4 arrays
+STATE_CHECK: 22 reachable; live class sizes 2,2,2,2,8; 6 absorbing dead states
+TRANSLATION_CHECK: all 22 states and all 8 left colours
+T_ROW_1: [2, 1, 0, 0, 0]
+T_ROW_2: [2, 0, 1, 0, 0]
+T_ROW_3: [1, 0, 0, 1, 0]
+T_ROW_4: [14, 2, 2, 2, 8]
+T_ROW_5: [2, 0, 0, 0, 1]
+BOUNDARIES: initial=[2,0,0,0,0]; final=[0,0,0,1,0]
+DET_I_MINUS_XT: [1, -5, 4, 5, -9, -12] (ascending powers)
+ADJUGATE_1_4: [0, 0, 0, 1, -1] (ascending powers)
+ANNIHILATOR: T^5 - 5T^4 + 4T^3 + 5T^2 - 9T - 12I = 0
+SCALAR_RELATION_ADAPTER_Q: [[16, 3, 2, -27, 8], [16, 2, 3, -27, 8], [15, 2, 2, -24, 8], [14, 2, 2, -24, 8], [16, 2, 2, -27, 9]]
+SCALAR_RELATION_ADAPTER: P*1=e4; T*P=P*Q; v*P=[2,0,0,-2,0]
+SOURCE_TABLE: all 210 terms equal independent raw-colour DP and five-state transfer
+FIRST_12: [0, 0, 0, 2, 8, 32, 118, 440, 1664, 6354, 24360, 93440]
+A210: 2926330003099893622846287450860258397909253733962992372819640489395214944219358091288596016183763620072268979612850730976
+GF_COEFFICIENTS: correct through degree 210; recurrence holds at every n=6..210
+SCOPE: exact checks and a general transfer route; no Lean proof of the claim or its negation
+ALL_CHECKS_OK
