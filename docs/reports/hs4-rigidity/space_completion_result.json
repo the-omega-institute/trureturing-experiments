@@ -1,0 +1,19 @@
+{
+  "status": "passed",
+  "exact_checks": 36,
+  "numerical_checks": 5200,
+  "negative_controls": 3,
+  "logical_cell_states": 400,
+  "three_node_states": 200,
+  "nontrivial_network_lower_bounds": 100,
+  "choi_erasure_minimum_eigenvalue": "-1/4",
+  "maximum_isotropic_retention_at_zero_chirality": "1/2",
+  "oriented_volume_eigenvalues": [
+    "-sqrt(3)/4",
+    "sqrt(3)/4"
+  ],
+  "python": "3.13.5",
+  "sympy": "1.14.0",
+  "numpy": "2.3.5",
+  "scope": "finite symbolic identities and seeded numerical inequalities; no Lean or universal-proof certification"
+}

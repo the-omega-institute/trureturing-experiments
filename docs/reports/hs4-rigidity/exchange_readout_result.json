@@ -1,0 +1,14 @@
+{
+  "status": "passed",
+  "exact_checks": 190,
+  "negative_controls": 3,
+  "static_observation_rank": 3,
+  "one_pulse_observation_rank": 4,
+  "fib_static_rank": 4,
+  "fib_product_rank": 5,
+  "pulse_angle": "pi/4",
+  "pulse_probability_plus": "(1+r)/2",
+  "single_swap_success": "(2+sqrt(3))/4",
+  "sympy": "1.14.0",
+  "scope": "exact finite and symbolic identities; no Lean compilation; no all-history proof by enumeration"
+}

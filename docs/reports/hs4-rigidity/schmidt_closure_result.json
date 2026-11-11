@@ -1,0 +1,20 @@
+{
+  "status": "passed",
+  "exact_checks": 12,
+  "numerical_checks": 3601,
+  "classified_orbit_samples": 160,
+  "unitary_rounding_samples": 200,
+  "small_deficit_samples": 140,
+  "negative_controls": 3,
+  "max_block_off_diagonal_residual": 1.0846320248711466e-14,
+  "spectral_constant": 10.596690202639271,
+  "one_body_constant": 1.6536746401973625,
+  "rounding_constant": 167.14866101400452,
+  "spin_error_constant": 336.6359711319286,
+  "small_deficit_threshold": 0.0002473756928821954,
+  "global_holder_constant": 39.31009781416438,
+  "python": "3.13.5",
+  "numpy": "2.3.5",
+  "sympy": "1.14.0",
+  "scope": "symbolic identities and bounded numerical tests; no Lean compilation or universal-proof certification"
+}
