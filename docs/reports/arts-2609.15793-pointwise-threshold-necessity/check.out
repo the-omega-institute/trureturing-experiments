@@ -1,0 +1,10 @@
+FIDELITY: source E[o_ab]=rho*n^2*(R*S*R^T)_ab and E[D_a], 256 cases
+WEIGHTS: all 2047 binary labelings, n=0..10; normalized, common support, nonconstant for n>=3
+FAMILY: det(S_L)=L>0; alpha=3L/2; beta=(6L+1)/2; L=64+u, u>=0
+CONSTANT: alpha*chi2(p||q)=1/[12(4L+1)]<1, symbolic for all L>=64
+DERIVATIVES: both printed H orientations checked symbolically; curvature is -sum(positive*log^2)/2
+MEANS: mu_1/log n <=25L/16; mu_2/log n >=47L/16, n>=400 on the size event
+TAILS: exact log certificates give -3L/64 and -37L/384; size-event failure <=2500/n
+UNION: failure <=2500/n+n^(1-3L/64)+n^(1-37L/384), all sufficiently large n
+L=64: S=((64,128),(128,257)); threshold=140 log n; C<=1/3084; exponents=-2,-31/6
+ALL_CHECKS_OK

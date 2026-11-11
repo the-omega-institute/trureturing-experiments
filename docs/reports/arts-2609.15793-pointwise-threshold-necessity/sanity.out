@@ -1,0 +1,8 @@
+DIAGNOSTIC_ONLY: floating-point joint off-diagonal Poisson simulations
+seed=260915793 L=64 n=4096 trials=5; rho*S_max<1
+trial=1 block_sizes=(2041,2055) errors=0
+trial=2 block_sizes=(2076,2020) errors=0
+trial=3 block_sizes=(2081,2015) errors=0
+trial=4 block_sizes=(2045,2051) errors=0
+trial=5 block_sizes=(2037,2059) errors=0
+DIAGNOSTIC_DONE
