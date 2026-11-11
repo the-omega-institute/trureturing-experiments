@@ -1,0 +1,8 @@
+FIDELITY: ribbon product, total degree 2..10: 4097 pairs
+FIDELITY: independent finite-alphabet ribbon realization, degree 1..6: 189 cases
+FIDELITY/COMPARISON: alternating-source and tensor-algebra ranks agree, half-degree 0..10
+COMPARISON: N=0..3, m,n=0..4: 100 stages, 131908 source tuples
+COMPARISON: quotient and wedge-smash reduced graded ranks: 35440 basis elements
+COMPARISON: complete-generator coproduct and ordered tensor product: 6155 cases
+SCOPE: exact finite necessary algebra checks; no homotopies or topological equivalences certified
+ALL_CHECKS_OK
