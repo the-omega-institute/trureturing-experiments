@@ -1,0 +1,13 @@
+FIDELITY_OK: periodic triangle interpolates cosine on pi*Z; Remark 5(1) cosine constant = 2/sqrt(3)
+TRIANGLE_NORMALIZATION_OK: integral f = 0; <f,f> = 2*pi/3; <f',f'> = 8/pi; proposed constant = 4/pi
+SYMBOLIC_BLOCK_OK: moments (0,0); affine block identically 0; quarter-period block value = 2*c
+FAMILY_CASE_OK: m=1, n=4, S_n(pi/2)=2, prescribed Rademacher event probability=1/2^4
+FAMILY_CASE_OK: m=2, n=8, S_n(pi/2)=4, prescribed Rademacher event probability=1/2^8
+FAMILY_CASE_OK: m=3, n=12, S_n(pi/2)=6, prescribed Rademacher event probability=1/2^12
+FAMILY_CASE_OK: m=10, n=40, S_n(pi/2)=20, prescribed Rademacher event probability=1/2^40
+FAMILY_CASE_OK: m=100, n=400, S_n(pi/2)=200, prescribed Rademacher event probability=1/2^400
+FAMILY_RANGE_OK: m=1..100, 3 nonzero amplitudes, 5 exact interval samples each; Rademacher moments (mean,second,third absolute)=(0,1,1)
+ENUMERATION_OK: n=4, flat-first-cell sign vectors=2, probability=1/8
+ENUMERATION_OK: n=8, flat-first-cell sign vectors=8, probability=1/32
+ENUMERATION_OK: n=12, flat-first-cell sign vectors=58, probability=29/2048
+ALL_CHECKS_OK
