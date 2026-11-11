@@ -1,0 +1,18 @@
+SYMBOLIC: hk=sum(t^i,i=0..6), hg=t^7-1, H D=C diag(I4,(u-1)I3)
+INTEGRAL_BASES: det(D)=1, det(C)=1; inverse entries in Z[lambda]
+LAURENT_SYMPLECTIC: exact dagger identity for the unit-block shears and toric identity block
+q=2 lambda=0: L=7,14 ker(V)=q^3, k=18; 9 toric+80 product qudits; symplectic; CRT and translations OK
+q=2 lambda=1: L=7,14 ker(V)=q^3, k=18; 9 toric+80 product qudits; symplectic; CRT and translations OK
+q=4 lambda=2: L=7,14 ker(V)=q^3, k=18; 9 toric+80 product qudits; symplectic; CRT and translations OK
+q=4 lambda=3: L=7,14 ker(V)=q^3, k=18; 9 toric+80 product qudits; symplectic; CRT and translations OK
+q=8 lambda=3: L=7,14 ker(V)=q^3, k=18; 9 toric+80 product qudits; symplectic; CRT and translations OK
+q=8 lambda=6: L=7,14 ker(V)=q^3, k=18; 9 toric+80 product qudits; symplectic; CRT and translations OK
+q=16 lambda=6: L=7,14 ker(V)=q^3, k=18; 9 toric+80 product qudits; symplectic; CRT and translations OK
+q=16 lambda=11: L=7,14 ker(V)=q^3, k=18; 9 toric+80 product qudits; symplectic; CRT and translations OK
+q=32 lambda=6: L=7,14 ker(V)=q^3, k=18; 9 toric+80 product qudits; symplectic; CRT and translations OK
+q=32 lambda=27: L=7,14 ker(V)=q^3, k=18; 9 toric+80 product qudits; symplectic; CRT and translations OK
+q=64 lambda=27: L=7,14 ker(V)=q^3, k=18; 9 toric+80 product qudits; symplectic; CRT and translations OK
+q=64 lambda=38: L=7,14 ker(V)=q^3, k=18; 9 toric+80 product qudits; symplectic; CRT and translations OK
+FIDELITY: q=4 h=t^3+3t^2+2t+3; GR(4,3) has 4^3=64 elements; source charge rank=9
+SCOPE: symbolic blocking is uniform; finite full-complex and CRT checks use q=2,4,8,16,32,64, both lambda roots
+ALL_CHECKS_OK
