@@ -1,0 +1,8 @@
+SOURCE_FIDELITY: Appendix A witness: n=20, m=30, connected, cubic, girth=5; stated map rank=17
+SMALL_GRAPHS: all 1098 labelled graphs on 2..5 vertices; 771 connected; depth and transposition/averaging bounds verified
+PARTIAL_INJECTIONS: 145793 nonidentity maps on 2..7 vertices; independent-constraint bound verified
+EDGE_BIT_PROBABILITIES: 222 maps on 2..4 vertices; exact satisfying-graph count = 2^(binom(n,2)-rank)
+GENUS_SCALARS: exact radical comparison for g=1..100000; g=1 equality recorded; general g>=3 polynomial certificate
+EXISTENCE_BUDGET: exact entropy, 64-step induction, 960-residue exponent certificates; union bound <1 for n=65536,65537,65600,100000,1000000
+SCOPE: finite checks support the general proof outline; they do not constitute a Lean proof or enumerate the large existence graphs
+ALL_CHECKS_OK
