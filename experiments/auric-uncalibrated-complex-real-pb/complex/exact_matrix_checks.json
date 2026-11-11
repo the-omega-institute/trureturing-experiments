@@ -1,0 +1,46 @@
+{
+  "alternative_abs_alpha_lt_one": {
+    "exact_raw_readouts_checked": true,
+    "phi_L": "-6*sqrt(2)",
+    "budget_at_epsilon_zero": "18*alpha**2 for each sign",
+    "strict_bound": "For |alpha|<1, epsilon=(1-|alpha|)/100. Real wedge perturbation <=17*epsilon per sign: ||dR wedge S0||<7epsilon, ||R0 wedge dS||<8epsilon, ||dR wedge dS||<2epsilon. RHS<=3sqrt(8)|alpha|+34epsilon<3sqrt(8)=LHS."
+  },
+  "alternative_abs_alpha_gt_one": {
+    "exact_raw_readouts_checked": true,
+    "phi_L": "-3*alpha",
+    "budget": "9/4+epsilon**2*|1+delta*alpha*w|**2",
+    "strict_bound": "For s=|alpha|>1, epsilon=(s-1)/(2(1+s|w|)). RHS<=3+2epsilon(1+s|w|)=s+2<3s. Both budgets >=9/4."
+  },
+  "finite_abs_alpha_gt_one": {
+    "exact_raw_readouts_checked": true,
+    "phi_L": "2*M*alpha",
+    "budget": "(M-delta*alpha)**2",
+    "strict_bound": "M=|alpha|+1>|alpha|. RHS=2M<2|alpha|M=LHS for |alpha|>1."
+  },
+  "finite_abs_alpha_lt_one": {
+    "exact_raw_readouts_checked": true,
+    "phi_L": "-1/tau",
+    "two_sum_budgets_times_tau_squared": "25*alpha**2*tau**6/4 + 5*alpha**2*tau**4/2 + 21*alpha**2*tau**2/4 + alpha**2 + tau**6 + tau**4 + 25*tau**2",
+    "strict_bound": "For |alpha|<1 set tau^2=(1-alpha^2)/82. The polynomial C<=alpha^2+41tau^2=(1+alpha^2)/2<1. (sqrt(B+)+sqrt(B-))^2<=2(B++B-)=C/tau^2<1/tau^2=LHS^2. Both B>=9/4 by the real minor."
+  },
+  "cauchy_and_H_reduction": {
+    "inverse_times_ones": [
+      6,
+      -30,
+      30
+    ],
+    "determinant": "1/5400",
+    "corrected_compressed_commutator": "4*(d1 - 2*d2 + d3)/15",
+    "correct_test": "(e1-e2)^T[d,C^2](e1-e3)=0; gives h1-4h2+3h3=0 for d=(h1,2h2,3h3)"
+  },
+  "universal_sufficiency": {
+    "checked_orientations": [
+      1,
+      -1
+    ],
+    "method": "Exact free noncommutative polynomial expansion; no commutativity or finite sampling assumed.",
+    "correct_products": "sigma=+1: Z_delta^* Z_delta; sigma=-1: Z_delta Z_delta^*. Each is delta independent.",
+    "result": "K_sigma(R+,S+)-K_sigma(R-,S-)=L. Positive-functional 2x2 complex Gram positivity gives |phi(K_sigma(R,S))|^2<=B_phi(R,S); triangle inequality gives raw PB for every positive complex-linear phi, including zero mass and zero budgets."
+  },
+  "status": "All symbolic assertions passed; no numerical sampling or Lean verification."
+}
