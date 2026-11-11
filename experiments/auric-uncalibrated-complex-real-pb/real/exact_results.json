@@ -1,0 +1,137 @@
+{
+  "linear_certificate": {
+    "rational_legality_checks": true,
+    "all_denominators_invertible_mod_prime": true,
+    "selected_constraints": 450,
+    "distinct_rational_frames_and_actors": 90,
+    "prime": 1000003,
+    "rank": 450,
+    "determinant_mod_prime": 123800,
+    "plain_python_determinant_mod_prime": 123800,
+    "matrix_sha256": "1eb2e5adb48b060d5c67d8fdad589266034c6d67016f359a85841053f66804d2"
+  },
+  "fixed_corner_exact_checks": {
+    "C_inverse_ones": [
+      6,
+      -30,
+      30
+    ],
+    "permutation_vectors": [
+      [
+        -15,
+        -30,
+        -45
+      ],
+      [
+        30,
+        15,
+        45
+      ]
+    ],
+    "ratio_QC2_over_Q": [
+      "67/75",
+      "19/15"
+    ],
+    "skew_quadratic_values": [
+      "1151/900",
+      "-11/20"
+    ],
+    "phi_L": -10,
+    "functional_mass": "101/100",
+    "full_product_readouts": [
+      {
+        "delta": 1,
+        "Rv": [
+          "19/2",
+          "-1/10",
+          "0",
+          "-1/20"
+        ],
+        "Sv": [
+          "11",
+          "1/10",
+          "0",
+          "1/10"
+        ],
+        "phi_R2": "7221/80",
+        "phi_S2": "6051/50",
+        "phi_RcircS": "20897/200"
+      },
+      {
+        "delta": -1,
+        "Rv": [
+          "21/2",
+          "1/10",
+          "0",
+          "1/20"
+        ],
+        "Sv": [
+          "-9",
+          "1/10",
+          "0",
+          "1/10"
+        ],
+        "phi_R2": "8821/80",
+        "phi_S2": "4051/50",
+        "phi_RcircS": "-18897/200"
+      }
+    ],
+    "wedge_order": [
+      "12",
+      "13",
+      "14",
+      "23",
+      "24",
+      "34"
+    ],
+    "wedges": [
+      [
+        "41/20",
+        "0",
+        "3/2",
+        "0",
+        "-1/200",
+        "0"
+      ],
+      [
+        "39/20",
+        "0",
+        "3/2",
+        "0",
+        "1/200",
+        "0"
+      ]
+    ],
+    "budgets": [
+      "258101/40000",
+      "242101/40000"
+    ],
+    "budget_mean": "250101/40000",
+    "root_sum_upper_bound": "sqrt(250101)/100 < 10"
+  },
+  "universal_identity_checks": {
+    "complex_optional_free_algebra": [
+      {
+        "D_sign": 1,
+        "factorization": true,
+        "correct_adjoint_product_independent_of_delta": true,
+        "L_commutator_identity": true,
+        "unstarred_product_independence": false
+      },
+      {
+        "D_sign": -1,
+        "factorization": true,
+        "correct_adjoint_product_independent_of_delta": true,
+        "L_commutator_identity": true,
+        "unstarred_product_independence": false
+      }
+    ],
+    "ell_X_term_zero_on_kernel": true,
+    "unweighted_skew_sign_average_zero": true,
+    "weighted_average_keeps_only_M12": true,
+    "spectral_permutations_span_all_diagonal_inputs": true
+  },
+  "status": "PASS",
+  "arithmetic": "rational, prime-field and free-algebra exact; no floating point",
+  "not_lean_kernel_certified": true
+}
