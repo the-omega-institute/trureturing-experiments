@@ -1,0 +1,10 @@
+FIDELITY: connected-guest disjoint-union identity: 6336 exact cases
+DOMAIN: empty targets included; empty graph has one map to the empty graph
+CYCLE_TRACE: hom(C_m,G)=tr(A_G^m), 0<=|G|<=4, 3<=m<=8: 456 cases
+COSPECTRAL: K1,4 versus C4 plus K1; charpoly=[1, 0, -4, 0, 0, 0]; even counts=[32, 128, 512, 2048]
+COSPECTRAL: K1,6 versus K2,3 plus two isolated vertices; charpoly=[1, 0, -6, 0, 0, 0, 0, 0]; even counts=[72, 432, 2592, 15552]
+ZERO_EIGENVALUES: K1,4 and C4 have different orders but equal positive-length cycle traces
+SPARSE_SMALL_CASES: 76 labelled targets; moments 4,10,18 determine moments 4,6,...,18; 11 signatures
+EXPONENTIAL_SUM: 16 exact positive-base nonsingular moment matrices
+LIMIT: these are finite arithmetic checks; the infinite-family theorem needs the proposed general proof
+ALL_CHECKS_OK
