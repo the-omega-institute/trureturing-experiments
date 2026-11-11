@@ -1,0 +1,10 @@
+FIDELITY Remark 7.5: double trivalent tree sigma=True; four-leaf-star quotient sigma=False
+FIDELITY tree median = majority on all vertex triples; principal ultrafilters exhaust both complex algebras
+P_SIZE=2 frames=1 sigma_true=1 sigma_false=0 consistent_upsets=1 flip_constructions=0 extracted_stars=0
+P_SIZE=4 frames=1 sigma_true=1 sigma_false=0 consistent_upsets=3 flip_constructions=0 extracted_stars=0
+P_SIZE=6 frames=5 sigma_true=5 sigma_false=0 consistent_upsets=33 flip_constructions=0 extracted_stars=0
+P_SIZE=8 frames=69 sigma_true=69 sigma_false=0 consistent_upsets=907 flip_constructions=0 extracted_stars=0
+P_SIZE=10 frames=2153 sigma_true=1344 sigma_false=809 consistent_upsets=53825 flip_constructions=1024 extracted_stars=1024
+TOTAL frames=2229 sigma_true=1420 sigma_false=809 consistent_upsets=54769 flip_constructions=1024 extracted_stars=1024
+COVERAGE all bounded poc sets of cardinality at most 10 up to complement-preserving relabelling; no infinite-case claim
+ALL_CHECKS_OK
