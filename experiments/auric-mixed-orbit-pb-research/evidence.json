@@ -10,6 +10,8 @@
       "229/4",
       "0"
     ],
+    "full_product_symbolic_actor_star_pairings_both_sigmas": true,
+    "full_product_symbolic_trace_L_all_lambda": 0,
     "pure_counterwitness_by_sigma": {
       "-1": {
         "budget_squares": [

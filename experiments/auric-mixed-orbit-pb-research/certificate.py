@@ -80,6 +80,33 @@ def exact_checks():
     det = sp.factor(sp.Matrix.hstack(*columns).det())
     assert det != 0
 
+    # Full-product symbolic identities for every supported Hermitian x and
+    # both complex star legs. The six-square check below uses these pairings.
+    xd = sp.symbols("x0:3", real=True)
+    xr01, xi01, xr02, xi02, xr12, xi12 = sp.symbols(
+        "xr01 xi01 xr02 xi02 xr12 xi12", real=True)
+    qa, qb, qc, qd = sp.symbols("qa qb qc qd", real=True)
+    X = sp.Matrix([[xd[0], xr01+sp.I*xi01, xr02+sp.I*xi02, 0],
+                   [xr01-sp.I*xi01, xd[1], xr12+sp.I*xi12, 0],
+                   [xr02-sp.I*xi02, xr12-sp.I*xi12, xd[2], 0],
+                   [0, 0, 0, 0]])
+    ts = sp.zeros(4)
+    ts[0,3], ts[1,3] = qa+sp.I*qb, qc+sp.I*qd
+    ts[3,0], ts[3,1] = qa-sp.I*qb, qc-sp.I*qd
+    rs, ks = (C*X+X*C)/2, (C*ts+ts*C)/2
+    lambda_s = sp.Symbol("lambda_s", real=True)
+    for sigma in (1, -1):
+        hs = sigma*sp.I*(C*X-X*C)/2
+        js = sigma*sp.I*(C*ts-ts*C)/2
+        for aa, bb in ((X,hs),(hs,rs),(ts,js),(ks,js),
+                       (X,ts),(X,ks),(X,js),(hs,ts),(hs,ks),
+                       (hs,js),(rs,ts),(rs,ks),(rs,js)):
+            assert sp.expand(sp.trace(aa*bb)) == 0
+        assert sp.expand(sp.trace(ks**2-js**2)) == 0
+        Ls = -(X*hs+hs*X)+(X*ks+ks*X)-(ts*rs+rs*ts) \
+             - lambda_s*(ts*js+js*ts)
+        assert sp.expand(sp.trace(Ls)) == 0
+
     # Abstract real Gram/exterior decomposition, using only the stated
     # orthogonalities. This is a symbolic polynomial identity, not sampling.
     xx, hh, rr, tt, kk, jj, xr, tk, lam = sp.symbols("xx hh rr tt kk jj xr tk lam", real=True)
@@ -112,6 +139,8 @@ def exact_checks():
             "cauchy_psd_all_principal_minors": minors,
             "spectral_squared_margin": str(spectral_slack),
             "symbolic_orbit_spanning_determinant": str(det),
+            "full_product_symbolic_actor_star_pairings_both_sigmas": True,
+            "full_product_symbolic_trace_L_all_lambda": 0,
             "abstract_exterior_polynomial_residual": 0,
             "zero_response_cauchy_psd_principal_minors": [81, 4, 0],
             "zero_response_spectral_squared_margin": str(m ** 2 - 85 * eps ** 2)}
