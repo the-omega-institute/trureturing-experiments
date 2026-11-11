@@ -1,0 +1,8 @@
+Exact distance alphabet: {1, 2, 3, +infinity}; 0 on the diagonal
+All separated symmetric extended metric matrices with 1 <= n <= 4: 663
+Fidelity: directed-subspace common-stage distance checks: 142103
+Finite nonempty doubles: metric, shortest paths, isometries, fold, pullback: 9611
+Power-functor pullbacks and diagonal distance identities, arities 0..2: 28833
+Empty-domain and infinity conventions: OK
+Scope: finite reduction checks only; no proof of the universal functor claim or omega+omega bound
+ALL_CHECKS_OK
