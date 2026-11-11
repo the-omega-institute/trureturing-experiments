@@ -1,0 +1,12 @@
+FIDELITY: 7380 source-product and equal-diameter cases; shrink <= 2^-n
+Luroth: constant digits 2,3,5 give (1,2/3), (2/5,3/7), (4/19,5/21)
+SOURCE TYPO CONTROL: |Delta_2|/|Delta_3| = 3, not 1/3
+LOCAL SECANTS: 44280 exact geometric cases; largest adjacent ratio = 3
+LOCAL SECANTS: minimum signed sampled quotient = 23/63 > 1/8
+Luroth x=1, F(x)=2/3: first four left secants = 5/9, -5/9, 5/9, -5/9
+Luroth x=2/5, F(x)=3/7: first four left secants = 95/42, -95/42, 95/42, -95/42
+Luroth x=4/19, F(x)=5/21: first four left secants = 361/63, -361/63, 361/63, -361/63
+Luroth x=7/10, F(x)=11/14: first four left secants = 125/63, -95/42, 95/42, -95/42
+Luroth x=1/2, F(x)=7/18: first four left secants = 2/3, -5/9, 5/9, -5/9
+LUROTH SECANTS: 80 actual exact pairs, depths 1..16
+ALL_CHECKS_OK
