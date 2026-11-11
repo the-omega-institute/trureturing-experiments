@@ -1,0 +1,20 @@
+SOURCE: OEIS A230393 revision 12; offset 1,5; Barker formula Mar 17 2018
+FIDELITY: 30 displayed terms equal the b-file prefix
+b230393.txt sha256: d47859cfd3244ba8f42e364a215c5ddb354d08d9ed479c0b5bd3df7da6ad474f
+height-5 literal arrays: [[(0, 1), (4, 2), (3, 3), (2, 4), (1, 0)], [(0, 4), (1, 3), (2, 2), (3, 1), (4, 0)]]
+EXHAUSTIVE: all normalized arrays at heights 1..5: [0, 0, 0, 0, 2]
+LITERAL ROW-PAIR DP: heights 1..14 agree with the OEIS b-file
+STATE CHECK: 20 states; 13 reachable; 17 productive; 10 live
+CLASS ORDER (delta,left-pending,right-pending): [(1, False, True), (2, True, False), (0, False, True), (2, False, True), (1, False, False)]
+QUOTIENT: [[2, 1, 0, 0, 0], [2, 0, 1, 0, 0], [2, 0, 0, 1, 0], [1, 0, 0, 0, 1], [8, 2, 2, 2, 2]]
+BOUNDARIES: initial=[2,0,0,0,0]; terminal=[0,0,0,0,1]
+ALL 210 TERMS: unpruned 20-state DP = 5-class transfer = OEIS b-file
+det(I-xT): 6*x**5 + 9*x**4 + 4*x**3 - 4*x + 1
+adj(I-xT)[1,5]: x**4
+MATRIX IDENTITY: T^5 - 4T^4 + 4T^2 + 9T + 6I = 0
+SIGNED BASIS TRANSFER B=P^-1 T P: [[10, 3, 2, 2, -15], [10, 2, 3, 2, -15], [10, 2, 2, 3, -15], [9, 2, 2, 2, -12], [8, 2, 2, 2, -12]]
+SIGNED BASIS: P*1=e5; initial=2(e1-e5); verified exact inverse and power identity
+GF CONVOLUTION: coefficients 0..210 equal 2*x^5
+RECURRENCE: all indices 6..210 checked with exact integers
+LIMITATION: finite exact evidence; no Lean proof of the all-height claim
+ALL_CHECKS_OK
