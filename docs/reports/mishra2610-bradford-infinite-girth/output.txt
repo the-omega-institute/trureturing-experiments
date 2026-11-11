@@ -1,0 +1,7 @@
+FIDELITY sparse-position lemma: 16 indices, 256 distinct mixed differences
+FIDELITY Bradford evaluation formula: 1456 reduced words of lengths 1..6, modulus 1459
+CONSTRUCTION r=2: M=5, m=15, ell=64, all 64 reduced words pass; 36 have zero shift
+MEMBERSHIP r=2: 15 single-site words and translated factors recover original generators
+CONSTRUCTION r=3: M=7, m=21, ell=132, all 456 reduced words pass; 198 have zero shift
+MEMBERSHIP r=3: 21 single-site words and translated factors recover original generators
+ALL_CHECKS_OK
