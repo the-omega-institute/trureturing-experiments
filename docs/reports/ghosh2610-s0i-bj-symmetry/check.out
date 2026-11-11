@@ -1,0 +1,11 @@
+FIDELITY Example 4.6: inverse, 0 in both numerical ranges, M_T={+/-e2}, ||T-I/2||=3/2<2 verified
+IDENTITIES: both shifted-projection inverse identities at 359 real/complex rational shifts and 9 positive rational resolvents
+LP p=3: u=(Fraction(1, 1), Fraction(2, 1)), y=(Fraction(4, 1), Fraction(-1, 1)), reverse fails at alpha=-1/2, z=-4/81, inverse real-part lower bound=81/85
+LP p=4: u=(Fraction(1, 1), Fraction(2, 1)), y=(Fraction(8, 1), Fraction(-1, 1)), reverse fails at alpha=-1/2, z=-36/289, inverse real-part lower bound=289/325
+EXPLICIT p=4: T=(1/289)[[53,136],[34,308]], z=-36/289, lower=289/325; valid over R and C
+LP p=5: u=(Fraction(1, 1), Fraction(2, 1)), y=(Fraction(16, 1), Fraction(-1, 1)), reverse fails at alpha=-1/2, z=-196/1089, inverse real-part lower bound=1089/1285
+LP p=6: u=(Fraction(1, 1), Fraction(2, 1)), y=(Fraction(32, 1), Fraction(-1, 1)), reverse fails at alpha=-1/2, z=-36/169, inverse real-part lower bound=169/205
+LP p=7: u=(Fraction(1, 1), Fraction(2, 1)), y=(Fraction(64, 1), Fraction(-1, 1)), reverse fails at alpha=-1/2, z=-3844/16641, inverse real-part lower bound=16641/20485
+LP p=8: u=(Fraction(1, 1), Fraction(2, 1)), y=(Fraction(128, 1), Fraction(-1, 1)), reverse fails at alpha=-1/2, z=-15876/66049, inverse real-part lower bound=66049/81925
+CONTRAPOSITIVE: 6 exact lp families and 288 nonzero integer test vectors verified; universal exclusion uses the stated analytic norm bound
+ALL_CHECKS_OK
