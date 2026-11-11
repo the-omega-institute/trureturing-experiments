@@ -1,0 +1,49 @@
+{
+  "target": "Full original C(p,v), acquired literal JM JMMM (J,M,J,M,M,M), readings (0,24,147/5,24,18,p,v), p!=24; independent distinct J-equal and M-equal pairs, both p and v free.",
+  "baseline": "a418ec4ea70b3082b55d5047529989ddf32fe28a",
+  "registered_utc": "2026-10-22T19:46:37.594762+00:00",
+  "workload": {
+    "wall_minutes_from_registration": 80,
+    "regular_joint_multistarts_max": 12000,
+    "function_evaluations_per_start_max": 500,
+    "continuation_steps_max": 2400,
+    "companion_seeds_per_base_max": 400,
+    "high_precision_candidate_refinements_max": 16,
+    "exact_certificate_boxes_max": 12,
+    "exact_symbolic_derivations_max": 6
+  },
+  "routes": [
+    "Reuse source circuit XI 6.2 and unequal-diagonal M polynomial circuit: trace known J and M pair curves with free base, compare or solve their joint incidence, including independently selected pairs.",
+    "Regular four-endpoint or three-endpoint overlap numerical joint solve, divided secants to remove diagonal solutions, deterministic multistarts over strict source regions; p,v are output unknowns, never fixed as target restrictions."
+  ],
+  "discovery_source_seed_scope": {
+    "r": "strict (0,1), seed grid including known pair sources",
+    "b": "positive seed range 10^-5 to 100, using logarithmic seeds; numerical continuation may leave seed range if strict"
+  },
+  "success": "Exact rational-box contraction or exact algebraic four-endpoint certificate: one shared p!=24,v, strict source guards, nonzero entire cubic-or-lower gains, each fixed drift, all literal clocks0..7 and within-pair distinctness. Independently replay literal matrices and interpolants. No numerical-residual existence claim.",
+  "falsifiers": [
+    "Any literal-row mismatch or polynomial degree>3 or zero whole gain invalidates candidate.",
+    "Any endpoint outside 0<r<1,b>0, denominator crossing without zero-safe reconstruction, p=24, or within-pair coincidence invalidates candidate.",
+    "Individual collisions at different bases, approximate equality, interval overlap, diagonal limits and inverse counts fixing m do not establish the target."
+  ],
+  "settlement": "Stop on certified positive result, genuinely all-domain exclusion, or finite envelope exhaustion. A bounded miss is unresolved; no theory filler. Keep only useful candidate/obstruction data and reusable experimental programs, no narration/transcripts. No Lean certification without builds.",
+  "global_scope_retained": [
+    "degree drops",
+    "gain sample zeros",
+    "repeated roots",
+    "zero drift",
+    "singular sources",
+    "exceptional K layer",
+    "unbounded b",
+    "all real v",
+    "all p!=24",
+    "pair overlap allowed"
+  ],
+  "prohibitions": [
+    "no delegation",
+    "no oracle",
+    "no judge/tool/CI/Interface/Impl/assumption/axiom changes",
+    "no publication or PR or merge",
+    "no experimental material in main repository"
+  ]
+}

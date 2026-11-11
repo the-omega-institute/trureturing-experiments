@@ -1,0 +1,659 @@
+{
+  "scope": "One private publication unit; all retained JSON bytes and all three original supplier files unchanged. Provenance paths are historical metadata, not runtime lookup paths.",
+  "publication_base": {
+    "checkout": "/Users/auricstudio/trureturing-experiments-fib-common-data-1023",
+    "branch": "lane/math/fib-common-data-1023",
+    "head": "dcf26254a756947704ec116a7e7aa4cac6bda6bb"
+  },
+  "origins": {
+    "common_base": {
+      "kind": "read-only experiment source",
+      "checkout": "/Users/auricstudio/trureturing-experiments",
+      "revision": "ad3e57ac452485696705ee18ac4834b0c09c07c1",
+      "relative_directory": "experiments/fib-common-base-6ada6767-attempt-1",
+      "file_status": "all 35 files untracked; revision identifies checkout context, not file contents; SHA-256 identifies the actual bytes"
+    },
+    "self_calibration": {
+      "kind": "read-only experiment source",
+      "checkout": "/Users/auricstudio/trureturing-experiments-fib-source-certificates-1021",
+      "revision": "ad3e57ac452485696705ee18ac4834b0c09c07c1",
+      "relative_directory": "experiments/fib-self-calibration",
+      "file_status": "the three retained suppliers are untracked; revision identifies checkout context, not file contents; SHA-256 identifies the actual bytes"
+    },
+    "theory": {
+      "kind": "explicit read-only theorem input",
+      "checkout": "/Users/auricstudio/trureturing-fib-common-base-1023",
+      "revision": "a418ec4ea70b3082b55d5047529989ddf32fe28a",
+      "relative_path": "docs/develop/theory/FIB_STRICT_REAL_UNEQUAL_DIAGONAL_ACTUAL_M_PAIR.md",
+      "sha256": "f39a62ba731197f79ba97288739282ba69af7f4602e4b18692beb9f8c309253d",
+      "retained": false,
+      "usage": "--theory parameter to verify_exact.py, verify_paper_certificate.py and replay.py; Section 9 accepted externally; no theorem edits or copies in this unit"
+    }
+  },
+  "license": {
+    "spdx": "Apache-2.0",
+    "path": "LICENSE",
+    "sha256": "45404ee75576b053a86e89e545fd6987a607107cf4d846fa78dcb6a233d53447",
+    "source_license_sha256": {
+      "common_base": "45404ee75576b053a86e89e545fd6987a607107cf4d846fa78dcb6a233d53447",
+      "self_calibration": "45404ee75576b053a86e89e545fd6987a607107cf4d846fa78dcb6a233d53447"
+    },
+    "source_NOTICE": "absent in both source roots",
+    "supplier_notices": "no per-file copyright/license/NOTICE text is removed or modified; no third-party source is vendored",
+    "python_packages": "SymPy, mpmath, NumPy and SciPy remain installed dependencies with their distributed license notices"
+  },
+  "supplier_edges": [
+    {
+      "consumers": [
+        "experiments/fib-common-base-6ada6767-attempt-1/reuse_inverse.py"
+      ],
+      "supplier": "experiments/fib-self-calibration/fixed-b-and-negative-child/negative-child-exhaustion.py",
+      "selection": "execute original symbolic prefix before pc=Fr(-11); includes original traces, carrier resultant and drift identity assertions",
+      "additional_local_inputs": []
+    },
+    {
+      "consumers": [
+        "experiments/fib-common-base-6ada6767-attempt-1/certify_M_base_child.py",
+        "experiments/fib-common-base-6ada6767-attempt-1/verify_paper_certificate.py"
+      ],
+      "supplier": "experiments/fib-self-calibration/fixed-b-and-negative-child/negative-child-exhaustion.py",
+      "selection": "AST class/function definitions G, asG, base_translate, centre_translate",
+      "additional_local_inputs": []
+    },
+    {
+      "consumers": [
+        "experiments/fib-common-base-6ada6767-attempt-1/discover.py"
+      ],
+      "supplier": "experiments/fib-self-calibration/fixed-b-and-negative-child/negative-j-seed.py",
+      "selection": "runpy original module; reuse response; fixed exact seed checks execute, no numerical solver",
+      "additional_local_inputs": []
+    },
+    {
+      "consumers": [
+        "experiments/fib-common-base-6ada6767-attempt-1/joint_search.py"
+      ],
+      "supplier": "experiments/fib-self-calibration/quantitative-arc/quantitative_certificate.py",
+      "selection": "AST literal blocks assignment only; full supplier is retained unchanged, no arc computation executes during discovery loading or replay",
+      "additional_local_inputs": []
+    },
+    {
+      "consumers": [
+        "experiments/fib-common-base-6ada6767-attempt-1/verify_paper_certificate.py"
+      ],
+      "supplier": "experiments/fib-common-base-6ada6767-attempt-1/certify_M_base_child.py",
+      "selection": "AST functions horner_terms and centred_poly; no numerical root construction executes",
+      "additional_local_inputs": []
+    }
+  ],
+  "program_dependencies": [
+    {
+      "path": "experiments/fib-common-base-6ada6767-attempt-1/certify_M_base_child.py",
+      "local_module_inputs": [
+        "experiments/fib-common-base-6ada6767-attempt-1/certify_intersections.py",
+        "experiments/fib-common-base-6ada6767-attempt-1/exact_intervals.py"
+      ],
+      "direct_python_packages": [
+        "mpmath",
+        "sympy"
+      ],
+      "literal_json_names": [
+        "existing_M_base_entire_child.json",
+        "existing_M_recheck.json",
+        "existing_M_recheck.json",
+        "inverse_coefficients.json"
+      ],
+      "execution": "retained support or construction/discovery; not a replay entry point"
+    },
+    {
+      "path": "experiments/fib-common-base-6ada6767-attempt-1/certify_intersections.py",
+      "local_module_inputs": [
+        "experiments/fib-common-base-6ada6767-attempt-1/exact_intervals.py"
+      ],
+      "direct_python_packages": [
+        "mpmath"
+      ],
+      "literal_json_names": [
+        ".json"
+      ],
+      "execution": "retained support or construction/discovery; not a replay entry point"
+    },
+    {
+      "path": "experiments/fib-common-base-6ada6767-attempt-1/companions.py",
+      "local_module_inputs": [
+        "experiments/fib-common-base-6ada6767-attempt-1/discover.py"
+      ],
+      "direct_python_packages": [
+        "scipy"
+      ],
+      "literal_json_names": [
+        "companion_data.json",
+        "inverse_coefficients.json",
+        "pair_catalogue.json",
+        "parent_curves.json"
+      ],
+      "execution": "retained support or construction/discovery; not a replay entry point"
+    },
+    {
+      "path": "experiments/fib-common-base-6ada6767-attempt-1/discover.py",
+      "local_module_inputs": [],
+      "direct_python_packages": [
+        "numpy",
+        "scipy"
+      ],
+      "literal_json_names": [
+        "curves.json"
+      ],
+      "execution": "retained support or construction/discovery; not a replay entry point"
+    },
+    {
+      "path": "experiments/fib-common-base-6ada6767-attempt-1/exact_intervals.py",
+      "local_module_inputs": [],
+      "direct_python_packages": [],
+      "literal_json_names": [],
+      "execution": "retained support or construction/discovery; not a replay entry point"
+    },
+    {
+      "path": "experiments/fib-common-base-6ada6767-attempt-1/full_parent.py",
+      "local_module_inputs": [],
+      "direct_python_packages": [
+        "numpy"
+      ],
+      "literal_json_names": [],
+      "execution": "retained support or construction/discovery; not a replay entry point"
+    },
+    {
+      "path": "experiments/fib-common-base-6ada6767-attempt-1/joint_catalogue_search.py",
+      "local_module_inputs": [
+        "experiments/fib-common-base-6ada6767-attempt-1/joint_search.py"
+      ],
+      "direct_python_packages": [],
+      "literal_json_names": [
+        "joint_catalogue_candidates.json",
+        "joint_catalogue_candidates.json",
+        "pair_catalogue.json",
+        "parent_curves.json"
+      ],
+      "execution": "retained support or construction/discovery; not a replay entry point"
+    },
+    {
+      "path": "experiments/fib-common-base-6ada6767-attempt-1/joint_search.py",
+      "local_module_inputs": [
+        "experiments/fib-common-base-6ada6767-attempt-1/discover.py"
+      ],
+      "direct_python_packages": [],
+      "literal_json_names": [
+        "joint_candidates.json",
+        "joint_candidates.json",
+        "parent_curves.json"
+      ],
+      "execution": "retained support or construction/discovery; not a replay entry point"
+    },
+    {
+      "path": "experiments/fib-common-base-6ada6767-attempt-1/joint_tb_search.py",
+      "local_module_inputs": [
+        "experiments/fib-common-base-6ada6767-attempt-1/discover.py"
+      ],
+      "direct_python_packages": [],
+      "literal_json_names": [
+        "joint_tb_candidates.json",
+        "joint_tb_candidates.json",
+        "pair_catalogue.json",
+        "parent_curves.json"
+      ],
+      "execution": "retained support or construction/discovery; not a replay entry point"
+    },
+    {
+      "path": "experiments/fib-common-base-6ada6767-attempt-1/overlap_search.py",
+      "local_module_inputs": [
+        "experiments/fib-common-base-6ada6767-attempt-1/discover.py"
+      ],
+      "direct_python_packages": [],
+      "literal_json_names": [
+        "overlap_candidates.json"
+      ],
+      "execution": "retained support or construction/discovery; not a replay entry point"
+    },
+    {
+      "path": "experiments/fib-common-base-6ada6767-attempt-1/pair_catalogue.py",
+      "local_module_inputs": [
+        "experiments/fib-common-base-6ada6767-attempt-1/discover.py"
+      ],
+      "direct_python_packages": [],
+      "literal_json_names": [
+        "pair_catalogue.json"
+      ],
+      "execution": "retained support or construction/discovery; not a replay entry point"
+    },
+    {
+      "path": "experiments/fib-common-base-6ada6767-attempt-1/positive_child_scan.py",
+      "local_module_inputs": [
+        "experiments/fib-common-base-6ada6767-attempt-1/companions.py",
+        "experiments/fib-common-base-6ada6767-attempt-1/discover.py",
+        "experiments/fib-common-base-6ada6767-attempt-1/full_parent.py"
+      ],
+      "direct_python_packages": [],
+      "literal_json_names": [
+        "pair_catalogue.json",
+        "positive_child_scan.json"
+      ],
+      "execution": "retained support or construction/discovery; not a replay entry point"
+    },
+    {
+      "path": "experiments/fib-common-base-6ada6767-attempt-1/reuse_inverse.py",
+      "local_module_inputs": [],
+      "direct_python_packages": [],
+      "literal_json_names": [
+        "inverse_coefficients.json"
+      ],
+      "execution": "exact replay"
+    },
+    {
+      "path": "experiments/fib-common-base-6ada6767-attempt-1/same_pair_search.py",
+      "local_module_inputs": [
+        "experiments/fib-common-base-6ada6767-attempt-1/discover.py"
+      ],
+      "direct_python_packages": [],
+      "literal_json_names": [
+        "same_pair_candidates.json"
+      ],
+      "execution": "retained support or construction/discovery; not a replay entry point"
+    },
+    {
+      "path": "experiments/fib-common-base-6ada6767-attempt-1/trace_parent.py",
+      "local_module_inputs": [
+        "experiments/fib-common-base-6ada6767-attempt-1/discover.py",
+        "experiments/fib-common-base-6ada6767-attempt-1/full_parent.py"
+      ],
+      "direct_python_packages": [],
+      "literal_json_names": [
+        "curves.json",
+        "parent_curves.json"
+      ],
+      "execution": "retained support or construction/discovery; not a replay entry point"
+    },
+    {
+      "path": "experiments/fib-common-base-6ada6767-attempt-1/verify_exact.py",
+      "local_module_inputs": [
+        "experiments/fib-common-base-6ada6767-attempt-1/certify_intersections.py",
+        "experiments/fib-common-base-6ada6767-attempt-1/exact_intervals.py"
+      ],
+      "direct_python_packages": [
+        "sympy"
+      ],
+      "literal_json_names": [
+        ".json"
+      ],
+      "execution": "exact replay"
+    },
+    {
+      "path": "experiments/fib-common-base-6ada6767-attempt-1/verify_paper_certificate.py",
+      "local_module_inputs": [
+        "experiments/fib-common-base-6ada6767-attempt-1/certify_intersections.py",
+        "experiments/fib-common-base-6ada6767-attempt-1/exact_intervals.py"
+      ],
+      "direct_python_packages": [
+        "sympy"
+      ],
+      "literal_json_names": [
+        "existing_M_base_entire_child.json",
+        "inverse_coefficients.json",
+        "paper_certificate.json"
+      ],
+      "execution": "exact replay"
+    }
+  ],
+  "dynamic_json_inputs": {
+    "verify_exact.py": [
+      "existing_M_recheck.json",
+      "negative_source_joint_intersection.json",
+      "disjoint_guard_failure_intersection.json"
+    ]
+  },
+  "regenerated_files": [
+    "experiments/fib-common-base-6ada6767-attempt-1/inverse_coefficients.json",
+    "experiments/fib-common-base-6ada6767-attempt-1/paper_certificate.json"
+  ],
+  "retained_files": [
+    {
+      "path": "experiments/fib-common-base-6ada6767-attempt-1/README.md",
+      "origin": "common_base",
+      "source_relative_path": "experiments/fib-common-base-6ada6767-attempt-1/README.md",
+      "source_sha256": "274ec1faeb336a9fbe4a3056e7687ed4e80892ef15ffc9e18b96533d8ad723c2",
+      "sha256": "d9fd1922a08fb34db4e673964a824a60edda6f4431b4f25239d4c9b2f335cd65",
+      "retention": "current dependency, provenance, license, reproduction and portability documentation"
+    },
+    {
+      "path": "experiments/fib-common-base-6ada6767-attempt-1/certify_M_base_child.py",
+      "origin": "common_base",
+      "source_relative_path": "experiments/fib-common-base-6ada6767-attempt-1/certify_M_base_child.py",
+      "source_sha256": "a5eb2081bf226ab7349d34e3b56e105ecf988a1726094d2b7d1e9da5c5e26fd2",
+      "sha256": "7926b4b8d15a5eca8945e888536df31a8638793f7a71564fdead04663f6974ad",
+      "retention": "supplier lookup changed to checkout-relative path; mathematical body unchanged"
+    },
+    {
+      "path": "experiments/fib-common-base-6ada6767-attempt-1/certify_intersections.py",
+      "origin": "common_base",
+      "source_relative_path": "experiments/fib-common-base-6ada6767-attempt-1/certify_intersections.py",
+      "source_sha256": "664cb229429d7e8bc48bf15be78b0da2c6a314a8ee0ba9dadb7462ad8431e5b0",
+      "sha256": "664cb229429d7e8bc48bf15be78b0da2c6a314a8ee0ba9dadb7462ad8431e5b0",
+      "retention": "byte-identical"
+    },
+    {
+      "path": "experiments/fib-common-base-6ada6767-attempt-1/companion_data.json",
+      "origin": "common_base",
+      "source_relative_path": "experiments/fib-common-base-6ada6767-attempt-1/companion_data.json",
+      "source_sha256": "24c04efff462eee8de7b051a4434d6d0a19f7f905a25591fef16619eb68c062e",
+      "sha256": "24c04efff462eee8de7b051a4434d6d0a19f7f905a25591fef16619eb68c062e",
+      "retention": "byte-identical"
+    },
+    {
+      "path": "experiments/fib-common-base-6ada6767-attempt-1/companions.py",
+      "origin": "common_base",
+      "source_relative_path": "experiments/fib-common-base-6ada6767-attempt-1/companions.py",
+      "source_sha256": "7d2aa65aac54b19974cb999f65e2a1516a9b89ecb8b629b5209834e59886a28e",
+      "sha256": "7d2aa65aac54b19974cb999f65e2a1516a9b89ecb8b629b5209834e59886a28e",
+      "retention": "byte-identical"
+    },
+    {
+      "path": "experiments/fib-common-base-6ada6767-attempt-1/curves.json",
+      "origin": "common_base",
+      "source_relative_path": "experiments/fib-common-base-6ada6767-attempt-1/curves.json",
+      "source_sha256": "1ee255829d228ac75ceffd11d24e74b7205cc115c7edcefa55b5503ecdc6c07e",
+      "sha256": "1ee255829d228ac75ceffd11d24e74b7205cc115c7edcefa55b5503ecdc6c07e",
+      "retention": "byte-identical"
+    },
+    {
+      "path": "experiments/fib-common-base-6ada6767-attempt-1/discover.py",
+      "origin": "common_base",
+      "source_relative_path": "experiments/fib-common-base-6ada6767-attempt-1/discover.py",
+      "source_sha256": "26b86f2423c704c1cdfe0b34e9384ca53c86233076d91ceca6d6b30402f3d562",
+      "sha256": "7e5d51e3a7c75c7947db409e9039781f33e8daab344979b8a76c3c61f5018c26",
+      "retention": "supplier lookup changed to checkout-relative path; mathematical body unchanged"
+    },
+    {
+      "path": "experiments/fib-common-base-6ada6767-attempt-1/disjoint_guard_failure_intersection.json",
+      "origin": "common_base",
+      "source_relative_path": "experiments/fib-common-base-6ada6767-attempt-1/disjoint_guard_failure_intersection.json",
+      "source_sha256": "ca352eb6b6d17f75d1e8aa6a232a8d77945ccc265d184cf2a923eee1e5aa4df2",
+      "sha256": "ca352eb6b6d17f75d1e8aa6a232a8d77945ccc265d184cf2a923eee1e5aa4df2",
+      "retention": "byte-identical"
+    },
+    {
+      "path": "experiments/fib-common-base-6ada6767-attempt-1/exact_intervals.py",
+      "origin": "common_base",
+      "source_relative_path": "experiments/fib-common-base-6ada6767-attempt-1/exact_intervals.py",
+      "source_sha256": "6b16115cb27fc8c6282e1c2eea5fcea136d97ac36b888726c9796b4049d54fa8",
+      "sha256": "6b16115cb27fc8c6282e1c2eea5fcea136d97ac36b888726c9796b4049d54fa8",
+      "retention": "byte-identical"
+    },
+    {
+      "path": "experiments/fib-common-base-6ada6767-attempt-1/existing_M_base_entire_child.json",
+      "origin": "common_base",
+      "source_relative_path": "experiments/fib-common-base-6ada6767-attempt-1/existing_M_base_entire_child.json",
+      "source_sha256": "cf481c3bea6fccc6ab027f32fb8b921fca94eff61f66b6211dc9ac1b64fc9974",
+      "sha256": "cf481c3bea6fccc6ab027f32fb8b921fca94eff61f66b6211dc9ac1b64fc9974",
+      "retention": "byte-identical"
+    },
+    {
+      "path": "experiments/fib-common-base-6ada6767-attempt-1/existing_M_recheck.json",
+      "origin": "common_base",
+      "source_relative_path": "experiments/fib-common-base-6ada6767-attempt-1/existing_M_recheck.json",
+      "source_sha256": "264b5a597722f9046e63189394b5ba39b426c4af59354ebb2f355e500ada3369",
+      "sha256": "264b5a597722f9046e63189394b5ba39b426c4af59354ebb2f355e500ada3369",
+      "retention": "byte-identical"
+    },
+    {
+      "path": "experiments/fib-common-base-6ada6767-attempt-1/full_parent.py",
+      "origin": "common_base",
+      "source_relative_path": "experiments/fib-common-base-6ada6767-attempt-1/full_parent.py",
+      "source_sha256": "42547c8b71d76cc89ea0dd3816d30c074f8d6dd4472869221f7e3f8bfd14bdcd",
+      "sha256": "42547c8b71d76cc89ea0dd3816d30c074f8d6dd4472869221f7e3f8bfd14bdcd",
+      "retention": "byte-identical"
+    },
+    {
+      "path": "experiments/fib-common-base-6ada6767-attempt-1/inverse_coefficients.json",
+      "origin": "common_base",
+      "source_relative_path": "experiments/fib-common-base-6ada6767-attempt-1/inverse_coefficients.json",
+      "source_sha256": "743895aaf5bd3c054fb69f0febc2da6dc5b539d050679021ba560fa0f8d98b48",
+      "sha256": "743895aaf5bd3c054fb69f0febc2da6dc5b539d050679021ba560fa0f8d98b48",
+      "retention": "byte-identical"
+    },
+    {
+      "path": "experiments/fib-common-base-6ada6767-attempt-1/joint_candidates.json",
+      "origin": "common_base",
+      "source_relative_path": "experiments/fib-common-base-6ada6767-attempt-1/joint_candidates.json",
+      "source_sha256": "70ab0b35bea29cb0b51b54c4495b79fdc83c3790f0cb76f930f962b29bf718dc",
+      "sha256": "70ab0b35bea29cb0b51b54c4495b79fdc83c3790f0cb76f930f962b29bf718dc",
+      "retention": "byte-identical"
+    },
+    {
+      "path": "experiments/fib-common-base-6ada6767-attempt-1/joint_catalogue_candidates.json",
+      "origin": "common_base",
+      "source_relative_path": "experiments/fib-common-base-6ada6767-attempt-1/joint_catalogue_candidates.json",
+      "source_sha256": "9ee15bfd481db81a5ae55d7ca5e9e9c38f13598d87580908f0d260c75db677c9",
+      "sha256": "9ee15bfd481db81a5ae55d7ca5e9e9c38f13598d87580908f0d260c75db677c9",
+      "retention": "byte-identical"
+    },
+    {
+      "path": "experiments/fib-common-base-6ada6767-attempt-1/joint_catalogue_search.py",
+      "origin": "common_base",
+      "source_relative_path": "experiments/fib-common-base-6ada6767-attempt-1/joint_catalogue_search.py",
+      "source_sha256": "5a2e4f3e380a5cb99d788422a8a4a9d32d5a34d1b4c10e5e70620f196c40886b",
+      "sha256": "5a2e4f3e380a5cb99d788422a8a4a9d32d5a34d1b4c10e5e70620f196c40886b",
+      "retention": "byte-identical"
+    },
+    {
+      "path": "experiments/fib-common-base-6ada6767-attempt-1/joint_search.py",
+      "origin": "common_base",
+      "source_relative_path": "experiments/fib-common-base-6ada6767-attempt-1/joint_search.py",
+      "source_sha256": "ff6e6a79213c93386d278be529287ff117528edc2ba6bb068710786b9352f33c",
+      "sha256": "bc830a8c4edb0d0975036fb835927e2500e842fb05a9695e494a8a3f91deabdb",
+      "retention": "supplier lookup changed to checkout-relative path; mathematical body unchanged"
+    },
+    {
+      "path": "experiments/fib-common-base-6ada6767-attempt-1/joint_tb_candidates.json",
+      "origin": "common_base",
+      "source_relative_path": "experiments/fib-common-base-6ada6767-attempt-1/joint_tb_candidates.json",
+      "source_sha256": "2152eb7f5d9323e571597b36005ddcbc0844a97ab4a062339cbe22bb2f321231",
+      "sha256": "2152eb7f5d9323e571597b36005ddcbc0844a97ab4a062339cbe22bb2f321231",
+      "retention": "byte-identical"
+    },
+    {
+      "path": "experiments/fib-common-base-6ada6767-attempt-1/joint_tb_search.py",
+      "origin": "common_base",
+      "source_relative_path": "experiments/fib-common-base-6ada6767-attempt-1/joint_tb_search.py",
+      "source_sha256": "3f5bf7a9c95aef4326ab1bd189ec158af42ce0a50800ba1e83c779b19bfde098",
+      "sha256": "3f5bf7a9c95aef4326ab1bd189ec158af42ce0a50800ba1e83c779b19bfde098",
+      "retention": "byte-identical"
+    },
+    {
+      "path": "experiments/fib-common-base-6ada6767-attempt-1/negative_source_joint_intersection.json",
+      "origin": "common_base",
+      "source_relative_path": "experiments/fib-common-base-6ada6767-attempt-1/negative_source_joint_intersection.json",
+      "source_sha256": "ad40b88aee0faae2fff22d9e8593dce6438df1ad0338231ae323916c50a2b056",
+      "sha256": "ad40b88aee0faae2fff22d9e8593dce6438df1ad0338231ae323916c50a2b056",
+      "retention": "byte-identical"
+    },
+    {
+      "path": "experiments/fib-common-base-6ada6767-attempt-1/overlap_candidates.json",
+      "origin": "common_base",
+      "source_relative_path": "experiments/fib-common-base-6ada6767-attempt-1/overlap_candidates.json",
+      "source_sha256": "485774f6369630b9b6601217824e06b8302f6d2b4c581c75c259b974be8e6305",
+      "sha256": "485774f6369630b9b6601217824e06b8302f6d2b4c581c75c259b974be8e6305",
+      "retention": "byte-identical"
+    },
+    {
+      "path": "experiments/fib-common-base-6ada6767-attempt-1/overlap_search.py",
+      "origin": "common_base",
+      "source_relative_path": "experiments/fib-common-base-6ada6767-attempt-1/overlap_search.py",
+      "source_sha256": "c796538a01e21cb80a230d2336d0fb7a510787e5f1a67097fd809dbbae4b7337",
+      "sha256": "c796538a01e21cb80a230d2336d0fb7a510787e5f1a67097fd809dbbae4b7337",
+      "retention": "byte-identical"
+    },
+    {
+      "path": "experiments/fib-common-base-6ada6767-attempt-1/pair_catalogue.json",
+      "origin": "common_base",
+      "source_relative_path": "experiments/fib-common-base-6ada6767-attempt-1/pair_catalogue.json",
+      "source_sha256": "9ddab83a51203959e34d3157b1edeebb25e84616d6c9f71c73930e3ac0a84fad",
+      "sha256": "9ddab83a51203959e34d3157b1edeebb25e84616d6c9f71c73930e3ac0a84fad",
+      "retention": "byte-identical"
+    },
+    {
+      "path": "experiments/fib-common-base-6ada6767-attempt-1/pair_catalogue.py",
+      "origin": "common_base",
+      "source_relative_path": "experiments/fib-common-base-6ada6767-attempt-1/pair_catalogue.py",
+      "source_sha256": "044493c6f5953eb8172371511c180a64925b36bb2d4c4176a7d6377f89293462",
+      "sha256": "044493c6f5953eb8172371511c180a64925b36bb2d4c4176a7d6377f89293462",
+      "retention": "byte-identical"
+    },
+    {
+      "path": "experiments/fib-common-base-6ada6767-attempt-1/paper_certificate.json",
+      "origin": "common_base",
+      "source_relative_path": "experiments/fib-common-base-6ada6767-attempt-1/paper_certificate.json",
+      "source_sha256": "466004a1593edc93cf2e4417c169a7ba62891608f9599654751e896190f3b628",
+      "sha256": "466004a1593edc93cf2e4417c169a7ba62891608f9599654751e896190f3b628",
+      "retention": "byte-identical"
+    },
+    {
+      "path": "experiments/fib-common-base-6ada6767-attempt-1/parent_curves.json",
+      "origin": "common_base",
+      "source_relative_path": "experiments/fib-common-base-6ada6767-attempt-1/parent_curves.json",
+      "source_sha256": "964f4a2fcc12fe3261e6b8b707862c0649b4fb52ae9031dfde2acac47b94dded",
+      "sha256": "964f4a2fcc12fe3261e6b8b707862c0649b4fb52ae9031dfde2acac47b94dded",
+      "retention": "byte-identical"
+    },
+    {
+      "path": "experiments/fib-common-base-6ada6767-attempt-1/positive_child_scan.json",
+      "origin": "common_base",
+      "source_relative_path": "experiments/fib-common-base-6ada6767-attempt-1/positive_child_scan.json",
+      "source_sha256": "b400165c9f8617231e3b29003a725ec6696885ebc73794b495ce0fd6ca82b6e1",
+      "sha256": "b400165c9f8617231e3b29003a725ec6696885ebc73794b495ce0fd6ca82b6e1",
+      "retention": "byte-identical"
+    },
+    {
+      "path": "experiments/fib-common-base-6ada6767-attempt-1/positive_child_scan.py",
+      "origin": "common_base",
+      "source_relative_path": "experiments/fib-common-base-6ada6767-attempt-1/positive_child_scan.py",
+      "source_sha256": "a346adc3e517b98fdbd5817ee18006fb531659251d67ea896f488b45359abe6f",
+      "sha256": "a346adc3e517b98fdbd5817ee18006fb531659251d67ea896f488b45359abe6f",
+      "retention": "byte-identical"
+    },
+    {
+      "path": "experiments/fib-common-base-6ada6767-attempt-1/preregistration.json",
+      "origin": "common_base",
+      "source_relative_path": "experiments/fib-common-base-6ada6767-attempt-1/preregistration.json",
+      "source_sha256": "52c847cdb51fe81c2b480634b7c8799a435c78399e5a310df67d0e8a12d6191e",
+      "sha256": "52c847cdb51fe81c2b480634b7c8799a435c78399e5a310df67d0e8a12d6191e",
+      "retention": "byte-identical"
+    },
+    {
+      "path": "experiments/fib-common-base-6ada6767-attempt-1/reuse_inverse.py",
+      "origin": "common_base",
+      "source_relative_path": "experiments/fib-common-base-6ada6767-attempt-1/reuse_inverse.py",
+      "source_sha256": "3d01a0b9d990e97f64c754dd5ff4e326e62beda9af1a95e2c05921989b62e68b",
+      "sha256": "b228df0cf6cc7dc613f1f28f9fe7d70c879811ea532656e2159ab4eebb134689",
+      "retention": "supplier lookup changed to checkout-relative path; mathematical body unchanged"
+    },
+    {
+      "path": "experiments/fib-common-base-6ada6767-attempt-1/same_pair_candidates.json",
+      "origin": "common_base",
+      "source_relative_path": "experiments/fib-common-base-6ada6767-attempt-1/same_pair_candidates.json",
+      "source_sha256": "4548b99e0a3e797d71978c27046e273c2f1325dc7e9bf583cb17fdbfafe6fdf1",
+      "sha256": "4548b99e0a3e797d71978c27046e273c2f1325dc7e9bf583cb17fdbfafe6fdf1",
+      "retention": "byte-identical"
+    },
+    {
+      "path": "experiments/fib-common-base-6ada6767-attempt-1/same_pair_search.py",
+      "origin": "common_base",
+      "source_relative_path": "experiments/fib-common-base-6ada6767-attempt-1/same_pair_search.py",
+      "source_sha256": "0574c15aed569fc5ffa2e08778c7059262dff5546274e4decdc200c6c6c0479f",
+      "sha256": "0574c15aed569fc5ffa2e08778c7059262dff5546274e4decdc200c6c6c0479f",
+      "retention": "byte-identical"
+    },
+    {
+      "path": "experiments/fib-common-base-6ada6767-attempt-1/trace_parent.py",
+      "origin": "common_base",
+      "source_relative_path": "experiments/fib-common-base-6ada6767-attempt-1/trace_parent.py",
+      "source_sha256": "3ec34ea44ed5276b73df706416bb8a1388504959324700fb89d909ac2f16a603",
+      "sha256": "3ec34ea44ed5276b73df706416bb8a1388504959324700fb89d909ac2f16a603",
+      "retention": "byte-identical"
+    },
+    {
+      "path": "experiments/fib-common-base-6ada6767-attempt-1/verify_exact.py",
+      "origin": "common_base",
+      "source_relative_path": "experiments/fib-common-base-6ada6767-attempt-1/verify_exact.py",
+      "source_sha256": "2deb218a487e62680ea7b22e56e5579ef666dd7c3db282deeebd0cb37b45f65a",
+      "sha256": "e74e21cd5c2c1bf1860c0c96d8ed688db23993cb5afdb8909935ea9f1863918d",
+      "retention": "explicit --theory and approved SHA-256 check; original rational and matrix checks unchanged"
+    },
+    {
+      "path": "experiments/fib-common-base-6ada6767-attempt-1/verify_paper_certificate.py",
+      "origin": "common_base",
+      "source_relative_path": "experiments/fib-common-base-6ada6767-attempt-1/verify_paper_certificate.py",
+      "source_sha256": "e247b62f0458d78e25cafe8d1989bc30f204ec96c91e3d749f5c356671eb44b1",
+      "sha256": "99488025cf5776cb069023601c3abff81775844f11036ce7dd84d06653988c42",
+      "retention": "supplier lookup changed to checkout-relative path; mathematical body unchanged; explicit --theory and approved SHA-256 check"
+    },
+    {
+      "path": "experiments/fib-self-calibration/fixed-b-and-negative-child/negative-child-exhaustion.py",
+      "origin": "self_calibration",
+      "source_relative_path": "experiments/fib-self-calibration/fixed-b-and-negative-child/negative-child-exhaustion.py",
+      "source_sha256": "c8a2eac6685519b34d94f060cc758ebaa4c328c4236ca4e7fe0907efb060583c",
+      "sha256": "c8a2eac6685519b34d94f060cc758ebaa4c328c4236ca4e7fe0907efb060583c",
+      "retention": "byte-identical"
+    },
+    {
+      "path": "experiments/fib-self-calibration/fixed-b-and-negative-child/negative-j-seed.py",
+      "origin": "self_calibration",
+      "source_relative_path": "experiments/fib-self-calibration/fixed-b-and-negative-child/negative-j-seed.py",
+      "source_sha256": "b9fd3227bdd3f8b26c87e8eb5476610c82df059fab9ee8b6186ac5b39ee7bf8c",
+      "sha256": "b9fd3227bdd3f8b26c87e8eb5476610c82df059fab9ee8b6186ac5b39ee7bf8c",
+      "retention": "byte-identical"
+    },
+    {
+      "path": "experiments/fib-self-calibration/quantitative-arc/quantitative_certificate.py",
+      "origin": "self_calibration",
+      "source_relative_path": "experiments/fib-self-calibration/quantitative-arc/quantitative_certificate.py",
+      "source_sha256": "c1c21e945158a60e5bb3ee8bde36306cc9c34def7c8642ae7b249426eb53d2f6",
+      "sha256": "c1c21e945158a60e5bb3ee8bde36306cc9c34def7c8642ae7b249426eb53d2f6",
+      "retention": "byte-identical"
+    }
+  ],
+  "added_files": [
+    {
+      "path": "experiments/fib-common-base-6ada6767-attempt-1/replay.py",
+      "sha256": "1732f9f2193a7e3566a4f05bb482e966c2cb876a7a5705530b63444bd15f354c"
+    },
+    {
+      "path": "experiments/fib-common-base-6ada6767-attempt-1/requirements.txt",
+      "sha256": "d135f7524cf994b9980305f695c95ff5dc068681745a6caefc078d1900395a25"
+    },
+    {
+      "path": "experiments/fib-common-base-6ada6767-attempt-1/requirements-discovery.txt",
+      "sha256": "812d15025316899fc6cb2471fafc56e2a4bc44845e7ed10e1590441814ba8e43"
+    },
+    {
+      "path": "experiments/fib-self-calibration/README.md",
+      "sha256": "7f6ac0cbc18b6ca508ada6d4107ce6febdbc18937480624bf9389d751dfc292a"
+    }
+  ],
+  "inventory_self_hash": "deliberately omitted to avoid a self-reference; all other new files and every retained file are hashed",
+  "requirements": {
+    "python": ">=3.9; tested CPython 3.9.6; assertions enabled",
+    "exact": {
+      "sympy": "1.14.0",
+      "mpmath": "1.3.0"
+    },
+    "discovery_only": {
+      "numpy": "2.0.2",
+      "scipy": "1.13.1"
+    },
+    "network": "not used by replay; package installation may use an index"
+  },
+  "limitations": [
+    "Exact arithmetic is not a Lean proof.",
+    "The all-base joint J/M problem remains open.",
+    "The 12000-start numerical data are bounded and nonexhaustive.",
+    "Caller owns staging, commit, review and publication; files are deliberately left untracked."
+  ]
+}
