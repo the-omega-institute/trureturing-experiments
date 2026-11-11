@@ -39,8 +39,8 @@ def exact_checks():
     Rplus, Splus = -k, t + g
     assert sp.trace(Splus**2) == 14
     assert sp.trace(Rplus**2) == sp.Rational(5, 2)
-    assert Splus*xi == sp.zeros(4, 1)
-    assert Rplus*xi == sp.Matrix([0, 0, 0, -sp.Rational(1, 2)])
+    assert (Splus*xi).applyfunc(sp.expand) == sp.zeros(4, 1)
+    assert (Rplus*xi).applyfunc(sp.expand) == sp.Matrix([0, 0, 0, -sp.Rational(1, 2)])
 
     weight = sp.diag(2, 2, sp.Rational(1, 8))
     coeff = sp.Matrix([2, 9, 3])

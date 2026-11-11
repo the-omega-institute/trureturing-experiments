@@ -1,5 +1,5 @@
 {
-  "adapter_sha256": "df2f3f363b42becc817da765f20bc60df3c8f6ebf8ed815103665b8ed0673d9d",
+  "adapter_sha256": "a0c9c070889f8219c755621f190a2c55c843e16dc01a3ab5c82c3d032052da0f",
   "array_encoding": "unsigned 16-bit little-endian, C row-major, zero-based indices",
   "arrays": {
     "nonunital-denominators.u16le": {

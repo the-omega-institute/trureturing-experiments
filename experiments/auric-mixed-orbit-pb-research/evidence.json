@@ -4,10 +4,10 @@
     "cauchy_psd_all_principal_minors": [
       "225",
       "148",
-      "85/4",
+      "85/16",
       "32976",
-      "18549/4",
-      "229",
+      "18549/16",
+      "229/4",
       "0"
     ],
     "pure_counterwitness_by_sigma": {
@@ -28,8 +28,24 @@
         "mass": 7
       }
     },
+    "seven_moment_separator": {
+      "pure_Rplus_norm_squared": "1/4",
+      "pure_Splus_norm_squared": 0,
+      "trace_Rplus_squared": "5/2",
+      "trace_Splus_squared": 14
+    },
     "spectral_squared_margin": "347/10000",
     "symbolic_orbit_spanning_determinant": "2*epsilon**15",
+    "uniform_scalar_family_cauchy_coefficients": [
+      2,
+      9,
+      3
+    ],
+    "uniform_scalar_family_cauchy_weights": [
+      "2",
+      "2",
+      "1/8"
+    ],
     "zero_response_cauchy_psd_principal_minors": [
       81,
       4,
