@@ -1,0 +1,26 @@
+Python 3.14.8; SymPy 1.14.0; exact integer/rational/algebraic arithmetic
+FIDELITY section 5: edges=12; occupied=15; complementary-pair arcs=2; W3_pairs=5
+FIDELITY section 8: z^T N z=0; charpoly=t^5(t^2-1)^2(t^2-2); exact PSD Gram rank=10<11
+FAMILY k=3: shape=4x2; length=4; arcs=6; complementary=0; W3_pairs=0; specialized_rank=4; connected=True; factor=QQ:one;Q(sqrt(2)):one;R:absolute-rank-and-content-certificate
+FAMILY k=4: shape=5x2; length=5; arcs=8; complementary=0; W3_pairs=0; specialized_rank=5; connected=True; factor=QQ:one;Q(sqrt(2)):one;R:absolute-rank-and-content-certificate
+FAMILY k=5: shape=6x2; length=6; arcs=10; complementary=0; W3_pairs=0; specialized_rank=6; connected=True; factor=QQ:one;Q(sqrt(2)):one;R:absolute-rank-and-content-certificate
+FAMILY k=6: shape=7x2; length=7; arcs=12; complementary=0; W3_pairs=0; specialized_rank=7; connected=True; factor=QQ:one;Q(sqrt(2)):one;R:absolute-rank-and-content-certificate
+FAMILY k=7: shape=8x2; length=8; arcs=14; complementary=0; W3_pairs=0; specialized_rank=8; connected=True; factor=not_requested
+FAMILY k=8: shape=9x2; length=9; arcs=16; complementary=0; W3_pairs=0; specialized_rank=9; connected=True; factor=not_requested
+FAMILY k=9: shape=10x2; length=10; arcs=18; complementary=0; W3_pairs=0; specialized_rank=10; connected=True; factor=not_requested
+FAMILY k=10: shape=11x2; length=11; arcs=20; complementary=0; W3_pairs=0; specialized_rank=11; connected=True; factor=not_requested
+FAMILY k=11: shape=12x2; length=12; arcs=22; complementary=0; W3_pairs=0; specialized_rank=12; connected=True; factor=not_requested
+FAMILY k=12: shape=13x2; length=13; arcs=24; complementary=0; W3_pairs=0; specialized_rank=13; connected=True; factor=not_requested
+FAMILY k=13: shape=14x2; length=14; arcs=26; complementary=0; W3_pairs=0; specialized_rank=14; connected=True; factor=not_requested
+FAMILY k=14: shape=15x2; length=15; arcs=28; complementary=0; W3_pairs=0; specialized_rank=15; connected=True; factor=not_requested
+FAMILY k=15: shape=16x2; length=16; arcs=30; complementary=0; W3_pairs=0; specialized_rank=16; connected=True; factor=not_requested
+FAMILY k=16: shape=17x2; length=17; arcs=32; complementary=0; W3_pairs=0; specialized_rank=17; connected=True; factor=not_requested
+FAMILY k=17: shape=18x2; length=18; arcs=34; complementary=0; W3_pairs=0; specialized_rank=18; connected=True; factor=not_requested
+FAMILY k=18: shape=19x2; length=19; arcs=36; complementary=0; W3_pairs=0; specialized_rank=19; connected=True; factor=not_requested
+FAMILY k=19: shape=20x2; length=20; arcs=38; complementary=0; W3_pairs=0; specialized_rank=20; connected=True; factor=not_requested
+FAMILY k=20: shape=21x2; length=21; arcs=40; complementary=0; W3_pairs=0; specialized_rank=21; connected=True; factor=not_requested
+FAMILY k=21: shape=22x2; length=22; arcs=42; complementary=0; W3_pairs=0; specialized_rank=22; connected=True; factor=not_requested
+FAMILY k=22: shape=23x2; length=23; arcs=44; complementary=0; W3_pairs=0; specialized_rank=23; connected=True; factor=not_requested
+FAMILY k=23: shape=24x2; length=24; arcs=46; complementary=0; W3_pairs=0; specialized_rank=24; connected=True; factor=not_requested
+FAMILY k=24: shape=25x2; length=25; arcs=48; complementary=0; W3_pairs=0; specialized_rank=25; connected=True; factor=not_requested
+ALL_CHECKS_OK
