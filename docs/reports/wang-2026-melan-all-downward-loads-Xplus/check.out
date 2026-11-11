@@ -1,0 +1,15 @@
+Python 3.14; SymPy 1.14.0
+FIDELITY: source Green jump, four hinged traces, double integral, and linear constant-load solution: 3 exact cases
+RESOLVENT: both identities and strict coordinate signs: 144 exact cases
+SOURCE_LOAD_BOUND: a=b=c=L=1, exact Taylor enclosure proves (H) threshold <3
+HEAVY_DISCRETE: n=2, profile=uniform, amplitude=100, mass=200/3, positive_roots=1, root_bracket=[9976839055/14495514624,19953678115/28991029248], frozen_residual=0
+HEAVY_DISCRETE: n=2, profile=left, amplitude=10000, mass=10000/3, positive_roots=1, root_bracket=[215348713375/14495514624,17945726125/1207959552], frozen_residual=0
+HEAVY_DISCRETE: n=2, profile=central, amplitude=1000000, mass=1000000/3, positive_roots=1, root_bracket=[679400996875/3623878656,393171875/2097152], frozen_residual=0
+HEAVY_DISCRETE: n=3, profile=uniform, amplitude=100, mass=75, positive_roots=1, root_bracket=[13837207163575/19825569038336,27674414334075/39651138076672], frozen_residual=0
+HEAVY_DISCRETE: n=3, profile=left, amplitude=10000, mass=5000, positive_roots=1, root_bracket=[372165340120625/19825569038336,46520667545625/2478196129792], frozen_residual=0
+HEAVY_DISCRETE: n=3, profile=central, amplitude=1000000, mass=250000, positive_roots=1, root_bracket=[53330830734375/309774516224,213323323828125/1239098064896], frozen_residual=0
+HEAVY_DISCRETE: n=5, profile=uniform, amplitude=100, mass=250/3, positive_roots=1, root_bracket=[8574525767476825/12198613358739456,11432701026159925/16264817811652608], frozen_residual=0
+HEAVY_DISCRETE: n=5, profile=left, amplitude=10000, mass=5000, positive_roots=1, root_bracket=[496291535355625/27850715430912,744437303498125/41776073146368], frozen_residual=0
+HEAVY_DISCRETE: n=5, profile=central, amplitude=1000000, mass=500000/3, positive_roots=1, root_bracket=[47331169848203125/338850371076096,7888528334453125/56475061846016], frozen_residual=0
+SCOPE: exact finite-difference checks do not prove continuum existence, uniqueness, Sobolev regularity, or convergence of Wang's Picard iteration
+ALL_CHECKS_OK
