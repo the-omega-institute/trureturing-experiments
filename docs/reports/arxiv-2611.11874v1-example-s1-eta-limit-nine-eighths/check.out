@@ -1,0 +1,12 @@
+Numeraire: all five null constraints verified exactly for t=0..200.
+Example S1 stopping rule at P(0.7): E[E*_{1+1(X1=1)}] = 30/29.
+eta_0 = 1
+eta_1 = 1
+eta_2 = 30/29
+eta_3 = 39/37
+eta_4 = 965164/899725
+Source gap at T=50: 93/200000000 < 9/8 - eta_50 < 19/40000000.
+Source gap at T=200: 13/40000000000000000000000 < 9/8 - eta_200 < 67/200000000000000000000000.
+Full ordered-tree policy enumeration agrees for T=0..4 at all five nulls.
+Exact Snell values, endpoint attainment, monotonicity and both bounds verified for T=0..200.
+ALL_CHECKS_OK
