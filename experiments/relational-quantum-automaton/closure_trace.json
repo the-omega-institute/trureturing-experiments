@@ -1,0 +1,43 @@
+{
+  "fixed_point": true,
+  "records": 6,
+  "rounds": [
+    {
+      "new_records": 2,
+      "passed": ["R0_identity_norm", "R4_positive_readout"],
+      "records": 1,
+      "round": 0,
+      "waiting": ["R1_binary_split", "R2_oriented_ternary", "R3_successor_proxy", "R5_composition_proxy"]
+    },
+    {
+      "new_records": 2,
+      "passed": ["R0_identity_norm", "R1_binary_split", "R4_positive_readout"],
+      "records": 3,
+      "round": 1,
+      "waiting": ["R2_oriented_ternary", "R3_successor_proxy", "R5_composition_proxy"]
+    },
+    {
+      "new_records": 1,
+      "passed": ["R0_identity_norm", "R1_binary_split", "R2_oriented_ternary", "R4_positive_readout"],
+      "records": 5,
+      "round": 2,
+      "waiting": ["R3_successor_proxy", "R5_composition_proxy"]
+    },
+    {
+      "new_records": 0,
+      "passed": ["R0_identity_norm", "R1_binary_split", "R2_oriented_ternary", "R3_successor_proxy", "R4_positive_readout", "R5_composition_proxy"],
+      "records": 6,
+      "round": 3,
+      "waiting": []
+    }
+  ],
+  "rule_names": [
+    "R0_identity_norm",
+    "R1_binary_split",
+    "R2_oriented_ternary",
+    "R3_successor_proxy",
+    "R4_positive_readout",
+    "R5_composition_proxy"
+  ],
+  "seed": ["identity"]
+}
