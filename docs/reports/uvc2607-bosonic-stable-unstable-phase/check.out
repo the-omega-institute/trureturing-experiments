@@ -1,0 +1,10 @@
+FIDELITY: source det b=f^2(delta^2-1) and double-band characteristic polynomial OK
+FAMILY: coordinate permutation, discriminants, det B=(ac+t^2)^2, symbolic eigenbases OK
+BOSONIC: pseudo-Hermiticity, Hermitian Hessian, momentum particle-hole constraint, fixed chiral grading OK
+GAP: det G=|f|^8(ac+t^2)^4; |f|^2=(2s-1)^2+2s(1-s)(1+cos k) OK
+EXACT t=1/2: eigenvalues [sqrt(3)/2 + 2, 2 - sqrt(3)/2, -2 + sqrt(3)/2, -2 - sqrt(3)/2]; eigenbasis invertible
+EXACT t=3/2: eigenvalues [2 + sqrt(5)*I/2, 2 - sqrt(5)*I/2, -2 + sqrt(5)*I/2, -2 - sqrt(5)*I/2]; eigenbasis invertible
+COLLISION t=1: eigenvalues +/-2, both geometric multiplicities 1; det=16 (nonzero-frequency EP)
+WINDING: exact factorization and right-half-plane certificate give continuous argument increment 8*pi, index +4
+BOUNDARY: exact geometric kernel recurrence (square summability uses |(1-s)/s|<1) OK
+ALL_CHECKS_OK
