@@ -1,0 +1,3150 @@
+{
+  "B_LAB_driver": true,
+  "B_allocation_width_common_timeline": true,
+  "B_complete": true,
+  "B_whole_family_correspondence": true,
+  "C_released": false,
+  "D_complete": false,
+  "allocator_probe": {
+    "after_cleanup": {
+      "bit_fields": 10,
+      "bits": 86,
+      "grant_bits": 12,
+      "objects": 12,
+      "reference_slots": 16,
+      "reference_width": 4
+    },
+    "before_cleanup": {
+      "bit_fields": 10,
+      "bits": 77,
+      "grant_bits": 11,
+      "objects": 11,
+      "reference_slots": 14,
+      "reference_width": 4
+    },
+    "cleanup_fields": 22,
+    "free_list_writes": 21,
+    "reference_copy_bits": 112,
+    "reference_widenings": 3
+  },
+  "common_timeline": {
+    "common_cut": {
+      "component_direct_census": {
+        "connection": {
+          "bit_fields": 2473,
+          "bits": 38218,
+          "grant_bits": 2613,
+          "objects": 2613,
+          "reference_slots": 2761,
+          "reference_width": 12
+        },
+        "installation": {
+          "bits": 19129883,
+          "objects": 1348178,
+          "reference_width": 21,
+          "refs": 5511840,
+          "total_bits": 136226701
+        },
+        "installation_normalized": {
+          "bit_fields": 19129883,
+          "bits": 136226701,
+          "grant_bits": 1348178,
+          "objects": 1348178,
+          "reference_slots": 5511840,
+          "reference_width": 21
+        },
+        "same_original_source": {
+          "bit_fields": 9393,
+          "bits": 183635,
+          "grant_bits": 10064,
+          "objects": 10064,
+          "reference_slots": 11727,
+          "reference_width": 14
+        }
+      },
+      "unified_total_at_same_cut": {
+        "bit_fields": 19141749,
+        "bits": 136448554,
+        "grant_bits": 1360855,
+        "objects": 1360855,
+        "reference_slots": 5526328
+      },
+      "unrelated_peak_sum_used": false,
+      "width_vector": {
+        "connection": 12,
+        "installation": 21,
+        "source": 14
+      }
+    },
+    "connection_operations": {
+      "allocations": 2613,
+      "bit_reads": 2473,
+      "bit_writes": 4808,
+      "call_grant_checks": 69,
+      "cleanup_fields": 4808,
+      "connection_acknowledgements": 69,
+      "connection_operand_bits": 1133,
+      "connection_reply_latch_bits": 138,
+      "field_reads": 12227,
+      "field_writes": 19720,
+      "free_list_writes": 4671,
+      "grant_deliveries": 2613,
+      "navigation_links": 4670,
+      "null_tests": 9616,
+      "original_calls": 69,
+      "port_acknowledgements": 69,
+      "port_ends": 69,
+      "port_logical_operand_bits": 1133,
+      "port_reply_bits": 138,
+      "port_returns": 69,
+      "port_root_returns": 69,
+      "port_wire_bits": 2335,
+      "reference_copy_bits": 94926,
+      "reference_read_bits": 103507,
+      "reference_rewrite_fields": 4572,
+      "reference_transport_bits": 27273,
+      "reference_widenings": 11,
+      "reference_write_bits": 157452
+    },
+    "run": {
+      "distinct_addresses": 57,
+      "field_actions": 185513,
+      "graph_sha256": "7d1b65bb3a3feb49d09cc5171995549891728088d1b4ce90c7e9e877c5e04936",
+      "installation_steps": 44916792,
+      "invocations": 69,
+      "native_steps": 29266611,
+      "output_sha256": "bcef2515534a7fc1046ff1dbbeeb5a220f9c0f62288bd7abbae2c7e260cc411d",
+      "source_bit": 0
+    },
+    "source_operations": {
+      "acknowledgements": 74,
+      "address_reference_writes": 4985375,
+      "arity_tests": 517317,
+      "bit_field_reads": 3939382,
+      "bit_field_writes": 43005,
+      "bit_register_reads": 2904426,
+      "bit_register_writes": 4169006,
+      "bit_tests": 2888730,
+      "code_bit_reads": 3895773,
+      "code_reference_reads": 742052,
+      "field_commits": 185513,
+      "input_bits": 7812,
+      "literal_bit_assignments": 249779,
+      "literal_null_assignments": 185513,
+      "native_control_reference_writes": 29266611,
+      "native_controller_selections": 29266611,
+      "native_successor_reference_reads": 29266611,
+      "null_tests": 212909,
+      "original_acknowledgements": 69,
+      "original_calls": 69,
+      "output_bits": 498,
+      "output_ends": 74,
+      "port_operand_bits": 1133,
+      "read_bit_latch_writes": 6843808,
+      "read_reference_latch_writes": 7076572,
+      "reference_equality_tests": 3,
+      "reference_field_reads": 917449,
+      "reference_field_writes": 67104,
+      "reference_register_reads": 6159123,
+      "reference_register_writes": 1479374,
+      "resume_signals": 2604,
+      "returns": 74,
+      "saved_reference_writes": 3
+    },
+    "timeline": {
+      "boundary_count": 69,
+      "direct_equals_incremental": true,
+      "free_pool_and_cleanup_observed": true,
+      "pending_ack_return_close_cuts": true,
+      "refusal_and_busy_paths_checked_by_existing_service_mutants": true,
+      "retained_old_jobs_and_roots": true,
+      "source_call_boundaries": [
+        {
+          "operand": "LL",
+          "owners": {
+            "connection": {
+              "direct": {
+                "bit_fields": 7,
+                "bits": 110,
+                "grant_bits": 11,
+                "objects": 11,
+                "reference_slots": 23,
+                "reference_width": 4
+              },
+              "incremental": {
+                "bit_fields": 7,
+                "bits": 110,
+                "grant_bits": 11,
+                "objects": 11,
+                "reference_slots": 23,
+                "reference_width": 4
+              }
+            },
+            "source": {
+              "direct": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              },
+              "incremental": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              }
+            }
+          },
+          "source_calls": 1
+        },
+        {
+          "operand": "",
+          "owners": {
+            "connection": {
+              "direct": {
+                "bit_fields": 10,
+                "bits": 176,
+                "grant_bits": 16,
+                "objects": 16,
+                "reference_slots": 30,
+                "reference_width": 5
+              },
+              "incremental": {
+                "bit_fields": 10,
+                "bits": 176,
+                "grant_bits": 16,
+                "objects": 16,
+                "reference_slots": 30,
+                "reference_width": 5
+              }
+            },
+            "source": {
+              "direct": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              },
+              "incremental": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              }
+            }
+          },
+          "source_calls": 2
+        },
+        {
+          "operand": "LL",
+          "owners": {
+            "connection": {
+              "direct": {
+                "bit_fields": 17,
+                "bits": 247,
+                "grant_bits": 25,
+                "objects": 25,
+                "reference_slots": 41,
+                "reference_width": 5
+              },
+              "incremental": {
+                "bit_fields": 17,
+                "bits": 247,
+                "grant_bits": 25,
+                "objects": 25,
+                "reference_slots": 41,
+                "reference_width": 5
+              }
+            },
+            "source": {
+              "direct": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              },
+              "incremental": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              }
+            }
+          },
+          "source_calls": 3
+        },
+        {
+          "operand": "LRR",
+          "owners": {
+            "connection": {
+              "direct": {
+                "bit_fields": 26,
+                "bits": 386,
+                "grant_bits": 36,
+                "objects": 36,
+                "reference_slots": 54,
+                "reference_width": 6
+              },
+              "incremental": {
+                "bit_fields": 26,
+                "bits": 386,
+                "grant_bits": 36,
+                "objects": 36,
+                "reference_slots": 54,
+                "reference_width": 6
+              }
+            },
+            "source": {
+              "direct": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              },
+              "incremental": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              }
+            }
+          },
+          "source_calls": 4
+        },
+        {
+          "operand": "LLR",
+          "owners": {
+            "connection": {
+              "direct": {
+                "bit_fields": 35,
+                "bits": 484,
+                "grant_bits": 47,
+                "objects": 47,
+                "reference_slots": 67,
+                "reference_width": 6
+              },
+              "incremental": {
+                "bit_fields": 35,
+                "bits": 484,
+                "grant_bits": 47,
+                "objects": 47,
+                "reference_slots": 67,
+                "reference_width": 6
+              }
+            },
+            "source": {
+              "direct": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              },
+              "incremental": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              }
+            }
+          },
+          "source_calls": 5
+        },
+        {
+          "operand": "LL",
+          "owners": {
+            "connection": {
+              "direct": {
+                "bit_fields": 42,
+                "bits": 566,
+                "grant_bits": 56,
+                "objects": 56,
+                "reference_slots": 78,
+                "reference_width": 6
+              },
+              "incremental": {
+                "bit_fields": 42,
+                "bits": 566,
+                "grant_bits": 56,
+                "objects": 56,
+                "reference_slots": 78,
+                "reference_width": 6
+              }
+            },
+            "source": {
+              "direct": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              },
+              "incremental": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              }
+            }
+          },
+          "source_calls": 6
+        },
+        {
+          "operand": "LR",
+          "owners": {
+            "connection": {
+              "direct": {
+                "bit_fields": 49,
+                "bits": 737,
+                "grant_bits": 65,
+                "objects": 65,
+                "reference_slots": 89,
+                "reference_width": 7
+              },
+              "incremental": {
+                "bit_fields": 49,
+                "bits": 737,
+                "grant_bits": 65,
+                "objects": 65,
+                "reference_slots": 89,
+                "reference_width": 7
+              }
+            },
+            "source": {
+              "direct": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              },
+              "incremental": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              }
+            }
+          },
+          "source_calls": 7
+        },
+        {
+          "operand": "LLL",
+          "owners": {
+            "connection": {
+              "direct": {
+                "bit_fields": 58,
+                "bits": 848,
+                "grant_bits": 76,
+                "objects": 76,
+                "reference_slots": 102,
+                "reference_width": 7
+              },
+              "incremental": {
+                "bit_fields": 58,
+                "bits": 848,
+                "grant_bits": 76,
+                "objects": 76,
+                "reference_slots": 102,
+                "reference_width": 7
+              }
+            },
+            "source": {
+              "direct": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              },
+              "incremental": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              }
+            }
+          },
+          "source_calls": 8
+        },
+        {
+          "operand": "LRL",
+          "owners": {
+            "connection": {
+              "direct": {
+                "bit_fields": 67,
+                "bits": 959,
+                "grant_bits": 87,
+                "objects": 87,
+                "reference_slots": 115,
+                "reference_width": 7
+              },
+              "incremental": {
+                "bit_fields": 67,
+                "bits": 959,
+                "grant_bits": 87,
+                "objects": 87,
+                "reference_slots": 115,
+                "reference_width": 7
+              }
+            },
+            "source": {
+              "direct": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              },
+              "incremental": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              }
+            }
+          },
+          "source_calls": 9
+        },
+        {
+          "operand": "RLL",
+          "owners": {
+            "connection": {
+              "direct": {
+                "bit_fields": 76,
+                "bits": 1070,
+                "grant_bits": 98,
+                "objects": 98,
+                "reference_slots": 128,
+                "reference_width": 7
+              },
+              "incremental": {
+                "bit_fields": 76,
+                "bits": 1070,
+                "grant_bits": 98,
+                "objects": 98,
+                "reference_slots": 128,
+                "reference_width": 7
+              }
+            },
+            "source": {
+              "direct": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              },
+              "incremental": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              }
+            }
+          },
+          "source_calls": 10
+        },
+        {
+          "operand": "RRLL",
+          "owners": {
+            "connection": {
+              "direct": {
+                "bit_fields": 87,
+                "bits": 1199,
+                "grant_bits": 111,
+                "objects": 111,
+                "reference_slots": 143,
+                "reference_width": 7
+              },
+              "incremental": {
+                "bit_fields": 87,
+                "bits": 1199,
+                "grant_bits": 111,
+                "objects": 111,
+                "reference_slots": 143,
+                "reference_width": 7
+              }
+            },
+            "source": {
+              "direct": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              },
+              "incremental": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              }
+            }
+          },
+          "source_calls": 11
+        },
+        {
+          "operand": "RRRLL",
+          "owners": {
+            "connection": {
+              "direct": {
+                "bit_fields": 100,
+                "bits": 1346,
+                "grant_bits": 126,
+                "objects": 126,
+                "reference_slots": 160,
+                "reference_width": 7
+              },
+              "incremental": {
+                "bit_fields": 100,
+                "bits": 1346,
+                "grant_bits": 126,
+                "objects": 126,
+                "reference_slots": 160,
+                "reference_width": 7
+              }
+            },
+            "source": {
+              "direct": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              },
+              "incremental": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              }
+            }
+          },
+          "source_calls": 12
+        },
+        {
+          "operand": "RRRRLL",
+          "owners": {
+            "connection": {
+              "direct": {
+                "bit_fields": 115,
+                "bits": 1690,
+                "grant_bits": 143,
+                "objects": 143,
+                "reference_slots": 179,
+                "reference_width": 8
+              },
+              "incremental": {
+                "bit_fields": 115,
+                "bits": 1690,
+                "grant_bits": 143,
+                "objects": 143,
+                "reference_slots": 179,
+                "reference_width": 8
+              }
+            },
+            "source": {
+              "direct": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              },
+              "incremental": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              }
+            }
+          },
+          "source_calls": 13
+        },
+        {
+          "operand": "RRRRRLL",
+          "owners": {
+            "connection": {
+              "direct": {
+                "bit_fields": 132,
+                "bits": 1894,
+                "grant_bits": 162,
+                "objects": 162,
+                "reference_slots": 200,
+                "reference_width": 8
+              },
+              "incremental": {
+                "bit_fields": 132,
+                "bits": 1894,
+                "grant_bits": 162,
+                "objects": 162,
+                "reference_slots": 200,
+                "reference_width": 8
+              }
+            },
+            "source": {
+              "direct": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              },
+              "incremental": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              }
+            }
+          },
+          "source_calls": 14
+        },
+        {
+          "operand": "RRRRRRLL",
+          "owners": {
+            "connection": {
+              "direct": {
+                "bit_fields": 151,
+                "bits": 2118,
+                "grant_bits": 183,
+                "objects": 183,
+                "reference_slots": 223,
+                "reference_width": 8
+              },
+              "incremental": {
+                "bit_fields": 151,
+                "bits": 2118,
+                "grant_bits": 183,
+                "objects": 183,
+                "reference_slots": 223,
+                "reference_width": 8
+              }
+            },
+            "source": {
+              "direct": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              },
+              "incremental": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              }
+            }
+          },
+          "source_calls": 15
+        },
+        {
+          "operand": "RRRRRRRLL",
+          "owners": {
+            "connection": {
+              "direct": {
+                "bit_fields": 172,
+                "bits": 2362,
+                "grant_bits": 206,
+                "objects": 206,
+                "reference_slots": 248,
+                "reference_width": 8
+              },
+              "incremental": {
+                "bit_fields": 172,
+                "bits": 2362,
+                "grant_bits": 206,
+                "objects": 206,
+                "reference_slots": 248,
+                "reference_width": 8
+              }
+            },
+            "source": {
+              "direct": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              },
+              "incremental": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              }
+            }
+          },
+          "source_calls": 16
+        },
+        {
+          "operand": "RRRRRRRRLL",
+          "owners": {
+            "connection": {
+              "direct": {
+                "bit_fields": 195,
+                "bits": 2626,
+                "grant_bits": 231,
+                "objects": 231,
+                "reference_slots": 275,
+                "reference_width": 8
+              },
+              "incremental": {
+                "bit_fields": 195,
+                "bits": 2626,
+                "grant_bits": 231,
+                "objects": 231,
+                "reference_slots": 275,
+                "reference_width": 8
+              }
+            },
+            "source": {
+              "direct": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              },
+              "incremental": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              }
+            }
+          },
+          "source_calls": 17
+        },
+        {
+          "operand": "RRRRRRRRRLL",
+          "owners": {
+            "connection": {
+              "direct": {
+                "bit_fields": 220,
+                "bits": 3214,
+                "grant_bits": 258,
+                "objects": 258,
+                "reference_slots": 304,
+                "reference_width": 9
+              },
+              "incremental": {
+                "bit_fields": 220,
+                "bits": 3214,
+                "grant_bits": 258,
+                "objects": 258,
+                "reference_slots": 304,
+                "reference_width": 9
+              }
+            },
+            "source": {
+              "direct": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              },
+              "incremental": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              }
+            }
+          },
+          "source_calls": 18
+        },
+        {
+          "operand": "RRRRRRRRRRLL",
+          "owners": {
+            "connection": {
+              "direct": {
+                "bit_fields": 247,
+                "bits": 3549,
+                "grant_bits": 287,
+                "objects": 287,
+                "reference_slots": 335,
+                "reference_width": 9
+              },
+              "incremental": {
+                "bit_fields": 247,
+                "bits": 3549,
+                "grant_bits": 287,
+                "objects": 287,
+                "reference_slots": 335,
+                "reference_width": 9
+              }
+            },
+            "source": {
+              "direct": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              },
+              "incremental": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              }
+            }
+          },
+          "source_calls": 19
+        },
+        {
+          "operand": "RRRRRRRRRRRLL",
+          "owners": {
+            "connection": {
+              "direct": {
+                "bit_fields": 276,
+                "bits": 3906,
+                "grant_bits": 318,
+                "objects": 318,
+                "reference_slots": 368,
+                "reference_width": 9
+              },
+              "incremental": {
+                "bit_fields": 276,
+                "bits": 3906,
+                "grant_bits": 318,
+                "objects": 318,
+                "reference_slots": 368,
+                "reference_width": 9
+              }
+            },
+            "source": {
+              "direct": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              },
+              "incremental": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              }
+            }
+          },
+          "source_calls": 20
+        },
+        {
+          "operand": "RRRRRRRRRRRRLL",
+          "owners": {
+            "connection": {
+              "direct": {
+                "bit_fields": 307,
+                "bits": 4285,
+                "grant_bits": 351,
+                "objects": 351,
+                "reference_slots": 403,
+                "reference_width": 9
+              },
+              "incremental": {
+                "bit_fields": 307,
+                "bits": 4285,
+                "grant_bits": 351,
+                "objects": 351,
+                "reference_slots": 403,
+                "reference_width": 9
+              }
+            },
+            "source": {
+              "direct": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              },
+              "incremental": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              }
+            }
+          },
+          "source_calls": 21
+        },
+        {
+          "operand": "RRRRRRRRRRRRRLL",
+          "owners": {
+            "connection": {
+              "direct": {
+                "bit_fields": 340,
+                "bits": 4686,
+                "grant_bits": 386,
+                "objects": 386,
+                "reference_slots": 440,
+                "reference_width": 9
+              },
+              "incremental": {
+                "bit_fields": 340,
+                "bits": 4686,
+                "grant_bits": 386,
+                "objects": 386,
+                "reference_slots": 440,
+                "reference_width": 9
+              }
+            },
+            "source": {
+              "direct": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              },
+              "incremental": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              }
+            }
+          },
+          "source_calls": 22
+        },
+        {
+          "operand": "RRRRRRRRRRRRRRLL",
+          "owners": {
+            "connection": {
+              "direct": {
+                "bit_fields": 375,
+                "bits": 5109,
+                "grant_bits": 423,
+                "objects": 423,
+                "reference_slots": 479,
+                "reference_width": 9
+              },
+              "incremental": {
+                "bit_fields": 375,
+                "bits": 5109,
+                "grant_bits": 423,
+                "objects": 423,
+                "reference_slots": 479,
+                "reference_width": 9
+              }
+            },
+            "source": {
+              "direct": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              },
+              "incremental": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              }
+            }
+          },
+          "source_calls": 23
+        },
+        {
+          "operand": "RRRRRRRRRRRRRRRLL",
+          "owners": {
+            "connection": {
+              "direct": {
+                "bit_fields": 412,
+                "bits": 5554,
+                "grant_bits": 462,
+                "objects": 462,
+                "reference_slots": 520,
+                "reference_width": 9
+              },
+              "incremental": {
+                "bit_fields": 412,
+                "bits": 5554,
+                "grant_bits": 462,
+                "objects": 462,
+                "reference_slots": 520,
+                "reference_width": 9
+              }
+            },
+            "source": {
+              "direct": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              },
+              "incremental": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              }
+            }
+          },
+          "source_calls": 24
+        },
+        {
+          "operand": "RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRLL",
+          "owners": {
+            "connection": {
+              "direct": {
+                "bit_fields": 509,
+                "bits": 7280,
+                "grant_bits": 561,
+                "objects": 561,
+                "reference_slots": 621,
+                "reference_width": 10
+              },
+              "incremental": {
+                "bit_fields": 509,
+                "bits": 7280,
+                "grant_bits": 561,
+                "objects": 561,
+                "reference_slots": 621,
+                "reference_width": 10
+              }
+            },
+            "source": {
+              "direct": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              },
+              "incremental": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              }
+            }
+          },
+          "source_calls": 25
+        },
+        {
+          "operand": "LL",
+          "owners": {
+            "connection": {
+              "direct": {
+                "bit_fields": 516,
+                "bits": 7406,
+                "grant_bits": 570,
+                "objects": 570,
+                "reference_slots": 632,
+                "reference_width": 10
+              },
+              "incremental": {
+                "bit_fields": 516,
+                "bits": 7406,
+                "grant_bits": 570,
+                "objects": 570,
+                "reference_slots": 632,
+                "reference_width": 10
+              }
+            },
+            "source": {
+              "direct": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              },
+              "incremental": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              }
+            }
+          },
+          "source_calls": 26
+        },
+        {
+          "operand": "",
+          "owners": {
+            "connection": {
+              "direct": {
+                "bit_fields": 519,
+                "bits": 7484,
+                "grant_bits": 575,
+                "objects": 575,
+                "reference_slots": 639,
+                "reference_width": 10
+              },
+              "incremental": {
+                "bit_fields": 519,
+                "bits": 7484,
+                "grant_bits": 575,
+                "objects": 575,
+                "reference_slots": 639,
+                "reference_width": 10
+              }
+            },
+            "source": {
+              "direct": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              },
+              "incremental": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              }
+            }
+          },
+          "source_calls": 27
+        },
+        {
+          "operand": "L",
+          "owners": {
+            "connection": {
+              "direct": {
+                "bit_fields": 524,
+                "bits": 7586,
+                "grant_bits": 582,
+                "objects": 582,
+                "reference_slots": 648,
+                "reference_width": 10
+              },
+              "incremental": {
+                "bit_fields": 524,
+                "bits": 7586,
+                "grant_bits": 582,
+                "objects": 582,
+                "reference_slots": 648,
+                "reference_width": 10
+              }
+            },
+            "source": {
+              "direct": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              },
+              "incremental": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              }
+            }
+          },
+          "source_calls": 28
+        },
+        {
+          "operand": "R",
+          "owners": {
+            "connection": {
+              "direct": {
+                "bit_fields": 529,
+                "bits": 7688,
+                "grant_bits": 589,
+                "objects": 589,
+                "reference_slots": 657,
+                "reference_width": 10
+              },
+              "incremental": {
+                "bit_fields": 529,
+                "bits": 7688,
+                "grant_bits": 589,
+                "objects": 589,
+                "reference_slots": 657,
+                "reference_width": 10
+              }
+            },
+            "source": {
+              "direct": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              },
+              "incremental": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              }
+            }
+          },
+          "source_calls": 29
+        },
+        {
+          "operand": "LL",
+          "owners": {
+            "connection": {
+              "direct": {
+                "bit_fields": 536,
+                "bits": 7814,
+                "grant_bits": 598,
+                "objects": 598,
+                "reference_slots": 668,
+                "reference_width": 10
+              },
+              "incremental": {
+                "bit_fields": 536,
+                "bits": 7814,
+                "grant_bits": 598,
+                "objects": 598,
+                "reference_slots": 668,
+                "reference_width": 10
+              }
+            },
+            "source": {
+              "direct": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              },
+              "incremental": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              }
+            }
+          },
+          "source_calls": 30
+        },
+        {
+          "operand": "LR",
+          "owners": {
+            "connection": {
+              "direct": {
+                "bit_fields": 543,
+                "bits": 7940,
+                "grant_bits": 607,
+                "objects": 607,
+                "reference_slots": 679,
+                "reference_width": 10
+              },
+              "incremental": {
+                "bit_fields": 543,
+                "bits": 7940,
+                "grant_bits": 607,
+                "objects": 607,
+                "reference_slots": 679,
+                "reference_width": 10
+              }
+            },
+            "source": {
+              "direct": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              },
+              "incremental": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              }
+            }
+          },
+          "source_calls": 31
+        },
+        {
+          "operand": "RL",
+          "owners": {
+            "connection": {
+              "direct": {
+                "bit_fields": 550,
+                "bits": 8066,
+                "grant_bits": 616,
+                "objects": 616,
+                "reference_slots": 690,
+                "reference_width": 10
+              },
+              "incremental": {
+                "bit_fields": 550,
+                "bits": 8066,
+                "grant_bits": 616,
+                "objects": 616,
+                "reference_slots": 690,
+                "reference_width": 10
+              }
+            },
+            "source": {
+              "direct": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              },
+              "incremental": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              }
+            }
+          },
+          "source_calls": 32
+        },
+        {
+          "operand": "RR",
+          "owners": {
+            "connection": {
+              "direct": {
+                "bit_fields": 557,
+                "bits": 8192,
+                "grant_bits": 625,
+                "objects": 625,
+                "reference_slots": 701,
+                "reference_width": 10
+              },
+              "incremental": {
+                "bit_fields": 557,
+                "bits": 8192,
+                "grant_bits": 625,
+                "objects": 625,
+                "reference_slots": 701,
+                "reference_width": 10
+              }
+            },
+            "source": {
+              "direct": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              },
+              "incremental": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              }
+            }
+          },
+          "source_calls": 33
+        },
+        {
+          "operand": "LLL",
+          "owners": {
+            "connection": {
+              "direct": {
+                "bit_fields": 566,
+                "bits": 8342,
+                "grant_bits": 636,
+                "objects": 636,
+                "reference_slots": 714,
+                "reference_width": 10
+              },
+              "incremental": {
+                "bit_fields": 566,
+                "bits": 8342,
+                "grant_bits": 636,
+                "objects": 636,
+                "reference_slots": 714,
+                "reference_width": 10
+              }
+            },
+            "source": {
+              "direct": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              },
+              "incremental": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              }
+            }
+          },
+          "source_calls": 34
+        },
+        {
+          "operand": "LLR",
+          "owners": {
+            "connection": {
+              "direct": {
+                "bit_fields": 575,
+                "bits": 8492,
+                "grant_bits": 647,
+                "objects": 647,
+                "reference_slots": 727,
+                "reference_width": 10
+              },
+              "incremental": {
+                "bit_fields": 575,
+                "bits": 8492,
+                "grant_bits": 647,
+                "objects": 647,
+                "reference_slots": 727,
+                "reference_width": 10
+              }
+            },
+            "source": {
+              "direct": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              },
+              "incremental": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              }
+            }
+          },
+          "source_calls": 35
+        },
+        {
+          "operand": "LRL",
+          "owners": {
+            "connection": {
+              "direct": {
+                "bit_fields": 584,
+                "bits": 8642,
+                "grant_bits": 658,
+                "objects": 658,
+                "reference_slots": 740,
+                "reference_width": 10
+              },
+              "incremental": {
+                "bit_fields": 584,
+                "bits": 8642,
+                "grant_bits": 658,
+                "objects": 658,
+                "reference_slots": 740,
+                "reference_width": 10
+              }
+            },
+            "source": {
+              "direct": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              },
+              "incremental": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              }
+            }
+          },
+          "source_calls": 36
+        },
+        {
+          "operand": "LRR",
+          "owners": {
+            "connection": {
+              "direct": {
+                "bit_fields": 593,
+                "bits": 8792,
+                "grant_bits": 669,
+                "objects": 669,
+                "reference_slots": 753,
+                "reference_width": 10
+              },
+              "incremental": {
+                "bit_fields": 593,
+                "bits": 8792,
+                "grant_bits": 669,
+                "objects": 669,
+                "reference_slots": 753,
+                "reference_width": 10
+              }
+            },
+            "source": {
+              "direct": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              },
+              "incremental": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              }
+            }
+          },
+          "source_calls": 37
+        },
+        {
+          "operand": "RLL",
+          "owners": {
+            "connection": {
+              "direct": {
+                "bit_fields": 602,
+                "bits": 8942,
+                "grant_bits": 680,
+                "objects": 680,
+                "reference_slots": 766,
+                "reference_width": 10
+              },
+              "incremental": {
+                "bit_fields": 602,
+                "bits": 8942,
+                "grant_bits": 680,
+                "objects": 680,
+                "reference_slots": 766,
+                "reference_width": 10
+              }
+            },
+            "source": {
+              "direct": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              },
+              "incremental": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              }
+            }
+          },
+          "source_calls": 38
+        },
+        {
+          "operand": "RLR",
+          "owners": {
+            "connection": {
+              "direct": {
+                "bit_fields": 611,
+                "bits": 9092,
+                "grant_bits": 691,
+                "objects": 691,
+                "reference_slots": 779,
+                "reference_width": 10
+              },
+              "incremental": {
+                "bit_fields": 611,
+                "bits": 9092,
+                "grant_bits": 691,
+                "objects": 691,
+                "reference_slots": 779,
+                "reference_width": 10
+              }
+            },
+            "source": {
+              "direct": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              },
+              "incremental": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              }
+            }
+          },
+          "source_calls": 39
+        },
+        {
+          "operand": "RRL",
+          "owners": {
+            "connection": {
+              "direct": {
+                "bit_fields": 620,
+                "bits": 9242,
+                "grant_bits": 702,
+                "objects": 702,
+                "reference_slots": 792,
+                "reference_width": 10
+              },
+              "incremental": {
+                "bit_fields": 620,
+                "bits": 9242,
+                "grant_bits": 702,
+                "objects": 702,
+                "reference_slots": 792,
+                "reference_width": 10
+              }
+            },
+            "source": {
+              "direct": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              },
+              "incremental": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              }
+            }
+          },
+          "source_calls": 40
+        },
+        {
+          "operand": "RRR",
+          "owners": {
+            "connection": {
+              "direct": {
+                "bit_fields": 629,
+                "bits": 9392,
+                "grant_bits": 713,
+                "objects": 713,
+                "reference_slots": 805,
+                "reference_width": 10
+              },
+              "incremental": {
+                "bit_fields": 629,
+                "bits": 9392,
+                "grant_bits": 713,
+                "objects": 713,
+                "reference_slots": 805,
+                "reference_width": 10
+              }
+            },
+            "source": {
+              "direct": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              },
+              "incremental": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              }
+            }
+          },
+          "source_calls": 41
+        },
+        {
+          "operand": "LLLL",
+          "owners": {
+            "connection": {
+              "direct": {
+                "bit_fields": 640,
+                "bits": 9566,
+                "grant_bits": 726,
+                "objects": 726,
+                "reference_slots": 820,
+                "reference_width": 10
+              },
+              "incremental": {
+                "bit_fields": 640,
+                "bits": 9566,
+                "grant_bits": 726,
+                "objects": 726,
+                "reference_slots": 820,
+                "reference_width": 10
+              }
+            },
+            "source": {
+              "direct": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              },
+              "incremental": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              }
+            }
+          },
+          "source_calls": 42
+        },
+        {
+          "operand": "LLLR",
+          "owners": {
+            "connection": {
+              "direct": {
+                "bit_fields": 651,
+                "bits": 9740,
+                "grant_bits": 739,
+                "objects": 739,
+                "reference_slots": 835,
+                "reference_width": 10
+              },
+              "incremental": {
+                "bit_fields": 651,
+                "bits": 9740,
+                "grant_bits": 739,
+                "objects": 739,
+                "reference_slots": 835,
+                "reference_width": 10
+              }
+            },
+            "source": {
+              "direct": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              },
+              "incremental": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              }
+            }
+          },
+          "source_calls": 43
+        },
+        {
+          "operand": "LLRL",
+          "owners": {
+            "connection": {
+              "direct": {
+                "bit_fields": 662,
+                "bits": 9914,
+                "grant_bits": 752,
+                "objects": 752,
+                "reference_slots": 850,
+                "reference_width": 10
+              },
+              "incremental": {
+                "bit_fields": 662,
+                "bits": 9914,
+                "grant_bits": 752,
+                "objects": 752,
+                "reference_slots": 850,
+                "reference_width": 10
+              }
+            },
+            "source": {
+              "direct": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              },
+              "incremental": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              }
+            }
+          },
+          "source_calls": 44
+        },
+        {
+          "operand": "LLRR",
+          "owners": {
+            "connection": {
+              "direct": {
+                "bit_fields": 673,
+                "bits": 10088,
+                "grant_bits": 765,
+                "objects": 765,
+                "reference_slots": 865,
+                "reference_width": 10
+              },
+              "incremental": {
+                "bit_fields": 673,
+                "bits": 10088,
+                "grant_bits": 765,
+                "objects": 765,
+                "reference_slots": 865,
+                "reference_width": 10
+              }
+            },
+            "source": {
+              "direct": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              },
+              "incremental": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              }
+            }
+          },
+          "source_calls": 45
+        },
+        {
+          "operand": "LRLL",
+          "owners": {
+            "connection": {
+              "direct": {
+                "bit_fields": 684,
+                "bits": 10262,
+                "grant_bits": 778,
+                "objects": 778,
+                "reference_slots": 880,
+                "reference_width": 10
+              },
+              "incremental": {
+                "bit_fields": 684,
+                "bits": 10262,
+                "grant_bits": 778,
+                "objects": 778,
+                "reference_slots": 880,
+                "reference_width": 10
+              }
+            },
+            "source": {
+              "direct": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              },
+              "incremental": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              }
+            }
+          },
+          "source_calls": 46
+        },
+        {
+          "operand": "LRLR",
+          "owners": {
+            "connection": {
+              "direct": {
+                "bit_fields": 695,
+                "bits": 10436,
+                "grant_bits": 791,
+                "objects": 791,
+                "reference_slots": 895,
+                "reference_width": 10
+              },
+              "incremental": {
+                "bit_fields": 695,
+                "bits": 10436,
+                "grant_bits": 791,
+                "objects": 791,
+                "reference_slots": 895,
+                "reference_width": 10
+              }
+            },
+            "source": {
+              "direct": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              },
+              "incremental": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              }
+            }
+          },
+          "source_calls": 47
+        },
+        {
+          "operand": "LRRL",
+          "owners": {
+            "connection": {
+              "direct": {
+                "bit_fields": 706,
+                "bits": 10610,
+                "grant_bits": 804,
+                "objects": 804,
+                "reference_slots": 910,
+                "reference_width": 10
+              },
+              "incremental": {
+                "bit_fields": 706,
+                "bits": 10610,
+                "grant_bits": 804,
+                "objects": 804,
+                "reference_slots": 910,
+                "reference_width": 10
+              }
+            },
+            "source": {
+              "direct": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              },
+              "incremental": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              }
+            }
+          },
+          "source_calls": 48
+        },
+        {
+          "operand": "LRRR",
+          "owners": {
+            "connection": {
+              "direct": {
+                "bit_fields": 717,
+                "bits": 10784,
+                "grant_bits": 817,
+                "objects": 817,
+                "reference_slots": 925,
+                "reference_width": 10
+              },
+              "incremental": {
+                "bit_fields": 717,
+                "bits": 10784,
+                "grant_bits": 817,
+                "objects": 817,
+                "reference_slots": 925,
+                "reference_width": 10
+              }
+            },
+            "source": {
+              "direct": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              },
+              "incremental": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              }
+            }
+          },
+          "source_calls": 49
+        },
+        {
+          "operand": "RLLL",
+          "owners": {
+            "connection": {
+              "direct": {
+                "bit_fields": 728,
+                "bits": 10958,
+                "grant_bits": 830,
+                "objects": 830,
+                "reference_slots": 940,
+                "reference_width": 10
+              },
+              "incremental": {
+                "bit_fields": 728,
+                "bits": 10958,
+                "grant_bits": 830,
+                "objects": 830,
+                "reference_slots": 940,
+                "reference_width": 10
+              }
+            },
+            "source": {
+              "direct": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              },
+              "incremental": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              }
+            }
+          },
+          "source_calls": 50
+        },
+        {
+          "operand": "RLLR",
+          "owners": {
+            "connection": {
+              "direct": {
+                "bit_fields": 739,
+                "bits": 11132,
+                "grant_bits": 843,
+                "objects": 843,
+                "reference_slots": 955,
+                "reference_width": 10
+              },
+              "incremental": {
+                "bit_fields": 739,
+                "bits": 11132,
+                "grant_bits": 843,
+                "objects": 843,
+                "reference_slots": 955,
+                "reference_width": 10
+              }
+            },
+            "source": {
+              "direct": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              },
+              "incremental": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              }
+            }
+          },
+          "source_calls": 51
+        },
+        {
+          "operand": "RLRL",
+          "owners": {
+            "connection": {
+              "direct": {
+                "bit_fields": 750,
+                "bits": 11306,
+                "grant_bits": 856,
+                "objects": 856,
+                "reference_slots": 970,
+                "reference_width": 10
+              },
+              "incremental": {
+                "bit_fields": 750,
+                "bits": 11306,
+                "grant_bits": 856,
+                "objects": 856,
+                "reference_slots": 970,
+                "reference_width": 10
+              }
+            },
+            "source": {
+              "direct": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              },
+              "incremental": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              }
+            }
+          },
+          "source_calls": 52
+        },
+        {
+          "operand": "RLRR",
+          "owners": {
+            "connection": {
+              "direct": {
+                "bit_fields": 761,
+                "bits": 11480,
+                "grant_bits": 869,
+                "objects": 869,
+                "reference_slots": 985,
+                "reference_width": 10
+              },
+              "incremental": {
+                "bit_fields": 761,
+                "bits": 11480,
+                "grant_bits": 869,
+                "objects": 869,
+                "reference_slots": 985,
+                "reference_width": 10
+              }
+            },
+            "source": {
+              "direct": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              },
+              "incremental": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              }
+            }
+          },
+          "source_calls": 53
+        },
+        {
+          "operand": "RRLL",
+          "owners": {
+            "connection": {
+              "direct": {
+                "bit_fields": 772,
+                "bits": 11654,
+                "grant_bits": 882,
+                "objects": 882,
+                "reference_slots": 1000,
+                "reference_width": 10
+              },
+              "incremental": {
+                "bit_fields": 772,
+                "bits": 11654,
+                "grant_bits": 882,
+                "objects": 882,
+                "reference_slots": 1000,
+                "reference_width": 10
+              }
+            },
+            "source": {
+              "direct": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              },
+              "incremental": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              }
+            }
+          },
+          "source_calls": 54
+        },
+        {
+          "operand": "RRLR",
+          "owners": {
+            "connection": {
+              "direct": {
+                "bit_fields": 783,
+                "bits": 11828,
+                "grant_bits": 895,
+                "objects": 895,
+                "reference_slots": 1015,
+                "reference_width": 10
+              },
+              "incremental": {
+                "bit_fields": 783,
+                "bits": 11828,
+                "grant_bits": 895,
+                "objects": 895,
+                "reference_slots": 1015,
+                "reference_width": 10
+              }
+            },
+            "source": {
+              "direct": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              },
+              "incremental": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              }
+            }
+          },
+          "source_calls": 55
+        },
+        {
+          "operand": "RRRL",
+          "owners": {
+            "connection": {
+              "direct": {
+                "bit_fields": 794,
+                "bits": 12002,
+                "grant_bits": 908,
+                "objects": 908,
+                "reference_slots": 1030,
+                "reference_width": 10
+              },
+              "incremental": {
+                "bit_fields": 794,
+                "bits": 12002,
+                "grant_bits": 908,
+                "objects": 908,
+                "reference_slots": 1030,
+                "reference_width": 10
+              }
+            },
+            "source": {
+              "direct": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              },
+              "incremental": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              }
+            }
+          },
+          "source_calls": 56
+        },
+        {
+          "operand": "RRRR",
+          "owners": {
+            "connection": {
+              "direct": {
+                "bit_fields": 805,
+                "bits": 12176,
+                "grant_bits": 921,
+                "objects": 921,
+                "reference_slots": 1045,
+                "reference_width": 10
+              },
+              "incremental": {
+                "bit_fields": 805,
+                "bits": 12176,
+                "grant_bits": 921,
+                "objects": 921,
+                "reference_slots": 1045,
+                "reference_width": 10
+              }
+            },
+            "source": {
+              "direct": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              },
+              "incremental": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              }
+            }
+          },
+          "source_calls": 57
+        },
+        {
+          "operand": "RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR",
+          "owners": {
+            "connection": {
+              "direct": {
+                "bit_fields": 928,
+                "bits": 14866,
+                "grant_bits": 1046,
+                "objects": 1046,
+                "reference_slots": 1172,
+                "reference_width": 11
+              },
+              "incremental": {
+                "bit_fields": 928,
+                "bits": 14866,
+                "grant_bits": 1046,
+                "objects": 1046,
+                "reference_slots": 1172,
+                "reference_width": 11
+              }
+            },
+            "source": {
+              "direct": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              },
+              "incremental": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              }
+            }
+          },
+          "source_calls": 58
+        },
+        {
+          "operand": "RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRL",
+          "owners": {
+            "connection": {
+              "direct": {
+                "bit_fields": 1053,
+                "bits": 16537,
+                "grant_bits": 1173,
+                "objects": 1173,
+                "reference_slots": 1301,
+                "reference_width": 11
+              },
+              "incremental": {
+                "bit_fields": 1053,
+                "bits": 16537,
+                "grant_bits": 1173,
+                "objects": 1173,
+                "reference_slots": 1301,
+                "reference_width": 11
+              }
+            },
+            "source": {
+              "direct": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              },
+              "incremental": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              }
+            }
+          },
+          "source_calls": 59
+        },
+        {
+          "operand": "RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR",
+          "owners": {
+            "connection": {
+              "direct": {
+                "bit_fields": 1178,
+                "bits": 18208,
+                "grant_bits": 1300,
+                "objects": 1300,
+                "reference_slots": 1430,
+                "reference_width": 11
+              },
+              "incremental": {
+                "bit_fields": 1178,
+                "bits": 18208,
+                "grant_bits": 1300,
+                "objects": 1300,
+                "reference_slots": 1430,
+                "reference_width": 11
+              }
+            },
+            "source": {
+              "direct": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              },
+              "incremental": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              }
+            }
+          },
+          "source_calls": 60
+        },
+        {
+          "operand": "RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRLL",
+          "owners": {
+            "connection": {
+              "direct": {
+                "bit_fields": 1305,
+                "bits": 19905,
+                "grant_bits": 1429,
+                "objects": 1429,
+                "reference_slots": 1561,
+                "reference_width": 11
+              },
+              "incremental": {
+                "bit_fields": 1305,
+                "bits": 19905,
+                "grant_bits": 1429,
+                "objects": 1429,
+                "reference_slots": 1561,
+                "reference_width": 11
+              }
+            },
+            "source": {
+              "direct": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              },
+              "incremental": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              }
+            }
+          },
+          "source_calls": 61
+        },
+        {
+          "operand": "RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRLR",
+          "owners": {
+            "connection": {
+              "direct": {
+                "bit_fields": 1432,
+                "bits": 21602,
+                "grant_bits": 1558,
+                "objects": 1558,
+                "reference_slots": 1692,
+                "reference_width": 11
+              },
+              "incremental": {
+                "bit_fields": 1432,
+                "bits": 21602,
+                "grant_bits": 1558,
+                "objects": 1558,
+                "reference_slots": 1692,
+                "reference_width": 11
+              }
+            },
+            "source": {
+              "direct": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              },
+              "incremental": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              }
+            }
+          },
+          "source_calls": 62
+        },
+        {
+          "operand": "RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRLLL",
+          "owners": {
+            "connection": {
+              "direct": {
+                "bit_fields": 1561,
+                "bits": 23325,
+                "grant_bits": 1689,
+                "objects": 1689,
+                "reference_slots": 1825,
+                "reference_width": 11
+              },
+              "incremental": {
+                "bit_fields": 1561,
+                "bits": 23325,
+                "grant_bits": 1689,
+                "objects": 1689,
+                "reference_slots": 1825,
+                "reference_width": 11
+              }
+            },
+            "source": {
+              "direct": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              },
+              "incremental": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              }
+            }
+          },
+          "source_calls": 63
+        },
+        {
+          "operand": "RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRLLR",
+          "owners": {
+            "connection": {
+              "direct": {
+                "bit_fields": 1690,
+                "bits": 25048,
+                "grant_bits": 1820,
+                "objects": 1820,
+                "reference_slots": 1958,
+                "reference_width": 11
+              },
+              "incremental": {
+                "bit_fields": 1690,
+                "bits": 25048,
+                "grant_bits": 1820,
+                "objects": 1820,
+                "reference_slots": 1958,
+                "reference_width": 11
+              }
+            },
+            "source": {
+              "direct": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              },
+              "incremental": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              }
+            }
+          },
+          "source_calls": 64
+        },
+        {
+          "operand": "RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR",
+          "owners": {
+            "connection": {
+              "direct": {
+                "bit_fields": 1819,
+                "bits": 26771,
+                "grant_bits": 1951,
+                "objects": 1951,
+                "reference_slots": 2091,
+                "reference_width": 11
+              },
+              "incremental": {
+                "bit_fields": 1819,
+                "bits": 26771,
+                "grant_bits": 1951,
+                "objects": 1951,
+                "reference_slots": 2091,
+                "reference_width": 11
+              }
+            },
+            "source": {
+              "direct": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              },
+              "incremental": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              }
+            }
+          },
+          "source_calls": 65
+        },
+        {
+          "operand": "RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRLLLL",
+          "owners": {
+            "connection": {
+              "direct": {
+                "bit_fields": 1950,
+                "bits": 30746,
+                "grant_bits": 2084,
+                "objects": 2084,
+                "reference_slots": 2226,
+                "reference_width": 12
+              },
+              "incremental": {
+                "bit_fields": 1950,
+                "bits": 30746,
+                "grant_bits": 2084,
+                "objects": 2084,
+                "reference_slots": 2226,
+                "reference_width": 12
+              }
+            },
+            "source": {
+              "direct": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              },
+              "incremental": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              }
+            }
+          },
+          "source_calls": 66
+        },
+        {
+          "operand": "LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL",
+          "owners": {
+            "connection": {
+              "direct": {
+                "bit_fields": 2133,
+                "bits": 33358,
+                "grant_bits": 2269,
+                "objects": 2269,
+                "reference_slots": 2413,
+                "reference_width": 12
+              },
+              "incremental": {
+                "bit_fields": 2133,
+                "bits": 33358,
+                "grant_bits": 2269,
+                "objects": 2269,
+                "reference_slots": 2413,
+                "reference_width": 12
+              }
+            },
+            "source": {
+              "direct": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              },
+              "incremental": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              }
+            }
+          },
+          "source_calls": 67
+        },
+        {
+          "operand": "RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR",
+          "owners": {
+            "connection": {
+              "direct": {
+                "bit_fields": 2342,
+                "bits": 36334,
+                "grant_bits": 2480,
+                "objects": 2480,
+                "reference_slots": 2626,
+                "reference_width": 12
+              },
+              "incremental": {
+                "bit_fields": 2342,
+                "bits": 36334,
+                "grant_bits": 2480,
+                "objects": 2480,
+                "reference_slots": 2626,
+                "reference_width": 12
+              }
+            },
+            "source": {
+              "direct": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              },
+              "incremental": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              }
+            }
+          },
+          "source_calls": 68
+        },
+        {
+          "operand": "RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRLRRRR",
+          "owners": {
+            "connection": {
+              "direct": {
+                "bit_fields": 2473,
+                "bits": 38218,
+                "grant_bits": 2613,
+                "objects": 2613,
+                "reference_slots": 2761,
+                "reference_width": 12
+              },
+              "incremental": {
+                "bit_fields": 2473,
+                "bits": 38218,
+                "grant_bits": 2613,
+                "objects": 2613,
+                "reference_slots": 2761,
+                "reference_width": 12
+              }
+            },
+            "source": {
+              "direct": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              },
+              "incremental": {
+                "bit_fields": 9393,
+                "bits": 183635,
+                "grant_bits": 10064,
+                "objects": 10064,
+                "reference_slots": 11727,
+                "reference_width": 14
+              }
+            }
+          },
+          "source_calls": 69
+        }
+      ]
+    }
+  },
+  "independent_acceptance": false,
+  "schema": 1,
+  "seconds": 36.008578500011936,
+  "source_binding": {
+    "default_engine_compatibility": true,
+    "fresh_compatibility": {
+      "baseline_sha256": "8b52235700c4d7d290deae7cbe27f94b271b8a94d2948562ac7fc28b2b2bdecb",
+      "fresh_output": [
+        1
+      ],
+      "native_steps": 836,
+      "source_sha256": "8b52235700c4d7d290deae7cbe27f94b271b8a94d2948562ac7fc28b2b2bdecb",
+      "unchanged_source": true
+    },
+    "operational_mutants": [
+      "actual_port_transfer_occupied",
+      "actual_cache_write"
+    ],
+    "returned_output_cases": 2,
+    "service_graph_sha256": "7d1b65bb3a3feb49d09cc5171995549891728088d1b4ce90c7e9e877c5e04936"
+  },
+  "source_hashes": {
+    "field_decoder.py": "1bc35d4702e141c89001985e3ce8c87278f9d84422fa2f8ba3aa71fa08100d3c",
+    "field_graph.py": "6c4a3c01d01812b8e91eeae96ab746b5428762ee17f86b0792faee9503315ae1",
+    "field_io.py": "5fa898cc6569807321a7c0975cf767a9e9047278e80859c6986609955df32e59",
+    "field_service.py": "e2094909ab99db4af7419ea4da499915ea996a7a0c5ca07be06d439253558a6f",
+    "framing.py": "13d043ef5557b713348bbf10e6da126f88540f1a3bf3e823bb6ae84121adc41b",
+    "integration_checks.py": "e048e080f710a0897aefee36a82c9b76f70b0aa9c87e9774ba564681b3390a82",
+    "native_engine.py": "8b52235700c4d7d290deae7cbe27f94b271b8a94d2948562ac7fc28b2b2bdecb",
+    "native_install.py": "a26ceeb8e7695d19549302e3884c2729222f5b5de96b9a7d76a53034e3cc4555",
+    "service_native.py": "1a09231d35389b3b3a22dc0b71a52ac434f168cefb7ac86e604a0bb5d0c7cca0",
+    "session.py": "de7306df87891d380379c9fd9ae06e7a4befc51276a7b0c5c01d9401db1e12c7"
+  },
+  "stage": "author integration",
+  "strict_original_omissions": [
+    "ML-N-evaluator-execution",
+    "ML-Cost-full-evaluator-session"
+  ],
+  "theory_binding": {
+    "candidate_manifest_sha256": "67e37c7ba9651c3a29663b7bf440870fdbfb12ece7dc67da08186da1f5545347",
+    "manifest_entry": {
+      "bytes": 218862,
+      "sha256": "d6cd351bad7d793f9057681f6ff1c97ea204630d70d95cea6f2011c56a256443"
+    },
+    "theory_bytes": 218862,
+    "theory_sha256": "d6cd351bad7d793f9057681f6ff1c97ea204630d70d95cea6f2011c56a256443"
+  },
+  "unit_complete": true,
+  "whole_family": {
+    "exhaustive_B": {
+      "all_jump_targets": true,
+      "bound": 8,
+      "halted": 1232,
+      "input_lengths": [
+        0,
+        1,
+        2
+      ],
+      "instances": 1722,
+      "instruction_commits": 7433,
+      "logical_events": 10642,
+      "nonhalting_boundaries": 490,
+      "primitive_pending_cuts": 76240,
+      "program_lengths": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    "framing": {
+      "V_words": 511,
+      "proper_frame_prefixes_wait": true,
+      "within_slot_masks": 32768
+    },
+    "original_port_menu": {
+      "all_slot_suffixes_through_length": 4,
+      "calls": 8248,
+      "distinct_operands_per_fixture": 2062,
+      "maximum_operand_length": 130
+    },
+    "strict_omissions_retained": [
+      "ML-N-evaluator-execution",
+      "ML-Cost-full-evaluator-session"
+    ]
+  },
+  "whole_goal_complete": false
+}

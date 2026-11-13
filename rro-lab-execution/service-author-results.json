@@ -1,0 +1,118 @@
+{
+  "B_complete": false,
+  "C_released": false,
+  "D_complete": false,
+  "assertions_enabled": true,
+  "executable": "/Users/auricstudio/.local/bin/python3",
+  "independent_acceptance": false,
+  "python": "3.12.13 (main, Mar 10 2026, 18:18:07) [Clang 21.1.4 ]",
+  "results": {
+    "exact-results.json": {
+      "bytes": 50517,
+      "sha256": "7273ba76f8273703672586c284ba1605fdd5252a00bebe0fa33873f9fe2e2a10"
+    },
+    "service-domain-results.json": {
+      "bytes": 34744,
+      "sha256": "172ddc1183c0937f4e25049bdd09b9153a252ad54f5bc4d81d6e5c2c89cd254d"
+    },
+    "service-results.json": {
+      "bytes": 78700,
+      "sha256": "81a1b6f552c03c87c7d67aa3a1ff0cbf3e7f196ddee6908960fca2f6b1bfaefc"
+    }
+  },
+  "schema": 1,
+  "scope_descriptors_inherited": 16,
+  "source_hashes": {
+    "NATIVE_RUNTIME.md": "8444b49206dd0d07944d1e5003ad916d4de3dcf7c8075b81482d7fff22d93d49",
+    "field_service.py": "e2094909ab99db4af7419ea4da499915ea996a7a0c5ca07be06d439253558a6f",
+    "native_engine.py": "8b52235700c4d7d290deae7cbe27f94b271b8a94d2948562ac7fc28b2b2bdecb",
+    "service_checks.py": "b17f76540bb25686b9d64e6c476ce52d7f324e91a3930d1effa31431f67dfc80",
+    "service_domain_checks.py": "aef38dbd32717053ab6a9308ab9884c8faf179527d6a9f8c3ca9a087174ecdb5",
+    "service_native.py": "1a09231d35389b3b3a22dc0b71a52ac434f168cefb7ac86e604a0bb5d0c7cca0",
+    "theory-candidate.json": "80da2984ce42548b166f0beb35654b5faa4329726ec03a7b43fc0068488bb5a3"
+  },
+  "strict_original_omissions": [
+    "ML-N-evaluator-execution",
+    "ML-Cost-full-evaluator-session"
+  ],
+  "tests": [
+    {
+      "argv": [
+        "/Users/auricstudio/.local/bin/python3",
+        "-B",
+        "rro-lab-execution/service_checks.py",
+        "--full-image",
+        "--output",
+        "rro-lab-execution/service-results.json"
+      ],
+      "exit": 0,
+      "expected_exit": 0,
+      "falsifier": null,
+      "matched": true,
+      "scope_descriptors_inherited": 16,
+      "seconds": 773.8023400000529
+    },
+    {
+      "argv": [
+        "/Users/auricstudio/.local/bin/python3",
+        "-B",
+        "rro-lab-execution/service_domain_checks.py",
+        "rro-lab-execution/service-domain-results.json"
+      ],
+      "exit": 0,
+      "expected_exit": 0,
+      "falsifier": null,
+      "matched": true,
+      "scope_descriptors_inherited": 16,
+      "seconds": 653.5508928329218
+    },
+    {
+      "argv": [
+        "/Users/auricstudio/.local/bin/python3",
+        "-B",
+        "rro-lab-execution/service_checks.py",
+        "--mutation",
+        "omit-port-bit"
+      ],
+      "exit": 1,
+      "expected_exit": 1,
+      "falsifier": "actual_port_transfer_occupied",
+      "matched": true,
+      "scope_descriptors_inherited": 16,
+      "seconds": 28.533762166975066
+    },
+    {
+      "argv": [
+        "/Users/auricstudio/.local/bin/python3",
+        "-B",
+        "rro-lab-execution/service_checks.py",
+        "--mutation",
+        "omit-cache-write"
+      ],
+      "exit": 1,
+      "expected_exit": 1,
+      "falsifier": "actual_cache_write",
+      "matched": true,
+      "scope_descriptors_inherited": 16,
+      "seconds": 42.20374108396936
+    },
+    {
+      "argv": [
+        "/Users/auricstudio/.local/bin/python3",
+        "-B",
+        "rro-lab-execution/exact_checks.py",
+        "--theory-root",
+        "/Users/auricstudio/trureturing-cad0ceaa-op",
+        "--output",
+        "rro-lab-execution/exact-results.json",
+        "--require-all"
+      ],
+      "exit": 2,
+      "expected_exit": 2,
+      "falsifier": null,
+      "matched": true,
+      "scope_descriptors_inherited": 16,
+      "seconds": 45.29366512503475
+    }
+  ]
+}

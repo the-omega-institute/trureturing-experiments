@@ -1,0 +1,723 @@
+{
+  "B": [
+    {
+      "charges": {
+        "P": 2,
+        "S": 2,
+        "allocations": 16,
+        "arity_tests": 7,
+        "bit_writes": 2,
+        "equality_tests": 2,
+        "field_reads": 40,
+        "field_writes": 67,
+        "grant_deliveries": 16,
+        "located_fields": 48,
+        "maintenance_ancestor_visits": 2,
+        "navigation_links": 2,
+        "null_tests": 26,
+        "reference_copy_bits": 946,
+        "reference_read_bits": 154,
+        "reference_rewrite_fields": 138,
+        "reference_transport_bits": 54,
+        "reference_widenings": 4,
+        "reference_write_bits": 227,
+        "route_appends": 2
+      },
+      "code": [],
+      "commits": 0,
+      "halt": true,
+      "head": 0,
+      "input": "",
+      "same_bare_tree_witness": false,
+      "work": {
+        "D": 2,
+        "H": 2,
+        "V": 7,
+        "depth_max": 0,
+        "objects": 11,
+        "ones": 0,
+        "reference_slots": 34,
+        "t": 1
+      }
+    },
+    {
+      "charges": {
+        "P": 4,
+        "S": 4,
+        "allocations": 35,
+        "arity_tests": 20,
+        "bit_writes": 10,
+        "equality_tests": 10,
+        "field_reads": 125,
+        "field_writes": 149,
+        "grant_deliveries": 35,
+        "located_fields": 116,
+        "maintenance_ancestor_visits": 10,
+        "navigation_links": 10,
+        "null_tests": 76,
+        "reference_copy_bits": 2013,
+        "reference_read_bits": 612,
+        "reference_rewrite_fields": 235,
+        "reference_transport_bits": 153,
+        "reference_widenings": 5,
+        "reference_write_bits": 611,
+        "route_appends": 10
+      },
+      "code": [
+        "R",
+        "M"
+      ],
+      "commits": 2,
+      "halt": true,
+      "head": 1,
+      "input": "00",
+      "same_bare_tree_witness": true,
+      "work": {
+        "D": 10,
+        "H": 4,
+        "V": 13,
+        "depth_max": 1,
+        "objects": 27,
+        "ones": 1,
+        "reference_slots": 70,
+        "t": 2
+      }
+    },
+    {
+      "charges": {
+        "P": 3,
+        "S": 2,
+        "allocations": 19,
+        "arity_tests": 15,
+        "bit_writes": 4,
+        "equality_tests": 4,
+        "field_reads": 71,
+        "field_writes": 80,
+        "grant_deliveries": 19,
+        "guard_refusals": 1,
+        "located_fields": 61,
+        "maintenance_ancestor_visits": 4,
+        "navigation_links": 4,
+        "null_tests": 47,
+        "reference_copy_bits": 946,
+        "reference_read_bits": 309,
+        "reference_rewrite_fields": 138,
+        "reference_transport_bits": 69,
+        "reference_widenings": 4,
+        "reference_write_bits": 282,
+        "route_appends": 4
+      },
+      "code": [
+        "M",
+        "M"
+      ],
+      "commits": 2,
+      "halt": true,
+      "head": 0,
+      "input": "0",
+      "same_bare_tree_witness": false,
+      "work": {
+        "D": 4,
+        "H": 2,
+        "V": 8,
+        "depth_max": 0,
+        "objects": 14,
+        "ones": 1,
+        "reference_slots": 40,
+        "t": 1
+      }
+    },
+    {
+      "charges": {
+        "P": 5,
+        "S": 6,
+        "allocations": 52,
+        "arity_tests": 38,
+        "bit_writes": 17,
+        "equality_tests": 17,
+        "field_reads": 216,
+        "field_writes": 222,
+        "grant_deliveries": 52,
+        "guard_refusals": 1,
+        "located_fields": 175,
+        "maintenance_ancestor_visits": 17,
+        "navigation_links": 17,
+        "null_tests": 135,
+        "reference_copy_bits": 2013,
+        "reference_read_bits": 1154,
+        "reference_rewrite_fields": 235,
+        "reference_transport_bits": 255,
+        "reference_widenings": 5,
+        "reference_write_bits": 1007,
+        "route_appends": 17
+      },
+      "code": [
+        "R",
+        "L",
+        "L",
+        "R",
+        "M"
+      ],
+      "commits": 5,
+      "halt": true,
+      "head": 0,
+      "input": "00",
+      "same_bare_tree_witness": false,
+      "work": {
+        "D": 17,
+        "H": 6,
+        "V": 18,
+        "depth_max": 2,
+        "objects": 41,
+        "ones": 1,
+        "reference_slots": 101,
+        "t": 3
+      }
+    },
+    {
+      "charges": {
+        "P": 4,
+        "S": 4,
+        "allocations": 34,
+        "arity_tests": 23,
+        "bit_writes": 9,
+        "equality_tests": 9,
+        "field_reads": 128,
+        "field_writes": 145,
+        "grant_deliveries": 34,
+        "guard_refusals": 1,
+        "located_fields": 112,
+        "maintenance_ancestor_visits": 9,
+        "navigation_links": 9,
+        "null_tests": 80,
+        "reference_copy_bits": 1991,
+        "reference_read_bits": 619,
+        "reference_rewrite_fields": 233,
+        "reference_transport_bits": 147,
+        "reference_widenings": 5,
+        "reference_write_bits": 598,
+        "route_appends": 9
+      },
+      "code": [
+        [
+          "J",
+          2
+        ],
+        "M",
+        "L"
+      ],
+      "commits": 3,
+      "halt": true,
+      "head": -1,
+      "input": "0",
+      "same_bare_tree_witness": false,
+      "work": {
+        "D": 9,
+        "H": 4,
+        "V": 13,
+        "depth_max": 1,
+        "objects": 26,
+        "ones": 1,
+        "reference_slots": 69,
+        "t": 2
+      }
+    },
+    {
+      "charges": {
+        "P": 4,
+        "S": 4,
+        "allocations": 34,
+        "arity_tests": 20,
+        "bit_writes": 9,
+        "equality_tests": 9,
+        "field_reads": 120,
+        "field_writes": 145,
+        "grant_deliveries": 34,
+        "guard_refusals": 1,
+        "located_fields": 112,
+        "maintenance_ancestor_visits": 9,
+        "navigation_links": 9,
+        "null_tests": 74,
+        "reference_copy_bits": 2009,
+        "reference_read_bits": 574,
+        "reference_rewrite_fields": 235,
+        "reference_transport_bits": 147,
+        "reference_widenings": 5,
+        "reference_write_bits": 597,
+        "route_appends": 9
+      },
+      "code": [
+        [
+          "J",
+          2
+        ],
+        "M",
+        "L"
+      ],
+      "commits": 2,
+      "halt": true,
+      "head": -1,
+      "input": "1",
+      "same_bare_tree_witness": false,
+      "work": {
+        "D": 9,
+        "H": 4,
+        "V": 13,
+        "depth_max": 1,
+        "objects": 26,
+        "ones": 1,
+        "reference_slots": 69,
+        "t": 2
+      }
+    },
+    {
+      "charges": {
+        "P": 6,
+        "S": 6,
+        "allocations": 56,
+        "arity_tests": 36,
+        "bit_writes": 20,
+        "equality_tests": 20,
+        "field_reads": 226,
+        "field_writes": 239,
+        "grant_deliveries": 56,
+        "guard_refusals": 1,
+        "located_fields": 192,
+        "maintenance_ancestor_visits": 20,
+        "navigation_links": 20,
+        "null_tests": 136,
+        "reference_copy_bits": 2009,
+        "reference_read_bits": 1219,
+        "reference_rewrite_fields": 235,
+        "reference_transport_bits": 279,
+        "reference_widenings": 5,
+        "reference_write_bits": 1095,
+        "route_appends": 20
+      },
+      "code": [
+        "R",
+        [
+          "J",
+          0
+        ]
+      ],
+      "commits": 4,
+      "halt": true,
+      "head": 2,
+      "input": "11",
+      "same_bare_tree_witness": false,
+      "work": {
+        "D": 20,
+        "H": 6,
+        "V": 19,
+        "depth_max": 2,
+        "objects": 45,
+        "ones": 2,
+        "reference_slots": 108,
+        "t": 3
+      }
+    },
+    {
+      "charges": {
+        "P": 3,
+        "S": 2,
+        "allocations": 19,
+        "arity_tests": 81,
+        "bit_writes": 4,
+        "equality_tests": 4,
+        "field_reads": 247,
+        "field_writes": 80,
+        "grant_deliveries": 19,
+        "guard_refusals": 1,
+        "located_fields": 61,
+        "maintenance_ancestor_visits": 4,
+        "navigation_links": 4,
+        "null_tests": 179,
+        "reference_copy_bits": 946,
+        "reference_read_bits": 1189,
+        "reference_rewrite_fields": 138,
+        "reference_transport_bits": 69,
+        "reference_widenings": 4,
+        "reference_write_bits": 282,
+        "route_appends": 4
+      },
+      "code": [
+        "M",
+        [
+          "J",
+          0
+        ]
+      ],
+      "commits": 24,
+      "halt": false,
+      "head": 0,
+      "input": "",
+      "same_bare_tree_witness": false,
+      "work": {
+        "D": 4,
+        "H": 2,
+        "V": 8,
+        "depth_max": 0,
+        "objects": 14,
+        "ones": 1,
+        "reference_slots": 40,
+        "t": 1
+      }
+    }
+  ],
+  "candidate": "FS1-fifo-directory-persistent-stacks",
+  "candidate_complete": false,
+  "old_C_complete": false,
+  "schema": 1,
+  "source": [
+    {
+      "N": 4,
+      "accepted_frame_sha256": "37dfee71eda5a8fbee3d373aab446982f15976785ef965ec2e4a1b6ea98c5402",
+      "calls": 74,
+      "case": "positive-full",
+      "observer_census": {
+        "bit_fields": 19082,
+        "bits": 342031,
+        "grant_bits": 19604,
+        "objects": 19604,
+        "reference_slots": 20223,
+        "reference_width": 15
+      },
+      "occurrence_receipts": 74,
+      "operand_length_sum": 2176,
+      "replies": [
+        "absent",
+        "alpha",
+        "beta",
+        "branch"
+      ],
+      "scope": "unchanged existing hosted Session only; no evaluator/output/continuation integration into FS1",
+      "source_census": {
+        "bit_fields": 9393,
+        "bits": 183635,
+        "grant_bits": 10064,
+        "objects": 10064,
+        "reference_slots": 11727,
+        "reference_width": 14
+      }
+    },
+    {
+      "N": 4,
+      "accepted_frame_sha256": "1a4ae049cf81b1f434398aa05cb8eabcf4d8689f7873f8d75f9ae1e870c34764",
+      "calls": 73,
+      "case": "positive-partial",
+      "observer_census": {
+        "bit_fields": 18573,
+        "bits": 333146,
+        "grant_bits": 19088,
+        "objects": 19088,
+        "reference_slots": 19699,
+        "reference_width": 15
+      },
+      "occurrence_receipts": 73,
+      "operand_length_sum": 2115,
+      "replies": [
+        "absent",
+        "alpha",
+        "beta",
+        "branch"
+      ],
+      "scope": "unchanged existing hosted Session only; no evaluator/output/continuation integration into FS1",
+      "source_census": {
+        "bit_fields": 9393,
+        "bits": 183635,
+        "grant_bits": 10064,
+        "objects": 10064,
+        "reference_slots": 11727,
+        "reference_width": 14
+      }
+    },
+    {
+      "N": 9,
+      "accepted_frame_sha256": "f5518d034eef5bd00c87ff9d43c5ca878ef9d012f47e04bedcbe45163ee3e29d",
+      "calls": 149,
+      "case": "null-nine-distinct-left",
+      "observer_census": {
+        "bit_fields": 80807,
+        "bits": 1574902,
+        "grant_bits": 81854,
+        "objects": 81854,
+        "reference_slots": 83073,
+        "reference_width": 17
+      },
+      "occurrence_receipts": 149,
+      "operand_length_sum": 9676,
+      "replies": [
+        "absent",
+        "alpha",
+        "beta",
+        "branch"
+      ],
+      "scope": "unchanged existing hosted Session only; no evaluator/output/continuation integration into FS1",
+      "source_census": {
+        "bit_fields": 46443,
+        "bits": 920414,
+        "grant_bits": 47939,
+        "objects": 47939,
+        "reference_slots": 51627,
+        "reference_width": 16
+      }
+    }
+  ],
+  "source_hashes": {
+    "constructor_ir.py": "920d9c265c2db2e76a6e268139b35457d05bd116911758d9a5bb660fc1e18fe5",
+    "evaluator_program.py": "33fd87384bae21581556fc776738c6940171c3dca22670f557f26b368558842f",
+    "framing.py": "13d043ef5557b713348bbf10e6da126f88540f1a3bf3e823bb6ae84121adc41b",
+    "frontier_stack_probe.py": "7f0718840b08e9494c4ef8d90062233a739e7ceeef718450c57c826984667058",
+    "lab.py": "28be97644c484f46984b7757e0ed8407b9608275e546d0361a1015eba622ed4a",
+    "session.py": "7f6bd6fa3e0d5804378d6d4e10895a5ea09fc5d45197f7357dbffeb4f30a0bed"
+  },
+  "stack": {
+    "fixed_graph_sha256": "1b1b7eb890daa523ab871beb77a57cc950c0a8e89923533dc383002a6e2c9d8b",
+    "grant_refusal_implementation": false,
+    "installed_PC": false,
+    "rows": [
+      {
+        "busy_growth_cuts": 4921,
+        "census": {
+          "bit_fields": 16882,
+          "bits": 502855,
+          "grant_bits": 21708,
+          "objects": 21708,
+          "reference_slots": 30951,
+          "reference_width": 15
+        },
+        "charges": {
+          "P": 700,
+          "S": 836,
+          "allocations": 21708,
+          "arity_tests": 2404,
+          "bit_writes": 16882,
+          "equality_tests": 16882,
+          "field_reads": 95869,
+          "field_writes": 87316,
+          "grant_deliveries": 21708,
+          "located_fields": 81900,
+          "maintenance_ancestor_visits": 16882,
+          "navigation_links": 16882,
+          "null_tests": 41397,
+          "reference_copy_bits": 1301131,
+          "reference_read_bits": 1308609,
+          "reference_rewrite_fields": 48361,
+          "reference_transport_bits": 292868,
+          "reference_widenings": 14,
+          "reference_write_bits": 953686,
+          "route_appends": 16882
+        },
+        "commits": 96,
+        "cut_sha256": "ca0b967c89de3e7bf6b64673709bfa43e69fb901f5cb03d30d89e8ca6a2f40b7",
+        "halt": false,
+        "name": "fixed-evaluator-prefix",
+        "pc": 5,
+        "work": {
+          "D": 16882,
+          "H": 836,
+          "V": 2373,
+          "depth_max": 15,
+          "objects": 20091,
+          "ones": 281,
+          "reference_slots": 28046,
+          "t": 418
+        }
+      },
+      {
+        "busy_growth_cuts": 309,
+        "census": {
+          "bit_fields": 71,
+          "bits": 2924,
+          "grant_bits": 149,
+          "objects": 149,
+          "reference_slots": 338,
+          "reference_width": 8
+        },
+        "charges": {
+          "P": 11,
+          "S": 14,
+          "allocations": 149,
+          "arity_tests": 45,
+          "bit_writes": 71,
+          "equality_tests": 71,
+          "field_reads": 577,
+          "field_writes": 623,
+          "grant_deliveries": 149,
+          "located_fields": 525,
+          "maintenance_ancestor_visits": 71,
+          "navigation_links": 71,
+          "null_tests": 289,
+          "reference_copy_bits": 9385,
+          "reference_read_bits": 3797,
+          "reference_rewrite_fields": 793,
+          "reference_transport_bits": 945,
+          "reference_widenings": 7,
+          "reference_write_bits": 3478,
+          "route_appends": 71
+        },
+        "commits": 20,
+        "cut_sha256": "776b377f21552e088cc3fc71bb543085536f604838bdb68994aa418dfc84d597",
+        "halt": false,
+        "name": "branch-",
+        "pc": 2,
+        "work": {
+          "D": 71,
+          "H": 14,
+          "V": 40,
+          "depth_max": 4,
+          "objects": 125,
+          "ones": 3,
+          "reference_slots": 259,
+          "t": 7
+        }
+      },
+      {
+        "busy_growth_cuts": 300,
+        "census": {
+          "bit_fields": 74,
+          "bits": 2954,
+          "grant_bits": 152,
+          "objects": 152,
+          "reference_slots": 341,
+          "reference_width": 8
+        },
+        "charges": {
+          "P": 11,
+          "S": 14,
+          "allocations": 152,
+          "arity_tests": 47,
+          "bit_writes": 74,
+          "equality_tests": 74,
+          "field_reads": 600,
+          "field_writes": 636,
+          "grant_deliveries": 152,
+          "located_fields": 537,
+          "maintenance_ancestor_visits": 74,
+          "navigation_links": 74,
+          "null_tests": 300,
+          "reference_copy_bits": 9344,
+          "reference_read_bits": 3975,
+          "reference_rewrite_fields": 790,
+          "reference_transport_bits": 969,
+          "reference_widenings": 7,
+          "reference_write_bits": 3557,
+          "route_appends": 74
+        },
+        "commits": 20,
+        "cut_sha256": "0f57cd524b4a7dd954df672ae49ac4dc245be76eb1caf319599a06d88271c28f",
+        "halt": false,
+        "name": "branch-0",
+        "pc": 5,
+        "work": {
+          "D": 74,
+          "H": 14,
+          "V": 40,
+          "depth_max": 4,
+          "objects": 128,
+          "ones": 3,
+          "reference_slots": 262,
+          "t": 7
+        }
+      },
+      {
+        "busy_growth_cuts": 412,
+        "census": {
+          "bit_fields": 104,
+          "bits": 3669,
+          "grant_bits": 197,
+          "objects": 197,
+          "reference_slots": 421,
+          "reference_width": 8
+        },
+        "charges": {
+          "P": 17,
+          "S": 16,
+          "allocations": 197,
+          "arity_tests": 62,
+          "bit_writes": 104,
+          "equality_tests": 104,
+          "field_reads": 806,
+          "field_writes": 823,
+          "grant_deliveries": 197,
+          "located_fields": 713,
+          "maintenance_ancestor_visits": 104,
+          "navigation_links": 104,
+          "null_tests": 403,
+          "reference_copy_bits": 9345,
+          "reference_read_bits": 5594,
+          "reference_rewrite_fields": 791,
+          "reference_transport_bits": 1329,
+          "reference_widenings": 7,
+          "reference_write_bits": 4817,
+          "route_appends": 104
+        },
+        "commits": 20,
+        "cut_sha256": "f5198f6ff775f90c39ddc47ff74d3db69940e7e288597e58610d563c1eb09275",
+        "halt": false,
+        "name": "branch-1",
+        "pc": 7,
+        "work": {
+          "D": 104,
+          "H": 16,
+          "V": 50,
+          "depth_max": 4,
+          "objects": 170,
+          "ones": 8,
+          "reference_slots": 336,
+          "t": 8
+        }
+      },
+      {
+        "busy_growth_cuts": 251,
+        "census": {
+          "bit_fields": 68,
+          "bits": 2861,
+          "grant_bits": 145,
+          "objects": 145,
+          "reference_slots": 331,
+          "reference_width": 8
+        },
+        "charges": {
+          "P": 10,
+          "S": 14,
+          "allocations": 145,
+          "arity_tests": 46,
+          "bit_writes": 68,
+          "equality_tests": 68,
+          "field_reads": 566,
+          "field_writes": 606,
+          "grant_deliveries": 145,
+          "located_fields": 508,
+          "maintenance_ancestor_visits": 68,
+          "navigation_links": 68,
+          "null_tests": 285,
+          "reference_copy_bits": 9396,
+          "reference_read_bits": 3715,
+          "reference_rewrite_fields": 794,
+          "reference_transport_bits": 913,
+          "reference_widenings": 7,
+          "reference_write_bits": 3364,
+          "route_appends": 68
+        },
+        "commits": 20,
+        "cut_sha256": "7f295c81cfdf8c3bc667f3ddd5324d6eac6890278986ecaa88c64aabced8c761",
+        "halt": false,
+        "name": "branch-00",
+        "pc": 2,
+        "work": {
+          "D": 68,
+          "H": 14,
+          "V": 39,
+          "depth_max": 4,
+          "objects": 121,
+          "ones": 2,
+          "reference_slots": 252,
+          "t": 7
+        }
+      }
+    ],
+    "scope": "hosted macro correspondence; fixed evaluator prefix only; no returned arithmetic result"
+  }
+}

@@ -1,0 +1,815 @@
+{
+  "C_complete": false,
+  "D_complete": false,
+  "actual_attempt_validation": [
+    {
+      "B_input_bits": 24000,
+      "actual_native_steps": 707163349,
+      "actual_plus_cells": 437,
+      "actual_remaining_input_bits": 23563,
+      "case": "positive-full",
+      "consumed_converted_bits": 437,
+      "full_execution_complete": false,
+      "peak_common_cut": {
+        "bit_fields": 9549786734,
+        "bits": 10402959400,
+        "grant_bits": 8723488,
+        "objects": 8723488,
+        "reference_slots": 35190092
+      },
+      "receipt_payload_bits": 4567,
+      "retained_common_cut": {
+        "bit_fields": 9549787343,
+        "bits": 10402917952,
+        "grant_bits": 8724108,
+        "objects": 8724108,
+        "reference_slots": 35190723
+      },
+      "source_calls": 73,
+      "verified_committed_physical_loader_bits": 436
+    },
+    {
+      "B_input_bits": 23968,
+      "actual_native_steps": 707267885,
+      "actual_plus_cells": 439,
+      "actual_remaining_input_bits": 23529,
+      "case": "positive-partial",
+      "consumed_converted_bits": 439,
+      "full_execution_complete": false,
+      "peak_common_cut": {
+        "bit_fields": 9549786730,
+        "bits": 10402959496,
+        "grant_bits": 8723488,
+        "objects": 8723488,
+        "reference_slots": 35190096
+      },
+      "receipt_payload_bits": 4442,
+      "retained_common_cut": {
+        "bit_fields": 9549787218,
+        "bits": 10402916023,
+        "grant_bits": 8723981,
+        "objects": 8723981,
+        "reference_slots": 35190594
+      },
+      "source_calls": 72,
+      "verified_committed_physical_loader_bits": 438
+    },
+    {
+      "B_input_bits": 38464,
+      "actual_native_steps": 669133688,
+      "actual_plus_cells": 327,
+      "actual_remaining_input_bits": 38137,
+      "case": "null-nine-distinct-left",
+      "consumed_converted_bits": 327,
+      "full_execution_complete": false,
+      "peak_common_cut": {
+        "bit_fields": 9549835944,
+        "bits": 10404097651,
+        "grant_bits": 8773651,
+        "objects": 8773651,
+        "reference_slots": 35242408
+      },
+      "receipt_payload_bits": 19792,
+      "retained_common_cut": {
+        "bit_fields": 9549839618,
+        "bits": 10403927948,
+        "grant_bits": 8777358,
+        "objects": 8777358,
+        "reference_slots": 35246148
+      },
+      "source_calls": 148,
+      "verified_committed_physical_loader_bits": 326
+    }
+  ],
+  "complete_fixed_A_artifact_identities_verified": 26,
+  "decoder_charge_falsifier": {
+    "actual_bit_field_reads": 3616742,
+    "actual_output": [
+      0
+    ],
+    "field_actions": 171481,
+    "native_steps": 27293265,
+    "one_omitted_read_rejected": true,
+    "scope": "actual returned-head decoder component fixture; not evaluator output"
+  },
+  "deterministic_replay": {
+    "exact_after_removing_only_host_duration_RSS_and_scope_fd_count": true,
+    "results": [
+      {
+        "bytes": 578674,
+        "sha256": "566360930d059a18e3f3751994536bf69885a0d8b037333f3d338ade333225a3"
+      },
+      {
+        "bytes": 578673,
+        "sha256": "f2cd18370ba8a21f4ebb8974935e1efaa25ff847593c8151ee85d7302a7af66e"
+      }
+    ],
+    "same_primitive_counts_material_cuts_receipts_and_pending_state": true
+  },
+  "fresh_native_compatibility": {
+    "default_engine_compatibility": true,
+    "fresh_compatibility": {
+      "baseline_sha256": "8b52235700c4d7d290deae7cbe27f94b271b8a94d2948562ac7fc28b2b2bdecb",
+      "fresh_output": [
+        1
+      ],
+      "native_steps": 836,
+      "source_sha256": "8b52235700c4d7d290deae7cbe27f94b271b8a94d2948562ac7fc28b2b2bdecb",
+      "unchanged_source": true
+    },
+    "operational_mutants": [
+      "actual_port_transfer_occupied",
+      "actual_cache_write"
+    ],
+    "returned_output_cases": 2,
+    "service_graph_sha256": "7d1b65bb3a3feb49d09cc5171995549891728088d1b4ce90c7e9e877c5e04936"
+  },
+  "independent_acceptance": false,
+  "inputs": [
+    {
+      "bytes": 580248,
+      "path": "/Users/auricstudio/trureturing-experiments-robin-8e46/rro-lab-execution/full-execution-positive-full.json",
+      "sha256": "795dee3a6a7f1e5fddbd06c0a25d73623f53c2eeeae85d9512fcf249a78d0597"
+    },
+    {
+      "bytes": 578674,
+      "path": "/Users/auricstudio/trureturing-experiments-robin-8e46/rro-lab-execution/full-execution-positive-partial.json",
+      "sha256": "566360930d059a18e3f3751994536bf69885a0d8b037333f3d338ade333225a3"
+    },
+    {
+      "bytes": 688148,
+      "path": "/Users/auricstudio/trureturing-experiments-robin-8e46/rro-lab-execution/full-execution-null-nine-distinct-left.json",
+      "sha256": "9bd4ffbb7fa33ab4ebf4e54b57dc3c39802581898590cde516604c1df53373cd"
+    }
+  ],
+  "native_state_mutants": [
+    {
+      "actual_cache": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "actual_output": [
+        1,
+        0,
+        1,
+        1,
+        0,
+        0,
+        1
+      ],
+      "actual_receipts": [
+        [
+          "RRRRRRRRRRRRRRRLL",
+          "beta"
+        ]
+      ],
+      "detected": true,
+      "field_actions": 4234,
+      "installation_steps": 43860792,
+      "mutation": "missing-index",
+      "native_steps": 669506,
+      "source_calls": 1
+    },
+    {
+      "actual_cache": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "actual_output": [
+        1,
+        0,
+        1,
+        1,
+        0,
+        0,
+        1
+      ],
+      "actual_receipts": [],
+      "detected": true,
+      "field_actions": 2134,
+      "installation_steps": 43860792,
+      "mutation": "missing-receipt",
+      "native_steps": 338991,
+      "source_calls": 1
+    }
+  ],
+  "premature_phase_falsifier": {
+    "Ack": 0,
+    "End": 0,
+    "Return": 0,
+    "detected": true,
+    "field_actions": 3,
+    "mutation": "executing End replaced by goto",
+    "native_steps": 559,
+    "output_before_refusal": [
+      1
+    ],
+    "scope": "actual installed primitive phase guard component, not completed evaluator"
+  },
+  "result_omission_mutants": [
+    "native_controller_selections",
+    "bit_field_reads",
+    "missing_receipt_occurrence",
+    "missing_original_index",
+    "premature_full_session_completion",
+    "wrong_loaded_physical_input_bit"
+  ],
+  "reused_DP_falsifier": [
+    {
+      "label_count": 0,
+      "literal_reference": {
+        "gotos": 4425519,
+        "halt_state": 195,
+        "output_bits": 0,
+        "peak_stack_bits": 750,
+        "peeks": 134019,
+        "pop_instructions": 8340958,
+        "pushes": 6569300,
+        "retained_stack_bits": 478,
+        "steps": 19469797,
+        "success": true
+      },
+      "old_array_replaced_by_new": false
+    },
+    {
+      "label_count": 2,
+      "literal_reference": {
+        "gotos": 4425806,
+        "halt_state": 195,
+        "output_bits": 2,
+        "peak_stack_bits": 750,
+        "peeks": 134019,
+        "pop_instructions": 8341364,
+        "pushes": 6569722,
+        "retained_stack_bits": 495,
+        "steps": 19470912,
+        "success": true
+      },
+      "old_array_replaced_by_new": true
+    }
+  ],
+  "schema": 1,
+  "source_bound_reused_evidence": {
+    "integration-results.json": {
+      "matching_source_bindings": 10,
+      "result_identity": {
+        "bytes": 93879,
+        "sha256": "b0e04b8607e5da848f5602fc9b233a2acfdb55be4c6c8ee3a236d88e5237fb19"
+      },
+      "scope": "supplied component or B author result; not fresh C acceptance"
+    },
+    "service-domain-results.json": {
+      "matching_source_bindings": 7,
+      "result_identity": {
+        "bytes": 34744,
+        "sha256": "172ddc1183c0937f4e25049bdd09b9153a252ad54f5bc4d81d6e5c2c89cd254d"
+      },
+      "scope": "actual installed Read and attained Predict input on specified same-source configurations; no full evaluator arithmetic return"
+    },
+    "service-results.json": {
+      "matching_source_bindings": 12,
+      "result_identity": {
+        "bytes": 78700,
+        "sha256": "81a1b6f552c03c87c7d67aa3a1ff0cbf3e7f196ddee6908960fca2f6b1bfaefc"
+      },
+      "scope": "supplied component or B author result; not fresh C acceptance"
+    }
+  },
+  "source_identity": {
+    "bytes": 16461,
+    "sha256": "e71c1995ec4667649a24ffa102607d723db8329d7989b9645c24a9ca8e347d7f"
+  },
+  "strict_missing_objects": [
+    "ML-N-evaluator-execution",
+    "ML-Cost-full-evaluator-session"
+  ],
+  "whole_goal_complete": false,
+  "widening_charge_falsifier": {
+    "actual_reference_copy_bits": 3645,
+    "cleanup_fields": 322,
+    "free_list_writes": 321,
+    "omitted_copy_bit_rejected": true,
+    "retained": {
+      "bit_fields": 160,
+      "bits": 1674,
+      "grant_bits": 162,
+      "objects": 162,
+      "reference_slots": 169,
+      "reference_width": 8
+    },
+    "scope": "actual Arena width/cleanup component; not complete evaluator session",
+    "width_changes": [
+      [
+        1,
+        2,
+        7
+      ],
+      [
+        2,
+        3,
+        9
+      ],
+      [
+        3,
+        4,
+        13
+      ],
+      [
+        4,
+        5,
+        21
+      ],
+      [
+        5,
+        6,
+        37
+      ],
+      [
+        6,
+        7,
+        69
+      ],
+      [
+        7,
+        8,
+        133
+      ]
+    ]
+  }
+}
