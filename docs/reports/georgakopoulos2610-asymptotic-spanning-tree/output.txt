@@ -1,0 +1,5 @@
+free-product ball radius=5: syllable cut and Z^2 isometry checks passed
+grid 2x2: edges=4, spanning_trees=4, minimum_edge_stretch=3
+grid 3x3: edges=12, spanning_trees=192, minimum_edge_stretch=3
+bounded one-ended-factor obstruction check passed
+ALL_CHECKS_OK
