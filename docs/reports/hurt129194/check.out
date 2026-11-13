@@ -1,0 +1,13 @@
+FIDELITY: all 53 OEIS displayed terms n=0..52 match the literal formula
+FIDELITY: source recurrence a(n)=3a(n-2)-3a(n-4)+a(n-6) matches for n=6..10000
+SETTLEMENT CHECK: denominator identity, fraction rewrite, gcd mechanism and parity formula match for every n=1..10000
+LARGE EXACT CHECKS: n=10001,10002,10^30,10^30+1 all match
+EXAMPLE: n=1, q=2, denominator=1, a=1
+EXAMPLE: n=2, q=3/2, denominator=2, a=2
+EXAMPLE: n=3, q=10/9, denominator=9, a=9
+EXAMPLE: n=4, q=7/8, denominator=8, a=8
+EXAMPLE: n=5, q=18/25, denominator=25, a=25
+EXAMPLE: n=6, q=11/18, denominator=18, a=18
+BOUNDARY: a(0)=0; rational expression at n=0 is excluded as undefined
+Finite exact checks support the proposed route; they do not prove the universal conjecture.
+ALL_CHECKS_OK
