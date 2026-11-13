@@ -1,0 +1,19 @@
+FIDELITY Examples 2.1/2.2: scaling, corner sums, inverse, ASM, boundary rectangles OK
+PREMISES n=1..40: 6528388 rectangles (including degenerate), four IC inequalities, two ASMs, C=rs/n OK
+EXHAUSTIVE bracket n=1: permutations=1, witnesses=1; no small refutation claimed
+EXHAUSTIVE bracket n=2: permutations=2, witnesses=2; no small refutation claimed
+EXHAUSTIVE bracket n=3: permutations=6, witnesses=6; no small refutation claimed
+EXHAUSTIVE bracket n=4: permutations=24, witnesses=16; no small refutation claimed
+EXHAUSTIVE bracket n=5: permutations=120, witnesses=80; no small refutation claimed
+EXHAUSTIVE bracket n=6: permutations=720, witnesses=128; no small refutation claimed
+EXHAUSTIVE bracket n=7: permutations=5040, witnesses=1280; no small refutation claimed
+EXHAUSTIVE bracket n=8: permutations=40320, witnesses=2176; no small refutation claimed
+HAAR n=8: all 16 basis blocks pairwise orthogonal; 40320 permutations satisfy empty-block coefficients, counts and square identity
+HAAR n=16: all 64 basis blocks pairwise orthogonal; 18 permutations satisfy empty-block coefficients, counts and square identity
+HAAR n=32: all 192 basis blocks pairwise orthogonal; 18 permutations satisfy empty-block coefficients, counts and square identity
+HAAR n=64: all 512 basis blocks pairwise orthogonal; 18 permutations satisfy empty-block coefficients, counts and square identity
+THRESHOLD m=2051: n bit_length=2052, normalized contradiction gap=1 > 0
+THRESHOLD m=2052: n bit_length=2053, normalized contradiction gap=2 > 0
+THRESHOLD m=4096: n bit_length=4097, normalized contradiction gap=2046 > 0
+LIMIT: S_(2^2051) was not enumerated; the universal family requires the stated mathematical argument and subsequent Lean verification
+ALL_CHECKS_OK
