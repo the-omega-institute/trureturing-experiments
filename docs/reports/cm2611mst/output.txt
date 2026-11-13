@@ -1,0 +1,9 @@
+FIDELITY: exact source marginal second moment for every d=2..12
+FIDELITY: spectral variance coefficient 1/4-(2/5)^2=9/100
+CONSTANT: reciprocal square root of 9/100 equals 10/3 exactly
+COLUMN ALGEBRA: exact rational orthogonal conjugations, every column, d=2..12
+INVERSE RADIUS: grouped Dirichlet bound <=256 at every d=16..1024
+ANCHOR UPPER / CHEAP-EDGE LOWER: 1783 weighted complete graphs exhaustively checked
+DOMAINS: n=2..4 weights={1,2,3}; n=5 weights={1,2}; every anchor size; four thresholds
+LIMIT: exact finite identities and tree inequalities; no asymptotic proof or Haar simulation
+ALL_CHECKS_OK
