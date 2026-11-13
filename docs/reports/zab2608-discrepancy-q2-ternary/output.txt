@@ -1,0 +1,6 @@
+volumes (1, 9, 33, 65, 81)
+one-error distance histogram {3: 21}
+normalized distance-four-pair candidate count 21 maximum additional clique 4
+candidate distance histogram d=1..4 (0, 1, 18, 2)
+D(one-error code) 1594/567 D(candidate) 10348/3969 gap 10/49
+ALL_CHECKS_OK
