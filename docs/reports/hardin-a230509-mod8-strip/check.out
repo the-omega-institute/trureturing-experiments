@@ -1,5 +1,8 @@
 FIDELITY_N4: [(0, 1, 7, 2, 6, 3, 5, 4), (0, 7, 1, 6, 2, 5, 3, 4)]
 LITERAL_ENUMERATION: n=1..4 agrees with source, including both n=4 arrays
+PREFIX_INVARIANT_N1: 8 literal prefixes; 8 actual-colour boundary states
+PREFIX_INVARIANT_N2: 22 literal prefixes; 16 actual-colour boundary states
+PREFIX_INVARIANT_N3: 64 literal prefixes; 26 actual-colour boundary states
 STATE_CHECK: 22 reachable; live class sizes 2,2,2,2,8; 6 absorbing dead states
 TRANSLATION_CHECK: all 22 states and all 8 left colours
 T_ROW_1: [2, 1, 0, 0, 0]

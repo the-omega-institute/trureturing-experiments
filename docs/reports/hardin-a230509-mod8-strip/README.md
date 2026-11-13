@@ -19,6 +19,11 @@ The check independently enumerates all arrays through height four, reproducing
 the two displayed source examples. A separate dynamic program uses actual
 colours and two flags for whether the current bottom cells already have their
 required neighbours. It matches every source term from height 1 through 210.
+For heights one through three, a direct scan of every anchored array also
+checks the complete distribution of unfinished boundary states: every cell
+above the last row must already have a successor, and the last-row flags
+record precisely the witnesses present in that prefix. This tests the initial
+boundary and the prefix invariant independently of the transition code.
 
 Subtracting the bottom left colour yields 22 reachable states (d,p,q).
 Six states with both flags false have no accepting continuation. The live

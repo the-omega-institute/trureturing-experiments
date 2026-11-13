@@ -280,6 +280,35 @@ def raw_counts(max_n):
     return result
 
 
+def check_prefix_invariant():
+    """Compare all unfinished states with a direct cell-by-cell prefix scan."""
+    vector = Counter((0, d, d == 1, d == 7) for d in range(8))
+    for n in range(1, 4):
+        literal = Counter()
+        for tail in product(range(8), repeat=2 * n - 1):
+            flat = (0,) + tail
+            satisfied = []
+            for i in range(n):
+                for j in range(2):
+                    neighbours = [2 * i + 1 - j]
+                    if i > 0:
+                        neighbours.append(2 * (i - 1) + j)
+                    if i + 1 < n:
+                        neighbours.append(2 * (i + 1) + j)
+                    satisfied.append(any(flat[k] == (flat[2 * i + j] + 1) % 8
+                                         for k in neighbours))
+            if all(satisfied[:-2]):
+                literal[(flat[-2], flat[-1], satisfied[-2], satisfied[-1])] += 1
+        assert literal == vector, n
+        print(f'PREFIX_INVARIANT_N{n}: {sum(literal.values())} literal prefixes; '
+              f'{len(literal)} actual-colour boundary states')
+        next_vector = Counter()
+        for state, count in vector.items():
+            for target, multiplicity in raw_step(state).items():
+                next_vector[target] += count * multiplicity
+        vector = next_vector
+
+
 def normalized_step(state):
     d, p, q = state
     out = Counter()
@@ -437,6 +466,7 @@ def main():
             assert set(solutions) == set(expected)
             print(f'FIDELITY_N4: {sorted(solutions)}')
     print('LITERAL_ENUMERATION: n=1..4 agrees with source, including both n=4 arrays')
+    check_prefix_invariant()
     check_states()
     check_algebra()
     vector = [2, 0, 0, 0, 0]
