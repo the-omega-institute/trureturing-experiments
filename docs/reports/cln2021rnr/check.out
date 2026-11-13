@@ -1,0 +1,6 @@
+FIDELITY: symbolic block characteristic polynomial; Theorem 3.1 in 736 exact cases
+GEOMETRY: 184 rational unit directions, width sqrt(3), global support certificates {'arc': 93, 'vertex': 91}; interior and non-disk obstruction exact
+FAMILY: kth spectral threshold for k=3..8, n=2k..2k+3, 4416 exact cases
+COMPRESSION: 8 explicit algebraic projections (rank 3/6 and rank 4/9); affine transport exact
+SCOPE: finite exact checks and symbolic identities; universal family proof remains a preregistered outline, with no Lean proof
+ALL_CHECKS_OK
