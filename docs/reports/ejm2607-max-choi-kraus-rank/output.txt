@@ -1,0 +1,5 @@
+FIDELITY Example 5.10: all 64 Choi entries, both unit identities, PSD rank 2, det(unit)=-3/4: OK
+SETTLEMENT n=1: scalar product, unit 1, Choi rank 1: OK
+SETTLEMENT n=2: 64 Choi entries; 8 unit-basis identities; Tr(HT)=0; K Gram identity; C>=1I; rank=8; det(C)=22113: OK
+SETTLEMENT n=3: 729 Choi entries; 18 unit-basis identities; Tr(HT)=0; K Gram identity; C>=4I; rank=27; det(C)=6163848876953125000000000000000: OK
+ALL_CHECKS_OK
