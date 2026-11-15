@@ -1,0 +1,16 @@
+hyperbolic_identity: EXACT_ZERO
+profile_modulus: EXACT_ZERO
+travelling_DNLS_PDE: EXACT_ZERO
+amplitude_phase_derivative: EXACT_ZERO
+amplitude_ODE: EXACT_ZERO
+tanh_mass_density: EXACT_ZERO
+soliton_mass: EXACT 8*atan(a) = 8*theta for 0<a=tan(theta)<1
+source_weight_integral_W_squared: EXACT 512/7
+weight_integral_W_sixth: EXACT 8589934592/206253075
+transit_exponents: EXACT p=6 -> 1; p=4 -> 0
+window_inclusion_margin: EXACT_ZERO
+linear_lower_bound: EXACT I6 >= lambda*(4/v)*cosh(1/99)^(-36)*(4*sin(2*theta)/(cosh(2)+cos(2*theta)))^3
+lower_bound_domain: 0<theta<pi/4; lambda>=max(1,2/v); v=2*cot(2*theta)>0
+mass_critical_scaling_covariance: EXACT lambda^(5/2) times PDE
+check_sha256: f81b8957c1569237f26857f892996fc3dc3c7332d230c1a03f79c1f6c3a4c5b0
+ALL_CHECKS_OK

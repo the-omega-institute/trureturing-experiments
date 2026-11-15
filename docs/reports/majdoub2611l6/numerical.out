@@ -1,0 +1,26 @@
+hyperbolic_identity: EXACT_ZERO
+profile_modulus: EXACT_ZERO
+travelling_DNLS_PDE: EXACT_ZERO
+amplitude_phase_derivative: EXACT_ZERO
+amplitude_ODE: EXACT_ZERO
+tanh_mass_density: EXACT_ZERO
+soliton_mass: EXACT 8*atan(a) = 8*theta for 0<a=tan(theta)<1
+source_weight_integral_W_squared: EXACT 512/7
+weight_integral_W_sixth: EXACT 8589934592/206253075
+transit_exponents: EXACT p=6 -> 1; p=4 -> 0
+window_inclusion_margin: EXACT_ZERO
+linear_lower_bound: EXACT I6 >= lambda*(4/v)*cosh(1/99)^(-36)*(4*sin(2*theta)/(cosh(2)+cos(2*theta)))^3
+lower_bound_domain: 0<theta<pi/4; lambda>=max(1,2/v); v=2*cot(2*theta)>0
+mass_critical_scaling_covariance: EXACT lambda^(5/2) times PDE
+check_sha256: f81b8957c1569237f26857f892996fc3dc3c7332d230c1a03f79c1f6c3a4c5b0
+DIAGNOSTIC_ONLY M=0.797349219929296 K=0.285963124659929
+DIAGNOSTIC_ONLY lambda=4 I6=1.12254387119604 I6/lambda=0.280635967799011 fraction_of_K=0.981371175506
+DIAGNOSTIC_ONLY lambda=16 I6=4.57540999455886 I6/lambda=0.285963124659929 fraction_of_K=1.0
+DIAGNOSTIC_ONLY lambda=64 I6=18.3016399782354 I6/lambda=0.285963124659929 fraction_of_K=1.0
+DIAGNOSTIC_ONLY lambda=256 I6=73.2065599129418 I6/lambda=0.285963124659929 fraction_of_K=1.0
+DIAGNOSTIC_ONLY M=3.14159265358979 K=94.3517866519304
+DIAGNOSTIC_ONLY lambda=4 I6=139.505823339721 I6/lambda=34.8764558349303 fraction_of_K=0.369642770662
+DIAGNOSTIC_ONLY lambda=16 I6=1424.8302478742 I6/lambda=89.0518904921376 fraction_of_K=0.943828343396
+DIAGNOSTIC_ONLY lambda=64 I6=6038.51434569534 I6/lambda=94.3517866514896 fraction_of_K=0.999999999995
+DIAGNOSTIC_ONLY lambda=256 I6=24154.0573828942 I6/lambda=94.3517866519304 fraction_of_K=1.0
+ALL_CHECKS_OK
