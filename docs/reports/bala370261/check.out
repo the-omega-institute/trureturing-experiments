@@ -1,0 +1,12 @@
+SOURCE_FIDELITY A370259: all 350 published b-file rows agree
+SOURCE_FIDELITY A370261: offset 1,2; revision 15; 17 listed terms agree
+TARGET n=1..300: exact T matrix cross-check, doubling, Pell, congruence, square and b-file agreement
+FIRST_WITNESSES 1,5,65,1449,46561
+EXAMPLE n=4: U_3(9)=5796; T_8(9)-1=5374978560; denominator=2560; q=1449
+BYPRODUCT 1500 cases: n=1..100, c=-7..7; includes odd, zero and negative c
+INVARIANT 189 cases: x=-4..4, m=0..20
+INPUT_SHA256 source-fields.json 4cfdae7a1d16dfbc32c176a8a3331e7b695d68128b7a38d01c9d6d18ae2d537d
+INPUT_SHA256 b370261.txt b481601254b71b6bbe9605b9eaff16f28a598c96f19070b992264fcf09ab6e39
+INPUT_SHA256 b370259.txt ad8a2d3605a7bb976a71dc39517f5a87609c1666cbc15eecdd9704fca2cb823d
+Finite checks support the preregistered argument; they are not a universal or Lean proof.
+ALL_CHECKS_OK
