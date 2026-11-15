@@ -1,0 +1,13 @@
+FIDELITY: G(vertex), CAS product/Gamma, outer section and dominant ratio: 63 (m,n) pairs OK
+QUBIT n=2CAS=1/10U=1/2p/CAS=5/3
+QUBIT n=3CAS=1/56U=11/112p/CAS=8/5
+QUBIT n=4CAS=1/330U=5/297p/CAS=11/7
+QUBIT n=5CAS=1/2002U=25/9152p/CAS=14/9
+QUBIT n=6CAS=1/12376U=1271/2939300p/CAS=17/11
+QUBIT n=7CAS=1/77520U=217/3209328p/CAS=20/13
+QUBIT n=8CAS=1/490314U=172/16380945p/CAS=23/15
+LEADING CONSTANT: beta_2=9/2; precursor p/CAS -> 3/2 and U/p -> 3 are compatible
+LOCAL PSD: exact extreme-slot assignments checked: 17304
+SUPPORT CORRECTION: m=n=2, B=-11/3, B+Z=-8/3; Q(B+Z>=0)=1/2=V_U/T_m
+TILT MOMENTS: exact first/second moment formulas and positive rates on all 63 small cases OK (finite mean B need not be positive)
+ALL_CHECKS_OK
