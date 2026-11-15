@@ -1,0 +1,20 @@
+FIDELITY: source p=x''+1 and D(xx') identities verified
+FIDELITY: first map lies in the six-term source span; exact Jacobian rank=6
+FAMILY k=2: D(H)=M*p; degree(p)=2; primitive linear-in-z; first image excluded by constant coefficient; second image kernel forces A=0
+FAMILY k=3: D(H)=M*p; degree(p)=2; primitive linear-in-z; first image excluded by constant coefficient; second image kernel forces A=0
+FAMILY k=4: D(H)=M*p; degree(p)=2; primitive linear-in-z; first image excluded by constant coefficient; second image kernel forces A=0
+FAMILY k=5: D(H)=M*p; degree(p)=2; primitive linear-in-z; first image excluded by constant coefficient; second image kernel forces A=0
+FAMILY k=6: D(H)=M*p; degree(p)=2; primitive linear-in-z; first image excluded by constant coefficient; second image kernel forces A=0
+FAMILY k=7: D(H)=M*p; degree(p)=2; primitive linear-in-z; first image excluded by constant coefficient; second image kernel forces A=0
+FAMILY k=8: D(H)=M*p; degree(p)=2; primitive linear-in-z; first image excluded by constant coefficient; second image kernel forces A=0
+FAMILY k=9: D(H)=M*p; degree(p)=2; primitive linear-in-z; first image excluded by constant coefficient; second image kernel forces A=0
+FAMILY k=10: D(H)=M*p; degree(p)=2; primitive linear-in-z; first image excluded by constant coefficient; second image kernel forces A=0
+FAMILY k=11: D(H)=M*p; degree(p)=2; primitive linear-in-z; first image excluded by constant coefficient; second image kernel forces A=0
+FAMILY k=12: D(H)=M*p; degree(p)=2; primitive linear-in-z; first image excluded by constant coefficient; second image kernel forces A=0
+CHOSEN k=2: excluded even from both source Zariski closures
+BOUNDED KERNEL k=2, total degree <= 8: span(1,H,H^2), dimension=3
+BOUNDED KERNEL k=3, total degree <= 10: span(1,H,H^2), dimension=3
+BOUNDED KERNEL k=4, total degree <= 12: span(1,H,H^2), dimension=3
+BOUNDED KERNEL k=5, total degree <= 14: span(1,H,H^2), dimension=3
+BOUNDED KERNEL k=6, total degree <= 16: span(1,H,H^2), dimension=3
+ALL_CHECKS_OK
