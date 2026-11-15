@@ -1,0 +1,9 @@
+n=1: exact globally certified local GW/fGW instances=9
+n=2: exact globally certified local GW/fGW instances=18
+n=3: exact globally certified local GW/fGW instances=72
+n=4: exact globally certified local GW/fGW instances=576
+local_certificates=675; ordered_cross_certificates=320148
+independent_objective_expansions=2673; source_fidelity_checks=100
+Scope: GW p=1,2,3,4; fused (1,1),(2,1),(2,2),(4,2) at alpha=1/2; (1,2) at alpha=1/4 with zero features; d=1.
+Continuum certificate uses Birkhoff; no classifier limit or arbitrary-real exponent is numerically certified.
+ALL_CHECKS_OK
