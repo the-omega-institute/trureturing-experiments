@@ -1,0 +1,34 @@
+FIDELITY q=3 s=2 k=2: all 729 words; radius=4; deep=18; Hermite bijection and Theorems 3.1/3.3 agree with direct NRT distances
+SQUAREFREE_BLOCK q=5 degree=2: all 125 functionals, 4 survivors
+CLASSIFICATION q=3 s=2 k=2: profiles=7 residual_dimension=1 enumerated=3 deep_cosets=2 deep_words=18
+CLASSIFICATION q=3 s=2 k=3: profiles=6 residual_dimension=1 enumerated=3 deep_cosets=2 deep_words=54
+CLASSIFICATION q=3 s=2 k=4: profiles=3 residual_dimension=1 enumerated=3 deep_cosets=2 deep_words=162
+CLASSIFICATION q=3 s=2 k=5: profiles=1 residual_dimension=1 enumerated=3 deep_cosets=2 deep_words=486
+CLASSIFICATION q=3 s=3 k=3: profiles=12 residual_dimension=1 enumerated=3 deep_cosets=2 deep_words=54
+CLASSIFICATION q=3 s=3 k=4: profiles=12 residual_dimension=1 enumerated=3 deep_cosets=2 deep_words=162
+CLASSIFICATION q=3 s=3 k=5: profiles=10 residual_dimension=1 enumerated=3 deep_cosets=2 deep_words=486
+CLASSIFICATION q=3 s=3 k=6: profiles=6 residual_dimension=1 enumerated=3 deep_cosets=2 deep_words=1458
+CLASSIFICATION q=3 s=3 k=7: profiles=3 residual_dimension=1 enumerated=3 deep_cosets=2 deep_words=4374
+CLASSIFICATION q=3 s=3 k=8: profiles=1 residual_dimension=1 enumerated=3 deep_cosets=2 deep_words=13122
+CLASSIFICATION q=5 s=2 k=2: profiles=30 residual_dimension=6 enumerated=15625 deep_cosets=4 deep_words=100
+CLASSIFICATION q=5 s=2 k=3: profiles=45 residual_dimension=1 enumerated=5 deep_cosets=4 deep_words=500
+CLASSIFICATION q=5 s=2 k=4: profiles=51 residual_dimension=1 enumerated=5 deep_cosets=4 deep_words=2500
+CLASSIFICATION q=5 s=2 k=5: profiles=45 residual_dimension=1 enumerated=5 deep_cosets=4 deep_words=12500
+CLASSIFICATION q=5 s=2 k=6: profiles=30 residual_dimension=1 enumerated=5 deep_cosets=4 deep_words=62500
+CLASSIFICATION q=5 s=2 k=7: profiles=15 residual_dimension=1 enumerated=5 deep_cosets=4 deep_words=312500
+CLASSIFICATION q=5 s=2 k=8: profiles=5 residual_dimension=1 enumerated=5 deep_cosets=4 deep_words=1562500
+CLASSIFICATION q=5 s=2 k=9: profiles=1 residual_dimension=1 enumerated=5 deep_cosets=4 deep_words=7812500
+CLASSIFICATION q=5 s=3 k=3: profiles=65 residual_dimension=6 enumerated=15625 deep_cosets=4 deep_words=500
+CLASSIFICATION q=5 s=3 k=4: profiles=101 residual_dimension=1 enumerated=5 deep_cosets=4 deep_words=2500
+CLASSIFICATION q=5 s=3 k=5: profiles=135 residual_dimension=1 enumerated=5 deep_cosets=4 deep_words=12500
+CLASSIFICATION q=5 s=3 k=6: profiles=155 residual_dimension=1 enumerated=5 deep_cosets=4 deep_words=62500
+CLASSIFICATION q=5 s=3 k=7: profiles=155 residual_dimension=1 enumerated=5 deep_cosets=4 deep_words=312500
+CLASSIFICATION q=5 s=3 k=8: profiles=135 residual_dimension=1 enumerated=5 deep_cosets=4 deep_words=1562500
+CLASSIFICATION q=5 s=3 k=9: profiles=101 residual_dimension=1 enumerated=5 deep_cosets=4 deep_words=7812500
+CLASSIFICATION q=5 s=3 k=10: profiles=65 residual_dimension=1 enumerated=5 deep_cosets=4 deep_words=39062500
+CLASSIFICATION q=5 s=3 k=11: profiles=35 residual_dimension=1 enumerated=5 deep_cosets=4 deep_words=195312500
+CLASSIFICATION q=5 s=3 k=12: profiles=15 residual_dimension=1 enumerated=5 deep_cosets=4 deep_words=976562500
+CLASSIFICATION q=5 s=3 k=13: profiles=5 residual_dimension=1 enumerated=5 deep_cosets=4 deep_words=4882812500
+CLASSIFICATION q=5 s=3 k=14: profiles=1 residual_dimension=1 enumerated=5 deep_cosets=4 deep_words=24414062500
+SOURCE_DATA: 18/18 overlapping workbook rows agree; 12 q=5,s=3 cases extend the workbook; 30 cases total
+ALL_CHECKS_OK
