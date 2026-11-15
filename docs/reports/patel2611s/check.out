@@ -1,0 +1,5 @@
+FIDELITY: Appendix F OGD substitutions and budget: 750 exact cases
+GENERIC_CANCELLATION: 8178 arbitrary-history symbols, 90114 exact coefficient contributions, 1..12 signs
+SIGN_AVERAGES: 792 policy/parameter cases, 68688 sign realizations; exact fresh-sign cancellation and block inequality
+ROUNDING: 261120 exact parameter cases T=1..128, P/D quarter-grid, 8 positive budgets; 10024 intermediate-regime cases
+ALL_CHECKS_OK
