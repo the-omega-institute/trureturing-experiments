@@ -1,0 +1,10 @@
+SOURCE_EQ6 [{'fiber_sums': [2, -2, 2, -2], 'eq6_lhs': -4, 'residue_mod_3': 2}, {'fiber_sums': [2, 2, -2, -2], 'eq6_lhs': -4, 'residue_mod_3': 2}, {'fiber_sums': [2, -2, -2, 2], 'eq6_lhs': -4, 'residue_mod_3': 2}]
+EXHAUSTIVE ell=0 {'families': 1, 'pinned_families': 4, 'parameter_cases': 16}
+EXHAUSTIVE ell=1 {'families': 3, 'pinned_families': 16, 'parameter_cases': 56}
+EXHAUSTIVE ell=2 {'families': 27, 'pinned_families': 136, 'parameter_cases': 352}
+EXHAUSTIVE ell=3 {'families': 63131, 'pinned_families': 258552, 'parameter_cases': 262120}
+TOTALS {'families': 63162, 'pinned_families': 258708, 'parameter_cases': 262544, 'eq6_outputs': 1226536, 'bessel_cases': 505163, 'granularity_functions': 300846}
+MAXIMUM_N [((0, 0), 0), ((0, 1), 0), ((0, 2), 0), ((0, 3), 0), ((1, 0), 0), ((1, 1), 1), ((1, 2), 2), ((1, 3), 3), ((2, 0), 0), ((2, 1), 1), ((2, 2), 3), ((2, 3), 6), ((3, 0), 0), ((3, 1), 4), ((3, 2), 5), ((3, 3), 7)]
+SHARPNESS k=0..6 d=1,2 primes=3,5,7,11 cases=56
+PARAMETER_BOUND d=k=3 N<=28
+ALL_CHECKS_OK
