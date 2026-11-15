@@ -1,0 +1,17 @@
+density equality: d0^2=4/39, 8/(3*d0^2)=26
+anchor 1: relative honeycomb points=103, support circles=655
+anchor -1: relative honeycomb points=103, support circles=655
+fidelity: max count at radius^2=39/4 is 26
+fidelity: max count over all strictly smaller radii is 25
+attainment endpoint=False: center=(Fraction(-2, 1), Fraction(-3, 1)), radius^2=9
+attainment endpoint=True: center=(Fraction(-5, 2), Fraction(-5, 2)), radius^2=39/4
+support circles total=1310; endpoint triangle supports=72
+26-point disk centers witnessed=24; all have antipodal honeycomb points
+arithmetic: endpoint triangle pairs=36; Q=26 impossible; every endpoint triangle has side^2=39
+integrality: Q(2z)=156 has 12 solutions, all coordinates even
+quotients: 12 norm-39 generators x 6 center classes; index=39, honeycomb classes=26
+(disk points, represented classes) histogram: [((26, 25), 72)]
+residue collision: every tested disk omits a honeycomb class; translates by z*Lambda preserve that omission
+conditional family arithmetic: p=[7, 13, 19, 31, 37, 43], 216 endpoint triangle pairs; no counting hypotheses assumed
+NOT_CHECKED: infinite covering compactness/Voronoi equality reduction (Lemma 3.14); Lean settlement
+ALL_CHECKS_OK
