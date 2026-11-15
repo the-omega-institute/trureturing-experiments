@@ -1,0 +1,7 @@
+FIDELITY Example 3.3: S=diag(1,2); coefficients=(p1,p2/2,p2/2); excess=p2; Riesz excess=0
+FAMILY identities: frame multiplier=1+t^2; kernel=A*(1,-t); kernel projection idempotent; diagonal sum=1; excess=carrier(h1)
+CARRIER identities: r_n=n*u/(1+(n+1)*u); r_(n+1)-r_n>=0; error=(1+u)/(1+(n+1)*u); limit=0 at u=0 and 1 at u>0
+RATIONAL checks: 65 interval points x 64 approximants; 128 exact t_m=1/m values; sharp bounds attained at t=0,1
+GENERAL complex-family identities: (f,1), multiplier=1+|f|^2, kernel generator=(1,-f), coefficient sum=1
+ANALYTIC boundary: exact algebra does not certify carrier existence in the bidual, normal extension, continuity contradiction, or all real parameters
+ALL_CHECKS_OK
