@@ -1,0 +1,5 @@
+k=729: exact radius and constraint identities verified
+k=729: capsule lower bound > k/3 >= 243 > annulus trial upper bound
+k=730: exact radius and constraint identities verified
+k=730: capsule lower bound > k/3 >= 243 > annulus trial upper bound
+ALL_CHECKS_OK
