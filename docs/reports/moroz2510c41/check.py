@@ -32,7 +32,7 @@ def s_family(a: int) -> Fraction:
 
 
 def main() -> None:
-    # The source's explicit jump point: s_1 = 6/11, with F(s_1)=379/396.
+    # The candidate's explicit jump value: s_1 = 6/11, with F(s_1)=379/396.
     s1 = s_family(1)
     assert s1 == Fraction(6, 11)
     f_s1 = g(1, g(11, Fraction(2, 3)))
