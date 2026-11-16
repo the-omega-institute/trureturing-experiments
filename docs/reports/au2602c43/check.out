@@ -1,0 +1,11 @@
+completed exact sequence index 0
+completed exact sequence index 39
+completed exact sequence index 79
+exact Q-ranks, n=0..39: [1, 2, 4, 6, 9, 12, 16, 20, 25]
+exact Q-ranks, n=40..79: [1, 2, 4, 6, 9, 12, 16, 20, 25]
+source fidelity: S(0,0,0;n)=-(1+8n)a_n for n=0..79
+source fidelity: displayed Hilbert coefficients 1,2,4,6,9,12 reproduced
+reflection: substitution (a,b,c)=(x,z,y-z), odd z coefficients vanish
+checked: parameter degrees 0..8; all 80 indices; two disjoint rank windows
+scope: finite checks only; no all-degree proof is claimed
+ALL_CHECKS_OK
