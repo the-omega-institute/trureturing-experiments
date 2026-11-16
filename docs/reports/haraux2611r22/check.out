@@ -1,0 +1,14 @@
+FIDELITY: source c=3/4 solution; PDE, boundaries, exact time range [0,1] OK
+TRANSMUTATION: 441 beta moments and all coefficients through N=30 OK
+BINOMIAL: (q-z^2)^N through N=18; semigroup through degree 24 OK
+WEIGHT: integral J0(sqrt(c)*sqrt(L^2-t^2)) has sine coefficients through k=30 OK
+BESSEL: J0(3) < -342055094543/1315333734400 < 0 (alternating upper bound)
+BESSEL: J0 positive on [0,12/5]; J0(241/100)<0; first zero lies in (12/5,241/100)
+BESSEL Bernstein coefficients: 1, 89/125, 1487/3125, 22127/78125, 248741/1953125, 608149/244140625
+THRESHOLD: certified 29/50 < j^2/pi^2 < 3/5, consistent with 17/100 sufficient and 3/4 obstruction
+FINITE WITNESS: c=2/3, coefficients (1,9/25), 806 rational grid points
+FINITE WITNESS: grid lower >= 7953/125000 ; uniform lower >= 227621/4000000 >1/20 on [-pi,pi]
+FINITE WITNESS: exact PDE, Dirichlet boundaries and trace at x0=pi/sqrt(2) OK
+HIGH-POTENTIAL FAMILY: c=1+h^2, cosh(h*t)*sin(x), exact PDE OK (h>=0)
+LIMIT: finite checks support the route; endpoint and all-parameter equivalence are not proved here
+ALL_CHECKS_OK
