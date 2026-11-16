@@ -1,0 +1,36 @@
+Exact arithmetic: integer coefficient equations and Singular characteristic 0
+Source fidelity: Corollary 1.9 and the displayed k=3 E(2) example
+FIDELITY m^1: colength=1 tangent=3 dual_check=OK
+FIDELITY m^2: colength=4 tangent=18 dual_check=OK
+FIDELITY m^3: colength=10 tangent=60 dual_check=OK
+FIDELITY m^4: colength=20 tangent=150 dual_check=OK
+FIDELITY m^5: colength=35 tangent=315 dual_check=OK
+FIDELITY m^6: colength=56 tangent=588 dual_check=OK
+FIDELITY explicit source example: colength=12 tangent=66
+E2 k=1 I: colength=3 tangent=9 grades={-3: 1, -2: 1, -1: 3, 0: 2, 1: 2} dual_check=OK
+E2 k=1 J: colength=3 tangent=9 grades={-1: 7, 0: 2} dual_check=OK
+BOREL k=1: count=2 extras=[((0, 0, 1), (0, 1, 0)), ((0, 0, 1), (0, 0, 2))]
+E2 k=2 I: colength=6 tangent=24 grades={-3: 3, -2: 1, -1: 13, 0: 2, 1: 5} dual_check=OK
+E2 k=2 J: colength=6 tangent=24 grades={-2: 4, -1: 12, 0: 8} dual_check=OK
+BOREL k=2: count=2 extras=[((0, 0, 2), (0, 1, 1)), ((0, 0, 2), (0, 0, 3))]
+E2 k=3 I: colength=12 tangent=66 grades={-3: 6, -2: 1, -1: 48, 0: 2, 1: 9} dual_check=OK
+E2 k=3 J: colength=12 tangent=66 grades={-2: 10, -1: 40, 0: 16} dual_check=OK
+BOREL k=3: count=2 extras=[((0, 0, 3), (0, 1, 2)), ((0, 0, 3), (0, 0, 4))]
+E2 k=4 I: colength=22 tangent=156 grades={-3: 10, -2: 1, -1: 129, 0: 2, 1: 14} dual_check=OK
+E2 k=4 J: colength=22 tangent=156 grades={-2: 18, -1: 112, 0: 26} dual_check=OK
+BOREL k=4: count=2 extras=[((0, 0, 4), (0, 1, 3)), ((0, 0, 4), (0, 0, 5))]
+E2 k=5 I: colength=37 tangent=321 grades={-3: 15, -2: 1, -1: 283, 0: 2, 1: 20} dual_check=OK
+E2 k=5 J: colength=37 tangent=321 grades={-2: 28, -1: 255, 0: 38} dual_check=OK
+BOREL k=5: count=2 extras=[((0, 0, 5), (0, 1, 4)), ((0, 0, 5), (0, 0, 6))]
+E2 k=6 I: colength=58 tangent=594 grades={-3: 21, -2: 1, -1: 543, 0: 2, 1: 27} dual_check=OK
+E2 k=6 J: colength=58 tangent=594 grades={-2: 40, -1: 502, 0: 52} dual_check=OK
+BOREL k=6: count=2 extras=[((0, 0, 6), (0, 1, 5)), ((0, 0, 6), (0, 0, 7))]
+CONVENTION_MISMATCH k=1: z^4 is an ideal monomial outside the minimal-generator hull
+CONVENTION_MISMATCH k=2: z^5 is an ideal monomial outside the minimal-generator hull
+CONVENTION_MISMATCH k=3: z^6 is an ideal monomial outside the minimal-generator hull
+CONVENTION_MISMATCH k=4: z^7 is an ideal monomial outside the minimal-generator hull
+CONVENTION_MISMATCH k=5: z^8 is an ideal monomial outside the minimal-generator hull
+CONVENTION_MISMATCH k=6: z^9 is an ideal monomial outside the minimal-generator hull
+GLOBAL_MAXIMALITY=NOT_CHECKED
+CONVEX_HULL_CLAUSES=REQUIRE_SOURCE_CONVENTION_CLARIFICATION
+ALL_CHECKS_OK
