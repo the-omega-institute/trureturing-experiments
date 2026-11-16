@@ -1,0 +1,17 @@
+Fidelity, G=Z, k=Z, coefficients=-2..2: vectors=3125; idempotents=6; classification and both unique extremes OK
+Additive gap identity: 816 in-range (a,b,x,y) tuples OK
+G=Z, k=Q: vectors=3125; idempotents=6; classification and both unique extremes OK
+G=Z, k=F_2: vectors=32; idempotents=6; classification and both unique extremes OK
+G=Z, k=F_3: vectors=243; idempotents=6; classification and both unique extremes OK
+G=Z, k=F_5: vectors=3125; idempotents=6; classification and both unique extremes OK
+G=Z^2 lex, k=Z: supports<=3; vectors=5989; idempotents=10; classification and both unique extremes OK
+G=Z^2 lex, k=Q: supports<=3; vectors=5989; idempotents=10; classification and both unique extremes OK
+G=Z^2 lex, k=F_2: supports<=3; vectors=130; idempotents=10; classification and both unique extremes OK
+G=Z^2 lex, k=F_3: supports<=3; vectors=835; idempotents=10; classification and both unique extremes OK
+G=Z^2 lex, k=F_5: supports<=3; vectors=5989; idempotents=10; classification and both unique extremes OK
+Heisenberg structure: 19683 triples; associativity, inverse, both order translations and right core laws OK; noncommutative
+G=Heisenberg(Z) lex, k=Z: supports<=3; vectors=24859; idempotents=28; classification and both unique extremes OK
+G=Heisenberg(Z) lex, k=F_2: supports<=3; vectors=3304; idempotents=28; classification and both unique extremes OK
+G=Heisenberg(Z) lex, k=F_3: supports<=3; vectors=24859; idempotents=28; classification and both unique extremes OK
+Singleton coefficient equation: 23 exact rational scalars OK
+ALL_CHECKS_OK
