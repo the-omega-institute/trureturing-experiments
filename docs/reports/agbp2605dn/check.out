@@ -1,5 +1,9 @@
-k=729: exact radius and constraint identities verified
-k=729: capsule lower bound > k/3 >= 243 > annulus trial upper bound
-k=730: exact radius and constraint identities verified
-k=730: capsule lower bound > k/3 >= 243 > annulus trial upper bound
+FIDELITY: source Steiner and ball-quermassintegral formulas, n=2..6: exact
+RADIAL: inverse-weight, cylinder and cap integrals: exact
+CONSTRAINTS: P(K_r)=4*pi and shell volume=2*pi under the two exact radius equations
+FAMILY: r>1/(2L), R^2<2/L imply 2r/R^3>k/3 for L=k^2; every k>=729 separates
+ANNULUS: exact trial quotient in (20,21); first radial eigenvalue in (149769/10000,150544/10000)
+CAPSULE k=16: exact radius brackets; lower bound in (31,32); exceeds annulus trial
+CAPSULE k=729: exact radius brackets; lower bound in (1457,1458); exceeds annulus trial
+CAPSULE k=730: exact radius brackets; lower bound in (1459,1460); exceeds annulus trial
 ALL_CHECKS_OK
