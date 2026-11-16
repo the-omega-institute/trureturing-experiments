@@ -1,5 +1,6 @@
 m=2, |K|=4, n=12
 exhaustive development identity checks: 4^12 = 16777216
+direct Walsh checks: 2 maps × 3 nonzero multipliers × 64 characters
 all nonzero output components have Walsh magnitude 64 = 2^(n/2)
 binary third derivative: deg(Q)=2 witness 0, deg(F)=3 witness 1
 ALL_CHECKS_OK

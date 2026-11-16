@@ -93,6 +93,18 @@ for lam in (1, 2, 3):
             Walsh = 64 * (1 if trace(mul(lam, dot(A, surviving[0]))) == 0 else -1)
             assert abs(Walsh) == 64
 
+# Direct Walsh evaluations independently check the source's spectral criterion
+# on the first 64 input characters for every nonzero output multiplier.
+def direct_walsh(H, lam, A):
+    total = 0
+    for x in V:
+        total += 1 if trace(mul(lam, H(x))) ^ trace(dot(A, x)) == 0 else -1
+    return total
+for H in (Q, F):
+    for lam in (1, 2, 3):
+        for A in V[:64]:
+            assert abs(direct_walsh(H, lam, A)) == 64
+
 # Q has binary degree 2, while the lambda=1 component of F has a nonzero
 # third derivative: Tr(1 * 1 * alpha)=1 for alpha=t (represented by 2).
 def component_H(H, lam, a):
@@ -116,6 +128,7 @@ assert third_difference(Q, 1) == 0
 
 print("m=2, |K|=4, n=12")
 print("exhaustive development identity checks: 4^12 = 16777216")
+print("direct Walsh checks: 2 maps × 3 nonzero multipliers × 64 characters")
 print("all nonzero output components have Walsh magnitude 64 = 2^(n/2)")
 print("binary third derivative: deg(Q)=2 witness 0, deg(F)=3 witness 1")
 print("ALL_CHECKS_OK")
