@@ -1,0 +1,5 @@
+s_1 = 6/11
+F(s_1) = 379/396
+right limit at s_1 = 19/20
+verified r_a orbit and s_a jump formulas for a=1..100
+ALL_CHECKS_OK
