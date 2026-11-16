@@ -1,0 +1,9 @@
+event halt times: (None, 1, 2, 3, None, 3, 8)
+bounded-simulation comparisons: 287
+source identity/bottom instrumentation cases: 63
+nontrivial finite behaviour properties: 30
+accepted-base cases: 75
+operational output comparisons: 103425
+constant-tail comparisons: 6690
+scope: finite compiler/fidelity checks; infinite undecidability requires the proposed argument
+ALL_CHECKS_OK
