@@ -1,0 +1,7 @@
+n=4 rankings=24
+P(light beats a specified core item) = 1/7
+P(light is Condorcet loser) = 4552319232/5168743489
+P(|S|=n-1) = 40461768/738391927
+P(|S|<n) = 38438293/38862733
+exact lower-bound check: P(loser)^4 >= 1/384
+ALL_CHECKS_OK
