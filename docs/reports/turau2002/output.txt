@@ -1,0 +1,17 @@
+FIDELITY complete graphs K_3..K_9: 1009 nonempty source sets; Flood_1=3, Flood_k=2 (1<k<n), Flood_n=1
+FIDELITY paths P_2..P_16: single-source time=eccentricity; odd cycles C_3..C_17: single-source time=n
+FAMILY k=1 vertices=7 edges=8 radius=2 r_k=2 witnessed_tau=3 counts=[4, 6, 6] conjecture_gap=-1
+FAMILY k=2 vertices=14 edges=17 radius=5 r_k=2 witnessed_tau=3 counts=[8, 12, 14] conjecture_gap=0
+FAMILY k=3 vertices=21 edges=26 radius=7 r_k=2 witnessed_tau=3 counts=[12, 18, 22] conjecture_gap=0
+FAMILY k=4 vertices=28 edges=35 radius=10 r_k=2 witnessed_tau=3 counts=[16, 24, 30] conjecture_gap=1
+FAMILY k=5 vertices=35 edges=44 radius=12 r_k=2 witnessed_tau=3 counts=[20, 30, 38] conjecture_gap=1
+FAMILY k=8 vertices=56 edges=71 radius=20 r_k=2 witnessed_tau=3 counts=[32, 48, 62] conjecture_gap=3
+FAMILY k=16 vertices=112 edges=143 radius=40 r_k=2 witnessed_tau=3 counts=[64, 96, 126] conjecture_gap=7
+FAMILY k=32 vertices=224 edges=287 radius=80 r_k=2 witnessed_tau=3 counts=[128, 192, 254] conjecture_gap=15
+FAMILY exact BFS and two independent transmission updates: k=1..32; all tests passed
+OPTIMALITY k=1: all 7 source sets have M_3 nonempty; Flood_k=3
+OPTIMALITY k=2: all 91 source sets have M_3 nonempty; Flood_k=3
+OPTIMALITY k=3: all 1330 source sets have M_3 nonempty; Flood_k=3
+OPTIMALITY k=4: all 20475 source sets have M_3 nonempty; Flood_k=3
+OPTIMALITY total source sets checked=21903; no appeal to the published lower bound in these finite checks
+ALL_CHECKS_OK
