@@ -1,0 +1,23 @@
+Channel fidelity: 126 binary words of lengths 1..6; displacement ball = matching ball
+Legal swap sets at length 11: 144
+Source first-extinction example: K*(00,11) = 2
+Source Proposition 12 fidelity: L=3, K*=5=L+2 (both orientations)
+Source Proposition 12 fidelity: L=4, K*=6=L+2 (both orientations)
+Source Proposition 12 fidelity: L=5, K*=7=L+2 (both orientations)
+Source Proposition 12 fidelity: L=6, K*=8=L+2 (both orientations)
+Source Proposition 12 fidelity: L=7, K*=9=L+2 (both orientations)
+Source Proposition 12 fidelity: L=8, K*=10=L+2 (both orientations)
+Candidate a=001, b=100000: ordered lengths=3,6; gcd=3; lcm=6; proposed ceiling=8
+Common-output counts at depths 1..11: 1,1,1,1,1,1,2,2,2,2,0
+Depth-10 witness: 0010010010 sites={2,6,9} -> 0100001001 ; 1000001000 sites={1} -> 0100001000
+Complete left depth-11 inputs: 00100100100,00100100110,00100110000,00110000000,00110000010
+Complete right depth-11 inputs: 10000000100,10000000110,10000010000
+Right truncated outputs beginning 0: 0100000001,0100000010,0100000011,0100000100,0100000101,0100001000,0100010000
+Left input 00100100100 starting-01 output (one-count, second-one-position): [(3, 5), (3, 6), (3, 7)]
+Left input 00100100110 starting-01 output (one-count, second-one-position): [(3, 5), (3, 6), (3, 7), (4, 5), (4, 6), (4, 7)]
+Left input 00100110000 starting-01 output (one-count, second-one-position): [(3, 5), (3, 6)]
+Left input 00110000000 starting-01 output (one-count, second-one-position): [(2, 4), (2, 5)]
+Left input 00110000010 starting-01 output (one-count, second-one-position): [(2, 4), (2, 5), (3, 4), (3, 5)]
+All 5 x 3 depth-11 prefix pairs extinct; positional separation verified on every output
+Expected refutation confirmed by exact enumeration: finite K*=11 > 8
+ALL_CHECKS_OK
