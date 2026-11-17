@@ -1,0 +1,17 @@
+LAW_BRIDGE: labelled-history counts equal N!/product(k_i!) for 3<=n<=6, 1<=N<=5
+FIDELITY: exact edge moments, mean transfer and Lemma 3.1 hold for 3<=n<=7, 1<=N<=6
+FAMILY: overlap identity, both moments and v(n,4)=F(n) verified for 3<=n<=24
+EXACT_ALGEBRA: F=E(M^2)-E(M)^2; F'(x)=-12*P(x-4)/x^7; P coefficients = [1, 4, 20, 144, 336, 120]
+v(3,4)=644/729
+v(4,4)=247/256
+v(5,4)=108/125
+BIN_REVERSAL: 15199/186624 ; RIGHT_DROP: 3227/32000
+N5_TYPE (5,) {10: 4}
+N5_TYPE (4, 1) {8: 40, 10: 20}
+N5_TYPE (3, 2) {6: 80, 10: 40}
+N5_TYPE (3, 1, 1) {6: 240}
+N5_TYPE (2, 2, 1) {4: 240, 6: 120}
+N5_TYPE (2, 1, 1, 1) {2: 240}
+N5_DISTRIBUTION {2: 240, 4: 240, 6: 440, 8: 40, 10: 64} TOTAL 1024
+v(4,5)= 3835/4096 ; SAMPLE_REVERSAL: -117/4096
+ALL_CHECKS_OK
