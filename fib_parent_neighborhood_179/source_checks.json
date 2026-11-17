@@ -1,0 +1,38 @@
+{
+  "check_count": 18,
+  "checks": [
+    "certificate_sha256",
+    "variables",
+    "generator_0_original_formula",
+    "generator_1_original_formula",
+    "generator_2_original_formula",
+    "generator_3_original_formula",
+    "generator_4_original_formula",
+    "macaulay_sum_equals_one",
+    "max_product_degree_8",
+    "five_generators",
+    "anchor_scale",
+    "q_tail_general_leading_coefficients",
+    "q_tail_uniform_nonzero_on_closed_box",
+    "r_tail_general_leading_coefficients",
+    "r_tail_uniform_nonzero_on_closed_box",
+    "corner_u0",
+    "corner_uniform_nonzero_on_closed_box",
+    "xi_uniform_nonzero_on_closed_box"
+  ],
+  "certificate_sha256": "f4a6f91da3e833ede44549a532a9b32d7695e3e24d744b8e6bac8e5e46f654ab",
+  "anchor": {
+    "theta": "3/7",
+    "xi": "-35/29",
+    "scale": "Tnum=203*T"
+  },
+  "macaulay_identity": "sum_i multiplier_i*generator_i=1",
+  "max_product_degree": 8,
+  "tail_leading_coefficients": [
+    "14*theta-28-10*xi",
+    "38*theta-19-10*xi"
+  ],
+  "u0_corner": "-260/203",
+  "uniform_box_radius": "1/100",
+  "scope": "exact arithmetic; source regularity and compact-envelope coefficients; not response immersion, neighborhood proof, or Lean verification"
+}
