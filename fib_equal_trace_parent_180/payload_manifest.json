@@ -1,0 +1,66 @@
+{
+  "README.md": {
+    "bytes": 2553,
+    "sha256": "dcf5d184115722878c37665e6b76b01a3c7287fa62295bf980db7d5d4e31287f"
+  },
+  "experiment_result.json": {
+    "bytes": 3055,
+    "sha256": "cb277c3d3b0f6dc1f27b406da8726ed3374dc7d08acfe238983ad3a7bafd85c0"
+  },
+  "fixed_0_E.json": {
+    "bytes": 41851,
+    "sha256": "639cb0828cb161187f01bd715711337839f8fe6c410a88534a02907be56729bc"
+  },
+  "fixed_0_J.json": {
+    "bytes": 55462,
+    "sha256": "1f73167c6196da5f218cf1bc20d372a383b285790c0af70edfe214df3eea8ecc"
+  },
+  "fixed_0_input.json": {
+    "bytes": 79732,
+    "sha256": "a2c97fe8ea574cc92165a712b6567bd6760e24c9f5d6133b8b6258b969d9092d"
+  },
+  "fixed_0_singular.json": {
+    "bytes": 391391,
+    "sha256": "34d4ec635cd1a0eb079d3d173035ed35d0ca6e62b86dbd20a83d140d7a1237b3"
+  },
+  "incidence.py": {
+    "bytes": 7057,
+    "sha256": "c1a659a2d3134d9ebda0fcc2b924a5dc69b6831f467156d2ba703375bae76476"
+  },
+  "result.md": {
+    "bytes": 2704,
+    "sha256": "3b1dad19aada7efd4dbbfaac87e1f2738d7638e01a8a2073d4f7b1f0a064d7d0"
+  },
+  "run.py": {
+    "bytes": 1293,
+    "sha256": "80e3d39f3507fe6c0091cb879d0b1770ae7edb77d009be7ed736adbe5ec9f798"
+  },
+  "same_trace.py": {
+    "bytes": 2621,
+    "sha256": "98846a6d56fb5c8bf1a1bd477a27f2906d951c1ced95bcdfaab7c62b8894bfa9"
+  },
+  "same_trace_elimination.json": {
+    "bytes": 343345,
+    "sha256": "5a5ac66fe944d761b8531e9ec4fec0c233f955fcb0ad7d04055c45d9419d6aab"
+  },
+  "same_trace_input.json": {
+    "bytes": 1153,
+    "sha256": "d38abdd3e0526f113aa2eab748e6538e1d42c1f146f5719a438b5b9ffd39b5fb"
+  },
+  "same_trace_parent_F.json": {
+    "bytes": 39557,
+    "sha256": "0fae329c1795f14dc7ce1374d5c67c4313a35229af9de7f2fc7ea0afcf7c4c51"
+  },
+  "same_trace_verification.json": {
+    "bytes": 893,
+    "sha256": "e653d1f14a254f16caf22c97f003b8cd90696e8ddd3fc8fca40b1c71ab34caee"
+  },
+  "universal_0_input.json": {
+    "bytes": 439480,
+    "sha256": "4ddc867cda2cc88476bf74fe1626905c0f3550a9decb0f15d0f1938169751bb2"
+  },
+  "verify_same_trace.py": {
+    "bytes": 6183,
+    "sha256": "564efc8de7cea5e2847f5950e8be1f34acb2c5d4317df0c7e0b8cdfd1f35df97"
+  }
+}
