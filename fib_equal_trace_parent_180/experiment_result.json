@@ -1,0 +1,99 @@
+{
+  "ci": "not run by assembly worker",
+  "fixed_parent_comparison": {
+    "MJ_image_bidegree": [
+      18,
+      16
+    ],
+    "MM_image_bidegree": [
+      16,
+      16
+    ],
+    "common_singular_candidate_support": "23*b-29, up to nonzero scalar",
+    "field": "QQ",
+    "scope": "candidate support only; not used for universal theorem",
+    "theta": "3/7",
+    "xi": "-35/29"
+  },
+  "functional_verification": {
+    "F_bytes_equal_sealed": true,
+    "F_sha256": "0fae329c1795f14dc7ce1374d5c67c4313a35229af9de7f2fc7ea0afcf7c4c51",
+    "caller_cwd": "unrelated empty directory",
+    "commands": [
+      {
+        "entry": [
+          "python3",
+          "-B",
+          "run.py",
+          "certificate"
+        ],
+        "exit_code": 0,
+        "wall_seconds": 6.508699292084202
+      },
+      {
+        "entry": [
+          "python3",
+          "-B",
+          "run.py",
+          "fixed-images"
+        ],
+        "exit_code": 0,
+        "wall_seconds": 55.16863666684367
+      }
+    ],
+    "complete_polynomial_objects_equal_sealed": [
+      "universal_0_input.json",
+      "same_trace_input.json",
+      "same_trace_elimination.json",
+      "fixed_0_input.json",
+      "fixed_0_E.json",
+      "fixed_0_J.json",
+      "fixed_0_singular.json"
+    ],
+    "no_installation_or_network": true,
+    "no_output_in_caller_cwd": true,
+    "relocated_copy": true
+  },
+  "lean": "zero new Lean; no compilation",
+  "main_certificate": {
+    "F_coefficient_sha256": "0fae329c1795f14dc7ce1374d5c67c4313a35229af9de7f2fc7ea0afcf7c4c51",
+    "F_degree_theta": 20,
+    "F_degree_xi": 20,
+    "F_factors_degrees": [
+      4,
+      8,
+      8
+    ],
+    "F_terms": 231,
+    "F_total_degree": 20,
+    "K_alpha_resultant": 1274500,
+    "both_full_resultants_equal": true,
+    "chart_identities": true,
+    "kind": "independent exact arithmetic implementation",
+    "max_rss_bytes": 88031232,
+    "nonzero_residue_mod_103": 87,
+    "nonzero_residue_parent": [
+      0,
+      1
+    ],
+    "not_peer_review": true,
+    "python": "3.12.13",
+    "quartic_identity": true,
+    "source_revision": "daec012452c47287e1a48afc68988b73e8ba9642",
+    "specialized_D_b_degree": 3,
+    "specialized_N_b_degree": 3,
+    "specialized_S_u_degree": 55,
+    "status": "passed",
+    "sympy_version": "1.14.0",
+    "system_seconds": 0.061363999999999995,
+    "user_seconds": 6.226497,
+    "wall_seconds": 6.12818287499249
+  },
+  "proof_evidence": "complete source/world and A=0 continuation prose proof in main X section 14",
+  "publication": "caller owns Git commits, experiment commit links, PR, CI and delivery",
+  "review": "arithmetic implementations do not constitute independent mathematical review; final assembled delivery needs independent review",
+  "scope": "necessary parent constraint for actual distinct equal-first-trace MM pairs; xi != 0",
+  "source_revision": "daec012452c47287e1a48afc68988b73e8ba9642",
+  "universal_unequal_u_trial": "not repeated; no global certificate claimed",
+  "unresolved": "remaining unequal-u shared MM/MJ incidence and global Bad nondominance"
+}
