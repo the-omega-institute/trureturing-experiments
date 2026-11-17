@@ -1,0 +1,219 @@
+{
+  "passed": true,
+  "requirements": {
+    "python": "3.12.13",
+    "sympy": "1.14.0",
+    "python-flint": "0.9.0"
+  },
+  "advertised_sha256": {
+    "R.json": "a7b5c02552dea6e43bbd4919bb0f0db88e92e838fca26b1bbc976603437d568e",
+    "E.json": "de87cab361a10a0f7a84a15a3738b5e8cad7702331698b6fcf2f3b1e530aff36",
+    "H_factor_1.json": "a4c611369cd5eedc73c7314581a507da880b7db30f5d2fc6fd01eb9866d5229e",
+    "collision_support.json": "ce0e91ac8fcf7b8637f0520f368938a9f165d305cc76c156c949cce5bbb727f1",
+    "support_isolations.json": "9f0cd27bde73dcbedac70eca973ee9942ee7d8bc46998232ec168e471ab62cd7"
+  },
+  "regenerated_coefficient_files": [
+    "R.json",
+    "E.json",
+    "H_factor_1.json",
+    "collision_support.json"
+  ],
+  "regenerated_isolations_match_except_timing": true,
+  "global_exact_identities": {
+    "child_line_identity": true,
+    "R_Sylvester_identity": true,
+    "D_chart_identity": true,
+    "E_cancellation_identity": true,
+    "G_is_A_unit": true,
+    "image_resultant_identity": true,
+    "image_factorization_identity": true,
+    "discriminant_identity": true,
+    "support_nonzero_squarefree": true,
+    "exception_resultant_A": true,
+    "support_covers_A": true,
+    "exception_resultant_D": true,
+    "support_covers_D": true,
+    "exception_resultant_phi": true,
+    "support_covers_phi": true,
+    "support_covers_discriminant": true,
+    "support_covers_content": true
+  },
+  "support_degree": 202,
+  "support_factor_degrees": [
+    1,
+    2,
+    2,
+    2,
+    4,
+    24,
+    32,
+    44,
+    91
+  ],
+  "distinct_real_roots_per_factor": [
+    1,
+    2,
+    2,
+    2,
+    4,
+    20,
+    24,
+    8,
+    49
+  ],
+  "distinct_real_candidate_responses": 112,
+  "bprime_checks": 78,
+  "bprime_checks_passed": true,
+  "bprime_measurements": {
+    "roots": [
+      {
+        "root": 1,
+        "endpoint_signs": [
+          "+",
+          "-"
+        ],
+        "source_signs": "--++",
+        "n": [
+          "-22854645331/100000000000",
+          "-114213638229/500000000000"
+        ],
+        "a": [
+          "166898979649/1000000000000",
+          "20877338007/125000000000"
+        ],
+        "Phi": [
+          "-7737006430231/1000000000000",
+          "-7731938206713/1000000000000"
+        ]
+      },
+      {
+        "root": 2,
+        "endpoint_signs": [
+          "-",
+          "+"
+        ],
+        "source_signs": "++++",
+        "n": [
+          "2865975893627/1000000000000",
+          "2865980696369/1000000000000"
+        ],
+        "a": [
+          "474574281389/200000000000",
+          "2372874104249/1000000000000"
+        ],
+        "Phi": [
+          "-30402588906891/500000000000",
+          "-7600645361151/125000000000"
+        ],
+        "actual_MJ": [
+          "-25935437680547/200000000000",
+          "-405230940883/3125000000"
+        ]
+      },
+      {
+        "root": 3,
+        "endpoint_signs": [
+          "+",
+          "-"
+        ],
+        "source_signs": "+-+-",
+        "n": [
+          "1585456508373/40000000000",
+          "2644703894361/62500000000"
+        ],
+        "a": [
+          "-2748587693449/125000000000",
+          "-10163924336601/500000000000"
+        ],
+        "Phi": [
+          "29231461364703/500000000000",
+          "16755720149369/250000000000"
+        ]
+      },
+      {
+        "root": 4,
+        "endpoint_signs": [
+          "-",
+          "+"
+        ],
+        "source_signs": "++++",
+        "n": [
+          "101980583409/31250000000",
+          "65269044453/20000000000"
+        ],
+        "a": [
+          "447209756997/200000000000",
+          "1118053038077/500000000000"
+        ],
+        "Phi": [
+          "-56699540048647/1000000000000",
+          "-2267967864319/40000000000"
+        ],
+        "actual_MJ": [
+          "-143518360471333/1000000000000",
+          "-71734551227139/500000000000"
+        ]
+      },
+      {
+        "root": 5,
+        "endpoint_signs": [
+          "+",
+          "-"
+        ],
+        "source_signs": "++--",
+        "n": [
+          "230874980783/50000000000",
+          "4617513908413/1000000000000"
+        ],
+        "a": [
+          "1868986270689/250000000000",
+          "1495208151469/200000000000"
+        ],
+        "Phi": [
+          "11803191476517/1000000000000",
+          "11803781965801/1000000000000"
+        ]
+      },
+      {
+        "root": 6,
+        "endpoint_signs": [
+          "-",
+          "+"
+        ],
+        "source_signs": "--++",
+        "n": [
+          "1212485784361/1000000000000",
+          "303121754449/250000000000"
+        ],
+        "a": [
+          "-180773552869/200000000000",
+          "-451933212373/500000000000"
+        ],
+        "Phi": [
+          "-293251137715561/250000000000",
+          "-1173003161911371/1000000000000"
+        ]
+      }
+    ],
+    "displayed_MJ": [
+      [
+        "-25935437680547/200000000000",
+        "-405230940883/3125000000"
+      ],
+      [
+        "-143518360471333/1000000000000",
+        "-71734551227139/500000000000"
+      ]
+    ]
+  },
+  "arithmetic": "rational polynomial identities, exact Sturm counts and rational root isolation; outward integer Bprime intervals at scale 10^80",
+  "scope": "fixed parent (3/7,-35/29); X section 9 full Bprime band and section 10 necessary MM support",
+  "not_established": [
+    "112 physical specializations",
+    "C_MM intersection C_MJ emptiness",
+    "root eight/nine-read decision",
+    "nine-read upper bound",
+    "Lean verification",
+    "independent review"
+  ]
+}

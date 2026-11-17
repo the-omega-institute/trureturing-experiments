@@ -1,0 +1,58 @@
+[
+  {
+    "bundle_path": "bprime_display_correction/verify_bprime.py",
+    "source_repository": "the-omega-institute/trureturing-experiments",
+    "source_path": "fib_shared_response_176/bprime_display_correction/verify_bprime.py",
+    "source_sha256": "62bf0cda1b630405988a94556c5b469c16580b721f1d38eeff35355c353cb1ec",
+    "adaptation": "absolute import directory replaced with bundle-relative directory"
+  },
+  {
+    "bundle_path": "dependencies/fib_x_section8_display_correction/verify_section8.py",
+    "source_repository": "the-omega-institute/trureturing-experiments",
+    "source_path": "fib_x_section8_display_correction/verify_section8.py",
+    "source_sha256": "6ff2eaf2bcaf58e15d25a133f770c01961056c9e7134423ee17b79cff4848f9d",
+    "adaptation": "none"
+  },
+  {
+    "bundle_path": "global_preflight/discriminant.py",
+    "source_repository": "the-omega-institute/trureturing-experiments",
+    "source_path": "fib_shared_response_176/global_preflight/discriminant.py",
+    "source_sha256": "c1ded9d4095c1397d9552bfb0045b832e89e449eb9b1c672610587fc2e46a59e",
+    "adaptation": "none"
+  },
+  {
+    "bundle_path": "global_preflight/isolate_support.py",
+    "source_repository": "the-omega-institute/trureturing-experiments",
+    "source_path": "fib_shared_response_176/global_preflight/isolate_support.py",
+    "source_sha256": "44d2b30a16a4dc6c70dabcff0a91a11683ed1eeadd33218e26eb1dfe323c2ba2",
+    "adaptation": "none"
+  },
+  {
+    "bundle_path": "global_preflight/probe.py",
+    "source_repository": "the-omega-institute/trureturing-experiments",
+    "source_path": "fib_shared_response_176/global_preflight/probe.py",
+    "source_sha256": "b8dc376c9d25c4bac5a2c7a958ab2f570caa154594a9398a158e1142aea7db81",
+    "adaptation": "absolute import directory replaced with bundle-relative directory"
+  },
+  {
+    "bundle_path": "global_preflight/support.py",
+    "source_repository": "the-omega-institute/trureturing-experiments",
+    "source_path": "fib_shared_response_176/global_preflight/support.py",
+    "source_sha256": "29c1d6dddc2572af021b5c3ee37695c0c8f9da1ffce3ac5c17ddce924b9bbf25",
+    "adaptation": "none"
+  },
+  {
+    "bundle_path": "global_preflight/verify_certificate.py",
+    "source_repository": "the-omega-institute/trureturing-experiments",
+    "source_path": "fib_shared_response_176/global_preflight/verify_certificate.py",
+    "source_sha256": "f1184d2eb33338ea9a21ec6e1bb378851decb830833b4146bd2adf01ef922512",
+    "adaptation": "none"
+  },
+  {
+    "bundle_path": "scan_fibers.py",
+    "source_repository": "the-omega-institute/trureturing-experiments",
+    "source_path": "fib_shared_response_176/scan_fibers.py",
+    "source_sha256": "723d0d5d79db379d60e403d8c938bddc3dd684327bb27c7f4f841b74b9a978c1",
+    "adaptation": "none"
+  }
+]
