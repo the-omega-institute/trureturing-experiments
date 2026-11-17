@@ -68,7 +68,7 @@ def main():
     print('LAW_BRIDGE: labelled-history counts equal N!/product(k_i!) for 3<=n<=6, 1<=N<=5')
 
     # Fidelity: source Section 2.2's exact raw edge moments and Section 2.3's
-    # E(d^c)=n/(n-1) E(d), plus Lemma 3.1's cyclic variance decomposition.
+    # E(d^c)=n/(n-1) E(d), plus Lemma 2.5's cyclic variance decomposition.
     for n in range(3, 8):
         for N in range(1, 7):
             h = occupancy_hist(n, N)
@@ -89,7 +89,7 @@ def main():
                 disjoint_cov = expectation(h, lambda k: abs(edge(k)) * abs(k[3] - k[2])) - ea ** 2
                 rhs += n * (n - 3) * disjoint_cov
             assert variance(h, cyclic) == rhs
-    print('FIDELITY: exact edge moments, mean transfer and Lemma 3.1 hold for 3<=n<=7, 1<=N<=6')
+    print('FIDELITY: exact edge moments, mean transfer and Lemma 2.5 hold for 3<=n<=7, 1<=N<=6')
 
     for n in range(3, 25):
         h = occupancy_hist(n, 4)
