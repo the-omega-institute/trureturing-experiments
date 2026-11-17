@@ -1,0 +1,14 @@
+FIDELITY: Lemma 1 XOR law/union bound: 40 exact cases
+FIDELITY: cycle signal cancellation: 4840 exact cases
+OCCUPANCY: 6684 ordered matrices; 361164 row subsets
+OCCUPANCY: exact birthday probability, E[D]=choose(m,2)/n, max L=2 sum floor(C/2)<=2D
+TESTER: 9 full exact H0/H1 enumerations; advantage=P(E)(1/2-2 eta(1-eta))
+FAMILY: t=2; n=32; m=8; eta=1/4; E[D]=7/8; advantage_lower=7/120
+FAMILY: t=3; n=243; m=27; eta=1/9; E[D]=13/9; advantage_lower=637/3564
+FAMILY: t=4; n=1024; m=64; eta=1/16; E[D]=63/32; advantage_lower=3087/12160
+FAMILY: t=10; n=100000; m=1000; eta=1/100; E[D]=999/200; advantage_lower=2398599/5995000
+FAMILY: t=100; n=10000000000; m=1000000; eta=1/10000; E[D]=999999/20000; advantage_lower=24989976009999/50999950000000
+FAMILY: t=10000; n=100000000000000000000; m=1000000000000; eta=1/100000000; E[D]=999999999999/200000000; advantage_lower=2499999899997501000099999999/5000999999995000000000000000
+FAMILY: 90 rational exponent pairs; strict gaps 2 beta-1<alpha<delta<beta
+SCOPE: exact exponent n^(delta+o(1)) only; a 2-cycle satisfies an upper-bound interpretation
+ALL_CHECKS_OK
