@@ -1,0 +1,28 @@
+fidelity Theorem 7.2: k=2 n=6 eternal=2
+fidelity Theorem 7.2: k=3 n=8 eternal=2
+fidelity Theorem 7.2: k=5 n=12 eternal=2
+core=singleton r=1 k=2: static=1 eternal=1 smaller=1
+core=singleton r=1 k=3: static=1 eternal=1 smaller=2
+core=singleton r=2 k=4: static=1 eternal=1 smaller=1
+core=singleton r=2 k=5: static=1 eternal=1 smaller=2
+core=singleton r=3 k=6: static=1 eternal=1 smaller=1
+core=singleton r=3 k=7: static=1 eternal=1 smaller=2
+core=four-vertex path r=1 k=2: static=4 eternal=4 smaller=4
+core=four-vertex path r=1 k=3: static=4 eternal=4 smaller=6
+core=four-vertex path r=2 k=4: static=4 eternal=4 smaller=4
+core=four-vertex path r=2 k=5: static=4 eternal=4 smaller=5
+core=four-vertex path r=3 k=6: static=4 eternal=4 smaller=4
+core=four-vertex path r=3 k=7: static=4 eternal=4 smaller=5
+core=four-vertex star r=1 k=2: static=4 eternal=4 smaller=4
+core=four-vertex star r=1 k=3: static=4 eternal=4 smaller=5
+core=four-vertex star r=2 k=4: static=4 eternal=4 smaller=4
+core=four-vertex star r=2 k=5: static=4 eternal=4 smaller=5
+core=four-vertex star r=3 k=6: static=4 eternal=4 smaller=4
+core=four-vertex star r=3 k=7: static=4 eternal=4 smaller=5
+refutation k=3 q=1 n=12: (3, 3, 4)
+refutation k=3 q=2 n=24: (6, 6, 8)
+refutation k=3 q=3 n=36: (9, 9, 12)
+refutation k=5 q=1 n=30: (5, 5, 6)
+refutation k=5 q=2 n=60: (10, 10, 12)
+refutation k=7 q=1 n=56: (7, 7, 8)
+ALL_CHECKS_OK
