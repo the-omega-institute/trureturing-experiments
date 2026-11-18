@@ -1,0 +1,8 @@
+SOURCE_FIDELITY binary model: xi = -2*a**2*(4*a - 3) ; eta = 12*a**2*(a - 1)**2
+FAMILY uniform marginals verified algebraically for 0 < q < 1
+FAMILY xi = -44*q**2/27 + 2*q ; eta = 16*q**3/27 - 3*q**2 + 3*q
+WITNESS q = 3/5: xi = 46/75; eta = 106/125; means = 1/5, 17/30, 5/6
+ALL_BRANCHES separator y <= (4/5)x + 891/2500: n=1, n=2, every n>=3, and (1,1)
+INTERVAL 59/100 <= q <= 61/100: separation >= 619/750000 > 1/1250
+POSITIVE_DENSITY c >= 1/1000: separation = 13689/62500000
+ALL_CHECKS_OK
