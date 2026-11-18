@@ -1,0 +1,18 @@
+FIDELITY rational reversal: 253 affine maps, 64009 composition pairs; two pair-order actions
+COVER base_size=1: Aut(E,F)=2, Aut(E,F,lifted_order)=2; exact product actions
+COVER base_size=2: Aut(E,F)=4, Aut(E,F,lifted_order)=2; exact product actions
+COVER base_size=3: Aut(E,F)=12, Aut(E,F,lifted_order)=2; exact product actions
+COVER base_size=4: Aut(E,F)=48, Aut(E,F,lifted_order)=2; exact product actions
+SHEARS abelian d=0: 1 distinct outer classes; independence, homomorphism, involution and symmetric-difference law
+SHEARS abelian d=1: 2 distinct outer classes; independence, homomorphism, involution and symmetric-difference law
+SHEARS abelian d=2: 4 distinct outer classes; independence, homomorphism, involution and symmetric-difference law
+SHEARS abelian d=3: 8 distinct outer classes; independence, homomorphism, involution and symmetric-difference law
+SHEARS abelian d=4: 16 distinct outer classes; independence, homomorphism, involution and symmetric-difference law
+SHEARS abelian d=5: 32 distinct outer classes; independence, homomorphism, involution and symmetric-difference law
+SHEARS abelian d=6: 64 distinct outer classes; independence, homomorphism, involution and symmetric-difference law
+SHEARS abelian homomorphism pairs checked=1198372
+SHEARS nonabelian d=0: |G|=12, |Inn(G)|=6, outer shear classes=1
+SHEARS nonabelian d=1: |G|=24, |Inn(G)|=6, outer shear classes=2
+SHEARS nonabelian d=2: |G|=48, |Inn(G)|=6, outer shear classes=4
+SHEARS nonabelian d=3: |G|=96, |Inn(G)|=6, outer shear classes=8
+ALL_CHECKS_OK
