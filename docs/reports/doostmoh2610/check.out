@@ -1,0 +1,5 @@
+FIDELITY_OK equations (18)-(19), anytime feasibility, Lemma 7
+FAMILY_OK 0 < delta < 2*a < 1, one-step entry, arbitrary later steps
+EXAMPLE x0=('99/100', '301/100') x1=('101/100', '299/100')
+EXAMPLE cost=19801/10000 optimum=1 gap=9801/10000
+ALL_CHECKS_OK
