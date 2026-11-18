@@ -1,0 +1,16 @@
+SOURCE_FIDELITY: return-time identity 33798 cases; dense cyclic sets 462
+BOOLEAN_BALLS: D(B_r)=B_min(2r,n), D*D=D in 45 cases, n<=8
+ALL_BOOLEAN_SUBRINGS: counts n=0..4 [1, 2, 5, 15, 52]; exact support-size optimum checked
+CENTRAL_BINOMIAL: recurrence, square bound, induction polynomial for t=0..512
+DENSITY_FAMILY: m=2, n=32, r=14, density>=1/2-1/2, optimal index=16
+DENSITY_FAMILY: m=3, n=162, r=78, density>=1/2-1/3, optimal index=64
+DENSITY_FAMILY: m=4, n=512, r=252, density>=1/2-1/4, optimal index=256
+DENSITY_FAMILY: m=5, n=1250, r=620, density>=1/2-1/5, optimal index=1024
+DENSITY_FAMILY: m=6, n=2592, r=1290, density>=1/2-1/6, optimal index=4096
+DENSITY_FAMILY: m=7, n=4802, r=2394, density>=1/2-1/7, optimal index=16384
+DENSITY_FAMILY: m=8, n=8192, r=4088, density>=1/2-1/8, optimal index=65536
+ENDPOINT: d=1, |A|=8, density=1/2, |m*m|=2, minimum index=4; full ring-law checks
+ENDPOINT: d=2, |A|=16, density=1/2, |m*m|=2, minimum index=8; full ring-law checks
+ENDPOINT: d=3, |A|=32, density=1/2, |m*m|=2, minimum index=16; full ring-law checks
+ENDPOINT: d=4, |A|=64, density=1/2, |m*m|=2, minimum index=32; full ring-law checks
+ALL_CHECKS_OK
