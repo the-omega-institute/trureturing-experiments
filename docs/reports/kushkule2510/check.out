@@ -1,0 +1,11 @@
+Source Example 1, Q8: 40/64 commuting pairs = 5/8
+m= 5: c(1)=2/5, minimum gap >= 1/60, witness <= -741/1225
+m= 7: c(1)=5/14, minimum gap >= 5/84, witness <= -1917/2401
+m= 9: c(1)=1/3, minimum gap >= 1/12, witness <= -3485/3969
+m=11: c(1)=7/22, minimum gap >= 13/132, witness <= -45/49
+m=13: c(1)=4/13, minimum gap >= 17/156, witness <= -7797/8281
+m=15: c(1)=3/10, minimum gap >= 7/60, witness <= -10541/11025
+m=17: c(1)=5/17, minimum gap >= 25/204, witness <= -13677/14161
+m=19: c(1)=11/38, minimum gap >= 29/228, witness <= -17205/17689
+m=21: c(1)=2/7, minimum gap >= 11/84, witness <= -21125/21609
+ALL_CHECKS_OK
