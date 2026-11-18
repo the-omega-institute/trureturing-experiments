@@ -1,0 +1,8 @@
+FIDELITY_OK: source phase-damping superactivation witness has nonzero commutator
+SOURCE_BOUNDARY: with standard computational dephasing the Pauli factor is Y tensor I + I tensor Y; the printed Z factor differs
+FAMILY_OK: completeness, spectra, selectors, output floor and both commutators
+RATIONAL_WITNESS_OK: a=t=1/2, Choi positive definite, output trace partial=I_5
+ADDITIVITY_CERTIFICATES_OK: correlated-prior DPI residual and independent-prior chain rule
+CLASSICAL_IDENTITY_OK: all 80 nonzero binary weight arrays with entries 0,1,2
+SCOPE: structural exact certificates; analytic DPI and optimized QCP equality are proved in the outline, not by this program
+ALL_CHECKS_OK
