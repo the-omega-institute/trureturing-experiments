@@ -1,0 +1,6 @@
+Fidelity (thesis (2.2)): two-atom Laplace derivative base and recurrence agree.
+Inverse derivative identities through order three agree.
+CM family: shifted coefficients [6, 616, 22209, 317200, 1299894], so the third inverse derivative is positive.
+CM normalization: the two weights sum to one and the derivative scales by a positive cube.
+BF family: the full strict drift interval gives negative product curvature and positive inverse curvature.
+ALL_CHECKS_OK
