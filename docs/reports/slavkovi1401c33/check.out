@@ -1,0 +1,23 @@
+Source §4.1: weights=(5, 5), total=50, positive_solutions=9, Markov size=1
+Consecutive n=3: minimum=3, cutoff=12, split_fibers=3
+Consecutive n=4: minimum=6, cutoff=17, split_fibers=5
+Consecutive n=5: minimum=10, cutoff=22, split_fibers=7
+Consecutive n=6: minimum=15, cutoff=27, split_fibers=9
+Consecutive n=7: minimum=21, cutoff=32, split_fibers=11
+Consecutive n=8: minimum=28, cutoff=37, split_fibers=13
+Consecutive n=9: minimum=36, cutoff=42, split_fibers=15
+Consecutive n=10: minimum=45, cutoff=47, split_fibers=17
+Consecutive n=11: minimum=55, cutoff=52, split_fibers=19
+Consecutive n=12: minimum=66, cutoff=57, split_fibers=21
+Bresinsky h=2: minimum=8, cutoff=93, split_fibers=7
+Bresinsky h=3: minimum=12, cutoff=283, split_fibers=11
+Bresinsky h=4: minimum=16, cutoff=633, split_fibers=15
+Bresinsky h=5: minimum=20, cutoff=1191, split_fibers=19
+Bresinsky h=6: minimum=24, cutoff=2005, split_fibers=23
+Bresinsky h=7: minimum=28, cutoff=3123, split_fibers=27
+Bresinsky h=8: minimum=32, cutoff=4593, split_fibers=31
+Bresinsky h=9: minimum=36, cutoff=6463, split_fibers=35
+Bresinsky h=10: minimum=40, cutoff=8781, split_fibers=39
+Bresinsky h=11: minimum=44, cutoff=11595, split_fibers=43
+Bresinsky h=12: minimum=48, cutoff=14953, split_fibers=47
+ALL_CHECKS_OK
