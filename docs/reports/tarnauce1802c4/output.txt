@@ -1,0 +1,12 @@
+SOURCE_FIDELITY D8: subgroups=10 sd=sdStar=23/25
+ENUMERATED_SCALAR p=2 r=2 q=3 order=12 subgroups=10 sd=sdStar=16/25 center=1 proper_subgroups_abelian=True normals=3
+ENUMERATED_SCALAR p=2 r=3 q=7 order=56 subgroups=25 sd=sdStar=69/125 center=1 proper_subgroups_abelian=True normals=3
+ENUMERATED_SCALAR p=2 r=4 q=5 order=80 subgroups=84 sd=sdStar=296/441 center=1 proper_subgroups_abelian=True normals=3
+ENUMERATED_COPRIME A4 x C5: subgroups=20 sd=sdStar=16/25
+EXPLICIT S: a=29212 m=128 sdStar_formula=853400265/860894281
+EXPLICIT T: a=1837991432 m=28629151 sdStar_formula=1689106253990898773/1742136202306250528
+EXPLICIT product: 23630880733917874106006145/24586804808008362132925088 > 2376/2500 > 23/25
+FAMILY_SAMPLE c=23/25 k=2 (p,q,r)=[(2, 11, 10), (3, 17, 16)] certified_product_lower_gt_c=True
+FAMILY_SAMPLE c=99/100 k=3 (p,q,r)=[(2, 11, 10), (3, 17, 16), (5, 19, 9)] certified_product_lower_gt_c=True
+FAMILY_SAMPLE c=9999/10000 k=5 (p,q,r)=[(2, 13, 12), (3, 17, 16), (5, 19, 9), (7, 23, 22), (11, 29, 28)] certified_product_lower_gt_c=True
+ALL_CHECKS_OK
