@@ -1,0 +1,20 @@
+Arithmetic: Python integers, fractions.Fraction, SymPy exact rationals
+Fidelity: source Lemma 1 on its explicitly included paths P_(4t)
+P_4: gamma_t=2, H=11/6, f(n,g)=11/6
+P_8: gamma_t=4, H=23/6, f(n,g)=23/6
+P_12: gamma_t=6, H=35/6, f(n,g)=35/6
+P_16: gamma_t=8, H=47/6, f(n,g)=47/6
+Source Theorem 1 base-case reading: H(S_4)=3/2 < f(4,2)=11/6
+Independent adjacency and exhaustive total-domination check of B_r, 1 <= r <= 32
+B_1: n=6, gamma_t=4, H=17/6, F=17/6, F-H=0
+B_2: n=7, gamma_t=4, H=46/15, F=31/10, F-H=1/30
+B_3: n=8, gamma_t=4, H=16/5, F=13/4, F-H=1/20
+B_8: n=13, gamma_t=4, H=569/165, F=155/44, F-H=49/660
+B_16: n=21, gamma_t=4, H=607/171, F=2483/684, F-H=55/684
+B_32: n=37, gamma_t=4, H=6437/1785, F=8779/2380, F-H=589/7140
+Figure 2 template: exact equality and odd gamma_t checked for 1<=r<=4, 1<=s<=3
+Symbolic identity: F-H = 1/12 - 1/((r+2)(r+3))
+Nonnegative-coefficient certificate at r=k+3: F-H-1/20 = k*(k + 11)/(30*(k + 5)*(k + 6))
+Exact limit of F-H as r tends to infinity: 1/12
+Scope: finite graph checks plus symbolic arithmetic; no Lean settlement/probe
+ALL_CHECKS_OK
