@@ -1,0 +1,6 @@
+A5 Example 5.1: level-set sizes (1, 35, 24), probabilities (5, 29, 26)/60
+A5 Lemmas 5.3 and 5.5(i) at t=1: checked for all 60 targets
+S4^1: degree=3, gamma=1, commutators=12/24, min gap=1/16
+S4^2: degree=9, gamma=3, commutators=144/576, min gap=3/256
+S4^3: degree=27, gamma=9, commutators=1728/13824, min gap=7/4096
+ALL_CHECKS_OK
