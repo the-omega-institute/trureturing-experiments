@@ -65,7 +65,7 @@ def check_codegree(vertices, connection):
             multiply(inverse(u), v) == g for u, v in product(connection, repeat=2)
         )
         assert common_neighbors == translated_intersection == representations
-    print(f"fidelity codegree pairs={len(vertices) * (len(vertices) - 1)} (Section 1.1)")
+    print(f"fidelity codegree pairs={len(vertices) * (len(vertices) - 1)} (Section 1.2)")
 
 
 def rooted_xi_size(vertices, labels):
@@ -97,7 +97,7 @@ def check(rank):
     vertices = list(product(QUATERNIONS, range(1 << rank)))
     labels = {(x, y): inverse_pair(right_difference(x, y)) for x, y in product(vertices, repeat=2)}
     assert rooted_xi_size(vertices, labels) == 8
-    print(f"fidelity rank={rank} vertices={len(vertices)} [Xi:R]=8 (Theorem 1.1)")
+    print(f"fidelity rank={rank} vertices={len(vertices)} [Xi:R]=8 (Section 1.5 and Theorem 1.1)")
 
     if rank == 0:
         return

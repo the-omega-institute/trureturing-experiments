@@ -1,14 +1,14 @@
-fidelity rank=0 vertices=8 [Xi:R]=8 (Theorem 1.1)
-fidelity rank=1 vertices=16 [Xi:R]=8 (Theorem 1.1)
-fidelity codegree pairs=240 (Section 1.1)
+fidelity rank=0 vertices=8 [Xi:R]=8 (Section 1.5 and Theorem 1.1)
+fidelity rank=1 vertices=16 [Xi:R]=8 (Section 1.5 and Theorem 1.1)
+fidelity codegree pairs=240 (Section 1.2)
 obstruction rank=1 inverse_pairs=6 connection_sets=64 generators=6
-fidelity rank=2 vertices=32 [Xi:R]=8 (Theorem 1.1)
-fidelity codegree pairs=992 (Section 1.1)
+fidelity rank=2 vertices=32 [Xi:R]=8 (Section 1.5 and Theorem 1.1)
+fidelity codegree pairs=992 (Section 1.2)
 obstruction rank=2 inverse_pairs=12 connection_sets=4096 generators=8
-fidelity rank=3 vertices=64 [Xi:R]=8 (Theorem 1.1)
-fidelity codegree pairs=4032 (Section 1.1)
+fidelity rank=3 vertices=64 [Xi:R]=8 (Section 1.5 and Theorem 1.1)
+fidelity codegree pairs=4032 (Section 1.2)
 obstruction rank=3 inverse_pairs=24 connection_sets=16777216 generators=10
-fidelity rank=4 vertices=128 [Xi:R]=8 (Theorem 1.1)
-fidelity codegree pairs=16256 (Section 1.1)
+fidelity rank=4 vertices=128 [Xi:R]=8 (Section 1.5 and Theorem 1.1)
+fidelity codegree pairs=16256 (Section 1.2)
 obstruction rank=4 inverse_pairs=48 connection_sets=281474976710656 generators=12
 ALL_CHECKS_OK
