@@ -1,0 +1,408 @@
+{
+  "acquired": {
+    "N4": {
+      "native_steps": 12381106,
+      "original_calls": 12
+    },
+    "N9": {
+      "cache_positions": 135,
+      "native_steps": 230472793,
+      "original_calls": 147
+    },
+    "continued_original_port": true,
+    "law_or_NullEvidence_computed": false,
+    "pending_evaluator": true,
+    "returned_head_component": {
+      "frame": "0111001",
+      "native_steps": 48031046,
+      "scope": "arbitrary record supplied to actual decoder/framing component; never an evaluator answer"
+    }
+  },
+  "active_owned_jobs": 0,
+  "artifacts": {
+    "packed-consumer-core-coverage.json": {
+      "bytes": 694,
+      "sha256": "41732ecec25ca4218080f1aa1c08450ee8099c5f0eb91d0c5aeaeedc0cc1963a"
+    },
+    "packed-consumer-core.json": {
+      "bytes": 11096,
+      "sha256": "0159a890c21d16a367f8a63826633d2cda379445c32cb8b53598dc4eb5c754fa"
+    },
+    "packed-consumer-coverage.json": {
+      "bytes": 7043,
+      "sha256": "d14939795a744a51fd05deb4c9700886da7330f2a53de546cf20e9b05f97b9d3"
+    },
+    "packed-consumer-guards.json": {
+      "bytes": 7114,
+      "sha256": "595117dc4a8596061670c4b6f5cbf738cc8c2c762080be53dac865250f3fe2d0"
+    },
+    "packed-consumer-image.json": {
+      "bytes": 5770,
+      "sha256": "f32bb73f440ac5391b85348f5d40b81a4c4798b04c4ba36992c35f478111f5c0"
+    },
+    "packed-consumer-plan.json": {
+      "bytes": 2274,
+      "sha256": "8e078d39529e0cc30773a8e63fae505ff23459aa3b9c437184d9727521d517bc"
+    },
+    "packed-consumer-session.json": {
+      "bytes": 66239,
+      "sha256": "2de1e7bbe2d6f9722adfbb6fb79271e716a3bd6bdd3a3b3bd0698a216e97ae5d"
+    },
+    "packed-live-falsifiers.json": {
+      "bytes": 4813,
+      "sha256": "1c92d8eb88ba26b3af7b7ceedd45c06c6ca4996c31df8c2571d0da4216479512"
+    },
+    "packed-material-results.json": {
+      "bytes": 10432,
+      "sha256": "990b02b09d8749b4b3ff64ab5c3f68aa8bc4ed150735a0d0c594fc5b9621b1ca"
+    }
+  },
+  "changed_private_paths_and_hashes": {
+    "rro-lab-execution/full_execution.py": {
+      "bytes": 21697,
+      "sha256": "effe5a79b5754548c0a5a049a7bc03dfbeb1f5d832e2f153b8acd9bd2a106973"
+    },
+    "rro-lab-execution/lab.py": {
+      "bytes": 19900,
+      "sha256": "28be97644c484f46984b7757e0ed8407b9608275e546d0361a1015eba622ed4a"
+    },
+    "rro-lab-execution/native_engine.py": {
+      "bytes": 17146,
+      "sha256": "996316168cdba25e1bc4e4168878dde02cf2351034362da2a674a6a713dbed5c"
+    },
+    "rro-lab-execution/native_install.py": {
+      "bytes": 14382,
+      "sha256": "0ab4e62dcfa620510cf3e93852358f14346a810faf6fa6c5e28b9f0436da7cb9"
+    },
+    "rro-lab-execution/packed-consumer-core-coverage.json": {
+      "bytes": 694,
+      "sha256": "41732ecec25ca4218080f1aa1c08450ee8099c5f0eb91d0c5aeaeedc0cc1963a"
+    },
+    "rro-lab-execution/packed-consumer-core.json": {
+      "bytes": 11096,
+      "sha256": "0159a890c21d16a367f8a63826633d2cda379445c32cb8b53598dc4eb5c754fa"
+    },
+    "rro-lab-execution/packed-consumer-coverage.json": {
+      "bytes": 7043,
+      "sha256": "d14939795a744a51fd05deb4c9700886da7330f2a53de546cf20e9b05f97b9d3"
+    },
+    "rro-lab-execution/packed-consumer-guards.json": {
+      "bytes": 7114,
+      "sha256": "595117dc4a8596061670c4b6f5cbf738cc8c2c762080be53dac865250f3fe2d0"
+    },
+    "rro-lab-execution/packed-consumer-image.json": {
+      "bytes": 5770,
+      "sha256": "f32bb73f440ac5391b85348f5d40b81a4c4798b04c4ba36992c35f478111f5c0"
+    },
+    "rro-lab-execution/packed-consumer-plan.json": {
+      "bytes": 2274,
+      "sha256": "8e078d39529e0cc30773a8e63fae505ff23459aa3b9c437184d9727521d517bc"
+    },
+    "rro-lab-execution/packed-consumer-session.json": {
+      "bytes": 66239,
+      "sha256": "2de1e7bbe2d6f9722adfbb6fb79271e716a3bd6bdd3a3b3bd0698a216e97ae5d"
+    },
+    "rro-lab-execution/packed-live-falsifiers.json": {
+      "bytes": 4813,
+      "sha256": "1c92d8eb88ba26b3af7b7ceedd45c06c6ca4996c31df8c2571d0da4216479512"
+    },
+    "rro-lab-execution/packed-material-results.json": {
+      "bytes": 10432,
+      "sha256": "990b02b09d8749b4b3ff64ab5c3f68aa8bc4ed150735a0d0c594fc5b9621b1ca"
+    },
+    "rro-lab-execution/packed_constructor.py": {
+      "bytes": 16804,
+      "sha256": "d342f1fbc409d61cbf320e178b520db8c0785d415f230825258d09af431b3c0a"
+    },
+    "rro-lab-execution/packed_consumer_checks.py": {
+      "bytes": 21893,
+      "sha256": "fea0c076680083bf3a972ff749373cce042b493188f7d89f44294b8b816d7205"
+    },
+    "rro-lab-execution/packed_live_falsifiers.py": {
+      "bytes": 3983,
+      "sha256": "e51158ade1f07566db007132ae04681d587fe23c18a366b48081ce3c18e2a6af"
+    },
+    "rro-lab-execution/packed_material_plan.py": {
+      "bytes": 7094,
+      "sha256": "c3fdb889dfe54410439cf92babe813006a07528bb684375edd58ca2ad50bcd4b"
+    },
+    "rro-lab-execution/service_native.py": {
+      "bytes": 5927,
+      "sha256": "b767a1387544b15f2e34d25a4550cfaf0914668e51f9b249f863b969606f8380"
+    },
+    "rro-lab-execution/session.py": {
+      "bytes": 10699,
+      "sha256": "7f6bd6fa3e0d5804378d6d4e10895a5ea09fc5d45197f7357dbffeb4f30a0bed"
+    },
+    "rro-lab-execution/theory-candidate.json": {
+      "bytes": 485,
+      "sha256": "7ad479c8f7e6c1525b9b8c6ee45c5a77a66bd5e9aa7725ed1908b4d787617a65"
+    }
+  },
+  "checks": [
+    {
+      "B_cases": 4,
+      "artifact": "packed-consumer-core.json",
+      "exit": 0,
+      "host": {
+        "ru_maxrss": 2684698624,
+        "seconds": 574.1449451249791,
+        "unit": "bytes on Darwin; KiB on Linux"
+      },
+      "installer_cuts": 98624,
+      "native_internal_cuts": 9071,
+      "scope": "core: arena, installer, primitive, B"
+    },
+    {
+      "artifact": "packed-consumer-session.json",
+      "exit": 1,
+      "failure": "ImportError of test helper before image consumer; all completed checkpoints retained",
+      "passed_groups": [
+        "decoder",
+        "record-census",
+        "session4",
+        "session9"
+      ],
+      "scope": "record-census,session4,session9,decoder,image",
+      "source_binding": "packed-consumer-coverage.json contains explicit reconstructed check source and unchanged production source bindings; checkpoint itself lacks embedded source hashes"
+    },
+    {
+      "artifact": "packed-consumer-image.json",
+      "exit": 0,
+      "host": {
+        "ru_maxrss": 9176907776,
+        "seconds": 1022.2798082079971,
+        "unit": "bytes on Darwin; KiB on Linux"
+      },
+      "native_steps": 143207100,
+      "scope": "corrected image consumer"
+    },
+    {
+      "artifact": "packed-consumer-guards.json",
+      "exit": 0,
+      "host": {
+        "ru_maxrss": 2765029376,
+        "seconds": 217.75395212508738,
+        "unit": "bytes on Darwin; KiB on Linux"
+      },
+      "native_steps": 692212,
+      "scope": "guards and current record-census"
+    },
+    {
+      "artifact": "packed-live-falsifiers.json",
+      "exit": 0,
+      "physical_output": [
+        1,
+        0,
+        1,
+        1,
+        0
+      ],
+      "scope": "executed packed alias/value/encoded-dispatch and census/grant/control falsifiers"
+    },
+    {
+      "artifact": "packed-material-results.json",
+      "exit": 0,
+      "scope": "source-derived material/host lower bound and unchanged-consumer AST audit"
+    },
+    {
+      "exit": 0,
+      "no_bytecode_writes": true,
+      "scope": "39 current Python sources compile in memory and current source_manifest validates"
+    },
+    {
+      "exit": 0,
+      "scope": "both worktree git diff --check; exact theory published prefix; LF cap"
+    }
+  ],
+  "family": {
+    "assumptions": [
+      "same valid original supplied source/current rights and legal framing",
+      "existing A/B fixed-table/image hypotheses remain in force",
+      "backing for the finite represented prefix, preparation overlap, and exact integer/byte operations"
+    ],
+    "domain": "all original valid finite public states and prefixes, including nonhalting prefixes and immediate halt; source-permitted N>=4, represented rational endpoints/unreduced priors, every 15N indexed mask and finite cylinders, arbitrary finite operands and promised arrays outside prior support",
+    "excludes": [
+      "arbitrary adaptive/oracle-controller compiler",
+      "unrepresented-real decisions",
+      "new primitive or cheaper modeled routing",
+      "reset/reroot/resampling/refill",
+      "full-session reserve or full C execution certificate"
+    ],
+    "preserved": [
+      "distinct identities/aliases/fields/grants",
+      "installer source/target and pending cuts",
+      "PC/code/control and original logical routing",
+      "owner widths/overlap and original tariffs",
+      "receipts/cache original indices",
+      "source/connection arenas and unchanged original port",
+      "returned-head decoder, Print/End/Ack/Return/Close guards"
+    ]
+  },
+  "goal_unchanged": true,
+  "long_goal_completion_claim": false,
+  "material": {
+    "host": {
+      "RAM_bytes": 103079215104,
+      "disk_free_bytes": 62972891136,
+      "logical_cpus": 28
+    },
+    "host_lower_bytes_per_installed_reserve_cell": 1128,
+    "no_OS_compression_or_swap_guarantee_claim": true,
+    "no_full_run_RSS_or_time_extrapolation": true,
+    "no_original_full_C_run": true,
+    "obstruction": "K>=W is necessary only. No upper bound on the full-session reserve is established. This backend additionally retains two proxy block records and one descriptor record per reserve cell; their nonshared shallow allocations alone exceed available RAM plus currently free disk for each original loader lower bound. OS compression/swap and larger future backing are not certified by this inequality.",
+    "original_cases": [
+      {
+        "D": 468002251,
+        "W_loader_only": 468089257,
+        "case": "positive-full",
+        "converted_bits": 24000,
+        "host_allocation_lower_bytes": 528004681896,
+        "input_bits": 387,
+        "input_sha256": "37dfee71eda5a8fbee3d373aab446982f15976785ef965ec2e4a1b6ea98c5402",
+        "installer_at_K_equal_W": {
+          "B": 17036001495,
+          "O": 1412377100,
+          "R": 6117734466,
+          "S": 208098147041,
+          "w": 31
+        },
+        "loader_comparison_source": {
+          "artifact": "full-execution-positive-full.json",
+          "scope": "prior measured loader prefix/count supplier; not rerun or full C",
+          "sha256": "795dee3a6a7f1e5fddbd06c0a25d73623f53c2eeeae85d9512fcf249a78d0597"
+        },
+        "marked_bits": 15000,
+        "sufficient_paid_reserve": false
+      },
+      {
+        "D": 466755081,
+        "W_loader_only": 466841971,
+        "case": "positive-partial",
+        "converted_bits": 23968,
+        "host_allocation_lower_bytes": 526597743288,
+        "input_bits": 386,
+        "input_sha256": "1a4ae049cf81b1f434398aa05cb8eabcf4d8689f7873f8d75f9ae1e870c34764",
+        "installer_at_K_equal_W": {
+          "B": 17016044919,
+          "O": 1408635242,
+          "R": 6101519748,
+          "S": 207571792349,
+          "w": 31
+        },
+        "loader_comparison_source": {
+          "artifact": "full-execution-positive-partial.json",
+          "scope": "prior measured loader prefix/count supplier; not rerun or full C",
+          "sha256": "566360930d059a18e3f3751994536bf69885a0d8b037333f3d338ade333225a3"
+        },
+        "marked_bits": 14980,
+        "sufficient_paid_reserve": false
+      },
+      {
+        "D": 1202080083,
+        "W_loader_only": 1202219521,
+        "case": "null-nine-distinct-left",
+        "converted_bits": 38464,
+        "host_allocation_lower_bytes": 1356103619688,
+        "input_bits": 839,
+        "input_sha256": "f5518d034eef5bd00c87ff9d43c5ca878ef9d012f47e04bedcbe45163ee3e29d",
+        "installer_at_K_equal_W": {
+          "B": 28782085719,
+          "O": 3614767892,
+          "R": 15661427898,
+          "S": 533562546347,
+          "w": 32
+        },
+        "loader_comparison_source": {
+          "artifact": "full-execution-null-nine-distinct-left.json",
+          "scope": "prior measured loader prefix/count supplier; not rerun or full C",
+          "sha256": "9bd4ffbb7fa33ab4ebf4e54b57dc3c39802581898590cde516604c1df53373cd"
+        },
+        "marked_bits": 24040,
+        "sufficient_paid_reserve": false
+      }
+    ],
+    "remaining": [
+      "finite common-run reserve for acquisition/parser/input/cache/receipts/connection/provider buffers",
+      "post-loader complete copier/B/LAB retained growth and pending scratch",
+      "returned-head decoder/output/cleanup and old jobs",
+      "owner widths and same-cut overlap for all these retained objects",
+      "backed host reservation including all metadata and preparation overlap"
+    ],
+    "status": "incomplete supported full-run plan"
+  },
+  "original_C_remaining": [
+    "full acquired positive N4 law",
+    "nontrivial conditional-cylinder/partial-slot update through evaluator",
+    "authentic acquired N9 NullEvidence",
+    "actual evaluator returned-head Arithmetic/End/Ack/Return",
+    "continued Reads on the same original port after evaluation",
+    "complete same-run ML.16 vector including every retained arena, grant, decoder, cleanup and common-cut overlap"
+  ],
+  "outcome": {
+    "D": "unreleased",
+    "actual_bounded_checks": "all named groups have passing observations; checkpointed acquisition suite exited 1 at image setup, corrected image group separately exited 0",
+    "independent_acceptance": "unreleased",
+    "original_C": "incomplete and unreleased",
+    "parameterized_correspondence": "ordinary source-level proof complete for valid finite states under original A/B and finite backing premises",
+    "production_consumer_integration": "complete; production run_case wired, bounded consumers executed",
+    "sufficient_paid_material_and_host_plan": "incomplete; precise source-grounded obstruction supplied"
+  },
+  "owned_jobs_joined": true,
+  "production_entries": [
+    "full_execution.run_case -> shared PackedStorage -> prepare_source / OriginalConnection / MeasuredEngine",
+    "NativeEngine.seal -> PackedStorage.import_sources -> Installer(storage)",
+    "Installer.tick allocation -> PackedStorage.block; original BitKernel binds retained bytearrays",
+    "NativeEngine.microtick and ServiceEngine.microtick read actual canonical packed proxies",
+    "Arena.alloc/write/read -> PackedObj/PackedFields; Buffer cleanup retains nullable bits and free pools",
+    "OriginalConnection.send/invoke/ack -> unchanged OriginalPort.call on the original root",
+    "unchanged compiler/copier/B/image/returned-head decoder/print graphs"
+  ],
+  "production_source_hashes": {
+    "full_execution.py": "effe5a79b5754548c0a5a049a7bc03dfbeb1f5d832e2f153b8acd9bd2a106973",
+    "lab.py": "28be97644c484f46984b7757e0ed8407b9608275e546d0361a1015eba622ed4a",
+    "native_engine.py": "996316168cdba25e1bc4e4168878dde02cf2351034362da2a674a6a713dbed5c",
+    "native_install.py": "0ab4e62dcfa620510cf3e93852358f14346a810faf6fa6c5e28b9f0436da7cb9",
+    "packed_constructor.py": "d342f1fbc409d61cbf320e178b520db8c0785d415f230825258d09af431b3c0a",
+    "service_native.py": "b767a1387544b15f2e34d25a4550cfaf0914668e51f9b249f863b969606f8380",
+    "session.py": "7f6bd6fa3e0d5804378d6d4e10895a5ea09fc5d45197f7357dbffeb4f30a0bed"
+  },
+  "publication_or_review_performed": false,
+  "role": "constructor-C-packed-consumer-integration",
+  "schema": 1,
+  "theory": {
+    "Lean_verified": false,
+    "additions": 269,
+    "bytes": 261068,
+    "deletions": 0,
+    "ordinary_proofs": true,
+    "path": "/Users/auricstudio/trureturing-cad0ceaa-op/docs/develop/theory/RECURSIVE_RELATIONAL_OBSERVATION_MONOTONE_LAB_INDEXED_EXECUTION.md",
+    "physical_LF_lines": 4157,
+    "published_prefix_bytes": 245437,
+    "published_prefix_preserved": true,
+    "published_prefix_sha256": "cebc063fcc0e24b86ee1d5b631f705db75cc029053701517eb95ad101aa61c20",
+    "sha256": "67d79629a8faece00e61f7759100c7b48307e5bea8da775a840e352e345a2946"
+  },
+  "verdict": "no-verdict-required",
+  "worktrees": {
+    "main": {
+      "branch": "lane/theory/rro-next-recovery-26100",
+      "diff": "one theory append, 269 insertions, zero deletions",
+      "head": "8357ff9d9b4f22fe242fcb44f0dad1b3c6ad1143",
+      "path": "/Users/auricstudio/trureturing-cad0ceaa-op"
+    },
+    "primary": {
+      "branch": "dev",
+      "observed_clean": true,
+      "observed_head": "8e15c484cf5786fe69fef0627fd84a63cfeb5942",
+      "path": "/Users/auricstudio/trureturing"
+    },
+    "private": {
+      "branch": "exp/rro-lab-execution-26100",
+      "diff": "packed consumer source, bounded checks/results and bindings only",
+      "head": "737f3e0b2ccb84e29f365be6d12ff519c6890582",
+      "path": "/Users/auricstudio/trureturing-experiments-robin-8e46"
+    }
+  }
+}

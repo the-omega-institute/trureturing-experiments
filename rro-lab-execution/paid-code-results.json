@@ -1,0 +1,526 @@
+{
+  "A_interface_sha256": "304461de407cd43e558a0f63411825fc5571f2e2ad77066d6522030c67d2009c",
+  "B_complete": false,
+  "C_released": false,
+  "full": {
+    "B_complete": false,
+    "cases": [
+      {
+        "instruction": "R",
+        "pc": 0,
+        "ticks": 29974
+      },
+      {
+        "instruction": [
+          "J",
+          8
+        ],
+        "pc": 1,
+        "ticks": 30885
+      },
+      {
+        "instruction": "R",
+        "pc": 2,
+        "ticks": 119200
+      },
+      {
+        "instruction": [
+          "J",
+          13
+        ],
+        "pc": 7,
+        "ticks": 119724
+      },
+      {
+        "instruction": "R",
+        "pc": 8,
+        "ticks": 121159
+      },
+      {
+        "instruction": [
+          "J",
+          13
+        ],
+        "pc": 12,
+        "ticks": 121552
+      },
+      {
+        "instruction": "R",
+        "pc": 13,
+        "ticks": 30299
+      },
+      {
+        "instruction": [
+          "J",
+          21
+        ],
+        "pc": 14,
+        "ticks": 31210
+      },
+      {
+        "instruction": "R",
+        "pc": 15,
+        "ticks": 119525
+      },
+      {
+        "instruction": [
+          "J",
+          26
+        ],
+        "pc": 20,
+        "ticks": 120049
+      },
+      {
+        "instruction": "R",
+        "pc": 21,
+        "ticks": 121484
+      },
+      {
+        "instruction": [
+          "J",
+          26
+        ],
+        "pc": 25,
+        "ticks": 121877
+      },
+      {
+        "instruction": "R",
+        "pc": 20969,
+        "ticks": 31924
+      },
+      {
+        "instruction": [
+          "J",
+          20977
+        ],
+        "pc": 20970,
+        "ticks": 32835
+      },
+      {
+        "instruction": "L",
+        "pc": 20971,
+        "ticks": 120431
+      },
+      {
+        "instruction": [
+          "J",
+          42068
+        ],
+        "pc": 20976,
+        "ticks": 120955
+      },
+      {
+        "instruction": "L",
+        "pc": 20977,
+        "ticks": 122390
+      },
+      {
+        "instruction": [
+          "J",
+          42068
+        ],
+        "pc": 20981,
+        "ticks": 122783
+      },
+      {
+        "instruction": "R",
+        "pc": 20982,
+        "ticks": 31924
+      },
+      {
+        "instruction": [
+          "J",
+          20990
+        ],
+        "pc": 20983,
+        "ticks": 32835
+      },
+      {
+        "instruction": "R",
+        "pc": 20984,
+        "ticks": 115723
+      },
+      {
+        "instruction": [
+          "J",
+          20995
+        ],
+        "pc": 20989,
+        "ticks": 116247
+      },
+      {
+        "instruction": "R",
+        "pc": 20990,
+        "ticks": 117682
+      },
+      {
+        "instruction": [
+          "J",
+          20995
+        ],
+        "pc": 20994,
+        "ticks": 118075
+      },
+      {
+        "instruction": "R",
+        "pc": 248082667534,
+        "ticks": 35824
+      },
+      {
+        "instruction": [
+          "J",
+          248082667542
+        ],
+        "pc": 248082667535,
+        "ticks": 36735
+      },
+      {
+        "instruction": "R",
+        "pc": 248082667536,
+        "ticks": 125050
+      },
+      {
+        "instruction": [
+          "J",
+          248082667547
+        ],
+        "pc": 248082667541,
+        "ticks": 125574
+      },
+      {
+        "instruction": "R",
+        "pc": 248082667542,
+        "ticks": 127009
+      },
+      {
+        "instruction": [
+          "J",
+          248082667547
+        ],
+        "pc": 248082667546,
+        "ticks": 127402
+      },
+      {
+        "instruction": "R",
+        "pc": 496162117022,
+        "ticks": 35824
+      },
+      {
+        "instruction": [
+          "J",
+          496162117030
+        ],
+        "pc": 496162117023,
+        "ticks": 36735
+      },
+      {
+        "instruction": "R",
+        "pc": 496162117024,
+        "ticks": 122199
+      },
+      {
+        "instruction": [
+          "J",
+          496162117035
+        ],
+        "pc": 496162117029,
+        "ticks": 122723
+      },
+      {
+        "instruction": "R",
+        "pc": 496162117030,
+        "ticks": 124158
+      },
+      {
+        "instruction": [
+          "J",
+          496162117035
+        ],
+        "pc": 496162117034,
+        "ticks": 124551
+      },
+      {
+        "instruction": "R",
+        "pc": 496162138095,
+        "ticks": 36474
+      },
+      {
+        "instruction": [
+          "J",
+          496162138103
+        ],
+        "pc": 496162138096,
+        "ticks": 37385
+      },
+      {
+        "instruction": "L",
+        "pc": 496162138097,
+        "ticks": 122130
+      },
+      {
+        "instruction": [
+          "J",
+          495855760426
+        ],
+        "pc": 496162138102,
+        "ticks": 122654
+      },
+      {
+        "instruction": "L",
+        "pc": 496162138103,
+        "ticks": 124089
+      },
+      {
+        "instruction": [
+          "J",
+          495855760426
+        ],
+        "pc": 496162138107,
+        "ticks": 124482
+      },
+      {
+        "instruction": "M",
+        "pc": 496162138108,
+        "ticks": 333
+      },
+      {
+        "instruction": null,
+        "pc": 496162138109,
+        "ticks": 267
+      }
+    ],
+    "cumulative_charges": {
+      "acknowledgements": 44,
+      "bit_tests": 1048643,
+      "boolean_gate_evaluations": 3478784,
+      "bounded_register_selection_tests": 43439544,
+      "code_bit_reads": 3029040,
+      "code_payload_bit_reads": 57984,
+      "code_reference_read_bits": 3196465,
+      "control_bit_reads": 245897390,
+      "control_bit_writes": 28794925,
+      "directory_reference_read_bits": 19830528,
+      "grant_deliveries": 407771,
+      "input_bits": 2816,
+      "installation_reference_bits": 10092724,
+      "installed_bit_initializations": 4724855584,
+      "installed_code_payload_bits": 4724752384,
+      "installed_reference_initializations": 531196,
+      "microsteps": 3916574,
+      "navigation_links": 1043712,
+      "output_bits": 2948,
+      "output_ends": 44,
+      "page_selection_tests": 869760,
+      "reference_register_read_bits": 744149060,
+      "reference_register_write_bits": 22856297,
+      "register_bit_reads": 4456116,
+      "register_bit_writes": 2783808,
+      "returns": 44,
+      "store_header_bit_reads": 278076754
+    },
+    "full_LAB_law_run": false,
+    "installation_charges": {
+      "bit_tests": 10960,
+      "boolean_gate_evaluations": 30912,
+      "bounded_register_selection_tests": 388848,
+      "code_bit_reads": 22608,
+      "code_payload_bit_reads": 608,
+      "code_reference_read_bits": 23845,
+      "control_bit_reads": 2122122,
+      "control_bit_writes": 253520,
+      "directory_reference_read_bits": 207936,
+      "grant_deliveries": 407771,
+      "installation_reference_bits": 10092724,
+      "installed_bit_initializations": 4724855584,
+      "installed_code_payload_bits": 4724752384,
+      "installed_reference_initializations": 531196,
+      "microsteps": 34234,
+      "navigation_links": 10944,
+      "page_selection_tests": 9120,
+      "reference_register_read_bits": 6504460,
+      "reference_register_write_bits": 237329,
+      "register_bit_reads": 41896,
+      "register_bit_writes": 22912,
+      "store_header_bit_reads": 2430614
+    },
+    "program": {
+      "opcode_set": [
+        "const",
+        "copy",
+        "add",
+        "sub",
+        "shl",
+        "shr",
+        "eq",
+        "lt",
+        "load8",
+        "load32",
+        "load64",
+        "branch",
+        "jump",
+        "finish",
+        "wait",
+        "fault"
+      ],
+      "registers": 57,
+      "serialized_bytes": 59774,
+      "sha256": "31e08ef6f89ef43fc4d29b81d362ee516fc2f2723316d91c6f5048275eef5135",
+      "states": 1380
+    },
+    "raw_bytes": 590588102,
+    "raw_sha256": "6eceb93c62b1357ef2faf30debd798e615462dfa93dd90235ed1ed4282003a19",
+    "storage": {
+      "bit_fields": 4724855584,
+      "bits": 4735356079,
+      "grant_bits": 407771,
+      "objects": 407771,
+      "reference_slots": 531196,
+      "reference_width": 19
+    },
+    "store": {
+      "allocated_pages": 144188,
+      "bit_fields": 4724752384,
+      "directory_objects": 262143,
+      "height": 18,
+      "logical_bytes": 590588102,
+      "objects": 406331,
+      "reference_fields": 524286
+    }
+  },
+  "scope": "Code-decoder component and its recorded tariffs; no complete installed ML-I interpreter, LAB/ML-Q session or simultaneous source/observer account.",
+  "small": {
+    "cases": [
+      {
+        "instruction": "R",
+        "pc": 0,
+        "ticks": 29974
+      },
+      {
+        "instruction": [
+          "J",
+          8
+        ],
+        "pc": 1,
+        "ticks": 30885
+      },
+      {
+        "instruction": "R",
+        "pc": 2,
+        "ticks": 48566
+      },
+      {
+        "instruction": "M",
+        "pc": 3,
+        "ticks": 48697
+      },
+      {
+        "instruction": [
+          "J",
+          13
+        ],
+        "pc": 7,
+        "ticks": 49090
+      },
+      {
+        "instruction": "R",
+        "pc": 8,
+        "ticks": 50525
+      },
+      {
+        "instruction": [
+          "J",
+          13
+        ],
+        "pc": 12,
+        "ticks": 50918
+      },
+      {
+        "instruction": "R",
+        "pc": 13,
+        "ticks": 30299
+      },
+      {
+        "instruction": [
+          "J",
+          21
+        ],
+        "pc": 14,
+        "ticks": 31210
+      },
+      {
+        "instruction": [
+          "J",
+          21034
+        ],
+        "pc": 21033,
+        "ticks": 51824
+      },
+      {
+        "instruction": "M",
+        "pc": 21034,
+        "ticks": 333
+      },
+      {
+        "instruction": null,
+        "pc": 21035,
+        "ticks": 267
+      }
+    ],
+    "charges": {
+      "acknowledgements": 14,
+      "bit_tests": 25065,
+      "boolean_gate_evaluations": 573184,
+      "bounded_register_selection_tests": 5749050,
+      "code_bit_reads": 582624,
+      "code_payload_bit_reads": 3440,
+      "code_reference_read_bits": 355883,
+      "control_bit_reads": 33632368,
+      "control_bit_writes": 3738477,
+      "directory_reference_read_bits": 264880,
+      "grant_deliveries": 1695,
+      "input_bits": 896,
+      "installation_reference_bits": 78804,
+      "installed_bit_initializations": 4297504,
+      "installed_code_payload_bits": 4194304,
+      "installed_reference_initializations": 7164,
+      "microsteps": 511904,
+      "navigation_links": 24080,
+      "output_bits": 938,
+      "output_ends": 14,
+      "page_selection_tests": 51600,
+      "reference_register_read_bits": 56309440,
+      "reference_register_write_bits": 431079,
+      "register_bit_reads": 479263,
+      "register_bit_writes": 478912,
+      "returns": 14,
+      "store_header_bit_reads": 36345184
+    },
+    "falsifiers": [
+      "premature-return",
+      "incremental-census-corruption",
+      "audit-erasure-preserves-output",
+      "per-primitive-independent-tariffs"
+    ],
+    "storage": {
+      "bit_fields": 4297504,
+      "bits": 4378003,
+      "grant_bits": 1695,
+      "objects": 1695,
+      "reference_slots": 7164,
+      "reference_width": 11
+    },
+    "store": {
+      "allocated_pages": 128,
+      "bit_fields": 4194304,
+      "directory_objects": 127,
+      "height": 7,
+      "logical_bytes": 517877,
+      "objects": 255,
+      "reference_fields": 254
+    }
+  },
+  "source_hashes": {
+    "paid_code.py": "a0fc0939b0f2135c629f81ac8e7642de58bfec417608030bc3b287faaaeff7a6",
+    "paid_code_checks.py": "a8e8587978477b02771b742092962ca6480089fb554833fdda11a355fd1268ab"
+  }
+}

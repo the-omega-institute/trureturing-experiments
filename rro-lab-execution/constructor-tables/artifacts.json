@@ -1,0 +1,51 @@
+{
+  "artifacts": {
+    "evaluator.binary.bin": {
+      "encoding": "gzip",
+      "logical": {
+        "bytes": 283233736,
+        "sha256": "6203cab30f56cfa7b726a945d559daa40d5a6aa567abc10e3b478f68025e51ba"
+      },
+      "packed": {
+        "bytes": 71351990,
+        "sha256": "cc513c68536bee7e9cf88fc299b80845d3904fe280218b44ab99ebb7ab9e12dc"
+      },
+      "parts": [
+        {
+          "bytes": 33554432,
+          "path": "evaluator.binary.bin.part000",
+          "sha256": "79b59da393576bcd250d1dac2c6c54fadfe462c9f48361485c8a1c6246dd3995"
+        },
+        {
+          "bytes": 33554432,
+          "path": "evaluator.binary.bin.part001",
+          "sha256": "dd652f87d4a41ca875e7c247a4eee89183d167fce7a1456e49630d9da21d5724"
+        },
+        {
+          "bytes": 4243126,
+          "path": "evaluator.binary.bin.part002",
+          "sha256": "26e009b0ad04370368bd0691b8a597fd0df9d02a0a885f829095f1c75b748268"
+        }
+      ]
+    },
+    "evaluator.four.bin": {
+      "encoding": "gzip",
+      "logical": {
+        "bytes": 51497056,
+        "sha256": "d1614280a9606193a7f62e911907dc40f0ddebcbbffd3fed6d514a682ff2f194"
+      },
+      "packed": {
+        "bytes": 13181702,
+        "sha256": "eb04e95d02d0eb64b3ca5c21eafcb1c7846925a1f078bea1f3d0d03375f2462a"
+      },
+      "parts": [
+        {
+          "bytes": 13181702,
+          "path": "evaluator.four.bin.part000",
+          "sha256": "eb04e95d02d0eb64b3ca5c21eafcb1c7846925a1f078bea1f3d0d03375f2462a"
+        }
+      ]
+    }
+  },
+  "schema": 1
+}

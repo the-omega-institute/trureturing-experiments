@@ -1,0 +1,44 @@
+{
+  "bounds": {
+    "B": "directions, crossing/frontier/mark/branch/immediate-halt plus bounded nonhalting prefixes; original B graph",
+    "guards": "paired installed service with unchanged original port: partial received Read, four malformed frames, unreduced endpoint-one prior, permanent Close and refused later input; Ack-before-End and Return-before-Ack primitive refusals",
+    "host": "process RSS/time measured for these checks only; analytical original loader/material lower bounds, no full-run extrapolation",
+    "image": "small supplied table via existing compiler/copier image and installed decoder; production graph methods unchanged",
+    "installer": "six actual layouts, cyclic/forward/shared references, C bit initializer one internal vertex per cut",
+    "primitive": "literal graph with reference/bit/selector/branch/output/End/Ack/Return, waiting and fault cuts",
+    "session": "original N4 and N9 source preparations, four replies, informative absence, repeat/partial/old index/long word; received Predict stops at evaluator entry; no arithmetic result"
+  },
+  "commitment": {
+    "falsifier": "any field/alias/grant/dispatch/pending/index/receipt/output/census mismatch or a packed operation not consumed",
+    "stop": "one integrated implementation; no full C or speculative large allocation; unresolved paid bound is reported explicitly",
+    "success": "all named same-input same-cut decoded state, actual branch, cost and common census comparisons agree; mutations are detected"
+  },
+  "mutations": [
+    "alias",
+    "bit-value",
+    "reference",
+    "grant",
+    "dispatch",
+    "pending",
+    "index",
+    "receipt",
+    "output",
+    "census",
+    "code-control-charge",
+    "decoder-charge",
+    "widening-charge"
+  ],
+  "production_entries": [
+    "NativeEngine.seal/microtick",
+    "Installer.tick",
+    "BitKernel.run",
+    "ServiceEngine.microtick/deliver/feed",
+    "OriginalConnection.send/invoke/ack",
+    "OriginalPort.call",
+    "Arena.alloc/write/read",
+    "full_execution.run_case"
+  ],
+  "schema": 1,
+  "scope": "bounded packed production-consumer differential checks; original C/D/review unreleased",
+  "source_binding": "current SHA256 of affected Python/C and theory bytes; prior manifests not reused as current evidence"
+}

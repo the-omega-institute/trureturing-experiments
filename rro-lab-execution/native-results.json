@@ -1,0 +1,1564 @@
+{
+  "A_interface_sha256": "304461de407cd43e558a0f63411825fc5571f2e2ad77066d6522030c67d2009c",
+  "B_complete": false,
+  "B_installation_closed": true,
+  "B_primitive_engine_closed": true,
+  "C_released": false,
+  "busy_cuts": {
+    "cuts": {
+      "PC-assigned-before-completion": {
+        "census": {
+          "bits": 18714833,
+          "objects": 1280576,
+          "reference_width": 21,
+          "refs": 5220646,
+          "total_bits": 129628975
+        },
+        "field_commits": 0,
+        "native_steps": 163,
+        "occupied": 0,
+        "read_bit": 0
+      },
+      "first-code-bit": {
+        "census": {
+          "bits": 18714833,
+          "objects": 1280576,
+          "reference_width": 21,
+          "refs": 5220646,
+          "total_bits": 129628975
+        },
+        "field_commits": 0,
+        "native_steps": 8,
+        "occupied": 0,
+        "read_bit": 0
+      },
+      "occupied-before-transfer": {
+        "census": {
+          "bits": 18714833,
+          "objects": 1280576,
+          "reference_width": 21,
+          "refs": 5220646,
+          "total_bits": 129628975
+        },
+        "field_commits": 1,
+        "native_steps": 294,
+        "occupied": 1,
+        "read_bit": 1
+      }
+    },
+    "paused_code_fetches_unchanged": true,
+    "paused_commits_unchanged": true,
+    "paused_native_steps": 12,
+    "refused": [
+      "growP",
+      "growS",
+      "capacity-1",
+      "capacity-2",
+      "capacity-3"
+    ]
+  },
+  "connected": {
+    "boot_seconds": 293.310629292042,
+    "cases": [],
+    "census": {
+      "bits": 104618213,
+      "objects": 6874916,
+      "reference_width": 23,
+      "refs": 29427310,
+      "total_bits": 788321259
+    },
+    "graph_nodes": 1836256,
+    "graph_sha256": "9c7d67d28e29cbb455e6fb20c056f28b277204785bf1d24488774ba9a527efe9",
+    "initializer_initial_bindings_null": true,
+    "installation_charges": {
+      "allocation_reference_latch_writes": 2258781,
+      "allocations": 2258781,
+      "arity_tests": 9005882,
+      "bit_initializations": 51224907,
+      "bit_scan_completions": 2258511,
+      "bit_scan_returns": 2258511,
+      "directory_reference_writes": 4517561,
+      "execution_control_reference_writes": 1,
+      "forward_reference_reads": 8292258,
+      "forward_reference_writes": 2258781,
+      "grant_deliveries": 2258781,
+      "initializer_binding_reads": 2258511,
+      "initializer_bit_latch_writes": 51224907,
+      "initializer_bit_writes": 2258511,
+      "initializer_reference_latch_writes": 26344624,
+      "initializer_reference_reads": 1,
+      "initializer_reference_writes": 13551878,
+      "installation_completions": 1,
+      "native_control_reference_writes": 260508087,
+      "native_controller_selections": 260508087,
+      "native_successor_reference_reads": 260508087,
+      "null_tests": 21827061,
+      "reference_initializations": 9017241,
+      "source_bit_reads": 51224907,
+      "source_directory_reads": 4517562,
+      "source_material_reference_reads": 4517562,
+      "source_reference_reads": 9017241,
+      "target_bit_writes": 51224907,
+      "target_reference_writes": 9017241
+    },
+    "installation_seconds": 177.41029358294327,
+    "installation_steps": 260508087,
+    "native_installed_nodes": 2258781,
+    "native_steps": 294405722,
+    "prefix": [
+      [
+        0,
+        0,
+        [
+          0,
+          1,
+          2,
+          4,
+          6,
+          7,
+          8,
+          10,
+          12,
+          14,
+          16,
+          18,
+          19,
+          20,
+          22,
+          23,
+          24,
+          26,
+          27,
+          28,
+          30,
+          32,
+          34,
+          35,
+          36,
+          38,
+          40,
+          42,
+          43,
+          44,
+          46,
+          48,
+          50,
+          51,
+          52,
+          54,
+          56,
+          57,
+          58,
+          60,
+          62,
+          64,
+          66,
+          67,
+          68,
+          70,
+          72,
+          74,
+          75,
+          76,
+          78,
+          80,
+          82,
+          83,
+          84,
+          86,
+          88,
+          90,
+          91,
+          92,
+          94,
+          96,
+          98,
+          99,
+          100,
+          102,
+          104,
+          106,
+          107,
+          108,
+          110,
+          112,
+          114,
+          116,
+          117,
+          118,
+          120,
+          122,
+          124,
+          126
+        ]
+      ],
+      [
+        1,
+        1,
+        [
+          0,
+          1,
+          2,
+          4,
+          6,
+          7,
+          8,
+          10,
+          12,
+          14,
+          16,
+          18,
+          19,
+          20,
+          22,
+          23,
+          24,
+          26,
+          27,
+          28,
+          30,
+          32,
+          34,
+          35,
+          36,
+          38,
+          40,
+          42,
+          43,
+          44,
+          46,
+          48,
+          50,
+          51,
+          52,
+          54,
+          56,
+          57,
+          58,
+          60,
+          62,
+          64,
+          66,
+          67,
+          68,
+          70,
+          72,
+          74,
+          75,
+          76,
+          78,
+          80,
+          82,
+          83,
+          84,
+          86,
+          88,
+          90,
+          91,
+          92,
+          94,
+          96,
+          98,
+          99,
+          100,
+          102,
+          104,
+          106,
+          107,
+          108,
+          110,
+          112,
+          114,
+          116,
+          117,
+          118,
+          120,
+          122,
+          124,
+          126
+        ]
+      ],
+      [
+        1,
+        8,
+        [
+          0,
+          1,
+          2,
+          4,
+          6,
+          7,
+          8,
+          10,
+          12,
+          14,
+          16,
+          18,
+          19,
+          20,
+          22,
+          23,
+          24,
+          26,
+          27,
+          28,
+          30,
+          32,
+          34,
+          35,
+          36,
+          38,
+          40,
+          42,
+          43,
+          44,
+          46,
+          48,
+          50,
+          51,
+          52,
+          54,
+          56,
+          57,
+          58,
+          60,
+          62,
+          64,
+          66,
+          67,
+          68,
+          70,
+          72,
+          74,
+          75,
+          76,
+          78,
+          80,
+          82,
+          83,
+          84,
+          86,
+          88,
+          90,
+          91,
+          92,
+          94,
+          96,
+          98,
+          99,
+          100,
+          102,
+          104,
+          106,
+          107,
+          108,
+          110,
+          112,
+          114,
+          116,
+          117,
+          118,
+          120,
+          122,
+          124,
+          126
+        ]
+      ],
+      [
+        2,
+        9,
+        [
+          0,
+          1,
+          2,
+          4,
+          6,
+          7,
+          8,
+          10,
+          12,
+          14,
+          16,
+          18,
+          19,
+          20,
+          22,
+          23,
+          24,
+          26,
+          27,
+          28,
+          30,
+          32,
+          34,
+          35,
+          36,
+          38,
+          40,
+          42,
+          43,
+          44,
+          46,
+          48,
+          50,
+          51,
+          52,
+          54,
+          56,
+          57,
+          58,
+          60,
+          62,
+          64,
+          66,
+          67,
+          68,
+          70,
+          72,
+          74,
+          75,
+          76,
+          78,
+          80,
+          82,
+          83,
+          84,
+          86,
+          88,
+          90,
+          91,
+          92,
+          94,
+          96,
+          98,
+          99,
+          100,
+          102,
+          104,
+          106,
+          107,
+          108,
+          110,
+          112,
+          114,
+          116,
+          117,
+          118,
+          120,
+          122,
+          124,
+          126
+        ]
+      ],
+      [
+        2,
+        10,
+        [
+          0,
+          1,
+          2,
+          4,
+          6,
+          7,
+          8,
+          10,
+          12,
+          14,
+          16,
+          18,
+          19,
+          20,
+          22,
+          23,
+          24,
+          26,
+          27,
+          28,
+          30,
+          32,
+          34,
+          35,
+          36,
+          38,
+          40,
+          42,
+          43,
+          44,
+          46,
+          48,
+          50,
+          51,
+          52,
+          54,
+          56,
+          57,
+          58,
+          60,
+          62,
+          64,
+          66,
+          67,
+          68,
+          70,
+          72,
+          74,
+          75,
+          76,
+          78,
+          80,
+          82,
+          83,
+          84,
+          86,
+          88,
+          90,
+          91,
+          92,
+          94,
+          96,
+          98,
+          99,
+          100,
+          102,
+          104,
+          106,
+          107,
+          108,
+          110,
+          112,
+          114,
+          116,
+          117,
+          118,
+          120,
+          122,
+          124,
+          126
+        ]
+      ]
+    ],
+    "raw_bytes": 517877,
+    "raw_sha256": "7c069ff6ccb3a819c599dbb456e4fc3c42efad88f66202bcf54e5bd2f1f0542c",
+    "source_profile": {
+      "b": 51224907,
+      "n": 2258781,
+      "r": 9017241
+    }
+  },
+  "consumer_source_hashes": {
+    "field_decoder.py": "1bc35d4702e141c89001985e3ce8c87278f9d84422fa2f8ba3aa71fa08100d3c",
+    "field_graph.py": "6c4a3c01d01812b8e91eeae96ab746b5428762ee17f86b0792faee9503315ae1",
+    "field_io.py": "5fa898cc6569807321a7c0975cf767a9e9047278e80859c6986609955df32e59",
+    "paid_code.py": "a0fc0939b0f2135c629f81ac8e7642de58bfec417608030bc3b287faaaeff7a6",
+    "primitive_engine.py": "d759774eed2fbe16a1b62456eedd83d4c84d5a61fbdd8bc0230b52d63b40ad6f"
+  },
+  "decoder_caller": {
+    "caller": "field_decoder.request",
+    "cases": [
+      {
+        "instruction": "R",
+        "pc": 0
+      },
+      {
+        "instruction": [
+          "J",
+          13
+        ],
+        "pc": 7
+      },
+      {
+        "instruction": "M",
+        "pc": 21034
+      },
+      {
+        "instruction": null,
+        "pc": 21035
+      }
+    ],
+    "installation_steps": 258214958,
+    "native_steps": 143207100,
+    "refused_address": 21036,
+    "retained": {
+      "bits": 103968771,
+      "objects": 6782945,
+      "reference_width": 23,
+      "refs": 29031295,
+      "total_bits": 778471501
+    }
+  },
+  "full_image": {
+    "boot_seconds": 47.66852916695643,
+    "cases": [
+      {
+        "instruction": [
+          "J",
+          13
+        ],
+        "native_steps": 161529588,
+        "pc": 7
+      },
+      {
+        "instruction": [
+          "J",
+          495855760426
+        ],
+        "native_steps": 167405529,
+        "pc": 496162138107
+      },
+      {
+        "instruction": "M",
+        "native_steps": 245373,
+        "pc": 496162138108
+      },
+      {
+        "instruction": null,
+        "native_steps": 138565,
+        "pc": 496162138109
+      }
+    ],
+    "census": {
+      "bits": 9547278325,
+      "objects": 8251712,
+      "reference_width": 23,
+      "refs": 33192882,
+      "total_bits": 10318966323
+    },
+    "graph_nodes": 1863112,
+    "graph_sha256": "d459db4293c1e2b866e6713feea18515a6866236ac9d7cd8a4aa40c78565f97e",
+    "initializer_initial_bindings_null": true,
+    "installation_charges": {
+      "allocation_reference_latch_writes": 2717713,
+      "allocations": 2717713,
+      "arity_tests": 13750098,
+      "bit_initializations": 4772554963,
+      "bit_scan_completions": 2455427,
+      "bit_scan_returns": 2455427,
+      "directory_reference_writes": 5435425,
+      "execution_control_reference_writes": 1,
+      "forward_reference_reads": 9386614,
+      "forward_reference_writes": 2717713,
+      "grant_deliveries": 2717713,
+      "initializer_binding_reads": 2455427,
+      "initializer_bit_latch_writes": 4772554963,
+      "initializer_bit_writes": 2455427,
+      "initializer_reference_latch_writes": 30010164,
+      "initializer_reference_reads": 1,
+      "initializer_reference_writes": 15519422,
+      "installation_completions": 1,
+      "native_control_reference_writes": 14441979551,
+      "native_controller_selections": 14441979551,
+      "native_successor_reference_reads": 14441979551,
+      "null_tests": 24574737,
+      "reference_initializations": 9752697,
+      "source_bit_reads": 4772554963,
+      "source_directory_reads": 5435426,
+      "source_material_reference_reads": 5435426,
+      "source_reference_reads": 9752697,
+      "target_bit_writes": 4772554963,
+      "target_reference_writes": 9752697
+    },
+    "installation_reference_relocation_verified": true,
+    "installation_seconds": 140.37603637494612,
+    "installation_source_target_bit_equality": true,
+    "installation_steps": 14441979551,
+    "installation_verification_phase": "before-first-native-transition",
+    "native_installed_nodes": 2717713,
+    "native_steps": 376293537,
+    "raw_bytes": 590588102,
+    "raw_sha256": "6eceb93c62b1357ef2faf30debd798e615462dfa93dd90235ed1ed4282003a19",
+    "source_profile": {
+      "b": 4772554963,
+      "n": 2717713,
+      "r": 9752697
+    }
+  },
+  "generic": [
+    {
+      "field_actions": 816,
+      "input": "",
+      "installation_steps": 43391456,
+      "native_steps": 126785,
+      "prefix": [
+        [
+          0,
+          0,
+          []
+        ],
+        [
+          -1,
+          1,
+          []
+        ],
+        [
+          -1,
+          2,
+          [
+            -1
+          ]
+        ],
+        [
+          0,
+          3,
+          [
+            -1
+          ]
+        ],
+        [
+          0,
+          4,
+          [
+            -1,
+            0
+          ]
+        ],
+        [
+          -1,
+          5,
+          [
+            -1,
+            0
+          ]
+        ],
+        [
+          -2,
+          6,
+          [
+            -1,
+            0
+          ]
+        ],
+        [
+          -2,
+          7,
+          [
+            -2,
+            -1,
+            0
+          ]
+        ],
+        [
+          -1,
+          8,
+          [
+            -2,
+            -1,
+            0
+          ]
+        ],
+        [
+          0,
+          9,
+          [
+            -2,
+            -1,
+            0
+          ]
+        ],
+        [
+          0,
+          10,
+          [
+            -2,
+            -1,
+            0
+          ]
+        ]
+      ],
+      "program": [
+        "L",
+        "M",
+        "R",
+        "M",
+        "L",
+        "L",
+        "M",
+        "R",
+        "R",
+        "M"
+      ],
+      "retained": {
+        "bits": 18730499,
+        "objects": 1282739,
+        "reference_width": 21,
+        "refs": 5229813,
+        "total_bits": 129839311
+      },
+      "seconds": 21.185549791902304
+    },
+    {
+      "field_actions": 364,
+      "input": "",
+      "installation_steps": 43391460,
+      "native_steps": 56343,
+      "prefix": [
+        [
+          0,
+          0,
+          []
+        ],
+        [
+          0,
+          1,
+          []
+        ],
+        [
+          0,
+          2,
+          [
+            0
+          ]
+        ],
+        [
+          0,
+          4,
+          [
+            0
+          ]
+        ],
+        [
+          0,
+          5,
+          [
+            0
+          ]
+        ]
+      ],
+      "program": [
+        [
+          "J",
+          3
+        ],
+        "M",
+        [
+          "J",
+          4
+        ],
+        "R",
+        "M"
+      ],
+      "retained": {
+        "bits": 18730499,
+        "objects": 1282739,
+        "reference_width": 21,
+        "refs": 5229813,
+        "total_bits": 129839311
+      },
+      "seconds": 29.456606666906737
+    },
+    {
+      "field_actions": 684,
+      "input": "",
+      "installation_steps": 43391456,
+      "native_steps": 107001,
+      "prefix": [
+        [
+          0,
+          0,
+          []
+        ],
+        [
+          1,
+          1,
+          []
+        ],
+        [
+          2,
+          2,
+          []
+        ],
+        [
+          1,
+          3,
+          []
+        ],
+        [
+          0,
+          4,
+          []
+        ],
+        [
+          -1,
+          5,
+          []
+        ],
+        [
+          -2,
+          6,
+          []
+        ],
+        [
+          -1,
+          7,
+          []
+        ]
+      ],
+      "program": [
+        "R",
+        "R",
+        "L",
+        "L",
+        "L",
+        "L",
+        "R"
+      ],
+      "retained": {
+        "bits": 18730499,
+        "objects": 1282739,
+        "reference_width": 21,
+        "refs": 5229813,
+        "total_bits": 129839311
+      },
+      "seconds": 39.24552216602024
+    },
+    {
+      "field_actions": 635,
+      "input": "",
+      "installation_steps": 43391458,
+      "native_steps": 96176,
+      "prefix": [
+        [
+          0,
+          0,
+          []
+        ],
+        [
+          0,
+          1,
+          [
+            0
+          ]
+        ],
+        [
+          0,
+          1,
+          [
+            0
+          ]
+        ],
+        [
+          0,
+          1,
+          [
+            0
+          ]
+        ],
+        [
+          0,
+          1,
+          [
+            0
+          ]
+        ],
+        [
+          0,
+          1,
+          [
+            0
+          ]
+        ],
+        [
+          0,
+          1,
+          [
+            0
+          ]
+        ],
+        [
+          0,
+          1,
+          [
+            0
+          ]
+        ],
+        [
+          0,
+          1,
+          [
+            0
+          ]
+        ],
+        [
+          0,
+          1,
+          [
+            0
+          ]
+        ],
+        [
+          0,
+          1,
+          [
+            0
+          ]
+        ],
+        [
+          0,
+          1,
+          [
+            0
+          ]
+        ],
+        [
+          0,
+          1,
+          [
+            0
+          ]
+        ]
+      ],
+      "program": [
+        "M",
+        [
+          "J",
+          1
+        ]
+      ],
+      "retained": {
+        "bits": 18730499,
+        "objects": 1282739,
+        "reference_width": 21,
+        "refs": 5229813,
+        "total_bits": 129839311
+      },
+      "seconds": 17.937663165968843
+    },
+    {
+      "field_actions": 721,
+      "input": "0101",
+      "installation_steps": 43391456,
+      "native_steps": 115050,
+      "prefix": [
+        [
+          0,
+          0,
+          [
+            1,
+            3
+          ]
+        ]
+      ],
+      "program": [],
+      "retained": {
+        "bits": 18730499,
+        "objects": 1282739,
+        "reference_width": 21,
+        "refs": 5229813,
+        "total_bits": 129839311
+      },
+      "seconds": 17.21497900004033
+    }
+  ],
+  "installer": {
+    "charges": {
+      "allocation_reference_latch_writes": 2,
+      "allocations": 2,
+      "arity_tests": 10,
+      "bit_initializations": 9,
+      "bit_scan_completions": 2,
+      "bit_scan_returns": 2,
+      "directory_reference_writes": 3,
+      "execution_control_reference_writes": 1,
+      "forward_reference_reads": 5,
+      "forward_reference_writes": 2,
+      "grant_deliveries": 2,
+      "initializer_binding_reads": 2,
+      "initializer_bit_latch_writes": 9,
+      "initializer_bit_writes": 2,
+      "initializer_reference_latch_writes": 18,
+      "initializer_reference_reads": 1,
+      "initializer_reference_writes": 14,
+      "installation_completions": 1,
+      "native_control_reference_writes": 107,
+      "native_controller_selections": 107,
+      "native_successor_reference_reads": 107,
+      "null_tests": 13,
+      "reference_initializations": 4,
+      "source_bit_reads": 9,
+      "source_directory_reads": 4,
+      "source_material_reference_reads": 4,
+      "source_reference_reads": 4,
+      "target_bit_writes": 9,
+      "target_reference_writes": 4
+    },
+    "cuts": {
+      "allocate": {
+        "census": {
+          "bits": 2168416,
+          "objects": 98578,
+          "reference_width": 17,
+          "refs": 98940,
+          "total_bits": 3948974
+        },
+        "pending_grant": 0
+      },
+      "bind-cursor": {
+        "census": {
+          "bits": 2168416,
+          "objects": 98578,
+          "reference_width": 17,
+          "refs": 98940,
+          "total_bits": 3948974
+        },
+        "pending_grant": 1
+      },
+      "bind-source": {
+        "census": {
+          "bits": 2168416,
+          "objects": 98578,
+          "reference_width": 17,
+          "refs": 98940,
+          "total_bits": 3948974
+        },
+        "pending_grant": 1
+      },
+      "bind-target": {
+        "census": {
+          "bits": 2168416,
+          "objects": 98578,
+          "reference_width": 17,
+          "refs": 98940,
+          "total_bits": 3948974
+        },
+        "pending_grant": 1
+      },
+      "bits": {
+        "census": {
+          "bits": 2168416,
+          "objects": 98578,
+          "reference_width": 17,
+          "refs": 98940,
+          "total_bits": 3948974
+        },
+        "pending_grant": 1
+      },
+      "clear-bit-done": {
+        "census": {
+          "bits": 2168416,
+          "objects": 98578,
+          "reference_width": 17,
+          "refs": 98940,
+          "total_bits": 3948974
+        },
+        "pending_grant": 1
+      },
+      "clear-directory": {
+        "census": {
+          "bits": 2168416,
+          "objects": 98578,
+          "reference_width": 17,
+          "refs": 98940,
+          "total_bits": 3948974
+        },
+        "pending_grant": 1
+      },
+      "clear-ref": {
+        "census": {
+          "bits": 2168416,
+          "objects": 98578,
+          "reference_width": 17,
+          "refs": 98940,
+          "total_bits": 3948974
+        },
+        "pending_grant": 1
+      },
+      "cursor-null": {
+        "census": {
+          "bits": 2168416,
+          "objects": 98578,
+          "reference_width": 17,
+          "refs": 98940,
+          "total_bits": 3948974
+        },
+        "pending_grant": 1
+      },
+      "cursor-write": {
+        "census": {
+          "bits": 2168416,
+          "objects": 98578,
+          "reference_width": 17,
+          "refs": 98940,
+          "total_bits": 3948974
+        },
+        "pending_grant": 1
+      },
+      "done": {
+        "census": {
+          "bits": 2168417,
+          "objects": 98579,
+          "reference_width": 17,
+          "refs": 98941,
+          "total_bits": 3948993
+        },
+        "pending_grant": 1
+      },
+      "entry-read": {
+        "census": {
+          "bits": 2168417,
+          "objects": 98579,
+          "reference_width": 17,
+          "refs": 98941,
+          "total_bits": 3948993
+        },
+        "pending_grant": 1
+      },
+      "entry-write": {
+        "census": {
+          "bits": 2168417,
+          "objects": 98579,
+          "reference_width": 17,
+          "refs": 98941,
+          "total_bits": 3948993
+        },
+        "pending_grant": 1
+      },
+      "forward-null": {
+        "census": {
+          "bits": 2168417,
+          "objects": 98579,
+          "reference_width": 17,
+          "refs": 98941,
+          "total_bits": 3948993
+        },
+        "pending_grant": 1
+      },
+      "forward-read": {
+        "census": {
+          "bits": 2168417,
+          "objects": 98579,
+          "reference_width": 17,
+          "refs": 98941,
+          "total_bits": 3948993
+        },
+        "pending_grant": 1
+      },
+      "forward-write": {
+        "census": {
+          "bits": 2168416,
+          "objects": 98578,
+          "reference_width": 17,
+          "refs": 98940,
+          "total_bits": 3948974
+        },
+        "pending_grant": 1
+      },
+      "grant": {
+        "census": {
+          "bits": 2168416,
+          "objects": 98578,
+          "reference_width": 17,
+          "refs": 98940,
+          "total_bits": 3948974
+        },
+        "pending_grant": 1
+      },
+      "head-read": {
+        "census": {
+          "bits": 2168417,
+          "objects": 98579,
+          "reference_width": 17,
+          "refs": 98941,
+          "total_bits": 3948993
+        },
+        "pending_grant": 1
+      },
+      "link-head": {
+        "census": {
+          "bits": 2168416,
+          "objects": 98578,
+          "reference_width": 17,
+          "refs": 98940,
+          "total_bits": 3948974
+        },
+        "pending_grant": 1
+      },
+      "link-tail": {
+        "census": {
+          "bits": 2168417,
+          "objects": 98579,
+          "reference_width": 17,
+          "refs": 98941,
+          "total_bits": 3948993
+        },
+        "pending_grant": 1
+      },
+      "material": {
+        "census": {
+          "bits": 2168408,
+          "objects": 98577,
+          "reference_width": 17,
+          "refs": 98935,
+          "total_bits": 3948880
+        },
+        "pending_grant": null
+      },
+      "next-read": {
+        "census": {
+          "bits": 2168416,
+          "objects": 98578,
+          "reference_width": 17,
+          "refs": 98940,
+          "total_bits": 3948974
+        },
+        "pending_grant": 1
+      },
+      "read-null": {
+        "census": {
+          "bits": 2168417,
+          "objects": 98579,
+          "reference_width": 17,
+          "refs": 98941,
+          "total_bits": 3948993
+        },
+        "pending_grant": 1
+      },
+      "shape": {
+        "census": {
+          "bits": 2168408,
+          "objects": 98577,
+          "reference_width": 17,
+          "refs": 98935,
+          "total_bits": 3948880
+        },
+        "pending_grant": null
+      },
+      "source-ref-read": {
+        "census": {
+          "bits": 2168417,
+          "objects": 98579,
+          "reference_width": 17,
+          "refs": 98941,
+          "total_bits": 3948993
+        },
+        "pending_grant": 1
+      },
+      "tail-null": {
+        "census": {
+          "bits": 2168416,
+          "objects": 98578,
+          "reference_width": 17,
+          "refs": 98940,
+          "total_bits": 3948974
+        },
+        "pending_grant": 1
+      },
+      "tail-write": {
+        "census": {
+          "bits": 2168416,
+          "objects": 98578,
+          "reference_width": 17,
+          "refs": 98940,
+          "total_bits": 3948974
+        },
+        "pending_grant": 1
+      },
+      "target-read": {
+        "census": {
+          "bits": 2168417,
+          "objects": 98579,
+          "reference_width": 17,
+          "refs": 98941,
+          "total_bits": 3948993
+        },
+        "pending_grant": 1
+      },
+      "target-ref-write": {
+        "census": {
+          "bits": 2168417,
+          "objects": 98579,
+          "reference_width": 17,
+          "refs": 98941,
+          "total_bits": 3948993
+        },
+        "pending_grant": 1
+      }
+    },
+    "final": {
+      "bits": 2168417,
+      "objects": 98579,
+      "reference_width": 17,
+      "refs": 98941,
+      "total_bits": 3948993
+    },
+    "phases": {
+      "allocate": 2,
+      "bind-cursor": 2,
+      "bind-source": 2,
+      "bind-target": 2,
+      "bits": 29,
+      "clear-bit-done": 2,
+      "clear-directory": 2,
+      "clear-ref": 4,
+      "cursor-null": 4,
+      "cursor-write": 5,
+      "done": 1,
+      "entry-read": 1,
+      "entry-write": 1,
+      "forward-null": 2,
+      "forward-read": 2,
+      "forward-write": 2,
+      "grant": 2,
+      "head-read": 1,
+      "link-head": 1,
+      "link-tail": 1,
+      "material": 4,
+      "next-read": 4,
+      "read-null": 5,
+      "shape": 10,
+      "source-ref-read": 4,
+      "tail-null": 2,
+      "tail-write": 2,
+      "target-read": 2,
+      "target-ref-write": 4
+    },
+    "steps": 107
+  },
+  "io": {
+    "conversion": [
+      {
+        "input_bits": 387,
+        "installation_steps": 45550824,
+        "name": "positive-full",
+        "native_steps": 52346395,
+        "output_bits": 24000,
+        "sha256": "1283c86f67b6786eb83a4ebd2a9782cea3b73cf51c0b8d06e41f3500c732ebbf"
+      },
+      {
+        "input_bits": 386,
+        "installation_steps": 45548646,
+        "name": "positive-partial",
+        "native_steps": 52276111,
+        "output_bits": 23968,
+        "sha256": "a82a074dd0feb9d3f22fda4c780b9414797a3e6cda184eb8cf25d1f7fd489f86"
+      },
+      {
+        "input_bits": 839,
+        "installation_steps": 46535280,
+        "name": "null-nine-distinct-left",
+        "native_steps": 84130759,
+        "output_bits": 38464,
+        "sha256": "cc62b42f2bf890171a99d16b59243aa025cbabe3ff4e87d2f7539c172508df5a"
+      },
+      {
+        "input_bits": 141,
+        "installation_steps": 45015036,
+        "name": "positive-unreduced-endpoint",
+        "native_steps": 35048662,
+        "output_bits": 16128,
+        "sha256": "46181d4d70b11a84a84821f7ac5ffb0f02dd413d4dfdbc216b203e5423c09e8c"
+      }
+    ],
+    "output": [
+      {
+        "installation_steps": 44991815,
+        "native_steps": 12402840,
+        "word": ""
+      },
+      {
+        "installation_steps": 44991815,
+        "native_steps": 27293265,
+        "word": "0"
+      },
+      {
+        "installation_steps": 44991815,
+        "native_steps": 27293265,
+        "word": "1"
+      },
+      {
+        "installation_steps": 44991815,
+        "native_steps": 48007819,
+        "word": "01"
+      }
+    ]
+  },
+  "measurements": {
+    "host_ru_maxrss": 6580633600,
+    "ru_maxrss_unit": "bytes on Darwin, KiB on Linux",
+    "wall_seconds": 2771.6475549580064
+  },
+  "operations": {
+    "charges": {
+      "acknowledgements": 1,
+      "address_reference_writes": 1226,
+      "arity_tests": 139,
+      "bit_field_reads": 970,
+      "bit_field_writes": 17,
+      "bit_register_reads": 732,
+      "bit_register_writes": 1026,
+      "bit_tests": 723,
+      "code_bit_reads": 945,
+      "code_reference_reads": 180,
+      "field_commits": 45,
+      "literal_bit_assignments": 65,
+      "literal_null_assignments": 45,
+      "native_control_reference_writes": 7245,
+      "native_controller_selections": 7245,
+      "native_successor_reference_reads": 7245,
+      "null_tests": 46,
+      "output_bits": 1,
+      "output_ends": 1,
+      "read_bit_latch_writes": 1702,
+      "read_reference_latch_writes": 1742,
+      "reference_equality_tests": 4,
+      "reference_field_reads": 222,
+      "reference_field_writes": 9,
+      "reference_register_reads": 1520,
+      "reference_register_writes": 359,
+      "returns": 1,
+      "saved_reference_writes": 4
+    },
+    "code_mutant_output": [
+      0
+    ],
+    "native_events": {
+      "ack": 1,
+      "address": 1226,
+      "bfield": 25,
+      "br": 732,
+      "bw": 1026,
+      "codebit": 945,
+      "coderef": 180,
+      "commit": 45,
+      "end": 1,
+      "equal": 4,
+      "goto": 89,
+      "literal": 65,
+      "nil": 45,
+      "null": 46,
+      "return": 1,
+      "rfield": 42,
+      "rr": 1520,
+      "rw": 359,
+      "save": 4,
+      "send": 1,
+      "shape": 139,
+      "test": 723,
+      "vfield": 17,
+      "wfield": 9
+    },
+    "refused": [
+      "ack",
+      "return",
+      "selector-4-on-four-reference-cell"
+    ]
+  },
+  "page_leaves": {
+    "directory_edges": 2,
+    "field_actions": 65541,
+    "native_steps": 10355468,
+    "page_fields": 32768,
+    "seconds": 51.14411516697146,
+    "source_sha256": "17cab6c6ee03371140ee64b2032cb7dd28c83eaa2318401f137e2d21aee0d669"
+  },
+  "schema": 1,
+  "source_hashes": {
+    "native_bits.c": "6fe240a31621ddfa6c43237c26d4b314f7cf28b12c27d8e77c956dd0e79d9645",
+    "native_checks.py": "eb0b77c4c8b38167baf43e3a50c7159c9a91fb2c0d0c0b292255ee69a1f57e56",
+    "native_engine.py": "2089e4ee678d92225ea746be9ffe582a02aa7688306cbf4c84fb684a74ccb0fc",
+    "native_install.py": "a26ceeb8e7695d19549302e3884c2729222f5b5de96b9a7d76a53034e3cc4555"
+  },
+  "strict_original_omissions": [
+    "ML-N-evaluator-execution",
+    "ML-Cost-full-evaluator-session"
+  ],
+  "whole_goal_complete": false
+}

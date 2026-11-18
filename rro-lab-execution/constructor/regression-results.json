@@ -1,0 +1,46 @@
+{
+  "DP_old_new_alias_falsifier": [
+    {
+      "label_count": 0,
+      "literal_reference": {
+        "gotos": 4425519,
+        "halt_state": 195,
+        "output_bits": 0,
+        "peak_stack_bits": 750,
+        "peeks": 134019,
+        "pop_instructions": 8340958,
+        "pushes": 6569300,
+        "retained_stack_bits": 478,
+        "steps": 19469797,
+        "success": true
+      },
+      "old_array_replaced_by_new": false
+    },
+    {
+      "label_count": 2,
+      "literal_reference": {
+        "gotos": 4425806,
+        "halt_state": 195,
+        "output_bits": 2,
+        "peak_stack_bits": 750,
+        "peeks": 134019,
+        "pop_instructions": 8341364,
+        "pushes": 6569722,
+        "retained_stack_bits": 495,
+        "steps": 19470912,
+        "success": true
+      },
+      "old_array_replaced_by_new": true
+    }
+  ],
+  "portability": {
+    "compiled_cases": {
+      "binary_steps": 17460,
+      "four_steps_including_halt": 4455,
+      "instances": 180
+    },
+    "cwd_contains_spaces": true,
+    "empty_environment_except_declared_PATH_and_scope_FDs": true,
+    "exit_code": 0
+  }
+}
