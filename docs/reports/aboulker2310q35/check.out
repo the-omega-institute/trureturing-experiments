@@ -1,0 +1,5 @@
+Fidelity TT_n, n=1..6: reverse backedge (omega, chi)=(n,n); minima=(1,1)
+Separator: 7 edges in backedge graph, d=3; all 362880 reversed-endpoint orders obstructed
+q=5: base=23, tournament=177, directed omega=2, d<=4, min chi over clique-optimal orders=5
+q=6: base=47, tournament=369, directed omega=2, d<=5, min chi over clique-optimal orders=6
+ALL_CHECKS_OK
