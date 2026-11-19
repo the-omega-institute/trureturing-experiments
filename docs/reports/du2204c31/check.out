@@ -1,0 +1,8 @@
+Fidelity: Proposition 2.1 coindices of X_n and L_n, 5 <= n <= 16
+Uniform algebra: both count bounds and a strict radical comparison for k >= 32
+k=32, n=1024: coindex gap >= 46666499323579/100000000 > 0
+k=33, n=1089: coindex gap >= 53250159950374/100000000 > 0
+k=36, n=1296: coindex gap >= 77212249217662/100000000 > 0
+k=40, n=1600: coindex gap >= 120729611320760/100000000 > 0
+k=48, n=2304: coindex gap >= 259973914389500/100000000 > 0
+ALL_CHECKS_OK
