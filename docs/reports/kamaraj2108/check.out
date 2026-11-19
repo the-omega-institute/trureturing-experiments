@@ -1,0 +1,5 @@
+Source Example 3.2: all three inverses satisfy the four equations; reverse order fails.
+Rank-one family for every real t != 0: reverse order holds and both range inclusions fail.
+Theorem 3.16 ranks for this family: block = 1, concatenation = 2.
+Dimension-two Gram determinant formula checked symbolically over complex coordinates.
+ALL_CHECKS_OK
