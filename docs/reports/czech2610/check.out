@@ -1,0 +1,31 @@
+Table 2 q=2 n=2: S/log(2)=1
+Table 2 q=2 n=3: S/log(2)=1
+Table 2 q=2 n=4: S/log(2)=1
+Table 2 q=3 n=2: S/log(2)=3/2
+Table 2 q=3 n=3: S/log(2)=4/3
+Table 2 q=3 n=4: S/log(2)=5/4
+d=4 lambda=2 n=4: binary nullity=48, Z=2^(-208), S/log(2)=13/3
+d=4 lambda=2 n=5: binary nullity=60, Z=2^(-440), S/log(2)=22/5
+d=4 lambda=2: gap/log(2)=1/15
+d=4 lambda=3 n=4: binary nullity=48, Z=2^(-208), S/log(2)=13/3
+d=4 lambda=3 n=5: binary nullity=60, Z=2^(-440), S/log(2)=22/5
+d=4 lambda=3: gap/log(2)=1/15
+d=8 lambda=2 n=8: binary nullity=288, Z=2^(-2784), S/log(2)=87/14
+d=8 lambda=2 n=9: binary nullity=270, Z=2^(-4104), S/log(2)=19/3
+d=8 lambda=2: gap/log(2)=5/42
+d=8 lambda=3 n=8: binary nullity=288, Z=2^(-2784), S/log(2)=87/14
+d=8 lambda=3 n=9: binary nullity=270, Z=2^(-4104), S/log(2)=19/3
+d=8 lambda=3: gap/log(2)=5/42
+d=8 lambda=4 n=8: binary nullity=288, Z=2^(-2784), S/log(2)=87/14
+d=8 lambda=4 n=9: binary nullity=270, Z=2^(-4104), S/log(2)=19/3
+d=8 lambda=4: gap/log(2)=5/42
+d=8 lambda=5 n=8: binary nullity=288, Z=2^(-2784), S/log(2)=87/14
+d=8 lambda=5 n=9: binary nullity=270, Z=2^(-4104), S/log(2)=19/3
+d=8 lambda=5: gap/log(2)=5/42
+d=8 lambda=6 n=8: binary nullity=288, Z=2^(-2784), S/log(2)=87/14
+d=8 lambda=6 n=9: binary nullity=270, Z=2^(-4104), S/log(2)=19/3
+d=8 lambda=6: gap/log(2)=5/42
+d=8 lambda=7 n=8: binary nullity=288, Z=2^(-2784), S/log(2)=87/14
+d=8 lambda=7 n=9: binary nullity=270, Z=2^(-4104), S/log(2)=19/3
+d=8 lambda=7: gap/log(2)=5/42
+ALL_CHECKS_OK
