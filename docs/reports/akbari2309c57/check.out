@@ -1,0 +1,9 @@
+Corollary 5.6 A5 row, (order, solubilizer size) -> multiplicity:
+[((1, 60), 1), ((2, 36), 15), ((3, 24), 20), ((5, 10), 24)]
+A5 witness, soluble partners by order: [(1, 1), (2, 15), (3, 12), (5, 8)]
+A5 x C3: |G|=180 order(x)=6 |R(G)|=3 |Sol_G(x)|=108 P_S(x)=3/5
+A5 x C5: |G|=300 order(x)=10 |R(G)|=5 |Sol_G(x)|=180 P_S(x)=3/5
+A5 x C7: |G|=420 order(x)=14 |R(G)|=7 |Sol_G(x)|=252 P_S(x)=3/5
+A5 x C9: |G|=540 order(x)=18 |R(G)|=9 |Sol_G(x)|=324 P_S(x)=3/5
+SL2(F5): |G|=120 order(x)=4 |R(G)|=2 |Sol_G(x)|=72 P_S(x)=3/5
+ALL_CHECKS_OK
