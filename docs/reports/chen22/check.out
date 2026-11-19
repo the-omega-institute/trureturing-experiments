@@ -1,0 +1,8 @@
+Equation (49): -1/2, 5/12, -1/4
+Equation (50): 1, -1/2, 13/24, -23/48
+sum(omega_1, ..., omega_19) = -663783049/6983776800
+Certified: G_19(1) < -1/15
+A_20 = 174611/125400
+Uniform lower bound on the A_(n+4)/A_n ratio for n >= 20: 21945/1024
+Exact coefficient signs for n = 20, 24, 28, 32, 36, 40: strictly negative
+ALL_CHECKS_OK
