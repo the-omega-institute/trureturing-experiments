@@ -1,0 +1,7 @@
+Fidelity (Gy p. 15): both q-Stirling identities and 84 triple differences, n <= 7
+Symbolic: strong index inequality factor r - i + 1
+Symbolic: E and H scalar factors both equal j*(j + 1)**2*(j + 2)*(2*a + j + 2)*(4*a + j + 3)/48
+Symbolic: degree-1 Turán determinant divided by the squared scalar factor is 10 - 4*t
+Example (a,t,j) = (1,3,1): both begin 10, 40, 180; determinant -200
+Direct family checks: 72 rational parameter triples
+ALL_CHECKS_OK
