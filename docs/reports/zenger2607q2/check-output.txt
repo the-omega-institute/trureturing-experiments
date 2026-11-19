@@ -1,0 +1,6 @@
+Fidelity: Lemma 3.10, Figure 3.1 falsified at w as stated
+Even-step consequences: 552 dynamic models, 0 <= k <= 6
+Parity models: odd A-witnesses and even countermodels for 0 <= m <= 17
+Stabilization: 16850 syntax trees, size <= 7, defects through 17
+Paired countermodels: 7921 transfers with the candidate true in the odd model
+ALL_CHECKS_OK
