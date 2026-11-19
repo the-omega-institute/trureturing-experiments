@@ -1,0 +1,17 @@
+Example 3.5: mu(J,K), mu(K,J) = (3, 4)
+A4: r=2, mu=(2, 2), common product=(3, 2, 1, 5, 4)
+A5: r=3, mu=(2, 2), common product=(4, 3, 2, 1, 6, 5)
+A6: r=4, mu=(2, 2), common product=(5, 4, 3, 2, 1, 7, 6)
+A7: r=5, mu=(2, 2), common product=(6, 5, 4, 3, 2, 1, 8, 7)
+A8: r=6, mu=(2, 2), common product=(7, 6, 5, 4, 3, 2, 1, 9, 8)
+A9: r=7, mu=(2, 2), common product=(8, 7, 6, 5, 4, 3, 2, 1, 10, 9)
+A10: r=8, mu=(2, 2), common product=(9, 8, 7, 6, 5, 4, 3, 2, 1, 11, 10)
+A11: r=9, mu=(2, 2), common product=(10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 12, 11)
+A12: r=10, mu=(2, 2), common product=(11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 13, 12)
+A1: 0 violations among 4 ordered support pairs
+A2: 0 violations among 16 ordered support pairs
+A3: 0 violations among 64 ordered support pairs
+A4: 8 violations among 256 ordered support pairs
+A5: 64 violations among 1024 ordered support pairs
+A6: 364 violations among 4096 ordered support pairs
+ALL_CHECKS_OK
