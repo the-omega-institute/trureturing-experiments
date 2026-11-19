@@ -1,0 +1,12 @@
+Example 2.6: two-factor semidirect model, 64 elements, 64 twist relations
+Corollary 3.7: standard intersection formula, all 16 stable pairs
+Question 9.4: intersection [(0, 0), (0, 2)], parabolic sizes [1, 4, 16, 64]
+Question 9.4 geometric sketch: stabilizer sizes 4 and 2
+Lamp family C_2: realized orders [1, 2], parabolic image sizes [1, 2]
+Lamp family C_3: realized orders [1, 3], parabolic image sizes [1, 3]
+Lamp family C_4: realized orders [1, 2, 4], parabolic image sizes [1, 4]
+Lamp family C_5: realized orders [1, 5], parabolic image sizes [1, 5]
+Lamp family C_6: realized orders [1, 2, 3, 6], parabolic image sizes [1, 6]
+Lamp family C_7: realized orders [1, 7], parabolic image sizes [1, 7]
+Lamp family C_8: realized orders [1, 2, 4, 8], parabolic image sizes [1, 8]
+ALL_CHECKS_OK
