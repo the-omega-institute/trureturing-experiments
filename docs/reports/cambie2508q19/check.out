@@ -1,0 +1,8 @@
+Source fidelity: Theorem 1.2 path equality and the tree-case equality on P_1,...,P_8
+Literal G_1 (N_I, R_I, N_T, R_T): (818, 7155, 1370, 13597)
+Direct cycle-interval enumeration agrees with the marked-gap formula for t=1,2,3,4
+Four polynomial identities checked at six distinct t; cross-product verified coefficientwise
+D(500+u) coefficients, constant first: (42462004714113084125758392, 1925779506623221638502017, 24673826783296240794501, 158280921255699172208, 603915422133555845, 1465304200906565, 2296142262702, 2260845064, 1276402, 316)
+G_500: av - mu = 1769250196421378505239933/18998398362554330511481326
+Linear coefficient of av - mu: 79/28884
+ALL_CHECKS_OK
