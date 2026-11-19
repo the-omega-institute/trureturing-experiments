@@ -1,0 +1,7 @@
+Fidelity (4.1): log derivative = -log(y), normalization agrees at z=0
+Fidelity (4.2): log curvature = -y/(y + 1) for y=exp(z)>0
+Normalized signed residues at a=b=1: [1, -1, 3/4, -19/36]
+Factorial-scaled coefficients: [1, a, a**2 + a/2, a**3 + 3*a**2/2 + 2*a/3]
+PF-infinity identity defect: a**3*(2*a + 3)/24 > 0 for a>0
+Defect at a=1: 5/24
+ALL_CHECKS_OK
