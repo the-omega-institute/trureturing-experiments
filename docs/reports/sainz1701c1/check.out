@@ -1,0 +1,4 @@
+FIDELITY Appendix E: 8 and 12 contexts have the same augmented RREF (rank 8)
+FAMILY: 81 block-size tuples with symbolic masses and both endpoints
+WITNESS: 20 positive probabilities, 4 added edges, Hilbert dimension 16, CHSH 3*sqrt(2)/2 > 2
+ALL_CHECKS_OK
