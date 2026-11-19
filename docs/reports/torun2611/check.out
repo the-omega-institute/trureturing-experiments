@@ -1,0 +1,7 @@
+Proposition 2: N=2, exact optimum r^3
+Proposition 2: N=3, exact optimum r^4
+Balanced signs: 12870, signed coordinates: 8, minimum positive high-degree mass: 1/4
+Both dual-case lower bounds equal 1. The gap is positive for 0 < r < 1/10.
+Four-copy dual trace: 64 sampled bijections and 64 signed-coordinate bijections.
+r=1/16, s=15/17: dual objective 203/260046848 < 1/1048576
+ALL_CHECKS_OK
