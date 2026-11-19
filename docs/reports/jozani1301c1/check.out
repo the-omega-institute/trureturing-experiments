@@ -1,0 +1,6 @@
+Fidelity (unit-rate exponential, n=2, alpha=2): SRS product 1/4, RSS product 1/3
+Pareto integrals: parent 1/3, rank 1 4/5, rank 2 2/15, cross 1/5
+Exact positive factors certify perfect < imperfect < SRS in collision products
+The interval is 0 < z < 1/2, equivalently 1/2 < p < 3/4
+p=2/3: perfect, imperfect and SRS collision products are (1944, 1984, 2025)/18225
+ALL_CHECKS_OK
