@@ -1,0 +1,9 @@
+Fidelity Example 4.5(1): 256 multiplication-containment tests
+Fidelity Proposition 4.67: 9 distinct T-principal ideals are T-full
+Fidelity Proposition 4.67: 5 distinct T-principal ideals are T-full
+Binary model: |A|=16, |m|=8, nonunit image sizes=[1, 4, 4, 4]
+F_2: 3 coordinate divisibilities, 4 rational pairs checked, nonzero formal polynomial U^2V-UV^2
+F_3: 4 coordinate divisibilities, 9 rational pairs checked, nonzero formal polynomial U^3V-UV^3
+F_5: 6 coordinate divisibilities, 25 rational pairs checked, nonzero formal polynomial U^5V-UV^5
+F_7: 8 coordinate divisibilities, 49 rational pairs checked, nonzero formal polynomial U^7V-UV^7
+ALL_CHECKS_OK
