@@ -1,0 +1,7 @@
+source Lemma 3.5: complete and edgeless graphs of orders 1 through 6 verified
+incidence k=3: order=14, induced-P5 triples=56, p(G) in [4,7], p(complement)=8, product >= 32, conjectured <= 225/4, strict violation from lower bound=False
+incidence k=4: order=24, induced-P5 triples=560, p(G) in [8,12], p(complement)=16, product >= 128, conjectured <= 625/4, strict violation from lower bound=False
+incidence k=5: order=42, induced-P5 triples=4960, p(G) in [16,21], p(complement)=32, product >= 512, conjectured <= 1849/4, strict violation from lower bound=True
+incidence k=6: order=76, induced-P5 triples=41664, p(G) in [32,38], p(complement)=64, product >= 2048, conjectured <= 5929/4, strict violation from lower bound=True
+exact arithmetic: ratio recurrence and strict bound checked for k=5 through 100
+ALL_CHECKS_OK
