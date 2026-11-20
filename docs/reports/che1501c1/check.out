@@ -1,0 +1,8 @@
+Fidelity: Theorem 5(a) sample has unique solution (1, 2).
+Pair: exact factorization, quartic positivity identity and Jacobian identities.
+Dense family: k=1, c=7/2, a=15, epsilon=1, 3 distinct verified solution rays with unique scales.
+Dense family: k=2, c=13/3, a=40, epsilon=2, 9 distinct verified solution rays with unique scales.
+Dense family: k=3, c=21/4, a=85, epsilon=1/3, 27 distinct verified solution rays with unique scales.
+Antecedent: the symmetrization of Bai–Huang–Wang Example 3.2 retains both solutions.
+Rational refutation: q=(-42,-42), solutions (2,1) and (1,2).
+ALL_CHECKS_OK
