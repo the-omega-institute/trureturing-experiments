@@ -1,0 +1,7 @@
+Exact breadth-first distance check: 211 balanced stars and brooms
+Source Proposition 4.1 on C_7: normalized weights 1/7, entropy log(7)
+Source Figure 5: its order-20 tree uniquely minimizes among balanced spiders
+n=1024, m=247, tail=776: all 1023 arm counts, gap >= 35480053278085/140737488355328 nats
+n=2048, m=366, tail=1681: all 2047 arm counts, gap >= 44071545561627/140737488355328 nats
+n=4096, m=541, tail=3554: all 4095 arm counts, gap >= 102036215064317/281474976710656 nats
+ALL_CHECKS_OK
