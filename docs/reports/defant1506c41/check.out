@@ -1,0 +1,10 @@
+Source fidelity: delta_2(3) = 10 at d=-1 and 16 at d=-2; I_2(9+3i) = 2.
+Witness at d=-11: norms 9 and 135; delta_2 values 16 and 240; I_2 = 16/9.
+Transfer: 48 checks using 0 <= e_3, e_5 <= 3 and 1 <= r <= 3.
+t=0: norms 9, 135; I_2 = 16/9.
+t=1: norms 36, 540; I_2 = 20/9.
+t=2: norms 144, 2160; I_2 = 7/3.
+t=3: norms 576, 8640; I_2 = 85/36.
+t=4: norms 2304, 34560; I_2 = 341/144.
+t=5: norms 9216, 138240; I_2 = 455/192.
+ALL_CHECKS_OK
