@@ -1,0 +1,10 @@
+Source fidelity (trefoil, C[4,1]): 16 total = 4 trivial + 12 nontrivial
+p=5 original-block enumeration (1,953,125 inputs per block): [(625, 1), (1, 3125)]
+p=5: kernels [(625, 1), (1, 3125)], coloring totals (78125, 390625)
+p=7: kernels [(2401, 1), (1, 16807)], coloring totals (823543, 5764801)
+p=11: kernels [(14641, 1), (1, 161051)], coloring totals (19487171, 214358881)
+p=13: kernels [(28561, 1), (1, 371293)], coloring totals (62748517, 815730721)
+p=17: kernels [(83521, 1), (1, 1419857)], coloring totals (410338673, 6975757441)
+p=19: kernels [(130321, 1), (1, 2476099)], coloring totals (893871739, 16983563041)
+p=31: kernels [(923521, 1), (1, 28629151)], coloring totals (27512614111, 852891037441)
+ALL_CHECKS_OK
