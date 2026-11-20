@@ -1,0 +1,11 @@
+Example 4.5(1), Chebyshev norm: n=4..8 passed
+Truncated Euclidean norm: n=4, 24 rank tuples excluded
+Truncated Euclidean norm: n=5, 120 rank tuples excluded
+Truncated Euclidean norm: n=6, 360 rank tuples excluded
+Truncated Euclidean norm: n=7, 840 rank tuples excluded
+Truncated Euclidean norm: n=8, 1680 rank tuples excluded
+Truncated Euclidean norm: n=9, 3024 rank tuples excluded
+Truncated Euclidean norm: n=10, 5040 rank tuples excluded
+Truncated Euclidean norm: n=11, 7920 rank tuples excluded
+Truncated Euclidean norm: n=12, 11880 rank tuples excluded
+ALL_CHECKS_OK
