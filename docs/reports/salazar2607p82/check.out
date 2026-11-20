@@ -1,0 +1,7 @@
+Equations (78), (80), (84): 585 exact sample checks
+Admissible triples: 45, with D = 0 in 15
+Increment identity and geometric upper bound: 585 exact checks
+Interval lower bound crosses the upper bound in 405 exact checks
+Decisive powers of two: 1 through 512
+N = D constant boundary: 260 exact checks
+ALL_CHECKS_OK
