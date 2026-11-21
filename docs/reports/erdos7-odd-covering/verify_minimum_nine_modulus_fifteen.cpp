@@ -1,4 +1,4 @@
-// Exact upward-rounded prefix comparison with modulus 15 omitted.
+// Exact prefix comparisons for the least-modulus-nine branch.
 #include <algorithm>
 #include <array>
 #include <cstdint>
@@ -11,6 +11,9 @@ using Integer = __int128_t;
 constexpr std::int64_t scale = 100'000'000'000'000;
 constexpr int endpoint = 80'021;
 constexpr int width = 34'500;
+constexpr int floor_width = 400;
+constexpr int floor_endpoint = 211;
+constexpr int clipping_without_twenty_one = 3;
 
 // Right endpoint of each interval, with its clipping parameter in hundredths.
 constexpr std::array schedule{
@@ -23,6 +26,12 @@ constexpr std::array schedule{
     std::array{1679, 37}, std::array{3359, 38}, std::array{16001, 38},
     std::array{endpoint, 43},
 };
+
+int clipping_for_prime(int prime) {
+    const auto band = std::lower_bound(schedule.begin(), schedule.end(), prime,
+        [](const auto& row, int p) { return row[0] < p; });
+    return (*band)[1];
+}
 
 void require(bool condition, const char* message) {
     if (!condition) {
@@ -85,14 +94,14 @@ Integer expectation(Integer fixed, Integer positive, int prime,
         cap_numerator * (prime * positive - fixed), prime * cap_denominator);
 }
 
-Comparison extend(const Comparison& continuation, int prime, int clipping, bool skip) {
+Comparison extend(const Comparison& continuation, int prime, int clipping, bool omit_ternary_slot) {
     const int divisor = prime <= 7 ? prime : 1;
     const int density_denominator = prime <= 7 ? prime * (prime - 1) - 1 : prime - 2;
-    const int intercept = divisor + (skip ? prime - 1 : 0);
+    const int intercept = divisor + (omit_ternary_slot ? prime - 1 : 0);
     const int threshold = 100 * intercept + clipping * density_denominator;
     const Integer cap_numerator = 100 * divisor * (prime - 1);
     const Integer cap_denominator = (100 - clipping) * density_denominator;
-    require(!skip || prime == 5, "unexpected omitted slot");
+    require(!omit_ternary_slot || prime == 5 || prime == 7, "unexpected omitted slot");
     require(cap_numerator <= prime * cap_denominator, "invalid comparison cap");
     require(threshold <= 100 * divisor * width, "low-state table misses clipping threshold");
 
@@ -145,6 +154,47 @@ std::vector<int> primes_through_endpoint() {
     return result;
 }
 
+Integer ternary_average(const Comparison& zero, const Comparison& positive) {
+    return ceiling(
+        3 * zero.values[1] + 6 * positive_expectation(positive, 3, 1, weights(3)), 5);
+}
+
+Integer suffix_floor(const std::vector<int>& primes) {
+    // Use the first branch only, with a zero terminal function and bounded states.
+    auto suffix_primes = primes;
+    suffix_primes.erase(std::upper_bound(suffix_primes.begin(), suffix_primes.end(), floor_endpoint),
+                        suffix_primes.end());
+    suffix_primes.insert(suffix_primes.begin(), 7);
+    std::array<Integer, floor_width + 1> future{};
+    for (auto it = suffix_primes.rbegin(); it != suffix_primes.rend(); ++it) {
+        const int prime = *it;
+        const int clipping = prime == 7 ? clipping_without_twenty_one : clipping_for_prime(prime);
+        const int divisor = prime == 7 ? prime : 1;
+        const int density_denominator = prime == 7 ? prime * (prime - 1) - 1 : prime - 2;
+        const int capped_denominator = (100 - clipping) * density_denominator;
+        const auto geometric = weights(prime);
+        const int last_power = int(geometric.powers.size()) - 1;
+        std::array<Integer, floor_width + 1> next{};
+        for (int state = 1; state <= floor_width; ++state) {
+            const int excess = divisor * (state - 1);
+            const int above = 100 * excess - clipping * density_denominator;
+            const Integer cap_numerator = (above < 0 ? 1 : 100) * divisor * (prime - 1);
+            const Integer cap_denominator = above < 0 ? density_denominator - excess
+                                                     : capped_denominator;
+            const Integer denominator = prime * cap_denominator;
+            Integer total = (denominator - cap_numerator) * future[state] / denominator;
+            const int cutoff = std::min(floor_width / state, last_power);
+            for (int n = 2; n <= cutoff; ++n) {
+                total += cap_numerator * (prime - 1) * future[state * n]
+                    / (cap_denominator * geometric.powers[n]);
+            }
+            next[state] = total + Integer(scale) * std::max(0, above) / capped_denominator;
+        }
+        future = next;
+    }
+    return future[1];
+}
+
 int main() {
     try {
         std::int64_t tail;
@@ -156,19 +206,24 @@ int main() {
         }
         const auto primes = primes_through_endpoint();
         for (auto p = primes.rbegin(); p != primes.rend(); ++p) {
-            const auto band = std::lower_bound(
-                schedule.begin(), schedule.end(), *p,
-                [](const auto& row, int prime) { return row[0] < prime; });
-            continuation = extend(continuation, *p, (*band)[1], false);
+            continuation = extend(continuation, *p, clipping_for_prime(*p), false);
         }
         const Comparison before_seven = extend(continuation, 7, 17, false);
         const Comparison zero = extend(before_seven, 5, 0, false);
         const Comparison positive = extend(before_seven, 5, 0, true);
-        const Integer total = ceiling(
-            3 * zero.values[1] + 6 * positive_expectation(positive, 3, 1, weights(3)), 5);
+        const Integer total = ternary_average(zero, positive);
         require(0 < total && total * 500 < Integer(scale) * 499,
                 "reserve does not exceed 1/500");
-        std::cout << primes.size() << ' ' << std::int64_t(total) << '\n';
+        const auto seven_zero = extend(continuation, 7, clipping_without_twenty_one, false);
+        const auto seven_positive = extend(continuation, 7, clipping_without_twenty_one, true);
+        const auto aligned_zero = extend(seven_zero, 5, 0, false);
+        const auto aligned_positive = extend(seven_positive, 5, 0, true);
+        const Integer missing_both = ternary_average(aligned_zero, aligned_positive);
+        const Integer lower = suffix_floor(primes);
+        require(0 < missing_both && missing_both < scale && 0 <= lower && lower < scale,
+                "invalid phase comparison bounds");
+        std::cout << primes.size() << ' ' << std::int64_t(total) << ' '
+                  << std::int64_t(missing_both) << ' ' << std::int64_t(lower) << '\n';
     } catch (const std::exception& error) {
         std::cerr << error.what() << '\n';
         return 1;
