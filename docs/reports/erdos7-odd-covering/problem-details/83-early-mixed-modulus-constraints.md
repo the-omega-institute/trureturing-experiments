@@ -8,6 +8,10 @@ under the uniform law conditioned to avoid the pure \(3\)-powers.
 In particular, when \(27\) is present and the \(15\)- and \(27\)-classes
 agree modulo \(3\), modulus \(63\) must occur.
 
+When \(15\) and \(35\) agree modulo \(5\), the cover must contain
+\(63\). A second alignment between \(63\) and \(15\) forces \(105\).
+[Relative phase constraints](84-mixed-class-phase-overlaps.md)
+
 ## A common bound with no clipping at five and seven
 
 Use the normalized pure-power reference laws \(\mu_p\) and the clipped
