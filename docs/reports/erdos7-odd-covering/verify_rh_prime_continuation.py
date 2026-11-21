@@ -74,7 +74,7 @@ def quadratic_floor(value, prime):
     return value + (left + right + isqrt(4 * left * right)) // (4 * (prime - 1)**2)
 
 
-def verify_quadratic(primes):
+def verify_quadratic(primes, capture=6997):
     endpoint = 5_000_000
     require(Fraction(11, 4)**15 < endpoint < Fraction(27, 10)**16, "quadratic log brackets")
     epsilon = Fraction(16**2, 24 * isqrt(endpoint))
@@ -85,7 +85,10 @@ def verify_quadratic(primes):
     lower, upper = 0, ceiling(SCALE * terminal)
     require(upper == 19_978_401_471_981_184, "quadratic terminal")
     count = 0
+    captured = None
     for prime in range(endpoint, 73, -1):
+        if prime == capture:
+            captured = upper
         if prime == 6997:
             prefix_tail = upper
         if primes[prime]:
@@ -100,7 +103,8 @@ def verify_quadratic(primes):
     require(upper < SCALE // 4, "quadratic monotonicity domain")
     require(prefix_tail == 27144070771294538066, "continuation at 6997")
     print("The quadratic continuation accepts 139.1 and has threshold below 139.26")
-    return prefix_tail
+    require(captured is not None, "capture is outside the verified continuation")
+    return captured
 
 
 def main():
