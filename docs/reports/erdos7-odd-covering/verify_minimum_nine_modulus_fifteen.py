@@ -73,6 +73,15 @@ def main():
             f"early mixed losses have insufficient reserve: {early_mixed_bound}, "
             f"{no_twenty_one_or_thirty_five}, {no_sixty_three_or_one_hundred_five}, {smaller_fifteen}"
         )
+    overlap_of_fifteen_and_thirty_five = Fraction(48, 3895)
+    overlap_of_fifteen_and_sixty_three = Fraction(4, 205) * Fraction(4, 19)
+    aligned_without_sixty_three = no_sixty_three - charge_at_seven * overlap_of_fifteen_and_thirty_five
+    aligned_without_one_hundred_five = no_twenty_one - charge_at_seven * (
+        Fraction(48, 3895) + overlap_of_fifteen_and_thirty_five
+        + overlap_of_fifteen_and_sixty_three
+    )
+    if not max(aligned_without_sixty_three, aligned_without_one_hundred_five) < Fraction(999, 1000):
+        raise ValueError("phase overlap constraints have insufficient reserve")
     print(f"Tail threshold {upper_tail}/{SCALE}, prefix seed {seed}/{PREFIX_SCALE}")
     print(f"{count} stages at primes 11 through {PREFIX}")
     print(f"Total {total}/{PREFIX_SCALE}, reserve above 1/500")
@@ -89,6 +98,8 @@ def main():
     print(f"Missing 21 and 35 give bound {no_twenty_one_or_thirty_five}")
     print(f"Missing 21, 63 and 105 give bound {no_sixty_three_or_one_hundred_five}")
     print(f"Missing 21 and 63 with ternary 15 mass at most 9/25 gives bound {smaller_fifteen}")
+    print(f"Missing 21 and 63 with 15 and 35 aligned modulo 5 gives bound {aligned_without_sixty_three}")
+    print(f"Missing 21 and 105 with both phase alignments gives bound {aligned_without_one_hundred_five}")
 
 
 if __name__ == "__main__":
