@@ -19,20 +19,22 @@ For a selected set \(\mathcal{E}\) of actual classes assigned to \(7\),
 bound the conditional probability of \(B_7\) by the probability of its
 remaining union \(B_7'\) plus the sum of the probabilities of \(C\in\mathcal{E}\).
 As in the preceding proof, conditional on \(x_3,x_5\) this bounds the
-suffix by
+suffix by the expression below after comparing the expectation of
+\(\Phi_7\) at prime \(7\) from above by the nested cap envelope
+\(G(x_3,x_5)\).
 \[
 J(x_3,x_5)+w_7\sum_{C\in\mathcal{E}}\Pr(C\mid x_3,x_5),
 \qquad
-J=\mathbb E[\Phi_7\mid x_3,x_5]+w_7\Pr(B_7'\mid x_3,x_5).
+J=G(x_3,x_5)+w_7\Pr(B_7'\mid x_3,x_5).
 \]
-The lower replay at zero clipping gives \(\mathbb E[\Phi_7\mid
-x_3,x_5]\ge b_5\) through the state with all nontrivial processed
-weights set to zero, so \(J\ge b_5\).
+The lower replay at zero clipping bounds \(G(x_3,x_5)\) below by
+\(b_5\) through the state with all nontrivial processed weights set
+to zero, so \(J\ge b_5\).
 Restricting at \(5\) applies the \(b_5\) credit to \(J\) and
 integrates the selected terms on \(B_5^{\mathrm c}\).
 Since \(C_{15}\subseteq B_5\), the resulting upper bound is
 \[
-\mathbb E\Phi_7+w_5\Pr(B_5)+w_7\Pr(B_7')
+\mathbb E G+w_5\Pr(B_5)+w_7\Pr(B_7')
 +w_7\sum_{C\in\mathcal{E}}\Pr(C\setminus C_{15}).
 \]
 It uses the same suffix and product law as the full-slot bound \(U\).
