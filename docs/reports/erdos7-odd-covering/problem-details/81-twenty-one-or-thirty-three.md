@@ -7,6 +7,9 @@ must have a class of modulus \(33\). If modulus \(11\) occurs, its class
 cannot contain the class of modulus \(33\), since such a class of modulus
 \(33\) could be deleted without changing the union.
 
+A least-modulus-\(9\) cover omitting \(21\) must also contain \(25\)
+and a \(27\)-class disjoint from its \(9\)-class. [Pure-power constraints](82-pure-prime-power-constraints.md)
+
 Use the clipping schedule, the prime-\(5\) charge coefficient \(1-b\)
 with \(b=3/100\), and the quadratic continuation from the preceding
 proof. With \(21\) and \(33\) absent, the only new omission in the suffix
