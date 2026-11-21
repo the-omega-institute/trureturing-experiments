@@ -287,12 +287,16 @@ int main() {
         require(floor_with_terminal[1] >= credit_at_seven, "prime-7 credit exceeds suffix floor");
         auto floor_with_zero_clipping = floor_with_terminal;
         extend_floor(floor_with_zero_clipping, 7, 0, false, scale - credit_at_seven, true);
+        auto floor_without_square_at_seven = floor_with_terminal;
+        extend_floor(floor_without_square_at_seven, 7, 0, true, scale - credit_at_seven, true);
         extend_floor(floor_with_terminal, 7, clipping_with_twenty_one, true,
                      scale - credit_at_seven, true);
         constexpr Integer credit_at_five = 3486 * Integer(scale) / 100'000;
         require(floor_with_terminal[1] >= credit_at_five, "prime-5 credit exceeds suffix floor");
         require(floor_with_zero_clipping[1] >= credit_at_five,
                 "prime-5 credit exceeds suffix floor at zero clipping");
+        require(floor_without_square_at_seven[1] >= credit_at_five,
+                "prime-5 credit exceeds suffix floor without 49 at zero clipping");
         const auto seven_no_square = extend(
             continuation, 7, clipping_with_twenty_one, false, true, scale - credit_at_seven);
         const auto five_no_square = extend(
@@ -304,6 +308,18 @@ int main() {
             unrestricted_at_seven, 5, 0, false, false, scale - credit_at_five);
         const Integer early_mixed_bound = ternary_average(
             unrestricted_at_five, unrestricted_at_five);
+        const Integer early_bound_with_limited_ternary_union = ternary_average(
+            unrestricted_at_five, unrestricted_at_five, 15, 13);
+        const auto zero_clipping_without_twenty_five = extend(
+            unrestricted_at_seven, 5, 0, false, true, scale - credit_at_five);
+        const Integer early_bound_without_twenty_five = ternary_average(
+            zero_clipping_without_twenty_five, zero_clipping_without_twenty_five);
+        const auto zero_clipping_without_forty_nine = extend(
+            continuation, 7, 0, false, true, scale - credit_at_seven);
+        const auto zero_clipping_without_both_squares = extend(
+            zero_clipping_without_forty_nine, 5, 0, false, true, scale - credit_at_five);
+        const Integer early_bound_without_both_squares = ternary_average(
+            zero_clipping_without_both_squares, zero_clipping_without_both_squares);
         require(0 < missing_three && missing_three < missing_both && missing_both < scale
                 && 0 <= lower && lower < scale,
                 "invalid phase comparison bounds");
@@ -312,7 +328,10 @@ int main() {
                   << std::int64_t(lower) << ' ' << std::int64_t(zero_tail) << ' '
                   << std::int64_t(limited_ternary_union) << ' ' << std::int64_t(no_twenty_one_or_square)
                   << ' ' << std::int64_t(no_small_powers) << ' '
-                  << std::int64_t(early_mixed_bound) << '\n';
+                  << std::int64_t(early_mixed_bound) << ' '
+                  << std::int64_t(early_bound_with_limited_ternary_union) << ' '
+                  << std::int64_t(early_bound_without_twenty_five) << ' '
+                  << std::int64_t(early_bound_without_both_squares) << '\n';
     } catch (const std::exception& error) {
         std::cerr << error.what() << '\n';
         return 1;

@@ -30,7 +30,9 @@ def main():
             capture_output=True, check=True,
         )
     (count, total, missing_both, missing_three, suffix_floor, zero_tail, limited_ternary_union,
-     no_twenty_one_or_square, no_small_powers, early_mixed_bound) = map(int, result.stdout.split())
+     no_twenty_one_or_square, no_small_powers, early_mixed_bound,
+     early_bound_with_limited_ternary_union, early_bound_without_twenty_five,
+     early_bound_without_both_squares) = map(int, result.stdout.split())
     if count != sum(primes[11:PREFIX + 1]):
         raise ValueError("prefix prime count disagrees with the continuation sieve")
     if not 500 * total < 499 * PREFIX_SCALE:
@@ -82,6 +84,18 @@ def main():
     )
     if not max(aligned_without_sixty_three, aligned_without_one_hundred_five) < Fraction(999, 1000):
         raise ValueError("phase overlap constraints have insufficient reserve")
+    aligned_ternary_bounds = []
+    for raw, ternary_cap, root_haar_mass, quinary_cap, septenary_cap in (
+        (early_bound_with_limited_ternary_union, Fraction(15, 13), Fraction(2, 9), Fraction(4, 19), Fraction(6, 41)),
+        (early_bound_without_both_squares, Fraction(6, 5), Fraction(2, 9), Fraction(20, 99), Fraction(42, 293)),
+        (early_bound_without_twenty_five, Fraction(6, 5), Fraction(5, 27), Fraction(20, 99), Fraction(6, 41)),
+    ):
+        full = (charge_at_five * quinary_cap + charge_at_seven * septenary_cap) * ternary_cap / 3
+        shared = (charge_at_five * quinary_cap
+                  + charge_at_seven * septenary_cap * (1 - quinary_cap)) * ternary_cap * root_haar_mass
+        aligned_ternary_bounds.append(Fraction(raw, PREFIX_SCALE) - full + shared)
+    if not max(aligned_ternary_bounds) < Fraction(999, 1000):
+        raise ValueError("ternary alignment exclusions have insufficient reserve")
     print(f"Tail threshold {upper_tail}/{SCALE}, prefix seed {seed}/{PREFIX_SCALE}")
     print(f"{count} stages at primes 11 through {PREFIX}")
     print(f"Total {total}/{PREFIX_SCALE}, reserve above 1/500")
@@ -100,6 +114,9 @@ def main():
     print(f"Missing 21 and 63 with ternary 15 mass at most 9/25 gives bound {smaller_fifteen}")
     print(f"Missing 21 and 63 with 15 and 35 aligned modulo 5 gives bound {aligned_without_sixty_three}")
     print(f"Missing 21 and 105 with both phase alignments gives bound {aligned_without_one_hundred_five}")
+    print(f"Aligned 9, 15 and 21 with ternary union at most 2/15 gives bound {aligned_ternary_bounds[0]}")
+    print(f"Aligned 9, 15 and 21 without 25 or 49 gives bound {aligned_ternary_bounds[1]}")
+    print(f"Aligned 9, 15, 21 and 27 without 25 gives bound {aligned_ternary_bounds[2]}")
 
 
 if __name__ == "__main__":
