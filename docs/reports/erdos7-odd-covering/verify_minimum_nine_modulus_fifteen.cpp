@@ -285,15 +285,25 @@ int main() {
         }
         constexpr Integer credit_at_seven = 81 * Integer(scale) / 10'000;
         require(floor_with_terminal[1] >= credit_at_seven, "prime-7 credit exceeds suffix floor");
+        auto floor_with_zero_clipping = floor_with_terminal;
+        extend_floor(floor_with_zero_clipping, 7, 0, false, scale - credit_at_seven, true);
         extend_floor(floor_with_terminal, 7, clipping_with_twenty_one, true,
                      scale - credit_at_seven, true);
         constexpr Integer credit_at_five = 3486 * Integer(scale) / 100'000;
         require(floor_with_terminal[1] >= credit_at_five, "prime-5 credit exceeds suffix floor");
+        require(floor_with_zero_clipping[1] >= credit_at_five,
+                "prime-5 credit exceeds suffix floor at zero clipping");
         const auto seven_no_square = extend(
             continuation, 7, clipping_with_twenty_one, false, true, scale - credit_at_seven);
         const auto five_no_square = extend(
             seven_no_square, 5, 0, false, true, scale - credit_at_five);
         const Integer no_small_powers = ternary_average(five_no_square, five_no_square, 54, 47);
+        const auto unrestricted_at_seven = extend(
+            continuation, 7, 0, false, false, scale - credit_at_seven);
+        const auto unrestricted_at_five = extend(
+            unrestricted_at_seven, 5, 0, false, false, scale - credit_at_five);
+        const Integer early_mixed_bound = ternary_average(
+            unrestricted_at_five, unrestricted_at_five);
         require(0 < missing_three && missing_three < missing_both && missing_both < scale
                 && 0 <= lower && lower < scale,
                 "invalid phase comparison bounds");
@@ -301,7 +311,8 @@ int main() {
                   << std::int64_t(missing_both) << ' ' << std::int64_t(missing_three) << ' '
                   << std::int64_t(lower) << ' ' << std::int64_t(zero_tail) << ' '
                   << std::int64_t(limited_ternary_union) << ' ' << std::int64_t(no_twenty_one_or_square)
-                  << ' ' << std::int64_t(no_small_powers) << '\n';
+                  << ' ' << std::int64_t(no_small_powers) << ' '
+                  << std::int64_t(early_mixed_bound) << '\n';
     } catch (const std::exception& error) {
         std::cerr << error.what() << '\n';
         return 1;

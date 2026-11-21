@@ -25,6 +25,9 @@ the union. The same deletion argument requires the \(45\)-class from the
 earlier phase constraint to be disjoint from the \(15\)-class as well.
 [Earlier phase constraint](80-aligned-nine-and-fifteen-force-21.md)
 
+A cover omitting \(21\) must also include \(35\) and at least one of
+\(63\) and \(105\). [Mixed modulus constraints](83-early-mixed-modulus-constraints.md)
+
 ## Reference measures
 
 Remove the pure power classes at each prime from its uniform reference
