@@ -7,6 +7,11 @@ one and with \(3,5,7,15\) all absent leaves an integer uncovered. The
 argument allows \(21\) and arbitrary original residues, prime-power
 exponents and finite prime support.
 
+If the residues modulo \(9\) and \(15\) agree modulo \(3\), a cover
+of least modulus \(9\) must also contain modulus \(21\). When \(21\) is
+absent, the class of modulus \(45\) must occur outside the class of
+modulus \(9\). [Proof of both constraints](80-aligned-nine-and-fifteen-force-21.md)
+
 ## Joint comparison through prime \(80021\)
 
 Use the normalized pure-power reference measures and the joint
