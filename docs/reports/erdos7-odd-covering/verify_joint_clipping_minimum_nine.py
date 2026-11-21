@@ -98,6 +98,20 @@ def run():
     if 1000 * total >= 987 * SCALE:
         raise ValueError("reserve smaller than 13/1000")
     print(f"{count} large-prefix steps give total {total}/{SCALE} and reserve above 13/1000")
+    verify_phase_constraints(Fraction(total, SCALE))
+
+
+def verify_phase_constraints(base):
+    root_cap = Fraction(4, 15)
+    debit_45 = Fraction(8, 285)
+    debit_63 = Fraction(4, 205)
+    bound_without_15 = base + Fraction(6, 41) * root_cap - debit_45
+    bound_without_21 = base + Fraction(4, 19) * root_cap - debit_45 - debit_63
+    if bound_without_15 >= 1 - Fraction(2, 1000):
+        raise ValueError("insufficient reserve when modulus 15 is absent")
+    if bound_without_21 >= 1 - Fraction(4, 1000):
+        raise ValueError("insufficient reserve when modulus 21 is absent")
+    print("The phase constraints have reserve above 2/1000 and 4/1000")
 
 
 if __name__ == '__main__':

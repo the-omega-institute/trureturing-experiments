@@ -122,3 +122,70 @@ final mass yields an uncovered integer.
 
 Run the [exact verifier](../verify_joint_clipping_minimum_nine.py)
 with Python 3.12 or later from the repository root.
+
+## A phase constraint from the modulus-nine class
+
+Suppose a distinct odd cover has least modulus \(9\). A modulus in this
+section is **inactive** if it is absent or its whole class is contained
+in the class of modulus \(9\). Then both of the following constraints
+hold.
+
+- If \(15\) is absent and the \(21\)-class agrees with the \(9\)-class
+  modulo \(3\), then \(45\) is present and its class is active.
+- If \(21\) is absent and the \(15\)-class agrees with the \(9\)-class
+  modulo \(3\), then at least one of \(45\) and \(63\) is present with
+  an active class.
+
+Delete any classes contained in the \(9\)-class before running the same
+proof. This preserves the union and the pure-power reference laws at
+\(3,5,7\). Let \(\lambda\) be the normalized Haar law on the surviving
+ternary coordinate after removing every pure \(3\)-power class.
+For a present class of modulus \(j\in\{15,21\}\), let \(\lambda_j\)
+be the mass of its ternary residue modulo \(3\). Set \(\lambda_j=0\)
+when the class is absent. On the root specified by the \(9\)-class, the
+pure survivors have Haar mass at most \(1/3-1/9=2/9\).
+The total surviving Haar mass is at least \(5/6\), so this
+root has \(\lambda\)-mass at most \(4/15\).
+
+The clipping parameters at \(3,5,7\) are zero. Under the original
+normalized distortion law their marginal is consequently the
+product of the three pure-power reference laws. At \(5\) and \(7\)
+the charged probability is bounded above by the sum of the individual
+mixed class probabilities under this same product. The two slots
+\(15\) and \(21\) were excluded in the preceding calculation.
+If present, their contributions here are at most
+\((4/19)\lambda_{15}\) and \((6/41)\lambda_{21}\), respectively,
+using the cap at the other prime.
+
+The completed ledger at \(5\) included the \(45\)-slot with
+coefficient \((4/19)(6/5)3^{-2}=8/285\). At \(7\) it included the
+\(63\)-slot with coefficient \((6/41)(6/5)3^{-2}=4/205\).
+If either is inactive, remove its coefficient from the corresponding
+completed upper bound. Each subtraction removes a term from the
+completed sum of cylinder caps. The bound for the joint suffix starting
+at \(11\), including the terminal query, uses the same three-coordinate
+product and the same caps as above. In particular, it is independent
+of which of these four early slots occurred. The early loss sum is
+linear in the admitted slots since the clipping parameters there are zero.
+
+Let \(C_0=986888733243508975907980/10^{24}\) be the outward-rounded
+bound above with both \(15\) and \(21\) absent and both \(45\) and
+\(63\) completed. The exact auxiliary upper expression computed before
+rounding is the sum of the two completed early losses and the joint
+suffix evaluated on that product comparison law. Each changed slot
+adds or removes the indicated expected contribution before rounding.
+The unchanged suffix permits the same \(C_0\) to serve in the
+resulting bound
+\[
+ C_0+\frac4{19}\lambda_{15}+\frac6{41}\lambda_{21}
+  -\frac8{285}\mathbf 1_{\{45\ {\rm inactive}\}}
+  -\frac4{205}\mathbf 1_{\{63\ {\rm inactive}\}}.
+\]
+If this expression is below one, restriction to survivors followed
+by the same RH continuation leaves an uncovered integer.
+
+Under the first set of excluded conditions, this bound is at most
+\(C_0+(6/41)(4/15)-8/285<1-2/1000\).
+Under the second it is at most
+\(C_0+(4/19)(4/15)-8/285-4/205<1-4/1000\).
+The same verifier checks both strict margins.
