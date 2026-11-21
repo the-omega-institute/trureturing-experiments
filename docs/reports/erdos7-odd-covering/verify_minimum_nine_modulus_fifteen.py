@@ -30,7 +30,7 @@ def main():
             capture_output=True, check=True,
         )
     (count, total, missing_both, missing_three, suffix_floor, zero_tail, limited_ternary_union,
-     no_twenty_one_or_square, no_small_powers) = map(int, result.stdout.split())
+     no_twenty_one_or_square, no_small_powers, early_mixed_bound) = map(int, result.stdout.split())
     if count != sum(primes[11:PREFIX + 1]):
         raise ValueError("prefix prime count disagrees with the continuation sieve")
     if not 500 * total < 499 * PREFIX_SCALE:
@@ -60,6 +60,19 @@ def main():
         raise ValueError("limited ternary union has insufficient reserve")
     if not 50_000 * max(no_twenty_one_or_square, no_small_powers) < 49_999 * PREFIX_SCALE:
         raise ValueError("missing-square comparisons have insufficient reserve")
+    charge_at_seven = 1 - Fraction(81, 10_000)
+    charge_at_five = 1 - Fraction(3486, 100_000)
+    no_twenty_one = Fraction(early_mixed_bound, PREFIX_SCALE) - charge_at_seven * Fraction(12, 205)
+    no_twenty_one_or_thirty_five = no_twenty_one - charge_at_seven * Fraction(24, 779)
+    no_sixty_three = no_twenty_one - charge_at_seven * Fraction(4, 205)
+    no_sixty_three_or_one_hundred_five = no_sixty_three - charge_at_seven * Fraction(48, 3895)
+    smaller_fifteen = no_sixty_three - charge_at_five * Fraction(4, 19) * (Fraction(2, 5) - Fraction(9, 25))
+    if not max(no_twenty_one_or_thirty_five, no_sixty_three_or_one_hundred_five,
+               smaller_fifteen) < Fraction(9995, 10_000):
+        raise ValueError(
+            f"early mixed losses have insufficient reserve: {early_mixed_bound}, "
+            f"{no_twenty_one_or_thirty_five}, {no_sixty_three_or_one_hundred_five}, {smaller_fifteen}"
+        )
     print(f"Tail threshold {upper_tail}/{SCALE}, prefix seed {seed}/{PREFIX_SCALE}")
     print(f"{count} stages at primes 11 through {PREFIX}")
     print(f"Total {total}/{PREFIX_SCALE}, reserve above 1/500")
@@ -72,6 +85,10 @@ def main():
     print(f"Missing 21 and ternary union at most 5/36 give bound {limited_ternary_union}/{PREFIX_SCALE}")
     print(f"Missing 21 and 25 give bound {no_twenty_one_or_square}/{PREFIX_SCALE}")
     print(f"Missing 25, 27 and 49 give bound {no_small_powers}/{PREFIX_SCALE}")
+    print(f"All early mixed slots give bound {early_mixed_bound}/{PREFIX_SCALE}")
+    print(f"Missing 21 and 35 give bound {no_twenty_one_or_thirty_five}")
+    print(f"Missing 21, 63 and 105 give bound {no_sixty_three_or_one_hundred_five}")
+    print(f"Missing 21 and 63 with ternary 15 mass at most 9/25 gives bound {smaller_fifteen}")
 
 
 if __name__ == "__main__":
