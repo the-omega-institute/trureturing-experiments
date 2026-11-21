@@ -5,6 +5,7 @@ It contains modulus \(15\). If modulus \(21\) is absent, the classes of
 moduli \(9\) and \(15\) have different residues modulo \(3\), and modulus
 \(45\) occurs with a class outside the class of modulus \(9\). The proof
 allows arbitrary residues and prime-power exponents.
+[Absence of modulus \(21\) also forces modulus \(33\)](81-twenty-one-or-thirty-three.md)
 [Presence of modulus \(15\)](79-least-modulus-nine-forces-15.md)
 
 ## Restricting at prime five
