@@ -1,5 +1,7 @@
 # Necessary small moduli when the least modulus is nine
 
+The joint comparison gives the stronger conclusion that [least modulus nine forces 15 or 21](78-least-modulus-nine-forces-15-or-21.md).
+
 A distinct odd cover whose least modulus is \(9\) must include at least
 one of \(15,21,33\) and at least one of \(15,21,45\). In particular, if
 \(15\) and \(21\) are both absent, then \(33\) and \(45\) must both occur.
