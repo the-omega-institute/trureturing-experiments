@@ -95,13 +95,14 @@ Integer expectation(Integer fixed, Integer positive, int prime,
 }
 
 Comparison extend(const Comparison& continuation, int prime, int clipping, bool omit_ternary_slot) {
-    const int divisor = prime <= 7 ? prime : 1;
-    const int density_denominator = prime <= 7 ? prime * (prime - 1) - 1 : prime - 2;
+    const int divisor = prime <= 11 ? prime : 1;
+    const int density_denominator = prime <= 7 ? prime * (prime - 1) - 1 : divisor * (prime - 2);
     const int intercept = divisor + (omit_ternary_slot ? prime - 1 : 0);
     const int threshold = 100 * intercept + clipping * density_denominator;
     const Integer cap_numerator = 100 * divisor * (prime - 1);
     const Integer cap_denominator = (100 - clipping) * density_denominator;
-    require(!omit_ternary_slot || prime == 5 || prime == 7, "unexpected omitted slot");
+    require(!omit_ternary_slot || prime == 5 || prime == 7 || prime == 11,
+            "unexpected omitted slot");
     require(cap_numerator <= prime * cap_denominator, "invalid comparison cap");
     require(threshold <= 100 * divisor * width, "low-state table misses clipping threshold");
 
@@ -205,9 +206,11 @@ int main() {
             continuation.values[state] = Integer(tail) * state * state;
         }
         const auto primes = primes_through_endpoint();
-        for (auto p = primes.rbegin(); p != primes.rend(); ++p) {
+        for (auto p = primes.rbegin(); p != primes.rend() && *p > 11; ++p) {
             continuation = extend(continuation, *p, clipping_for_prime(*p), false);
         }
+        const auto eleven_without_thirty_three = extend(continuation, 11, clipping_for_prime(11), true);
+        continuation = extend(continuation, 11, clipping_for_prime(11), false);
         const Comparison before_seven = extend(continuation, 7, 17, false);
         const Comparison zero = extend(before_seven, 5, 0, false);
         const Comparison positive = extend(before_seven, 5, 0, true);
@@ -219,11 +222,18 @@ int main() {
         const auto aligned_zero = extend(seven_zero, 5, 0, false);
         const auto aligned_positive = extend(seven_positive, 5, 0, true);
         const Integer missing_both = ternary_average(aligned_zero, aligned_positive);
+        const auto seven_without_thirty_three = extend(
+            eleven_without_thirty_three, 7, clipping_without_twenty_one, true);
+        const auto before_five_without_thirty_three = extend(
+            seven_without_thirty_three, 5, 0, true);
+        const Integer missing_three = ternary_average(aligned_zero, before_five_without_thirty_three);
         const Integer lower = suffix_floor(primes);
-        require(0 < missing_both && missing_both < scale && 0 <= lower && lower < scale,
+        require(0 < missing_three && missing_three < missing_both && missing_both < scale
+                && 0 <= lower && lower < scale,
                 "invalid phase comparison bounds");
         std::cout << primes.size() << ' ' << std::int64_t(total) << ' '
-                  << std::int64_t(missing_both) << ' ' << std::int64_t(lower) << '\n';
+                  << std::int64_t(missing_both) << ' ' << std::int64_t(missing_three) << ' '
+                  << std::int64_t(lower) << '\n';
     } catch (const std::exception& error) {
         std::cerr << error.what() << '\n';
         return 1;
