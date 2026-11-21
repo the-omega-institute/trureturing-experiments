@@ -122,3 +122,32 @@ repository root with Python 3.12 or later and a GCC or Clang C++17
 compiler with signed 128-bit integers and undefined-behavior sanitization.
 It computes the continuation, compiles the integer prefix replay in
 a temporary directory, and verifies the strict reserve.
+
+## Limit of this comparison when modulus fifteen is allowed
+
+Keep the clipping schedule of this report and allow every mixed slot.
+The resulting scalar comparison exceeds \(1.01\) even with zero terminal
+charge and the \(3/100\) [credit for loss at \(5\)](80-aligned-nine-and-fifteen-force-21.md).
+This gives a lower bound on the particular comparison value.
+
+For a lower replay, start with zero after \(1999\), keep the first branch
+of every joint envelope, and retain only states \(1\le D\le800\).
+Sum the retained geometric point probabilities, rounding each
+nonnegative contribution and the clipping charge downward. At \(3\)
+use mass \(3/5\) at zero depth and retain the positive-depth points
+within the same cutoff. Dropping later stages, replacing a maximum by
+its first branch, and discarding transitions to larger states can only
+decrease the comparison. The remaining unweighted value is at least
+\[
+\frac{101782228988757}{10^{14}} .
+\]
+At \(5\) the completed unweighted charge is
+\(\mathbb E T_3/d_5=3/19\), and its coefficient enters linearly because
+\(\delta_5=0\). After crediting \(3/100\) of that charge the lower bound is
+\[
+\frac{1924862350786383}{1900000000000000}>\frac{101}{100}.
+\]
+Increasing the terminal value preserves this lower bound by
+monotonicity. In the unrestricted modulus-\(9\) branch, this clipping
+schedule therefore needs a stronger estimate within the finite prefix
+even if the bound for primes beyond \(80021\) is replaced by zero.
