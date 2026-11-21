@@ -1,5 +1,7 @@
 # Least modulus nine forces 15 or 21
 
+The extended joint comparison proves that [least modulus nine forces 15](79-least-modulus-nine-forces-15.md).
+
 Every finite distinct odd cover with least modulus \(9\) contains a
 class of modulus \(15\) or \(21\). More generally, a distinct odd family
 with no moduli \(3,5,7,15,21\) leaves an integer uncovered. The residues,
