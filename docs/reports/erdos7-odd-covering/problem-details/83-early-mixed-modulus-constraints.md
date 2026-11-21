@@ -22,20 +22,26 @@ two mixed events under that product, with a class assigned by its
 largest prime factor. For any fixed complete terminal query, use the
 joint upper envelope \(\Phi_7\) for the conditional suffix cost given
 all three coordinates, starting at \(11\). The lower replay from the
-preceding result gives \(\Phi_7\ge b_7=81/10000\). After restricting at
-\(7\), a conditional upper bound given the coordinates at \(3,5\) is
+preceding result gives \(\Phi_7\ge b_7=81/10000\).
+
+For fixed earlier coordinates \(x_3,x_5\), compare
+\(\mathbb E[\Phi_7\mid x_3,x_5]\) from above by \(G(x_3,x_5)\).
+Here \(G\) evaluates \(\Phi_7\) with nested prime-\(7\) indicators
+of cap \(\rho_7\), using the same remaining weights at \(3,5\).
+The directional convex comparison applies to those indicators with
+the earlier weights fixed. After restricting at \(7\), the suffix
+cost is therefore bounded above by
 \[
 (1-b_7)\Pr(B_7\mid x_3,x_5)
-+\mathbb E[\Phi_7\mid x_3,x_5].
++G(x_3,x_5).
 \]
-The second term is bounded below by its value when the suffix input
-weights with nontrivial \(3\)- or \(5\)-parts are set to zero. The same
-lower replay, including the \(7\)-step at zero clipping with the
-ordinary reference cap, certifies a lower bound \(b_5=3486/100000\) at
-that state. The first term is nonnegative. Restricting at \(5\) then
-gives the joint upper bound
+The function \(G\) is increasing in the earlier input weights.
+Setting the weights with nontrivial \(3\)- or \(5\)-parts to zero
+gives its lower comparison state. The replay with zero clipping and
+cap \(\rho_7\) at \(7\) certifies \(G(x_3,x_5)\ge b_5=3486/100000\).
+Restricting at \(5\) then gives the joint upper bound
 \[
-\mathbb E\Phi_7 +(1-b_5)\Pr(B_5)+(1-b_7)\Pr(B_7).
+\mathbb E G +(1-b_5)\Pr(B_5)+(1-b_7)\Pr(B_7).
 \]
 This bounds the probability of coverage through \(80021\) plus the
 terminal second moment on the survivors, on one normalized law.
@@ -49,8 +55,9 @@ A mixed numerical slot with prime exponents \(e_p\) has mass at most
 over the slots coincide with the expected linear charges of the
 auxiliary comparison, since \(\Pr(T_p\ge e)=M_p(e)\) for \(e>0\)
 and the auxiliary exponents at these three stages are independent.
-The upper replay for the full slot sums and the common suffix
-expectation gives
+Applying the directional convex comparison at \(5\) and \(3\) also
+bounds \(\mathbb E G\) by the common nested suffix expectation. The
+upper replay for that expectation and the full slot sums gives
 \[
 U=\frac{108496429444579}{10^{14}}.
 \]
