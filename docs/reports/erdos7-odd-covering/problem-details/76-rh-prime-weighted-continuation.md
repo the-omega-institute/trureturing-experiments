@@ -235,3 +235,35 @@ for both comparisons. The star family rules out reaching all heads
 by uniformly improving this second-moment continuation alone.
 
 Run the [exact verifier](../verify_rh_prime_continuation.py) with Python 3.12 or later from the repository root.
+
+## An unconditional input with the same constants
+
+Both tail calculations use only
+\(\lvert\vartheta(x)-x\rvert\le\varepsilon_T x\) for \(x\ge T\).
+The RH proof supplies that inequality as above. Published explicit
+bounds also give the same two choices of \(\varepsilon_T\) unconditionally.
+
+For \(1423\le x\le10^{19}\), Büthe's Theorem 2, (1.6) and (1.7),
+gives \(0<x-\vartheta(x)\le1.95\sqrt{x}\). Hence for
+\(T\le x\le10^{19}\),
+\[
+ \frac{|\vartheta(x)-x|}{x}
+ \le \frac{2}{\lfloor\sqrt{T}\rfloor}.
+\]
+At \(T=200000\), this is at most \(169/(24\cdot447)\).
+At \(T=5000000\), it is at most \(256/(24\cdot2236)\).
+[Büthe, Theorem 2](https://arxiv.org/abs/1511.02032v2)
+
+For \(x>10^{19}\), use the \(\log X_0=\log X_1=20\) row of
+Broadbent–Kadiri–Lumley–Ng–Wilk, Table 14.
+Since \(e^{20}<10^{19}\), their lower and upper relative errors
+are at most \(9.1639\cdot10^{-5}\) and \(4.2676\cdot10^{-5}\),
+respectively. Both are smaller than the two rational
+\(\varepsilon_T\) values. The ranges therefore cover every
+\(x\ge T\) in each calculation.
+[Broadbent–Kadiri–Lumley–Ng–Wilk, Theorem 1 and Table 14](https://arxiv.org/abs/2002.11068)
+
+These estimates can be substituted directly at the partial-summation
+step in both continuations. The same rational inequalities then prove
+the stated cutoffs, the second-moment threshold, and the applications
+to least modulus nine without invoking the full Riemann hypothesis.
