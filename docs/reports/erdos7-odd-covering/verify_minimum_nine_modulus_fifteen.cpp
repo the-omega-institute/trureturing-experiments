@@ -93,10 +93,12 @@ Integer expectation(Integer fixed, Integer positive, int prime,
         cap_numerator * (prime * positive - fixed), prime * cap_denominator);
 }
 
-Comparison extend(const Comparison& continuation, int prime, int clipping, bool omit_ternary_slot) {
-    const int divisor = prime <= 11 ? prime : 1;
-    const int density_denominator = prime <= 7 ? prime * (prime - 1) - 1 : divisor * (prime - 2);
-    const int intercept = divisor + (omit_ternary_slot ? prime - 1 : 0);
+Comparison extend(const Comparison& continuation, int prime, int clipping, bool omit_ternary_slot,
+                  bool omit_square = false, Integer charge = scale) {
+    require(!omit_square || prime == 5 || prime == 7, "unexpected omitted square");
+    const int divisor = omit_square ? prime * prime : (prime <= 11 ? prime : 1);
+    const int density_denominator = prime <= 7 ? divisor * (prime - 1) - 1 : divisor * (prime - 2);
+    const int intercept = divisor + (omit_ternary_slot ? divisor / prime * (prime - 1) : 0);
     const int threshold = 100 * intercept + clipping * density_denominator;
     const Integer cap_numerator = 100 * divisor * (prime - 1);
     const Integer cap_denominator = (100 - clipping) * density_denominator;
@@ -111,8 +113,8 @@ Comparison extend(const Comparison& continuation, int prime, int clipping, bool 
             continuation.quadratic * cap_numerator * (3 * prime - 1),
             cap_denominator * previous * previous),
         continuation.linear + ceiling(
-            (continuation.linear + scale) * 100 * divisor, cap_denominator),
-        continuation.constant - Integer(scale) * threshold / cap_denominator,
+            (continuation.linear + charge) * 100 * divisor, cap_denominator),
+        continuation.constant - charge * threshold / cap_denominator,
         std::vector<Integer>(width + 1),
     };
     const auto geometric = weights(prime);
@@ -127,11 +129,11 @@ Comparison extend(const Comparison& continuation, int prime, int clipping, bool 
             const Integer smaller_cap = expectation(
                 fixed, positive, prime, divisor * (prime - 1), local_denominator);
             // Subtract a lower rounding of (bar c - c(a))/bar c.
-            const Integer deduction = Integer(scale) * (100 * local_denominator - cap_denominator)
+            const Integer deduction = charge * (100 * local_denominator - cap_denominator)
                 / (100 * local_denominator);
             future = std::max(smaller_cap, future - deduction);
         }
-        next.values[state] = future + ceiling(Integer(scale) * std::max(0, above), cap_denominator);
+        next.values[state] = future + ceiling(charge * std::max(0, above), cap_denominator);
     }
     return next;
 }
@@ -154,9 +156,48 @@ std::vector<int> primes_through_endpoint() {
     return result;
 }
 
-Integer ternary_average(const Comparison& zero, const Comparison& positive) {
-    return ceiling(
-        3 * zero.values[1] + 6 * positive_expectation(positive, 3, 1, weights(3)), 5);
+Integer ternary_average(const Comparison& zero, const Comparison& positive,
+                       int cap_numerator = 6, int cap_denominator = 5) {
+    return expectation(zero.values[1], positive_expectation(positive, 3, 1, weights(3)),
+                       3, cap_numerator, cap_denominator);
+}
+
+Integer truncated_expectation(const std::vector<Integer>& future, int prime, int state,
+                              const GeometricWeights& geometric, Integer numerator,
+                              Integer denominator) {
+    const Integer zero_denominator = prime * denominator;
+    Integer total = (zero_denominator - numerator) * future[state] / zero_denominator;
+    const int cutoff = std::min((int(future.size()) - 1) / state, int(geometric.powers.size()) - 1);
+    for (int n = 2; n <= cutoff; ++n) {
+        total += numerator * (prime - 1) * future[state * n] / (denominator * geometric.powers[n]);
+    }
+    return total;
+}
+
+void extend_floor(std::vector<Integer>& future, int prime, int clipping,
+                  bool omit_square, Integer charge, bool both_branches) {
+    const int divisor = omit_square ? prime * prime : (prime <= 7 ? prime : 1);
+    const int density_denominator = prime <= 7 ? divisor * (prime - 1) - 1 : prime - 2;
+    const int capped_denominator = (100 - clipping) * density_denominator;
+    const int base_numerator = divisor * (prime - 1);
+    const auto geometric = weights(prime);
+    std::vector<Integer> next(future.size());
+    for (int state = 1; state < int(future.size()); ++state) {
+        const int excess = divisor * (state - 1);
+        const int above = 100 * excess - clipping * density_denominator;
+        const int denominator = above < 0 ? density_denominator - excess : capped_denominator;
+        const int numerator = above < 0 ? base_numerator : 100 * base_numerator;
+        Integer total = truncated_expectation(future, prime, state, geometric, numerator, denominator);
+        if (both_branches && above < 0) {
+            const auto capped = truncated_expectation(
+                future, prime, state, geometric, 100 * base_numerator, capped_denominator);
+            const auto deduction = ceiling(charge * (100 * denominator - capped_denominator),
+                                           100 * denominator);
+            total = std::max(total, capped - deduction);
+        }
+        next[state] = total + charge * std::max(0, above) / capped_denominator;
+    }
+    future.swap(next);
 }
 
 std::vector<Integer> first_branch_floor(const std::vector<int>& primes,
@@ -174,28 +215,7 @@ std::vector<Integer> first_branch_floor(const std::vector<int>& primes,
     for (auto it = suffix_primes.rbegin(); it != suffix_primes.rend(); ++it) {
         const int prime = *it;
         const int clipping = prime == 7 ? clipping_at_seven : clipping_for_prime(prime);
-        const int divisor = prime <= 7 ? prime : 1;
-        const int density_denominator = prime <= 7 ? prime * (prime - 1) - 1 : prime - 2;
-        const int capped_denominator = (100 - clipping) * density_denominator;
-        const auto geometric = weights(prime);
-        const int last_power = int(geometric.powers.size()) - 1;
-        std::vector<Integer> next(state_limit + 1);
-        for (int state = 1; state <= state_limit; ++state) {
-            const int excess = divisor * (state - 1);
-            const int above = 100 * excess - clipping * density_denominator;
-            const Integer cap_numerator = (above < 0 ? 1 : 100) * divisor * (prime - 1);
-            const Integer cap_denominator = above < 0 ? density_denominator - excess
-                                                     : capped_denominator;
-            const Integer denominator = prime * cap_denominator;
-            Integer total = (denominator - cap_numerator) * future[state] / denominator;
-            const int cutoff = std::min(state_limit / state, last_power);
-            for (int n = 2; n <= cutoff; ++n) {
-                total += cap_numerator * (prime - 1) * future[state * n]
-                    / (cap_denominator * geometric.powers[n]);
-            }
-            next[state] = total + Integer(scale) * std::max(0, above) / capped_denominator;
-        }
-        future.swap(next);
+        extend_floor(future, prime, clipping, false, scale, false);
     }
     return future;
 }
@@ -244,12 +264,44 @@ int main() {
         const Integer lower = first_branch_floor(primes, 7, 211, 400, clipping_without_twenty_one)[1];
         const Integer zero_tail = ternary_floor(
             first_branch_floor(primes, 5, 1999, 800, clipping_with_twenty_one));
+        constexpr Integer charge_at_five_without_twenty_one = 97 * Integer(scale) / 100;
+        const auto five_all_zero = extend(
+            seven_zero, 5, 0, false, false, charge_at_five_without_twenty_one);
+        const auto five_all_positive = extend(
+            seven_positive, 5, 0, false, false, charge_at_five_without_twenty_one);
+        const Integer limited_ternary_union = ternary_average(five_all_zero, five_all_positive, 36, 31);
+        const auto five_no_square_zero = extend(
+            seven_zero, 5, 0, false, true, charge_at_five_without_twenty_one);
+        const auto five_no_square_positive = extend(
+            seven_positive, 5, 0, false, true, charge_at_five_without_twenty_one);
+        const Integer no_twenty_one_or_square = ternary_average(
+            five_no_square_zero, five_no_square_positive);
+        std::vector<Integer> floor_with_terminal(1201);
+        for (int state = 1; state < int(floor_with_terminal.size()); ++state) {
+            floor_with_terminal[state] = Integer(tail) * state * state;
+        }
+        for (auto p = primes.rbegin(); p != primes.rend(); ++p) {
+            extend_floor(floor_with_terminal, *p, clipping_for_prime(*p), false, scale, true);
+        }
+        constexpr Integer credit_at_seven = 81 * Integer(scale) / 10'000;
+        require(floor_with_terminal[1] >= credit_at_seven, "prime-7 credit exceeds suffix floor");
+        extend_floor(floor_with_terminal, 7, clipping_with_twenty_one, true,
+                     scale - credit_at_seven, true);
+        constexpr Integer credit_at_five = 3486 * Integer(scale) / 100'000;
+        require(floor_with_terminal[1] >= credit_at_five, "prime-5 credit exceeds suffix floor");
+        const auto seven_no_square = extend(
+            continuation, 7, clipping_with_twenty_one, false, true, scale - credit_at_seven);
+        const auto five_no_square = extend(
+            seven_no_square, 5, 0, false, true, scale - credit_at_five);
+        const Integer no_small_powers = ternary_average(five_no_square, five_no_square, 54, 47);
         require(0 < missing_three && missing_three < missing_both && missing_both < scale
                 && 0 <= lower && lower < scale,
                 "invalid phase comparison bounds");
         std::cout << primes.size() << ' ' << std::int64_t(total) << ' '
                   << std::int64_t(missing_both) << ' ' << std::int64_t(missing_three) << ' '
-                  << std::int64_t(lower) << ' ' << std::int64_t(zero_tail) << '\n';
+                  << std::int64_t(lower) << ' ' << std::int64_t(zero_tail) << ' '
+                  << std::int64_t(limited_ternary_union) << ' ' << std::int64_t(no_twenty_one_or_square)
+                  << ' ' << std::int64_t(no_small_powers) << '\n';
     } catch (const std::exception& error) {
         std::cerr << error.what() << '\n';
         return 1;
