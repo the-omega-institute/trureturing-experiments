@@ -11,8 +11,7 @@ using Integer = __int128_t;
 constexpr std::int64_t scale = 100'000'000'000'000;
 constexpr int endpoint = 80'021;
 constexpr int width = 34'500;
-constexpr int floor_width = 400;
-constexpr int floor_endpoint = 211;
+constexpr int clipping_with_twenty_one = 17;
 constexpr int clipping_without_twenty_one = 3;
 
 // Right endpoint of each interval, with its clipping parameter in hundredths.
@@ -160,23 +159,28 @@ Integer ternary_average(const Comparison& zero, const Comparison& positive) {
         3 * zero.values[1] + 6 * positive_expectation(positive, 3, 1, weights(3)), 5);
 }
 
-Integer suffix_floor(const std::vector<int>& primes) {
+std::vector<Integer> first_branch_floor(const std::vector<int>& primes,
+                                       int first_prime, int last_prime, int state_limit,
+                                       int clipping_at_seven) {
     // Use the first branch only, with a zero terminal function and bounded states.
-    auto suffix_primes = primes;
-    suffix_primes.erase(std::upper_bound(suffix_primes.begin(), suffix_primes.end(), floor_endpoint),
-                        suffix_primes.end());
-    suffix_primes.insert(suffix_primes.begin(), 7);
-    std::array<Integer, floor_width + 1> future{};
+    std::vector<int> suffix_primes;
+    if (first_prime == 5) {
+        suffix_primes.push_back(5);
+    }
+    suffix_primes.push_back(7);
+    suffix_primes.insert(suffix_primes.end(), primes.begin(),
+                         std::upper_bound(primes.begin(), primes.end(), last_prime));
+    std::vector<Integer> future(state_limit + 1);
     for (auto it = suffix_primes.rbegin(); it != suffix_primes.rend(); ++it) {
         const int prime = *it;
-        const int clipping = prime == 7 ? clipping_without_twenty_one : clipping_for_prime(prime);
-        const int divisor = prime == 7 ? prime : 1;
-        const int density_denominator = prime == 7 ? prime * (prime - 1) - 1 : prime - 2;
+        const int clipping = prime == 7 ? clipping_at_seven : clipping_for_prime(prime);
+        const int divisor = prime <= 7 ? prime : 1;
+        const int density_denominator = prime <= 7 ? prime * (prime - 1) - 1 : prime - 2;
         const int capped_denominator = (100 - clipping) * density_denominator;
         const auto geometric = weights(prime);
         const int last_power = int(geometric.powers.size()) - 1;
-        std::array<Integer, floor_width + 1> next{};
-        for (int state = 1; state <= floor_width; ++state) {
+        std::vector<Integer> next(state_limit + 1);
+        for (int state = 1; state <= state_limit; ++state) {
             const int excess = divisor * (state - 1);
             const int above = 100 * excess - clipping * density_denominator;
             const Integer cap_numerator = (above < 0 ? 1 : 100) * divisor * (prime - 1);
@@ -184,16 +188,26 @@ Integer suffix_floor(const std::vector<int>& primes) {
                                                      : capped_denominator;
             const Integer denominator = prime * cap_denominator;
             Integer total = (denominator - cap_numerator) * future[state] / denominator;
-            const int cutoff = std::min(floor_width / state, last_power);
+            const int cutoff = std::min(state_limit / state, last_power);
             for (int n = 2; n <= cutoff; ++n) {
                 total += cap_numerator * (prime - 1) * future[state * n]
                     / (cap_denominator * geometric.powers[n]);
             }
             next[state] = total + Integer(scale) * std::max(0, above) / capped_denominator;
         }
-        future = next;
+        future.swap(next);
     }
-    return future[1];
+    return future;
+}
+
+Integer ternary_floor(const std::vector<Integer>& future) {
+    const auto geometric = weights(3);
+    const int cutoff = std::min(int(future.size()) - 1, int(geometric.powers.size()) - 1);
+    Integer result = 3 * future[1] / 5;
+    for (int n = 2; n <= cutoff; ++n) {
+        result += 12 * future[n] / (5 * geometric.powers[n]);
+    }
+    return result;
 }
 
 int main() {
@@ -211,7 +225,7 @@ int main() {
         }
         const auto eleven_without_thirty_three = extend(continuation, 11, clipping_for_prime(11), true);
         continuation = extend(continuation, 11, clipping_for_prime(11), false);
-        const Comparison before_seven = extend(continuation, 7, 17, false);
+        const Comparison before_seven = extend(continuation, 7, clipping_with_twenty_one, false);
         const Comparison zero = extend(before_seven, 5, 0, false);
         const Comparison positive = extend(before_seven, 5, 0, true);
         const Integer total = ternary_average(zero, positive);
@@ -227,13 +241,15 @@ int main() {
         const auto before_five_without_thirty_three = extend(
             seven_without_thirty_three, 5, 0, true);
         const Integer missing_three = ternary_average(aligned_zero, before_five_without_thirty_three);
-        const Integer lower = suffix_floor(primes);
+        const Integer lower = first_branch_floor(primes, 7, 211, 400, clipping_without_twenty_one)[1];
+        const Integer zero_tail = ternary_floor(
+            first_branch_floor(primes, 5, 1999, 800, clipping_with_twenty_one));
         require(0 < missing_three && missing_three < missing_both && missing_both < scale
                 && 0 <= lower && lower < scale,
                 "invalid phase comparison bounds");
         std::cout << primes.size() << ' ' << std::int64_t(total) << ' '
                   << std::int64_t(missing_both) << ' ' << std::int64_t(missing_three) << ' '
-                  << std::int64_t(lower) << '\n';
+                  << std::int64_t(lower) << ' ' << std::int64_t(zero_tail) << '\n';
     } catch (const std::exception& error) {
         std::cerr << error.what() << '\n';
         return 1;

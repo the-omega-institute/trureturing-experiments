@@ -29,7 +29,7 @@ def main():
             [str(binary)], input=f"{seed}\n", text=True,
             capture_output=True, check=True,
         )
-    count, total, missing_both, missing_three, suffix_floor = map(int, result.stdout.split())
+    count, total, missing_both, missing_three, suffix_floor, zero_tail = map(int, result.stdout.split())
     if count != sum(primes[11:PREFIX + 1]):
         raise ValueError("prefix prime count disagrees with the continuation sieve")
     if not 500 * total < 499 * PREFIX_SCALE:
@@ -51,6 +51,10 @@ def main():
     )
     if not without_twenty_one_and_thirty_three < Fraction(1999, 2000):
         raise ValueError("missing 21 and 33 comparison has insufficient reserve")
+    full_five_charge = Fraction(3, 19)
+    zero_tail_with_credit = Fraction(zero_tail, PREFIX_SCALE) - credit * full_five_charge
+    if not zero_tail_with_credit > Fraction(101, 100):
+        raise ValueError("zero-tail comparison floor does not exceed 1.01")
     print(f"Tail threshold {upper_tail}/{SCALE}, prefix seed {seed}/{PREFIX_SCALE}")
     print(f"{count} stages at primes 11 through {PREFIX}")
     print(f"Total {total}/{PREFIX_SCALE}, reserve above 1/500")
@@ -59,6 +63,7 @@ def main():
     print(f"Residue constraints without 21 bound {bound}, reserve above 1/1000")
     print(f"Missing 15, 21 and 33 comparison {missing_three}/{PREFIX_SCALE}")
     print(f"Missing 21 and 33 bound {without_twenty_one_and_thirty_three}, reserve above 1/2000")
+    print(f"All slots, zero tail and prime-5 credit give comparison at least {zero_tail_with_credit}")
 
 
 if __name__ == "__main__":
