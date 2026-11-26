@@ -225,7 +225,7 @@ def verify():
         rows = [[data[n][1][0], data[n][1][1]+data[n][1][2]] for n in triple]
         yy = [(-1)**i*arb_mat([r for k, r in enumerate(rows) if k != i]).det() for i in range(3)]
         low = abs(sum(a*data[n][0] for a, n in zip(yy, triple)))/sum(abs(a) for a in yy)
-        assert arb("7.614e21") < low < arb("2.1e22")
+        assert low > arb("7.614e21") and arb(low.lower()) < arb("2.1e22")
         print("实轮换门户 (p_1=p_2) 在三枚上的极小极大残差下界/GeV²", triple, low.lower().str(6))
 
     # 四、四枚：有符号特征标门户被排除，残差为精确极小极大值 |y.T|/||y||_1。

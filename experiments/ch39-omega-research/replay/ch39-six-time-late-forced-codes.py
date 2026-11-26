@@ -15,9 +15,13 @@ from flint import arb, ctx
 
 ORDERS = range(7, 13)
 EXPECTED = {
-    # k: (锐位数, 强迫码, 参考码)
-    7: (35, 32071996606, 32071992476),
-    8: (32, 3937814481, 3937811998),
+    # k: (锐位数, 强迫码, 参考码, 偏移下界, 偏移上界)
+    7: (35, 32071996606, 32071992476, "1.20207618035e-7", "1.20209757802e-7"),
+    8: (32, 3937814481, 3937811998, "5.78026170278e-7", "5.78043448459e-7"),
+    9: (29, 482997963, 482996889, "2.00046618393e-6", "2.00054363240e-6"),
+    10: (31, 1894385824, 1894373861, "5.57085500576e-6", "5.57110877485e-6"),
+    11: (29, 464151025, 464143910, "1.32512261901e-5", "1.32519037059e-5"),
+    12: (24, 14211350, 14210881, "2.79373958775e-5", "2.79389568441e-5"),
 }
 
 
@@ -79,9 +83,9 @@ def verify(root=Path(__file__).parent):
         print("k=%d 锐位数 %d 强迫码 %s 参考码 %s 格距 %s 偏移 (%s, %s) 外宽 %s" % (
             k, bits, code.str(20), ref_code.str(20), gap.str(10),
             offset_low.str(12), offset_high.str(12), (high-low).str(6)))
-        if k in EXPECTED:
-            want = EXPECTED[k]
-            assert bits == want[0] and code == want[1] and ref_code == want[2]
+        want = EXPECTED[k]
+        assert bits == want[0] and code == want[1] and ref_code == want[2]
+        assert arb(want[3]) < offset_low and offset_high < arb(want[4])
     return table
 
 
