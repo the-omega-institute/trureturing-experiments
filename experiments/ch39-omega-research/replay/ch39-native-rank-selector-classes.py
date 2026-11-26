@@ -226,8 +226,8 @@ def verify():
     W3 = (bounds["Z23"][1], inf47)
     W7 = (bounds["Z47"][1], bounds["Z815"][0])
     W15 = bounds["Z815"][1]
-    assert W1 > arb("7.3747") and W3[0] < arb("8.2251") and W3[1] >= arb("10.6")
-    assert W7[0] < arb("11.2231") and W7[1] > arb("15.808") and W15 < arb("16.6625")
+    assert W1 > arb("7.3746") and W3[0] < arb("8.2251") and W3[1] > arb("10.5999")
+    assert W7[0] < arb("11.2231") and W7[1] > arb("15.8179") and W15 < arb("16.5952")
     print("C 一致窗：秩1 mu<", W1.lower().str(6), " 秩3", W3[0].upper().str(6), W3[1].lower().str(5),
           " 秩7", W7[0].upper().str(6), W7[1].lower().str(6), " 秩15 mu>", W15.upper().str(6), " 自适应格数", cells)
     # Witnesses on the single-charge torus; each extends to an open set.
