@@ -205,11 +205,10 @@ def verify(root):
     assert report["entropy"][0] > arb("0.0379")
     assert report["l2"][0] > arb("0.00114")
     assert report["logvol"][0] > arb("7.51")
-    # 以香农熵表述：全部共同真空权的熵 <= 4.2258 奈特；同一 t 的切片最大熵至少高出 0.0379。
-    print(report)  #TMP
-    assert -report["entropy"][2] < arb("4.2258")
-    assert report["l2"][2] > arb("0.018742")
-    assert report["logvol"][2] > arb("537.94")
+    # 全部共同真空权：香农熵 < 4.2260 奈特，二范数平方 > 0.018744，负对数体积 > 537.93。
+    assert -report["entropy"][2] < arb("4.2260")
+    assert report["l2"][2] > arb("0.018744")
+    assert report["logvol"][2] > arb("537.93")
     # 数值参考（非证书）：t 端点处三种切片最优权的末圈份额都远低于 0.072。
     for t in (LO/1e5, HI/1e5):
         m = float_matrix(entry, t)

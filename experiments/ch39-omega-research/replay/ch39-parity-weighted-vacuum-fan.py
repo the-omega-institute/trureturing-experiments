@@ -200,7 +200,7 @@ def verify():
     print("  breakpoints", [b.str(6) for b in abreaks])
 
     # --- monotone no-go ----------------------------------------------------------
-    witnesses = {10875: (11177, 11681), 11737: (11618, 11531), 11488: (11618, 11346)}
+    witnesses = {10875: (11177, 11681), 11737: (11618, 12003), 11488: (11618, 11346)}
     for n, (up, down) in witnesses.items():
         assert sector[up] == sector[down] == sector[n]
         assert energy[up] < energy[n] and gap[up] > gap[n]

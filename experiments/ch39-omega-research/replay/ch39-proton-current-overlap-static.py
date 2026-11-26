@@ -1,4 +1,6 @@
-"""辅助电流重叠 c=g_L^dag g_D 的读数分类：一代静态单点费米配分函数的精确多项式。
+"""辅助电流重叠 c=g_L^dag g_D：Q-L 扇区接触项的静态单点 Berezin 不变量的精确多项式，
+以及与 kappa、|F|、双线性归一都无关的 Delta B=0 读数比 X(rho)。
+静态不变量是人为定义的读数（零跳跃、无其余单点项、只对 Q,L,Qbar,Lbar 积分），不是模型配分函数的极限。
 
 H = sum_a [K11 Dbar_a D_a + K22 (QL)_a T_a + K21 (QL)_a D_a + K12 Dbar_a T_a]，
 K = G^dag G，G = [g_D, conj(F) g_L]。Z = Berezin 顶阶系数 of exp(H)（32 个 Grassmann 生成元）。
@@ -188,14 +190,50 @@ def verify():
     tau = sp.simplify(K[0, 1]*K[1, 0]/(K[0, 0]*K[1, 1]))
     assert sp.simplify(tau-c*sp.conjugate(c)) == 0
     assert sp.simplify(K.det()-F*sp.conjugate(F)*(1-c*sp.conjugate(c))) == 0
-    # 一维辅助空间：单位向量只差相位，|c|=1，正交支不可实现。
-    # Delta B=-1 读数 <O6>=d log Z/dK21=K12 p'(tau)/(K11 K22 p(tau))：仅在 c=0 为零。
+    # Cauchy-Schwarz：|c|^2 = |gL^dag gD|^2 <= |gL|^2|gD|^2 = 1，差为 Gram 行列式（Lagrange 恒等式，符号向量）。
+    a1, a2, b1, b2 = sp.symbols("a1 a2 b1 b2")
+    A1, A2, B1, B2 = sp.symbols("A1 A2 B1 B2")  # 共轭分量作独立符号
+    inner = A1*b1+A2*b2  # conj(gL).gD
+    lagrange = (a1*A1+a2*A2)*(b1*B1+b2*B2)-inner*(a1*B1+a2*B2)
+    assert sp.expand(lagrange-(a1*b2-a2*b1)*(A1*B2-A2*B1)) == 0
+    assert sp.simplify(1-c*sp.conjugate(c)-(gL.H*gL)[0]*(gD.H*gD)[0]+(gL.H*gD)[0]*(gD.H*gL)[0]) == 0
+    # 一维辅助空间：gD=e^{i alpha}, gL=e^{i beta}，|c|=1。
+    al, be = sp.symbols("alpha beta", real=True)
+    c1 = sp.exp(-sp.I*be)*sp.exp(sp.I*al)
+    assert sp.simplify(c1*sp.conjugate(c1)) == 1
+    # 关于 K12 一次的 Delta B=+1 读数 <sum_a (QL)^a D_a> = kappa^{-1} d log Z/dK21 = K12 p'(tau)/(K11 K22 p(tau))：仅在 c=0 为零。
     Kp = {k11: 1, k22: 1}
     logZ = sp.log(Zsym.subs(Kp))
     o6 = sp.simplify(sp.diff(logZ, k21))
     assert sp.simplify(o6 - k12*sp.diff(p, rho).subs(rho, k12*k21)/p.subs(rho, k12*k21)) == 0
     assert o6.subs({k12: 0, k21: 0}) == 0
     assert sp.diff(p, rho).subs(rho, 1)/p.subs(rho, 1) == sp.Rational(12, 5)
+    # 与 kappa、|F| 及双线性归一都无关的 Delta B=0 读数比
+    #   X = <A B>/(<A><B>)，A=sum_a Dbar_a D_a，B=sum_a (QL)^a T_a，
+    # <A>=kappa^{-1} d_{K11} log Z，<B>=kappa^{-1} d_{K22} log Z，<AB>=kappa^{-2} d_{K11}d_{K22} Z / Z。
+    lam = sp.symbols("lam", positive=True)
+    zf = Zsym
+    X = sp.cancel(sp.diff(zf, k11, k22)*zf/(sp.diff(zf, k11)*sp.diff(zf, k22)))
+    tsym = sp.symbols("t")
+    Xt = sp.cancel(X.subs({k11: 1, k22: 1, k21: 1, k12: tsym}))
+    # 只经 tau 依赖：对四个 K 元任意独立重标度后，X 仍只取决于 tau。
+    for sc in [{k11: lam*k11, k12: lam*k12}, {k22: lam*k22, k21: lam*k21},
+               {k11: lam*k11, k21: lam*k21}, {k22: lam*k22, k12: lam*k12}]:
+        assert sp.simplify(X.subs(sc, simultaneous=True)-X) == 0
+    assert sp.simplify(X-Xt.subs(tsym, k12*k21/(k11*k22))) == 0
+    pt = p.subs(rho, tsym)
+    closedX = pt*(16*pt-7*tsym*sp.diff(pt, tsym)+tsym**2*sp.diff(pt, tsym, 2))/(4*pt-tsym*sp.diff(pt, tsym))**2
+    assert sp.simplify(Xt-closedX) == 0
+    assert sp.expand(4*pt-tsym*sp.diff(pt, tsym)-4*(20*tsym**3+45*tsym**2+18*tsym+1)) == 0
+    assert Xt.subs(tsym, 0) == 1 and Xt.subs(tsym, 1) == sp.Rational(5, 4)
+    num, den = sp.fraction(sp.together(sp.diff(Xt, tsym)))
+    num, den = sp.Poly(sp.expand(num), tsym), sp.Poly(sp.expand(den), tsym)
+    nc, dc = num.all_coeffs(), den.all_coeffs()
+    # 分子分母系数同号且非零 => X'(t)>0 对 t>=0；X 在 [0,1] 上严格增。
+    assert all(v > 0 for v in nc) and all(v > 0 for v in dc)
+    nX, dX = sp.fraction(Xt)
+    print("归一无关读数 X(rho) =", nX, "/", dX, "；X(0)=1, X(1)=", Xt.subs(tsym, 1))
+    print("X' 分子系数", nc[:4], "... 全正")
     print("一代单点顶阶系数 384*prod(d!)；Z/(K11K22)^4 =", scale, "* (1+24t+90t^2+80t^3+15t^4)")
     print("Bernstein 系数", [comb(6+j, 6) for j in range(5)], "；Z(平行)/Z(正交) =", p.subs(rho, 1))
     print("生成函数比例常数", 384**2, "；|c|^2 首阶相对系数 24")
