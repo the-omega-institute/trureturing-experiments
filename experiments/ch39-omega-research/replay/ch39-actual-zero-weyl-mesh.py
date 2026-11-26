@@ -77,8 +77,10 @@ def flat_certificate(shell, previous):
         print("软化乘子、求根半径、压缩率、速度行列式严格下界",
               "0" if tau.is_zero() else "[0,1]",r.str(7),rho.str(8),det.lower().str(10))
         if tau.is_zero():
+            flat_root = (h+arb(0,r), e+arb(0,r), [1+a for a in t])
             print("零软化的高度、交叉本征值与两条正电导",
                   (h+arb(0,r)).str(18),(e+arb(0,r)).str(18),*[(1+a).str(16) for a in t])
+    return flat_root
 
 
 def tetrahedron(shell):

@@ -38,7 +38,7 @@ def angular_exposure(kind, z, x, p0, p1, logratio, rule):
     return result+arb(0, (error*logratio).upper())
 
 
-def verify(root):
+def verify(root, return_measure=False):
     fields = run_path(str(root / "ch39-two-zero-cutoff-gravity.py"))["gravity_fields"]
     single, lib, (rows,) = fields(root, (2_306_888_100_085,))
     model, _, _, initial, _ = lib["chiral"]["source"]["mean"]["inputs"]()
@@ -81,6 +81,8 @@ def verify(root):
     assert arb("1.4641238432") < -weights[3] < arb("1.4641238434")
     common = initial[0]+sum(c[3]*w for c, w in zip(cols, weights, strict=True))
     assert arb("39.12824") < common < arb("39.12826")
+    if return_measure:
+        return sites, weights, rows
     print("精细角积分的绝对余量、行列式、五项权、统一逆耦合",
           (fine[1]*logratio).str(12), det.str(12), *[w.str(13) for w in weights], common.str(13), flush=True)
 
