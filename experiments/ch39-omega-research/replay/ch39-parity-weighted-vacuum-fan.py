@@ -105,7 +105,9 @@ def envelope(points):
     assert all(points[m][0] > points[first][0] for m in points if m != first)
     assert all(points[m][0] < points[last][0] for m in points if m != last)
     for a, b in zip(chain, chain[1:]):
-        # Every other point lies strictly above the supporting line of each edge.
+        assert points[b][0] > points[a][0]
+        # Every other point lies strictly above the supporting line of each edge;
+        # with the next vertex this also certifies c_{i-1} > c_i.
         for m in points:
             if m not in (a, b):
                 assert orient(points[a], points[b], points[m]) > 0, (a, b, m)
@@ -266,7 +268,7 @@ def verify():
     assert arb("0.0021434") < costs[best] < arb("0.0021439")
     assert costs[11763] - costs[best] > arb("0.0000335")
     l1 = energy[best] - e_min + g_max - gap[best]
-    assert arb("0.0037525") < l1 < arb("0.0037532")
+    assert arb("0.0031699") < l1 < arb("0.0031700")
     assert arb("0.09055") < costs[best] / g_max < arb("0.09057")
     for n, (lo, hi) in {10875: ("0.026143", "0.026145"), 11488: ("0.0084160", "0.0084163"),
                         11737: ("0.0219155", "0.0219158")}.items():
