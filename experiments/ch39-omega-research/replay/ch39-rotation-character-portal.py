@@ -106,6 +106,8 @@ def candidate(model, initial, read, S, bases, n):
     table = [((UNIT/model["mz"]).log()+l, w, B, f, s) for l, w, B, f, s
              in two["thresholds"](model, levels, False)]
     target, moments = common["portal_at"](model, initial, (levels, 1/alpha, table), SCALE, steps=65536)
+    # 交点模块会改动工作精度，显式算子在 192 位下重算。
+    prec, ctx.prec = ctx.prec, 192
     unit_matrix = charge_matrix(3, height)
     # 与 shell_spectra 的分解一致：极点边单位传输的星图加非辐边荷三矩阵。
     base, neutral, _ = soft["vector_pencil"](height)
@@ -120,7 +122,7 @@ def candidate(model, initial, read, S, bases, n):
     center = (trace-6*amount)/18
     labelled = []
     for chi, B in enumerate(bases):
-        for eig in (B.conjugate().transpose()*mat*B).eig(multiple=True):
+        for eig in (B.conjugate().transpose()*mat*B).eig(multiple=True, algorithm="rump"):
             assert eig.imag.contains(0)
             v = eig.real
             labelled.append((v*abs(v-center), chi, v))
@@ -144,6 +146,7 @@ def candidate(model, initial, read, S, bases, n):
             pattern.append(chi)
             heights.append(g)
     assert len(pattern) == 14
+    ctx.prec = prec
     assert all((a-b).contains(0) or a.overlaps(b) for a, b in zip(x, moments[:4]))
     return alpha, target, W, x, pattern, heights, gap
 

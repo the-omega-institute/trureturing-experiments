@@ -1,4 +1,4 @@
-"""两个质量标尺 (k,d) 上的单谱型泛函驻点与沿 k/d^2 滑行的读数响应。
+"""两个质量标尺 (k,d) 上的超迹谱泛函驻点（整数维与实数维）与沿 k/d^2 滑行的读数响应。
 
 记 u=log k, v=log d。奇荷 (1,3) 重模质量为 Mbar*h/d^2，偶荷 (0,2,4,6) 为 Mbar*k*h/d^2，
 故全部质量只经两条线性型 alpha=-2v 与 beta=u-2v 依赖标尺；沿 k/d^2 滑行即 beta 固定、alpha 变动。
@@ -41,13 +41,6 @@ def weighted_log_mean(pairs):
     den = sum(w for w, _ in pairs)
     assert not den.contains(0)
     return sum(w*h.log() for w, h in pairs)/den, den
-
-
-def _unused_cw_point(rows):
-    """四维一圈 STr M^4(log M^2/Lambda^2 - c) 的驻点倍率 k* 与奇荷对数均值。"""
-    odd, ode = weighted_log_mean([(g*h**4, h) for g, _, e, h in rows if not e])
-    even, eve = weighted_log_mean([(g*h**4, h) for g, _, e, h in rows if e])
-    return (odd-even).exp(), odd, ode, eve
 
 
 def power_point(odd, even, p):
@@ -230,12 +223,12 @@ def verify(root):
     inside(main, '0.99999336383', '0.99999336387')
     even_masses = [*layers[0], *(h for q in (2, 4, 6) for h in layers[q][3:])]
     strong = {}
-    expected_energy = {715: ('3.8505e14', '3.8516e14'), 716: ('3.8364e14', '3.8375e14'),
-                       724: ('3.7293e14', '3.7306e14'), 743: ('3.4902e14', '3.4918e14'),
-                       744: ('3.4781e14', '3.4799e14')}
-    expected_alpha = {715: ('0.119016', '0.119026'), 716: ('0.118944', '0.118958'),
-                      724: ('0.118376', '0.118386'), 743: ('0.117056', '0.117070'),
-                      744: ('0.116984', '0.116996')}
+    expected_energy = {715: ('3.85045e14', '3.85109e14'), 716: ('3.83667e14', '3.83755e14'),
+                       724: ('3.72980e14', '3.73062e14'), 743: ('3.49022e14', '3.49102e14'),
+                       744: ('3.47811e14', '3.47890e14')}
+    expected_alpha = {715: ('0.1190155', '0.1190203'), 716: ('0.1189429', '0.1189493'),
+                      724: ('0.1183751', '0.1183814'), 743: ('0.1170532', '0.1170593'),
+                      744: ('0.1169842', '0.1169904')}
     for d in (715, 716, 724, 743, 744):
         dd = arb(d)
         kk = k0*(dd/d0)**2
@@ -256,20 +249,20 @@ def verify(root):
             energy, _, alpha = joint['gauge']['crossing_enclosure'](
                 model, initial, layers, False, dd, '29.04', '.1184', recenter=True)
         assert kk*reduced/dd**2*min(even_masses) > energy
-        print(energy.lower().str(8), energy.upper().str(8), alpha.lower().str(8), alpha.upper().str(8))
         inside(energy, *expected_energy[d])
         inside(alpha, *expected_alpha[d])
-        assert alpha.rad() < arb('7.2e-6')
+        assert alpha.rad() < arb('3.3e-6')
         strong[d] = alpha
-        print('滑行点 d =', d, 'k =', kk.str(12), '交点/GeV', energy.str(8),
-              '强耦合', alpha.str(10), '曲率修正上界', loss.str(4))
+        print('滑行点 d =', d, 'k =', kk.str(12), '交点/GeV', energy.lower().str(7), energy.upper().str(7),
+              '强耦合', alpha.lower().str(8), alpha.upper().str(8), '曲率修正上界', loss.str(4))
     window = lambda x: arb('.117') < x < arb('.119')
     assert window(strong[716]) and window(strong[724]) and window(strong[743])
     assert strong[715] > arb('.119') and strong[744] < arb('.117')
     secant = inside((strong[743]-strong[716])/27, '-7.03e-5', '-6.97e-5')
     assert secant.rad() < arb('2.4e-7')
     log_secant = inside((strong[743]-strong[716])/(arb(743).log()-arb(716).log()), '-0.0513', '-0.0507')
-    print('716 至 743 的强耦合割线 /单位分母、/单位 log d', secant.str(8), log_secant.str(8))
+    print('716 至 743 的强耦合割线 /单位分母、/单位 log d', secant.lower().str(6), secant.upper().str(6),
+          log_secant.lower().str(6), log_secant.upper().str(6))
     print('曲率主项（滑行不变）', main.str(14))
 
 
