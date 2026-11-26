@@ -5,13 +5,13 @@ from runpy import run_path
 from flint import acb, arb, ctx
 
 
-def verify(root):
+def verify(root, *, return_data=False):
     pair = run_path(str(root / "ch39-two-zero-simultaneous-quark-gravity.py"))
-    _, training = pair["verify"](root)
+    right_frame, training = pair["verify"](root)
     left = 2_306_888_100_084
     flavor = run_path(str(root / "ch39-common-embedding-central-right-ckm.py"))
     geometry = (".0182", ".113", ("-.21668", "-.53516", ".71837", "-.38807"))
-    _, responses, _ = flavor["verify_nodes"](
+    left_frame, responses, _ = flavor["verify_nodes"](
         root, ((left, "0"),), ".74", geometry, ((1,10,16,18), (6,7,10,18))
     )
     shell = run_path(str(root / "ch39-three-ray-chiral-boundary.py"))
@@ -30,6 +30,8 @@ def verify(root):
     assert all(floor < v < arb(".999") for _,v in records)
     print("三个编号的校准节点数及最大振幅", len(records),
           max(v.upper() for _,v in records).str(14), flush=True)
+    if return_data:
+        return records, (left_frame, right_frame)
 
 
 if __name__ == "__main__":
