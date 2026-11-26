@@ -35,13 +35,14 @@ def dual_forms(rows, rotation, lib):
     return forms
 
 
-def setup(root,offset):
+def setup(root,offset,rotation=None):
     native=run_path(str(root/"ch39-free-four-site-native-positive-spectrum.py"))
     geom=run_path(str(root/"ch39-complex-four-site-unit-quark-amplitudes.py"))
     ck=run_path(str(root/"ch39-shell-clock-ckm-blocks.py"))
     rows=native["native"](root,2_306_888_100_085+offset)
     ctx.prec=256
-    sectors=[dual_forms(sector,geom["four_basis"](),geom) for sector in rows]
+    rotation=geom["four_basis"]() if rotation is None else rotation
+    sectors=[dual_forms(sector,rotation,geom) for sector in rows]
     V=acb_mat(ck["standard_matrix"](*[arb(i).sin() for i in (".22704",".04275",".00377")],arb("1.139")))
     mass=[list(map(arb,row)) for row in ((".00000615",".00311",".8616"),(".0000135",".000268",".01401"))]
     up,down=[geom["diag"]([m/row[2] for m in row]) for row in mass]
@@ -178,8 +179,8 @@ def exclude(y,basis,t,V,mass,forms,geom):
     return count,min(margins)
 
 
-def verify(root,offset):
-    geom,forms,V,mass,A,B=setup(root,offset)
+def verify(root,offset,rotation=None):
+    geom,forms,V,mass,A,B=setup(root,offset,rotation)
     for basis,(base,other) in enumerate(((A,B),(B,A))):
         stack=[(arb(-1),arb(1),(0,1,2),0)]
         pairs=phases=depth=0
