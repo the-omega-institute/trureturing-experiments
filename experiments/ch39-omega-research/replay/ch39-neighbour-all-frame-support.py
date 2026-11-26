@@ -115,7 +115,7 @@ def phase_cover(constraints):
     return count,worst
 
 
-def exclude(y,basis,t,V,mass,forms,geom):
+def exclude(y,basis,t,V,mass,forms,geom,character_scales):
     adj=geom["adj"]
     yrep=[V*y,y]
     stats=[moments(h,spec) for h,spec in zip(yrep,mass,strict=True)]
@@ -127,7 +127,7 @@ def exclude(y,basis,t,V,mass,forms,geom):
     w=[None,None]
     w[remote]=norm
     w[basis]=-t*mass[basis][2]/mass[remote][2]*norm
-    u,v=arb(".00384"),arb(".0384")
+    u,v=character_scales
     a2=u*v
     b=(1-a2).sqrt()
     signs=[]
@@ -179,8 +179,9 @@ def exclude(y,basis,t,V,mass,forms,geom):
     return count,min(margins)
 
 
-def verify(root,offset,rotation=None):
+def verify(root,offset,rotation=None,scales=(".00384",".0384")):
     geom,forms,V,mass,A,B=setup(root,offset,rotation)
+    character_scales=tuple(map(arb,scales))
     for basis,(base,other) in enumerate(((A,B),(B,A))):
         stack=[(arb(-1),arb(1),(0,1,2),0)]
         pairs=phases=depth=0
@@ -192,7 +193,7 @@ def verify(root,offset,rotation=None):
             candidates=lines(base,other,lo,hi,indices,geom)
             keep=[]
             for i in indices:
-                proof=exclude(candidates[i],basis,lo.union(hi),V,mass,forms,geom) if i in candidates else None
+                proof=exclude(candidates[i],basis,lo.union(hi),V,mass,forms,geom,character_scales) if i in candidates else None
                 if proof is None:
                     keep.append(i)
                 else:

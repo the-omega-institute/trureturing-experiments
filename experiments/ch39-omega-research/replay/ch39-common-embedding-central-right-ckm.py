@@ -12,13 +12,13 @@ def adj(matrix):
     return matrix.conjugate().transpose()
 
 
-def common_embedding():
-    u, v = arb(".00384"), arb(".0384")
+def common_embedding(u_text=".00384", v_text=".0384", quaternion=(".15495", ".07140", ".97665", "-.13053")):
+    u, v = arb(u_text), arb(v_text)
     a, b = (u*v).sqrt(), (1-u*v).sqrt()
     p = v/(u+v)
     f, g = p.sqrt(), (1-p).sqrt()
     intrinsic = acb_mat([[1, 0, 0], [0, 0, b], [0, g, -a*f], [0, -f, -a*g]])
-    seed = [arb(s) for s in (".15495", ".07140", ".97665", "-.13053")]
+    seed = [arb(s) for s in quaternion]
     length = sum(s*s for s in seed).sqrt()
     x, y, z, w = [s/length for s in seed]
     h = 1/arb(2).sqrt()
@@ -39,7 +39,7 @@ def extend_target(matrix, u, v):
                     [0, 0, plus, 0], [0, 0, 0, minus]])
 
 
-def verify(root):
+def verify_nodes(root, nodes, basis_coefficient, geometry, chosen):
     single = run_path(str(root/"ch39-complex-four-site-unit-quark-amplitudes.py"))
     fixed = run_path(str(root/"ch39-free-four-site-native-positive-spectrum.py"))
     ckm = run_path(str(root/"ch39-shell-clock-ckm-blocks.py"))
@@ -52,21 +52,20 @@ def verify(root):
                                               (".0000135", ".000268", ".01401"))]
     up, down = [diag([y/row[-1] for y in row]) for row in masses]
     up = adj(mixing)*up*mixing
-    basis = fixed["target_basis"](up, down*arb(".1"))*diag([acb(0, 1), 1, acb(0, -1)])
+    basis = fixed["target_basis"](up, down*arb(basis_coefficient))*diag([acb(0, 1), 1, acb(0, -1)])
     assert (adj(basis)*basis).contains(diag([1]*3))
     original = [adj(basis)*m*basis*row[-1] for m, row in zip((up, down), masses, strict=True)]
-    unit = acb(1, arb(".0294"))
-    phase = diag([unit/unit.conjugate(), 1, 1])
-    assert (adj(phase)*phase).contains(diag([1]*3))
-    u, v, intrinsic, rotation = common_embedding()
+    u, v, intrinsic, rotation = common_embedding(*geometry)
     embedding = rotation*intrinsic
     assert (adj(rotation)*rotation).contains(diag([1]*4))
     assert (adj(embedding)*embedding).contains(diag([1]*3))
     expected_j = (mixing[0, 0]*mixing[1, 1]*mixing[0, 1].conjugate()*mixing[1, 0].conjugate()).imag
-    chosen = ((6, 7, 10, 13), (6, 7, 10, 12))
     central_effective = []
     responses = {}
-    for node, transform in ((CENTRAL, diag([1]*3)), (CENTRAL+1, phase)):
+    for node, phase_coordinate in nodes:
+        phase = acb(1, arb(phase_coordinate))
+        transform = diag([phase/phase.conjugate(), 1, 1])
+        assert (adj(transform)*transform).contains(diag([1]*3))
         sectors = fixed["native"](root, node)
         eigenspaces = []
         for qi, charge in enumerate((-4, 2)):
@@ -91,7 +90,7 @@ def verify(root):
                   "最大", largest.str(15))
             if node == CENTRAL:
                 central_effective.append(effective)
-            else:
+            elif central_effective:
                 difference = abs(effective[0, 2]-central_effective[qi][0, 2])
                 assert difference > 0
                 print("两壳有效矩阵的 13 元之差的模", charge, difference.str(15))
@@ -101,9 +100,20 @@ def verify(root):
         jarlskog = (pu[0]*pd[0]*pu[1]*pd[1]).trace().imag
         assert jarlskog > 0 and jarlskog.overlaps(expected_j)
         print(node, "有符号 J", jarlskog.str(15))
+    return embedding, responses, rotation
+
+
+def verify(root):
+    embedding, responses, rotation = verify_nodes(root, ((CENTRAL, "0"), (CENTRAL+1, ".0294")),
+                                                 ".1", (), ((6, 7, 10, 13), (6, 7, 10, 12)))
 
     cover = run_path(str(root/"ch39-neighbour-all-frame-support.py"))
     cover["verify"](root, -1, rotation)
+    left_geometry = (".0182", ".113", ("-.21668", "-.53516", ".71837", "-.38807"))
+    _, _, left_rotation = verify_nodes(root, ((CENTRAL-1, "0"),), ".74", left_geometry,
+                                       ((1, 10, 16, 18), (6, 7, 10, 18)))
+    for offset in (0, 1):
+        cover["verify"](root, offset, left_rotation, left_geometry[:2])
     return embedding,responses
 
 
