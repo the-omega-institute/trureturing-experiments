@@ -37,6 +37,8 @@ def gap_at_line(y,ckm,mass,cap):
         mod=[inner_square(z) for z in h]
         means.append(sum(p*w for p,w in zip(mod,spectrum,strict=True)))
         v=sum(mod[i]*mod[j]*(spectrum[i]-spectrum[j])**2 for i,j in combinations(range(3),2))
+        if not v.is_finite():
+            return None
         variance.append(v)
         tangent=[((spectrum[(i+2)%3]-spectrum[(i+1)%3])*h[(i+1)%3]*h[(i+2)%3]).conjugate() for i in range(3)]
         xs.append(column(tangent))
@@ -61,7 +63,10 @@ def gap_at_line(y,ckm,mass,cap):
             denom=min(denom,(cap-s).upper())
         l1=varlo/denom**2
         h1=(var+ (spectrum[0]*spectrum[1]*spectrum[2])/p)/s**2
-        low=max(low,l1.lower());high=min(high,h1.upper())
+        if not l1.is_finite() or not h1.is_finite():
+            return None
+        low=max(low,l1.lower())
+        high=min(high,h1.upper())
     return low-high
 
 
