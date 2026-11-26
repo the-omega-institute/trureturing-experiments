@@ -26,6 +26,7 @@
 | 准许沿原壳的边传递后，荷一整代轻空间可以无损进入荷二或负四吗？ | 对该枚实际零点，两荷的最小图距离均为一跳，三维空间中每个输入的传递成功率恰为 1。 | [一跳通道](replay/原壳一跳的三代等距传递.md) |
 | 一跳局部性能确定三代的夸克混合矩阵吗？ | 同一壳谱上，荷一到荷二可一跳无损实现任意三阶酉矩阵。若两扇区的传输算子都与壳的三阶轮换对易，特征标基中只剩对角相位。 | [任意混合的统一证明](replay/一跳局部性与夸克混合的自由度.md) · [轮换特征标](replay/轮换协变的一跳三代传递.md) |
 | 要实现参考 CKM 混合，至少需要多大的三阶轮换偏差？ | 取两支轻空间等距，至少一支的轮换交换偏差 Frobenius 范数在整个原参考盒内大于 0.280。 | [允许重新配对时的下界](replay/参考混合要求多大的轮换偏差.md) |
+| 上、下两支一跳无损传输分担参考 CKM 混合时，能把较大的轮换偏差降到多低？ | 参考中心的最佳值介于 0.28117247 与 0.28208788。上界在第 2,306,888,100,085 枚零点由两个一跳收缩同时实现。 | [双扇区构造](replay/两个一跳扇区分担参考混合.md) |
 
 从公开仓库根目录运行下列命令可复算表中的结果。使用 Python 3.12、python-flint 0.9.0 和 NumPy。完整记录还包括各节列明的其他依赖。第三方 SMDR 源码的授权随源码提供。[完整复算包](ch39-omega-math-replay.zip) · [SMDR 许可](replay/ch39-smdr/LICENSE.txt)
 
@@ -46,6 +47,7 @@ python3 ch39-joint-zero-shell-local-transfer.py
 python3 ch39-joint-zero-cyclic-light-transfer.py
 python3 ch39-one-hop-flavor-freedom.py
 python3 ch39-ckm-cyclic-covariance-cost.py
+python3 ch39-two-sector-ckm-transfer.py
 python3 ch39-first-three-window-integer-scales.py
 python3 ch39-oriented-difference-coherence.py
 python3 ch39-balanced-proton-residual.py
