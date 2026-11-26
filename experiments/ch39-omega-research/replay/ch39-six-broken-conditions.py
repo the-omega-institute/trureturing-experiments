@@ -6,16 +6,16 @@ import sys
 from flint import arb, arb_mat
 
 
-def broken_system(root, energy, portal_box):
+def broken_system(root, energy, portal_box, *, number=2_306_888_100_085):
     joint = run_path(str(root/"ch39-all-field-signed-crossing.py"))
     rotation = run_path(str(root/"ch39-rotation-portal-top-energy.py"))
-    signs, reconstructed = rotation["rotation_signs"](root)
+    signs, reconstructed = rotation["rotation_signs"](root, number)
     pi = arb.pi()
     r = (arb("246.22")/arb("1.22089e19"))**2/2
     yt, g1, g2 = map(arb, (".8616", ".467453", ".63811"))
     top, zw, zz = yt**2, g2**2/2, (g2**2+3*g1**2/5)/2
     light = ((-12,arb(1),top), (6,-arb(1),zw), (3,-arb(1)/2,zz))
-    data = joint["joint_system"](root, energy, order=16, last=47)
+    data = joint["joint_system"](root, energy, order=16, last=47, number=number)
     heat, sites, rows = data["heat"], data["sites"], data["rows"]
     masses = [z for _, _, z in rows[49:65]]
     assert all(z.overlaps(v) for z, v in zip(masses, reconstructed, strict=True))
@@ -67,7 +67,7 @@ def broken_system(root, energy, portal_box):
         static.append((g-4,a-arb(2)/3,z))
     moments = run_path(str(root/"ch39-signed-cutoff-gravity.py"))["moments"]
     target = arb_mat([[1], [1], [arb("1e-122")], [8*colour/3-photon], [arb(".258")]])
-    def fixed_portal(u):
+    def columns_at(u):
         gravity = static+[(4,arb(2)/3,z+sg*u*r) for z, sg in zip(masses, signs, strict=True)]
         assert sum(g for g, _, _ in gravity) == sum(g for g, _, _ in rows)
         assert (sum(a for _, a, _ in gravity)-sum(a for _, a, _ in rows)).contains(0)
@@ -83,7 +83,10 @@ def broken_system(root, energy, portal_box):
                 hess -= u**2*heat(1,mass/x)
             cols.append([1,k,w,de-8*dc/3,hess/(8*pi**2)])
             slopes.append(s/(8*pi**2))
-        matrix = arb_mat(cols).transpose()
+        return arb_mat(cols).transpose(), slopes
+
+    def fixed_portal(u):
+        matrix, slopes = columns_at(u)
         det = matrix.det()
         assert not det.contains(0)
         c = matrix.solve(target).entries()
@@ -92,7 +95,7 @@ def broken_system(root, energy, portal_box):
 
     path = dict(data, species=species, initial=channels(photon,colour))
     return dict(original=data, path=path, weights_at=fixed_portal, per_site=per_site,
-                masses=masses, signs=signs, rho=r, weak_mass=zw*r)
+                masses=masses, signs=signs, rho=r, weak_mass=zw*r, columns_at=columns_at)
 
 
 def verify(root):

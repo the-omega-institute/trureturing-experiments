@@ -5,10 +5,10 @@ from runpy import run_path
 from flint import acb, acb_mat, arb, ctx
 
 
-def rotation_signs(root):
+def rotation_signs(root, number=2_306_888_100_085):
     shell = run_path(str(root / "ch39-three-ray-chiral-boundary.py"))
     ctx.prec = 224
-    height = acb.zeta_zero(2_306_888_100_085).imag
+    height = acb.zeta_zero(number).imag
     H = shell["laplacian"](3, height)
     sites = shell["geo"]["sites"]
     rotation = [sites.index((j,k,i)) for i,j,k in sites]
