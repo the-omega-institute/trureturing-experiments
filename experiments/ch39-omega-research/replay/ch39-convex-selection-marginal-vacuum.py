@@ -13,6 +13,7 @@
 """
 from pathlib import Path
 from runpy import run_path
+import json
 import sys
 
 import numpy as np
@@ -179,10 +180,82 @@ def dual_lower(kind, entry, mid, rad, m, share):
     return (mult[0]+nu*share+sum(1+(-z).log() for z in a)).lower()
 
 
+def flagship_bracket(root, entry):
+    """x=-0.01046 处真实可行族上的两侧证书：竞争点对偶界与一个经全环面覆盖的共同真空权。"""
+    lib = load(root, "mincut-global-winding")
+    shell = load(root, "three-ray-chiral-boundary")
+    angles = load(root, "mincut-reference-ckm-action")
+    flavor = load(root, "chiral-neutral-flavor-phase")
+    fixed = load(root, "height-independent-flavor-vacuum")
+    cover = load(root, "reference-flavor-global-winding")
+    ctx.prec = 224
+    tri = lib["terms"](shell)
+    x = arb("-.01046")
+    y = x-angles["reference_angles"](flavor)[0]
+    cols = {q: [arb(1), *fixed["gradient_columns"](lib, tri, q, x, y)] for q in range(1, 106)}
+    bare = {q: lib["coeff"](tri, q, arb(0)) for q in range(1, 106)}
+    home = {q: lib["energy"](q, bare[q], x, y) for q in range(1, 106)}
+    data = json.loads(Path(__file__).with_suffix(".json").read_text())
+
+    def complete(free, basis):
+        rhs = [arb(int(k == 0))-sum(v*cols[q][k] for q, v in free.items()) for k in range(5)]
+        mat = arb_mat([cols[q] for q in basis]).transpose()
+        return {**free, **dict(zip(basis, mat.solve(arb_mat([[v] for v in rhs])).entries()))}
+
+    # 已有 100 维族中心：全部 105 个权严格为正的共同真空权。
+    original = fixed["minimum_order_weights"](lib, tri, x, y)
+    solved = (30, 35, 38, 40, 105)
+    interior = complete({q: original.get(q, arb("1e-8")) for q in range(1, 106) if q not in solved}, solved)
+    assert all(v > 0 for v in interior.values())
+    cap = arb(23)/25*arb(2)**-20/14**2
+    delta = arb(0).union(cap)
+    result = {}
+    for kind in ("entropy", "l2"):
+        rec = data[kind]
+        mult = [arb(v) for v in rec["multipliers"]]
+        rows = []
+        for bx, by, nu in rec["cuts"]:
+            nu = arb(nu)
+            assert nu > 0
+            bx, by = arb(bx), arb(by)
+            rows.append((nu, {q: lib["energy"](q, bare[q], bx, by)-home[q] for q in range(1, 106)}))
+        # 对 F 中任一 w，每个竞争点给出 sum_q w_q [S_q(B)-S_q(A)] >= 0（单位辐边极限）。
+        if kind == "entropy":
+            a = [sum(m*c for m, c in zip(mult, cols[q][1:]))+sum(n*r[q] for n, r in rows)
+                 for q in range(1, 106)]
+            bound = sum(z.exp() for z in a).log()           # 熵的上界
+        else:
+            a = [sum(m*c for m, c in zip(mult, cols[q]))+sum(n*r[q] for n, r in rows)
+                 for q in range(1, 106)]
+            bound = mult[0]-sum(arb(max(0, z.upper()))**2 for z in a)/4   # 二范数平方的下界
+        base = complete({int(q): arb(v) for q, v in rec["free"].items()}, rec["basis"])
+        assert all(v > 0 or v == 0 for v in base.values())
+        mix = arb(rec["mix"])
+        weights = {q: (1-mix)*base[q]+mix*interior[q] for q in range(1, 106)}
+        modes = [(q, [w*c for c in lib["coeff"](tri, q, delta)]) for q, w in weights.items()]
+        drift = cover["global_cover"](lib, tri, weights, modes, x, y)
+        assert drift < 0
+        value = (-sum(v*v.log() for v in weights.values()) if kind == "entropy"
+                 else sum(v*v for v in weights.values()))
+        top = sorted(weights, key=lambda q: -weights[q].mid())[:6]
+        result[kind] = (bound, value, weights[105])
+        print("旗舰相位：泛函、可行族最优值的两侧界、可行见证的 w_105、最大六权的绕数",
+              kind, bound.str(10), value.str(10), weights[105].str(6), top, flush=True)
+    assert arb("2.6193") < result["entropy"][1] and result["entropy"][0] < arb("2.6291")
+    assert arb("0.091428") < result["l2"][0] and result["l2"][1] < arb("0.092585")
+    # 同一相位上 100 维切片本身的最优值（可行点）作对照。
+    m = float_matrix(entry, 0.01046)
+    slice_h = -primal_upper("entropy", entry, arb("0.01046"), arb(0), m)
+    slice_l2 = arb(primal_upper("l2", entry, arb("0.01046"), arb(0), m))
+    assert arb("4.2466") < slice_h and slice_l2 < arb("0.017062")
+    print("同一相位切片：最大熵下界、最小二范数平方上界", slice_h.str(8), slice_l2.str(8))
+
+
 def verify(root):
     load(root, "all-native-spectral-masses")["verify"](root)
     load(root, "fixed-vacuum-weight-dimension")["verify"]()
     entry, _ = build_rows(root)
+    flagship_bracket(root, entry)
     ctx.prec = 160
     share = arb(SHARE)
     lo, hi = arb(LO)/10**5, arb(HI)/10**5

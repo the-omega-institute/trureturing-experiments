@@ -148,17 +148,18 @@ def verify():
     chain, breaks = envelope(diagonal)
     assert chain == [11681, 10928, 12003, 10931, 11601, 11874, 11202, 11474, 11075,
                      11746, 11346, 11618, 11619, 11891, 11491, 11092, 11363, 11431]
-    expected = ["494.0415", "0.94514", "0.93997", "0.90784", "0.77395", "0.71762", "0.60284",
-                "0.45398", "0.44907", "0.29482", "0.10538", "-0.06733", "-0.11466",
-                "-0.40180", "-1.03760", "-2.61783", "-7.42210"]
+    expected = ["494.041507", "0.945135457", "0.939965592", "0.907828443", "0.773946665",
+                "0.717624141", "0.602841750", "0.453983554", "0.449061886", "0.294824545",
+                "0.105376222", "-0.0673258848", "-0.114658450", "-0.401805876", "-1.03759945",
+                "-2.61783583", "-7.42210119"]
     for b, e in zip(breaks, expected, strict=True):
-        assert abs(b - arb(e)) < arb("0.0006"), (b, e)
+        assert abs(b - arb(e)) < arb("1e-8") * (1 + abs(arb(e))), (b, e)
     # Named diagonal points: mu=0 vacuum energy, mu=1 opposite-parity level, mu=-1.
     named = {0: 11618, 1: 10928, -1: 11491}
     for mu, winner in named.items():
         assert all(value(diagonal, m, mu) > value(diagonal, winner, mu) for m in ns if m != winner)
     print("diagonal (parity-blind) winners, mu from +inf to -inf:", chain)
-    print("  breakpoints", [b.str(6) for b in breaks])
+    print("  breakpoints", [b.str(9) for b in breaks])
 
     classes = {}
     for label, members in (("+", plus), ("-", minus)):
@@ -169,9 +170,12 @@ def verify():
     assert classes["-"][1] == [11531, 11532, 12001, 11731, 12002, 12003, 10931, 11601,
                                11874, 11202, 11474, 11075, 11746, 11346, 11618, 11619,
                                11891, 11491, 11092, 11363, 10965]
+    for label, ends in (("+", ("494.041507", "-4.28919788")), ("-", ("1318.22350", "-10.7558127"))):
+        cuts = classes[label][2]
+        assert abs(cuts[0] - arb(ends[0])) < arb("1e-5") and abs(cuts[-1] - arb(ends[1])) < arb("1e-7")
     for label in "+-":
         print("sector", label, "winners:", classes[label][1])
-        print("  breakpoints", [b.str(6) for b in classes[label][2]])
+        print("  breakpoints", [b.str(9) for b in classes[label][2]])
 
     # Every sector vertex is the unique global winner at an explicit (mu+, mu-).
     big = arb(10)**5
@@ -196,10 +200,16 @@ def verify():
     achain, abreaks = envelope(anti)
     assert achain == [10965, 11363, 11092, 11491, 11891, 11619, 11618, 11346, 11746, 11075,
                       11474, 11050, 11448, 11177, 11576, 11304, 11977, 11033, 11431]
+    expected = ["11.7558127", "3.61783583", "2.03759945", "1.40180588", "1.11465845",
+                "1.06732588", "0.894623778", "0.705175455", "0.550938114", "0.546016446",
+                "0.432139659", "0.275948924", "0.179180939", "-0.132376863", "-0.564578197",
+                "-0.570362233", "-1.45886358", "-4.28919788"]
+    for b, e in zip(abreaks, expected, strict=True):
+        assert abs(b - arb(e)) < arb("1e-8") * (1 + abs(arb(e))), (b, e)
     for c, winner in ((0, 11177), (1, 11618)):
         assert all(value(anti, m, c) > value(anti, winner, c) for m in ns if m != winner)
     print("fixed-parity interpolation winners, weight on E_minus from +inf to -inf:", achain)
-    print("  breakpoints", [b.str(6) for b in abreaks])
+    print("  breakpoints", [b.str(9) for b in abreaks])
 
     # --- monotone no-go ----------------------------------------------------------
     witnesses = {10875: (11177, 11681), 11737: (11618, 12003), 11488: (11618, 11346)}
@@ -272,6 +282,14 @@ def verify():
         a, b = energy[n] - e_min, g_max - gap[n]
         return (a + b + abs(a - b)) / 2
 
+    table = {11431: ("0.0062448", "0.0236719"), 11491: ("0.0010263", "0.0215282"),
+             11618: ("0", "0.0174275"), 11177: ("0.0012022", "0.0179025"),
+             10875: ("0.0261440", "0.0069400"), 11488: ("0.0068288", "0.0152557"),
+             11737: ("0.0116821", "0.0017562")}
+    for n, (de, gg) in table.items():
+        assert abs(energy[n] - e_min - arb(de)) < arb("5e-8"), n
+        assert abs(gap[n] - arb(gg)) < arb("5e-8"), n
+        print(n, "sector", sector[n], "E - E_min", (energy[n] - e_min).str(8), "g", gap[n].str(8))
     costs = {n: cost(n) for n in ns}
     best = 11491
     assert all(costs[m] > costs[best] for m in ns if m != best)

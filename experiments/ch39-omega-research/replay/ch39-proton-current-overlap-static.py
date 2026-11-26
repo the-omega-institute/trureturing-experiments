@@ -226,11 +226,14 @@ def verify():
     assert sp.simplify(Xt-closedX) == 0
     assert sp.expand(4*pt-tsym*sp.diff(pt, tsym)-4*(20*tsym**3+45*tsym**2+18*tsym+1)) == 0
     assert Xt.subs(tsym, 0) == 1 and Xt.subs(tsym, 1) == sp.Rational(5, 4)
-    num, den = sp.fraction(sp.together(sp.diff(Xt, tsym)))
-    num, den = sp.Poly(sp.expand(num), tsym), sp.Poly(sp.expand(den), tsym)
-    nc, dc = num.all_coeffs(), den.all_coeffs()
-    # 分子分母系数同号且非零 => X'(t)>0 对 t>=0；X 在 [0,1] 上严格增。
-    assert all(v > 0 for v in nc) and all(v > 0 for v in dc)
+    cub = 20*tsym**3+45*tsym**2+18*tsym+1
+    assert sp.simplify(Xt-(10*tsym**3+45*tsym**2+27*tsym+2)*pt/(2*cub**2)) == 0
+    num, den = sp.fraction(sp.cancel(sp.diff(Xt, tsym)))
+    nc = sp.Poly(num, tsym).all_coeffs()
+    # 约分后：X'(t) = N(t)/[2 (20t^3+45t^2+18t+1)^3]，N 系数全正 => X 在 [0,1] 上严格增。
+    assert nc == [3000, 20250, 48150, 68775, 52920, 22365, 6090, 675, 36, 3]
+    assert sp.expand(den-2*cub**3) == 0
+    assert all(v > 0 for v in nc)
     nX, dX = sp.fraction(Xt)
     print("归一无关读数 X(rho) =", nX, "/", dX, "；X(0)=1, X(1)=", Xt.subs(tsym, 1))
     print("X' 分子系数", nc[:4], "... 全正")

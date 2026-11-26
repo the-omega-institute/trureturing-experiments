@@ -30,6 +30,7 @@ BARE = {(0, 0): fmpq(2, 5), (2, 0): fmpq(-1, 10), (-2, 0): fmpq(-1, 10),
 MODIFIED = {(0, 0): fmpq(4, 5), (0, 2): fmpq(1, 10), (0, -2): fmpq(1, 10),
             (1, 1): fmpq(-1, 4), (1, -1): fmpq(-1, 4), (-1, 1): fmpq(-1, 4), (-1, -1): fmpq(-1, 4)}
 STENCIL = BARE
+K_BARE_AT_V0 = sp.expand((12-2*T**2-T*V)/20).subs(V, 0)
 
 
 def symbol_of(stencil):
@@ -131,6 +132,11 @@ def check_modified():
         ser = sp.series(e.subs(sub, simultaneous=True), eps, 0, 4).removeO()
         assert sp.expand(ser-eps**2*(t**2/2+s**2/10)) == 0
     # 环面非负：对 |T|≤2，K'≥(6+V^2)/10-|V|/2=(|V|-2)(|V|-3)/10≥0，仅 |V|=2、T=2sgnV（长波点）为零。
+    # 环面零点：(T,V)=(2,2) 即 (t,s)=(0,0)，及其规范像 (T,V)=(-2,-2) 即 (π,π)；V=0 时 K' 为常数 3/5（无传播）。
+    assert Kp.subs({T: 2, V: 2}) == 0 and Kp.subs({T: -2, V: -2}) == 0
+    assert Kp.subs(V, 0) == sp.Rational(3, 5)
+    # 裸雷吉在 V=0 处 K=(12-2T^2)/20≥1/5>0，G_k 在 s=π/2 连续。
+    assert sp.expand(K_BARE_AT_V0-(12-2*T**2)/20) == 0 and K_BARE_AT_V0.subs(T, 2) == sp.Rational(1, 5)
     Va = sp.symbols("Va", nonnegative=True)
     assert sp.expand((6+Va**2)/10-Va/2-(Va-2)*(Va-3)/10) == 0
     # 每个 0<V<2：K' 对 T 仿射、斜率 -V/4<0、唯一根 r=2(6+V^2)/(5V)，r-2=2(V-2)(V-3)/(5V)>0。
@@ -269,7 +275,12 @@ def check_checkerboard():
 
 
 def checkerboard_involutions():
-    """有效二维棋盘上反转 n 的仿射映射 (n,m)->(c-n, ±m+d)：对合与保格点条件。"""
+    """有效二维棋盘上反转 n 的仿射映射：有限范围抽查（一般整数 c,d 的结论见说明的奇偶论证）。"""
+    # 线性部分 (Δn,Δm)->(-Δn, αΔn+βΔm) 保持裸模板偏移集，迫使 α=0、β=±1（有限范围抽查）。
+    offsets = set(BARE)
+    keep = [(al, be) for al in range(-3, 4) for be in range(-3, 4)
+            if {(-a, al*a+be*b) for a, b in offsets} == offsets]
+    assert keep == [(0, -1), (0, 1)]
     out = set()
     for c in range(-3, 4):
         for d in range(-3, 4):

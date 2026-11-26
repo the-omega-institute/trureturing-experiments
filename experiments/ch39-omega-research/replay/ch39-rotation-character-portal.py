@@ -15,6 +15,8 @@ ROOT = Path(__file__).parent
 common = run_path(str(ROOT / "ch39-chiral-common-portal-scale.py"))
 fixed, chiral, two = common["fixed"], common["chiral"], common["two"]
 geometry = run_path(str(ROOT / "ch39-fixed-planck-magnetic-window.py"))["geometry"]
+matter = run_path(str(ROOT / "ch39-charge-matter-determinant-order.py"))
+soft = matter["soft"]
 
 ZEROS = (11661, 11934, 12207, 28325)
 SCALE = arb("3.725e14")
@@ -77,7 +79,24 @@ def charge_matrix(q, height):
     return mat
 
 
-def candidate(model, initial, read, S, bases, center, n):
+def spoke_removal(S, height):
+    """三条辐边（极点到一个轮换轨道）的刚度减量，每边权重 amount，传输为一。"""
+    pole, orbit = soft["pole"], soft["star"]["orbit"]
+    assert geometry["sites"][pole] == (17, 17, 17)
+    star = acb_mat(19, 19)
+    for v in orbit:
+        e = [int(i == v)-int(i == pole) for i in range(19)]
+        for i in range(19):
+            for j in range(19):
+                star[i, j] += e[i]*e[j]
+    assert star.trace().real == 6
+    perm = [geometry["sites"].index((b, c, a)) for a, b, c in geometry["sites"]]
+    assert perm[pole] == pole and {perm[v] for v in orbit} == set(orbit) and len(set(orbit)) == 3
+    amount = arb(23)/25*arb(2)**-20/(height**2+soft["point"]["study"]["offset"])
+    return amount, star
+
+
+def candidate(model, initial, read, S, bases, n):
     height = acb.zeta_zero(n).imag
     rows = read(height)
     levels = {q: chiral["ordered"]([h for h, z in rows if z == q]) for q in (0, *model["charges"])}
@@ -87,29 +106,46 @@ def candidate(model, initial, read, S, bases, center, n):
     table = [((UNIT/model["mz"]).log()+l, w, B, f, s) for l, w, B, f, s
              in two["thresholds"](model, levels, False)]
     target, moments = common["portal_at"](model, initial, (levels, 1/alpha, table), SCALE, steps=65536)
-    mat = charge_matrix(3, height)
-    assert all(abs(z) < arb("1e-30") for z in (S*mat-mat*S).entries())
-    # 三辐边减量只依赖边长且极点固定，与 S 对易；块内 Weyl 界给每个特征标本征值 1e-12 的加宽。
+    unit_matrix = charge_matrix(3, height)
+    # 与 shell_spectra 的分解一致：极点边单位传输的星图加非辐边荷三矩阵。
+    base, neutral, _ = soft["vector_pencil"](height)
+    assert all(z.contains(0) for z in (unit_matrix-base-matter["nonspokes"](3, height)).entries())
+    amount, star = spoke_removal(S, height)
+    mat = unit_matrix-amount*star
+    # 含辐边减量的荷三算子与 S 对易：每个矩阵元的区间都包含零。
+    assert all(z.contains(0) for z in (S*mat-mat*S).entries())
+    # 中性算子的迹为 270，减量迹为 6a，且常向量为零模，故十八个正本征值的均值为 15-a/3。
+    trace = (base+neutral).trace().real
+    assert trace == 270
+    center = (trace-6*amount)/18
     labelled = []
     for chi, B in enumerate(bases):
         for eig in (B.conjugate().transpose()*mat*B).eig(multiple=True):
             assert eig.imag.contains(0)
-            v = eig.real+arb(0, "1e-12")
-            labelled.append((v*abs(v-center), chi))
+            v = eig.real
+            labelled.append((v*abs(v-center), chi, v))
     assert len(labelled) == 19
+    gap = min(abs(a[2]-b[2]) for a in labelled for b in labelled if a[1] != b[1])
+    labelled.sort(key=lambda t: float(t[0].mid()))
+    assert all(a[0] < b[0] for a, b in zip(labelled, labelled[1:]))
+    # 显式算子的包围落在 spectral_supplier 的 1e-12 宽包围之内，次序一致。
+    assert all(g.overlaps(h) for (g, _, _), h in zip(labelled, levels[3]))
     W = [arb(0)]*3
-    pattern = []
-    for h in levels[3][3:]:
-        mass = UNIT*h
+    x = [arb(0)]*4
+    pattern, heights = [], []
+    for g, chi, _ in labelled[3:]:
+        mass = UNIT*g
         assert mass < SCALE or mass > SCALE
         if mass < SCALE:
-            chis = [c for g, c in labelled if g.overlaps(h)]
-            assert len(chis) == 1
-            W[chis[0]] += mass**2*(1+2*(SCALE/mass).log())/(16*arb.pi()**2)
-            pattern.append(chis[0])
+            w = mass**2*(1+2*(SCALE/mass).log())/(16*arb.pi()**2)
+            W[chi] += w
+            for k in range(4):
+                x[k] += w*(mass/(80*UNIT))**(2*k)
+            pattern.append(chi)
+            heights.append(g)
     assert len(pattern) == 14
-    assert (sum(W)-moments[0]).contains(0)
-    return alpha, target, W, moments, pattern
+    assert all((a-b).contains(0) or a.overlaps(b) for a, b in zip(x, moments[:4]))
+    return alpha, target, W, x, pattern, heights, gap
 
 
 def cone_interval(Wa, Wb):
@@ -160,11 +196,11 @@ def verify():
     ctx.prec = 192
     read = chiral["source"]["spectral_supplier"](model)
     S, bases = rotation()
-    neutral = model["shell"]["shell_spectra"]((0,), zero_index=11431)[0]
-    center = sum(v+arb(0, "1e-12") for v in neutral)/18
-    data, patterns = {}, {}
+    data, patterns, clusters = {}, {}, {}
     for n in ZEROS:
-        alpha, T, W, x, pattern = candidate(model, initial, read, S, bases, center, n)
+        alpha, T, W, x, pattern, heights, gap = candidate(model, initial, read, S, bases, n)
+        clusters[n] = heights
+        print("不同特征标本征值的最小间距", n, gap.str(6), flush=True)
         assert [pattern.count(c) for c in range(3)] == [5, 5, 4]
         assert all(w > 0 for w in W) and T > 0 and T.rad() < arb("5e20")
         ref_T, ref_W = TABLE[n]
@@ -174,6 +210,7 @@ def verify():
         patterns[n] = pattern
         print("零点、强耦合、两圈阈值 T/GeV²、三特征标权 W/GeV²、活跃层特征标",
               n, alpha.str(8), T.str(10), [w.str(9) for w in W], pattern, flush=True)
+        print("DEBUG T rad, moments", T.rad().str(4), [v.str(6) for v in x], [h.str(6) for h in heights])
 
     # 不同特征标块之间无能级排斥：11934 在 h 约 37 与 44 的两簇处交换了特征标次序。
     assert patterns[11661] == patterns[12207] == patterns[28325]
@@ -235,6 +272,14 @@ def verify():
     assert char_res/TOLERANCE > arb("3.5e17")
     print("四枚共用有符号特征标门户的极小极大残差下界/GeV²", char_res.lower().str(6),
           "左零向量", [v.str(5) for v in y])
+
+    qres, _ = null_residual([data[n][2][:3] for n in ZEROS], targets)
+    print("DEBUG quad4", qres.str(6))
+    try:
+        cub = arb_mat([data[n][2][:4] for n in ZEROS]).solve(arb_mat([[t] for t in targets])).entries()
+        print("DEBUG cubic", [c.str(6) for c in cub])
+    except Exception as e:
+        print("DEBUG cubic fail", e)
 
     # 五、有符号谱多项式：沿 11661,11934,12207 依次加入，次数 N-2 被排除，次数 N-1 唯一可解。
     for N in (2, 3):
