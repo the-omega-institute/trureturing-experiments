@@ -71,7 +71,7 @@ def weights(rows,heat,points,target):
     return mat.solve(arb_mat([[1],[1],[target]])).entries()
 
 
-def capped(rows,heat,target):
+def capped(rows,heat,target, *, return_measure=False):
     a0,a1="1e-6","1.2e-6"
     b0,b1=".49",".51"
     l0,l1=".22150091",".22150096"
@@ -100,6 +100,8 @@ def capped(rows,heat,target):
     assert p>0>n and r>0 and (-n).overlaps(dual)
     print("有界截止：导数覆盖段数、分离斜率及两个内支撑",pieces,ell.str(17),a.str(17),b.str(17))
     print("支撑处的精确解系数与对偶最优负量",*[z.str(17) for z in (p,n,r,dual)])
+    if return_measure:
+        return dual, (a, b, arb(1)), (p, n, r)
     return dual
 
 
