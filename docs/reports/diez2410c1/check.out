@@ -1,0 +1,4 @@
+Fidelity: Definition 2 yields Catalan moments m = 0,...,8; odd moments vanish by symmetry.
+Family: exact boundary and endpoint identities, 1 < x' <= 181/72 < 4.
+Family: exact moments (1, 0, 1, +/- e) and R-transform sum 2w.
+ALL_CHECKS_OK
