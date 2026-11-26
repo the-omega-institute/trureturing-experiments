@@ -81,6 +81,10 @@ def dot(a,b):
 
 def equations(variables,data,target,wide):
     native,u,v=native_moments(variables,data,wide)
+    return block_invariants(native,u,v,target)
+
+
+def block_invariants(native,u,v,target):
     q=u*v
     b=(1-q).sqrt()
     invariant=[]

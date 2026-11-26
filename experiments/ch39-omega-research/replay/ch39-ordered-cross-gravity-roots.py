@@ -5,7 +5,7 @@ from runpy import run_path
 from flint import arb, arb_mat, ctx
 
 
-def high_pair(weights,low,rows,heat,moments):
+def high_pair(weights,low,rows,heat,moments,*,with_slack=False):
     a,b,c=weights
     pi=arb.pi()
     target=arb("1e-122")
@@ -35,6 +35,10 @@ def high_pair(weights,low,rows,heat,moments):
     row_norm=[sum(abs(e).upper() for e in row) for row in defect.tolist()]
     residual=pre*values(center,low)
     assert all(abs(r)+n*scale<scale for r,n in zip(residual.entries(),row_norm,strict=True))
+    if with_slack:
+        slack = min((scale-abs(r)-n*scale).lower() for r,n in zip(residual.entries(),row_norm,strict=True))
+        pre_norm = max(sum(abs(x).upper() for x in row) for row in pre.tolist())
+        return box,(slack/pre_norm).lower()
     return box
 
 
