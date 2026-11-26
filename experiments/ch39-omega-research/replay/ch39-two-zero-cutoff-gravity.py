@@ -6,7 +6,7 @@ from flint import acb, arb, arb_mat, ctx
 import sympy as sp
 
 
-def adjacent_fields(root):
+def gravity_fields(root, numbers=None):
     single = run_path(str(root / "ch39-signed-cutoff-gravity.py"))
     lib = run_path(str(root / "ch39-chiral-minimal-neutral-gravity.py"))
     chiral = lib["chiral"]
@@ -33,15 +33,21 @@ def adjacent_fields(root):
                 vals = [v-arb(0).union(4*delta) for v in neutral[1:]]
             else:
                 eig = shell["laplacian"](q, h).eig(multiple=True)
-                vals = sorted((z.real for z in eig), key=float)
+                vals = [z.real for z in eig]
                 assert len(vals) == 19 and all(z.imag.contains(0) for z in eig)
-            bands[q] = sorted((v*abs(v-c) for v in vals), key=float)
+            bands[q] = chiral["ordered"]([v*abs(v-c) for v in vals])
         rows = lib["fields"](bands)
         assert len(rows) == 99 and all(z > 0 for _, _, z in rows[1:])
         return rows
-    n = single["NUMBER"]
-    rows0, rows1 = levels(n), levels(n + 1)
-    return single, lib, rows0, rows1
+    if numbers is None:
+        n = single["NUMBER"]
+        numbers = (n, n + 1)
+    return single, lib, [levels(n) for n in numbers]
+
+
+def adjacent_fields(root):
+    single, lib, rows = gravity_fields(root)
+    return single, lib, *rows
 
 
 def verify():

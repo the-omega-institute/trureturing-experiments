@@ -5,6 +5,15 @@ from runpy import run_path
 from flint import arb
 
 
+def exponential_difference(x, z, h, ref):
+    # 抽出较轻端的指数，用 expm1 保存相邻两枚的质量差。
+    if z > h:
+        return (-(h-ref)/x).exp() * -((h-z)/x).expm1()
+    if h > z:
+        return (-(z-ref)/x).exp() * ((z-h)/x).expm1()
+    return (z-h)/x * (-(h.union(z)-ref)/x).exp()
+
+
 def verify():
     root = Path(__file__).resolve().parent
     _, _, first, second = run_path(str(root / "ch39-two-zero-cutoff-gravity.py"))["adjacent_fields"](root)
@@ -26,16 +35,8 @@ def verify():
     envelope = sum(abs(aj) + start*abs(gj)/(2*slope) for _, gj, aj, _ in terms)
     assert a - start*abs(g)/(2*slope) > envelope * (-gap/start).exp()
 
-    def difference(x, z, h):
-        # 抽出较轻端的指数，用 expm1 保存相邻两枚的质量差。
-        if z > h:
-            return (-(h-ref)/x).exp() * -((h-z)/x).expm1()
-        if h > z:
-            return (-(z-ref)/x).exp() * ((z-h)/x).expm1()
-        return (z-h)/x * (-(h.union(z)-ref)/x).exp()
-
     def separated(x):
-        return sum((aj+x*gj/(2*slope))*difference(x, z, h) for gj, aj, z, h in pairs) > 0
+        return sum((aj+x*gj/(2*slope))*exponential_difference(x, z, h, ref) for gj, aj, z, h in pairs) > 0
 
     count = 0
     left = start
