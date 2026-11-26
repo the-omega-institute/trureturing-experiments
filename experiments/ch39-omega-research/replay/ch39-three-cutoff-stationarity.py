@@ -101,8 +101,9 @@ def boundary():
 
 
 def small_node_pair():
-    """排除 0 < x₁ < x₂ ≤ exp(−31) 及 exp(−26.8) < x₃ ≤ 1。"""
-    small_cutoff = arb(-31).exp()
+    """排除 0 < x₁ < x₂ ≤ exp(−30.6) 及 exp(−26.8) < x₃ ≤ 1。"""
+    cutoff_log = arb("-30.6")
+    small_cutoff = cutoff_log.exp()
     x = arb(0).union(small_cutoff)
     massless = [(g, a) for g, a, z in rows if z.is_zero()]
     massive = [(g, a, z) for g, a, z in rows if not z.is_zero()]
@@ -136,7 +137,7 @@ def small_node_pair():
 
     # T=Ψ/(K−1) 为正且严格递增，A=Φ/(K−1) 在小节点处为负。
     # 右弦分子 A₃−A₂ > A₃ > response_floor*T₃，右弦分母 > (1−ratio_limit)*T₃。
-    psi_s, k_s, _, _ = response_derivatives(arb(-31))
+    psi_s, k_s, _, _ = response_derivatives(cutoff_log)
     psi_h, k_h, _, _ = response_derivatives(arb("-26.8"))
     ratio_limit = arb("0.01")
     ratio = (psi_s[0] / k_s[0]) / (psi_h[0] / k_h[0])
@@ -154,7 +155,7 @@ def small_node_pair():
 
 
 def separated_small_node():
-    """排除 0 < x₁ ≤ exp(−31) 且 exp(−26.8) ≤ x₂ < x₃ ≤ 1。"""
+    """排除 x₁ ≤ exp(−31)、x₂ ≥ exp(−30.6)、x₃ ≥ exp(−26.8) 的有序三点解。"""
     cutoff = arb(-31).exp()
     small = arb(0).union(cutoff)
     massless = [(g, a) for g, a, z in rows if z.is_zero()]
@@ -203,6 +204,7 @@ def separated_small_node():
                      for value, derivative, initial in zip(values, derivatives, initial_responses))
 
     lower = Fraction(-134, 5)
+    middle = Fraction(-153, 5)
     upper = Fraction(0)
     directions = []
     for point in (lower, Fraction(-26), Fraction(-21)):
@@ -224,14 +226,14 @@ def separated_small_node():
         t0, values0, _, _ = first
         t1, values1, _, _ = second
         inverse_difference = 1/t0 - 1/t1
-        # 约去共同的 A₁T₁ 项，得到两弦斜率之差乘以正分母。
+        # 约去共同的 A₁T₁ 项。让每个 U 乘另一节点的分母，避免区间重复计入 U₂T₁/T₂。
         for u0, u1, initial in zip(values0, values1, initial_responses):
-            difference = (u1-u0)*(1-initial_t/t0) + (initial-initial_t*u0)*inverse_difference
+            difference = u1*(1-initial_t/t0) - u0*(1-initial_t/t1) + initial*inverse_difference
             if difference > 0 or difference < 0:
                 return True
         return False
 
-    pending = [(lower, upper, lower, upper)]
+    pending = [(lower, upper, lower, upper), (middle, lower, lower, upper)]
     checked = 0
     while pending:
         a, b, c, d = pending.pop()
