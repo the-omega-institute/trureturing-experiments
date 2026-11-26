@@ -18,14 +18,15 @@ CASES = (
 
 
 def read(coeff,peaks,nodes,rows,targets,*,matrices=False):
-    amplitude,scale,z1,z2 = coeff
+    amplitude,scale,z1,z2 = coeff[:4]
+    spread = coeff[4] if len(coeff)>4 else arb(0)
     residues,axes,operators = [],[],[]
     for ts,projections,mu in zip(nodes,rows,targets,strict=True):
         weights = []
         for t in ts:
-            u = scale*(t-z1)*(t-z2)
+            u = scale**2*((t-z1)**2+spread**2)*(t-z2)**2
             v = (t-peaks[0])*(t-peaks[1])
-            weights.append(arb(FLOOR)+(amplitude-arb(FLOOR))*u*u/(u*u+v*v))
+            weights.append(arb(FLOOR)+(amplitude-arb(FLOOR))*u/(u+v*v))
         p,h,re,im,plus,minus = [sum(w*c for w,c in zip(weights,row,strict=True)) for row in projections]
         axis = (2*re,-2*im,p-h)
         mag = sum(t*t for t in axis).sqrt()
@@ -52,7 +53,7 @@ def constraints(coeff,points,nodes,rows,target):
     return arb_mat([[x] for x in f]),arb_mat(der).transpose()
 
 
-def ckm_branches(coeff,box,nodes,rows,masses):
+def ckm_branches(coeff,box,nodes,rows,masses,*,verbose=True):
     residues,axes,operators = read(coeff,box,nodes,rows,masses,matrices=True)
     a,b = axes
     c = sum(u*v for u,v in zip(a,b,strict=True))
@@ -81,18 +82,21 @@ def ckm_branches(coeff,box,nodes,rows,masses):
         mix = state[0].conjugate().transpose()*state[1]
         j = (mix[0,0]*mix[1,1]*mix[0,1].conjugate()*mix[1,0].conjugate()).imag
         res.append((abs(mix[0,2]),j,[[abs(mix[i,k])**2 for k in range(3)] for i in range(3)]))
-        print("镜像标记、|Vub|、有符号 J",sign,abs(mix[0,2]).str(12),j.str(12),flush=True)
+        if verbose:
+            print("镜像标记、|Vub|、有符号 J",sign,abs(mix[0,2]).str(12),j.str(12),flush=True)
     assert all(res[0][2][i][k].overlaps(res[1][2][i][k]) for i in range(3) for k in range(3))
     assert res[0][1].overlaps(-res[1][1]) and not res[0][1].contains(0)
+    return res
+
+
+def reference_windows():
     angles=[(arb(c)-arb(e)).union(arb(c)+arb(e)) for c,e in
             ((".22704",".00082"),(".04275",".00042"),(".00377",".00008"),("1.139",".023"))]
     a,b,g,phase=angles
     req_vub=g.sin()
     req_j=a.sin()*a.cos()*b.sin()*b.cos()*g.sin()*g.cos()**2*phase.sin()
-    assert all(not x.overlaps(req_vub) and not j.overlaps(req_j) for x,j,_ in res)
-    print("参考 |Vub| 与有符号 J 的一倍误差包围",
-          req_vub.lower().str(10),req_vub.upper().str(10),req_j.lower().str(10),req_j.upper().str(10))
-    return res
+    return req_vub,req_j
+
 
 
 def verify(root):
@@ -131,7 +135,9 @@ def verify(root):
         sx,sy=[(x[1]-x[0])/(x[1]+x[0]) for x in r]
         margin=(1-c*c)*(1-sx*sx)-(sy-c*sx)**2
         assert margin>0
-        ckm_branches(coeff,box,nodes,rows,target)
+        branches = ckm_branches(coeff,box,nodes,rows,target)
+        req_vub,req_j = reference_windows()
+        assert all(not x.overlaps(req_vub) and not j.overlaps(req_j) for x,j,_ in branches)
         print("编号、两个峰位、压缩映射范数上界、共同法向相容余量",index,
               *[x.str(15) for x in box],gain.str(8),margin.str(10),flush=True)
 
