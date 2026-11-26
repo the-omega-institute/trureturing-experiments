@@ -6,7 +6,7 @@ from flint import acb, arb, ctx
 
 
 def verify(root):
-    _,fermions = run_path(str(root / "ch39-common-embedding-central-right-ckm.py"))["verify"](root)
+    frame,fermions = run_path(str(root / "ch39-common-embedding-central-right-ckm.py"))["verify"](root)
     cutoffs = run_path(str(root / "ch39-adjacent-ordered-charge-six-cutoffs.py"))["verify"](root)
     ordered = run_path(str(root / "ch39-bounded-common-rational-amplitude.py"))["ordered"]
     shell = run_path(str(root / "ch39-three-ray-chiral-boundary.py"))
@@ -27,6 +27,7 @@ def verify(root):
     print("两编号、三荷 114 个真实节点的最小间距",min_gap.str(13),flush=True)
     left_cut = cutoffs[0][1][0].sqrt()*arb("1.22089e19")
     print("左邻三段解的最低截止（GeV）",left_cut.str(13),flush=True)
+    return frame, data
 
 
 if __name__ == "__main__":

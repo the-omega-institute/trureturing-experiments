@@ -18,12 +18,14 @@ def cross(x, y):
     return [x[(i+1)%3]*y[(i+2)%3]-x[(i+2)%3]*y[(i+1)%3] for i in range(3)]
 
 
-def certify_invariants(root):
+def certify_invariants(root, scales=None, collect=None):
     pencil = run_path(str(root/"ch39-triple-geometry-pencil.py"))
     lib, geom, V, mass, A, B, _ = pencil["setup"](root)
     u, v = interval(".003839",".003841"), interval(".03839",".03841")
     boxes = [interval(".003109",".003123"),interval(".0002808",".0002830"),
              interval(".9959",".9962"),interval(".8122",".8132"),interval(".3959",".3969")]
+    if scales is not None:
+        u, v = scales
     a2 = u*v
     b = (1-a2).sqrt()
     count = hits = deepest = 0
@@ -45,6 +47,8 @@ def certify_invariants(root):
                     chars = [(s-sign*w/u,s+sign*w/v) for d,s,z,k,w,det in box[0]]
                     if any(c<0 or c>1 for pair in chars for c in pair):
                         continue
+                    if collect is not None and any(det-a2*d*h[0]*h[1]<0 for (d,s,z,k,w,det),h in zip(box[0],chars,strict=True)):
+                        continue
                     bloch = []
                     for d,s,z,k,w,det in box[0]:
                         low = (z-a2*s-(u-v)*sign*w)/(1-a2)
@@ -58,9 +62,12 @@ def certify_invariants(root):
                         if radius>0:
                             para = dot(x,y)/radius
                             perp2 = dot(y,y)-para**2
-                            if perp2>0 and all(bound.contains(val) for bound,val in zip(boxes,(tu,td,radius,para,perp2.sqrt()),strict=True)):
-                                hits += 1
-                                continue
+                            if perp2>0:
+                                values = (tu,td,radius,para,perp2.sqrt())
+                                ok = collect(values,x[2]/radius) if collect is not None else all(bound.contains(val) for bound,val in zip(boxes,values,strict=True))
+                                if ok:
+                                    hits += 1
+                                    continue
                     keep.append(idx)
                     break
             if keep:
@@ -98,22 +105,25 @@ def forms(rows):
     return result
 
 
-def verify(root):
-    tu, td, radius, para, perp = certify_invariants(root)
-    fixed=run_path(str(root/"ch39-free-four-site-native-positive-spectrum.py"))
-    up, down=fixed["native"](root,2_306_888_100_084)
-    ctx.prec=256
+def native_rays(up):
     cs=[native_coordinates(row) for row in up]
     rays=[(j+1,c[0],[x/c[0] for x in c[1:]]) for j,c in enumerate(cs) if c[0]>0]
     assert len(rays)==7
-    support=forms(down)
+    return rays
+
+
+def exclude_rays(boxes,rays,support,allowed=()):
+    tu, td, radius, para, perp = boxes
     defect=1-radius**2
+    results=[]
     down_norm2=para**2+perp**2
     for j,trace,ray in rays:
+        if j in allowed:
+            continue
         distance=min((1-dot(ray,r)).lower() for k,_,r in rays if k!=j)
         L=2/distance
         if distance*(1-trace/tu)>defect:
-            print("上型最近谱层由容量排除",j)
+            results.append((j,0,None))
             continue
         assert L*defect<1
         root_disc=(1-L*defect).sqrt()
@@ -145,7 +155,20 @@ def verify(root):
             else:
                 assert depth<19,(j,depth,l,margin)
                 stack.extend(((depth+1,2*l),(depth+1,2*l+1)))
-        print("上型最近谱层、下型方向角覆盖盒、最小严格违约量",j,visited,worst.str(12))
+        results.append((j,visited,worst))
+    return results
+
+
+def verify(root):
+    boxes=certify_invariants(root)
+    fixed=run_path(str(root/"ch39-free-four-site-native-positive-spectrum.py"))
+    up,down=fixed["native"](root,2_306_888_100_084)
+    ctx.prec=256
+    for j,visited,worst in exclude_rays(boxes,native_rays(up),forms(down)):
+        if visited:
+            print("上型最近谱层、下型方向角覆盖盒、最小严格违约量",j,visited,worst.str(12))
+        else:
+            print("上型最近谱层由容量排除",j)
 
 
 if __name__=="__main__":
