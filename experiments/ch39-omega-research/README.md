@@ -21,6 +21,7 @@
 | 整个联合角窗都要求压低十二面质子因子时，最差相位至少还剩多少？ | 最佳可达的最大模介于 $7.08889\times10^{-8}$ 与 $7.18683\times10^{-8}$。对每组权，至少 29.3% 的窗面积超过 $5\times10^{-8}$。 | [整窗构造与实际零点密度](replay/整个联合角窗的质子因子.md) |
 | 以正零点的逆高度平方作概率，十二面因子在全谱上的均方根可否任意小？ | 前 512 枚已占总权 95.1052%，其贡献给全部合格权的均方根下界 0.005567917381。 | [全谱算术平均](replay/全部实际零点的质子因子均方.md) |
 | 逐站滤波允许抛弃部分输出，能否把整个三维轻空间准确送到另一荷？ | 对荷一等权输入，即便只看成功输出，荷二、荷负四的最小重概率仍分别超过 4.609632%、5.181978%。 | [保迹通道与后选择](replay/逐站滤波能否传递三代轻空间.md) |
+| 如果把两种单钟三角也加入十二面质子顶点，同一组权能否让自由真空和实际零点同时相消？ | 两处取同一编号的实际高度，固定同一组 15 项绕数权和三个正的类份额，两处的树级因子均可精确为零。在角窗内沿横向微动会恢复非零因子。 | [三类双点相消](replay/三类正反等分的双点相消.md) |
 
 从公开仓库根目录运行下列命令可复算表中的结果。使用 Python 3.12、python-flint 0.9.0 和 NumPy。完整记录还包括各节列明的其他依赖。第三方 SMDR 源码的授权随源码提供。[完整复算包](ch39-omega-math-replay.zip) · [SMDR 许可](replay/ch39-smdr/LICENSE.txt)
 
@@ -34,6 +35,7 @@ python3 ch39-signed-coherent-weights.py
 python3 ch39-one-corrupt-zero-reading.py
 python3 ch39-optimal-sparse-winding-differences.py
 python3 ch39-proton-factor-zero.py
+python3 ch39-mixed-proton-double-zero.py
 python3 ch39-first-three-window-integer-scales.py
 python3 ch39-oriented-difference-coherence.py
 python3 ch39-balanced-proton-residual.py
