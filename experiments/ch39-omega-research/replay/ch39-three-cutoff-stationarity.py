@@ -1,4 +1,4 @@
-"""区间核验 #11661 可见谱的两个同侧三截止排除区间与曲率方向反例。
+"""区间核验 #11661 可见谱的同侧与混合三截止排除区间、曲率方向反例。
 
 依赖 python-flint。沿用 ch39-cutoff-scale-stationarity.py 的固有时模型和谱输入。
 """
@@ -98,6 +98,59 @@ def boundary():
     print("low tail", left.str(12), flush=True)
 
 
+def small_node_pair():
+    """排除 0 < x₁ < x₂ ≤ exp(−31) 及 exp(−26.8) < x₃ ≤ 1。"""
+    small_cutoff = arb(-31).exp()
+    x = arb(0).union(small_cutoff)
+    massless = [(g, a) for g, a, z in rows if z.is_zero()]
+    massive = [(g, a, z) for g, a, z in rows if not z.is_zero()]
+    min_argument = arb(32)
+    assert all(z > min_argument * small_cutoff for _, _, z in massive)
+    tail = (-min_argument).exp()
+    g_tail = sum(abs(g) for g, _, _ in massive) * tail
+    a_tail = sum(abs(a) for _, a, _ in massive) * tail
+    g_zero = sum(g for g, _ in massless)
+    a_zero = sum(a for _, a in massless)
+
+    # E₂(u) ≤ exp(−u)，故 ΣαE₂(u) 与 Σαexp(−u) 共用包围区间。
+    a_sum = ball(a_zero, a_tail)
+    g_exp = ball(g_zero, g_tail)
+    denominator = x * a_sum / pi2 - 1
+    d_k = a_sum / pi2
+    phi = x * a_sum
+    # u exp(−u) 在 u ≥ 32 上由 32 exp(−32) 控制。
+    d_phi = a_sum + ball(0, min_argument * a_tail)
+    d_psi = x * (2 * g_exp + ball(0, min_argument * g_tail))
+    d_a = (d_phi * denominator - phi * d_k) / denominator**2
+    d_t = (d_psi * denominator - x**2 * g_exp * d_k) / denominator**2
+    assert a_sum > 0 and denominator < 0
+    assert d_a < -arb(1)/7
+    assert d_t < 130 * small_cutoff
+
+    # 由 A'(x) + slope*T'(x) < 0，左弦斜率小于 −slope。
+    slope = arb("2e10")
+    assert 1 / (910 * small_cutoff) > slope
+    assert d_a + slope * d_t < 0
+
+    # T=Ψ/(K−1) 为正且严格递增，A=Φ/(K−1) 在小节点处为负。
+    # 右弦分子 A₃−A₂ > A₃ > response_floor*T₃，右弦分母 > (1−ratio_limit)*T₃。
+    psi_s, k_s, _, _ = response_derivatives(arb(-31))
+    psi_h, k_h, _, _ = response_derivatives(arb("-26.8"))
+    ratio_limit = arb("0.01")
+    ratio = (psi_s[0] / k_s[0]) / (psi_h[0] / k_h[0])
+    assert ratio < ratio_limit
+    response_floor = arb("-1.9e10")
+    assert response_floor / (1 - ratio_limit) > -slope
+
+    def ratio_margin(logx):
+        psi, _, phi, _ = response_derivatives(logx)
+        return phi[0] / psi[0] - response_floor
+
+    confirm("-26.8", "0", ratio_margin, 1, max_boxes=5000)
+    print("small-node derivative margins", (-d_a).str(12), (d_t / small_cutoff).str(12))
+    print("small-node T ratio", ratio.str(12))
+
+
 def confirm(left, right, expression, sign, max_boxes=12500):
     pending = [(arb(left),arb(right))]
     count = 0
@@ -133,6 +186,7 @@ def verify():
         return arb("2e-8") * newton + vacuum
 
     confirm("-25.3", "0", mixed_curvature, 1)
+    small_node_pair()
 
 
 if __name__ == "__main__":
