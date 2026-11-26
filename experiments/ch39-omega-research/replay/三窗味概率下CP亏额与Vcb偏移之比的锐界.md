@@ -1,16 +1,16 @@
-# 平均 |Vub|² 精确时，三窗零点的留出 CP 亏额恰为平均 |Vcb|² 偏移的 1.9192×10¹⁰ 至 6.3870×10¹⁰ 倍
+# 平均 |Vub|² 精确时，三窗零点的留出 CP 亏额严格介于平均 |Vcb|² 偏移的 1.9192×10¹⁰ 倍与 6.3870×10¹⁰ 倍之间，两端均锐
 
 在原三窗（分界 9 的五荷三模、两圈强耦合窗、四层曲率窗）的零点上任取味概率 $\nu$，只要平均 $|V_{ub}|^2$ 精确等于参考值，留出的相对 CP 亏额 $D=1-\mathbb E_\nu J/J_0$ 与平均 $|V_{cb}|^2$ 的偏移 $\Delta C=\mathbb E_\nu|V_{cb}|^2-|V_{cb}|_0^2$ 就满足
 
 $$
-\kappa_-\,\Delta C\ <\ 10^{-12}D\cdot10^{12}\ \ \Longleftrightarrow\ \ 1.91919011\times10^{10}\,\Delta C\ <\ D\ \le\ 6.38699834\times10^{10}\,\Delta C ,
+1.91919011\times10^{10}\,\Delta C\ <\ D\ <\ 6.38699834\times10^{10}\,\Delta C ,
 $$
 
-只在 $\nu$ 全部落在参考相位时取等。两端都是锐的：比值 $D/\Delta C$ 的下确界位于 $[1.91919011,1.91923898]\times10^{10}$，上确界位于 $[6.38699833,6.38699834]\times10^{10}$，开区间 $(1.91923898,6.38699833)\times10^{10}$ 中每个值都由至多四枚实际三窗零点的正权实现。这条关系与共同尺度、算术时间的项数、味侧效率 $\eta$ 和任何选权规则都无关。
+除非 $\nu$ 全部落在参考相位（此时 $D=\Delta C=0$）。两端都是锐的：比值 $D/\Delta C$ 的下确界位于 $[1.91919011,1.91923898]\times10^{10}$，上确界位于 $[6.38699833,6.38699834]\times10^{10}$，开区间 $(1.91923898,6.38699833)\times10^{10}$ 中每个值都由至多四枚实际三窗零点的正权实现。这条关系与共同尺度、算术时间的项数、味侧效率 $\eta$ 和任何选权规则都无关。
 
 ## 模型前提
 
-沿用[第十二章](../../../../trureturing-books/books/omega-unification/zh/ch12-shared-arithmetic-clock.md)的已校准下型味张量与原双钟相位读法。每枚零点 $\gamma$ 的味读数只经六面坐标 $c=c(\gamma)$ 进入，记 $U(c)=|V_{ub}|^2$、$C(c)=|V_{cb}|^2$、$J(c)$ 为最高谱投影的两个对角元与 Jarlskog 不变量；参考相位为 $c_0=0.98764618475554\ldots$，$U_0=U(c_0)$ 等。
+沿用专著第十二章的已校准下型味张量与原双钟相位读法。每枚零点 $\gamma$ 的味读数只经六面坐标 $c=c(\gamma)$ 进入，记 $U(c)=|V_{ub}|^2$、$C(c)=|V_{cb}|^2$、$J(c)$ 为最高谱投影的两个对角元与 Jarlskog 不变量；参考相位为 $c_0=0.98764618475554\ldots$，$U_0=U(c_0)$ 等。
 
 对原三窗的每一枚零点，已有区间证书给出两钟角距 $|\theta_1-\theta_2|<0.215915$ 弧度，因而
 
@@ -31,14 +31,14 @@ $$
 **定理（比值律）.** 对 $I$ 上任意概率 $\nu$，若 $\mathbb E_\nu U=U_0$ 且 $\nu\ne\delta_{c_0}$，则
 
 $$
-0.0191919011<\frac{D}{10^{12}\Delta C}\le 0.0638699834,
+0.0191919011<\frac{D}{10^{12}\Delta C}< 0.0638699834,
 \qquad
 30318.0619\le\frac{10^{12}\Delta C}{\mathbb E_\nu(c-c_0)^2}\le 30318.2522,
 \qquad
 581.861\le\frac{D}{\mathbb E_\nu(c-c_0)^2}\le 1936.427 .
 $$
 
-特别地 $D=0\iff\Delta C=0\iff\nu=\delta_{c_0}$。等价地 $1.56568\times10^{-11}D\le\Delta C<5.21053\times10^{-11}D$。
+特别地 $D=0\iff\Delta C=0\iff\nu=\delta_{c_0}$。等价地 $1.56568\times10^{-11}D<\Delta C<5.21053\times10^{-11}D$（常数向外取整）。
 
 **锐性.** 设 $\kappa_\pm$ 为三窗零点上全体可行 $\nu$ 的比值 $D/(10^{12}\Delta C)$ 的上、下确界。则
 
@@ -52,7 +52,7 @@ $$
 
 **线性化.** $\mathbb E_\nu U=U_0$ 即 $\mathbb E_\nu A=0$，故 $D=\mathbb E_\nu L=\mathbb E_\nu\widetilde H$，$10^{12}\Delta C=\mathbb E_\nu B$。由 $s,\tau$ 的定义，$\widetilde H$ 与 $B$ 在 $c_0$ 处的值和一阶导数都为零。
 
-**逐点不等式.** 对 $f\in\{\widetilde H-\kappa B,\ \kappa' B-\widetilde H,\ B-\beta(c-c_0)^2,\ \dots\}$，在 $I$ 上作自适应二分。对每个格 $X$，先检验以 $c_0$ 为展开点的 Lagrange 余项：$f(c)=\tfrac12f''(\xi)(c-c_0)^2$，$\xi$ 介于 $c,c_0$；若 $\tfrac12f''$ 在 $X\cup\{c_0\}$ 的凸包上严格为正，则 $f>0$ 于 $X\setminus\{c_0\}$。对不含 $c_0$ 的格，再以格心作二阶 Taylor 包围 $f(m)+f'(m)[-w,w]+\tfrac12f''(X)[0,w^2]>0$。二阶射流由已有的谱投影隐式微分与 CP 分子插值给出，[`ch39-three-window-two-probability-cp.py`](ch39-three-window-two-probability-cp.py) 中的 `observables` 直接复用。两条比值不等式各用 69 与 55 个格完成。对概率取期望即得定理；由于 $B>0$ 于 $I\setminus\{c_0\}$，且逐点不等式在 $c\ne c_0$ 处严格，$\nu\neq\delta_{c_0}$ 时比值的下界严格。
+**逐点不等式.** 对 $f\in\{\widetilde H-\kappa B,\ \kappa' B-\widetilde H,\ B-\beta(c-c_0)^2,\ \dots\}$，在 $I$ 上作自适应二分。对每个格 $X$，先检验以 $c_0$ 为展开点的 Lagrange 余项：$f(c)=\tfrac12f''(\xi)(c-c_0)^2$，$\xi$ 介于 $c,c_0$；若 $\tfrac12f''$ 在 $X\cup\{c_0\}$ 的凸包上严格为正，则 $f>0$ 于 $X\setminus\{c_0\}$。对不含 $c_0$ 的格，再以格心作二阶 Taylor 包围 $f(m)+f'(m)[-w,w]+\tfrac12f''(X)[0,w^2]>0$。二阶射流由已有的谱投影隐式微分与 CP 分子插值给出，[`ch39-three-window-two-probability-cp.py`](ch39-three-window-two-probability-cp.py) 中的 `observables` 直接复用。两条比值不等式各用 69 与 55 个格完成。对概率取期望即得定理；由于 $B>0$ 于 $I\setminus\{c_0\}$，且逐点不等式在 $c\ne c_0$ 处严格，$\nu\neq\delta_{c_0}$ 时两端都是严格不等式（$R(a)=0.06386998330\ldots$ 严格小于上常数）。
 
 **内界.** 单点比 $R=\widetilde H/B$ 在 $I$ 上从低端约 $0.019192$ 递增到高端约 $0.063870$。已认证的两个三窗开相位窗，中心 $(\theta_{724},\theta_{804})=(0.15674163,-0.05916834)$ 与 $(0.072,0.072)$、半宽 $2^{-42}$，其六面坐标分别包在 $c\approx0.9756198966$ 与 $c\approx0.9988104269$ 的 $5\times10^{-13}$ 邻域内，两窗都含任意高的实际零点；窗内的 $R$ 分别为 $0.019192389745\ldots$ 与 $0.06386998330\ldots$。参考相位两侧任意近处也有实际三窗零点（[`ch39-finite-flavor-precision.py`](ch39-finite-flavor-precision.py)）。
 

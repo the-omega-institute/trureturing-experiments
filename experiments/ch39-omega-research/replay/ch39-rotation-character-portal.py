@@ -20,6 +20,11 @@ ZEROS = (11661, 11934, 12207, 28325)
 SCALE = arb("3.725e14")
 UNIT = arb("2.435e18")/724**2
 TOLERANCE = arb("125.25")**2/2
+# 说明文档表中的四舍五入值：T/1e26 与 W/1e27。
+TABLE = {11661: ("1.04651", ("2.613824", "2.760040", "1.833693")),
+         11934: ("1.04518", ("2.608613", "2.736231", "1.818032")),
+         12207: ("1.04669", ("2.614174", "2.764174", "1.835853")),
+         28325: ("1.04661", ("2.614720", "2.759766", "1.835275"))}
 
 
 def rotation():
@@ -161,7 +166,10 @@ def verify():
     for n in ZEROS:
         alpha, T, W, x, pattern = candidate(model, initial, read, S, bases, center, n)
         assert [pattern.count(c) for c in range(3)] == [5, 5, 4]
-        assert all(w > 0 for w in W) and T > 0
+        assert all(w > 0 for w in W) and T > 0 and T.rad() < arb("5e20")
+        ref_T, ref_W = TABLE[n]
+        assert abs(T-arb(ref_T)*10**26) < arb("5e20")
+        assert all(abs(w-arb(r)*10**27) < arb("1e21") for w, r in zip(W, ref_W))
         data[n] = (T, W, x)
         patterns[n] = pattern
         print("零点、强耦合、两圈阈值 T/GeV²、三特征标权 W/GeV²、活跃层特征标",
@@ -185,7 +193,8 @@ def verify():
             # 非负 p 时 (Wb.p)/(Wa.p) 在 [lo,hi] 内，最佳残差下界取比值间隙。
             gap = (r-hi) if r > hi else (lo-r)
             residual = gap*data[a][0]/(1+(hi if r > hi else lo))
-            assert residual > arb("3.54e22")
+            assert residual > {(11661, 11934): arb("3.753e22"), (11934, 12207): arb("3.544e22"),
+                               (11934, 28325): arb("5.057e22")}[(a, b)]
             print("非负特征标门户排除", a, b, "比值、区间、两枚最大残差下界/GeV²",
                   r.str(10), lo.str(10), hi.str(10), residual.lower().str(6))
     assert feasible == {(11661, 11934): False, (11661, 12207): True, (11661, 28325): True,
@@ -199,6 +208,8 @@ def verify():
         M = arb_mat([data[n][1] for n in triple])
         p = M.solve(arb_mat([[widened(n)] for n in triple])).entries()
         assert p[0] > 0 and p[1] > 0 and p[2] < 0
+        assert arb(".034") < p[0] < arb(".046") and arb(".007") < p[1] < arb(".020")
+        assert arb("-.036") < p[2] < arb("-.015")
         print("三枚的唯一特征标门户 (p_0,p_1,p_2)", triple, [v.str(5) for v in p])
 
     # 三、半正定特征标门户 (p>=0) 的极小极大残差：浮点线性规划给对偶向量，Arb 复核。
@@ -206,7 +217,7 @@ def verify():
         bound = psd_lower_bound([data[n][1] for n in chosen], [data[n][0] for n in chosen])
         assert bound > (arb("9.25e21") if chosen == (11661, 12207, 28325) else arb("3.75e22"))
         if 11934 in chosen and 28325 in chosen:
-            assert bound > arb("5.05e22")
+            assert bound > arb("5.057e22")
         print("半正定特征标门户的极小极大残差下界/GeV²", chosen, bound.lower().str(6))
 
     # 三之二、实门户 b 为实数，等价 p_1=p_2：二维族在任意三枚上被排除。
@@ -214,13 +225,13 @@ def verify():
         rows = [[data[n][1][0], data[n][1][1]+data[n][1][2]] for n in triple]
         yy = [(-1)**i*arb_mat([r for k, r in enumerate(rows) if k != i]).det() for i in range(3)]
         low = abs(sum(a*data[n][0] for a, n in zip(yy, triple)))/sum(abs(a) for a in yy)
-        assert low > arb("7.61e21")
+        assert arb("7.614e21") < low < arb("2.1e22")
         print("实轮换门户 (p_1=p_2) 在三枚上的极小极大残差下界/GeV²", triple, low.lower().str(6))
 
     # 四、四枚：有符号特征标门户被排除，残差为精确极小极大值 |y.T|/||y||_1。
     targets = [data[n][0] for n in ZEROS]
     char_res, y = null_residual([data[n][1] for n in ZEROS], targets)
-    assert char_res > arb("2.79e21")
+    assert char_res > arb("2.795e21")
     assert char_res/TOLERANCE > arb("3.5e17")
     print("四枚共用有符号特征标门户的极小极大残差下界/GeV²", char_res.lower().str(6),
           "左零向量", [v.str(5) for v in y])
@@ -231,7 +242,7 @@ def verify():
         rows = [data[n][2][:N-1] for n in chosen]
         yy = [(-1)**i*arb_mat([r for k, r in enumerate(rows) if k != i]).det() for i in range(N)]
         low = abs(sum(a*data[n][0] for a, n in zip(yy, chosen)))/sum(abs(a) for a in yy)
-        assert low > (arb("2.58e23") if N == 2 else arb("1.418e22"))
+        assert low > (arb("2.583e23") if N == 2 else arb("1.418e22"))
         full = arb_mat([data[n][2][:N] for n in chosen])
         coef = full.solve(arb_mat([[widened(n)] for n in chosen])).entries()
         print("零点数、次数 N-2 的极小极大残差下界/GeV²、次数 N-1 的唯一系数",
