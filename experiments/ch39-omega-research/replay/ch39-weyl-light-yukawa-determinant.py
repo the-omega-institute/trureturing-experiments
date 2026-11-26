@@ -5,6 +5,21 @@ from runpy import run_path
 from flint import acb, arb, ctx
 
 
+def spectator_levels(native, edges, center, weights, charge):
+    matrix = native["laplacian"](charge, center)
+    for (i, j), weight in zip(edges, weights, strict=True):
+        assert abs(matrix[i,j]).contains(1)
+        delta = weight-1
+        matrix[i,i] += delta
+        matrix[j,j] += delta
+        matrix[i,j] *= weight
+        matrix[j,i] = matrix[i,j].conjugate()
+    eig = matrix.eig(multiple=True)
+    assert all(z.imag.contains(0) for z in eig)
+    eig = sorted((z.real for z in eig), key=float)
+    return eig
+
+
 def verify():
     root = Path(__file__).resolve().parent
     native = run_path(str(root / "ch39-three-ray-chiral-boundary.py"))
@@ -19,17 +34,7 @@ def verify():
              for _, _, d, _ in native["geo"]["edges"] if d in (724,804)]
     assert len(rates) == 12 and center > 80
     for charge in (1, -4, 2, 6):
-        matrix = native["laplacian"](charge, center)
-        for (i, j), weight in zip(cone["EDGES"], weights, strict=True):
-            assert abs(matrix[i,j]).contains(1)
-            delta = weight-1
-            matrix[i,i] += delta
-            matrix[j,j] += delta
-            matrix[i,j] *= weight
-            matrix[j,i] = matrix[i,j].conjugate()
-        eig = matrix.eig(multiple=True)
-        assert all(z.imag.contains(0) for z in eig)
-        eig = sorted((z.real for z in eig), key=float)
+        eig = spectator_levels(native, cone["EDGES"], center, weights, charge)
         # 钟边相位导数、软边导数及两条单位磁边的权导数。
         shift = width*(abs(charge)*sum(rates)+1+4)
         gap = eig[3]-eig[2]-2*shift
