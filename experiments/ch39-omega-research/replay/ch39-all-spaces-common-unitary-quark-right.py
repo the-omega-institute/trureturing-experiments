@@ -65,12 +65,14 @@ def certify_observables(root):
     lower.sort()
     assert lower[0] > 0
     gaps = []
+    spectra = []
     for k, (a,b) in enumerate(zip(*obs, strict=True)):
         earlier["positive"](a)
         earlier["positive"](b)
         g = (a.inv()+arb(15)/25*b.inv()).inv()
         vals = eigs(g)
         assert vals[0] > 0
+        spectra.append(vals)
         bound = sum(x*y.lower() for x,y in zip(lower[:len(vals)], reversed(vals), strict=True))
         threshold = arb(CHARACTER if k else TRACE)
         assert bound > threshold
@@ -79,6 +81,7 @@ def certify_observables(root):
     gap = min(v.lower() for v in gaps)
     assert gap > arb(".000319")
     print("全部空间上双荷输运的最小射影算符范数距离下界",gap.str(15),flush=True)
+    return h, spectra
 
 
 def cover_orientations(model, split, poly, blocks, h, chart, rows):
