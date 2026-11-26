@@ -18,7 +18,7 @@ def setup(root):
     return lib,geom,V,mass,A,B,tuple(map(arb,floors))
 
 
-def physical_blocks(y,basis,pencil,V,masses,geom,lib,ratios):
+def physical_blocks(y,basis,pencil,V,masses,geom,lib,ratios,*,complex_cross=False):
     adj=geom["adj"]
     remote=1-basis
     yrep=[V*y,y]
@@ -42,7 +42,8 @@ def physical_blocks(y,basis,pencil,V,masses,geom,lib,ratios):
     for j,(xq,zq,mass) in enumerate(zip(xs,zs,masses,strict=True)):
         p=sum(abs(xq[i,0])**2*mass[i] for i in range(3)).intersection(mass[0].union(mass[2]))
         zz=sum(abs(zq[i,0])**2*mass[i] for i in range(3)).intersection(mass[0].union(mass[2]))
-        k=abs(sum(xq[i,0].conjugate()*zq[i,0]*mass[i] for i in range(3)))
+        cross=sum(xq[i,0].conjugate()*zq[i,0]*mass[i] for i in range(3))
+        k=cross if complex_cross else abs(cross)
         s=stats[j][0].intersection(mass[0].union(mass[2]))
         bounds=mass[0].union(mass[2])
         p=p.intersection((sum(mass)-s-zz).intersection(bounds))
