@@ -214,31 +214,41 @@ def verify():
     e_lo, e_hi = interval_bounds([energy[n] for n in ns])
     g_lo, g_hi = interval_bounds([gap[n] for n in ns])
     sig = np.array([sector[n] for n in ns])
-    selectable = set()
-    sizes = {}
+
+    def front(idx, direction):
+        """Members of idx not strictly dominated (lower energy, gap better in direction)."""
+        kept = []
+        for i in idx:
+            lower_e = e_hi[idx] < e_lo[i]
+            higher_e = e_lo[idx] > e_hi[i]
+            if direction == 1:
+                better_g, worse_g = g_lo[idx] > g_hi[i], g_hi[idx] < g_lo[i]
+            else:
+                better_g, worse_g = g_hi[idx] < g_lo[i], g_lo[idx] > g_hi[i]
+            others = idx != i
+            dominated = np.any(lower_e & better_g & others)
+            # Not dominated only when every rival is strictly worse in one coordinate.
+            assert dominated or np.all(higher_e | worse_g | ~others)
+            if not dominated:
+                kept.append(ns[i])
+        return kept
+
+    selectable, sizes = set(), {}
     for s in (1, -1):
-        idx = np.nonzero(sig == s)[0]
         for direction in (1, -1):
-            front = []
-            for i in idx:
-                lower_e = e_hi[idx] < e_lo[i]
-                higher_e = e_lo[idx] > e_hi[i]
-                if direction == 1:
-                    better_g, worse_g = g_lo[idx] > g_hi[i], g_hi[idx] < g_lo[i]
-                else:
-                    better_g, worse_g = g_hi[idx] < g_lo[i], g_lo[idx] > g_hi[i]
-                others = idx != i
-                dominated = np.any(lower_e & better_g & others)
-                safe = higher_e | worse_g | ~others
-                assert dominated or np.all(safe)
-                if not dominated:
-                    front.append(ns[i])
-            sizes[(s, direction)] = len(front)
-            selectable |= set(front)
+            kept = front(np.nonzero(sig == s)[0], direction)
+            sizes[(s, direction)] = len(kept)
+            selectable |= set(kept)
     assert sizes == {(1, 1): 11, (1, -1): 40, (-1, 1): 10, (-1, -1): 33}
     assert len(selectable) == 92 and not selectable & {10875, 11737, 11488}
     assert {11431, 11618, 11177} <= selectable
+    blind_up = front(np.arange(len(ns)), 1)
+    blind_down = front(np.arange(len(ns)), -1)
+    assert blind_up == [11092, 11363, 11431, 11491, 11618, 11619, 11763, 11891, 11892, 12036]
+    blind = set(blind_up) | set(blind_down)
+    assert len(blind_down) == 35 and len(blind) == 44 and blind <= selectable
     print("sector-monotone selectable zeros:", len(selectable), sizes)
+    print("parity-blind monotone selectable zeros:", len(blind), "; gap-rewarding front:", blind_up)
 
     # Exact ranks of the five named zeros in the two native orders.
     ranks = {}
