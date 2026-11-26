@@ -1,4 +1,4 @@
-"""每个请求位数只用四个严格正的有理截止，全钟域逼近两个引力目标。"""
+"""每个请求位数用三个或四个严格正的有理截止，全钟域逼近两个引力目标。"""
 from argparse import ArgumentParser
 from fractions import Fraction
 from pathlib import Path
@@ -19,7 +19,7 @@ def dyadic_pi(m):
     return Fraction((value*scale).__floor__(), scale)
 
 
-def verify(bits):
+def verify(bits, sites=4):
     root = Path(__file__).resolve().parent
     spectrum = run_path(str(root / "ch39-monotone-chiral-phase-obstruction.py"))
     model, *_ = spectrum["torus"]["local"]["inputs"]()
@@ -39,9 +39,14 @@ def verify(bits):
     pi = arb.pi()
     epsilon = arb(10)**-122
     k_ir = 2/pi + 1/(12*pi) + 49*alpha/(pi*arb("4.55e-12"))
-    k_uv = 16*epsilon*alpha/(465*2*pi)
+    high_divisor = 155 if sites == 3 else 465
+    k_uv = 16*epsilon*alpha/(high_divisor*2*pi)
     w_ir = 145*spin/(8*pi*epsilon)
-    w_uv = 2/pi + 4*spin/(310*pi)
+    # 三点形将高能窗左端移至 2s，主项少 4s^4，重质量余项按积分包围。
+    if sites == 3:
+        w_uv = 2/pi + 16/pi + 8*spin/(310*pi)
+    else:
+        w_uv = 2/pi + 4*spin/(310*pi)
     cap = max(k_ir+k_uv, w_ir+w_uv)
     assert cap < arb(2)**420
     # 若 |K-1|、|W/ε-1|≤e≤1/4，曲率的相对误差至多 6e。
@@ -52,17 +57,20 @@ def verify(bits):
     s = Fraction(1, T)
     p = dyadic_pi(m)
     assert 3 < p < 4
-    A, B = 12*p*T, Fraction(4, 465*10**122*T*T)*p
+    A, B = 12*p*T, Fraction(4, high_divisor*10**122*T*T)*p
     assert 1 < A < 48*T and 0 < B < 1
-    assert s < 2*s < T < 2*T
+    ends = (s, 2*s, T) if sites == 3 else (s, 2*s, T, 2*T)
+    weights = (1-A, A-B, B) if sites == 3 else (1-A, A, -B, B)
+    assert all(lo < hi for lo, hi in zip(ends, ends[1:])) and sum(weights) == 1
     print("所求相对精度位数、截止指数 m、统一误差系数的上界",
           bits, m, cap.upper().str(12))
 
 
 if __name__ == "__main__":
     parser = ArgumentParser(description=__doc__)
+    parser.add_argument("--sites", choices=(3, 4), type=int, default=4)
     parser.add_argument("--bits", type=int, default=256)
     args = parser.parse_args()
     if args.bits < 0:
         parser.error("精度位数须为非负整数")
-    verify(args.bits)
+    verify(args.bits, args.sites)
