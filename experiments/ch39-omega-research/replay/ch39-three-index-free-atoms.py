@@ -4,9 +4,7 @@ from runpy import run_path
 from flint import arb, arb_mat, ctx
 
 
-def spectra(root):
-    n = 2_306_888_100_085
-    numbers = (n,n-1,n+1)
+def broken_fields(root, numbers):
     shared = run_path(str(root/"ch39-two-zero-cutoff-gravity.py"))
     single,lib,original = shared["gravity_fields"](root,numbers)
     rotation = run_path(str(root/"ch39-rotation-portal-top-energy.py"))["rotation_signs"]
@@ -24,8 +22,14 @@ def spectra(root):
             assert z.overlaps(m) and z+s*portal*r>0
             rows.extend(((g-4,a-arb(2)/3,z),(4,arb(2)/3,z+s*portal*r)))
         total.append(rows)
+    return single["moments"], lib["expint"], total
+
+
+def spectra(root):
+    n = 2_306_888_100_085
+    moments,heat,total = broken_fields(root,(n,n-1,n+1))
     def column(x):
-        (k,w),(km,wm),(kp,wp)=[single["moments"](rows,lib["expint"],x) for rows in total]
+        (k,w),(km,wm),(kp,wp)=[moments(rows,heat,x) for rows in total]
         return [arb(1),k,w,km-k,wm-w,kp-k,wp-w]
     return column,total
 
