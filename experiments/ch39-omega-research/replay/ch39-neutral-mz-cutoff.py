@@ -5,14 +5,18 @@ from runpy import run_path
 from flint import acb, arb, arb_mat, ctx
 
 
-def low_weak_column(w, z, t, p0, p1):
-    # x=p0，能量和质量平方均以 p0 为单位。
+def low_weak_column(w, z, t, p0, p1, *, x_over_p0=1):
+    # w,z,t 是相对 p0 的质量平方。x_over_p0 指定截止，原算例取一。
+    ratio = arb(x_over_p0)
+    assert ratio > 0
+    def e1(mass):
+        return (mass/ratio).expint(1)
     tol = arb("1e-28")
     eta = arb(2)**-60
     def primitive(mass):
-        return mass*mass.expint(1)-(-mass).exp()
+        return mass*e1(mass)-ratio*(-mass/ratio).exp()
 
-    ew,et = w.expint(1),t.expint(1)
+    ew,et = e1(w),e1(t)
     pw = primitive(w)
 
     def integrand(s, analytic):
@@ -20,22 +24,22 @@ def low_weak_column(w, z, t, p0, p1):
         a = s*z
         if analytic and not all(v.real>0 for v in (h,a,a+h,w+h,t+h)):
             return acb("nan")
-        charged = w*(ew-(w+h).expint(1))
-        neutral = z*(a.expint(1)-(a+h).expint(1))
-        axial = t*(et-(t+h).expint(1))
-        vector = 6*h*(h.expint(1)-(t+h).expint(1))
+        charged = w*(ew-e1(w+h))
+        neutral = z*(e1(a)-e1(a+h))
+        axial = t*(et-e1(t+h))
+        vector = 6*h*(e1(h)-e1(t+h))
         scalar = primitive(w+h)-pw-primitive(a+h)+primitive(a)
         return (-(2*charged+neutral)/4+scalar/8+3*axial/8-vector/24)/arb.pi()
 
     value = acb.integral(integrand,eta,1-eta,abs_tol=tol,rel_tol=tol)
     assert value.is_finite() and value.imag.contains(0)
-    # 两类等质量插入 <=h，中性插入 <=1，标量原函数差 <=1，顶矢量核 <=6t。
+    # 两类等质量插入 <=h，中性插入 <=1，标量两质量相对零质量核的差各由 h+b 界住，顶矢量核 <=6t。
     # 含系数后的被积函数绝对值 <2，两个尾段的总积分因而至多为 4 eta。
     assert 0<w and 0<z and 0<t<4
     low = value.real+arb(0,4*eta)
     assert low.rad()<arb("1e-14")
     # 高能端用已有的小截止估计，各原始端点的绝对值小于 2x/p。
-    return low+arb(0,(2*p0/p1).upper())
+    return low+arb(0,(2*ratio*p0/p1).upper())
 
 
 def verify(root):

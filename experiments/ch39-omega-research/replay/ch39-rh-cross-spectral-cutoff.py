@@ -120,6 +120,7 @@ def verify(details=False):
     largest = max(q[1] for rows in groups.values() for q in rows)
     assert Q("3844.09") < largest < Q("3844.11")
     print("相互正交",zeros,"全部可归一对",sum(len(v) for v in groups.values()))
+    return groups
 
 
 if __name__=="__main__":
