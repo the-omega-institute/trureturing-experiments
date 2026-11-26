@@ -12,7 +12,7 @@ def verify(root):
     high_weak = run_path(str(root / "ch39-full-neutral-free-cutoff.py"))["weak_column"]
     left = 2_306_888_100_084
     moments, heat, fields = gravity["broken_fields"](root, (left,))
-    _, _, pivots, _ = next(v for v in native["shell_weights"](root, left) if v[0] == 6)
+    _, levels, pivots, _ = next(v for v in native["shell_weights"](root, left) if v[0] == 6)
     ctx.prec = 256
     c = [z.real for z in pivots[0]]
     assert sum(c).contains(1)
@@ -63,8 +63,10 @@ def verify(root):
     weights = (1-middle-c[18], middle, c[18])
     def solve_pair(abc, low):
         return high_pair(abc, low, fields[0], heat, moments)
-    _, _, _, minimum = three(left, weights, ("1","1.001"), solve_pair, weak_at, high_weak, mz, p0, p1)
+    low, mid, high, minimum = three(left, weights, ("1","1.001"), solve_pair, weak_at, high_weak, mz, p0, p1)
     assert mz < minimum
+    positions = [mid if i in (7,8,18) else high if i == 19 else low for i in range(1,20)]
+    return levels, positions
 
 
 if __name__ == "__main__":
