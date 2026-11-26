@@ -21,6 +21,16 @@ def three_zero_cancellation(root):
         if (j, -1) not in basis:
             assert -price < 1
     assert arb(".03201774") < primal[-1] < arb(".03201775")
+    signs = (1, 1, -1)
+    assert all(v*s < 0 for v, s in zip(dual[1:], signs))
+    # 正概率的三个活动面与三项最大模条件，给出总变差预算为零的另一端点。
+    support = (5, 27, 31)
+    endpoint = arb_mat([[s*row[j] for j in support]+[-1] for row, s in zip(rows, signs)]
+                       + [[1, 1, 1, 0]]).solve(arb_mat([[0], [0], [0], [1]])).entries()
+    assert min(endpoint) > 0
+    slope = 1 / sum(abs(v) for v in dual[1:])
+    assert (endpoint[-1] - primal[-1]*slope).contains(0)
+    print("三点最坏最大模随负质量预算的下降斜率", slope.str(17))
     print("使三个实际编号同时为零的最小负面系数总量", primal[-1].str(17))
 
 
