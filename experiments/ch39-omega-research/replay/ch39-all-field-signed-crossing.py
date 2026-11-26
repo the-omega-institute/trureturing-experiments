@@ -38,7 +38,7 @@ def angular_exposure(kind, z, x, p0, p1, logratio, rule):
     return result+arb(0, (error*logratio).upper())
 
 
-def verify(root, return_measure=False):
+def verify(root, return_measure=False, *, scalar_shifts=None, check_path=None):
     fields = run_path(str(root / "ch39-two-zero-cutoff-gravity.py"))["gravity_fields"]
     single, lib, (rows,) = fields(root, (2_306_888_100_085,))
     model, _, _, initial, _ = lib["chiral"]["source"]["mean"]["inputs"]()
@@ -49,11 +49,21 @@ def verify(root, return_measure=False):
                (gauge, arb(0), [0, -arb(22)/3, -11])]
     assert all((sum(b[i] for _, _, b in species)-model["beta"][i]).contains(0) for i in range(3))
     assert tuple(model["charges"]) == (1, 4, 2, 3, 6)
+    # 合并场行保留原谱，另组实际背景的引力行。十六层标量可分别改变质量平方比。
+    if scalar_shifts is None:
+        scalar_shifts = [arb(0)]*16
+    assert len(scalar_shifts) == 16
+    gravity_rows = list(rows)
     for j, (q, weyl) in enumerate(zip(model["charges"], model["weyl"], strict=True)):
-        for _, _, z in rows[1+16*j:17+16*j]:
+        for layer, (g, alpha, z) in enumerate(rows[1+16*j:17+16*j]):
             species.append((fermion, z, [2*v for v in weyl]))
             if q == 3:
-                species.append((scalar, z, model["higgs"]))
+                shift = arb(scalar_shifts[layer])
+                assert z+shift > 0
+                species.append((scalar, z+shift, model["higgs"]))
+                if not shift.is_zero():
+                    gravity_rows[1+16*j+layer] = (g-4, alpha-arb(4)/6, z)
+                    gravity_rows.append((4, arb(4)/6, z+shift))
     species.extend((vector, z, [0, -7, -arb(21)/2]) for _, _, z in rows[-18:])
     assert len(species) == 117
     p0 = (model["mz"]/arb("1.22089e19"))**2
@@ -64,7 +74,7 @@ def verify(root, return_measure=False):
     pi = arb.pi()
     cols = []
     for x in sites:
-        k, w = single["moments"](rows, lib["expint"], x)
+        k, w = single["moments"](gravity_rows, lib["expint"], x)
         shifts = [arb(0), arb(0), arb(0)]
         for kind, z, b in species:
             term = angular_exposure(kind, z, x, p0, p1, logratio, fine)/(4*pi)
@@ -81,8 +91,12 @@ def verify(root, return_measure=False):
     assert arb("1.4641238432") < -weights[3] < arb("1.4641238434")
     common = initial[0]+sum(c[3]*w for c, w in zip(cols, weights, strict=True))
     assert arb("39.12824") < common < arb("39.12826")
-    if return_measure:
-        return sites, weights, rows
+    if check_path is None:
+        check_path = not return_measure
+    if not check_path:
+        if return_measure:
+            return sites, weights, rows
+        return
     print("精细角积分的绝对余量、行列式、五项权、统一逆耦合",
           (fine[1]*logratio).str(12), det.str(12), *[w.str(13) for w in weights], common.str(13), flush=True)
 
@@ -111,6 +125,8 @@ def verify(root, return_measure=False):
         previous_positive = positive
     assert min(floors) > 2
     print("从 M_Z 到交汇能标的三支逆耦合全程下界", *[v.str(12) for v in floors])
+    if return_measure:
+        return sites, weights, rows
 
 
 if __name__ == "__main__":

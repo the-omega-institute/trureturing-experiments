@@ -99,6 +99,29 @@ def verify(root):
     print("电弱驻点降低的 W、两处 W 相等所需三阶导的绝对值",
           vacuum_drop.str(14), (6*quartic/rho).str(14))
 
+    # 对固定的局域质量、四次项目标，逐层限制 z_j+λ_jρ≥0。
+    # 平移非负变量后得到一个单纯形，正定四次系数的最大值必在顶点取得。
+    strength = [-v for v in linear]
+    thresholds = []
+    for k, a in enumerate(strength):
+        other = [i for i in range(len(masses)) if i != k]
+        weighted_mass = sum(strength[i]*masses[i] for i in other)
+        square = sum(quadratic[i]*masses[i]**2 for i in other)
+        slope = weighted_mass/a
+        intercept = delta/a
+        aa = square + quadratic[k]*slope**2
+        bb = 2*quadratic[k]*intercept*slope
+        cc = quadratic[k]*intercept**2 - quartic
+        assert aa > 0 and bb > 0 and cc < 0
+        inverse_radius = -2*cc/(bb+(bb**2-4*aa*cc).sqrt())
+        thresholds.append(1/inverse_radius)
+    best = max(range(len(thresholds)), key=lambda j: float(thresholds[j]))
+    assert all(thresholds[best] > x for j, x in enumerate(thresholds) if j != best)
+    field = arb("1.22089e19")*(2*thresholds[best]).sqrt()
+    assert best == 3 and arb("1.5340547e15") < field < arb("1.5340550e15")
+    print("原点两阶拟合下保持全部重质量平方非负的最大 ρ、最大径向场 GeV、唯一正门户谱行",
+          thresholds[best].str(12), field.str(12), best+1)
+
 
 if __name__ == "__main__":
     verify(Path(sys.argv[1]) if len(sys.argv) > 1 else Path(__file__).resolve().parent)
