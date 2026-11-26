@@ -5,8 +5,8 @@ from runpy import run_path
 from flint import acb, arb, ctx
 
 
-def verify():
-    root = Path(__file__).resolve().parent
+def verify(root=None):
+    root = Path(__file__).resolve().parent if root is None else root
     fixed = run_path(str(root / "ch39-height-independent-flavor-vacuum.py"))
     angles = run_path(str(root / "ch39-mincut-reference-ckm-action.py"))
     winding = run_path(str(root / "ch39-mincut-global-winding.py"))
@@ -64,6 +64,7 @@ def verify():
     assert density > arb("1.82378e-13")
     print("共同开窗的相对下密度、能差上界、U 与 J 相对误差上界",
           *[v.str(15) for v in (density, energy_cap, u_error, j_error)])
+    return model, initial, physical["joint"], bands, density, delta
 
 
 if __name__ == "__main__":
