@@ -59,6 +59,19 @@ def verify(root):
         G=acb_mat([[(int(i==j)-target[i,j])*p[j,i] for j in range(19)] for i in range(19)])
         T=acb_mat([[G[i,j]/(d[i]*d[j]).sqrt() for j in range(19)] for i in range(19)])
         eigen_bounds(T,*CONDITIONAL[q])
+        # 将最佳广义本征向量缩到算子范数 1，并逐输入给出该最优滤波的成功率下界。
+        sigma=arb(CONDITIONAL[q][0]).union(arb(CONDITIONAL[q][1]))
+        sub=acb_mat([[T[i,j]-int(i==j)*sigma for j in range(18)] for i in range(18)])
+        assert not sub.det().contains(0)
+        vec=sub.solve(acb_mat([[-T[i,18]] for i in range(18)])).entries()+[acb(1)]
+        optimal=[vec[i]/d[i].sqrt() for i in range(19)]
+        scale=max(abs(a).upper() for a in optimal)
+        filtered=acb_mat([[optimal[i]/scale*u[i,col] for col in range(3)] for i in range(19)])
+        success_form=filtered.conjugate().transpose()*filtered
+        uniform=arb(".00068" if q==2 else ".00059")
+        certify_positive(acb_mat([[success_form[i,k]-int(i==k)*uniform for k in range(3)] for i in range(3)]))
+        select=sum(success_form[i,i].real for i in range(3))/3
+        print("条件重率最优滤波的平均成功率、所有轻输入的成功率下界",select.str(12),uniform.str(8),flush=True)
         s=arb(".00468" if q==2 else ".00467")
         certify_positive(acb_mat([[G[i,j]-int(i==j)*s*s for j in range(19)] for i in range(19)]))
         # 保迹通道的对偶证书及显式单一对角酉的上界。
