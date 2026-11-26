@@ -18,6 +18,9 @@
 | 只用十二张钟差三角选权，按相位虚部正负独立给复系数如何？ | 对全部衰减比，同一个竞争点仍比合窗参考味候选低逾 $1/4096$。 | [两种定向的竞争](replay/定向钟差振幅的竞争点.md) |
 | 在自由真空与实际零点上同时压低十二面质子因子，能做到什么精度？ | 两点最大模的最优值介于 $2.41357448\times10^{-8}$ 与 $2.44547983\times10^{-8}$。全角均方根大于 0.01093748149。 | [两点残差](replay/真空与实际零点的质子因子共同残差.md) · [任意绕数与全角均方](replay/十二面因子的全阶非零系数.md) |
 | 保持十九个站点的对应关系，能否逐站调相使某个荷一轻态也成为荷二轻态？ | 任意归一荷一轻态对荷二重空间的投影概率均超过 16.87830%，对荷负四则均超过 15.54432%。 | [逐态检验](replay/同一站点下每个轻态的重投影.md) |
+| 整个联合角窗都要求压低十二面质子因子时，最差相位至少还剩多少？ | 最佳可达的最大模介于 $7.08889\times10^{-8}$ 与 $7.18683\times10^{-8}$。对每组权，至少 29.3% 的窗面积超过 $5\times10^{-8}$。 | [整窗构造与实际零点密度](replay/整个联合角窗的质子因子.md) |
+| 以正零点的逆高度平方作概率，十二面因子在全谱上的均方根可否任意小？ | 前 512 枚已占总权 95.1052%，其贡献给全部合格权的均方根下界 0.005567917381。 | [全谱算术平均](replay/全部实际零点的质子因子均方.md) |
+| 逐站滤波允许抛弃部分输出，能否把整个三维轻空间准确送到另一荷？ | 对荷一等权输入，即便只看成功输出，荷二、荷负四的最小重概率仍分别超过 4.609632%、5.181978%。 | [保迹通道与后选择](replay/逐站滤波能否传递三代轻空间.md) |
 
 从公开仓库根目录运行下列命令可复算表中的结果。使用 Python 3.12、python-flint 0.9.0 和 NumPy。完整记录还包括各节列明的其他依赖。第三方 SMDR 源码的授权随源码提供。[完整复算包](ch39-omega-math-replay.zip) · [SMDR 许可](replay/ch39-smdr/LICENSE.txt)
 
@@ -34,8 +37,11 @@ python3 ch39-proton-factor-zero.py
 python3 ch39-first-three-window-integer-scales.py
 python3 ch39-oriented-difference-coherence.py
 python3 ch39-balanced-proton-residual.py
+python3 ch39-proton-joint-window-floor.py
 python3 ch39-proton-factor-all-orders.py
 python3 ch39-joint-zero-individual-light-leakage.py
+python3 ch39-joint-zero-diagonal-light-filters.py
+python3 ch39-proton-weighted-zero-mean.py
 ```
 
 ## 统一问题研究图谱
