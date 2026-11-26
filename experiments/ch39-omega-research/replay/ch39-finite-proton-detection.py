@@ -74,6 +74,7 @@ def verify(root):
     assert shell["soft"]["point"]["study"]["offset"] >= 0
     delta = arb(23)/25*arb(2)**-20/14**2
     corners = list(product((0, 1), repeat=3))
+    results = []
     for pack, numbers, limit, claim in zip(data, indices, (".87", ".69"), (".0001633", ".0003645"), strict=True):
         filters = [[arb(v)/10**6 for v in row[1:]] for row in pack["readouts"]]
         assert all(len(row)==3 for row in filters)
@@ -104,6 +105,8 @@ def verify(root):
         print("零点枚数、编号范围、比较闭段、绕数总误差、滤波器范数、实际因子绝对值下界",
               len(numbers), (min(numbers),max(numbers)), len(pack["comparisons"]),
               upper.str(14), norm.str(14), bound.str(17))
+        results.append((numbers, filters, upper, delta))
+    return results
 
 
 if __name__ == "__main__":
