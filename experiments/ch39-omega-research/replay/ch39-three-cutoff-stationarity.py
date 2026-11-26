@@ -128,7 +128,11 @@ def verify():
 
     boundary()
     confirm("-29", "-26.8", lambda logx: interval(logx.exp()), 1)
-    confirm("-14.55", "0", lambda logx: curvature(logx)[1], 1)
+    def mixed_curvature(logx):
+        newton, vacuum = curvature(logx)
+        return arb("2e-8") * newton + vacuum
+
+    confirm("-25.3", "0", mixed_curvature, 1)
 
 
 if __name__ == "__main__":
