@@ -38,7 +38,7 @@ def angular_exposure(kind, z, x, p0, p1, logratio, rule):
     return result+arb(0, (error*logratio).upper())
 
 
-def verify(root, return_measure=False, *, scalar_shifts=None, check_path=None):
+def joint_system(root, energy_gev, *, scalar_shifts=None, order=14, last=41):
     fields = run_path(str(root / "ch39-two-zero-cutoff-gravity.py"))["gravity_fields"]
     single, lib, (rows,) = fields(root, (2_306_888_100_085,))
     model, _, _, initial, _ = lib["chiral"]["source"]["mean"]["inputs"]()
@@ -67,10 +67,10 @@ def verify(root, return_measure=False, *, scalar_shifts=None, check_path=None):
     species.extend((vector, z, [0, -7, -arb(21)/2]) for _, _, z in rows[-18:])
     assert len(species) == 117
     p0 = (model["mz"]/arb("1.22089e19"))**2
-    p1 = (arb("1e16")/arb("1.22089e19"))**2
+    p1 = (arb(energy_gev)/arb("1.22089e19"))**2
     logratio = (p1/p0).log()
     sites = list(map(arb, ("4e-15", "3.5e-11", "1.23e-6", ".5", "1")))
-    fine = angular_rule(14, 41)
+    fine = angular_rule(order, last)
     pi = arb.pi()
     cols = []
     for x in sites:
@@ -82,9 +82,17 @@ def verify(root, return_measure=False, *, scalar_shifts=None, check_path=None):
                 shifts[i] -= b[i]*term
         cols.append([arb(1), k, w, *shifts])
     matrix = arb_mat([c[:3]+[c[3]-c[4], c[3]-c[5]] for c in cols]).transpose()
+    target = arb_mat([[1], [1], [arb("1e-122")], [initial[1]-initial[0]], [initial[2]-initial[0]]])
+    return dict(sites=sites, rows=rows, matrix=matrix, target=target, initial=initial, cols=cols,
+                heat=lib["expint"], species=species, p0=p0, p1=p1, fine_error=fine[1]*logratio)
+
+
+def verify(root, return_measure=False, *, scalar_shifts=None, check_path=None):
+    data = joint_system(root, "1e16", scalar_shifts=scalar_shifts)
+    sites, rows, matrix, target = (data[k] for k in ("sites", "rows", "matrix", "target"))
+    cols, initial = data["cols"], data["initial"]
     det = matrix.det()
     assert -819 < det < -817
-    target = arb_mat([[1], [1], [arb("1e-122")], [initial[1]-initial[0]], [initial[2]-initial[0]]])
     weights = matrix.solve(target).entries()
     assert all(sign*w > 0 for sign, w in zip((1, 1, 1, -1, 1), weights, strict=True))
     assert sum(weights[1:]) > 0 and sum(weights[2:]) > 0 > sum(weights[3:])
@@ -98,15 +106,26 @@ def verify(root, return_measure=False, *, scalar_shifts=None, check_path=None):
             return sites, weights, rows
         return
     print("精细角积分的绝对余量、行列式、五项权、统一逆耦合",
-          (fine[1]*logratio).str(12), det.str(12), *[w.str(13) for w in weights], common.str(13), flush=True)
+          data["fine_error"].str(12), det.str(12), *[w.str(13) for w in weights], common.str(13), flush=True)
 
+    floors = running_floors(data, weights)
+    assert min(floors) > 2
+    print("从 M_Z 到交汇能标的三支逆耦合全程下界", *[v.str(12) for v in floors])
+    if return_measure:
+        return sites, weights, rows
+
+
+def running_floors(data, weights, steps=28):
+    species, sites, initial = (data[k] for k in ("species", "sites", "initial"))
+    p0, p1 = data["p0"], data["p1"]
+    pi, logratio = arb.pi(), (p1/p0).log()
     # 单个物种、单个截止的减法核随 p 单调。按各系数分离正负贡献，覆盖整条实能标路径。
     coarse = angular_rule(7, 17)
     previous_positive = [arb(0)]*3
     floors = list(initial)
-    for j in range(1, 29):
-        log = logratio*j/28
-        p = p1 if j == 28 else p0*log.exp()
+    for j in range(1, steps+1):
+        log = logratio*j/steps
+        p = p1 if j == steps else p0*log.exp()
         positive, negative = [arb(0)]*3, [arb(0)]*3
         for weight, x in zip(weights, sites, strict=True):
             for kind, z, b in species:
@@ -123,10 +142,7 @@ def verify(root, return_measure=False, *, scalar_shifts=None, check_path=None):
         floors = [min(f.lower(), (a+l+n).lower())
                   for f, a, l, n in zip(floors, initial, previous_positive, negative, strict=True)]
         previous_positive = positive
-    assert min(floors) > 2
-    print("从 M_Z 到交汇能标的三支逆耦合全程下界", *[v.str(12) for v in floors])
-    if return_measure:
-        return sites, weights, rows
+    return floors
 
 
 if __name__ == "__main__":
