@@ -17,17 +17,32 @@ def verify(root):
     model, initial = physical['model_inputs']()
     ctx.prec = 128
     joint = physical['joint']
-    gauge = joint['gauge']
-    sm, chiral = gauge['sm'], joint['chiral']
+    chiral = joint['chiral']
     height = acb.zeta_zero(2_306_888_100_085).imag
     rows = chiral['source']['spectral_supplier'](model)(height)
     layers = {q:chiral['ordered']([h for h,z in rows if z==q]) for q in (0,*model['charges'])}
+    verify_scale_layers(model, initial, joint, layers, arb('31.98396690'), arb('32.01596692'), neighbors=True)
+
+
+def verify_scale_layers(model, initial, joint, layers, kmin, kmax, *, neighbors=False):
+    gauge = joint['gauge']
+    sm = gauge['sm']
     unit=arb('2.435e18')/724**2
     # 上一证书的全域热核界给等效倍率 k (724/d)^2 的必要外区间。
-    kmin,kmax=arb('31.98396690'),arb('32.01596692')
     a=(arb('246.22')**2/(arb('1.22089e19')*32*unit*layers[2][15]))**2
     c=(9*arb(3).log()-12*arb(2).log())/2
     nominal_curve=c*a*a/(arb.pi()*arb('1e-122'))
+    # 在任一合格牛顿根 x 处，E2<=1 给出不依赖两个尺度的 x 下界。
+    # 精确配平的场内容固定权重，移动各层质量只改变热核参数。
+    vacuum=joint['vacuum']
+    template=vacuum['minimal']['fields'](layers)
+    weights=[w+(arb(-g)/6 if g<0 else arb(g)/12) for g,w,z in template]
+    weights.extend(w for w,z in vacuum['low_sector'](4,a))
+    xmin=arb('.006')
+    assert 2*arb.pi()/sum(w for w in weights if w>0)>xmin
+    assert nominal_curve/4 < arb('.998')
+    assert 4*nominal_curve*(1-2*a/(xmin*c)) > arb('1.002')
+    assert 2*a/(xmin*c)<arb('1e-57')
     assert kmin < 32*(nominal_curve*(1-arb('1e-57'))/arb('1.002')).root(4)
     assert 32*(nominal_curve/arb('.998')).root(4)<kmax
     assert kmax*(arb(127)/724)**2<1
@@ -159,7 +174,7 @@ def verify(root):
                 pending.extend(((l,mid),(mid,r)))
         print('排除的阈值平移区间与末段数',lo.str(12),hi.str(12),leaves,flush=True)
     # 显式检查离合格分母最近的左右两个额外曲率整数对。
-    for k,d in ((30,701),(35,757)):
+    for k,d in (((30,701),(35,757)) if neighbors else ()):
         effective=arb(k)*(arb(724)/d)**2
         curve=nominal_curve*(32/effective)**4*(1-arb(0).union(arb('1e-57')))
         vacuum=joint['vacuum']
