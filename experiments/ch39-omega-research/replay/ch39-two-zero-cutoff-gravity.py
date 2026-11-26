@@ -6,8 +6,7 @@ from flint import acb, arb, arb_mat, ctx
 import sympy as sp
 
 
-def verify():
-    root = Path(__file__).resolve().parent
+def adjacent_fields(root):
     single = run_path(str(root / "ch39-signed-cutoff-gravity.py"))
     lib = run_path(str(root / "ch39-chiral-minimal-neutral-gravity.py"))
     chiral = lib["chiral"]
@@ -37,9 +36,17 @@ def verify():
                 vals = sorted((z.real for z in eig), key=float)
                 assert len(vals) == 19 and all(z.imag.contains(0) for z in eig)
             bands[q] = sorted((v*abs(v-c) for v in vals), key=float)
-        return lib["fields"](bands)
+        rows = lib["fields"](bands)
+        assert len(rows) == 99 and all(z > 0 for _, _, z in rows[1:])
+        return rows
     n = single["NUMBER"]
     rows0, rows1 = levels(n), levels(n + 1)
+    return single, lib, rows0, rows1
+
+
+def verify():
+    root = Path(__file__).resolve().parent
+    single, lib, rows0, rows1 = adjacent_fields(root)
     target = arb("1e-122")
     def read(rows, x):
         return single["moments"](rows, lib["expint"], x)
