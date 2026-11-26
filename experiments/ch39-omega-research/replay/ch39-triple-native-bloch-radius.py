@@ -7,6 +7,9 @@ from runpy import run_path
 from flint import acb_mat, arb
 
 
+TRIPLE_RATIO_FLOORS = (".00711281",".00449434")
+
+
 def dot(a,b):
     return sum(x*y for x,y in zip(a,b,strict=True))
 
@@ -75,6 +78,8 @@ def verify(root):
             ratio = (1-radius)/(1+radius)
             print("部门、编号偏移、Bloch 半径上界、特征值比下界",q,numbers,
                   radius.upper().str(14),ratio.lower().str(12))
+            if len(numbers)==3:
+                assert ratio>arb(TRIPLE_RATIO_FLOORS[q])
             if q==0 and -1 in numbers:
                 assert radius < targets[0]
 

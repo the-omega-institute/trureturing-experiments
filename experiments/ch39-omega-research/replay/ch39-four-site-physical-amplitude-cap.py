@@ -70,7 +70,7 @@ def gap_at_line(y,ckm,mass,cap):
     return low-high
 
 
-def pencil_cell(base,other,lo,hi,which,ckm,mass,cap):
+def pencil_cell(base,other,lo,hi,which,ckm,mass,cap,*,line_test=gap_at_line):
     center=(lo+hi)/2
     radius=(hi-lo)/2
     vals,Q=(base+other*center).eig(right=True,algorithm="rump")
@@ -108,7 +108,7 @@ def pencil_cell(base,other,lo,hi,which,ckm,mass,cap):
         if v is None:
             keep.append(i)
             continue
-        gap=gap_at_line(U*v,ckm,mass,cap)
+        gap=line_test(U*v,ckm,mass,cap)
         if gap is None or not gap>0:
             keep.append(i)
     return keep
