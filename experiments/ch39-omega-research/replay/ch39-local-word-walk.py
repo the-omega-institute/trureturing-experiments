@@ -10,7 +10,7 @@ def verify():
     geometry = run_path(str(root / "ch39-mincut-real-triangle-tomography.py"))
     ctx.prec = 224
     theta = geometry["unit"]((108469, 109)).arg()
-    assert 0 < 106 * theta < arb.pi()
+    assert 0 < 105 * (arb.pi() - 106 * theta) < arb.pi() / 2
     cosines = [(q * theta).cos() for q in range(1, 106)]
     assert all(a > b for a, b in zip(cosines, cosines[1:]))
     assert cosines[-1] < 0
