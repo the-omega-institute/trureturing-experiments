@@ -94,10 +94,13 @@ def verify_outer(number, weights, ranges, field, moments, heat, low_weak, high_w
     print('编号、共同低截止/GeV、末两层平方截止、热核面相对误差、弱差两面', number,
           (mz*t_lo.union(t_hi).sqrt()).str(12), *[v.str(12) for v in box], ratio.str(7),
           d_lo.str(7), d_hi.str(7), flush=True)
+    low = (p0*t_lo.union(t_hi)).sqrt()
+    return [low if j in (0, 15) else middle for j in range(17)] + [x.sqrt() for x in box]
 
 
-def verify(root):
-    training, _ = run_path(str(root/'ch39-three-shell-two-space-readout.py'))['verify'](root, return_data=True)
+def verify(root, *, training=None):
+    if training is None:
+        training, _ = run_path(str(root/'ch39-three-shell-two-space-readout.py'))['verify'](root, return_data=True)
     assert len(training) == 171
     native = run_path(str(root/'ch39-native-rh-ray-pvm.py'))
     gravity = run_path(str(root/'ch39-three-index-free-atoms.py'))
@@ -106,11 +109,13 @@ def verify(root):
     moments, heat, fields = gravity['broken_fields'](root, numbers)
     ctx.prec = 320
     weak = native['weak_series']()
+    responses = {}
     for number, field in zip(numbers, fields, strict=True):
         _, levels, pivots, _ = next(x for x in native['shell_weights'](root, number) if x[0] == 6)
         ctx.prec = 320
         ranges = [inner_prefix_range(t, training) for t in levels]
-        verify_outer(number, [w.real for w in pivots[0]], ranges, field, moments, heat, weak, high_weak)
+        responses[number] = verify_outer(number, [w.real for w in pivots[0]], ranges, field, moments, heat, weak, high_weak)
+    return responses
 
 
 if __name__ == '__main__':
