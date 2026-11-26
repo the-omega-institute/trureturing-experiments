@@ -2,6 +2,8 @@
 
 依赖 python-flint。沿用 ch39-cutoff-scale-stationarity.py 的固有时模型和谱输入。
 """
+from fractions import Fraction
+from functools import cache
 from pathlib import Path
 from runpy import run_path
 
@@ -151,6 +153,104 @@ def small_node_pair():
     print("small-node T ratio", ratio.str(12))
 
 
+def separated_small_node():
+    """排除 0 < x₁ ≤ exp(−31) 且 exp(−26.8) ≤ x₂ < x₃ ≤ 1。"""
+    cutoff = arb(-31).exp()
+    small = arb(0).union(cutoff)
+    massless = [(g, a) for g, a, z in rows if z.is_zero()]
+    massive = [(g, a, z) for g, a, z in rows if not z.is_zero()]
+    assert all(z > 32*cutoff for _, _, z in massive)
+    tail = arb(-32).exp()
+    alpha = ball(sum(a for _, a in massless), tail * sum(abs(a) for _, a, _ in massive))
+    polarization = ball(sum(g for g, _ in massless), tail * sum(abs(g) for g, _, _ in massive))
+    denominator = small * alpha / pi2 - 1
+    assert denominator < 0
+    # 对 u≥32，两项 E₁(u) 与 E₂(u) 均由 exp(−32) 控制。
+    residual_bound = tail * (
+        cutoff * sum(abs(g*z) for g, _, z in massive) / (4*pi2)
+        + target * sum(abs(a*z) for _, a, z in massive) / pi2
+    )
+    initial_t = small**2 * polarization / denominator
+    initial_responses = (small * alpha / denominator, ball(0, residual_bound) / denominator)
+
+    @cache
+    def chart(left, right):
+        """T，两个 U=响应/Ψ，及其对 log x 的导数与 T'/T。"""
+        lo = arb(left.numerator) / left.denominator
+        hi = arb(right.numerator) / right.denominator
+        psi, newton, phi, residual = response_derivatives(lo.union(hi))
+        t = psi[0] / newton[0]
+        if not (t > 0 and t-initial_t > 0):
+            return None
+        values = tuple(response[0] / psi[0] for response in (phi, residual))
+        derivatives = tuple((response[1]-value*psi[1]) / psi[0]
+                            for response, value in zip((phi, residual), values))
+        log_t_derivative = psi[1]/psi[0] - newton[1]/newton[0]
+        if left < right:
+            midpoint = (left+right)/2
+            center = chart(midpoint, midpoint)
+            if center is not None:
+                radius = (right-left)/2
+                width = arb(radius.numerator) / radius.denominator
+                values = tuple(value.intersection(mid + ball(0, width*abs(derivative)))
+                               for value, mid, derivative in zip(values, center[1], derivatives))
+        return t, values, derivatives, log_t_derivative
+
+    def slope_derivatives(t, values, derivatives, log_t_derivative):
+        # S=(U−A₁/T)/(1−T₁/T)，这里计算 S' 乘以严格正的 (1−T₁/T)²。
+        ratio = initial_t/t
+        return tuple(derivative*(1-ratio) + log_t_derivative*(initial/t-ratio*value)
+                     for value, derivative, initial in zip(values, derivatives, initial_responses))
+
+    lower = Fraction(-134, 5)
+    upper = Fraction(0)
+    directions = []
+    for point in (lower, Fraction(-26), Fraction(-21)):
+        entry = chart(point, point)
+        assert entry is not None
+        directions.append(slope_derivatives(*entry))
+    for (a, b), (c, d) in zip(directions, directions[1:] + directions[:1]):
+        assert a*d-b*c > 0
+
+    def separated(left, left_end, right_start, right):
+        if right-left < Fraction(1, 2):
+            span = chart(left, right)
+            if span is not None and any(v > 0 or v < 0 for v in slope_derivatives(*span)):
+                return True
+        first = chart(left, left_end)
+        second = chart(right_start, right)
+        if first is None or second is None:
+            return False
+        t0, values0, _, _ = first
+        t1, values1, _, _ = second
+        inverse_difference = 1/t0 - 1/t1
+        # 约去共同的 A₁T₁ 项，得到两弦斜率之差乘以正分母。
+        for u0, u1, initial in zip(values0, values1, initial_responses):
+            difference = (u1-u0)*(1-initial_t/t0) + (initial-initial_t*u0)*inverse_difference
+            if difference > 0 or difference < 0:
+                return True
+        return False
+
+    pending = [(lower, upper, lower, upper)]
+    checked = 0
+    while pending:
+        a, b, c, d = pending.pop()
+        if a >= d:
+            continue
+        checked += 1
+        if separated(a, b, c, d):
+            continue
+        if checked >= 180000 or max(b-a, d-c) < Fraction(1, 100000):
+            raise RuntimeError(("unresolved ordered box", checked, a, b, c, d))
+        if b-a >= d-c:
+            midpoint = (a+b)/2
+            pending.extend([(a, midpoint, c, d), (midpoint, b, c, d)])
+        else:
+            midpoint = (c+d)/2
+            pending.extend([(a, b, c, midpoint), (a, b, midpoint, d)])
+    print("separated-small-node boxes", checked, flush=True)
+
+
 def confirm(left, right, expression, sign, max_boxes=12500):
     pending = [(arb(left),arb(right))]
     count = 0
@@ -187,6 +287,7 @@ def verify():
 
     confirm("-25.3", "0", mixed_curvature, 1)
     small_node_pair()
+    separated_small_node()
 
 
 if __name__ == "__main__":
