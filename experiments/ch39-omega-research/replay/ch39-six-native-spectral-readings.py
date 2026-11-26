@@ -42,7 +42,7 @@ def verify():
                      x * (-first_cos * a.sin() + first_sin * a.cos())])
     minors = [(abs(arb_mat([rows[i] for i in nodes]).det()), nodes)
               for nodes in combinations(range(8), 5)]
-    assert len(minors) == 56 and all(det > 0 for det, _ in minors)
+    assert len(minors) == 56 and all(det > arb("3.23e-13") for det, _ in minors)
     print("全窗第二正弦、Wronskian 下界", min(second_lower).str(14), min(wronskian_lower).str(14))
     print("56 个五阶子式的绝对值下界", min(det.lower() for det, _ in minors).str(14))
 
