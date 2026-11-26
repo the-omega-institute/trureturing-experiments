@@ -9,28 +9,22 @@ from flint import acb, arb, arb_mat, ctx
 SUPPORT=(15447127,142269606336,142300003154,295280111868,296004209875,13217728165506,143921420592856)
 
 
-def verify(root):
+def six_time_support(root, support):
     def read(name):
-        return run_path(str(root / ('ch39-' + name + '.py')))
+        return run_path(str(root / ("ch39-" + name + ".py")))
 
     clock=read('arithmetic-height-bandwidth')
     bands=read('six-time-height-bands')
     dictionary=read('seventh-time-zero-dictionary')
-    shell=read('three-ray-chiral-boundary')
-    lib=read('mincut-global-winding')
-    fixed=read('height-independent-flavor-vacuum')
-    angles=read('mincut-reference-ckm-action')
-    flavor=read('chiral-neutral-flavor-phase')
-    global_model=read('reference-flavor-global-winding')
     physical=read('first-three-mode-observables')
     ctx.prec=176
-    heights={n:acb.zeta_zero(n).imag for n in SUPPORT}
+    heights={n:acb.zeta_zero(n).imag for n in support}
     ctx.prec=512
     coordinates={n:1/(1+(h/bands['scale'])**2) for n,h in heights.items()}
     times=clock['times']()[:7]
     times[6]+=arb('1.360900010e-8')
     denominator,moments=bands['radial']['compact_moments'](times)
-    _,prob=dictionary['certified_rule'](SUPPORT,coordinates,times,moments,denominator)
+    _,prob=dictionary['certified_rule'](support,coordinates,times,moments,denominator)
     print('七枚实际零点概率',*(p.str(15) for p in prob),flush=True)
     ctx.prec=224
     model,initial=physical['model_inputs']()
@@ -41,6 +35,20 @@ def verify(root):
                   for q in (0, *model['charges'])}
         _, alpha, curve = physical['layer_observables'](model, initial, layers)
         assert arb('.117')<alpha<arb('.119') and arb('.998')<curve<arb('1.002')
+    return heights, prob
+
+
+def verify(root):
+    def read(name):
+        return run_path(str(root / ("ch39-" + name + ".py")))
+
+    shell=read('three-ray-chiral-boundary')
+    lib=read('mincut-global-winding')
+    fixed=read('height-independent-flavor-vacuum')
+    angles=read('mincut-reference-ckm-action')
+    flavor=read('chiral-neutral-flavor-phase')
+    global_model=read('reference-flavor-global-winding')
+    heights, prob = six_time_support(root, SUPPORT)
     x=arb('-.01046')
     y=x-angles['reference_angles'](flavor)[0]
     tri=lib['terms'](shell)
