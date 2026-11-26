@@ -16,6 +16,8 @@
 | 保持同一全局真空，能否让树级质子因子在实际零点精确为零？ | 第 2,306,888,100,085 枚上，一组共用绕数权给十二面正反等分因子 0.03143984，另一组使它精确相消。两组均通过原能差与味窗。 | [相消的构造](replay/同一真空的质子因子相消.md) |
 | 第 8359 枚也唯一确定两个整数标尺吗？ | 两个标尺共同取正整数时只余 $(32,724)$，而这枚的 $U=\lvert V_{ub}\rvert^2$ 和 $J$ 各低 40.75% 与 29.32%。 | [第 8359 枚的标尺](replay/第8359枚零点的整数标尺.md) |
 | 只用十二张钟差三角选权，按相位虚部正负独立给复系数如何？ | 对全部衰减比，同一个竞争点仍比合窗参考味候选低逾 $1/4096$。 | [两种定向的竞争](replay/定向钟差振幅的竞争点.md) |
+| 在自由真空与实际零点上同时压低十二面质子因子，能做到什么精度？ | 两点最大模的最优值介于 $2.41357448\times10^{-8}$ 与 $2.44547983\times10^{-8}$。全角均方根大于 0.01093748149。 | [两点残差](replay/真空与实际零点的质子因子共同残差.md) · [任意绕数与全角均方](replay/十二面因子的全阶非零系数.md) |
+| 保持十九个站点的对应关系，能否逐站调相使某个荷一轻态也成为荷二轻态？ | 任意归一荷一轻态对荷二重空间的投影概率均超过 16.87830%，对荷负四则均超过 15.54432%。 | [逐态检验](replay/同一站点下每个轻态的重投影.md) |
 
 从公开仓库根目录运行下列命令可复算表中的结果。使用 Python 3.12、python-flint 0.9.0 和 NumPy。完整记录还包括各节列明的其他依赖。第三方 SMDR 源码的授权随源码提供。[完整复算包](ch39-omega-math-replay.zip) · [SMDR 许可](replay/ch39-smdr/LICENSE.txt)
 
@@ -31,6 +33,9 @@ python3 ch39-optimal-sparse-winding-differences.py
 python3 ch39-proton-factor-zero.py
 python3 ch39-first-three-window-integer-scales.py
 python3 ch39-oriented-difference-coherence.py
+python3 ch39-balanced-proton-residual.py
+python3 ch39-proton-factor-all-orders.py
+python3 ch39-joint-zero-individual-light-leakage.py
 ```
 
 ## 统一问题研究图谱
