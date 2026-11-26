@@ -100,6 +100,7 @@
 | 允许面有归一化的负或复系数，三枚检出与全谱下界怎样变化？ | 三枚指定编号同时相消的最小负系数总量约为 0.03201775；前 32 枚此时恰需全测。复系数的全谱最小均方根约为 0.01055307。 | [符号扩展与正概率结论的适用范围](replay/放开面概率正性后的质子相消代价.md) |
 | 三枚实际编号的整数检出证书，能容许共同真空绕数权变动多少？ | 在原参考角保持全高度共同真空时，允许全部 105 圈变动，固定整数证书的总变差锐半径约 0.00191779。整个已有百维全正真空盒都有 0.00254198 的检出余量。 | [临界权与全高度复算](replay/三枚实际零点检出共同真空权的邻域.md) |
 | 在联合编号上，只调两类钟边及全部辐边能形成十六个重层吗？ | 三种荷都不行。即使全图任意换相，每荷仍须至少 7 条既非钟边也非辐边的电导超过 1；固定原相位时三荷依次至少需要 8、8、7 条。 | [谱秩、顶点覆盖与强度界](replay/十六重层要求提高哪些非钟边电导.md) |
+| 固定十四项真空权，能从实测因子还原逐面轨道概率吗？ | 带符号读数在前 33 枚中任取 31 枚即可，前 33 枚还可纠正一项任意错误。只给平方时，前 46 枚允许全正碰撞；前 527 枚可线性还原全部系数乘积。 | [测量名单、纠错与模值界](replay/从质子读数反求面概率需要多少个实际编号.md) |
 
 从公开仓库根目录运行下列命令可复算表中的结果。使用 Python 3.12、python-flint 0.9.0 和 NumPy。完整记录还包括各节列明的其他依赖。第三方 SMDR 源码的授权随源码提供。[完整复算包](ch39-omega-math-replay.zip) · [SMDR 许可](replay/ch39-smdr/LICENSE.txt)
 
@@ -205,6 +206,8 @@ python3 ch39-isospectral-site-observations.py
 python3 ch39-signed-face-proton-readout.py
 python3 ch39-three-zero-vacuum-robustness.py
 python3 ch39-clock-edge-heavy-locality.py
+python3 ch39-proton-face-tomography.py
+python3 ch39-proton-rate-tomography.py
 python3 ch39-three-even-positive-towers.py
 python3 ch39-proton-all-vacua-floor.py
 ```
