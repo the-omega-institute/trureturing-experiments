@@ -16,7 +16,7 @@ from pathlib import Path
 from runpy import run_path
 
 import numpy as np
-from flint import acb, acb_mat, arb
+from flint import acb, acb_mat, arb, ctx
 
 root = Path(__file__).parent
 model = run_path(str(root / "ch39-majorana-vacuum-energy.py"))
@@ -26,21 +26,43 @@ unit = acb_mat([[int(i == j) for j in range(38)] for i in range(38)])
 FIRST, COUNT = 10815, 1278
 
 
+def frobenius(m):
+    return sum(abs(z).upper()**2 for z in m.entries()).sqrt().upper()
+
+
+def centre(m):
+    return acb_mat([[m[i, j].mid() for j in range(m.ncols())] for i in range(m.nrows())])
+
+
 def spectrum(h):
     """Certified E (half the sum of the 19 lowest eigenvalues) and g (20th eigenvalue)."""
     _, approx = np.linalg.eigh(np.array(h.tolist(), dtype=complex))
     v = acb_mat(approx.tolist())
-    v = v * (3 * unit - v.conjugate().transpose() * v) / 2
-    adj = v.conjugate().transpose()
-    defect = model["frobenius"](adj * v - unit)
-    assert defect < arb("1e-20")
+    # Proposal only: orthonormalise, then one first-order Jacobi correction in
+    # ball precision.  The certificate below does not depend on how v was found.
+    v = centre(v * (3 * unit - v.conjugate().transpose() * v) / 2)
+    a = v.conjugate().transpose() * h * v
+    d = [a[i, i].real.mid() for i in range(38)]
+    x = acb_mat([[0 if i == j else (a[i, j] / (d[j] - d[i])).mid() for j in range(38)]
+                 for i in range(38)])
+    v = centre(v * (unit + x))
+    for _ in range(4):
+        v = v * (3 * unit - v.conjugate().transpose() * v) / 2
+        adj = v.conjugate().transpose()
+        defect = frobenius(adj * v - unit)
+        if defect < arb("1e-24"):
+            break
+        v = centre(v)
+    assert defect < arb("1e-24")
     hv = h * v
     ray = adj * hv
     diag = [ray[i, i].real.mid() for i in range(38)]
     residual = acb_mat([[hv[i, j] - v[i, j] * diag[j] for j in range(38)] for i in range(38)])
-    # Same perturbation bound as the vacuum certificate: ||H - Q D Q^*|| <= error.
-    error = 2 * model["frobenius"](residual) + defect * (
-        model["frobenius"](h) + 3 * max(abs(z).upper() for z in diag))
+    # Same perturbation bound as the vacuum certificate: ||H - Q D Q^*|| <= error,
+    # Q the unitary polar factor of v.
+    error = 2 * frobenius(residual) + defect * (
+        frobenius(h) + 3 * max(abs(z).upper() for z in diag))
+    assert error < arb("1e-12")
     d = sorted(diag)
     # Weyl: the k-th eigenvalue lies within error of d[k].  Particle-hole symmetry
     # pairs the spectrum; the 20th eigenvalue is certified positive.
@@ -53,6 +75,7 @@ def spectrum(h):
 
 
 def collect():
+    ctx.prec = 128
     data = {}
     for n, z in enumerate(acb.zeta_zeros(FIRST, COUNT), FIRST):
         parent = shell["parent_data"](z.imag)
@@ -111,6 +134,12 @@ def verify():
     plus = [n for n in ns if sector[n] == 1]
     minus = [n for n in ns if sector[n] == -1]
     assert (len(plus), len(minus)) == (611, 667)
+    # Consistency with the published vacuum and gap certificates.
+    for n in (11618, 11431):
+        old = model["vacuum"](model["hamiltonian"](acb.zeta_zero(n).imag))
+        assert old.overlaps(energy[n]) and energy[n].rad() < old.rad()
+    assert arb("0.0236718") < gap[11431] < arb("0.0236719")
+    assert sector[11177] == 1 and sector[11618] == -1
 
     # --- one-parameter envelopes -------------------------------------------------
     diagonal = {n: (gap[n], energy[n]) for n in ns}
