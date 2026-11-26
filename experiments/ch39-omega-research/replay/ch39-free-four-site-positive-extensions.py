@@ -46,12 +46,13 @@ def window_bound(mixing):
     return lo.lower(),hi.upper()
 
 
-def witness(mixing, exponent, geometry, projectors):
+def witness(mixing, exponent, geometry, projectors, down_weight=1):
     v = acb_mat(mixing)
     masses = [list(map(arb, seq)) for seq in ((".00000615",".00311",".8616"),(".0000135",".000268",".01401"))]
     normalized = [diagonal([(m/seq[-1])**exponent for m in seq]) for seq in masses]
     up,down = adj(v)*normalized[0]*v, normalized[1]
-    vals,vecs = (up+down).eig(algorithm="rump",right=True)
+    assert down_weight > 0
+    vals,vecs = (up+down*down_weight).eig(algorithm="rump",right=True)
     branch = sorted(range(3),key=lambda j:vals[j].real.mid())
     assert all(vals[i].real<vals[j].real for i,j in zip(branch,branch[1:]))
     y = acb_mat([[vecs[i,branch[-1]]] for i in range(3)])
