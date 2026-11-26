@@ -80,6 +80,7 @@ def verify(root):
     assert arb(".00018518829899377")<cancel<arb(".00018518829899382")
     print("相消约束引起的均方与均方根相对增幅", (cancel/plain-1).str(16),
           ((cancel/plain).sqrt()-1).str(16))
+    return arb_mat(gram)
 
 
 if __name__=="__main__":

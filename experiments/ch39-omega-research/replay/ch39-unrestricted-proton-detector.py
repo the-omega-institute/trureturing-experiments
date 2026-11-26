@@ -59,6 +59,7 @@ def verify(root):
             assert sum(u*row[i] for u,row in zip(dual,signed))>primal[-1]
     assert arb(".003215")<primal[-1]<arb(".003217")
     print("最坏三个轨道及其组概率和可达最大模",support,*[z.str(19) for z in primal])
+    return rows
 
 
 if __name__=="__main__":
