@@ -145,6 +145,7 @@ def verify_universal():
     assert F(156027, 10**4) < beta < F(156029, 10**4)
     assert c["b"] == F(1523793, 10**9)
     assert c["sign"] < 1155
+    assert F(4983, 1000) < c["per"] < F(4984, 1000) and c["r"] < F(11583, 100) and c["n_der"] < F(146115, 10**4)
     assert c["current"] < F(1002, 1000)*F(10)**20
     # 可取的衰减率上确界 ln(1+alpha/(4 sqrt2))：用 x-x^2/2 < ln(1+x) < x-x^2/2+x^3/3 与 sqrt2 的上下界。
     x_lo, x_hi = alpha/(4*SQRT2_HI), alpha/(4*F(1414213, 10**6))
@@ -207,6 +208,7 @@ def verify_two_zeros(shell):
     assert mmax < arb("5.1")
     a_c, a_ref, a_s = F(2519, 10**5), F(2689, 10**5), F(963, 10**5)
     m_hi = arb_hi(mmax, 10**6)
+    assert m_hi < F(28044, 10**4)
     beta = max(m_hi, F(0)) + 8 + SPIN
     heavy_der = m_hi + 7 + SPIN
     const = stage_constants(a_c, beta, max(F(1), heavy_der), True, REP_DIM_SUM)
