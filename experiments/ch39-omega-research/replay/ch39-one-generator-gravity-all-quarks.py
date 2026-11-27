@@ -193,6 +193,18 @@ def verify(root):
     assert all(value*sign>0 for value,sign in zip(signs,expected_signs,strict=True)),signs
     print("相位选定后三根的包围端点及特征多项式符号",endpoints,expected_signs,flush=True)
     print("各端点符号检验的最小绝对余量",min(abs(v).lower() for v in signs).str(10),flush=True)
+    # 压缩后的粲方向正比于 (A-m_c I)^(-1)n。所选法向相位也消去
+    # 该方向上下型二次型中的交叉项。以第一字符为基准，避免依赖性损失。
+    charm = mass[1]
+    relative = [probs[i]/probs[1]*((eigen[1]-charm)/(eigen[i]-charm))**2
+                if i != 1 else arb(1) for i in range(4)]
+    charm_mean = c1 + sum(w*(value-c1) for w,value in
+                          zip(relative,(b_low,c1,b_high,c2),strict=True))/sum(relative)
+    # E_c <= s_max + (b_max-s_max) |V_cb|^2。
+    vcb_squared = (charm_mean-points[3])/(points[5]-points[3])
+    assert vcb_squared > arb(".9967")**2
+    print("本构造的粲方向下型期望与 |V_cb| 严格下界",
+          charm_mean.str(12),vcb_squared.sqrt().lower().str(10),flush=True)
     # 两端分别向内推进，只保留有严格符号的端点。
     for a,b,sgn in zip(points[::2],points[1::2],expected_signs[::2],strict=True):
         l,r = a,b
