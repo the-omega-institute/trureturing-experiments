@@ -17,7 +17,7 @@ def cutoff_ticks():
     ].astype(int)
 
 
-def build_grid(root, momentum_offsets, *, number=2_306_888_100_089, energies=(5600, 560000, 56000000, 5600000000, 560000000000), portal=None, pivot=3):
+def build_grid(root, momentum_offsets, *, number=2_306_888_100_089, energies=(5600, 560000, 56000000, 5600000000, 560000000000), portal=None, pivot=3, height=None):
     def lib(name):
         return run_path(str(root / ("ch39-" + name + ".py")))
 
@@ -26,14 +26,14 @@ def build_grid(root, momentum_offsets, *, number=2_306_888_100_089, energies=(56
     )[2]
     native = lib("native-rh-ray-pvm")
     _, _, pivots, _ = next(
-        row for row in native["shell_weights"](root, number) if row[0] == 6
+        row for row in native["shell_weights"](root, number, height=height) if row[0] == 6
     )
     assert 1 <= pivot <= len(pivots)
     weights = [v.real for v in pivots[pivot - 1]]
     gauge = lib("all-field-signed-crossing")
     neutral = lib("full-neutral-free-cutoff")
-    data = gauge["joint_system"](root, "1.176397e14", number=number, order=4, last=8)
-    signs, masses = lib("rotation-portal-top-energy")["rotation_signs"](root, number)
+    data = gauge["joint_system"](root, "1.176397e14", number=number, order=4, last=8, height=height)
+    signs, masses = lib("rotation-portal-top-energy")["rotation_signs"](root, number, height=height)
     ctx.prec = 160
     p0, p1 = data["p0"], data["p1"]
     rho = (arb("246.22") / arb("1.22089e19")) ** 2 / 2

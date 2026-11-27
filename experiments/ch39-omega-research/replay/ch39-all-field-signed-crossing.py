@@ -38,9 +38,9 @@ def angular_exposure(kind, z, x, p0, p1, logratio, rule):
     return result+arb(0, (error*logratio).upper())
 
 
-def joint_system(root, energy_gev, *, scalar_shifts=None, order=14, last=41, number=2_306_888_100_085):
+def joint_system(root, energy_gev, *, scalar_shifts=None, order=14, last=41, number=2_306_888_100_085, height=None):
     fields = run_path(str(root / "ch39-two-zero-cutoff-gravity.py"))["gravity_fields"]
-    single, lib, (rows,) = fields(root, (number,))
+    single, lib, (rows,) = fields(root, (number,), heights=(height,) if height is not None else None)
     model, _, _, initial, _ = lib["chiral"]["source"]["mean"]["inputs"]()
     ctx.prec = 192
     fermion, scalar, vector, gauge = range(4)

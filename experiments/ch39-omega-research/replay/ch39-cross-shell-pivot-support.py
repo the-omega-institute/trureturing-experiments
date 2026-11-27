@@ -11,9 +11,9 @@ DIRECTIONS = ((0, 0, -1, 0), (0, 0, -1, -10), (-20, 29, -1, 0), (-21, 29, -1, -2
 ENERGY = 560000
 
 
-def projected_tables(core, root, number, portal):
+def projected_tables(core, root, number, portal, *, height=None):
     tables = core["build_grid"](
-        root, (0,), number=number, energies=(ENERGY,), portal=portal
+        root, (0,), number=number, energies=(ENERGY,), portal=portal, height=height
     )
     lower, upper, _, _, start = tables[:5]
     # 端点三式后是 A_QQ/10 和 A_c/10，只保留色坐标。

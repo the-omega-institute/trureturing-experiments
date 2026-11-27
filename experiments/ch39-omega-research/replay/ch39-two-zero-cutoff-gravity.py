@@ -6,7 +6,7 @@ from flint import acb, arb, arb_mat, ctx
 import sympy as sp
 
 
-def gravity_fields(root, numbers=None):
+def gravity_fields(root, numbers=None, *, heights=None):
     single = run_path(str(root / "ch39-signed-cutoff-gravity.py"))
     lib = run_path(str(root / "ch39-chiral-minimal-neutral-gravity.py"))
     chiral = lib["chiral"]
@@ -23,8 +23,7 @@ def gravity_fields(root, numbers=None):
     neutral = [arb(str(lo)).union(arb(str(hi)))
                for (lo, hi), multiplicity in intervals for _ in range(multiplicity)]
     assert len(neutral) == 19 and neutral[0].is_zero()
-    def levels(n):
-        h = acb.zeta_zero(n).imag
+    def levels(h):
         delta = arb(23)/25 * arb(2)**-20 / (h*h+shell["soft"]["point"]["study"]["offset"])
         c = 15-delta/3
         bands = {}
@@ -42,7 +41,9 @@ def gravity_fields(root, numbers=None):
     if numbers is None:
         n = single["NUMBER"]
         numbers = (n, n + 1)
-    return single, lib, [levels(n) for n in numbers]
+    if heights is None:
+        heights = [acb.zeta_zero(n).imag for n in numbers]
+    return single, lib, [levels(h) for h in heights]
 
 
 def adjacent_fields(root):

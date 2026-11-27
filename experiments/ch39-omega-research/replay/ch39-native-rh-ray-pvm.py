@@ -77,14 +77,15 @@ def weak_series(order=32):
     return at
 
 
-def shell_weights(root, number=2_306_888_100_085):
+def shell_weights(root, number=2_306_888_100_085, *, height=None):
     """逐荷产生 (q, 有序19谱值, 三组复谱权, 镜向三组复谱权)。"""
     shell = run_path(str(root/"ch39-three-ray-chiral-boundary.py"))
     ctx.prec = 256
     gram = gram_cholesky(root)
     pole,*rays = [shell["soft"]["pole"],*shell["boundary_sites"]()]
     assert [pole,*rays]==[14,8,7,6]
-    height = acb.zeta_zero(number).imag
+    if height is None:
+        height = acb.zeta_zero(number).imag
     for q in (1,-4,2,-3,6):
         matrix = shell["laplacian"](q,height)
         vals,vecs = matrix.eig(right=True,algorithm="rump")
