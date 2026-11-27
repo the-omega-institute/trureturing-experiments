@@ -12,7 +12,7 @@ SCALE = 10**7
 NUMBER = 2_306_888_100_093
 
 
-def polynomials(root):
+def polynomials(root, *, include_single_edge=True):
     def lib(name):
         return run_path(str(root / ("ch39-" + name + ".py")))
 
@@ -36,14 +36,15 @@ def polynomials(root):
     pole = shell["soft"]["pole"]
     output = []
     single_edge = [[] for _ in near]
-    t = 3 * arb.pi() / 8
+    if include_single_edge:
+        t = 3 * arb.pi() / 8
     for pivot in range(1, 4):
         rows = []
         weights = gram[pivot]
         for j in range(19):
             left = [vectors[a, j] for a in near]
             right = [link * vectors[b, j] for link, b in zip(links, far, strict=True)]
-            if pivot == 2:
+            if pivot == 2 and include_single_edge:
                 for which in range(3):
                     measured = [*left]
                     measured[which] = left[which]*t.cos() + right[which]*t.sin()
@@ -61,7 +62,8 @@ def polynomials(root):
                 (aa*q+ab*r)/2, p*q, p*r, (aa*q-ab*r)/2, (aa*r+ab*q)/2
             )))
         output.append(rows)
-    assert all(sum(row).contains(1) for row in single_edge)
+    if include_single_edge:
+        assert all(sum(row).contains(1) for row in single_edge)
     return output, single_edge
 
 
@@ -76,24 +78,36 @@ def integer_bounds(value):
     return int(scaled.lower().floor().unique_fmpz()), int(scaled.upper().ceil().unique_fmpz())
 
 
-def score_box(tables, weights, major):
+def projected_box(tables, weights, major, *, signs=None):
     rest = [w for i, w in enumerate(weights) if i not in major]
-    pos = sum(w.max(arb(0)) for w in rest)
-    neg = sum(w.min(arb(0)) for w in rest)
+    if signs is None:
+        pos = sum(w.max(arb(0)) for w in rest)
+        neg = sum(w.min(arb(0)) for w in rest)
+    else:
+        # 对固定符号的原谱权求导时，每层贡献的端点仍由原权符号决定。
+        pos = sum(w for i, w in enumerate(weights) if i not in major and signs[i])
+        neg = sum(w for i, w in enumerate(weights) if i not in major and not signs[i])
     projections = []
     for offset, bands, scale in tables:
         base = integer_bounds((offset + pos*min(t[0] for t in bands)
                                + neg*max(t[1] for t in bands)) / scale)
+        def contribution(i, l, h):
+            if signs is None:
+                return (weights[i]*l).min(weights[i]*h)
+            return weights[i] * (l if signs[i] else h)
         major_terms = [
-            [integer_bounds((weights[i]*l).min(weights[i]*h) / scale) for l, h in bands]
-            for i in major
+            [integer_bounds(contribution(i, l, h) / scale) for l, h in bands] for i in major
         ]
         # 四个整数相加，下界、上界分别在最后一维；预先排除 int64 溢出。
         assert max(abs(z) for pair in [base, *(t for col in major_terms for t in col)]
                    for z in pair) < 2**59
         a, b, c = np.asarray(major_terms, dtype=np.int64)
         projections.append(base + a[:, None, None, :] + b[None, :, None, :] + c[None, None, :, :])
-    return np.max(projections, axis=0).min(axis=(0, 1, 2))
+    return np.stack(projections)
+
+
+def score_box(tables, weights, major):
+    return projected_box(tables, weights, major).max(axis=0).min(axis=(0, 1, 2))
 
 
 def score(tables, weights):
