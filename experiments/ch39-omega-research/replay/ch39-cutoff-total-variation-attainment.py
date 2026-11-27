@@ -19,7 +19,8 @@ uses the derivative of the massless term in the Newton heat trace.
 
 Pass --floor-window to certify the unique four-atom optimum uniformly for
 0 <= delta <= 10^-14, with its first atom at delta, for all three spectra.
-This mode also certifies a quadratic remainder in the optimal cost.
+This mode also certifies a quadratic remainder in the optimal cost and
+full rank for the contact and tangent columns of the signed Jacobian.
 """
 
 from argparse import ArgumentParser
@@ -80,9 +81,10 @@ def endpoint_column(rows, floor_upper):
             phi += a * x
             psi += g * x**2
             continue
-        assert z > 0
-        # exp(-z/x) and E_n(z/x) for n >= 1 lie in this interval.
-        factor = arb(0).union((-z / floor_upper).exp())
+        scaled_mass = z / floor_upper
+        assert scaled_mass >= 1
+        # For u >= 1 and n >= 1, E_n(u) <= exp(-u)/u <= exp(-u).
+        factor = arb(0).union((-scaled_mass).exp())
         ell += z * a * factor
         phi += a * x * factor
         psi += g * x**2 * factor
@@ -476,6 +478,14 @@ def main():
                 tail = derivative_tail_positive(y, rows)
                 intervals = certify_dual(certificate, rows, y, times, floor_upper=floor_upper)
                 rank, _ = certify_rank(certificate, rows, times, endpoint=endpoint)
+                jets = [interval_jets(certificate["heat"], rows, t) for t in times]
+                assert dot(jets[0][2], y) < 0 and dot(jets[1][2], y) > 0
+                final = interval_jets(certificate["heat"], rows, arb(0))[0]
+                contacts = [endpoint, jets[0][0], jets[1][0], final]
+                tangent_minors = [arb_mat(contacts + [jet[1]]).det() for jet in jets]
+                assert any(not det.contains(0) for det in tangent_minors)
+                print(n, "contact-plus-tangent determinants",
+                      *(det.str(9) for det in tangent_minors))
                 print(
                     n, "uniform floor window [0, 1e-14]", intervals,
                     "tail lower bound", tail.str(6), "contact minor", rank.str(6),
