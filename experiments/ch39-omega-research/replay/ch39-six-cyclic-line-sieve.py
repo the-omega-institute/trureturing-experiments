@@ -208,7 +208,11 @@ def basic_options(model, targets):
     return True
 
 
-def experiment(root, fifth, columns, levels):
+def experiment(root, fifth, columns, levels, *, tolerance=None):
+    if tolerance is None:
+        tolerance = arb(0)
+    assert tolerance >= 0
+
     def lib(name):
         return run_path(str(root / ("ch39-" + name + ".py")))
 
@@ -253,7 +257,7 @@ def experiment(root, fifth, columns, levels):
             w * (far if i in ids else near if w > 0 else arb("-1.4e-11"))
             for i, w in enumerate(weights)
         )
-        assert upper < 0
+        assert upper < -tolerance
         projections = [adj(basis) * f for f in frames]
         assert all(squared(row(projections[0], i)) > arb(".9") for i in ids)
         shells.append((projections, weights, field))
@@ -263,9 +267,20 @@ def experiment(root, fifth, columns, levels):
     geometry = cover_api["prepare"](model)
     survivors = []
     count = 0
+
+    def admissible_moments(ids):
+        targets = bounds(model, levels, tzero, total, ids)
+        return [
+            (
+                u + arb(0, (tolerance / (s["ck"] * total**2)).upper()),
+                v + arb(0, (tolerance / (s["cw"] * total**4)).upper()),
+            )
+            for s, (u, v) in zip(model, targets, strict=True)
+        ]
+
     for ids in product(*candidates):
         count += 1
-        targets = bounds(model, levels, tzero, total, ids)
+        targets = admissible_moments(ids)
         if basic_options(model, targets) and cover_api["test"](geometry, targets)[0]:
             survivors.append(ids)
     print(
@@ -276,6 +291,7 @@ def experiment(root, fifth, columns, levels):
         flush=True,
     )
     assert count == 324 and survivors == [(15, 15, 0, 0, 0, 0)]
+    return model, admissible_moments(survivors[0])
 
 
 if __name__ == "__main__":
