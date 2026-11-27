@@ -8,7 +8,7 @@ COEFFICIENTS=(303683517812,-42243366948,-45877802961,-296083391333,3378297926988
               27285170980,-1772989573,7583036013,-23404272160,14764351651298,381538561071)
 
 
-def verify(root, *, certify_rank=False, return_operator=False):
+def verify(root, *, certify_rank=False, return_operator=False, spectral_probes=None):
     def lib(name):
         return run_path(str(root/("ch39-"+name+".py")))
 
@@ -24,7 +24,7 @@ def verify(root, *, certify_rank=False, return_operator=False):
     result=lib("fifth-flavor-cutoff-chart")["solve"](
         root,NAME,(0,0,0,1),directions,frame=frame,rows=rows,
         target_sites=[boxes[i] for i in rows],seed_rays=True,high_targets=[(i,boxes[i]) for i in (2,3)],
-        certify_rank=certify_rank,return_operator=return_operator)
+        certify_rank=certify_rank,return_operator=return_operator,spectral_probes=spectral_probes)
     sites,operator = result if return_operator else (result,None)
     assert all(s.overlaps(b) for s,b in zip(sites,boxes,strict=True))
     # 前十八个截止等式由联合方程精确强制。第 15 层由两条荷六重列的归一化与源迹相同精确给出。

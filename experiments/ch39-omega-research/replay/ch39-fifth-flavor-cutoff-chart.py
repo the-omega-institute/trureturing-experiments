@@ -11,14 +11,16 @@ def adj(matrix):
     return matrix.conjugate().transpose()
 
 
-def solve(root, name, quaternion, directions, *, endpoints=None, frame=None, rows=(), target_radius=0, target_sites=None, seed_rays=False, high_targets=(), certify_rank=False, return_operator=False):
+def solve(root, name, quaternion, directions, *, endpoints=None, frame=None, rows=(), target_radius=0, target_sites=None, seed_rays=False, high_targets=(), certify_rank=False, return_operator=False, spectral_probes=None):
     size = len(directions)
     assert size == (16 if endpoints else 12) + 4*len(rows) + len(high_targets)
     def lib(name):
         return run_path(str(root / ("ch39-" + name + ".py")))
 
-    point, whole, deriv, widths, upstream, incoming, levels = lib("fourth-third-pivot-joint")["verify"](
-        root, return_chart=True, tight_chart=bool(high_targets))
+    if spectral_probes is not None:
+        assert return_operator == "spectral" and high_targets and rows and target_radius == 0
+    point, whole, deriv, widths, upstream, incoming, levels, *fourth_constraint = lib("fourth-third-pivot-joint")["verify"](
+        root, return_chart=True, tight_chart=bool(high_targets),linearize_chart=spectral_probes is not None)
     quarks = lib("fifth-two-charge-full-quark")
     rotation = quarks["rotation"]
     turn = rotation(quaternion) * rotation(quarks["QUATERNION"])
@@ -194,6 +196,12 @@ def solve(root, name, quaternion, directions, *, endpoints=None, frame=None, row
                 break
             radii=[max(r,arb("1.03")*n) for r,n in zip(radii,need,strict=True)]
         assert ratio < 1
+        if spectral_probes is not None:
+            for _ in range(22):
+                square = sum((1 if i==j else 2)*r*r for (i,j,_),r in zip(directions,radii,strict=True))
+                need = [e+k*square+sum(abs(a).upper()*v for a,v in zip(row,radii,strict=True))
+                        for e,k,row in zip(errs,curvature,defect,strict=True)]
+                radii = [min(r,b.upper()) for r,b in zip(radii,need,strict=True)]
         if certify_rank:
             assert size == 78 and len(input_goals) == 16
             # 在自映盒内，所有真根另满足已证的二阶偏移界。
@@ -289,5 +297,47 @@ def solve(root, name, quaternion, directions, *, endpoints=None, frame=None, row
             for j, goal in enumerate(pair):
                 old = overlap[i, j]
                 overlap[i, j] = acb(old.real.intersection(goal.real), old.imag.intersection(goal.imag))
-        return sites, (adj(dst6), overlap, levels)
+        operator = (adj(dst6), overlap, levels)
+        if spectral_probes is not None:
+            # 指定低行的两列值等于方程右端，仅对其余原生第五壳谱行传播参数误差。
+            coefficients = spectral_probes * adj(dst6)
+            unknown = acb_mat([[z if i not in rows else 0 for i,z in enumerate(line)]
+                               for line in coefficients.tolist()])
+            assert all(sum(abs(z).upper()**2 for z in line)<1 for line in unknown.tolist())
+            known = acb_mat([[sum(line[i]*pair[j] for i,pair in zip(rows,input_goals,strict=True))
+                              for j in (0,1)] for line in coefficients.tolist()])
+
+            def real_column(matrix):
+                return arb_mat([[v] for line in matrix.tolist() for z in line for v in (z.real,z.imag)])
+
+            def slope(matrices):
+                return arb_mat([real_column(unknown*d).entries() for d in matrices]).transpose()
+
+            def deviations(sizes):
+                return arb_mat([[arb(0,v.upper())] for v in sizes])
+
+            central = real_column(known + unknown*(dst6*step0**3*mid6))
+            central_tangents = [dst6*d_cube(step0,e) for e in local(seed,center,directions,identity)[1]]
+            multiplier = (slope([d*mid6 for d in central_tangents])*pre).mid()
+            value = central - multiplier*f + multiplier*arb_mat([[v] for v in error])
+            fourth_slope = slope(fourth_changes) - multiplier*cross
+            fourth_f, fourth_pre, fourth_j = fourth_constraint[0]
+            fourth_multiplier = fourth_slope.mid()*fourth_pre
+            value -= fourth_multiplier*fourth_f
+            value += (fourth_slope-fourth_multiplier*fourth_j)*deviations(widths)
+
+            # 第五壳的同一偏移既受全盒雅可比控制，也受中心一阶项及 Cayley 二阶余项控制。
+            _, wide_j = system(box,sources,source6)
+            first_bound = (slope(fifth_changes)-multiplier*wide_j)*deviations(radii)
+            centered = slope([d*source6 for d in central_tangents])-multiplier*j_center
+            linear = centered*deviations(radii)
+            square = sum((1 if i==j else 2)*r*r for (i,j,_),r in zip(directions,radii,strict=True))
+            for i,k in enumerate(curvature_bounds(multiplier)):
+                # 三次幂探测行的算子范数至多一，二阶余项至多 2·3²·square。
+                remainder = ((18+k)*square).upper()
+                value[i,0] += first_bound[i,0].intersection(linear[i,0]+arb(0,remainder))
+            probed = acb_mat([[acb(value[4*i+2*j,0],value[4*i+2*j+1,0]) for j in (0,1)]
+                              for i in range(spectral_probes.nrows())])
+            operator += (probed,)
+        return sites, operator
     return (sites, (adj(dst6)*overlap, levels)) if return_operator else sites

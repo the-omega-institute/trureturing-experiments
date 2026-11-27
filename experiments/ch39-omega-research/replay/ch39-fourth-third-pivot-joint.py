@@ -21,7 +21,7 @@ def inputs(root):
     return sectors,incoming,readout,levels,thermal,[q.real for q in pivots[2]]
 
 
-def solve_matrix(root, data, centres, log_widths, *, return_transport=False, return_chart=False, tight_chart=False, component_box=False, name=NAME, upstream=None):
+def solve_matrix(root, data, centres, log_widths, *, return_transport=False, return_chart=False, tight_chart=False, linearize_chart=False, component_box=False, name=NAME, upstream=None):
     def lib(name):
         return run_path(str(root/("ch39-"+name+".py")))
 
@@ -143,17 +143,21 @@ def solve_matrix(root, data, centres, log_widths, *, return_transport=False, ret
                     widths = [min(old, new.upper()) for old, new in zip(widths, bound.entries(), strict=True)]
                 box = [v+arb(0,r.upper()) for v,r in zip(center,widths,strict=True)]
             wide,derivatives=local(seed,box,dirs,eye)
-            return sites,(z,wide,derivatives,widths,sectors,incoming,(low,h,k))
+            chart = (z,wide,derivatives,widths,sectors,incoming,(low,h,k))
+            if linearize_chart:
+                _, jacobian_box, _ = system(box,wide_targets)
+                chart += ((f, pre, jacobian_box),)
+            return sites, chart
         dz = 2*sum(a*a*(1 if i==j else 2) for a,(i,j,_) in zip(widths,dirs,strict=True)).sqrt()
         return sites,(z,dz,sectors,incoming,(low,h,k))
     return sites
 
 
-def verify(root,*,return_transport=False,return_chart=False,tight_chart=False):
+def verify(root,*,return_transport=False,return_chart=False,tight_chart=False,linearize_chart=False):
     adjust = run_path(str(root/"ch39-fourth-third-pivot-three-adjusters.py"))
     box = adjust["verify"](root)
     assert tuple(box["layers"])==LOW_ROWS
-    result = solve_matrix(root,inputs(root),box["centers"],box["radii"],return_transport=return_transport,return_chart=return_chart,tight_chart=tight_chart)
+    result = solve_matrix(root,inputs(root),box["centers"],box["radii"],return_transport=return_transport,return_chart=return_chart,tight_chart=tight_chart,linearize_chart=linearize_chart)
     sites = result[0] if return_transport or return_chart else result
     high = [x for i,x in enumerate(sites) if i not in LOW_ROWS]
     shifts = [abs((x/c).log()).upper() for x,c in zip(high,box["high_centers"],strict=True)]
