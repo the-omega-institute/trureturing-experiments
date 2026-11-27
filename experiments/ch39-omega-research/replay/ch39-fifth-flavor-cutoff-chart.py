@@ -11,14 +11,14 @@ def adj(matrix):
     return matrix.conjugate().transpose()
 
 
-def solve(root, name, quaternion, directions, *, endpoints=None, frame=None, rows=(), target_radius=0, target_sites=None):
+def solve(root, name, quaternion, directions, *, endpoints=None, frame=None, rows=(), target_radius=0, target_sites=None, seed_rays=False, high_targets=()):
     size = len(directions)
-    assert size == (16 if endpoints else 12) + 4*len(rows)
+    assert size == (16 if endpoints else 12) + 4*len(rows) + len(high_targets)
     def lib(name):
         return run_path(str(root / ("ch39-" + name + ".py")))
 
     point, whole, deriv, widths, upstream, incoming, levels = lib("fourth-third-pivot-joint")["verify"](
-        root, return_chart=True)
+        root, return_chart=True, tight_chart=bool(high_targets))
     quarks = lib("fifth-two-charge-full-quark")
     rotation = quarks["rotation"]
     turn = rotation(quaternion) * rotation(quarks["QUATERNION"])
@@ -53,10 +53,21 @@ def solve(root, name, quaternion, directions, *, endpoints=None, frame=None, row
 
     dst6 = adj(spectrum(shell, 6, NUMBER)[1])
     low, heavy, highest = levels
-    row_goals = ([((x.sqrt()-low)/(heavy-low)).sqrt() for x in target_sites]
-                 if target_sites is not None else [arb(0)]*len(rows))
-    goal_centers = [v.mid() for v in row_goals]
-    assert len(row_goals)==len(rows)
+    if seed_rays:
+        reference = dst6*seed**3*point**3*incoming
+        input_goals = []
+        for i,x in zip(rows,target_sites,strict=True):
+            first,second = [acb(reference[i,j].real.mid(),reference[i,j].imag.mid()) for j in range(2)]
+            scale = ((x.sqrt()-low)/((heavy-low)*abs(first)**2+(highest-low)*abs(second)**2)).sqrt()
+            input_goals.append((first*scale,second*scale))
+    else:
+        amplitudes = ([((x.sqrt()-low)/(heavy-low)).sqrt() for x in target_sites]
+                      if target_sites is not None else [arb(0)]*len(rows))
+        input_goals = [(acb(v),acb(0)) for v in amplitudes]
+    row_goals=[getattr(v,part) for part in ("real","imag") for pair in input_goals for v in pair]
+    high_goals=[x.sqrt() for i,x in high_targets]
+    goal_centers=[c.mid() for c in row_goals+high_goals]
+    assert len(input_goals)==len(rows)
     def d_cube(unitary, tangent):
         return tangent*unitary**2 + unitary*tangent*unitary + unitary**2*tangent
     mid6 = point**3*incoming
@@ -94,12 +105,15 @@ def solve(root, name, quaternion, directions, *, endpoints=None, frame=None, row
             delta = ([dst6*z**3*e for e in tangent6] if cross else
                      [dst6*d_cube(z, e)*src6 for e in dz])
         if rows:
-            for part in ("real", "imag"):
-                for i,goal in zip(rows,goal_centers,strict=True):
-                    for j in range(2):
-                        target = goal if j==0 and part=="real" else 0
-                        values.append(getattr(ov[i,j],part)-target)
-                        jac.append([getattr(e[i,j],part) for e in delta])
+            keys=[(i,j,part) for part in ("real","imag") for i in rows for j in range(2)]
+            for n,(i,j,part) in enumerate(keys):
+                values.append(getattr(ov[i,j],part)-goal_centers[n])
+                jac.append([getattr(e[i,j],part) for e in delta])
+            for n,(i,_) in enumerate(high_targets,len(keys)):
+                a=low+(heavy-low)*abs(ov[i,0])**2+(highest-low)*abs(ov[i,1])**2
+                values.append(a-goal_centers[n])
+                jac.append([2*((heavy-low)*(ov[i,0].conjugate()*e[i,0]).real+
+                               (highest-low)*(ov[i,1].conjugate()*e[i,1]).real) for e in delta])
         if endpoints:
             amps = [low + (heavy-low)*abs(ov[i, 0])**2 + (highest-low)*abs(ov[i, 1])**2 for i in range(19)]
             totals = [-arb(1), -arb("1e-122")]
@@ -120,10 +134,12 @@ def solve(root, name, quaternion, directions, *, endpoints=None, frame=None, row
         return arb_mat([[v] for v in values]), arb_mat(jac)
 
     center = [arb(0)]*size
-    for _ in range(3):
+    for _ in range(14 if high_targets else 3):
         f, j = system(center, mid_sources, mid6)
         step = j.mid().solve(f.mid()).entries()
         center = [(x-d).mid() for x, d in zip(center, step, strict=True)]
+        if high_targets and max(abs(v).upper() for v in step)<arb("1e-18"):
+            break
     f, j = system(center, mid_sources, mid6)
     pre = j.mid().inv()
     assert not pre.det().contains(0)
@@ -132,8 +148,7 @@ def solve(root, name, quaternion, directions, *, endpoints=None, frame=None, row
     unit = arb_mat([[int(i==j) for j in range(size)] for i in range(size)])
     if rows:
         if target_sites is not None:
-            error = [arb(0)]*12+[v for goal,center0 in zip(row_goals,goal_centers,strict=True)
-                                for v in (goal-center0,arb(0))]+[arb(0)]*(2*len(rows))
+            error=[arb(0)]*12+[v-c for v,c in zip(row_goals+high_goals,goal_centers,strict=True)]
             projected -= pre*arb_mat([[v] for v in error])
         if target_radius:
             arbitrary = [arb(0)]*12+[arb(0,arb(target_radius).upper())]*(4*len(rows))
@@ -144,7 +159,9 @@ def solve(root, name, quaternion, directions, *, endpoints=None, frame=None, row
         defect = (unit-pre*j_center).tolist()
         curvature = []
         for line in pre.tolist():
-            total = 18*sum(abs(v).upper() for v in line[12:])
+            end=12+4*len(rows)
+            total = 18*sum(abs(v).upper() for v in line[12:end])
+            total += 72*highest*sum(abs(v).upper() for v in line[end:])
             for iq, (_, ws, cols, _) in enumerate(sectors):
                 diagonal = arb_mat([line[6*iq:6*iq+6]])*cols
                 total += 8*(2-iq)**2*sum(map(abs,ws))*max(abs(v).upper() for v in diagonal.entries())

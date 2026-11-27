@@ -7,7 +7,7 @@ from runpy import run_path
 from flint import arb, arb_mat, ctx
 
 
-def solve(root, centers, axes, *, number=2_306_888_100_090, pivot=3):
+def solve(root, centers, axes, *, number=2_306_888_100_090, pivot=3, tighten=False):
     def lib(name):
         return run_path(str(root / ("ch39-" + name + ".py")))
 
@@ -129,6 +129,17 @@ def solve(root, centers, axes, *, number=2_306_888_100_090, pivot=3):
     )
     print("六维自映比", ratio.str(13), flush=True)
     assert ratio < 1
+    if tighten:
+        # 真根偏移逐坐标满足预条件后的非负均值不等式。封闭盒中原先已覆盖真实弱差与平滑替身的差。
+        widths=[radius]*len(axes)
+        for _ in range(10):
+            mismatch=(eye-pre*jac(box)).tolist()
+            bounds=[abs(v).upper()+sum(abs(a).upper()*w for a,w in zip(row,widths,strict=True))
+                    for v,row in zip(offset,mismatch,strict=True)]
+            widths=[min(old,new.upper()) for old,new in zip(widths,bounds,strict=True)]
+            for i,w in zip(axes,widths,strict=True):
+                box[i]=sites[i]*arb(0,w.upper()).exp()
+        print("原五式各调整坐标的收紧半宽",*[v.str(9) for v in widths],flush=True)
     gaps = lib("schur-horn-gravity-holdout")["ky_fan_gaps"](
         source, [x.sqrt() for x in box]
     )

@@ -149,11 +149,11 @@ def solve_matrix(root, data, centres, log_widths, *, return_transport=False, ret
     return sites
 
 
-def verify(root,*,return_transport=False,return_chart=False):
+def verify(root,*,return_transport=False,return_chart=False,tight_chart=False):
     adjust = run_path(str(root/"ch39-fourth-third-pivot-three-adjusters.py"))
     box = adjust["verify"](root)
     assert tuple(box["layers"])==LOW_ROWS
-    result = solve_matrix(root,inputs(root),box["centers"],box["radii"],return_transport=return_transport,return_chart=return_chart)
+    result = solve_matrix(root,inputs(root),box["centers"],box["radii"],return_transport=return_transport,return_chart=return_chart,tight_chart=tight_chart)
     sites = result[0] if return_transport or return_chart else result
     high = [x for i,x in enumerate(sites) if i not in LOW_ROWS]
     shifts = [abs((x/c).log()).upper() for x,c in zip(high,box["high_centers"],strict=True)]
