@@ -85,6 +85,13 @@ def verify(root):
     light=min(floors[s].lower() for s in ("tensor","char1","char2"))
     strange=min(floors[s].lower() for s in ("average","char1","char2"))
     assert light>arb(".00004232") and strange>arb(".00141168")
+    wmax = max(v.upper() for v in w)
+    for name,lower,upper in (("下", light, ".0000137"), ("奇", strange, ".000271")):
+        distance = (lower.sqrt()-arb(upper).sqrt())/wmax.sqrt()
+        commutator = distance*gap/arb(38).sqrt()
+        print(name,"入窗的算子距离、交换子算子范数下界",
+              distance.lower().str(13),commutator.lower().str(13),flush=True)
+        assert distance > arb(".005") and commutator > arb(".00003")
     print("单位圆最小谱隙、任意三平面轻下与奇质量下界",gap.str(12),light.str(14),strange.str(14),flush=True)
 
 
