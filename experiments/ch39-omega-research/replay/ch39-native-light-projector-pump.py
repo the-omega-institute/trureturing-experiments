@@ -102,7 +102,7 @@ def verify(root):
                     midpoint_sine = (1-sq.lower()).max(arb(0)).sqrt()
                     limit = (midpoint_sine + change/(gap-change)).upper()
                     upper = max(upper, limit)
-            assert upper < arb(1)/3
+            assert upper < (arb(1)/3 if angles else arb(".17"))
             angles.append(upper)
         worst = max(worst, *angles)
         print("荷、三个特征标全域的主角正弦上界",q,*[v.str(11) for v in angles],flush=True)
