@@ -123,13 +123,18 @@ for q, x, y, scale in [
     outputs.append(eig(adj(Y)*Y))
 
 (u, U), (d, D) = outputs
-V = adj(U)*D
-s13 = abs(V[0,2])
-c13 = (1-s13**2).sqrt()
-s12, s23 = abs(V[0,1])/c13, abs(V[1,2])/c13
-quartet = V[0,1]*V[1,1].conjugate()*V[1,2]*V[0,2].conjugate()
-phase = (quartet/(s12*s23*s13*c13**2)+s12*s23*s13).arg()
-values = [z.sqrt() for z in u+d] + [s12.asin(), s23.asin(), s13.asin(), phase]
+
+def mixing_angles(U, D):
+    V = adj(U)*D
+    s13 = abs(V[0,2])
+    c13 = (1-s13**2).sqrt()
+    s12, s23 = abs(V[0,1])/c13, abs(V[1,2])/c13
+    quartet = V[0,1]*V[1,1].conjugate()*V[1,2]*V[0,2].conjugate()
+    phase = (quartet/(s12*s23*s13*c13**2)+s12*s23*s13).arg()
+    return [s12.asin(), s23.asin(), s13.asin(), phase]
+
+
+values = [z.sqrt() for z in u+d] + mixing_angles(U,D)
 ref = refs["up"] + refs["down"] + list(map(arb, (".22704", ".04275", ".00377", "1.139")))
 tol = list(map(arb, ("1.4e-7", "5e-5", ".0043", "2e-7", "3e-6", ".00009",
                     ".00082", ".00042", ".00008", ".023")))
