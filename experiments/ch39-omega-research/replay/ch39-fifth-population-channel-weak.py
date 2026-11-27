@@ -24,6 +24,7 @@ def experiment(root, fifth, columns, levels):
         _, target = calculate(graph, 6, 2_306_888_100_092+j)
         overlap = adj(target)*fifth
         bounds = []
+        leakage = []
         for i in ids:
             terms = [[abs(overlap[i,k]*columns[k,h]) for k in range(19)] for h in (0,1)]
             # Kraus 环境的第 k 个向量范数为 1。每个重源列独立应用反三角不等式。
@@ -31,9 +32,17 @@ def experiment(root, fifth, columns, levels):
             for row in terms:
                 gain.append(max([arb(0)]+[(v-sum(w for k,w in enumerate(row) if k!=l)).lower()
                                           for l,v in enumerate(row)]))
+            # 若某候选达到弱端点所需的低能，至少一个环境重列的变动达到 deficit。
+            required = arb(weak["THRESHOLDS"][j])/planck
+            deficit = max((g-((required-floor)/(l-floor)).sqrt()).lower()
+                          for g,l in zip(gain,(heavy,top),strict=True))
+            assert 0 < deficit < 1
+            leakage.append((deficit**2-deficit**4/4).lower())
             bounds.append((floor + (heavy-floor)*gain[0]**2 + (top-floor)*gain[1]**2).lower())
         energy = planck*min(bounds)
         print("壳号、原生候选各线的统一能量下界（GeV）", j+7, energy.lower().str(15), flush=True)
+        print("保幺信道的原生谱层总跃迁概率下界", min(leakage).str(15), flush=True)
+        assert min(leakage) > arb((".00488", ".00367", ".00168")[j])
         assert energy > arb("1e15") > weak["THRESHOLDS"][j]
 
 
