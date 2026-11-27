@@ -108,6 +108,13 @@ def verify(root):
     assert loss < probs[2], (loss,probs[2],beta,dc)
     print("下型两字符包围、高平凡上型轴的下型均值上界、二平面负定余量",
           [v.str(11) for v in dc],beta.upper().str(11),(probs[2]-loss).lower().str(11),flush=True)
+    # 低平凡上型本征线投回三平面。原射线与归一化投影的正弦距离恰为 sqrt(p_1)。
+    low_vec = acb_mat([[vec[i, ix[0]]] for i in range(2)])
+    low_vec *= 1/(adj(low_vec)*low_vec)[0,0].real.sqrt()
+    low_expectation = (adj(low_vec)*db*low_vec)[0,0].real
+    bottom = low_expectation - 2*max_d*(sin_bound+dx) - max_d*probs[0].sqrt()
+    assert bottom > arb(".0975")
+    print("所有上型中心三平面的底夸克严格下界",bottom.lower().str(12),flush=True)
     print("三个上型中心与奇夸克开区间",*[v.str(8) for v in mass],low.str(8),high_edge.str(8),flush=True)
 
 
