@@ -17,20 +17,19 @@ def trace_bound(shells, floor, ids, caps):
     ]
     trivial_trace = sum(v * r for v, r in zip(column_norms, radii, strict=True)) ** 2
 
-    thresholds = []
-    for _, pos, positive_rows, weights, c, error, allowance, holder in shells:
-        positive = arb(0)
-        for i, row in zip(pos, (positive_rows * inverse).tolist(), strict=True):
-            row_norm = sum(abs(z) * r for z, r in zip(row, radii, strict=True))
-            # 一般正源的最大本征值可以任意大，此处只用七条低线的约束。
-            amplitude = (floor + min(trivial_trace.upper(), (row_norm**2).upper())).upper()
-            positive += weights[i] * (c * amplitude**4 + error * amplitude**2)
-        cost = arb(".99") * c * holder
-        assert cost > 0 and positive + allowance > 0
-        # 余下十二条谱行的截止和等于 12f 加上该子空间的超额迹。
-        complementary_cap = ((positive + allowance) / cost).sqrt().sqrt()
-        thresholds.append((trivial_trace + complementary_cap - 12 * floor).upper())
-    return min(thresholds)
+    # 第七壳起的第四个读数；其余六壳只约束弱差。
+    _, pos, positive_rows, weights, c, error, allowance, holder = shells[3]
+    positive = arb(0)
+    for i, row in zip(pos, (positive_rows * inverse).tolist(), strict=True):
+        row_norm = sum(abs(z) * r for z, r in zip(row, radii, strict=True))
+        # 一般正源的最大本征值可以任意大，此处只用七条低线的约束。
+        amplitude = (floor + min(trivial_trace.upper(), (row_norm**2).upper())).upper()
+        positive += weights[i] * (c * amplitude**4 + error * amplitude**2)
+    cost = arb(".99") * c * holder
+    assert cost > 0 and positive + allowance > 0
+    # 余下十二条谱行的截止和等于 12f 加上该子空间的超额迹。
+    complementary_cap = ((positive + allowance) / cost).sqrt().sqrt()
+    return (trivial_trace + complementary_cap - 12 * floor).upper()
 
 
 def experiment(root, levels):
