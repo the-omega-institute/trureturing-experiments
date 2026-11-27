@@ -5,7 +5,20 @@ from runpy import run_path
 from flint import arb, ctx
 
 
-def solve_three(n,abc,bracket,high_pair,low_weak,high_weak,mz,p0,p1):
+def refine_weak_bracket(rough,lo,hi):
+    # 中点只定位候选。两端须由调用方用所有谱层的弱差包围严格验证。
+    for _ in range(64):
+        mid=(lo+hi)/2
+        if rough(mid).mid()>0:
+            lo=mid
+        else:
+            hi=mid
+    center=(lo+hi)/2
+    half=arb("1e-17")
+    return center-half,center+half
+
+
+def solve_three(n,abc,bracket,high_pair,low_weak,high_weak,mz,p0,p1,*,refine=False):
     a,b,c=abc
     reference=arb("-.074256577194663365545")
     lo,hi=map(arb,bracket)
@@ -19,6 +32,8 @@ def solve_three(n,abc,bracket,high_pair,low_weak,high_weak,mz,p0,p1):
         else:
             assert hint<0
             hi=mid
+    if refine:
+        lo,hi=refine_weak_bracket(lambda t:a*low_weak(t)+(1-a)*reference,lo,hi)
     low = p0*lo.union(hi)
     middle,highest = high_pair(abc,low)
     rest=b*high_weak(middle,p0,p1)+c*high_weak(highest,p0,p1)
@@ -30,7 +45,7 @@ def solve_three(n,abc,bracket,high_pair,low_weak,high_weak,mz,p0,p1):
     return low,middle,highest,minimum
 
 
-def verify(root):
+def verify(root,*,refine_node=None):
     gravity = run_path(str(root / "ch39-three-index-free-atoms.py"))
     native = run_path(str(root / "ch39-native-rh-ray-pvm.py"))
     pair = run_path(str(root / "ch39-ordered-cross-gravity-roots.py"))["high_pair"]
@@ -41,7 +56,7 @@ def verify(root):
     ctx.prec = 256
     mp,mz = arb("1.22089e19"),arb("91.1876")
     p0,p1 = (mz/mp)**2,(arb("1.176397e14")/mp)**2
-    low_weak = native["weak_series"]()
+    low_weak = native["weak_series"](56 if refine_node is not None else 32)
     result = []
     for n,rows,bracket in zip(numbers, fields, ((".991","1"),("1","2"),("1","2")),strict=True):
         _,levels,pivots,_ = next(t for t in native["shell_weights"](root,n) if t[0]==6)
@@ -54,14 +69,15 @@ def verify(root):
             bound = low_weak(arb(1))+depth*(low_weak(arb(1))-high_weak(arb(1),p0,p1))
             print("左邻所有电弱以上保序截止的弱差上界",bound.str(13),flush=True)
             assert bound<arb("-.00027260")
+        refine = n==refine_node
         def high_pair(abc,low):
-            return pair(abc,low,rows,heat,moments)
+            return pair(abc,low,rows,heat,moments,scale_text="1e-23" if refine else "1e-11")
         if n==center-1:
             promoted=(a-weights[6],b+weights[6],c)
             lo_pos,mid_pos,hi_pos,minimum=solve_three(n,promoted,("1","1.001"),high_pair,low_weak,high_weak,mz,p0,p1)
             assert mz<minimum and lo_pos<mid_pos<hi_pos
             print("左邻将第七层移入中截止后，最低 Q/GeV",minimum.str(12),flush=True)
-        low,middle,highest,minimum=solve_three(n,abc,bracket,high_pair,low_weak,high_weak,mz,p0,p1)
+        low,middle,highest,minimum=solve_three(n,abc,bracket,high_pair,low_weak,high_weak,mz,p0,p1,refine=refine)
         assert (minimum<mz if n==center-1 else minimum>mz)
         result.append((levels,[low]*17+[middle,highest]))
     return result

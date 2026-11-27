@@ -5,7 +5,7 @@ from runpy import run_path
 from flint import arb, arb_mat, ctx
 
 
-def high_pair(weights,low,rows,heat,moments,*,with_slack=False):
+def high_pair(weights,low,rows,heat,moments,*,with_slack=False,scale_text="1e-11"):
     a,b,c=weights
     pi=arb.pi()
     target=arb("1e-122")
@@ -27,7 +27,7 @@ def high_pair(weights,low,rows,heat,moments,*,with_slack=False):
     for _ in range(4):
         step=derivative(center).solve(values(center,low.mid()))
         center=[(x-y.mid()).mid() for x,y in zip(center,step.entries(),strict=True)]
-    scale=arb("1e-11")
+    scale=arb(scale_text)
     box=[x+arb(0,scale.upper()) for x in center]
     assert low<box[0]<box[1]<1
     pre=derivative(center).inv()

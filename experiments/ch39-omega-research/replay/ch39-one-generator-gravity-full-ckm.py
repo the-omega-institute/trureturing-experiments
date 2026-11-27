@@ -1,6 +1,7 @@
 """同一酉发生元的荷六精确校准、六个 Yukawa 中心与完整带号 CKM。"""
 from pathlib import Path
 from runpy import run_path
+from argparse import ArgumentParser
 
 from flint import acb, acb_mat, arb, arb_mat, ctx
 
@@ -50,7 +51,8 @@ def targets(root, independent, embedding):
     return goals
 
 
-def verify(root):
+def verify(root,*,refine=False):
+    """返回十八个中心和已证方盒的半宽。refine 同时收紧输入截止及输出方程。"""
     get = lambda file: run_path(str(root/file))
     rank = get("ch39-rank-two-generator-up-quark.py")
     n = rank["N"]+2
@@ -59,7 +61,8 @@ def verify(root):
     spec = get("ch39-adjacent-pvm-transport.py")["spectrum"]
     shell = get("ch39-three-ray-chiral-boundary.py")
     _,labels,_ = emb["verify_nodes"](root,((n-1,".0294"),),".1",(),((6,7,10,13),(6,7,10,12)))
-    ordered = get("ch39-adjacent-ordered-charge-six-cutoffs.py")["verify"](root)[2][1]
+    ordered_api = get("ch39-adjacent-ordered-charge-six-cutoffs.py")
+    ordered = ordered_api["verify"](root,refine_node=n-1 if refine else None)[2][1]
     assert all(z is ordered[0] for z in ordered[:17])
     low,h,k = [ordered[j].sqrt() for j in (0,17,18)]
     moments,heat,fields = get("ch39-three-index-free-atoms.py")["broken_fields"](root,[n])
@@ -68,7 +71,7 @@ def verify(root):
     _,_,pivots,_ = next(row for row in native["shell_weights"](root,n) if row[0]==6)
     c = [z.real for z in pivots[0]]
     assert sum(c).contains(1)
-    weak = native["weak_series"]()
+    weak = native["weak_series"](56 if refine else 32)
     weak_high = get("ch39-full-neutral-free-cutoff.py")["weak_column"]
     ctx.prec = 384
     spectra = [[spec(shell,charge,node)[1] for node in (n-1,n)] for charge in (-4,2,6)]
@@ -109,6 +112,8 @@ def verify(root):
         else:
             assert rough(mid)<0
             far = mid
+    if refine:
+        near,far = ordered_api["refine_weak_bracket"](rough,near,far)
     # 第16层的定向重叠方程用任意一个精确选定的单位相位。
     start = (dest*x0*x0*x0*source)[15,0]
     phase = start/abs(start)
@@ -165,11 +170,11 @@ def verify(root):
 
     time = near.union(far)
     center = [arb(0)]*18
-    for _ in range(2):
+    for _ in range(3 if refine else 2):
         val,jac,_ = system(center,time.mid())
         step = jac.mid().solve(val.mid())
         center = [(z-d).mid() for z,d in zip(center,step.entries(),strict=True)]
-    radius = arb("1e-9")
+    radius = arb("1e-20" if refine else "1e-9")
     box = [z+arb(0,radius.upper()) for z in center]
     val,jac,_ = system(center,time)
     pre = jac.mid().inv()
@@ -181,6 +186,11 @@ def verify(root):
     print("十八参数最大中心、半宽、导数行和及中心位移占比",max(abs(y).upper() for y in center).str(12),
           radius.str(5),jac_error.str(10),offset.str(10),flush=True)
     assert jac_error+offset<1
+    if refine:
+        # 在压缩映射的不动点，距中心至多为中心位移除以 1-q。
+        coordinate_bound = (radius*offset/(1-jac_error)).upper()
+        assert coordinate_bound < arb("1.034e-22")
+        print("精化解的逐坐标误差上界",coordinate_bound.str(12),flush=True)
     other = sum(c[j]*weak_high(y*y,p0,p1) for j,y in enumerate(amplitudes) if j!=15)
     ends = [c[15]*weak(t)+other for t in (near,far)]
     assert ends[0]>0>ends[1]
@@ -190,4 +200,6 @@ def verify(root):
 
 
 if __name__=="__main__":
-    verify(Path(__file__).resolve().parent)
+    parser = ArgumentParser(description=__doc__)
+    parser.add_argument("--refine",action="store_true",help="精化十八参数方盒以供下一壳使用")
+    verify(Path(__file__).resolve().parent,refine=parser.parse_args().refine)
