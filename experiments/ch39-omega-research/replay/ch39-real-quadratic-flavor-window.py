@@ -3,7 +3,7 @@ from math import prod
 from pathlib import Path
 from runpy import run_path
 
-from flint import acb, arb
+from flint import acb, acb_mat, arb
 
 
 def largest_component(moment, eigenvalues):
@@ -56,6 +56,29 @@ def cover(rows, ratios, noise):
     print("六质量和一个混合角的整窗排除，终格和最大深度", leaves, deepest)
 
 
+
+def six_mass_witness(model):
+    gram = run_path(str(Path(__file__).with_name("ch39-quadratic-gram-source.py")))
+    a, b = [gram["at_zero"](model, q, index) for q, index in ((-4, 2345666), (2, 964890))]
+    adj = model["adj"]
+    up, down = adj(a) * a, adj(b) * b
+    identity = acb_mat([[int(i == j) for j in range(3)] for i in range(3)])
+    words = (identity, up, down, up * up, down * down, up * down + down * up)
+    coefficients = ("16.684865648070968", "-809.98951344225793", "-11080.589304375806",
+                    "331.115662319232", "62470.40192255997", "4569.4302699735663")
+    covariance = sum((arb(c) * w for c, w in zip(coefficients, words, strict=True)), acb_mat(3, 3))
+    levels, frame = model["eig"](covariance)
+    assert levels[0] > 0
+    root = frame * acb_mat([[v.sqrt() if i == j else 0 for j in range(3)] for i, v in enumerate(levels)])
+    yu, yd = a * root * arb("7.068506533092252"), b * root
+    (mu, left), (md, right) = [model["eig"](adj(y) * y) for y in (yu, yd)]
+    masses = [v.sqrt() for v in mu + md]
+    errors = [abs(v - ref) / width for v, ref, width in zip(masses, model["ref"][:6], model["tol"][:6], strict=True)]
+    assert all(e < arb(".00383") for e in errors)
+    theta13 = model["mixing_angles"](left, right)[2]
+    assert arb(".0056031") < theta13 < arb(".0056032")
+    print("实二次六质量见证的最大半宽误差和最小混合角", max(e.upper() for e in errors).str(8), theta13.str(10))
+
 def verify():
     orbit = run_path(str(Path(__file__).with_name("ch39-two-zero-orbit-condition.py")))
     quad = run_path(str(Path(__file__).with_name("ch39-two-zero-quadratic-source.py")))
@@ -72,6 +95,7 @@ def verify():
     pairs = ((0, 1), (0, 2), (1, 2))
     rows = [[axis[i, j] for i, j in pairs] for axis in axes]
     cover(rows, ratios, noise)
+    six_mass_witness(model)
 
 
 if __name__ == "__main__":
