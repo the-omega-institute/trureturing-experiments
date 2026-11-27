@@ -34,7 +34,7 @@ def exclusion_test(base, gram, scale, inv, drift, rad):
     return result
 
 
-def experiment(root, fifth, columns, levels):
+def experiment(root, fifth, columns, levels, *, observe=None):
     def lib(name):
         return run_path(str(root/("ch39-"+name+".py")))
     ctx.prec=256
@@ -148,6 +148,8 @@ def experiment(root, fifth, columns, levels):
                 assert margin>0,groups
                 least_margin=min(least_margin,margin)
                 classified.append((sizes,tuple(sorted(sites)),mask))
+                if observe is not None:
+                    observe(tuple(sorted(sites)), image)
     from collections import Counter
     counts=Counter(s for s,sites,m in classified)
     assert {mask for _,_,mask in classified}=={6}
@@ -181,6 +183,9 @@ def experiment(root, fifth, columns, levels):
     print("保极候选、可实现分布、排除最小余量、构造最小面余量",count,counts,least_gap.str(12),least_margin.str(12),flush=True)
     for _,sites,mask in classified:
         print("八站支撑、相位组掩码",sites,mask)
+    return winners
+
+    return winners
 
 
 if __name__=="__main__":
