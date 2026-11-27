@@ -10,7 +10,7 @@ def gravity_system(projection, derivatives, levels, weights, heat, field, comput
     gains = (heavy-low, top-low)
     target = (arb(1), arb("1e-122"))
     values = [-t for t in target]
-    jacobian = [[arb(0), arb(0)] for _ in target]
+    jacobian = [[arb(0) for _ in derivatives] for _ in target]
     for i, weight in enumerate(weights):
         amplitude = low + sum(gain*abs(projection[i, j])**2 for j, gain in enumerate(gains))
         left = max(low.lower(), amplitude.lower())**2
