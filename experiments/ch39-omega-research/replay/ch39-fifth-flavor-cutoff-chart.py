@@ -1,7 +1,7 @@
 """第五壳固定上游的共同味方程，可叠加第三枢轴的四项端点。"""
 from runpy import run_path
 
-from flint import acb, arb, arb_mat, ctx
+from flint import acb, acb_mat, arb, arb_mat, ctx
 
 
 NUMBER = 2_306_888_100_090
@@ -11,7 +11,7 @@ def adj(matrix):
     return matrix.conjugate().transpose()
 
 
-def solve(root, name, quaternion, directions, *, endpoints=None, frame=None, rows=(), target_radius=0, target_sites=None, seed_rays=False, high_targets=()):
+def solve(root, name, quaternion, directions, *, endpoints=None, frame=None, rows=(), target_radius=0, target_sites=None, seed_rays=False, high_targets=(), certify_rank=False, return_operator=False):
     size = len(directions)
     assert size == (16 if endpoints else 12) + 4*len(rows) + len(high_targets)
     def lib(name):
@@ -82,8 +82,8 @@ def solve(root, name, quaternion, directions, *, endpoints=None, frame=None, row
         exposure = endpoints(dst6*seed**3*mid6, (low, heavy, highest))
         ctx.prec = 384
 
-    def system(coords, srcs, src6, *, cross=False):
-        z, dz = local(seed, coords, directions, identity, not cross)
+    def system(coords, srcs, src6, *, cross=False, axes=directions, sixth=None):
+        z, dz = local(seed, coords, axes, identity, not cross)
         values, jac = [], []
         for i, ((dst, ws, cols, goal), s, op) in enumerate(zip(sectors, srcs, (adj(z*z), z), strict=True)):
             ov = dst*op*s
@@ -114,6 +114,14 @@ def solve(root, name, quaternion, directions, *, endpoints=None, frame=None, row
                 values.append(a-goal_centers[n])
                 jac.append([2*((heavy-low)*(ov[i,0].conjugate()*e[i,0]).real+
                                (highest-low)*(ov[i,1].conjugate()*e[i,1]).real) for e in delta])
+        if sixth is not None:
+            coeffs, fixed = sixth
+            pair = coeffs*ov + fixed
+            dpairs = [coeffs*e for e in delta]
+            weights = (heavy-low, highest-low)
+            values.append(low+sum(w*abs(pair[0,j])**2 for j,w in enumerate(weights)))
+            jac.append([2*sum(w*(pair[0,j].conjugate()*d[0,j]).real for j,w in enumerate(weights))
+                        for d in dpairs])
         if endpoints:
             amps = [low + (heavy-low)*abs(ov[i, 0])**2 + (highest-low)*abs(ov[i, 1])**2 for i in range(19)]
             totals = [-arb(1), -arb("1e-122")]
@@ -157,15 +165,21 @@ def solve(root, name, quaternion, directions, *, endpoints=None, frame=None, row
         errs = [abs(v).upper() for v in projected.entries()]
         _, j_center = system(center, sources, source6)
         defect = (unit-pre*j_center).tolist()
-        curvature = []
-        for line in pre.tolist():
-            end=12+4*len(rows)
-            total = 18*sum(abs(v).upper() for v in line[12:end])
-            total += 72*highest*sum(abs(v).upper() for v in line[end:])
-            for iq, (_, ws, cols, _) in enumerate(sectors):
-                diagonal = arb_mat([line[6*iq:6*iq+6]])*cols
-                total += 8*(2-iq)**2*sum(map(abs,ws))*max(abs(v).upper() for v in diagonal.entries())
-            curvature.append(total.upper())
+        def curvature_bounds(inverse, sixth_bound=None):
+            result = []
+            for line in inverse.tolist():
+                low_end = 12+4*len(rows)
+                high_end = low_end+len(high_targets)
+                total = 18*sum(abs(v).upper() for v in line[12:low_end])
+                total += 72*highest*sum(abs(v).upper() for v in line[low_end:high_end])
+                if sixth_bound is not None:
+                    total += sixth_bound*abs(line[-1]).upper()
+                for iq, (_, ws, cols, _) in enumerate(sectors):
+                    diagonal = arb_mat([line[6*iq:6*iq+6]])*cols
+                    total += 8*(2-iq)**2*sum(map(abs,ws))*max(abs(v).upper() for v in diagonal.entries())
+                result.append(total.upper())
+            return result
+        curvature = curvature_bounds(pre)
         maximum = max(errs)
         radii = [2*max(v,maximum/10000) for v in errs]
         for _ in range(10):
@@ -180,6 +194,69 @@ def solve(root, name, quaternion, directions, *, endpoints=None, frame=None, row
                 break
             radii=[max(r,arb("1.03")*n) for r,n in zip(radii,need,strict=True)]
         assert ratio < 1
+        if certify_rank:
+            assert size == 78 and len(input_goals) == 16
+            # 在自映盒内，所有真根另满足已证的二阶偏移界。
+            root_radii = list(radii)
+            factors = [1 if i==j else 2 for i,j,_ in directions]
+            def frobenius(weights, mult):
+                return sum(m*r*r for m,r in zip(mult,weights,strict=True)).sqrt()
+            for _ in range(10):
+                square = frobenius(root_radii,factors)**2
+                root_radii = [min(r,(e+k*square+sum(abs(a).upper()*v for a,v in zip(row,root_radii,strict=True))).upper())
+                              for r,e,k,row in zip(root_radii,errs,curvature,defect,strict=True)]
+            root_norm = frobenius(root_radii,factors)
+            # 由 Hessian 的对角界极化得混合方向界。测试范数的权由非负上界迭代给出。
+            def derivative_norm(defects, bounds, mult, test_weights):
+                for _ in range(24):
+                    test_norm = frobenius(test_weights,mult)
+                    image = [sum(abs(a).upper()*r for a,r in zip(row,test_weights,strict=True)) +
+                             2*k*root_norm*test_norm for row,k in zip(defects,bounds,strict=True)]
+                    norm = max((b/r).upper() for b,r in zip(image,test_weights,strict=True))
+                    print("联合雅可比阶数、真根处预条件导数缺陷范数上界",len(mult),norm.str(12),flush=True)
+                    if norm < 1:
+                        return norm,test_weights
+                    test_weights = [b.upper() for b in image]
+                raise ValueError("未能包围真根处的逆导数")
+            norm78,_ = derivative_norm(defect,curvature,factors,list(radii))
+            assert norm78<arb("0.318031")
+            parts = [min(abs(a).lower(),abs(b).lower()) for a,b in input_goals]
+            gaps = [x.sqrt()-low for x in target_sites]
+            print("十六行的最小复分量模下界、最小加权振幅增量下界",
+                  min(parts).str(12),min(gaps).lower().str(12),flush=True)
+            assert min(parts)>arb("1.33345e-10") and min(gaps)>0 and len(directions)==len(set(directions))
+            n=19
+            readouts = 12+len(input_goals)+len(high_targets)
+            fiber = n*n-readouts
+            print("固定十二个味及十八个独立截止的局部实维数、模整体相位的实维数",
+                  fiber, fiber-1, flush=True)
+            assert readouts==30 and fiber==331 and fiber-1==330
+            axis = (7,6,"i")
+            assert axis not in directions
+            extended = [*directions,axis]
+            basis = adj(spectrum(shell,6,NUMBER+1)[1])*adj(dst6)
+            # 用十六条固定低行的目标替换它们的实际坐标，所得函数在七十八条等式上恰等于实际第六壳读数。
+            coeffs = acb_mat([[basis[0,i] if i not in rows else 0 for i in range(19)]])
+            fixed = acb_mat([[sum(basis[0,i]*v[j] for i,v in zip(rows,input_goals,strict=True)) for j in range(2)]])
+            beta = sum(abs(c)**2 for c in coeffs.entries()).sqrt()
+            fixed_norm = sum(abs(c)**2 for c in fixed.entries()).sqrt()
+            # ||d W³||≤6s，||d² W³||≤36s²。此读数二阶余项的两项分别来自模平方与 W³。
+            sixth_bound = (36*highest*beta*(2*beta+fixed_norm)).upper()
+            sixth = (coeffs,fixed)
+            exact_values, extended_j = system([*center,arb(0)],sources,source6,axes=extended,sixth=sixth)
+            pinv = extended_j.mid().inv()
+            assert not pinv.det().contains(0)
+            eye79 = arb_mat([[int(i==j) for j in range(79)] for i in range(79)])
+            defects = (eye79-pinv*extended_j).tolist()
+            norm,weights = derivative_norm(defects,curvature_bounds(pinv,sixth_bound),
+                                           [*factors,2],[*radii,max(radii)])
+            col_norm = max(abs(pinv[i,78]).upper()/weights[i] for i in range(79))
+            inv_bound = weights[78]*col_norm/(1-norm)
+            deriv_abs = (1/inv_bound).lower()
+            assert norm<arb("0.680591") and deriv_abs>arb("8.98544e-10")
+            print("第六壳最低线在三个高层的投影范数、中心处读数、切向导数绝对值下界",
+                  beta.str(12),exact_values[78,0].str(12),deriv_abs.str(12),flush=True)
+
         box=[v+arb(0,r.upper()) for v,r in zip(center,radii,strict=True)]
     else:
         offset = max(abs(v).upper() for v in projected.entries())
@@ -205,4 +282,4 @@ def solve(root, name, quaternion, directions, *, endpoints=None, frame=None, row
             delta = arb(0, err.upper())
             overlap[i, j] += acb(delta, delta)
     sites = [(low + (heavy-low)*abs(overlap[i, 0])**2 + (highest-low)*abs(overlap[i, 1])**2)**2 for i in range(19)]
-    return sites
+    return (sites, (adj(dst6)*overlap, levels)) if return_operator else sites
