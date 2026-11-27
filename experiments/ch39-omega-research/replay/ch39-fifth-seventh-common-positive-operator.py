@@ -6,7 +6,7 @@ from runpy import run_path
 from flint import arb, ctx
 
 
-def verify(root, *, sixth_measurement=False, sixth_schur=False, readout_radius=0):
+def verify(root, *, sixth_measurement=False, sixth_schur=False, readout_radius=0, swap_five_sixteen=False):
     def lib(name):
         return run_path(str(root / ("ch39-" + name + ".py")))
 
@@ -50,6 +50,10 @@ def verify(root, *, sixth_measurement=False, sixth_schur=False, readout_radius=0
     _, other_goal = errors(fields[1], heat, e, [".75553"] * 19)
     slope = -sum(g for g, _, _ in fields[1]) / (8 * arb.pi())
     assert slope > 0
+    # 交换第七壳的两条谱线仅置换末端读数。取反后可复用同一个上界证明。
+    if swap_five_sixteen:
+        e = [-w for w in e]
+        e[4], e[15] = e[15], e[4]
     # 由第五壳已证的强层低截止，每个强层对二、四次振幅矩的影响单独包围。
     tv = sum(abs(c[j]) for j in strong)
     low = arb(".001")
@@ -135,6 +139,11 @@ def verify(root, *, sixth_measurement=False, sixth_schur=False, readout_radius=0
         stack.append((left, right[:axis] + (mid,) + right[axis + 1 :]))
         stack.append((left[:axis] + (mid,) + left[axis + 1 :], right))
     # other_goal = W_target/slope + 对称的热核误差，用其下端抽出有质量 W 的上界。
+    if swap_five_sixteen:
+        lower = arb("1e-122") + slope * (arb(".01") - other_goal.upper())
+        print("交换第 5、16 层后的闭盒数、实际真空项下界", cells, lower.lower().str(15), flush=True)
+        assert lower > arb(".09689")
+        return lower.lower()
     upper = arb("1e-122") + slope * (arb("-.01") - other_goal.lower())
     print(
         "三维闭盒数、第七壳无质量归一四次矩上界、实际真空 W 上界",
@@ -166,10 +175,12 @@ if __name__ == "__main__":
         "--readout-radius", default="0", help="允许第七壳各对角读数偏移的半径"
     )
     cli.add_argument("--sixth-schur", action="store_true", help="覆盖保持第六壳各谱层占据数的所有量子信道")
+    cli.add_argument("--swap-five-sixteen", action="store_true", help="交换第七壳的第 5、16 层并证明真空项为正")
     options = cli.parse_args()
     verify(
         Path(__file__).resolve().parent,
         sixth_measurement=options.sixth_measurement,
         sixth_schur=options.sixth_schur,
+        swap_five_sixteen=options.swap_five_sixteen,
         readout_radius=options.readout_radius,
     )
