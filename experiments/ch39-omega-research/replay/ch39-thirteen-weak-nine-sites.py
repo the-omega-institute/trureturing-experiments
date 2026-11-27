@@ -41,7 +41,7 @@ def compatible_rows(rows, radii):
     return inverse, acb_mat([[values[j,0]/10**8] for j in chosen])
 
 
-def experiment(root, fifth, columns, levels):
+def experiment(root, fifth, columns, levels, *, terminal=False):
     def lib(name):
         return run_path(str(root/("ch39-"+name+".py")))
     graph = lib("three-ray-chiral-boundary")
@@ -68,6 +68,12 @@ def experiment(root, fifth, columns, levels):
     means = (inverse*selected)*acb_mat([[1,0]])
     source = fifth*columns*acb_mat([[(heavy-floor).sqrt(),0],[0,(top-floor).sqrt()]])
     sites = (3,4,1,5,8,9,10,11,14)
+    if terminal:
+        chosen = set(lib("terminal-port-support")["verify"](root)) | {14}
+        # 依轨道和轨道内站号排列，前两对各留一个正负零和方向。
+        groups = [sorted(i for i in chosen if abs(frame[i,k])>arb(".5")) for k in range(7)]
+        assert [len(g) for g in groups]==[2,2,1,1,1,1,1]
+        sites = tuple(i for g in groups for i in g)
     local = acb_mat([source.tolist()[j] for j in sites])
     average = adj(acb_mat([frame.tolist()[j] for j in sites]))
     dual = adj(average)*(average*adj(average)).inv()
@@ -76,7 +82,9 @@ def experiment(root, fifth, columns, levels):
     a = remaining[0,0].real.sqrt()
     b = remaining[0,1]/a
     c2 = remaining[1,1].real-abs(b)**2
-    assert remaining[0,0].real > arb(".01") and c2 > arb(".05")
+    assert remaining[0,0].real > 0 and c2 > 0
+    if not terminal:
+        assert remaining[0,0].real > arb(".01") and c2 > arb(".05")
     print("九站局部 Gram 的两个平方枢轴",remaining[0,0].real.str(12),c2.str(12),flush=True)
     extra = acb_mat([[(int(k==0)-int(k==1))/arb(2).sqrt(),(int(k==2)-int(k==3))/arb(2).sqrt()]
                      for k in range(9)])
@@ -110,6 +118,10 @@ def experiment(root, fifth, columns, levels):
 
 
 if __name__ == "__main__":
+    from argparse import ArgumentParser
+    parser = ArgumentParser(description=__doc__)
+    parser.add_argument("--terminal",action="store_true",help="使用末端口选出的八站加极点")
+    options=parser.parse_args()
     root = Path(__file__).resolve().parent
     original = run_path(str(root/"ch39-fifth-full-positive-joint.py"))["verify"]
-    experiment(root,*original(root,return_operator="spectral"))
+    experiment(root,*original(root,return_operator="spectral"),terminal=options.terminal)
