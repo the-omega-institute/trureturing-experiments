@@ -28,17 +28,17 @@ def block(angles):
     return values,derivatives
 
 
-def transport(fifth, point, *, parameters=ANGLES, active=ACTIVE):
+def transport(fifth, point, *, parameters=ANGLES, active=ACTIVE, layers=LAYERS):
     angles = list(map(arb,parameters))
     for key,val in zip(active, point,strict=True):
         angles[key] = val
-    gates = [block(angles[4*j:4*j+4]) for j in range(3)]
+    gates = [block(angles[4*j:4*j+4]) for j in range(len(parameters)//4)]
     # 在第五壳谱标架的十九个列向量上同时传播 U 及其四个导数。
-    mats = [acb_mat(fifth)]+[acb_mat(19,19) for _ in active]
-    for index,pairs in LAYERS:
+    mats = [acb_mat(fifth)]+[acb_mat(fifth.nrows(),fifth.ncols()) for _ in active]
+    for index,pairs in layers:
         gate,jac = gates[index]
         for a,b in pairs:
-            for j in range(19):
+            for j in range(fifth.ncols()):
                 src = [(m[a,j],m[b,j]) for m in mats]
                 for k,(m,(u,v)) in enumerate(zip(mats,src,strict=True)):
                     d1,d2 = gate[0]*u+gate[1]*v,gate[2]*u+gate[3]*v
