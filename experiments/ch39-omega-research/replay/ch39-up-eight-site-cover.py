@@ -65,7 +65,7 @@ def certify_set(support, h, target, four, positive, threshold):
     positive(bound)
 
 
-def verify(root):
+def verify(root, size=8, filename="ch39-up-eight-site-cover.tsv", threshold=".0000073", exceptions=()):
     training = run_path(str(root / "ch39-common-embedding-central-right-ckm.py"))["verify_nodes"]
     shell = run_path(str(root / "ch39-three-ray-chiral-boundary.py"))
     spec = run_path(str(root / "ch39-adjacent-pvm-transport.py"))["spectrum"]
@@ -80,15 +80,16 @@ def verify(root):
     h = weighted(source, labels[n,-4])
     four = rows(target,(14,8,7,6))
     covered = set()
-    entries = (root/"ch39-up-eight-site-cover.tsv").read_text().splitlines()
+    entries = (root/filename).read_text().splitlines()
     for line in entries:
         support = tuple(map(int,line.split()))
-        assert tuple(sorted(set(support))) == support and 8 <= len(support) <= 19
+        assert tuple(sorted(set(support))) == support and size <= len(support) <= 19
         assert 0 <= min(support) and max(support) < 19
-        certify_set(support, h, target, four, positive, arb(".0000073"))
-        covered.update(combinations(support,8))
-    assert len(covered)==comb(19,8)
-    print("已复核支撑超集、八站支撑及四站最小本征值下界",len(entries),len(covered),"0.0000073")
+        certify_set(support, h, target, four, positive, arb(threshold))
+        covered.update(combinations(support,size))
+    assert not covered.intersection(exceptions)
+    assert len(covered)+len(set(exceptions))==comb(19,size)
+    print("活动站数、已复核超集、覆盖支撑数、最轻质量下界",size,len(entries),len(covered),threshold)
 
 
 if __name__ == "__main__":
