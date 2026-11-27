@@ -83,7 +83,18 @@ def experiment(root, levels):
             for wi, a in zip(w, all_cutoffs, strict=True)
         )
         assert vacuum < arb("-.55")
-        vacuum_bounds.append(vacuum.upper())
+        exact_vacuum = arb(0)
+        for g, _, mass_sq in field:
+            for wi, cutoff in zip(w, all_cutoffs, strict=True):
+                exact_vacuum -= (
+                    wi
+                    * g
+                    * cutoff**4
+                    * (mass_sq / cutoff**2).expint(3)
+                    / (4 * arb.pi())
+                )
+        assert exact_vacuum < arb("-.55")
+        vacuum_bounds.append(exact_vacuum.upper())
         assert (
             squared(acb_mat([[basis[0, k] for k in range(19)]]) * frames[0]) > arb(".9")
             and low**2 > p0
