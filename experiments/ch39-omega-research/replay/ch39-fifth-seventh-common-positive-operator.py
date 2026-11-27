@@ -6,7 +6,7 @@ from runpy import run_path
 from flint import arb, ctx
 
 
-def verify(root, *, sixth_measurement=False):
+def verify(root, *, sixth_measurement=False, readout_radius=0):
     def lib(name):
         return run_path(str(root / ("ch39-" + name + ".py")))
 
@@ -32,6 +32,8 @@ def verify(root, *, sixth_measurement=False):
         root, [fifth, seventh]
     )
     ctx.prec = 192
+    radius = arb(readout_radius)
+    assert radius >= 0
     cap = arb(".75553")
     assert source[-1].sqrt() < cap
     trace = sum(v.sqrt() for v in source).upper()
@@ -60,7 +62,9 @@ def verify(root, *, sixth_measurement=False):
         if sixth_measurement:
             # 完全非选择测量的直接和表示给出单个入射层的精确边长平方。
             measured = [
-                sum(abs(outgoing[i, k] * incoming[k, j]) ** 2 for k in range(19)).nonnegative_part().sqrt()
+                sum(abs(outgoing[i, k] * incoming[k, j]) ** 2 for k in range(19))
+                .nonnegative_part()
+                .sqrt()
                 for j in range(19)
             ]
             assert all(v.is_finite() for v in measured)
@@ -97,14 +101,14 @@ def verify(root, *, sixth_measurement=False):
             top = [v * h for v, h in zip(higher, roothi, strict=True)]
             rest = s + norm * root_tail
             if weight > 0:
-                y = cap.min((sum(top) + rest) ** 2)
+                y = cap.min((sum(top) + rest) ** 2 + radius)
             else:
                 assert weight < 0
                 a = max(
                     (v * l - sum(top[j] for j in range(3) if j != i) - rest).lower()
                     for i, (v, l) in enumerate(zip(lower, rootlo, strict=True))
                 )
-                y = max(arb(0), a) ** 2
+                y = (max(arb(0), a) ** 2 - radius).max(arb(0))
             score += weight * y**4
         return score < arb("-.01")
 
@@ -131,8 +135,30 @@ def verify(root, *, sixth_measurement=False):
         flush=True,
     )
     assert upper < arb("-.09689")
+    if radius > 0:
+        gap = source[-1].sqrt() - source[0].sqrt()
+        print(
+            "允许的逐层读数半径、按原谱跨度换算的酉位移下界",
+            radius.str(12),
+            (radius / gap).lower().str(14),
+            flush=True,
+        )
     return upper.upper()
 
 
 if __name__ == "__main__":
-    verify(Path(__file__).resolve().parent)
+    from argparse import ArgumentParser
+
+    cli = ArgumentParser(description=__doc__)
+    cli.add_argument(
+        "--sixth-measurement", action="store_true", help="覆盖所有第六壳非选择测量强度"
+    )
+    cli.add_argument(
+        "--readout-radius", default="0", help="允许第七壳各对角读数偏移的半径"
+    )
+    options = cli.parse_args()
+    verify(
+        Path(__file__).resolve().parent,
+        sixth_measurement=options.sixth_measurement,
+        readout_radius=options.readout_radius,
+    )
