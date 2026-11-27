@@ -1,6 +1,7 @@
 """严格三循环五壳共同解的候选低线与二维零空间中的纯态方向。"""
 
 from bisect import bisect_left, bisect_right
+from functools import cache
 from itertools import product
 from pathlib import Path
 from runpy import run_path
@@ -34,7 +35,7 @@ def row(m, i):
     return acb_mat([[m[i, k] for k in range(m.ncols())]])
 
 
-def kernel_frame(rows, floor_energy, cutoff_gev):
+def kernel_frame(rows, floor_energy, cutoffs_gev):
     I = acb_mat([[int(i == j) for j in range(7)] for i in range(7)])
     B = acb_mat([v.tolist()[0] for v in rows])
     J = adj(B) * (B * adj(B)).inv()
@@ -46,16 +47,18 @@ def kernel_frame(rows, floor_energy, cutoff_gev):
         n = n / sq(n).sqrt()
         basis.append(n)
         F = F - n * adj(n)
-    eps = (arb(cutoff_gev) / arb("1.22089e19") - floor_energy).sqrt()
-    cap = eps * sum(sum(abs(J[k, i]) ** 2 for k in range(7)).sqrt() for i in range(5))
+    eps = [(arb(q) / arb("1.22089e19") - floor_energy).sqrt() for q in cutoffs_gev]
+    cap = sum(
+        eps[i] * sum(abs(J[k, i]) ** 2 for k in range(7)).sqrt() for i in range(5)
+    )
     return basis, J, eps, cap
 
 
-def shellprep(ids, model, t0, lam, floor_energy, T, cutoff_gev=3000):
+def shellprep(ids, model, t0, lam, floor_energy, T, cutoffs_gev=(3000,) * 5):
     basis, J, eps, cap = kernel_frame(
         [row(s["zero"], i) for s, i in zip(model, ids, strict=True)],
         floor_energy,
-        cutoff_gev,
+        cutoffs_gev,
     )
     out = []
     for s in model:
@@ -73,7 +76,7 @@ def shellprep(ids, model, t0, lam, floor_energy, T, cutoff_gev=3000):
             ]
             coeff = [floor(t0 * x) for x in arr]
             quant = sum(max(0, ceil(t0 * x) - c) for x, c in zip(arr, coeff))
-            err = eps * sum(abs(v) for v in (f * J).entries())
+            err = sum(e * abs(v) for e, v in zip(eps, (f * J).entries(), strict=True))
             # 当次特征值至多 lam 时，用最高源迹 t0 代替投影主特征值所引入的算子范数误差至多 cap²+lam。
             delta = (
                 ceil(cap**2 + lam + 2 * t0.sqrt() * err + err**2)
@@ -207,7 +210,7 @@ def experiment(root, fifth, columns, levels):
         if not excluded:
             out.append(ids)
     for line, cutoff in ((0, 10000), (15, 100000000)):
-        data = shellprep((line,) * 5, model, t0, lam, levels[0], T, cutoff)
+        data = shellprep((line,) * 5, model, t0, lam, levels[0], T, (cutoff,) * 5)
         excluded, _ = cover(data, table, monom, depthmax=9)
         assert excluded
         print(
@@ -217,10 +220,35 @@ def experiment(root, fifth, columns, levels):
             flush=True,
         )
     assert len(out) == 20 and all(set(ids) == {0, 15} for ids in out)
-    height = lambda n: acb.zeta_zero(n).imag
-    span = height(2_306_888_100_096) - height(2_306_888_100_092)
-    assert 0 < span < arb("1.037551")
-    assert (arb(100000) / 3).log() > arb("10.0374") * span
+
+    @cache
+    def all_directions_excluded(hypothesis):
+        lines, limits = zip(*hypothesis, strict=True)
+        data = shellprep(lines, model, t0, lam, levels[0], T, limits)
+        return cover(data, table, monom, depthmax=9)[0]
+
+    # 反设所有已知第 16 线低截止的两步邻域内，该线均不超过 10^8 GeV。
+    # 每壳选择一个由此蕴含的上界；任一选法已不可能，就排除整项反设。
+    for ids in out:
+        choices = []
+        for j, i in enumerate(ids):
+            options = [(i, 3000)]
+            if i != 15 and any(v == 15 and abs(k - j) <= 2 for k, v in enumerate(ids)):
+                options.append((15, 100_000_000))
+            choices.append(options)
+        assert any(all_directions_excluded(trial) for trial in product(*choices))
+    heights = [acb.zeta_zero(2_306_888_100_092 + j).imag for j in range(5)]
+    largest_span = max(
+        (b - a).upper() for a, b in zip(heights[:-2], heights[2:], strict=True)
+    )
+    slope = (arb(100000) / 3).log() / largest_span
+    assert largest_span < arb(".552200") and slope > arb("18.8596")
+    print(
+        "第16谱线的两步高度跨度上界、相邻一步对数斜率下界",
+        largest_span.str(15),
+        slope.str(15),
+        flush=True,
+    )
     print(
         "五壳候选、排除、未排除及一基选线",
         108,
