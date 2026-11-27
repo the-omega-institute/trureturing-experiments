@@ -5,7 +5,7 @@ from runpy import run_path
 from flint import arb,ctx
 
 
-def verify(root, *, number=2_306_888_100_089, certified_region=None):
+def verify(root, *, number=2_306_888_100_089, certified_region=None, capped_layer=None):
     def lib(name):
         return run_path(str(root/("ch39-"+name+".py")))
     _,ordered=lib("adjacent-ordered-charge-six-cutoffs")["verify"](root,refine_node=2_306_888_100_086)[2]
@@ -19,7 +19,14 @@ def verify(root, *, number=2_306_888_100_089, certified_region=None):
     other=[i for i in range(19) if i not in strong]
     assert c[3]>0 and all(c[i]<0 for i in other if i!=3)
     b=-c[2]
-    bmax=max(-c[i] for i in other if i not in (2,3))
+    remaining = [i for i in other if i not in (2,3)]
+    capped_first_moment = arb(0)
+    if capped_layer is not None:
+        layer, cap = capped_layer
+        remaining.remove(layer)
+        assert c[layer] < 0 and cap > 0
+        capped_first_moment = -c[layer] * cap
+    bmax=max(-c[i] for i in remaining)
     a=c[3]
     total=sum(v.sqrt() for v in ordered).upper()
     pi=arb.pi()
@@ -30,6 +37,20 @@ def verify(root, *, number=2_306_888_100_089, certified_region=None):
     other_tv=sum(abs(c[i]) for i in other)
     # 强权层小于阈值时，直接估计其整个热矩。其余各层保留无质量主项。
     k_err=low_tv*threshold*sum(abs(alpha) for _,alpha,_ in field)/(2*pi)
+    if capped_layer is not None:
+        # xE₂(z/x) 在 x 上单调。逐小段按系数符号合并，保留场间抵消。
+        zero = [arb(0)] * len(field)
+        left = zero
+        maximum = arb(0)
+        for j in range(1, 65):
+            x = threshold * j / 64
+            right = [x * heat(2, z/x) for _, _, z in field]
+            interval = sum(
+                alpha * u.union(v) for (_, alpha, _), u, v in zip(field, left, right, strict=True)
+            )/(2*pi)
+            maximum = max(maximum, abs(interval).upper())
+            left = right
+        k_err = low_tv * maximum
     w_err=low_tv*threshold**2*sum(abs(g) for g,_,_ in field)/(8*pi)
     xmax=ordered[-1]
     k_err+=other_tv*xmax*sum(abs(alpha)*(1-heat(2,z/xmax)) for _,alpha,z in field)/(2*pi)
@@ -47,7 +68,8 @@ def verify(root, *, number=2_306_888_100_089, certified_region=None):
             continue
         if yl+tl>total:
             continue
-        A=(a*yl**2+margin-b*th**2).lower()
+        # 如另设一负权层上界，先扣去其一次矩上界；二次矩只需舍去其非负项。
+        A=(a*yl**2+margin-b*th**2-capped_first_moment).lower()
         B=(a*yh**4+allowance-b*tl**4).upper()
         if B<0 or (A>0 and A**3>B*(bmax*(total-yl-tl))**2):
             continue
