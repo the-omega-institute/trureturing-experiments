@@ -282,4 +282,12 @@ def solve(root, name, quaternion, directions, *, endpoints=None, frame=None, row
             delta = arb(0, err.upper())
             overlap[i, j] += acb(delta, delta)
     sites = [(low + (heavy-low)*abs(overlap[i, 0])**2 + (highest-low)*abs(overlap[i, 1])**2)**2 for i in range(19)]
+    if return_operator == "spectral":
+        # 十六个低行的两条复分量在联合真根处精确等于方程右侧。
+        # 返回第五壳标架以便先合成两壳的基变换，再传播重列的区间。
+        for i, pair in zip(rows, input_goals, strict=True):
+            for j, goal in enumerate(pair):
+                old = overlap[i, j]
+                overlap[i, j] = acb(old.real.intersection(goal.real), old.imag.intersection(goal.imag))
+        return sites, (adj(dst6), overlap, levels)
     return (sites, (adj(dst6)*overlap, levels)) if return_operator else sites
