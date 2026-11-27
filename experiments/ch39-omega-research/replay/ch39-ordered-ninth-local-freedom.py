@@ -33,14 +33,18 @@ def experiment(root, fifth, columns, levels):
     center = [v.mid() for v in box]
     inverse = matrix(center + fixed).mid().inv()
     identity = arb_mat([[int(i == j) for j in range(6)] for i in range(6)])
-    stack = [box]
+    # 认证根在原盒中；将六个角再各向外放宽，以容纳以真根为中心的小盒。
+    radius = arb("1e-6")
+    angle_error = arb(0, radius.upper())
+    stack = [[q + angle_error for q in box]]
+    free = [q + angle_error for q in fixed]
     count = 0
     worst = arb(0)
     while stack:
         cell = stack.pop()
-        defect = identity - inverse*matrix(cell + fixed)
+        defect = identity - inverse*matrix(cell + free)
         norm = max(sum(v.abs_upper() for v in row) for row in defect.tolist())
-        if norm < 1:
+        if norm < arb(".9"):
             count += 1
             worst = max(worst, norm)
             continue
@@ -51,7 +55,12 @@ def experiment(root, fifth, columns, levels):
         stack.extend([cell[:axis]+[edge.union(mid)]+cell[axis+1:]
                       for edge in (x.lower(), x.upper())])
     print("覆盖根盒的子盒数与六维雅可比的最大预条件偏差", count, worst.str(14), flush=True)
-    return worst
+    gain = max(abs(inverse[i, 4]).upper() + abs(inverse[i, 5]).upper() for i in range(6))
+    assert gain > 0
+    output_radius = radius*(1-worst)/gain
+    print("第九壳两个读数可独立指定的共同半径下界", output_radius.lower().str(15), flush=True)
+    assert output_radius > arb("8.80e-9")
+    return worst, output_radius
 
 
 if __name__ == "__main__":
