@@ -72,6 +72,15 @@ def verify(root):
         assert floor > arb((".00117514",".00095667")[iq])
         if iq==0:
             assert cap < arb(".644666")
+            source_cap = arb(".947555")
+            assert max(w.upper() for w in labels[n+1,charge]) < source_cap
+            target_edge = arb(".8573")
+            angle = (target_edge/source_cap).sqrt().asin()-(arb(".644666")/source_cap).sqrt().asin()
+            second_only = 2*(angle/4).sin()
+            shared = 2*(angle/8).sin()
+            assert second_only > arb(".1434485") and shared > arb(".0717704")
+            print("为使顶质量入窗，改第二步或两步共改时生成元至少相距",
+                  second_only.lower().str(12),shared.lower().str(12),flush=True)
         # 使用完全相干时的本征标架作为固定试探子空间，端点的下界沿仿射段保持。
         top_two = acb_mat([[axes[1][i,0],axes[2][i,0]] for i in range(3)])
         mid_floor = min(min(z.real.lower() for z in (adj(top_two)*mat*top_two).eig(algorithm="rump"))
