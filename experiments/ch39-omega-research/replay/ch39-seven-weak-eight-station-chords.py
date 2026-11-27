@@ -67,16 +67,39 @@ def experiment(root, fifth, columns, levels):
     # 中继站可在门序中参与，最终在八站以外逐点恢复恒等。
     # 在 151 档一次放开其余全部十一站即可覆盖任意中继子集。
     bounds = ((243, 0, ".02"), (215, 1, ".02"), (151, 11, ".15"))
+    terminal = lib("terminal-port-support")["verify"](root)
+    terminal_bounds = ((631,0,".07"), (503,1,".02"), (223,2,".02"))
     min_gaps = {}
     connected = []
+    leakage = arb(1)
+    unit_sum = acb_mat([[1]*6])
+    sum_scale = (arb(3)/8).sqrt()
     for support in sorted(winners):
         active = set(support)
         spare = sorted(set(range(19)) - active)
         groups = [tuple(i for i in support if i in o) for o in orbit]
         if len(components(support,sites,244)) == 1:
             connected.append(support)
+        # 若八站均匀态的复直线不变，则它读到的两列行也只能共同乘一个相位。
+        local = acb_mat([source.tolist()[i] for i in support])
+        p = acb_mat([[1]*8])*local/arb(8).sqrt()
+        gram = adj(local)*local
+        a, b, c = gram[0,0].real, gram[0,1], gram[1,1].real
+        norm2 = (a+c+((a-c)**2+4*abs(b)**2).sqrt())/2
+        chart_bounds = []
+        for inverse,fixed,cap in charts:
+            q = p + sum_scale*unit_sum*(fixed-acb_mat(means.tolist()[:6]))
+            radii = (sum_scale*unit_sum*inverse).entries()
+            err = sum(abs(z)*r for z,r in zip(radii,cap,strict=True))
+            squared = (q*adj(q)+p*adj(p))[0,0].real - 2*abs((q*adj(p))[0,0])
+            if squared > 0:
+                chart_bounds.append((squared.sqrt()-err).lower())
+        assert chart_bounds and max(chart_bounds) > arb(".0558")
+        delta = max(chart_bounds)**2/(2*norm2.upper())
+        assert 0 < delta < 1
+        leakage = min(leakage,(2*delta-delta**2).lower())
         cached = {}
-        for cutoff, count, tolerance in bounds:
+        for cutoff, count, tolerance in (bounds+terminal_bounds if support==terminal else bounds):
             for extra in combinations(spare,count):
                 gaps = []
                 for block in components((*support,*extra),sites,cutoff):
@@ -89,10 +112,14 @@ def experiment(root, fifth, columns, levels):
                 gap = max(gaps)
                 if cutoff not in min_gaps or gap < min_gaps[cutoff]:
                     min_gaps[cutoff] = gap
+    assert leakage > arb(".00808")
+    print("八站均匀态留在原直线外的概率统一下界", leakage.str(12), flush=True)
     assert len(winners)==32 and len(connected)==4
     print("不设中继时在平方弦长 244 连通的四种可行支撑", connected,flush=True)
     examples = ((216, (0,1,2,4,6,10,11,15), (16,)),
                 (152, (1,3,4,5,8,9,10,12), (14,18)))
+    examples += ((632, terminal, ()), (504, terminal, (15,)),
+                 (224, terminal, (12,17)), (152, terminal, (12,14,18)))
     for cutoff, support, extra in examples:
         assert support in winners and not set(support).intersection(extra)
         assert any(part.issuperset(support) for part in components((*support,*extra),sites,cutoff))

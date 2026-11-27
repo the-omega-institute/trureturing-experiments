@@ -32,11 +32,16 @@ def check_cyclic_geometry(graph, rotation):
         assert dot(x, y) == dot(rx, ry) and det(pole, x, y) == det(pole, rx, ry)
 
 
-def experiment(root, fifth, columns, levels):
+def experiment(root, fifth, columns, levels, *, sites=(1,3,4,5,8,9,10,11),
+               pivot_bounds=(".0214", ".1318"), face_bound="1.4e-8"):
     def lib(name):
         return run_path(str(root / ("ch39-" + name + ".py")))
 
     ctx.prec=256
+    pivot1, pivot2 = map(arb, pivot_bounds)
+    face_bound = arb(face_bound)
+    assert all(v.is_finite() and v >= 0 for v in (pivot1, pivot2, face_bound))
+    assert len(sites) == 8 and tuple(sites) == tuple(sorted(set(sites)))
     graph=lib("three-ray-chiral-boundary")
     native=lib("native-rh-ray-pvm")
     frames, rotation = lib("cyclic-two-characters-nine")["characters"](graph["geo"]["sites"])
@@ -99,7 +104,6 @@ def experiment(root, fifth, columns, levels):
     first6=(inv*acb_mat([[targets[j,0]/scale] for j in chosen])
             -(inv*acb_mat([[b[j][6]] for j in chosen]))*pole_norm)
     avg_trivial=first6*direction
-    sites=(1,3,4,5,8,9,10,11)
     groups=[[i for i in sites if abs(frame[i,k])>arb(".5")] for k in range(6)]
     assert tuple(map(len,groups))==(2,2,1,1,1,1)
     assert set(sites)==set().union(*groups) and 14 not in sites
@@ -108,11 +112,12 @@ def experiment(root, fifth, columns, levels):
                   +(arb(3)/len(g)).sqrt()*(avg_trivial[k,h]-projected[k,h])
                   for h in (0,1)] for k,g in enumerate(groups)])
     rem=adj(local)*local-adj(avg)*avg
+    assert rem[0,0].real.is_finite() and rem[0,0].real > pivot1
     a=rem[0,0].real.sqrt()
     b12=rem[0,1]/a
     d2=rem[1,1].real-abs(b12)**2
     print("局部 Gram 两个 Cholesky 平方枢轴",rem[0,0].real.str(10),d2.str(10),flush=True)
-    assert rem[0,0].real>arb(".0214") and d2>arb(".1318")
+    assert d2.is_finite() and d2 > pivot2
     comp=acb_mat([[a,b12],[0,d2.sqrt()]])
     image=acb_mat(source)
     kextra=0
@@ -133,8 +138,9 @@ def experiment(root, fifth, columns, levels):
     p0,p1=(mz/planck)**2,(arb("1.176397e14")/planck)**2
     margins=[]
     for row,w,q in zip(rows,weights,centers,strict=True):
-        high=min((floor+sum(max(arb(0),abs(z).lower())**2 for z in line)).lower()
-                 for line in (row*image).tolist()[1:])
+        lines = (row*image).tolist()[1:]
+        assert len(lines) == 18 and all(z.is_finite() for line in lines for z in line)
+        high=min((floor+sum(max(arb(0),abs(z).lower())**2 for z in line)).lower() for line in lines)
         assert high.is_finite() and high**2>p0
         err=(large(high**2,p0,p1)-ref).abs_upper()*sum(abs(z).upper() for z in w[1:])
         m1=(ref+w[0]*(weak(((q-width)/mz)**2)-ref)-err).lower()
@@ -142,7 +148,7 @@ def experiment(root, fifth, columns, levels):
         assert m1.is_finite() and m2.is_finite() and min(m1,m2)>0,(len(margins)+7,high,err,m1,m2)
         margins.append(min(m1,m2))
     # 以上为十一维截止盒的相对两面的严格异号。Poincaré–Miranda 给出共同零点。
-    assert min(margins)>arb("1.4e-8")
+    assert len(margins) == 11 and min(margins) > face_bound
     print("第七至十七壳十一对弱差面最小余量",min(margins).str(12),flush=True)
     return ratio, min(margins)
 
