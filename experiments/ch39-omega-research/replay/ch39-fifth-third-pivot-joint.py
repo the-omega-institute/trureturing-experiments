@@ -25,7 +25,7 @@ def local_box():
                 high_centers=list(map(arb, high)), high_log_radius=arb(".005"))
 
 
-def verify(root, *, return_transport=False):
+def verify(root, *, return_transport=False, return_chart=False):
     def lib(name):
         return run_path(str(root/("ch39-"+name+".py")))
 
@@ -64,14 +64,16 @@ def verify(root, *, return_transport=False):
     moments, heat, (field,) = lib("three-index-free-atoms")["broken_fields"](root, [NUMBER])
     data = sectors, inc, readout, levels, (moments, heat, field), weights
     result = old["solve_matrix"](root, data, box["centers"], box["radii"], name=NAME,
-                                 upstream=source_chart, return_transport=return_transport)
-    sites = result[0] if return_transport else result
+                                 upstream=source_chart, return_transport=return_transport, return_chart=return_chart, tight_chart=return_chart)
+    sites = result[0] if return_transport or return_chart else result
     high = [x for i, x in enumerate(sites) if i not in box["layers"]]
     shifts = [abs((x/c).log()).upper() for x, c in zip(high, box["high_centers"], strict=True)]
     maximum = max(shifts)
     assert maximum < box["high_log_radius"]
     print("十六高层截止的最大对数偏移与最小截止平方", maximum.str(12),
           min(x.lower() for x in high).str(12), flush=True)
+    if return_chart:
+        return result[1], source_chart
     return result[1] if return_transport else sites
 
 

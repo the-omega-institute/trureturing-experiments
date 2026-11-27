@@ -21,7 +21,7 @@ def inputs(root):
     return sectors,incoming,readout,levels,thermal,[q.real for q in pivots[2]]
 
 
-def solve_matrix(root, data, centres, log_widths, *, return_transport=False, return_chart=False, name=NAME, upstream=None):
+def solve_matrix(root, data, centres, log_widths, *, return_transport=False, return_chart=False, tight_chart=False, component_box=False, name=NAME, upstream=None):
     def lib(name):
         return run_path(str(root/("ch39-"+name+".py")))
 
@@ -108,18 +108,40 @@ def solve_matrix(root, data, centres, log_widths, *, return_transport=False, ret
         projected=pre*f0+(pre*cross)*arb_mat([[arb(0,v.upper())] for v in widths])
     offset=max(abs(v).upper() for v in projected.entries())
     radius=2*offset.upper()
-    box=[v+arb(0,radius.upper()) for v in center]
-    _,wide,amps=system(box,wide_targets)
+    radii=[radius]*26
     ident=arb_mat([[int(i==j) for j in range(26)] for i in range(26)])
-    lip=coupling["outer_sum"](ident-pre*wide)
-    print("共同生成元中心偏移、参数盒半径、位移占比与导数误差行和",
-          *[v.str(13) for v in (max(abs(a).upper() for a in center),radius,offset/radius,lip)],flush=True)
-    assert lip+offset/radius<1
+    if component_box:
+        residual=[abs(v).upper() for v in projected.entries()]
+        radii=[2*max(v,radius/200) for v in residual]
+        box=[v+arb(0,r.upper()) for v,r in zip(center,radii,strict=True)]
+        _,wide,amps=system(box,wide_targets)
+        defect=(ident-pre*wide).tolist()
+        movement=[sum(abs(a).upper()*r for a,r in zip(row,radii,strict=True)) for row in defect]
+        ratio=max((err+mov)/r for err,mov,r in zip(residual,movement,radii,strict=True))
+        assert ratio<1
+        print("逐坐标解盒的最大半宽与自映比上界",max(radii).str(13),ratio.upper().str(13),flush=True)
+    else:
+        box=[v+arb(0,radius.upper()) for v in center]
+        _,wide,amps=system(box,wide_targets)
+        lip=coupling["outer_sum"](ident-pre*wide)
+        print("共同生成元中心偏移、参数盒半径、位移占比与导数误差行和",
+              *[v.str(13) for v in (max(abs(a).upper() for a in center),radius,offset/radius,lip)],flush=True)
+        assert lip+offset/radius<1
     sites = [a*a for a in amps]
     if return_transport or return_chart:
         z,_ = local(seed,center,dirs,eye,False)
         widths = [abs(b-v).upper() for b,v in zip(box,center,strict=True)]
         if return_chart:
+            # 任一真根的各坐标偏移都受预条件中心误差和均值导数约束。
+            # 迭代非负线性界仅收紧供下一壳使用的包围。
+            if tight_chart:
+                defect = ident-pre*wide
+                magnitude = arb_mat([[abs(v).upper() for v in row] for row in defect.tolist()])
+                residual = arb_mat([[abs(v).upper()] for v in projected.entries()])
+                for _ in range(5):
+                    bound = residual + magnitude*arb_mat([[v] for v in widths])
+                    widths = [min(old, new.upper()) for old, new in zip(widths, bound.entries(), strict=True)]
+                box = [v+arb(0,r.upper()) for v,r in zip(center,widths,strict=True)]
             wide,derivatives=local(seed,box,dirs,eye)
             return sites,(z,wide,derivatives,widths,sectors,incoming,(low,h,k))
         dz = 2*sum(a*a*(1 if i==j else 2) for a,(i,j,_) in zip(widths,dirs,strict=True)).sqrt()
