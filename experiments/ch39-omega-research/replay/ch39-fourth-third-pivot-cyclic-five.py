@@ -33,11 +33,11 @@ def angular_means(t):
     return [a.union(b) for a,b in zip(point(t.lower()),point(t.upper()),strict=True)]
 
 
-def verify(root):
+def verify(root, *, return_inputs=False):
     def lib(name):
         return run_path(str(root/("ch39-"+name+".py")))
     number=2_306_888_100_089
-    _,_,incoming,readout,(low,high,highest),_,thermal=lib("fourth-shell-two-gravity-rules")["shell_data"](root)
+    first,second,incoming,readout,(low,high,highest),_,thermal=lib("fourth-shell-two-gravity-rules")["shell_data"](root)
     moments,heat,fields=thermal
     native=lib("native-rh-ray-pvm")
     _,_,pivots,_=next(row for row in native["shell_weights"](root,number) if row[0]==6)
@@ -139,6 +139,12 @@ def verify(root):
     assert 34<colour<36
     print("色逆耦合上下界、三块迹与最大本征值",colour.lower().str(13),colour.upper().str(13),[v.str(13) for v in totals],
           [v.str(13) for v in maxima],flush=True)
+    if return_inputs:
+        # 不动点位移至多为中心残差除以 1-q；需严格延拓两列高态时用较窄包围。
+        narrow = (offset*radius/(1-slope)).upper()
+        for i in SELECTED:
+            amps[i]=(anchors[i]*(1+arb(0,narrow))).sqrt()
+        return amps,colour,first,second,incoming,readout,(low,high,highest)
     return amps,colour
 
 

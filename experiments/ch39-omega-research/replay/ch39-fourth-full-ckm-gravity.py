@@ -12,7 +12,7 @@ def adj(a):
     return a.conjugate().transpose()
 
 
-def verify(root,*,return_transport=False,return_cutoffs=False):
+def verify(root,*,return_transport=False,return_cutoffs=False,return_inputs=False):
     def lib(name):
         return run_path(str(root/("ch39-"+name+".py")))
     x,y,incoming,readout,(low,h,k),weights,thermal = lib("fourth-shell-two-gravity-rules")["shell_data"](root)
@@ -45,6 +45,8 @@ def verify(root,*,return_transport=False,return_cutoffs=False):
         src,dst = [spec(shell,q,j)[1] for j in (n+1,n+4)]
         sectors.append((propagation*src,adj(dst),training[n+1,q],arb_mat([coords(p) for p in projectors]).transpose(),
                         arb_mat([[v] for v in coords(goal)])))
+    if return_inputs:
+        return sectors,incoming,readout,(low,h,k),thermal
     coupling = lib("next-common-ckm")
     local = coupling["local"]
     eye = rank["eye"](19)

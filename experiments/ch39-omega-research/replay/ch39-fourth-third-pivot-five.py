@@ -6,7 +6,7 @@ from runpy import run_path
 from flint import arb, arb_mat, ctx
 
 
-def verify(root):
+def verify(root,*,refined_amplitudes=False):
     def lib(name):
         return run_path(str(root/("ch39-"+name+".py")))
     n=2_306_888_100_085
@@ -123,6 +123,16 @@ def verify(root):
     colour=colour_centre+arb(0,(colour_lipschitz*variation).upper())
     print("全解盒端点色逆耦合上下界",colour.lower().str(14),colour.upper().str(14),flush=True)
     assert arb("29.7103")<colour<arb("30.2330")
+    if refined_amplitudes:
+        identity = arb_mat([[int(i==j) for j in range(5)] for i in range(5)])
+        fixed = -pre*f
+        enclosure = arb_mat([[v] for v in box])
+        for _ in range(4):
+            segment = [t.union(arb(0)) for t in enclosure.entries()]
+            image = fixed+(identity-pre*jacobian(segment))*enclosure
+            enclosure = arb_mat([[a.intersection(b)] for a,b in zip(enclosure.entries(),image.entries(),strict=True)])
+        for i,x0,v in zip(selected,center,enclosure.entries(),strict=True):
+            amps[i] = (x0*(1+v)).sqrt()
     return amps
 
 
