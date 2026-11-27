@@ -1,0 +1,1457 @@
+[
+ {
+  "source": "README",
+  "claim": "213 字共轭等质量下实现指定十四项真空权的最小总变差在 (0.0033434696169,0.0033434696171) 内且最优分布唯一",
+  "class": "R3",
+  "rational_form": "变量为 107 个有理逐字质量；约束矩阵元 cos(qj·arg u) 属于二次域 Q(√11775824788)（u=(108469+109√867 i)/|·|），目标权 w 由模型函数在 x=-0.01046 与一个 CKM 相位根处给出；命题为该线性规划最优值落在有理区间内、最优顶点非退化",
+  "certificate": "Arb 区间证书",
+  "scripts": [
+   "ch39-realized-vacuum-word-masses.py",
+   "ch39-height-independent-flavor-vacuum.py"
+  ],
+  "bridge": "目标权 w 的包围（来自模型函数与一个相位根，非有理）；矩阵部分为代数数，可精确处理",
+  "working_precision": "224 位",
+  "row": "213 个原生两面字要移动多少概率，",
+  "note": [
+   "实现固定真空权的最小逐字质量改动.md"
+  ]
+ },
+ {
+  "source": "README",
+  "claim": "联合编号起八枚中任取六枚唯一确定两频四振幅",
+  "class": "R3",
+  "rational_form": "自由变量为 I=[0,1.61] 中的高度差 x；命题为 s2(x)>0.138 与 Wronskian>0.059 在 I 的 161 个闭子区间上成立，加上书面的零点计数论证",
+  "certificate": "Arb 区间证书 + 书面证明",
+  "scripts": [
+   "ch39-six-native-spectral-readings.py"
+  ],
+  "bridge": "h_N=γ_N（N=2306888100085）及 ω_j h_N 的相位落在 Arb 球内；ω_j 为有理余弦的反余弦",
+  "zero_use": "有限枚零点的数值位置",
+  "working_precision": "320 位",
+  "row": "原壳的谱与模型中任意双频信号，各需多",
+  "note": [
+   "原壳谱恰需六项精确读数.md",
+   "七个预选高度的双频歧义.md"
+  ]
+ },
+ {
+  "source": "README",
+  "claim": "任取五枚均有连续多解",
+  "class": "R3",
+  "rational_form": "在实际五个高度处雅可比秩条件严格成立（隐函数定理给出连续解族）",
+  "certificate": "Arb 区间证书",
+  "scripts": [
+   "ch39-six-native-spectral-readings.py"
+  ],
+  "bridge": "同上",
+  "zero_use": "有限枚零点的数值位置",
+  "working_precision": "320 位",
+  "row": "原壳的谱与模型中任意双频信号，各需多",
+  "note": [
+   "原壳谱恰需六项精确读数.md",
+   "七个预选高度的双频歧义.md"
+  ]
+ },
+ {
+  "source": "README",
+  "claim": "全自由振幅模型需八个预选高度：任意七个实高度都有双频歧义",
+  "class": "R1",
+  "rational_form": "7×8 实线性系统必有非零核（维数计数）；三角函数线性无关由 Vandermonde 行列式给出；结论对任意七个高度成立，不含数值输入",
+  "certificate": "书面证明",
+  "scripts": [
+   "ch39-seven-spectral-ambiguity.py"
+  ],
+  "working_precision": "384 位",
+  "row": "原壳的谱与模型中任意双频信号，各需多",
+  "note": [
+   "原壳谱恰需六项精确读数.md",
+   "七个预选高度的双频歧义.md"
+  ]
+ },
+ {
+  "source": "README",
+  "claim": "再增四项使最小奇异值达 0.85：至少需四项，实际编号达 0.85734",
+  "class": "R3",
+  "rational_form": "下界：原雅可比第四小奇异值 0.170913175<0.85（严格不等式）配合子空间维数论证；上界：在四个具体编号上最小奇异值 >0.85",
+  "certificate": "Arb 区间证书 + 书面证明",
+  "scripts": [
+   "ch39-wide-zero-sampling.py"
+  ],
+  "bridge": "N-279,N-232,N-45,N+99 等枚零点的高度包围",
+  "zero_use": "有限枚零点的数值位置",
+  "working_precision": "256 位",
+  "row": "保留相邻八项，再增加多少个谱读数能够",
+  "note": [
+   "四枚分散零点提高双钟反演精度.md"
+  ]
+ },
+ {
+  "source": "README",
+  "claim": "逐字概率单调时第 105 圈份额上确界在 (0.0637103937438668,0.0637103937438670)，低于 0.072",
+  "class": "R1",
+  "rational_form": "数据 X_qr 为 cos(qj·arg u) 的有理组合，属二次域 Q(√11775824788)；命题为锥上二次分式最大值的 KKT 证书（Gram 可逆、系数为正、余量为负），全部可在该数域内精确核验",
+  "certificate": "Arb 区间证书（数据为代数数，原则上可转精确证书）",
+  "scripts": [
+   "ch39-word-shape-no-go.py"
+  ],
+  "working_precision": "224–256 位",
+  "row": "只要求长字的概率不高于短字，能否选出",
+  "note": [
+   "逐字概率随字长不增时的末圈锐上界.md"
+  ]
+ },
+ {
+  "source": "README",
+  "claim": "负比率支只是 (-1)^n 规范的产物；扇区内可实现的反转对合只有站点型与 PT 型",
+  "class": "R1",
+  "rational_form": "整数格点上的对合分类与符号规范，纯组合与有理线性代数",
+  "certificate": "书面证明 + 精确符号计算",
+  "scripts": [
+   "ch39-cross-branch-reflection-classification.py",
+   "ch39-simplex-reflection-slices.py"
+  ],
+  "working_precision": "脚本自身未设",
+  "row": "沿对角时间的交叉偏振负比率支，是雷吉",
+  "note": [
+   "交叉扇区负比率支的规范本性与对角切片反射分类.md"
+  ]
+ },
+ {
+  "source": "README",
+  "claim": "裸雷吉二次型对站点型反射在全部动量上反射正",
+  "class": "R2",
+  "rational_form": "动能 K=(12-2T^2-TV)/20，T=2cos t、V=2cos s；把两个相位取为圆上自由有理点，命题为该有理二次型在整张有理环面上定号",
+  "certificate": "书面证明 + 精确符号计算",
+  "scripts": [
+   "ch39-cross-branch-reflection-classification.py",
+   "ch39-regge-cross-transfer.py"
+  ],
+  "r2_kind": "全称",
+  "working_precision": "脚本自身未设",
+  "row": "沿对角时间的交叉偏振负比率支，是雷吉",
+  "note": [
+   "交叉扇区负比率支的规范本性与对角切片反射分类.md"
+  ]
+ },
+ {
+  "source": "README",
+  "claim": "半片 PT 型反射对一切有时间传播的理论失败；有隙第二支可由合法局域二次型修正消去",
+  "class": "R1",
+  "rational_form": "对理论类的全称结论与一个显式修正的构造，书面代数论证",
+  "certificate": "书面证明 + 精确符号计算",
+  "scripts": [
+   "ch39-cross-branch-reflection-classification.py"
+  ],
+  "working_precision": "脚本自身未设",
+  "row": "沿对角时间的交叉偏振负比率支，是雷吉",
+  "note": [
+   "交叉扇区负比率支的规范本性与对角切片反射分类.md"
+  ]
+ },
+ {
+  "source": "README",
+  "claim": "全理论的反射正性",
+  "class": "R4",
+  "rational_form": "对一切场构型的正性；不是有限维有理不等式",
+  "certificate": "开放",
+  "scripts": [
+   "ch39-cross-branch-reflection-classification.py"
+  ],
+  "why_not_resolution": "缺的是含共形模的全理论正性论证（结构问题），与零点和精度无关",
+  "r4_reason": [
+   "缺结构原理"
+  ],
+  "working_precision": "脚本自身未设",
+  "row": "沿对角时间的交叉偏振负比率支，是雷吉",
+  "note": [
+   "交叉扇区负比率支的规范本性与对角切片反射分类.md"
+  ]
+ },
+ {
+  "source": "README",
+  "claim": "取向只经 c=g_L†g_D 进入；超荷混合反常背景平凡时 1/M^2 阶三重中性读数与取向无关，1/M^4 阶只经 |c|^2；静态接触读数比由 1 增至 5/4",
+  "class": "R1",
+  "rational_form": "Grassmann 积分给出 c、|F|、κ 的整系数多项式；比值 1 与 5/4 为精确有理数",
+  "certificate": "精确符号证书",
+  "scripts": [
+   "ch39-proton-current-overlap-static.py"
+  ],
+  "working_precision": "脚本自身未设",
+  "row": "同一真空下，哪些读数能区分正交与平行",
+  "note": [
+   "辅助电流取向的三重荷选择律与归一无关的静态接触读数.md"
+  ]
+ },
+ {
+  "source": "README",
+  "claim": "同一真空下由紫外唯一确定取向",
+  "class": "R4",
+  "rational_form": "不是一条固定的不等式：要求一条从紫外定出 c=g_L†g_D 的原理",
+  "certificate": "开放",
+  "scripts": [
+   "ch39-fixed-vacuum-proton-currents.py"
+  ],
+  "why_not_resolution": "在 1/M^2 阶的 ΔB≡0 读数上两支恒等；到 1/M^4 阶只经 |c|^2 依赖取向，ΔB≢0 的衰变本身也区分两支，所以这不是两量处处相等，而是缺一条在同一真空下选定取向的紫外原理",
+  "r4_reason": [
+   "选择问题",
+   "缺结构原理"
+  ],
+  "working_precision": "224 位",
+  "row": "同一真空下，哪些读数能区分正交与平行",
+  "note": [
+   "辅助电流取向的三重荷选择律与归一无关的静态接触读数.md"
+  ]
+ },
+ {
+  "source": "README",
+  "claim": "位力函数不变号的单谱超迹泛函处处没有驻点",
+  "class": "R1",
+  "rational_form": "定号引理：若 Σ g_r z_r f'(z_r) 不变号则导数不为零；对任意正质量表成立",
+  "certificate": "书面证明",
+  "scripts": [
+   "ch39-mass-scale-spectral-stationarity.py"
+  ],
+  "working_precision": "脚本自身未设",
+  "row": "两个质量标尺 $(k,d)$ 能否由",
+  "note": [
+   "位力定号与单谱CW型超迹泛函在两质量标尺窗内没有驻点.md"
+  ]
+ },
+ {
+  "source": "README",
+  "claim": "共用减法常数的偶数维一圈 CW 超迹恰有一个驻点，倍率不超过 4.21603（四维 2.41346），两窗要求 (29.984,35.002)",
+  "class": "R3",
+  "rational_form": "场表质量为联合编号零点处的壳谱与标定常数；命题为驻点倍率的严格上界小于窗口下端",
+  "certificate": "Arb 区间证书",
+  "scripts": [
+   "ch39-mass-scale-spectral-stationarity.py",
+   "ch39-joint-vacuum-scale-window.py"
+  ],
+  "bridge": "场表质量（依赖联合编号零点高度与壳谱）的包围",
+  "zero_use": "有限枚零点的数值位置",
+  "working_precision": "脚本自身未设",
+  "row": "两个质量标尺 $(k,d)$ 能否由",
+  "note": [
+   "位力定号与单谱CW型超迹泛函在两质量标尺窗内没有驻点.md"
+  ]
+ },
+ {
+  "source": "README",
+  "claim": "形式延拓 D∈(11.10,11.16) 与滑行线割线 -7.0e-5",
+  "class": "R3",
+  "rational_form": "单变量严格不等式与割线值的区间",
+  "certificate": "Arb 区间证书",
+  "scripts": [
+   "ch39-mass-scale-spectral-stationarity.py"
+  ],
+  "bridge": "同上",
+  "working_precision": "脚本自身未设",
+  "row": "两个质量标尺 $(k,d)$ 能否由",
+  "note": [
+   "位力定号与单谱CW型超迹泛函在两质量标尺窗内没有驻点.md"
+  ]
+ },
+ {
+  "source": "README",
+  "claim": "解除 (32,724) 沿 k/d^2 的简并所需的第二条尺度律",
+  "class": "R4",
+  "rational_form": "不是数值命题",
+  "certificate": "开放",
+  "scripts": [
+   "ch39-mass-scale-spectral-stationarity.py"
+  ],
+  "why_not_resolution": "缺一条结构性尺度律；已排除的泛函类不随精度改变",
+  "r4_reason": [
+   "缺结构原理"
+  ],
+  "working_precision": "脚本自身未设",
+  "row": "两个质量标尺 $(k,d)$ 能否由",
+  "note": [
+   "位力定号与单谱CW型超迹泛函在两质量标尺窗内没有驻点.md"
+  ]
+ },
+ {
+  "source": "README",
+  "claim": "全部正零点、全部两钟相位与 δ∈[0,1e-8] 上五荷 λ3<8.685<9.6<λ4",
+  "class": "R2",
+  "rational_form": "两钟相位取为圆上自由有理点，δ 取有理区间；命题为 L_q(U,V)-8.685 与 L_q-9.6 的惯性指数在整张有理环面上恒定",
+  "certificate": "Arb 覆盖证书（整张实环面，因而含全部有理点）",
+  "scripts": [
+   "ch39-all-zero-three-mode-gap.py"
+  ],
+  "zero_use": "只经 δ(γ)≤δ_cap 使用零点，所需桥接仅为 γ_1>14",
+  "r2_kind": "全称",
+  "working_precision": "320 位",
+  "row": "十九点壳升维的四维重叠核与外尔测度的",
+  "note": [
+   "十九点壳重叠核与测度输运项的显式指数局域性.md"
+  ]
+ },
+ {
+  "source": "README",
+  "claim": "符号核 ≤1155 e^{-0.001523793 d}，输运项合计 ≤1.002e20 e^{-0.003047586 d}",
+  "class": "R2",
+  "rational_form": "以整张环面上的 R2 带界与方格误差 1/200 为前提，常数是谱隙有理界的显式函数（含 Combes–Thomas 预解式界与指数函数）",
+  "certificate": "书面证明 + 精确算术",
+  "scripts": [
+   "ch39-shell-overlap-kato-locality.py",
+   "ch39-local-measure-current.py"
+  ],
+  "r2_kind": "以全称带界为前提的推导",
+  "working_precision": "192 位",
+  "row": "十九点壳升维的四维重叠核与外尔测度的",
+  "note": [
+   "十九点壳重叠核与测度输运项的显式指数局域性.md"
+  ]
+ },
+ {
+  "source": "README",
+  "claim": "所采用参考构造（Kadoh–Kikukawa、Lüscher）下参考测度一项的局域性常数",
+  "class": "R3",
+  "rational_form": "常数确定但未显式化；给定构造后是关于有限个谱隙界与指数函数的显式估计",
+  "certificate": "未做",
+  "scripts": [
+   "ch39-shell-overlap-kato-locality.py"
+  ],
+  "bridge": "无零点输入；超越量为指数函数与谱隙的 Arb 界",
+  "threshold_note": "有限计算（R1 或 R3），未做",
+  "working_precision": "192 位",
+  "row": "十九点壳升维的四维重叠核与外尔测度的",
+  "note": [
+   "十九点壳重叠核与测度输运项的显式指数局域性.md"
+  ]
+ },
+ {
+  "source": "README",
+  "claim": "群代数 span{I,S,S^2} 门户只有三个特征标值，有符号时可拟合任意三枚",
+  "class": "R1",
+  "rational_form": "三阶轮换的特征标分解与 3×3 线性代数",
+  "certificate": "书面证明 + 精确算术",
+  "scripts": [
+   "ch39-rotation-character-portal.py"
+  ],
+  "working_precision": "192 位",
+  "row": "由原壳三阶轮换生成的门户，能否在四枚",
+  "note": [
+   "由原壳三阶轮换生成的群代数门户不能在四枚规范候选上抵消两圈希格斯阈值.md"
+  ]
+ },
+ {
+  "source": "README",
+  "claim": "有符号三枚拟合中必有一枚系数为负；四枚共用时至少一枚残留超过 3.191e21 GeV^2；半正定时含 11934 的配对与三枚以上全部不可行",
+  "class": "R3",
+  "rational_form": "四枚零点上的阈值 T_n 与权 w_i 的包围；命题为线性规划对偶向量给出的严格下界",
+  "certificate": "Arb 区间证书（浮点 LP 只提候选对偶向量）",
+  "scripts": [
+   "ch39-rotation-character-portal.py",
+   "ch39-chiral-third-portal-obstruction.py"
+  ],
+  "bridge": "#11661、#11934、#12207、#28325 的高度及其壳谱包围",
+  "zero_use": "有限枚零点的数值位置",
+  "working_precision": "192 位",
+  "row": "由原壳三阶轮换生成的门户，能否在四枚",
+  "note": [
+   "由原壳三阶轮换生成的群代数门户不能在四枚规范候选上抵消两圈希格斯阈值.md"
+  ]
+ },
+ {
+  "source": "README",
+  "claim": "单步谱下谱隙宽度与谱隙比逐点选 1，正可加泛函只选 1 或 15",
+  "class": "R2",
+  "rational_form": "相位取有理环面点；命题为各标签本征值之间的严格次序在整张环面上成立",
+  "certificate": "Arb 覆盖证书",
+  "scripts": [
+   "ch39-native-rank-selector-classes.py",
+   "ch39-all-common-shell-ranks.py"
+  ],
+  "r2_kind": "全称",
+  "working_precision": "128–192 位",
+  "row": "不借外部分界，哪些稳定性泛函能在共同",
+  "note": [
+   "费米能级狄拉克海选出三代当且仅当能级落在宽约二点四的窗内.md"
+  ]
+ },
+ {
+  "source": "README",
+  "claim": "狄拉克海一致选出三代的能级窗包含 (8.22501,10.6)",
+  "class": "R2",
+  "rational_form": "对全部有理环面点 λ3<8.22501 且 λ4>10.6",
+  "certificate": "Arb 覆盖证书",
+  "scripts": [
+   "ch39-native-rank-selector-classes.py",
+   "ch39-all-zero-three-mode-gap.py"
+  ],
+  "zero_use": "环面命题；转到全部实际零点时，“窗含于外界”一向用到零点相位稠密",
+  "r2_kind": "全称",
+  "working_precision": "128–320 位",
+  "row": "不借外部分界，哪些稳定性泛函能在共同",
+  "note": [
+   "费米能级狄拉克海选出三代当且仅当能级落在宽约二点四的窗内.md"
+  ]
+ },
+ {
+  "source": "README",
+  "claim": "该能级窗含于 (8.22064,10.63563)",
+  "class": "R2",
+  "rational_form": "存在环面点使 λ3>8.22064，也存在环面点使 λ4<10.63563",
+  "certificate": "Arb 单点见证",
+  "scripts": [
+   "ch39-native-rank-selector-classes.py"
+  ],
+  "r2_kind": "存在见证",
+  "zero_use": "环面命题；转到全部实际零点时这一向用到零点相位稠密",
+  "working_precision": "128 位",
+  "row": "不借外部分界，哪些稳定性泛函能在共同",
+  "note": [
+   "费米能级狄拉克海选出三代当且仅当能级落在宽约二点四的窗内.md"
+  ]
+ },
+ {
+  "source": "README",
+  "claim": "D/ΔC 严格介于 1.91919011e10 与 6.38699834e10 之间",
+  "class": "R2",
+  "rational_form": "相位只经 c∈I=[0.97561882,0.998810426891862] 进入；命题为单变量函数 R(c) 在有理区间 I 上的严格上下界",
+  "certificate": "Arb 区间证书",
+  "scripts": [
+   "ch39-three-window-cp-charm-ratio.py",
+   "ch39-three-window-extreme-cp.py"
+  ],
+  "zero_use": "三窗零点只经 c(γ)∈I 使用；I 本身由全格角距排除给出",
+  "r2_kind": "环面子区域",
+  "working_precision": "160–224 位",
+  "row": "平均 $\\lvert V_{ub}\\",
+  "note": [
+   "三窗味概率下CP亏额与Vcb偏移之比的双侧界.md"
+  ]
+ },
+ {
+  "source": "README",
+  "claim": "上确界锐、开区间内每个值都由至多四枚实际三窗零点实现",
+  "class": "R4",
+  "rational_form": "要求零点相位在 c0 两侧任意近处出现：对无穷多零点的存在性陈述",
+  "certificate": "书面证明（RH 下的双钟联合等分布）+ Arb",
+  "scripts": [
+   "ch39-three-window-cp-charm-ratio.py"
+  ],
+  "why_not_resolution": "量词越出有限分辨率：任意给定精度都只覆盖有限枚零点；由 RH 下 Landau 显式公式与 Weyl 判据的等分布定理解决",
+  "zero_use": "用到对全体零点的分布断言",
+  "r4_reason": [
+   "全体零点量词"
+  ],
+  "working_precision": "160 位",
+  "row": "平均 $\\lvert V_{ub}\\",
+  "note": [
+   "三窗味概率下CP亏额与Vcb偏移之比的双侧界.md"
+  ]
+ },
+ {
+  "source": "README",
+  "claim": "六项算术时间强迫第八至第十二项的二进制码（锐位数 32、29、31、29、24）",
+  "class": "R3",
+  "rational_form": "对 [0,b] 上一切满足六个矩的正测度，第 k 项读数位于有理区间内（多项式定号证书）；输入为前五项参考时间与第六项预设值",
+  "certificate": "Arb 区间证书",
+  "scripts": [
+   "ch39-six-time-late-forced-codes.py",
+   "ch39-seventh-readout-input-minimum.py"
+  ],
+  "bridge": "参考算术时间 T_1…T_6 的包围（依赖三窗零点）与 b（依赖第 8359 枚零点）",
+  "zero_use": "有限枚零点的数值位置",
+  "working_precision": "576 位",
+  "row": "给定六项算术时间，第八至第十二项的读",
+  "note": [
+   "六项算术时间强迫的第八至第十二项二进制码.md"
+  ]
+ },
+ {
+  "source": "README",
+  "claim": "锐性：多一位时两组实际零点给出不同码",
+  "class": "R3",
+  "rational_form": "两组具体零点上的读数落在相邻二进格的不同侧",
+  "certificate": "Arb 区间证书",
+  "scripts": [
+   "ch39-six-time-late-forced-codes.py"
+  ],
+  "bridge": "具体零点高度",
+  "zero_use": "有限枚零点的数值位置",
+  "working_precision": "576 位",
+  "row": "给定六项算术时间，第八至第十二项的读",
+  "note": [
+   "六项算术时间强迫的第八至第十二项二进制码.md"
+  ]
+ },
+ {
+  "source": "README",
+  "claim": "第 10815 至 12092 枚的全窗上 E+μ_s g 恰有 33 个唯一优胜者；单调扇区判据可达恰 92 枚",
+  "class": "R3",
+  "rational_form": "1278 枚零点各给一对数 (E(n),g(n))；命题为这些数的有限个严格次序关系",
+  "certificate": "Arb 区间证书",
+  "scripts": [
+   "ch39-parity-weighted-vacuum-fan.py",
+   "ch39-majorana-vacuum-energy.py"
+  ],
+  "bridge": "1278 枚零点的高度与 38 阶矩阵谱的包围",
+  "zero_use": "有限枚零点的数值位置",
+  "working_precision": "128 位",
+  "row": "多体真空能与奇偶能隙并入同一配分函数",
+  "note": [
+   "窗口上奇偶加权真空族的三十三个零温唯一优胜者.md"
+  ]
+ },
+ {
+  "source": "README",
+  "claim": "同时夺得两项首位的最小 ℓ∞ 改动 0.0021436331 唯一在 11491",
+  "class": "R3",
+  "rational_form": "有限组严格不等式",
+  "certificate": "Arb 区间证书",
+  "scripts": [
+   "ch39-parity-weighted-vacuum-fan.py"
+  ],
+  "bridge": "同上",
+  "working_precision": "128 位",
+  "row": "多体真空能与奇偶能隙并入同一配分函数",
+  "note": [
+   "窗口上奇偶加权真空族的三十三个零温唯一优胜者.md"
+  ]
+ },
+ {
+  "source": "README",
+  "claim": "最大熵、最小二范数、解析中心在切片 P_t 上的最优权末圈份额 <0.072，故只能选出边缘真空",
+  "class": "R3",
+  "rational_form": "t 取遍有理区间 [0.00815,0.0128]，高度经 δ∈[0,δ_cap] 进入；命题为对偶界与原始可行点之间的严格不等式",
+  "certificate": "Arb 区间证书（浮点优化只提候选）",
+  "scripts": [
+   "ch39-convex-selection-marginal-vacuum.py"
+  ],
+  "bridge": "δ_cap 只用 γ_1>14；目标函数含对数",
+  "zero_use": "“全高度”经区间 δ∈[0,δ_cap] 覆盖，不需要逐枚零点",
+  "working_precision": "160–224 位",
+  "row": "105 圈真空的可行权族上，最大熵、",
+  "note": [
+   "最大熵最小二范数与解析中心只能选出边缘真空.md"
+  ]
+ },
+ {
+  "source": "README",
+  "claim": "以某严格真空为中心的二次泛函选中它自身",
+  "class": "R1",
+  "rational_form": "反例的构造为精确恒等式",
+  "certificate": "书面证明",
+  "scripts": [
+   "ch39-convex-selection-marginal-vacuum.py"
+  ],
+  "working_precision": "160–224 位",
+  "row": "105 圈真空的可行权族上，最大熵、",
+  "note": [
+   "最大熵最小二范数与解析中心只能选出边缘真空.md"
+  ]
+ },
+ {
+  "source": "README",
+  "claim": "在原八项外任加一个二次输运单项，三零点共用九系数即让六个质量比超过参考下限的 98.7%",
+  "class": "R3",
+  "rational_form": "三枚零点处壳谱与轻模的包围；命题为六个比值的严格下界",
+  "certificate": "Arb 区间证书",
+  "scripts": [
+   "ch39-per-leg-double-hop-transfer.py"
+  ],
+  "bridge": "#11661、#11934、#22027 的高度",
+  "zero_use": "有限枚零点的数值位置",
+  "working_precision": "448 位",
+  "row": "把三腿作用律扩充为每腿至多两次邻边输",
+  "note": [
+   "每腿至多两次邻边输运时第九项即解除三零点共同系数的质量比障碍.md"
+  ]
+ },
+ {
+  "source": "README",
+  "claim": "二十七项字典在三枚上同时重现九质量与完整 CKM；每枚的 h^2 系数 >1.130e31 GeV^2",
+  "class": "R3",
+  "rational_form": "存在性由区间牛顿型认证；重块下界为严格不等式",
+  "certificate": "Arb 区间证书",
+  "scripts": [
+   "ch39-per-leg-double-hop-transfer.py"
+  ],
+  "bridge": "同上",
+  "zero_use": "有限枚零点的数值位置",
+  "working_precision": "448 位",
+  "row": "把三腿作用律扩充为每腿至多两次邻边输",
+  "note": [
+   "每腿至多两次邻边输运时第九项即解除三零点共同系数的质量比障碍.md"
+  ]
+ },
+ {
+  "source": "README",
+  "claim": "是否存在重块谱范数低于 √(4π) 的完整命中",
+  "class": "R3",
+  "rational_form": "紧参数集上的半代数可行性，数据依赖三枚零点；若可行则带余量的见证可在有限分辨率下认证，若不可行则需全域排除证书",
+  "certificate": "未判定",
+  "scripts": [
+   "ch39-per-leg-double-hop-transfer.py"
+  ],
+  "bridge": "同上",
+  "threshold_note": "现有证书只强制谱范数 >0.2976，现有见证 >6.59e4；分辨率门槛未知",
+  "working_precision": "448 位",
+  "row": "把三腿作用律扩充为每腿至多两次邻边输",
+  "note": [
+   "每腿至多两次邻边输运时第九项即解除三零点共同系数的质量比障碍.md"
+  ]
+ },
+ {
+  "source": "README",
+  "claim": "两种读数不能在一个截止区间上恒等于非零常数",
+  "class": "R1",
+  "rational_form": "不同质量处 exp(-z/x) 的线性无关（Vandermonde）",
+  "certificate": "书面证明",
+  "scripts": [
+   "ch39-cutoff-scale-stationarity.py"
+  ],
+  "working_precision": "192–512 位",
+  "row": "把单一固有时截止换成形状固定、整体标",
+  "note": [
+   "两点截止在匹配牛顿项时不能驻定真空读数而四点测度对共同截止标度一阶驻定.md"
+  ]
+ },
+ {
+  "source": "README",
+  "claim": "两点测度匹配 K=1 时不能驻定；四点测度可同时给出 K=1、ΛG=1e-122 与一阶驻定，翻号推迟到约 1e-58；一阶驻定要求总变差 >8194",
+  "class": "R3",
+  "rational_form": "三枚零点可见谱（相对半径约 1e-12）上的有限维方程组与严格不等式",
+  "certificate": "Arb 区间证书",
+  "scripts": [
+   "ch39-cutoff-scale-stationarity.py",
+   "ch39-three-cutoff-stationarity.py"
+  ],
+  "bridge": "#11661、#11934、#12207 的可见谱包围",
+  "zero_use": "有限枚零点的数值位置",
+  "working_precision": "192–512 位",
+  "row": "把单一固有时截止换成形状固定、整体标",
+  "note": [
+   "两点截止在匹配牛顿项时不能驻定真空读数而四点测度对共同截止标度一阶驻定.md"
+  ]
+ },
+ {
+  "source": "README",
+  "claim": "只移动最敏感的一个截止，三枚依次在 1.8e-120、8.6e-120、2.0e-120 以内翻负（截止比值须精确到约 120 位）",
+  "class": "R3",
+  "rational_form": "在三枚零点可见谱的包围内，只增大第 j 个截止时曲率转负所需相对增量的严格上界",
+  "certificate": "Arb 区间证书",
+  "scripts": [
+   "ch39-cutoff-scale-stationarity.py"
+  ],
+  "zero_use": "有限枚零点的数值位置",
+  "bridge": "#11661、#11934、#12207 的可见谱包围（相对半径约 1e-12）",
+  "working_precision": "192–512 位",
+  "row": "把单一固有时截止换成形状固定、整体标",
+  "note": [
+   "两点截止在匹配牛顿项时不能驻定真空读数而四点测度对共同截止标度一阶驻定.md"
+  ]
+ },
+ {
+  "source": "README",
+  "claim": "三点测度是否可行",
+  "class": "R3",
+  "rational_form": "三个方程（K=1、ΛG=1e-122、驻定）在三点测度参数上的可解性，横截解可由区间方法认证",
+  "certificate": "未判定",
+  "scripts": [
+   "ch39-three-cutoff-stationarity.py"
+  ],
+  "bridge": "同上",
+  "threshold_note": "未知",
+  "working_precision": "192 位",
+  "row": "把单一固有时截止换成形状固定、整体标",
+  "note": [
+   "两点截止在匹配牛顿项时不能驻定真空读数而四点测度对共同截止标度一阶驻定.md"
+  ]
+ },
+ {
+  "source": "README",
+  "claim": "截止 56 时 32 个辅助态足够（十三列 Gram 补全）",
+  "class": "R1",
+  "rational_form": "数据为 76 点传播在三次单位根处的值（代数数，不含零点高度）；命题为存在秩 ≤13 的实 Gram 因子精确满足 153 个方程，现由有理种子 Y0 与 Newton–Kantorovich 球认证",
+  "certificate": "Arb 区间证书（存在球半径 1e-12；数据为代数数，原则上可转精确证书）",
+  "scripts": [
+   "ch39-local-gram-13-certificate.py"
+  ],
+  "working_precision": "192 位",
+  "row": "只允许修正平方弦距不超过 56 的旧",
+  "note": [
+   "截止56的十三列Gram补全把三时钟辅助态上界降到32.md"
+  ]
+ },
+ {
+  "source": "README",
+  "claim": "锚取常数时可分离混合的驻点倍率与锚无关，分母由锚唯一确定",
+  "class": "R1",
+  "rational_form": "对数尺度下的平移不变性，书面代数推导",
+  "certificate": "书面证明",
+  "scripts": [
+   "ch39-mass-scale-mixed-supertrace-stationarity.py"
+  ],
+  "working_precision": "脚本自身未设",
+  "row": "把单谱超迹泛函换成几个谱函数的混合后",
+  "note": [
+   "常数锚混合超迹泛函的驻点分母由锚决定而四维截止族须调准一个无量纲系数才能进入两质量标尺窗.md"
+  ]
+ },
+ {
+  "source": "README",
+  "claim": "四维截止族倍率入窗当且仅当 σ 在 (0.0345056616,0.0441123197) 内一个区间并取 (W_{-1},W_0) 分支",
+  "class": "R3",
+  "rational_form": "单变量 σ 的有理区间端点，Lambert W 分支的严格不等式",
+  "certificate": "Arb 区间证书",
+  "scripts": [
+   "ch39-mass-scale-mixed-supertrace-stationarity.py"
+  ],
+  "bridge": "场表质量包围",
+  "working_precision": "脚本自身未设",
+  "row": "把单谱超迹泛函换成几个谱函数的混合后",
+  "note": [
+   "常数锚混合超迹泛函的驻点分母由锚决定而四维截止族须调准一个无量纲系数才能进入两质量标尺窗.md"
+  ]
+ },
+ {
+  "source": "README",
+  "claim": "恰在 (32,724) 须 σ≈0.0398046，锚落在端点比 1.0010005 的区间内",
+  "class": "R3",
+  "rational_form": "单变量 σ 与锚区间端点的严格不等式",
+  "certificate": "Arb 区间证书",
+  "scripts": [
+   "ch39-mass-scale-mixed-supertrace-stationarity.py"
+  ],
+  "bridge": "场表质量包围",
+  "working_precision": "脚本自身未设",
+  "row": "把单谱超迹泛函换成几个谱函数的混合后",
+  "note": [
+   "常数锚混合超迹泛函的驻点分母由锚决定而四维截止族须调准一个无量纲系数才能进入两质量标尺窗.md"
+  ]
+ },
+ {
+  "source": "README",
+  "claim": "参考连接的曲率合计 ≤2.606e6 e^{-0.15069244 d}；完整测度曲率 ≤1.184e16 e^{-0.003047586 d}",
+  "class": "R2",
+  "rational_form": "以整张环面上的 R2 带界为前提，由谱隙有理界推出的显式常数（含指数函数）",
+  "certificate": "书面证明 + 精确算术",
+  "scripts": [
+   "ch39-shell-measure-curvature-locality.py",
+   "ch39-local-measure-current.py"
+  ],
+  "r2_kind": "以全称带界为前提的推导",
+  "working_precision": "脚本自身未设",
+  "row": "参考测度的连接补进来之后，十九点壳外",
+  "note": [
+   "外尔测度流的曲率部分显式指数局域而对称部分可随参考选择任意放大且衰减任意变慢.md"
+  ]
+ },
+ {
+  "source": "README",
+  "claim": "对称部分可随参考选择任意放大、衰减任意变慢",
+  "class": "R1",
+  "rational_form": "构造：乘局域规范不变相位的显式族",
+  "certificate": "书面证明",
+  "scripts": [
+   "ch39-local-measure-current.py"
+  ],
+  "working_precision": "脚本自身未设",
+  "row": "参考测度的连接补进来之后，十九点壳外",
+  "note": [
+   "外尔测度流的曲率部分显式指数局域而对称部分可随参考选择任意放大且衰减任意变慢.md"
+  ]
+ },
+ {
+  "source": "README",
+  "claim": "所选参考构造下对称部分的局域常数",
+  "class": "R3",
+  "rational_form": "给定参考构造后，对称部分的局域常数是确定的显式估计",
+  "certificate": "未做",
+  "scripts": [
+   "ch39-local-measure-current.py"
+  ],
+  "bridge": "无零点输入；超越量为指数函数与谱隙的 Arb 界",
+  "threshold_note": "有限计算（R1 或 R3），未做",
+  "working_precision": "脚本自身未设",
+  "row": "参考测度的连接补进来之后，十九点壳外",
+  "note": [
+   "外尔测度流的曲率部分显式指数局域而对称部分可随参考选择任意放大且衰减任意变慢.md"
+  ]
+ },
+ {
+  "source": "README",
+  "claim": "两步读数下全环面五荷共同分界只剩秩 15：h_(15)<60.39217<61.91994<h_(16)",
+  "class": "R2",
+  "rational_form": "相位取有理环面点；命题为整张环面上的严格次序",
+  "certificate": "Arb 覆盖证书",
+  "scripts": [
+   "ch39-two-step-three-generation-window.py"
+  ],
+  "r2_kind": "全称",
+  "working_precision": "64 位",
+  "row": "把读数从单步谱换成两步质量后，三代还",
+  "note": [
+   "两步质量读数下容许秩含二三四时五荷一致的三代费米能级窗为空而全环面共同两步分界只剩秩15.md"
+  ]
+ },
+ {
+  "source": "README",
+  "claim": "容许秩含 2、3、4 时任何不随相位变的可加泛函都不能一致选出三代",
+  "class": "R2",
+  "rational_form": "荷二、四、六的第三与第四两步质量在环面上值域相交：存在两个环面点使两者次序互换，再由书面逻辑推出窗为空",
+  "certificate": "Arb 见证 + 书面证明",
+  "scripts": [
+   "ch39-two-step-three-generation-window.py"
+  ],
+  "zero_use": "对全部实际零点的推论（φ 连续）用到零点相位在环面上稠密",
+  "r2_kind": "存在见证",
+  "working_precision": "64 位",
+  "row": "把读数从单步谱换成两步质量后，三代还",
+  "note": [
+   "两步质量读数下容许秩含二三四时五荷一致的三代费米能级窗为空而全环面共同两步分界只剩秩15.md"
+  ]
+ },
+ {
+  "source": "README",
+  "claim": "沿用 {1,3,7,15} 时窗包含 [13,17]",
+  "class": "R2",
+  "rational_form": "整张有理环面上的严格不等式",
+  "certificate": "Arb 覆盖证书",
+  "scripts": [
+   "ch39-two-step-three-generation-window.py"
+  ],
+  "r2_kind": "全称",
+  "working_precision": "64 位",
+  "row": "把读数从单步谱换成两步质量后，三代还",
+  "note": [
+   "两步质量读数下容许秩含二三四时五荷一致的三代费米能级窗为空而全环面共同两步分界只剩秩15.md"
+  ]
+ },
+ {
+  "source": "README",
+  "claim": "该窗含于 (11.68872,17.97989)",
+  "class": "R2",
+  "rational_form": "存在环面点给出越界的两步质量",
+  "certificate": "Arb 单点见证",
+  "scripts": [
+   "ch39-two-step-three-generation-window.py"
+  ],
+  "r2_kind": "存在见证",
+  "working_precision": "64 位",
+  "row": "把读数从单步谱换成两步质量后，三代还",
+  "note": [
+   "两步质量读数下容许秩含二三四时五荷一致的三代费米能级窗为空而全环面共同两步分界只剩秩15.md"
+  ]
+ },
+ {
+  "source": "README",
+  "claim": "螺旋度 ±1 向量扇区：c=(2T^2+7-2 sin t sin s)/25≥1/5；每个横向动量两支有隙模 ln2≤E≤arcosh(3/2)",
+  "class": "R2",
+  "rational_form": "T=2cos t 等取为圆上自由有理点；c≥1/5 为有理环面上的多项式不等式；cosh E∈[5/4,3/2] 为有理端点",
+  "certificate": "书面证明 + 精确符号计算",
+  "scripts": [
+   "ch39-regge-vector-sector-reflection.py"
+  ],
+  "r2_kind": "全称",
+  "working_precision": "脚本自身未设",
+  "row": "同一投影动量族上，交叉偏振以外的扇区",
+  "note": [
+   "螺旋度正负一向量扇区的格点有隙模破坏对角切片站点反射正性而正偏振所在扇区因含共形模不定.md"
+  ]
+ },
+ {
+  "source": "README",
+  "claim": "8×4 反周期盒上局域见证的反射期望为 -17/282",
+  "class": "R1",
+  "rational_form": "有限维精确计算给出一个有理数",
+  "certificate": "精确符号计算",
+  "scripts": [
+   "ch39-regge-vector-sector-reflection.py"
+  ],
+  "working_precision": "脚本自身未设",
+  "row": "同一投影动量族上，交叉偏振以外的扇区",
+  "note": [
+   "螺旋度正负一向量扇区的格点有隙模破坏对角切片站点反射正性而正偏振所在扇区因含共形模不定.md"
+  ]
+ },
+ {
+  "source": "README",
+  "claim": "4|M 的反周期盒上 PT 型反射对任何平移不变扇区理论给出平衡符号差",
+  "class": "R1",
+  "rational_form": "有限维二次型的惯性指数计数",
+  "certificate": "书面证明",
+  "scripts": [
+   "ch39-regge-vector-sector-reflection.py"
+  ],
+  "working_precision": "脚本自身未设",
+  "row": "同一投影动量族上，交叉偏振以外的扇区",
+  "note": [
+   "螺旋度正负一向量扇区的格点有隙模破坏对角切片站点反射正性而正偏振所在扇区因含共形模不定.md"
+  ]
+ },
+ {
+  "source": "README",
+  "claim": "正偏振所在扇区（含共形模）的反射正性",
+  "class": "R4",
+  "rational_form": "每个动量有一个负方向，不可归一",
+  "certificate": "未判定",
+  "scripts": [
+   "ch39-regge-vector-sector-reflection.py"
+  ],
+  "why_not_resolution": "障碍来自无界共形模，是结构问题，不是精度问题",
+  "r4_reason": [
+   "缺结构原理"
+  ],
+  "working_precision": "脚本自身未设",
+  "row": "同一投影动量族上，交叉偏振以外的扇区",
+  "note": [
+   "螺旋度正负一向量扇区的格点有隙模破坏对角切片站点反射正性而正偏振所在扇区因含共形模不定.md"
+  ]
+ },
+ {
+  "source": "README",
+  "claim": "两点格配分函数为 225 项精确多项式；t→0 时首阶修正 O(t^4)，无三角形图正交支差 O(t^8)；X(1,1/10,·) 不单调；两支区间在 [1.000001,1.0069] 上相交；三比值雅可比不恒为零",
+  "class": "R1",
+  "rational_form": "U=1/(Mt)^2、V=|F|^2U、ρ 的有理函数；全部为精确多项式与有理点上的计算",
+  "certificate": "精确符号证书",
+  "scripts": [
+   "ch39-proton-current-overlap-hopping.py"
+  ],
+  "working_precision": "脚本自身未设",
+  "row": "在 $Q$–$L$ 接触探针上加入最",
+  "note": [
+   "最近邻跳跃下接触读数比随Mt漂移与三比值局部确定重叠模长.md"
+  ]
+ },
+ {
+  "source": "README",
+  "claim": "三比值的全局单射性",
+  "class": "R1",
+  "rational_form": "有理映射在实半代数域上的单射性，是实代数可判定问题",
+  "certificate": "未判定",
+  "scripts": [
+   "ch39-proton-current-overlap-hopping.py"
+  ],
+  "working_precision": "脚本自身未设",
+  "row": "在 $Q$–$L$ 接触探针上加入最",
+  "note": [
+   "最近邻跳跃下接触读数比随Mt漂移与三比值局部确定重叠模长.md"
+  ]
+ },
+ {
+  "source": "README",
+  "claim": "c 的相位在任何图、任何阶都不进入该探针",
+  "class": "R1",
+  "rational_form": "对称性论证",
+  "certificate": "书面证明",
+  "scripts": [
+   "ch39-proton-current-overlap-hopping.py"
+  ],
+  "working_precision": "脚本自身未设",
+  "row": "在 $Q$–$L$ 接触探针上加入最",
+  "note": [
+   "最近邻跳跃下接触读数比随Mt漂移与三比值局部确定重叠模长.md"
+  ]
+ },
+ {
+  "source": "README",
+  "claim": "四项读数（W、V、η、E）下必要窗 #10815–#12092 上认证的帕累托最优编号 102 枚、非负线性加权可唯一选出 29 枚；#11488 被三枚同时严格超过；最坏名次最小唯一选出 #11618",
+  "class": "R3",
+  "rational_form": "1278 枚零点各给一组读数包围；命题为有限个严格次序与有限维线性可行性（对偶）关系",
+  "certificate": "Arb 区间证书",
+  "scripts": [
+   "ch39-five-criterion-pareto-selection.py"
+  ],
+  "bridge": "1278 枚零点的高度及各读数的包围",
+  "zero_use": "有限枚零点的数值位置",
+  "working_precision": "112–192 位",
+  "row": "把第十四章五项零点选择判据的读数放到",
+  "note": [
+   "五项选点判据在全窗上的联合比较中11488被11618严格支配而四项读数下最坏名次唯一选出11618.md"
+  ]
+ },
+ {
+  "source": "README",
+  "claim": "另 8 枚帕累托地位与 23 枚线性可选性未判定",
+  "class": "R3",
+  "rational_form": "同一组有限严格不等式，当前因体积分 V 的区间宽度不足而未定号",
+  "certificate": "未判定",
+  "scripts": [
+   "ch39-five-criterion-pareto-selection.py"
+  ],
+  "bridge": "同上",
+  "threshold_note": "门槛为 V 的包围宽度；收窄包围即可判定或遇到恰好相等",
+  "working_precision": "112–192 位",
+  "row": "把第十四章五项零点选择判据的读数放到",
+  "note": [
+   "五项选点判据在全窗上的联合比较中11488被11618严格支配而四项读数下最坏名次唯一选出11618.md"
+  ]
+ },
+ {
+  "source": "README",
+  "claim": "四枚规范候选定出的三次谱门户在十枚留出候选中八枚上残差非零，最小超过 6.6e19 GeV^2",
+  "class": "R3",
+  "rational_form": "十枚候选的阈值与门户读数包围；命题为残差区间不含零",
+  "certificate": "Arb 区间证书",
+  "scripts": [
+   "ch39-cubic-portal-holdout.py"
+  ],
+  "bridge": "候选零点高度与两圈交点（在种子包围的分支约定下，唯一性未证）",
+  "zero_use": "有限枚零点的数值位置",
+  "working_precision": "192 位",
+  "row": "四枚规范候选唯一确定的三次谱门户，在",
+  "note": [
+   "四枚规范候选唯一确定的三次谱门户在十枚留出候选中八枚上的残差被证书认定非零.md"
+  ]
+ },
+ {
+  "source": "README",
+  "claim": "#12610 与 #22027 上的残差是否为零",
+  "class": "R3",
+  "rational_form": "残差区间当前包含零",
+  "certificate": "未判定",
+  "scripts": [
+   "ch39-cubic-portal-holdout.py"
+  ],
+  "bridge": "同上",
+  "threshold_note": "门槛为阈值包围的分辨率；若残差非零，收窄包围即可判定",
+  "working_precision": "192 位",
+  "row": "四枚规范候选唯一确定的三次谱门户，在",
+  "note": [
+   "四枚规范候选唯一确定的三次谱门户在十枚留出候选中八枚上的残差被证书认定非零.md"
+  ]
+ },
+ {
+  "source": "README",
+  "claim": "置换对称补全的最小秩恰为 12，故 31 个辅助态足够，29≤n_aux≤31",
+  "class": "R1",
+  "rational_form": "数据为三次单位根处的代数数；上界由有理运算与两次开方给出的秩十二补全，下界由固定矩阵惯性 (4,2,0)、结式与 Sturm 计数精确给出",
+  "certificate": "精确证书 + Arb（收缩判据）",
+  "scripts": [
+   "ch39-symmetric-gram-lower-bound.py",
+   "ch39-symmetric-gram-twelve-completion.py"
+  ],
+  "working_precision": "192 位",
+  "row": "截止 56 时，保持三坐标置换对称的",
+  "note": [
+   "截止56的置换对称补全最小秩恰为12并把三时钟辅助态上界降到31.md"
+  ]
+ },
+ {
+  "source": "README",
+  "claim": "一般实现的精确辅助态数是 29、30、31 中的哪一个",
+  "class": "R1",
+  "rational_form": "固定代数数据上的最小秩正半定补全问题，是实代数可判定问题",
+  "certificate": "未判定",
+  "scripts": [
+   "ch39-symmetric-gram-lower-bound.py",
+   "ch39-local-memory-null-vectors.py"
+  ],
+  "working_precision": "脚本自身未设",
+  "row": "截止 56 时，保持三坐标置换对称的",
+  "note": [
+   "截止56的置换对称补全最小秩恰为12并把三时钟辅助态上界降到31.md"
+  ]
+ },
+ {
+  "source": "ch15:prob-ou-q1:witness",
+  "claim": "给定场表、重阈值与 (d,k)=(724,32) 标定后两圈反推 α_s(M_Z)≈0.1184（#28325、#11661、#11934）",
+  "class": "R3",
+  "rational_form": "有限枚零点处的壳谱代入两圈跑动，命题为 α_s 落在有理区间",
+  "certificate": "Arb 区间证书",
+  "scripts": [],
+  "bridge": "所列零点的高度包围",
+  "zero_use": "有限枚零点的数值位置",
+  "working_precision": "无脚本"
+ },
+ {
+  "source": "ch15:prob-ou-q2:witness",
+  "claim": "前 8192 枚中 67 枚在五荷各留三轻模（首枚三窗 #8359）",
+  "class": "R3",
+  "rational_form": "有限枚零点上壳谱标签之间的严格次序",
+  "certificate": "Arb 区间证书",
+  "scripts": [
+   "ch39-first-three-mode-observables.py"
+  ],
+  "bridge": "前 8192 枚零点的高度包围",
+  "zero_use": "有限枚零点的数值位置",
+  "working_precision": "192–224 位"
+ },
+ {
+  "source": "ch15:prob-ou-q2:witness",
+  "claim": "全环面共同秩精确分类为 {1,3,7,15}",
+  "class": "R2",
+  "rational_form": "相位取有理环面点；命题为各秩处的严格谱隙在整张环面上成立",
+  "certificate": "Arb 覆盖证书",
+  "scripts": [
+   "ch39-all-common-shell-ranks.py"
+  ],
+  "r2_kind": "全称",
+  "working_precision": "192 位"
+ },
+ {
+  "source": "ch15:prob-ou-q3:witness",
+  "claim": "两枚或单枚零点拟合九个带电费米子质量与完整 CKM",
+  "class": "R3",
+  "rational_form": "有限枚零点上的方程组可解性与严格不等式",
+  "certificate": "Arb 区间证书",
+  "scripts": [],
+  "bridge": "所用零点的高度包围",
+  "zero_use": "有限枚零点的数值位置",
+  "working_precision": "无脚本"
+ },
+ {
+  "source": "ch15:prob-ou-q3:witness",
+  "claim": "重子三重性 ΔB≡0 (mod 3) 禁止低能单质子衰变",
+  "class": "R1",
+  "rational_form": "整数荷的同余",
+  "certificate": "书面证明 + 精确算术",
+  "scripts": [
+   "ch39-higgs-baryon-triality-measure.py"
+  ],
+  "working_precision": "脚本自身未设"
+ },
+ {
+  "source": "ch15:prob-ou-q4:witness",
+  "claim": "四维单纯形雷吉作用长波零锥双螺旋度 ±2 极点，静态核 10/|p|^2",
+  "class": "R1",
+  "rational_form": "有理系数色散关系的精确长波展开",
+  "certificate": "书面证明 + 精确符号计算",
+  "scripts": [],
+  "working_precision": "无脚本"
+ },
+ {
+  "source": "ch15:prob-ou-q4:witness",
+  "claim": "四层热核真空能在 #28325 命中观测曲率的 0.99941058 倍",
+  "class": "R3",
+  "rational_form": "单枚零点处可见谱代入热核，命题为比值落在有理区间",
+  "certificate": "Arb 区间证书",
+  "scripts": [],
+  "bridge": "#28325 的高度与壳谱包围",
+  "zero_use": "有限枚零点的数值位置",
+  "working_precision": "无脚本"
+ },
+ {
+  "source": "ch15:prob-ou-q4:witness",
+  "claim": "百万分之一精度下同时命中三窗的零点具有正下密度",
+  "class": "R4",
+  "rational_form": "对无穷多零点的密度陈述",
+  "certificate": "书面证明（RH 下的等分布）+ Arb",
+  "scripts": [],
+  "why_not_resolution": "密度是全体零点上的极限量，有限分辨率只能覆盖有限枚；由 RH 下的双钟联合等分布定理解决",
+  "zero_use": "用到对全体零点的分布断言",
+  "r4_reason": [
+   "全体零点量词"
+  ],
+  "working_precision": "无脚本"
+ },
+ {
+  "source": "ch15:prob-ou-q1:gap",
+  "claim": "三支耦合两圈交汇与 α_s，并以第二条尺度律解除 (32,724) 沿 k/d^2 的简并",
+  "class": "R4",
+  "rational_form": "要求构造一条律；任一候选律给定后，检验它是否选出 (32,724) 是 R3 命题",
+  "certificate": "开放",
+  "scripts": [],
+  "missing_sentence": [
+   "解除 $(k, d) = (32, 724)$ 沿 $k/d^2$ 的连续简并"
+  ],
+  "r4_reason": [
+   "缺结构原理"
+  ],
+  "why_not_resolution": "简并线上每一点都满足已认证的不等式；已排除的泛函类（位力定号单谱型、常数锚混合型）只说明哪些律不行，精度不产生新律",
+  "working_precision": "无脚本"
+ },
+ {
+  "source": "ch15:prob-ou-q1:gap",
+  "claim": "轻希格斯质量、v/M_P 的动力学来源与四次耦合稳定",
+  "class": "R4",
+  "rational_form": "要求一条导出机制；对给定门户族的检验是 R3（二次谱门户与群代数门户已在四枚上被排除）",
+  "certificate": "开放",
+  "scripts": [],
+  "missing_sentence": [
+   "的动力学来源，且在从统一能标跑动至电弱能标的过程中保持四次耦合稳定"
+  ],
+  "r4_reason": [
+   "缺结构原理"
+  ],
+  "why_not_resolution": "缺的是使希格斯质量与层级比出现的机制；已有的门户排除都是对具体族的 R3 结论",
+  "working_precision": "无脚本"
+ },
+ {
+  "source": "ch15:prob-ou-q1:gap",
+  "claim": "消除对低能输入偏移与门户多项式的事后调校",
+  "class": "R4",
+  "rational_form": "要求不经调校即导出输入；固定输入下的偏移下界本身是 R3",
+  "certificate": "开放",
+  "scripts": [],
+  "missing_sentence": [
+   "消除对低能输入偏移（$\\ge 647.17\\;\\mathrm{ppm}$）与门户多项式的事后调校"
+  ],
+  "r4_reason": [
+   "缺结构原理"
+  ],
+  "why_not_resolution": "调校的存在已由 R3 结论确认，缺的是取代调校的原理",
+  "working_precision": "无脚本"
+ },
+ {
+  "source": "ch15:prob-ou-q1:gap",
+  "claim": "零点编号选择准则的唯一动力学起源",
+  "class": "R4",
+  "rational_form": "给定一个判据后，其唯一优胜者是谁是 R3 命题（单调判据、五项判据组已有此类结果）",
+  "certificate": "开放",
+  "scripts": [],
+  "missing_sentence": [
+   "零点编号选择准则的唯一动力学起源"
+  ],
+  "r4_reason": [
+   "选择问题"
+  ],
+  "why_not_resolution": "各候选编号都满足已认证的窗口不等式；单调扇区判据选不出 #10875 与 #11737，五项判据组的“最坏名次最小”去掉任一判据优胜者即改变，判据组本身仍是选择",
+  "working_precision": "无脚本"
+ },
+ {
+  "source": "ch15:prob-ou-q2:gap",
+  "claim": "以纯动力学稳定性从 {1,3,7,15} 中选出恰好三代",
+  "class": "R4",
+  "rational_form": "给定泛函后，其是否一致选出 3 是 R2 或 R3 命题（档案已对多类泛函给出此类结果）",
+  "certificate": "开放",
+  "scripts": [],
+  "missing_sentence": [
+   "以纯动力学稳定性选出**恰好三代**"
+  ],
+  "r4_reason": [
+   "选择问题"
+  ],
+  "why_not_resolution": "四个秩都满足同样的严格谱隙，选 3 不对应任何待定号的不等式",
+  "working_precision": "无脚本"
+ },
+ {
+  "source": "ch15:prob-ou-q2:gap",
+  "claim": "解释并控制不同超荷轻子空间之间的几何泄漏与共同背景排除",
+  "class": "R4",
+  "rational_form": "要求一条解释机制；泄漏的大小本身是可计算量",
+  "certificate": "开放",
+  "scripts": [],
+  "missing_sentence": [
+   "同时解释并控制不同超荷三维轻子空间之间超过 $31\\%$ 的几何泄漏"
+  ],
+  "r4_reason": [
+   "缺结构原理"
+  ],
+  "why_not_resolution": "缺的是解释，不是数值",
+  "working_precision": "无脚本"
+ },
+ {
+  "source": "ch15:prob-ou-q2:gap",
+  "claim": "非微扰相互作用四维手征格点规范理论的构造",
+  "class": "R4",
+  "rational_form": "要求构造一个理论",
+  "certificate": "开放",
+  "scripts": [],
+  "missing_sentence": [
+   "非微扰相互作用四维手征格点规范理论"
+  ],
+  "r4_reason": [
+   "缺结构原理"
+  ],
+  "why_not_resolution": "缺构造；静态外场下的指数与测度输运已有，相互作用的完整测度没有",
+  "working_precision": "无脚本"
+ },
+ {
+  "source": "ch15:prob-ou-q2:gap",
+  "claim": "参考测度连接的局域常数显式化",
+  "class": "R3",
+  "rational_form": "对所采用的 Kadoh–Kikukawa 与 Lüscher 构造，常数确定但未显式化，是有限计算",
+  "certificate": "未做",
+  "scripts": [],
+  "missing_sentence": [
+   "参考测度连接的局域常数尚未显式化"
+  ],
+  "bridge": "无零点输入；超越量为指数函数与谱隙的 Arb 界",
+  "threshold_note": "有限计算（R1 或 R3），未做",
+  "working_precision": "无脚本"
+ },
+ {
+  "source": "ch15:prob-ou-q3:gap",
+  "claim": "统一生成九个带电费米子质量、CKM 与轻子/PMNS 的跨零点味折叠律",
+  "class": "R4",
+  "rational_form": "要求一条作用律；对给定字典的检验是 R3",
+  "certificate": "开放",
+  "scripts": [],
+  "missing_sentence": [
+   "统一生成全部九个带电费米子质量层级"
+  ],
+  "r4_reason": [
+   "缺结构原理"
+  ],
+  "why_not_resolution": "缺统一作用律",
+  "working_precision": "无脚本"
+ },
+ {
+  "source": "ch15:prob-ou-q3:gap",
+  "claim": "是否存在重块谱范数低于 √(4π) 的完整命中",
+  "class": "R3",
+  "rational_form": "紧参数集上的半代数可行性，数据依赖三枚零点",
+  "certificate": "未判定",
+  "scripts": [
+   "ch39-per-leg-double-hop-transfer.py"
+  ],
+  "missing_sentence": [
+   "现有见证的重块谱范数却超过 $6.5 \\times 10^4$"
+  ],
+  "bridge": "#11661、#11934、#22027 的高度",
+  "threshold_note": "现有证书只强制谱范数 >0.2976，分辨率门槛未知",
+  "working_precision": "448 位"
+ },
+ {
+  "source": "ch15:prob-ou-q3:gap",
+  "claim": "由有限半径局部壳动力学自然诱导高阶绕数作用",
+  "class": "R4",
+  "rational_form": "要求一条诱导机制",
+  "certificate": "开放",
+  "scripts": [],
+  "missing_sentence": [
+   "自然诱导等效的高阶绕数作用"
+  ],
+  "r4_reason": [
+   "缺结构原理"
+  ],
+  "why_not_resolution": "缺机制",
+  "working_precision": "无脚本"
+ },
+ {
+  "source": "ch15:prob-ou-q3:gap",
+  "claim": "锁定 105 圈真空中的 100 个连续自由系数",
+  "class": "R4",
+  "rational_form": "给定选权泛函后，其最优权是否为严格真空是 R3 命题（最大熵等三种已判为边缘真空）",
+  "certificate": "开放",
+  "scripts": [],
+  "missing_sentence": [
+   "锁定 $105$ 圈真空中悬而未决的 $100$ 个连续自由系数"
+  ],
+  "r4_reason": [
+   "选择问题"
+  ],
+  "why_not_resolution": "可行族是连续族，缺的是选权原理",
+  "working_precision": "无脚本"
+ },
+ {
+  "source": "ch15:prob-ou-q3:gap",
+  "claim": "D=56 处记忆秩瓶颈：n_aux 是 29、30、31 中的哪一个",
+  "class": "R1",
+  "rational_form": "固定代数数据上的最小秩正半定补全问题，实代数可判定",
+  "certificate": "未判定",
+  "scripts": [
+   "ch39-symmetric-gram-lower-bound.py",
+   "ch39-local-memory-null-vectors.py"
+  ],
+  "missing_sentence": [
+   "$D = 56$ 处 $[29, 31]$ 记忆秩瓶颈"
+  ],
+  "working_precision": "脚本自身未设"
+ },
+ {
+  "source": "ch15:prob-ou-q3:gap",
+  "claim": "从微观相互作用唯一确定 c_6 与辅助电流取向",
+  "class": "R4",
+  "rational_form": "要求一条紫外原理；1/M^2 阶 ΔB≡0 读数与取向无关，1/M^4 阶只经 |c|^2 依赖",
+  "certificate": "开放",
+  "scripts": [],
+  "missing_sentence": [
+   "唯一确定六维重子算符系数 $c_6$ 与辅助电流取向"
+  ],
+  "r4_reason": [
+   "选择问题",
+   "缺结构原理"
+  ],
+  "why_not_resolution": "同一真空下两支都合模型，缺的是选定取向的紫外原理",
+  "working_precision": "无脚本"
+ },
+ {
+  "source": "ch15:prob-ou-q4:gap",
+  "claim": "四维洛伦兹连续引力极限",
+  "class": "R4",
+  "rational_form": "要求构造连续极限",
+  "certificate": "开放",
+  "scripts": [],
+  "missing_sentence": [
+   "无鬼传播的四维**洛伦兹**连续引力极限"
+  ],
+  "r4_reason": [
+   "缺结构原理"
+  ],
+  "why_not_resolution": "缺构造",
+  "working_precision": "无脚本"
+ },
+ {
+  "source": "ch15:prob-ou-q4:gap",
+  "claim": "有限铰链负载下平直驻点的 √3 比率：非负有理负载不能满足",
+  "class": "R1",
+  "rational_form": "沿短边变分的一阶导数是四价面负载和与六价面负载和的 √3 倍之差的正倍数；√3 无理，非负有理负载不全为零时它不为零",
+  "certificate": "书面证明",
+  "scripts": [],
+  "missing_sentence": [
+   "平直驻点 $\\sqrt{3}$ 无理比率障碍"
+  ],
+  "note": "缺口条款要求“解决”这一障碍；障碍本身是 R1 否定，解决它属于上一条的构造",
+  "working_precision": "无脚本"
+ },
+ {
+  "source": "ch15:prob-ou-q4:gap",
+  "claim": "把反射正性推到含无界共形模的全理论",
+  "class": "R4",
+  "rational_form": "对一切场构型的正性，不是有限维有理不等式",
+  "certificate": "开放",
+  "scripts": [],
+  "missing_sentence": [
+   "把反射正性从交叉偏振扇区推到含无界共形模的全理论"
+  ],
+  "r4_reason": [
+   "缺结构原理"
+  ],
+  "why_not_resolution": "障碍来自无界共形模，是结构问题",
+  "working_precision": "无脚本"
+ },
+ {
+  "source": "ch15:prob-ou-q4:gap",
+  "claim": "牛顿常数与普朗克标度相对规范统一标度的绝对大小",
+  "class": "R4",
+  "rational_form": "要求导出而非标定",
+  "certificate": "开放",
+  "scripts": [],
+  "missing_sentence": [
+   "牛顿引力常数 $G_N$ 与普朗克标度 $M_P$ 相对规范统一标度的绝对大小"
+  ],
+  "r4_reason": [
+   "缺结构原理"
+  ],
+  "why_not_resolution": "现有读数都先标定牛顿项，缺导出机制",
+  "working_precision": "无脚本"
+ },
+ {
+  "source": "ch15:prob-ou-q4:gap",
+  "claim": "辐射修正与截断扰动下自然保持 Λℓ_P^2~1e-122 的正暗能量机制",
+  "class": "R4",
+  "rational_form": "要求对一切扰动的稳定性与一条导出机制",
+  "certificate": "开放",
+  "scripts": [],
+  "missing_sentence": [
+   "仍然在辐射修正与截断扰动下自然保持"
+  ],
+  "r4_reason": [
+   "缺结构原理"
+  ],
+  "why_not_resolution": "第十五章把“自然保持”写进问题，并以“独立移动最敏感的一个截止，曲率仍在 10^-120 量级内翻号”为缺口证据：缺的是为什么取这个数、扰动后为什么不变；可行解已经存在，所以也不是“残差远小于包围”",
+  "working_precision": "无脚本"
+ },
+ {
+  "source": "extra:q4",
+  "claim": "附加子问题：把三枚零点上四点测度的调准截止比值本身包到约 120 位",
+  "class": "R3",
+  "rational_form": "固定零点数据后，满足 K=1、ΛG=1e-122 与一阶驻定的截止参数是确定的实数组，把它包到 120 位是有限计算",
+  "certificate": "未做",
+  "scripts": [
+   "ch39-cutoff-scale-stationarity.py"
+  ],
+  "bridge": "三枚零点可见谱的包围（现有相对半径约 1e-12）",
+  "threshold_note": "零点谱须包到相近的相对精度；不是第十五章原文的缺口条款",
+  "zero_use": "有限枚零点的数值位置",
+  "working_precision": "192–512 位"
+ }
+]
