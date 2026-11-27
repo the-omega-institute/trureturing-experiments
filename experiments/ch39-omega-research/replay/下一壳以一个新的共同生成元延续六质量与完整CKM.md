@@ -43,6 +43,6 @@
  F_{16}\approx0.00583856445,\qquad K\approx0.697543935,\qquad
  W\approx0.155018262,\qquad D\approx-0.07425657719 .
 \]
-这组读数排除了此盒实现 \(N+3\) 的荷六目标 \((1,10^{-122},0)\)。其他共同生成元有无同时精确实现 \(N+3\) 完整味与荷六三项的解，仍是开放问题。[荷六训练振幅](ch39-adjacent-ordered-charge-six-cutoffs.py) · [破缺场背景](ch39-three-index-free-atoms.py)
+这组读数排除了此盒实现 \(N+3\) 的荷六目标 \((1,10^{-122},0)\)。另一组已通过区间验证的十八参数给出了同时满足两类读数的共同生成元。[两壳联合存在证书](相邻两壳以两个共同生成元连续实现完整CKM与荷六三读数.md) · [荷六训练振幅](ch39-adjacent-ordered-charge-six-cutoffs.py) · [破缺场背景](ch39-three-index-free-atoms.py)
 
 在本目录运行 `python3 -B ch39-next-common-ckm.py` 可从原训练谱复算上游精确解盒、两个下游味块的共同见证和该盒的荷六读数。
