@@ -27,13 +27,18 @@ root2, soft, imag = arb(2).sqrt(), arb("6e-8"), acb(0,1)
 def frob(matrix):
     return sum(abs(z)**2 for z in matrix.entries()).sqrt().upper()
 
-def verify(charge, sign, xlo, xhi, index, limit):
+def verify(charge, sign, xlo, xhi, index, limit, shared_clock=724, source_basis=None):
     shift = [acb("1.78",".25"), acb("1.80","-.09")]
     if sign < 0:
         shift = [z.conjugate() for z in shift[::-1]]
     basis_change = pivot.inv()*acb_mat([[arb(".3"),*shift],[0,1,0],[0,0,1]])
+    if source_basis is not None:
+        basis_change = source_basis
     filter_error = arb("2e-8")*frob(basis_change)
     base, links = pump["clock_matrices"](graph, charge)
+    assert shared_clock in (724, 804)
+    if shared_clock == 804:
+        links = links[::-1]
     sectors = []
     for frame, incoming in zip(frames, inputs):
         a,b = [adj(frame)*link*frame for link in links]
@@ -99,13 +104,14 @@ def verify(charge, sign, xlo, xhi, index, limit):
     print(charge, sign, xlo, xhi, index, limit, accepted, flush=True)
     return accepted
 
-total = 0
-for sign in (1,-1):
-    for lo,hi,outer in ((0,".41",True),(".41","2.5",False),("2.5",arb.pi(),True)):
-        tests = ((-4,1,"2.65"),(2,0,"13.9")) if outer else ((-4,0,"8.5"),(2,1,"5.45"))
-        for charge,index,limit in tests:
-            total += verify(charge, sign, lo, hi, index, limit)
-assert arb("2.65")*arb("13.9")*(arb(9)/7)**2 < arb("61.32")
-assert arb("8.5")*arb("5.45")*(arb(9)/7)**2 < arb("77.12")
-print("accepted", total)
-cert["target_gaps"]()
+if __name__ == "__main__":
+    total = 0
+    for sign in (1,-1):
+        for lo,hi,outer in ((0,".41",True),(".41","2.5",False),("2.5",arb.pi(),True)):
+            tests = ((-4,1,"2.65"),(2,0,"13.9")) if outer else ((-4,0,"8.5"),(2,1,"5.45"))
+            for charge,index,limit in tests:
+                total += verify(charge, sign, lo, hi, index, limit)
+    assert arb("2.65")*arb("13.9")*(arb(9)/7)**2 < arb("61.32")
+    assert arb("8.5")*arb("5.45")*(arb(9)/7)**2 < arb("77.12")
+    print("accepted", total)
+    cert["target_gaps"]()
