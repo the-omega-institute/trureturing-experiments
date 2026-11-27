@@ -5,11 +5,10 @@ from runpy import run_path
 from flint import arb,ctx
 
 
-def verify(root):
+def verify(root, *, number=2_306_888_100_089, certified_region=None):
     def lib(name):
         return run_path(str(root/("ch39-"+name+".py")))
-    number=2_306_888_100_089
-    _,ordered=lib("adjacent-ordered-charge-six-cutoffs")["verify"](root,refine_node=number-3)[2]
+    _,ordered=lib("adjacent-ordered-charge-six-cutoffs")["verify"](root,refine_node=2_306_888_100_086)[2]
     _,_,pivots,_=next(row for row in lib("native-rh-ray-pvm")["shell_weights"](root,number) if row[0]==6)
     c=[v.real for v in pivots[2]]
     _,heat,(field,)=lib("three-index-free-atoms")["broken_fields"](root,[number])
@@ -44,6 +43,8 @@ def verify(root):
     cells=0
     while stack:
         yl,yh,tl,th=stack.pop();cells+=1
+        if certified_region is not None and certified_region(yl, tl, total):
+            continue
         if yl+tl>total:
             continue
         A=(a*yl**2+margin-b*th**2).lower()
