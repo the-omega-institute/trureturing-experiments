@@ -20,7 +20,13 @@ def certify_exact(model, a, b, identity):
     adj, trace, bracket = model["adj"], quad["trace"], quad["bracket"]
     up, down = [adj(v) * v for v in (a, b)]
     up, down = up / trace(up).real, down / trace(down).real
-    quad["normal_frame"](up, down)  # 已认证六维实词空间与三个独立的法向。
+    frame, _ = quad["normal_frame"](up, down)
+    source = model["K"] * adj(model["K"])
+    inverse_source = source.inv()
+    spectral = [h / trace(h).real for h in (source, inverse_source)]
+    minor = arb_mat([[trace(axis*h).real for h in spectral] for axis in frame[1:]]).det()
+    assert minor < arb("-.00503")
+    print("二次词空间与原协方差对易条件的二阶子式", minor.str(8))
     comm = bracket(up, down)
     normals = [trace(comm*comm).real * g - trace(comm*g).real * comm
                for g in (bracket(up*up, down), bracket(up, down*down))]
