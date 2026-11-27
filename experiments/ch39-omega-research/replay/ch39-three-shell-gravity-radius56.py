@@ -155,14 +155,24 @@ def experiment(root, fifth, columns, levels):
     projected = pre * curv
     center_defect = eye-pre*j
     ratios = []
+    derivative_norms = []
+    gains = []
+    motion = pre*f
     for i in range(6):
         derivative = sum(center_defect[i,k].abs_upper() for k in range(6))
         curvature = sum(projected[i,k].abs_upper()*(1 if a==b else 2)
                         for k,(a,b) in enumerate(keys))
-        offset_i = (pre*f)[i,0].abs_upper()
+        offset_i = motion[i,0].abs_upper()
+        derivative_norms.append(derivative + curvature*width)
+        gains.append(sum(pre[i,k].abs_upper() for k in range(6)))
         ratios.append(offset_i/width + derivative + curvature*width/2)
     print("二阶自映的逐行比例", *[q.str(12) for q in ratios], flush=True)
     assert max(ratios) < arb(".762")
+    margin = min(((1-ratio)*width/gain).lower() for ratio,gain in zip(ratios,gains,strict=True))
+    print("六个读数可独立扰动的共同半径下界、六维导数缺陷上界",
+          margin.str(15), max(derivative_norms).str(15), flush=True)
+    assert margin > arb("9.9e-7") and max(derivative_norms) < arb(".067")
+
     return [q + arb(0, width) for q in center]
 
 
