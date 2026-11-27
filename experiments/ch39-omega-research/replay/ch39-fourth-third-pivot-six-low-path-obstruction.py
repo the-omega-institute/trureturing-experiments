@@ -6,7 +6,8 @@ from flint import arb, ctx
 import numpy as np
 
 
-def integral_table(root, extra_probes=(), endpoint_shifts=(), cell_probes=()):
+def integral_table(root, extra_probes=(), endpoint_shifts=(), cell_probes=(), *,
+                   resolution=(512,4096), low_rows=(), precise_light=None):
     def lib(name):
         return run_path(str(root/("ch39-"+name+".py")))
     number=2_306_888_100_089
@@ -54,6 +55,8 @@ def integral_table(root, extra_probes=(), endpoint_shifts=(), cell_probes=()):
     weak_allowance=[]
     global_upper={}
     for j in (6+i for i,(_,channel) in enumerate(probes) if channel=="y"):
+        if precise_light and probes[j-6][0]==precise_light[0]:
+            continue
         pm=powers[which[j]]
         ent=lib("full-neutral-running")["weak_bound"]({"p0":pm},[pm],[arb(0)],
                                     lib("neutral-axial-top"),lib("neutral-bosonic"))
@@ -104,7 +107,7 @@ def integral_table(root, extra_probes=(), endpoint_shifts=(), cell_probes=()):
         deltas=E[0]-E[1:]
         return [arb(float(np.sum(coeff[j]*deltas[which[j]])))+arb(0,errs[j]) for j in range(count)]
 
-    coarse,fine=512,4096
+    coarse,fine=resolution
     assert fine%coarse==0 and fine&(fine-1)==0
     ref=gauge_values(cut)
     dref=neutral["weak_column"](cut,p0,p1)
@@ -121,6 +124,16 @@ def integral_table(root, extra_probes=(), endpoint_shifts=(), cell_probes=()):
         return [*values,*[values[j]+a*values[0]+b*values[1] for j,a,b in shifted]]
     def errors(values):
         return [*values,*[values[j]+abs(a)*values[0]+abs(b)*values[1] for j,a,b in shifted]]
+    light_indices=[]
+    light_bands=[]
+    if precise_light:
+        energy,kernel=precise_light
+        loc=6+probes.index((energy,"y"))
+        centre,noise,light_bands=kernel(lo,cut,fine,p0,p1,lib)
+        assert len(light_bands)==fine
+        base[loc]+=-centre+arb(0,(tv*noise).upper())
+        drifts[loc]+=kappa/cut
+        light_indices=[loc]+[count+i for i,(j,a,b) in enumerate(shifted) if j==loc]
     base=projections(base)
     drifts=errors(drifts)
     wide_ref=projections(ref)
@@ -186,7 +199,13 @@ def integral_table(root, extra_probes=(), endpoint_shifts=(), cell_probes=()):
     assert int(np.max(np.abs(high_error)))*19<2**50
     bounds=np.zeros((19,2*fine,len(full_base),2),dtype=np.int64)
     for i,w in enumerate(c):
+        if low_rows and i+1 not in low_rows:
+            continue
         bounds[i,fine:,:len(base)]=[[bracket(w*v) for v in band] for band in graph]
+        if light_indices:
+            light_values=np.array([bracket(w*v) for v in light_bands],dtype=np.int64)
+            for col in light_indices:
+                bounds[i,fine:,col]+=light_values
         for col,(j,p,delta) in enumerate(extra,len(base)):
             for k,(x,y) in enumerate(edges):
                 inv=(abs(w)*kappa/x).upper()
@@ -196,7 +215,7 @@ def integral_table(root, extra_probes=(), endpoint_shifts=(), cell_probes=()):
                 assert low<=high
                 a,b=bracket(low.union(high))
                 bounds[i,fine+k,col]=bounds[i,fine+k,j]+[a,b]
-    assert int(np.max(np.abs(bounds)))*7+int(np.max(np.abs(high_error)))*19+int(np.max(np.abs(constants)))<2**60
+
     for n in range(fine-1,0,-1):
         bounds[:,n,:,0]=np.minimum(bounds[:,2*n,:,0],bounds[:,2*n+1,:,0])
         bounds[:,n,:,1]=np.maximum(bounds[:,2*n,:,1],bounds[:,2*n+1,:,1])
@@ -212,8 +231,11 @@ def integer_cover(root,constants,high_error,bounds,size,domains=None,except_rows
     compiler=shutil.which("c++")
     assert compiler,"整数覆盖需要 C++ 编译器"
     _,nodes,count,_=bounds.shape
-    assert int(np.max(np.abs(bounds)))*400 < 2**63
-    assert int(np.max(np.abs(bounds)))*size+int(np.max(np.abs(high_error)))*19+int(np.max(np.abs(constants)))<2**60
+    column_max=int(np.max(np.abs(bounds[:,1])))
+    assert column_max*400 < 2**63
+    needed=set(range(1,20)) if domains is None else {row for case in domains for row,_,_ in case}
+    assert all(np.any(bounds[row-1,1]) for row in needed)
+    assert column_max*size+int(np.max(np.abs(high_error)))*19+int(np.max(np.abs(constants)))<2**60
     with TemporaryDirectory() as folder:
         binary=Path(folder)/"cover"
         run([compiler,"-std=c++17","-O3",str(root/"ch39-low-cutoff-integer-cover.cpp"),"-o",str(binary)],check=True)
