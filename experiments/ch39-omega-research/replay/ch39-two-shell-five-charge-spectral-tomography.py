@@ -72,6 +72,14 @@ def verify(root, *, first_zero=False):
     for k,rows in enumerate(design):
         size=(49,36,36)[k]
         defect,error=rank_bound(rows,size)
+        # 新原生谱线在同一列变换下有界，直接外推绕开逆列变换的放大。
+        if first_zero:
+            dimension=(7,6,6)[k]
+            drift=deltas[0]/abs(difference) if k==0 else arb(0)
+            target_norm=1+arb(dimension-1)/arb(2).sqrt()+drift/2
+            prediction=(target_norm*error).upper()
+            print("任意后续简单谱行的误差放大上界",k,prediction.str(12),flush=True)
+            assert prediction < arb("2e5")
         transform = 1+1/abs(difference) if k==0 else arb(1)
         error=(error*transform).upper()
         print("索引、字符、原坐标逐项误差的放大上界",numbers,k,error.str(12),flush=True)
