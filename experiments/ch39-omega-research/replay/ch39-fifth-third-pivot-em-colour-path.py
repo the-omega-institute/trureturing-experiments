@@ -7,11 +7,10 @@ from runpy import run_path
 from flint import arb, arb_mat, ctx
 
 
-def solve(root, centers, axes):
+def solve(root, centers, axes, *, number=2_306_888_100_090):
     def lib(name):
         return run_path(str(root / ("ch39-" + name + ".py")))
 
-    number = 2_306_888_100_090
     _, ordered = lib("adjacent-ordered-charge-six-cutoffs")["verify"](
         root, refine_node=2_306_888_100_086
     )[2]
