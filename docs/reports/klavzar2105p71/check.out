@@ -1,0 +1,10 @@
+Fidelity: Theorems 3.1 and 3.2, 84 exact path/star/cycle cases
+Corollary 4.4(v) discrepancy: K_2 join independent 5, k=2,3 -> (5, 5)
+G_2: order=8, sgp_2=5, sgp_3=4, sgp_7=8, 18 certificates
+G_3: order=9, sgp_2=6, sgp_3=5, sgp_8=9, 18 certificates
+G_4: order=10, sgp_2=7, sgp_3=6, sgp_9=10, 18 certificates
+G_5: order=11, sgp_2=8, sgp_3=7, sgp_10=11, 18 certificates
+G_6: order=12, sgp_2=9, sgp_3=8, sgp_11=12, 18 certificates
+G_7: order=13, sgp_2=10, sgp_3=9, sgp_12=13, 18 certificates
+G_8: order=14, sgp_2=11, sgp_3=10, sgp_13=14, 18 certificates
+ALL_CHECKS_OK
