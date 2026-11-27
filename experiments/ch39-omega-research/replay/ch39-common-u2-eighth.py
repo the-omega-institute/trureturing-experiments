@@ -10,17 +10,32 @@ Q = 1 << 24
 PERIOD = 1 << 16
 
 
+def floor(v):
+    return int((Q*v).lower().floor().unique_fmpz())
+def ceil(v):
+    return int((Q*v).upper().ceil().unique_fmpz())
+def mid(v):
+    return int((Q*v.mid()).floor().unique_fmpz())
+
+
+def quarter_wave():
+    lines = []
+    # 查表的中心三角值分别向下量化；用对称性扩展至全周期。
+    lines.append([0])
+    for i in range(1,PERIOD//4):
+        value = (2*arb.pi()*i/PERIOD).sin()
+        tick = floor(value)
+        assert arb(tick)/Q <= value and value < arb(tick+1)/Q
+        lines.append([tick])
+    lines.append([Q])
+    return lines
+
+
 def prepare(root, fifth, columns, levels):
     lib = lambda name: run_path(str(root/("ch39-"+name+".py")))
     data = lib("fifth-seventh-shortest-site-gates")["geometry"](
         root, fifth, columns, levels, number=2_306_888_100_093)
     base, _, _, basis, station, weights, heat, field = data
-    def floor(v):
-        return int((Q*v).lower().floor().unique_fmpz())
-    def ceil(v):
-        return int((Q*v).upper().ceil().unique_fmpz())
-    def mid(v):
-        return int((Q*v.mid()).floor().unique_fmpz())
     mass = lib("fifth-seventh-cutoff-separation")["moment_errors"](
         field,heat,weights,[".75553"]*19)
     slopes = (sum(a for _,a,_ in field)/(2*arb.pi()),-sum(g for g,_,_ in field)/(8*arb.pi()))
@@ -48,14 +63,7 @@ def prepare(root, fifth, columns, levels):
             # 每项中心三角系数的复误差小于 5/Q；最终复投影截断的误差小于 2/Q。
             error = ceil(sum(radii) + (5*(size_d+size_o)+2)/Q)
             lines.append([n for pair in values for n in pair]+[ceil(size_d),ceil(size_o),error])
-    # 查表的中心三角值分别向下量化；用对称性扩展至全周期。
-    lines.append([0])
-    for i in range(1,PERIOD//4):
-        value = (2*arb.pi()*i/PERIOD).sin()
-        tick = floor(value)
-        assert arb(tick)/Q <= value and value < arb(tick+1)/Q
-        lines.append([tick])
-    lines.append([Q])
+    lines.extend(quarter_wave())
     return "\n".join(" ".join(map(str,line)) for line in lines)+"\n"
 
 

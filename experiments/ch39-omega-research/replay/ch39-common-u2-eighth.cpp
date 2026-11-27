@@ -1,53 +1,8 @@
-// 四个角的二进闭盒，所有决定覆盖的包围均以定点整数向外取整。
-#include <algorithm>
-#include <array>
-#include <cassert>
-#include <cmath>
-#include <cstdint>
-#include <iostream>
+// 同一二阶酉门的四角覆盖。
+#include "ch39-fixed-gate-heat.hpp"
 #include <vector>
 
-using Z = std::int64_t;
-constexpr Z Q = 1 << 24;
-constexpr int period = 1 << 16;
-using Pair = std::array<Z, 2>;
-struct Row {
-  std::array<Pair, 5> coeff;
-  Z diag, off, error;
-};
-struct Span {
-  int lo, hi;
-};
-using Box = std::array<Span, 4>;
-std::array<Row, 38> rows;
-std::array<Pair, 19> weights;
-std::array<Pair, 3> gain;
-std::array<Pair, 2> goal;
-std::array<Z, period / 4 + 1> quarter;
-Z cap;
-Z up(Z a, Z b) {
-  assert(a >= 0);
-  return (a + b - 1) / b;
-}
-Z sine(int n) {
-  n %= period;
-  if (n < 0)
-    n += period;
-  if (n > period / 2)
-    return -sine(n - period / 2);
-  if (n > period / 4)
-    n = period / 2 - n;
-  return quarter[n];
-}
-Z cosine(int n) { return sine(n + period / 4); }
-Z root_floor(Z n) {
-  Z r = static_cast<Z>(std::sqrt(static_cast<double>(n)));
-  while ((r + 1) * (r + 1) <= n)
-    ++r;
-  while (r * r > n)
-    --r;
-  return r;
-}
+Shell shell;
 
 bool excluded(const Box &box, int &split) {
   std::array<int, 4> m;
@@ -73,66 +28,20 @@ bool excluded(const Box &box, int &split) {
     Z t = k < 2 ? c : s;
     gate[k] = {t * cosine(phases[k]) / Q, t * sine(phases[k]) / Q};
   }
-  std::array<Pair, 2> sum{};
-  for (int i = 0; i < 19; ++i) {
-    Pair amp = gain[0];
-    for (int j = 0; j < 2; ++j) {
-      const Row &row = rows[2 * i + j];
-      Z vr = row.coeff[0][0] * Q, vi = row.coeff[0][1] * Q;
-      for (int k = 0; k < 4; ++k) {
-        const auto &a = row.coeff[k + 1];
-        const auto &g = gate[k];
-        vr += a[0] * g[0] - a[1] * g[1];
-        vi += a[0] * g[1] + a[1] * g[0];
-      }
-      vr /= Q;
-      vi /= Q;
-      Z mag = root_floor(vr * vr + vi * vi);
-      Z radius = row.error + up(row.diag * diag + row.off * off, Q);
-      Z l = std::max<Z>(0, mag - radius), r = std::min(Q, mag + 1 + radius);
-      assert(l <= r);
-      amp[0] += gain[j + 1][0] * (l * l / Q) / Q;
-      amp[1] += up(gain[j + 1][1] * up(r * r, Q), Q);
-    }
-    amp[1] = std::min(cap, amp[1]);
-    Pair x{amp[0] * amp[0] / Q, up(amp[1] * amp[1], Q)};
-    for (int k = 0; k < 2; ++k) {
-      sum[k][0] += weights[i][0] * (weights[i][0] < 0 ? x[1] : x[0]);
-      sum[k][1] += weights[i][1] * (weights[i][1] < 0 ? x[0] : x[1]);
-      if (k == 0)
-        x = {x[0] * x[0] / Q, up(x[1] * x[1], Q)};
-    }
-  }
-  for (int k = 0; k < 2; ++k)
-    if (sum[k][0] > goal[k][1] * Q || sum[k][1] < goal[k][0] * Q)
-      return true;
-  return false;
+  return heat_separates(shell, gate, std::array<Z,2>{diag, off});
 }
 
 int main() {
   Z unit, cycle;
   std::cin >> unit >> cycle >> cap;
   assert(unit == Q && cycle == period && cap > 0 && cap < Q);
-  for (auto &a : goal)
+  for (auto &a : shell.goal)
     std::cin >> a[0] >> a[1];
   for (auto &a : gain) {
     std::cin >> a[0] >> a[1];
     assert(0 <= a[0] && a[1] <= Q);
   }
-  Z total_weight = 0;
-  for (auto &a : weights) {
-    std::cin >> a[0] >> a[1];
-    total_weight += std::max(std::abs(a[0]), std::abs(a[1]));
-  }
-  assert(total_weight < 1200 * Q);
-  for (auto &r : rows) {
-    for (auto &t : r.coeff) {
-      std::cin >> t[0] >> t[1];
-      assert(std::abs(t[0]) <= 2 * Q && std::abs(t[1]) <= 2 * Q);
-    }
-    std::cin >> r.diag >> r.off >> r.error;
-    assert(r.diag <= 4 * Q && r.off <= 4 * Q && r.error < Q);
-  }
+  read_projections<2>(shell);
   for (auto &s : quarter) {
     std::cin >> s;
     assert(s >= 0 && s <= Q);
