@@ -205,6 +205,20 @@ def verify(root):
     assert vcb_squared > arb(".9967")**2
     print("本构造的粲方向下型期望与 |V_cb| 严格下界",
           charm_mean.str(12),vcb_squared.sqrt().lower().str(10),flush=True)
+    # 对任意共同三平面，利用谱投影在该字符线上的权重。
+    # 将留数公式中的可消因子先约去，因此端点相等时也可连续使用。
+    windows = run_path(str(root/"ch39-common-quadratic-flavor-exclusion.py"))["MASS"]
+    up_windows = [arb(lo).union(arb(hi)) for lo,hi in windows[0]]
+    m = up_windows[1]
+    lam = eigen[1]
+    shift = m-lam
+    weight = (prod(1+shift/(lam-z) for j,z in enumerate(eigen) if j != 1)
+              * prod(1-shift/(m-z) for j,z in enumerate(up_windows) if j != 1))
+    # 下型在这条字符线上取 c1，整个正交补也是正半定。
+    all_planes = (c1*weight-points[3])/(points[5]-points[3])
+    assert all_planes > arb(".95")**2
+    print("任意共同三平面、六质量全窗的字符权重与 |V_cb| 下界",
+          weight.lower().str(10),all_planes.sqrt().lower().str(10),flush=True)
     # 两端分别向内推进，只保留有严格符号的端点。
     for a,b,sgn in zip(points[::2],points[1::2],expected_signs[::2],strict=True):
         l,r = a,b
