@@ -6,7 +6,7 @@ from runpy import run_path
 from flint import arb, ctx
 
 
-def verify(root):
+def verify(root, *, sixth_measurement=False):
     def lib(name):
         return run_path(str(root / ("ch39-" + name + ".py")))
 
@@ -24,6 +24,10 @@ def verify(root):
     spectrum = lib("adjacent-pvm-transport")["spectrum"]
     bases = [spectrum(shell, 6, n)[1] for n in (fifth, seventh)]
     overlap = bases[1].conjugate().transpose() * bases[0]
+    if sixth_measurement:
+        middle = spectrum(shell, 6, fifth + 1)[1]
+        incoming = middle.conjugate().transpose() * bases[0]
+        outgoing = bases[1].conjugate().transpose() * middle
     _, heat, fields = lib("three-index-free-atoms")["broken_fields"](
         root, [fifth, seventh]
     )
@@ -52,9 +56,21 @@ def verify(root):
     rows = []
     for i in range(19):
         h = [abs(overlap[i, j]) for j in range(19)]
-        s = sum(h[j] for j in strong) * low.sqrt()
-        a = sum(h[j] ** 2 for j in others).sqrt()
-        rows.append(([h[j] for j in main], s.upper(), a.upper()))
+        lower, higher = h, h
+        if sixth_measurement:
+            # 完全非选择测量的直接和表示给出单个入射层的精确边长平方。
+            measured = [
+                sum(abs(outgoing[i, k] * incoming[k, j]) ** 2 for k in range(19)).nonnegative_part().sqrt()
+                for j in range(19)
+            ]
+            assert all(v.is_finite() for v in measured)
+            lower = [a.min(b).lower() for a, b in zip(h, measured, strict=True)]
+            higher = [a.max(b).upper() for a, b in zip(h, measured, strict=True)]
+        s = sum(higher[j] for j in strong) * low.sqrt()
+        a = sum(higher[j] ** 2 for j in others).sqrt()
+        rows.append(
+            ([lower[j] for j in main], [higher[j] for j in main], s.upper(), a.upper())
+        )
 
     def excluded(left, right):
         tail = trace - sum(left)
@@ -77,8 +93,8 @@ def verify(root):
         roothi = [v.sqrt() for v in right]
         root_tail = tail.upper().sqrt()
         score = arb(0)
-        for weight, (entries, s, norm) in zip(e, rows, strict=True):
-            top = [v * h for v, h in zip(entries, roothi, strict=True)]
+        for weight, (lower, higher, s, norm) in zip(e, rows, strict=True):
+            top = [v * h for v, h in zip(higher, roothi, strict=True)]
             rest = s + norm * root_tail
             if weight > 0:
                 y = cap.min((sum(top) + rest) ** 2)
@@ -86,7 +102,7 @@ def verify(root):
                 assert weight < 0
                 a = max(
                     (v * l - sum(top[j] for j in range(3) if j != i) - rest).lower()
-                    for i, (v, l) in enumerate(zip(entries, rootlo, strict=True))
+                    for i, (v, l) in enumerate(zip(lower, rootlo, strict=True))
                 )
                 y = max(arb(0), a) ** 2
             score += weight * y**4
