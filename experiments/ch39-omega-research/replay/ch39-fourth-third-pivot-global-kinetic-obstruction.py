@@ -17,7 +17,7 @@ def cutoff_ticks():
     ].astype(int)
 
 
-def build_grid(root, momentum_offsets, *, number=2_306_888_100_089, energies=(5600, 560000, 56000000, 5600000000, 560000000000), portal=None):
+def build_grid(root, momentum_offsets, *, number=2_306_888_100_089, energies=(5600, 560000, 56000000, 5600000000, 560000000000), portal=None, pivot=3):
     def lib(name):
         return run_path(str(root / ("ch39-" + name + ".py")))
 
@@ -28,7 +28,8 @@ def build_grid(root, momentum_offsets, *, number=2_306_888_100_089, energies=(56
     _, _, pivots, _ = next(
         row for row in native["shell_weights"](root, number) if row[0] == 6
     )
-    weights = [v.real for v in pivots[2]]
+    assert 1 <= pivot <= len(pivots)
+    weights = [v.real for v in pivots[pivot - 1]]
     gauge = lib("all-field-signed-crossing")
     neutral = lib("full-neutral-free-cutoff")
     data = gauge["joint_system"](root, "1.176397e14", number=number, order=4, last=8)
@@ -207,15 +208,22 @@ def source_boxes(
     weights,
     *,
     filename="ch39-fourth-third-pivot-global-kinetic-duals.txt",
+    whole_domain=False,
 ):
-    strong = [i for i, c in enumerate(weights) if abs(c) > 4]
-    assert [i + 1 for i in strong] == [1, 10, 16, 17, 18, 19]
+    if whole_domain:
+        branches = [None]
+    else:
+        branches = [i for i, c in enumerate(weights) if abs(c) > 4]
+        assert [i + 1 for i in branches] == [1, 10, 16, 17, 18, 19]
     source = root / filename
     lines = iter(source.read_text().splitlines())
-    for distinguished in strong:
-        assert next(lines) == "branch " + str(distinguished + 1)
+    for distinguished in branches:
         full = [(0, last) for _ in range(19)]
-        full[distinguished] = (high, last)
+        if distinguished is None:
+            assert next(lines) == "branch all"
+        else:
+            assert next(lines) == "branch " + str(distinguished + 1)
+            full[distinguished] = (high, last)
         stack = [full]
         while stack:
             box = stack.pop()
@@ -257,12 +265,12 @@ def signed_lower(floors, ceilings, box, weights, initial):
     return total.lower()
 
 
-def verify_branches(root, tables, filename, *, minimum_deficit=0):
+def verify_branches(root, tables, filename, *, minimum_deficit=0, whole_domain=False):
     lower, upper, high, weights, start = tables
     bound = max(int(np.max(np.abs(lower))), int(np.max(np.abs(upper))))
     results = {}
     for axis, box, direction in source_boxes(
-        root, high, len(lower) - 1, weights, filename=filename
+        root, high, len(lower) - 1, weights, filename=filename, whole_domain=whole_domain
     ):
         floor, ceil = projection(lower, upper, direction, bound)
         initial = sum(a * d for a, d in zip(start, direction, strict=True)) * SCALE
@@ -276,12 +284,12 @@ def verify_branches(root, tables, filename, *, minimum_deficit=0):
     for axis, (count, margin) in results.items():
         print(
             "高截止层、分离叶数、严格最小余量",
-            axis + 1,
+            "全域" if axis is None else axis + 1,
             count,
             margin.str(13),
             flush=True,
         )
-    print("六分支合计分离叶数", sum(k for k, _ in results.values()), flush=True)
+    print("合计分离叶数", sum(k for k, _ in results.values()), flush=True)
     return list(results.values())
 
 
