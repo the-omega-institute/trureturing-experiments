@@ -72,7 +72,9 @@ def source_qr(block):
     return n,coeff,residual
 
 
-def experiment(root, fifth, columns, levels, *, return_blocks=False, return_chart=False):
+def experiment(root, fifth, columns, levels, *, return_blocks=False, return_chart=False,
+               lines=LINES, energies=ENERGIES, parameters=PARAMETERS, active=ACTIVE,
+               uniform_grid=4, ratio_bound=".904", shared_source_error=False):
     def lib(name):
         return run_path(str(root/("ch39-"+name+".py")))
     general = lib("common-three-shell-nine-endpoints")
@@ -81,7 +83,7 @@ def experiment(root, fifth, columns, levels, *, return_blocks=False, return_char
     geometry = lib("fifth-seventh-shortest-site-gates")["geometry"]
     gravity = lib("shortest-common-complex-gate")["gravity_system"]
     shells = []
-    for n,idx in zip(range(2_306_888_100_092,2_306_888_100_095),LINES,strict=True):
+    for n,idx in zip(range(2_306_888_100_092,2_306_888_100_092+len(lines)),lines,strict=True):
         _,_,_,basis,_,weights,heat,field = geometry(root,fifth,columns,levels,number=n)
         # 简单谱的本征行有确定字符。平凡字符分量严格非零，故该行属平凡字符。
         row = acb_mat([[basis[j,idx].conjugate() for j in range(19)]])
@@ -98,18 +100,17 @@ def experiment(root, fifth, columns, levels, *, return_blocks=False, return_char
         e,w = edges[tuple(sorted((x,y)))]
         assert d==e and (d not in (724,804) or x<y)
         assert (w if x<y else w.conjugate()).overlaps(z)
-    rows = acb_mat([[basis[idx,j] for j in range(19)] for (basis,_,_,_),idx in zip(shells,LINES,strict=True)])
+    rows = acb_mat([[basis[idx,j] for j in range(19)] for (basis,_,_,_),idx in zip(shells,lines,strict=True)])
     s = rows*forms[0]
     dual = adj(s)*(s*adj(s)).inv()
     projectors = (eye(7)-dual*s,eye(6))
     original = fifth*columns
     blocks = [adj(f)*original for f in forms]
     factors0 = [source_qr(a) for a in blocks[:2]]
-    fixed = forms[2]*blocks[2]
     mp,mz = arb("1.22089e19"),arb("91.1876")
     low,heavy,top = levels
     normalize,inner = general["normalize"],general["inner"]
-    def frame(point,energies, return_blocks=False):
+    def frame(point,energies, return_blocks=False, reference_factors=None, reference_fixed=None):
         b = acb_mat([[((q/mp-low)/(heavy-low)).sqrt(),0] for q in energies])
         particular = dual*b
         # 以源列的正交残量避免在近共线时直接相减两个 Gram 对角量。
@@ -121,18 +122,21 @@ def experiment(root, fifth, columns, levels, *, return_blocks=False, return_char
             assert sq>0 and remainder>0
             diag = sq.sqrt()
             factors.append(acb_mat([[diag,coeff*n/diag],[0,remainder.sqrt()]]))
-        ws = list(map(arb,PARAMETERS))
-        for j,v in zip(ACTIVE,point,strict=True):
+        if reference_factors is not None:
+            factors = reference_factors
+        fixed_block = blocks[2] if reference_fixed is None else reference_fixed
+        ws = list(map(arb,parameters))
+        for j,v in zip(active,point,strict=True):
             ws[j] = v
         character_frames = []
-        total = [fixed+forms[0]*particular]+[acb_mat(19,2) for _ in point]
+        total = [forms[2]*fixed_block+forms[0]*particular]+[acb_mat(19,2) for _ in point]
         base = 0
         for form,proj,factor in zip(forms[:2],projectors,factors,strict=True):
             n = form.ncols()
             raw = acb_mat([[acb(ws[base+2*i+h],ws[base+2*n+2*i+h]) for h in range(2)] for i in range(n)])
             raw = proj*raw
             ds = [acb_mat(n,2) for _ in point]
-            for d,j in zip(ds,ACTIVE,strict=True):
+            for d,j in zip(ds,active,strict=True):
                 if base<=j<base+4*n:
                     imag,idx = divmod(j-base,2*n)
                     row,h = divmod(idx,2)
@@ -151,7 +155,9 @@ def experiment(root, fifth, columns, levels, *, return_blocks=False, return_char
                     character_frames.append(block+particular if base==0 else block)
                 total[j] += form*block
             base += 4*n
-        return [*character_frames,blocks[2]] if return_blocks else total
+        if return_blocks=="factors":
+            return factors
+        return [*character_frames,fixed_block] if return_blocks else total
 
     def system(point,qs,values):
         mats = frame(point,qs)
@@ -162,8 +168,8 @@ def experiment(root, fifth, columns, levels, *, return_blocks=False, return_char
             fs.extend(f.tolist())
             js.extend(j.tolist())
         return arb_mat(fs),arb_mat(js)
-    center = [arb(PARAMETERS[i]) for i in ACTIVE]
-    q = list(map(arb,ENERGIES))
+    center = [arb(parameters[i]) for i in active]
+    q = list(map(arb,energies))
     eps = arb(".0003")
     qs = [x+arb(0,eps) for x in q]
     for _ in range(3):
@@ -174,26 +180,60 @@ def experiment(root, fifth, columns, levels, *, return_blocks=False, return_char
     pre = j.mid().inv().mid()
     assert not pre.det().contains(0)
     offsets = [v.abs_upper() for v in (pre*f).entries()]
+    if shared_source_error:
+        factors = frame(center,qs,return_blocks="factors")
+        fixed_mids = [m.mid() for m in factors]
+        ref_fixed = blocks[2].mid()
+        mids = frame(center,qs,reference_factors=fixed_mids,reference_fixed=ref_fixed)[0]
+        whole_station = frame(center,qs)[0]
+        basis_tangent = []
+        noises = []
+        # 字符三角因子与固定重列线性进入构造，先在共同误差方向上作预条件。
+        for k in (0,1):
+            for a,b in ((0,0),(0,1),(1,1)):
+                for imag in ((False,True) if a!=b else (False,)):
+                    aligned = [acb_mat(m) for m in fixed_mids]
+                    aligned[k][a,b] += acb(0,1) if imag else 1
+                    z = frame(center,qs,reference_factors=aligned,reference_fixed=ref_fixed)[0]-mids
+                    err = factors[k][a,b]-fixed_mids[k][a,b]
+                    basis_tangent.append(z)
+                    noises.append(err.imag if imag else err.real)
+        for i in range(6):
+            for b in range(2):
+                for imag in (False,True):
+                    z = acb_mat(6,2)
+                    z[i,b] = acb(0,1) if imag else 1
+                    basis_tangent.append(forms[2]*z)
+                    w = blocks[2][i,b]-ref_fixed[i,b]
+                    noises.append(w.imag if imag else w.real)
+        fs,ds = [],[]
+        for basis,w,heat,field in shells:
+            fm,_ = gravity(basis*mids,[],levels,w,heat,field,True)
+            _,jd = gravity(basis*whole_station,[basis*v for v in basis_tangent],levels,w,heat,field,False)
+            fs.extend(fm.tolist())
+            ds.extend(jd.tolist())
+        shift = pre*arb_mat(fs)+(pre*arb_mat(ds))*arb_mat([[v] for v in noises])
+        offsets = [min(a,z.abs_upper()) for a,z in zip(offsets,shift.entries(),strict=True)]
     widths = [2*d+arb(".000002") for d in offsets]
     box = [c+arb(0,r.upper()) for c,r in zip(center,widths,strict=True)]
-    ident = arb_mat([[int(i==j) for j in ACTIVE] for i in ACTIVE])
-    norms = [arb(0) for _ in ACTIVE]
-    for ix in product(range(4),repeat=6):
-        sub = [c+(2*i-3)*r/4+arb(0,(r/4).upper()) for c,r,i in zip(center,widths,ix,strict=True)]
+    ident = arb_mat([[int(i==j) for j in active] for i in active])
+    norms = [arb(0) for _ in active]
+    for ix in product(range(uniform_grid),repeat=len(active)):
+        sub = [c+(2*i+1-uniform_grid)*r/uniform_grid+arb(0,(r/uniform_grid).upper()) for c,r,i in zip(center,widths,ix,strict=True)]
         _,whole = system(sub,qs,False)
         for k,row in enumerate((ident-pre*whole).tolist()):
             limit = sum(z.abs_upper()*r for z,r in zip(row,widths,strict=True))/widths[k]
             norms[k] = max(norms[k],limit)
     ratio = max(o/r+g for o,r,g in zip(offsets,widths,norms,strict=True))
-    print("六维中心偏移、最大盒半宽、自映比",*[v.str(13) for v in (max(offsets),max(widths),ratio)],flush=True)
-    assert ratio<arb(".904")
+    print("活动维数、中心偏移、最大盒半宽、自映比",len(active),*[v.str(13) for v in (max(offsets),max(widths),ratio)],flush=True)
+    assert ratio<arb(ratio_bound)
     unit = frame(box,qs)[0]
     weak = lib("native-rh-ray-pvm")["weak_series"](56)
     large = lib("full-neutral-free-cutoff")["weak_column"]
     ref = arb("-.074256577194663365546").union(arb("-.074256577194663365544"))
     p0,p1 = (mz/mp)**2,(arb("1.176397e14")/mp)**2
     character_values = frame(box,qs,return_blocks=True)
-    for (basis,w,_,_),idx,qq in zip(shells,LINES,q,strict=True):
+    for (basis,w,_,_),idx,qq in zip(shells,lines,q,strict=True):
         overlaps = [basis*e for e in forms]
         projections = [m*a for m,a in zip(overlaps,character_values,strict=True)]
         lower_bounds = []
