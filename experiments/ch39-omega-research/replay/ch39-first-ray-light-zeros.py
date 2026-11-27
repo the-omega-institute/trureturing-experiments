@@ -48,7 +48,7 @@ def verify(root):
 
         def equations(values, include_soft_error):
             mat, deriv=matrix_angles(values[0],values[1])
-            # 镜面对称的三条辐边同步改权，19站扰动范数 <= 6e-8。
+            # 三循环对称的三条软辐边同步改权，19站扰动范数 <= 6e-8。
             # 两个钟角独立变化，软辐边参数固定；区间覆盖每个允许取值。
             if include_soft_error:
                 entry=acb(arb(0,arb("6e-8")),arb(0,arb("6e-8")))
@@ -80,7 +80,7 @@ def verify(root):
         displacement=pre*offset
         ratio=max(abs(displacement[i,0]).upper()/radius+
                   sum(abs(x).upper() for x in defect.tolist()[i]) for i in range(dim))
-        assert ratio<1,(q,ratio)
+        assert ratio<arb(".00666"),(q,ratio)
         # 其余虚分量由 Hermitian 二次型恒等式恢复。全盒根仍在字符最轻本征值的隔离隙中。
         shift=arb(2).sqrt()*2*radius+arb("6e-8")
         assert box[2].upper()<ev.lower()+gap-shift
