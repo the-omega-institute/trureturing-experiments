@@ -5,14 +5,14 @@ from runpy import run_path
 from flint import arb, ctx
 
 
-def verify(root):
+def verify(root, *, portal=None):
     def lib(name):
         return run_path(str(root/("ch39-"+name+".py")))
 
     number = 2_306_888_100_091
     _, ordered = lib("adjacent-ordered-charge-six-cutoffs")["verify"](root, refine_node=2_306_888_100_086)[2]
     _, _, pivots, _ = next(row for row in lib("native-rh-ray-pvm")["shell_weights"](root, number) if row[0] == 6)
-    _, heat, (field,) = lib("three-index-free-atoms")["broken_fields"](root, [number])
+    _, heat, (field,) = lib("three-index-free-atoms")["broken_fields"](root, [number], portal=portal)
     ctx.prec = 192
     weights = [c.real for c in pivots[2]]
     positive = [i for i, c in enumerate(weights) if c > 0]

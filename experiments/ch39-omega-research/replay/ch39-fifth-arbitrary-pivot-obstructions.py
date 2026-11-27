@@ -5,7 +5,7 @@ from runpy import run_path
 from flint import arb, ctx
 
 
-def inputs(root, *, number=2_306_888_100_090):
+def inputs(root, *, number=2_306_888_100_090, portal=None):
     def lib(name):
         return run_path(str(root/("ch39-"+name+".py")))
     n = 2_306_888_100_085
@@ -13,14 +13,16 @@ def inputs(root, *, number=2_306_888_100_090):
     native = lib("native-rh-ray-pvm")
     _,_,pivots,_ = next(row for row in native["shell_weights"](root,number) if row[0]==6)
     weights = [[z.real for z in pivot] for pivot in pivots]
-    thermal = lib("three-index-free-atoms")["broken_fields"](root,[number])
+    thermal = lib("three-index-free-atoms")["broken_fields"](root,[number],portal=portal)
     gauge = lib("all-field-signed-crossing")
     neutral = lib("full-neutral-free-cutoff")
     data = gauge["joint_system"](root,"1.176397e14",order=4,last=8,number=number)
     signs,masses = lib("rotation-portal-top-energy")["rotation_signs"](root,number)
     ctx.prec = 192
     rho = (arb("246.22")/arb("1.22089e19"))**2/2
-    rows,_ = neutral["response_rows"](data,masses,signs,rho,arb(".42995401872"))
+    if portal is None:
+        portal = arb(".42995401872")
+    rows,_ = neutral["response_rows"](data,masses,signs,rho,portal)
     return lib,source,weights,(thermal[0],thermal[1],thermal[2][0]),data,rows
 
 
@@ -63,8 +65,8 @@ def high_cutoff(weights,source,thermal,pivot):
     return bound
 
 
-def verify(root, *, number=2_306_888_100_090):
-    lib,source,weights,thermal,data,rows = inputs(root,number=number)
+def verify(root, *, number=2_306_888_100_090, portal=None):
+    lib,source,weights,thermal,data,rows = inputs(root,number=number,portal=portal)
     p0,p1 = data["p0"],data["p1"]
     shared = lib("fourth-variable-scale-neutral-gauge")
     gauge = lib("all-field-signed-crossing")

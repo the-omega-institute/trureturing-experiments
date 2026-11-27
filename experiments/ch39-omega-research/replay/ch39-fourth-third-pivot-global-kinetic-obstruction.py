@@ -17,7 +17,7 @@ def cutoff_ticks():
     ].astype(int)
 
 
-def build_grid(root, momentum_offsets, *, number=2_306_888_100_089):
+def build_grid(root, momentum_offsets, *, number=2_306_888_100_089, energies=(5600, 560000, 56000000, 5600000000, 560000000000), portal=None):
     def lib(name):
         return run_path(str(root / ("ch39-" + name + ".py")))
 
@@ -36,8 +36,9 @@ def build_grid(root, momentum_offsets, *, number=2_306_888_100_089):
     ctx.prec = 160
     p0, p1 = data["p0"], data["p1"]
     rho = (arb("246.22") / arb("1.22089e19")) ** 2 / 2
-    species, _ = neutral["response_rows"](data, masses, signs, rho, arb(".42995401872"))
-    energies = [5600, 560000, 56000000, 5600000000, 560000000000]
+    if portal is None:
+        portal = arb(".42995401872")
+    species, _ = neutral["response_rows"](data, masses, signs, rho, portal)
     assert momentum_offsets and momentum_offsets[0] == 0
     test_momenta = [(arb(e) / arb("1.22089e19")) ** 2 for e in energies]
     matched = [p1 * (arb(int(j)) / 64).exp() for j in momentum_offsets]

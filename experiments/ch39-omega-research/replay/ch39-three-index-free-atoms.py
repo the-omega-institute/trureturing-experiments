@@ -4,11 +4,12 @@ from runpy import run_path
 from flint import arb, arb_mat, ctx
 
 
-def broken_fields(root, numbers):
+def broken_fields(root, numbers, *, portal=None):
     shared = run_path(str(root/"ch39-two-zero-cutoff-gravity.py"))
     single,lib,original = shared["gravity_fields"](root,numbers)
     rotation = run_path(str(root/"ch39-rotation-portal-top-energy.py"))["rotation_signs"]
-    portal = arb(".42995401872")
+    if portal is None:
+        portal = arb(".42995401872")
     r=(arb("246.22")/arb("1.22089e19"))**2/2
     yt,g1,g2=map(arb,(".8616",".467453",".63811"))
     light=[(-59,arb(2)/3,arb(0)),(-12,arb(1),yt**2*r),(6,arb(-1),g2**2*r/2),
