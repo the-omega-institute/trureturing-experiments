@@ -7,7 +7,7 @@ from runpy import run_path
 from flint import arb, arb_mat, ctx
 
 
-def solve(root, centers, axes, *, number=2_306_888_100_090):
+def solve(root, centers, axes, *, number=2_306_888_100_090, pivot=3):
     def lib(name):
         return run_path(str(root / ("ch39-" + name + ".py")))
 
@@ -19,7 +19,8 @@ def solve(root, centers, axes, *, number=2_306_888_100_090):
     _, _, pivots, _ = next(
         a for a in native["shell_weights"](root, number) if a[0] == 6
     )
-    weights = [w.real for w in pivots[2]]
+    assert 1 <= pivot <= len(pivots)
+    weights = [w.real for w in pivots[pivot - 1]]
     assert sum(weights).contains(1)
     gauge = lib("all-field-signed-crossing")
     neutral = lib("full-neutral-free-cutoff")

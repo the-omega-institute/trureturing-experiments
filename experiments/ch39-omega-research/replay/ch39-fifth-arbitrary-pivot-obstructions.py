@@ -26,7 +26,7 @@ def inputs(root, *, number=2_306_888_100_090, portal=None):
     return lib,source,weights,(thermal[0],thermal[1],thermal[2][0]),data,rows
 
 
-def high_cutoff(weights,source,thermal,pivot):
+def high_cutoff(weights,source,thermal,pivot,*,dominant=17):
     _,heat,field = thermal
     max_x = source[-1]
     tv = sum(map(abs,weights))
@@ -35,18 +35,18 @@ def high_cutoff(weights,source,thermal,pivot):
     w = -sum(g for g,_,_ in field)/(8*pi)
     ek = tv*max_x*sum(abs(a)*(1-heat(2,z/max_x)) for _,a,z in field)/(2*pi)
     ew = tv*max_x**2*sum(abs(g)*(arb(1)/2-heat(3,z/max_x)) for g,_,z in field)/(4*pi)
-    assert k<0<w and weights[17]<0
+    assert k<0<w and weights[dominant]<0
     if pivot==1:
-        other = sum(-v for i,v in enumerate(weights) if i!=17 and v<0)
-        bound = (((1-ek)/abs(k)-other*max_x)/abs(weights[17])).lower()
+        other = sum(-v for i,v in enumerate(weights) if i!=dominant and v<0)
+        bound = (((1-ek)/abs(k)-other*max_x)/abs(weights[dominant])).lower()
         assert bound>arb(".04")
         return bound
     assert [i for i,c in enumerate(weights) if c>0]==[0,9,15]
     mplus = min(w.lower() for w in weights if w>0)
-    mminus = max((-w).upper() for i,w in enumerate(weights) if i!=17 and w<0)
+    mminus = max((-w).upper() for i,w in enumerate(weights) if i!=dominant and w<0)
     trace = sum(x.sqrt() for x in source).upper()
     bound = arb("1e-5")
-    delta = (1-ek)/abs(k)-abs(weights[17])*bound
+    delta = (1-ek)/abs(k)-abs(weights[dominant])*bound
     error = (arb("1e-122")+ew)/w
     assert mminus*trace**2<5 and delta>arb(".35")
     def exclude(pl,pr,ql,qr):
@@ -65,7 +65,7 @@ def high_cutoff(weights,source,thermal,pivot):
     return bound
 
 
-def verify(root, *, number=2_306_888_100_090, portal=None, pivots_to_check=(1,2)):
+def verify(root, *, number=2_306_888_100_090, portal=None, pivots_to_check=(1,2), dominant=17):
     assert pivots_to_check and all(p in (1,2) for p in pivots_to_check)
     lib,source,weights,thermal,data,rows = inputs(root,number=number,portal=portal)
     p0,p1 = data["p0"],data["p1"]
@@ -82,7 +82,7 @@ def verify(root, *, number=2_306_888_100_090, portal=None, pivots_to_check=(1,2)
         if pivot not in pivots_to_check:
             continue
         c = weights[pivot-1]
-        bound = high_cutoff(c,source,thermal,pivot)
+        bound = high_cutoff(c,source,thermal,pivot,dominant=dominant)
         limit = 2**log_edge*p0
         large = neutral["weak_column"](limit,p0,p1)
         whole = large
@@ -102,12 +102,15 @@ def verify(root, *, number=2_306_888_100_090, portal=None, pivots_to_check=(1,2)
             all_x = shared["hull"](bands)
             low = shared["hull"](bands[:edges.index(limit)])
             high = shared["hull"](bands[edges.index(bound):])
-            result.append([starts[j]+sum(v*(low if i==s else high if i==17 else all_x) for i,v in enumerate(c))
+            result.append([starts[j]+sum(v*(low if i==s else high if i==dominant else all_x) for i,v in enumerate(c))
                            for s in small])
-        print("枢轴、x18下界、无小截止时D上界、各分支RP与RM下界",pivot,
+        print("枢轴、负权谱层、该层下界、无小截止时D上界、各分支RP与RM下界",pivot,dominant+1,
               bound.str(12),d.upper().str(12),[[x.lower().str(12) for x in result[j]] for j in range(2)],flush=True)
         assert all(v>0 for v in result[0])
         photon_limits.append([v.lower() for v in result[0]])
+        if number==2_306_888_100_093 and pivot==1:
+            assert bound>arb(".06591293") and d<arb("-.01639606")
+            assert result[0][0]>arb("315.71600") and result[1][0]>arb("49.82607")
         if number==2_306_888_100_090:
             if pivot==1:
                 assert bound>arb(".0485981") and d<arb("-.0151457")
