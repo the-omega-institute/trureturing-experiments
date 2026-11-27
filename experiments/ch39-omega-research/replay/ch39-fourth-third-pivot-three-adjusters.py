@@ -19,17 +19,16 @@ def local_box():
                 high_centers=mid, high_log_radius=arb(".01"))
 
 
-def verify(root):
+def verify(root, *, number=2_306_888_100_089, box_data=None):
     def lib(name):
         return run_path(str(root/("ch39-"+name+".py")))
 
-    n=2_306_888_100_085
     native=lib("native-rh-ray-pvm")
-    _,_,pivots,_=next(row for row in native["shell_weights"](root,n+4) if row[0]==6)
+    _,_,pivots,_=next(row for row in native["shell_weights"](root,number) if row[0]==6)
     c=[a.real for a in pivots[2]]
     gauge=lib("all-field-signed-crossing")
-    data=gauge["joint_system"](root,"1.176397e14",number=n+4,order=4,last=8)
-    signs,masses=lib("rotation-portal-top-energy")["rotation_signs"](root,n+4)
+    data=gauge["joint_system"](root,"1.176397e14",number=number,order=4,last=8)
+    signs,masses=lib("rotation-portal-top-energy")["rotation_signs"](root,number)
     ctx.prec=192
     neutral=lib("full-neutral-free-cutoff")
     rho=(arb("246.22")/arb("1.22089e19"))**2/2
@@ -64,15 +63,16 @@ def verify(root):
         fac=[avgband(p0/x,pol)-avgband(p1/x,pol) for pol in polys]
         return [-sum(b[j]*(-z/x).exp()*fac[k] for k,z,b in rows) for j in range(2)]
     weak=native["weak_series"](56)
-    tcenter=arb("4.156672262801198e-34")
-    local=local_box()
+    local=local_box() if box_data is None else box_data
+    tcenter=local["centers"][0]
     high_mid=local["high_centers"]
     width=local["radii"][0]
     last=16
-    for mode,m1,m2,r1,r2 in [
+    modes = [
             ("local",*local["centers"][1:],*local["radii"][1:]),
             ("9e-5","9.079019140623481e-10","1.355984336417077e-23",".00035",".000075"),
-            ("1e-6","9.079019140623481e-10","1.355984336417077e-23",".035",".0065")]:
+            ("1e-6","9.079019140623481e-10","1.355984336417077e-23",".035",".0065")]
+    for mode,m1,m2,r1,r2 in modes if box_data is None else modes[:1]:
         active=(0,last)
         other=[i for i in range(19) if i not in (9,*active)]
         center=[arb(m1),arb(m2)]

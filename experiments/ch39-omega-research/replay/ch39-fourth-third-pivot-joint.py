@@ -21,7 +21,7 @@ def inputs(root):
     return sectors,incoming,readout,levels,thermal,[q.real for q in pivots[2]]
 
 
-def solve_matrix(root, data, centres, log_widths, *, return_transport=False):
+def solve_matrix(root, data, centres, log_widths, *, return_transport=False, return_chart=False, name=NAME, upstream=None):
     def lib(name):
         return run_path(str(root/("ch39-"+name+".py")))
 
@@ -31,9 +31,9 @@ def solve_matrix(root, data, centres, log_widths, *, return_transport=False):
     eye = identity(19)
     coupling = lib("next-common-ckm")
     local = coupling["local"]
-    seed = lib("one-generator-gravity-up-strange-bottom")["cayley"](root,identity,NAME+"-cayley.tsv")
+    seed = lib("one-generator-gravity-up-strange-bottom")["cayley"](root,identity,name+"-cayley.tsv")
     dirs = [(int(i),int(j),axis) for i,j,axis in (line.split() for line in
-            (root/(NAME+"-directions.tsv")).read_text().splitlines())]
+            (root/(name+"-directions.tsv")).read_text().splitlines())]
     assert len(set(dirs))==len(dirs)==26
     ov0 = readout*seed**3*incoming
     phases = [acb(ov0[i,0].real.mid(),ov0[i,0].imag.mid()) for i in LOW_ROWS]
@@ -42,25 +42,28 @@ def solve_matrix(root, data, centres, log_widths, *, return_transport=False):
     targets = list(map(arb,centres))
     wide_targets = [v*arb(0,arb(s).upper()).exp() for v,s in zip(targets,log_widths,strict=True)]
 
-    def system(point,cutoffs):
-        z,dz = local(seed,point,dirs,eye)
+    def system(point,cutoffs, *, sources=None, source_tangents=None):
+        sector_inputs, high_source = sources if sources is not None else (sectors,incoming)
+        z,dz = local(seed,point,dirs,eye,source_tangents is None)
         z2=z*z
         d2=[e*z+z*e for e in dz]
         values,jac=[],[]
-        for (src,dst,w,cols,goal),op,ds in zip(sectors,(adj(z2),z),([adj(d) for d in d2],dz),strict=True):
+        for iq,((src,dst,w,cols,goal),op,ds) in enumerate(zip(sector_inputs,(adj(z2),z),([adj(d) for d in d2],dz),strict=True)):
             ov=dst*op*src
             output=arb_mat([[sum(v*abs(ov[i,j])**2 for j,v in enumerate(w))] for i in range(19)])
             values.extend((cols*output-goal).entries())
             derivatives=[]
-            for e in ds:
-                do=dst*e*src
+            varied = ([dst*e*src for e in ds] if source_tangents is None else
+                      [dst*op*de for de in source_tangents[iq]])
+            for do in varied:
                 dw=arb_mat([[2*sum(v*(ov[i,j].conjugate()*do[i,j]).real for j,v in enumerate(w))]
                             for i in range(19)])
                 derivatives.append((cols*dw).entries())
             jac.extend(arb_mat(derivatives).transpose().tolist())
 
-        ov=readout*z2*z*incoming
-        d3=[readout*(e*z+z2*d)*incoming for e,d in zip(d2,dz,strict=True)]
+        ov=readout*z2*z*high_source
+        d3=([readout*(e*z+z2*d)*high_source for e,d in zip(d2,dz,strict=True)] if source_tangents is None else
+            [readout*z2*z*de for de in source_tangents[2]])
         amps=[low+(h-low)*abs(ov[i,0])**2+(k-low)*abs(ov[i,1])**2 for i in range(19)]
         for i,x,phase in zip(LOW_ROWS,cutoffs,phases,strict=True):
             amps[i]=x.sqrt()
@@ -96,7 +99,14 @@ def solve_matrix(root, data, centres, log_widths, *, return_transport=False):
     f,j,_=system(center,wide_targets)
     pre=j.mid().inv()
     assert not pre.det().contains(0)
-    offset=max(abs(v).upper() for v in (pre*f).entries())
+    projected=pre*f
+    if upstream is not None:
+        point_sources,tangents,widths=upstream
+        f0,_,_=system(center,wide_targets,sources=point_sources)
+        _,cross,_=system(center,wide_targets,source_tangents=tangents)
+        # 先预条件化上游导数，再包围同一个上游 Cayley 参数在所有方程中的作用。
+        projected=pre*f0+(pre*cross)*arb_mat([[arb(0,v.upper())] for v in widths])
+    offset=max(abs(v).upper() for v in projected.entries())
     radius=2*offset.upper()
     box=[v+arb(0,radius.upper()) for v in center]
     _,wide,amps=system(box,wide_targets)
@@ -106,25 +116,28 @@ def solve_matrix(root, data, centres, log_widths, *, return_transport=False):
           *[v.str(13) for v in (max(abs(a).upper() for a in center),radius,offset/radius,lip)],flush=True)
     assert lip+offset/radius<1
     sites = [a*a for a in amps]
-    if return_transport:
+    if return_transport or return_chart:
         z,_ = local(seed,center,dirs,eye,False)
         widths = [abs(b-v).upper() for b,v in zip(box,center,strict=True)]
+        if return_chart:
+            wide,derivatives=local(seed,box,dirs,eye)
+            return sites,(z,wide,derivatives,widths,sectors,incoming,(low,h,k))
         dz = 2*sum(a*a*(1 if i==j else 2) for a,(i,j,_) in zip(widths,dirs,strict=True)).sqrt()
         return sites,(z,dz,sectors,incoming,(low,h,k))
     return sites
 
 
-def verify(root,*,return_transport=False):
+def verify(root,*,return_transport=False,return_chart=False):
     adjust = run_path(str(root/"ch39-fourth-third-pivot-three-adjusters.py"))
     box = adjust["verify"](root)
     assert tuple(box["layers"])==LOW_ROWS
-    result = solve_matrix(root,inputs(root),box["centers"],box["radii"],return_transport=return_transport)
-    sites = result[0] if return_transport else result
+    result = solve_matrix(root,inputs(root),box["centers"],box["radii"],return_transport=return_transport,return_chart=return_chart)
+    sites = result[0] if return_transport or return_chart else result
     high = [x for i,x in enumerate(sites) if i not in LOW_ROWS]
     shifts = [abs((x/c).log()).upper() for x,c in zip(high,box["high_centers"],strict=True)]
     assert max(shifts)<box["high_log_radius"]
     print("十六个高截止在联合盒内相对参照值的最大对数位移",max(shifts).str(14),flush=True)
-    return result[1] if return_transport else sites
+    return result[1] if return_transport or return_chart else sites
 
 
 if __name__=="__main__":
