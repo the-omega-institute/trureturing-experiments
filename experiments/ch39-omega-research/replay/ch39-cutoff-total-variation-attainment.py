@@ -19,7 +19,7 @@ uses the derivative of the massless term in the Newton heat trace.
 
 Pass --floor-window to certify the unique four-atom optimum uniformly for
 0 <= delta <= 10^-14, with its first atom at delta, for all three spectra.
-This mode also certifies a quadratic remainder in the optimal cost and
+This mode also certifies the strict convexity of the optimal cost, a quadratic remainder, and
 full rank for the contact and tangent columns of the signed Jacobian.
 """
 
@@ -221,17 +221,21 @@ def solve(certificate, rows, n, *, floor_upper=None, radius="1e-30"):
         response = inverse * parameter_derivative
         response_norm = max(abs(response[i, 0]).upper() for i in range(11))
         derivative_norm = response_norm / (1 - contraction_norm)
-        component_bounds = [
-            abs(response[i, 0]) + row_bounds[i] * derivative_norm for i in range(11)
-        ]
-        dual_derivatives = [
-            arb(0, bound * scale) for bound, scale in zip(component_bounds[:5], yscale)
-        ]
-        weight_derivative = arb(0, component_bounds[5] * W_SCALE[0])
-        second_derivative = (
+        # Intersect each enclosure of the derivative with its fixed-point image.
+        derivatives = arb_mat(11, 1, [arb(0, derivative_norm)] * 11)
+        for _ in range(8):
+            image = -response + contraction * derivatives
+            derivatives = arb_mat(11, 1, [
+                derivatives[i, 0].intersection(image[i, 0]) for i in range(11)
+            ])
+        dual_derivatives = [derivatives[i, 0] * scale for i, scale in enumerate(yscale)]
+        weight_derivative = derivatives[5, 0] * W_SCALE[0]
+        second_derivative = -(
             weight_derivative * dot(y, first)
             + w[0] * (dot(dual_derivatives, first) + dot(y, second))
         )
+        assert arb("1.13e14") < second_derivative and second_derivative < arb("1.19e14")
+        print(n, "optimal cost second derivative", second_derivative.str(15))
         remainder = abs(second_derivative).upper() / 2
         print(n, "quadratic remainder coefficient upper bound", remainder.str(15))
         assert remainder < arb("6e13")
