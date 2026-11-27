@@ -6,7 +6,7 @@ from runpy import run_path
 from flint import acb, acb_mat, arb, arb_mat
 
 
-def prepare(root, lib, fifth, columns, levels):
+def prepare(root, lib, fifth, columns, levels, numbers=(2_306_888_100_092, 2_306_888_100_093)):
     sites = lib("three-ray-chiral-boundary")["geo"]["sites"]
     edges = {32: [], 52: []}
     for i,j in combinations(range(19),2):
@@ -17,7 +17,7 @@ def prepare(root, lib, fifth, columns, levels):
     assert edges[52] == [(6,9),(6,13),(7,10),(7,15),(8,16),(8,17)]
     assert set(sum(edges[32],())).isdisjoint(sum(edges[52],()))
     geometries = []
-    for number in (2_306_888_100_092, 2_306_888_100_093):
+    for number in numbers:
         base,_,_,basis,station,weights,heat,field = lib("fifth-seventh-shortest-site-gates")["geometry"](
             root, fifth, columns, levels, number=number)
         def rows(matrix, indices):
@@ -42,28 +42,33 @@ def prepare(root, lib, fifth, columns, levels):
     return geometries
 
 
+def project(point, fixed, blocks, match):
+    beta, gamma = arb("-2.375"), arb("-.125")
+    imaginary = acb(0,1)
+    theta,alpha,angle,phase = point
+    s,c = theta.sin_cos()
+    ph = [(imaginary*t).exp() for t in (gamma+alpha,gamma-alpha,gamma+beta,gamma-beta)]
+    v = [k*t for k,t in zip(ph,(c,c,s,s),strict=True)]
+    dt = [k*t for k,t in zip(ph,(-s,-s,c,c),strict=True)]
+    da = [imaginary*v[0],-imaginary*v[1]]
+    plus,minus = [(imaginary*(phase+t)).exp() for t in (angle,-angle)]
+    p = fixed+sum((a*b for a,b in zip(v,blocks,strict=True)),0*fixed)
+    p += plus*match[0]+minus*match[1]
+    der = [sum((a*b for a,b in zip(dt,blocks,strict=True)),0*fixed),
+           da[0]*blocks[0]+da[1]*blocks[1], imaginary*(plus*match[0]-minus*match[1]),
+           imaginary*(plus*match[0]+minus*match[1])]
+    return p,der
+
+
 def experiment(root, fifth, columns, levels):
     def lib(name):
         return run_path(str(root/("ch39-"+name+".py")))
     geometry = prepare(root,lib,fifth,columns,levels)
     gravity = lib("shortest-common-complex-gate")["gravity_system"]
-    beta, gamma = arb("-2.375"), arb("-.125")
-    imaginary = acb(0,1)
     def system(point, values):
-        theta,alpha,angle,phase = point
-        s,c = theta.sin_cos()
-        ph = [(imaginary*t).exp() for t in (gamma+alpha,gamma-alpha,gamma+beta,gamma-beta)]
-        v = [k*t for k,t in zip(ph,(c,c,s,s),strict=True)]
-        dt = [k*t for k,t in zip(ph,(-s,-s,c,c),strict=True)]
-        da = [imaginary*v[0],-imaginary*v[1]]
-        plus,minus = [(imaginary*(phase+t)).exp() for t in (angle,-angle)]
         fs,js = [],[]
         for fixed,blocks,match,w,heat,field in geometry:
-            p = fixed+sum((a*b for a,b in zip(v,blocks,strict=True)),0*fixed)
-            p += plus*match[0]+minus*match[1]
-            der = [sum((a*b for a,b in zip(dt,blocks,strict=True)),0*fixed),
-                   da[0]*blocks[0]+da[1]*blocks[1], imaginary*(plus*match[0]-minus*match[1]),
-                   imaginary*(plus*match[0]+minus*match[1])]
+            p,der = project(point,fixed,blocks,match)
             f,j = gravity(p,der,levels,w,heat,field,values)
             fs.extend(f.tolist())
             js.extend(j.tolist())
