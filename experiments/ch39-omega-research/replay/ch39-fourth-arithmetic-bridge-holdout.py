@@ -9,12 +9,12 @@ def adj(matrix):
     return matrix.conjugate().transpose()
 
 
-def verify(root):
+def verify(root, rule=None):
     def lib(name):
         return run_path(str(root / ("ch39-" + name + ".py")))
 
-    step = lib("fourth-arithmetic-rank-one-bridge")["verify"](root)
     x, y, incoming, readout, cutoffs, pivot, thermal = lib("fourth-shell-two-gravity-rules")["shell_data"](root)
+    step = lib("fourth-arithmetic-rank-one-bridge")["verify"](root) if rule is None else rule(x,y)
     rank = lib("rank-two-generator-up-quark")
     n = rank["N"]
     _, labels, _ = lib("common-embedding-central-right-ckm")["verify_nodes"](
