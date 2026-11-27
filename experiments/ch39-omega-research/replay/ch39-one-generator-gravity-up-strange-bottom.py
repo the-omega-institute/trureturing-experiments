@@ -100,6 +100,13 @@ def verify_case(root, data, filename, endpoints, expected_signs):
         char_terms = (p_1*(t-c2)+p_2*(t-c1))*prod(t-z for z in mu)
         return trivial_terms+char_terms
 
+    # 六个质量中心的相位检验：法向相对相位只改变 (t-c1)(t-c2) 的系数。
+    desired = tuple(map(arb, (".0000135", ".000268", ".01401")))
+    residuals = [characteristic(c)-prod(c-m for m in desired) for c in (c1,c2)]
+    nonzero = [abs(r).lower() for r in residuals]
+    assert max(nonzero)>0
+    print("在两条下型字符处的质量特征多项式差", [r.str(12) for r in residuals],flush=True)
+
     points = tuple(map(arb,endpoints))
     signs = tuple(characteristic(t) for t in points)
     assert all(value*sign>0 for value,sign in zip(signs,expected_signs,strict=True)),signs
