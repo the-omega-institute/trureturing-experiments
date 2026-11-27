@@ -10,7 +10,7 @@ def shape(masses):
     return sum(x*x for x in masses)/product**(arb(2)/3)
 
 
-def verify():
+def certified_inputs():
     model = run_path(str(Path(__file__).with_name("ch39-two-zero-quark-window.py")))
     shell, load, sources = model["shell"], model["load"], model["sources"]
     adjoint = model["adj"]
@@ -24,16 +24,21 @@ def verify():
         (2,"0.565247837594779","-0.630343671648397"),
     )]
     factor = abs(matrices[1].det()/matrices[0].det())**(arb(2)/3)
-    for basis in (sources, raw):
-        transform = adjoint(sources)*basis
+    masses = [m+arb(0,r.upper()) for m,r in zip(model["ref"][:6],model["tol"][:6],strict=True)]
+    required = shape(masses[:3])/shape(masses[3:])
+    assert required > arb("74.25")
+    coordinates = (adjoint(sources)*sources, adjoint(sources)*raw)
+    return matrices, coordinates, factor, adjoint
+
+
+def verify():
+    matrices, coordinates, factor, adjoint = certified_inputs()
+    for transform in coordinates:
         outputs = [a*transform for a in matrices]
         up, down = [adjoint(a)*a for a in outputs]
         ratios = [factor*up[i,i].real/down[i,i].real for i in range(3)]
         assert all(v < arb("1.083") for v in ratios)
         print("三条源分别给出的归一化迹之比", [x.str(9) for x in ratios])
-    masses = [m+arb(0,r.upper()) for m,r in zip(model["ref"][:6],model["tol"][:6],strict=True)]
-    required = shape(masses[:3])/shape(masses[3:])
-    assert required > arb("74.25")
     condition = arb("74.25")/arb("1.083")
     correlation = (condition-1)/(2*(condition+1))
     assert condition > arb("68.55") and correlation > arb(".4856")
