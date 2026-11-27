@@ -6,10 +6,11 @@ from runpy import run_path
 from flint import arb, arb_mat
 
 
-def verify(root, *, number=2_306_888_100_090, input_anchors=None, active=None):
+def verify(root, *, number=2_306_888_100_090, input_anchors=None, active=None, radius="1e-9", pivot=3, weak_index=9):
     lib,ordered,pivots,(moments,heat,field),data,species = run_path(str(root/"ch39-fifth-arbitrary-pivot-obstructions.py"))["inputs"](root,number=number)
     source = [x.sqrt() for x in ordered]
-    c = pivots[2]
+    assert pivot in (1,2,3) and 0<=weak_index<19
+    c = pivots[pivot-1]
     gauge = lib("all-field-signed-crossing")
     native = lib("native-rh-ray-pvm")
     p0,p1 = data["p0"],data["p1"]
@@ -17,7 +18,7 @@ def verify(root, *, number=2_306_888_100_090, input_anchors=None, active=None):
     a1,a2,a3 = data["initial"]
     starts = (5*a1/3+a2-arb(8)*a3/3,a2-a3)
     pi = arb.pi()
-    # 十三个不动截止，第十层作弱差参数。另五层解两个规范读数、两个热迹和振幅迹。
+    # 十三个不动截止，另取一层作弱差参数。另五层解两个规范读数、两个热迹和振幅迹。
     anchors = list(map(arb,(
         "0.005858229824914461", "2.11616221952219e-18", "1.39799555210032e-14", "2.0612839852922e-20",
         "4.06913149566367e-31", "7.4286087689067e-05", "2.74842854286246e-18", "0.2728832136625107",
@@ -29,9 +30,10 @@ def verify(root, *, number=2_306_888_100_090, input_anchors=None, active=None):
     if input_anchors is not None:
         anchors=list(map(arb,input_anchors))
         selected=active
-        assert len(anchors)==19 and len(set(selected))==5 and 9 not in selected
+        assert len(anchors)==19 and len(set(selected))==5 and weak_index not in selected
     center=[anchors[i] for i in selected]
-    width=arb('1e-9')
+    width=arb(radius)
+    assert 0 < width < 1
     rule=gauge["angular_rule"](19,54)
     log=(p1/p0).log()
     def values(x):
@@ -77,12 +79,12 @@ def verify(root, *, number=2_306_888_100_090, input_anchors=None, active=None):
     f=[target+sum(w*col[j] for w,col in zip(c,cols,strict=True))
        for j,target in enumerate((*starts,-1,-arb("1e-122")))]
     f.append(sum(x.sqrt() for x in anchors)-sum(source))
-    # 对 log x 的单物种角核导数绝对值至多一。第十层引力导数用 0 <= exp(-z/x) <= 1。
-    low=anchors[9]*(1+arb(0,width.upper()))
+    # 对 log x 的单物种角核导数绝对值至多一。参数层引力导数用 0 <= exp(-z/x) <= 1。
+    low=anchors[weak_index]*(1+arb(0,width.upper()))
     log_span=-(1-width).log()
     err=[sum(abs(b[j]) for _,_,b in rows)/(4*pi) for j in range(2)]
     err += [low*sum(abs(a) for _,a,_ in field)/(2*pi),low**2*sum(abs(b) for b,_,_ in field)/(4*pi)]
-    param=[arb(0,(abs(c[9])*e*log_span).upper()) for e in err]
+    param=[arb(0,(abs(c[weak_index])*e*log_span).upper()) for e in err]
     param.append(arb(0,(low.sqrt()*log_span/2).upper()))
     f=arb_mat([[value+error] for value,error in zip(f,param,strict=True)])
     pre=jacobian([arb(0)]*5).mid().inv()
@@ -99,7 +101,7 @@ def verify(root, *, number=2_306_888_100_090, input_anchors=None, active=None):
     output=anchors[:]
     for i in selected:
         output[i]*=1+box[0]
-    output[9]=low
+    output[weak_index]=low
     amps=[x.sqrt() for x in output]
     assert all(source[0]<y<source[-1] for y in amps)
     gaps=lib("schur-horn-gravity-holdout")["ky_fan_gaps"](source,amps)
@@ -107,16 +109,16 @@ def verify(root, *, number=2_306_888_100_090, input_anchors=None, active=None):
     def weak(x):
         return series(x/p0) if x<10**7*p0 else lib_neutral(x,p0,p1)
     lib_neutral=lib("full-neutral-free-cutoff")["weak_column"]
-    rest=sum(c[i]*weak(x) for i,x in enumerate(output) if i!=9)
-    ds=[rest+c[9]*weak(anchors[9]*(1+s*width)) for s in (-1,1)]
-    print("第十层两个参数端点的弱差、最小主序余量",*(v.str(15) for v in ds),min(gaps).str(15),flush=True)
-    assert ds[0]>0>ds[1] and min(gaps)>0
+    rest=sum(c[i]*weak(x) for i,x in enumerate(output) if i!=weak_index)
+    ds=[rest+c[weak_index]*weak(anchors[weak_index]*(1+s*width)) for s in (-1,1)]
+    print("弱差参数层、两个端点弱差及最小主序余量",weak_index+1,*(v.str(15) for v in ds),min(gaps).str(15),flush=True)
+    assert ds[0]*ds[1] < 0 and min(gaps)>0
     if input_anchors is None:
         assert arb("8.5e-11")<ds[0]<arb("8.7e-11") and arb("-8.7e-11")<ds[1]<arb("-8.5e-11")
         assert min(gaps)>arb("1.1879e-17")
     colour_centre=a3+sum(w*col[4] for w,col in zip(c,cols,strict=True))
     colour_lipschitz=sum(abs(b[2]) for _,_,b in rows)/(4*pi)
-    variation=sum(abs(c[i]) for i in selected)*(-(1-radius).log())+abs(c[9])*log_span
+    variation=sum(abs(c[i]) for i in selected)*(-(1-radius).log())+abs(c[weak_index])*log_span
     colour=colour_centre+arb(0,(colour_lipschitz*variation).upper())
     print("全解盒端点色逆耦合上下界",colour.lower().str(14),colour.upper().str(14),flush=True)
     if input_anchors is None:

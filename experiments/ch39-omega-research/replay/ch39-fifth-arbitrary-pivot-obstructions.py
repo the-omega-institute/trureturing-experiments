@@ -65,7 +65,8 @@ def high_cutoff(weights,source,thermal,pivot):
     return bound
 
 
-def verify(root, *, number=2_306_888_100_090, portal=None):
+def verify(root, *, number=2_306_888_100_090, portal=None, pivots_to_check=(1,2)):
+    assert pivots_to_check and all(p in (1,2) for p in pivots_to_check)
     lib,source,weights,thermal,data,rows = inputs(root,number=number,portal=portal)
     p0,p1 = data["p0"],data["p1"]
     shared = lib("fourth-variable-scale-neutral-gauge")
@@ -78,6 +79,8 @@ def verify(root, *, number=2_306_888_100_090, portal=None):
     coeffs = [(qq-arb(8)*col/3,mix-col) for _,_,(qq,mix,col) in rows]
     photon_limits=[]
     for pivot,small,log_edge in ((1,(15,),8),(2,(0,15),13)):
+        if pivot not in pivots_to_check:
+            continue
         c = weights[pivot-1]
         bound = high_cutoff(c,source,thermal,pivot)
         limit = 2**log_edge*p0
