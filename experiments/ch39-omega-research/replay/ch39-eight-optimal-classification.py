@@ -34,7 +34,7 @@ def exclusion_test(base, gram, scale, inv, drift, rad):
     return result
 
 
-def experiment(root, fifth, columns, levels, *, observe=None):
+def experiment(root, fifth, columns, levels, *, observe=None, observe_projected=None):
     def lib(name):
         return run_path(str(root/("ch39-"+name+".py")))
     ctx.prec=256
@@ -150,6 +150,8 @@ def experiment(root, fifth, columns, levels, *, observe=None):
                 classified.append((sizes,tuple(sorted(sites)),mask))
                 if observe is not None:
                     observe(tuple(sorted(sites)), image)
+                if observe_projected is not None:
+                    observe_projected(tuple(sorted(sites)), image, projected_target*direction, full, frame)
     from collections import Counter
     counts=Counter(s for s,sites,m in classified)
     assert {mask for _,_,mask in classified}=={6}
