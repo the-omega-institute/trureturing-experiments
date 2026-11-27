@@ -75,6 +75,18 @@ def verify(root):
         sharp = max(ratios)/min(ratios)
         assert arb(lo) < sharp < arb(hi)
         print("实际正零点编号和中心质量、CKM要求的最小条件数积",n,sharp.str(15))
+    # 将制备与目的同时换到已登记的弱读数高度，检验固定首零点这项假设。
+    for n,lo,hi in ((2086602,"1981.9247","1981.9248"),(2040244,"1353.4949","1353.4950")):
+        moving = []
+        for q in (-4,2):
+            levels,basis = spectrum(graph,q,n)
+            light = acb_mat([[basis[i,j] for j in range(3)] for i in range(19)])
+            factors = acb_mat([[1/(1+(levels[i]/9)**512) if i==j else 0
+                                for j in range(3)] for i in range(3)])
+            moving.append(factors*light.conjugate().transpose()*sources)
+        s = singular_values(moving[0]*moving[1].inv())
+        assert arb(lo) < s[-1]/s[0] < arb(hi)
+        print("制备与目的同移的编号、可达层级商上端",(n),(s[-1]/s[0]).str(15))
 
 
 if __name__ == "__main__":
