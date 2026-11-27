@@ -5,13 +5,7 @@ from runpy import run_path
 from flint import arb
 
 
-def verify(root):
-    core=run_path(str(root/"ch39-fourth-third-pivot-six-low-path-obstruction.py"))
-    source=run_path(str(root/"ch39-fourth-third-pivot-sparse-positive-path.py"))
-    rows=[i+1 for i in source["ROWS"]]
-    anchors=dict(zip(rows,map(arb,source["ANCHORS"]),strict=True))
-    free={rows[i] for i in source["ACTIVE"]}
-    assert free=={1,16,18}
+def probe_list():
     more=[(32000000,"y"),(100000000,"y"),(320000000,"y"),(1000000000,"y"),
           (300000,"col"),(100000,"col"),(25000,"col"),(5600,"y"),(10000,"y"),
           (3160000000,"y"),(42000,"col"),(56000000,"y"),(316000,"col"),(10000000000,"y")]
@@ -19,6 +13,17 @@ def verify(root):
         (32000000,"y"),(100000000,"y"),(320000000,"y"),(1000000000,"y"),
         (3160000000,"y"),(10000000000,"y"),(42000,"col"),(316000,"col"),
         (5600000,"col"),(100000,"col"),(750000,"col"),(17800000000,"y"))]
+    return more,shifted
+
+
+def verify(root):
+    core=run_path(str(root/"ch39-fourth-third-pivot-six-low-path-obstruction.py"))
+    source=run_path(str(root/"ch39-fourth-third-pivot-sparse-positive-path.py"))
+    rows=[i+1 for i in source["ROWS"]]
+    anchors=dict(zip(rows,map(arb,source["ANCHORS"]),strict=True))
+    free={rows[i] for i in source["ACTIVE"]}
+    assert free=={1,16,18}
+    more,shifted=probe_list()
     lo,cut,constants,high_error,bounds=core["integral_table"](root,more,shifted)
     leaves=bounds.shape[1]//2
     log_span=(cut/lo).log()

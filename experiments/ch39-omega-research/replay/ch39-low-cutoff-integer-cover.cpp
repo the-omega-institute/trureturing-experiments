@@ -127,12 +127,19 @@ struct Cover {
         std::cout<<"所选支撑、全部闭盒、途中排除数 "<<supports<<" "<<examined<<" "<<kinetic<<std::endl;
         return true;
     }
-    bool all(){
+    bool all(bool skip_one=false){
+        std::vector<Integer> except;
+        if(skip_one){
+            except.resize(k);read_array(except.data(),k);
+            for(auto &i:except) --i;
+        }
         std::iota(active.begin(),active.end(),0);
         while(true){
-            ++supports;
-            set_base();
-            if(!check()) return false;
+            if(!skip_one || !std::equal(active.begin(),active.end(),except.begin())){
+                ++supports;
+                set_base();
+                if(!check()) return false;
+            }
             int i=k-1;
             while(i>=0 && active[i]==layers-k+i) --i;
             if(i<0) break;
@@ -151,6 +158,7 @@ int main(int argc,char** argv){
        dims[2]<7 || dims[2]>128 || (dims[1]&(dims[1]-1))) return 2;
     Cover work(dims[0],dims[1],dims[2]);
     if(argc==1) return work.all()?0:1;
+    if(argc==2 && std::string(argv[1])=="--except") return work.all(true)?0:1;
     if(argc==2 && std::string(argv[1])=="--selected") return work.selected()?0:1;
     return 2;
 }

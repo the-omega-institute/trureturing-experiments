@@ -6,7 +6,7 @@ from flint import arb, ctx
 import numpy as np
 
 
-def integral_table(root, extra_probes=(), endpoint_shifts=()):
+def integral_table(root, extra_probes=(), endpoint_shifts=(), cell_probes=()):
     def lib(name):
         return run_path(str(root/("ch39-"+name+".py")))
     number=2_306_888_100_089
@@ -52,6 +52,7 @@ def integral_table(root, extra_probes=(), endpoint_shifts=()):
     # 负固有时密度给 D_inf <= D(x) <= 0，再按权号估计 D 的上端。
     # 对较高探测能标另用 D(M0)=0 将弱差改写为两个高能端点之差。
     weak_allowance=[]
+    global_upper={}
     for j in (6+i for i,(_,channel) in enumerate(probes) if channel=="y"):
         pm=powers[which[j]]
         ent=lib("full-neutral-running")["weak_bound"]({"p0":pm},[pm],[arb(0)],
@@ -60,6 +61,7 @@ def integral_table(root, extra_probes=(), endpoint_shifts=()):
         b=tv*(ent+2*(kappa/pm).sqrt())
         allowance=min(a.upper(),b.upper())
         const[j]+=allowance
+        global_upper[j]=allowance
         weak_allowance.append(allowance)
     # 浮点坐标和角权从 Arb 区间转出并逐项核对，线性和误差按最不利的顺序求和。
     nodes,qerr=gauge["angular_rule"](13,34)
@@ -128,6 +130,7 @@ def integral_table(root, extra_probes=(), endpoint_shifts=()):
     def second(p,z,l,r):
         return min(arb(".368"),((z+p/4)/l).upper(),(2*(-z/(2*r)).exp()).upper(),(48*r/p).upper())
     graph=[]
+    edges=[]
     left=lo
     gl=gauge_values(left)
     for t in range(coarse):
@@ -142,6 +145,8 @@ def integral_table(root, extra_probes=(), endpoint_shifts=()):
         for j in range(fine//coarse):
             a=arb(j)/(fine//coarse);b=arb(j+1)/(fine//coarse)
             x=lo*(span*(t+a)/coarse).exp();y=lo*(span*(t+b)/coarse).exp()
+            if cell_probes:
+                edges.append((x,y))
             limit=10**7*p0
             if y<limit:
                 dw=wseries(x/p0).union(wseries(y/p0))-dref
@@ -160,12 +165,37 @@ def integral_table(root, extra_probes=(), endpoint_shifts=()):
         hi=(v.upper()*scale).ceil().unique_fmpz()
         assert lo is not None and hi is not None
         return int(lo),int(hi)
-    constants=np.array([bracket(v) for v in base],dtype=np.int64)
-    high_error=np.array([[bracket(abs(w)*d)[1] for d in drifts] for w in c],dtype=np.int64)
+    # D(M0)=0：以 P 与 M0 之间的无截止弱差为参考，逐位置取两项余量的交集。
+    extra=[]
+    if cell_probes:
+        axial=lib("neutral-axial-top")
+        boson=lib("neutral-bosonic")
+        w,z,t=[s*rho for s in (arb(".63811")**2/2,(arb(".63811")**2+3*arb(".467453")**2/5)/2,arb(".8616")**2)]
+        for energy in cell_probes:
+            j=6+probes.index((energy,"y"))
+            p=powers[which[j]]
+            corr=(-(2*axial["J"](w/p)+boson["j_neutral"](z/p))/(4*arb.pi())
+                  +boson["scalar_difference"](w/p,z/p)/(8*arb.pi())
+                  +3*axial["J"](t/p)/(8*arb.pi())-axial["L"](t/p)/(24*arb.pi()))
+            delta=-corr+arb(0,arb("2.398e-21"))
+            extra.append((j,p,delta))
+    full_base=base+[base[j]-global_upper[j]+delta for j,p,delta in extra]
+    full_drift=drifts+[drifts[j]+kappa/cut for j,p,delta in extra]
+    constants=np.array([bracket(v) for v in full_base],dtype=np.int64)
+    high_error=np.array([[bracket(abs(w)*d)[1] for d in full_drift] for w in c],dtype=np.int64)
     assert int(np.max(np.abs(high_error)))*19<2**50
-    bounds=np.zeros((19,2*fine,len(base),2),dtype=np.int64)
+    bounds=np.zeros((19,2*fine,len(full_base),2),dtype=np.int64)
     for i,w in enumerate(c):
-        bounds[i,fine:]=[[bracket(w*v) for v in band] for band in graph]
+        bounds[i,fine:,:len(base)]=[[bracket(w*v) for v in band] for band in graph]
+        for col,(j,p,delta) in enumerate(extra,len(base)):
+            for k,(x,y) in enumerate(edges):
+                inv=(abs(w)*kappa/x).upper()
+                raw=(abs(w)*4*y/p).upper()
+                low=max(-inv,(-raw-w*delta).lower())
+                high=min(inv,(raw-w*delta).upper())
+                assert low<=high
+                a,b=bracket(low.union(high))
+                bounds[i,fine+k,col]=bounds[i,fine+k,j]+[a,b]
     assert int(np.max(np.abs(bounds)))*7+int(np.max(np.abs(high_error)))*19+int(np.max(np.abs(constants)))<2**60
     for n in range(fine-1,0,-1):
         bounds[:,n,:,0]=np.minimum(bounds[:,2*n,:,0],bounds[:,2*n+1,:,0])
@@ -174,7 +204,7 @@ def integral_table(root, extra_probes=(), endpoint_shifts=()):
     return lo,cut,constants,high_error,bounds
 
 
-def integer_cover(root,constants,high_error,bounds,size,domains=None):
+def integer_cover(root,constants,high_error,bounds,size,domains=None,except_rows=()):
     # domains 的每个条目依次给出层号和闭对数格端点。默认遍历全部同尺寸支撑。
     from tempfile import TemporaryDirectory
     from subprocess import run
@@ -198,8 +228,11 @@ def integer_cover(root,constants,high_error,bounds,size,domains=None):
                     assert 1<=len(case)<=size and len({row for row,_,_ in case})==len(case)
                     np.array([len(case)],dtype=np.int64).tofile(fp)
                     np.array(case,dtype=np.int64).tofile(fp)
+            if except_rows:
+                assert domains is None and len(set(except_rows))==size
+                np.array(sorted(except_rows),dtype=np.int64).tofile(fp)
             fp.seek(0)
-            options=[] if domains is None else ["--selected"]
+            options=["--except"] if except_rows else ([] if domains is None else ["--selected"])
             run([str(binary),*options],stdin=fp,check=True)
 
 
