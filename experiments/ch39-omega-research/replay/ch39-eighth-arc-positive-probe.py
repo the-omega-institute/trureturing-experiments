@@ -53,13 +53,19 @@ SEEDS = (
 ACTIVE = ((15, 16, 11, 0, 18), (15, 16, 14, 0, 8))
 
 
-def verify(root):
+def verify(root, *, parameter_case=None):
     def lib(name):
         return run_path(str(root / ("ch39-" + name + ".py")))
 
     arc = lib("eighth-shortest-arc-pivot-support")
-    rows, single = arc["polynomials"](root)
-    spectra = (single[1], arc["angle_weights"](rows[1], arb(3) / 4))
+    rows, single = arc["polynomials"](root, include_single_edge=parameter_case is None)
+    if parameter_case is None:
+        spectra = (single[1], arc["angle_weights"](rows[1], arb(3) / 4))
+        cases = tuple(zip(spectra, SEEDS, ACTIVE, strict=True))
+    else:
+        parameter, seed, axes = parameter_case
+        ws = lib("eighth-rational-arc-signs")["rational_weights"](rows[1], parameter)
+        cases = ((ws, seed, axes),)
     num = arc["NUMBER"]
     _, source = lib("adjacent-ordered-charge-six-cutoffs")["verify"](
         root, refine_node=2_306_888_100_086
@@ -192,9 +198,8 @@ def verify(root):
             (abs(d) / radius + sum(map(abs, row))).upper()
             for d, row in zip(diff, error, strict=True)
         )
-        gaps = lib("schur-horn-gravity-holdout")["ky_fan_gaps"](
-            source, [(p0 * t.exp()).sqrt() for t in box]
-        )
+        amplitudes = [(p0 * t.exp()).sqrt() for t in box]
+        gaps = lib("schur-horn-gravity-holdout")["ky_fan_gaps"](source, amplitudes)
         thermal = [moments(field, heat, p0 * t.exp()) for t in box]
         gravity = [
             sum(w * v[i] for w, v in zip(ws, thermal, strict=True)) for i in (0, 1)
@@ -207,6 +212,9 @@ def verify(root):
             *[v.str(13) for v in gravity],
             flush=True,
         )
+        assert ratio < 1 and min(gaps) > 0
+        if parameter_case is not None:
+            return amplitudes
         limit, gap, kl, kh, wl, wh = (
             (".001322", "9.70e-20", ".06417", ".06418", "-.09670", "-.09668"),
             (".000555", "1.42e-19", ".07559", ".07560", "-.03485", "-.03483"),
@@ -214,8 +222,9 @@ def verify(root):
         assert ratio < arb(limit) and min(gaps) > arb(gap)
         assert arb(kl) < gravity[0] < arb(kh) and arb(wl) < gravity[1] < arb(wh)
 
-    for k, (ws, seed, axes) in enumerate(zip(spectra, SEEDS, ACTIVE, strict=True)):
-        solve(k, ws, seed, axes)
+        return amplitudes
+
+    return [solve(k, ws, seed, axes) for k, (ws, seed, axes) in enumerate(cases)]
 
 
 if __name__ == "__main__":
