@@ -345,7 +345,19 @@ def main():
 
 
 FIRST_ROW, ROUNDS_ROW, LAST_ROW = "213 个原生两面字要移动多少概率", "沿对角时间的交叉偏振负比率支", "截止 56 时，保持三坐标置换对称"
-BOOK_CH15 = R.parents[2] / ".." / "trureturing-books" / "books" / "omega-unification" / "zh" / "ch15-unified-verdict-and-open-roadmap.md"
+BOOK_REPO = R.parents[2] / ".." / "trureturing-books"
+BOOK_COMMIT = "cbdd318582de6c2f71e48d9d072fb8e07d94905a"
+BOOK_CH15 = "books/omega-unification/zh/ch15-unified-verdict-and-open-roadmap.md"
+
+
+def book_ch15():
+    """Chapter 15 at the pinned book commit, or None when that commit is not available."""
+    import subprocess
+    try:
+        out = subprocess.run(["git", "show", "%s:%s" % (BOOK_COMMIT, BOOK_CH15)], cwd=BOOK_REPO, capture_output=True, check=True)
+    except (OSError, subprocess.CalledProcessError):
+        return None
+    return out.stdout.decode("utf-8")
 R4_REASONS = {"两量恰好相等", "全体零点量词", "选择问题", "残差远小于包围", "缺结构原理"}
 
 
@@ -405,13 +417,13 @@ def classification(scripts):
     gaps = [x for x in probs if x["source"].endswith(":gap")]
     assert all(x.get("missing_sentence") for x in gaps) and not any(x.get("missing_sentence") for x in extra)
     assert Counter(r for x in entries if x["class"] == "R4" for r in x["r4_reason"]) == {"缺结构原理": 16, "选择问题": 5, "全体零点量词": 2}
-    if BOOK_CH15.exists():
-        book = BOOK_CH15.read_text(encoding="utf-8")
+    book = book_ch15()
+    if book is not None:
         assert all(m in book for x in gaps for m in x["missing_sentence"]), "ch15 quote"
         assert "消除对低能输入偏移" in book
-        print("ch15 quotes checked against", BOOK_CH15.resolve())
+        print("ch15 quotes checked against book commit", BOOK_COMMIT[:12])
     else:
-        print("ch15 quotes not checked: book checkout not found next to this repository")
+        print("ch15 quotes not checked: pinned book commit not available next to this repository")
     rh = [x for x in entries if x.get("zero_use") == "用到对全体零点的分布断言"]
     assert len(rh) == 2 and all(x["class"] == "R4" for x in rh)
     precs = sorted({int(v) for x in entries if x["class"] == "R3" for k in x["scripts"]
