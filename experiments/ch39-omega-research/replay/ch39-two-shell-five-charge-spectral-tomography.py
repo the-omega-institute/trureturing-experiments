@@ -55,16 +55,29 @@ def verify(root):
                     design[k].append(row)
             levels.sort(key=lambda x:x.mid())
             assert all(x<y for x,y in zip(levels,levels[1:]))
-    for k,rows in enumerate(design):
+    def rank_bound(rows,size):
         mat=arb_mat(rows)
         gram=mat.transpose()*mat
-        size=mat.ncols()
-        assert size==(49,36,36)[k]
+        assert mat.ncols()==size
         pre=gram.mid().inv()
         identity=arb_mat([[int(i==j) for j in range(size)] for i in range(size)])
-        defect=norm_infinity(identity-pre*gram)
-        print("字符、读数行数、列秩、预条件缺陷",k,mat.nrows(),size,defect.str(12),flush=True)
+        return norm_infinity(identity-pre*gram)
+
+    for k,rows in enumerate(design):
+        size=(49,36,36)[k]
+        defect=rank_bound(rows,size)
+        print("字符、读数行数、列秩、预条件缺陷",k,len(rows),size,defect.str(12),flush=True)
         assert defect.is_finite() and defect<arb(".001")
+
+    # 每个设置在七维块只有六个独立于公共迹的额外读数。检查任取八个设置。
+    worst=arb(0)
+    for omit in combinations(range(10),2):
+        for rows,dim in zip(design,(7,6,6),strict=True):
+            chosen=[row for i,row in enumerate(rows) if i//dim not in omit]
+            defect=rank_bound(chosen,dim**2)
+            assert defect.is_finite() and defect<arb(".001"),(omit,dim)
+            worst=max(worst,defect.upper())
+    print("任取八种荷与高度组合，45 次删选中的最大预条件缺陷",worst.str(12),flush=True)
 
 
 if __name__=="__main__":
