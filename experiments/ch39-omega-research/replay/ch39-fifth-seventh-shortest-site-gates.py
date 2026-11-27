@@ -12,7 +12,7 @@ def adj(matrix):
     return matrix.conjugate().transpose()
 
 
-def geometry(root, fifth, columns, levels):
+def geometry(root, fifth, columns, levels, *, number=SEVENTH):
     def lib(name):
         return run_path(str(root/("ch39-"+name+".py")))
 
@@ -26,13 +26,13 @@ def geometry(root, fifth, columns, levels):
         assert geo["det"](pole,a,b)==0
         assert sum((x-y)**2 for x,y in zip(pole,a,strict=True))<sum((x-y)**2 for x,y in zip(pole,b,strict=True))
     ctx.prec = 320
-    matrix = shell["laplacian"](6, acb.zeta_zero(SEVENTH).imag)
+    matrix = shell["laplacian"](6, acb.zeta_zero(number).imag)
     assert all((-matrix[i,j]).contains(1) for i,j,_ in accepted)
-    eigenvalues, basis = lib("adjacent-pvm-transport")["spectrum"](shell,6,SEVENTH)
-    _, nodes, pivots, _ = next(row for row in lib("native-rh-ray-pvm")["shell_weights"](root,SEVENTH) if row[0]==6)
+    eigenvalues, basis = lib("adjacent-pvm-transport")["spectrum"](shell,6,number)
+    _, nodes, pivots, _ = next(row for row in lib("native-rh-ray-pvm")["shell_weights"](root,number) if row[0]==6)
     assert all(a.overlaps(b) for a,b in zip(eigenvalues,nodes,strict=True))
     weights = [v.real for v in pivots[2]]
-    _, heat, (field,) = lib("three-index-free-atoms")["broken_fields"](root,[SEVENTH])
+    _, heat, (field,) = lib("three-index-free-atoms")["broken_fields"](root,[number])
     ctx.prec = 192
     assert 0 < levels[0] < levels[1] < levels[2]
     station = fifth*columns
