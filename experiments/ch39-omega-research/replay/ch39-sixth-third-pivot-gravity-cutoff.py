@@ -5,11 +5,10 @@ from runpy import run_path
 from flint import arb, ctx
 
 
-def verify(root, *, portal=None):
+def verify(root, *, portal=None, number=2_306_888_100_091, positive_layers=(1, 10, 16), maximum=".989853"):
     def lib(name):
         return run_path(str(root/("ch39-"+name+".py")))
 
-    number = 2_306_888_100_091
     _, ordered = lib("adjacent-ordered-charge-six-cutoffs")["verify"](root, refine_node=2_306_888_100_086)[2]
     _, _, pivots, _ = next(row for row in lib("native-rh-ray-pvm")["shell_weights"](root, number) if row[0] == 6)
     _, heat, (field,) = lib("three-index-free-atoms")["broken_fields"](root, [number], portal=portal)
@@ -17,7 +16,7 @@ def verify(root, *, portal=None):
     weights = [c.real for c in pivots[2]]
     positive = [i for i, c in enumerate(weights) if c > 0]
     negative = [i for i, c in enumerate(weights) if c < 0]
-    assert [i+1 for i in positive] == [1, 10, 16] and len(negative) == 16
+    assert tuple(i+1 for i in positive) == positive_layers and len(negative) + len(positive) == 19
     pos_sum = sum(weights[i] for i in positive)
     neg_sum = -sum(weights[i] for i in negative)
     # F(x)=K(x)+250 W(x)，十九层同时达到目标时总 F 严格大于一。
@@ -44,7 +43,7 @@ def verify(root, *, portal=None):
     bound = pos_sum*low_ceiling-neg_sum*floor
     print("单层全域下界、低截止上界与十九层线性组合上界",
           *[v.str(13) for v in (floor,low_ceiling,bound)], flush=True)
-    assert bound < arb(".989853") < 1
+    assert bound < arb(maximum) < 1
     return tuple(i+1 for i in positive)
 
 
