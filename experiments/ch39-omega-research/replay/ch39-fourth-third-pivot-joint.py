@@ -21,7 +21,7 @@ def inputs(root):
     return sectors,incoming,readout,levels,thermal,[q.real for q in pivots[2]]
 
 
-def solve_matrix(root, data, centres, log_widths):
+def solve_matrix(root, data, centres, log_widths, *, return_transport=False):
     def lib(name):
         return run_path(str(root/("ch39-"+name+".py")))
 
@@ -105,19 +105,26 @@ def solve_matrix(root, data, centres, log_widths):
     print("共同生成元中心偏移、参数盒半径、位移占比与导数误差行和",
           *[v.str(13) for v in (max(abs(a).upper() for a in center),radius,offset/radius,lip)],flush=True)
     assert lip+offset/radius<1
-    return [a*a for a in amps]
+    sites = [a*a for a in amps]
+    if return_transport:
+        z,_ = local(seed,center,dirs,eye,False)
+        widths = [abs(b-v).upper() for b,v in zip(box,center,strict=True)]
+        dz = 2*sum(a*a*(1 if i==j else 2) for a,(i,j,_) in zip(widths,dirs,strict=True)).sqrt()
+        return sites,(z,dz,sectors,incoming,(low,h,k))
+    return sites
 
 
-def verify(root):
+def verify(root,*,return_transport=False):
     adjust = run_path(str(root/"ch39-fourth-third-pivot-three-adjusters.py"))
     box = adjust["verify"](root)
     assert tuple(box["layers"])==LOW_ROWS
-    sites = solve_matrix(root,inputs(root),box["centers"],box["radii"])
+    result = solve_matrix(root,inputs(root),box["centers"],box["radii"],return_transport=return_transport)
+    sites = result[0] if return_transport else result
     high = [x for i,x in enumerate(sites) if i not in LOW_ROWS]
     shifts = [abs((x/c).log()).upper() for x,c in zip(high,box["high_centers"],strict=True)]
     assert max(shifts)<box["high_log_radius"]
     print("十六个高截止在联合盒内相对参照值的最大对数位移",max(shifts).str(14),flush=True)
-    return sites
+    return result[1] if return_transport else sites
 
 
 if __name__=="__main__":
