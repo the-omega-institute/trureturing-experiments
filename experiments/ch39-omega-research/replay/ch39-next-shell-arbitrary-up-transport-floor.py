@@ -76,6 +76,11 @@ def verify(root):
     print("平凡块七个目的层（从一开始编号）", [j+1 for j in mids])
     print("第 N+3 壳的全局最小上型质量包围、超过参考窗上端的量",best.lower().str(15),best.upper().str(15),
           (best-threshold).lower().str(15))
+    cap = arb(".947555")
+    assert max(w.upper() for w in original) < cap
+    distance = (best.lower().sqrt()-threshold.sqrt())/(2*cap.sqrt())
+    assert distance > arb(".000088027")
+    print("重选第一步生成元所需的射影算子距离下界",distance.lower().str(12))
     return best,bounds
 
 
