@@ -11,11 +11,58 @@ def adj(matrix):
 
 
 def norm(matrix):
-    return sum(abs(z)**2 for z in matrix.entries()).sqrt()
+    return sum(abs(z)**2 for z in matrix.entries()).nonnegative_part().sqrt()
 
 
 def column(matrix, index):
     return acb_mat([[row[index]] for row in matrix.tolist()])
+
+
+def certify_low_lines(spectra, local, selected, endpoints, floor, planck, mz, native, lib):
+    # 低线固定后，在站位限制的二维核内补齐两条重列的 Gram，以参数盒相对面上的符号验证弱差共同零点。
+    assert local.nrows() == len(selected)+2
+    constraints = acb_mat([s[0].tolist()[i] for s, i in zip(spectra, selected, strict=True)])
+    before = acb_mat([s[1].tolist()[i] for s, i in zip(spectra, selected, strict=True)])
+    outside = before - constraints*local
+    dual = adj(constraints)*(constraints*adj(constraints)).inv()
+    eye = acb_mat([[int(i==j) for j in range(local.nrows())] for i in range(local.nrows())])
+    kernel = eye - dual*constraints
+    projected = [column(kernel, i) for i in range(kernel.ncols())]
+    u = max(projected, key=lambda v: norm(v).lower())
+    assert norm(u) > 0
+    u = u/norm(u)
+    residuals = [v-u*(adj(u)*v)[0, 0] for v in projected]
+    v = max(residuals, key=lambda w: norm(w).lower())
+    assert norm(v) > 0
+    v = v/norm(v)
+    null_frame = acb_mat([x+y for x, y in zip(u.tolist(), v.tolist(), strict=True)])
+    target = acb_mat([[((lo.union(hi))/planck-floor).sqrt(), 0] for lo, hi in endpoints])
+    lift = dual*(target-outside)
+    remaining = adj(local)*local-adj(lift)*lift
+    assert remaining[0, 0].real > 0
+    a = remaining[0, 0].real.sqrt()
+    b = remaining[0, 1]/a
+    c2 = remaining[1, 1].real-abs(b)**2
+    assert c2 > 0
+    image = lift + null_frame*acb_mat([[a, b], [0, c2.sqrt()]])
+    ctx.prec = max(ctx.prec, 256)
+    weak = native["weak_series"](56)
+    large = lib("full-neutral-free-cutoff")["weak_column"]
+    reference = arb("-.074256577194663365546").union(arb("-.074256577194663365544"))
+    p0, p1 = (mz/planck)**2, (arb("1.176397e14")/planck)**2
+    face_margins = []
+    for (restricted, old, weights), i, ends in zip(spectra, selected, endpoints, strict=True):
+        changed = old + restricted*(image-local)
+        minimum = min((floor+sum(abs(z)**2 for z in row)).lower()
+                      for j, row in enumerate(changed.tolist()) if j != i)
+        assert minimum**2 > p0
+        tail = (large(minimum**2, p0, p1)-reference).abs_upper()
+        tail *= sum(abs(w).upper() for j, w in enumerate(weights) if j != i)
+        faces = [reference + weights[i]*(weak((q/mz)**2)-reference) + arb(0, tail)
+                 for q in ends]
+        assert faces[0] > 0 > faces[1]
+        face_margins.extend((faces[0].lower(), -faces[1].upper()))
+    return min(face_margins)
 
 
 def experiment(root, fifth, columns, levels):
@@ -69,45 +116,10 @@ def experiment(root, fifth, columns, levels):
     separation = (minimum_row-low_row)/(top-floor).sqrt()
     assert separation > arb(".0059357")
 
-    # 第七、八壳分别用第十、十六线：固定其激发振幅，并在四站内补齐源 Gram。
-    selected = (9, 15)
-    constraints = acb_mat([s[0].tolist()[i] for s, i in zip(spectra[:2], selected, strict=True)])
-    before = acb_mat([s[1].tolist()[i] for s, i in zip(spectra[:2], selected, strict=True)])
-    outside = before - constraints*local
-    dual = adj(constraints)*(constraints*adj(constraints)).inv()
-    eye = acb_mat([[int(i==j) for j in range(4)] for i in range(4)])
-    kernel = eye - dual*constraints
-    u = column(kernel, 2)
-    u = u/norm(u)
-    v = column(kernel, 3)
-    v = v - u*(adj(u)*v)[0, 0]
-    v = v/norm(v)
-    null_frame = acb_mat([x+y for x, y in zip(u.tolist(), v.tolist(), strict=True)])
+    # 第七、八壳分别用第十、十六线。
     endpoints = [(arb("178.45518"), arb("178.45519")), (arb("895.56334"), arb("895.56335"))]
-    target = acb_mat([[((lo.union(hi))/planck-floor).sqrt(), 0] for lo, hi in endpoints])
-    lift = dual*(target-outside)
-    remaining = adj(local)*local-adj(lift)*lift
-    assert remaining[0, 0].real > 0
-    a = remaining[0, 0].real.sqrt()
-    b = remaining[0, 1]/a
-    c2 = remaining[1, 1].real-abs(b)**2
-    assert c2 > 0
-    image = lift + null_frame*acb_mat([[a, b], [0, c2.sqrt()]])
-    weak = native["weak_series"](56)
-    large = lib("full-neutral-free-cutoff")["weak_column"]
-    reference = arb("-.074256577194663365546").union(arb("-.074256577194663365544"))
-    p0, p1 = (mz/planck)**2, (arb("1.176397e14")/planck)**2
-    for (restricted, old, weights), i, ends in zip(spectra[:2], selected, endpoints, strict=True):
-        changed = old + restricted*(image-local)
-        minimum = min((floor+sum(abs(z)**2 for z in row)).lower()
-                      for j, row in enumerate(changed.tolist()) if j != i)
-        assert minimum > arb("1e-5")
-        tail = (large(minimum**2, p0, p1)-reference).abs_upper()
-        tail *= sum(abs(w).upper() for j, w in enumerate(weights) if j != i)
-        faces = [reference + weights[i]*(weak((q/mz)**2)-reference) + arb(0, tail)
-                 for q in ends]
-        assert faces[0] > 0 > faces[1]
-        print("低线与两弱差面的包围", i+1, *[x.str(12) for x in faces], flush=True)
+    margin = certify_low_lines(spectra[:2], local, (9, 15), endpoints, floor, planck, mz, native, lib)
+    print("两壳弱差面的最小严格余量", margin.str(12), flush=True)
     print("三壳候选组合数与至少一条所选线的截止下界（GeV）",
           len(bounds), min(bounds).str(14), flush=True)
 
