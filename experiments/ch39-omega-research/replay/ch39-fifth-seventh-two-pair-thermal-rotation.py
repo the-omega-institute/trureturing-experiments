@@ -19,7 +19,7 @@ def adj(matrix):
     return matrix.conjugate().transpose()
 
 
-def coherent_reading(root, lib, boxes):
+def coherent_frame(root, lib, boxes):
     _, source = lib("adjacent-ordered-charge-six-cutoffs")["verify"](
         root, refine_node=2_306_888_100_086
     )[2]
@@ -51,13 +51,22 @@ def coherent_reading(root, lib, boxes):
             for m in range(19):
                 basis[m, j] *= phase
         bases.append(basis)
-    out = adj(bases[1]) * bases[0] * cols
+    overlap = adj(bases[1]) * bases[0]
+    return low, h, k, overlap * cols, overlap, probs, phases
+
+
+def readings(frame):
+    low, h, k, out, *_ = frame
     diag = [
         low + (h - low) * abs(out[i, 0]) ** 2 + (k - low) * abs(out[i, 1]) ** 2
         for i in range(19)
     ]
     assert all(y > 0 for y in diag) and sum(diag).overlaps(17 * low + h + k)
     return diag, k
+
+
+def coherent_reading(root, lib, boxes):
+    return readings(coherent_frame(root, lib, boxes))
 
 
 def thermal_columns(field, moments, heat):
