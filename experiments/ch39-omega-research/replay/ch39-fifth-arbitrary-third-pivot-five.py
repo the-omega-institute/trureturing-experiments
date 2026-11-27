@@ -6,8 +6,8 @@ from runpy import run_path
 from flint import arb, arb_mat
 
 
-def verify(root):
-    lib,ordered,pivots,(moments,heat,field),data,species = run_path(str(root/"ch39-fifth-arbitrary-pivot-obstructions.py"))["inputs"](root)
+def verify(root, *, number=2_306_888_100_090, input_anchors=None, active=None):
+    lib,ordered,pivots,(moments,heat,field),data,species = run_path(str(root/"ch39-fifth-arbitrary-pivot-obstructions.py"))["inputs"](root,number=number)
     source = [x.sqrt() for x in ordered]
     c = pivots[2]
     gauge = lib("all-field-signed-crossing")
@@ -26,6 +26,10 @@ def verify(root):
         "7.307216313411196e-12", "0.0018046757498149666", "2.37954485815224e-21",
     )))
     selected=(17,16,15,7,0)
+    if input_anchors is not None:
+        anchors=list(map(arb,input_anchors))
+        selected=active
+        assert len(anchors)==19 and len(set(selected))==5 and 9 not in selected
     center=[anchors[i] for i in selected]
     width=arb('1e-9')
     rule=gauge["angular_rule"](19,54)
@@ -42,7 +46,10 @@ def verify(root):
     beta=[arb(factorial(j))**2/factorial(2*j+1) for j in range(order+2)]
     angular=((0,6,1),(3,-12,1),(5,12,7),(9,12,11))
     polys=[[(a*beta[j]+b*beta[j+1])*(-1)**j/(d*factorial(j)) for j in range(order+1)] for a,b,d in angular]
+    angular_means=lib("fourth-third-pivot-cyclic-five")["angular_means"]
     def factors(x):
+        if input_anchors is not None:
+            return [a-b for a,b in zip(angular_means(p0/x),angular_means(p1/x),strict=True)]
         def avg(t,poly):
             v=arb(0)
             for coeff in reversed(poly):
@@ -86,7 +93,9 @@ def verify(root):
     offset=max(abs(v).upper() for v in (pre*f).entries())/radius
     slope=max(sum(abs(v).upper() for v in row) for row in defect.tolist())
     print("中心位移占比、导数误差行和",offset.str(13),slope.str(13),flush=True)
-    assert offset<arb(".00314") and slope<arb(".000501") and offset+slope<1
+    assert offset+slope<1
+    if input_anchors is None:
+        assert offset<arb(".00314") and slope<arb(".000501")
     output=anchors[:]
     for i in selected:
         output[i]*=1+box[0]
@@ -101,14 +110,17 @@ def verify(root):
     rest=sum(c[i]*weak(x) for i,x in enumerate(output) if i!=9)
     ds=[rest+c[9]*weak(anchors[9]*(1+s*width)) for s in (-1,1)]
     print("第十层两个参数端点的弱差、最小主序余量",*(v.str(15) for v in ds),min(gaps).str(15),flush=True)
-    assert arb("8.5e-11")<ds[0]<arb("8.7e-11") and arb("-8.7e-11")<ds[1]<arb("-8.5e-11")
-    assert min(gaps)>arb("1.1879e-17")
+    assert ds[0]>0>ds[1] and min(gaps)>0
+    if input_anchors is None:
+        assert arb("8.5e-11")<ds[0]<arb("8.7e-11") and arb("-8.7e-11")<ds[1]<arb("-8.5e-11")
+        assert min(gaps)>arb("1.1879e-17")
     colour_centre=a3+sum(w*col[4] for w,col in zip(c,cols,strict=True))
     colour_lipschitz=sum(abs(b[2]) for _,_,b in rows)/(4*pi)
     variation=sum(abs(c[i]) for i in selected)*(-(1-radius).log())+abs(c[9])*log_span
     colour=colour_centre+arb(0,(colour_lipschitz*variation).upper())
     print("全解盒端点色逆耦合上下界",colour.lower().str(14),colour.upper().str(14),flush=True)
-    assert arb("30.3494")<colour<arb("30.8732")
+    if input_anchors is None:
+        assert arb("30.3494")<colour<arb("30.8732")
     return amps
 
 

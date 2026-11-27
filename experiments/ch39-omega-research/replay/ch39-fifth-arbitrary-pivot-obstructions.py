@@ -5,11 +5,10 @@ from runpy import run_path
 from flint import arb, ctx
 
 
-def inputs(root):
+def inputs(root, *, number=2_306_888_100_090):
     def lib(name):
         return run_path(str(root/("ch39-"+name+".py")))
     n = 2_306_888_100_085
-    number = n+5
     _,source = lib("adjacent-ordered-charge-six-cutoffs")["verify"](root,refine_node=n+1)[2]
     native = lib("native-rh-ray-pvm")
     _,_,pivots,_ = next(row for row in native["shell_weights"](root,number) if row[0]==6)
@@ -64,8 +63,8 @@ def high_cutoff(weights,source,thermal,pivot):
     return bound
 
 
-def verify(root):
-    lib,source,weights,thermal,data,rows = inputs(root)
+def verify(root, *, number=2_306_888_100_090):
+    lib,source,weights,thermal,data,rows = inputs(root,number=number)
     p0,p1 = data["p0"],data["p1"]
     shared = lib("fourth-variable-scale-neutral-gauge")
     gauge = lib("all-field-signed-crossing")
@@ -75,6 +74,7 @@ def verify(root):
     a1,a2,a3 = data["initial"]
     starts = [5*a1/3+a2-arb(8)*a3/3,a2-a3]
     coeffs = [(qq-arb(8)*col/3,mix-col) for _,_,(qq,mix,col) in rows]
+    photon_limits=[]
     for pivot,small,log_edge in ((1,(15,),8),(2,(0,15),13)):
         c = weights[pivot-1]
         bound = high_cutoff(c,source,thermal,pivot)
@@ -101,12 +101,17 @@ def verify(root):
                            for s in small])
         print("枢轴、x18下界、无小截止时D上界、各分支RP与RM下界",pivot,
               bound.str(12),d.upper().str(12),[[x.lower().str(12) for x in result[j]] for j in range(2)],flush=True)
-        if pivot==1:
-            assert bound>arb(".0485981") and d<arb("-.0151457")
-            assert result[0][0]>arb("435.50") and result[1][0]>arb("68.85")
-        else:
-            assert d<arb("-.0057625")
-            assert result[0][0]>arb("233.91") and result[0][1]>arb("3760.31")
+        assert all(v>0 for v in result[0])
+        photon_limits.append([v.lower() for v in result[0]])
+        if number==2_306_888_100_090:
+            if pivot==1:
+                assert bound>arb(".0485981") and d<arb("-.0151457")
+                assert result[0][0]>arb("435.50") and result[1][0]>arb("68.85")
+            else:
+                assert d<arb("-.0057625")
+                assert result[0][0]>arb("233.91") and result[0][1]>arb("3760.31")
+
+    return photon_limits
 
 
 if __name__=="__main__":
