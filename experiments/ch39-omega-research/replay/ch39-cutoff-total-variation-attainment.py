@@ -16,8 +16,12 @@ coefficients stay in the certified box for sufficiently small floors.
 The right derivative of the optimal cost is minus the leftmost weight
 times the derivative of the dual function at zero. The printed enclosure
 uses the derivative of the massless term in the Newton heat trace.
+
+Pass --floor-window to certify the unique four-atom optimum uniformly for
+0 <= delta <= 10^-14, with its first atom at delta, for all three spectra.
 """
 
+from argparse import ArgumentParser
 from pathlib import Path
 from math import floor
 from runpy import run_path
@@ -66,7 +70,27 @@ def identity(n):
     return arb_mat([[arb(int(i == j)) for j in range(n)] for i in range(n)])
 
 
-def solve(certificate, rows, n):
+def endpoint_column(rows, floor_upper):
+    """Enclose the five moments of one cutoff over [0, floor_upper]."""
+    x = arb(0).union(floor_upper)
+    ell = phi = psi = pressure = arb(0)
+    for g, a, z in rows:
+        if z.is_zero():
+            phi += a * x
+            psi += g * x**2
+            continue
+        assert z > 0
+        # exp(-z/x) and E_n(z/x) for n >= 1 lie in this interval.
+        factor = arb(0).union((-z / floor_upper).exp())
+        ell += z * a * factor
+        phi += a * x * factor
+        psi += g * x**2 * factor
+        pressure += z * g * x * factor
+    denom = 2 * arb.pi()
+    return [arb(1), ell / denom, phi, psi, pressure / denom]
+
+
+def solve(certificate, rows, n, *, endpoint=None, radius="1e-30"):
     heat = certificate["heat"]
     yscale = [abs(arb(v)) for v in certificate["DUAL"][n]]
     yseed = [arb(v) / s for v, s in zip(certificate["DUAL"][n], yscale)]
@@ -75,7 +99,7 @@ def solve(certificate, rows, n):
     desired = [arb(1), arb(-1), arb(0), arb(0), 4 * arb("1e-122")]
     signs = BASE_WEIGHTS
 
-    def system(u):
+    def system(u, first_column=None):
         dual = [v * s for v, s in zip(u[:5], yscale)]
         weights = [v * s for v, s in zip(u[5:9], W_SCALE)]
         vals, ds, dds = (
@@ -84,6 +108,8 @@ def solve(certificate, rows, n):
                 *(interval_jets(heat, rows, t) for t in [None, *u[9:], arb(0)])
             )
         )
+        if first_column is not None:
+            vals[0] = first_column
         f = [
             (dot([row[i] for row in vals], weights) - desired[i]) / scales[i]
             for i in range(5)
@@ -111,11 +137,12 @@ def solve(certificate, rows, n):
         f, J = system(u)
         correction = J.solve(f)
         u = [(value - correction[i, 0]).mid() for i, value in enumerate(u)]
-    f, J = system(u)
-    r = arb("1e-30")
+    _, J = system(u)
+    r = arb(radius)
     rho = arb(0, r)
     box = [value + rho for value in u]
-    _, B = system(box)
+    f, _ = system(u, endpoint)
+    _, B = system(box, endpoint)
     inv = J.inv()
     inverse = arb_mat([[inv[i, j].mid() for j in range(11)] for i in range(11)])
     contraction = identity(11) - inverse * B
@@ -138,7 +165,7 @@ def solve(certificate, rows, n):
     w = [v * s for v, s in zip(box[5:9], W_SCALE)]
     print(
         n,
-        "closed-domain Krawczyk",
+        "Krawczyk radius",
         r.str(4),
         "Lipschitz bound",
         str(contraction_norm),
@@ -297,13 +324,13 @@ def third_derivative(heat, rows, y, box):
     )
 
 
-def certify_dual(certificate, rows, y, times):
+def certify_dual(certificate, rows, y, times, *, floor_upper=0):
     heat = certificate["heat"]
     a, b = [floor(float(t) * 1024) for t in times]
     l1, u1, l2, u2 = [arb(k) / 1024 for k in (a - 8, a + 9, b - 8, b + 9)]
-    assert (
-        times[0] > l1 and times[0] < u1 and times[1] > l2 and times[1] < u2 and u1 < l2
-    )
+    assert -40 < l1 and floor_upper < l1.exp()
+    assert times[0] > l1 and times[0] < u1 and times[1] > l2 and times[1] < u2
+    assert u1 < l2 and u2 < 0
     count = [0, 0]
 
     def covering(lo, hi, sign, curvature, depth=0):
@@ -340,9 +367,11 @@ def certify_dual(certificate, rows, y, times):
     return count
 
 
-def certify_rank(certificate, rows, times):
+def certify_rank(certificate, rows, times, *, endpoint=None):
     heat = certificate["heat"]
     atoms = [interval_jets(heat, rows, t)[0] for t in [None, *times, arb(0)]]
+    if endpoint is not None:
+        atoms[0] = endpoint
     minors = [arb_mat([r[:i] + r[i + 1 :] for r in atoms]).det() for i in range(5)]
     assert any(not v.contains(0) for v in minors)
     basis = [interval_jets(heat, rows, arb(t))[0] for t in (-32, -23, -13, -2, 0)]
@@ -354,6 +383,10 @@ def certify_rank(certificate, rows, times):
 def main():
     if not __debug__ or sys.version_info < (3, 12):
         sys.exit("Use Python 3.12 or newer with assertions enabled.")
+
+    parser = ArgumentParser(description=__doc__.splitlines()[0])
+    parser.add_argument("--floor-window", action="store_true")
+    options = parser.parse_args()
 
     repo = Path(__file__).resolve().parents[3]
     with tempfile.TemporaryDirectory(prefix="cutoff-attainment.") as directory:
@@ -378,6 +411,18 @@ def main():
         data = exact_spectra(certificate)
         ctx.prec = 320
         for n, rows in data.items():
+            if options.floor_window:
+                floor_upper = arb("1e-14")
+                endpoint = endpoint_column(rows, floor_upper)
+                y, _, times = solve(certificate, rows, n, endpoint=endpoint, radius="1e-9")
+                tail = derivative_tail_positive(y, rows)
+                intervals = certify_dual(certificate, rows, y, times, floor_upper=floor_upper)
+                rank, _ = certify_rank(certificate, rows, times, endpoint=endpoint)
+                print(
+                    n, "uniform floor window [0, 1e-14]", intervals,
+                    "tail lower bound", tail.str(6), "contact minor", rank.str(6),
+                )
+                continue
             y, weights, times = solve(certificate, rows, n)
             tail = derivative_tail_positive(y, rows)
             intervals = certify_dual(certificate, rows, y, times)
