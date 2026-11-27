@@ -35,7 +35,7 @@ def weak_bounds(root,p0,pmin,weights):
             whole = whole.union(low_at(((64+j)*step).union((65+j)*step)))
     bound = sum(c*(large if i==15 else whole) for i,c in enumerate(weights)).upper()
     print("中能标的弱差高端余量、第16层为大截止时的弱差上界",hi.str(13),bound.str(13),flush=True)
-    assert bound<0
+    assert hi<arb("8.224e-8") and bound<arb("-.0152219")
 
 
 def verify(root):
@@ -66,6 +66,8 @@ def verify(root):
         print("上端能标的十进指数、两项残差连续外包",index/2,
               [(v.lower().str(10),v.upper().str(10)) for v in values],flush=True)
         previous = current
+    assert all(arb(".1063")<p<arb("300.521") and arb("-42.804")<m<arb("94.340") for p,m in ranges[:9])
+    assert all(arb("151.342")<p<arb("655.534") and arb("6.728")<m<arb("134.676") for p,m in ranges[9:])
     return ranges
 
 
