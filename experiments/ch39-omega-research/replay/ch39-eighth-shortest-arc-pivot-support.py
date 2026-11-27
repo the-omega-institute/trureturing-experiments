@@ -12,7 +12,7 @@ SCALE = 10**7
 NUMBER = 2_306_888_100_093
 
 
-def polynomials(root, *, include_single_edge=True):
+def polynomials(root, *, include_single_edge=True, number=NUMBER):
     def lib(name):
         return run_path(str(root / ("ch39-" + name + ".py")))
 
@@ -28,8 +28,8 @@ def polynomials(root, *, include_single_edge=True):
     for i, j in bridges:
         midpoint = Fraction(sum((a+b)**2 for a, b in zip(sites[i], sites[j], strict=True)), 4)
         assert midpoint == 864 and midpoint / 867 == Fraction(288, 289)
-    _, vectors = lib("adjacent-pvm-transport")["spectrum"](shell, 6, NUMBER)
-    matrix = shell["laplacian"](6, acb.zeta_zero(NUMBER).imag)
+    _, vectors = lib("adjacent-pvm-transport")["spectrum"](shell, 6, number)
+    matrix = shell["laplacian"](6, acb.zeta_zero(number).imag)
     links = [-matrix[a, b] for a, b in zip(near, far, strict=True)]
     assert all(z.contains(1) for z in links)
     gram = lib("native-rh-ray-pvm")["gram_cholesky"](root)
