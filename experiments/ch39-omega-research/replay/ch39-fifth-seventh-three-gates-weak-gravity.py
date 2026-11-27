@@ -222,6 +222,11 @@ def three_gates(root, data):
         flush=True,
     )
     assert ratio < arb(".050005")
+    # 移动两个引力目标时，预条件化残差的每个分量至多增加此行的绝对和乘目标半径。
+    inverse_norm = max(sum(abs(v) for v in row).upper() for row in pre.tolist())
+    target_width = rad*(1-ratio)/inverse_norm
+    print("外部两个引力目标可同时变动的半宽下界",target_width.lower().str(15),flush=True)
+    assert target_width > arb(".00014")
     rows = readings(box)
     restored = dict(zip(idx, rows, strict=True))
     assert diag[17] < rows[3] < diag[6]
@@ -285,6 +290,7 @@ def three_gates(root, data):
     test = least / (low * (trace - low))
     print("两次相交门的行列式与可达阈值之比上界", test.upper().str(14), flush=True)
     assert test < arb(".009095")
+    return [restored.get(i,diag[i]) for i in range(19)]
 
 
 if __name__ == "__main__":
