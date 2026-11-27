@@ -9,12 +9,16 @@ def adj(matrix):
     return matrix.conjugate().transpose()
 
 
-def verify(root, rule=None):
+def verify(root, rule=None, *, charge_steps=None):
     def lib(name):
         return run_path(str(root / ("ch39-" + name + ".py")))
 
     x, y, incoming, readout, cutoffs, pivot, thermal = lib("fourth-shell-two-gravity-rules")["shell_data"](root)
-    step = lib("fourth-arithmetic-rank-one-bridge")["verify"](root) if rule is None else rule(x,y)
+    if charge_steps is None:
+        step = lib("fourth-arithmetic-rank-one-bridge")["verify"](root) if rule is None else rule(x,y)
+        up, down, gravity = adj(step**2), step, step**3
+    else:
+        up, down, gravity = charge_steps(root, y)
     rank = lib("rank-two-generator-up-quark")
     n = rank["N"]
     _, labels, _ = lib("common-embedding-central-right-ckm")["verify_nodes"](
@@ -25,7 +29,7 @@ def verify(root, rule=None):
     sites = (shell["soft"]["pole"], *shell["boundary_sites"]())
     assert sites == (14,8,7,6)
     windows = lib("three-shell-outer-holdout")["WINDOWS"]
-    transports = (adj(step**2)*adj(y**2)*adj(x**2), step*y*x)
+    transports = (up*adj(y**2)*adj(x**2), down*y*x)
     for charge, op, limits in zip((-4,2), transports, windows, strict=True):
         source, target = [spectrum(shell, charge, i)[1] for i in (n+1,n+4)]
         amplitudes = rank["read"](source, target, labels[n+1,charge], op)
@@ -43,7 +47,7 @@ def verify(root, rule=None):
         print(charge, [v.str(14) for v in levels], verdict, flush=True)
 
     low, high, highest = cutoffs
-    moved = readout * step**3 * incoming
+    moved = readout * gravity * incoming
     amplitudes = [low + (high-low)*abs(moved[i,0])**2 + (highest-low)*abs(moved[i,1])**2 for i in range(19)]
     moments, heat, field = thermal
     p0,p1 = [(arb(s)/arb("1.22089e19"))**2 for s in ("91.1876","1.176397e14")]
