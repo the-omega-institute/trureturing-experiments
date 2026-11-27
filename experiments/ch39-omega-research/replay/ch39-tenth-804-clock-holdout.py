@@ -6,11 +6,12 @@ from runpy import run_path
 from flint import acb, arb, ctx
 
 
-def evaluate(root, stage):
+def evaluate(root, stage, *, previous_shell=9):
     def lib(name):
         return run_path(str(root / ("ch39-" + name + ".py")))
 
-    old, new = 2_306_888_100_094, 2_306_888_100_095
+    old = 2_306_888_100_085 + previous_shell
+    new = old + 1
     shell = lib("three-ray-chiral-boundary")
     clocks = shell["geo"]["phases"]
     ctx.prec = 320
