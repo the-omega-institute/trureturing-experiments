@@ -16,7 +16,7 @@ def cutoff_bound(rows, source, support, floor):
     outside = [k for k in range(7) if k not in support]
     combination = [sum(c*r[k] for c, r in zip(minors, rows, strict=True)) for k in outside]
     energies = [sum(z*source[k,h] for k,z in zip(outside, combination, strict=True)) for h in (0,1)]
-    numerator = sum(abs(z).lower()**2 for z in energies)
+    numerator = sum(max(arb(0), abs(z).lower())**2 for z in energies)
     return ((floor + numerator/denominator**2)*arb("1.22089e19")).lower()
 
 
@@ -44,9 +44,10 @@ def experiment(root, fifth, columns, levels):
             rows = [r[i] for r,i in zip(raw, ids, strict=True)]
             for support in combinations(range(7), size-1):
                 lower = cutoff_bound(rows, source, support, floor)
+                assert lower.is_finite()
                 minimum = min(minimum, lower)
                 count += 1
-                if lower < arb(3000):
+                if not lower > arb(3000):
                     unresolved.append((ids, tuple(k for k in range(7) if k not in support)))
         if threshold is not None:
             assert not unresolved and minimum > arb(threshold)
