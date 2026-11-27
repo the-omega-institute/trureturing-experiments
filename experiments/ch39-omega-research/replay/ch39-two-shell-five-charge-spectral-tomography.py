@@ -10,19 +10,23 @@ def norm_infinity(matrix):
     return max(sum(abs(z).upper() for z in row) for row in matrix.tolist())
 
 
-def verify(root):
+def verify(root, *, first_zero=False):
     def lib(name):
         return run_path(str(root/("ch39-"+name+".py")))
     graph = lib("three-ray-chiral-boundary")
     frames, rotation = lib("cyclic-two-characters-nine")["characters"](graph["geo"]["sites"])
     lib("eleven-weak-eight-sites")["check_cyclic_geometry"](graph,rotation)
     ctx.prec = 384
-    heights = [acb.zeta_zero(2_306_888_100_085+j).imag for j in (7,8)]
+    numbers = (1,2_306_888_100_092) if first_zero else (2_306_888_100_092,2_306_888_100_093)
+    heights = [acb.zeta_zero(j).imag for j in numbers]
     deltas = [arb(23)/25*arb(2)**-20/(h**2+graph["soft"]["point"]["study"]["offset"]) for h in heights]
     difference = deltas[1]-deltas[0]
     assert difference < 0
     sensitivity = abs(difference)/((1-deltas[0])**2+5).sqrt()
-    assert sensitivity < arb("6.51e-43")
+    if not first_zero:
+        assert sensitivity < arb("6.51e-43")
+    if first_zero:
+        assert abs(difference)>arb("3.8118e-9")
     print("两壳星边亏额差",difference.str(13),flush=True)
     design = [[],[],[]]
     for hindex,height in enumerate(heights):
@@ -61,11 +65,18 @@ def verify(root):
         assert mat.ncols()==size
         pre=gram.mid().inv()
         identity=arb_mat([[int(i==j) for j in range(size)] for i in range(size)])
-        return norm_infinity(identity-pre*gram)
+        defect=norm_infinity(identity-pre*gram)
+        assert defect.is_finite() and defect<1
+        return defect,(norm_infinity(pre*mat.transpose())/(1-defect)).upper()
 
     for k,rows in enumerate(design):
         size=(49,36,36)[k]
-        defect=rank_bound(rows,size)
+        defect,error=rank_bound(rows,size)
+        transform = 1+1/abs(difference) if k==0 else arb(1)
+        error=(error*transform).upper()
+        print("索引、字符、原坐标逐项误差的放大上界",numbers,k,error.str(12),flush=True)
+        if first_zero:
+            assert error < arb(("8.961e12","2843","10570")[k])
         print("字符、读数行数、列秩、预条件缺陷",k,len(rows),size,defect.str(12),flush=True)
         assert defect.is_finite() and defect<arb(".001")
 
@@ -74,11 +85,13 @@ def verify(root):
     for omit in combinations(range(10),2):
         for rows,dim in zip(design,(7,6,6),strict=True):
             chosen=[row for i,row in enumerate(rows) if i//dim not in omit]
-            defect=rank_bound(chosen,dim**2)
+            defect,_=rank_bound(chosen,dim**2)
             assert defect.is_finite() and defect<arb(".001"),(omit,dim)
             worst=max(worst,defect.upper())
     print("任取八种荷与高度组合，45 次删选中的最大预条件缺陷",worst.str(12),flush=True)
 
 
 if __name__=="__main__":
-    verify(Path(__file__).resolve().parent)
+    root=Path(__file__).resolve().parent
+    verify(root)
+    verify(root,first_zero=True)
