@@ -32,12 +32,19 @@ def multipliers(block, rhs, norm2):
     return [arb(format(float(x),".16g")) for x in right]
 
 
-def certify_set(support, h, target, four, positive, threshold):
+def certify_set(support, h, target, four, positive, threshold, fixed_adjoint=None):
     inside = rows(target, support)
     outside = acb_mat(target)
     for j in range(19):
         for i in support:
             outside[i,j] = 0
+    if fixed_adjoint is not None:
+        fixed = [i for i in range(19) if i not in support]
+        old = rows(outside, fixed)
+        transformed = fixed_adjoint * old
+        for k,i in enumerate(fixed):
+            for j in range(19):
+                outside[i,j] = transformed[k,j]
     block = acb_mat([[h[i,j] for j in support] for i in support])
     mixed = h*outside
     rhs = rows(mixed, support)

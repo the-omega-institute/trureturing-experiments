@@ -131,6 +131,10 @@ def witness(sites, anchor, generators, source, target, levels, weights, field, m
     ends=[weights[15]*low_weak(z)+other for z in (t0,t1)]
     print('局部站、六面误差占半宽、其余振幅下界、弱差两端', sites,frac.str(9),minimum.str(9),*[v.str(9) for v in ends],flush=True)
     assert frac<1 and ends[0]>0>ends[1]
+    # Cayley 映射在厄米参数处为 2-Lipschitz，每个生成元的范数为一。
+    center_h = sum((g*x for g,x in zip(generators,point,strict=True)), acb_mat(n,n))
+    center_u = (2*(I-im*center_h).inv()-I)*anchor
+    return center_u, 2*sum(abs(x-y).upper() for x,y in zip(box,point,strict=True))
 
 
 def verify(root):
@@ -147,7 +151,11 @@ def verify(root):
     weak=pv['weak_series']();ranges=run_path(str(root/'ch39-outer-shared-distance-kernel.py'))['weak_bands']
     whole,large=ranges(weak,high_weak,mz**2,(arb('1.176397e14')/arb('1.22089e19'))**2)
     assert sum(c*(large if i==15 else whole) for i,c in enumerate(weights))<arb('-.01656')
-    for block,base,G in charts():witness(block,base,G,src,dest,levels,weights,fields[0],moments,heat,weak,high_weak)
+    certified = []
+    for block,base,G in charts():
+        center_u,radius = witness(block,base,G,src,dest,levels,weights,fields[0],moments,heat,weak,high_weak)
+        certified.append((block,center_u,radius))
+    return certified
 
 
 if __name__=='__main__':verify(Path(__file__).resolve().parent)

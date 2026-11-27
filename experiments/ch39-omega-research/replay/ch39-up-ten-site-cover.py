@@ -11,3 +11,6 @@ if __name__ == "__main__":
     assert all(len(s)==10 and s==tuple(sorted(set(s))) and min(s)>=0 and max(s)<19 for s in exceptions)
     check = run_path(str(root/"ch39-up-eight-site-cover.py"))["verify"]
     check(root, 10, "ch39-up-ten-site-cover.tsv", ".00000629", exceptions)
+    coherent = run_path(str(root/"ch39-up-ten-site-coherent-exceptions.py"))["verify"]
+    assert coherent(root) == set(exceptions)
+    print("全部 92378 个十站支撑均违反轻上夸克参考窗，至少需要十一站。")
