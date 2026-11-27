@@ -9,7 +9,7 @@ def adj(a):
     return a.conjugate().transpose()
 
 
-def experiment(root,fifth,columns,levels):
+def experiment(root,fifth,columns,levels,*,read_gravity=False):
     def lib(name):
         return run_path(str(root/("ch39-"+name+".py")))
 
@@ -32,6 +32,7 @@ def experiment(root,fifth,columns,levels):
     ref = arb("-.074256577194663365545")
     p0,p1 = [(arb(q)/arb("1.22089e19"))**2 for q in ("91.1876","1.176397e14")]
     zero_one = arb(0).union(arb(1))
+    readings = []
     for off in (0,5):
         indices = tuple(map(int,raw[off].split()))
         assert indices == ((9,15,15) if off==0 else (15,9,15))
@@ -54,6 +55,26 @@ def experiment(root,fifth,columns,levels):
                 lo = levels[0].lower()+sum((levels[c+1]-levels[0]).lower()*v.abs_lower()**2 for c,v in enumerate(values))
                 hi = levels[0].upper()+sum((levels[c+1]-levels[0]).upper()*v.abs_upper()**2 for c,v in enumerate(values))
                 return lo.lower(),hi.upper()
+            if read_gravity:
+                number = 2_306_888_100_092+h
+                moments,heat,(field,) = lib("three-index-free-atoms")["broken_fields"](root,[number])
+                ctx.prec = 256
+                _,thermal = lib("fifth-seventh-two-pair-thermal-rotation")["thermal_columns"](field,moments,heat)
+                intervals = [amplitude(i,[zero_one]*3) for i in range(19)]
+                values = []
+                for a,b in intervals:
+                    if b < arb("1e-6"):
+                        # 低线上整个振幅盒可能很宽；直接用 0<E2≤1、0<E3≤1/2。
+                        k_max = b**2*sum(abs(v) for _,v,_ in field)/(2*arb.pi())
+                        w_max = b**4*sum(abs(g) for g,_,_ in field)/(8*arb.pi())
+                        values.append((arb(0,k_max.upper()),arb(0,w_max.upper())))
+                    else:
+                        values.append(thermal(a.union(b)))
+                pair = [sum(w*r[j] for w,r in zip(weights,values,strict=True)) for j in range(2)]
+                assert all(v.is_finite() for v in pair)
+                print("原弱解盒的牛顿与真空读数",indices,h+7,
+                      [(v.lower().str(15),v.upper().str(15)) for v in pair],flush=True)
+                readings.append(pair)
             rest = [amplitude(i,[zero_one]*3)[0] for i in range(19) if i!=k]
             minimum = min(rest)
             assert minimum > 0 and minimum**2 > p0 and sum(weights).contains(1)
@@ -68,6 +89,7 @@ def experiment(root,fifth,columns,levels):
                 faces.append(ref+weights[k]*(part-ref)+tail)
             print("低线组合、壳、最小余线振幅、弱差两面",indices,h+7,minimum.str(10),faces[0].str(12),faces[1].str(12),flush=True)
             assert faces[0] > 0 > faces[1]
+    return readings
 
 
 if __name__ == "__main__":
