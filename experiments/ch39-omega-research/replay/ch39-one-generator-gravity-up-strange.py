@@ -104,6 +104,10 @@ def verify(root):
     ds = [bracket(v.real,eps[1]) for v in db.eig(algorithm="rump")]
     low,high_edge = arb(".000265"),arb(".000271")
     assert all(v>low for v in [*dc,*ds]) and all(v<high_edge for v in dc)
+    # 对任何新三平面和任何整体相位，最轻质量的平方根均服从同一扰动界。
+    separation = (low.sqrt()-arb(".0000135").sqrt())/max_d.sqrt()
+    assert separation>arb(".02325")
+    print("命中下夸克中心所需的发生元射影距离下界",separation.lower().str(12),flush=True)
     loss = (beta-high_edge)*sum(probs[j]/(high_edge-v) for j,v in zip((1,3),dc,strict=True))
     assert loss < probs[2], (loss,probs[2],beta,dc)
     print("下型两字符包围、高平凡上型轴的下型均值上界、二平面负定余量",
