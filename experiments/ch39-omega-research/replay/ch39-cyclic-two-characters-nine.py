@@ -75,12 +75,15 @@ def source_qr(block):
 def experiment(root, fifth, columns, levels, *, return_blocks=False, return_chart=False,
                lines=LINES, energies=ENERGIES, parameters=PARAMETERS, active=ACTIVE,
                uniform_grid=4, ratio_bound=".904", shared_source_error=False,
-               gravity_rows=None, align_source=False, gravity_readout=()):
+               gravity_rows=None, align_source=False, gravity_readout=(), merge_nontrivial=False):
     def lib(name):
         return run_path(str(root/("ch39-"+name+".py")))
     general = lib("common-three-shell-nine-endpoints")
     shell = lib("three-ray-chiral-boundary")
     forms,rotation = characters(shell["geo"]["sites"])
+    if merge_nontrivial:
+        joined = acb_mat([left+right for left,right in zip(forms[1].tolist(),forms[2].tolist(),strict=True)])
+        forms = [forms[0],joined,acb_mat(19,0)]
     geometry = lib("fifth-seventh-shortest-site-gates")["geometry"]
     gravity = lib("shortest-common-complex-gate")["gravity_system"]
     shells = []
@@ -104,7 +107,7 @@ def experiment(root, fifth, columns, levels, *, return_blocks=False, return_char
     rows = acb_mat([[basis[idx,j] for j in range(19)] for (basis,_,_,_),idx in zip(shells,lines,strict=True)])
     s = rows*forms[0]
     dual = adj(s)*(s*adj(s)).inv()
-    projectors = (eye(7)-dual*s,eye(6))
+    projectors = (eye(7)-dual*s,eye(forms[1].ncols()))
     original = fifth*columns
     blocks = [adj(f)*original for f in forms]
     factors0 = [source_qr(a) for a in blocks[:2]]
@@ -217,10 +220,10 @@ def experiment(root, fifth, columns, levels, *, return_blocks=False, return_char
                     err = factors[k][a,b]-fixed_mids[k][a,b]
                     basis_tangent.append(z)
                     noises.append(err.imag if imag else err.real)
-        for i in range(6):
+        for i in range(ref_fixed.nrows()):
             for b in range(2):
                 for imag in (False,True):
-                    z = acb_mat(6,2)
+                    z = acb_mat(ref_fixed.nrows(),2)
                     z[i,b] = acb(0,1) if imag else 1
                     basis_tangent.append(forms[2]*z)
                     w = blocks[2][i,b]-ref_fixed[i,b]
