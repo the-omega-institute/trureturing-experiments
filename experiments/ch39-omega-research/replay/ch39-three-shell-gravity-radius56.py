@@ -17,20 +17,20 @@ EXTRA_LAYERS = ((3, ((11, 9), (12, 15), (18, 16))),
                 (3, ((11, 13), (12, 10), (18, 17))))
 
 
-def hessian_columns(station, layers, point, block):
+def hessian_columns(station, layers, point, block, *, parameters=PARAMETERS, active=ACTIVE):
     """共同门在整个角盒中的重列、梯度与对称二阶导数。"""
     from flint import acb, acb_mat
-    angles = list(map(arb, PARAMETERS))
-    for k, q in zip(ACTIVE, point, strict=True):
+    angles = list(map(arb, parameters))
+    for k, q in zip(active, point, strict=True):
         angles[k] = q
-    keys = [(i, j) for i in range(6) for j in range(i+1)]
+    keys = [(i, j) for i in range(len(active)) for j in range(i+1)]
     value = acb_mat(station)
-    first = [acb_mat(19, 2) for _ in ACTIVE]
+    first = [acb_mat(19, 2) for _ in active]
     second = [acb_mat(19, 2) for _ in keys]
     phase_signs = ((1, 0, 0, -1), (0, -1, 1, 0), (1, 1, 1, 1))
     for gate_id, edges in layers:
         g, dg = block(angles[4*gate_id:4*gate_id+4])
-        local = {i: a%4 for i, a in enumerate(ACTIVE) if a//4 == gate_id}
+        local = {i: a%4 for i, a in enumerate(active) if a//4 == gate_id}
         d2g = {}
         for i, a in local.items():
             for j, b in local.items():
@@ -73,6 +73,10 @@ def hessian_columns(station, layers, point, block):
 
 def hessian(station, layers, point, block, shells, levels):
     value, grad, second, keys = hessian_columns(station, layers, point, block)
+    return gravity_hessian(value, grad, second, keys, shells, levels)
+
+
+def gravity_hessian(value, grad, second, keys, shells, levels):
     low, heavy, top = levels
     gains = (heavy-low, top-low)
     answer = []
