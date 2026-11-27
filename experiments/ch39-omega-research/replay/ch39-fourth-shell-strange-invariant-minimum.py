@@ -67,6 +67,22 @@ def verify(root):
     assert distance > arb(".00029159") and leakage > arb("8.50270e-8")
     print("最小奇质量、达窗所需的算子距离及泄漏概率下界",
           optimum.str(15),distance.lower().str(12),leakage.lower().str(12),flush=True)
+    # 允许跨空间转移时，沿同一个四站平凡方向作变分检验。
+    # 给补空间加入正罚项，七维压缩的各个本征值由全空间相应升序本征值从下控制。
+    assert sum(strengths).contains(1) and max(z.upper() for z in w) < 1
+    complement = groups[1] + groups[2]
+    for threshold, penalty, required in ((".000271", 13, "2.00e-7"), (".000268", 8, "4.97e-7")):
+        penalized = acb_mat(raw)
+        for j in complement:
+            penalized[j,j] += penalty
+        lowest = spectrum(penalized)[:7]
+        rayleigh = sum(strengths[j]*value for j,value in zip(seq, lowest, strict=True))
+        probability = (rayleigh-arb(threshold))/penalty
+        assert arb(required) < probability < arb("5e-7")
+        # 在这个小泄漏范围，两个非平凡字符仍高于目标。
+        assert arb(".0004").sqrt() - (2*probability).sqrt() > arb(threshold).sqrt()
+        print("奇质量阈值、罚项、进入该阈值所需的最大方向转移概率下界",
+              threshold, penalty, probability.lower().str(13), flush=True)
     return optimum
 
 
