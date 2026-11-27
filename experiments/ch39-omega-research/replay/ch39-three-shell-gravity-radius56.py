@@ -13,6 +13,10 @@ PARAMETERS = ("-2.875", ".30117250539529", "-.9375", ".875",
 ACTIVE = (1, 4, 8, 11, 12, 15)
 
 
+EXTRA_LAYERS = ((3, ((11, 9), (12, 15), (18, 16))),
+                (3, ((11, 13), (12, 10), (18, 17))))
+
+
 def hessian_columns(station, layers, point, block):
     """共同门在整个角盒中的重列、梯度与对称二阶导数。"""
     from flint import acb, acb_mat
@@ -113,8 +117,7 @@ def experiment(root, fifth, columns, levels):
         return run_path(str(root / ("ch39-" + name + ".py")))
 
     ordered = lib("two-shell-ordered-bond-gates")
-    layers = ordered["LAYERS"] + ((3, ((11, 9), (12, 15), (18, 16))),
-                                 (3, ((11, 13), (12, 10), (18, 17))))
+    layers = ordered["LAYERS"] + EXTRA_LAYERS
     sites = lib("three-ray-chiral-boundary")["geo"]["sites"]
     used = [((12, 32, 52, 56)[k], min(a, b), max(a, b)) for k, pairs in layers for a, b in pairs]
     lengths = {(sum((x-y)**2 for x, y in zip(sites[i], sites[j], strict=True)), i, j)
