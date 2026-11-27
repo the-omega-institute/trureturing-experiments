@@ -1,4 +1,4 @@
-"""直接在五个真实正零点重算三条射线首站对最低三态的最小奇异值。"""
+"""直接在十个真实正零点重算三条射线首站对最低三态的最小奇异值。"""
 from pathlib import Path
 from runpy import run_path
 
@@ -11,7 +11,9 @@ def verify(root):
     sites = graph["boundary_sites"]()
     assert sorted(sites) == [6, 7, 8]
     cases = ((1, 3992, 5351), (-4, 2958, 7359), (2, 1281, 3909),
-             (-3, 3049, 4572), (6, 3837, 4623))
+             (-3, 3049, 4572), (6, 3837, 4623),
+             (1, 22439, 807), (-4, 36298, 696), (2, 502189, 704),
+             (-3, 19119, 629), (6, 60165, 744))
     for charge, number, millionths in cases:
         levels, basis = spectrum(graph, charge, number)
         assert levels[2] < 9 < levels[3]
