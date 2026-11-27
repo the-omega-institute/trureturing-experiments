@@ -6,7 +6,7 @@ from flint import arb, ctx
 import numpy as np
 
 
-def verify(root):
+def integral_table(root, extra_probes=(), endpoint_shifts=()):
     def lib(name):
         return run_path(str(root/("ch39-"+name+".py")))
     number=2_306_888_100_089
@@ -28,6 +28,7 @@ def verify(root):
             (17800000000,"y"),(17800000000,"col"),(5600,"col"),(1800000,"col"),
             (56000000000,"y"),(10000000,"y"),(4200,"y"),(5600000,"col"),
             (100000000000,"y")]
+    probes.extend(extra_probes)
     energies=list(dict.fromkeys(energy for energy,_ in probes))
     powers=[p1,*[(arb(v)/mp)**2 for v in energies]]
     lo=(arb("103.04188")/mp)**2
@@ -113,6 +114,15 @@ def verify(root):
         base.append(const[j]+ref[j]+weakcoef[j]*dref)
         drifts.append(massnorm[j]*(powers[which[j]]-p0)/(4*cut)+
                       abs(weakcoef[j])*2*(arb("2.398e-21")+kappa/cut))
+    shifted=[(6+probes.index((power,kind)),arb(rp),arb(rm)) for power,kind,rp,rm in endpoint_shifts]
+    def projections(values):
+        return [*values,*[values[j]+a*values[0]+b*values[1] for j,a,b in shifted]]
+    def errors(values):
+        return [*values,*[values[j]+abs(a)*values[0]+abs(b)*values[1] for j,a,b in shifted]]
+    base=projections(base)
+    drifts=errors(drifts)
+    wide_ref=projections(ref)
+    wide_weakcoef=weakcoef+[0]*len(shifted)
     def end(j):
         return lo*(span*j/coarse).exp()
     def second(p,z,l,r):
@@ -127,6 +137,8 @@ def verify(root):
             p=powers[which[j]]
             e=sum(abs(b[j])*(second(p0,z,left,right)+second(p,z,left,right)) for b,(_,z,_) in zip(beta,species,strict=True))
             bend.append((e*(span/coarse)**2/8).upper())
+        point_left,point_right=projections(gl),projections(gr)
+        wide_bend=errors(bend)
         for j in range(fine//coarse):
             a=arb(j)/(fine//coarse);b=arb(j+1)/(fine//coarse)
             x=lo*(span*(t+a)/coarse).exp();y=lo*(span*(t+b)/coarse).exp()
@@ -138,7 +150,7 @@ def verify(root):
             else:
                 dw=wseries(x/p0).union(wseries(limit/p0)).union(neutral["weak_column"](limit,p0,p1))-dref
             graph.append([((1-a)*u+a*v).union((1-b)*u+b*v)-r+arb(0,e)+wc*dw
-                          for u,v,r,e,wc in zip(gl,gr,ref,bend,weakcoef,strict=True)])
+                          for u,v,r,e,wc in zip(point_left,point_right,wide_ref,wide_bend,wide_weakcoef,strict=True)])
         left,gl=right,gr
 
     # 每个端点按 2^-32 向外取整。树中只做 int64 的最小、最大和加法。
@@ -151,32 +163,49 @@ def verify(root):
     constants=np.array([bracket(v) for v in base],dtype=np.int64)
     high_error=np.array([[bracket(abs(w)*d)[1] for d in drifts] for w in c],dtype=np.int64)
     assert int(np.max(np.abs(high_error)))*19<2**50
-    bounds=np.zeros((19,2*fine,count,2),dtype=np.int64)
+    bounds=np.zeros((19,2*fine,len(base),2),dtype=np.int64)
     for i,w in enumerate(c):
         bounds[i,fine:]=[[bracket(w*v) for v in band] for band in graph]
     assert int(np.max(np.abs(bounds)))*7+int(np.max(np.abs(high_error)))*19+int(np.max(np.abs(constants)))<2**60
     for n in range(fine-1,0,-1):
         bounds[:,n,:,0]=np.minimum(bounds[:,2*n,:,0],bounds[:,2*n+1,:,0])
         bounds[:,n,:,1]=np.maximum(bounds[:,2*n,:,1],bounds[:,2*n+1,:,1])
-    # 在临时目录编译深度优先遍历，内存不随同一层的未决盒数增长。
+    print("中性探测能标的弱差上界",[v.str(12) for v in weak_allowance],flush=True)
+    return lo,cut,constants,high_error,bounds
+
+
+def integer_cover(root,constants,high_error,bounds,size,domains=None):
+    # domains 的每个条目依次给出层号和闭对数格端点。默认遍历全部同尺寸支撑。
     from tempfile import TemporaryDirectory
     from subprocess import run
     import shutil
     compiler=shutil.which("c++")
-    assert compiler,"六层整数覆盖需要 C++ 编译器"
+    assert compiler,"整数覆盖需要 C++ 编译器"
+    _,nodes,count,_=bounds.shape
     assert int(np.max(np.abs(bounds)))*400 < 2**63
-    print("中性探测能标的弱差上界",[v.str(12) for v in weak_allowance],flush=True)
+    assert int(np.max(np.abs(bounds)))*size+int(np.max(np.abs(high_error)))*19+int(np.max(np.abs(constants)))<2**60
     with TemporaryDirectory() as folder:
         binary=Path(folder)/"cover"
         run([compiler,"-std=c++17","-O3",str(root/"ch39-low-cutoff-integer-cover.cpp"),"-o",str(binary)],check=True)
         with (Path(folder)/"table").open("w+b") as fp:
-            np.array([6,fine,count],dtype=np.int64).tofile(fp)
+            np.array([size,nodes//2,count],dtype=np.int64).tofile(fp)
             constants.tofile(fp)
             high_error.tofile(fp)
             bounds.tofile(fp)
+            if domains is not None:
+                np.array([len(domains)],dtype=np.int64).tofile(fp)
+                for case in domains:
+                    assert 1<=len(case)<=size and len({row for row,_,_ in case})==len(case)
+                    np.array([len(case)],dtype=np.int64).tofile(fp)
+                    np.array(case,dtype=np.int64).tofile(fp)
             fp.seek(0)
-            run([str(binary)],stdin=fp,check=True)
+            options=[] if domains is None else ["--selected"]
+            run([str(binary),*options],stdin=fp,check=True)
 
+
+def verify(root):
+    _,_,constants,high_error,bounds=integral_table(root)
+    integer_cover(root,constants,high_error,bounds,6)
 
 
 if __name__=="__main__":
