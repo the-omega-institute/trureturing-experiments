@@ -5,7 +5,7 @@ from runpy import run_path
 from flint import acb_mat, arb, ctx
 
 
-def verify(root):
+def shell_data(root):
     def lib(name):
         return run_path(str(root / ("ch39-" + name + ".py")))
 
@@ -41,11 +41,16 @@ def verify(root):
 
     x = generator(cx, rx, upstream["DIRECTIONS"], "ch39-full-ckm-gravity-cayley.tsv")
     y = generator(cy, ry, joint["DIRECTIONS"], "ch39-next-common-ckm-gravity-cayley.tsv")
-    z = y * x.conjugate().transpose() * y
     incoming = y**3 * x**3 * source
     readout = target.conjugate().transpose()
+    return x, y, incoming, readout, (low,high,highest), weights, (moments,heat,fields[0])
+
+
+def verify(root):
+    x,y,incoming,readout,(low,high,highest),weights,(moments,heat,field) = shell_data(root)
+    z = y * x.conjugate().transpose() * y
     p0, p1 = [(arb(s)/arb("1.22089e19"))**2 for s in ("91.1876", "1.176397e14")]
-    weak = lib("full-neutral-free-cutoff")["weak_column"]
+    weak = run_path(str(root / "ch39-full-neutral-free-cutoff.py"))["weak_column"]
     goals = (arb(1), arb("1e-122"), arb(0))
     results = {}
     for name, step in (("YX*Y",z), ("Y",y)):
@@ -53,7 +58,7 @@ def verify(root):
         amplitudes = [low + (high-low)*abs(ov[i,0])**2 + (highest-low)*abs(ov[i,1])**2
                       for i in range(19)]
         assert all(v>0 and v*v>p0 for v in amplitudes)
-        thermal = [moments(fields[0], heat, v*v) for v in amplitudes]
+        thermal = [moments(field, heat, v*v) for v in amplitudes]
         columns = (*zip(*thermal), [weak(v*v, p0, p1) for v in amplitudes])
         result = [sum(w*b for w,b in zip(weights, col, strict=True)) for col in columns]
         print("第三步、最小振幅下界、最大振幅上界、K、W、D", name,
