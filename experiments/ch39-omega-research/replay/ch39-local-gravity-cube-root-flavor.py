@@ -55,6 +55,7 @@ def verify(root):
             count += 1
         print("站位、荷六块半径、上型块误差上界、分支数、轻上型严格下界",
               sites,radius.str(10),error.str(12),count,goal,flush=True)
+    return blocks
 
 
 if __name__ == "__main__":
