@@ -5,7 +5,7 @@ from runpy import run_path
 from flint import acb_mat, arb, ctx
 
 
-def verify(root):
+def blocks(root):
     def lib(name):
         return run_path(str(root/("ch39-"+name+".py")))
 
@@ -49,6 +49,11 @@ def verify(root):
               [(v.lower().str(13), v.upper().str(13)) for v in values], flush=True)
         char.append(values)
 
+    return trivial_blocks, char
+
+
+def verify(root):
+    trivial_blocks, char = blocks(root)
     order = sorted(range(2), key=lambda i: char[0][i].mid())
     ua, ub = [char[0][i] for i in order]
     da, db = [char[1][i] for i in order]

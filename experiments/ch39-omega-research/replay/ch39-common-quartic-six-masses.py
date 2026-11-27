@@ -99,7 +99,7 @@ def reference_windows():
 
 
 
-def verify(root):
+def certified_cases(root, *, radius_text="1e-15"):
     native=run_path(str(root/"ch39-free-four-site-native-positive-spectrum.py"))
     shell=run_path(str(root/"ch39-three-ray-chiral-boundary.py"))
     ordered=run_path(str(root/"ch39-bounded-common-rational-amplitude.py"))["ordered"]
@@ -121,7 +121,7 @@ def verify(root):
             f,j=constraints(coeff,center,nodes,rows,target)
             corrected=j.solve(f)
             center=[(x-v).mid() for x,v in zip(center,corrected.entries(),strict=True)]
-        radius=arb("1e-15")
+        radius=arb(radius_text)
         box=[x+arb(0,radius.upper()) for x in center]
         assert all(not (h-z).contains(0) for h in box for z in coeff[2:])
         f,j=constraints(coeff,center,nodes,rows,target)
@@ -135,6 +135,11 @@ def verify(root):
         sx,sy=[(x[1]-x[0])/(x[1]+x[0]) for x in r]
         margin=(1-c*c)*(1-sx*sx)-(sy-c*sx)**2
         assert margin>0
+        yield index,coeff,box,nodes,rows,target,gain,margin
+
+
+def verify(root):
+    for index,coeff,box,nodes,rows,target,gain,margin in certified_cases(root):
         branches = ckm_branches(coeff,box,nodes,rows,target)
         req_vub,req_j = reference_windows()
         assert all(not x.overlaps(req_vub) and not j.overlaps(req_j) for x,j,_ in branches)
