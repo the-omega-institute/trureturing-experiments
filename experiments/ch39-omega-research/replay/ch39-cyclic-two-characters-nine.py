@@ -74,7 +74,8 @@ def source_qr(block):
 
 def experiment(root, fifth, columns, levels, *, return_blocks=False, return_chart=False,
                lines=LINES, energies=ENERGIES, parameters=PARAMETERS, active=ACTIVE,
-               uniform_grid=4, ratio_bound=".904", shared_source_error=False):
+               uniform_grid=4, ratio_bound=".904", shared_source_error=False,
+               gravity_rows=None, align_source=False, gravity_readout=()):
     def lib(name):
         return run_path(str(root/("ch39-"+name+".py")))
     general = lib("common-three-shell-nine-endpoints")
@@ -111,17 +112,28 @@ def experiment(root, fifth, columns, levels, *, return_blocks=False, return_char
     low,heavy,top = levels
     normalize,inner = general["normalize"],general["inner"]
     def frame(point,energies, return_blocks=False, reference_factors=None, reference_fixed=None):
-        b = acb_mat([[((q/mp-low)/(heavy-low)).sqrt(),0] for q in energies])
+        if align_source:
+            n,coeff,_ = factors0[0]
+            slope = coeff/n
+            gain = heavy-low+(top-low)*abs(slope)**2
+            first = [-((q/mp-low)/gain).sqrt() for q in energies]
+            b = acb_mat([[v,v*slope] for v in first])
+        else:
+            b = acb_mat([[((q/mp-low)/(heavy-low)).sqrt(),0] for q in energies])
         particular = dual*b
         # 以源列的正交残量避免在近共线时直接相减两个 Gram 对角量。
         factors = []
         for k,(n,coeff,residual) in enumerate(factors0):
             loss = sum(abs(particular[i,0])**2 for i in range(7)) if k==0 else arb(0)
             sq = n*n-loss
-            remainder = residual-abs(coeff)**2*loss/sq
-            assert sq>0 and remainder>0
+            assert sq>0
             diag = sq.sqrt()
-            factors.append(acb_mat([[diag,coeff*n/diag],[0,remainder.sqrt()]]))
+            if k==0 and align_source:
+                off,remainder = diag*slope,residual
+            else:
+                off,remainder = coeff*n/diag,residual-abs(coeff)**2*loss/sq
+            assert remainder>0
+            factors.append(acb_mat([[diag,off],[0,remainder.sqrt()]]))
         if reference_factors is not None:
             factors = reference_factors
         fixed_block = blocks[2] if reference_fixed is None else reference_fixed
@@ -155,9 +167,16 @@ def experiment(root, fifth, columns, levels, *, return_blocks=False, return_char
                     character_frames.append(block+particular if base==0 else block)
                 total[j] += form*block
             base += 4*n
+        if return_blocks=="particular":
+            return particular
         if return_blocks=="factors":
             return factors
         return [*character_frames,fixed_block] if return_blocks else total
+
+    selected = tuple(range(2*len(shells))) if gravity_rows is None else gravity_rows
+    assert len(selected)==len(active) and len(set(selected))==len(selected)
+    def select(rows):
+        return arb_mat([rows[i] for i in selected])
 
     def system(point,qs,values):
         mats = frame(point,qs)
@@ -167,7 +186,7 @@ def experiment(root, fifth, columns, levels, *, return_blocks=False, return_char
             f,j = gravity(proj,ds,levels,w,heat,field,values)
             fs.extend(f.tolist())
             js.extend(j.tolist())
-        return arb_mat(fs),arb_mat(js)
+        return select(fs),select(js)
     center = [arb(parameters[i]) for i in active]
     q = list(map(arb,energies))
     eps = arb(".0003")
@@ -212,7 +231,7 @@ def experiment(root, fifth, columns, levels, *, return_blocks=False, return_char
             _,jd = gravity(basis*whole_station,[basis*v for v in basis_tangent],levels,w,heat,field,False)
             fs.extend(fm.tolist())
             ds.extend(jd.tolist())
-        shift = pre*arb_mat(fs)+(pre*arb_mat(ds))*arb_mat([[v] for v in noises])
+        shift = pre*select(fs)+(pre*select(ds))*arb_mat([[v] for v in noises])
         offsets = [min(a,z.abs_upper()) for a,z in zip(offsets,shift.entries(),strict=True)]
     widths = [2*d+arb(".000002") for d in offsets]
     box = [c+arb(0,r.upper()) for c,r in zip(center,widths,strict=True)]
@@ -233,9 +252,13 @@ def experiment(root, fifth, columns, levels, *, return_blocks=False, return_char
     ref = arb("-.074256577194663365546").union(arb("-.074256577194663365544"))
     p0,p1 = (mz/mp)**2,(arb("1.176397e14")/mp)**2
     character_values = frame(box,qs,return_blocks=True)
+    particular = frame(center,qs,return_blocks="particular") if align_source else None
     for (basis,w,_,_),idx,qq in zip(shells,lines,q,strict=True):
         overlaps = [basis*e for e in forms]
         projections = [m*a for m,a in zip(overlaps,character_values,strict=True)]
+        if align_source:
+            # 近邻壳的本征行几乎平行。先投到已选低线的正交补，保留这种相消。
+            projections[0] = overlaps[0]*particular+(overlaps[0]*projectors[0])*(character_values[0]-particular)
         lower_bounds = []
         for i in range(19):
             if i==idx:
@@ -251,6 +274,17 @@ def experiment(root, fifth, columns, levels, *, return_blocks=False, return_char
         faces = [ref+w[idx]*(weak(((qq+sign*eps)/mz)**2)-ref)+arb(0,tail) for sign in (-1,1)]
         print("低线、余振幅下界、弱差面",idx+1,*[v.str(12) for v in (amin,*faces)],flush=True)
         assert faces[0]>0>faces[1]
+    if gravity_readout:
+        mid,wide = frame(center,qs)[0],frame(box,qs)
+        for row,lo,hi in gravity_readout:
+            k,h = divmod(row,2)
+            basis,w,heat,field = shells[k]
+            f,_ = gravity(basis*mid,[],levels,w,heat,field,True)
+            _,df = gravity(basis*wide[0],[basis*m for m in wide[1:]],levels,w,heat,field,False)
+            value = f[h,0]+sum(df[h,i]*(v-c) for i,(v,c) in enumerate(zip(box,center,strict=True)))
+            value += (arb(1),arb("1e-122"))[h]
+            print("壳号、引力读数与端点包围",k+7,("K","W")[h],value.lower().str(16),value.upper().str(16),flush=True)
+            assert arb(lo)<value<arb(hi)
     if return_chart:
         return forms,character_values,levels,frame(center,qs)[0],frame(box,qs),box,center
     if return_blocks:
