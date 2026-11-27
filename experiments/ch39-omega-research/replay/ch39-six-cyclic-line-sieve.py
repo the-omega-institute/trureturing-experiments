@@ -208,21 +208,17 @@ def basic_options(model, targets):
     return True
 
 
-def experiment(root, fifth, columns, levels, *, tolerance=None):
-    if tolerance is None:
-        tolerance = arb(0)
+def prepare_shells(root, fifth, columns, levels, candidate_sets, tolerance):
     assert tolerance >= 0
 
     def lib(name):
         return run_path(str(root / ("ch39-" + name + ".py")))
 
-    api = lib("seven-cyclic-weak-horizon")
-    candidates = api["CANDIDATES"][:6]
     graph = lib("three-ray-chiral-boundary")
     native = lib("native-rh-ray-pvm")
     gram = native["gram_cholesky"](root)
     frames, _ = lib("cyclic-two-characters-nine")["characters"](graph["geo"]["sites"])
-    positions = range(2_306_888_100_092, 2_306_888_100_098)
+    positions = range(2_306_888_100_092, 2_306_888_100_092 + len(candidate_sets))
     fields = lib("three-index-free-atoms")["broken_fields"](root, positions)[2]
     floor, heavy, top = levels
     weighted = (
@@ -244,7 +240,7 @@ def experiment(root, fifth, columns, levels, *, tolerance=None):
     cover((arb(3000) / mz) ** 2, far)
     cover((floor * planck / mz) ** 2, near)
     shells = []
-    for number, ids, field in zip(positions, candidates, fields, strict=True):
+    for number, ids, field in zip(positions, candidate_sets, fields, strict=True):
         _, basis = lib("adjacent-pvm-transport")["spectrum"](graph, 6, number)
         weights = [
             z.real
@@ -262,8 +258,19 @@ def experiment(root, fifth, columns, levels, *, tolerance=None):
         assert all(squared(row(projections[0], i)) > arb(".9") for i in ids)
         shells.append((projections, weights, field))
 
-    tzero, total, model = prepare(levels, blocks, shells)
-    cover_api = lib("six-cyclic-diagonal-cover")
+    return blocks, prepare(levels, blocks, shells)
+
+
+def experiment(root, fifth, columns, levels, *, tolerance=None):
+    if tolerance is None:
+        tolerance = arb(0)
+    candidates = run_path(str(root / "ch39-seven-cyclic-weak-horizon.py"))[
+        "CANDIDATES"
+    ][:6]
+    _, (tzero, total, model) = prepare_shells(
+        root, fifth, columns, levels, candidates, tolerance
+    )
+    cover_api = run_path(str(root / "ch39-six-cyclic-diagonal-cover.py"))
     geometry = cover_api["prepare"](model)
     survivors = []
     count = 0
