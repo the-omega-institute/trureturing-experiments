@@ -2,7 +2,7 @@
 from pathlib import Path
 from runpy import run_path
 
-from flint import acb_mat, arb, ctx
+from flint import acb, acb_mat, arb, ctx
 
 
 def singular_values(matrix):
@@ -43,6 +43,18 @@ def verify(root):
     assert required > arb("128.56") and required/bound > arb("13.02")
     print("首零点相对条件数、所有目的背景上界、质量窗下界、部门附加变形至少需要的倍数",
           ratio.str(13),bound.str(13),required.str(13),(required/bound).str(13))
+    def box(mid,radius):
+        return arb(mid)+arb(0,arb(radius).upper())
+    t12,t23,t13,phase = (box(m,r) for m,r in ((".22704",".00082"),(".04275",".00042"),
+                                                (".00377",".00008"),("1.139",".023")))
+    vtd = abs(acb(t12.sin()*t23.sin())-t12.cos()*t23.cos()*t13.sin()*acb(0,phase).exp())
+    mixing = arb(".8573")/arb(".0000137")*arb(".01392")/arb(".00000629")*vtd.lower()*t13.sin().lower()
+    assert mixing > 4329 and mixing/bound > arb("438.5")
+    threshold = (required/ratio).sqrt()
+    minimal_error = (threshold*arb(7)/9-1)/(threshold+1)
+    assert minimal_error > arb(".46274")
+    print("含CKM的相对条件数下界、附加变形条件数积下界、只用质量时相对源误差下界",
+          mixing.str(13),(mixing/bound).str(13),minimal_error.str(13))
 
 
 if __name__ == "__main__":
