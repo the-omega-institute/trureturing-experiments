@@ -12,7 +12,7 @@ def adj(a):
     return a.conjugate().transpose()
 
 
-def verify(root,*,return_transport=False):
+def verify(root,*,return_transport=False,return_cutoffs=False):
     def lib(name):
         return run_path(str(root/("ch39-"+name+".py")))
     x,y,incoming,readout,(low,h,k),weights,thermal = lib("fourth-shell-two-gravity-rules")["shell_data"](root)
@@ -148,6 +148,9 @@ def verify(root,*,return_transport=False):
     print("第16层截止 GeV、弱差两端、另外十八层最小振幅",
           *[v.str(13) for v in (mz*time.sqrt(),*ends,min(a.lower() for i,a in enumerate(amps) if i!=15))],
           flush=True)
+    if return_cutoffs:
+        # 第16层使用已由四个重叠方程固定的精确截止，全盒覆盖每个联合解。
+        return [a*a for a in amps],weights
     if return_transport:
         z,_=local(seed,center,dirs,eye,False)
         # 每个反厄米 Cayley 逆为压缩，且各坐标方向关于实 Frobenius 内积正交。
