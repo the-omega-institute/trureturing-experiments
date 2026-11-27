@@ -1,7 +1,7 @@
 """有理矩阵见证：相同的原生谱线占据、四端口压缩与八站压缩。"""
 from pathlib import Path
 from runpy import run_path
-from flint import fmpq, fmpq_mat
+from flint import acb_mat, arb, fmpq, fmpq_mat
 
 
 def verify(root):
@@ -32,6 +32,27 @@ def verify(root):
         assert all(diff[i,j]==0 for i in read for j in read)
     assert diff[14,0]==fmpq(1,2)
     print("四端口与八站压缩相同，极点与 0 站的归一化非对角元之差",diff[14,0])
+
+    frames, _ = run_path(str(root/"ch39-cyclic-two-characters-nine.py"))["characters"](points)
+    # 三条未调谐轨道在每个字符各贡献一个坐标。所有可调边的端点都在外部。
+    quiet = {9,10,11,12,13,15,16,17,18}
+    assert quiet.isdisjoint(set(graph["soft"]["star"]["orbit"])|{14})
+    for i,j,d,_ in graph["geo"]["edges"]:
+        assert d not in (724,804) or (i not in quiet and j not in quiet)
+    minors = []
+    for charge in (1,-4,2,-3,6):
+        base = graph["laplacian"](charge,arb(1),phases={})
+        for frame in frames:
+            for k in range(frame.ncols()):
+                support = {i for i in range(19) if abs(frame[i,k])>arb(".5")}
+                assert bool(support & quiet) == (k in (3,4,5))
+                if k in (3,4,5):
+                    assert support <= quiet
+            block = frame.conjugate().transpose()*base*frame
+            bridge = acb_mat([block.tolist()[j][:3] for j in (3,4,5)])
+            minors.append(abs(bridge.det()).lower())
+    assert all(x.is_finite() and x>arb(".0001548") for x in minors)
+    print("五荷十五个三阶连接子式的最小绝对值下界",min(minors).str(13))
 
 
 if __name__=="__main__":
