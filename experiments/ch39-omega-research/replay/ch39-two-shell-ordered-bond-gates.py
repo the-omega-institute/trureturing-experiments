@@ -28,13 +28,13 @@ def block(angles):
     return values,derivatives
 
 
-def transport(fifth, point):
-    angles = list(map(arb,ANGLES))
-    for key,val in zip(ACTIVE, point,strict=True):
+def transport(fifth, point, *, parameters=ANGLES, active=ACTIVE):
+    angles = list(map(arb,parameters))
+    for key,val in zip(active, point,strict=True):
         angles[key] = val
     gates = [block(angles[4*j:4*j+4]) for j in range(3)]
     # 在第五壳谱标架的十九个列向量上同时传播 U 及其四个导数。
-    mats = [acb_mat(fifth)]+[acb_mat(19,19) for _ in ACTIVE]
+    mats = [acb_mat(fifth)]+[acb_mat(19,19) for _ in active]
     for index,pairs in LAYERS:
         gate,jac = gates[index]
         for a,b in pairs:
@@ -42,8 +42,8 @@ def transport(fifth, point):
                 src = [(m[a,j],m[b,j]) for m in mats]
                 for k,(m,(u,v)) in enumerate(zip(mats,src,strict=True)):
                     d1,d2 = gate[0]*u+gate[1]*v,gate[2]*u+gate[3]*v
-                    if k and ACTIVE[k-1]//4==index:
-                        dg = jac[ACTIVE[k-1]%4]
+                    if k and active[k-1]//4==index:
+                        dg = jac[active[k-1]%4]
                         l,r = src[0]
                         d1 += dg[0]*l+dg[1]*r
                         d2 += dg[2]*l+dg[3]*r
@@ -51,9 +51,11 @@ def transport(fifth, point):
     return mats
 
 
-def experiment(root, fifth, columns, levels):
+def experiment(root, fifth, columns, levels, *, parameters=ANGLES, active=ACTIVE,
+               half_width=".00005", maximum_ratio=".656"):
     def lib(name):
         return run_path(str(root/("ch39-"+name+".py")))
+    assert len(parameters)==12 and len(active)==len(set(active))==4
     sites = lib("three-ray-chiral-boundary")["geo"]["sites"]
     expected = set()
     for i,j in combinations(range(19),2):
@@ -69,7 +71,7 @@ def experiment(root, fifth, columns, levels):
         geometry.append((basis.conjugate().transpose(),weights,heat,field))
     gravity = lib("shortest-common-complex-gate")["gravity_system"]
     def system(point,values):
-        mats = transport(fifth,point)
+        mats = transport(fifth,point,parameters=parameters,active=active)
         fs,js = [],[]
         for left,w,heat,field in geometry:
             p,*deriv = [(left*x)*columns for x in mats]
@@ -77,20 +79,20 @@ def experiment(root, fifth, columns, levels):
             fs.extend(f.tolist())
             js.extend(j.tolist())
         return arb_mat(fs),arb_mat(js)
-    center=[arb(ANGLES[i]) for i in ACTIVE]
+    center=[arb(parameters[i]) for i in active]
     f,j=system(center,True)
     pre=j.mid().inv()
     assert not pre.det().contains(0)
     eye=arb_mat([[int(i==j) for j in range(4)] for i in range(4)])
     move=max(v.abs_upper() for v in (pre*f).entries())
-    radius=arb(".00005")
+    radius=arb(half_width)
     box=[v+arb(0,radius) for v in center]
     _,jac=system(box,False)
     norm=max(sum(abs(v).upper() for v in row) for row in (eye-pre*jac).tolist())
     ratio=move/radius+norm
     print("每边一次的联合盒半径、预条件中心位移、导数偏差、自映比",
           *[v.str(14) for v in (radius,move,norm,ratio)],flush=True)
-    assert ratio < arb(".656")
+    assert ratio < arb(maximum_ratio)
     return box,ratio
 
 

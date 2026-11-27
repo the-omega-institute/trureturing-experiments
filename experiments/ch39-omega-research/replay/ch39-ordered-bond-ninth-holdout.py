@@ -5,12 +5,11 @@ from runpy import run_path
 from flint import arb
 
 
-def experiment(root, fifth, columns, levels):
+def read_ninth(root, fifth, columns, levels, box, *, parameters, active):
     def lib(name):
         return run_path(str(root / ("ch39-" + name + ".py")))
 
     ordered = lib("two-shell-ordered-bond-gates")
-    box, _ = ordered["experiment"](root, fifth, columns, levels)
     _, _, _, basis, _, weights, heat, field = lib("fifth-seventh-shortest-site-gates")["geometry"](
         root, fifth, columns, levels, number=2_306_888_100_094
     )
@@ -18,7 +17,7 @@ def experiment(root, fifth, columns, levels):
     gravity = lib("shortest-common-complex-gate")["gravity_system"]
 
     def read(point, values):
-        frame, *directions = ordered["transport"](fifth, point)
+        frame, *directions = ordered["transport"](fifth, point, parameters=parameters, active=active)
         projection = (left * frame) * columns
         derivatives = [(left * direction) * columns for direction in directions]
         return gravity(projection, derivatives, levels, weights, heat, field, values)
@@ -31,6 +30,14 @@ def experiment(root, fifth, columns, levels):
         value = target + residual[i, 0] + sum(jac[i, j]*(q - mid[j]) for j, q in enumerate(box))
         print(("牛顿项", "真空项")[i], value.lower().str(16), value.upper().str(16), flush=True)
         result.append(value)
+    return result
+
+
+def experiment(root, fifth, columns, levels):
+    ordered = run_path(str(root / "ch39-two-shell-ordered-bond-gates.py"))
+    box, _ = ordered["experiment"](root, fifth, columns, levels)
+    result = read_ninth(root, fifth, columns, levels, box,
+                        parameters=ordered["ANGLES"], active=ordered["ACTIVE"])
     k, w = result
     assert arb(".122283") < k < arb(".123940")
     assert arb("-.018590") < w < arb("-.018472")
