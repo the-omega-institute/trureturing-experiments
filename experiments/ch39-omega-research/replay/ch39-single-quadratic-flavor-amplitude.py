@@ -20,6 +20,13 @@ def certify_exact(model, a, b, identity):
     adj, trace, bracket = model["adj"], quad["trace"], quad["bracket"]
     up, down = [adj(v) * v for v in (a, b)]
     up, down = up / trace(up).real, down / trace(down).real
+    words = (identity, up, down, up*up, down*down, up*down, down*up)
+    # 若振幅的像在单一坐标轴上，落在另外两行的六个复元素必须全为零。
+    for axis in range(3):
+        rows = [(i, j) for i in range(3) if i != axis for j in range(3)]
+        for omit in range(7):
+            system = acb_mat([[w[i, j] for k, w in enumerate(words) if k != omit] for i, j in rows])
+            assert abs(system.det()) > arb("7e-13")
     frame, _ = quad["normal_frame"](up, down)
     source = model["K"] * adj(model["K"])
     inverse_source = source.inv()
