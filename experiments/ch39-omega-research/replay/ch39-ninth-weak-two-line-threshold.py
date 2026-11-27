@@ -73,6 +73,7 @@ def verify(root):
     left, right = example(2240), example(2241)
     print("同谱等能标路径在 2240 与 2241 GeV 的弱差", left.str(15), right.str(15), flush=True)
     assert left > arb(".000012") and right < arb("-4e-7")
+    return squared, weights, finite, large, bound_from
 
 
 if __name__ == "__main__":
