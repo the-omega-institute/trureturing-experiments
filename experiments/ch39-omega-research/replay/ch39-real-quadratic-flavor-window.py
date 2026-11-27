@@ -31,7 +31,7 @@ def component_bounds(model, relative, eigenvalues):
     weights = (low_weight, 1 - low_weight - high_weight, high_weight)
     assert all(weight > 0 for weight in weights)
     low, middle, high = (v.sqrt() for v in weights)
-    return (arb(1), high / middle, high / low), (down[1] / down[2])**2 / (low * middle)
+    return (low, middle, high), (down[1] / down[2])**2
 
 
 def cover(rows, ratios, noise):
@@ -91,7 +91,8 @@ def verify():
     generalized = down.inv() * frame
     axes = [adj(generalized) * normal * generalized for normal in normals]
     assert all(axis[i, i].contains(0) for axis in axes for i in range(3))
-    ratios, noise = component_bounds(model, relative, eigenvalues)
+    (low, middle, high), tail = component_bounds(model, relative, eigenvalues)
+    ratios, noise = (arb(1), high / middle, high / low), tail / (low * middle)
     pairs = ((0, 1), (0, 2), (1, 2))
     rows = [[axis[i, j] for i, j in pairs] for axis in axes]
     cover(rows, ratios, noise)
