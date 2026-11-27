@@ -8,7 +8,7 @@ from tempfile import TemporaryDirectory
 from flint import acb, arb
 
 
-def prepare(root, fifth, columns, levels):
+def prepare(root, fifth, columns, levels, *, leakage=None, antidiagonal=False):
     def lib(name):
         return run_path(str(root/("ch39-"+name+".py")))
 
@@ -41,7 +41,7 @@ def prepare(root, fifth, columns, levels):
         slopes = (sum(a for _,a,_ in field)/(2*arb.pi()),-sum(g for g,_,_ in field)/(8*arb.pi()))
         assert levels[2] < arb(".75553")
         for t, slope in zip(target, slopes, strict=True):
-            tolerance = arb(".25")/abs(slope)
+            tolerance = (arb(".25") if leakage is None else arb(".01"))/abs(slope)
             lines.append([floor(t-tolerance), ceil(t+tolerance)])
         for w in weights:
             lines.append([floor(w),ceil(w)])
@@ -52,23 +52,38 @@ def prepare(root, fifth, columns, levels):
                     for sign in (1,-1):
                         coeff.append(sum((basis[a,i]+sign*basis[b,i]).conjugate()
                                          *(station[a,j]+sign*station[b,j])/2 for a,b in edges))
-                terms = [base[i,j]-sum(coeff),*coeff]
+                fixed_part = base[i,j]-sum(coeff)
+                allowance = arb(0)
+                if leakage is not None:
+                    # 将长度 12 的两条交叉模投影另行保留，可分别覆盖对角和反对角邻域。
+                    cross = [sum((basis[a,i]+sign*basis[b,i]).conjugate()
+                                 *(station[a,j]-sign*station[b,j])/2 for a,b in groups[12])
+                             for sign in (1,-1)]
+                    if antidiagonal:
+                        coeff[:2], cross = cross, coeff[:2]
+                    r = arb(leakage)
+                    assert 0 <= r < 1
+                    allowance = (1-(1-r*r).sqrt())*sum(abs(t) for t in coeff[:2])+r*sum(abs(t) for t in cross)
+                terms = [fixed_part,*coeff]
                 centers = [(midpoint(t.real),midpoint(t.imag)) for t in terms]
                 rounding = sum(abs(t-acb(arb(a)/unit,arb(b)/unit))
                                for t,(a,b) in zip(terms,centers,strict=True))
                 # 单位相位的两个坐标各至多一刻度误差；复投影截断再计两刻度。
-                error = ceil(rounding + (2*sum(abs(t) for t in coeff)+2)/unit)
+                error = ceil(rounding + allowance + (2*sum(abs(t) for t in coeff)+2)/unit)
                 lines.append([q for pair in centers for q in pair]+[ceil(abs(t)) for t in coeff]+[error])
     lines.extend(fixed["quarter_wave"]())
     return "\n".join(" ".join(map(str,line)) for line in lines)+"\n"
 
 
-def experiment(root, fifth, columns, levels):
-    data = prepare(root,fifth,columns,levels)
+def cover(root, data):
     with TemporaryDirectory() as temp:
         exe = Path(temp)/"cover"
         run(["c++","-std=c++17","-O3",str(root/"ch39-two-bond-phase-torus.cpp"),"-o",str(exe)],check=True)
         run([str(exe)],input=data,text=True,check=True)
+
+
+def experiment(root, fifth, columns, levels):
+    cover(root, prepare(root,fifth,columns,levels))
 
 
 def verify(root):
