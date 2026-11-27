@@ -84,7 +84,7 @@ def certify(root, levels, blocks, model, frames):
     print("六种最大线配对的最小排除余量",gap.str(12),flush=True)
 
 
-def experiment(root,fifth,columns,levels):
+def experiment(root,fifth,columns,levels,check=certify):
     sieve = run_path(str(root/"ch39-six-cyclic-line-sieve.py"))
     opts = run_path(str(root/"ch39-seven-cyclic-weak-horizon.py"))["CANDIDATES"][:6]
     blocks, (_,_,model) = sieve["prepare_shells"](root,fifth,columns,levels,opts,arb(0))
@@ -101,7 +101,7 @@ def experiment(root,fifth,columns,levels):
         assert ek*cost<arb(".04") and ew*cost<arb(".045")
         _,basis=spectrum(graph,6,number)
         frames.append((sieve["adj"](basis)*frame).tolist())
-    certify(root,levels,blocks,model,frames)
+    check(root,levels,blocks,model,frames)
 
 
 if __name__=="__main__":
