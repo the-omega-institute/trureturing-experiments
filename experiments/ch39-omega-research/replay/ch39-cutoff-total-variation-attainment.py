@@ -19,6 +19,7 @@ uses the derivative of the massless term in the Newton heat trace.
 
 Pass --floor-window to certify the unique four-atom optimum uniformly for
 0 <= delta <= 10^-14, with its first atom at delta, for all three spectra.
+This mode also certifies a quadratic remainder in the optimal cost.
 """
 
 from argparse import ArgumentParser
@@ -90,7 +91,38 @@ def endpoint_column(rows, floor_upper):
     return [arb(1), ell / denom, phi, psi, pressure / denom]
 
 
-def solve(certificate, rows, n, *, endpoint=None, radius="1e-30"):
+def endpoint_derivatives(rows, floor_upper):
+    """Enclose the first two cutoff derivatives, including their limits at zero."""
+    x = arb(0).union(floor_upper)
+    first = [arb(0) for _ in range(5)]
+    second = first.copy()
+    denom = 2 * arb.pi()
+    for g, a, z in rows:
+        if z.is_zero():
+            first[2] += a
+            first[3] += 2 * g * x
+            second[3] += 2 * g
+            continue
+        assert z > 0
+        lower = (z / floor_upper).lower()
+        # The maximum of u^k exp(-u) on [lower, infinity) occurs at max(lower, k).
+        tails = []
+        for k in range(4):
+            point = max(lower, arb(k))
+            tails.append(arb(0).union(point**k * (-point).exp()))
+        e, ue, u2e, u3e = tails
+        first[1] += a * ue / denom
+        first[2] += a * (e + ue)
+        first[3] += g * x * (2 * e + ue)
+        first[4] += g * z * e / denom
+        second[1] += a * (u3e - u2e) / (z * denom)
+        second[2] += a * u3e / z
+        second[3] += g * (2 * e + 2 * ue + u2e)
+        second[4] += g * u2e / denom
+    return first, second
+
+
+def solve(certificate, rows, n, *, floor_upper=None, radius="1e-30"):
     heat = certificate["heat"]
     yscale = [abs(arb(v)) for v in certificate["DUAL"][n]]
     yseed = [arb(v) / s for v, s in zip(certificate["DUAL"][n], yscale)]
@@ -141,6 +173,7 @@ def solve(certificate, rows, n, *, endpoint=None, radius="1e-30"):
     r = arb(radius)
     rho = arb(0, r)
     box = [value + rho for value in u]
+    endpoint = None if floor_upper is None else endpoint_column(rows, floor_upper)
     f, _ = system(u, endpoint)
     _, B = system(box, endpoint)
     inv = J.inv()
@@ -175,6 +208,31 @@ def solve(certificate, rows, n, *, endpoint=None, radius="1e-30"):
         sum(map(abs, w)).str(25),
     )
     assert all(wi * si > 0 for wi, si in zip(w, signs))
+    if floor_upper is not None:
+        first, second = endpoint_derivatives(rows, floor_upper)
+        # Only the five moment equations and the left contact depend directly on the floor.
+        parameter_derivative = arb_mat(
+            11, 1,
+            [w[0] * value / scale for value, scale in zip(first, scales)]
+            + [dot(y, first)] + [arb(0)] * 5,
+        )
+        response = inverse * parameter_derivative
+        response_norm = max(abs(response[i, 0]).upper() for i in range(11))
+        derivative_norm = response_norm / (1 - contraction_norm)
+        component_bounds = [
+            abs(response[i, 0]) + row_bounds[i] * derivative_norm for i in range(11)
+        ]
+        dual_derivatives = [
+            arb(0, bound * scale) for bound, scale in zip(component_bounds[:5], yscale)
+        ]
+        weight_derivative = arb(0, component_bounds[5] * W_SCALE[0])
+        second_derivative = (
+            weight_derivative * dot(y, first)
+            + w[0] * (dot(dual_derivatives, first) + dot(y, second))
+        )
+        remainder = abs(second_derivative).upper() / 2
+        print(n, "quadratic remainder coefficient upper bound", remainder.str(15))
+        assert remainder < arb("6e13")
     return y, w, box[9:]
 
 
@@ -414,7 +472,7 @@ def main():
             if options.floor_window:
                 floor_upper = arb("1e-14")
                 endpoint = endpoint_column(rows, floor_upper)
-                y, _, times = solve(certificate, rows, n, endpoint=endpoint, radius="1e-9")
+                y, _, times = solve(certificate, rows, n, floor_upper=floor_upper, radius="1e-9")
                 tail = derivative_tail_positive(y, rows)
                 intervals = certify_dual(certificate, rows, y, times, floor_upper=floor_upper)
                 rank, _ = certify_rank(certificate, rows, times, endpoint=endpoint)
