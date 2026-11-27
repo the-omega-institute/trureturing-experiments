@@ -5,14 +5,13 @@ from runpy import run_path
 from flint import acb_mat, arb
 
 
-def experiment(root, fifth, columns, levels):
+def readout(root, fifth, columns, levels, model, number):
     def lib(name):
         return run_path(str(root/("ch39-"+name+".py")))
-    forms,blocks,levels,mid,wide,box,center = lib("cyclic-two-characters-nine")["experiment"](
+    forms,blocks,levels,mid,wide,box,center = lib(model)["experiment"](
         root,fifth,columns,levels,return_chart=True)
-    n = 2_306_888_100_095
     _,_,_,basis,_,weights,heat,field = lib("fifth-seventh-shortest-site-gates")["geometry"](
-        root,fifth,columns,levels,number=n)
+        root,fifth,columns,levels,number=number)
     overlaps = [basis.conjugate().transpose()*f for f in forms]
     pr = [a*b for a,b in zip(overlaps,blocks,strict=True)]
     projection = acb_mat(19,2)
@@ -39,7 +38,12 @@ def experiment(root, fifth, columns, levels):
         assert lo>p0.sqrt()
         tail += abs(w).upper()*(large(lo.lower()**2,p0,p1)-ref).abs_upper()
     values = [f[0,0]+1,f[1,0]+arb("1e-122"),ref+arb(0,tail.upper())]
-    print("第十壳牛顿、真空、弱差",[(v.lower().str(15),v.upper().str(15)) for v in values],flush=True)
+    print("壳号及牛顿、真空、弱差",number,[(v.lower().str(15),v.upper().str(15)) for v in values],flush=True)
+    return values
+
+
+def experiment(root, fifth, columns, levels):
+    values = readout(root, fifth, columns, levels, "cyclic-two-characters-nine", 2_306_888_100_095)
     for value,(lo,hi) in zip(values,(("1.03247","1.04187"),("-.000695","-.0004715"),
                                     ("-.07425657723","-.07425657716")),strict=True):
         assert arb(lo)<value<arb(hi)
