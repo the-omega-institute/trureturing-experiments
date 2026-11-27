@@ -253,6 +253,24 @@ def separated_small_node():
     print("separated-small-node boxes", checked, flush=True)
 
 
+def close_node_spacing():
+    """排除 log x₃−log x₁ ≤ 0.01 的相异有序三点解。"""
+    # 两个同侧区间已经排除。其余三点的 log x 落在 [−26.81, −25.29]，
+    # 且跨度不超过一个网格步长。两个连续网格单元的闭包覆盖任一此类三点。
+    first = -2681
+    last = -2530
+    margin = None
+    for index in range(first, last + 1):
+        left = arb(index) / 100
+        right = arb(index + 2) / 100
+        directions = [abs(value).lower() for value in curvature(left.union(right))
+                      if value > 0 or value < 0]
+        assert directions, (left, right)
+        local_margin = max(directions)
+        margin = local_margin if margin is None else min(margin, local_margin)
+    print("close-node boxes", last - first + 1, "minimum certified margin", margin.str(12), flush=True)
+
+
 def confirm(left, right, expression, sign, max_boxes=12500):
     pending = [(arb(left),arb(right))]
     count = 0
@@ -290,6 +308,7 @@ def verify():
     confirm("-25.3", "0", mixed_curvature, 1)
     small_node_pair()
     separated_small_node()
+    close_node_spacing()
 
 
 if __name__ == "__main__":
