@@ -1,4 +1,4 @@
-"""固定极点的共同输运在第七至十八壳中至少有一个弱差小于 -0.001。"""
+"""十二壳弱差全过门要求极点的去谱底权至少减少 18.69%。"""
 from itertools import combinations, product
 from pathlib import Path
 from runpy import run_path
@@ -32,7 +32,6 @@ def experiment(root, fifth, columns, levels):
     centers = list(map(arb, (*lib("six-cyclic-weak-horizon")["Q"],
                         "506.579672393","504.414926074","510.694806713","520.456826617",
                         "525.342423153","535.119289427")))
-    caps = [q + 102 for q in centers]
     rows_by_shell, weights_by_shell = [], []
     for j in range(7,19):
         _, basis = lib("adjacent-pvm-transport")["spectrum"](graph,6,2_306_888_100_085+j)
@@ -75,22 +74,18 @@ def experiment(root, fifth, columns, levels):
           max(first_seven).str(12),min(mixed).str(12),flush=True)
     first = [rows[0] for rows in rows_by_shell]
     # 同一额外低线与原七壳的六条第一线配对；每个六行子集都给出必要不等式。
-    other_ratios = []
+    other_rows = []
     for rows, weights in zip(rows_by_shell,weights_by_shell,strict=True):
         for i,w in enumerate(weights):
             if i==0 or w<0:
                 continue
-            ratios = []
+            bounds = []
             for six in combinations(range(7),6):
                 last = acb_mat([first[h] for h in six]+[rows[i]]).inv().tolist()[6]
-                upper = radius(3000)*sum(abs(z) for z in last[:6])+radius(1950)*abs(last[6])
-                ratio = (pole_norm/upper).lower()
-                assert ratio.is_finite()
-                ratios.append(ratio)
-            assert max(ratios) > arb("2.98")
-            other_ratios.append(max(ratios))
-    assert len(other_ratios)==30
-    print("三十条额外正权谱线的最小极点排除比",min(other_ratios).str(12),flush=True)
+                bounds.append((radius(3000)*sum(abs(z) for z in last[:6]), abs(last[6])))
+            assert len(bounds)==7
+            other_rows.append(bounds)
+    assert len(other_rows)==30
 
     # 六个有理复系数确定的线性组合精确消去六个自由均值，只剩固定极点。
     chosen = [1,3,4,6,8,10]
@@ -108,10 +103,6 @@ def experiment(root, fifth, columns, levels):
         for j,c in zip(indices,values,strict=True):
             coeff[j]=c
     unavoidable = pole_norm*abs(sum(c*row[6] for c,row in zip(coeff,first,strict=True)))
-    available = sum(abs(c)*radius(cap) for c,cap in zip(coeff,caps,strict=True))
-    dual_ratio = unavoidable/available
-    assert dual_ratio > arb("1.0005")
-    print("第一线各自放宽 102 GeV 后的十二行极点排除比",dual_ratio.str(13),flush=True)
 
     # 在第一线超过对应 cap 的同一壳，逐段包围其余所有截止到无穷高能。
     def envelope(q):
@@ -119,17 +110,38 @@ def experiment(root, fifth, columns, levels):
         cover((q/mz)**2,bound)
         return bound
 
-    extra_high = envelope(arb(1950))
-    uppers = []
-    for q, weights in zip(caps,weights_by_shell,strict=True):
-        main_high = envelope(q)
-        upper = (ref+weights[0]*main_high +
-                 sum(w*(extra_high if w>0 else lower) for w in weights[1:]))
-        assert upper.is_finite() and upper < arb("-.0017")
-        uppers.append(upper.upper())
-    print("第一线超限且其余正权线至少 1950 GeV 时的十二壳最大弱差",
-          max(uppers).str(13),flush=True)
-    return dual_ratio, max(uppers)
+    def check_caps(caps, other_cap, ratio_floor, weak_ceiling):
+        other_radius = radius(other_cap)
+        other_ratios = []
+        for seven_bounds in other_rows:
+            ratios = [(pole_norm/(base+other_radius*factor)).lower() for base,factor in seven_bounds]
+            assert all(v.is_finite() for v in ratios)
+            other_ratios.append(max(ratios))
+        assert min(other_ratios) > arb("2.98")
+        available = sum(abs(c)*radius(cap) for c,cap in zip(coeff,caps,strict=True))
+        dual_ratio = unavoidable/available
+        norm_ratio = min(min(mixed), min(other_ratios), dual_ratio.lower())
+        assert dual_ratio.is_finite() and norm_ratio > arb(ratio_floor)
+        extra_high = envelope(arb(other_cap))
+        uppers = []
+        for q, weights in zip(caps,weights_by_shell,strict=True):
+            main_high = envelope(q)
+            upper = (ref+weights[0]*main_high +
+                     sum(w*(extra_high if w>0 else lower) for w in weights[1:]))
+            assert upper.is_finite() and upper < arb(weak_ceiling)
+            uppers.append(upper.upper())
+        print("额外正权线门槛 GeV、三十行排除比、十二行排除比、该壳最大弱差",
+              other_cap,min(other_ratios).str(12),dual_ratio.str(13),max(uppers).str(13),flush=True)
+        return dual_ratio, max(uppers), norm_ratio
+
+    original = check_caps([q+102 for q in centers],1950,"1.0005","-.0017")
+    caps = list(map(arb,(527,539,549,549,538,521,511,509,515,525,530,540)))
+    _,_,required_ratio = check_caps(caps,50000,"1.10903","-.001005")
+    # 若十二壳均 D >= -0.001，则极点行范数必须小于原值除以三组排除比的最小值。
+    loss = 1-1/required_ratio**2
+    assert loss.is_finite() and loss > arb(".1869")
+    print("十二壳弱差全过门时，极点去谱底权的相对减量严格大于",loss.lower().str(12),flush=True)
+    return original[:2]
 
 
 if __name__ == "__main__":
