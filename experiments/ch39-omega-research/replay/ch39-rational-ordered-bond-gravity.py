@@ -42,6 +42,9 @@ def experiment(root, fifth, columns, levels):
     def lib(name):
         return run_path(str(root / ("ch39-" + name + ".py")))
 
+    bits = 427
+    low, _, top = levels
+    assert 2_800_000 * 10**122 < 2**bits
     layers = lib("two-shell-ordered-bond-gates")["LAYERS"]
     geometry = lib("fifth-seventh-shortest-site-gates")["geometry"]
     gravity = lib("shortest-common-complex-gate")["gravity_system"]
@@ -49,6 +52,14 @@ def experiment(root, fifth, columns, levels):
         _, _, _, basis, station, weights, heat, field = geometry(
             root, fifth, columns, levels, number=number
         )
+        # 有质量矩对振幅的全域导数界，使用真空项与牛顿项的实际物种系数。
+        assert all(mass >= 0 for _, _, mass in field)
+        variation = sum(abs(weight) for weight in weights)
+        newton = variation * top * sum(abs(alpha) for _, alpha, _ in field) / arb.pi()
+        vacuum = variation * top**3 * sum(abs(g) for g, _, _ in field) / (2*arb.pi())
+        coefficient = 24*(top-low)*max(newton, vacuum)
+        assert coefficient < 2_800_000
+        print(number, "有理化对两种读数的共同误差系数上界", coefficient.upper().str(15))
         for index, seed in enumerate(SEEDS):
             projection = basis.conjugate().transpose() * apply_gates(station, layers, seed)
             residual, _ = gravity(projection, [], levels, weights, heat, field, True)
