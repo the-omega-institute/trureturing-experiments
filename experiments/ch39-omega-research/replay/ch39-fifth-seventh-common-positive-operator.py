@@ -6,7 +6,7 @@ from runpy import run_path
 from flint import arb, ctx
 
 
-def verify(root, *, sixth_measurement=False, readout_radius=0):
+def verify(root, *, sixth_measurement=False, sixth_schur=False, readout_radius=0):
     def lib(name):
         return run_path(str(root / ("ch39-" + name + ".py")))
 
@@ -24,7 +24,7 @@ def verify(root, *, sixth_measurement=False, readout_radius=0):
     spectrum = lib("adjacent-pvm-transport")["spectrum"]
     bases = [spectrum(shell, 6, n)[1] for n in (fifth, seventh)]
     overlap = bases[1].conjugate().transpose() * bases[0]
-    if sixth_measurement:
+    if sixth_measurement or sixth_schur:
         middle = spectrum(shell, 6, fifth + 1)[1]
         incoming = middle.conjugate().transpose() * bases[0]
         outgoing = bases[1].conjugate().transpose() * middle
@@ -59,7 +59,16 @@ def verify(root, *, sixth_measurement=False, readout_radius=0):
     for i in range(19):
         h = [abs(overlap[i, j]) for j in range(19)]
         lower, higher = h, h
-        if sixth_measurement:
+        if sixth_schur:
+            # 保持每个第六壳谱投影的信道可附加任意十九条单位环境向量。
+            # 每条路径的复系数固定，环境向量之和的范数受正反三角不等式控制。
+            lower, higher = [], []
+            for j in range(19):
+                lengths = [abs(outgoing[i,k] * incoming[k,j]) for k in range(19)]
+                reach = sum(lengths).upper()
+                higher.append(min(arb(1), reach))
+                lower.append(max(arb(0), (2*max(v.lower() for v in lengths)-reach).lower()))
+        elif sixth_measurement:
             # 完全非选择测量的直接和表示给出单个入射层的精确边长平方。
             measured = [
                 sum(abs(outgoing[i, k] * incoming[k, j]) ** 2 for k in range(19))
@@ -156,9 +165,11 @@ if __name__ == "__main__":
     cli.add_argument(
         "--readout-radius", default="0", help="允许第七壳各对角读数偏移的半径"
     )
+    cli.add_argument("--sixth-schur", action="store_true", help="覆盖保持第六壳各谱层占据数的所有量子信道")
     options = cli.parse_args()
     verify(
         Path(__file__).resolve().parent,
         sixth_measurement=options.sixth_measurement,
+        sixth_schur=options.sixth_schur,
         readout_radius=options.readout_radius,
     )
