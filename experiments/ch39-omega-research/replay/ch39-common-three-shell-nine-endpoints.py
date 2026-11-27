@@ -125,6 +125,7 @@ def verify(root):
         print("第十六线能标中心、其余振幅下界及该壳两个面的弱差",
               q.str(16),minimum.str(12),faces[0].str(10),faces[1].str(10),flush=True)
         assert faces[0] > 0 > faces[1]
+    return source, levels
 
 
 if __name__ == "__main__":
