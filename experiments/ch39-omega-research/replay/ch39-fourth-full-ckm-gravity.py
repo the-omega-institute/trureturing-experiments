@@ -12,7 +12,7 @@ def adj(a):
     return a.conjugate().transpose()
 
 
-def verify(root):
+def verify(root,*,return_transport=False):
     def lib(name):
         return run_path(str(root/("ch39-"+name+".py")))
     x,y,incoming,readout,(low,h,k),weights,thermal = lib("fourth-shell-two-gravity-rules")["shell_data"](root)
@@ -148,6 +148,13 @@ def verify(root):
     print("第16层截止 GeV、弱差两端、另外十八层最小振幅",
           *[v.str(13) for v in (mz*time.sqrt(),*ends,min(a.lower() for i,a in enumerate(amps) if i!=15))],
           flush=True)
+    if return_transport:
+        z,_=local(seed,center,dirs,eye,False)
+        # 每个反厄米 Cayley 逆为压缩，且各坐标方向关于实 Frobenius 内积正交。
+        widths=[abs(b-v).upper() for b,v in zip(box,center,strict=True)]
+        error=2*sum((1 if i==j else 2)*a*a for a,(i,j,_) in zip(widths,dirs,strict=True)).sqrt()
+        flavor_inputs=[(src,w) for src,_,w,_,_ in sectors]
+        return z,error,flavor_inputs,incoming,(low,h,k)
     return center,radius,time,frame
 
 
