@@ -26,7 +26,9 @@ PARAMETERS = (
 ACTIVE = (2, 4, 6, 12, 13, 15, 16, 17, 20, 21, 24, 26, 28, 32, 36, 40, 44, 47)
 
 
-def experiment(root, fifth, columns, levels):
+def experiment(root, fifth, columns, levels, *, parameters=PARAMETERS, active=ACTIVE,
+               lines=LINES, energy_centers=ENERGIES, angle_radius=".00045",
+               ratio_limit=".764", contraction_limit=".325", scaled_widths=False):
     def lib(name):
         return run_path(str(root/("ch39-"+name+".py")))
     ordered = lib("two-shell-ordered-bond-gates")
@@ -44,13 +46,13 @@ def experiment(root, fifth, columns, levels):
         shells.append((basis.conjugate().transpose(),weights,heat,field))
     mp,mz = arb("1.22089e19"),arb("91.1876")
     low,heavy,top = levels
-    q = [arb(v) for v in ENERGIES]
+    q = [arb(v) for v in energy_centers]
     width = arb(".000001")
     energies = [x+arb(0,width) for x in q]
     def evaluate(point,qs,values):
-        mats = ordered["transport"](source,point,parameters=PARAMETERS,active=ACTIVE,layers=layers)
+        mats = ordered["transport"](source,point,parameters=parameters,active=active,layers=layers)
         fs,js,fg,jg = [],[],[],[]
-        for (basis,weights,heat,field),line,energy in zip(shells,LINES,qs,strict=True):
+        for (basis,weights,heat,field),line,energy in zip(shells,lines,qs,strict=True):
             proj,*ds = [basis*m for m in mats]
             b = ((energy/mp-low)/(heavy-low)).sqrt()
             for c in (0,1):
@@ -61,7 +63,7 @@ def experiment(root, fifth, columns, levels):
             fg.extend(f.entries())
             jg.extend(j.tolist())
         return arb_mat([[v] for v in fs+fg]),arb_mat(js+jg)
-    center = [arb(PARAMETERS[j]) for j in ACTIVE]
+    center = [arb(parameters[j]) for j in active]
     for _ in range(3):
         f,j = evaluate(center,q,True)
         step = j.mid().solve(f.mid()).entries()
@@ -70,38 +72,40 @@ def experiment(root, fifth, columns, levels):
     pre = j.mid().inv().mid()
     assert not pre.det().contains(0)
     offsets = [v.abs_upper() for v in (pre*f).entries()]
-    radius = arb(".00045")
-    box = [c+arb(0,radius) for c in center]
+    radius = arb(angle_radius)
+    widths = [2*o+arb(".00002") for o in offsets] if scaled_widths else [radius]*len(offsets)
+    box = [c+arb(0,r.upper()) for c,r in zip(center,widths,strict=True)]
     curv = lib("three-shell-gravity-radius56")
     value,grad,second,keys = curv["hessian_columns"](source,layers,box,ordered["block"],
-                                                     parameters=PARAMETERS,active=ACTIVE)
+                                                     parameters=parameters,active=active)
     grav_h,_ = curv["gravity_hessian"](value,grad,second,keys,shells,levels)
     projection_h = []
-    for (basis,_,_,_),i in zip(shells,LINES,strict=True):
+    for (basis,_,_,_),i in zip(shells,lines,strict=True):
         projected = [basis*m for m in second]
         for c in range(2):
             projection_h += [[p[i,c].real for p in projected],[p[i,c].imag for p in projected]]
     h = pre*arb_mat(projection_h+grav_h.tolist())
-    eye = arb_mat([[int(i==k) for k in ACTIVE] for i in ACTIVE])
-    center_defect = [sum(z.abs_upper() for z in row) for row in (eye-pre*j).tolist()]
-    second_norm = [sum(z.abs_upper()*(1 if a==b else 2) for z,(a,b) in zip(row,keys,strict=True))
-                   for row in h.tolist()]
-    ratio = max(o/radius+e+radius*g/2 for o,e,g in zip(offsets,center_defect,second_norm,strict=True))
-    contraction = max(e+radius*g for e,g in zip(center_defect,second_norm,strict=True))
+    eye = arb_mat([[int(i==k) for k in active] for i in active])
+    center_defect = [sum(z.abs_upper()*r for z,r in zip(row,widths,strict=True))
+                     for row in (eye-pre*j).tolist()]
+    second_norm = [sum(z.abs_upper()*(1 if a==b else 2)*widths[a]*widths[b]
+                       for z,(a,b) in zip(row,keys,strict=True)) for row in h.tolist()]
+    ratio = max((o+e+g/2)/r for o,e,g,r in zip(offsets,center_defect,second_norm,widths,strict=True))
+    contraction = max((e+g)/r for e,g,r in zip(center_defect,second_norm,widths,strict=True))
     print("中心偏移、十八维自映比与压缩率",
           *[v.str(12) for v in (max(offsets),ratio,contraction)],flush=True)
-    assert ratio < arb(".764") and contraction < arb(".325")
-    center_mats = ordered["transport"](source,center,parameters=PARAMETERS,active=ACTIVE,layers=layers)
+    assert ratio < arb(ratio_limit) and contraction < arb(contraction_limit)
+    center_mats = ordered["transport"](source,center,parameters=parameters,active=active,layers=layers)
     native = lib("native-rh-ray-pvm")
     finite = native["weak_series"](56)
     large = lib("full-neutral-free-cutoff")["weak_column"]
     p0,p1 = (mz/mp)**2,(arb("1.176397e14")/mp)**2
     ref = arb("-.074256577194663365546").union(arb("-.074256577194663365544"))
-    for (basis,weights,_,_),i,mid in zip(shells,LINES,q,strict=True):
+    for (basis,weights,_,_),i,mid in zip(shells,lines,q,strict=True):
         centered = basis*center_mats[0]
         directions = [basis*g for g in grad]
         def abs_lower(k,c):
-            motion = radius*sum(abs(d[k,c]).upper() for d in directions)
+            motion = sum(r*abs(d[k,c]).upper() for r,d in zip(widths,directions,strict=True))
             return max(arb(0),(abs(centered[k,c]).lower()-motion).lower())
         smallest = min((low+(heavy-low)*abs_lower(k,0)**2+(top-low)*abs_lower(k,1)**2).lower()
                        for k in range(19) if k!=i)
