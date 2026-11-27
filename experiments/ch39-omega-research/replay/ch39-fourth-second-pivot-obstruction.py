@@ -5,7 +5,7 @@ from runpy import run_path
 from flint import arb, ctx
 
 
-def verify(root):
+def verify(root, *, weak_minimum=None):
     def lib(name):
         return run_path(str(root/("ch39-"+name+".py")))
 
@@ -65,16 +65,22 @@ def verify(root):
 
     series=native["weak_series"](56)
     threshold=8192*p0
-    large=neutral["weak_column"](threshold,p0,p1)
+    weak_momentum=p1 if weak_minimum is None else (arb(weak_minimum)/arb("1.22089e19"))**2
+    assert weak_momentum>=(arb("1e13")/arb("1.22089e19"))**2 or weak_minimum is None
+    large=neutral["weak_column"](threshold,p0,weak_momentum)
     whole=large
     assert lo>p0
     for e in range(13):
         step=arb(2)**(e-6)
         for j in range(64):
-            whole=whole.union(series(((64+j)*step).union((65+j)*step)))
+            ratio=((64+j)*step).union((65+j)*step)
+            extra=arb(0,(2*ratio*p0/weak_momentum).upper()) if weak_minimum is not None else arb(0)
+            whole=whole.union(series(ratio)+extra)
     if_high=sum(w*(large if i in (0,15) else whole) for i,w in enumerate(c))
     print("两正权层均在阈值以上时的弱差上界",if_high.upper().str(10),flush=True)
     assert if_high<0
+    if weak_minimum is not None:
+        return c, threshold, xcut, p0, if_high.upper()
 
     rho=(arb("246.22")/arb("1.22089e19"))**2/2
     species,_=neutral["response_rows"](data,masses,signs,rho,arb(".42995401872"))
