@@ -9,6 +9,13 @@ Contact-column independence forces every optimal measure to contain the
 negative atom at zero. To approach the optimum with positive cutoffs, move
 that atom to a small positive cutoff and use the positive basis to correct
 the moment residual. The correction tends to zero.
+
+For a small positive cutoff floor, the invertible primal–dual Jacobian
+continues the solution with its leftmost atom at the floor. Its dual
+coefficients stay in the certified box for sufficiently small floors.
+The right derivative of the optimal cost is minus the leftmost weight
+times the derivative of the dual function at zero. The printed enclosure
+uses the derivative of the massless term in the Newton heat trace.
 """
 
 from pathlib import Path
@@ -141,7 +148,7 @@ def solve(certificate, rows, n):
         sum(map(abs, w)).str(25),
     )
     assert all(wi * si > 0 for wi, si in zip(w, signs))
-    return y, box[9:]
+    return y, w, box[9:]
 
 
 def hermitian_inertia(matrix, shift):
@@ -371,10 +378,13 @@ def main():
         data = exact_spectra(certificate)
         ctx.prec = 320
         for n, rows in data.items():
-            y, times = solve(certificate, rows, n)
+            y, weights, times = solve(certificate, rows, n)
             tail = derivative_tail_positive(y, rows)
             intervals = certify_dual(certificate, rows, y, times)
             rank, basis_det = certify_rank(certificate, rows, times)
+            massless_newton_weight = sum(a for _, a, z in rows if z.is_zero())
+            floor_slope = -weights[0] * y[2] * massless_newton_weight
+            assert floor_slope > 0
             print(
                 n,
                 "strict dual shape",
@@ -385,6 +395,8 @@ def main():
                 rank.str(6),
                 "positive basis determinant",
                 basis_det.str(6),
+                "optimal cost right derivative at zero floor",
+                floor_slope.str(25),
             )
 
 
