@@ -46,7 +46,7 @@ def mode_parameters(P,E,S,T):
     return (fixed,offset,col(dual,0),col(dual,2),tangent,inner(R*s,R*s).real)
 
 
-def verify(root):
+def verify(root, *, return_parameters=False):
     base = run_path(str(root/'ch39-rank-two-generator-up-quark.py'))
     orbits = run_path(str(root/'ch39-up-quark-arbitrary-site-phase-floor.py'))['ORBITS']
     shells = run_path(str(root/'ch39-three-ray-chiral-boundary.py'))
@@ -176,6 +176,8 @@ def verify(root):
     print('两热参数、统一压缩比、弱差异号端点、第16层GeV',
           [x.str(12) for x in box],ratio.str(9),face(l).lower().str(8),face(r).upper().str(8),q16.str(13),flush=True)
     print('第18层与第19层振幅',f[17].str(9),f[18].str(9),flush=True)
+    if return_parameters:
+        return X, tuple(box), q16, (low,h,k)
     return X
 
 
