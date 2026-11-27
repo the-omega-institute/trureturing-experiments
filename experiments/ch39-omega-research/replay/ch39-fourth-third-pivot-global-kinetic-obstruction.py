@@ -17,13 +17,12 @@ def cutoff_ticks():
     ].astype(int)
 
 
-def build_grid(root, momentum_offsets):
+def build_grid(root, momentum_offsets, *, number=2_306_888_100_089):
     def lib(name):
         return run_path(str(root / ("ch39-" + name + ".py")))
 
-    number = 2_306_888_100_089
     _, ordered = lib("adjacent-ordered-charge-six-cutoffs")["verify"](
-        root, refine_node=number - 3
+        root, refine_node=2_306_888_100_086
     )[2]
     native = lib("native-rh-ray-pvm")
     _, _, pivots, _ = next(
@@ -200,10 +199,17 @@ def decode_direction(multipliers):
     ]
 
 
-def source_boxes(root, high, last, weights):
+def source_boxes(
+    root,
+    high,
+    last,
+    weights,
+    *,
+    filename="ch39-fourth-third-pivot-global-kinetic-duals.txt",
+):
     strong = [i for i, c in enumerate(weights) if abs(c) > 4]
     assert [i + 1 for i in strong] == [1, 10, 16, 17, 18, 19]
-    source = root / "ch39-fourth-third-pivot-global-kinetic-duals.txt"
+    source = root / filename
     lines = iter(source.read_text().splitlines())
     for distinguished in strong:
         assert next(lines) == "branch " + str(distinguished + 1)
@@ -250,17 +256,20 @@ def signed_lower(floors, ceilings, box, weights, initial):
     return total.lower()
 
 
-def verify(root):
-    gravity = run_path(str(root / "ch39-fourth-third-pivot-strong-gravity-cutoff.py"))
-    gravity["verify"](root)
-    lower, upper, high, weights, start = build(root)
+def verify_branches(root, tables, filename, *, minimum_deficit=0):
+    lower, upper, high, weights, start = tables
     bound = max(int(np.max(np.abs(lower))), int(np.max(np.abs(upper))))
     results = {}
-    for axis, box, direction in source_boxes(root, high, len(lower) - 1, weights):
+    for axis, box, direction in source_boxes(
+        root, high, len(lower) - 1, weights, filename=filename
+    ):
         floor, ceil = projection(lower, upper, direction, bound)
         initial = sum(a * d for a, d in zip(start, direction, strict=True)) * SCALE
         margin = signed_lower(floor, ceil, box, weights, initial) / (SCALE * 10**9)
         assert margin > 0
+        # 端点三式为零时，余量来自五处动力学读数。用未归一的非负整数乘数之和。
+        kinetic_weight = -sum(direction[3:])
+        assert margin * 10**10 > minimum_deficit * kinetic_weight
         leaves, old = results.get(axis, (0, arb(100)))
         results[axis] = leaves + 1, min(margin.lower(), old)
     for axis, (count, margin) in results.items():
@@ -273,6 +282,14 @@ def verify(root):
         )
     print("六分支合计分离叶数", sum(k for k, _ in results.values()), flush=True)
     return list(results.values())
+
+
+def verify(root):
+    gravity = run_path(str(root / "ch39-fourth-third-pivot-strong-gravity-cutoff.py"))
+    gravity["verify"](root)
+    return verify_branches(
+        root, build(root), "ch39-fourth-third-pivot-global-kinetic-duals.txt"
+    )
 
 
 if __name__ == "__main__":
