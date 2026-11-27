@@ -72,7 +72,7 @@ def source_qr(block):
     return n,coeff,residual
 
 
-def experiment(root, fifth, columns, levels, *, return_blocks=False):
+def experiment(root, fifth, columns, levels, *, return_blocks=False, return_chart=False):
     def lib(name):
         return run_path(str(root/("ch39-"+name+".py")))
     general = lib("common-three-shell-nine-endpoints")
@@ -211,6 +211,8 @@ def experiment(root, fifth, columns, levels, *, return_blocks=False):
         faces = [ref+w[idx]*(weak(((qq+sign*eps)/mz)**2)-ref)+arb(0,tail) for sign in (-1,1)]
         print("低线、余振幅下界、弱差面",idx+1,*[v.str(12) for v in (amin,*faces)],flush=True)
         assert faces[0]>0>faces[1]
+    if return_chart:
+        return forms,character_values,levels,frame(center,qs)[0],frame(box,qs),box,center
     if return_blocks:
         return forms,character_values,levels
     return unit,levels
