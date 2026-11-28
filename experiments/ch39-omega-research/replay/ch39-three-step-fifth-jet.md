@@ -77,3 +77,21 @@ where $W$ is spanned by $\ell(x) A u$ and $\ell(x)L D x$ with all linear forms $
 The only quadratic forms $H$ satisfying this inclusion are the multiples of $L$. Wedge with $x$ and use the first four coordinates on $V$. The first family spans a space of dimension at most $64-4=60$ after wedging, since the four independent expressions $x u_j$ map to zero. Here independence refers to the four coefficient arrays giving $x u_j$. The second family is $L$ times arbitrary quadratic vectors. Its projected dimension is at most $40-4=36$ since the four linear multiples of $x$ vanish after wedging. Thus $\dim(x\wedge W)\le96$. Adding the ten columns for $x\wedge Hq$ increases the dimension by at most nine because $Lq$ already belongs to the second family. Evaluating on $\{-1,0,1,2\}^4$ gives ranks 96 and 105 modulo both 31 and 101. A nonzero minor lifts to characteristic zero and attains both upper bounds, so the kernel on quadratic forms is exactly the line spanned by $L$. [Exact projected ranks](ch39-two-step-central-jets.py)
 
 Here $s_2>0$ and $d_2<0$. The two positive multiples of squares in $H$ give it rank at most two, whereas $L$ has rank four. Thus $H=0$ and both $a$ and $h$ vanish. The three scalar first jets now coincide, a case excluded by the rank-190 calculation above. Any fourth-order solution with unrestricted two-step kinetic vector must therefore have unequal Wilson masses at some pair of light centers. The three-step fifth-order construction has equal light masses, so three steps are minimal for fourth- and fifth-order matching under this equal-mass condition alone.
+
+## At most twelve candidates on each line of fixed center masses
+
+Fix an arbitrary real two-step scalar $b=-B$ with three positive light-center values $m_s=b_s(0)$ and two negative heavy-center values. No relation among the three positive values is required. For
+$$
+ g=\sin\theta_1+\cos\theta_1-\sin\theta_2-\cos\theta_2
+$$
+all five center values of $b+t g$ are independent of real $t$. On this entire line, at most twelve values of $t$ allow a two-step nondegenerate kinetic vector with fourth-order matching. The bound allows the kinetic vector to be chosen anew at each $t$.
+
+A real two-step kinetic component $f$ has 61 coefficients. Let $V_m$ consist of those $f$ that vanish at the five centers and obey $m_0 Df_s=m_s Df_0$ at $s=\pm1$. The five value rows and twelve independent light-gradient rows have joint rank 17 in the unrestricted coefficient space by a finite-field minor. Hence the five value rows and eight gradient-ratio conditions have rank 13 for each choice of positive $m_s$, giving $\dim V_m=48$.
+
+For any scalar $a$ define the linear map
+$$
+ K_a f=\left(J^4(a_0 f_s-a_s f_0)\right)_{s=-1,1},
+$$
+where $J^4$ truncates at degree four in the common local coordinates. On the 56-dimensional subspace of five-center-zero components, $\ker K_g$ is spanned by $g$. Indeed, the five value rows and the coefficient rows of $K_g$ together have rank 60 modulo 101 and 181, while $g$ lies in their kernel in characteristic zero. The Fourier replay specializes both a primitive fifth root and $i$ to each finite field. The gradient of $g$ at center $s$ is $(\cos(2\pi s/5)-\sin(2\pi s/5))(e_1-e_2)$. This factor is positive at zero and negative at $+1$. Since $m_0,m_1>0$, $g\notin V_m$, so $K_g$ restricted to $V_m$ is injective. [Exact directional rank and center interpolation](ch39-two-step-central-jets.py)
+
+Choose 48 rows detecting this injection in a basis of $V_m$. The determinant of the same rows for $K_b+t K_g$ is a degree-48 polynomial with nonzero leading coefficient. Fourth-order matching with invertible velocity requires four independent kinetic components in its kernel. At each feasible $t_0$ the square submatrix thus has nullity at least four. A constant change of column basis makes four columns vanish at $t_0$ and proves that the determinant is divisible by $(t-t_0)^4$. There can be at most twelve distinct such parameters. In every affine space with the five masses prescribed, the candidate set is therefore contained in a proper algebraic subset of measure zero. Determinant roots still require four independent slopes and the gap and sign conditions on the full torus.
