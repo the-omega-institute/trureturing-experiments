@@ -1,4 +1,5 @@
 """在五个实际零点背景检验共同的引力矩与零动量一圈规范阈值。"""
+from itertools import product
 from pathlib import Path
 from runpy import run_path
 
@@ -41,6 +42,40 @@ def certified_weights(matrix, target):
     radius = max(abs(v).upper() for v in residual.entries())/(1-norm)
     assert radius < arb(".02")
     return [w+arb(0, radius.upper()) for w in approx.entries()], norm, radius
+
+
+def mixed_sectors(rows, sites, weights, charge_weights, threshold_column, moments, heat, projection):
+    """荷 4 与 2 分别取上下型高度，其余整组重场各自选用两处之一。"""
+    base, up, down, up_alt, down_alt = rows
+    empty = (0, 0, arb(0))
+    def split(spectrum):
+        groups = []
+        for start, end in ((0, 16), (16, 32), (32, 48), (48, 64), (64, 80), (80, 98)):
+            block = [empty, *spectrum[1+start:1+end]]
+            per_site = [threshold_column(block, moments, heat, charge_weights[start:end], arb(x))
+                        for x in sites]
+            _, k, w, *threshold = apply_weights(per_site, weights)
+            groups.append((k, w, dot(projection, threshold)))
+        return groups
+
+    reference, u0, d0, u1, d1 = map(split, (base, up, down, up_alt, down_alt))
+    for uid, u in zip(CANDIDATES[::2], (u0, u1), strict=True):
+        for did, d in zip(CANDIDATES[1::2], (d0, d1), strict=True):
+            choices = ((u[0], d[0]), (u[1],), (d[2],), (u[3], d[3]), (u[4], d[4]), (u[5], d[5]))
+            residuals = [[sum(field[i]-ref[i] for field, ref in zip(choice, reference, strict=True))
+                          for i in range(3)] for choice in product(*choices)]
+            assert len(residuals) == 16
+            dk, dw, projected = zip(*residuals, strict=True)
+            assert all(v > arb("8.29e-8") for v in dk)
+            assert all(v > arb("2.05e-7") for v in dw)
+            assert all(abs(v) > arb(".00235") for v in projected)
+            if uid == CANDIDATES[0]:
+                assert any(v < 0 for v in projected) and any(v > 0 for v in projected)
+            else:
+                assert all(v > arb(".06497") for v in projected)
+            print("混合谱", uid, did, "规范投影的最小、最大和最小绝对值",
+                  min(v.lower() for v in projected).str(11), max(v.upper() for v in projected).str(11),
+                  min(abs(v).lower() for v in projected).str(11))
 
 
 def verify():
@@ -110,6 +145,8 @@ def verify():
     print(BASE+1, "第六背景 K−1, W−ε, d·A", *[v.str(12) for v in (dk, dw, projection)])
     assert arb("-.003361") < dk < arb("-.003359")
     assert arb("-2e-9") < dw < 0 and 179874 < projection < 179876
+    mixed_sectors(rows[:-1], ORIGINAL_SITES, weights, charge_weights, local["threshold_column"],
+                  single["moments"], lib["expint"], d)
 
 
 if __name__ == "__main__":
