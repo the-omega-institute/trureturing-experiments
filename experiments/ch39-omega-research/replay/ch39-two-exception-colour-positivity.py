@@ -19,6 +19,53 @@ def upper(value):
     return int((value * UNIT).upper().ceil().unique_fmpz())
 
 
+def line_bounds(rows, cut):
+    pi = arb.pi()
+    lib = run_path(str(ROOT / "ch39-chiral-minimal-neutral-gravity.py"))
+    model, _, _, initial, _ = lib["chiral"]["source"]["mean"]["inputs"]()
+    gauge = run_path(str(ROOT / "ch39-signed-gravity-unification.py"))
+    heavy = [(row[2], z) for row, (_, _, z) in zip(gauge["gauge_weights"](model), rows[1:], strict=True)]
+    logscale = (arb(10**16)/model["mz"]).log()
+    offset = initial[2]-model["beta"][2]*logscale/(2*pi)
+    offset += sum(b*(arb.const_euler()+z.log()) for b, z in heavy)/(4*pi)
+    log_coeff = -sum(b for b, _ in heavy)/(4*pi)
+    w0 = -sum(g for g, _, _ in rows)/(8*pi)
+    assert log_coeff > 0 and w0 > 0
+    spin_pos = sum(max(g, 0)*z for g, _, z in rows)/(4*pi)
+    spin_neg = sum(max(-g, 0)*z for g, _, z in rows)/(4*pi)
+
+    def at(edge, start, end):
+        """在给定闭段上包围该线的真空读数，并给出色支上界。"""
+        a, b, weight = edge
+        pos, neg = weight.max(0), (-weight).max(0)
+        left = (1-start)*a+start*b
+        right = (1-end)*a+end*b
+        w_left, w_right = w0*weight*left**2, w0*weight*right**2
+        lo = lower(w_left.min(w_right)-(pos*spin_neg+neg*spin_pos)*right/cut)
+        hi = upper(w_left.max(w_right)+(pos*spin_pos+neg*spin_neg)*right/cut)
+        remainder = arb(0)
+        for bj, z in heavy:
+            y = z/(cut*left)
+            ein_upper = y.min(1+y.log().max(0))
+            remainder += (-(weight*bj)).max(0)*ein_upper
+        log_term = (weight*left.log()).max(weight*right.log())
+        top = upper(log_coeff*log_term + remainder/(4*pi))
+        return lo, hi, top
+
+    assert model["beta"][2] == -7
+    return upper(offset), at
+
+
+def interval_tables(edges, at, parts):
+    tables = [np.empty((len(edges), parts), dtype=np.int64) for _ in range(3)]
+    grid = [arb(k)/parts for k in range(parts+1)]
+    for i, edge in enumerate(edges):
+        for k, (start, end) in enumerate(zip(grid, grid[1:])):
+            for table, value in zip(tables, at(edge, start, end), strict=True):
+                table[i,k] = value
+    return tables
+
+
 def verify():
     previous = run_path(str(ROOT / "ch39-two-copy-gram-cutoff-two-exceptions.py"))
     edges, rows, heat, _ = previous["model_inputs"]()
@@ -39,40 +86,8 @@ def verify():
         k_max = k_max.max((k0*cut*p).max(0)+k_error)
     assert k_max < 1
 
-    lib = run_path(str(ROOT / "ch39-chiral-minimal-neutral-gravity.py"))
-    model, _, _, initial, _ = lib["chiral"]["source"]["mean"]["inputs"]()
-    gauge = run_path(str(ROOT / "ch39-signed-gravity-unification.py"))
-    heavy = [(row[2], z) for row, (_, _, z) in zip(gauge["gauge_weights"](model), rows[1:], strict=True)]
-    logscale = (arb(10**16)/model["mz"]).log()
-    offset = initial[2]-model["beta"][2]*logscale/(2*pi)
-    offset += sum(b*(arb.const_euler()+z.log()) for b, z in heavy)/(4*pi)
-    log_coeff = -sum(b for b, _ in heavy)/(4*pi)
-    w0 = -sum(g for g, _, _ in rows)/(8*pi)
-    assert log_coeff > 0 and w0 > 0
-    spin_pos = sum(max(g, 0)*z for g, _, z in rows)/(4*pi)
-    spin_neg = sum(max(-g, 0)*z for g, _, z in rows)/(4*pi)
-
-    # 每个数组元素都是一个谱线对在整段插值上的向外取整界。
-    low_w = np.empty((len(edges), PARTS), dtype=np.int64)
-    high_w = np.empty_like(low_w)
-    high_colour = np.empty_like(low_w)
-    for i, (a, b, weight) in enumerate(edges):
-        pos, neg = weight.max(0), (-weight).max(0)
-        for k in range(PARTS):
-            left = ((PARTS-k)*a+k*b)/PARTS
-            right = ((PARTS-k-1)*a+(k+1)*b)/PARTS
-            w_left, w_right = w0*weight*left**2, w0*weight*right**2
-            low_w[i,k] = lower(w_left.min(w_right)-(pos*spin_neg+neg*spin_pos)*right/cut)
-            high_w[i,k] = upper(w_left.max(w_right)+(pos*spin_pos+neg*spin_neg)*right/cut)
-            remainder = arb(0)
-            for bj, z in heavy:
-                y = z/(cut*left)
-                ein_upper = y.min(1+y.log().max(0))
-                remainder += (-(weight*bj)).max(0)*ein_upper
-            log_term = (weight*left.log()).max(weight*right.log())
-            high_colour[i,k] = upper(log_coeff*log_term + remainder/(4*pi))
-
-    bound0 = upper(offset)
+    bound0, at = line_bounds(rows, cut)
+    low_w, high_w, high_colour = interval_tables(edges, at, PARTS)
     # 每个整数中间结果的绝对值小于下面的保守估计，保证 int64 运算精确。
     largest = max(abs(int(x)) for table in (low_w, high_w, high_colour) for x in table.flat)
     assert (len(edges)+4)*largest+abs(bound0) < 2**62
@@ -94,8 +109,7 @@ def verify():
             largest_colour = local if largest_colour is None else max(local, largest_colour)
             viable_boxes += int(possible.sum())
     assert largest_colour is not None and largest_colour < -722*UNIT
-    assert model["beta"][2] == -7
-    increase = -model["beta"][2]*(arb("1.22089e19")/10**16).log()/(2*pi)
+    increase = 7*(arb("1.22089e19")/10**16).log()/(2*pi)
     assert 0 < increase < 8
     print("小标尺全域 K 上界及升至普朗克标尺的色支增量", k_max.str(16), increase.str(14))
     print("选择数、每组闭盒、通过真空必要条件的盒数、色支上界（精确分子/分母）",
