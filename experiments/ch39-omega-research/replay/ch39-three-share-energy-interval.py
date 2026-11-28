@@ -11,14 +11,17 @@ LINES = (16,285,301)
 EXCLUDED = object()
 
 
-def setup(*, log_compensation=None):
+def setup(heavy=TARGET, *, log_compensation=None, batch_context=None):
     repair = run_path(str(ROOT/"ch39-one-share-gravity-repair.py"))
     load = repair["load"]
     global_source = load("two-share-global-forward")
-    kernel,moments,choices,edges,fields,bgs,q,v0,total,baseline,increments,loss = global_source["context"]((TARGET,),20)
+    if batch_context is None:
+        batch_context = global_source["context"]((heavy,),20)
+    kernel,moments,choices,edges,fields,bgs,q,v0,total,baseline,increments,loss = batch_context
     small = (baseline+sum(increments[i] for i in LINES))/20+loss
-    assert small<arb(".76")
-    rows = bgs[TARGET]
+    if heavy==TARGET:
+        assert small<arb(".76")
+    rows = bgs[heavy]
     lib = load("chiral-minimal-neutral-gravity")
     model,_,_,initial,_ = lib["chiral"]["source"]["mean"]["inputs"]()
     beta = [v/(2*arb.pi()) for v in model["beta"]]
@@ -61,6 +64,7 @@ def setup(*, log_compensation=None):
     allowed_moves = [(-choices[i][1]).union(1-choices[i][1]) for i in LINES]
 
     def point(s, *, derivatives=False, physical_only=False, share_curvature=False, common_readout=False):
+        # 通用展开的质量比界覆盖 s≥1/20；极小标尺的排除另见对应重谱的证书。
         invs,logarithm = 1/s,s.log()
         vals = [[evaluate(co,err,s,invs,logarithm,0) for co,ds,err in row] for row in data]
         if physical_only:
