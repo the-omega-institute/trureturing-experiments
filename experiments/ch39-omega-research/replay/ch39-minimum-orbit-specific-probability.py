@@ -28,7 +28,7 @@ def setup():
     coeffs = [arb_mat([[poly[label][k] for k in range(7)] for label in labels])
               for poly in (up,down)]
 
-    def optimal(offsets, support):
+    def optimal(offsets, support, root_radius=None):
         recipes, cost = [], []
         for tag, values in support:
             if tag == "class":
@@ -49,6 +49,8 @@ def setup():
         roots = [arb(n)/10**46 for n in ns]
         if offsets == (0,0):
             assert [int(n) for n in ns] == [Fraction(t)*10**46 for t in reference["ROOTS"]]
+        if root_radius is not None:
+            roots = [r+arb(0,root_radius.upper()) for r in roots]
         target = factor(roots)
         inverse = mixture["simplex_inverse"](recipes)
         weights, _, _ = mixture["barycentric"](inverse,target)
