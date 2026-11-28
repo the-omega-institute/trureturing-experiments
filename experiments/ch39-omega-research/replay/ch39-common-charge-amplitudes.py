@@ -35,10 +35,9 @@ def left_inverse_bound(matrix):
     return (1-frobenius(eye-left*matrix)).lower()/frobenius(left).upper()
 
 
-def eigenline_derivatives(matrix, slopes, first_line):
+def eigenline_derivatives(matrix, slopes, first_line, pivot=5):
     entries, _ = first_line(matrix)
     n = len(entries)
-    pivot = 5
     assert abs(entries[pivot]) > 0
     column = acb_mat([[z/entries[pivot]] for z in entries])
     column[pivot,0] = 1
@@ -49,13 +48,13 @@ def eigenline_derivatives(matrix, slopes, first_line):
             bordered[i,j] = matrix[i,j] - int(i == j)*energy
         bordered[i,n] = -column[i,0]
     bordered[n,pivot] = 1
-    rhs = acb_mat(n+1,2)
+    rhs = acb_mat(n+1,len(slopes))
     for j, slope in enumerate(slopes):
         product = slope*column
         for i in range(n):
             rhs[i,j] = -product[i,0]
     derivative = bordered.solve(rhs)
-    return (column.entries(), [derivative[i,0] for i in range(n)], [derivative[i,1] for i in range(n)])
+    return [column.entries(), *([derivative[i,j] for i in range(n)] for j in range(len(slopes)))]
 
 
 def determinant_system(angles, rows, operators, first_line):
@@ -67,13 +66,18 @@ def determinant_system(angles, rows, operators, first_line):
         slopes = [(item-adj(item))*factor for item in (a,b)]
         columns.append(eigenline_derivatives(base+a+adj(a)+b+adj(b), slopes, first_line))
 
+    value, slopes = determinant_derivatives(columns, rows)
+    return arb_mat([[value.real],[value.imag]]), arb_mat([[z.real for z in slopes], [z.imag for z in slopes]])
+
+
+def determinant_derivatives(columns, rows):
     def minor(direction=0, replace=None):
         return acb_mat([[col[direction if j == replace else 0][i]
                          for j,col in enumerate(columns)] for i in rows]).det()
 
-    value = minor()
-    slopes = [sum(minor(direction,j) for j in range(5)) for direction in (1,2)]
-    return arb_mat([[value.real],[value.imag]]), arb_mat([[z.real for z in slopes], [z.imag for z in slopes]])
+    slopes = [sum(minor(direction,j) for j in range(len(columns)))
+              for direction in range(1,len(columns[0]))]
+    return minor(), slopes
 
 
 def verify(root):
