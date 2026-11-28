@@ -31,6 +31,10 @@ def verify():
         (("-.0013849","-.00091671",".00021066","-.00021829"), ".121", "3.05e-7"),
         (("-.00411497","-.00122105",".00131647","-.00115155"), ".901", "9.10e-7"),
     )
+    # 在直积编号的计数中，两荷分别计数后相乘，无需不同零点的独立性假设。
+    pair_fraction = (model["radius"]/arb.pi())**4
+    assert pair_fraction > arb("1.0265e-46")
+    assert abs(arb(cases[0][0][0])-arb(cases[1][0][0])) > 2*model["radius"]
     for shifts, window, lower in cases:
         roots, outputs = [], []
         for i,(q,x,y,scale) in enumerate(model["PHASE_BOXES"]):
