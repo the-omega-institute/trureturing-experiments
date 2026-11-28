@@ -40,9 +40,8 @@ def primal():
     assert 0<theta<1 and lower>arb("0.000073")
 
 
-def projection(sectors,fields,beta,initial,inputs,kernel,directions,meeting,independent,
-               *, scale_millionths=None):
-    """给出重建热核后的投影下界，以及它对共同 log E 的斜率。"""
+def projection_terms(sectors,fields,beta,initial,inputs,kernel,directions,meeting,scale_millionths):
+    """返回投影的基线、能标斜率及已扣热核尾界的逐线数据。"""
     scales = [7000]*len(sectors) if scale_millionths is None else scale_millionths
     order = kernel["ORDER"]
     tail = 2*arb(7)**(order+1)/factorial(order+1)
@@ -70,8 +69,15 @@ def projection(sectors,fields,beta,initial,inputs,kernel,directions,meeting,inde
             constant -= rate*(arb(meeting)/inputs["mz"]).log()
         slope -= rate
 
+    return constant,slope,list(zip(*tables,strict=True))
+
+
+def projection(sectors,fields,beta,initial,inputs,kernel,directions,meeting,independent,
+               *, scale_millionths=None):
+    constant,slope,rows = projection_terms(sectors,fields,beta,initial,inputs,kernel,directions,
+                                           meeting,scale_millionths)
     minimum = load("shared-continuous-position-gap")["projected_minimum"]
-    for i,terms in enumerate(zip(*tables,strict=True)):
+    for i,terms in enumerate(rows):
         groups = [[term] for term in terms] if i in independent else [terms]
         for group in groups:
             constant += minimum(kernel["basis"],kernel["S"],group,arb("1e-6"))

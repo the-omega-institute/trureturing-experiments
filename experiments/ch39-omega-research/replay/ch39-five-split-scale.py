@@ -25,9 +25,11 @@ def load(name):
 def primal():
     solve = load("one-background-specific-line")["solve_layout"]
     layouts = json.loads((ROOT/"ch39-five-split-scale-layouts.json").read_text())
-    cases = [("fifth",SHELL[-1:],HEAVY[-1:],[6500],10**12,"12.3454"),
-             ("five",SHELL,HEAVY,SCALES,10**7,"27.675")]
-    for name,shell,heavy,scales,energy,minimum in cases:
+    cases = [("fifth",SHELL[-1:],HEAVY[-1:],[6500],10**12,"12.3454",set()),
+             ("five",SHELL,HEAVY,SCALES,10**7,"27.675",{0,323})]
+    for site,lower in [(15,"27.59"),(18,"27.46"),(285,"27.74")]:
+        cases.append((f"pair-{site}",SHELL,HEAVY,SCALES,10**7,lower,{0,site}))
+    for name,shell,heavy,scales,energy,minimum,expected in cases:
         layout = layouts[name]
         base = [arb(k)/11000 for row in layout["base"] for k in row]
         labels = [list(base) for _ in shell]
@@ -37,14 +39,14 @@ def primal():
             independent.add(i)
             for row,k in zip(labels,positions,strict=True):
                 row[i] = arb(k)/11000
-        assert independent == ({0,323} if name=="five" else set())
+        assert independent == expected
         extra = [(n,i,arb(k)/11000) for n,i,k in layout["extra"]]
-        print("标尺（百万分之一）与共同交汇能标 GeV",scales,energy,flush=True)
+        print("独立线、标尺（百万分之一）、共同交汇能标 GeV",sorted(independent),scales,energy,flush=True)
         solve(labels,extra,independent,[minimum]*len(labels),shell,heavy,False,
               reference_gev=energy,scale_millionths=scales)
 
 
-def dual():
+def inputs():
     gravity = load("two-zero-cutoff-gravity")["gravity_fields"]
     _,lib,backgrounds = gravity(ROOT,HEAVY,tight_neutral=True)
     model,_,_,initial,_ = lib["chiral"]["source"]["mean"]["inputs"]()
@@ -55,6 +57,11 @@ def dual():
     kernel = load("continuous-split-roots")
     sectors = [(paired(ROOT,shell,n),kernel["series"](bg,fields),bg)
                for n,bg in zip(SHELL,backgrounds,strict=True)]
+    return sectors,fields,beta,initial,model,kernel
+
+
+def dual():
+    sectors,fields,beta,initial,model,kernel = inputs()
     projection = load("three-background-calibration")["projection"]
     bound,_ = projection(sectors,fields,beta,initial,model,kernel,DIRECTION,None,{0},
                          scale_millionths=SCALES)
