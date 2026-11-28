@@ -54,6 +54,39 @@ def verify_quadratic_projection(prime):
     print(f"Prime {prime}: projected quartic span 96, with quadratic forms 105.")
 
 
+def verify_mass_preserving_direction(prime, root, modes, powers, exponential):
+    # Jets use x=ik. Specialize i and the fifth root in the same finite field.
+    imaginary = next(j for j in range(2, prime) if (j*j + 1) % prime == 0)
+    table = np.array([exponential[v] for v in modes]).T
+    phases = {s: np.array([pow(root, s*sum(v), prime) for v in modes])
+              for s in range(-2, 3)}
+    jets = {s: table * phase % prime for s, phase in phases.items()}
+    g = np.zeros(len(modes), dtype=np.int64)
+    for j, sign in ((0, 1), (1, -1)):
+        v = tuple(int(i == j) for i in range(5))
+        g[modes.index(v)] = sign * (1-imaginary)
+        g[modes.index(tuple(-x for x in v))] = sign * (1+imaginary)
+    direction = {s: jets[s] @ g % prime for s in (-1, 0, 1)}
+    centers = [phases[s] for s in range(-2, 3)]
+    slopes = [jets[s][j] for s in (-1, 0, 1) for j in range(1, 5)]
+    assert modular_rank(centers + slopes, prime) == 17
+    rows = list(centers)
+    index = {a: i for i, a in enumerate(powers)}
+    for s in (-1, 1):
+        for alpha in powers[1:]:
+            row = np.zeros(len(modes), dtype=np.int64)
+            for i, beta in enumerate(powers):
+                gamma = tuple(a-b for a, b in zip(alpha, beta))
+                if min(gamma) >= 0:
+                    k = index[gamma]
+                    row += direction[0][i] * jets[s][k] - direction[s][i] * jets[0][k]
+            rows.append(row % prime)
+    matrix = np.array(rows)
+    assert np.all(matrix @ g % prime == 0)
+    assert modular_rank(matrix, prime) == 60
+    print(f"Prime {prime}: center and slope rank 17, direction kernel dimension one.")
+
+
 def verify(prime, root):
     assert root != 1 and pow(root, 5, prime) == 1
     modes = [v for v in product(range(-2, 3), repeat=5) if sum(map(abs, v)) <= 2]
@@ -68,6 +101,8 @@ def verify(prime, root):
             prod(n**j for n, j in zip(frequency, a)) * denominator % prime
             for a, denominator in zip(powers, denominators)
         ])
+    if prime % 4 == 1:
+        verify_mass_preserving_direction(prime, root, modes, powers, exponential)
     charges = np.array([sum(v) for v in modes])
     assert (len(modes), int(np.sum(charges == 0))) == (61, 21)
     differences = []
@@ -139,6 +174,6 @@ def verify(prime, root):
 
 
 if __name__ == "__main__":
-    for p, zeta in [(31, 2), (101, 95)]:
+    for p, zeta in [(31, 2), (101, 95), (181, 42)]:
         verify(p, zeta)
         verify_quadratic_projection(p)
