@@ -102,6 +102,32 @@ def verify():
     print("两条线的左端点份额与另两条线的位置", *[z.str(17) for z in root])
     print("共同逆耦合和全程最小值",common.str(17),minimum.str(17))
 
+    # 在盒内的同一个中心解处冻结所有选择，仅更换重场质量所用的零点。
+    frozen = []
+    for i, ((a, b, weight), digit) in enumerate(zip(edges, labels, strict=True)):
+        if i in SPLIT:
+            share = root[SPLIT.index(i)]
+            choices = [(arb(0), share), (arb(1), 1-share)]
+        elif i in MOVING:
+            choices = [(root[2+MOVING.index(i)], arb(1))]
+        else:
+            choices = [(arb(int(digit, 12))/11, arb(1))]
+        for t, share in choices:
+            frozen.append((scale*((1-t)*a+t*b), weight*share))
+
+    codes = (2_345_665, 2_345_667)
+    _, _, neighbours = load("two-zero-cutoff-gravity")["gravity_fields"](ROOT, codes, tight_neutral=True)
+    for code, neighbour in zip(codes, neighbours, strict=True):
+        result = arb_mat([[0], [0], *[[a-b*logscale] for a,b in zip(initial,beta,strict=True)]])
+        for x, weight in frozen:
+            column = gauge["threshold_column"](neighbour, gravity["moments"], heat, fields, x)
+            result += arb_mat([[weight*v] for v in column[1:]])
+        k, vacuum, u1, u2, u3 = result.entries()
+        differences = (k-1, vacuum-arb("1e-122"), u1-u3, u2-u3)
+        assert all(not v.contains(0) for v in differences)
+        print("冻结两分拆解后的邻点编号，牛顿、真空、超荷减色、弱减色残差",
+              code, *[v.str(13) for v in differences])
+
 
 if __name__ == "__main__":
     verify()
