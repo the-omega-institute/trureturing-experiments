@@ -103,6 +103,27 @@ def verify():
     krylov = acb_mat([[col[i,0] for col in columns_from_pole] for i in range(3)])
     assert arb("3.08918e-7") < abs(krylov.det()) < arb("3.08919e-7")
 
+    imag_axes = []
+    for i,j in ((0,1),(0,2),(1,2)):
+        outer = columns_from_pole[j]*adj(columns_from_pole[i])
+        imag_axes.append((outer-adj(outer))/acb(0,2))
+    imag_moments = words["orbit_coefficients"](parts, adj, imag_axes)
+    cells = [(0,0,0)]
+    real_leaves = 0
+    while cells:
+        depth, i, j = cells.pop()
+        half = arb.pi()/2**depth
+        pad = arb(0,half.upper())
+        vals = columns((2*i+1)*half+pad,(2*j+1)*half+pad)[0]
+        residuals = imag_moments*vals
+        if any(z.abs_lower()>arb("1e-14") for z in residuals.entries()):
+            real_leaves += 1
+        else:
+            assert depth < 40
+            cells.extend((depth+1,2*i+di,2*j+dj) for di in (0,1) for dj in (0,1))
+    print("整轨道上极点三列的虚部至少一项超过 1e-14，终格数",real_leaves)
+
+
     pole_readings = [acb(0,1)*(axis*pole-pole*axis) for axis in axes]
     pole_moments = words["orbit_coefficients"](parts, adj, pole_readings)
     cells = [(0,0,0)]
