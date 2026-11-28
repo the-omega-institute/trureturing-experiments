@@ -11,9 +11,9 @@ def mass_weights(masses):
             for i,v in enumerate(masses)]
 
 
-def six_mass_control(model, traces):
+def six_mass_control(masses, traces):
     # θ13=0 时 x=sin² θ12、y=sin² θ23 的四个双线性系数。
-    up,down = [mass_weights(model["ref"][i:i+3]) for i in (0,3)]
+    up,down = [mass_weights(masses[i:i+3]) for i in (0,3)]
     def coefficients(s,target):
         w = [[(u/d)**s for d in down] for u in up]
         return (w[0][0]+w[1][1]+w[2][2]-target,
@@ -29,12 +29,13 @@ def six_mass_control(model, traces):
     # (e+gy)(b+dy) - (a+cy)(f+hy) 取零，再用正迹还原 x。
     p0,p1,p2 = e*b-a*f, e*d+g*b-a*h-c*f, g*d-c*h
     discriminant = p1**2-4*p2*p0
-    assert discriminant > 0 and abs(p2) > 0
+    if not (discriminant > 0 and abs(p2) > 0):
+        return None
     for sign in (-1,1):
         y = (-p1+sign*discriminant.sqrt())/(2*p2)
         if 0 < y < 1 and abs(b+d*y) > 0 and 0 < solve_x(y) < 1:
             return solve_x(y), y
-    raise AssertionError("未能构造六个质量中心的实混合矩阵")
+    return None
 
 
 def verify():
@@ -56,12 +57,26 @@ def verify():
     direct_up = {i:normalize(a) for i,a in up.items()}
     inverse_down = {i:normalize(a).inv() for i,a in down.items()}
     # 质量从轻到重。目标矩阵 D_u V D_d^{-1} 的两因子的奇异值均按降序排列。
-    a = [x.sqrt() for x in mass_weights(model["ref"][:3])[::-1]]
-    b = [1/x.sqrt() for x in mass_weights(model["ref"][3:6])]
-    inverse_a,inverse_b = [[1/x for x in side[::-1]] for side in (a,b)]
-    minima = [sum((first[k]*second[2-k])**2 for k in range(3))
-              for first,second in ((a,b),(inverse_a,inverse_b))]
+    def constraints(masses):
+        a = [x.sqrt() for x in mass_weights(masses[:3])[::-1]]
+        b = [1/x.sqrt() for x in mass_weights(masses[3:6])]
+        pairs = ((a,b),([1/x for x in a[::-1]],[1/x for x in b[::-1]]))
+        minima = [sum((first[k]*second[2-k])**2 for k in range(3)) for first,second in pairs]
+        return pairs,minima
+
+    def outside_singular_bounds(pairs, singular):
+        for (a,b),c in zip(pairs,(singular,[1/x for x in singular[::-1]]),strict=True):
+            if any(c[k+l] > a[k]*b[l] for k in range(3) for l in range(3-k)):
+                return True
+        return False
+
+    centers,widths = model["ref"][:6],model["tol"][:6]
+    exact,exact_min = constraints(centers)
+    full,full_min = constraints(mass_box)
+    corners = [[v+s*w for v,w,s in zip(centers,widths,signs,strict=True)]
+               for signs in product((-1,1),repeat=6)]
     hits = []
+    added = []
     winner = (0,21)
     for i,j in product(sites,repeat=2):
         mat = direct_up[i]*inverse_down[j]
@@ -71,19 +86,23 @@ def verify():
             assert arb("2067.64") < inv_tr < arb("2067.65")
         elif (i,j)!=(0,0):
             assert inv_tr < arb("2067.64")
-        if tr < minima[0] or inv_tr < minima[1]:
+        if tr < full_min[0] or inv_tr < full_min[1]:
             continue
         singular = model["singular"](mat)[::-1]
-        constraints = ((a,b,singular),(inverse_a,inverse_b,[1/x for x in singular[::-1]]))
-        if any(c[k+l]>first[k]*second[l] for first,second,c in constraints
-               for k in range(3) for l in range(3-k)):
+        if outside_singular_bounds(full,singular):
             continue
-        _,y = six_mass_control(model,(tr,inv_tr))
-        if (i,j)==(0,-2):
-            assert arb(".0000002328") < y < arb(".0000002330")
-        hits.append((i,j))
-    assert len(hits)==93 and (0,-2) in hits and (0,0) in hits
-    print("六个质量中心可达的编号对数",len(hits),"其余 16640 对中逆迹的最大值位于",winner)
+        if tr < exact_min[0] or inv_tr < exact_min[1] or outside_singular_bounds(exact,singular):
+            assert any(six_mass_control(corner,(tr,inv_tr)) is not None for corner in corners)
+            added.append((i,j))
+        else:
+            point = six_mass_control(centers,(tr,inv_tr))
+            assert point is not None
+            if (i,j)==(0,-2):
+                assert arb(".0000002328") < point[1] < arb(".0000002330")
+            hits.append((i,j))
+    assert len(hits)==93 and (0,-2) in hits and (0,0) in hits and len(added)==4
+    print("六质量中心 / 完整质量窗",len(hits),len(hits)+len(added),"仅放宽后新增的偏移",added)
+    print("其余 16640 对中逆迹的最大值位于",winner)
 
 
 if __name__ == "__main__":
