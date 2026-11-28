@@ -31,6 +31,29 @@ def verify():
     print("ΔΣgz、抵消系数、H 的全区间上下界",
           *[z.str(14) for z in (delta_moment, factor, lower, upper)])
 
+    # h_x(u)=x(1-E₂(u/x)) 随 x 递增，定向积分的每项也随 x 单调。
+    # 在相邻节点上逐项取端点包络，覆盖整段而非只测试节点。
+    def terms(x):
+        if x.is_zero():
+            return [arb(0)]*(2*len(spectrum))
+        values = [-a*x*(1-heat(2, s/x))/(2*pi) for _, a, s in spectrum]
+        for (g, _, s), (_, _, t) in zip(spectrum, reference, strict=True):
+            integral = x*(s-t+x*(heat(3, s/x)-heat(3, t/x)))
+            values.append(factor*g*integral/(4*pi))
+        return values
+
+    previous = terms(arb(0))
+    global_lo, global_hi = arb(0), arb(0)
+    for j in range(-200, 1):
+        current = terms(arb(2)**(arb(j)/4))
+        pairs = list(zip(previous, current, strict=True))
+        global_lo = global_lo.min(sum(a.min(b) for a, b in pairs).lower())
+        global_hi = global_hi.max(sum(a.max(b) for a, b in pairs).upper())
+        previous = current
+    refined = (1-global_hi)/(global_hi-global_lo)
+    assert arb("18292.7062") < refined < arb("18292.7063")
+    print("分段单调包络给出的全区间负量下界", refined.str(15))
+
 
 if __name__ == "__main__":
     verify()
