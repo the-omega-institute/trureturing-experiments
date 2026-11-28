@@ -98,6 +98,11 @@ def verify():
 
     pole_row = acb_mat([[source[model["shell"]["soft"]["pole"],j] for j in range(3)]])
     pole = adj(pole_row)*pole_row
+    pole_vector = adj(pole_row)
+    columns_from_pole = (pole_vector, observable*pole_vector, observable**2*pole_vector)
+    krylov = acb_mat([[col[i,0] for col in columns_from_pole] for i in range(3)])
+    assert arb("3.08918e-7") < abs(krylov.det()) < arb("3.08919e-7")
+
     pole_readings = [acb(0,1)*(axis*pole-pole*axis) for axis in axes]
     pole_moments = words["orbit_coefficients"](parts, adj, pole_readings)
     cells = [(0,0,0)]
