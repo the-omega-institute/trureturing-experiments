@@ -137,13 +137,13 @@ def verify(root):
         _, jac, drift = schur(whole, left, right)
         move, rate = pre * value, pre * drift
         defect = eye - pre * jac
-        ratio = max(
+        row_bounds = [
             (move[i, 0].abs_upper() + delta_max * rate[i, 0].abs_upper()) / radius
             + sum(z.abs_upper() for z in row)
             for i, row in enumerate(defect.tolist())
-        )
-        assert ratio < arb(".91"), (mask, ratio)
-        worst = max(worst, ratio.upper())
+        ]
+        assert all(bound < arb(".91") for bound in row_bounds), (mask, row_bounds)
+        worst = max(worst, *(bound.upper() for bound in row_bounds))
     print(
         "four-site omissions, rotation classes, inherited, Schur boxes, worst self-map bound",
         3876,
