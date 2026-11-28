@@ -100,20 +100,7 @@ def contract_height(rows, sign, full, kappa, offset):
     return (kappa/interval-offset).sqrt()
 
 
-def verify():
-    replay = Path(__file__).resolve().parent
-    pump = run_path(str(replay/"ch39-native-light-projector-pump.py"))
-    shell = run_path(str(replay/"ch39-three-ray-chiral-boundary.py"))
-    selector = run_path(str(replay/"ch39-light-spectrum-zero-selector.py"))
-    light = selector["light_spectra"](replay)
-    levels = [e for q,n in CENTERS for e in light(q,n)]
-    ctx.prec = 256
-    roots = [arb(r) for r in ROOTS]
-    eps = arb("1e-32")
-    assert all(abs(x-y) < arb("1e-45") for x,y in zip(levels, roots, strict=True))
-    assert all(abs(x-y) > arb(".14958") for i,x in enumerate(roots) for y in roots[i+1:])
-    assert all(0 < x < 9 for x in [*levels, *roots])
-    targets = [r+arb(0, eps.upper()) for r in roots]
+def verify_number_boxes(pump, shell, centers, targets):
     frames = list(pump["rotation_bases"](shell))
     radial = acb_mat(19, 19)
     pole = shell["soft"]["pole"]
@@ -136,7 +123,7 @@ def verify():
     assert kappa/(acb.zeta_zero(1).imag**2+offset) < arb("4e-9")
     full = arb(0).union(arb("4e-9"))
     wide = arb(-1).union(arb(1))
-    for charge, index in CENTERS:
+    for charge, index in centers:
         atlas = determinant_rows(pump, shell, radial, frames, charge, targets)
         surviving = []
         for indices in product(range(6), repeat=3):
@@ -148,19 +135,36 @@ def verify():
         assert surviving == [expected]
         print("荷与 216 组中唯一保留的有序三元组", charge, expected)
         rows = [block[i] for block,i in zip(atlas, expected, strict=True)]
+        hits = []
         for sign in (-1,1):
             height = contract_height(rows, sign, full, kappa, offset)
             lo = height.lower().zeta_nzeros().unique_fmpz()
             hi = height.upper().zeta_nzeros().unique_fmpz()
             assert lo is not None and hi is not None
             assert acb.zeta_zero(int(lo)).imag < height
-            if (charge,sign) in ((-4,-1),(2,1)):
+            if lo != hi:
                 assert (int(lo),int(hi)) == (index-1,index)
                 assert height.contains(acb.zeta_zero(index).imag)
-            else:
-                assert lo == hi
+                hits.append(index)
             print("荷、正弦分支、高度与端点零点数", charge, sign, height.str(17), lo, hi)
+        assert hits == [index]
 
+
+def verify():
+    replay = Path(__file__).resolve().parent
+    pump = run_path(str(replay/"ch39-native-light-projector-pump.py"))
+    shell = run_path(str(replay/"ch39-three-ray-chiral-boundary.py"))
+    selector = run_path(str(replay/"ch39-light-spectrum-zero-selector.py"))
+    light = selector["light_spectra"](replay)
+    levels = [e for q,n in CENTERS for e in light(q,n)]
+    ctx.prec = 256
+    roots = [arb(r) for r in ROOTS]
+    eps = arb("1e-32")
+    assert all(abs(x-y) < arb("1e-45") for x,y in zip(levels, roots, strict=True))
+    assert all(abs(x-y) > arb(".14958") for i,x in enumerate(roots) for y in roots[i+1:])
+    assert all(0 < x < 9 for x in [*levels, *roots])
+    targets = [r+arb(0, eps.upper()) for r in roots]
+    verify_number_boxes(pump, shell, CENTERS, targets)
     central_bound = 3 * arb("1e-45")**2 * 9**10
     competitor_bound = eps**2 * (arb(".14958")/2)**10
     assert central_bound < arb("1.047e-80") and competitor_bound-central_bound > arb("5.47e-76")
