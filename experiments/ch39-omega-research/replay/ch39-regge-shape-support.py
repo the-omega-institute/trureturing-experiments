@@ -22,6 +22,7 @@ PROFILES = {
     "equilateral": ((1, 1, 1, 1), 0),
     "checkerboard": ((fmpq(4, 5), fmpq(6, 5), fmpq(6, 5), fmpq(4, 5)), fmpq(1, 25)),
     "negative": ((1, 1, fmpq(3242533, 10**7), 1), 0),
+    "odd-moment": ((1, 1, fmpq(12987, 40000), 1), 0),
     "positive": ((1, fmpq(13, 10), fmpq(59, 40), fmpq(6, 5)), fmpq(11, 100)),
 }
 
@@ -69,6 +70,18 @@ def verify_box(profile, width):
     return shape
 
 
+def enclosing_volume():
+    """Volume bound for the positive orthant with weighted edge norm squared at most 960."""
+    edges = 15*SIDE**4
+    half_dim = edges//2
+    ellipsoid_volume = (arb.pi()*960/4)**half_dim/factorial(half_dim)
+    for steps in range(1, 5):
+        valence = factorial(steps)*factorial(5-steps)
+        count = SIDE**4*comb(4, steps)
+        ellipsoid_volume /= arb(valence)**(count//2)
+    return ellipsoid_volume
+
+
 def main():
     ctx.prec = 192
     # Each triangle's 2pi budget is divided among its incident simplices.
@@ -93,12 +106,7 @@ def main():
         # Scale the whole box by 1/16 in squared lengths to ensure V<=1.
         # Fatness bounds the enclosing weighted ellipsoid in its positive orthant.
         edges = 15*SIDE**4
-        half_dim = edges//2
-        ellipsoid_volume = (arb.pi()*960/4)**half_dim/factorial(half_dim)
-        for steps in range(1, 5):
-            valence = factorial(steps)*factorial(5-steps)
-            count = SIDE**4*comb(4, steps)
-            ellipsoid_volume /= arb(valence)**(count//2)
+        ellipsoid_volume = enclosing_volume()
         mass = (arb(width)/8)**edges / ellipsoid_volume
         assert mass > arb(10)**(-exponent)
         print("probability exceeds 10^", -exponent)
