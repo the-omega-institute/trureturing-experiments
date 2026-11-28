@@ -49,7 +49,7 @@ def setup():
     target = [arb(1),arb("1e-122"),-v0]
     allowed_moves = [(-choices[i][1]).union(1-choices[i][1]) for i in LINES]
 
-    def point(s, *, derivatives=False, physical_only=False):
+    def point(s, *, derivatives=False, physical_only=False, share_curvature=False):
         invs,logarithm = 1/s,s.log()
         vals = [[evaluate(co,err,s,invs,logarithm,0) for co,ds,err in row] for row in data]
         if physical_only:
@@ -76,11 +76,25 @@ def setup():
                               or any(v<0 for v in (*couplings,common))):
             return EXCLUDED
         energy = model["mz"]*log_energy.exp()
-        if not derivatives:
+        if not derivatives and not share_curvature:
             return energy,shares,floor
         ds = [[evaluate(dco,err,s,invs,logarithm,0)*invs for co,dco,err in row] for row in data]
         at_moves = [row[0]+sum(b*v for b,v in zip(row[1:],moves,strict=True)) for row in ds]
         share_slopes = matrix.solve(arb_mat([[-v] for v in at_moves[:3]])).entries()
+        if share_curvature:
+            # s² f″=(D²-D)f, D=s d/ds。对遗漏的 r^-m，二阶系数最多为 (m+1)/m!。
+            # z/x<4 且 m>=49，后继绝对项比小于 1/2。
+            accelerations = []
+            for row,first in zip(data[:3],ds[:3],strict=True):
+                second = []
+                for (powers,log_weight),_,err in row:
+                    coeff2 = [(2-k)*(1-k)*v for k,v in enumerate(powers)]
+                    coeff2[2] -= log_weight
+                    second.append(evaluate((coeff2,arb(0)),(n+1)*err,s,invs,logarithm,0)*invs**2)
+                fixed = second[0]+sum(a*v for a,v in zip(second[1:],moves,strict=True))
+                drift = 2*sum(a*v for a,v in zip(first[1:],share_slopes,strict=True))
+                accelerations.append([-fixed-drift])
+            return shares,share_slopes,matrix.solve(arb_mat(accelerations)).entries()
         slopes = [a+sum(b*d for b,d in zip(row[1:],share_slopes,strict=True))
                   for a,row in zip(at_moves[3:],vals[3:],strict=True)]
         log_slope = (slopes[0]-slopes[2])/(beta[0]-beta[2])
