@@ -36,14 +36,15 @@ def load():
     return data,fields,beta,limit,initial,kernel,earlier
 
 
-def projected(ctx,key):
+def project_direction(ctx, components, kernel_ratio=5):
     data,fields,beta,limit,initial,kernel,earlier=ctx
-    y=[arb(v)/10**11 for v in DIRECTIONS[str(key)]]
+    y=[arb(v)/10**11 for v in components]
     norm=sum(abs(y[k]) for k in (2,3,6,7))
     tables=[]
     constant=arb(0)
     order=kernel['ORDER']
-    tail=2*arb(5)**(order+1)/factorial(order+1)
+    assert arb(kernel_ratio)/(order+2) < arb(1)/2
+    tail=2*arb(kernel_ratio)**(order+1)/factorial(order+1)
     for n,(edges,series,bg) in enumerate(data):
         ky,wy,u,v=y[4*n:4*n+4]
         direction=[ky,wy,u,v,-u-v]
@@ -92,7 +93,7 @@ def at(ctx,model,micro):
 
 
 def certify_part(ctx,key,left,right):
-    model=projected(ctx,key)
+    model=project_direction(ctx,DIRECTIONS[str(key)])
     rows,_,norm=model
     M=curvature(rows,ctx[-2]['S'],arb(left)/10**6)
     @cache
