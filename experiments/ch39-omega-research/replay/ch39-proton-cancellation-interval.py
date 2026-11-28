@@ -22,7 +22,8 @@ def verify():
 
     # 第一、第二个面积分别严格下降、上升。第三个面积在全区间严格为负。
     # 用相邻有理端点的区间包络覆盖整段高度，以包含矩阵求逆的误差。
-    for k in range(-42, 106):
+    sites8 = (0, 2, 3, 5, 6, 9, 11, 13)
+    for k in range(-47, 107):
         for j in range(8):
             numerator = 8*k + j
             offset = (arb(numerator)/8000).union(arb(numerator + 1)/8000)
@@ -32,6 +33,22 @@ def verify():
             assert area(dy, z) + area(y, dz) < 0
             assert area(dz, x) + area(z, dx) > 0
             assert area(x, y) < 0
+            for station in (3, 5):
+                assert green[6, station].real > arb("-.00085")
+                assert arb(".0186") < slope[6, station].imag < arb(".021")
+            for source in sites8:
+                for target in sites8:
+                    if {source, target} in ({6, 3}, {6, 5}):
+                        continue
+                    assert green[source, target].real > arb(".006")
+                    assert abs(slope[source, target].imag) < arb(".0067")
+
+    concentration = arb(".006")/arb(".00685")
+    reverse = (1 - concentration)**2/(2*concentration)
+    derivative_floor = arb(".0186")*concentration - arb(".0396")*reverse - arb(".0067")*(1 - concentration)
+    assert derivative_floor > arb(".015")
+    print("冻结任一相消电流后，整段上的虚部导数绝对下界", derivative_floor.lower().str(12))
+
 
     for index, endpoints, expected_signs in [(0, left, (1, -1)), (1, right, (-1, 1))]:
         for offset, sign in zip(endpoints, expected_signs, strict=True):
@@ -40,7 +57,6 @@ def verify():
     print("包含第 177 枚正零点的相消分支，两端相对零点的高度位移分别在", left, right)
 
     # 在原三角形的两端各接上一段。r 是支持直线的方向，k 为穿过该直线的站。
-    sites8 = (0, 2, 3, 5, 6, 9, 11, 13)
     sides = (
         (-47, -41, 0, 5, 3, 1, ("-.0459972646597", "-.0459972646594")),
         (105, 107, 2, 3, 5, -1, (".1064730230790", ".1064730230793")),
