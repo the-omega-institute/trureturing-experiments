@@ -1,0 +1,140 @@
+{
+  "acceptance_complete": false,
+  "graph_bytes": 532868,
+  "graph_sha256": "1b1b7eb890daa523ab871beb77a57cc950c0a8e89923533dc383002a6e2c9d8b",
+  "graph_states": 22202,
+  "primitive_cases": 204,
+  "reference_runs": [
+    {
+      "expected_source": "UJB16.2 repeated-edge/full-injection argument; null degree bound; partial <=4-edge inversion supplier",
+      "input_bits": 387,
+      "input_sha256": "37dfee71eda5a8fbee3d373aab446982f15976785ef965ec2e4a1b6ea98c5402",
+      "name": "positive-full",
+      "output_bits": 1308,
+      "output_sha256": "ef3f42dd5c96832e9c78b64f889813604f04ddd344be94fd04986977424b155c",
+      "ratios": [
+        "1",
+        "0"
+      ],
+      "reference": {
+        "gotos": 61937920,
+        "halt_state": 1901,
+        "output_bits": 1308,
+        "peak_stack_bits": 8085,
+        "peeks": 1059730,
+        "pop_instructions": 109016393,
+        "pushes": 92333003,
+        "retained_stack_bits": 6375,
+        "steps": 264347047,
+        "success": true
+      },
+      "values": [
+        "1/240734712102912",
+        "1/240734712102912",
+        "1/240734712102912",
+        "1/240734712102912",
+        "1/240734712102912",
+        "1/240734712102912",
+        "0",
+        "0",
+        "0"
+      ]
+    },
+    {
+      "expected_source": "UJB16.2 repeated-edge/full-injection argument; null degree bound; partial <=4-edge inversion supplier",
+      "input_bits": 386,
+      "input_sha256": "1a4ae049cf81b1f434398aa05cb8eabcf4d8689f7873f8d75f9ae1e870c34764",
+      "name": "positive-partial",
+      "output_bits": 1560,
+      "output_sha256": "846c751c6308a655e918464253b6eee91afcb99e8555830ea3f779361f325bd6",
+      "ratios": [
+        "255/281",
+        "0"
+      ],
+      "reference": {
+        "gotos": 1077163168,
+        "halt_state": 1901,
+        "output_bits": 1560,
+        "peak_stack_bits": 9302,
+        "peeks": 22644002,
+        "pop_instructions": 1954337813,
+        "pushes": 1606631408,
+        "retained_stack_bits": 7845,
+        "steps": 4660776392,
+        "success": true
+      },
+      "values": [
+        "281/61387351586242560",
+        "281/61387351586242560",
+        "281/61387351586242560",
+        "1/240734712102912",
+        "1/240734712102912",
+        "1/240734712102912",
+        "0",
+        "0",
+        "0"
+      ]
+    },
+    {
+      "expected_source": "UJB16.2 repeated-edge/full-injection argument; null degree bound; partial <=4-edge inversion supplier",
+      "input_bits": 839,
+      "input_sha256": "f5518d034eef5bd00c87ff9d43c5ca878ef9d012f47e04bedcbe45163ee3e29d",
+      "name": "null-nine-distinct-left",
+      "output_bits": 145,
+      "output_sha256": "46ab5545c4bd8b8c3eb927a6d7430e757402525268317b63f2f8f948ca9ac423",
+      "ratios": null,
+      "reference": {
+        "gotos": 357157571,
+        "halt_state": 1901,
+        "output_bits": 145,
+        "peak_stack_bits": 7023,
+        "peeks": 592421,
+        "pop_instructions": 545966820,
+        "pushes": 534572126,
+        "retained_stack_bits": 5441,
+        "steps": 1438288939,
+        "success": true
+      },
+      "values": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ]
+    },
+    {
+      "expected_source": "UJB16.2 repeated-edge/full-injection argument; null degree bound; partial <=4-edge inversion supplier",
+      "input_bits": 141,
+      "input_sha256": "4062f7860aed1ee4efc0854ab4c18cdb8e7ccfb55e5f86cfc27a8628701c2213",
+      "name": "positive-unreduced-endpoint",
+      "output_bits": 618,
+      "output_sha256": "c579132fce7d2bc468e4e3e221cc2eac56504e5d047bae8732c601ff7bddc2b6",
+      "ratios": [],
+      "reference": {
+        "gotos": 29911945,
+        "halt_state": 1901,
+        "output_bits": 618,
+        "peak_stack_bits": 4998,
+        "peeks": 524826,
+        "pop_instructions": 52858757,
+        "pushes": 44597905,
+        "retained_stack_bits": 4998,
+        "steps": 127893434,
+        "success": true
+      },
+      "values": [
+        "1/240734712102912",
+        "1/240734712102912",
+        "1/240734712102912"
+      ]
+    }
+  ],
+  "reference_scope_complete": true,
+  "registers": 361,
+  "scope": "Primitive reference graph; no LAB execution or complete resource account."
+}

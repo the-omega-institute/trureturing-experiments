@@ -1,0 +1,19 @@
+{
+  "binary_bytes": 283233736,
+  "binary_rules": 47205620,
+  "binary_sha256": "6203cab30f56cfa7b726a945d559daa40d5a6aa567abc10e3b478f68025e51ba",
+  "binary_states": 23602810,
+  "four_bytes": 51497056,
+  "four_sha256": "d1614280a9606193a7f62e911907dc40f0ddebcbbffd3fed6d514a682ff2f194",
+  "four_states": 2145710,
+  "layout": "11 states per four-symbol state; row-major little-endian RROTABLE",
+  "phase_counts": {
+    "delete": 145872,
+    "finish": 2,
+    "inspect": 7148,
+    "main": 22202,
+    "push": 883243,
+    "rewind": 11854,
+    "seek": 1075389
+  }
+}

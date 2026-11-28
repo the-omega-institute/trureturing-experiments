@@ -1,0 +1,424 @@
+{
+  "adapter_cases": 48,
+  "cases": [
+    {
+      "FS1_reference_conditional": {
+        "D_lower": 6984018100,
+        "O_lower": 7907352004,
+        "R_lower": 9754019812,
+        "allocations": 92333390,
+        "explicit_host_object_lower_bytes": 379552896192,
+        "host_shallow_object_bytes": 48,
+        "pushes": 92333003,
+        "retained_bits_lower": 336774023900,
+        "scope": "conditional on prior counted stack supplier; not rerun or native work certificate",
+        "stack_steps": 264347047,
+        "width_lower": 33
+      },
+      "K_conditional_extra_bits": 420577,
+      "L": 387,
+      "N": 4,
+      "case": "positive-full",
+      "connection": {
+        "B": 4574,
+        "O": 4724,
+        "R": 4882,
+        "S": 72764,
+        "w": 13
+      },
+      "host_shallow_lower_bytes": 25389236696357928,
+      "input_sha256": "37dfee71eda5a8fbee3d373aab446982f15976785ef965ec2e4a1b6ea98c5402",
+      "lower": {
+        "K_min": 22508188560601,
+        "a": 1498,
+        "q": 6709424,
+        "s": 240,
+        "span": 6709440
+      },
+      "native_installer_at_necessary_K": {
+        "B": 360140563542999,
+        "O": 67524573791132,
+        "R": 292606483861938,
+        "S": 13887563394983279,
+        "w": 46
+      },
+      "schedule": {
+        "A": 2176,
+        "q": 74
+      },
+      "source": {
+        "B": 9393,
+        "O": 10064,
+        "R": 11727,
+        "S": 183635,
+        "w": 14
+      }
+    },
+    {
+      "FS1_reference_conditional": {
+        "D_lower": 141367674200,
+        "O_lower": 157433992144,
+        "R_lower": 189566628032,
+        "allocations": 1606631794,
+        "explicit_host_object_lower_bytes": 7556831622912,
+        "host_shallow_object_bytes": 48,
+        "pushes": 1606631408,
+        "retained_bits_lower": 7502333531560,
+        "scope": "conditional on prior counted stack supplier; not rerun or native work certificate",
+        "stack_steps": 4660776392,
+        "width_lower": 38
+      },
+      "K_conditional_extra_bits": 418648,
+      "L": 386,
+      "N": 4,
+      "case": "positive-partial",
+      "connection": {
+        "B": 4449,
+        "O": 4597,
+        "R": 4753,
+        "S": 70835,
+        "w": 13
+      },
+      "host_shallow_lower_bytes": 25330904044019112,
+      "input_sha256": "1a4ae049cf81b1f434398aa05cb8eabcf4d8689f7873f8d75f9ae1e870c34764",
+      "lower": {
+        "K_min": 22456475216329,
+        "a": 1496,
+        "q": 6701712,
+        "s": 240,
+        "span": 6701728
+      },
+      "native_installer_at_necessary_K": {
+        "B": 359313150034647,
+        "O": 67369433758316,
+        "R": 291934210386402,
+        "S": 13855656261567455,
+        "w": 46
+      },
+      "schedule": {
+        "A": 2115,
+        "q": 73
+      },
+      "source": {
+        "B": 9393,
+        "O": 10064,
+        "R": 11727,
+        "S": 183635,
+        "w": 14
+      }
+    },
+    {
+      "FS1_reference_conditional": {
+        "D_lower": 44362662344,
+        "O_lower": 49708391998,
+        "R_lower": 60399851306,
+        "allocations": 534572965,
+        "explicit_host_object_lower_bytes": 2386002815904,
+        "host_shallow_object_bytes": 48,
+        "pushes": 534572126,
+        "retained_bits_lower": 2268465701358,
+        "scope": "conditional on prior counted stack supplier; not rerun or native work certificate",
+        "stack_steps": 1438288939,
+        "width_lower": 36
+      },
+      "K_conditional_extra_bits": 2092449,
+      "L": 839,
+      "N": 9,
+      "case": "null-nine-distinct-left",
+      "connection": {
+        "B": 19799,
+        "O": 20099,
+        "R": 20407,
+        "S": 346003,
+        "w": 15
+      },
+      "host_shallow_lower_bytes": 366259318119593256,
+      "input_sha256": "f5518d034eef5bd00c87ff9d43c5ca878ef9d012f47e04bedcbe45163ee3e29d",
+      "lower": {
+        "K_min": 324697977056377,
+        "a": 2402,
+        "q": 25483248,
+        "s": 540,
+        "span": 25483264
+      },
+      "native_installer_at_necessary_K": {
+        "B": 5195177179475415,
+        "O": 974093939278460,
+        "R": 4221073734307026,
+        "S": 217222957834105175,
+        "w": 50
+      },
+      "schedule": {
+        "A": 9676,
+        "q": 149
+      },
+      "source": {
+        "B": 46443,
+        "O": 47939,
+        "R": 51627,
+        "S": 920414,
+        "w": 16
+      }
+    }
+  ],
+  "census_scope": "sequential same-cut dominating envelope; not attained peak, extraction bound, time or host bound",
+  "complete_operation_vector": false,
+  "copier": [
+    {
+      "B_steps": 5806,
+      "conservative_positions": 112,
+      "copies": 1,
+      "instantiated_positions": 120,
+      "span": 128,
+      "word": ""
+    },
+    {
+      "B_steps": 19449,
+      "conservative_positions": 224,
+      "copies": 2,
+      "instantiated_positions": 232,
+      "span": 240,
+      "word": ""
+    },
+    {
+      "B_steps": 43557,
+      "conservative_positions": 368,
+      "copies": 3,
+      "instantiated_positions": 376,
+      "span": 384,
+      "word": ""
+    },
+    {
+      "B_steps": 5806,
+      "conservative_positions": 112,
+      "copies": 1,
+      "instantiated_positions": 120,
+      "span": 128,
+      "word": "0"
+    },
+    {
+      "B_steps": 19449,
+      "conservative_positions": 224,
+      "copies": 2,
+      "instantiated_positions": 232,
+      "span": 240,
+      "word": "0"
+    },
+    {
+      "B_steps": 43557,
+      "conservative_positions": 368,
+      "copies": 3,
+      "instantiated_positions": 376,
+      "span": 384,
+      "word": "0"
+    },
+    {
+      "B_steps": 5683,
+      "conservative_positions": 112,
+      "copies": 1,
+      "instantiated_positions": 120,
+      "span": 128,
+      "word": "1"
+    },
+    {
+      "B_steps": 18978,
+      "conservative_positions": 224,
+      "copies": 2,
+      "instantiated_positions": 232,
+      "span": 240,
+      "word": "1"
+    },
+    {
+      "B_steps": 42567,
+      "conservative_positions": 368,
+      "copies": 3,
+      "instantiated_positions": 376,
+      "span": 384,
+      "word": "1"
+    },
+    {
+      "B_steps": 9262,
+      "conservative_positions": 144,
+      "copies": 1,
+      "instantiated_positions": 152,
+      "span": 160,
+      "word": "01"
+    },
+    {
+      "B_steps": 27504,
+      "conservative_positions": 272,
+      "copies": 2,
+      "instantiated_positions": 280,
+      "span": 288,
+      "word": "01"
+    },
+    {
+      "B_steps": 57095,
+      "conservative_positions": 432,
+      "copies": 3,
+      "instantiated_positions": 440,
+      "span": 448,
+      "word": "01"
+    },
+    {
+      "B_steps": 13109,
+      "conservative_positions": 176,
+      "copies": 1,
+      "instantiated_positions": 184,
+      "span": 192,
+      "word": "101"
+    },
+    {
+      "B_steps": 36458,
+      "conservative_positions": 320,
+      "copies": 2,
+      "instantiated_positions": 328,
+      "span": 336,
+      "word": "101"
+    },
+    {
+      "B_steps": 72729,
+      "conservative_positions": 496,
+      "copies": 3,
+      "instantiated_positions": 504,
+      "span": 512,
+      "word": "101"
+    }
+  ],
+  "host_reservation": false,
+  "host_shallow_bytes_per_reserve_cell": 1128,
+  "host_shallow_sizes": {
+    "PackedBlock": 96,
+    "PackedRefs": 56,
+    "PackedSlot": 80,
+    "PackedSource": 80,
+    "RefView": 56,
+    "empty_bytearray": 56
+  },
+  "old_C_complete": false,
+  "program_sha256": "04ff091d9a6bedb8bf58e62949e40753ec2572af461fdf29277a1c09dc5258c1",
+  "provider": {
+    "direct_allocation_calls": {
+      "native_engine.py": [],
+      "service_native.py": []
+    },
+    "excluded_host_allocations": "observer/output Python list appends are physical host allocations, outside this modeled-owner census",
+    "indirect_provider": "ServiceEngine.sourcecall -> OriginalConnection.invoke -> OriginalPort.call",
+    "rows": [
+      {
+        "A": 146,
+        "calls": 6,
+        "connection": {
+          "B": 310,
+          "O": 324,
+          "R": 346,
+          "S": 3748,
+          "w": 9
+        },
+        "k": 0,
+        "source": {
+          "B": 3,
+          "O": 14,
+          "R": 57,
+          "S": 245,
+          "w": 4
+        }
+      },
+      {
+        "A": 148,
+        "calls": 6,
+        "connection": {
+          "B": 314,
+          "O": 328,
+          "R": 350,
+          "S": 3792,
+          "w": 9
+        },
+        "k": 1,
+        "source": {
+          "B": 12,
+          "O": 34,
+          "R": 104,
+          "S": 670,
+          "w": 6
+        }
+      },
+      {
+        "A": 154,
+        "calls": 6,
+        "connection": {
+          "B": 326,
+          "O": 340,
+          "R": 362,
+          "S": 3924,
+          "w": 9
+        },
+        "k": 4,
+        "source": {
+          "B": 69,
+          "O": 124,
+          "R": 275,
+          "S": 2118,
+          "w": 7
+        }
+      },
+      {
+        "A": 266,
+        "calls": 6,
+        "connection": {
+          "B": 550,
+          "O": 564,
+          "R": 586,
+          "S": 6974,
+          "w": 10
+        },
+        "k": 60,
+        "source": {
+          "B": 9393,
+          "O": 10064,
+          "R": 11727,
+          "S": 183635,
+          "w": 14
+        }
+      },
+      {
+        "A": 416,
+        "calls": 6,
+        "connection": {
+          "B": 850,
+          "O": 864,
+          "R": 886,
+          "S": 10574,
+          "w": 10
+        },
+        "k": 135,
+        "source": {
+          "B": 46443,
+          "O": 47939,
+          "R": 51627,
+          "S": 920414,
+          "w": 16
+        }
+      }
+    ]
+  },
+  "python": "3.12.13 (main, Mar 10 2026, 18:18:07) [Clang 21.1.4 ]",
+  "schema": 1,
+  "scope": "necessary post-loader bounds and K-conditional modeled census; no full C run",
+  "source_hashes": {
+    "constructor/constructor-results.json": "0a8ac57a7afa0c01e0140f61638976c493ddb3d7c774d7a3c50c1769df25348e",
+    "constructor/evaluator.stack.bin": "1b1b7eb890daa523ab871beb77a57cc950c0a8e89923533dc383002a6e2c9d8b",
+    "constructor_compiler.py": "b6e3b5a3e7b0d6cc999f3094bfd7f5fd07464c198f86bb48641e25d67239690d",
+    "constructor_ir.py": "920d9c265c2db2e76a6e268139b35457d05bd116911758d9a5bb660fc1e18fe5",
+    "copier.py": "b571227e74ce3583b09e0fa359df950e2d462385528a973b81b1c50060a22d62",
+    "evaluator_program.py": "33fd87384bae21581556fc776738c6940171c3dca22670f557f26b368558842f",
+    "lab.py": "28be97644c484f46984b7757e0ed8407b9608275e546d0361a1015eba622ed4a",
+    "native_engine.py": "996316168cdba25e1bc4e4168878dde02cf2351034362da2a674a6a713dbed5c",
+    "native_install.py": "0ab4e62dcfa620510cf3e93852358f14346a810faf6fa6c5e28b9f0436da7cb9",
+    "nwmg.py": "cff762dff0ce4ea3f06a356ac948c3ea70751a900edaa7160ea093a91b401517",
+    "packed_constructor.py": "d342f1fbc409d61cbf320e178b520db8c0785d415f230825258d09af431b3c0a",
+    "service_native.py": "b767a1387544b15f2e34d25a4550cfaf0914668e51f9b249f863b969606f8380",
+    "session.py": "7f6bd6fa3e0d5804378d6d4e10895a5ea09fc5d45197f7357dbffeb4f30a0bed"
+  },
+  "sufficient_K": false
+}

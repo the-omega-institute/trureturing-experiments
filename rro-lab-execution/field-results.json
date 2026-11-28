@@ -1,0 +1,355 @@
+{
+  "ALU": [
+    {
+      "a": 13,
+      "b": 29,
+      "cpu_subphases": 43341,
+      "graph_actions": 1525,
+      "op": "add",
+      "result": 42
+    },
+    {
+      "a": 29,
+      "b": 13,
+      "cpu_subphases": 43509,
+      "graph_actions": 1531,
+      "op": "sub",
+      "result": 16
+    },
+    {
+      "a": 0,
+      "b": 0,
+      "cpu_subphases": 25521,
+      "graph_actions": 900,
+      "op": "eq",
+      "result": 1
+    },
+    {
+      "a": 1,
+      "b": 0,
+      "cpu_subphases": 25521,
+      "graph_actions": 900,
+      "op": "eq",
+      "result": 0
+    },
+    {
+      "a": 1,
+      "b": 2,
+      "cpu_subphases": 28999,
+      "graph_actions": 1022,
+      "op": "lt",
+      "result": 1
+    },
+    {
+      "a": 2,
+      "b": 1,
+      "cpu_subphases": 29055,
+      "graph_actions": 1024,
+      "op": "lt",
+      "result": 0
+    },
+    {
+      "a": 2,
+      "b": 2,
+      "cpu_subphases": 29141,
+      "graph_actions": 1027,
+      "op": "lt",
+      "result": 0
+    },
+    {
+      "a": 1,
+      "b": 5,
+      "cpu_subphases": 14151,
+      "graph_actions": 501,
+      "op": "shl",
+      "result": 32
+    },
+    {
+      "a": 128,
+      "b": 3,
+      "cpu_subphases": 14265,
+      "graph_actions": 505,
+      "op": "shr",
+      "result": 16
+    },
+    {
+      "a": 18446744073709551615,
+      "b": 0,
+      "cpu_subphases": 10908,
+      "graph_actions": 385,
+      "op": "copy",
+      "result": 18446744073709551615
+    }
+  ],
+  "B": {
+    "cross_census": {
+      "bit_fields": 5958,
+      "bits": 22589,
+      "grants": 476,
+      "objects": 476,
+      "occupied_pool_cells": 40,
+      "reference_slots": 1795,
+      "reference_width": 9,
+      "reserved_pool_cells": 256
+    },
+    "cross_primitive_events": {
+      "bit_field_reads": 30,
+      "bit_field_writes": 42,
+      "bit_register_reads": 131,
+      "bit_register_writes": 98,
+      "bit_tests": 89,
+      "code_bit_reads": 17283,
+      "code_reference_reads": 3301,
+      "controller_selections": 24030,
+      "cpu_bit_writes": 18517,
+      "cpu_reference_writes": 5772,
+      "null_tests": 115,
+      "reference_equality_tests": 23,
+      "reference_field_reads": 147,
+      "reference_field_writes": 84,
+      "reference_register_reads": 669,
+      "reference_register_writes": 268,
+      "resume_signals": 11
+    },
+    "falsifiers": [
+      "exact-B-prefix-comparison",
+      "primitive-code-event-census",
+      "inadequate-grant-refuses",
+      "binary-bit-domain",
+      "audit-erasure"
+    ],
+    "finite_cases": {
+      "bounded_prefixes": 490,
+      "commits": 7433,
+      "cpu_subphases": 24114436,
+      "graph_actions": 825095,
+      "halted": 1232,
+      "instances": 1722
+    },
+    "graph_nodes": 184,
+    "graph_sha256": "a29c456fa49723b1873f930f1a52f090254a02f131c17083ee581cac21b302ae",
+    "subphase_cuts": {
+      "a": 816,
+      "b": 816,
+      "commit": 816,
+      "copy": 266,
+      "dispatch": 816,
+      "equal": 23,
+      "get": 147,
+      "goto": 82,
+      "immediate": 13056,
+      "indirect": 9,
+      "literal": 9,
+      "null": 114,
+      "one": 816,
+      "opcode": 4069,
+      "put": 67,
+      "read": 30,
+      "read-a-bit": 88,
+      "read-a-ref": 272,
+      "read-b-bit": 42,
+      "read-b-ref": 394,
+      "read.writeback": 30,
+      "set": 84,
+      "test": 88,
+      "wait": 11,
+      "write": 42,
+      "zero": 816
+    }
+  },
+  "B_complete": false,
+  "C_released": false,
+  "full_image": {
+    "boot_cpu_subphases": 9236217,
+    "cases": [
+      {
+        "cpu_subphases": 31725818,
+        "instruction": [
+          "J",
+          13
+        ],
+        "pc": 7
+      },
+      {
+        "cpu_subphases": 32856042,
+        "instruction": [
+          "J",
+          495855760426
+        ],
+        "pc": 496162138107
+      },
+      {
+        "cpu_subphases": 47342,
+        "instruction": "M",
+        "pc": 496162138108
+      },
+      {
+        "cpu_subphases": 26524,
+        "instruction": null,
+        "pc": 496162138109
+      }
+    ],
+    "graph_sha256": "78a838ee179bf19676656441ff99d0e918f01074e461a730c4c13beca6cf8ee1",
+    "nodes": 1852122,
+    "primitive_events": {
+      "acknowledgements": 4,
+      "bit_register_reads": 1103479,
+      "bit_register_writes": 751869,
+      "bit_tests": 1103211,
+      "code_bit_reads": 54446007,
+      "code_reference_reads": 10375388,
+      "controller_selections": 73891943,
+      "cpu_bit_writes": 59250641,
+      "cpu_reference_writes": 15749522,
+      "directory_reference_reads": 84960,
+      "finite_control_index_write_bits": 369459715,
+      "finite_control_phase_write_bits": 369459715,
+      "output_bits": 268,
+      "output_ends": 4,
+      "page_bit_reads": 4720,
+      "reference_register_reads": 99120,
+      "reference_register_writes": 94400,
+      "resume_signals": 4,
+      "returns": 4
+    },
+    "raw_image_sha256": "6eceb93c62b1357ef2faf30debd798e615462dfa93dd90235ed1ed4282003a19",
+    "retained": {
+      "bit_fields": 4763650918,
+      "bits": 4940434706,
+      "grants": 2262386,
+      "objects": 2262386,
+      "occupied_pool_cells": 0,
+      "reference_slots": 7932791,
+      "reference_width": 22,
+      "reserved_pool_cells": 1
+    },
+    "scope": "Full image installed by host preparation; selected actual primitive-engine code fetches, not chronological installation or law execution."
+  },
+  "immutable_A_interface": "304461de407cd43e558a0f63411825fc5571f2e2ad77066d6522030c67d2009c",
+  "input_conversion": {
+    "cases": [
+      {
+        "B_input_bits": 24000,
+        "cpu_subphases": 9378956,
+        "graph_actions": 320094,
+        "input_bits": 387,
+        "name": "positive-full",
+        "occupied": 24388,
+        "sha256": "1283c86f67b6786eb83a4ebd2a9782cea3b73cf51c0b8d06e41f3500c732ebbf"
+      },
+      {
+        "B_input_bits": 23968,
+        "cpu_subphases": 9366358,
+        "graph_actions": 319664,
+        "input_bits": 386,
+        "name": "positive-partial",
+        "occupied": 24355,
+        "sha256": "a82a074dd0feb9d3f22fda4c780b9414797a3e6cda184eb8cf25d1f7fd489f86"
+      },
+      {
+        "B_input_bits": 38464,
+        "cpu_subphases": 15076724,
+        "graph_actions": 514578,
+        "input_bits": 839,
+        "name": "null-nine-distinct-left",
+        "occupied": 39304,
+        "sha256": "cc62b42f2bf890171a99d16b59243aa025cbabe3ff4e87d2f7539c172508df5a"
+      },
+      {
+        "B_input_bits": 16128,
+        "cpu_subphases": 6278140,
+        "graph_actions": 214253,
+        "input_bits": 141,
+        "name": "positive-unreduced-endpoint",
+        "occupied": 16270,
+        "sha256": "46181d4d70b11a84a84821f7ac5ffb0f02dd413d4dfdbc216b203e5423c09e8c"
+      }
+    ],
+    "graph_sha256": "a153f8db7ab0afb9d3048d7c724cc50f908c40064ea4fcfbb6f11121f2a813c4",
+    "nodes": 5426,
+    "scope": "Actual conversion of published raw inputs; no law evaluation, paid Receive or LAB load in these cases."
+  },
+  "limits": [
+    "Host installation has no paid initializer continuation.",
+    "Finite-control multibit updates and field-selector decoding still need literal primitive refinement.",
+    "No particular original-port service/controller or joint source/observer timeline.",
+    "Fixed finite supplied pool is fully retained; no dynamic widening, cleanup or shared-job controller.",
+    "No full compiled evaluator run; both original strict failures remain."
+  ],
+  "output_scan": {
+    "cases": [
+      {
+        "cpu_subphases": 2281360,
+        "graph_actions": 77910,
+        "retained": {
+          "bit_fields": 205305,
+          "bits": 1708349,
+          "grants": 24674,
+          "objects": 24674,
+          "occupied_pool_cells": 3664,
+          "reference_slots": 98558,
+          "reference_width": 15,
+          "reserved_pool_cells": 24000
+        },
+        "word": ""
+      },
+      {
+        "cpu_subphases": 5020803,
+        "graph_actions": 171481,
+        "retained": {
+          "bit_fields": 205305,
+          "bits": 1708349,
+          "grants": 24674,
+          "objects": 24674,
+          "occupied_pool_cells": 7975,
+          "reference_slots": 98558,
+          "reference_width": 15,
+          "reserved_pool_cells": 24000
+        },
+        "word": "0"
+      },
+      {
+        "cpu_subphases": 5020803,
+        "graph_actions": 171481,
+        "retained": {
+          "bit_fields": 205305,
+          "bits": 1708349,
+          "grants": 24674,
+          "objects": 24674,
+          "occupied_pool_cells": 7975,
+          "reference_slots": 98558,
+          "reference_width": 15,
+          "reserved_pool_cells": 24000
+        },
+        "word": "1"
+      },
+      {
+        "cpu_subphases": 8831890,
+        "graph_actions": 301661,
+        "retained": {
+          "bit_fields": 205305,
+          "bits": 1708349,
+          "grants": 24674,
+          "objects": 24674,
+          "occupied_pool_cells": 13950,
+          "reference_slots": 98558,
+          "reference_width": 15,
+          "reserved_pool_cells": 24000
+        },
+        "word": "01"
+      }
+    ],
+    "graph_nodes": 631,
+    "graph_sha256": "8648b503e63cc5057def6b82757b02412c9aeecaa3ed60fe8c8649d79aaab752",
+    "scope": "Actual returned-head scan of installed comb fixtures and emitted separator-terminated words; not an executed full evaluator."
+  },
+  "schema": 1,
+  "source_hashes": {
+    "field_checks.py": "464cd66c0f32dc9ed6170e657d10cdaa9f9be34ab99b22c8aa31782c300d8bbd",
+    "field_decoder.py": "1bc35d4702e141c89001985e3ce8c87278f9d84422fa2f8ba3aa71fa08100d3c",
+    "field_graph.py": "6c4a3c01d01812b8e91eeae96ab746b5428762ee17f86b0792faee9503315ae1",
+    "field_io.py": "5fa898cc6569807321a7c0975cf767a9e9047278e80859c6986609955df32e59",
+    "primitive_engine.py": "d759774eed2fbe16a1b62456eedd83d4c84d5a61fbdd8bc0230b52d63b40ad6f"
+  },
+  "whole_runtime_state_map_complete": false
+}
