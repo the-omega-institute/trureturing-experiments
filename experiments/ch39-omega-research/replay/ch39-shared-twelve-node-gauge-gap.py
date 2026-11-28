@@ -17,18 +17,20 @@ def dot(u,v):
     return sum(a*b for a,b in zip(u,v,strict=True))
 
 
-def paired_lines(root, shell, code, *, weight_code=None):
-    if weight_code is not None and weight_code != code:
-        endpoints = paired_lines(root,shell,code)
-        weights = paired_lines(root,shell,weight_code)
-        return [(a,b,w) for (a,b,_),(_,_,w) in zip(endpoints,weights,strict=True)]
+def paired_lines(root, shell, code, *, weight_code=None, positive_code=None):
+    """code 提供荷 −4 端点，positive_code 提供荷 +2 端点，weight_code 提供两荷权。"""
+    positive_code = code if positive_code is None else positive_code
+    weight_code = code if weight_code is None else weight_code
     sectors = {}
-    for charge,levels,direct,_ in shell(root,number=code):
-        if charge in (-4,2):
-            nodes = [z/levels[-1] for z in levels[:-1]]+[arb(1)]
-            weights = direct[0 if charge == -4 else 2]
-            sectors[charge] = list(zip(nodes,[w.real for w in weights],strict=True))
-    return [(s*t,(s+t)/2,w*v) for (s,w),(t,v) in product(sectors[-4],sectors[2])]
+    for number in dict.fromkeys((code,positive_code,weight_code)):
+        for charge,levels,direct,_ in shell(root,number=number):
+            if charge in (-4,2):
+                nodes = [z/levels[-1] for z in levels[:-1]]+[arb(1)]
+                weights = [w.real for w in direct[0 if charge == -4 else 2]]
+                sectors[number,charge] = nodes,weights
+    negative = zip(sectors[code,-4][0],sectors[weight_code,-4][1],strict=True)
+    positive = zip(sectors[positive_code,2][0],sectors[weight_code,2][1],strict=True)
+    return [(s*t,(s+t)/2,w*v) for (s,w),(t,v) in product(negative,positive)]
 
 
 def read_data():
