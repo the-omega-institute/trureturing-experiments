@@ -89,9 +89,77 @@ def wilson_and_ray():
         assert min(scalar) == -12*radius+1 and max(scalar) == 12*radius-1
 
 
+def mixed_step_jets():
+    """Expand the original five exponentials over Q(zeta_20) on two rays."""
+    from math import factorial
+
+    field = sp.QQ.cyclotomic_field(20)
+    zeta = field.unit**4
+    imag = field.unit**5
+    zero, one = field.zero, field.one
+    c = (zeta+zeta**4)/2
+    a = 1-c
+    sine = (zeta-zeta**4)/(2*imag)
+    cos2 = (zeta**2+zeta**3)/2
+    sin2 = (zeta**2-zeta**3)/(2*imag)
+    sin3 = -sin2
+    h = 1-cos2
+
+    def product(left, right):
+        return [sum((left[j]*right[n-j] for j in range(n+1)), zero)
+                for n in range(len(left))]
+
+    def power(series, exponent):
+        out = [one] + [zero]*(len(series)-1)
+        for _ in range(exponent):
+            out = product(out, series)
+        return out
+
+    def average_power(vector, degree, sign, center, length):
+        return [zeta**((sign*center*degree) % 5) * (sign*imag*degree)**n *
+                sum(v**n for v in vector) / (5*factorial(n)) for n in range(length)]
+
+    def real(positive, negative):
+        return [(x+y)/2 for x,y in zip(positive,negative)]
+
+    for order in range(3, 10):
+        q = (order-1)//2
+        length = order
+        lam = (2*one)/(h*(h-a))**q
+        first, outer = lam*(-a/2)**q, lam*(a*c/2)**q
+        beta = (first-outer)/(1-cos2)
+        gamma = (q*outer*sine/(3*c)-beta*sin2)/sin3 if order % 2 == 0 else zero
+        for vector in [(1,2,-3,0,0), (3,-1,2,-3,-1)]:
+            scalar_jets = []
+            for center in (0,1,-1):
+                moments = {sign: [average_power(vector,j,sign,center,length)
+                                  for j in (1,2,3)] for sign in (1,-1)}
+                u, uc = moments[1][0], moments[-1][0]
+                w = [-v for v in real(u,uc)]
+                w[0] += one
+                shifted = w.copy()
+                shifted[0] -= a
+                d = [-v for v in product(u,uc)]
+                d[0] += one
+                second, third = [], []
+                for sign in (1,-1):
+                    mean, moment2, moment3 = moments[sign]
+                    mean2 = product(mean,mean)
+                    second.append([x-y for x,y in zip(moment2,mean2)])
+                    third.append([x-3*y+2*z for x,y,z in
+                                  zip(moment3,product(moment2,mean),product(mean2,mean))])
+                e = real(*second)
+                v = real(*third)
+                correction = product([beta*i+gamma*j for i,j in zip(e,v)], power(d,q-1))
+                scalar_jets.append([lam*x+y for x,y in zip(power(product(w,shifted),q),correction)])
+            assert scalar_jets[0] == scalar_jets[1] == scalar_jets[2]
+
+
 if __name__ == "__main__":
     polynomial_checks()
     target_jets()
     shorter_kinetic_interpolant()
     wilson_and_ray()
+    mixed_step_jets()
+    print("Mixed translation jets K=3..9 and two nonzero cubic moments verified.")
     print("Exact two-node kinetic jets K=1..10, Wilson identities K=1..16, and short-ray frequency supports r=1..8 verified.")
