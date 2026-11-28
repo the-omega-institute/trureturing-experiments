@@ -40,3 +40,40 @@ For an arbitrary kinetic vector $C$, let $R$ be its central fourth-order Taylor 
 For $R$ from $Y_j=\Im(z_j\overline M)$ the rank is 214, modulo both 31 and 101. The replay uses $10iY$ to clear denominators, which rescales all amplitude columns by a single nonzero constant. Consequently there is a full-column-rank minor over characteristic zero, polynomial in the coefficients of $R$. Where it is nonzero, the only solution has zero charged vector coefficients. The vector is then invariant and the scalar sign obstruction applies. Any unrestricted solution must therefore lie in the proper algebraic set where every full-column-rank minor vanishes. This excludes a neighborhood of the displayed kinetic jet. Feasibility within the rank-deficient set remains open. [Two modular rank certificates](ch39-two-step-central-jets.py)
 
 There is a second necessary condition directly on the scalar. Its values or its gradients must differ between some two light centers. To see this, write $b=-B$, and choose linear output coordinates so the linear term of the common ratio $C/b$ is $x$. Let $T_d$ map the 40 charged Fourier coefficients to the two Taylor differences through degree $d$. If $T_1 b=0$, cubic matching gives $T_3 C_j=[x_j T_3 b]_{\le3}$, since the scalar difference starts in degree two. These four identities and $T_1 b=0$ form a linear system in 200 unknowns. Its rank is at least 190 by modular elimination, and $T_2$ has rank 30 (the number of its rows). The full ten-dimensional kernel is therefore the subspace with all charged vector coefficients zero and $b\in\ker T_2$. For a fourth-order match the resulting invariant vector forces equality of the scalar third-order jets, and consequently equal signs at all five centers. Thus even arbitrary kinetic vectors cannot repair a two-step kernel with equal light-center scalar values and gradients. [Exact elimination](ch39-two-step-central-jets.py)
+
+## Equal light-center Wilson masses force a fourth-order obstruction
+
+Suppose that the three light values of $b=-B$ are equal. Fourth-order matching then fails for every two-step vector, including arbitrary anisotropic vectors and arbitrary scalar gradients. To prove this, identify the four-dimensional output with the tangent hyperplane $V=\{x\in\mathbb R^5:\sum x_j=0\}$ using the common invertible linear term of $C_s/b_s$. Write its common quotient jet as $x+F_2(x)+\cdots$. For any center-dependent scalar or vector field $G$ put
+$$
+ E(G)=(G_++G_-)/2-G_0,\qquad O(G)=(G_+-G_-)/2 .
+$$
+Let $a=E(b)_1$, $h=O(b)_1$ be linear forms. The degree-two vector contrasts are $E(C)_2=a x$ and $O(C)_2=h x$. At degree three, $E(C)_3\equiv aF_2$ and $O(C)_3\equiv hF_2$ modulo scalar polynomial multiples of $x$. Therefore $a O(C)_3-h E(C)_3\equiv0$.
+
+Write $P$ for the zero-sum projection, $q=P(x_j^2)$, $u=P(x_j^3)$ and $L=\sum x_j^2/5$. For the two charged word families write
+$$
+ U_n=\sum_j u_j x_j^n,\qquad V_n=\sum_{i\le j}v_{ij}(x_i+x_j)^n .
+$$
+Here the complex vector coefficients represent the real part of the corresponding Fourier sum. Each family has coefficient sum zero because $C$ vanishes at all five uniform centers. Write $d_j=\cos(2\pi j/5)-1$ and $s_j=\sin(2\pi j/5)$. The Taylor contrasts are
+$$
+ E(C)_n=\Re\big[i^n(d_1U_n+d_2V_n)\big]/n!,\qquad
+ O(C)_n=\Re\big[i^{n+1}(s_1U_n+s_2V_n)\big]/n!.
+$$
+In particular $d_1\Re U_2+d_2\Re V_2=-2a x$ and $s_1\Im U_2+s_2\Im V_2=2h x$. Polarize quadratic moments as symmetric bilinear forms. Expanding each word gives $U_3=U_1(u)$, $U_2(x,q)=U_1(u)-L U_1(x)$ and
+$$
+ V_3=3V_2(x,q)-2V_1(u)+6L V_1(x).
+$$
+Substituting the quadratic constraints into $E(C)_3,O(C)_3$ and using $(a x)(x,q)=(a(x)q+a(q)x)/2$ leaves
+$$
+ E(C)_3\equiv A u+L D x+\frac{d_2}{2s_2}h q,\qquad
+ O(C)_3\equiv A' u+L D' x-\frac{s_2}{2d_2}a q
+$$
+for real linear maps $A,D,A',D'$ on $V$. Hence
+$$
+ H q\in W\quad\text{modulo multiples of }x,\qquad
+ H=-\frac{s_2}{2d_2}a^2-\frac{d_2}{2s_2}h^2 ,
+$$
+where $W$ is spanned by $\ell(x) A u$ and $\ell(x)L D x$ with all linear forms $\ell$ and maps $A,D$.
+
+The only quadratic forms $H$ satisfying this inclusion are the multiples of $L$. Wedge with $x$ and use the first four coordinates on $V$. The first family spans a space of dimension at most $64-4=60$ after wedging, since the four independent expressions $x u_j$ map to zero. Here independence refers to the four coefficient arrays giving $x u_j$. The second family is $L$ times arbitrary quadratic vectors. Its projected dimension is at most $40-4=36$ since the four linear multiples of $x$ vanish after wedging. Thus $\dim(x\wedge W)\le96$. Adding the ten columns for $x\wedge Hq$ increases the dimension by at most nine because $Lq$ already belongs to the second family. Evaluating on $\{-1,0,1,2\}^4$ gives ranks 96 and 105 modulo both 31 and 101. A nonzero minor lifts to characteristic zero and attains both upper bounds, so the kernel on quadratic forms is exactly the line spanned by $L$. [Exact projected ranks](ch39-two-step-central-jets.py)
+
+Here $s_2>0$ and $d_2<0$. The two positive multiples of squares in $H$ give it rank at most two, whereas $L$ has rank four. Thus $H=0$ and both $a$ and $h$ vanish. The three scalar first jets now coincide, a case excluded by the rank-190 calculation above. Any fourth-order solution with unrestricted two-step kinetic vector must therefore have unequal Wilson masses at some pair of light centers. The three-step fifth-order construction has equal light masses, so three steps are minimal for fourth- and fifth-order matching under this equal-mass condition alone.

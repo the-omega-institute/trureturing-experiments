@@ -1,6 +1,6 @@
 """Modular minors for the five-center, two-step Fourier jet constraints."""
 
-from itertools import product
+from itertools import combinations, product
 from math import factorial, prod
 
 import numpy as np
@@ -21,6 +21,37 @@ def modular_rank(matrix, prime):
         lower[:] = (lower - lower[:, col, None] * row) % prime
         rank += 1
     return rank
+
+
+def verify_quadratic_projection(prime):
+    # Wedge with x removes all polynomial multiples of x. The finite grid
+    # gives a lower bound on the rank of the corresponding polynomial map.
+    x = np.array(list(product(range(-1, 3), repeat=4)), dtype=np.int64)
+    tangent = np.column_stack((x, -x.sum(axis=1))) % prime
+    inverse_five = pow(5, -1, prime)
+    mean_square = (tangent**2).sum(axis=1) * inverse_five % prime
+    square = (x**2 - mean_square[:, None]) % prime
+    mean_cube = (tangent**3).sum(axis=1) * inverse_five % prime
+    cube = (x**3 - mean_cube[:, None]) % prime
+
+    def wedge(vector):
+        return np.column_stack([
+            (x[:, i]*vector[:, j] - x[:, j]*vector[:, i]) % prime
+            for i, j in combinations(range(4), 2)
+        ]).ravel()
+
+    columns = []
+    for term in (cube, mean_square[:, None]*x):
+        for h, i, j in product(range(4), repeat=3):
+            vector = np.zeros_like(x)
+            vector[:, i] = x[:, h] * term[:, j]
+            columns.append(wedge(vector))
+    assert modular_rank(np.array(columns).T, prime) == 96
+    for i in range(4):
+        for j in range(i, 4):
+            columns.append(wedge(x[:, i, None] * x[:, j, None] * square))
+    assert modular_rank(np.array(columns).T, prime) == 105
+    print(f"Prime {prime}: projected quartic span 96, with quadratic forms 105.")
 
 
 def verify(prime, root):
@@ -110,3 +141,4 @@ def verify(prime, root):
 if __name__ == "__main__":
     for p, zeta in [(31, 2), (101, 95)]:
         verify(p, zeta)
+        verify_quadratic_projection(p)
