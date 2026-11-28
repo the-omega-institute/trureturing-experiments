@@ -16,12 +16,24 @@ def verify():
     assert abs(factor.det()) > 0
     # 四项铅笔模标量的法向在该协方差三个谱投影上的精确符号。
     covariance = factor*model["adj"](factor)
-    _, basis = model["eig"](covariance)
+    levels, basis = model["eig"](covariance)
+    assert 0 < levels[0] < levels[1] < levels[2]
     for j,(lo,hi) in enumerate((("-.490","-.489"),(".677",".678"),("-.188","-.187"))):
         x,y,z = [basis[i,j] for i in range(3)]
         normal = abs(y)**2-abs(z)**2-h[0,1].real/h[1,2].real*(x*z.conjugate()).real
         assert arb(lo) < normal < arb(hi)
         print("六质量源第",j+1,"个谱投影的法向读数",normal.str(14))
+    # 后两条线分别选一个三项算子。L−tI 的二阶主子式非零保证目标谱值单重。
+    ratio = h[0,1].real/h[1,2].real
+    for i,(lo,hi) in zip((1,2),((-47,-46),(".321",".322")),strict=True):
+        assert abs(basis[0,i])>0
+        y,z = [(basis[j,i]/basis[0,i]).real for j in (1,2)]
+        first = y*(1-ratio*z)
+        second = z*(ratio+z)-y*y
+        eigenvalue = ratio+z-ratio*y*y
+        minor = (ratio*second-eigenvalue)*(-eigenvalue)-first**2
+        assert arb(lo) < minor < arb(hi)
+        print("三项算子在目标本征值处的非零子式",minor.str(12))
     masses = []
     for prepared, scale in ((up, "17.1011054860"), (down,"2.4193378623")):
         masses.extend(model["singular"](arb(scale)*prepared*frame*factor))
