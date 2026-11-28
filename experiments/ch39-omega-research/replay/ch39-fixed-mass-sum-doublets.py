@@ -17,7 +17,8 @@ def verify():
     assert len(masses) == 16 and min(masses) > 0
     lo, hi = arb(".3939"), arb(".3941")
     # K_x/K_∞ 是 (1+t/x)exp(-t/x) 对正权 dt/t² 的平均值。
-    cap = max(m.upper() for m in masses)*(1+hi)**2 + p1/4
+    fifteen_lo, fifteen_hi = arb(".3954"), arb(".3955")
+    cap = max(m.upper() for m in masses)*(1+fifteen_hi)**2 + p1/4
     assert weights[0] > 0 and weights[1] < 0 and weights[3] < 0
     assert weights[2] > 0 and weights[4] > 0 and sites[4] > sites[2]
     ratio = cap/sites[2]
@@ -46,6 +47,11 @@ def verify():
     assert smallest > arb(".00035829056")
     assert above - smallest < arb("-.00032974240")
     print("最多十五层分裂的残差上界", (above-smallest).upper().str(12))
+    for split, sign in ((fifteen_lo, -1), (fifteen_hi, 1)):
+        partial = layer_gains(split)
+        best = light + sum(partial) - min(partial)
+        assert sign*best > 0
+        print("最多十五层分裂的端点与最大残差", split.str(8), best.str(10))
     assert below < arb("-2.14e-5") and above > arb("2.85e-5")
     assert (1 + lo)/(1 - lo) > arb("2.299")
     print("线性质量和守恒的全域斜率比较下界、两端中性残差", floor.lower().str(8), below.str(9), above.str(9))
