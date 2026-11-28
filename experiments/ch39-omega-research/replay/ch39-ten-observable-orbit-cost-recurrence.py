@@ -23,27 +23,36 @@ def verify():
     center = optimal((0,0),basis)
     geometry["geometry"](shell,pump)
     adj = pump["adjoint"]
-    eps = arb("1e-22")
-    energy_radius = arb("1e-20")
-    delta = arb(23)/25*arb(2)**-20/(arb(10**9)**2+shell["soft"]["point"]["study"]["offset"])
-    assert 0 < delta and delta < arb("4e-18")
-    assert model["deficit"].contains(arb(0).union(delta))
-    # 每个参考角周围的小开方形在旧十项盒内。单位钟相位变化不超过角变化。
-    assert arb("6e-12")+eps < model["radius"]
-    assert 18*eps+6*delta+arb("0.5e-46") < energy_radius
-    shifts = {-4:(-1,-1),2:(1,-1)}
-    roots = []
-    for q,x,y,_ in model["PHASE_BOXES"]:
-        base, links = pump["clock_matrices"](shell,q)
-        angles = [arb(a)+v*arb("6e-12") for a,v in zip((x,y),shifts[q],strict=True)]
-        off = sum((acb(0,a).exp()*link for a,link in zip(angles,links,strict=True)),0*base)
-        laplacian = base+off+adj(off)
-        for frame in pump["rotation_bases"](shell):
-            roots.append(geometry["minimum"](adj(frame)*laplacian*frame))
-    cost = optimal(None,basis,roots=roots,root_radius=energy_radius)
-    improvement = center-cost
-    assert improvement > arb("3.71e-15")
-    print("两个开相位盒中，中央最小费用减去替代最小费用",improvement.str(12))
+    delta = arb(23)/25*arb(2)**-20/(arb(500000)**2+shell["soft"]["point"]["study"]["offset"])
+    assert 0 < delta and model["deficit"].contains(0) and model["deficit"].contains(delta)
+    energy_radius = arb("2e-10")
+    assert 18*model["radius"]+6*delta+arb("0.5e-46") < energy_radius
+    cases = (
+        (("-.0013849","-.00091671",".00021066","-.00021829"), ".121", "3.05e-7"),
+        (("-.00411497","-.00122105",".00131647","-.00115155"), ".901", "9.10e-7"),
+    )
+    for shifts, window, lower in cases:
+        roots, outputs = [], []
+        for i,(q,x,y,scale) in enumerate(model["PHASE_BOXES"]):
+            a = arb(x)+arb(shifts[2*i])
+            b = arb(y)+arb(shifts[2*i+1])
+            # prepare 在两角各自半宽 1e-11 及完整径向亏额区间上执行。
+            y_matrix = model["prepare"](q,a,b)*model["K"]*arb(scale)
+            outputs.append(model["eig"](adj(y_matrix)*y_matrix))
+            base, links = pump["clock_matrices"](shell,q)
+            off = acb(0,a).exp()*links[0]+acb(0,b).exp()*links[1]
+            laplacian = base+off+adj(off)
+            for frame in pump["rotation_bases"](shell):
+                roots.append(geometry["minimum"](adj(frame)*laplacian*frame))
+        (up,u),(down,d) = outputs
+        values = [v.sqrt() for v in up+down]+model["mixing_angles"](u,d)
+        error = max((abs(v-r)/w).upper() for v,r,w in
+                    zip(values,model["ref"],model["tol"],strict=True))
+        cost = optimal(None,basis,roots=roots,root_radius=energy_radius)
+        improvement = center-cost
+        assert error < arb(window) and improvement > arb(lower)
+        print("十项最大相对半宽与中央费用减替代费用",error.str(12),improvement.str(10))
+
 
 
 if __name__ == "__main__":
