@@ -27,6 +27,41 @@ def check_minimum_word_degree(h, pole, parts, adj, words, neighbours, boxes, equ
         print("实三次基元法向在精确根处的配对",value.str(11))
 
 
+def check_three_commutators(parts, adj, words, axes, generators, identity):
+    # 交换子在九个厄米正交方向上的坐标，第三列缩放以改善区间精度。
+    scaled = [generators[0], generators[1], 1000*generators[2]]
+    forms = [acb(0,1)*(axis*g-g*axis) for g in scaled for axis in axes]
+    moments = words["orbit_coefficients"](parts, adj, forms+[identity])
+    cells = [(0,0,0)]
+    leaves = 0
+    while cells:
+        depth, i, j = cells.pop()
+        half = arb.pi()/2**depth
+        pad = arb(0,half.upper())
+        column = words["trigonometric_columns"]((2*i+1)*half+pad,(2*j+1)*half+pad)[0]
+        values = (moments*column).entries()
+        coords = [values[k:k+9] for k in (0,9,18)]
+        diag = [sum(v.abs_lower()**2 for v in c) for c in coords]
+        xy,xz,yz = [sum(v*w for v,w in zip(coords[m],coords[n],strict=True))
+                    for m,n in ((0,1),(0,2),(1,2))]
+        trace = values[-1].abs_upper()
+        # 对角只取下界；实际 Gram 比所检验矩阵多一个半正定对角阵。
+        def positive(penalties):
+            a,b,c = [d-(trace*t)**2 for d,t in zip(diag,penalties,strict=True)]
+            if not a>0:
+                return False
+            b -= xy**2/a
+            c -= xz**2/a
+            return b>0 and c>0 and b*c>(yz-xy*xz/a).abs_upper()**2
+
+        if positive([arb(".0006"),arb(".0006"),arb(".6")]) and positive([arb(".15")]*3):
+            leaves += 1
+        else:
+            assert depth < 22
+            cells.extend((depth+1,2*i+di,2*j+dj) for di in (0,1) for dj in (0,1))
+    print("三项壳交换子一致下界，终格数",leaves)
+
+
 def verify():
     root = Path(__file__).resolve().parent
     neighbours = run_path(str(root / "ch39-four-quadratic-source-neighbours.py"))
@@ -156,7 +191,25 @@ def verify():
     isolate = run_path(str(root/"ch39-real-cubic-udu-orbit.py"))["certify_four_roots"]
     leaves, deepest = isolate(equations, columns, phase_boxes)
     print("在两个壳算子的实代数上只加 i[H,P] 后恰有四个校准源，终格数与最高层",leaves,deepest)
+    chiral_scale = (commutator**2).trace().real.sqrt()/arb(2).sqrt()
+    identity = acb_mat([[int(i==j) for j in range(3)] for i in range(3)])
+    chiral_moments = words["orbit_coefficients"](parts, adj, [imag_axes[0], identity])
+    intervals = [
+        ("-.00500681","-.00500679","-.201064","-.201062"),
+        (".02552233",".02552235","1.541101","1.541105"),
+        (".03448134",".03448136","1.534916","1.534920"),
+        ("-.04553798","-.04553796","-3.105911","-3.105907"),
+    ]
+    for box, (lo,hi,eta_lo,eta_hi) in zip(phase_boxes,intervals,strict=True):
+        x,y = neighbours["refine"]((*box,0), arb(".02"), equations, columns)
+        reading,trace = (chiral_moments*columns(x,y)[0]).entries()
+        coefficient = reading / slopes[0]
+        normalized = 10**6*coefficient*chiral_scale/trace
+        assert arb(lo) < coefficient < arb(hi)
+        assert arb(eta_lo) < normalized < arb(eta_hi)
+        print("有向交换子系数、按迹归一的百万分手征读数",coefficient.str(11),normalized.str(10))
     check_minimum_word_degree(observable, pole, parts, adj, words, neighbours, phase_boxes, equations)
+    check_three_commutators(parts, adj, words, axes, [observable, pole, commutator], identity)
 
     higher = acb(0,1)*(observable**2*pole-pole*observable**2)
     second_dir = [(axis*higher).trace().real for axis in imag_axes]
