@@ -169,7 +169,7 @@ Outcome classify(const Vector& q,int depth) {
     if(valid_center) {
         double upper=center_score.hi;
         for(int i=0;i<10;i++) upper=up(upper+up(gradient[i].magnitude()*r[i]));
-        Interval threshold=(Interval(391)/200)*root(root(feasible_min)/24);
+        Interval threshold=(Interval(5)/4)*root(root(feasible_min)/24);
         if(upper<threshold.lo) return Outcome::bounded;
     }
     return Outcome::split;
