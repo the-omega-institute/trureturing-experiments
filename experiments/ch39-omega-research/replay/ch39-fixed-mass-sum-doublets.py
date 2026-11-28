@@ -29,16 +29,23 @@ def verify():
     rule = gauge["angular_rule"](24, 57)
     log_ratio = (p1/p0).log()
 
-    def residual(split):
-        result = light
+    def layer_gains(split):
+        gains = []
         for b in masses:
+            gain = arb(0)
             for x, c in zip(sites, weights, strict=True):
                 left, right = [gauge["angular_exposure"](1, b*(1+s)**2, x, p0, p1, log_ratio, rule)
                                for s in (-split, split)]
-                result += c*(left-right)/(48*arb.pi())
-        return result
+                gain += c*(left-right)/(48*arb.pi())
+            gains.append(gain)
+        return gains
 
-    below, above = residual(lo), residual(hi)
+    gains = layer_gains(hi)
+    below, above = light + sum(layer_gains(lo)), light + sum(gains)
+    smallest = min(g.lower() for g in gains)
+    assert smallest > arb(".00035829056")
+    assert above - smallest < arb("-.00032974240")
+    print("最多十五层分裂的残差上界", (above-smallest).upper().str(12))
     assert below < arb("-2.14e-5") and above > arb("2.85e-5")
     assert (1 + lo)/(1 - lo) > arb("2.299")
     print("线性质量和守恒的全域斜率比较下界、两端中性残差", floor.lower().str(8), below.str(9), above.str(9))
