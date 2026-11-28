@@ -56,6 +56,11 @@ def verify():
     c = (arb(".0052")-arb(".0001"))/arb(".0064")
     pmin = c-(1-c)**2/(2*c)
     assert 19*pmin**2-1>10 and pmin > arb(7)/10
+    at_zero = arb(13)/16
+    dominant = (at_zero + (2*at_zero-1).sqrt())/2
+    energy_gap = 19*dominant**2 - 11
+    assert energy_gap > arb("1.20669")
+    print("精确相消所要求的两端能量差下界", energy_gap.lower().str(13))
     print("两钟全环面各层终格数、假设小实部时的单向质量下界", sorted(counts.items()), pmin.str(9))
 
 
