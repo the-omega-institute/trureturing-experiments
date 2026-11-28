@@ -39,7 +39,8 @@ def load():
 def project_direction(ctx, components, kernel_ratio=5):
     data,fields,beta,limit,initial,kernel,earlier=ctx
     y=[arb(v)/10**11 for v in components]
-    norm=sum(abs(y[k]) for k in (2,3,6,7))
+    assert len(y)==4*len(data)
+    norm=sum(abs(v) for j,v in enumerate(y) if j%4 in (2,3))
     tables=[]
     constant=arb(0)
     order=kernel['ORDER']

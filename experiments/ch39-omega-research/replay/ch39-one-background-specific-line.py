@@ -24,10 +24,10 @@ def load(n):
     return run_path(str(ROOT/f"ch39-{n}.py"))
 
 
-def certify(labels, extra, independent, minima):
+def solve_layout(labels, extra, independent, minima, shell_codes, heavy_codes, fit_energy):
     source = load("shared-twelve-node-gauge-gap")
     single,lib,backgrounds = load("two-zero-cutoff-gravity")["gravity_fields"](
-        ROOT,source["HEAVY"],tight_neutral=True)
+        ROOT,heavy_codes,tight_neutral=True)
     model,_,_,initial,_ = lib["chiral"]["source"]["mean"]["inputs"]()
     gauge = load("signed-gravity-unification")
     shell = load("native-rh-ray-pvm")["shell_weights"]
@@ -35,11 +35,15 @@ def certify(labels, extra, independent, minima):
     beta = [b/(2*arb.pi()) for b in model["beta"]]
     logscale = (arb(10**16)/model["mz"]).log()
     bare = [v-b*logscale for v,b in zip(initial,beta,strict=True)]
-    assert all(len(row)==361 for row in labels) and len(extra)==8
-    assert all(a is b or a==b for i,(a,b) in enumerate(zip(*labels,strict=True)) if i!=independent)
+    count = len(shell_codes)
+    assert len(labels)==count and len(extra)+int(fit_energy)==4*count
+    assert all(len(row)==361 for row in labels)
+    for i,row in enumerate(zip(*labels,strict=True)):
+        if i!=independent:
+            assert all(a is row[0] or a==row[0] for a in row[1:])
     assert all(who is None or i==independent for who,i,k in extra)
     bases,changes = [],[]
-    for n,(code,bg) in enumerate(zip(source["SHELL"],backgrounds,strict=True)):
+    for n,(code,bg) in enumerate(zip(shell_codes,backgrounds,strict=True)):
         edges = source["paired_lines"](ROOT,shell,code)
         def response(i,k):
             a,b,w = edges[i]
@@ -54,18 +58,24 @@ def certify(labels, extra, independent, minima):
         bases.append(base.entries())
         changes.append([(response(i,k)-chosen[i]).entries() if who in (None,n) else [arb(0)]*5
                         for who,i,k in extra])
-    matrix = arb_mat(
-        [changes[0][j][:4]+changes[1][j][:4] for j in range(8)]).transpose()
-    assert not matrix.det().contains(0)
+    columns = [[v for group in changes for v in group[j][:4]] for j in range(len(extra))]
+    if fit_energy:
+        columns.append([0,0,beta[2]-beta[0],beta[2]-beta[1]]*count)
+    matrix = arb_mat(columns).transpose()
     rhs = arb_mat([[-v] for base in bases for v in base[:4]])
     def midpoint(m):
         return arb_mat([[m[i,j].mid() for j in range(m.ncols())] for i in range(m.nrows())])
     pre = midpoint(midpoint(matrix).inv())
     seed = midpoint(pre*midpoint(rhs))
     normalized = pre*matrix
-    shares = (seed+normalized.solve(pre*(rhs-matrix*seed))).entries()
+    assert not normalized.det().contains(0)
+    solution = (seed+normalized.solve(pre*(rhs-matrix*seed))).entries()
+    shares = solution[:len(extra)]
+    log_change = solution[-1] if fit_energy else arb(0)
+    energy = arb(10**16)*log_change.exp()
+    assert model["mz"] < energy < arb("1.22089e19")
     assert all(0 < s < 1 for s in shares)
-    for n in range(2):
+    for n in range(count):
         unused = {i:arb(1) for _,i,_ in extra}
         for s,(who,i,_) in zip(shares,extra,strict=True):
             if who in (None,n):
@@ -73,9 +83,16 @@ def certify(labels, extra, independent, minima):
         assert all(v > 0 for v in unused.values())
         common = bases[n][-1]+sum(s*row[-1] for s,row in zip(shares,changes[n],strict=True))
         minimum = common+beta[2]*logscale
+        common -= beta[2]*log_change
         assert beta[2]<beta[1]<0<beta[0] and minimum>arb(minima[n])
         print("背景、共同逆耦合、从电弱到交汇能标的最小逆耦合",n,common.str(13),minimum.str(13))
-    print("八个内部格点份额",[x.str(11) for x in shares])
+    print("内部格点份额",[x.str(11) for x in shares])
+    return shares,energy
+
+
+def certify(labels, extra, independent, minima):
+    source = load("shared-twelve-node-gauge-gap")
+    shares,_ = solve_layout(labels,extra,independent,minima,source["SHELL"],source["HEAVY"],False)
     return shares
 
 
