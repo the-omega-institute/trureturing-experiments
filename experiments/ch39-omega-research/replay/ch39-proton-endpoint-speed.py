@@ -9,10 +9,7 @@ def area(x,y):
     return (x.conjugate()*y).imag
 
 
-def verify():
-    shell = run_path(str(Path(__file__).with_name("ch39-three-ray-chiral-boundary.py")))
-    ctx.prec = 192
-    h = acb.zeta_zero(177).imag
+def green_and_slope(shell, h):
     geo,soft = shell["geo"],shell["soft"]
     laplacian = shell["laplacian"](5,h)
     green = laplacian.inv()
@@ -29,7 +26,14 @@ def verify():
         derivative[j,j] += weight_derivative
         derivative[pole,j] -= weight_derivative
         derivative[j,pole] -= weight_derivative
-    slope = -green*derivative*green
+    return green, -green*derivative*green
+
+
+def verify():
+    shell = run_path(str(Path(__file__).with_name("ch39-three-ray-chiral-boundary.py")))
+    ctx.prec = 192
+    h = acb.zeta_zero(177).imag
+    green, slope = green_and_slope(shell, h)
 
     sites = (0,2,3,5,6,9,11,13)
     support = (3,5,13)
