@@ -8,12 +8,10 @@ from flint import arb, arb_mat
 ROOT = Path(__file__).resolve().parent
 
 
-def verify():
-    old = run_path(str(ROOT/'ch39-two-split-global-roots.py'))
+def systems(codes):
     parent = run_path(str(ROOT/'ch39-two-copy-two-split-lines.py'))
     load = parent['load']
     edges,_,heat,_ = load('two-copy-gram-cutoff-two-exceptions')['model_inputs']()
-    codes = tuple(range(2_345_664,2_345_669))
     _,lib,backgrounds = load('two-zero-cutoff-gravity')['gravity_fields'](
         ROOT,codes,tight_neutral=True)
     model,_,_,initial,_ = lib['chiral']['source']['mean']['inputs']()
@@ -23,12 +21,17 @@ def verify():
     moments = load('signed-cutoff-gravity')['moments']
     fields = gauge['gauge_weights'](model)
     labels = ''.join(load('two-copy-four-split-lines')['LABELS'])
-    roots = []
     for code,bg in zip(codes,backgrounds,strict=True):
         print('重谱零点编号',code,flush=True)
         system = parent['calibration_system'](edges,bg,heat,moments,gauge['threshold_column'],
                                               fields,labels,arb(7)/1000,initial,beta,logscale)
-        roots.append(old['certify'](system,parent['SEED'],beta,logscale))
+        yield code,system,parent['SEED'],beta,logscale
+
+
+def verify():
+    old = run_path(str(ROOT/'ch39-two-split-global-roots.py'))
+    roots = [old['certify'](system,seed,beta,logscale)
+             for _,system,seed,beta,logscale in systems(range(2_345_664,2_345_669))]
     differences = arb_mat([[v-c for v,c in zip(root,roots[0],strict=True)] for root in roots[1:]])
     d = differences.det()
     print("五个正交汇根坐标差的行列式",d.str(15),flush=True)
