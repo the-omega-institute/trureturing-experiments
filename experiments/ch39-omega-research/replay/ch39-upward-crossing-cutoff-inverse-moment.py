@@ -5,12 +5,7 @@ from runpy import run_path
 from flint import arb, arb_mat, ctx
 
 
-def verify():
-    root = Path(__file__).resolve().parent
-    fields = run_path(str(root/"ch39-two-zero-cutoff-gravity.py"))["gravity_fields"]
-    _, lib, (central,) = fields(root, (2_345_666,), tight_neutral=True)
-    model, _, _, initial, _ = lib["chiral"]["source"]["mean"]["inputs"]()
-    ctx.prec = 192
+def inverse_moment_terms(root, model, initial, central):
     pi = arb.pi()
     beta = [v/(2*pi) for v in model["beta"]]
     coefficients = run_path(str(root/"ch39-signed-gravity-unification.py"))["gauge_weights"](model)
@@ -22,6 +17,17 @@ def verify():
     heavy = [(dot(direction, b), z) for b, (_, _, z) in zip(coefficients, central[1:], strict=True)]
     constant = dot(direction, initial)+sum(b*(arb.const_euler()+z.log()) for b, z in heavy)/(4*pi)
     envelope = sum(abs(b)*z for b, z in heavy)/(4*pi)
+    return constant, envelope, dot(direction, initial), heavy
+
+
+def verify():
+    root = Path(__file__).resolve().parent
+    fields = run_path(str(root/"ch39-two-zero-cutoff-gravity.py"))["gravity_fields"]
+    _, lib, (central,) = fields(root, (2_345_666,), tight_neutral=True)
+    model, _, _, initial, _ = lib["chiral"]["source"]["mean"]["inputs"]()
+    ctx.prec = 192
+    pi = arb.pi()
+    constant, envelope, initial_projection, heavy = inverse_moment_terms(root, model, initial, central)
     floor = -constant/envelope
     print("消去共同逆耦合和共同对数后的常数、余项系数、上行交汇的截止倒数矩下界",
           constant.str(13), envelope.str(13), floor.str(13))
@@ -53,7 +59,7 @@ def verify():
 
     def response(y):
         # -Σ b Ein(zy)/(4π)，因 Σb=0，公共的 log y 精确抵消。
-        return dot(direction, initial)-constant-sum(
+        return initial_projection-constant-sum(
             b*lib["expint"](1, z*y) for b, z in heavy
         )/(4*pi)
 
