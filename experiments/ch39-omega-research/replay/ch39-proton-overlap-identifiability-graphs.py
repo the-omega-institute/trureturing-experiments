@@ -208,7 +208,7 @@ def two_point(AMP, rho, loss, uv):
     return out
 
 
-def triangle_t6(AMP, rho, uv):
+def triangle_t6(AMP, rho, uv, *, amplitude=amp_poly):
     """三角形 t^6：每条边两次跳跃，每点失去 4 个生成元（其余分配由宇称排除）。"""
     hl = {}
     for (x, y) in [(0, 1), (0, 2), (1, 2)]:
@@ -228,9 +228,9 @@ def triangle_t6(AMP, rho, uv):
                 Mu |= 1 << k
         return (Mu, Mb)
     A4 = {k: v for k, v in AMP.items() if pc(k[0])+pc(k[1]) == 4}
-    A1 = {k: amp_poly(v, rho, uv=uv) for k, v in A4.items()}
-    A0 = {k: {d: amp_poly(v, rho, d, uv) for d in DERS} for k, v in A4.items()}
-    out, n = zero_polys(), 0
+    A1 = {k: amplitude(v, rho, uv=uv) for k, v in A4.items()}
+    A0 = {k: {d: amplitude(v, rho, d, uv) for d in DERS} for k, v in A4.items()}
+    out, n = {d: 0 for d in DERS}, 0
     for h01 in hl[0, 1]:
         for h02 in hl[0, 2]:
             m0 = miss(0, h01+h02)
