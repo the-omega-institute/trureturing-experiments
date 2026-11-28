@@ -6,6 +6,12 @@ from runpy import run_path
 from flint import acb, arb
 
 
+PHASE_TRILLIONTHS = (-589008033029,-1374438668050,-634060530989,57991527584,
+             -1236007593642,57991527584,-3648161005871,-805905093363,
+             -158905532750,57991527584,57991527584,57991527584,57991527584,
+             -351904688965,0,57991527584,57991527584,-521011918124,57991527584)
+
+
 def verify():
     shell = run_path(str(Path(__file__).with_name("ch39-arc-relative-determinant.py")))
     heights = [acb.zeta_zero(n).imag for n in (2345666,964890)]
@@ -52,11 +58,7 @@ def verify():
         assert any(-sum(offset[j,k] for j,k in zip(seq,seq[1:]+seq[:1],strict=True))
                    > 2*len(seq)*threshold for seq in cycles)
 
-    units = (-589008033029,-1374438668050,-634060530989,57991527584,
-             -1236007593642,57991527584,-3648161005871,-805905093363,
-             -158905532750,57991527584,57991527584,57991527584,57991527584,
-             -351904688965,0,57991527584,57991527584,-521011918124,57991527584)
-    angles = [arb(v)/10**12 for v in units]
+    angles = [arb(v)/10**12 for v in PHASE_TRILLIONTHS]
     upper = arb("1.37443866806")
     for (i,j),t in targets.items():
         assert abs(acb(0,t+angles[i]-angles[j]).exp().arg()) < upper
