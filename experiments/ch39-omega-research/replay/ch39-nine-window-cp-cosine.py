@@ -28,9 +28,10 @@ class Dual:
     def cos(self):return Dual(self.v.cos(),-self.d*self.v.sin())
 
 
-def phase(values,target):
+def affine_trace(values, inverse=False):
+    orientation = -1 if inverse else 1
     masses=[[(v*v/(group[(i+1)%3]*group[(i+2)%3]))**(arb(2)*sign/3)
-             for i,v in enumerate(group)] for group,sign in ((values[:3],1),(values[3:6],-1))]
+             for i,v in enumerate(group)] for group,sign in ((values[:3],orientation),(values[3:6],-orientation))]
     u,d=masses
     a,b,z=[v.sin() for v in values[6:9]]
     ca,cb,cz=[v.cos() for v in values[6:9]]
@@ -40,6 +41,11 @@ def phase(values,target):
         (x*y+ca*ca*cb*cb*w,ca*ca*y+x*cb*cb*w,cb*cb*cz*cz))
     base=sum(u[i]*d[j]*m0[i][j] for i,j in product(range(3),repeat=2))
     slope=2*a*b*z*ca*cb*(u[1]-u[2])*(d[0]-d[1])
+    return base,slope
+
+
+def phase(values,target):
+    base,slope = affine_trace(values)
     return (-base+target)/slope
 
 def verify(replay):

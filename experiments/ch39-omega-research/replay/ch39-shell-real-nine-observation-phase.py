@@ -28,7 +28,7 @@ def cosine_bound(values,inverse,spectrum):
     return (spectrum-value)/slope
 
 
-def verify(replay, signs):
+def verify(replay):
     library=run_path(str(replay/"ch39-shell-real-ten-observation-window.py"))
     orbit=run_path(str(replay/"ch39-two-zero-orbit-condition.py"))
     model,up,down=orbit["calibration"]()
@@ -50,9 +50,10 @@ def verify(replay, signs):
     phase_count=128
     table=library["phase_table"](phase_count)
     priority=[1,10,5,1100,550,560,260,430,990,1010]
-    for sign in signs:
-        center=[*model["ref"][:9],sign*arb("1.10")]
-        width=[*model["tol"][:9],arb(".25")]
+    cases = ((-1,"1.10",".25",1), (1,"1.245",".105",1), (1,"1.10",".25",2))
+    for sign, midpoint, half, divisor in cases:
+        center=[*model["ref"][:9],sign*arb(midpoint)]
+        width=[*[v/divisor for v in model["tol"][:9]],arb(half)]
         stack=[([0.]*10,[1.]*10,0,np.arange(phase_count**2))]
         closed=trace_closed=deepest=0
         while stack:
@@ -77,7 +78,7 @@ def verify(replay, signs):
                 continue
             assert depth<36,(point, radius)
             def split_priority(i):
-                return priority[i]*radius[i]*(.25/.023 if i==9 else 1)
+                return priority[i]*radius[i]*(float(half)/.023 if i==9 else 1)
             j=max(range(10),key=split_priority)
             smaller=radius.copy()
             smaller[j]/=2
@@ -85,8 +86,8 @@ def verify(replay, signs):
                 shifted=point.copy()
                 shifted[j]+=direction*smaller[j]
                 stack.append((shifted,smaller,depth+1,cells))
-        print("CP 分支、壳实性排除盒、谱迹排除盒、实性排除最大深度",sign,closed,trace_closed,deepest)
+        print("CP 分支、相位中央/半宽、九窗半宽除数、实性/迹排除盒、实性最大深度",sign,midpoint,half,divisor,closed,trace_closed,deepest)
 
 
 if __name__=="__main__":
-    verify(Path(sys.argv[1]).resolve() if len(sys.argv)>1 else Path(__file__).resolve().parent,(-1,))
+    verify(Path(sys.argv[1]).resolve() if len(sys.argv)>1 else Path(__file__).resolve().parent)
