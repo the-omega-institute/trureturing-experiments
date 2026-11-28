@@ -66,16 +66,20 @@ def verify():
     print("不约束引力时第一与第三重谱的 D 差上界", upper.str(12))
     assert upper < arb("-.02435")
 
-    layout = json.loads((ROOT / "ch39-fifth-shell-common-323.json").read_text())
+    solve_witness(load, shell, 323)
+
+
+def solve_witness(load, shell, line):
+    layout = json.loads((ROOT / f"ch39-fifth-shell-common-{line}.json").read_text())
     labels = [arb(k)/11000 for row in layout["base"] for k in row]
     bases = []
-    for k in layout["line_323"]:
+    for k in layout[f"line_{line}"]:
         fixed = labels.copy()
-        fixed[323] = arb(k)/11000
+        fixed[line] = arb(k)/11000
         bases.append(fixed)
     extra = [(who, i, arb(k)/11000) for who, i, k in layout["extra"]]
     load("one-background-specific-line")["solve_layout"](
-        bases, extra, 323, ["11.58"]*3, [shell]*3, HEAVY, False, reference_gev=10**12)
+        bases, extra, line, ["11.58"]*3, [shell]*3, HEAVY, False, reference_gev=10**12)
 
 
 if __name__ == "__main__":
