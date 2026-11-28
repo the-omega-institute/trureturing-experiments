@@ -64,6 +64,7 @@ def verify_selection(shell):
         else:
             assert len(valid)==33 and min(valid)==(6,1,BANDS)
             assert [count(prefixes(seq,d),BANDS) for seq in data[6,1]]==[3,4,5,7]
+            return valid
 
 
 def verify():

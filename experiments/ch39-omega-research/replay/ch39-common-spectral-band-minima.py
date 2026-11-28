@@ -11,11 +11,11 @@ LIMITS = ((1, 3), (4, 6), (5, 6), (7, 8), (8, 9), (6, 7), (6, 7))
 CHARGES = (1, 2, 3, 4, 6)
 
 
-def spectra():
+def spectra(targets=TARGETS):
     shell = run_path(str(Path(__file__).with_name("ch39-three-ray-chiral-boundary.py")))
     ctx.prec = 320
     columns = {}
-    for n in TARGETS:
+    for n in targets:
         h = acb.zeta_zero(n).imag
         delta = arb(23)/25 * arb(2)**-20 / (h*h + shell["soft"]["point"]["study"]["offset"])
         phases = shell["geo"]["phases"](h)
