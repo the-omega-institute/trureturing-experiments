@@ -1,4 +1,4 @@
-"""Finite Hermite interpolation for matching overlap jets, and a Laurent degree check."""
+"""Two-node Hermite and Wilson constructions for matching three overlap jets."""
 import sympy as sp
 
 
@@ -37,7 +37,61 @@ def target_jets():
     assert sp.rem(z**4*z-1,sp.cyclotomic_poly(5,z),z)==0
 
 
+def shorter_kinetic_interpolant():
+    """Recover the two-node polynomial directly by Chinese remaindering."""
+    s = sp.symbols("s")
+    c = (sp.sqrt(5) - 1) / 4
+    node = 1 - c**2
+    field = sp.QQ.algebraic_field(sp.sqrt(5))
+    variable = sp.Poly(s, s, domain=field)
+    shifted = variable - sp.Poly(node, s, domain=field)
+    for order in range(1, 11):
+        left_order = (order + 1) // 2
+        right_order = order if order % 2 else order + 1
+        left = sum(sp.binomial(2*j, j) * variable**j / 4**j
+                   for j in range(left_order))
+        # Keep arithmetic in Q(sqrt(5)) throughout.
+        right = sp.Poly(0, s, domain=field)
+        for j in range(right_order):
+            coeff = sp.binomial(2*j, j) / (4**j * c**(2*j+1))
+            right += shifted**j * sp.Poly(coeff, s, domain=field)
+        left = sp.Poly(left, s, domain=field)
+        modulus = shifted**right_order
+        lift = ((right-left) * (variable**left_order).invert(modulus)).rem(modulus)
+        interpolant = left + variable**left_order * lift
+        assert (interpolant-left).rem(variable**left_order).is_zero
+        assert (interpolant-right).rem(modulus).is_zero
+        assert 2*interpolant.degree()+1 == 3*order + int(order % 2 == 0)
+
+
+def wilson_and_ray():
+    w, m, a = sp.symbols("w m a")
+    x = w*(w-a)/(m*(m-a))
+    for order in range(1, 17):
+        q = (order+2)//2
+        if q % 2 == 0:
+            q += 1
+        h = (w+m-a)/(m-a)*sum(x**j for j in range(q))
+        assert sp.cancel((w-m)*h + m - m*x**q) == 0
+        assert 2*q >= order + 1
+        assert 2*q <= 3*order + int(order % 2 == 0)
+    ray = (2,2,2,-3,-3)
+    assert sum(ray) == 0 and all((3*n) % 5 == 1 for n in ray)
+    powers = {0}
+    letters = set(ray) | {-n for n in ray}
+    for radius in range(1, 9):
+        powers |= {n+step for n in powers for step in letters}
+        # In each cross difference, terms with equal residues cancel.
+        cross = {i+j for i in powers for j in powers if (i-j) % 5}
+        pair = {i+j for i in powers for j in powers}
+        scalar = {i+j for i in pair for j in pair if (i-j) % 5}
+        assert min(cross) == -6*radius+1 and max(cross) == 6*radius-1
+        assert min(scalar) == -12*radius+1 and max(scalar) == 12*radius-1
+
+
 if __name__ == "__main__":
     polynomial_checks()
     target_jets()
-    print("Finite Hermite selectors, kinetic/mass square completions, and the five-center ray verified.")
+    shorter_kinetic_interpolant()
+    wilson_and_ray()
+    print("Exact two-node kinetic jets K=1..10, Wilson identities K=1..16, and short-ray frequency supports r=1..8 verified.")
