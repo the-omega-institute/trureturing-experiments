@@ -69,8 +69,9 @@ def verify():
     solve_witness(load, shell, 323)
 
 
-def solve_witness(load, shell, line):
-    layout = json.loads((ROOT / f"ch39-fifth-shell-common-{line}.json").read_text())
+def solve_witness(load, shell, line, *, layout=None, energy=10**12, minimum="11.58"):
+    if layout is None:
+        layout = json.loads((ROOT / f"ch39-fifth-shell-common-{line}.json").read_text())
     labels = [arb(k)/11000 for row in layout["base"] for k in row]
     bases = []
     for k in layout[f"line_{line}"]:
@@ -79,7 +80,7 @@ def solve_witness(load, shell, line):
         bases.append(fixed)
     extra = [(who, i, arb(k)/11000) for who, i, k in layout["extra"]]
     load("one-background-specific-line")["solve_layout"](
-        bases, extra, line, ["11.58"]*3, [shell]*3, HEAVY, False, reference_gev=10**12)
+        bases, extra, line, [minimum]*3, [shell]*3, HEAVY, False, reference_gev=energy)
 
 
 if __name__ == "__main__":

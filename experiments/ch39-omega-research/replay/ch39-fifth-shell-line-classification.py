@@ -26,10 +26,11 @@ def verify():
     minimum = load("shared-continuous-position-gap")["projected_minimum"]
     directions = json.loads((ROOT/"ch39-fifth-shell-line-directions.json").read_text())
     remaining = set(range(361))
+    movable = remaining.copy()
     for flat in directions:
         # 对每个背景依次取 K-1、W-目标、第一与第三支之差、第二与第三支之差。
         vectors = [[*flat[j:j+4], 0] for j in (0, 4, 8)]
-        base, _, groups = build(sectors, fields, beta, initial, model, kernel, vectors, MEETING, None)
+        base, slope, groups = build(sectors, fields, beta, initial, model, kernel, vectors, MEETING, None)
         norm = sum(abs(arb(k)/10**11) for row in vectors for k in row[2:4])
         def lower(terms):
             return minimum(kernel["basis"], kernel["S"], terms, arb("1e-11"))
@@ -41,15 +42,27 @@ def verify():
             shared.append(lower([(left, span, coeff)]))
         total = base + sum(shared)
         bounds = {i: (total-shared[i]+sum(lower([term]) for term in groups[i]))/norm
-                  for i in remaining}
-        eliminated = {i for i, value in bounds.items() if value > arb(".00105")}
+                  for i in remaining | movable}
+        eliminated = {i for i in remaining if bounds[i] > arb(".00105")}
         assert eliminated
         print("本步排除条数、最小规范差下界", len(eliminated),
               min(bounds[i].lower() for i in eliminated).str(12), flush=True)
         remaining -= eliminated
-    assert remaining == {285, 323}
+        shift = min((slope*(energy/MEETING).log()).lower() for energy in (model["mz"], arb("1.22089e19")))
+        wide = {i: bounds[i]+shift/norm for i in movable}
+        excluded = {i for i in movable if wide[i] > arb(".00022")}
+        print("共同能标全域本步排除条数", len(excluded), flush=True)
+        movable -= excluded
+    assert remaining == movable == {285, 323}
     for line in sorted(remaining):
         positive["solve_witness"](load, shell, line)
+    layouts = json.loads((ROOT/"ch39-fifth-shell-common-energy-layouts.json").read_text())
+    assert {(entry["line"], entry["energy"]) for entry in layouts} == {
+        (line, energy) for line in movable for energy in (92, 5*10**15)}
+    for entry in layouts:
+        print("交汇能标、独立线", entry["energy"], entry["line"], flush=True)
+        positive["solve_witness"](load, shell, entry["line"], layout=entry,
+                                  energy=entry["energy"], minimum=".033")
 
 
 if __name__ == "__main__":
