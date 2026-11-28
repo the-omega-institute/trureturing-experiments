@@ -27,11 +27,7 @@ def lowest(matrix):
     return levels[0]
 
 
-def verify(replay):
-    selector = run_path(str(replay / "ch39-light-spectrum-zero-selector.py"))
-    shell = run_path(str(replay / "ch39-three-ray-chiral-boundary.py"))
-    pump = run_path(str(replay / "ch39-native-light-projector-pump.py"))
-    ctx.prec = 384
+def flavor_vectors(shell, pump, selector, phases_by_charge, degree):
     blocks = list(pump["rotation_bases"](shell))
     adj = pump["adjoint"]
     moments = selector["chebyshev_moments"]
@@ -39,21 +35,30 @@ def verify(replay):
     for charge, index in ((-4, 2345666), (2, 964890)):
         height = acb.zeta_zero(index).imag
         central_matrix = shell["laplacian"](charge, height)
-        central = moments([lowest(adj(b)*central_matrix*b) for b in blocks], 11)
+        central = moments([lowest(adj(b)*central_matrix*b) for b in blocks], degree)
         phases = shell["geo"]["phases"](height)
         center_factors = [phases[d]**charge for d in (724, 804)]
         base, edges = pump["clock_matrices"](shell, charge)
-        relative, absolute = PHASES[charge]
+        relative, absolute = phases_by_charge[charge]
         for origin, offsets in ((center_factors, relative), ((1, 1), absolute)):
             for point in offsets:
                 factors = [z*acb(0, arb(t)).exp() for z, t in zip(origin, point, strict=True)]
                 link = edges[0]*factors[0] + edges[1]*factors[1]
                 flat = base + link + adj(link)
-                candidate = moments([lowest(adj(b)*flat*b) for b in blocks], 11)
+                candidate = moments([lowest(adj(b)*flat*b) for b in blocks], degree)
                 displacement = [v-w for v, w in zip(candidate, central, strict=True)]
                 length = sum(v**2 for v in displacement).sqrt()
                 assert length > 0
                 vectors.append([v/length for v in displacement])
+    return vectors
+
+
+def verify(replay):
+    selector = run_path(str(replay / "ch39-light-spectrum-zero-selector.py"))
+    shell = run_path(str(replay / "ch39-three-ray-chiral-boundary.py"))
+    pump = run_path(str(replay / "ch39-native-light-projector-pump.py"))
+    ctx.prec = 384
+    vectors = flavor_vectors(shell, pump, selector, PHASES, 11)
     radius = selector["interior_radius"](vectors)
     assert radius > arb("2.75e-12")
     print("十二维增广矩阵给出的十一维归一位移内半径", radius.str(16))
