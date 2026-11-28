@@ -21,6 +21,20 @@ def cover(ranges,accept):
     return count
 
 
+def isolate(lo,hi,read):
+    assert read(lo)<0<read(hi)
+    for _ in range(48):
+        center = ((lo+hi)/2).mid()
+        v = read(center)
+        if v<0:
+            lo = center
+        elif v>0:
+            hi = center
+        else:
+            break
+    return lo.union(hi)
+
+
 def verify():
     module = run_path(str(ROOT/"ch39-three-share-energy-interval.py"))
     point,mz = module["setup"]()
@@ -39,19 +53,6 @@ def verify():
     inside = cover(((left,right),),regular)
     print("认证连续性、份额及能标导数的区间数",inside,flush=True)
 
-    def isolate(lo,hi,read):
-        assert read(lo)<0<read(hi)
-        for _ in range(48):
-            center = ((lo+hi)/2).mid()
-            v = read(center)
-            if v<0:
-                lo = center
-            elif v>0:
-                hi = center
-            else:
-                break
-        return lo.union(hi)
-
     scale_top = isolate(left,right,lambda s:point(s)[1][1])
     scale_ew = isolate(left,right,lambda s:mz-point(s)[0])
     assert scale_top<scale_ew
@@ -65,6 +66,7 @@ def verify():
     assert arb(".58987")<shares[0]<arb(".58988") and arb(".89298")<shares[2]<arb(".893")
     print("最小、最大物理标尺比，最高能标、端点三份额、沿程最小逆耦合",
           scale_top.str(15),scale_ew.str(15),top.str(14),[p.str(11) for p in shares],floor.str(11),flush=True)
+    return scale_top,scale_ew
 
 
 if __name__=="__main__":

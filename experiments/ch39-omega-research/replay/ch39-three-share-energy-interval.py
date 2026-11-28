@@ -11,7 +11,7 @@ LINES = (16,285,301)
 EXCLUDED = object()
 
 
-def setup():
+def setup(*, log_compensation=None):
     repair = run_path(str(ROOT/"ch39-one-share-gravity-repair.py"))
     load = repair["load"]
     global_source = load("two-share-global-forward")
@@ -22,8 +22,19 @@ def setup():
     lib = load("chiral-minimal-neutral-gravity")
     model,_,_,initial,_ = lib["chiral"]["source"]["mean"]["inputs"]()
     beta = [v/(2*arb.pi()) for v in model["beta"]]
+    weights_by_readout = [[1,0,0],[0,1,0],[0,0,1]]
+    if log_compensation is not None:
+        # 沿 D=0 的分支，log(E/Mz)+k*C 可减去 λD。令公共 log(x) 系数严格抵消。
+        k = log_compensation
+        u = (1-k*beta[2])/(beta[0]-beta[2])
+        direction = [u,0,k-u]
+        logs = [sum(row[j] for row in fields) for j in range(3)]
+        numerator = sum(a*b for a,b in zip(direction,logs,strict=True))
+        denominator = sum(a*b for a,b in zip(q,logs,strict=True))
+        assert not denominator.contains(0)
+        weights_by_readout.append([a-numerator/denominator*b for a,b in zip(direction,q,strict=True)])
     projection = arb_mat([[1,0,0,0,0],[0,1,0,0,0],[0,0,*q],
-                          [0,0,1,0,0],[0,0,0,1,0],[0,0,0,0,1]])
+                          *[[0,0,*v] for v in weights_by_readout]])
     coeff = projection*kernel["series"](rows,fields)
     scalar,evaluate = global_source["scalar"],global_source["evaluate"]
     # context 已证 s≥1/20 时 z/(s*x)<4。对 d/d log s 的余项也用此界：
@@ -32,7 +43,7 @@ def setup():
     factor = 2*arb(4)**n/(4*arb.pi()*factorial(n))
     sizes = [sum(abs(2*a) for _,a,_ in rows),sum(abs(g) for g,_,_ in rows),
              sum(abs(f*b) for bs in fields for f,b in zip(q,bs,strict=True)),
-             *[sum(abs(bs[k]) for bs in fields) for k in range(3)]]
+             *[sum(abs(sum(a*b for a,b in zip(v,bs,strict=True))) for bs in fields) for v in weights_by_readout]]
     weights = [total,*[2*abs(edges[i][2]) for i in LINES]]
     measures = [moments,*[choices[i][0] for i in LINES]]
     data = []
@@ -49,7 +60,7 @@ def setup():
     target = [arb(1),arb("1e-122"),-v0]
     allowed_moves = [(-choices[i][1]).union(1-choices[i][1]) for i in LINES]
 
-    def point(s, *, derivatives=False, physical_only=False, share_curvature=False):
+    def point(s, *, derivatives=False, physical_only=False, share_curvature=False, common_readout=False):
         invs,logarithm = 1/s,s.log()
         vals = [[evaluate(co,err,s,invs,logarithm,0) for co,ds,err in row] for row in data]
         if physical_only:
@@ -68,7 +79,7 @@ def setup():
         shares = [choices[i][1]+v for i,v in zip(LINES,moves,strict=True)]
         if physical_only and any(v<0 or v>1 for v in shares):
             return EXCLUDED
-        couplings = [a+row[0]+sum(b*v for b,v in zip(row[1:],moves,strict=True)) for a,row in zip(initial,vals[3:],strict=True)]
+        couplings = [a+row[0]+sum(b*v for b,v in zip(row[1:],moves,strict=True)) for a,row in zip(initial,vals[3:6],strict=True)]
         log_energy = (couplings[0]-couplings[2])/(beta[0]-beta[2])
         common = couplings[2]-beta[2]*log_energy
         floor = min(v.lower() for v in (*couplings,common))
@@ -76,6 +87,8 @@ def setup():
                               or any(v<0 for v in (*couplings,common))):
             return EXCLUDED
         energy = model["mz"]*log_energy.exp()
+        if common_readout and not derivatives:
+            return energy,common
         if not derivatives and not share_curvature:
             return energy,shares,floor
         ds = [[evaluate(dco,err,s,invs,logarithm,0)*invs for co,dco,err in row] for row in data]
@@ -98,6 +111,11 @@ def setup():
         slopes = [a+sum(b*d for b,d in zip(row[1:],share_slopes,strict=True))
                   for a,row in zip(at_moves[3:],vals[3:],strict=True)]
         log_slope = (slopes[0]-slopes[2])/(beta[0]-beta[2])
+        if common_readout:
+            common_slope = slopes[2]-beta[2]*log_slope
+            if log_compensation is not None:
+                return energy,common,log_slope,common_slope,slopes[3]
+            return energy,common,log_slope,common_slope
         return energy,shares,floor,share_slopes,log_slope
     return point,model["mz"]
 
