@@ -12,7 +12,9 @@ ROOT = Path(__file__).resolve().parent
 FORWARD = tuple(range(2_345_988, 2_346_027, 2))
 
 
-def verify(*, forward=False, check_domain=None):
+def verify(*, forward=False, check_domain=None, targets_override=None):
+    if targets_override is not None and not forward:
+        raise ValueError("自选目标适用于从源点预报的检验")
     repair = run_path(str(ROOT/"ch39-one-share-gravity-repair.py"))
     load = repair["load"]
     edges,kernel,moments,choices = repair["source_data"]()
@@ -21,9 +23,10 @@ def verify(*, forward=False, check_domain=None):
     assert targets == [2345704,2345712,2345716,2345972,2345974]
     assert len(seeds)==len({(r["heavy"],*r["lines"]) for r in seeds})==8
     if forward:
-        targets = list(FORWARD)
-        seeds = [{"heavy":n, "lines":[16,301]} for n in FORWARD]
+        targets = list(FORWARD if targets_override is None else targets_override)
+        seeds = [{"heavy":n, "lines":[16,301]} for n in targets]
     outcomes = []
+    certified = {}
     _,lib,spectra = load("two-zero-cutoff-gravity")["gravity_fields"](ROOT,targets,tight_neutral=True)
     model,_,_,initial,_ = lib["chiral"]["source"]["mean"]["inputs"]()
     fields = [(0,0,0),*load("signed-gravity-unification")["gauge_weights"](model)]
@@ -120,7 +123,8 @@ def verify(*, forward=False, check_domain=None):
                 print(number,"一阶预报、认证分支、预报与实际能标、份额及标尺的最大坐标误差",
                       predicted,physical,penergy.str(9),energy.str(9),",".join(failed),
                       max(abs(x-y).upper() for x,y in zip(proposal,(s,d,e),strict=True)).str(9),flush=True)
-                if physical:
+                certified[number] = (physical,energy)
+                if physical and targets_override is None:
                     assert abs(penergy/energy-1) < arb(".00060")
                     assert max(abs(x-y).upper() for x,y in zip(proposal,(s,d,e),strict=True)) < arb(".000055")
                 outcomes.append((number,predicted,physical,abs((penergy/energy).log()).upper()))
@@ -130,6 +134,8 @@ def verify(*, forward=False, check_domain=None):
                 assert arb("158493.00") < energy < arb("158493.02")
             print(number,i,j,"标尺比、两份额增量、交汇 GeV、全程最小逆耦合",
                   *[v.str(9) for v in (s,d,e,energy,minimum)],flush=True)
+    if targets_override is not None:
+        return certified
     if forward:
         assert [n for n,p,v,_ in outcomes if p and v] == [2345990,2345998,2346002,2346024,2346026]
         assert all(p==v for _,p,v,_ in outcomes) and max(err for _,_,_,err in outcomes)<arb(".06")
