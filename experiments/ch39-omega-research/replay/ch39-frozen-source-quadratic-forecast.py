@@ -73,7 +73,14 @@ def predict():
 def verify():
     forecasts = predict()
     certify = run_path(str(ROOT / "ch39-two-source-share-crossings.py"))["verify"]
-    certified = certify(forward=True, targets_override=TARGETS)
+    check_pair = run_path(str(ROOT / "ch39-two-share-global-forward.py"))["check_pair"]
+    box_counts = []
+    def check_domain(number, root, physical, read):
+        visited, small = check_pair(number, (16,301), root, read, TARGETS)
+        print("全域分类", number, int(physical), visited, small.str(9), flush=True)
+        box_counts.append(visited)
+    certified = certify(forward=True, targets_override=TARGETS, check_domain=check_domain)
+    print("全域标尺区间合计",sum(box_counts))
     assert list(forecasts) == list(certified) == list(TARGETS)
     misclassified = {"物理": [[],[]], "高能": [[],[]]}
     physical_errors = []
