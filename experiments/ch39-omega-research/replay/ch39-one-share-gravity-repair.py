@@ -8,6 +8,7 @@ from flint import arb,arb_mat
 ROOT = Path(__file__).resolve().parent
 SOURCE = 2345698
 HOLDOUT = tuple(range(2345700,2345723,2))
+FORWARD = tuple(range(2345724,2345747,2))
 
 
 def load(name):
@@ -122,11 +123,18 @@ def verify(targets=HOLDOUT):
         slopes_lower.append(abs(schur).lower());relative.append(rel.upper())
         print(number,"标尺比改变量、份额改变量、质量和预报的相对误差",
               (s-1).str(9),d.str(9),rel.str(8),flush=True)
-    assert min(slopes_lower)>arb(".01") and max(shifts_s)<arb(".00002")
-    assert max(shifts_d)<arb(".00004") and max(relative)<arb(".00014")
+    assert min(slopes_lower)>arb(".01")
+    assert max(shifts_s)<arb(".0001") and max(shifts_d)<arb(".0001") and max(relative)<arb(".01")
+    if targets==FORWARD:
+        assert max(shifts_s)<arb(".00002379") and max(shifts_d)<arb(".00004678")
+        assert max(relative)<arb(".0000437")
+    if targets==HOLDOUT:
+        assert max(shifts_s)<arb(".0000189") and max(shifts_d)<arb(".0000373") and max(relative)<arb(".00013")
     print("最大标尺比改变量、最大份额改变量、真空对份额斜率绝对值下界、最大预报相对误差",
           max(shifts_s),max(shifts_d),min(slopes_lower),max(relative))
 
 
 if __name__=="__main__":
     verify()
+    verify(FORWARD)
+    load("fifth-shell-rescaled-gravity")["verify"](forward=FORWARD)

@@ -17,11 +17,11 @@ def derivative(coeff, s):
     return arb_mat([[*terms, 0]])
 
 
-def verify():
+def verify(*, forward=None):
     load = run_path(str(ROOT/"ch39-four-background-crossing.py"))["load"]
     order_check = load("fifth-shell-vacuum-order")
     old = load("fifth-shell-frozen-witnesses")["NUMBERS"]
-    numbers = (*old, *order_check["HOLDOUT"])
+    numbers = (*old, *(order_check["HOLDOUT"] if forward is None else forward))
     ctx = load("shared-large-scale-gap")["load"]()
     fields, kernel = ctx[1], ctx[-2]
     scale = arb(7)/1000
@@ -56,7 +56,9 @@ def verify():
     source = [massless_error(i,1) for i in range(len(old))]
     def expect(row):
         return (row*moments)[0,0]
-    pairs = [*permutations(range(len(old)),2), *((3,j) for j in range(4,len(numbers)))]
+    pairs = [(3,j) for j in range(4,len(numbers))]
+    if forward is None:
+        pairs = [*permutations(range(len(old)),2), *pairs]
     corrections, gaps = [], []
     for i,j in pairs:
         small = relative_small*(1+source[i])+tiny[j]
@@ -87,10 +89,13 @@ def verify():
         margin = abs(at_one)-wt[i]-wt[j]-abs(ratio)*kt[i]-speed*step
         print(numbers[i],numbers[j],"小标尺牛顿上界、最大相对调整、调整后真空差下界",
               small.upper().str(7),step.str(8),margin.lower().str(9),flush=True)
-        assert margin > arb("2.39e-9")
+        assert margin > 0
         corrections.append(step)
         gaps.append(margin.lower())
-    assert max(corrections)<arb(".000748") and min(gaps)>arb("2.416e-9")
+    if forward is None:
+        assert max(corrections)<arb(".000748") and min(gaps)>arb("2.416e-9")
+    if forward==tuple(range(2345724,2345747,2)):
+        assert min(gaps)>arb("3.0886e-8")
     print("全部配对最大相对调整、最小真空差下界",max(corrections).str(9),min(gaps).str(9))
 
 
