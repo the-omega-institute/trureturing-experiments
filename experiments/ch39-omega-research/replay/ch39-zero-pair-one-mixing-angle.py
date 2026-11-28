@@ -24,22 +24,23 @@ def six_mass_control(model, traces):
     def solve_x(y):
         a,b,c,d = direct
         return -(a+c*y)/(b+d*y)
-    def residual(y):
-        a,b,c,d = inverse
-        return a+c*y+(b+d*y)*solve_x(y)
-    left,right = arb(".0000002328"),arb(".0000002330")
-    assert residual(left)*residual(right) < 0
-    y = left.union(right)
-    denominator = direct[1]+direct[3]*y
-    assert not denominator.contains(0)
-    assert 0 < solve_x(y) < 1 and 0 < y < 1
+    a,b,c,d = direct
+    e,f,g,h = inverse
+    # (e+gy)(b+dy) - (a+cy)(f+hy) 取零，再用正迹还原 x。
+    p0,p1,p2 = e*b-a*f, e*d+g*b-a*h-c*f, g*d-c*h
+    discriminant = p1**2-4*p2*p0
+    assert discriminant > 0 and abs(p2) > 0
+    for sign in (-1,1):
+        y = (-p1+sign*discriminant.sqrt())/(2*p2)
+        if 0 < y < 1 and abs(b+d*y) > 0 and 0 < solve_x(y) < 1:
+            return solve_x(y), y
+    raise AssertionError("未能构造六个质量中心的实混合矩阵")
 
 
 def verify():
     replay = Path(__file__).resolve().parent
     model = run_path(str(replay/"ch39-two-zero-quark-window.py"))
     at_zero = run_path(str(replay/"ch39-quadratic-gram-source.py"))["at_zero"]
-    normalized_traces = run_path(str(replay/"ch39-two-zero-sharp-quark-fit.py"))["normalized_traces"]
     mass_box = [v+arb(0,w.upper()) for v,w in zip(model["ref"][:6],model["tol"][:6],strict=True)]
     u,d = [mass_weights(mass_box[i:i+3]) for i in (0,3)]
     angle = model["ref"][8]+arb(0,model["tol"][8].upper())
@@ -48,22 +49,41 @@ def verify():
     sites = range(-64,65)
     up,down = [{i:at_zero(model,q,n+i) for i in sites}
                for q,n in ((-4,2345666),(2,964890))]
-    six_mass_control(model, normalized_traces(up[0], down[-2]))
     def normalize(a):
         return a/abs(a.det())**(arb(1)/3)
     direct_down = {i:normalize(a) for i,a in down.items()}
     inverse_up = {i:normalize(a).inv() for i,a in up.items()}
+    direct_up = {i:normalize(a) for i,a in up.items()}
+    inverse_down = {i:normalize(a).inv() for i,a in down.items()}
+    # 质量从轻到重。目标矩阵 D_u V D_d^{-1} 的两因子的奇异值均按降序排列。
+    a = [x.sqrt() for x in mass_weights(model["ref"][:3])[::-1]]
+    b = [1/x.sqrt() for x in mass_weights(model["ref"][3:6])]
+    inverse_a,inverse_b = [[1/x for x in side[::-1]] for side in (a,b)]
+    minima = [sum((first[k]*second[2-k])**2 for k in range(3))
+              for first,second in ((a,b),(inverse_a,inverse_b))]
+    hits = []
     winner = (0,21)
     for i,j in product(sites,repeat=2):
-        if (i,j)==(0,0):
-            continue
-        matrix = direct_down[j]*inverse_up[i]
-        value = sum(abs(z)**2 for z in matrix.entries())
+        mat = direct_up[i]*inverse_down[j]
+        inverse = direct_down[j]*inverse_up[i]
+        tr,inv_tr = [sum(abs(z)**2 for z in m.entries()) for m in (mat,inverse)]
         if (i,j)==winner:
-            assert arb("2067.64") < value < arb("2067.65")
-        else:
-            assert value < arb("2067.64")
-    print("其余 16640 对中逆迹的最大值位于编号偏移", winner, "并小于 2067.65")
+            assert arb("2067.64") < inv_tr < arb("2067.65")
+        elif (i,j)!=(0,0):
+            assert inv_tr < arb("2067.64")
+        if tr < minima[0] or inv_tr < minima[1]:
+            continue
+        singular = model["singular"](mat)[::-1]
+        constraints = ((a,b,singular),(inverse_a,inverse_b,[1/x for x in singular[::-1]]))
+        if any(c[k+l]>first[k]*second[l] for first,second,c in constraints
+               for k in range(3) for l in range(3-k)):
+            continue
+        _,y = six_mass_control(model,(tr,inv_tr))
+        if (i,j)==(0,-2):
+            assert arb(".0000002328") < y < arb(".0000002330")
+        hits.append((i,j))
+    assert len(hits)==93 and (0,-2) in hits and (0,0) in hits
+    print("六个质量中心可达的编号对数",len(hits),"其余 16640 对中逆迹的最大值位于",winner)
 
 
 if __name__ == "__main__":
