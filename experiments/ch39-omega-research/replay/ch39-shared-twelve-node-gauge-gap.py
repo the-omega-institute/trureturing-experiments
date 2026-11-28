@@ -17,6 +17,16 @@ def dot(u,v):
     return sum(a*b for a,b in zip(u,v,strict=True))
 
 
+def paired_lines(root, shell, code):
+    sectors = {}
+    for charge,levels,direct,_ in shell(root,number=code):
+        if charge in (-4,2):
+            nodes = [z/levels[-1] for z in levels[:-1]]+[arb(1)]
+            weights = direct[0 if charge == -4 else 2]
+            sectors[charge] = list(zip(nodes,[w.real for w in weights],strict=True))
+    return [(s*t,(s+t)/2,w*v) for (s,w),(t,v) in product(sectors[-4],sectors[2])]
+
+
 def read_data():
     def load(name):
         return run_path(str(ROOT/f"ch39-{name}.py"))
@@ -31,21 +41,14 @@ def read_data():
     baseline = [a-b*logscale for a,b in zip(initial,beta,strict=True)]
     rows = []
     for code, background in zip(SHELL,backgrounds,strict=True):
-        sector = {}
-        for charge,levels,direct,_ in shell(ROOT,number=code):
-            if charge in (-4,2):
-                pivot = 0 if charge == -4 else 2
-                sector[charge] = list(zip([z/levels[-1] for z in levels[:-1]]+[arb(1)],
-                                          [w.real for w in direct[pivot]],strict=True))
         table = []
-        for (s,w),(t,v) in product(sector[-4],sector[2]):
-            left,right = s*t,(s+t)/2
+        for left,right,weight in paired_lines(ROOT,shell,code):
             cell = []
             for k in range(12):
                 x = arb(7)/1000*((11-k)*left+k*right)/11
                 _,kg,wg,d1,d2,d3 = gauge["threshold_column"](
                     background,single["moments"],lib["expint"],fields,x)
-                cell.append([w*v*a for a in (kg,wg,d1-d3,d2-d3,d3)])
+                cell.append([weight*a for a in (kg,wg,d1-d3,d2-d3,d3)])
             table.append(cell)
         rows.append(table)
     return rows,baseline,beta,model
