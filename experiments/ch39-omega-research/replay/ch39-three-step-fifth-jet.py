@@ -53,6 +53,14 @@ def verify():
     heavy = [x-y for x,y in zip(moment(two, 2, 0, DIRECTIONS[0]), moment(two, 0, 0, DIRECTIONS[0]))]
     assert rank(constraints) == rank(constraints+[heavy]) == 3
 
+    fifth_differences = differences(three, (0, 2, 3, 4, 5))
+    for direction in ((1, 1, 1, 1, -4), (2, 1, 0, 0, -3)):
+        fifth_differences.append([a-b for a, b in zip(moment(three, 1, 5, direction),
+                                                       moment(three, 0, 5, direction))])
+    contrast = [a-b for a, b in zip(moment(three, 2, 0, DIRECTIONS[0]),
+                                     moment(three, 0, 0, DIRECTIONS[0]))]
+    assert rank(fifth_differences) == rank(fifth_differences+[contrast]) == 7
+
     flat = [moment(three, s, k, d) for s in (0, 1) for k in (0, 2, 3, 4) for d in DIRECTIONS]
     assert rank(flat) == 9
 
@@ -78,6 +86,7 @@ def verify():
     centers = [evaluate(moment(three, j, 0, DIRECTIONS[0])) for j in range(3)]
     assert centers == [FIELD.zero, FIELD.zero, FIELD.from_sympy(5*(1+sp.sqrt(5))/4)]
     print("Range-two constraints and heavy-contrast augmented ranks: 3, 3.")
+    print("Range-three fifth-order differences and heavy-contrast augmented ranks: 7, 7.")
     print("Range-three absolute fourth-order flatness rank: 9 of 9.")
     print("Range-three selector matches light jets through order four, heavy value", FIELD.to_sympy(centers[2]))
 
