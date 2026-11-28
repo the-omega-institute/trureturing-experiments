@@ -123,6 +123,19 @@ def verify():
             cells.extend((depth+1,2*i+di,2*j+dj) for di in (0,1) for dj in (0,1))
     print("整轨道上极点三列的虚部至少一项超过 1e-14，终格数",real_leaves)
 
+    commutator = acb(0,1)*(observable*pole-pole*observable)
+    slopes = [(axis*commutator).trace().real for axis in imag_axes]
+    assert abs(slopes[0]) > arb("3e-7")
+    missing = [imag_axes[i] - (slopes[i]/slopes[0])*imag_axes[0] for i in (1,2)]
+    equations = words["orbit_coefficients"](parts, adj, missing)
+    phase_boxes = [(arb(x),arb(y)) for x,y in (
+        ("1.657056","4.507081"),("5.450512","4.752972"),
+        ("2.130443",".906317"),("5.058382",".640596"))]
+    isolate = run_path(str(root/"ch39-real-cubic-udu-orbit.py"))["certify_four_roots"]
+    leaves, deepest = isolate(equations, columns, phase_boxes)
+    print("在两个壳算子的实代数上只加 i[H,P] 后恰有四个校准源，终格数与最高层",leaves,deepest)
+
+
 
     pole_readings = [acb(0,1)*(axis*pole-pole*axis) for axis in axes]
     pole_moments = words["orbit_coefficients"](parts, adj, pole_readings)

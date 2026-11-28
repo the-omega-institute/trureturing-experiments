@@ -24,6 +24,12 @@ def verify(replay):
     centers = [(arb(x), arb(y)) for x, y in (
         ("1.93903", "3.46545"), ("1.97986", ".13985"),
         ("5.06480", "3.10882"), ("5.11728", ".22654"))]
+    leaves, deepest = certify_four_roots(residuals, columns, centers)
+    print("UDU 四解，原盒整条两相位轨道的终格数与最深层", leaves, deepest)
+
+
+def certify_four_roots(residuals, columns, centers):
+    assert len(centers) == 4
     radius = arb(1)/50
     pad = arb(0, radius.upper())
     assert all(radius < u < 2*arb.pi()-radius for p in centers for u in p)
@@ -57,7 +63,7 @@ def verify(replay):
         else:
             assert depth < 16
             cells.extend((depth+1, 2*i+di, 2*j+dj) for di in (0,1) for dj in (0,1))
-    print("UDU 四解，原盒整条两相位轨道的终格数与最深层", leaves, deepest)
+    return leaves, deepest
 
 
 if __name__ == "__main__":
