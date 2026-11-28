@@ -76,11 +76,12 @@ def certify(labels, extra, independent, minima):
         assert beta[2]<beta[1]<0<beta[0] and minimum>arb(minima[n])
         print("背景、共同逆耦合、从电弱到交汇能标的最小逆耦合",n,common.str(13),minimum.str(13))
     print("八个内部格点份额",[x.str(11) for x in shares])
+    return shares
 
 
-def verify():
+def layouts():
     labels = [arb(int(d,12))/11 for d in "".join(LABELS)]
-    certify([labels,labels],[(n,i,arb(k)/11) for n,i,k in EXTRA],0,("1.535","1.231"))
+    yield [labels,labels],[(n,i,arb(k)/11) for n,i,k in EXTRA],0,("1.535","1.231")
     layout = json.loads((ROOT/"ch39-background-specific-line-323.json").read_text())
     denominator = layout["denominator"]
     labels = [arb(v)/denominator for row in layout["common_base_numerators"] for v in row]
@@ -88,7 +89,12 @@ def verify():
     for i,v in layout["second_base_changes"]:
         second[i] = arb(v)/denominator
     extra = [(n,i,arb(v)/denominator) for n,i,v in layout["extra_numerators"]]
-    certify([labels,second],extra,323,("1.528","1.056"))
+    yield [labels,second],extra,323,("1.528","1.056")
+
+
+def verify():
+    for layout in layouts():
+        certify(*layout)
 
 
 if __name__ == "__main__":
