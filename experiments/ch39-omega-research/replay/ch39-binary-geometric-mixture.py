@@ -36,6 +36,13 @@ def verify():
     # 每组六个上型列的权重和为该分支概率；除以该和即得分支内的上型条件律。
     first_mass = sum(weights[i,0] for i in range(len(UP[0])))
     assert 0 < first_mass < 1 and minimum > 0
+    # 两组的上下型支撑分别不交，任一侧观察到配方即可恢复分支。
+    assert set(UP[0]).isdisjoint(UP[1])
+    down_support = [{(m,mode) for m,mode,_ in group} for group in DOWN]
+    assert down_support[0].isdisjoint(down_support[1])
+    information = -first_mass*first_mass.log()-(1-first_mass)*(1-first_mass).log()
+    assert information < arb("0.120756")
+    print("两荷配方互信息（自然对数）", information.str(12))
     _, error = shared["rationalize"](weights, columns, target)
     assert error < arb("5.47e-76")
     print("第一分支概率、最小列权、全编号有理化误差上界",
