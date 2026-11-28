@@ -150,6 +150,12 @@ def mixed_step_jets():
                                   zip(moment3,product(moment2,mean),product(mean2,mean))])
                 e = real(*second)
                 v = real(*third)
+                quadratic_weight = (-a/2-a*c/2)/(1-cos2)
+                invariant_weight = -a/2-quadratic_weight
+                mask = [x+quadratic_weight*y-invariant_weight*z
+                        for x,y,z in zip(product(w,shifted),e,d)]
+                assert mask[:3] == [zero]*3
+                assert power(mask,(order+2)//3) == [zero]*length
                 correction = product([beta*i+gamma*j for i,j in zip(e,v)], power(d,q-1))
                 scalar_jets.append([lam*x+y for x,y in zip(power(product(w,shifted),q),correction)])
             assert scalar_jets[0] == scalar_jets[1] == scalar_jets[2]
@@ -161,5 +167,5 @@ if __name__ == "__main__":
     shorter_kinetic_interpolant()
     wilson_and_ray()
     mixed_step_jets()
-    print("Mixed translation jets K=3..9 and two nonzero cubic moments verified.")
+    print("Mixed translation jets and third-order mask powers K=3..9 on two rays verified.")
     print("Exact two-node kinetic jets K=1..10, Wilson identities K=1..16, and short-ray frequency supports r=1..8 verified.")
