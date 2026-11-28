@@ -9,7 +9,10 @@ from flint import arb, arb_mat
 ROOT = Path(__file__).resolve().parent
 
 
-def verify():
+FORWARD = tuple(range(2_345_988, 2_346_027, 2))
+
+
+def verify(*, forward=False):
     repair = run_path(str(ROOT/"ch39-one-share-gravity-repair.py"))
     load = repair["load"]
     edges,kernel,moments,choices = repair["source_data"]()
@@ -17,6 +20,10 @@ def verify():
     targets = sorted({r["heavy"] for r in seeds})
     assert targets == [2345704,2345712,2345716,2345972,2345974]
     assert len(seeds)==len({(r["heavy"],*r["lines"]) for r in seeds})==8
+    if forward:
+        targets = list(FORWARD)
+        seeds = [{"heavy":n, "lines":[16,301]} for n in FORWARD]
+    outcomes = []
     _,lib,spectra = load("two-zero-cutoff-gravity")["gravity_fields"](ROOT,targets,tight_neutral=True)
     model,_,_,initial,_ = lib["chiral"]["source"]["mean"]["inputs"]()
     fields = [(0,0,0),*load("signed-gravity-unification")["gauge_weights"](model)]
@@ -39,7 +46,32 @@ def verify():
             i,j = seed["lines"]
             mi,pi = choices[i]
             mj,pj = choices[j]
+            scale = arb(7)/1000
+            def variation(d,e):
+                return total+2*(abs(d*edges[i][2])+abs(e*edges[j][2]))
+            def observable(s,d,e):
+                assert max(z.upper() for _,_,z in rows) < s*scale*min(a.lower() for a,_,_ in edges)
+                measure = moments+d*mi+e*mj
+                coupling = []
+                for k in range(3):
+                    f = repair["dilate"](row(series,2+k),s)
+                    tail = factor*variation(d,e)*sum(abs(bs[k]) for bs in fields)
+                    coupling.append(initial[k]+(f*measure)[0,0]+arb(0,tail.upper()))
+                log_energy = (coupling[0]-coupling[2])/(beta[0]-beta[2])
+                energy = model["mz"]*log_energy.exp()
+                common = coupling[2]-beta[2]*log_energy
+                positions = (pi+d,pj+e)
+                floor = min(*coupling,common)
+                checks = [s,1-scale*s,log_energy,(arb("1.22089e19")/model["mz"]).log()-log_energy,
+                          *positions,*[1-v for v in positions],floor]
+                assert all(not v.contains(0) for v in checks)
+                labels = ("正标尺","标尺上限","能标下限","能标上限","第一份额下限","第二份额下限",
+                          "第一份额上限","第二份额上限","正性")
+                failed = [label for label,v in zip(labels,checks,strict=True) if v<0]
+                return energy,floor,failed
             def read(s,d,e):
+                assert s>arb(".5")
+                assert max(z.upper() for _,_,z in rows) < s*scale*min(a.lower() for a,_,_ in edges)
                 measure = moments+d*mi+e*mj
                 residual, jac = [], []
                 for k,bias in enumerate((-1,-arb("1e-122"),constant)):
@@ -47,20 +79,30 @@ def verify():
                     f = repair["dilate"](r,s)
                     derivative = repair["dilate"](r,s,True)
                     tail = factor*size[k]
-                    residual.append((f*measure)[0,0]+bias+arb(0,(tail*total).upper()))
-                    jac.append([(derivative*measure)[0,0]+arb(0,(2*tail*total).upper()),
+                    residual.append((f*measure)[0,0]+bias+arb(0,(tail*variation(d,e)).upper()))
+                    jac.append([(derivative*measure)[0,0]+arb(0,(2*tail*variation(d,e)).upper()),
                                 (f*mi)[0,0]+arb(0,(2*tail*abs(edges[i][2])).upper()),
                                 (f*mj)[0,0]+arb(0,(2*tail*abs(edges[j][2])).upper())])
                 return arb_mat([[v] for v in residual]),arb_mat(jac)
-            center = [arb(v)/10**8 for v in seed["center"]]
-            for _ in range(2):
+            if forward:
+                source = [arb(1),arb(0),arb(0)]
+                residual,jac = read(*source)
+                delta = jac.solve(residual)
+                proposal = [x-y for x,y in zip(source,delta.entries(),strict=True)]
+                penergy,_,pfail = observable(*proposal)
+                predicted = not pfail
+                center = [x.mid() for x in proposal]
+            else:
+                center = [arb(v)/10**8 for v in seed["center"]]
+            for _ in range(4 if forward else 2):
                 value,jac = read(*center)
                 step = jac.solve(value)
                 center = [(x-y).mid() for x,y in zip(center,step.entries(),strict=True)]
             radius = arb("1e-9")
             box = [x+arb(0,radius) for x in center]
-            assert box[0]>arb(".99") and box[0]<arb("1.02")
-            assert 0<pi+box[1]<1 and 0<pj+box[2]<1
+            if not forward:
+                assert box[0]>arb(".99") and box[0]<arb("1.02")
+                assert 0<pi+box[1]<1 and 0<pj+box[2]<1
             value,jac = read(*center)
             inv = arb_mat(3,3,[x.mid() for x in jac.inv().entries()])
             assert not inv.det().contains(0)
@@ -70,21 +112,31 @@ def verify():
             error = max(abs(z).upper() for z in (inv*value).entries())
             assert contraction<1 and error+radius*contraction < radius
             s,d,e = [x+arb(0,(error/(1-contraction)).upper()) for x in center]
-            measure = moments+d*mi+e*mj
-            coupling = []
-            for k in range(3):
-                f = repair["dilate"](row(series,2+k),s)
-                tail = factor*total*sum(abs(bs[k]) for bs in fields)
-                coupling.append(initial[k]+(f*measure)[0,0]+arb(0,tail.upper()))
-            log_energy = (coupling[0]-coupling[2])/(beta[0]-beta[2])
-            energy = model["mz"]*log_energy.exp()
-            common = coupling[2]-beta[2]*log_energy
-            assert model["mz"]<energy<arb("1.22089e19") and min(*coupling,common)>arb("19.83")
+            energy,minimum,failed = observable(s,d,e)
+            physical = not failed
+            if forward:
+                print(number,"一阶预报、认证分支、预报与实际能标、份额及标尺的最大坐标误差",
+                      predicted,physical,penergy.str(9),energy.str(9),",".join(failed),
+                      max(abs(x-y).upper() for x,y in zip(proposal,(s,d,e),strict=True)).str(9),flush=True)
+                if physical:
+                    assert abs(penergy/energy-1) < arb(".00060")
+                    assert max(abs(x-y).upper() for x,y in zip(proposal,(s,d,e),strict=True)) < arb(".000055")
+                outcomes.append((number,predicted,physical,abs((penergy/energy).log()).upper()))
+                continue
+            assert physical and minimum>arb("19.83")
             if number==2345704 and [i,j]==[16,301]:
                 assert arb("158493.00") < energy < arb("158493.02")
             print(number,i,j,"标尺比、两份额增量、交汇 GeV、全程最小逆耦合",
-                  *[v.str(9) for v in (s,d,e,energy,min(*coupling,common))],flush=True)
+                  *[v.str(9) for v in (s,d,e,energy,minimum)],flush=True)
+    if forward:
+        assert [n for n,p,v,_ in outcomes if p and v] == [2345990,2345998,2346002,2346024,2346026]
+        assert all(p==v for _,p,v,_ in outcomes) and max(err for _,_,_,err in outcomes)<arb(".06")
+        print("二十处算术线性预报和数学根均正交汇",
+              [n for n,p,v,_ in outcomes if p and v],flush=True)
+        print("判定一致数，最大能标对数误差",sum(p==v for _,p,v,_ in outcomes),
+              max(err for _,_,_,err in outcomes).str(9),flush=True)
 
 
 if __name__=="__main__":
     verify()
+    verify(forward=True)
