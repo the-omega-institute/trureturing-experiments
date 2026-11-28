@@ -22,11 +22,15 @@ def certify_exact(model, a, b, identity):
     up, down = up / trace(up).real, down / trace(down).real
     words = (identity, up, down, up*up, down*down, up*down, down*up)
     # 若振幅的像在单一坐标轴上，落在另外两行的六个复元素必须全为零。
+    real_minors = ((0, 2, 5, 6, 7, 8, 11), (0, 4, 7, 8, 9, 10, 11), (0, 1, 4, 5, 8, 10, 11))
     for axis in range(3):
         rows = [(i, j) for i in range(3) if i != axis for j in range(3)]
         for omit in range(7):
             system = acb_mat([[w[i, j] for k, w in enumerate(words) if k != omit] for i, j in rows])
             assert abs(system.det()) > arb("7e-13")
+        columns = [[part for i, j in rows for part in (w[i, j].real, w[i, j].imag)] for w in words]
+        real_system = arb_mat([[col[k] for col in columns] for k in real_minors[axis]])
+        assert abs(real_system.det()) > arb("3.48e-13")
     frame, _ = quad["normal_frame"](up, down)
     source = model["K"] * adj(model["K"])
     inverse_source = source.inv()
