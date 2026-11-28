@@ -123,7 +123,9 @@ def verify_number_boxes(pump, shell, centers, targets):
     assert kappa/(acb.zeta_zero(1).imag**2+offset) < arb("4e-9")
     full = arb(0).union(arb("4e-9"))
     wide = arb(-1).union(arb(1))
+    height_boxes = {}
     for charge, index in centers:
+        height_boxes[charge] = []
         atlas = determinant_rows(pump, shell, radial, frames, charge, targets)
         surviving = []
         for indices in product(range(len(targets)), repeat=3):
@@ -138,6 +140,7 @@ def verify_number_boxes(pump, shell, centers, targets):
         hits = []
         for sign in (-1,1):
             height = contract_height(rows, sign, full, kappa, offset)
+            height_boxes[charge].append(height)
             lo = height.lower().zeta_nzeros().unique_fmpz()
             hi = height.upper().zeta_nzeros().unique_fmpz()
             assert lo is not None and hi is not None
@@ -148,6 +151,7 @@ def verify_number_boxes(pump, shell, centers, targets):
                 hits.append(index)
             print("荷、正弦分支、高度与端点零点数", charge, sign, height.str(17), lo, hi)
         assert hits == [index]
+    return height_boxes
 
 
 def verify():
@@ -164,7 +168,11 @@ def verify():
     assert all(abs(x-y) > arb(".14958") for i,x in enumerate(roots) for y in roots[i+1:])
     assert all(0 < x < 9 for x in [*levels, *roots])
     targets = [r+arb(0, eps.upper()) for r in roots]
-    verify_number_boxes(pump, shell, CENTERS, targets)
+    height_boxes = verify_number_boxes(pump, shell, CENTERS, targets)
+    for up in height_boxes[-4]:
+        for down in height_boxes[2]:
+            assert up-down > arb("728522.42")
+            assert arb("2.25390") < up/down < arb("2.26860")
     central_bound = 3 * arb("1e-45")**2 * 9**10
     competitor_bound = eps**2 * (arb(".14958")/2)**10
     assert central_bound < arb("1.047e-80") and competitor_bound-central_bound > arb("5.47e-76")
