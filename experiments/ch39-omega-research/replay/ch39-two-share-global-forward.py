@@ -10,11 +10,10 @@ ROOT = Path(__file__).resolve().parent
 
 
 @cache
-def context():
+def context(targets, denominator):
     repair = run_path(str(ROOT/"ch39-one-share-gravity-repair.py"))
     load = repair["load"]
     edges,kernel,moments,choices = repair["source_data"]()
-    targets = tuple(range(2345988,2346027,2))
     _,lib,bgs = load("two-zero-cutoff-gravity")["gravity_fields"](
         ROOT,(repair["SOURCE"],*targets),tight_neutral=True)
     model,_,_,initial,_ = lib["chiral"]["source"]["mean"]["inputs"]()
@@ -26,24 +25,23 @@ def context():
     total = sum(abs(w) for a,b,w in edges)
     # 对小标尺直接将各线实际位置一次矩与无质量热核误差分开。
     scale = arb(7)/1000
-    low = arb(1)/10
+    low = arb(1)/denominator
     src = bgs[0]
     loss_rows = [(g,a,max(bg[i][2].upper() for bg in bgs[1:])) for i,(g,a,z) in enumerate(src)]
     def loss(rows,s):
         return sum(abs(w)*sum(abs(h)*(scale*s*b)*(1-lib["expint"](2,z/(scale*s*b)))
                    for g,h,z in rows) for _,b,w in edges)/(2*arb.pi())
     main = sum(a for g,a,z in src)/(2*arb.pi())
-    maximum = 1+loss(src,1)
-    for line in (16,301):
-        delta,f = choices[line]
-        maximum += ((-f).union(1-f)*main*delta[1,0]*kernel["S"]).upper()
-    assert maximum>0
-    small = low*maximum+loss(loss_rows,low)
-    print("标尺比不超过 0.1 时的牛顿矩上界",small.str(12),flush=True)
-    assert small<arb(".949705")
-    assert all(max(z.upper() for g,a,z in rows)<min(arb(1),2*low*scale*min(a.lower() for a,b,w in edges))
+    baseline = 1+loss(src,1)
+    increments = {i:((-f).union(1-f)*main*delta[1,0]*kernel["S"]).upper()
+                  for i,(delta,f) in choices.items()}
+    target_loss = loss(loss_rows,low)
+    assert baseline>0 and all(h>=0 for h in increments.values())
+    ratio = denominator//5
+    assert denominator%5==0 and 2*ratio < kernel["ORDER"]+2
+    assert all(max(z.upper() for g,a,z in rows)<min(arb(1),ratio*low*scale*min(a.lower() for a,b,w in edges))
                for rows in bgs)
-    return kernel,moments,choices,edges,fields,dict(zip(targets,bgs[1:],strict=True)),q,v0,total
+    return kernel,moments,choices,edges,fields,dict(zip(targets,bgs[1:],strict=True)),q,v0,total,baseline,increments,target_loss
 
 
 def scalar(row, measure):
@@ -64,23 +62,26 @@ def evaluate(coefficients, error, s, invs, logarithm, degree):
     return powers[0]*s**(2-degree)+powers[1]*s**(1-degree)+constant*invs**degree
 
 
-def global_domain(number,root,physical,read):
-    kernel,moments,choices,edges,fields,bgs,q,v0,total = context()
+def check_pair(number,pair,root,read,targets,denominator=10):
+    kernel,moments,choices,edges,fields,bgs,q,v0,total,baseline,increments,target_loss = context(targets,denominator)
+    i,j = pair
+    small = (baseline+increments[i]+increments[j])/denominator+target_loss
+    assert small<1,(pair,small)
     rows = bgs[number]
     series = kernel["series"](rows,fields)
     mat = arb_mat([[1,0,0,0,0],[0,1,0,0,0],[0,0,*q]])*series
-    mi,pi = choices[16]
-    mj,pj = choices[301]
+    mi,pi = choices[i]
+    mj,pj = choices[j]
     physical_d = (-pi).union(1-pi)
     physical_e = (-pj).union(1-pj)
     rows_by_observable = [arb_mat([[mat[k,j] for j in range(mat.ncols())]]) for k in range(3)]
     tab = [[scalar(row,measure) for measure in (moments,mi,mj)] for row in rows_by_observable]
-    # 任意标尺 s≥0.1 时 z/x<2。基准矩为原概率分布，差矩为两原子之差。
+    # 当 s≥1/denominator 时 z/x<denominator/5。基准矩为原概率分布，差矩为两原子之差。
     n = kernel["ORDER"]+1
-    factor = 2*arb(2)**n/(4*arb.pi()*factorial(n))
+    factor = 2*arb(denominator//5)**n/(4*arb.pi()*factorial(n))
     sizes = [sum(abs(2*a) for g,a,z in rows),sum(abs(g) for g,a,z in rows),
              sum(sum(abs(t*b) for t,b in zip(q,bs,strict=True)) for bs in fields)]
-    errors = [[arb(0,(factor*size*w).upper()) for w in (total,2*abs(edges[16][2]),2*abs(edges[301][2]))]
+    errors = [[arb(0,(factor*size*w).upper()) for w in (total,2*abs(edges[i][2]),2*abs(edges[j][2]))]
               for size in sizes]
     # 用同一三元方程认证较宽盒内至多一个数学根。
     radius = arb(".0001")
@@ -91,7 +92,7 @@ def global_domain(number,root,physical,read):
     assert not inv.det().contains(0)
     C = arb_mat([[int(i==j) for j in range(3)] for i in range(3)])-inv*interval
     assert max(sum(abs(C[i,j]) for j in range(3)) for i in range(3))<1
-    todo = [(arb(1)/10,arb(1000)/7)]
+    todo = [(arb(1)/denominator,arb(1000)/7)]
     visited = 0
     while todo:
         lo,hi = todo.pop()
@@ -124,6 +125,13 @@ def global_domain(number,root,physical,read):
         mid = ((lo+hi)/2).mid()
         assert hi-lo>arb("1e-11"),(number,s,det)
         todo.extend(((lo,mid),(mid,hi)))
+    return visited,small
+
+
+def global_domain(number,root,physical,read):
+    targets = tuple(range(2345988,2346027,2))
+    visited,small = check_pair(number,(16,301),root,read,targets)
+    assert small<arb(".949705")
     print("目标、全域物理解数、已检验标尺盒数",number,int(physical),visited,flush=True)
 
 

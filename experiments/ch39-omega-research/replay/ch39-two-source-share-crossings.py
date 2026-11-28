@@ -12,21 +12,11 @@ ROOT = Path(__file__).resolve().parent
 FORWARD = tuple(range(2_345_988, 2_346_027, 2))
 
 
-def verify(*, forward=False, check_domain=None, targets_override=None):
-    if targets_override is not None and not forward:
-        raise ValueError("自选目标适用于从源点预报的检验")
+def certified_pairs(targets,seeds):
+    """逐个给出三元根、全程读数及区间残差函数。"""
     repair = run_path(str(ROOT/"ch39-one-share-gravity-repair.py"))
     load = repair["load"]
     edges,kernel,moments,choices = repair["source_data"]()
-    seeds = json.loads((ROOT/"ch39-two-source-share-seeds.json").read_text())
-    targets = sorted({r["heavy"] for r in seeds})
-    assert targets == [2345704,2345712,2345716,2345972,2345974]
-    assert len(seeds)==len({(r["heavy"],*r["lines"]) for r in seeds})==8
-    if forward:
-        targets = list(FORWARD if targets_override is None else targets_override)
-        seeds = [{"heavy":n, "lines":[16,301]} for n in targets]
-    outcomes = []
-    certified = {}
     _,lib,spectra = load("two-zero-cutoff-gravity")["gravity_fields"](ROOT,targets,tight_neutral=True)
     model,_,_,initial,_ = lib["chiral"]["source"]["mean"]["inputs"]()
     fields = [(0,0,0),*load("signed-gravity-unification")["gauge_weights"](model)]
@@ -87,7 +77,9 @@ def verify(*, forward=False, check_domain=None, targets_override=None):
                                 (f*mi)[0,0]+arb(0,(2*tail*abs(edges[i][2])).upper()),
                                 (f*mj)[0,0]+arb(0,(2*tail*abs(edges[j][2])).upper())])
                 return arb_mat([[v] for v in residual]),arb_mat(jac)
-            if forward:
+            approximate = "center" not in seed
+            proposal = penergy = predicted = None
+            if approximate:
                 source = [arb(1),arb(0),arb(0)]
                 residual,jac = read(*source)
                 delta = jac.solve(residual)
@@ -97,13 +89,13 @@ def verify(*, forward=False, check_domain=None, targets_override=None):
                 center = [x.mid() for x in proposal]
             else:
                 center = [arb(v)/10**8 for v in seed["center"]]
-            for _ in range(4 if forward else 2):
+            for _ in range(4 if approximate else 2):
                 value,jac = read(*center)
                 step = jac.solve(value)
                 center = [(x-y).mid() for x,y in zip(center,step.entries(),strict=True)]
             radius = arb("1e-9")
             box = [x+arb(0,radius) for x in center]
-            if not forward:
+            if not approximate:
                 assert box[0]>arb(".99") and box[0]<arb("1.02")
                 assert 0<pi+box[1]<1 and 0<pj+box[2]<1
             value,jac = read(*center)
@@ -116,24 +108,41 @@ def verify(*, forward=False, check_domain=None, targets_override=None):
             assert contraction<1 and error+radius*contraction < radius
             s,d,e = [x+arb(0,(error/(1-contraction)).upper()) for x in center]
             energy,minimum,failed = observable(s,d,e)
-            physical = not failed
-            if check_domain is not None:
-                check_domain(number,(s,d,e),physical,read)
-            if forward:
-                print(number,"一阶预报、认证分支、预报与实际能标、份额及标尺的最大坐标误差",
-                      predicted,physical,penergy.str(9),energy.str(9),",".join(failed),
-                      max(abs(x-y).upper() for x,y in zip(proposal,(s,d,e),strict=True)).str(9),flush=True)
-                certified[number] = (physical,energy)
-                if physical and targets_override is None:
-                    assert abs(penergy/energy-1) < arb(".00060")
-                    assert max(abs(x-y).upper() for x,y in zip(proposal,(s,d,e),strict=True)) < arb(".000055")
-                outcomes.append((number,predicted,physical,abs((penergy/energy).log()).upper()))
-                continue
-            assert physical and minimum>arb("19.83")
-            if number==2345704 and [i,j]==[16,301]:
-                assert arb("158493.00") < energy < arb("158493.02")
-            print(number,i,j,"标尺比、两份额增量、交汇 GeV、全程最小逆耦合",
-                  *[v.str(9) for v in (s,d,e,energy,minimum)],flush=True)
+            yield number,(i,j),(s,d,e),energy,minimum,failed,read,proposal,penergy,predicted
+
+
+def verify(*, forward=False, check_domain=None, targets_override=None):
+    if targets_override is not None and not forward:
+        raise ValueError("自选目标适用于从源点预报的检验")
+    seeds = json.loads((ROOT/"ch39-two-source-share-seeds.json").read_text())
+    targets = sorted({r["heavy"] for r in seeds})
+    assert targets == [2345704,2345712,2345716,2345972,2345974]
+    assert len(seeds)==len({(r["heavy"],*r["lines"]) for r in seeds})==8
+    if forward:
+        targets = list(FORWARD if targets_override is None else targets_override)
+        seeds = [{"heavy":n, "lines":[16,301]} for n in targets]
+    outcomes = []
+    certified = {}
+    for number,(i,j),root,energy,minimum,failed,read,proposal,penergy,predicted in certified_pairs(targets,seeds):
+        s,d,e = root
+        physical = not failed
+        if check_domain is not None:
+            check_domain(number,(s,d,e),physical,read)
+        if forward:
+            print(number,"一阶预报、认证分支、预报与实际能标、份额及标尺的最大坐标误差",
+                  predicted,physical,penergy.str(9),energy.str(9),",".join(failed),
+                  max(abs(x-y).upper() for x,y in zip(proposal,(s,d,e),strict=True)).str(9),flush=True)
+            certified[number] = (physical,energy)
+            if physical and targets_override is None:
+                assert abs(penergy/energy-1) < arb(".00060")
+                assert max(abs(x-y).upper() for x,y in zip(proposal,(s,d,e),strict=True)) < arb(".000055")
+            outcomes.append((number,predicted,physical,abs((penergy/energy).log()).upper()))
+            continue
+        assert physical and minimum>arb("19.83")
+        if number==2345704 and [i,j]==[16,301]:
+            assert arb("158493.00") < energy < arb("158493.02")
+        print(number,i,j,"标尺比、两份额增量、交汇 GeV、全程最小逆耦合",
+              *[v.str(9) for v in (s,d,e,energy,minimum)],flush=True)
     if targets_override is not None:
         return certified
     if forward:
