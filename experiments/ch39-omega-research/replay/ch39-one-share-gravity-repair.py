@@ -65,6 +65,28 @@ def slopes(matrix):
     return [sum(abs(matrix[i,j]) for j in range(2)).upper() for i in range(2)]
 
 
+def repair_box(args, share):
+    # 每个源份额由原四式的区间解给出，固定盒中的 Newton 中心只用二进制中点。
+    center = [arb(1),arb(0)]
+    for _ in range(3):
+        val,jac = bounds(*center,*args)
+        move = jac.solve(val)
+        center = [(x-v).mid() for x,v in zip(center,move.entries(),strict=True)]
+    radius = arb("2e-9")
+    half = arb(0,radius)
+    boxes = [x+half for x in center]
+    assert boxes[0]>arb(".99") and boxes[0]<arb("1.01") and 0<share+boxes[1]<1
+    at,center_jac = bounds(*center,*args)
+    _,jac = bounds(*boxes,*args)
+    inv = arb_mat(2,2,[x.mid() for x in center_jac.inv().entries()])
+    contraction = max(slopes(arb_mat([[1,0],[0,1]])-inv*jac))
+    error = max(abs(v).upper() for v in (inv*at).entries())
+    assert contraction<1 and error+contraction*radius<radius,(error,contraction)
+    # 解坐标重新包紧以验极小漂移符号。
+    root = [z+arb(0,(error/(1-contraction)).upper()) for z in center]
+    return root,jac
+
+
 def verify(targets=HOLDOUT):
     edges,kernel,moments,change,share = setup()
     _,lib,bgs = load("two-zero-cutoff-gravity")["gravity_fields"](ROOT,(SOURCE,*targets),tight_neutral=True)
@@ -84,25 +106,7 @@ def verify(targets=HOLDOUT):
         tails = [2*size/(4*arb.pi()*factorial(order+1)) for size in
                  [sum(abs(2*a) for g,a,z in rows),sum(abs(g) for g,a,z in rows)]]
         args = (coeff,moments,change,[t*total for t in tails],[2*t*wc for t in tails])
-        # 每个源份额由原四式的区间解给出，固定盒中的 Newton 中心只用二进制中点。
-        center = [arb(1),arb(0)]
-        for _ in range(3):
-            val,jac = bounds(*center,*args)
-            move = jac.solve(val)
-            center = [(x-v).mid() for x,v in zip(center,move.entries(),strict=True)]
-        radius = arb("2e-9")
-        half = arb(0,radius)
-        boxes = [x+half for x in center]
-        assert boxes[0]>arb(".99") and boxes[0]<arb("1.01") and 0<share+boxes[1]<1
-        at,center_jac = bounds(*center,*args)
-        _,jac = bounds(*boxes,*args)
-        inv = arb_mat(2,2,[x.mid() for x in center_jac.inv().entries()])
-        contraction = max(slopes(arb_mat([[1,0],[0,1]])-inv*jac))
-        error = max(abs(v).upper() for v in (inv*at).entries())
-        assert contraction<1 and error+contraction*radius<radius,(number,error,contraction)
-        # 解坐标重新包紧以验极小漂移符号。
-        root = [z+arb(0,(error/(1-contraction)).upper()) for z in center]
-        s,d = root
+        (s,d),jac = repair_box(args,share)
         schur = jac[1,1]-jac[1,0]*jac[0,1]/jac[0,0]
         assert jac[0,0]>0 and not schur.contains(0)
         lead = (sum(g*z for g,a,z in rows)-source_mass)/denom
