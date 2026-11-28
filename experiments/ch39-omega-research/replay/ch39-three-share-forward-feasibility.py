@@ -32,13 +32,12 @@ def locate(point, excluded, lower_energy, upper_energy):
     return None,examined
 
 
-def verify():
-    targets = run_path(str(ROOT/"ch39-one-of-nineteen-forward.py"))["TARGETS"]
+def classify(targets,small_bound):
     model = run_path(str(ROOT/"ch39-three-share-energy-interval.py"))
     context = run_path(str(ROOT/"ch39-two-share-global-forward.py"))["context"](targets,20)
     *_,baseline,increments,loss = context
     small = (baseline+sum(increments[i] for i in model["LINES"]))/20+loss
-    assert small<arb(".764515")
+    assert small<small_bound<1
     physical,high = [],[]
     for n in targets:
         point,mz = model["setup"](n,batch_context=context)
@@ -54,8 +53,14 @@ def verify():
             physical.append(n)
             print("可行标尺比、能标、三份额、逆耦合下界",s.str(12),energy.str(10),
                   [p.str(8) for p in shares],floor.str(9),flush=True)
-    assert physical==[2346078,2346088,2346090,2346092,2346094] and high==[2346088,2346090,2346094]
     print("全物理域中有解的编号及有高能解的编号",physical,high,flush=True)
+    return physical,high
+
+
+def verify():
+    targets = run_path(str(ROOT/"ch39-one-of-nineteen-forward.py"))["TARGETS"]
+    physical,high = classify(targets,arb(".764515"))
+    assert physical==[2346078,2346088,2346090,2346092,2346094] and high==[2346088,2346090,2346094]
 
 
 if __name__=="__main__":

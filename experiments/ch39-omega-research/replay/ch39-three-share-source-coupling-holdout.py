@@ -8,7 +8,7 @@ ROOT = Path(__file__).resolve().parent
 TARGETS = tuple(range(2346100,2346123,2))
 
 
-def verify():
+def verify_transfer():
     local = run_path(str(ROOT/"ch39-three-share-energy-interval.py"))
     domain = run_path(str(ROOT/"ch39-three-share-global-energy.py"))
     global_source = run_path(str(ROOT/"ch39-two-share-global-forward.py"))
@@ -69,6 +69,14 @@ def verify():
             assert arb(lo)<roots[0][1]<arb(hi)<arb(10)**13
     print("物理正例", [n for n,v in outcomes.items() if v],flush=True)
     print("高能窗正例", [n for n,v in outcomes.items() if any(arb(10)**13<e<arb(10)**17 for s,e in v)],flush=True)
+
+
+def verify():
+    verify_transfer()
+    free = run_path(str(ROOT/"ch39-three-share-forward-feasibility.py"))
+    physical,high = free["classify"](TARGETS,arb(".769268"))
+    assert physical==high==[2346102,2346108,2346122]
+    print("放开源耦合后，物理与高能的个数",len(physical),len(high),flush=True)
 
 
 if __name__=="__main__":
