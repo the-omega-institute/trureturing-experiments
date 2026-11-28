@@ -1,4 +1,5 @@
 """两组零点共用连续插值位置的任意逐线份额，认证规范投影的下界。"""
+from functools import cache
 from math import factorial
 from pathlib import Path
 from runpy import run_path
@@ -57,7 +58,8 @@ def verify():
     model,_,_,initial,_ = lib["chiral"]["source"]["mean"]["inputs"]()
     fields = [(0,0,0)]+load("signed-gravity-unification")["gauge_weights"](model)
     shell = load("native-rh-ray-pvm")["shell_weights"]
-    scale = arb(7)/1000
+    scale_min, scale_max = arb(5)/1000, arb(9)/1000
+    curvature = arb(0)
     y = [arb(n)/10**11 for n in DIRECTION]
     limit = (arb("1.22089e19")/model["mz"]).log()
     beta = [b/(2*arb.pi()) for b in model["beta"]]
@@ -70,28 +72,67 @@ def verify():
         edges = source["paired_lines"](ROOT,shell,source["SHELL"][n])
         assert all(0 < a and (a < b or a == b) and b <= 1 for a,b,_ in edges)
         assert len(edges) == 361
-        floor = min((scale*a).lower() for a,_,_ in edges)
+        floor = min((scale_min*a).lower() for a,_,_ in edges)
         zmax = max(z.upper() for _,_,z in bg)
-        assert zmax < 1 and zmax/floor < 6
+        assert zmax < 1 and zmax/floor < 7
         order = kernel["ORDER"]
         # 三种热核的对数项均已保留。每个 n 阶幂尾由 (z/x)^n/n! 乘场系数控制。
-        tail = 2*arb(6)**(order+1)/factorial(order+1)
-        assert arb(6)/(order+2) < arb(1)/2
+        tail = 2*arb(7)**(order+1)/factorial(order+1)
+        assert arb(7)/(order+2) < arb(1)/2
         size = sum(abs(2*ky*a)+abs(wy*g)+sum(abs(d*b) for d,b in
                    zip(direction[2:],bs,strict=True))
                    for (g,a,_),bs in zip(bg,fields,strict=True))/(4*arb.pi())
         error += tail*size*sum(abs(w) for _,_,w in edges)
-        tables.append([(scale*a,scale*(b-a),w*coeff) for a,b,w in edges])
+        tables.append([(a,b-a,w*coeff) for a,b,w in edges])
+        # s=log(c) 时，幂 r^p 的二阶导数为 p²r^p，对数项二阶导数为零。
+        # 只需截断函数的曲率，真实热核的统一尾界在插值后扣除一次。
+        unit = kernel["S"]
+        for a,b,w in edges:
+            high = scale_max*b/unit
+            inverse = unit/(scale_min*a)
+            bound = 4*abs(coeff[0,0])*high**2+abs(coeff[0,1])*high
+            power = arb(1)
+            for j in range(1,order+1):
+                power *= inverse
+                bound += j*j*abs(coeff[0,j+2])*power
+            curvature += abs(w)*bound
         rate = u*(beta[0]-beta[2])+v*(beta[1]-beta[2])
         constant += -ky-wy*arb("1e-122")+u*(initial[0]-initial[2])+v*(initial[1]-initial[2])
         constant -= (rate*limit).max(0)
-    lower = constant-error
-    for lines in zip(*tables,strict=True):
-        lower += projected_minimum(basis,kernel["S"],lines,arb("1e-5"))
     norm = sum(abs(y[j]) for j in (2,3,6,7))
-    print("连续位置逐线投影最小和含基线及两组最坏能标，最大规范差的下界",
-          lower.str(14),(lower/norm).str(14))
-    assert lower/norm > arb(".8387")
+
+    @cache
+    def at(micro):
+        scale = arb(micro)/10**6
+        lower = constant-error
+        for row in zip(*tables,strict=True):
+            lines = [(scale*a,scale*span,coeff) for a,span,coeff in row]
+            lower += projected_minimum(basis,kernel["S"],lines,arb("1e-5"))
+        return lower.lower()
+
+    fixed = at(7000)/norm
+    print("共同标尺 0.007 的连续位置规范差下界",fixed.str(14),flush=True)
+    assert fixed > arb(".8387")
+    print("对数标尺截断投影的曲率上界",curvature.upper().str(12),flush=True)
+    def band(left,right,minimum):
+        work = [(left,right)]
+        bounds = []
+        while work:
+            a,b = work.pop()
+            width = (arb(b)/a).log()
+            bound = (min(at(a),at(b))-curvature*width**2/8)/norm
+            if bound > minimum:
+                bounds.append(bound.lower())
+            else:
+                mid = (a+b)//2
+                assert a < mid < b, (a,b,bound)
+                work.extend(((a,mid),(mid,b)))
+        return min(bounds),len(bounds)
+
+    for left,right,goal in [(5000,6000,".05"),(6000,8000,".45"),(8000,9000,".10")]:
+        bound,cells = band(left,right,arb(goal))
+        print("共同标尺（百万分之一）、闭段数、规范差最大绝对值下界",
+              left,right,cells,bound.str(12),flush=True)
 
 
 if __name__ == "__main__":
