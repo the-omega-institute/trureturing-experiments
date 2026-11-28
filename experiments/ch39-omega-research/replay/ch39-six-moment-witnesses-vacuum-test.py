@@ -39,6 +39,8 @@ def check(root, levels, blocks, model, frames):
         assert trace > cap**2
         for j,(s,f,field) in enumerate(zip(model[:1],frames[:1],fields[:1],strict=True)):
             K=W=arb(0)
+            occupation_lipschitz = arb(0)
+            radius = arb(".001")
             for i,w in enumerate(s["w"]):
                 if i in s["triv"]:
                     r=row(s["zero"],i)
@@ -48,10 +50,16 @@ def check(root, levels, blocks, model, frames):
                     hi=a0+(h*trace.sqrt()+err)**2
                 else:
                     lo=hi=a0+T*abs((acb_mat([f[i]])*q)[0,0])**2/norm2
+                    wide = hi.upper() + T*radius
+                    bound = T*abs(w)*wide**3*sum(abs(g)*(-z/wide**2).exp() for g,_,z in field)/(2*arb.pi())
+                    occupation_lipschitz = max(occupation_lipschitz, bound.upper())
                 u,v=gravity(lo.lower(),hi.upper(),field)
                 K+=w*u
                 W+=w*v
             assert arb(left) < W < arb(right)
+            robust = abs(W).lower() - occupation_lipschitz*radius
+            assert robust > arb(".00086")
+            print("占据向量一范数偏离不超过千分之一时的真空绝对下界", robust.lower().str(10))
             print(j+7,"K-1", (K-1).str(10),"W",W.str(10),flush=True)
 source = lib("fifth-full-positive-joint")
 lib("six-trivial-shared-endpoints")["experiment"](root,*source["verify"](root,return_operator="spectral"),check=check)
