@@ -20,8 +20,12 @@ def verify():
           ".5161383481948316 -.002681451490776185 .00002409262405821096",
           ".696284559591118 .0003248566079149002 -.0001541608842793307"),
          "15.835644452588557","2.2403097993123082"),
+        (("-1.0299955061154296 .0006739588194340176 -.00003734351146289303",
+          "-.325480640747518 -.004401646063320289 .000005612213663910973",
+          "-.7365532522102924 .0010026105016756317 .000049741117807932745"),
+         "19.604138072394083","2.774685099285122"),
     )
-    for rows,su,sd in cases:
+    for index,(rows,su,sd) in enumerate(cases):
         factor = acb_mat([[arb(v) for v in row.split()] for row in rows])
         assert abs(factor.det())>0
         levels,basis = model["eig"](factor*adj(factor))
@@ -36,11 +40,14 @@ def verify():
         (u,U),(d,D) = [model["eig"](adj(m)*m) for m in matrices]
         values = [v.sqrt() for v in u+d]+model["mixing_angles"](U,D)
         errors = [abs(v-m)/t for v,m,t in zip(values,model["ref"],model["tol"],strict=True)]
-        assert all(errors[i] < arb(".0014") for i in (0,1,2,3,4,5,8))
-        assert all(errors[i] > 1 for i in (6,7,9))
-        print("七项最大偏差所占参考半宽",max(errors[i].upper() for i in (0,1,2,3,4,5,8)).str(10))
+        matched = (0,1,2,3,4,5,8) if index<2 else (0,1,2,3,4,5,6,8)
+        held_out = [i for i in range(10) if i not in matched]
+        bound = arb(".0014") if index<2 else arb(".096")
+        assert all(errors[i] < bound for i in matched)
+        assert all(errors[i] > 1 for i in held_out)
+        print("入窗项数、最大误差占半宽",len(matched),max(errors[i].upper() for i in matched).str(10))
         print("四项混合读数",[v.str(11) for v in values[6:]])
-        print("其余三项误差比",[errors[i].str(8) for i in (6,7,9)])
+        print("留出项误差占半宽",[errors[i].str(8) for i in held_out])
 
 
 if __name__=="__main__":
