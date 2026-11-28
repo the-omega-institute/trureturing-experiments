@@ -18,9 +18,9 @@ def load(name):
 
 
 @cache
-def inputs():
+def inputs(weight_code=2306888100090):
     shell = load("native-rh-ray-pvm")["shell_weights"]
-    edges = load("shared-twelve-node-gauge-gap")["paired_lines"](ROOT,shell,2306888100090)
+    edges = load("shared-twelve-node-gauge-gap")["paired_lines"](ROOT,shell,2306888100090,weight_code=weight_code)
     assert len(edges)==361 and all(0<a and (a<b or a==b) and b<=1 for a,b,w in edges)
     _,lib,(rows,) = load("two-zero-cutoff-gravity")["gravity_fields"](ROOT,(2345676,),tight_neutral=True)
     model,_,_,initial,_ = lib["chiral"]["source"]["mean"]["inputs"]()
@@ -52,12 +52,12 @@ def small_scale(data):
     error_w = sum((w*g).max(0)*b*z for a,b,w in edges for g,alpha,z in rows)/(4*pi)
     bound = c*main.max(0)+error_k+l*error_w
     print("小标尺上 K+W/(4c) 的上界",bound.str(15),flush=True)
-    assert bound < arb(".963884")
+    return bound
 
 
-def certify(part):
+def certify(part,data=None):
     left,right,vector = part
-    edges,rows,_,model,initial,beta,fields,matrix,unit = inputs()
+    edges,rows,_,model,initial,beta,fields,matrix,unit = inputs() if data is None else data
     k,h,u,v = [arb(n)/10**11 for n in vector]
     d = [k,h,u,v,-u-v]
     coeff = (arb_mat([d])*matrix).entries()
@@ -137,7 +137,7 @@ def certify(part):
 
 def verify():
     data = inputs()
-    small_scale(data)
+    assert small_scale(data)<arb(".963884")
     parts = json.loads((ROOT/"ch39-sixth-scale-directions.json").read_text())
     assert parts[0][0]==START and parts[-1][1]==10**6
     assert all(a[1]==b[0] for a,b in zip(parts,parts[1:]))

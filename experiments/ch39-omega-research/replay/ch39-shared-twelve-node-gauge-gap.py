@@ -17,7 +17,11 @@ def dot(u,v):
     return sum(a*b for a,b in zip(u,v,strict=True))
 
 
-def paired_lines(root, shell, code):
+def paired_lines(root, shell, code, *, weight_code=None):
+    if weight_code is not None and weight_code != code:
+        endpoints = paired_lines(root,shell,code)
+        weights = paired_lines(root,shell,weight_code)
+        return [(a,b,w) for (a,b,_),(_,_,w) in zip(endpoints,weights,strict=True)]
     sectors = {}
     for charge,levels,direct,_ in shell(root,number=code):
         if charge in (-4,2):
