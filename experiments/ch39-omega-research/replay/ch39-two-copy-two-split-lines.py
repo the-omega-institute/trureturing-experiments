@@ -135,15 +135,41 @@ def verify():
     codes = (2_345_665, 2_345_667)
     _, _, neighbours = load("two-zero-cutoff-gravity")["gravity_fields"](ROOT, codes, tight_neutral=True)
     for code, neighbour in zip(codes, neighbours, strict=True):
-        result = arb_mat([[0], [0], *[[a-b*logscale] for a,b in zip(initial,beta,strict=True)]])
-        for x, weight in frozen:
-            column = gauge["threshold_column"](neighbour, gravity["moments"], heat, fields, x)
-            result += arb_mat([[weight*v] for v in column[1:]])
-        k, vacuum, u1, u2, u3 = result.entries()
+        cut = arb(1)/500
+        terms = [(weight*(x/scale)*alpha/(2*pi), z/(x/scale))
+                 for x, weight in frozen for _, alpha, z in neighbour]
+        slope = sum(h for h, _ in terms)
+        ceiling = cut*(slope.max(0)+sum((-h).max(0)*(1-heat(2, y/cut)) for h,y in terms))
+        floor = slope-sum(abs(h)*(1-(-y/cut).exp()) for h,y in terms)
+        assert ceiling < arb(".348") and floor > arb("133.7")
+
+        def read_at(c):
+            result = arb_mat([[0], [0], *[[a-b*logscale] for a,b in zip(initial,beta,strict=True)]])
+            for x, weight in frozen:
+                column = gauge["threshold_column"](neighbour, gravity["moments"], heat, fields, c*(x/scale))
+                result += arb_mat([[weight*v] for v in column[1:]])
+            return result.entries()
+
+        k, vacuum, u1, u2, u3 = read_at(scale)
         differences = (k-1, vacuum-arb("1e-122"), u1-u3, u2-u3)
         assert all(not v.contains(0) for v in differences)
         print("冻结两分拆解后的邻点编号，牛顿、真空、超荷减色、弱减色残差",
               code, *[v.str(13) for v in differences])
+
+        # 两端夹住各邻点唯一的牛顿标尺。在整个根窗上消去任意公共交汇能标。
+        bounds = (("0.95967", "0.95969") if code == 2_345_665 else ("0.69588", "0.69590"))
+        left, right = [scale+arb(v)*arb("1e-9") for v in bounds]
+        def newton(c):
+            return c*sum(h*heat(2, y/c) for h,y in terms)
+        assert left > cut and newton(left) < 1 < newton(right)
+        k, vacuum, u1, u2, u3 = read_at(left.union(right))
+        assert k.contains(1) and vacuum > arb("1e-7")
+        ratio = (beta[0]-beta[2])/(beta[1]-beta[2])
+        invariant = (u1-u3)-ratio*(u2-u3)
+        assert abs(invariant) > arb(".0004")
+        print("唯一牛顿标尺的平移量 10⁹(c−0.007)、真空残差、消去交汇能标的规范差",
+              code, ((left.union(right)-scale)*10**9).str(10),
+              (vacuum-arb("1e-122")).str(12), invariant.str(12))
 
 
 if __name__ == "__main__":
