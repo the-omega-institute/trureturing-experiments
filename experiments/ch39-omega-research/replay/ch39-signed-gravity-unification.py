@@ -6,6 +6,23 @@ import sys
 from flint import arb, arb_mat, ctx
 
 
+def gauge_weights(model):
+    weights = []
+    assert tuple(model["charges"]) == (1, 4, 2, 3, 6)
+    for q, weyl in zip(model["charges"], model["weyl"], strict=True):
+        weights.extend([[2*b+(h if q == 3 else 0) for b, h in zip(weyl, model["higgs"], strict=True)]]*16)
+    weights.extend([(0, -7, -arb(21)/2)]*18)
+    return weights
+
+
+def threshold_column(rows, moments, heat, weights, x):
+    k, w = moments(rows, heat, x)
+    js = [heat(1, z/x) for _, _, z in rows[1:]]
+    shifts = [-sum(b[i]*j for b, j in zip(weights, js, strict=True))/(4*arb.pi())
+              for i in range(3)]
+    return [arb(1), k, w, *shifts]
+
+
 def verify(root):
     fields = run_path(str(root / "ch39-two-zero-cutoff-gravity.py"))["gravity_fields"]
     single, lib, (rows,) = fields(root, (2_306_888_100_085,))
@@ -18,17 +35,10 @@ def verify(root):
     def project(v):
         return sum(c*a for c, a in zip(d, v, strict=True))
 
-    weights = []
-    assert tuple(model["charges"]) == (1, 4, 2, 3, 6)
-    for q, weyl in zip(model["charges"], model["weyl"], strict=True):
-        weights.extend([[2*b+(h if q == 3 else 0) for b, h in zip(weyl, model["higgs"], strict=True)]]*16)
-    weights.extend([(0, -7, -arb(21)/2)]*18)
+    weights = gauge_weights(model)
     heat = lib["expint"]
     def column(x):
-        k, w = single["moments"](rows, heat, x)
-        js = [heat(1, z/x) for _, _, z in rows[1:]]
-        shifts = [-sum(b[i]*j for b, j in zip(weights, js, strict=True))/(4*pi) for i in range(3)]
-        return [arb(1), k, w, *shifts]
+        return threshold_column(rows, single["moments"], heat, weights, x)
 
     def unification(cols, p):
         intercept = [v+sum(c[3+i]*u for c, u in zip(cols, p, strict=True)) for i, v in enumerate(initial)]

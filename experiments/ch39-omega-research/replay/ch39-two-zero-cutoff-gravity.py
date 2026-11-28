@@ -2,11 +2,45 @@
 from pathlib import Path
 from runpy import run_path
 
-from flint import acb, arb, arb_mat, ctx
+from flint import acb, arb, arb_mat, ctx, fmpz_mat
 import sympy as sp
 
 
-def gravity_fields(root, numbers=None, *, heights=None):
+def neutral_levels(shell, delta):
+    """用有理软边的整数特征多项式及 Weyl 界包住十八条非零谱线。"""
+    scale = 2**192
+    loss = (scale*delta).mid().floor().unique_fmpz()
+    matrix = fmpz_mat(19, 19)
+    tuned = shell["soft"]["star"]["orbit"]
+    pole = shell["soft"]["pole"]
+    degree = 0
+    for i, j, _, _ in shell["geo"]["edges"]:
+        spoke = pole in (i, j) and (i in tuned or j in tuned)
+        degree += int(spoke)
+        weight = scale-loss if spoke else scale
+        matrix[i, i] += weight
+        matrix[j, j] += weight
+        matrix[i, j] -= weight
+        matrix[j, i] -= weight
+    assert degree == 3
+    # 三边星的拉普拉斯算子范数是 4。常数向量在原矩阵和近似矩阵中均给出零模。
+    error = 4*abs(delta-arb(loss)/scale)
+    roots = matrix.charpoly().complex_roots()
+    vals = []
+    zero_count = 0
+    for value, multiplicity in roots:
+        assert value.imag.contains(0)
+        if value.real.is_zero():
+            zero_count += multiplicity
+        else:
+            level = value.real/scale + arb(0, error.upper())
+            assert level > 0
+            vals.extend([level]*multiplicity)
+    assert zero_count == 1 and len(vals) == 18
+    return vals
+
+
+def gravity_fields(root, numbers=None, *, heights=None, tight_neutral=False):
     single = run_path(str(root / "ch39-signed-cutoff-gravity.py"))
     lib = run_path(str(root / "ch39-chiral-minimal-neutral-gravity.py"))
     chiral = lib["chiral"]
@@ -29,7 +63,8 @@ def gravity_fields(root, numbers=None, *, heights=None):
         bands = {}
         for q in (0, *model["charges"]):
             if q == 0:
-                vals = [v-arb(0).union(4*delta) for v in neutral[1:]]
+                vals = (neutral_levels(shell, delta) if tight_neutral else
+                        [v-arb(0).union(4*delta) for v in neutral[1:]])
             else:
                 eig = shell["laplacian"](q, h).eig(multiple=True)
                 vals = [z.real for z in eig]
