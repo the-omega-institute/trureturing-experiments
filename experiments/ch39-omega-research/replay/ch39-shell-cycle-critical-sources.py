@@ -96,6 +96,30 @@ def verify():
             cells.extend((depth+1,2*i+di,2*j+dj) for di in (0,1) for dj in (0,1))
     print("交换子范数大于 0.64 倍协方差迹，终格数", commutator_leaves)
 
+    pole_row = acb_mat([[source[model["shell"]["soft"]["pole"],j] for j in range(3)]])
+    pole = adj(pole_row)*pole_row
+    pole_readings = [acb(0,1)*(axis*pole-pole*axis) for axis in axes]
+    pole_moments = words["orbit_coefficients"](parts, adj, pole_readings)
+    cells = [(0,0,0)]
+    pencil_leaves = 0
+    while cells:
+        depth, i, j = cells.pop()
+        half = arb.pi()/2**depth
+        pad = arb(0,half.upper())
+        vals = columns((2*i+1)*half+pad,(2*j+1)*half+pad)[0]
+        first, second = moments*vals, pole_moments*vals
+        penalty = (arb(".16")*first[9,0].abs_upper())**2
+        first_floor = sum(first[k,0].abs_lower()**2 for k in range(9))-penalty
+        second_floor = sum(second[k,0].abs_lower()**2 for k in range(9))-penalty
+        cross = sum(first[k,0]*second[k,0] for k in range(9))
+        if first_floor>0 and second_floor>0 and first_floor*second_floor > cross.abs_upper()**2:
+            pencil_leaves += 1
+        else:
+            assert depth < 18
+            cells.extend((depth+1,2*i+di,2*j+dj) for di in (0,1) for dj in (0,1))
+    print("任意归一壳循环与极点位置线性组合的交换子大于 0.16 倍源迹，终格数", pencil_leaves)
+
+
 
 
 if __name__ == "__main__":
