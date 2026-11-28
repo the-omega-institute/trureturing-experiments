@@ -1,4 +1,4 @@
-"""预登记的连续三十二枚壳零点，逐一验证两锚点预测与最小异类间隔。"""
+"""两个预登记窗口的连续壳零点，逐一验证两锚点预测与最小异类间隔。"""
 from concurrent.futures import ProcessPoolExecutor
 from contextlib import redirect_stdout
 from functools import cache
@@ -64,8 +64,11 @@ def classify(item):
 def verify():
     cert = json.loads((ROOT/"ch39-real-minima-window.json").read_text())
     assert sorted(map(int,cert))==list(range(32))
+    extension = json.loads((ROOT/"ch39-real-minima-window-extension.json").read_text())
+    assert sorted(map(int,extension))==list(range(32,128))
+    cert.update(extension)
     with ProcessPoolExecutor(max_workers=6) as pool:
-        observations = list(pool.map(classify,[(i,cert[str(i)]) for i in range(32)]))
+        observations = list(pool.map(classify,[(i,cert[str(i)]) for i in range(128)]))
     vectors = [(arb(s),arb(t)) for i,positive,s,t,lower in observations]
     def distance(i,j):
         a,b = vectors[i]
@@ -73,24 +76,33 @@ def verify():
         return abs(a-c).max(abs(b-d))
     positives = [i for i,positive,*_ in observations if positive]
     negatives = [i for i,positive,*_ in observations if not positive]
-    assert positives==[*range(5),*range(25,32)]
+    first_positives = [i for i in positives if i<32]
+    assert first_positives==[*range(5),*range(25,32)]
+    first_floor = min(arb(lower).lower() for i,positive,s,t,lower in observations if not positive and i<32)
+    assert first_floor>arb(".3433")
     floor = min(arb(lower).lower() for i,positive,s,t,lower in observations if not positive)
-    assert floor>arb(".3433")
-    print("可行偏移、排除的最小规范差下界",positives,floor.str(14))
-    correct = []
-    for i in range(6,32):
-        a,b = distance(i,4),distance(i,5)
-        assert a<b or b<a
-        if (a<b)==(i in positives):
-            correct.append(i)
-    print("预测样本数与命中数",26,len(correct))
-    assert len(correct)==26
-    for start,expected in [(0,(4,24)),(6,(25,24))]:
-        pairs = [(i,j) for i in positives for j in negatives if i>=start and j>=start]
+    assert floor>arb(".06387")
+    print("全部可行偏移、排除的最小规范差下界",positives,floor.str(14))
+    assert len(positives)==28
+    def confusion(start,stop):
+        result = {(p,r):0 for p in (False,True) for r in (False,True)}
+        for i in range(start,stop):
+            a,b = distance(i,4),distance(i,5)
+            assert a<b or b<a
+            result[(a<b,i in positives)] += 1
+        return result
+    first,second = confusion(6,32),confusion(32,128)
+    assert first=={(True,True):7,(False,True):0,(True,False):0,(False,False):19}
+    assert second=={(True,True):16,(False,True):0,(True,False):25,(False,False):55}
+    print("预登记预测与实测的计数",first,second)
+    cases = [(0,32,(4,24)),(6,32,(25,24)),(32,128,(57,58)),(0,128,(57,58))]
+    for start,stop,expected in cases:
+        pairs = [(i,j) for i in positives for j in negatives if start<=i<stop and start<=j<stop]
         value = distance(*expected)
         assert expected in pairs and all(value<distance(*p) for p in pairs if p!=expected)
-        print("异类最近两枚、距离",*(START+i for i in expected),value.str(17))
+        print("窗口、异类最近两枚、距离",start,stop,*(START+i for i in expected),value.str(17))
     print("锚点间距",distance(4,5).str(16))
+    print("最近对的最低值、排除壳规范差下界",vectors[57],vectors[58],observations[58][-1])
 
 
 if __name__=="__main__":
