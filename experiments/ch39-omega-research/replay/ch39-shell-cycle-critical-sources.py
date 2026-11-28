@@ -66,6 +66,37 @@ def verify():
             cells.extend((depth+1,2*i+di,2*j+dj) for di in (0,1) for dj in (0,1))
     print("两相位完整覆盖终格",leaves)
 
+    # 谱函数 S=f(H) 必须与 H 对易。用厄米正交单位基逐项读 i[H,S]。
+    axes = []
+    for i in range(3):
+        diagonal = acb_mat(3,3)
+        diagonal[i,i] = 1
+        axes.append(diagonal)
+        for j in range(i):
+            for phase in (acb(1), acb(0,1)):
+                basis = acb_mat(3,3)
+                basis[i,j] = phase/arb(2).sqrt()
+                basis[j,i] = basis[i,j].conjugate()
+                axes.append(basis)
+    readings = [acb(0,1)*(axis*observable-observable*axis) for axis in axes]
+    readings.append(acb_mat([[int(i==j) for j in range(3)] for i in range(3)]))
+    moments = words["orbit_coefficients"](parts, adj, readings)
+    cells = [(0,0,0)]
+    commutator_leaves = 0
+    while cells:
+        depth, i, j = cells.pop()
+        half = arb.pi()/2**depth
+        pad = arb(0,half.upper())
+        vals = moments*columns((2*i+1)*half+pad,(2*j+1)*half+pad)[0]
+        lower = sum(vals[k,0].abs_lower()**2 for k in range(9))
+        if lower > (arb(".64")*abs(vals[9,0]).upper())**2:
+            commutator_leaves += 1
+        else:
+            assert depth < 17
+            cells.extend((depth+1,2*i+di,2*j+dj) for di in (0,1) for dj in (0,1))
+    print("交换子范数大于 0.64 倍协方差迹，终格数", commutator_leaves)
+
+
 
 if __name__ == "__main__":
     verify()
