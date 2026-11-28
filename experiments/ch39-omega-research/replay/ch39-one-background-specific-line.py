@@ -25,7 +25,7 @@ def load(n):
 
 
 def solve_layout(labels, extra, independent, minima, shell_codes, heavy_codes, fit_energy,
-                 *, reference_gev=10**16, scale_millionths=None, weight_codes=None, positive_codes=None):
+                 *, reference_gev=10**16, scale_millionths=None, weight_codes=None, positive_codes=None, edge_tables=None):
     source = load("shared-twelve-node-gauge-gap")
     single,lib,backgrounds = load("two-zero-cutoff-gravity")["gravity_fields"](
         ROOT,heavy_codes,tight_neutral=True)
@@ -51,7 +51,12 @@ def solve_layout(labels, extra, independent, minima, shell_codes, heavy_codes, f
     assert all(who is None or (i in independent and who in range(count)) for who,i,k in extra)
     bases,changes = [],[]
     for n,(code,bg) in enumerate(zip(shell_codes,backgrounds,strict=True)):
-        edges = source["paired_lines"](ROOT,shell,code,weight_code=weight_codes[n],positive_code=positive_codes[n])
+        if edge_tables is None:
+            edges = source["paired_lines"](ROOT,shell,code,weight_code=weight_codes[n],positive_code=positive_codes[n])
+        else:
+            assert len(edge_tables)==count
+            edges = edge_tables[n]
+            assert len(edges)==361 and all(0<a and (a<b or a==b) and b<=1 for a,b,w in edges)
         scale = arb(scale_millionths[n])/10**6
         def response(i,k):
             a,b,w = edges[i]
