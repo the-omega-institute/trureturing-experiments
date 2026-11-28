@@ -9,18 +9,23 @@ ROOT = Path(__file__).resolve().parent
 NUMBERS = tuple(range(2_345_772, 2_345_867, 2))
 
 
-def verify():
-    load = run_path(str(ROOT/"ch39-four-background-crossing.py"))["load"]
+def nearest(load, numbers):
     geometry = load("three-ray-chiral-boundary")
     trace = load("fifth-shell-closed-walk-vacuum")["full_trace"]
     ctx.prec = 320
-    values = {n:trace(geometry,n) for n in NUMBERS}
-    forecasts = {(a,b):(values[b]-values[a])/(-arb(103)/3) for a,b in combinations(NUMBERS,2)}
+    values = {n:trace(geometry,n) for n in numbers}
+    forecasts = {(a,b):(values[b]-values[a])/(-arb(103)/3) for a,b in combinations(numbers,2)}
     ranking = sorted(forecasts, key=lambda p: abs(forecasts[p]).mid())
     assert len(ranking)==1128
     for i,p in enumerate(ranking[:5]):
         assert all(abs(forecasts[p]) < abs(forecasts[q]) for q in ranking[i+1:])
-    pairs = ranking[:5]
+    return {p:forecasts[p] for p in ranking[:5]}
+
+
+def verify():
+    load = run_path(str(ROOT/"ch39-four-background-crossing.py"))["load"]
+    forecasts = nearest(load,NUMBERS)
+    pairs = list(forecasts)
     numbers = sorted({n for p in pairs for n in p})
     intervals = load("fifth-shell-vacuum-order")["vacuum_intervals"]
     wrong = []
