@@ -103,6 +103,7 @@ def verify():
     assert len(hits)==93 and (0,-2) in hits and (0,0) in hits and len(added)==4
     print("六质量中心 / 完整质量窗",len(hits),len(hits)+len(added),"仅放宽后新增的偏移",added)
     print("其余 16640 对中逆迹的最大值位于",winner)
+    return hits, added
 
 
 if __name__ == "__main__":

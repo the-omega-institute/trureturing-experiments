@@ -108,10 +108,11 @@ singular = load("first-zero-relative-quark-spectrum")["singular_values"]
 source_shape = singular(K)
 assert arb("14551.17") < source_shape[2]/source_shape[0] < arb("14551.18")
 outputs = []
-for q, x, y, scale in [
+PHASE_BOXES = (
     (-4, "-0.680061861483031", "0.873223965353125", "7.06539940386823251"),
     ( 2, "0.565247837594779", "-0.630343671648397", "1"),
-]:
+)
+for q, x, y, scale in PHASE_BOXES:
     x, y = arb(x), arb(y)
     locate(q, x, y)
     prepared = prepare(q, x, y)

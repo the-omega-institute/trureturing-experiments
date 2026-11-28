@@ -28,7 +28,7 @@ def setup():
     coeffs = [arb_mat([[poly[label][k] for k in range(7)] for label in labels])
               for poly in (up,down)]
 
-    def optimal(offsets, support, root_radius=None):
+    def optimal(offsets, support, root_radius=None, *, roots=None):
         recipes, cost = [], []
         for tag, values in support:
             if tag == "class":
@@ -42,13 +42,14 @@ def setup():
                 i,b,j,c = values
                 recipes.append(up[i,b]*down[j,c])
                 cost.append(1)
-        du, dd = offsets
-        levels = light(-4,2345666+du)+light(2,964890+dd)
-        ns = [(x*10**46+arb(1)/2).floor().unique_fmpz() for x in levels]
-        assert all(n is not None for n in ns)
-        roots = [arb(n)/10**46 for n in ns]
-        if offsets == (0,0):
-            assert [int(n) for n in ns] == [Fraction(t)*10**46 for t in reference["ROOTS"]]
+        if roots is None:
+            du, dd = offsets
+            levels = light(-4,2345666+du)+light(2,964890+dd)
+            ns = [(x*10**46+arb(1)/2).floor().unique_fmpz() for x in levels]
+            assert all(n is not None for n in ns)
+            roots = [arb(n)/10**46 for n in ns]
+            if offsets == (0,0):
+                assert [int(n) for n in ns] == [Fraction(t)*10**46 for t in reference["ROOTS"]]
         if root_radius is not None:
             roots = [r+arb(0,root_radius.upper()) for r in roots]
         target = factor(roots)
