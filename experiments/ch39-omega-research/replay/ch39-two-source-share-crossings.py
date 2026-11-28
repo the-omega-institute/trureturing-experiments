@@ -12,7 +12,7 @@ ROOT = Path(__file__).resolve().parent
 FORWARD = tuple(range(2_345_988, 2_346_027, 2))
 
 
-def verify(*, forward=False):
+def verify(*, forward=False, check_domain=None):
     repair = run_path(str(ROOT/"ch39-one-share-gravity-repair.py"))
     load = repair["load"]
     edges,kernel,moments,choices = repair["source_data"]()
@@ -114,6 +114,8 @@ def verify(*, forward=False):
             s,d,e = [x+arb(0,(error/(1-contraction)).upper()) for x in center]
             energy,minimum,failed = observable(s,d,e)
             physical = not failed
+            if check_domain is not None:
+                check_domain(number,(s,d,e),physical,read)
             if forward:
                 print(number,"一阶预报、认证分支、预报与实际能标、份额及标尺的最大坐标误差",
                       predicted,physical,penergy.str(9),energy.str(9),",".join(failed),
