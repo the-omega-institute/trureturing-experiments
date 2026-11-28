@@ -171,6 +171,10 @@ def verify():
               code, ((left.union(right)-scale)*10**9).str(10),
               (vacuum-arb("1e-122")).str(12), invariant.str(12))
 
+        load("neighbour-one-share")["check"](
+            code, [(x/scale, w) for x,w in frozen], edges[0], neighbour, heat,
+            gravity["moments"], gauge["threshold_column"], fields, initial, beta, logscale)
+
 
 if __name__ == "__main__":
     verify()
