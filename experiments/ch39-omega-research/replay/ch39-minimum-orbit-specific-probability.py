@@ -1,4 +1,5 @@
 """为精确复现中央校准多项式，求必须容许区分轨道身份的最小概率。"""
+from fractions import Fraction
 from itertools import product
 import json
 from pathlib import Path
@@ -47,7 +48,6 @@ def setup():
         assert all(n is not None for n in ns)
         roots = [arb(n)/10**46 for n in ns]
         if offsets == (0,0):
-            from fractions import Fraction
             assert [int(n) for n in ns] == [Fraction(t)*10**46 for t in reference["ROOTS"]]
         target = factor(roots)
         inverse = mixture["simplex_inverse"](recipes)
@@ -84,8 +84,16 @@ def verify():
     center = costs[0,0]
     assert arb("0.00016543237") < center < arb("0.00016543240")
     assert all(cost > 2*center for k,cost in costs.items() if k != (0,0))
-    for pair, cost in costs.items():
+    saved = Path(__file__).with_name("ch39-holdout-orbit-cost-bases.json")
+    held = {tuple(item["offsets"]):optimal(tuple(item["offsets"]), item["support"])
+            for item in json.loads(saved.read_text())}
+    expected = {pair for pair in product(range(-2,3),repeat=2) if max(map(abs,pair)) == 2}
+    assert set(held) == expected and all(v > center for v in held.values())
+    assert all(v > max(3*center, arb("0.00050939")) for v in held.values())
+    assert all(held[0,-2] < v for k,v in held.items() if k != (0,-2))
+    for pair, cost in {**costs,**held}.items():
         print("编号偏移与最小须区分轨道的概率", pair, cost.str(22))
+
 
 
 if __name__ == "__main__":
