@@ -1,14 +1,15 @@
 """Modular minors for the five-center, two-step Fourier jet constraints."""
 
-from itertools import combinations, product
+from itertools import combinations, combinations_with_replacement, product
 from math import factorial, prod
 
 import numpy as np
 
 
-def modular_rank(matrix, prime):
+def echelon(matrix, prime):
     matrix = np.asarray(matrix, dtype=np.int64) % prime
     rank = 0
+    pivots = []
     for col in range(matrix.shape[1]):
         nonzero = np.flatnonzero(matrix[rank:, col])
         if not len(nonzero):
@@ -17,10 +18,27 @@ def modular_rank(matrix, prime):
         matrix[[rank, pivot]] = matrix[[pivot, rank]]
         inverse = pow(int(matrix[rank, col]), -1, prime)
         row = matrix[rank] * inverse % prime
+        matrix[rank] = row
         lower = matrix[rank + 1:]
         lower[:] = (lower - lower[:, col, None] * row) % prime
+        pivots.append(col)
         rank += 1
-    return rank
+    return matrix[:rank], pivots
+
+
+def modular_rank(matrix, prime):
+    _, pivots = echelon(matrix, prime)
+    return len(pivots)
+
+
+def modular_kernel(matrix, prime):
+    rows, pivots = echelon(matrix, prime)
+    free = [i for i in range(rows.shape[1]) if i not in pivots]
+    basis = np.zeros((rows.shape[1], len(free)), dtype=np.int64)
+    basis[free] = np.eye(len(free), dtype=np.int64)
+    for row, pivot in reversed(list(zip(rows, pivots))):
+        basis[pivot] = -(row @ basis) % prime
+    return basis
 
 
 def verify_quadratic_projection(prime):
@@ -61,30 +79,59 @@ def verify_mass_preserving_direction(prime, root, modes, powers, exponential):
     phases = {s: np.array([pow(root, s*sum(v), prime) for v in modes])
               for s in range(-2, 3)}
     jets = {s: table * phase % prime for s, phase in phases.items()}
-    g = np.zeros(len(modes), dtype=np.int64)
-    for j, sign in ((0, 1), (1, -1)):
-        v = tuple(int(i == j) for i in range(5))
-        g[modes.index(v)] = sign * (1-imaginary)
-        g[modes.index(tuple(-x for x in v))] = sign * (1+imaginary)
-    direction = {s: jets[s] @ g % prime for s in (-1, 0, 1)}
+    index = {a: i for i, a in enumerate(powers)}
+    splits = []
+    for alpha in powers:
+        terms = []
+        for i, beta in enumerate(powers):
+            gamma = tuple(a-b for a, b in zip(alpha, beta))
+            if min(gamma) >= 0:
+                terms.append((i, index[gamma]))
+        splits.append(terms)
+
+    def coefficients(j, k):
+        g = np.zeros(len(modes), dtype=np.int64)
+        for place, sign in ((j, 1), (k, -1)):
+            v = tuple(int(i == place) for i in range(5))
+            g[modes.index(v)] = sign * (1-imaginary)
+            g[modes.index(tuple(-x for x in v))] = sign * (1+imaginary)
+        return g
+
+    def contrast_rows(g, orders):
+        direction = {s: jets[s] @ g % prime for s in (-1, 0, 1)}
+        return np.array([
+            sum(direction[0][i] * jets[s][k] - direction[s][i] * jets[0][k]
+                for i, k in terms) % prime
+            for s in (-1, 1) for alpha, terms in zip(powers, splits) if sum(alpha) in orders
+        ])
+
     centers = [phases[s] for s in range(-2, 3)]
     slopes = [jets[s][j] for s in (-1, 0, 1) for j in range(1, 5)]
     assert modular_rank(centers + slopes, prime) == 17
-    rows = list(centers)
-    index = {a: i for i, a in enumerate(powers)}
-    for s in (-1, 1):
-        for alpha in powers[1:]:
-            row = np.zeros(len(modes), dtype=np.int64)
-            for i, beta in enumerate(powers):
-                gamma = tuple(a-b for a, b in zip(alpha, beta))
-                if min(gamma) >= 0:
-                    k = index[gamma]
-                    row += direction[0][i] * jets[s][k] - direction[s][i] * jets[0][k]
-            rows.append(row % prime)
-    matrix = np.array(rows)
+    g = coefficients(0, 1)
+    matrix = np.vstack((centers, contrast_rows(g, (1, 2, 3, 4))))
     assert np.all(matrix @ g % prime == 0)
     assert modular_rank(matrix, prime) == 60
     print(f"Prime {prime}: center and slope rank 17, direction kernel dimension one.")
+
+    # After the linear velocity vanishes, cubics force the quadratic jets
+    # into the same known ratios at all three centers.
+    beta = {s: ((1-imaginary)*pow(root, s, prime) - (1+imaginary)*pow(root, -s, prime)) % prime
+            for s in (-1, 0, 1)}
+    quadratic = [(beta[0]*jets[s][i] - beta[s]*jets[0][i]) % prime
+                 for s in (-1, 1) for i, alpha in enumerate(powers) if sum(alpha) == 2]
+    kernel = modular_kernel(centers + slopes + quadratic, prime)
+    assert kernel.shape == (61, 24)
+    assert np.all(np.array(centers + slopes + quadratic) @ kernel % prime == 0)
+
+    family = [contrast_rows(coefficients(j, 4), (4,)) @ kernel % prime for j in range(4)]
+    pairs = list(combinations_with_replacement(range(4), 2))
+    lifted = np.zeros((280, 240), dtype=np.int64)
+    for j, k in product(range(4), repeat=2):
+        block = pairs.index(tuple(sorted((j, k))))
+        lifted[70*j:70*(j+1), 24*block:24*(block+1)] = family[k]
+    assert modular_rank(lifted, prime) == 240
+    print(f"Prime {prime}: four-direction quadratic coefficient rank 240 of 240.")
 
 
 def verify(prime, root):
