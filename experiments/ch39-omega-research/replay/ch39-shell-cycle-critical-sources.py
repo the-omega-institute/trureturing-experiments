@@ -5,6 +5,28 @@ from runpy import run_path
 from flint import arb, arb_mat, acb, acb_mat
 
 
+def check_minimum_word_degree(h, pole, parts, adj, words, neighbours, boxes, equations):
+    identity = acb_mat([[int(i==j) for j in range(3)] for i in range(3)])
+    symmetric = [identity,h,h*h,pole,h*pole+pole*h]
+    cubic = h*pole*h
+    orthogonal = []
+    for word in symmetric+[cubic]:
+        residual = word
+        for axis in orthogonal:
+            residual = residual - (axis*residual).trace().real*axis
+        size = (residual*residual).trace().real.sqrt()
+        assert size > arb("2.4e-7")
+        orthogonal.append(residual/size)
+    normal = orthogonal[-1]
+    coeff = words["orbit_coefficients"](parts, adj, [normal])
+    columns = words["trigonometric_columns"]
+    for x,y in boxes:
+        x,y = neighbours["refine"]((x,y,0),arb(".02"),equations,columns)
+        value = (coeff*columns(x,y)[0])[0,0]
+        assert value < arb("-.77")
+        print("实三次基元法向在精确根处的配对",value.str(11))
+
+
 def verify():
     root = Path(__file__).resolve().parent
     neighbours = run_path(str(root / "ch39-four-quadratic-source-neighbours.py"))
@@ -134,6 +156,25 @@ def verify():
     isolate = run_path(str(root/"ch39-real-cubic-udu-orbit.py"))["certify_four_roots"]
     leaves, deepest = isolate(equations, columns, phase_boxes)
     print("在两个壳算子的实代数上只加 i[H,P] 后恰有四个校准源，终格数与最高层",leaves,deepest)
+    check_minimum_word_degree(observable, pole, parts, adj, words, neighbours, phase_boxes, equations)
+
+    higher = acb(0,1)*(observable**2*pole-pole*observable**2)
+    second_dir = [(axis*higher).trace().real for axis in imag_axes]
+    direction = [slopes[(j+1)%3]*second_dir[(j+2)%3] - slopes[(j+2)%3]*second_dir[(j+1)%3]
+                 for j in range(3)]
+    divisor = max(z.abs_lower() for z in direction)
+    assert divisor > arb("9.5e-14")
+    cubic_harmonics = arb_mat([[z/divisor for z in direction]]) * imag_moments
+    constant, dc, ds, xc, xs, yc, ys = cubic_harmonics.entries()
+    y_size = (yc*yc+ys*ys).sqrt()
+    beat = (dc*dc+ds*ds).sqrt()
+    offset = abs(constant) + y_size
+    amplitude = (xc*xc+xs*xs).sqrt() - beat
+    assert xc - beat - offset > arb("7e-8")
+    slope_floor = (amplitude**2-offset**2).sqrt()
+    assert slope_floor > arb("1.2e-7")
+    print("三次两条闭曲线的横向斜率下界", slope_floor.lower().str(10))
+
 
 
 
