@@ -71,29 +71,24 @@ def geometry(shell, pump):
     return triple
 
 
-def verify():
-    replay = Path(__file__).resolve().parent
-    shell = run_path(str(replay/"ch39-three-ray-chiral-boundary.py"))
-    pump = run_path(str(replay/"ch39-native-light-projector-pump.py"))
-    selector = run_path(str(replay/"ch39-rational-unique-light-action.py"))
-    ctx.prec = 640
-    triple = geometry(shell, pump)
-    recipes = [squared_factors(triple(-4, up, mode)+triple(2, down, mode))
-               for up, down, mode in SUPPORT]
-    target = squared_factors([arb(r) for r in selector["ROOTS"]])
+def simplex_inverse(recipes):
     # 首项相同，零次项只平移作用。余下 11 个系数与概率归一化构成方阵。
     matrix = arb_mat([[p[k] for p in recipes] for k in range(1,12)]+[[1]*12])
     assert abs(matrix.det()) > 0
-    inverse = matrix.inv()
+    return matrix.inv()
+
+
+def barycentric(inverse, target):
     weights = inverse*arb_mat([[target[k]] for k in range(1,12)]+[[1]])
     smallest = min(weights[j,0].lower() for j in range(12))
-    assert smallest > arb('3.80e-9')
+    assert smallest > 0
     # 系数向量在无穷范数下移动时，到每个重心坐标为零的超平面的距离。
     radius = min((weights[j,0]/sum(abs(inverse[j,k]) for k in range(11))).lower()
                  for j in range(12))
-    assert radius > arb("6.59e-8")
-    print("最小概率与系数单形内半径", smallest.str(10), radius.str(10))
+    return weights, smallest, radius
 
+
+def rationalize(weights, recipes, target):
     # 前十一项向下取整，末项补齐，使分母相同的有理权重严格归一。
     denominator = 10**110
     numbers = []
@@ -108,6 +103,23 @@ def verify():
     # 原变量作用差最多比较六个能量。磁拉普拉斯的加权度 <=18，
     # 故 t 在 [0,36]，|x|<=3。首项按有理权重和精确相消。
     error = 6*9**12*sum(3**k*abs(mixture[k]-target[k]) for k in range(1,12))
+    return numbers, error.upper()
+
+
+def verify():
+    replay = Path(__file__).resolve().parent
+    shell = run_path(str(replay/"ch39-three-ray-chiral-boundary.py"))
+    pump = run_path(str(replay/"ch39-native-light-projector-pump.py"))
+    selector = run_path(str(replay/"ch39-rational-unique-light-action.py"))
+    ctx.prec = 640
+    triple = geometry(shell, pump)
+    recipes = [squared_factors(triple(-4, up, mode)+triple(2, down, mode))
+               for up, down, mode in SUPPORT]
+    target = squared_factors([arb(r) for r in selector["ROOTS"]])
+    weights, smallest, radius = barycentric(simplex_inverse(recipes), target)
+    assert smallest > arb("3.80e-9") and radius > arb("6.59e-8")
+    print("最小概率与系数单形内半径", smallest.str(10), radius.str(10))
+    numbers, error = rationalize(weights, recipes, target)
     assert error < arb("3.63e-91") < arb("5.47e-76")
     print("有理权重分子（公分母 10^110）", numbers)
     print("全编号作用差扰动上界", error.upper().str(10))
