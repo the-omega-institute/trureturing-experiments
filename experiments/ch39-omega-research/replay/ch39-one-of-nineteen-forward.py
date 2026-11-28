@@ -27,7 +27,7 @@ def derivative_bound(p, d, z, direction):
     return total
 
 
-def search(point,z):
+def search(point,z, *, exclude=None):
     def first(s):
         _,p,_,dp,_ = point(s,derivatives=True)
         assert all(0<x<1 for x in p)
@@ -40,6 +40,8 @@ def search(point,z):
         lo,hi = queue.pop()
         s = lo.union(hi)
         boxes += 1
+        if exclude is not None and exclude(s):
+            continue
         result = point(s,share_curvature=True)
         if result is not None:
             p,dp,ddp = result
