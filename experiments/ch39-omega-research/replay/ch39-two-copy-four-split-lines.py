@@ -33,6 +33,7 @@ def verify():
     baseline = arb_mat([[0], [0], *[[v-b*logscale] for v,b in zip(initial, beta, strict=True)]])
     assert len(LABELS) == 19 and all(len(row) == 19 for row in LABELS)
     directions = []
+    support = []
     for i, ((a, b, weight), digit) in enumerate(zip(edges, "".join(LABELS), strict=True)):
         def response(label):
             x = arb(7)/1000*((11-label)*a+label*b)/11
@@ -42,10 +43,13 @@ def verify():
 
         if i in SPLITS:
             left, right = SPLITS[i]
+            support.append((a, b, weight, (left, right)))
             base = response(right)
             directions.append(response(left)-base)
         else:
-            base = response(int(digit, 12))
+            label = int(digit, 12)
+            support.append((a, b, weight, (label,)))
+            base = response(label)
         baseline += base
     # 行顺序 K,W,三支逆耦合。最后的两个方程规定三支在同一能标相等。
     projection = arb_mat([[1,0,0,0,0], [0,1,0,0,0], [0,0,1,-1,0], [0,0,1,0,-1]])
@@ -62,6 +66,31 @@ def verify():
     assert arb("37.56") < common < arb("37.57") and minimum > arb("1.54")
     print("四条分拆线在较低位置的份额", *[v.str(14) for v in fractions.entries()])
     print("共同逆耦合、M_Z 到交汇能标的全程最小值", common.str(16), minimum.str(16))
+
+    # 冻结校准所得的权、格点和份额，只更换产生重场质量的中性编号。
+    frozen = []
+    shares = iter(fractions.entries())
+    for a, b, weight, labels in support:
+        parts = [arb(1)]
+        if len(labels) == 2:
+            left_share = next(shares)
+            parts = [left_share, 1-left_share]
+        for label, part in zip(labels, parts, strict=True):
+            x = arb(7)/1000*((11-label)*a+label*b)/11
+            frozen.append((x, weight*part))
+    rebuild = run_path(str(ROOT / "ch39-two-zero-cutoff-gravity.py"))["gravity_fields"]
+    codes = (2_345_665, 2_345_667)
+    _, _, backgrounds = rebuild(ROOT, codes, tight_neutral=True)
+    for code, neighbour in zip(codes, backgrounds, strict=True):
+        held = arb_mat([[0], [0], *[[v-b*logscale] for v,b in zip(initial, beta, strict=True)]])
+        for x, weight in frozen:
+            column = gauge["threshold_column"](neighbour, moments, heat, fields, x)[1:]
+            held += arb_mat([[weight*v] for v in column])
+        k, vacuum, u1, u2, u3 = held.entries()
+        print("冻结参数的邻点", code, "K−1、W、两条规范差",
+              *[v.str(12) for v in (k-1, vacuum, u1-u3, u2-u3)])
+        assert not (k-1).contains(0) and not (vacuum-arb("1e-122")).contains(0)
+        assert not (u1-u3).contains(0) and not (u2-u3).contains(0)
 
 
 if __name__ == "__main__":
