@@ -24,7 +24,8 @@ def load(n):
     return run_path(str(ROOT/f"ch39-{n}.py"))
 
 
-def solve_layout(labels, extra, independent, minima, shell_codes, heavy_codes, fit_energy):
+def solve_layout(labels, extra, independent, minima, shell_codes, heavy_codes, fit_energy,
+                 *, reference_gev=10**16):
     source = load("shared-twelve-node-gauge-gap")
     single,lib,backgrounds = load("two-zero-cutoff-gravity")["gravity_fields"](
         ROOT,heavy_codes,tight_neutral=True)
@@ -33,7 +34,7 @@ def solve_layout(labels, extra, independent, minima, shell_codes, heavy_codes, f
     shell = load("native-rh-ray-pvm")["shell_weights"]
     fields = gauge["gauge_weights"](model)
     beta = [b/(2*arb.pi()) for b in model["beta"]]
-    logscale = (arb(10**16)/model["mz"]).log()
+    logscale = (arb(reference_gev)/model["mz"]).log()
     bare = [v-b*logscale for v,b in zip(initial,beta,strict=True)]
     count = len(shell_codes)
     assert len(labels)==count and len(extra)+int(fit_energy)==4*count
@@ -72,7 +73,7 @@ def solve_layout(labels, extra, independent, minima, shell_codes, heavy_codes, f
     solution = (seed+normalized.solve(pre*(rhs-matrix*seed))).entries()
     shares = solution[:len(extra)]
     log_change = solution[-1] if fit_energy else arb(0)
-    energy = arb(10**16)*log_change.exp()
+    energy = arb(reference_gev)*log_change.exp()
     assert model["mz"] < energy < arb("1.22089e19")
     assert all(0 < s < 1 for s in shares)
     for n in range(count):
@@ -84,7 +85,7 @@ def solve_layout(labels, extra, independent, minima, shell_codes, heavy_codes, f
         common = bases[n][-1]+sum(s*row[-1] for s,row in zip(shares,changes[n],strict=True))
         minimum = common+beta[2]*logscale
         common -= beta[2]*log_change
-        assert beta[2]<beta[1]<0<beta[0] and minimum>arb(minima[n])
+        assert beta[2]<beta[1]<0<beta[0] and common>0 and minimum>arb(minima[n])
         print("背景、共同逆耦合、从电弱到交汇能标的最小逆耦合",n,common.str(13),minimum.str(13))
     print("内部格点份额",[x.str(11) for x in shares])
     return shares,energy
