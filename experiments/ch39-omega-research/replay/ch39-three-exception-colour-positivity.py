@@ -15,7 +15,7 @@ COARSE = 12
 EXPECTED = {(15,285,323): 18, (16,17,18): 54, (285,304,323): 11, (285,323,342): 9}
 
 
-def small_scale(edges, rows, heat, cut, unit, lower):
+def small_scale(edges, rows, heat, cut, unit, lower, exceptions=3):
     pi = arb.pi()
     k0 = sum(alpha for _,alpha,_ in rows)/(2*pi)
     assert k0 < 0
@@ -26,7 +26,7 @@ def small_scale(edges, rows, heat, cut, unit, lower):
     bounds = []
     for endpoint in endpoints:
         corrections = sorted(lower(m-e) for m,e in zip(minima,endpoint))
-        first_moment = sum(endpoint)+arb(sum(corrections[:3]))/unit
+        first_moment = sum(endpoint)+arb(sum(corrections[:exceptions]))/unit
         bounds.append((k0*cut*first_moment).max(0)+error)
     assert max(v.upper() for v in bounds) < arb(".977")
     print("小标尺牛顿上界，两种公共端点",*[v.str(12) for v in bounds])
