@@ -16,7 +16,9 @@ SUPPORT = (
 CENTRAL = {-4:2345666, 2:964890}
 
 
-def verify(replay, tile=None):
+def verify(replay, tile=None, *, support=SUPPORT, denominator=10**6,
+           holdouts=((-4,483437,200),(2,33560,10000)), closest=(-4,11757),
+           gap_bounds=("5358.20","5358.21")):
     def load(name):
         return run_path(str(replay / f"ch39-{name}.py"))
 
@@ -27,10 +29,10 @@ def verify(replay, tile=None):
     ctx.prec = 160
     triple = reference["geometry"](shell,pump)
     classes = grouped["geometry_classes"]()
-    weights = sum(case[-1] for case in SUPPORT)
-    assert weights == 10**6
+    weights = sum(case[-1] for case in support)
+    assert weights == denominator
     polynomial = arb_poly([0])
-    for key, up, down, numerator in SUPPORT:
+    for key, up, down, numerator in support:
         group = classes[key]
         term = sum((reference["squared_factors"](triple(-4,a,up)+triple(2,b,down))
                     for a,b in group), arb_poly([0]))
@@ -61,7 +63,7 @@ def verify(replay, tile=None):
         return 9**12 * sum(polynomial(energy/9-1) for energy in levels)
     central = {q:rate(q,acb.zeta_zero(n).imag) for q,n in CENTRAL.items()}
     # 两枚训练集合外的实际编号逐荷反转同一有理权重的排序。
-    for charge, index, lower in ((-4,483437,200),(2,33560,10000)):
+    for charge, index, lower in holdouts:
         improvement = central[charge]-rate(charge,acb.zeta_zero(index).imag)
         assert improvement > lower
         print("集合外的荷、编号、目标减竞争作用",charge,index,improvement.str(13))
@@ -80,16 +82,16 @@ def verify(replay, tile=None):
                 if n != CENTRAL[charge]:
                     enclosure = rate(charge,zero.imag)-central[charge]
                     gap = enclosure.lower()
-                    if (charge,n) == (-4,11757):
-                        assert enclosure.upper() < arb("5358.21")
+                    if (charge,n) == closest:
+                        assert enclosure.upper() < arb(gap_bounds[1])
                     else:
-                        assert gap > arb("5358.21"), (charge,n,gap)
+                        assert gap > arb(gap_bounds[1]), (charge,n,gap)
                     if gap < best:
                         best, nearest = gap, (charge, n)
                     count += 1
-    assert best > arb("5358.20")
+    assert best > arb(gap_bounds[0])
     if tile is None:
-        assert count == 66816 and nearest == (-4,11757)
+        assert count == 66816 and nearest == closest
     print("分区、严格比较数、最小区间下界与所在编号",tile,count,best.str(14),nearest)
 
 

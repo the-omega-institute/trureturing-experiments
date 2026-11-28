@@ -16,6 +16,25 @@ CLASSES = (
 )
 
 
+def unique_gap(replay, shell, pair):
+    selector = run_path(str(replay/"ch39-rational-unique-light-action.py"))
+    pump = run_path(str(replay/"ch39-native-light-projector-pump.py"))
+    reader = run_path(str(replay/"ch39-light-spectrum-zero-selector.py"))
+    light = reader["light_spectra"](replay)
+    ctx.prec = 320
+    actual = [v for q,n in zip((-4,2),pair,strict=True) for v in light(q,n)]
+    ns = [(e*10**46+arb(1)/2).floor().unique_fmpz() for e in actual]
+    assert all(k is not None for k in ns)
+    roots = [arb(k)/10**46 for k in ns]
+    eps = arb("1e-32")
+    selector["verify_number_boxes"](pump,shell,((-4,pair[0]),(2,pair[1])),[x+arb(0,eps.upper()) for x in roots])
+    lower = eps**2*min(prod((abs(x-y)/2)**2 for j,y in enumerate(roots) if i!=j).lower()
+                       for i,x in enumerate(roots))
+    upper = sum(prod((x-y)**2 for y in roots) for x in actual)
+    assert lower-upper > 0
+    return (lower-upper).lower()
+
+
 def verify():
     replay = Path(__file__).resolve().parent
     setup = run_path(str(replay/"ch39-minimum-orbit-specific-probability.py"))["setup"]
@@ -37,23 +56,9 @@ def verify():
     # 两个正相对宽度的高度窗也可满足指定中央六能量的必要高度比例。
     assert arb("2.26")/arb("1.001") > arb("2.25390") and arb("2.26226") < arb("2.26860")
     assert (arb("2.26")-arb("1.001"))*600000 > arb("728522.42")
-    # 对具体 n 再检验全域唯一性。鲁棒邻域只断言目标多项式的实现成本。
-    selector = run_path(str(replay/"ch39-rational-unique-light-action.py"))
-    pump = run_path(str(replay/"ch39-native-light-projector-pump.py"))
-    reader = run_path(str(replay/"ch39-light-spectrum-zero-selector.py"))
-    light = reader["light_spectra"](replay)
-    ctx.prec = 320
-    actual = [v for q in (-4,2) for v in light(q,n)]
-    ns = [(e*10**46+arb(1)/2).floor().unique_fmpz() for e in actual]
-    assert all(k is not None for k in ns)
-    roots = [arb(k)/10**46 for k in ns]
-    eps = arb("1e-32")
-    selector["verify_number_boxes"](pump,shell,((-4,n),(2,n)),[x+arb(0,eps.upper()) for x in roots])
-    lower = eps**2*min(prod((abs(x-y)/2)**2 for j,y in enumerate(roots) if i!=j).lower()
-                       for i,x in enumerate(roots))
-    upper = sum(prod((x-y)**2 for y in roots) for x in actual)
-    assert lower-upper > arb("7.85e-69")
-    print("其他实际编号相对目标的统一作用差下界", (lower-upper).str(12))
+    gap = unique_gap(replay,shell,(n,n))
+    assert gap > arb("7.85e-69")
+    print("其他实际编号相对目标的统一作用差下界",gap.str(12))
     print("两荷编号、具名轨道费用及独立参考根半宽", n, 0, radius.str(4))
 
 
