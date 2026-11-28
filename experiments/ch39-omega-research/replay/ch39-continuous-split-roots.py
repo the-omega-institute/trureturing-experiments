@@ -27,17 +27,17 @@ def midpoint(matrix):
     return arb_mat([[matrix[i,j].mid() for j in range(matrix.ncols())] for i in range(matrix.nrows())])
 
 
-def basis(x, derivative=0):
-    """依次取 r²,r,1,r^-1,...,r^-ORDER, log r；导数对 r=x/S。"""
+def basis(x, derivative=0, *, order=ORDER):
+    """依次取 r²,r,1,r^-1,...,r^-order, log r；导数对 r=x/S。"""
     r = x/S
     powers = [r**2, r, arb(1)]
-    for j in range(ORDER+derivative):
+    for j in range(order+derivative):
         powers.append(powers[-1]/r)
     if derivative == 0:
-        return vector([*powers[:ORDER+3],r.log()])
+        return vector([*powers[:order+3],r.log()])
     if derivative == 1:
-        return vector([(2-i)*powers[i+1] for i in range(ORDER+3)]+[1/r])
-    return vector([(2-i)*(1-i)*powers[i+2] for i in range(ORDER+3)]+[-1/r**2])
+        return vector([(2-i)*powers[i+1] for i in range(order+3)]+[1/r])
+    return vector([(2-i)*(1-i)*powers[i+2] for i in range(order+3)]+[-1/r**2])
 
 
 def spectrum(shell, lib, neutral, h, half):
@@ -69,9 +69,9 @@ def spectrum(shell, lib, neutral, h, half):
     return point,boxes
 
 
-def series(rows, gauge):
+def series(rows, gauge, *, order=ORDER):
     """三类热核 xE₂、x²E₃、E₁ 的截断展开系数矩阵。"""
-    mat=arb_mat(5,ORDER+4)
+    mat=arb_mat(5,order+4)
     pi4=4*arb.pi()
     for (g,a,z),bs in zip(rows,gauge,strict=True):
         y=z/S
@@ -80,17 +80,17 @@ def series(rows, gauge):
         # 除公共因子外 (场 × 读数 × 谱矩) 的非多项式部分。
         mat[0,1]+=v[0]*S
         mat[0,2]+=v[0]*S*y*(log-1)
-        mat[0,ORDER+3]-=v[0]*S*y
+        mat[0,order+3]-=v[0]*S*y
         mat[1,0]+=v[1]*S**2/2
         mat[1,1]-=v[1]*S**2*y
         mat[1,2]+=v[1]*S**2*y**2*(arb(3)/2-log)/2
-        mat[1,ORDER+3]+=v[1]*S**2*y**2/2
+        mat[1,order+3]+=v[1]*S**2*y**2/2
         for j in range(2,5):
             mat[j,2]-=v[j]*log
-            mat[j,ORDER+3]+=v[j]
-        # 常规幂项按 r^-n 收集，各行恰截到 n=ORDER。
+            mat[j,order+3]+=v[j]
+        # 常规幂项按 r^-n 收集，各行恰截到 n=order。
         e=arb(1)
-        for n in range(1,ORDER+1):
+        for n in range(1,order+1):
             e *= -y/n
             # E1 的 r^-n 项为 -e/n，xE2 项为 S*y*e/[n(n+1)]，
             # x²E3 项为 -S²*y²*e/[n(n+1)(n+2)]。
