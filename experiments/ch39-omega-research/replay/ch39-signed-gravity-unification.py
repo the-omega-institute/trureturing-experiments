@@ -30,6 +30,7 @@ def verify(root):
     ctx.prec = 320
     pi, eps = arb.pi(), arb("1e-122")
     beta = [b/(2*pi) for b in model["beta"]]
+    assert beta[2] < beta[1] < 0 < beta[0]
     ratio = (beta[0]-beta[2])/(beta[0]-beta[1])
     d = (1-ratio, ratio, -1)
     def project(v):
@@ -88,6 +89,9 @@ def verify(root):
     assert arb("3.42999e16") < scale < arb("3.43000e16") and arb("35.9793") < common < arb("35.9794")
     print("排除非负尾的投影与阈值上界、双原子两段上界", project(initial).str(14), cap.str(14),
           small.str(14), large.str(14))
+    low_colour = common+beta[2]*(scale/model["mz"]).log()
+    assert arb("-1.411") < low_colour < arb("-1.410")
+    print("三原子在整个跑动区间的最小逆耦合", low_colour.str(13))
     print("三原子权、交汇能标和统一逆耦合", *[u.str(15) for u in p], scale.str(16), common.str(16))
 
     # 四个固定有理节点，直接令剩余规范投影为零。
@@ -101,6 +105,10 @@ def verify(root):
     assert sum(p[1:]) > 0 > sum(p[2:])
     assert arb("1.63377099") < -p[2] < arb("1.63377101")
     assert arb("5.03052e16") < scale < arb("5.03053e16") and arb("37.8345") < common < arb("37.8346")
+    # 三支仿射逆耦合在 [M_Z,M_U] 上的共同最小值是色支的低端值。
+    low_colour = common+beta[2]*(scale/model["mz"]).log()
+    assert arb(".0180") < low_colour < arb(".0182")
+    print("四原子在整个跑动区间的最小逆耦合", low_colour.str(13))
     print("四原子权、交汇能标和统一逆耦合", *[u.str(17) for u in p], scale.str(17), common.str(17))
 
 
