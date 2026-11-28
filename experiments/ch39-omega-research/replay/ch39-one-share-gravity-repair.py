@@ -1,4 +1,5 @@
 """固定第五壳源见证，只调第16线的一个份额及共同标尺，精确恢复引力双矩。"""
+from functools import cache
 from math import factorial
 from pathlib import Path
 from runpy import run_path
@@ -15,7 +16,8 @@ def load(name):
     return run_path(str(ROOT/f"ch39-{name}.py"))
 
 
-def setup():
+@cache
+def source_data():
     frozen = load("fifth-shell-frozen-witnesses")
     layout = frozen["data"]("ch39-fifth-shell-quadratic-layout.json")
     assert layout["heavy"]==SOURCE and layout["extra"][0]==[16,11000]
@@ -35,7 +37,13 @@ def setup():
     changes = [point(i,t)-base[i] for who,i,t in extra]
     for share,delta in zip(shares,changes,strict=True):
         moments += share*delta
-    return edges,kernel,moments,changes[0],shares[0]
+    return edges,kernel,moments,{i:(v,p) for (_,i,_),v,p in zip(extra,changes,shares,strict=True)}
+
+
+def setup(line=16):
+    edges,kernel,moments,lines = source_data()
+    change,share = lines[line]
+    return edges,kernel,moments,change,share
 
 
 def dilate(row,s,derivative=False):
@@ -87,18 +95,19 @@ def repair_box(args, share):
     return root,jac
 
 
-def verify(targets=HOLDOUT):
-    edges,kernel,moments,change,share = setup()
+def verify(targets=HOLDOUT, *, line=16):
+    edges,kernel,moments,change,share = setup(line)
     _,lib,bgs = load("two-zero-cutoff-gravity")["gravity_fields"](ROOT,(SOURCE,*targets),tight_neutral=True)
     model,_,_,_,_ = lib["chiral"]["source"]["mean"]["inputs"]()
     fields = [(0,0,0),*load("signed-gravity-unification")["gauge_weights"](model)]
     total = sum(abs(w) for a,b,w in edges)
     order = kernel["ORDER"]
-    wc = abs(edges[16][2])
+    wc = abs(edges[line][2])
     source_rows = bgs[0]
     denom = 2*sum(a for g,a,z in source_rows)
     source_mass = sum(g*z for g,a,z in source_rows)
     slopes_lower,shifts_s,shifts_d,relative = [],[],[],[]
+    corrections = {}
     for number,rows in zip(targets,bgs[1:],strict=True):
         assert max(z.upper() for g,a,z in rows)<min(arb(1),arb(".0069")*min(a.lower() for a,b,w in edges))
         series = kernel["series"](rows,fields)
@@ -123,19 +132,22 @@ def verify(targets=HOLDOUT):
         predicted = -lead/source_slope
         assert predicted*d>0
         rel = abs((d-predicted)/predicted)
+        corrections[number] = d
         shifts_s.append(abs(s-1).upper());shifts_d.append(abs(d).upper())
         slopes_lower.append(abs(schur).lower());relative.append(rel.upper())
         print(number,"标尺比改变量、份额改变量、质量和预报的相对误差",
               (s-1).str(9),d.str(9),rel.str(8),flush=True)
-    assert min(slopes_lower)>arb(".01")
-    assert max(shifts_s)<arb(".0001") and max(shifts_d)<arb(".0001") and max(relative)<arb(".01")
-    if targets==FORWARD:
+    if line==16:
+        assert min(slopes_lower)>arb(".01")
+        assert max(shifts_s)<arb(".0001") and max(shifts_d)<arb(".0001") and max(relative)<arb(".01")
+    if line==16 and targets==FORWARD:
         assert max(shifts_s)<arb(".00002379") and max(shifts_d)<arb(".00004678")
         assert max(relative)<arb(".0000437")
-    if targets==HOLDOUT:
+    if line==16 and targets==HOLDOUT:
         assert max(shifts_s)<arb(".0000189") and max(shifts_d)<arb(".0000373") and max(relative)<arb(".00013")
     print("最大标尺比改变量、最大份额改变量、真空对份额斜率绝对值下界、最大预报相对误差",
           max(shifts_s),max(shifts_d),min(slopes_lower),max(relative))
+    return source_slope,corrections,max(relative)
 
 
 if __name__=="__main__":
