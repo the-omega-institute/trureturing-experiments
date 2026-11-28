@@ -45,6 +45,31 @@ def verify(prime, root):
         differences.append(np.array(rows).T[degrees <= 3])
     assert modular_rank(np.vstack(differences), prime) == 40
 
+    # Given equal scalar values and gradients, the common linear cone is x
+    # after an invertible output change. Terms through degree three then
+    # depend linearly on the charged vector and scalar coefficients.
+    charged = charges != 0
+    cubic = np.vstack(differences)[:, charged]
+    low = degrees[degrees <= 3]
+    quadratic = cubic[np.tile(low <= 2, 2)]
+    first = cubic[np.tile(low <= 1, 2)]
+    assert modular_rank(quadratic, prime) == 30
+    low_index = {a: i for i, a in enumerate(powers) if sum(a) <= 3}
+    block_height = len(low)
+    constraints = np.zeros((4 * len(cubic) + len(first), 200), dtype=np.int64)
+    constraints[4 * len(cubic):, 160:] = first
+    for j in range(4):
+        start = j * len(cubic)
+        constraints[start:start + len(cubic), j*40:(j+1)*40] = cubic
+        for alpha, i in low_index.items():
+            if alpha[j] == 0:
+                continue
+            beta = tuple(a - int(k == j) for k, a in enumerate(alpha))
+            for block in range(2):
+                offset = block * block_height
+                constraints[start + offset + i, 160:] = -cubic[offset + low_index[beta]]
+    assert modular_rank(constraints, prime) == 190
+
     # Each column is a pair of light-center differences, with four output coordinates.
     def column():
         return np.zeros((2, 4, len(powers)), dtype=np.int64)
@@ -79,7 +104,7 @@ def verify(prime, root):
     matrix = positive_degrees.reshape(len(columns), -1).T
     assert matrix.shape == (552, 214)
     assert modular_rank(matrix, prime) == 214
-    print(f"Prime {prime}, root {root}: scalar rank 40, kinetic and amplitude rank 214.")
+    print(f"Prime {prime}, root {root}: scalar rank 40, equal first jets rank 190, kinetic and amplitude rank 214.")
 
 
 if __name__ == "__main__":
