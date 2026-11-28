@@ -40,15 +40,18 @@ def primal():
     assert 0<theta<1 and lower>arb("0.000073")
 
 
-def projection(sectors,fields,beta,initial,inputs,kernel,directions,meeting,independent):
+def projection(sectors,fields,beta,initial,inputs,kernel,directions,meeting,independent,
+               *, scale_millionths=None):
     """给出重建热核后的投影下界，以及它对共同 log E 的斜率。"""
-    scale = arb(7)/1000
+    scales = [7000]*len(sectors) if scale_millionths is None else scale_millionths
     order = kernel["ORDER"]
     tail = 2*arb(7)**(order+1)/factorial(order+1)
     assert arb(7)/(order+2) < arb(1)/2
     constant, slope = arb(0), arb(0)
     tables = []
-    for (edges,series,bg),integers in zip(sectors,directions,strict=True):
+    for (edges,series,bg),integers,micro in zip(sectors,directions,scales,strict=True):
+        assert micro>0
+        scale = arb(micro)/10**6
         k,h,u,v,s = [arb(z)/10**11 for z in integers]
         row = [k,h,u,v,s-u-v]
         coeff = arb_mat([row])*series

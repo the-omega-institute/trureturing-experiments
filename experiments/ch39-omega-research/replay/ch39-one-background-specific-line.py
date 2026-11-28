@@ -25,7 +25,7 @@ def load(n):
 
 
 def solve_layout(labels, extra, independent, minima, shell_codes, heavy_codes, fit_energy,
-                 *, reference_gev=10**16):
+                 *, reference_gev=10**16, scale_millionths=None):
     source = load("shared-twelve-node-gauge-gap")
     single,lib,backgrounds = load("two-zero-cutoff-gravity")["gravity_fields"](
         ROOT,heavy_codes,tight_neutral=True)
@@ -37,19 +37,23 @@ def solve_layout(labels, extra, independent, minima, shell_codes, heavy_codes, f
     logscale = (arb(reference_gev)/model["mz"]).log()
     bare = [v-b*logscale for v,b in zip(initial,beta,strict=True)]
     count = len(shell_codes)
+    scale_millionths = [7000]*count if scale_millionths is None else scale_millionths
+    independent = {independent} if isinstance(independent,int) else set(independent)
+    assert len(scale_millionths)==count and all(v>0 for v in scale_millionths)
     assert len(labels)==count and len(extra)+int(fit_energy)==4*count
     assert all(len(row)==361 for row in labels)
     for i,row in enumerate(zip(*labels,strict=True)):
-        if i!=independent:
+        if i not in independent:
             assert all(a is row[0] or a==row[0] for a in row[1:])
-    assert all(who is None or i==independent for who,i,k in extra)
+    assert all(who is None or (i in independent and who in range(count)) for who,i,k in extra)
     bases,changes = [],[]
     for n,(code,bg) in enumerate(zip(shell_codes,backgrounds,strict=True)):
         edges = source["paired_lines"](ROOT,shell,code)
+        scale = arb(scale_millionths[n])/10**6
         def response(i,k):
             a,b,w = edges[i]
             assert 0 <= k <= 1
-            x = arb(7)/1000*((1-k)*a+k*b)
+            x = scale*((1-k)*a+k*b)
             _,K,W,g1,g2,g3 = gauge["threshold_column"](bg,single["moments"],lib["expint"],fields,x)
             return arb_mat([[w*z] for z in (K,W,g1-g3,g2-g3,g3)])
         chosen = [response(i,k) for i,k in enumerate(labels[n])]
