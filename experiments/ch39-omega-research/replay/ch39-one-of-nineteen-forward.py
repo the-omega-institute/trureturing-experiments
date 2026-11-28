@@ -27,6 +27,32 @@ def derivative_bound(p, d, z, direction):
     return total
 
 
+def xlogx(v):
+    """在 v 的物理部分 [0,1] 上包围 x log(x)，包括连续端点值零。"""
+    if v>0:
+        return v*v.log()
+    hi = v.upper()
+    if hi<=0:
+        return arb(0)
+    minimum = -1/arb(1).exp()
+    if hi < -minimum:
+        minimum = hi*hi.log()
+    return minimum.union(arb(0))
+
+
+def positive_boundary_curvature(p,dp,ddp,z,j):
+    """其余份额严格内部时，以 w=p_j(1-p_j) 消除 L″ 的单个端点极点。"""
+    v = p[j].intersection(arb(0).union(arb(1)))
+    w = v*(1-v)
+    weighted_logit = (1-v)*xlogx(v)-v*xlogx(1-v)
+    scaled = dp[j]**2+ddp[j]*(weighted_logit-w*z)
+    for i in range(len(p)):
+        if i!=j:
+            h = p[i]
+            scaled += w*(dp[i]**2/(h*(1-h))+ddp[i]*((h/(1-h)).log()-z))
+    return scaled>0
+
+
 def search(point,z, *, exclude=None):
     def first(s):
         _,p,_,dp,_ = point(s,derivatives=True)
@@ -51,25 +77,47 @@ def search(point,z, *, exclude=None):
             negative_upper = derivative_bound(p,dp,z,-1)
             if (upper is not None and upper<0) or (negative_upper is not None and negative_upper<0):
                 continue
-            if all(0<v<1 for v in p):
+            boundary = [j for j,v in enumerate(p) if not (0<v<1)]
+            sign_at = None
+            if not boundary:
                 second = sum(d*d/(v*(1-v))+dd*((v/(1-v)).log()-z)
                              for v,d,dd in zip(p,dp,ddp,strict=True))
                 if second>0:
-                    left,right = first(lo),first(hi)
-                    if left>0 or right<0:
-                        continue
-                    if left<0<right:
-                        for _ in range(45):
-                            mid = ((lo+hi)/2).mid()
-                            val = first(mid)
-                            if val<0:
-                                lo = mid
-                            elif val>0:
-                                hi = mid
-                            else:
-                                break
-                        roots.append(lo.union(hi))
-                        continue
+                    sign_at = first
+            elif len(boundary)==1:
+                j = boundary[0]
+                if not dp[j].contains(0) and positive_boundary_curvature(p,dp,ddp,z,j):
+                    def sign_at(s):
+                        _,v,_,d,_ = point(s,derivatives=True)
+                        orientation = 1 if dp[j]>0 else -1
+                        # 盒中该份额单调，F=L′ 在物理区外沿用端点的无穷符号。
+                        if v[j]<=0:
+                            return -orientation
+                        if v[j]>=1:
+                            return orientation
+                        top = derivative_bound(v,d,z,1)
+                        bottom = derivative_bound(v,d,z,-1)
+                        if top is not None and top<0:
+                            return -1
+                        if bottom is not None and bottom<0:
+                            return 1
+                        return 0
+            if sign_at is not None:
+                left,right = sign_at(lo),sign_at(hi)
+                if left>0 or right<0:
+                    continue
+                if left<0<right:
+                    for _ in range(45):
+                        mid = ((lo+hi)/2).mid()
+                        val = sign_at(mid)
+                        if val<0:
+                            lo = mid
+                        elif val>0:
+                            hi = mid
+                        else:
+                            break
+                    roots.append(lo.union(hi))
+                    continue
         assert hi-lo>arb("1e-12"),(s,result)
         mid = ((lo+hi)/2).mid()
         queue.extend(((lo,mid),(mid,hi)))
