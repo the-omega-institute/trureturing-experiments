@@ -1,7 +1,7 @@
 """Exact cutoff-200 base spectra, Fourier simplex and optimal visible-to-hidden gaps."""
 
 from collections import Counter, defaultdict
-from itertools import combinations_with_replacement
+from itertools import combinations, combinations_with_replacement
 from pathlib import Path
 from runpy import run_path
 
@@ -15,6 +15,32 @@ def roots(matrix, variable):
     print(sp.factor(poly.as_expr()))
     print("Distinct root multiplicities:", [m for _,m in intervals])
     return [interval for interval,_ in intervals]
+
+
+def verify_inverse_spectrum(field, C, z):
+    one, zero = field.one, field.zero
+    indices = (1, 2, 4)
+    # Two noncyclic orderings of the same three distinct energies.
+    for sign in (1, -1):
+        weights = [(one/3 + sign*(C[0][j]-C[2][j])/18) for j in range(3)]
+        energies = [sum((x*y for x, y in zip(row, weights)), zero) for row in C]
+        assert energies == [sign*one/2, zero, -sign*one/2]
+    assert sp.Rational("1.54") + sp.Rational("1.88") < 6
+
+    # v=(e_0-e_3-e_1+e_4)/2 uses two neighboring fibers. For the
+    # conjugate pair +/-k, add both Fourier probabilities.
+    mass = [(2*one - C[k][0])/6 for k in range(3)]
+    for k in (0, 3, 6):
+        assert (one-z**(3*k))*(one-z**k) == zero
+    for k, predicted in zip(indices, mass):
+        forward = (one-z**(3*k))*(one-z**k)
+        backward = (one-z**(-3*k))*(one-z**(-k))
+        assert 2*forward*backward/36 == predicted
+    assert sum(mass, zero) == one
+    subset_sums = {sum(subset, zero) for size in range(4)
+                   for subset in combinations(mass, size)}
+    assert len(subset_sums) == 8
+    print("Two noncyclic isospectral triples and eight distinct probe masses verified.")
 
 
 def verify_joint_gap(adjacency, transformed):
@@ -96,6 +122,7 @@ def verify():
     for ((lo,hi),mult),(a,b) in zip(cosine,[(-188,-187),(34,35),(153,154)]):
         assert mult==1 and Q(a,100)<lo<=hi<Q(b,100)
 
+    verify_inverse_spectrum(field, C, z)
     adjacency = roots(graph,t)
     laplacian = roots(sp.diag(*degree)-graph,t)
     # A hidden coordinate lies in [-1.88,1.54]. Retain only gaps that
