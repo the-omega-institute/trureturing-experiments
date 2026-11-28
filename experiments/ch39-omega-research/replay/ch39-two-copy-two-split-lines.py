@@ -115,6 +115,23 @@ def verify():
         for t, share in choices:
             frozen.append((scale*((1-t)*a+t*b), weight*share))
 
+    # 沿四个匹配方程隐式调节四个参数，求公共逆耦合对共同标尺的局部响应。
+    scale_column = arb_mat([[0] for _ in range(5)])
+    for x, weight in frozen:
+        rates = [(-z/x).exp() for _, _, z in rows]
+        dk = x*sum(alpha*e for (_,alpha,_),e in zip(rows,rates,strict=True))/(2*pi)
+        dw = -x*x*sum(g*e for (g,_,_),e in zip(rows,rates,strict=True))/(4*pi)
+        du = [-sum(b[j]*e for b,e in zip(fields,rates[1:],strict=True))/(4*pi) for j in range(3)]
+        scale_column += arb_mat([[weight*f] for f in (dk,dw,*du)])
+    response_matrix = arb_mat([v.entries() for v in
+                               [*directions, *(derivative(i,t) for i,t in zip(MOVING,root[2:],strict=True))]]).transpose()
+    system = project*response_matrix
+    assert not system.det().contains(0)
+    parameter_slopes = system.solve(-project*scale_column)
+    common_slope = (scale_column+response_matrix*parameter_slopes)[4,0]
+    assert arb("-.832249") < common_slope < arb("-.832248")
+    print("沿精确交汇解支的公共逆耦合对 log c 的导数", common_slope.str(14))
+
     codes = (2_345_665, 2_345_667)
     _, _, neighbours = load("two-zero-cutoff-gravity")["gravity_fields"](ROOT, codes, tight_neutral=True)
     for code, neighbour in zip(codes, neighbours, strict=True):
