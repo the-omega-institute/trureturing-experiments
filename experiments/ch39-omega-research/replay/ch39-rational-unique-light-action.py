@@ -126,14 +126,14 @@ def verify_number_boxes(pump, shell, centers, targets):
     for charge, index in centers:
         atlas = determinant_rows(pump, shell, radial, frames, charge, targets)
         surviving = []
-        for indices in product(range(6), repeat=3):
+        for indices in product(range(len(targets)), repeat=3):
             rows = [block[i] for block,i in zip(atlas,indices,strict=True)]
             polynomial, _, _ = eliminate(rows, [wide]*3)
             if polynomial(full).contains(0):
                 surviving.append(indices)
         expected = (0,1,2) if charge == -4 else (3,4,5)
         assert surviving == [expected]
-        print("荷与 216 组中唯一保留的有序三元组", charge, expected)
+        print("荷、候选组合数与唯一保留的有序三元组", charge, len(targets)**3, expected)
         rows = [block[i] for block,i in zip(atlas, expected, strict=True)]
         hits = []
         for sign in (-1,1):

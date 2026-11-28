@@ -34,6 +34,7 @@ def verify():
     energy = (adj(vector)*hamiltonian*vector)[0,0].real
     overlap = (adj(vector)*radial*vector)[0,0].real
     derivative = 2*prod((energy-r)**2 for r in roots)*sum(1/(energy-r) for r in roots)
+    assert arb("8.24686") < energy < arb("8.24687")
     assert gap > arb("2.75") and overlap > arb(".45617")
     assert arb("-1.758") < derivative < arb("-1.757")
     print("中性非平凡字符能量、径向期望、十二次势导数",energy.str(11),overlap.str(11),derivative.str(11))
