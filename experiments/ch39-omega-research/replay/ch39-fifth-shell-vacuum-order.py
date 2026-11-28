@@ -10,7 +10,7 @@ ROOT = Path(__file__).resolve().parent
 HOLDOUT = tuple(range(2_345_700, 2_345_723, 2))
 
 
-def vacuum_intervals(load, numbers, *, source_only=False):
+def vacuum_intervals(load, numbers, *, source_only=False, selected_pairs=None):
     context = load("shared-large-scale-gap")["load"]()
     fields, kernel = context[1], context[-2]
     shell = load("fourth-fifth-shell-exchange")["FIFTH_SHELL"]
@@ -37,6 +37,8 @@ def vacuum_intervals(load, numbers, *, source_only=False):
         assert layout["heavy"] == numbers[0]
         actual_moments = frozen["witness_moments"](load, shell, edges, kernel, layout)
     pairs = ((0,j) for j in range(1,len(numbers))) if source_only else permutations(range(len(numbers)),2)
+    if selected_pairs is not None:
+        pairs = [(numbers.index(a), numbers.index(b)) for a,b in selected_pairs]
     for i,j in pairs:
         lead = (inventory[j]-inventory[i])/coupling
         coeff = vacuum*(series[j]-series[i])-lead*(newton*series[i])
