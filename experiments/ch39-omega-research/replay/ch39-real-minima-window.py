@@ -28,9 +28,8 @@ def inputs():
     return weight,sectors,rows,model,initial,beta,fields,kernel,series
 
 
-def classify(item):
-    index,certificate = item
-    weight,laplacian,rows,model,initial,beta,fields,kernel,series = inputs()
+def shell_data(index):
+    weight,laplacian,*_ = inputs()
     height = acb.zeta_zero(START+index).imag
     spectra = []
     for charge in (-4,2):
@@ -41,6 +40,13 @@ def classify(item):
         spectra.append([v/levels[-1] for v in levels[:-1]]+[arb(1)])
     minus,plus = spectra
     edges = [(s*t,(s+t)/2,weight[19*i+j]) for i,s in enumerate(minus) for j,t in enumerate(plus)]
+    return edges,minus[0],plus[0]
+
+
+def classify(item):
+    index,certificate = item
+    _,_,rows,model,initial,beta,fields,kernel,series = inputs()
+    edges,x,y = shell_data(index)
     positive = "base" in certificate
     lower = None
     if positive:
@@ -58,7 +64,7 @@ def classify(item):
         norm = sum(abs(arb(v)/10**11) for v in direction[2:4])
         assert bound/norm>0,(index,bound)
         lower = (bound/norm).str(25)
-    return index,positive,minus[0].str(30),plus[0].str(30),lower
+    return index,positive,x.str(30),y.str(30),lower
 
 
 def verify():
