@@ -42,6 +42,29 @@ def verify_inverse_spectrum(field, C, z):
     assert len(subset_sums) == 8
     print("Two noncyclic isospectral triples and eight distinct probe masses verified.")
 
+    # Balanced energy triples are parameterized by s*h+t*v. Holding s
+    # fixed leaves a possible sign ambiguity in t after the second moment.
+    def cyclic_difference(vector):
+        x, y, z = vector
+        return [y-z, z-x, x-y]
+
+    v = cyclic_difference(mass)
+    h = cyclic_difference([x*y for x, y in zip(mass, v)])
+
+    def coefficient(i, j):
+        return sum((p*a**i*b**j for p, a, b in zip(mass, h, v)), zero)
+
+    rational = sp.Rational
+    expected = {
+        (1, 0): -rational(1, 8), (0, 1): 0,
+        (2, 0): rational(1, 32), (1, 1): 0, (0, 2): rational(1, 8),
+        (2, 1): -rational(1, 192), (0, 3): rational(1, 24),
+        (3, 1): 0, (1, 3): -rational(1, 192),
+    }
+    assert all(coefficient(i, j) == field.convert(value)
+               for (i, j), value in expected.items())
+    print("Verified return-moment coordinates, cubic collision and quartic sign resolution.")
+
 
 def verify_joint_gap(adjacency, transformed):
     # In hidden adjacency coordinates, both operators use a common forbidden set.
