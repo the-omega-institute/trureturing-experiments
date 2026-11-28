@@ -51,5 +51,52 @@ def verify():
         print("平方弦长上限、达到的角误差",cutoff,radius.str(16))
 
 
+
+
+def verify_department_charges():
+    shell = run_path(str(Path(__file__).with_name("ch39-arc-relative-determinant.py")))
+    up, down = [acb.zeta_zero(n).imag for n in (2345666,964890)]
+    inner = (6,7,8)
+    pi = arb.pi()
+    targets = {}
+    clock_sites = {i:{} for i in range(6)}
+    tails = []
+    for i,j,d,z in shell["edges"]:
+        if d<=544:
+            continue
+        value = z**-6
+        if d in (724,804):
+            value *= acb(0,(shell["theta"](d)-shell["theta"](244))*(-4*up-2*down)).exp()
+            clock_sites[i][d] = j
+        else:
+            assert d==632
+            tails.append((i,j))
+        targets[i,j] = value.arg()
+    assert len(tails) == len({j for _,j in tails}) == 6
+    # 三个内点按 6→7→8→6 定向，三个角差都可取 2π/3。
+    phases = [arb(0) for _ in range(19)]
+    for k,i in enumerate(inner):
+        phases[i] = -2*pi*k/3
+    path_angles = {}
+    for i,ends in clock_sites.items():
+        j, k = ends[724],ends[804]
+        target = angle(targets[i,j]-targets[i,k])
+        path_angles[j,k] = target
+        left, right = phases[j]-targets[i,j], phases[k]-targets[i,k]
+        phases[i] = left+angle(right-left)/2
+    for i,j in tails:
+        phases[j] = phases[i]+targets[i,j]
+    cycle = [(6,7),(7,8),(8,6)]
+    # 三次路径绕过六条边，任意规范下最大边误差至少是环量角距的六分之一。
+    lower = abs(angle(sum(path_angles[pair] for pair in cycle)))/6
+    upper = arb(0)
+    for (i,j),target in targets.items():
+        upper = upper.max(abs(angle(target+phases[i]-phases[j])))
+    assert arb(".39645665403697162") < lower
+    assert upper < arb(".39645665403697164")
+    print("两部门荷数和背景同时保留时的环量下界、构造上界",lower.str(18),upper.str(18))
+
+
 if __name__ == "__main__":
     verify()
+    verify_department_charges()
