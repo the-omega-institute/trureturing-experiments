@@ -12,33 +12,21 @@ SEED = (".04570626066740993", ".33879910987562295",
         ".9686248814813744", ".14392524328127743")
 
 
-def verify():
-    def load(name):
-        return run_path(str(ROOT / f"ch39-{name}.py"))
-
-    edges, rows, heat, _ = load("two-copy-gram-cutoff-two-exceptions")["model_inputs"]()
-    gravity = load("signed-cutoff-gravity")
-    gauge = load("signed-gravity-unification")
-    lib = load("chiral-minimal-neutral-gravity")
-    model, _, _, initial, _ = lib["chiral"]["source"]["mean"]["inputs"]()
-    labels = "".join(load("two-copy-four-split-lines")["LABELS"])
-    fields = gauge["gauge_weights"](model)
-    scale = arb(7)/1000
+def calibration_system(edges, rows, heat, moments, threshold_column, fields, labels, scale, initial, beta, logscale):
+    """四个自由坐标的五个读数及导数；可在别的重谱上保留原线权和位置。"""
     pi = arb.pi()
-    logscale = (arb(10**16)/model["mz"]).log()
-    beta = [b/(2*pi) for b in model["beta"]]
     baseline = arb_mat([[0], [0], *[[a-b*logscale] for a,b in zip(initial,beta,strict=True)]])
 
     def response(i, t):
         a, b, w = edges[i]
-        x = scale*((1-t)*a+t*b)
+        x = scale*(a+t*(b-a))
         assert 0 < x <= 1
-        column = gauge["threshold_column"](rows, gravity["moments"], heat, fields, x)
+        column = threshold_column(rows, moments, heat, fields, x)
         return arb_mat([[w*v] for v in column[1:]])
 
     def derivative(i, t):
         a, b, w = edges[i]
-        x = scale*((1-t)*a+t*b)
+        x = scale*(a+t*(b-a))
         exps = [(-z/x).exp() for _,_,z in rows]
         # d[x E₂(z/x)]/dx=e^(-z/x)，d[x² E₃(z/x)]/dx=x e^(-z/x)。
         k = sum(alpha*e for (_,alpha,_),e in zip(rows,exps,strict=True))/(2*pi)
@@ -69,6 +57,29 @@ def verify():
         columns = [*directions, *(derivative(i,t) for i,t in zip(MOVING,params[2:],strict=True))]
         return project*arb_mat([v.entries() for v in columns]).transpose()
 
+    return readings, response, derivative, directions, project, target, jacobian
+
+
+def load(name):
+    return run_path(str(ROOT / f"ch39-{name}.py"))
+
+
+def verify():
+
+    edges, rows, heat, _ = load("two-copy-gram-cutoff-two-exceptions")["model_inputs"]()
+    gravity = load("signed-cutoff-gravity")
+    gauge = load("signed-gravity-unification")
+    lib = load("chiral-minimal-neutral-gravity")
+    model, _, _, initial, _ = lib["chiral"]["source"]["mean"]["inputs"]()
+    labels = "".join(load("two-copy-four-split-lines")["LABELS"])
+    fields = gauge["gauge_weights"](model)
+    scale = arb(7)/1000
+    pi = arb.pi()
+    logscale = (arb(10**16)/model["mz"]).log()
+    beta = [b/(2*pi) for b in model["beta"]]
+    readings, _, derivative, directions, project, target, jacobian = calibration_system(
+        edges, rows, heat, gravity["moments"], gauge["threshold_column"], fields,
+        labels, scale, initial, beta, logscale)
     # 浮点初值只用于定位。预条件矩阵取逐项精确的二进制中点。
     center = [arb(v) for v in SEED]
     step = jacobian(center).solve(project*readings(center)-target)
