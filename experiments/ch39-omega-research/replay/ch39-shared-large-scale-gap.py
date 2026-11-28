@@ -36,7 +36,7 @@ def load():
     return data,fields,beta,limit,initial,kernel,earlier
 
 
-def project_direction(ctx, components, kernel_ratio=5):
+def project_direction(ctx, components, kernel_ratio=5, *, low_colours=None, common_log=None):
     data,fields,beta,limit,initial,kernel,earlier=ctx
     y=[arb(v)/10**11 for v in components]
     assert len(y)==4*len(data)
@@ -48,11 +48,13 @@ def project_direction(ctx, components, kernel_ratio=5):
     tail=2*arb(kernel_ratio)**(order+1)/factorial(order+1)
     for n,(edges,series,bg) in enumerate(data):
         ky,wy,u,v=y[4*n:4*n+4]
-        direction=[ky,wy,u,v,-u-v]
+        colour = arb(0) if low_colours is None else low_colours[n]
+        direction=[ky,wy,u,v,colour-u-v]
         row=arb_mat([direction])*series
         tables.append([(a,b-a,w*row) for a,b,w in edges])
         rate=u*(beta[0]-beta[2])+v*(beta[1]-beta[2])
-        constant+= -ky-wy*arb('1e-122')+u*(initial[0]-initial[2])+v*(initial[1]-initial[2])-(rate*limit).max(0)
+        shift = (rate*limit).max(0) if common_log is None else rate*common_log
+        constant+= -ky-wy*arb('1e-122')+u*(initial[0]-initial[2])+v*(initial[1]-initial[2])+colour*initial[2]-shift
         size=sum(abs(2*ky*k)+abs(wy*g)+sum(abs(d*j) for d,j in zip(direction[2:],bs,strict=True))
                  for (g,k,z),bs in zip(bg,fields,strict=True))/(4*arb.pi())
         constant-=tail*size*sum(abs(w) for a,b,w in edges)
