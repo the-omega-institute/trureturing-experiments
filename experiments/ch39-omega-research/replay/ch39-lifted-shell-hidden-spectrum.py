@@ -1,6 +1,7 @@
 """Exact cutoff-200 base spectra, Fourier simplex and optimal visible-to-hidden gaps."""
 
-from collections import Counter
+from collections import Counter, defaultdict
+from itertools import combinations_with_replacement
 from pathlib import Path
 from runpy import run_path
 
@@ -14,6 +15,46 @@ def roots(matrix, variable):
     print(sp.factor(poly.as_expr()))
     print("Distinct root multiplicities:", [m for _,m in intervals])
     return [interval for interval,_ in intervals]
+
+
+def verify_joint_gap(adjacency, transformed):
+    # In hidden adjacency coordinates, both operators use a common forbidden set.
+    Q = sp.Rational
+    forbidden = sorted(set(adjacency + transformed))
+    assert all(left[1] < right[0] for left, right in zip(forbidden, forbidden[1:]))
+    lower, upper = Q("-1.88"), Q("1.54")
+    assert forbidden[0][1] < lower < upper < forbidden[-1][0]
+    quarter = Q(1, 4)
+    intervals = []
+    endpoints = []
+    for left, right in zip(forbidden, forbidden[1:]):
+        lo = max(lower, left[0] + quarter)
+        hi = min(upper, right[1] - quarter)
+        if lo <= hi:
+            intervals.append((lo, hi))
+            endpoints.append((left, right))
+
+    assert len(intervals) == 3
+    ((minus_one, r), (zero, beta), (beta_again, _)) = endpoints
+    assert minus_one == (-1, -1) and zero == (0, 0) and beta_again == beta
+    assert r in adjacency and beta in transformed
+    # Enclose the true feasible coordinates outward, so empty intersections
+    # with the zero-sum plane exclude the corresponding gap assignments.
+    possible = []
+    for triple in combinations_with_replacement(range(3), 3):
+        if sum(intervals[i][0] for i in triple) <= 0 <= sum(intervals[i][1] for i in triple):
+            possible.append(triple)
+    assert possible == [(0, 1, 1)]
+
+    gap_lo = (r[0] + 2*beta[0])/3
+    gap_hi = (r[1] + 2*beta[1])/3
+    assert Q(".25029998053739") < gap_lo <= gap_hi < Q(".25029998053740")
+    # At equality the negative coordinate is r-gap and both positive
+    # coordinates are beta-gap. Test the opposite endpoints of their gaps.
+    u_lo, u_hi = (beta[0]-r[1])/3, (beta[1]-r[0])/3
+    assert u_lo > gap_hi and 1 - 2*u_hi > gap_hi
+    assert Q("1.54") * u_hi < 1  # w_j = (1 - u*C_{negative row,j})/3
+    print("Optimal joint distance in (0.25029998053739, 0.25029998053740).")
 
 
 def verify():
@@ -31,6 +72,15 @@ def verify():
     last = Counter(sizes[p]*sizes[q] for i,p in enumerate(old)
                    for q in old[:i] if distance(p,q)==200)
     assert last == {1:3, 9:3}
+    multiplicities_by_length = defaultdict(set)
+    for i, p in enumerate(old):
+        for q in old[:i]:
+            length = distance(p, q)
+            if 0 < length <= 200:
+                multiplicities_by_length[length].add(sizes[p]*sizes[q])
+    assert {length for length, kinds in multiplicities_by_length.items()
+            if len(kinds) > 1} == {200}
+    assert multiplicities_by_length[200] == {1, 9}
 
     t = sp.symbols("t")
     field = sp.QQ.cyclotomic_field(9)
@@ -70,6 +120,7 @@ def verify():
     left,right = near[1]
     assert Q(".2948708841598") < left/2 <= right/2 < Q(".2948708841600")
     assert all(r[1]-l[0]<left for l,r in zip(near[1:],near[2:]))
+    verify_joint_gap(adjacency, transformed)
     previous = max(b for a,b in transformed if b<0)
     assert previous < -3*right/2 and Q("1.54")*right/2<1
     print("Optimal adjacency distance in (0.3595181495938, 0.3595181495939).")
