@@ -145,6 +145,15 @@ def verify():
     print(BASE+1, "第六背景 K−1, W−ε, d·A", *[v.str(12) for v in (dk, dw, projection)])
     assert arb("-.003361") < dk < arb("-.003359")
     assert arb("-2e-9") < dw < 0 and 179874 < projection < 179876
+    # 把相邻编号纳入双背景校准，保留原交汇的三个截距。
+    catalogue = (0, 5, 8, 10, 12, 14, 16, 19, 22, 24, 25)
+    pair_matrix = arb_mat([joint[0][j]+differences[j] for j in catalogue]).transpose()
+    pair_target = arb_mat([[v] for v in [1, 1, epsilon, *shifts] + [0]*5])
+    pair_weights, _, _ = certified_weights(pair_matrix, pair_target)
+    assert all(w > 0 or w < 0 for w in pair_weights)
+    pair_cost = sum(-w for w in pair_weights if w < 0)
+    assert arb("2.13373e8") < pair_cost < arb("2.13374e8")
+    print("相邻编号 11 节点共同解负量", pair_cost.str(13))
     mixed_sectors(rows[:-1], ORIGINAL_SITES, weights, charge_weights, local["threshold_column"],
                   single["moments"], lib["expint"], d)
 
