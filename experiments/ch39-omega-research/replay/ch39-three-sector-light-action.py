@@ -29,6 +29,26 @@ def verify():
     assert abs(middle-neutral_root) < arb("1e-45")
     assert middle-lower > arb("6.56e-19") and upper-middle > arb("3.53e-19")
     roots = [arb(s) for s in model["ROOTS"]]+[neutral_root]
+
+    # 对保留原六个有理双根的十三次候选，作用差对剩余两个系数线性。
+    def pair_moments(energies):
+        weights = [prod((e-r)**2 for r in roots[:-1]) for e in energies]
+        return sum(weights), sum(e*v for e,v in zip(energies,weights,strict=True))
+
+    def displacement(point, center):
+        return [v-w for v,w in zip(pair_moments(point),pair_moments(center),strict=True)]
+
+    # 中性平凡字符的常数项在比较时自动消去。
+    vectors = [displacement([e,e],[middle,middle]) for e in (lower,upper)]
+    vectors.append(displacement(light(2,2070988),light(2,964890)))
+    unit_vectors = []
+    for v in vectors:
+        length = sum(x*x for x in v).sqrt()
+        assert length > 0
+        unit_vectors.append([x/length for x in v])
+    circle = read["interior_radius"](unit_vectors)
+    assert circle > arb("2.7e-20")
+    print("保留六个有理双根时十三次的有限反例，归一位移内半径",circle.str(14))
     # 先前全高度区间以这个较宽的区间包住中性非平凡最低能量。
     neutral_band = arb("8.24686").union(arb("8.24687"))
     assert all(abs(neutral_band-r) > arb(".20") for r in roots[:-1])
