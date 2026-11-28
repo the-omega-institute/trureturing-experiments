@@ -132,8 +132,8 @@ def quantized(grid):
 def controls(nodes):
     # Quadratic Bernstein controls from the values at 0, 1/2 and 1 on both axes.
     def axis(data, direction):
-        lo = np.take(data, np.arange(0, 2 * CELLS, 2), axis=direction)
-        mid = np.take(data, np.arange(1, 2 * CELLS, 2), axis=direction)
+        lo = np.take(data, np.arange(0, data.shape[direction], 2), axis=direction)
+        mid = np.take(data, np.arange(1, data.shape[direction], 2), axis=direction)
         hi = np.roll(lo, -1, axis=direction)
         return np.stack((lo, 2 * mid - (lo + hi) // 2, hi), axis=-1)
 
@@ -147,19 +147,20 @@ def split_axis(data, axis):
     return [np.stack(s, axis=axis) for s in ((a, u, w), (w, v, b))]
 
 
-def verify_cells(balls, level=0):
-    # [cells, y control, x control, six rows, five columns, real/imaginary]
+def inverse_test(balls, threshold_units):
+    # [cells, y control, x control, five or six rows, five columns, real/imaginary]
+    assert balls.shape[3] in (5, 6) and balls.shape[4:] == (5, 2)
+    assert 0 < threshold_units <= SCALE
     length = len(balls)
     central_control = balls[:, 1, 1]
     mid = (central_control[..., 0] + 1j * central_control[..., 1]) / SCALE
     proposed = np.linalg.pinv(mid)
-    assert np.isfinite(proposed).all() and np.abs(proposed).max() < 10000
-    left = np.rint(
-        LEFT_SCALE * np.stack((proposed.real, proposed.imag), axis=-1)
-    ).astype(np.int64)
-    # The caps bound a complex dot product by 12*(10000*1024)*(2*SCALE)
-    # and either squared left norm by 60*(10000*1024)**2, within int64.
-    assert np.abs(left).max() <= 10000 * LEFT_SCALE and np.abs(balls).max() <= 2 * SCALE
+    assert np.isfinite(proposed).all()
+    parts = np.stack((proposed.real, proposed.imag), axis=-1)
+    left = np.rint(LEFT_SCALE * np.clip(parts, -50000, 50000)).astype(np.int64)
+    # The caps bound a complex dot product by 12*(50000*1024)*(2*SCALE)
+    # and either squared left norm by 60*(50000*1024)**2, within int64.
+    assert np.abs(left).max() <= 50000 * LEFT_SCALE and np.abs(balls).max() <= 2 * SCALE
     lreal, limag = left[..., 0], left[..., 1]
     norm2 = (left * left).sum(axis=(1, 2, 3))
     norms = np.fromiter(
@@ -174,8 +175,11 @@ def verify_cells(balls, level=0):
         im = lreal @ i + limag @ r
         maxerr = np.maximum(maxerr, np.maximum(abs(re), abs(im)).max(axis=(1, 2)))
     # Frobenius norm <= sqrt(50) * largest real/imaginary entry of the defect.
-    # Demand 1/4096 for every convex combination of the represented controls.
-    ok = 8 * maxerr + norms * (SCALE // 4096) < unit
+    return 8 * maxerr + norms * threshold_units < unit
+
+
+def verify_cells(balls, level=0):
+    ok = inverse_test(balls, SCALE // 4096)
     counts = [int(ok.sum())]
     if ok.all():
         return counts
@@ -190,13 +194,14 @@ def verify_cells(balls, level=0):
     return counts
 
 
-def verify_character(pump, shell, k):
+def fill_controls(pump, shell, k, control_net):
+    cells = control_net.shape[0]
+    assert control_net.shape == (cells, cells, 3, 3, 6, 5, 2)
     basis = list(pump["rotation_bases"](shell))[k]
     pole = shell["soft"]["pole"]
     rows = [j for j in range(basis.ncols()) if basis[pole, j].is_zero()]
     assert len(rows) == 6
-    nodes = 2 * CELLS
-    control_net = np.empty((CELLS, CELLS, 3, 3, 6, 5, 2), dtype=np.int64)
+    nodes = 2 * cells
     third_bounds = []
     residuals = []
     for col, q in enumerate(CHARGES):
@@ -210,11 +215,26 @@ def verify_character(pump, shell, k):
             grid = sample(v[:, :, j], nodes, q)
             for part in range(2):
                 part_grid = [[z.imag if part else z.real for z in row] for row in grid]
-                control_net[:, :, :, :, r, col, part] = controls(quantized(part_grid))
-    h = arb.pi() / CELLS
+                net = controls(quantized(part_grid))
+                assert np.abs(net).max() <= 2 * SCALE
+                control_net[:, :, :, :, r, col, part] = net
+    h = arb.pi() / cells
     third = sum(s**2 for s in third_bounds).sqrt()
     # Tensor interpolation operator norm <= 5/4 on either coordinate.
     interpolation = (1 + arb(5) / 4) * third * h**3 / (9 * arb(3).sqrt())
+    # Each of the three softened edge Laplacians has norm two. The pinned
+    # gap is > 1 at every parameter. Continuity keeps the selected Ritz energy
+    # on the ground branch from (0,0,0), since the residual/norm is < 1/2.
+    full_residual = max(residuals) + 6 * arb("1e-8") * arb("1.5")
+    distance = full_residual / arb(".4")
+    assert distance < arb(".5")
+    off_line = full_residual / (1 - distance)
+    return interpolation, off_line
+
+
+def verify_character(pump, shell, k):
+    control_net = np.empty((CELLS, CELLS, 3, 3, 6, 5, 2), dtype=np.int64)
+    interpolation, off_line = fill_controls(pump, shell, k, control_net)
     # Integer node error < 1 unit. Each control conversion has l1 norm <= 3
     # and rounding < 1 unit. Each dyadic subdivision adds at most four units.
     rounding = arb(60).sqrt() * (13 + 4 * 9) / SCALE
@@ -228,13 +248,6 @@ def verify_character(pump, shell, k):
     assert sum(
         n * 4 ** (len(counts) - 1 - d) for d, n in enumerate(counts)
     ) == CELLS**2 * 4 ** (len(counts) - 1)
-    # Each of the three softened edge Laplacians has norm two. The pinned
-    # gap is > 1 at every parameter. Continuity keeps the selected Ritz energy
-    # on the ground branch from (0,0,0), since the residual/norm is < 1/2.
-    full_residual = max(residuals) + 6 * arb("1e-8") * arb("1.5")
-    distance = full_residual / arb(".4")
-    assert distance < arb(".5")
-    off_line = full_residual / (1 - distance)
     floor = (arb(1) / 4096 - interpolation - rounding - arb(5).sqrt() * off_line) / arb(
         "1.5"
     )
